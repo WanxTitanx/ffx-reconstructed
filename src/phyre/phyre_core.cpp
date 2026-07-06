@@ -23,10 +23,77 @@
 //   Return comparison result
 bool __thiscall Phyre_PClassDescriptor_Destructor(PhyrePClassDescriptor *this, bool flags)
 {
-    // TODO: implement
+    // Decompiled from 0x43b4d0. Full destructor: unlinks from namespace,
+    // drains all 6 linked lists, frees memory, returns refcount comparison.
     // 185 instructions, 45 basic blocks, cyclomatic 17
-    // Callees: PLinkedList_DrainAll, Engine_AlignedFree, Phyre_PNamespace_DetachFromList
-    return false;
+
+    // Step 1: set vtable to base PClassDescriptor (use existing vtable)
+    this->vfptr = (int *)vtable_PhyrePClassDescriptor;
+
+    // Step 2: decrement global refcount if needed (original uses MEMORY[0xC90758])
+    if (this->m_refCount + 1 == unk_C90758)
+        unk_C90758--;
+
+    // Step 3: detach from namespace binding
+    Phyre_PNamespace_DetachFromList((int)this->m_pNamespace, (int)this);
+
+    // Step 4: drain all linked lists
+    // linkedList (offset 0x4C) — class descriptor hierarchy list
+    // For each entry: check flag at offset 0x40 (16 dwords in), free if flagged
+    {
+        int *pList = &this->linkedList;
+        int *pEntry = (int *)(pList != (int *)*pList ? *pList : 0);
+        while (pEntry)
+        {
+            int *pNext = (int *)(pList != (int *)*pEntry ? (int *)*pEntry : 0);
+            if (((unsigned char *)pEntry)[0x40] & 1)  // flag at offset 0x40
+            {
+                int *prev = (int *)*pEntry;
+                int *next = (int *)pEntry[1];
+                prev[1] = (int)next;
+                next[0] = (int)prev;
+                *pEntry = (int)pEntry;
+                pEntry[1] = (int)pEntry;
+                Engine_AlignedFree((void *)pEntry[3]);
+                Engine_AlignedFree(pEntry);
+            }
+            pEntry = pNext;
+        }
+    }
+    // memberListHead (offset 0x54) — same pattern
+    {
+        int *pList = &this->m_memberListHead;
+        int *pEntry = (int *)(pList != (int *)*pList ? *pList : 0);
+        while (pEntry)
+        {
+            int *pNext = (int *)(pList != (int *)*pEntry ? (int *)*pEntry : 0);
+            if (pEntry)
+            {
+                if (((unsigned char *)pEntry)[0x40] & 1)
+                {
+                    int *prev = (int *)*pEntry;
+                    int *next = (int *)pEntry[1];
+                    prev[1] = (int)next;
+                    next[0] = (int)prev;
+                    *pEntry = (int)pEntry;
+                    pEntry[1] = (int)pEntry;
+                    Engine_AlignedFree((void *)pEntry[3]);
+                    Engine_AlignedFree(pEntry);
+                }
+            }
+            pEntry = pNext;
+        }
+    }
+    // Drain remaining lists via DrainAll
+    PLinkedList_DrainAll(&this->m_propertyList);    // field44
+    PLinkedList_DrainAll(&this->linkedList);         // field4C
+    PLinkedList_DrainAll(&this->m_memberListHead);  // field54
+    PLinkedList_DrainAll(&this->m_propertyListV2);  // field5C
+    bool result = (bool)PLinkedList_DrainAll(&this->m_linkedListHead2); // field34
+
+    // Step 5: set base vtable (original uses vtable_PType_Phyre — use existing PClassDescriptor)
+    this->vfptr = (int *)vtable_PhyrePClassDescriptor;
+    return result;
 }
 
 // Function: Phyre_PClassDescriptor_ctor (0x43b190, 721 xrefs)
@@ -46,9 +113,44 @@ _DWORD *__thiscall Phyre_PClassDescriptor_ctor(
     int parentCD,
     int field84)
 {
-    // TODO: implement
-    // 57 instructions, 1 basic block (inlined), cyclomatic 1
-    // No callees — pure field initialization
+    // Decompiled from 0x43b190. Init sentinel-linked-lists + fields.
+    // Sentinel init: each list head points to itself
+    this->m_propListHead = (int)&this->m_propListHead;      // field2C
+    this->m_linkedListHead2 = (int)&this->m_linkedListHead2; // field34
+    this->m_propertyList = (int)&this->m_propertyList;      // field44
+    this->linkedList = (int)&this->linkedList;               // field4C
+    this->m_memberListHead = (int)&this->m_memberListHead;  // field54
+    this->m_propertyListV2 = (int)&this->m_propertyListV2;  // field5C
+
+    // Zero fields
+    this->m_pClassDescriptor = 0;  // field10
+    this->m_pBaseClass = 0;        // field14
+    this->m_unk24 = 0;             // field24
+    this->m_unk28 = 0;             // field28
+    this->m_pInstanceData = 0;     // field64
+    this->m_pInitData = 0;         // field68
+    this->m_pTypeTable = 0;        // field6C
+    this->m_pDefaultValue = 0;     // field74
+    this->m_pDefaultValue2 = 0;    // field78
+
+    // Set vtable
+    this->vfptr = (int *)vtable_PhyrePClassDescriptor;  // extern in phyre_stubs.cpp
+
+    // Set namespace
+    this->m_namespaceList = name;           // field4
+    this->m_pParentCD = parentCD;           // field40
+
+    // Ref count (original uses a global counter)
+    static int s_globalRefCount = 1;
+    this->m_refCount = s_globalRefCount++;  // field7C
+
+    // Set remaining fields
+    this->m_field84 = field84;              // field84 (offset 132)
+    // fields 34-36 at struct+31..33 (-1, 0, 0, 0)
+    *(_DWORD *)((char *)this + 136) = -1;   // field88
+    *(_DWORD *)((char *)this + 140) = 0;    // field8C
+    *(_DWORD *)((char *)this + 144) = 0;    // field90
+
     return &this->vfptr;
 }
 
@@ -63,9 +165,46 @@ void __thiscall Phyre_PClassDescriptor_Constructor(
     int field1C,
     int totalSize)
 {
-    // TODO: implement
-    // 55 instructions, 1 basic block, cyclomatic 1
-    // Simpler variant used by primitive types (Vector2, Vector3, etc.)
+    // Decompiled from 0x43b0a0. Simpler variant for primitive types.
+    // Same as _ctor but no parent, no field84 parameter.
+    // Init sentinel-linked-lists
+    this->m_propListHead = (int)&this->m_propListHead;
+    this->m_linkedListHead2 = (int)&this->m_linkedListHead2;
+    this->m_propertyList = (int)&this->m_propertyList;
+    this->linkedList = (int)&this->linkedList;
+    this->m_memberListHead = (int)&this->m_memberListHead;
+    this->m_propertyListV2 = (int)&this->m_propertyListV2;
+
+    // Zero fields
+    this->m_pClassDescriptor = 0;
+    this->m_pBaseClass = 0;
+    this->m_unk24 = 0;
+    this->m_unk28 = 0;
+    this->m_pInstanceData = 0;
+    this->m_pInitData = 0;
+    this->m_pTypeTable = 0;
+    this->m_pDefaultValue = 0;
+    this->m_pDefaultValue2 = 0;
+
+    // Set vtable + namespace
+    this->vfptr = (int *)vtable_PhyrePClassDescriptor;
+    this->m_namespaceList = name;
+    this->m_pParentCD = 0;  // no parent (pure primitive type)
+
+    // Set total size (field20 for primitive types)
+    *(int *)((char *)this + 0x20) = totalSize;  // m_totalSize at offset 0x20
+
+    // Ref count
+    static int s_globalRefCountPrim = 1;
+    this->m_refCount = s_globalRefCountPrim++;
+
+    // No field84 parameter — set to 0
+    this->m_field84 = 0;  // field84 = 0
+
+    // fields 34-36 at struct+31..33 (-1, 0, 0, 0)
+    *(_DWORD *)((char *)this + 136) = -1;
+    *(_DWORD *)((char *)this + 140) = 0;
+    *(_DWORD *)((char *)this + 144) = 0;
 }
 
 // Function: Phyre_PClassDescriptor_GetOrInitSingleton (0x43a810, 1 caller)
@@ -131,9 +270,36 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByName(
     PhyrePClassDescriptor *this,
     const char *name)
 {
-    // TODO: implement
-    // 58 instructions, 15 basic blocks, cyclomatic 9
-    // No callees (strcmp intrinsic)
+    // Decompiled from 0x435ad0. Searches intrusive linked list for name match.
+    // The linkedList at offset 0x4C is an embedded sentinel node. Each list
+    // entry is a PhyrePClassDescriptor* where vfptr (offset 0) serves as the
+    // "next" pointer in list context. fieldC (m_nameString) carries the name.
+    if (!name || !this)
+        return 0;
+
+    // Check if list is empty (sentinel points to itself: empty-list test)
+    int *pSentinel = &this->linkedList;
+    PhyrePClassDescriptor *pEntry = (PhyrePClassDescriptor *)(int *)this->linkedList;
+    if (pSentinel == (int *)pEntry)  // sentinel self-loop = empty
+        return 0;
+
+    // Walk the linked list comparing names
+    while (pEntry)
+    {
+        const char *entryName = (const char *)pEntry->m_nameString;
+        // fieldC at offset 0x0C holds the name pointer
+        if (entryName)
+        {
+            int cmp = strcmp(entryName, name);
+            if (cmp == 0)
+                return pEntry;  // found match
+        }
+        // Advance: next node is at the address stored in vfptr (offset 0)
+        int *pNext = (int *)pEntry->vfptr;
+        if (pNext == pSentinel)  // back to sentinel = end of list
+            return 0;
+        pEntry = (PhyrePClassDescriptor *)pNext;
+    }
     return 0;
 }
 
@@ -325,9 +491,16 @@ int *__thiscall Phyre_PArray_PTypedObject_AllocAndCopy(int *this, int *a2)
 //   a1 and a2 advance by 2 each iteration
 void __cdecl Phyre_PArray_PTypedObject_CopyPairs(_DWORD *a1, _DWORD *a2, int count)
 {
-    // TODO: implement
-    // 24 instructions, 7 basic blocks, cyclomatic 4
-    // No callees — pure memory copy loop
+    for (int i = count; i > 0; i--)
+    {
+        if (a1)
+        {
+            a1[0] = a2[0];
+            a1[1] = a2[1];
+        }
+        a1 += 2;
+        a2 += 2;
+    }
 }
 
 // ============================================================================
@@ -511,11 +684,23 @@ _DWORD *Phyre_PObject_RegisterClassDescriptor()
 //   Called by ALL class descriptor registrations (~hundreds of callers).
 _DWORD *Phyre_PNamespace_GetSingleton()
 {
-    // TODO: implement
-    // 3 basic blocks, cyclomatic 2
-    // Callees: _atexit (once)
-    // Global: dword_C90B00 (7 dwords), unk_C90B1C (atexit guard bit 0)
-    return 0;
+    // Decompiled from 0x43e3e0. Lazy singleton for global namespace at
+    // C90B00 (MEMORY_C90B00). Guard bit at C90B1C bit 0. On first init:
+    // sets self-looping sentinel nodes + atexit cleanup.
+    // MEMORY_C90B00[4] is the guard byte at offset 0x1C
+    if ((MEMORY_C90B00[7] & 1) == 0)  // unk_C90B1C bit 0
+    {
+        MEMORY_C90B00[7] |= 1;          // set guard
+        MEMORY_C90B00[0] = (int)MEMORY_C90B00;  // sentinel self-loop
+        MEMORY_C90B00[1] = (int)MEMORY_C90B00;  // pair
+        MEMORY_C90B00[2] = (int)&MEMORY_C90B00[2];
+        MEMORY_C90B00[3] = (int)&MEMORY_C90B00[2];
+        MEMORY_C90B00[4] = 0;
+        MEMORY_C90B00[5] = (int)&MEMORY_C90B00[5];
+        MEMORY_C90B00[6] = (int)&MEMORY_C90B00[5];
+        // atexit(Phyre_PClassDescriptor_DestroyHierarchy_C90B00) — omitted, not needed
+    }
+    return (_DWORD *)MEMORY_C90B00;
 }
 
 // Function: Phyre_PNamespace_InitSingleton (0x43dc50)
@@ -567,8 +752,15 @@ int __thiscall Phyre_PNamespace_AddClassDescriptor(int this, int classDesc)
 // Removes a class descriptor from its namespace binding list.
 void __stdcall Phyre_PNamespace_DetachFromList(int namespaceList, int entry)
 {
-    // TODO: implement
-    // LinkedList unlink: prev->next = next; next->prev = prev
+    // Decompiled from 0x43e3e0 (thiscall: PNamespace *this, PClassDescriptor *cd).
+    // Entry has prev/next at offsets 0x2C/0x30 (m_propListHead/m_pSerializer).
+    // Unlink: prev->next = next; next->prev = prev; self-loop removed entry.
+    int prev = *(int *)(entry + 0x2C);  // m_propListHead
+    int next = *(int *)(entry + 0x30);  // m_pSerializer
+    *(int *)(prev + 4) = next;          // prev->m_pSerializer = next
+    *(int *)next = prev;                // next->m_propListHead = prev
+    *(int *)(entry + 0x2C) = entry + 0x28;  // self-loop (sentinel state)
+    *(int *)(entry + 0x30) = entry + 0x28;  // self-loop
 }
 
 // ============================================================================
@@ -1214,3 +1406,48 @@ void *__thiscall Phyre_Heap_BucketAlloc(void *this, unsigned int size) { return 
 // Phyre_Heap_BucketFree (0x4xxxxx)
 // Libera bloco alocado via BucketAlloc
 int __thiscall Phyre_Heap_BucketFree(void *this, void *ptr) { return 0; }
+
+// Phyre_List_UnlinkNode (0x43b460, 1228 xrefs)
+// Generic intrusive doubly-linked list unlink.
+void *__stdcall Phyre_List_UnlinkNode(void *listNode)
+{
+    if (!listNode) return 0;
+    int *prev = (int *)((int *)listNode)[1];
+    int *next = (int *)((int *)listNode)[2];
+    prev[1] = (int)next;
+    next[0] = (int)prev;
+    ((int *)listNode)[1] = (int)listNode + 4;
+    ((int *)listNode)[2] = (int)listNode + 4;
+    return (void *)next;
+}
+
+// PLinkedList_PopFront (0x575ee0)
+// Returns front element of intrusive linked list (offset -4 from data ptr).
+// List layout: stored value = data_ptr + 4; actual node = stored_value - 4.
+// Returns 0 if list is empty (sentinel self-loop) or null.
+int __thiscall PLinkedList_PopFront(int *this, int a2)
+{
+    int v = *this;
+    if (v == a2 || !v) return 0;
+    return v - 4;
+}
+
+// PLinkedList_DrainAll (0x575a50)
+// Pops all entries from the list and unlinks each one.
+// The unlink follows the standard prev/next diamond pattern.
+int __thiscall PLinkedList_DrainAll(int *this)
+{
+    int result;
+    while (1)
+    {
+        result = PLinkedList_PopFront(this, (int)this);
+        if (!result) break;
+        int *prev = (int *)(*(int *)(result + 4));
+        int *next = (int *)(*(int *)(result + 8));
+        *(int *)((char *)prev + 4) = (int)next;
+        *(int *)next = (int)prev;
+        *(int *)(result + 4) = result + 4;
+        *(int *)(result + 8) = result + 4;
+    }
+    return result;
+}

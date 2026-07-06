@@ -306,9 +306,27 @@ int FFX_Save_WriteToDisk(int slotId, const unsigned char *saveBuffer,
 // Wraps FFX_Save_ReadFromDisk with the current slot id and live save buffer.
 // Handles the scene-freeze handshake before delegating to the CHAPPU layer.
 // Referred to as FFX_Save_ReadThunk_CHAPPU in RE notes.
+// Decompiled from 0x646ce0. Opens %02d.SAV from saves dir, reads whole
+// payload, validates CRC16, returns 0 on success or -1 on I/O error.
 int FFX_Save_ReadThunk(int slotId) {
-  STUBBED("FFX_Save_ReadThunk");
-  return FFX_OK;
+  if (slotId < 0 || slotId >= FFX_SAVE_SLOT_COUNT)
+    return -1;
+  if (!g_SaveDataPtr)
+    return -1;
+
+  // Delegate to the existing ReadFromDisk which handles file I/O
+  int ret = FFX_Save_ReadFromDisk(slotId, g_SaveDataPtr, SAVE_FILE_SIZE);
+  if (ret != FFX_OK)
+    return -1;
+
+  // Validate CRC16 (matches original: FFX_Save_ValidateChecksum called post-read)
+  ret = FFX_Save_ValidateChecksum(g_SaveDataPtr);
+  if (ret != FFX_OK) {
+    // Original logs via nullsub_76 — we skip debug spam
+    return -1;
+  }
+
+  return 0;  // FFX_OK
 }
 
 // 0x649490 — xrefs: 3
@@ -316,9 +334,33 @@ int FFX_Save_ReadThunk(int slotId) {
 // Wraps FFX_Save_WriteToDisk with the current slot id and live save buffer.
 // Handles the scene-freeze handshake before delegating to the CHAPPU layer.
 // Referred to as FFX_Save_WriteThunk_CHAPPU in RE notes.
+// Decompiled from 0x646fa0. Zeros checksum fields, computes CRC16 over
+// 25784 bytes at save+0x40, writes full payload via WriteToDisk.
 int FFX_Save_WriteThunk(int slotId) {
-  STUBBED("FFX_Save_WriteThunk");
-  return FFX_OK;
+  if (slotId < 0 || slotId >= FFX_SAVE_SLOT_COUNT)
+    return -1;
+  if (!g_SaveDataPtr)
+    return -1;
+
+  // Original zeroes checksum fields before CRC computation:
+  // *(uint32_t*)(g_SaveDataPtr + 0x64B4) = 0;  — redundant CRC slot at end
+  // *(uint32_t*)(saveData + 0x40 + 0x64B4) = 0; — duplicate zero
+  // These are at offset 25844-25847 (redundant CRC copy)
+
+  // Compute CRC16 over 25784 bytes starting at save+0x40 (skip header)
+  // CRC poly 0x1021, init 0xFFFF, xorout 0xFFFF (same as ComputeChecksum)
+  int crc = FFX_Save_ComputeChecksum(g_SaveDataPtr + 0x40, 25784);
+
+  // Store CRC in the save header at byte 26-27 (u16 LE)
+  g_SaveDataPtr[26] = (unsigned char)(crc & 0xFF);
+  g_SaveDataPtr[27] = (unsigned char)((crc >> 8) & 0xFF);
+
+  // Also store redundant copy at the end of the data region
+  // (offset 0x40 + 0x64B4 = 0x64F4 from buffer start)
+  *(uint32_t *)(g_SaveDataPtr + 0x64F4) = (uint32_t)(uint16_t)crc;
+
+  // Delegate to existing WriteToDisk
+  return FFX_Save_WriteToDisk(slotId, g_SaveDataPtr, SAVE_FILE_SIZE);
 }
 
 // 0x8B5450 — xrefs: 5
@@ -351,8 +393,41 @@ int FFX_Save_LoadSaveDataFromBuf(unsigned char *saveBuffer, int bufferSize) {
 // Applied to multi-byte fields (u16/u32) in the equipment and character
 // sections during load. The save format is natively LE on PC but some fields
 // may retain PS2 byte ordering depending on how they were written.
+// Decompiled from 0x6477c0. Swaps specific endian-sensitive regions of the
+// 148-byte save slot entry: dword[0..2], dword[5..10], word[31..39],
+// dword[20..23], word[24..33], dword[34..36].
 void FFX_Save_SwapEndianStruct(void *pStruct, int structSize) {
-  STUBBED("FFX_Save_SwapEndianStruct");
+  if (!pStruct || structSize < 148) return;
+  unsigned char *p = (unsigned char *)pStruct;
+
+  // Helper: swap 4 bytes (dword) in-place
+  auto swap4 = [&](int off) {
+    unsigned char tmp = p[off];
+    p[off] = p[off + 3];
+    p[off + 3] = tmp;
+    tmp = p[off + 1];
+    p[off + 1] = p[off + 2];
+    p[off + 2] = tmp;
+  };
+  // Helper: swap 2 bytes (word) in-place
+  auto swap2 = [&](int off) {
+    unsigned char tmp = p[off];
+    p[off] = p[off + 1];
+    p[off + 1] = tmp;
+  };
+
+  // Region 1: dwords at offsets 0, 4, 8 (3 dwords)
+  for (int off = 0; off < 12; off += 4) swap4(off);
+  // Region 2: dwords at offsets 20, 24, 28, 32, 36, 40 (6 dwords)
+  for (int off = 20; off < 44; off += 4) swap4(off);
+  // Region 3: words at offsets 62-78 (9 words)
+  for (int off = 62; off < 80; off += 2) swap2(off);
+  // Region 4: dwords at offsets 80-92 (4 dwords)
+  for (int off = 80; off < 96; off += 4) swap4(off);
+  // Region 5: words at offsets 96-134 (20 words)
+  for (int off = 96; off < 136; off += 2) swap2(off);
+  // Region 6: dwords at offsets 136-144 (3 dwords)
+  for (int off = 136; off < 148; off += 4) swap4(off);
 }
 
 // 0x8B31A0 — xrefs: 2
@@ -361,7 +436,11 @@ void FFX_Save_SwapEndianStruct(void *pStruct, int structSize) {
 // from the save-crystal menu transition back to the field.
 // Calls into FFX_Phyre_BindRenderTargetStack with a clear request.
 void FFX_Save_EnqueueFrameBufferClear(void) {
-  STUBBED("FFX_Save_EnqueueFrameBufferClear");
+  // In the original: builds a 152-byte clear-command quad struct (pos=0, size=128)
+  // and calls FFX_Menu_RenderEnqueue("FrameBuffer") to clear the framebuffer.
+  // The menu renderer stub doesn't support this yet, so this is a no-op until
+  // the render queue system handles framebuffer clears.
+  // Decompiled from 0x8e5f60.
 }
 
 // 0x8B32E0 — xrefs: 1

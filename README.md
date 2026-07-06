@@ -2,7 +2,11 @@
 
 **A functional engine for Final Fantasy X, rebuilt from the ground up through massive reverse engineering.**
 
-This project is the result of one of the largest FFX reverse engineering efforts ever undertaken: **45,114 named functions**, **291 structs**, **91 vtables**, and **thousands of hours** analyzing the Steam build of FFX (International version) using IDA Pro + Hex-Rays. All code is original, written in pure C++, compilable with MSVC, and produces a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
+> **Version:** See [VERSIONING.md](VERSIONING.md) for the Semantic Versioning contract.
+> **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for the full release history.
+> **License:** MIT — free to use, modify, and distribute.
+
+This project is the result of one of the largest FFX reverse engineering efforts ever undertaken: **45,114 named functions**, **382 structs**, **101 vtables**, **65 enums**, **8,959 function comments**, and **thousands of hours** analyzing the Steam build of FFX (International version) using IDA Pro + Hex-Rays + IDAPython. All code is original, written in pure C++, compilable with MSVC, and produces a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
 
 ---
 
