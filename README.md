@@ -1,49 +1,47 @@
 # FFX Reconstructed
 
-**Uma engine funcional para Final Fantasy X, reconstruída do zero via engenharia reversa.**
+**A functional engine for Final Fantasy X, rebuilt from the ground up through massive reverse engineering.**
 
-Este projeto nasceu de um esforço massivo de reverse engineering: **45.114 funções nomeadas**, **291 structs**, **91 vtables**, e **milhares de horas de análise** da build Steam do FFX (versão internacional) usando IDA Pro + Hex-Rays. Todo o código é original, escrito em C++ puro, compilável com MSVC e capaz de rodar um executável Windows que abre janela, inicializa D3D11, desenha na tela e aceita input do teclado.
-
----
-
-## Estado Atual
-
-O projeto está em **fase de reconstrução ativa**. A engine base já é funcional:
-
-### ✅ Funciona agora
-- **Game loop completo** — PeekMessage não-bloqueante, delta time via QueryPerformanceCounter, clamp anti-spiral-of-death
-- **D3D11 nativo** — Device, swap chain, render target view criados via LoadLibrary + GetProcAddress (zero dependência estática de d3d11.lib)
-- **Shaders inline HLSL** — Vertex + pixel shaders compilados via D3DCompile em runtime a partir de strings C incorporadas
-- **Render queue** — Sistema de quad batching com buffer de vértices dinâmico até 2048 quads por frame, matriz de projeção ortográfica, DrawIndexed otimizado com batch sorting por textura
-- **Input de teclado** — Polling de 256 teclas via GetAsyncKeyState com detecção de borda de subida
-- **Menu ESC** — Overlay com toggle pela tecla M, navegação por setas, highlight com accent teal (#2A9D8F), fechar com Enter/Esc
-- **Texturas** — Carregamento de PNG/JPG/BMP/TGA via stb_image, cache de até 64 SRVs, sistema de registro de atlas por ID
-- **DrawWindow** — Janelas 9-slice com bordas 2px, cantos accent, title bar, gradiente de fundo
-- **DrawString** — Renderização de texto com fallback para retângulos coloridos, suporte a 3 tamanhos de fonte e múltiplas linhas
-- **DrawPlasma** — Efeito gradiente animado (placeholder para o plasma procedural original)
-- **Sistema de save** — CRC-16 CCITT completo, I/O de arquivo real com CreateFile/ReadFile/WriteFile, gerenciamento de 7 slots, acesso a dados de personagem (HP, MP, stats, equipment, aeons)
-- **Fullscreen** — Alternância via F11, resize de janela com recreate do backbuffer
-- **FPS counter** — Barra colorida no canto superior esquerdo (verde >48fps, amarelo >30fps, vermelho abaixo)
-- **Lua 5.1** — VM completa compilada e linkada (27 arquivos .c, sem modificações)
-
-### 🔄 Em andamento
-- **Battle HUD** — Sistema de atores (12 slots), action queue, CTB, ATEL scripts. Data model funcional, rendering visual sendo implementado
-- **Menu sistema** — Pool de 32 slots, contexto por menuId, scroll, páginas, navegação, confirm/cancel. API de alto nível funcional, páginas de configuração sendo construídas
-- **Sistema de atlas** — 6 texturas de menu registradas (meswin, menu_new, ffx_bg, stonetexture, summonbg, icon), dispatch por atlas ID implementado
-
-### ❌ Stub (próximos passos)
-- **Field/3D** — Carregamento de cenas, render 3D, câmera, iluminação — 5% implementado
-- **Battle HUD rendering** — HP bars, CTB ring, overdrive gauge, status icons — 0% implementado
-- **Save/Load UI** — Orquestrador de save crystal com freeze de cena — 10% implementado
-- **PhyreEngine Type System** — PClassDescriptor, PNamespace — PClass system parcial, type system completo necessário para carregar assets
-- **FMOD Audio** — Música e SFX — stub
-- **Steam API** — Conquistas, cloud save — stub
-- **Iggy UI** — Sistema de UI do PhyreEngine — stub
-- **DirectInput / XInput** — Gamepad, controles analógicos — stub
+This project is the result of one of the largest FFX reverse engineering efforts ever undertaken: **45,114 named functions**, **291 structs**, **91 vtables**, and **thousands of hours** analyzing the Steam build of FFX (International version) using IDA Pro + Hex-Rays. All code is original, written in pure C++, compilable with MSVC, and produces a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
 
 ---
 
-## Arquitetura
+## Current Status
+
+### ✅ Working Now
+- **Game loop** — Non-blocking PeekMessage, delta time via QueryPerformanceCounter, anti-spiral-of-death clamp
+- **Native D3D11** — Device, swap chain, render target view created via LoadLibrary + GetProcAddress (zero static dependency on d3d11.lib)
+- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile from embedded C strings
+- **Render queue** — Quad batching with dynamic vertex buffer (up to 2048 quads/frame), orthographic projection matrix, DrawIndexed with texture-based batch sorting
+- **Keyboard input** — Full 256-key polling via GetAsyncKeyState with rising-edge detection
+- **ESC menu** — Toggle with M key, arrow navigation, teal accent highlight (#2A9D8F), close with Enter/Esc
+- **Textures** — PNG/JPG/BMP/TGA loading via stb_image, 64-slot SRV cache, atlas registry by ID
+- **DrawWindow** — 9-slice windows with 2px borders, accent corners, title bar, gradient background
+- **DrawString** — Text rendering with colored-rect fallback, 3 font sizes, multi-line support
+- **DrawPlasma** — Animated gradient effect (placeholder for procedural plasma)
+- **Save system** — Full CRC-16 CCITT, real file I/O via CreateFile/ReadFile/WriteFile, 7-slot management, character data access (HP, MP, stats, equipment, aeons)
+- **Fullscreen** — F11 toggle, window resize with backbuffer recreation
+- **FPS counter** — Color-coded bar in top-left (green >48fps, yellow >30fps, red below)
+- **Lua 5.1** — Complete VM compiled and linked (27 .c files, unmodified)
+
+### 🔄 In Progress
+- **Battle HUD** — Actor system (12 slots), action queue, CTB, ATEL scripts. Data model working, visual rendering being implemented
+- **Menu system** — 32-slot pool, per-menuId context, scroll, pages, navigation, confirm/cancel. High-level API working, config pages being built
+- **Atlas system** — 6 menu textures registered (meswin, menu_new, ffx_bg, stonetexture, summonbg, icon), atlas ID dispatch implemented
+
+### ❌ Stubbed (Next Steps)
+- **Field/3D** — Scene loading, 3D rendering, camera, lighting — 5% done
+- **Battle HUD rendering** — HP bars, CTB ring, overdrive gauge, status icons — 0% done
+- **Save/Load UI** — Save crystal orchestrator with scene freeze — 10% done
+- **PhyreEngine Type System** — PClassDescriptor, PNamespace — PClass partial, type system needed for asset loading
+- **FMOD Audio** — Music and SFX — stub
+- **Steam API** — Achievements, cloud save — stub
+- **Iggy UI** — PhyreEngine UI middleware — stub
+- **DirectInput / XInput** — Gamepad, analog controls — stub
+
+---
+
+## Architecture
 
 ```
 ffx-reconstructed/
@@ -69,7 +67,7 @@ ffx-reconstructed/
 └── CMakeLists.txt              # Visual Studio 2022/2026, Win32, /MD /O2 /LTCG
 ```
 
-### Pipeline de Renderização
+### Render Pipeline
 
 ```
 FFX_Renderer_BeginFrame()
@@ -77,10 +75,10 @@ FFX_Renderer_BeginFrame()
   └── ClearRenderTargetView(RTV, clearColor)
 
 [Scene drawing]
-  ├── FFX_RenderQueue_PushRect()    — quads sólidos/gradiente
-  ├── FFX_RenderQueue_PushQuad()    — quads com UV + cores por vértice
-  ├── FFX_RenderQueue_PushQuadTex() — quads texturizados com SRV
-  └── FFX_Renderer_DrawTestTriangle() — triângulo RGB de teste
+  ├── FFX_RenderQueue_PushRect()    — solid/gradient quads
+  ├── FFX_RenderQueue_PushQuad()    — UV-mapped quads with per-vertex colors
+  ├── FFX_RenderQueue_PushQuadTex() — textured quads with SRV
+  └── FFX_Renderer_DrawTestTriangle() — RGB test triangle
 
 FFX_RenderQueue_Flush()
   ├── Map vertex buffer (WRITE_DISCARD)
@@ -95,12 +93,12 @@ FFX_Renderer_EndFrame()
 
 ---
 
-## Como Compilar
+## Building
 
-### Requisitos
+### Requirements
 - **Windows 10+**
-- **Visual Studio 2022 ou 2026** com suporte a desktop C++
-- **CMake** 3.20+ (incluído no VS)
+- **Visual Studio 2022 or 2026** with C++ desktop workload
+- **CMake** 3.20+ (bundled with VS)
 
 ### Build
 ```bash
@@ -109,36 +107,36 @@ cmake -S . -B build -G "Visual Studio 17 2022" -A Win32
 cmake --build build --config Release
 ```
 
-O executável será gerado em `build/Release/FFX_Reconstructed.exe`.
+The executable will be at `build/Release/FFX_Reconstructed.exe`.
 
-### Comandos
-| Tecla | Ação |
-|-------|------|
-| `M` | Toggle menu ESC |
-| `↑/↓` | Navegar no menu |
-| `Enter` | Confirmar / fechar menu |
-| `Esc` | Fechar menu / sair do jogo |
-| `F11` | Alternar fullscreen |
-
----
-
-## A Jornada
-
-Este é o resultado de um dos maiores esforços de reverse engineering de Final Fantasy X já realizados:
-
-- **45.114 funções** completamente analisadas e renomeadas na base IDA
-- **291 structs** mapeadas, incluindo PClassDescriptor (sistema de tipos), PRenderer, PAnimation, Bullet physics, sistema de HUD, e mais
-- **91 vtables** identificadas e tipadas no .rdata
-- **~95,7% de cobertura** de stubs convertidos em implementações reais
-- **~76.500+ linhas** de código de reconstrução geradas
-- **25+ bibliotecas open-source** integradas: Bullet Physics, Lua 5.1, zlib, stb, ImGui, FMOD (stub), Steam (stub)
-
-A base de conhecimento deste projeto está documentada em:
-- `src/include/ffx_structs.h` — 20 structs do FFX/PhyreEngine com campos nomeados
-- `src/include/ffx_vtables.h` — 4 vtables com 35 entries mapeadas
+### Controls
+| Key | Action |
+|-----|--------|
+| `M` | Toggle ESC menu |
+| `↑/↓` | Navigate menu |
+| `Enter` | Confirm / close menu |
+| `Esc` | Close menu / quit game |
+| `F11` | Toggle fullscreen |
 
 ---
 
-## Licença
+## The Journey
 
-MIT — Este é um projeto de pesquisa e engenharia reversa educacional. Não contém código original da Square Enix, apenas implementações originais baseadas em observação do comportamento do software. O jogo Final Fantasy X é propriedade da Square Enix.
+This is the culmination of one of the largest Final Fantasy X reverse engineering efforts ever:
+
+- **45,114 functions** completely analyzed and renamed in the IDA database
+- **291 structs** mapped, including PClassDescriptor (type system), PRenderer, PAnimation, Bullet physics, HUD system, and more
+- **91 vtables** identified and typed in .rdata
+- **~95.7%** of stubs converted to real implementations
+- **~76,500+ lines** of reconstruction code generated
+- **25+ open-source libraries** integrated: Bullet Physics, Lua 5.1, zlib, stb, ImGui, FMOD (stub), Steam (stub)
+
+The knowledge base is documented in:
+- `src/include/ffx_structs.h` — 20 FFX/PhyreEngine structs with named fields
+- `src/include/ffx_vtables.h` — 4 vtables with 35 mapped entries
+
+---
+
+## License
+
+MIT — This is an educational reverse engineering and research project. It contains no original Square Enix code, only original implementations based on software behavior observation. Final Fantasy X is property of Square Enix.
