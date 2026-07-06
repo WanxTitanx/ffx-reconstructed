@@ -1940,3 +1940,50 @@ double __cdecl FFX_Math_Distance2DXZ(float *a, float *b)
     float dx = b[0] - a[0], dz = b[2] - a[2];
     return sqrtf(dx*dx + dz*dz);
 }
+
+// FFX_Math_NormalizeAngle (0x8367a0): normalize rad to [-PI, PI]
+double __cdecl FFX_Math_NormalizeAngle(float a1)
+{
+    double result = a1;
+    double twoPI = 6.283185307179586;
+    double PI = 3.141592653589793;
+    if (a1 > (float)PI) {
+        while (result - twoPI > PI) result -= twoPI;
+        result -= twoPI;
+    }
+    if (result < (float)-PI) {
+        while (result + twoPI < -PI) result += twoPI;
+        result += twoPI;
+    }
+    return result;
+}
+
+// FFX_Math_RangeCompare (0x8313b0): compare with hysteresis
+int __cdecl FFX_Math_RangeCompare(int prev, int target, int a3, int a4)
+{
+    if (prev == target) return 1;
+    if (prev < target) {
+        if (a3 >= prev && a3 < target) return 2;
+        if (a4 >= prev && a4 < target) return 4;
+        return 0;
+    }
+    if (a3 >= prev || a3 < target) return 3;
+    if (a4 < prev && a4 >= target) return 0;
+    return 5;
+}
+
+// FFX_Math_ClampVec3Min (0x7ecc20): vec3 component-wise min clamp
+void __cdecl FFX_Math_ClampVec3Min(float *out, float *in, float minX, float minY, float minZ)
+{
+    out[0] = (minX < in[0]) ? in[0] : minX;
+    out[1] = (minY < in[1]) ? in[1] : minY;
+    out[2] = (minZ < in[2]) ? in[2] : minZ;
+}
+
+// FFX_Math_ClampVec3Max (0x7ecce0): vec3 component-wise max clamp
+void __cdecl FFX_Math_ClampVec3Max(float *out, float *in, float maxX, float maxY, float maxZ)
+{
+    out[0] = (maxX > in[0]) ? in[0] : maxX;
+    out[1] = (maxY > in[1]) ? in[1] : maxY;
+    out[2] = (maxZ > in[2]) ? in[2] : maxZ;
+}
