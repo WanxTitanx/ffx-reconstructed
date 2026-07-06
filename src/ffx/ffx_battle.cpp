@@ -1711,3 +1711,127 @@ void *FFX_Battle_GetEnemyByIndex(void *self, int index) { return 0; }
 // ============================================================================
 // End of ffx_battle.cpp
 // ============================================================================
+
+// ============================================================
+// FFX Math Utilities — self-contained, decompiled from DB
+// ============================================================
+
+// FFX_Math_Vec4Assign (0x710f10): copy 4 floats
+int __cdecl FFX_Math_Vec4Assign(float *a1, float *a2)
+{
+    a1[0] = a2[0];
+    a1[1] = a2[1];
+    a1[2] = a2[2];
+    a1[3] = a2[3];
+    return (int)a1;
+}
+
+// FFX_Math_Vec4AssignReverse (0x710f50): copy reversed
+int __cdecl FFX_Math_Vec4AssignReverse(float *a1, float *a2)
+{
+    a1[3] = a2[3];
+    a1[2] = a2[2];
+    a1[1] = a2[1];
+    a1[0] = a2[0];
+    return (int)a1;
+}
+
+// FFX_Math_Vec3MulScalarStore (0x710f80): vec3 *= scalar
+float *__cdecl FFX_Math_Vec3MulScalarStore(float *a1, float *a2, float a3)
+{
+    a1[0] = a2[0] * a3;
+    a1[1] = a2[1] * a3;
+    a1[2] = a2[2] * a3;
+    return a1;
+}
+
+// FFX_Math_Vec3Mul3Scalars (0x728b50): vec3 *= 3 scalars
+float *__cdecl FFX_Math_Vec3Mul3Scalars(float *a1, float *a2, float a3, float a4, float a5)
+{
+    a1[0] = a2[0] * a3;
+    a1[1] = a2[1] * a4;
+    a1[2] = a2[2] * a5;
+    return a1;
+}
+
+// FFX_Math_SetFlagBit7 (0x42ef20): set bit 7 on value
+int __cdecl FFX_Math_SetFlagBit7(int val) { return val | 0x80; }
+
+// FFX_Math_SetFlagBit6 (0x42ef30): set bit 6 on value
+int __cdecl FFX_Math_SetFlagBit6(int val) { return val | 0x40; }
+
+// FFX_Math_Copy4Dwords (0x72f4a0): copy 4 dwords
+int __cdecl FFX_Math_Copy4Dwords(int *a1, int *a2)
+{
+    a2[0] = a1[0];
+    a2[1] = a1[1];
+    a2[2] = a1[2];
+    a2[3] = a1[3];
+    return a2[3];
+}
+
+// FFX_Math_FloatAddInPlace (0x74b700): *a1 = *a2 + a4
+float *__cdecl FFX_Math_FloatAddInPlace(float *a1, float *a2, int a3, float a4)
+{
+    *a1 = *a2 + a4;
+    return a1;
+}
+
+// FFX_Math_Vec4Copy (0x7500f0): copy 4 floats
+float *__cdecl FFX_Math_Vec4Copy(float *a1, float *a2)
+{
+    a1[0] = a2[0];
+    a1[1] = a2[1];
+    a1[2] = a2[2];
+    a1[3] = a2[3];
+    return a1;
+}
+
+// FFX_Math_Vec4MulScalar (0x7501a0): vec4 *= scalar
+float *__cdecl FFX_Math_Vec4MulScalar(float *a1, float *a2, float a3)
+{
+    a1[0] = a2[0] * a3;
+    a1[1] = a2[1] * a3;
+    a1[2] = a2[2] * a3;
+    a1[3] = a2[3] * a3;
+    return a2;
+}
+
+// FFX_Math_Vec3Scale (0x75bbf0): vec3 *= scalar
+float *__cdecl FFX_Math_Vec3Scale(float *a1, float *a2, float a3)
+{ a1[0] = a2[0] * a3; a1[1] = a2[1] * a3; a1[2] = a2[2] * a3; return a1; }
+
+// FFX_Math_FloatSqrt (0x75fce0): sqrtf
+double __cdecl FFX_Math_FloatSqrt(float a1) { return (double)sqrtf(a1); }
+
+// FFX_Math_FloatMulInPlace (0x7677a0): *a1 = *a2 * a3
+float *__cdecl FFX_Math_FloatMulInPlace(float *a1, float *a2, float a3)
+{ *a1 = *a2 * a3; return a1; }
+
+// FFX_Math_SumDwordArray (0x76b2f0): sum array
+int __cdecl FFX_Math_SumDwordArray(int *a1, int count)
+{ int r = 0; for (int i = 0; i < count; i++) r += a1[i]; return r; }
+
+// FFX_Math_ClampInt (0x79a0d0): clamp int between min/max
+int __cdecl FFX_Math_ClampInt(int val, int minVal, int maxVal)
+{
+    if (val < minVal) return minVal;
+    if (val > maxVal) return maxVal;
+    return val;
+}
+
+// FFX_Math_Vector4MulPerComponent (0x7c1140): vec4 *= (a3,a4,a5,a6)
+float *__cdecl FFX_Math_Vector4MulPerComponent(float *a1, float *a2, float a3, float a4, float a5, float a6)
+{
+    a1[0] = a2[0] * a3; a1[1] = a2[1] * a4;
+    a1[2] = a2[2] * a5; a1[3] = a2[3] * a6;
+    return a1;
+}
+
+// FFX_Math_CharToDigit (0x7cf190): '0'-'9' -> 0-9, else -1
+int __cdecl FFX_Math_CharToDigit(char c)
+{
+    unsigned char d = (unsigned char)(c - 48);
+    if (d > 9) return -1;
+    return d;
+}
