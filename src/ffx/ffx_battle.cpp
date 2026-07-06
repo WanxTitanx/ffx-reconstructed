@@ -1878,3 +1878,27 @@ BOOL __cdecl FFX_Math_CheckAngleRangeWrapped_structural(float angle, float min, 
     if (lo <= hi) return (lo <= a && a <= hi);
     return (a <= hi || a >= lo);
 }
+
+// FFX_Math_IdentityMatrix44 (0x7ea5e0): memset + diagonal[0,5,10,15]=1
+void *__cdecl FFX_Math_IdentityMatrix44(float *a1)
+{
+    memset(a1, 0, 0x40);
+    a1[0] = 1.0f; a1[5] = 1.0f; a1[10] = 1.0f; a1[15] = 1.0f;
+    return a1;
+}
+
+// FFX_Math_UniformScaleMatrix44 (0x7ea610): scale matrix
+void *__cdecl FFX_Math_UniformScaleMatrix44(float *a1, float a2)
+{
+    memset(a1, 0, 0x40);
+    a1[0] = a2; a1[5] = a2; a1[10] = a2; a1[15] = 1.0f;
+    return a1;
+}
+
+// FFX_Math_ScaleMatrix44FromVector (0x7ea640): scale from vec3
+float *__cdecl FFX_Math_ScaleMatrix44FromVector(float *a1, float *a2)
+{
+    memset(a1, 0, 0x40);
+    a1[0] = a2[0]; a1[5] = a2[1]; a1[10] = a2[2]; a1[15] = 1.0f;
+    return a2;
+}
