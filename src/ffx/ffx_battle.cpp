@@ -1835,3 +1835,46 @@ int __cdecl FFX_Math_CharToDigit(char c)
     if (d > 9) return -1;
     return d;
 }
+
+// FFX_Math_Vector3Distance_structural (0x7e7ed0): vec3 distance
+double __cdecl FFX_Math_Vector3Distance_structural(float *a, float *b)
+{
+    float dx = b[0] - a[0];
+    float dy = b[1] - a[1];
+    float dz = b[2] - a[2];
+    return sqrtf(dx * dx + dy * dy + dz * dz);
+}
+
+// FFX_Util_Align16Pad (0x92b2c0): padding needed to align to 16 bytes
+int __cdecl FFX_Util_Align16Pad(int val)
+{
+    int rem = val % 16;
+    return rem ? 16 - rem : 0;
+}
+
+// FFX_Math_Vector3Delta (0x834080): a1[3..5] - a1[7..9] -> a2[0..2]
+float *__cdecl FFX_Math_Vector3Delta(float *a1, float *a2)
+{
+    a2[0] = a1[7] - a1[3];
+    a2[1] = a1[8] - a1[4];
+    a2[2] = a1[9] - a1[5];
+    return a2;
+}
+
+// FFX_Math_Vector4Copy (0x7c1090): copy 4 floats
+float *__cdecl FFX_Math_Vector4Copy(float *a1, float *a2)
+{
+    a1[0] = a2[0]; a1[1] = a2[1];
+    a1[2] = a2[2]; a1[3] = a2[3];
+    return a1;
+}
+
+// FFX_Math_CheckAngleRangeWrapped_structural (0x7e7e70): wrapped angle check
+BOOL __cdecl FFX_Math_CheckAngleRangeWrapped_structural(float angle, float min, float max)
+{
+    int a = (int)angle & 0xFFF;
+    int lo = (int)min & 0xFFF;
+    int hi = (int)max & 0xFFF;
+    if (lo <= hi) return (lo <= a && a <= hi);
+    return (a <= hi || a >= lo);
+}
