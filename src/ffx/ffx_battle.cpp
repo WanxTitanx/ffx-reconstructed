@@ -1925,3 +1925,18 @@ double __cdecl FFX_Math_VectorDistance3(float *a, float *b)
     float dx = b[0]-a[0], dy = b[1]-a[1], dz = b[2]-a[2];
     return sqrtf(dx*dx + dy*dy + dz*dz);
 }
+
+// FFX_Math_RadToDeg (0x836770): rad * 180/pi
+double __cdecl FFX_Math_RadToDeg(float rad)
+{ return (double)(rad * 57.295776f); }  // 180/pi
+
+// FFX_Math_LerpFloat (0x839d30): (1-t)*a + t*b
+double __cdecl FFX_Math_LerpFloat(float a, float b, float t)
+{ return (double)(a + t * (b - a)); }
+
+// FFX_Math_Distance2DXZ (0x83e3e0): 2D XZ distance (ignoring Y)
+double __cdecl FFX_Math_Distance2DXZ(float *a, float *b)
+{
+    float dx = b[0] - a[0], dz = b[2] - a[2];
+    return sqrtf(dx*dx + dz*dz);
+}
