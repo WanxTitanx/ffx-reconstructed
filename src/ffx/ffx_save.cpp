@@ -1,3 +1,4 @@
+#include "ffx_debug.h"
 // ============================================================================
 // ffx_save.cpp — FFX Save/Load System Stubs
 // Phase 3-E: FFX Game Stubs
@@ -102,7 +103,8 @@ static inline unsigned char *aeon_block(int aeonId) {
 // on the UI state. Referred to as Save_LoadOrchestrator_WAKKA in RE notes.
 // Called from FFX_Menu_ScreenEntryDispatch during save-crystal interaction.
 int FFX_Save_LoadOrchestrator(int slotId, int loadFlags) {
-  STUBBED("FFX_Save_LoadOrchestrator");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Save_LoadOrchestrator");
   return FFX_OK;
 }
 
@@ -111,7 +113,8 @@ int FFX_Save_LoadOrchestrator(int slotId, int loadFlags) {
 // Handles the save-to-disk path: triggers scene-freeze, calls
 // FFX_Save_WriteThunk, then restores field state.
 int FFX_Save_SaveOrchestrator(int slotId, int saveFlags) {
-  STUBBED("FFX_Save_SaveOrchestrator");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Save_SaveOrchestrator");
   return FFX_OK;
 }
 
@@ -121,7 +124,8 @@ int FFX_Save_SaveOrchestrator(int slotId, int saveFlags) {
 // lighting, actor positions) that was frozen during the save-crystal menu.
 // Reads from SaveData to reposition the player if the load changed maps.
 void FFX_Save_LoadOrchestrator_PostHydrateScenes(void) {
-  STUBBED("FFX_Save_LoadOrchestrator_PostHydrateScenes");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Save_LoadOrchestrator_PostHydrateScenes");
 }
 
 // ============================================================================
@@ -451,7 +455,8 @@ void FFX_Save_EnqueueFrameBufferClear(void) {
 const char *FFX_Save_ParseBytecodeToString(const unsigned char *bytecode,
                                            int bytecodeLen, char *outString,
                                            int outMaxLen) {
-  STUBBED("FFX_Save_ParseBytecodeToString");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Save_ParseBytecodeToString");
   return NULL;
 }
 
@@ -1284,7 +1289,8 @@ int FFX_Save_GetAeonMp(int aeonId) {
 // the save payload and computes (activatedNodes / totalNodes) * 100.
 // Returns 0..100, or 0 if no Sphere Grid data is available.
 int FFX_Save_GetSphereGridProgress(int charId) {
-  STUBBED("FFX_Save_GetSphereGridProgress");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Save_GetSphereGridProgress");
   return 0;
 }
 
@@ -1297,28 +1303,28 @@ int FFX_Save_GetSphereGridProgress(int charId) {
 // ============================================================================
 
 // FFX_Save_GetWeapon (0xADDR) — descrição
-int FFX_Save_GetWeapon(void *_this) { return 0; }
+int FFX_Save_GetWeapon(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetWeapon (0xADDR) — descrição
-int FFX_Save_SetWeapon(void *_this) { return 0; }
+int FFX_Save_SetWeapon(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetArmor (0xADDR) — descrição
-int FFX_Save_GetArmor(void *_this) { return 0; }
+int FFX_Save_GetArmor(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetArmor (0xADDR) — descrição
-int FFX_Save_SetArmor(void *_this) { return 0; }
+int FFX_Save_SetArmor(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetAbility (0xADDR) — descrição
-int FFX_Save_GetAbility(void *_this) { return 0; }
+int FFX_Save_GetAbility(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetAbility (0xADDR) — descrição
-int FFX_Save_SetAbility(void *_this) { return 0; }
+int FFX_Save_SetAbility(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetItem (0xADDR) — descrição
-int FFX_Save_GetItem(void *_this) { return 0; }
+int FFX_Save_GetItem(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetItem (0xADDR) — descrição
-int FFX_Save_SetItem(void *_this) { return 0; }
+int FFX_Save_SetItem(void *_this) { FFX_LOG_STUB(); return 0; }
 
 // ============================================================================
 // FFX_Save — Clear Data / Reset (EXPANDED STUBS)
@@ -1328,44 +1334,44 @@ int FFX_Save_SetItem(void *_this) { return 0; }
 // within the save payload. Clear data tracks story progression flags,
 // completed sidequests, and special events. Returns NULL if save is
 // uninitialized.
-int FFX_Save_GetClearData(void *self) { return 0; }
+int FFX_Save_GetClearData(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetClearData (0x8Bxxxx) — Writes clear data flags into the save
 // payload. Called when story progression events are completed to persist
 // the new flag state. Returns 0 on success.
-int FFX_Save_SetClearData(void *self) { return 0; }
+int FFX_Save_SetClearData(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetCompletion (0x8Bxxxx) — Returns the overall game completion
 // percentage (0..100) computed from clear data flags, Sphere Grid progress,
 // monster arena captures, and sidequest completion. May return -1 if
 // the save data is uninitialized or corrupted.
-int FFX_Save_GetCompletion(void *self) { return 0; }
+int FFX_Save_GetCompletion(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetMonsterArena (0x8Bxxxx) — Returns monster arena capture status
 // data: which species have been captured, capture counts per zone,
 // and which arena creations are unlocked. Returns a pointer to the arena
 // data sub-block, or NULL if unavailable.
-int FFX_Save_GetMonsterArena(void *self) { return 0; }
+int FFX_Save_GetMonsterArena(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetMonsterArena (0x8Bxxxx) — Writes monster arena capture data
 // into the save payload. Called after a successful capture to persist
 // the updated capture count and check for unlockable creations.
 // Returns 0 on success.
-int FFX_Save_SetMonsterArena(void *self) { return 0; }
+int FFX_Save_SetMonsterArena(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_GetBlitzballData (0x8Bxxxx) — Returns blitzball data from the
 // save payload: team stats, player contracts, league standings, tournament
 // results, and blitzball-specific flags. Returns a pointer to the blitzball
 // data sub-block, or NULL if blitzball is not yet available.
-int FFX_Save_GetBlitzballData(void *self) { return 0; }
+int FFX_Save_GetBlitzballData(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_SetBlitzballData (0x8Bxxxx) — Writes blitzball data into the
 // save payload. Called after matches, league progression, player signings,
 // or tournament results to persist the updated state. Returns 0 on success.
-int FFX_Save_SetBlitzballData(void *self) { return 0; }
+int FFX_Save_SetBlitzballData(void *self) { FFX_LOG_STUB(); return 0; }
 
 // FFX_Save_ResetData (0x8Bxxxx) — Resets the save data to its default/
 // empty state. Clears all character data, flags, inventory, and progress
 // while preserving the header and slot metadata. Called for "New Game"
 // or data corruption recovery. Returns 0 on success.
-int FFX_Save_ResetData(void *self) { return 0; }
+int FFX_Save_ResetData(void *self) { FFX_LOG_STUB(); return 0; }

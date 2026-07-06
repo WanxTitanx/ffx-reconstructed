@@ -1,3 +1,4 @@
+#include "ffx_debug.h"
 // ============================================================================
 // ffx_menu.cpp — FFX Menu System Stubs
 // Phase 3-E: FFX Game Stubs
@@ -140,7 +141,8 @@ void FFX_FFEscMenu_BuildMenu(void *pThis) {
   if (!pThis)
     return;
 
-  STUBBED("FFX_FFEscMenu_BuildMenu");
+  FFX_LOG_STUB();
+    STUBBED("FFX_FFEscMenu_BuildMenu");
   (void)pThis;
 }
 
@@ -179,7 +181,8 @@ void FFX_FFEscMenu_ShowPopUp(void *pThis, int popUpId) {
   if (!pThis)
     return;
 
-  STUBBED("FFX_FFEscMenu_ShowPopUp");
+  FFX_LOG_STUB();
+    STUBBED("FFX_FFEscMenu_ShowPopUp");
   (void)pThis;
   (void)popUpId;
 }
@@ -229,7 +232,8 @@ void FFX_FFEscMenu_ShowGamePopUp(void *pThis, int popUpId, int arg) {
   if (!pThis)
     return;
 
-  STUBBED("FFX_FFEscMenu_ShowGamePopUp");
+  FFX_LOG_STUB();
+    STUBBED("FFX_FFEscMenu_ShowGamePopUp");
   (void)pThis;
   (void)popUpId;
   (void)arg;
@@ -322,7 +326,8 @@ void FFX_Menu2D_ComputeViewProjection(void *pCtx, void *pOutMatrix) {
   //   v11..v12 = -view[3].xy, v13=1.0
   // Then copies camera model-view matrix and projects.
 
-  STUBBED("FFX_Menu2D_ComputeViewProjection");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Menu2D_ComputeViewProjection");
   (void)pCtx;
   (void)pOutMatrix;
 }
@@ -552,7 +557,8 @@ void FFX_Menu_LoadWaterTextureBridge(void *pMenu) {
 // NOTA: FFX_JobSchedule_GetThreadDataPlus4 e FFX_FileIO_* ainda nao estao
 // declarados. Esta stub documenta o fluxo para implementacao futura.
 int FFX_Menu_LoadMenuBin(const char *filePath, void *pOutData) {
-  STUBBED("FFX_Menu_LoadMenuBin");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Menu_LoadMenuBin");
   (void)filePath;
   (void)pOutData;
   return 0;
@@ -1162,7 +1168,8 @@ void FFX_Menu_DrawScrollbar(float x, float y, float h, int totalRows,
 //   5. Set gate g_FFX_MenuSubsystemActive = 1
 //
 int FFX_Menu_Group106_ShowModularMenu(int menuId, void *pParams) {
-  STUBBED("FFX_Menu_Group106_ShowModularMenu");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Menu_Group106_ShowModularMenu");
   (void)menuId;
   (void)pParams;
   return FFX_OK;
@@ -1946,7 +1953,8 @@ int FFX_Menu_DrawMenuItem(void *_this) {
   // 2/3=direct, 4=ability slot, default=full draw).
   // This simplified version draws a basic item slot.
 
-  STUBBED("FFX_Menu_DrawMenuItem");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Menu_DrawMenuItem");
   (void)slotIdx;
   return 0;
 }
@@ -1988,7 +1996,8 @@ int FFX_Menu_DrawMenuBackground(void *_this) {
   // Window frame around the content area
   FFX_Menu2D_DrawWindow(10.0f, 10.0f, 492.0f, 396.0f, 0);
 
-  STUBBED("FFX_Menu_DrawMenuBackground");
+  FFX_LOG_STUB();
+    STUBBED("FFX_Menu_DrawMenuBackground");
   (void)menuId;
   return FFX_OK;
 }

@@ -1,3 +1,4 @@
+#include "../include/ffx_debug.h"
 // ============================================================================
 // FFX.EXE — PhyreScripting Bridge: Phyre Lua Integration (Stub)
 // Gerado de analise IDA com decompilador Hex-Rays
@@ -78,6 +79,7 @@ int __stdcall Phyre_Scripting_GetValueFromScriptContext(PScriptContext *ctx,
                                                         void *outValue,
                                                         void *typeInfo) {
   // TODO: implement
+    FFX_LOG_STUB();
   // 31 basic blocks (core dispatch) + 12 BB (abstract error stub)
   // Callees: Phyre_Scripting_TypeCheck, Phyre_PClassMember_GetDefaultValue,
   //         memcpy, Phyre_Stream_Printf (error path)
@@ -102,6 +104,7 @@ int __stdcall Phyre_Scripting_PutValueToScriptContext(PScriptContext *ctx,
                                                       void *value,
                                                       void *typeInfo) {
   // TODO: implement
+    FFX_LOG_STUB();
   // 31 basic blocks (core dispatch) + 12 BB (abstract error stub)
   // Callees: Phyre_Scripting_ConvertToPhyreObject, Phyre_Scripting_TypeCheck,
   //         Phyre_Stream_Printf (error path)
