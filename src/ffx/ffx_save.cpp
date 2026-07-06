@@ -559,9 +559,33 @@ int FFX_Save_GetPlayTime(void) {
 // from the SaveData region and formats it as a slot label
 // (e.g., "Besaid — 03:45", "Tidus Lv.28").
 void FFX_Save_EncodeSlotName(int slotId, char *outName, int maxLen) {
-  // STUBBED removed: returns empty string (caller should implement formatting)
-  if (outName && maxLen > 0)
+  if (!outName || maxLen <= 0) return;
+
+  if (slotId < 0 || slotId >= FFX_SAVE_SLOT_COUNT) {
     outName[0] = '\0';
+    return;
+  }
+
+  // Read slot info to build the display name
+  unsigned char infoBuf[SLOTINFO_SIZE];
+  int ret = FFX_Save_GetSlotInfo(slotId, infoBuf);
+  if (ret != FFX_OK) {
+    snprintf(outName, (size_t)maxLen, "Slot %d — Empty", slotId + 1);
+    return;
+  }
+
+  int32_t *info = (int32_t *)infoBuf;
+  int seconds  = info[SLOTINFO_OFF_PLAYTIME / 4];
+  int h = seconds / 3600;
+  int m = (seconds % 3600) / 60;
+
+  // Location name
+  const char *location = (const char *)(infoBuf + SLOTINFO_OFF_LOCATION);
+  if (location[0] != '\0') {
+    snprintf(outName, (size_t)maxLen, "%s — %02d:%02d", location, h, m);
+  } else {
+    snprintf(outName, (size_t)maxLen, "Slot %d — %02d:%02d", slotId + 1, h, m);
+  }
 }
 
 // 0x8B1F00 — xrefs: 1
@@ -801,8 +825,28 @@ int FFX_Save_GetSlotInfo(int slotId, void *outInfo) {
 // distinguish empty slots from occupied ones.
 // Returns 1 (true) if empty, 0 (false) if occupied.
 int FFX_Save_IsSlotEmpty(int slotId) {
-  // STUBBED removed: returns true (slot not implemented)
-  return FFX_TRUE;
+  if (slotId < 0 || slotId >= FFX_SAVE_SLOT_COUNT)
+    return FFX_TRUE;
+
+  char path[MAX_PATH];
+  if (!internal_get_slot_path(slotId, path, sizeof(path)))
+    return FFX_TRUE;
+
+  // Check if file exists and has valid header
+  HANDLE hFile = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, NULL,
+                             OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+  if (hFile == INVALID_HANDLE_VALUE)
+    return FFX_TRUE;
+
+  unsigned char header[2] = {0};
+  DWORD bytesRead = 0;
+  BOOL ok = ReadFile(hFile, header, 1, &bytesRead, NULL);
+  CloseHandle(hFile);
+
+  if (!ok || bytesRead != 1)
+    return FFX_TRUE;
+
+  return (header[0] != FFX_SAVE_HEADER_MARKER) ? FFX_TRUE : FFX_FALSE;
 }
 
 // 0x8B20E0 (derived) — xrefs: 2
@@ -810,7 +854,25 @@ int FFX_Save_IsSlotEmpty(int slotId) {
 // header. Reads the file, validates CRC, and verifies header marker.
 // Returns 1 (true) if corrupted, 0 (false) if valid.
 int FFX_Save_IsSlotCorrupted(int slotId) {
-  // STUBBED removed: returns false (slot not implemented)
+  if (slotId < 0 || slotId >= FFX_SAVE_SLOT_COUNT)
+    return FFX_FALSE;
+
+  // Read file and validate CRC
+  unsigned char buf[SAVE_FILE_SIZE];
+  int ret = FFX_Save_ReadFromDisk(slotId, buf, sizeof(buf));
+  if (ret != FFX_OK) {
+    // File exists but CRC failed
+    char path[MAX_PATH];
+    if (internal_get_slot_path(slotId, path, sizeof(path))) {
+      HANDLE hFile = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, NULL,
+                                 OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+      if (hFile != INVALID_HANDLE_VALUE) {
+        CloseHandle(hFile);
+        return FFX_TRUE; // file exists but CRC invalid = corrupted
+      }
+    }
+    return FFX_FALSE; // no file = not corrupted
+  }
   return FFX_FALSE;
 }
 
@@ -820,9 +882,8 @@ int FFX_Save_IsSlotCorrupted(int slotId) {
 // a slot label (e.g., "Besaid — 03:45", "Tidus Lv.30").
 // Wraps FFX_Save_EncodeSlotName with additional formatting logic.
 void FFX_Save_FormatSlotName(int slotId, char *outName, int maxLen) {
-  // STUBBED removed: returns empty string
-  if (outName && maxLen > 0)
-    outName[0] = '\0';
+  // Delegate to EncodeSlotName for consistent formatting
+  FFX_Save_EncodeSlotName(slotId, outName, maxLen);
 }
 
 // 0x8B2210 (derived) — xrefs: 1

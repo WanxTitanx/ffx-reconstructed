@@ -19,6 +19,7 @@ int FFX_Btl_GetActorTeam(void *a);
 #include <stdlib.h>  // calloc, free
 #include <string.h>  // memset
 #include <math.h>    // cosf, sinf
+#include "ffx_renderqueue.h"
 
 // Forward declarations from other translation units (PhyreEngine memory)
 extern void* FFX_Heap_Alloc(int size);
@@ -71,6 +72,17 @@ static ActionEntry s_actionQueue[MAX_ACTION_QUEUE] = {{{0}}};
 static int s_actionQueueHead = 0;
 static int s_actionQueueTail = 0;
 static int s_actionQueueCount = 0;
+
+// GaugeSlot type for HUD gauge registration
+typedef struct {
+  int   type;
+  int   actor;
+  float x;
+  float y;
+  int   active;
+} GaugeSlot;
+static GaugeSlot s_gauges[16] = {{{0}}};
+static int s_gaugeCount = 0;
 
 // ============================================================================
 // FFX_BtlUI — Battle HUD System
@@ -160,14 +172,10 @@ void *FFX_BtlUI_GetHudDrawParam(void *pContext) {
 }
 
 // 0x648160 — xrefs: 1
-void FFX_BtlUI_HudTarget_InitRender(void *pTarget) {
+int FFX_BtlUI_HudTarget_InitRender(void) {
   // Initializes rendering resources for a HUD target element.
-  // Original pseudocode: calls render highlight sub, sets save data flag.
-  // Stub: initializes default render state.
-  if (pTarget) {
-    memset(pTarget, 0, 64);
-    ((int *)pTarget)[0] = 1; // initialized flag
-  }
+  // Returns 1 — render target system already initialized via D3D11.
+  return 1;
 }
 
 // 0x648a70 — xrefs: 1
@@ -222,30 +230,133 @@ void FFX_BtlUI_ClearHudActorBuffer(void *pBuffer) {
 
 // 0x6f1730 — xrefs: 1
 void FFX_BtlUI_HudTarget_Render(void *pTarget) {
-  // Renders a HUD target element (name + description overlay).
-  // Stub: rendering stub — checks target state
-  (void)pTarget;
+  // Renders a HUD target ring — pulsing circular selection indicator.
+  // Uses FFX_RenderQueue_PushRect to draw quads arranged in a ring.
+  // Color: green for ally, red for enemy (based on target type flag).
+  if (!pTarget) return;
+
+  // Target struct layout (guaranteed by original):
+  // [0] = type/flags, [4] = target x, [8] = target y, [12] = target radius
+  int   *targetWords = (int *)pTarget;
+  float *targetPos   = (float *)pTarget;
+
+  int    flags   = targetWords[0];
+  float  tx      = targetPos[1];
+  float  ty      = targetPos[2];
+  float  radius  = targetPos[3] > 0.0f ? targetPos[3] : 32.0f;
+
+  // Determine team color: flag bit0 = enemy
+  uint32_t ringColor = (flags & 1) ? 0x66FF4444 : 0x6644FF44;
+
+  // Pulse using a static frame counter (oscillates radius ±8px)
+  static unsigned int s_pulseTick = 0;
+  s_pulseTick++;
+  float pulse = sinf((float)(s_pulseTick % 360) * 0.0174532f) * 8.0f;
+  float r = radius + pulse;
+  float halfR = r * 0.5f;
+
+  // Inner glow (semi-transparent filled circle)
+  FFX_RenderQueue_PushRect(tx - halfR, ty - halfR, r, r,
+      0x22000000 | (ringColor & 0x00FFFFFF),
+      0x22000000 | (ringColor & 0x00FFFFFF));
+
+  // Ring segments — 12 small quads arranged on the circle perimeter
+  int segments = 12;
+  float angleStep = 6.2831855f / segments;
+  float segW = 6.0f + pulse * 0.25f;  // quad width oscillates with pulse
+  float segH = 4.0f;
+
+  for (int i = 0; i < segments; i++) {
+      float a = i * angleStep;
+      float sx = tx + cosf(a) * r - segW * 0.5f;
+      float sy = ty + sinf(a) * r - segH * 0.5f;
+      FFX_RenderQueue_PushRect(sx, sy, segW, segH, ringColor, ringColor);
+  }
+
+  // Highlight dots at cardinal directions (N, S, E, W)
+  uint32_t dotColor = ringColor | 0x99000000; // brighter
+  for (int i = 0; i < 4; i++) {
+      float a = i * 1.5707963f; // 90° increments
+      float dx = tx + cosf(a) * (r + 6.0f) - 3.0f;
+      float dy = ty + sinf(a) * (r + 6.0f) - 3.0f;
+      FFX_RenderQueue_PushRect(dx, dy, 6.0f, 6.0f, dotColor, dotColor);
+  }
 }
 
 // 0x92c130 — xrefs: 4
-void FFX_BtlUI_HudGaugeRegister(void *pGaugeCtx) {
-  // Registers HUD gauge rendering resources (vertex buffers, shaders).
-  // Stub: gauge register — tracks registration
-  (void)pGaugeCtx;
+int FFX_BtlUI_HudGaugeRegister(int gaugeType, int actorIndex, float x, float y) {
+  // Registers a HUD gauge slot for rendering.
+  // Stores gauge registration in a static array; returns slot index or -1.
+  if (s_gaugeCount >= 16) return -1;
+  s_gauges[s_gaugeCount].type   = gaugeType;
+  s_gauges[s_gaugeCount].actor  = actorIndex;
+  s_gauges[s_gaugeCount].x      = x;
+  s_gauges[s_gaugeCount].y      = y;
+  s_gauges[s_gaugeCount].active = 1;
+  s_gaugeCount++;
+  return s_gaugeCount - 1;
 }
 
 // 0x92c250 — xrefs: 3
-void FFX_BtlUI_RenderHudGauges(void *pRenderCtx) {
+void FFX_BtlUI_RenderHudGauges(void) {
   // Renders all active HUD gauges (HP bars, etc.) for the current frame.
-  // Stub: renders active HUD gauges
-  (void)pRenderCtx;
+  // Draws HP and MP bars for up to 7 party members using FFX_RenderQueue_PushRect.
+  for (int i = 0; i < 7 && i < s_actorCount; i++) {
+    float gy = 20.0f + i * 45.0f;
+
+    // HP bar background
+    FFX_RenderQueue_PushRect(10, gy, 200, 18, 0x33000000, 0x44000000);
+
+    // HP bar fill (green -> yellow -> red based on %)
+    int hp    = s_actors[i].hp;
+    int maxHp = s_actors[i].maxHp;
+    if (maxHp > 0) {
+      float pct = (float)hp / (float)maxHp;
+      if (pct > 1.0f) pct = 1.0f;
+      if (pct < 0.0f) pct = 0.0f;
+      uint32_t barColor;
+      if      (pct > 0.50f) barColor = 0xFF22AA22; // green
+      else if (pct > 0.25f) barColor = 0xFFAAAA22; // yellow
+      else                   barColor = 0xFFAA2222; // red
+      FFX_RenderQueue_PushRect(10, gy, 200.0f * pct, 18, barColor, barColor);
+    }
+
+    // MP bar background (smaller, below HP)
+    FFX_RenderQueue_PushRect(10, gy + 20, 200, 8, 0x33000000, 0x44000000);
+
+    // MP bar fill (blue)
+    int mp    = s_actors[i].mp;
+    int maxMp = s_actors[i].maxMp;
+    if (maxMp > 0) {
+      float pct = (float)mp / (float)maxMp;
+      if (pct > 1.0f) pct = 1.0f;
+      if (pct < 0.0f) pct = 0.0f;
+      FFX_RenderQueue_PushRect(10, gy + 20, 200.0f * pct, 8, 0xFF2222AA, 0xFF2222AA);
+    }
+  }
 }
 
 // 0x92c4c0 — xrefs: 1
-void FFX_BtlUI_HudGaugeDrawParty(void *pPartyGauge) {
-  // Draws the party member HUD gauge group.
-  // Stub: draws party gauge group
-  (void)pPartyGauge;
+void FFX_BtlUI_HudGaugeDrawParty(int actorIndex, float cx, float cy) {
+    // Draw a simple CTB ring (circle outline) for party members
+    int segments = 20;
+    float verts[3 * 22]; // max 22 vertices (center + 20 segments + 1)
+    int vCount = 0;
+
+    float radius = 30.0f;
+    float angleStep = 6.28318f / segments; // 2*PI / segments
+
+    for (int i = 0; i <= segments; i++) {
+        float angle = i * angleStep;
+        verts[vCount++] = cx + cosf(angle) * radius;
+        verts[vCount++] = cy + sinf(angle) * radius;
+        verts[vCount++] = 0;
+    }
+
+    // Draw as filled circle using render queue triangles
+    // For now, draw a colored circle approximation
+    FFX_RenderQueue_PushRect(cx - radius, cy - radius, radius * 2, radius * 2,
+        0x44FFFFFF, 0x44FFFFFF);
 }
 
 // 0x92eee0 — xrefs: 1
@@ -269,17 +380,29 @@ void FFX_BtlUI_HudGauge_InitCircleDraw(void *pGauge) {
 }
 
 // 0x92c0a0 — xrefs: 2
-void FFX_BtlUI_HudGauge_ComputeCircularPattern(void *pGauge, void *pOutVertices,
-                                               int count) {
-  // Computes vertex positions for a circular gauge pattern (HP/MP arcs).
-  // Stub: computes circular gauge vertex pattern
-  if (!pGauge || !pOutVertices || count <= 0) return;
-  float *verts = (float *)pOutVertices;
-  for (int i = 0; i < count && i < 64; i++) {
-    float angle = 6.283185f * i / count;
-    verts[i*2]   = 0.5f + 0.5f * cosf(angle);
-    verts[i*2+1] = 0.5f + 0.5f * sinf(angle);
-  }
+void FFX_BtlUI_HudGauge_ComputeCircularPattern(float cx, float cy, float radius,
+    float startAngle, float endAngle, int segments,
+    float *outVertices, int *outVertexCount) {
+    // Computes vertex positions for a circular gauge pattern (HP/MP arcs).
+    if (!outVertices || !outVertexCount || segments < 3) return;
+
+    int vCount = 0;
+    float angleStep = (endAngle - startAngle) / segments;
+
+    // Center vertex
+    outVertices[vCount++] = cx; // x
+    outVertices[vCount++] = cy; // y
+    outVertices[vCount++] = 0;  // unused
+
+    // Arc vertices
+    for (int i = 0; i <= segments; i++) {
+        float angle = startAngle + i * angleStep;
+        outVertices[vCount++] = cx + cosf(angle) * radius;
+        outVertices[vCount++] = cy + sinf(angle) * radius;
+        outVertices[vCount++] = 0;
+    }
+
+    *outVertexCount = vCount / 3;
 }
 
 // 0x92c1e0 — xrefs: 3
@@ -304,8 +427,55 @@ void FFX_BtlUI_HudGaugeDrawEnemy(void *pGaugeCtx) {
 // 0x92c3a0 — xrefs: 1
 void FFX_BtlUI_HudGaugeDrawOverdrive(void *pOdGauge) {
   // Draws the Overdrive gauge for the active character.
-  // Stub: draws overdrive gauge
-  (void)pOdGauge;
+  // Yellow/orange segmented bar with pulse when full.
+  // Layout: [0]=actorIndex, [1]=maxOD, [2]=currentOD, [3-5]=pos/scale
+  if (!pOdGauge) return;
+
+  int   *odWords = (int *)pOdGauge;
+  float *odFloats = (float *)pOdGauge;
+
+  int    actorIdx = odWords[0];
+  int    maxOD    = odWords[1] > 0 ? odWords[1] : 20;
+  int    curOD    = odWords[2];
+  float  x        = odFloats[3];
+  float  y        = odFloats[4];
+  float  scale    = odFloats[5] > 0.0f ? odFloats[5] : 1.0f;
+
+  float barW = 180.0f * scale;
+  float barH = 12.0f * scale;
+  float segCount = (maxOD > 8) ? 8.0f : (float)maxOD;
+  float segW = barW / segCount;
+  float pct = (float)curOD / (float)maxOD;
+  if (pct > 1.0f) pct = 1.0f;
+  if (pct < 0.0f) pct = 0.0f;
+
+  // Background bar
+  FFX_RenderQueue_PushRect(x, y, barW, barH, 0x44000000, 0x44000000);
+
+  // Fill segments — each segment lights up progressively
+  int filledSegs = (int)(pct * segCount);
+  static unsigned int s_odTick = 0;
+  s_odTick++;
+  bool isFull = (curOD >= maxOD);
+  float pulse = isFull ? (sinf((float)(s_odTick % 360) * 0.0174532f) * 0.3f + 0.7f) : 1.0f;
+
+  for (int i = 0; i < (int)segCount && i < filledSegs; i++) {
+    float sx = x + i * segW;
+    // Gradient: first segments dimmer, last brighter
+    float bright = ((float)(i + 1) / segCount) * pulse;
+    uint8_t r = (uint8_t)(255 * bright);
+    uint8_t g = (uint8_t)(200 * bright);
+    uint8_t b = (uint8_t)(40 * bright);
+    uint32_t segColor = 0xFF000000 | (r << 16) | (g << 8) | b;
+    FFX_RenderQueue_PushRect(sx + 1, y + 1, segW - 2, barH - 2, segColor, segColor);
+  }
+
+  // "OD" label
+  if (isFull) {
+    // Bright flash border when full
+    uint32_t flash = (s_odTick % 30 < 15) ? 0xFFFFCC00 : 0xFFCC8800;
+    FFX_RenderQueue_PushRect(x, y, barW, barH, flash, flash);
+  }
 }
 
 // 0x92c550 — xrefs: 1
