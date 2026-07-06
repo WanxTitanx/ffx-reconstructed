@@ -1902,3 +1902,26 @@ float *__cdecl FFX_Math_ScaleMatrix44FromVector(float *a1, float *a2)
     a1[0] = a2[0]; a1[5] = a2[1]; a1[10] = a2[2]; a1[15] = 1.0f;
     return a2;
 }
+
+// FFX_Math_ScaleVectorW (0x7ecde0): a2.w *= a3
+int __cdecl FFX_Math_ScaleVectorW(float *a1, float *a2, float a3)
+{ a1[3] = a2[3] * a3; return (int)a1; }
+
+// FFX_Math_Clamp0to99 (0x82dae0): clamp 0-99
+int __cdecl FFX_Math_Clamp0to99(int n)
+{
+    if (n > 99) return 99;
+    if (n < 0) return 0;
+    return n;
+}
+
+// FFX_Math_VectorLength3 (0x8366f0): vec3 magnitude
+double __cdecl FFX_Math_VectorLength3(float *a1)
+{ return sqrtf(a1[0]*a1[0] + a1[1]*a1[1] + a1[2]*a1[2]); }
+
+// FFX_Math_VectorDistance3 (0x836720): vec3 distance
+double __cdecl FFX_Math_VectorDistance3(float *a, float *b)
+{
+    float dx = b[0]-a[0], dy = b[1]-a[1], dz = b[2]-a[2];
+    return sqrtf(dx*dx + dy*dy + dz*dz);
+}
