@@ -219,10 +219,7 @@ void __thiscall Phyre_PClassDescriptor_Constructor(
 //   Return computed pointer or 0
 int __usercall Phyre_PClassDescriptor_GetOrInitSingleton(int a1@<esi>)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 30 instructions, 10 basic blocks, cyclomatic 5
-    // Callees: Phyre_PClass_ConstructDefault, Phyre_PClassDataMember_ValidateLayout
+    if (!a1) return 0;
     return 0;
 }
 
