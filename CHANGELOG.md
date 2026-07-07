@@ -7,6 +7,26 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.14.0.0] - 2026-07-07
+
+### Added
+- **MILESTONE: 88/88 FFX_LOG_STUB eliminados (100% redução)**
+  - phyre_core.cpp: 51 → 0 (ZlibInflate, MemoryPool, PClassDescriptor, Type, Cluster, Array, Scene, Container, Renderer)
+  - phyre_pinputs.cpp: 16 → 0 (PInputMapper, PInputDevice, DirectInput, Keyboard)
+  - ffx_save.cpp: 11 → 0 (LoadOrchestrator, SaveOrchestrator, ParseBytecode, GetSphereGridProgress)
+  - ffx_menu.cpp: 8 → 0 (BuildMenu, ShowPopUp, ComputeViewProjection, LoadMenuBin, Group106)
+  - phyre_scripting.cpp: 2 → 0
+- **FFXMagicHost DB type applied** (16 fields HIGH confidence):
+  - slot_count (0x90), slot_records_ptr (0x94)
+  - is_multi_channel (0xC0), channel_count (0xC4), channel_mask (0xC8)
+  - commit_prep_flag (0xB8), buffer_chain_head (0x30), buffer_chain_total_size (0x3C)
+  - next_drawable_ptr (0x24), state_flags (0x4), flags_50 (0x50)
+  - attach_reset_flag (0x14), source_copy_32/40 (0x20/0x28)
+- Discovery: FFXMagicHost (376B) is actually a **VFX Texture Slot Record**, not the main magic host context
+
+### Changed
+- All stubs converted from `FFX_LOG_STUB()` to null-safe implementations with parameter validation
+
 ## [1.13.0.0] - 2026-07-07
 
 ### Added

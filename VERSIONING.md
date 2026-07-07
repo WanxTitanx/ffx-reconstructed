@@ -31,6 +31,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.11.0.0 | 2026-07-07 | P4 — 53 asserts removidos de phyre_render.cpp (safe no-op) + .rdata extraction PoC (desafio DeepSeek: IMPOSSIVEL -> POSSIVEL) + 4 testes rdata_dump |
 | v1.12.0.0 | 2026-07-07 | P5 — 3 ThreadPool setters + PArray_Reserve/Compact/Swap + PString_Format + 8 testes PhyreString (22/22 total) |
 | v1.13.0.0 | 2026-07-07 | P6 — PhyrePCamera struct inferred via decompile (49 fields → 3 matrizes + near/far) + DB type applied + 6 PhyreCamera tests (28/28 total) |
+| v1.14.0.0 | 2026-07-07 | P7 — **88/88 FFX_LOG_STUB eliminados (100%)** + FFXMagicHost 16 fields HIGH confidence aplicados no DB (slot_count, slot_records_ptr, is_multi_channel, channel_count, channel_mask, commit_prep_flag, buffer_chain_head, next_drawable_ptr, state_flags) |
 
 ## Próximas metas
 
