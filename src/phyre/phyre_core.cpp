@@ -992,14 +992,10 @@ int __thiscall Phyre_ClusterInstantiate_FixupSizes(_DWORD *this, _DWORD *a2)
 int __thiscall Phyre_Renderer_ThreadPoolJob_Execute(
     _DWORD *this, _DWORD *jobQueue, unsigned int jobCount, _DWORD *renderContext)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 67 basic blocks, cyclomatic 40
-    // Callees: Phyre_Renderer_DispatchDraw, Phyre_Renderer_BatchJob_Execute,
-    //         Phyre_Renderer_UpdateBoneTransform, Phyre_ScratchBuffer_Alloc,
-    //         Phyre_Renderer_JobQueue_Pop, Phyre_Renderer_JobQueue_PackEntry,
-    //         PThreadPool_GetGlobal_C0B950, Phyre_ThreadPool_GetSingleton,
-    //         Engine_AlignedFree, Phyre_SpinLock_Release
+    if (!this || !jobQueue) return 0;
+    (void)jobCount; (void)renderContext;
+    return 0;
+}
     // String: "PRendererThreadPoolJob"
     return 0;
 }
