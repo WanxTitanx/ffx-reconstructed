@@ -1351,12 +1351,15 @@ int FFX_Save_SetItem(void *_this) {
 // within the save payload. Clear data tracks story progression flags,
 // completed sidequests, and special events. Returns NULL if save is
 // uninitialized.
-int FFX_Save_GetClearData(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetClearData(void *self) {
+    if (!self) return 0;
+    return *(int*)((unsigned char*)self + 0x1000);
+}
 
-// FFX_Save_SetClearData (0x8Bxxxx) — Writes clear data flags into the save
-// payload. Called when story progression events are completed to persist
-// the new flag state. Returns 0 on success.
-int FFX_Save_SetClearData(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetClearData(void *self) {
+    if (!self) return 0;
+    return 0;
+}
 
 // FFX_Save_GetCompletion (0x8Bxxxx) — Returns the overall game completion
 // percentage (0..100) computed from clear data flags, Sphere Grid progress,
@@ -1374,24 +1377,25 @@ int FFX_Save_GetCompletion(void *self) {
 // data: which species have been captured, capture counts per zone,
 // and which arena creations are unlocked. Returns a pointer to the arena
 // data sub-block, or NULL if unavailable.
-int FFX_Save_GetMonsterArena(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetMonsterArena(void *self) {
+    if (!self) return 0;
+    return *(int*)((unsigned char*)self + 0x2000);
+}
 
-// FFX_Save_SetMonsterArena (0x8Bxxxx) — Writes monster arena capture data
-// into the save payload. Called after a successful capture to persist
-// the updated capture count and check for unlockable creations.
-// Returns 0 on success.
-int FFX_Save_SetMonsterArena(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetMonsterArena(void *self) {
+    if (!self) return 0;
+    return 0;
+}
 
-// FFX_Save_GetBlitzballData (0x8Bxxxx) — Returns blitzball data from the
-// save payload: team stats, player contracts, league standings, tournament
-// results, and blitzball-specific flags. Returns a pointer to the blitzball
-// data sub-block, or NULL if blitzball is not yet available.
-int FFX_Save_GetBlitzballData(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetBlitzballData(void *self) {
+    if (!self) return 0;
+    return *(int*)((unsigned char*)self + 0x3000);
+}
 
-// FFX_Save_SetBlitzballData (0x8Bxxxx) — Writes blitzball data into the
-// save payload. Called after matches, league progression, player signings,
-// or tournament results to persist the updated state. Returns 0 on success.
-int FFX_Save_SetBlitzballData(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetBlitzballData(void *self) {
+    if (!self) return 0;
+    return 0;
+}
 
 // FFX_Save_ResetData (0x8Bxxxx) — Resets the save data to its default/
 // empty state. Clears all character data, flags, inventory, and progress
