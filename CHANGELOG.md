@@ -7,6 +7,23 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) pr√≥pria ‚Ä
 
 ## [Unreleased]
 
+## [1.16.0.0] - 2026-07-07
+
+### Added
+- **FFXBattleActorData expanded** with 35+ HIGH confidence fields from decompiling 8 battle functions:
+  - **Identity**: modelHandle@0, fieldAttachId@4, formId@14, isReadyToSpawn@36
+  - **Action/Menu State (1008-1104)**: pendingCommandId, actionTargetSlot, hasActiveAction, currentMotionId, menuActionState, commandSubMode, actionLockedFlag
+  - **Command Ring**: commandStyle@1474, commandStyleCounter@1475
+  - **Damage**: turnDamagePercent@1466 (maxHp * percent / 100)
+  - **Overdrive**: overdriveActionState@1597, overdriveLevel@1598, overdriveGauge@3532
+  - **Status**: statusFlagA/B/C@1544-1546, reflectActiveFlag@1738
+  - **State Machine (3536-3607)**: damageFlag, hasQueuedAction, subStateMode, lastDamageSourceActorId, actorTurnState, turnSkipFlag, postDamageFlag, mainStateMode, actionRingIndex
+  - **Bitfields**: statusBitfieldA@3934, statusBitfieldB@1558
+  - **Animation**: currentAnimId@1244 (passed to SetActorAnimById)
+- All offsets confirmed by cross-referencing 8 battle functions (ComputeOverdriveActionState, SetActorMenuActionState, ResetActorActionState, ApplyActionResultsToAllTargets, ProcessActorTurnInit, ProcessAllActorsStateMachine, HandleActorDeathOrRevive, InitActorBattleUIData)
+- DB IDA: FFXBattleActorData type re-declared via `idalib_declare_type` with expanded fields
+- DB saved + backup (post_p8.2, 70.9MB)
+
 ## [1.15.0.0] - 2026-07-07
 
 ### Added

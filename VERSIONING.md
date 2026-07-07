@@ -33,6 +33,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.13.0.0 | 2026-07-07 | P6 — PhyrePCamera struct inferred via decompile (49 fields → 3 matrizes + near/far) + DB type applied + 6 PhyreCamera tests (28/28 total) |
 | v1.14.0.0 | 2026-07-07 | P7 — **88/88 FFX_LOG_STUB eliminados (100%)** + FFXMagicHost 16 fields HIGH confidence aplicados no DB (slot_count, slot_records_ptr, is_multi_channel, channel_count, channel_mask, commit_prep_flag, buffer_chain_head, next_drawable_ptr, state_flags) |
 | v1.15.0.0 | 2026-07-07 | P8 — **FFX_System_Host discovery** (singleton 69KB, não FFXFieldMap 396B) + FFXBattleActorData struct (3984B) com offsets reais confirmados (HP@1488, maxHp@1428, status@1448-1455, activeFlag@3546) + FFXBtlActor/FFXActor identificados como structs órfãos sem xrefs |
+| v1.16.0.0 | 2026-07-07 | P8.2 — FFXBattleActorData expandido com 35+ fields de ALTA confiança (modelHandle, hasActiveAction, menuActionState, actionLockedFlag, commandStyle, overdriveActionState, overdriveLevel, reflectActiveFlag, mainStateMode, subStateMode, actorTurnState, turnSkipFlag, actionRingIndex, statusBitfieldA, etc.) |
 
 ## Próximas metas
 
