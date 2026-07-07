@@ -22,7 +22,6 @@ set(FFX_SOURCES
     src/ffx/ffx_input.cpp
     src/ffx/ffx_renderqueue.cpp
     src/ffx/ffx_texture.cpp
-    src/ffx/ffx_texture.cpp
 )
 
 set(PHYRE_SOURCES
