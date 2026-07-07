@@ -7,6 +7,18 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.12.0.0] - 2026-07-07
+
+### Added
+- **3 ThreadPool setters** real-implemented: SetStackSize, SetMaxCount, SetMinCount (global setters)
+- **3 PArray functions** real-implemented: Reserve, Compact, Swap
+- **PString_Format** real-implemented with _vsnprintf
+- **8 PhyreString tests**: Append, Compare (equal/less/greater), Find (substring/notfound/withstart)
+- Test count: 14 → 22 (5 suites)
+
+### Changed
+- `phyre_core.cpp`: added `<string.h>`, `<stdarg.h>`, `<stdio.h>` includes
+
 ## [1.11.0.0] - 2026-07-07
 
 ### Added

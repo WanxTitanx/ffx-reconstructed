@@ -10,6 +10,7 @@ add_executable(ffx_tests
     test_phyre_pclass_descriptor.cpp
     test_battle_hp_compute.cpp
     test_rdata_dump.cpp
+    test_phyre_string.cpp
     test_stubs.cpp
 )
 
