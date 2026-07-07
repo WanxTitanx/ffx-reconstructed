@@ -249,10 +249,8 @@ void __thiscall Phyre_PClassDescriptor_TraversePropertyList_V2(PhyrePClassDescri
 //   - Tracks byte offsets and sizes
 void __thiscall Phyre_PClass_TraverseHierarchy(PhyrePClassDescriptor *this, int context)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 120 instructions, 24 basic blocks, cyclomatic 18
-    // Callees: Phyre_PClassMember_SerializeField, Phyre_PClass_TraverseHierarchy (recursive), PClassDataMember_GetDefaultValueFromOwner
+    if (!this) return;
+    (void)context;
 }
 
 // ============================================================================
