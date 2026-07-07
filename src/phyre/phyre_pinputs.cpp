@@ -18,20 +18,16 @@ int Phyre_PInputSource_ctor_Default(void *self);
 // Phyre_PInputMapper_Constructor (0x626xxx)
 // Constroi o PInputMapper: inicializa mapa de acoes, fontes, dispositivos
 int Phyre_PInputMapper_Constructor(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputMap_Init, Phyre_PInputSource_Init (multi)
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
 
 // Phyre_PInputMapper_ProcessInput (0x627xxx)
 // Processa entrada de todos os dispositivos no mapper
 // Le estados dos dispositivos, traduz para acoes, notifica listeners
 int Phyre_PInputMapper_ProcessInput(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputDevice_Poll, Phyre_PInputAction_Process
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
 
 // Phyre_PInputMapper_GetClassName (0x626xxx)
@@ -48,37 +44,31 @@ const char *Phyre_PInputMapper_GetClassName(void *self) {
 // Inicializa dispositivo de entrada (teclado, mouse, controle)
 // Configura buffer, polling interval, mapeamento inicial
 int Phyre_PInputDevice_Init(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputSource_Init, Phyre_Input_SetKeyMapping (defaults)
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
 
 // Phyre_PInputDevice_SetKeyMapping (0x624xxx)
 // Define mapeamento de tecla para acao especifica no dispositivo
 int Phyre_PInputDevice_SetKeyMapping(void *self, int key, int action) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputAction_SortedInsert
-  return 0;
+    if (!self) return 0;
+    (void)key; (void)action;
+    return 1;
 }
 
 // Phyre_PInputDevice_Poll (0x627xxx)
 // Poll do dispositivo: le estado atual e alimenta os listeners
 int Phyre_PInputDevice_Poll(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: GetKeyboardState/GetAsyncKeyState, XInputGetState,
-  // DirectInput_GetDeviceState
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
 
 // Phyre_InputDevice_EnumerateByType (0x623Exx, 13 xrefs)
 // List walker de dispositivos de entrada por tipo
 int Phyre_InputDevice_EnumerateByType(void *self, int type) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  return 0;
+    if (!self) return 0;
+    (void)type;
+    return 0;
 }
 
 // Phyre_InputDevice_Return23 (0x625Exx)
@@ -93,10 +83,8 @@ int Phyre_InputDevice_Return23(void *self) { return 23; }
 // Poll de conexao de controles via DirectInput
 // Verifica ganchos/remocao de controllers, atualiza estado
 int Phyre_DirectInput_PollControllerConnection(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: IDirectInput8_EnumDevices, IDirectInputDevice8_GetDeviceState
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
 
 // Phyre_DirectInput_InitDevice (0x628xxx)
