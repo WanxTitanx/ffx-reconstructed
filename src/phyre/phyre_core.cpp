@@ -1342,12 +1342,11 @@ void *__stdcall PClassDescriptorInit_PThreadPool()
 // Decompiled body:
 //   Armazena o ponteiro do pool secundario no global dword_C0B95C.
 //   Usado durante inicializacao do subsistema de IO.
+static void *g_ThreadPool_Global = NULL;
+
 void __stdcall Phyre_ThreadPool_SetGlobal_C0B95C(void *pool)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 4 instructions — setter simples
-    // dword_C0B95C = pool
+    g_ThreadPool_Global = pool;
 }
 
 // Function: Phyre_Renderer_ThreadPoolJob_Execute (0x5b3f90, 1543 bytes)
