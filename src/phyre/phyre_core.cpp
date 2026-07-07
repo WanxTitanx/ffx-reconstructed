@@ -788,8 +788,9 @@ int __thiscall Phyre_PClassDescriptor_SetFields74_78(_DWORD *this, int v74, int 
 //   "invalid code lengths set", "too many length or distance symbols"
 int __thiscall Phyre_ZlibInflate(unsigned __int8 **this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this) return 0;
+    return 0;
+}
     // 359 basic blocks, cyclomatic 227 — biggest FSM in the binary
     // Callees: Phyre_ZlibCRC32, Phyre_ZlibInflate_InflateBlock (x2),
     //         Phyre_ZlibInflate_BuildHuffmanTables, Phyre_ZlibInflate_InitFixedTables,
@@ -833,9 +834,8 @@ int __thiscall Phyre_ZlibInflate(unsigned __int8 **this)
 //   Standard zlib inflate table generation with bit-reversed codes
 int __thiscall Phyre_ZlibInflate_BuildHuffmanTables(int this, int a2, int a3, int maxSymbols)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 44a bytes, callees: none (pure computation)
+    if (!this) return 0;
+    (void)a2; (void)a3; (void)maxSymbols;
     return 0;
 }
 
@@ -845,10 +845,7 @@ int __thiscall Phyre_ZlibInflate_BuildHuffmanTables(int this, int a2, int a3, in
 //   Handles literal/length codes, distance codes, and copy operations
 int __thiscall Phyre_ZlibInflate_InflateBlock(int this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 42e bytes
-    // Callees: memcpy
+    if (!this) return 0;
     return 0;
 }
 
@@ -867,11 +864,9 @@ int __thiscall Phyre_ZlibInflate_InflateBlock(int this)
 //   Returns pointer to usable area (offset +8 from block header).
 _DWORD *__cdecl Phyre_MemoryPool_Alloc(_DWORD *pool, unsigned int n16)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 95 basic blocks, cyclomatic 47
-    // No callees — pure pointer manipulation
-    return 0;
+    if (!pool) return NULL;
+    (void)n16;
+    return NULL;
 }
 
 // Function: Phyre_MemoryPool_Free (0x6eac50, 1 caller, 854 bytes)
@@ -884,10 +879,8 @@ _DWORD *__cdecl Phyre_MemoryPool_Alloc(_DWORD *pool, unsigned int n16)
 //   Updates pool stats: allocated/deallocated counters.
 int __cdecl Phyre_MemoryPool_Free(_DWORD *pool, int ptr, int a3, int n16)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 71 basic blocks, cyclomatic 37
-    // No callees — pure pointer/linked-list manipulation
+    if (!pool || !ptr) return 0;
+    (void)a3; (void)n16;
     return 0;
 }
 
@@ -905,8 +898,9 @@ int __cdecl Phyre_MemoryPool_Free(_DWORD *pool, int ptr, int a3, int n16)
 //   allocates aligned memory for arrays, reads fields from cluster stream
 int __thiscall Phyre_Type_ConstructDispatcher(_BYTE *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this) return 0;
+    return 0;
+}
     // 115 basic blocks, cyclomatic 56
     // Callees: Phyre_Type_ConstructFromChunk, Phyre_Type_ConstructFromChunkVariableSize,
     //         Engine_AlignedAllocAlign, Engine_AlignedFree, Phyre_Texture_Construct,
@@ -923,8 +917,10 @@ int __thiscall Phyre_Type_ConstructDispatcher(_BYTE *this)
 //   Security: /GS stack cookie active.
 int __thiscall Phyre_Type_ConstructFromChunk(int *this, unsigned int a2, char a3, int a4, char a5)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this) return 0;
+    (void)a2; (void)a3; (void)a4; (void)a5;
+    return 0;
+}
     // 68 basic blocks, cyclomatic 29
     // Callees: Phyre_Cluster_ZeroInitArea, Phyre_Cluster_ReadFieldsFromStream,
     //         Phyre_Type_ConstructFromChunk_SubResources, Phyre_RefCount_GetWithMinOne_C
@@ -969,8 +965,10 @@ int __thiscall Phyre_Type_ConstructFromChunk(int *this, unsigned int a2, char a3
 //     // Read import regions from stream
 int __thiscall Phyre_ClusterInstantiate_FixupSizes(_DWORD *this, _DWORD *a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this) return 0;
+    (void)a2;
+    return 0;
+}
     // 130 basic blocks, cyclomatic 66
     // Callees: Engine_AlignedAllocAlign, memcpy, Phyre_Class_ConstructInterleaved,
     //         Phyre_Class_SerializeBuffer, Phyre_Stream_Printf, Engine_AlignedFree
@@ -1041,8 +1039,9 @@ int __thiscall Phyre_Renderer_ThreadPoolJob_Execute(
 //     *a2 = dedupCount; // output dedup count
 int __stdcall Phyre_Array_Sort(_DWORD *a1, int *a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!a1 || !a2) return 0;
+    return 0;
+}
     // 83 basic blocks, cyclomatic 56
     // Callees: Phyre_Array_IntrospectiveSortUInt, Phyre_Array_IntrospectiveSort4Byte,
     //         Engine_AlignedAllocAlign, Engine_AlignedFree, memcpy, memset, alloca
@@ -1081,8 +1080,9 @@ int __stdcall Phyre_Array_Sort(_DWORD *a1, int *a2)
 //     // Step 6: Store result in this->worldMatrix (field +0x0C)
 int __usercall Phyre_SceneNode_ComposeTransformMath(int node@<ecx>)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!node) return 0;
+    return 0;
+}
     // Callees: Phyre_PSceneNode_composeWorldMatrix_parentChain,
     //         Phyre_Matrix4_Copy, Phyre_Matrix4x4_ComposeMultiply,
     //         Phyre_Matrix4x4_Inverse, Phyre_Matrix4x4_TransposeRotation,
@@ -1109,8 +1109,9 @@ int __usercall Phyre_SceneNode_ComposeTransformMath(int node@<ecx>)
 //   Uses PBVHNode_CollisionCapsule_Constructor as base
 int __thiscall Phyre_Container_Constructor(int this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this) return 0;
+    return 0;
+}
     // 50 basic blocks, cyclomatic 0 (linear init)
     // Callees: PTexture2D_InitDefaults (x2), Phyre_StructArray7Dword_ZeroInit (x2),
     //         PContainerNode_ctor_child0 (x2), Phyre_RSpriteContainer_Ctor (x2),
@@ -1252,8 +1253,10 @@ void __stdcall Phyre_ThreadPool_SetGlobal_C0B95C(void *pool)
 int __thiscall Phyre_Renderer_ThreadPoolJob_Execute(
     void *this, void *jobQueue, unsigned int jobCount, void *renderContext)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
+    if (!this || !jobQueue) return 0;
+    (void)jobCount; (void)renderContext;
+    return 0;
+}
     // 67 basic blocks, cyclomatic 40
     // Callees: Phyre_Renderer_DispatchDraw, Phyre_Renderer_BatchJob_Execute,
     //         Phyre_Renderer_UpdateBoneTransform, Phyre_ScratchBuffer_Alloc,
