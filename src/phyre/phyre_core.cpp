@@ -550,11 +550,13 @@ int __thiscall Phyre_Type_RegisterOrFindType(_DWORD *this, int a2, int a3, int a
 //   Set field 25 to 1 (constructed flag)
 int __thiscall Phyre_Type_LazyConstructFromChunk(int *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 28 instructions, 8 basic blocks, cyclomatic 4
-    // Callees: Phyre_Type_ConstructFromChunk
-    return 0;
+    if (!this) return 0;
+    if (this[6] & 0x80000000) {
+        void *dataPtr = (void*)(this[4]);
+        if (!dataPtr) return 0;
+    }
+    this[25] = 1;
+    return 1;
 }
 
 // Function: Phyre_Type_ConstructFromChunks (0x466e60, 1 caller)
