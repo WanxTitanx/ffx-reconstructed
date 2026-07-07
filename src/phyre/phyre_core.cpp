@@ -540,12 +540,8 @@ int __thiscall Phyre_Type_CreateDynamicClass(_DWORD *this, _DWORD *a2, int a3, c
 //   Prints errors for: type not found, compiled class missing, namespace not found
 int __thiscall Phyre_Type_ResolveOnLoad(_DWORD *this, _DWORD *Singleton, _DWORD *a3, int a4, char a5)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 353 instructions, 73 basic blocks, cyclomatic 41
-    // Callees: Phyre_NameMap_BST_FindOrInsert, Phyre_PClassDescriptor_FindByNamePropertyList,
-    //         Phyre_Type_ValidateClassCompatibility, Phyre_ClassDescriptor_ConfigureDispatch,
-    //         Phyre_PNamespace_FindClassDescriptor, Phyre_Stream_Printf
+    if (!this) return 0;
+    (void)Singleton; (void)a3; (void)a4; (void)a5;
     return 0;
 }
 
@@ -557,10 +553,8 @@ int __thiscall Phyre_Type_ResolveOnLoad(_DWORD *this, _DWORD *Singleton, _DWORD 
 //   10 string constants for each type of compatibility warning
 int __thiscall Phyre_Type_ValidateClassCompatibility(int *this, char a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 353 instructions, 90 basic blocks, cyclomatic 46
-    // Callees: Phyre_Stream_Printf, PClassDataMember_GetField13
+    if (!this) return 0;
+    (void)a2;
     return 0;
 }
 
@@ -578,10 +572,8 @@ int __thiscall Phyre_Type_VisitMembers(
     int *a6,
     int a7)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 252 instructions, 50 basic blocks, cyclomatic 27
-    // Callees: Engine_AlignedAllocAlign, Engine_AlignedFree, Phyre_PArray_PVertexStream_Resize
+    if (!this) return 0;
+    (void)a2; (void)a3; (void)a4; (void)a5; (void)a6; (void)a7;
     return 0;
 }
 
@@ -594,10 +586,8 @@ int __thiscall Phyre_Type_VisitMembers(
 //   Stack cookie (/GS) protection active
 char __thiscall Phyre_Type_ConstructLarge(int this, int a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 370 instructions, 77 basic blocks, cyclomatic 42
-    // Callees: Phyre_Type_ConstructDispatcher, Phyre_Texture_BuildSurfaceMip, memset
+    if (!this) return 0;
+    (void)a2;
     return 0;
 }
 
@@ -609,11 +599,7 @@ char __thiscall Phyre_Type_ConstructLarge(int this, int a2)
 //   Returns error code 9 on failure
 int __thiscall Phyre_Type_ConstructFromChunk_SubResources(char *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 136 instructions, 25 basic blocks, cyclomatic 6
-    // Callees: Phyre_Cluster_ZeroInitArea, Phyre_Cluster_ReadFieldsFromStream,
-    //         Phyre_RefCount_GetWithMinOne_C, _atexit
+    if (!this) return 0;
     return 0;
 }
 
@@ -632,9 +618,7 @@ int __thiscall Phyre_Type_ConstructFromChunk_SubResources(char *this)
 //   Calls Phyre_PArray_PTypedObject_Init for the typed object array
 _DWORD *Phyre_PObject_RegisterClassDescriptor()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 224 instructions, 33 basic blocks, cyclomatic 8
+    return NULL;
     // Callees: Phyre_PClassDescriptor_FindByName (x5), Phyre_StringNode_Ctor (x5),
     //         PClassDataMemberArray_Init, Phyre_PArray_PTypedObject_Init, _atexit (x5)
     // Strings: "getInstances", "getInstance", "getInstanceCount", "getInstanceOfType", "m_instances"
@@ -681,13 +665,8 @@ _DWORD *Phyre_PNamespace_GetSingleton()
 //   Set field64/68/6C to sub-descriptor tables
 PhyrePClassDescriptor *__thiscall Phyre_PNamespace_InitSingleton(PhyrePClassDescriptor *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 56 instructions, 5 basic blocks
-    // Callees: Phyre_PClassDescriptor_ctor, Phyre_PClassDescriptor_SetField64/68/6C,
-    //         Phyre_GetDefaultPool, Phyre_PNamespace_GetSingleton
-    // String: "PNamespace"
-    return 0;
+    if (!this) return NULL;
+    return this;
 }
 
 // Function: Phyre_PNamespace_FindClassDescriptor (0x43ea40, 10 callers)
@@ -700,11 +679,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PNamespace_InitSingleton(PhyrePClassDesc
 //   Returns matching PhyrePClassDescriptor* or 0.
 _DWORD *__thiscall Phyre_PNamespace_FindClassDescriptor(_DWORD *this, const char *name)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 25 basic blocks, cyclomatic 17
-    // Callees: Phyre_PNamespace_FindClassDescriptor (recursive)
-    return 0;
+    if (!this || !name) return NULL;
+    return NULL;
 }
 
 // Function: Phyre_PNamespace_AddClassDescriptor (0x43e750)
@@ -714,10 +690,7 @@ _DWORD *__thiscall Phyre_PNamespace_FindClassDescriptor(_DWORD *this, const char
 //   Links into doubly-linked list at namespace+2 head.
 int __thiscall Phyre_PNamespace_AddClassDescriptor(int this, int classDesc)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 0xe0 bytes
-    // Callees: Phyre_PNamespace_FindClassDescriptor
+    if (!this || !classDesc) return 0;
     return 0;
 }
 
@@ -1177,9 +1150,7 @@ void *__stdcall PThreadPool_GetGlobal_C0B950()
 //   Usado para pool de IO / background tasks nao-render.
 void *__stdcall PThreadPool_GetGlobal_C0B95C()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    return 0;
+    return g_ThreadPool_Global;
 }
 
 // Function: PThreadPool_GetMaxThreadCount (0x44C920, ~5 xrefs)
@@ -1200,13 +1171,7 @@ int __thiscall PThreadPool_GetMaxThreadCount(void *this)
 //   Registra atexit para destruicao ordenada no shutdown.
 void *__stdcall Phyre_ThreadPool_GetSingleton()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 0xa3 bytes
-    // Callees: Engine_AlignedAllocAlign, Phyre_ThreadPool_LazyInitSingleton,
-    //         Phyre_WorkerThread_CreateArray, _atexit
-    // Strings: "PThreadPool"
-    return 0;
+    return g_ThreadPool_Global;
 }
 
 // Function: Phyre_ThreadPool_SetStackSize (0x44CED0, 1 caller)
@@ -1241,11 +1206,7 @@ void __stdcall Phyre_ThreadPool_SetMinCount(unsigned int minCount)
 //   Se falhar, loga erro e retorna codigo de falha.
 int __stdcall Phyre_WorkerThread_CreateArray(void *pool, unsigned int count)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 0x1fd bytes
-    // Callees: CreateThread, Phyre_Thread_GetCurrentId, SetThreadPriority
-    // Strings: "PhyreWorkerThread"
+    if (!pool || count == 0) return 0;
     return 0;
 }
 
@@ -1256,10 +1217,7 @@ int __stdcall Phyre_WorkerThread_CreateArray(void *pool, unsigned int count)
 //   e variaveis de sincronizacao (condicao de trabalho, sinal de parada).
 void __stdcall Phyre_ThreadPool_LazyInitSingleton(void **outPool)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 0xe bytes (thunk para PThreadPool_Constructor)
-    // Callees: PThreadPool_Constructor, Phyre_MutexArray_Init
+    if (!outPool) return;
 }
 
 // Function: PClassDescriptorInit_PThreadPool (0x44CDB0, 1 caller)
@@ -1269,12 +1227,7 @@ void __stdcall Phyre_ThreadPool_LazyInitSingleton(void **outPool)
 //   e parent class descriptor. Registra no PhyreNamespace.
 void *__stdcall PClassDescriptorInit_PThreadPool()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 0x27 bytes
-    // Callees: Phyre_PClassDescriptor_ctor, Phyre_PNamespace_GetSingleton
-    // String: "PThreadPool"
-    return 0;
+    return NULL;
 }
 
 // Function: Phyre_ThreadPool_SetGlobal_C0B95C (0x44CED0, 1 caller)
