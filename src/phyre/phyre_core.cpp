@@ -1420,35 +1420,92 @@ int __thiscall Phyre_PString_Format(void *this, const char *format, ...) { retur
 
 // Phyre_PString_Append (0x4xxxxx)
 // Concatena string ao final
-int __thiscall Phyre_PString_Append(void *this, const char *text) { return 0; }
+int __thiscall Phyre_PString_Append(void *this, const char *text) {
+    if (!this || !text) return 0;
+    char *str = *(char**)this;
+    if (!str) return 0;
+    int curLen = (int)strlen(str);
+    int addLen = (int)strlen(text);
+    memcpy(str + curLen, text, addLen + 1);
+    return curLen + addLen;
+}
 
 // Phyre_PString_Prepend (0x4xxxxx)
 // Insere string no inicio
-int __thiscall Phyre_PString_Prepend(void *this, const char *text) { return 0; }
+int __thiscall Phyre_PString_Prepend(void *this, const char *text) {
+    if (!this || !text) return 0;
+    char *str = *(char**)this;
+    if (!str) return 0;
+    int curLen = (int)strlen(str);
+    int addLen = (int)strlen(text);
+    memmove(str + addLen, str, curLen + 1);
+    memcpy(str, text, addLen);
+    return curLen + addLen;
+}
 
 // Phyre_String_Compare (0x4xxxxx)
 // Compara duas strings, retorna 0 se igual
-int __thiscall Phyre_String_Compare(void *this, const char *other) { return 0; }
+int __thiscall Phyre_String_Compare(void *this, const char *other) {
+    if (!this || !other) return -1;
+    const char *str = *(const char**)this;
+    if (!str) return -1;
+    return strcmp(str, other);
+}
 
 // Phyre_String_CompareLess (0x4xxxxx)
 // Compara duas strings para ordenacao, retorna <0 se this < other
-int __thiscall Phyre_String_CompareLess(void *this, const char *other) { return 0; }
+int __thiscall Phyre_String_CompareLess(void *this, const char *other) {
+    if (!this || !other) return -1;
+    const char *str = *(const char**)this;
+    if (!str) return -1;
+    return strcmp(str, other);
+}
 
 // Phyre_String_AppendStr (0x4xxxxx)
 // Concatena string ao final (diferenca de PString_Append: aceita substring ou fonte alternativa)
-int __thiscall Phyre_String_AppendStr(void *this, const char *text) { return 0; }
+int __thiscall Phyre_String_AppendStr(void *this, const char *text) {
+    return Phyre_PString_Append(this, text);
+}
 
 // Phyre_String_Insert (0x4xxxxx)
 // Insere texto em posicao especifica
-int __thiscall Phyre_String_Insert(void *this, unsigned int pos, const char *text) { return 0; }
+int __thiscall Phyre_String_Insert(void *this, unsigned int pos, const char *text) {
+    if (!this || !text) return 0;
+    char *str = *(char**)this;
+    if (!str) return 0;
+    int curLen = (int)strlen(str);
+    if (pos > (unsigned int)curLen) pos = (unsigned int)curLen;
+    int addLen = (int)strlen(text);
+    memmove(str + pos + addLen, str + pos, curLen - pos + 1);
+    memcpy(str + pos, text, addLen);
+    return curLen + addLen;
+}
 
 // Phyre_String_Remove (0x4xxxxx)
 // Remove range de caracteres
-int __thiscall Phyre_String_Remove(void *this, unsigned int pos, unsigned int count) { return 0; }
+int __thiscall Phyre_String_Remove(void *this, unsigned int pos, unsigned int count) {
+    if (!this) return 0;
+    char *str = *(char**)this;
+    if (!str) return 0;
+    int curLen = (int)strlen(str);
+    if (pos >= (unsigned int)curLen) return curLen;
+    if (pos + count > (unsigned int)curLen) count = (unsigned int)curLen - pos;
+    memmove(str + pos, str + pos + count, curLen - pos - count + 1);
+    return (int)strlen(str);
+}
 
 // Phyre_String_Find (0x4xxxxx)
 // Busca substring, retorna indice ou -1 se nao encontrar
-int __thiscall Phyre_String_Find(void *this, const char *sub, unsigned int start) { return 0; }
+int __thiscall Phyre_String_Find(void *this, const char *sub, unsigned int start) {
+    if (!this || !sub) return -1;
+    const char *str = *(const char**)this;
+    if (!str) return -1;
+    int len = (int)strlen(str);
+    if ((int)start >= len) return -1;
+    const char *found = strstr(str + start, sub);
+    if (!found) return -1;
+    return (int)(found - str);
+}
 
 // ============================================================================
 // HEAP — BUCKET ALLOC / FREE
