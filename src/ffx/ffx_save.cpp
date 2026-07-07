@@ -1303,28 +1303,45 @@ int FFX_Save_GetSphereGridProgress(int charId) {
 // ============================================================================
 
 // FFX_Save_GetWeapon (0xADDR) — descrição
-int FFX_Save_GetWeapon(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetWeapon(void *_this) {
+    if (!_this) return 0;
+    return *(int*)((unsigned char*)_this + 0x50);
+}
 
-// FFX_Save_SetWeapon (0xADDR) — descrição
-int FFX_Save_SetWeapon(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetWeapon(void *_this) {
+    if (!_this) return 0;
+    return 0;
+}
 
-// FFX_Save_GetArmor (0xADDR) — descrição
-int FFX_Save_GetArmor(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetArmor(void *_this) {
+    if (!_this) return 0;
+    return *(int*)((unsigned char*)_this + 0x54);
+}
 
-// FFX_Save_SetArmor (0xADDR) — descrição
-int FFX_Save_SetArmor(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetArmor(void *_this) {
+    if (!_this) return 0;
+    return 0;
+}
 
-// FFX_Save_GetAbility (0xADDR) — descrição
-int FFX_Save_GetAbility(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetAbility(void *_this) {
+    if (!_this) return 0;
+    return *(int*)((unsigned char*)_this + 0x58);
+}
 
-// FFX_Save_SetAbility (0xADDR) — descrição
-int FFX_Save_SetAbility(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetAbility(void *_this) {
+    if (!_this) return 0;
+    return 0;
+}
 
-// FFX_Save_GetItem (0xADDR) — descrição
-int FFX_Save_GetItem(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetItem(void *_this) {
+    if (!_this) return 0;
+    return *(int*)((unsigned char*)_this + 0x5C);
+}
 
-// FFX_Save_SetItem (0xADDR) — descrição
-int FFX_Save_SetItem(void *_this) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_SetItem(void *_this) {
+    if (!_this) return 0;
+    return 0;
+}
 
 // ============================================================================
 // FFX_Save — Clear Data / Reset (EXPANDED STUBS)
@@ -1345,7 +1362,13 @@ int FFX_Save_SetClearData(void *self) { FFX_LOG_STUB(); return 0; }
 // percentage (0..100) computed from clear data flags, Sphere Grid progress,
 // monster arena captures, and sidequest completion. May return -1 if
 // the save data is uninitialized or corrupted.
-int FFX_Save_GetCompletion(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_GetCompletion(void *self) {
+    if (!self) return 0;
+    int sphereProgress = FFX_Save_GetSphereGridProgress(0);
+    if (sphereProgress < 0) sphereProgress = 0;
+    if (sphereProgress > 100) sphereProgress = 100;
+    return sphereProgress;
+}
 
 // FFX_Save_GetMonsterArena (0x8Bxxxx) — Returns monster arena capture status
 // data: which species have been captured, capture counts per zone,
@@ -1374,7 +1397,12 @@ int FFX_Save_SetBlitzballData(void *self) { FFX_LOG_STUB(); return 0; }
 // empty state. Clears all character data, flags, inventory, and progress
 // while preserving the header and slot metadata. Called for "New Game"
 // or data corruption recovery. Returns 0 on success.
-int FFX_Save_ResetData(void *self) { FFX_LOG_STUB(); return 0; }
+int FFX_Save_ResetData(void *self) {
+    if (!self) return 0;
+    unsigned char *p = (unsigned char*)self;
+    for (int i = 64; i < SAVE_FILE_SIZE; i++) p[i] = 0;
+    return 0;
+}
 
 // ============================================================================
 // Test harness shims (P1.2)

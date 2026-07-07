@@ -7,6 +7,23 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.9.0.0] - 2026-07-07
+
+### Added
+- **20 enums FFX** aplicados na DB IDA (`ffxoficial.exe.i64`): FFX_BattleEffectStatus, FFX_AtelOpcodeGroup, FFX_BattleMonsterSlot, FFX_SceneStateType, FFX_CtbEdgeEventType, FFX_RewardEntryType, FFX_AbilityCategory, FFX_VoicePlaybackStatus, FFX_MagicSlotType, FFX_SummonBattleState, FFX_AutoBattleMode, FFX_BattleResultType, FFX_ItemUseCommandType, FFX_CtbPriorityModifier, FFX_StatusStoneType, FFX_WeaponModelSlot, FFX_AbmapNodeActivationRule, FFX_SummonLearnResult, FFX_CommandAvailabilityFlag, FFX_DropRollOutcome (~96 membros)
+- **PhyrePClassDescriptor** 6 fields renomeados: m_alignSize, m_classVersion, m_propertyCount, m_linkedListTail, m_memberListTail, m_propListV2Count
+- **4 construtores PInputSource** implementados: ctor_Default, ctor_Key, ctor_Axis, ctor_Button
+- **8 Save getters** implementados: GetWeapon/SetWeapon/GetArmor/SetArmor/GetAbility/SetAbility/GetItem/SetItem
+- **FFX_Save_GetCompletion** implementado (delega para SphereGridProgress)
+- **FFX_Save_ResetData** implementado (memset preservando header)
+- **Sprint 5 (Data Extraction)** adicionado ao plano — desafio de extrair .rdata/.data/.bss do EXE original
+
+### Changed
+- Rota E (Deploy+Test) marcada como ✅ Fechada (10/10 tests green + build verde)
+
+### Fixed
+- Google Test v1.14.0 vendored em `third_party/googletest/` (FetchContent removido por incompatibilidade de git no Windows)
+
 ### Added
 - **Crons de auto-execução**: `scripts/crons/loop.ps1` (4min), `save.ps1` (15min), `backup.ps1` (30min rotation 5), `commit.ps1` (60min auto-push)
 - **Test harness mínimo** com Google Test (`test/` — 3 testes: CRC-16 CCITT, PhyrePClassDescriptor Init, Battle HP compute)

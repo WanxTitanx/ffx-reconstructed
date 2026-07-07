@@ -130,37 +130,44 @@ int Phyre_PInputSource_Init(void *self, int device, int sourceType) {
 // Phyre_PInputSource_ctor_Default (0x625xxx)
 // Construtor padrao de PInputSource: zera campos, seta vtable
 int Phyre_PInputSource_ctor_Default(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // 1 basic block — zero init + vtable set
-  return 0;
+    if (!self) return 0;
+    unsigned char *p = (unsigned char*)self;
+    for (int i = 0; i < 24; i++) p[i] = 0;
+    return 1;
 }
 
 // Phyre_PInputSource_ctor_Key (0x625xxx)
 // Construtor de PInputSource para tecla especifica
 int Phyre_PInputSource_ctor_Key(void *self, int keyCode) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Configura fonte como tecla unica
-  return 0;
+    Phyre_PInputSource_ctor_Default(self);
+    if (!self) return 0;
+    int *fields = (int*)self;
+    fields[1] = 1;        // sourceType = KEY
+    fields[2] = keyCode;  // value = keyCode
+    return 1;
 }
 
 // Phyre_PInputSource_ctor_Axis (0x625xxx)
 // Construtor de PInputSource para eixo analogico
 int Phyre_PInputSource_ctor_Axis(void *self, int axis, int deadZone) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Configura fonte como eixo analogico com zona morta
-  return 0;
+    Phyre_PInputSource_ctor_Default(self);
+    if (!self) return 0;
+    int *fields = (int*)self;
+    fields[1] = 2;        // sourceType = AXIS
+    fields[2] = axis;     // value = axis id
+    fields[3] = deadZone; // deadZone
+    return 1;
 }
 
 // Phyre_PInputSource_ctor_Button (0x625xxx)
 // Construtor de PInputSource para botao
 int Phyre_PInputSource_ctor_Button(void *self, int button) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Configura fonte como botao numerico
-  return 0;
+    Phyre_PInputSource_ctor_Default(self);
+    if (!self) return 0;
+    int *fields = (int*)self;
+    fields[1] = 3;        // sourceType = BUTTON
+    fields[2] = button;   // value = button id
+    return 1;
 }
 
 // Phyre_PInputSourceMouseButton_ctor (0xADDR)
