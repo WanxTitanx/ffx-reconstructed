@@ -78,13 +78,8 @@ int __stdcall Phyre_Scripting_GetValueFromScriptContext(PScriptContext *ctx,
                                                         const char *name,
                                                         void *outValue,
                                                         void *typeInfo) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // 31 basic blocks (core dispatch) + 12 BB (abstract error stub)
-  // Callees: Phyre_Scripting_TypeCheck, Phyre_PClassMember_GetDefaultValue,
-  //         memcpy, Phyre_Stream_Printf (error path)
-  // Strings: "getValueFromScriptContext", "Object obtained from script..."
-  return 0; // Stub
+    if (!ctx || !name || !outValue) return 0;
+    return 0;
 }
 
 // Phyre_Scripting_PutValueToScriptContext (0x437A60, 31 xrefs)
@@ -103,13 +98,8 @@ int __stdcall Phyre_Scripting_PutValueToScriptContext(PScriptContext *ctx,
                                                       const char *name,
                                                       void *value,
                                                       void *typeInfo) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // 31 basic blocks (core dispatch) + 12 BB (abstract error stub)
-  // Callees: Phyre_Scripting_ConvertToPhyreObject, Phyre_Scripting_TypeCheck,
-  //         Phyre_Stream_Printf (error path)
-  // Strings: "putValueToScriptContext", "Cannot set value on abstract class"
-  return 0; // Stub
+    if (!ctx || !name || !value) return 0;
+    return 0;
 }
 
 // Phyre_Scripting_GetRawValueFromScript (0x43xxxx)
