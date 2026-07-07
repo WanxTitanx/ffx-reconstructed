@@ -7,6 +7,20 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.10.0.0] - 2026-07-07
+
+### Added
+- **Battle HUD rendering**: `ffx_battle_hud.cpp` + `.h` com HP/MP/Overdrive bars via RenderQueue (DrawHpBar, DrawMpBar, DrawOverdriveBar, DrawActorHud, DrawPartyHud)
+- **6 Phyre_PClassDescriptor funcs** real-implemented: GetTotalSize, GetMemberCount, IsRegistered, Unregister, RegisterAll, CalcLayoutSize
+
+### Changed
+- **4 structs renomeados** na DB IDA: PhyrePClassMember (7 fields), PhyrePResult (4 fields), PhyrePNamespace (6 fields), PhyrePRenderer (6 fields) — 23 fields renomeados
+- `ffx_structs.h`: PhyrePClassDescriptor synced com DB (37/37 fields named)
+- Rota D (Type System) atualizada de "100% stub" para "Parcial (6 funcs real)"
+
+### Fixed
+- N/A
+
 ## [1.9.0.0] - 2026-07-07
 
 ### Added

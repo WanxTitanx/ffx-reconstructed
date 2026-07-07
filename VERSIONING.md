@@ -15,7 +15,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | A    | Render 2D        | ✅ Fechada (estável ~95%) |
 | B    | Battle HUD       | 🟡 Parcial (data model OK, visual 0%) |
 | C    | Save/Load UI     | 🟡 Parcial (CRC+IO OK, orchestrators stub) |
-| D    | Type System      | 🟡 Parcial (phyre_pclass.cpp 100% stub) |
+| D    | Type System      | 🟡 Parcial (PhyrePClassDescriptor 6 funcs real, 26 stub) |
 | E    | Deploy+Test      | ✅ Fechada (build verde + 10/10 tests green) |
 | F    | Editor Preview   | ⏳ Pendente (escopo outro repo) |
 | G    | Phyre Stubs      | 🟡 Parcial (49 asserts em phyre_render.cpp) |
@@ -27,6 +27,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.8.0.0 | 2026-07-06 | Snapshot inicial público (50 fns, 17 core stubs + 33 math). Rotas A/B fechadas.        |
 | v1.8.0.1 | 2026-07-07 | P1 — test harness + 5 vtables aplicadas no .rdata + Versioning/Changelog + fix CMakeLists |
 | v1.9.0.0 | 2026-07-07 | P2 — 20 enums FFX aplicados na DB IDA + PhyrePClassDescriptor 6 fields renomeados + 4 PInputSource ctors implementados + 8 Save getters + ResetData + GetCompletion + Rota E fechada (10/10 tests green) |
+| v1.10.0.0 | 2026-07-07 | P3 — Battle HUD rendering (HP/MP/Overdrive bars) + 6 PClassDescriptor funcs real-implemented + 4 structs renomeados na DB (PhyrePClassMember, PhyrePResult, PhyrePNamespace, PhyrePRenderer) + ffx_structs.h synced |
 
 ## Próximas metas
 
