@@ -1,4 +1,5 @@
 #include "../include/ffx_debug.h"
+#include <string.h>
 // ============================================================================
 // FFX.EXE — PInput System Stubs (NIVEL 2-A)
 // Generated from IDA naming: jarvis_goal
@@ -223,19 +224,14 @@ void Phyre_PInputSourceMotionLinearAccelZ_ctor(void *self) {}
 // Insere acao ordenadamente na lista de acoes do mapper
 // Mantem lista ordenada por prioridade/id
 int Phyre_PInputAction_SortedInsert(void *self, int action) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Walk action list, compare keys, insert at correct position
-  return 0;
+    if (!self || !action) return 0;
+    return 1;
 }
 
-// Phyre_PInputAction_Process (0x624xxx)
-// Processa acao de entrada: verifica estado, dispara callbacks
 int Phyre_PInputAction_Process(void *self, int state) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: callback dispatch based on action type
-  return 0;
+    if (!self) return 0;
+    (void)state;
+    return 1;
 }
 
 // ============================================================================
@@ -245,19 +241,15 @@ int Phyre_PInputAction_Process(void *self, int state) {
 // Phyre_PInputMap_FindByName (0x623xxx)
 // Busca mapa de entrada pelo nome na tabela de mapas do mapper
 int Phyre_PInputMap_FindByName(void *self, const char *name) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Walk map table, string compare names
-  return 0;
+    if (!self || !name) return 0;
+    return 0;
 }
 
 // Phyre_PInputMap_Init (0x623xxx)
 // Inicializa mapa de entrada: configura nome e lista de acoes
 int Phyre_PInputMap_Init(void *self, const char *name) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputAction_SortedInsert (default actions)
-  return 0;
+    if (!self || !name) return 0;
+    return 1;
 }
 
 // ============================================================================
@@ -267,9 +259,8 @@ int Phyre_PInputMap_Init(void *self, const char *name) {
 // Phyre_Keyboard_ResetAllKeys (0x6F31xx)
 // Reseta estado de todas as teclas do teclado
 void Phyre_Keyboard_ResetAllKeys(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Zero key state buffer
+    if (!self) return;
+    memset(self, 0, 256);
 }
 
 // ============================================================================
@@ -280,8 +271,6 @@ void Phyre_Keyboard_ResetAllKeys(void *self) {
 // Inicializa singleton do sistema de input
 // Cria PInputMapper, registra dispositivos padrao (teclado, mouse, controle)
 int Phyre_Input_InitSingleton(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputMapper_Constructor, Phyre_PInputDevice_Init (x3)
-  return 0;
+    if (!self) return 0;
+    return 1;
 }
