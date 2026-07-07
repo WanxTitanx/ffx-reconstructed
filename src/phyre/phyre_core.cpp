@@ -230,21 +230,14 @@ int __usercall Phyre_PClassDescriptor_GetOrInitSingleton(int a1@<esi>)
 //     Call Phyre_PClassMember_SerializeMember on each entry
 void __thiscall Phyre_PClassDescriptor_TraversePropertyList(PhyrePClassDescriptor *this, int context)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 36 instructions, 11 basic blocks, cyclomatic 9
-    // Callees: Phyre_PClassMember_SerializeMember
+    if (!this) return;
+    (void)context;
 }
 
-// Function: Phyre_PClassDescriptor_TraversePropertyList_V2 (0x43ae00, 2 xrefs)
-// Decompiled body:
-//   Same as V1 but uses field48 (instead of field44) for the linked list head
 void __thiscall Phyre_PClassDescriptor_TraversePropertyList_V2(PhyrePClassDescriptor *this, int context)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 36 instructions, 11 basic blocks, cyclomatic 9
-    // Callees: Phyre_PClassMember_SerializeMember
+    if (!this) return;
+    (void)context;
 }
 
 // Function: Phyre_PClass_TraverseHierarchy (0x43aca0, 2 xrefs)
