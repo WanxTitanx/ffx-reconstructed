@@ -1249,10 +1249,8 @@ void *__stdcall PThreadPool_GetGlobal_C0B95C()
 //   Le de campo interno this->maxThreadCount.
 int __thiscall PThreadPool_GetMaxThreadCount(void *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 1 basic block, accessor
-    return 0;
+    if (!this) return 0;
+    return g_ThreadPool_MaxCount;
 }
 
 // Function: Phyre_ThreadPool_GetSingleton (0x44CE10, ~20 xrefs)
