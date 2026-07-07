@@ -7,6 +7,41 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.21.0.0] - 2026-07-07
+
+### Added — FFX_System_Host reconstruction (69096 bytes / 0x10DE8)
+- **Constructor fully mapped** from decompilation at 0x64DDB0
+- 33 named sub-regions: vfptr, cursorRingState, 5 PCallers, 5 PCameraPerspective, 3 PCameraOrthographic, ShaderPreprocessor×2, PInstanceList×7, PCluster arrays (64+16+16+16), mutex, color correction
+- Applied to both IDA DB (struct FFX_System_Host) and ffx_structs.h (typedef with static_assert)
+- Decompilation now reads `this->m_perspCam1` instead of `*((DWORD*)this+56)` — affects hundreds of functions
+
+### Added — 3 new Phyre types from .rdata extraction
+- ClothInstancingDynamicMesh, ClothInstancingDynamicMeshInstance, ShadowDynamicMeshInstance
+- Discovered at 0xB4A918-0xB4C25C via string extraction (0xB49000-0xB55000 batch)
+
+### Added — FFX_SteamAchievement enum (35 entries)
+- All 35 Steam achievements identified from .rdata strings
+- ACH_COMPLETION_OF_FFX through ACH_A_JOURNEY_WORTH_TAKING
+
+### Added — .rdata 0xB49000-0xB55000 extraction (1331 strings)
+Major discoveries:
+- **280 ATEL/PMCOM opcodes** (ppp*): pppDrawMdl, pppKe*, pppRand*, pppMatrix*, pppop_the_world, pppop_blink, etc.
+- **Source path confirmed**: `..\npart\eiProg\pppYanagi.c` — ATEL bytecode interpreter source
+- **Steam achievements**: 35 complete IDs
+- **FMOD audio**: full path system, mappers, 70+ error strings
+- **Flash debug UI**: freecamera.swf, invincible.swf, time_stop.swf, autobattle.swf
+- **PS2 legacy layer**: sceCd*, HDD install, pfs0:, sa_task, movie_str.c, movie_cd.c
+- **Virtuos developer strings**: build timestamp "Aug 18 2015 16:55:04", source paths
+- **Shadow system**: ShadowGaussianBlur, ShadowManager, shadow map targets
+- **Water/distortion materials**: foamStrength, circleWave*, sineWave*, SpecularMap
+
+### Discovery — MagicHostContextTable is a static function pointer array
+- The 2048-byte table at 0xC64CE8 is NOT populated at runtime
+- It contains 512 statically-compiled function pointers from the host EXE
+- Passed to magic.prx via `InitMagicPRX(&table)` in FFX_MagicFile_Start (0x9da7d0)
+- First 32 slots confirmed as FFX_Chr_* and FFX_Mseq_* callbacks (character/animation system)
+- FFX_MagicFile_BindDllExports (0x9db0f0) resolves InitMagicPRX via GetProcAddress
+
 ## [1.20.0.0] - 2026-07-07
 
 ### Added — 10 Phyre Physics types (DB + C++ simultaneously)

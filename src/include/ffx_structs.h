@@ -887,4 +887,50 @@ static_assert(sizeof(PPhysicsWorld) == 168, "");
 static_assert(sizeof(PPhysicsRigidBody) == 228, "");
 static_assert(sizeof(PPhysicsCharacterController) == 348, "");
 
+// =============================================================================
+// FFX_System_Host — 69096 bytes (0x10DE8)
+// The main field/battle scene host. Reconstructed from constructor at 0x64DDB0.
+// Contains: cursor ring state, 5 PCallers, 5 PCameraPerspective, 3 PCameraOrthographic,
+//           2 ShaderPreprocessors, 7 PInstanceLists, PCluster arrays (64+16+16+16),
+//           mutex, post-processing, color correction.
+// =============================================================================
+#pragma pack(push, 1)
+typedef struct FFX_System_Host {
+    void           *vfptr;                          // 0x0000
+    char            m_cursorRingState[32];          // 0x0004
+    unsigned short  m_flagsWord;                    // 0x0024
+    char            pad0026[2];                     // 0x0026
+    int             m_headerState[22];              // 0x0028
+    int             m_pcallers[5][4];               // 0x007C — 5 PCaller sub-structs
+    char            pad00CC[16];                    // 0x00CC
+    int             m_fieldDC;                      // 0x00DC
+    char            m_perspCam1[344];               // 0x00E0 — PCameraPerspective #1
+    int             m_field238;                     // 0x0238
+    char            m_perspCam2[348];               // 0x023C
+    char            m_perspCam3[344];               // 0x0398
+    char            m_orthoCam1[360];               // 0x04F0 — PCameraOrthographic #1
+    char            m_perspCam4[396];               // 0x0658
+    char            m_orthoCam2[344];               // 0x07E4
+    char            m_miscShared[40];               // 0x093C
+    char            m_shaderTypeArray[288];         // 0x0964 — 8 PShaderType entries
+    char            m_orthoCam3[344];               // 0x0A84
+    char            m_perspCam5[524];               // 0x0BDC
+    char            m_hostSubstruct[728];            // 0x0DE8 — FFX_System_Host_Substruct
+    int             m_fields10C0[9];                // 0x10C0
+    char            m_shaderPreprocs[172];           // 0x10E4 — 2 ShaderPreprocessors
+    char            m_treeAndLists[84];             // 0x1190 — RBTree + linked list
+    char            m_instanceLists5[400];           // 0x11E4 — 5 PInstanceLists
+    char            m_clusterArray64[5120];          // 0x1374 — 64 PCluster entries
+    char            m_gapAndInstLists67[416];        // 0x2774 — gap + 2 PInstanceLists
+    char            m_clusterArray16a[1280];         // 0x2914 — 16 PCluster
+    char            m_clusterArray16b[1280];         // 0x2E14
+    char            m_clusterArray16c[1280];         // 0x3314
+    char            m_gap3814[64];                   // 0x3814
+    int             m_fields3854[30];                // 0x3854 — buffer pool config
+    char            m_runtimeWorkspace[49152];       // 0x38CC — runtime render targets
+    char            m_postProcess[5400];             // 0xF8CC — post-proc, mutex, color
+} FFX_System_Host;
+#pragma pack(pop)
+
+static_assert(sizeof(FFX_System_Host) == 69096, "FFX_System_Host must be 69096 bytes (0x10DE8), actual: see error message");
 #endif // FFX_STRUCTS_H

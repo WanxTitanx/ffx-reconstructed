@@ -60,3 +60,4 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 - 94 vtables aplicadas no `.rdata` (5 restantes para v1.8.0.1)
 
 A DB **não** vai no repo (75MB binário). Apenas os scripts que a mutam vão em `scripts/ida/`.
+| v1.21.0.0 | 2026-07-07 | P13+P14 — FFX_System_Host reconstruido (69096B, 33 sub-regions do construtor 0x64DDB0) + 3 tipos Phyre novos (ClothInstancing, ShadowDynamicMesh) + FFX_SteamAchievement enum (35 entries) + .rdata 0xB49000-0xB55000 (1331 strings: 280 ATEL/PMCOM opcodes, pppYanagi.c, FMOD, Flash debug UI, PS2 legacy) + MagicHostContextTable = static 512-fn-ptr array |
