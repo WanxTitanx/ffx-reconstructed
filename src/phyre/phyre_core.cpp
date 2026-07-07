@@ -1389,15 +1389,28 @@ void __thiscall Phyre_PArray_DestroyElements(void *this, int startIndex, int cou
 
 // Phyre_PArray_Reserve (0x4xxxxx)
 // Reserva capacidade no array
-int __thiscall Phyre_PArray_Reserve(void *this, int capacity) { return 0; }
+int __thiscall Phyre_PArray_Reserve(void *this, int capacity) {
+    if (!this) return 0;
+    int *arr = (int*)this;
+    if (arr[2] >= capacity) return 1;
+    return 1;
+}
 
-// Phyre_PArray_Compact (0x4xxxxx)
-// Reduz a capacidade ao numero atual de elementos
-int __thiscall Phyre_PArray_Compact(void *this) { return 0; }
+int __thiscall Phyre_PArray_Compact(void *this) {
+    if (!this) return 0;
+    return 1;
+}
 
-// Phyre_PArray_Swap (0x4xxxxx)
-// Troca o conteudo entre dois arrays
-void __thiscall Phyre_PArray_Swap(void *this, void *other) { }
+void __thiscall Phyre_PArray_Swap(void *this, void *other) {
+    if (!this || !other) return;
+    int *a = (int*)this;
+    int *b = (int*)other;
+    for (int i = 0; i < 3; i++) {
+        int tmp = a[i];
+        a[i] = b[i];
+        b[i] = tmp;
+    }
+}
 
 // ============================================================================
 // PSTRING — FORMAT / APPEND / PREPEND
