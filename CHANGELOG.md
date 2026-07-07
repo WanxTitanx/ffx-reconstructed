@@ -7,6 +7,45 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.20.0.0] - 2026-07-07
+
+### Added — 10 Phyre Physics types (DB + C++ simultaneously)
+
+#### Physics structs declared in IDA DB
+All 10 types have sizes confirmed via `Phyre_PClassDescriptor_ctor` decompilation (the 4th argument is the type size):
+
+| Type                          | Size  | Evidence                              |
+| ----------------------------- | ----- | ------------------------------------- |
+| PPhysicsMaterial              | 12B   | `PClassDescriptor_ctor(..., 12, 4, ...)`  |
+| PPhysicsModel                 | 12B   | confirmed                              |
+| PPhysicsShape                 | 92B   | confirmed                              |
+| PPhysicsSphere                | 100B  | confirmed                              |
+| PPhysicsCylinder              | 108B  | confirmed                              |
+| PPhysicsCapsule               | 112B  | confirmed                              |
+| PPhysicsBox                   | 112B  | confirmed                              |
+| PPhysicsWorld                 | 168B  | confirmed                              |
+| PPhysicsRigidBody             | 228B  | confirmed                              |
+| PPhysicsCharacterController   | 348B  | confirmed                              |
+
+Each struct has `vfptr`, `m_refCount`, and physics-specific fields from .rdata string extraction.
+
+#### ffx_structs.h updated
+- All 10 physics structs added with `#pragma pack(push, 1)` + `static_assert` per type
+- Field names from .rdata extraction: m_friction, m_restitution, m_collisionGroup, m_dynamicFriction, m_gravity, m_mass, m_rigidBodyType, m_linearDamping, etc.
+
+### Added — .rdata extraction 0xB3D000-0xB49000 (1061 strings)
+
+Major discoveries in this batch:
+- **Post-processing pipeline** (~80 strings): PhyreColorCorrection, PhyreMLAA, PhyreFXAA, SMAA, HDAO, DepthOfField, Glow, ScreenFade, UnSharpMask, BrightnessShader
+- **Character lighting**: AtelLight0-3 (ATEL drives 4 runtime light slots), CharacterShadeCoeff, USE_CHARACTER_LIGHTING
+- **Character IDs**: Tidus(0), Yuna(1), Auron(2), Kimari(3), Wakka(4), Lulu(5), Rikk(6), Seymour(7)
+- **Battle debug**: LoveParam (affection system), Enable Mon Input (monster AI debug), FullItem/FullCommand/FullLevel cheats
+- **Al Bhed encoding**: ffxsjistbl_jp/us/kr/ch.bin, data.albhedrikku
+- **ESC Menu**: Full ActionScript callback registry (onEscClose, showEscMenu, EscMenuResume, etc.)
+- **Steam integration**: SteamAPI_Init success/fail strings
+- **Vita title IDs**: PCSG00219, PCSE00293, PCSB00395, PCSH00042
+- **VSP shader modes**: VSP_GROUND_SPECIAL, VSP_Z_BUF_CLEAR, VSP_GRAY_SCALE, VSP_NOISE_BLUR_ADDITIVE
+
 ## [1.19.0.0] - 2026-07-07
 
 ### Added — ffx_addresses.h sync total (DB + C++ simultaneamente)

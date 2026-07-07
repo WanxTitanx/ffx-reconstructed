@@ -689,4 +689,202 @@ typedef struct FFXBattleActorData {
 
 static_assert(sizeof(FFXBattleActorData) == 0xF90, "FFXBattleActorData must be 3984 bytes (FFX_BATTLE_CHR_STRIDE)");
 
+// =============================================================================
+// Phyre Physics Types — sizes confirmed via PClassDescriptor registration
+// Fields from .rdata string extraction (0xB31000-0xB49000)
+// =============================================================================
+
+#pragma pack(push, 1)
+typedef struct PPhysicsMaterial {        // 12 bytes
+    int             vfptr;
+    int             m_friction;
+    int             m_restitution;
+} PPhysicsMaterial;
+
+typedef struct PPhysicsModel {           // 12 bytes
+    int             vfptr;
+    int             m_rigidBodies;
+    int             m_shapes;
+} PPhysicsModel;
+
+typedef struct PPhysicsShape {          // 92 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            pad_rest[52];
+} PPhysicsShape;
+
+typedef struct PPhysicsSphere {         // 100 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            pad_rest[60];
+} PPhysicsSphere;
+
+typedef struct PPhysicsCylinder {       // 108 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            pad_rest[68];
+} PPhysicsCylinder;
+
+typedef struct PPhysicsCapsule {        // 112 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            pad_rest[72];
+} PPhysicsCapsule;
+
+typedef struct PPhysicsBox {            // 112 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            pad_rest[72];
+} PPhysicsBox;
+
+typedef struct PPhysicsWorld {          // 168 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_physics;
+    char            pad8[4];
+    int             m_collisionConfig;
+    int             m_dispatcher;
+    int             m_broadphase;
+    int             m_constraintSolver;
+    int             m_collisionWorld;
+    int             m_dynamicsWorld;
+    int             m_gravityX;
+    int             m_gravityY;
+    int             m_gravityZ;
+    int             m_simulationSpeed;
+    int             m_subStepCount;
+    int             m_maxSubSteps;
+    int             m_fixedTimeStep;
+    int             m_debugDrawFlags;
+    int             m_debugDrawMode;
+    int             m_contactBreakingThreshold;
+    int             m_splitImpulse;
+    int             m_splitImpulsePenetrationThreshold;
+    int             m_enableCcd;
+    int             m_ccdMotionThreshold;
+    int             m_ccdSweptSphereRadius;
+    int             m_worldBoundsMinX;
+    int             m_worldBoundsMinY;
+    int             m_worldBoundsMinZ;
+    int             m_worldBoundsMaxX;
+    int             m_worldBoundsMaxY;
+    int             m_worldBoundsMaxZ;
+    int             m_physicsFlags;
+    int             m_collisionFilterGroups;
+    int             m_collisionFilterMasks;
+    int             m_debugDrawer;
+    char            pad_rest[28];
+} PPhysicsWorld;
+
+typedef struct PPhysicsRigidBody {      // 228 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_shape;
+    char            pad8[8];
+    int             m_collisionGroup;
+    int             m_collisionFilterMask;
+    int             m_dynamicFriction;
+    int             m_staticFriction;
+    int             m_restitution;
+    char            padA[4];
+    int             m_rigidBodies;
+    int             m_equationCoefficient;
+    int             m_mass;
+    int             m_rigidBodyType;
+    char            m_massFrameTransform[16];
+    char            m_initialPosition[16];
+    char            m_initialOrientation[16];
+    char            m_inertiaTensor[16];
+    char            m_initialLinearVelocity[16];
+    char            m_initialAngularVelocity[16];
+    int             m_shapes;
+    int             m_linearDamping;
+    int             m_angularDamping;
+    int             m_model;
+    int             m_nextKinematicRigidBody;
+    int             m_collisionGroup2;
+    char            pad_rest[48];
+} PPhysicsRigidBody;
+
+typedef struct PPhysicsCharacterController { // 348 bytes
+    int             vfptr;
+    int             m_refCount;
+    int             m_halfExtents;
+    char            m_radiusArray[8];
+    int             m_collisionRadius;
+    int             m_targetDistance;
+    int             m_targetHeight;
+    int             m_contactEpsilon;
+    int             m_minimumCameraDistance;
+    int             m_smoothingRate;
+    int             m_springTension;
+    int             m_nearCameraYAdjust;
+    char            pad4[4];
+    int             m_gravity;
+    int             m_targetNode;
+    int             m_targetWorldMatrix;
+    char            m_rotate[16];
+    char            m_right[16];
+    char            m_forward[16];
+    char            m_velocity[16];
+    char            m_jump[16];
+    int             m_isOnGround;
+    int             m_maxSlopeAngle;
+    int             m_startPosition;
+    int             m_jumpHeight;
+    int             m_radius;
+    int             m_world;
+    int             m_graphicsOffset;
+    int             m_invGraphicsOffset;
+    int             m_scriptHandler;
+    char            pad_rest[164];
+} PPhysicsCharacterController;
+#pragma pack(pop)
+
+static_assert(sizeof(PPhysicsMaterial) == 12, "");
+static_assert(sizeof(PPhysicsModel) == 12, "");
+static_assert(sizeof(PPhysicsShape) == 92, "");
+static_assert(sizeof(PPhysicsSphere) == 100, "");
+static_assert(sizeof(PPhysicsCylinder) == 108, "");
+static_assert(sizeof(PPhysicsCapsule) == 112, "");
+static_assert(sizeof(PPhysicsBox) == 112, "");
+static_assert(sizeof(PPhysicsWorld) == 168, "");
+static_assert(sizeof(PPhysicsRigidBody) == 228, "");
+static_assert(sizeof(PPhysicsCharacterController) == 348, "");
+
 #endif // FFX_STRUCTS_H
