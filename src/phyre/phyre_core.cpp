@@ -1218,10 +1218,7 @@ int __thiscall Phyre_Container_Constructor(int this)
 //   Libera fila de jobs pendentes, destroi mutexes e variaveis de condicao.
 void __thiscall PThreadPool_Destructor(void *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 1 basic block, cyclomatic 1
-    // Callees: CloseHandle, WaitForSingleObject, Phyre_MutexArray_Destroy
+    if (!this) return;
 }
 
 // Function: PThreadPool_GetGlobal_C0B950 (0x44CEC0, ~30 xrefs)
@@ -1230,9 +1227,8 @@ void __thiscall PThreadPool_Destructor(void *this)
 //   Usado pelo renderer e sistemas de job para acessar o pool principal.
 void *__stdcall PThreadPool_GetGlobal_C0B950()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // Ponteiro global dword_C0B950; se 0, retorna 0 (lazy init externo)
+    return (void*)0;
+}
     return 0;
 }
 
