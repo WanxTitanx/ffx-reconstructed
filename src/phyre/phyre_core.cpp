@@ -1384,11 +1384,24 @@ int __thiscall Phyre_Renderer_ThreadPoolJob_Execute(
 
 // Phyre_PArray_ConstructFromData (0x4xxxxx)
 // Constroi um PArray a partir de dados brutos (ponteiro + contagem)
-int __thiscall Phyre_PArray_ConstructFromData(void *this, void *data, int count, int elementSize) { return 0; }
+int __thiscall Phyre_PArray_ConstructFromData(void *this, void *data, int count, int elementSize) {
+    if (!this || !data || count <= 0 || elementSize <= 0) return 0;
+    int *arr = (int*)this;
+    arr[0] = (int)data;
+    arr[1] = count;
+    arr[2] = count;
+    return 1;
+}
 
-// Phyre_PArray_DestroyElements (0x4xxxxx)
-// Invoca destrutores nos elementos do array sem liberar o buffer
-void __thiscall Phyre_PArray_DestroyElements(void *this, int startIndex, int count) { }
+void __thiscall Phyre_PArray_DestroyElements(void *this, int startIndex, int count) {
+    if (!this) return;
+    int *arr = (int*)this;
+    if (startIndex < 0 || count <= 0) return;
+    if (startIndex + count > arr[1]) count = arr[1] - startIndex;
+    if (count > 0) {
+        memset((void*)(arr[0] + startIndex * 4), 0, count * 4);
+    }
+}
 
 // Phyre_PArray_Reserve (0x4xxxxx)
 // Reserva capacidade no array
