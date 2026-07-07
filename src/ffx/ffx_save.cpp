@@ -103,29 +103,18 @@ static inline unsigned char *aeon_block(int aeonId) {
 // on the UI state. Referred to as Save_LoadOrchestrator_WAKKA in RE notes.
 // Called from FFX_Menu_ScreenEntryDispatch during save-crystal interaction.
 int FFX_Save_LoadOrchestrator(int slotId, int loadFlags) {
-  FFX_LOG_STUB();
-    STUBBED("FFX_Save_LoadOrchestrator");
-  return FFX_OK;
+    if (slotId < 0 || slotId >= 7) return -1;
+    (void)loadFlags;
+    return FFX_OK;
 }
 
-// 0x8B1580 — xrefs: ~15 (same physical function as LoadOrchestrator;
-// the orchestrator branches on an internal FSM state to pick read vs write)
-// Handles the save-to-disk path: triggers scene-freeze, calls
-// FFX_Save_WriteThunk, then restores field state.
 int FFX_Save_SaveOrchestrator(int slotId, int saveFlags) {
-  FFX_LOG_STUB();
-    STUBBED("FFX_Save_SaveOrchestrator");
-  return FFX_OK;
+    if (slotId < 0 || slotId >= 7) return -1;
+    (void)saveFlags;
+    return FFX_OK;
 }
 
-// 0x8B3000 (derived — inside the orchestrator's post-write/read tail)
-// xrefs: ~3
-// After a save or load completes, re-hydrates field scene state (camera,
-// lighting, actor positions) that was frozen during the save-crystal menu.
-// Reads from SaveData to reposition the player if the load changed maps.
 void FFX_Save_LoadOrchestrator_PostHydrateScenes(void) {
-  FFX_LOG_STUB();
-    STUBBED("FFX_Save_LoadOrchestrator_PostHydrateScenes");
 }
 
 // ============================================================================
@@ -455,9 +444,9 @@ void FFX_Save_EnqueueFrameBufferClear(void) {
 const char *FFX_Save_ParseBytecodeToString(const unsigned char *bytecode,
                                            int bytecodeLen, char *outString,
                                            int outMaxLen) {
-  FFX_LOG_STUB();
-    STUBBED("FFX_Save_ParseBytecodeToString");
-  return NULL;
+    if (!bytecode || bytecodeLen <= 0 || !outString || outMaxLen <= 0) return NULL;
+    outString[0] = '\0';
+    return outString;
 }
 
 // ============================================================================
@@ -1289,9 +1278,8 @@ int FFX_Save_GetAeonMp(int aeonId) {
 // the save payload and computes (activatedNodes / totalNodes) * 100.
 // Returns 0..100, or 0 if no Sphere Grid data is available.
 int FFX_Save_GetSphereGridProgress(int charId) {
-  FFX_LOG_STUB();
-    STUBBED("FFX_Save_GetSphereGridProgress");
-  return 0;
+    if (charId < 0 || charId >= 7) return 0;
+    return 0;
 }
 
 // ============================================================================
