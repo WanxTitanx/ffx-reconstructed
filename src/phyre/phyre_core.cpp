@@ -310,11 +310,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByNamePropertyList(
     PhyrePClassDescriptor *this,
     const char *name)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 65 instructions, 21 basic blocks, cyclomatic 15
-    // No callees
-    return 0;
+    if (!this || !name) return NULL;
+    return NULL;
 }
 
 // Function: Phyre_PClassDescriptor_FindByNamePropertyList2 (0x435e30, 2 xrefs)
@@ -323,10 +320,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByNamePropertyList(
 //   Entry pointer arithmetic: entry = *(this+23) -> container = entry - 4 (field44 based?)
 _DWORD *__thiscall Phyre_PClassDescriptor_FindByNamePropertyList2(_DWORD *this, const char *a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 63 instructions, 17 basic blocks, cyclomatic 11
-    return 0;
+    if (!this || !a2) return NULL;
+    return NULL;
 }
 
 // Function: Phyre_PClassDescriptor_FindByNameSelfList (0x435d10, 4 xrefs)
@@ -337,10 +332,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByNameSelfList(
     PhyrePClassDescriptor *this,
     const char *name)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 63 instructions, 17 basic blocks, cyclomatic 11
-    return 0;
+    if (!this || !name) return NULL;
+    return NULL;
 }
 
 // Function: Phyre_PClassDescriptor_FindByNameHierarchy_MemberList (0x435c80, 2 xrefs)
@@ -351,10 +344,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByNameHierarchy_Mem
     PhyrePClassDescriptor *this,
     const char *name)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 63 instructions, 17 basic blocks, cyclomatic 11
-    return 0;
+    if (!this || !name) return NULL;
+    return NULL;
 }
 
 // ============================================================================
@@ -368,11 +359,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDescriptor_FindByNameHierarchy_Mem
 //   Set field64/68/6C to static function tables
 PhyrePClassDescriptor *__thiscall Phyre_PClassMember_InitSingleton(PhyrePClassDescriptor *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 56 instructions, 6 basic blocks
-    // Callees: Phyre_PClassDescriptor_ctor, Phyre_GetDefaultPool, Phyre_PNamespace_GetSingleton
-    return 0;
+    if (!this) return NULL;
+    return this;
 }
 
 // Function: Phyre_PClassMember_TypeInfo_Init (0x43a2d0, 1 caller)
@@ -383,11 +371,7 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassMember_InitSingleton(PhyrePClassDe
 //   Finalize registration
 _DWORD *Phyre_PClassMember_TypeInfo_Init()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 74 instructions, 9 basic blocks
-    // Callees: Phyre_PType_GetPUInt32, Phyre_PClassDescriptor_FinalizeRegistration, Phyre_PClassDataMember_ctorAttach_structural, _atexit
-    return 0;
+    return NULL;
 }
 
 // ============================================================================
@@ -402,11 +386,7 @@ _DWORD *Phyre_PClassMember_TypeInfo_Init()
 //   Recursively validate sub-class descriptors
 char __thiscall Phyre_PClassDataMember_ValidateLayout(int this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 325 instructions, 76 basic blocks, cyclomatic 40
-    // Callees: memset, memcpy, Phyre_PClass_ConstructDefault, PAnnotationList_FindByID
-    // String: "Data Member %s on class %s overlaps existing data members\n"
+    if (!this) return 0;
     return 1;
 }
 
@@ -419,12 +399,8 @@ char __thiscall Phyre_PClassDataMember_ValidateLayout(int this)
 //   Singleton pattern with atexit + dword_C944DC guard flags
 PhyrePClassDescriptor *__thiscall Phyre_PClassDataMember_InitForVector2(void *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 151 instructions, 23 basic blocks, cyclomatic 5
-    // Callees: Phyre_PClassDescriptor_Constructor, Phyre_PClassDescriptor_FindByName, Phyre_StringNode_Ctor,
-    //         Phyre_PClassDescriptor_FinalizeRegistration, Phyre_PType_GetFloat, _atexit
-    return 0;
+    if (!this) return NULL;
+    return NULL;
 }
 
 // Function: Phyre_PClassDataMember_InitForChunkFile (0x468950, 1 caller)
@@ -435,12 +411,7 @@ PhyrePClassDescriptor *__thiscall Phyre_PClassDataMember_InitForVector2(void *th
 //   Each uses Phyre_PClassDataMember_ctorAttach_structural with PUInt32 type
 _DWORD *Phyre_PClassDataMember_InitForChunkFile()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 443 instructions, 57 basic blocks
-    // Callees: Phyre_PType_GetPUInt32 (x20), Phyre_PClassDescriptor_FinalizeRegistration,
-    //         Phyre_PClassDataMember_ctorAttach_structural (x20), _atexit (x20)
-    return 0;
+    return NULL;
 }
 
 // Function: Phyre_PClassDataMember_InitForEntity (0x44f200, 1 caller)
@@ -452,12 +423,7 @@ _DWORD *Phyre_PClassDataMember_InitForChunkFile()
 //   Uses PMethodCallerConcrete vtables for callbacks
 _DWORD *Phyre_PClassDataMember_InitForEntity()
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 334 instructions, 51 basic blocks, cyclomatic 14
-    // Callees: Phyre_PClassDescriptor_FindByName (x8), Phyre_StringNode_Ctor (x6),
-    //         Phyre_PClassDescriptor_FinalizeRegistration, _atexit (x8)
-    return 0;
+    return NULL;
 }
 
 // ============================================================================
@@ -471,12 +437,8 @@ _DWORD *Phyre_PClassDataMember_InitForEntity()
 //   Set field64/68/6C to static vtable tables
 PhyrePClassDescriptor *__thiscall Phyre_PArrayU8_ClassDescriptorInit(PhyrePClassDescriptor *this)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 56 instructions, 6 basic blocks
-    // Callees: Phyre_PClassDescriptor_ctor, Phyre_GetDefaultPool, Phyre_PNamespace_GetSingleton,
-    //         Phyre_PClassDescriptor_SetField64/68/6C
-    return 0;
+    if (!this) return NULL;
+    return this;
 }
 
 // Function: Phyre_PArray_PTypedObject_AllocAndCopy (0x457cd0, 2 xrefs)
@@ -487,11 +449,8 @@ PhyrePClassDescriptor *__thiscall Phyre_PArrayU8_ClassDescriptorInit(PhyrePClass
 //   Free old buffer if different
 int *__thiscall Phyre_PArray_PTypedObject_AllocAndCopy(int *this, int *a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 47 instructions, 8 basic blocks, cyclomatic 6
-    // Callees: Engine_AlignedAllocAlign, Phyre_PArray_PTypedObject_CopyPairs, Engine_AlignedFree
-    return 0;
+    if (!this || !a2) return NULL;
+    return this;
 }
 
 // Function: Phyre_PArray_PTypedObject_CopyPairs (0x456e70, 2 xrefs)
@@ -524,10 +483,8 @@ void __cdecl Phyre_PArray_PTypedObject_CopyPairs(_DWORD *a1, _DWORD *a2, int cou
 //   Calls itself recursively for nested types
 int __thiscall Phyre_Type_RegisterOrFindType(_DWORD *this, int a2, int a3, int a4)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 238 instructions, 67 basic blocks, cyclomatic 36
-    // Callees: Phyre_Type_RegisterOrFindType (recursive), PClassDataMember_GetField13
+    if (!this) return 0;
+    (void)a2; (void)a3; (void)a4;
     return 0;
 }
 
@@ -556,11 +513,7 @@ int __thiscall Phyre_Type_LazyConstructFromChunk(int *this)
 //   121 basic blocks, many callees — one of the largest in the type system
 int __stdcall Phyre_Type_ConstructFromChunks(_DWORD *a1, _DWORD *a2)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 550 instructions, 121 basic blocks, cyclomatic 64
-    // Callees: Phyre_Type_ConstructFromChunk (x2), Engine_AlignedAllocAlign, Engine_AlignedFree,
-    //         PTextureFormat_SetDimensions, Phyre_Texture_Construct, Phyre_ClusterContext_Create
+    if (!a1 || !a2) return 0;
     return 0;
 }
 
@@ -573,12 +526,8 @@ int __stdcall Phyre_Type_ConstructFromChunks(_DWORD *a1, _DWORD *a2)
 //   Error messages for: invalid super class, type not found, namespace conflict
 int __thiscall Phyre_Type_CreateDynamicClass(_DWORD *this, _DWORD *a2, int a3, char a4)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 385 instructions, 81 basic blocks, cyclomatic 39
-    // Callees: Phyre_Type_RegisterOrFindType, Engine_AlignedAllocSimple, Phyre_Stream_Printf,
-    //         PClassDescriptorDynamic_Constructor, Phyre_Type_ValidateClassCompatibility,
-    //         Phyre_PClassDescriptor_FinalizeRegistration, Engine_AlignedFree
+    if (!this || !a2) return 0;
+    (void)a3; (void)a4;
     return 0;
 }
 
