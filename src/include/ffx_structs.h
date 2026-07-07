@@ -70,6 +70,34 @@ typedef struct PhyrePClassDescriptor {
 } PhyrePClassDescriptor;
 
 // ============================================================================
+// PCAMERA — Camera with view + projection matrices (208 bytes)
+// Layout inferred from decompile of:
+//   - PCameraOrthographic_Constructor (0x455c00)
+//   - PCameraProjection_InitIdentity (0x454a30)
+//   - PCameraOrthographic_UpdateProjectionMatrix (0x4560b0)
+//   - Phyre_Camera_ComputeProjectionMatrix (0x454330)
+//   - PCamera_SetFieldX/Y/Z (0x454ee0, 0x454f00, 0x454f20)
+//   - PCamera_SetField3 (0x452870)
+//   - PCameraOrthographic_SetAspectRatio (0x456010)
+// Init values from Phyre_ViewMatrix_InitIdentity:
+//   view = identity 3x4, projection = identity 4x4,
+//   viewProjection = identity 4x4, near=0.1, far=10000.0
+// ============================================================================
+typedef struct PhyrePCamera {
+    void *vfptr;                       // 0x00 — vtable
+    float mViewMatrix[12];             // 0x04-0x33 — affine 3x4 view matrix
+    float mProjectionMatrix[16];       // 0x34-0x73 — 4x4 projection matrix
+    float mViewProjectionMatrix[16];   // 0x74-0xB3 — 4x4 view*projection result
+    int m_flags;                       // 0xB4 — integer flags (DWORD)
+    float m_nearPlane;                 // 0xB8 — near clip plane (default 0.1)
+    float m_farPlane;                  // 0xBC — far clip plane (default 10000.0)
+    float m_fieldC0;                   // 0xC0 — reserved/unknown
+    float m_fieldC4;                   // 0xC4 — reserved/unknown
+    float m_fieldC8;                   // 0xC8 — reserved/unknown
+    float m_fieldCC;                   // 0xCC — reserved/unknown
+} PhyrePCamera;
+
+// ============================================================================
 // PCLASS MEMBER — Single class data member (20 bytes)
 // Layout confirmed from Phyre_PClassMember_InitSingleton (0x43a050)
 // ============================================================================

@@ -7,6 +7,21 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.13.0.0] - 2026-07-07
+
+### Added
+- **PhyrePCamera struct** (208 bytes) fully inferred via decompile of 8 functions:
+  - View matrix (3x4, 12 floats, offset 0x04-0x33)
+  - Projection matrix (4x4, 16 floats, offset 0x34-0x73)
+  - ViewProjection matrix (4x4, 16 floats, offset 0x74-0xB3)
+  - m_flags (int, 0xB4), m_nearPlane (float, 0xB8, default 0.1), m_farPlane (float, 0xBC, default 10000.0)
+- **DB IDA**: PhyrePCamera type applied via `idalib_declare_type` (49 unnamed fields → 11 named members)
+- **6 PhyreCamera tests**: size, view matrix offset, projection offset, near/far planes, flags, view-projection layout
+- Test count: 22 → 28 (6 suites)
+
+### Changed
+- `ffx_structs.h`: added PhyrePCamera typedef with documented layout
+
 ## [1.12.0.0] - 2026-07-07
 
 ### Added

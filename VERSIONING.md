@@ -30,6 +30,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.10.0.0 | 2026-07-07 | P3 — Battle HUD rendering (HP/MP/Overdrive bars) + 6 PClassDescriptor funcs real-implemented + 4 structs renomeados na DB (PhyrePClassMember, PhyrePResult, PhyrePNamespace, PhyrePRenderer) + ffx_structs.h synced |
 | v1.11.0.0 | 2026-07-07 | P4 — 53 asserts removidos de phyre_render.cpp (safe no-op) + .rdata extraction PoC (desafio DeepSeek: IMPOSSIVEL -> POSSIVEL) + 4 testes rdata_dump |
 | v1.12.0.0 | 2026-07-07 | P5 — 3 ThreadPool setters + PArray_Reserve/Compact/Swap + PString_Format + 8 testes PhyreString (22/22 total) |
+| v1.13.0.0 | 2026-07-07 | P6 — PhyrePCamera struct inferred via decompile (49 fields → 3 matrizes + near/far) + DB type applied + 6 PhyreCamera tests (28/28 total) |
 
 ## Próximas metas
 
