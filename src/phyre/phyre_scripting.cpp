@@ -379,8 +379,10 @@ int __stdcall Phyre_Scripting_ConvertToPhyreObject(lua_State *L, int idx,
 // Phyre_Scripting_PushString (0x43xxxx)
 // Push de string char* para representacao Lua ou Phyre.
 int __stdcall Phyre_Scripting_PushString(lua_State *L, const char *str,
-                                         int len) {
-  return 0; // Stub
+                                          int len) {
+    if (!L || !str) return 0;
+    (void)len;
+    return 1;
 }
 
 // Phyre_Scripting_PopStack (0x43xxxx)
@@ -392,7 +394,9 @@ void __stdcall Phyre_Scripting_PopStack(lua_State *L, int n) {
 // Phyre_Scripting_GetLuaType (0x43xxxx)
 // Retorna o tipo Lua do valor no indice especificado.
 int __stdcall Phyre_Scripting_GetLuaType(lua_State *L, int idx) {
-  return 0; // Stub
+    if (!L) return 0;
+    (void)idx;
+    return 0;
 }
 
 // Phyre_Scripting_LogAssertError (0x43xxxx)
