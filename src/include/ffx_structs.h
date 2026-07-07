@@ -30,44 +30,43 @@ typedef uint32_t    _BOOL;
 // When populated, they point to the first/last entry in the list.
 // ============================================================================
 typedef struct PhyrePClassDescriptor {
-    // Vtable pointer (0x00)
-    int *vfptr;             // 0x00 — vtable (PObject base)
-    int field4;             // 0x04
-    int field8;             // 0x08
-    int fieldC;             // 0x0C
-    int m_pClassDescriptor; // 0x10 — PClassDescriptor*
-    int m_pBaseClass;       // 0x14 — PClassDescriptor* (parent)
+    int *vfptr;             // 0x00
+    int m_namespaceList;    // 0x04
+    int m_namespaceListPrev; // 0x08
+    int m_nameString;       // 0x0C
+    int m_pClassDescriptor; // 0x10
+    int m_pBaseClass;       // 0x14
     const char *m_pClassName; // 0x18
-    int m_typeSize;         // 0x1C — size of type in bytes
+    int m_typeSize;         // 0x1C
     int m_totalSize;        // 0x20
-    int field24;            // 0x24
-    int field28;            // 0x28
-    int field2C;            // 0x2C
-    int field30;            // 0x30
-    int field34;            // 0x34
-    int field38;            // 0x38
+    int m_alignSize;        // 0x24
+    int m_classVersion;     // 0x28
+    int m_propListHead;     // 0x2C
+    int m_pSerializer;      // 0x30
+    int m_linkedListHead2;  // 0x34
+    int m_flags2;           // 0x38
     int m_pNamespace;       // 0x3C
     int m_pParentCD;        // 0x40
-    int field44;            // 0x44
-    int field48;            // 0x48
+    int m_propertyList;     // 0x44
+    int m_propertyCount;    // 0x48
     int linkedList;         // 0x4C
-    int field50;            // 0x50
-    int field54;            // 0x54
-    int field58;            // 0x58
-    int field5C;            // 0x5C
-    int field60;            // 0x60
+    int m_linkedListTail;   // 0x50
+    int m_memberListHead;   // 0x54
+    int m_memberListTail;   // 0x58
+    int m_propertyListV2;   // 0x5C
+    int m_propListV2Count;  // 0x60
     int m_pInstanceData;    // 0x64
     int m_pInitData;        // 0x68
-    int field6C;            // 0x6C
+    int m_pTypeTable;       // 0x6C
     int m_cachedTotalSize;  // 0x70
-    int field74;            // 0x74
-    int field78;            // 0x78
+    int m_pDefaultValue;    // 0x74
+    int m_pDefaultValue2;   // 0x78
     int m_refCount;         // 0x7C
     int m_regState;         // 0x80
-    int m_field84;          // 0x84
+    int m_flags;            // 0x84
     int m_propCapacity;     // 0x88
     int m_propCount;        // 0x8C
-    int m_flags;            // 0x90
+    int m_padding;          // 0x90
 } PhyrePClassDescriptor;
 
 // ============================================================================

@@ -14,6 +14,7 @@ set(CMAKE_EXE_LINKER_FLAGS "/LTCG /SUBSYSTEM:WINDOWS")
 set(FFX_SOURCES
     src/ffx/main.cpp
     src/ffx/ffx_battle.cpp
+    src/ffx/ffx_battle_hud.cpp
     src/ffx/ffx_field.cpp
     src/ffx/ffx_menu.cpp
     src/ffx/ffx_save.cpp

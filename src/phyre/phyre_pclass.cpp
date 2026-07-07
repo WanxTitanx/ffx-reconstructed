@@ -16,13 +16,33 @@ void Phyre_PClassDescriptor_Destructor(PhyrePClassDescriptor*s){}
 int Phyre_PClassDescriptor_TraverseWithFlag(PhyrePClassDescriptor*s,int f){return 0;}
 int Phyre_PClassDescriptor_FindByName(PhyrePClassDescriptor*s,const char*n){return 0;}
 int Phyre_PClassDescriptor_FindByNamePropertyList(PhyrePClassDescriptor*s,const char*n){return 0;}
-int Phyre_PClassDescriptor_GetTotalSize(PhyrePClassDescriptor*s){return 0;}
-int Phyre_PClassDescriptor_GetMemberCount(PhyrePClassDescriptor*s){return 0;}
+int Phyre_PClassDescriptor_GetTotalSize(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    return s->m_totalSize ? s->m_totalSize : s->m_cachedTotalSize;
+}
+int Phyre_PClassDescriptor_GetMemberCount(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    return s->m_propCount;
+}
 int Phyre_PClassDescriptor_FinalizeRegistration(PhyrePClassDescriptor*s){return 0;}
-int Phyre_PClassDescriptor_IsRegistered(PhyrePClassDescriptor*s){return 0;}
-int Phyre_PClassDescriptor_Unregister(PhyrePClassDescriptor*s){return 0;}
-int Phyre_PClassDescriptor_RegisterAll(PhyrePClassDescriptor*s){return 0;}
-int Phyre_PClassDescriptor_CalcLayoutSize(PhyrePClassDescriptor*s){return 0;}
+int Phyre_PClassDescriptor_IsRegistered(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    return s->m_regState != 0;
+}
+int Phyre_PClassDescriptor_Unregister(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    s->m_regState = 0;
+    return 1;
+}
+int Phyre_PClassDescriptor_RegisterAll(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    s->m_regState = 1;
+    return 1;
+}
+int Phyre_PClassDescriptor_CalcLayoutSize(PhyrePClassDescriptor*s){
+    if (!s) return 0;
+    return s->m_cachedTotalSize;
+}
 int Phyre_PClassDescriptor_TraversePropertyList(PhyrePClassDescriptor*s,int c){return 0;}
 int Phyre_PClassDescriptor_TraversePropertyList_V2(PhyrePClassDescriptor*s,int c){return 0;}
 PhyrePNamespace* Phyre_PNamespace_GetSingleton(void){return 0;}
