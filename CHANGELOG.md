@@ -7,6 +7,21 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.17.0.0] - 2026-07-07
+
+### Added
+- **PhyrePRendererBase analysis**: Confirmed struct is VIVA (164 bytes, 33 members). Constructor @ 0x5b47f0 initializes fields 0x0-0x5c explicitly. Two unnamed fields (m_nUnknown58@0x58, m_nUnknown5C@0x5c) confirmed as real fields (init zero in ctor, after m_pGlobalRenderTarget). 17 renderState_NN fields (0x60-0xa0) confirmed as contiguous block, not init in base ctor (populated dynamically). Inference confidence too low for rename — left as-is with analysis documented.
+
+### Investigated — Orphan Structs (4 confirmed dead)
+- **FFXEncounterState** (340 bytes): ZERO xrefs as type. Global MEMORY[0x112A929] accesses byte offsets up to 8159+ (~8KB struct), NOT 340 bytes. Struct layout does not match real global. **Orphan — incorrect reconstruction.**
+- **FFXMenu2DContext** (228 bytes, 57 fields): ZERO xrefs on all fields tested. Domain is alive (97+ FFX_Menu2D_* functions) but struct is disconnected — functions use raw offsets without stroff. All 57 fields already have names. **Orphan of type-info — struct not applied.**
+- **FFXBattleState** (184 bytes, 46 members): ZERO xrefs on 6 fields tested (4 named + 2 unnamed). g_pBattleState @ 0xcd8f28 has value=0x0 and 0 xrefs. Getters return addresses that don't have FFXBattleState type. **Ghost struct — no live instance.**
+- **PhyreScriptContext** (192 bytes, 48 fields): ZERO xrefs on 5 fields. Not an addressable symbol. No globals of this type. No strings reference it. Likely imported from SDK Phyre header without usage. **Orphan — imported type, never materialized.**
+
+### Strategy Pivot
+- Struct analysis via "fields sem nome" ranking proved inefficient: 4/5 targets were orphans. The ranking counted placeholder names, not real unnamed fields.
+- Pivoting to `.rdata` extraction (proven, no risks) and seeking live structs via different pattern (functions with raw offset access to globals, not type-library orphans).
+
 ## [1.16.0.0] - 2026-07-07
 
 ### Added

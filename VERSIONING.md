@@ -34,6 +34,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.14.0.0 | 2026-07-07 | P7 — **88/88 FFX_LOG_STUB eliminados (100%)** + FFXMagicHost 16 fields HIGH confidence aplicados no DB (slot_count, slot_records_ptr, is_multi_channel, channel_count, channel_mask, commit_prep_flag, buffer_chain_head, next_drawable_ptr, state_flags) |
 | v1.15.0.0 | 2026-07-07 | P8 — **FFX_System_Host discovery** (singleton 69KB, não FFXFieldMap 396B) + FFXBattleActorData struct (3984B) com offsets reais confirmados (HP@1488, maxHp@1428, status@1448-1455, activeFlag@3546) + FFXBtlActor/FFXActor identificados como structs órfãos sem xrefs |
 | v1.16.0.0 | 2026-07-07 | P8.2 — FFXBattleActorData expandido com 35+ fields de ALTA confiança (modelHandle, hasActiveAction, menuActionState, actionLockedFlag, commandStyle, overdriveActionState, overdriveLevel, reflectActiveFlag, mainStateMode, subStateMode, actorTurnState, turnSkipFlag, actionRingIndex, statusBitfieldA, etc.) |
+| v1.17.0.0 | 2026-07-07 | P9 — Struct analysis batch (5 subagentes paralelos): 4 orphans confirmados (FFXEncounterState, FFXMenu2DContext, FFXBattleState, PhyreScriptContext — todos zero xrefs) + PhyrePRendererBase confirmado vivo (2 fields unnamed, confiança baixa) + strategy pivot para .rdata extraction |
 
 ## Próximas metas
 
