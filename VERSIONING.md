@@ -36,6 +36,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.16.0.0 | 2026-07-07 | P8.2 — FFXBattleActorData expandido com 35+ fields de ALTA confiança (modelHandle, hasActiveAction, menuActionState, actionLockedFlag, commandStyle, overdriveActionState, overdriveLevel, reflectActiveFlag, mainStateMode, subStateMode, actorTurnState, turnSkipFlag, actionRingIndex, statusBitfieldA, etc.) |
 | v1.17.0.0 | 2026-07-07 | P9 — Struct analysis batch (5 subagentes paralelos): 4 orphans confirmados (FFXEncounterState, FFXMenu2DContext, FFXBattleState, PhyreScriptContext — todos zero xrefs) + PhyrePRendererBase confirmado vivo (2 fields unnamed, confiança baixa) + strategy pivot para .rdata extraction |
 | v1.18.0.0 | 2026-07-07 | P10 — FFXBattleActorData MAJOR expansion: 8 base stats nomeados (STR/DEF/MAG/MDEF/AGI/LUCK/EVA/ACC @ 0x5A8-0x5AF) + 6 charge levels + CTB fields + 4 effective stats DWORD + .rdata 48KB extraídos (40+ tipos Phyre) + 3 live globals documentados (g_pBattleContext 74 xrefs, g_pMenu2DContext 29 xrefs) |
+| v1.19.0.0 | 2026-07-07 | P11 — **ffx_addresses.h sync total**: 8 novos campos confirmados em FFXBattleActorData (overdriveCharge@0x5BC, nulTideBlock@0x60E, nulShockBlock@0x610, nulHolyBlock@0x613, nulDarkBlock@0x614, inlineActionId@0x72C, autoAbilities2@0x6BE, actionSlot@0xDE5) + struct byte-accurato com `static_assert(sizeof==0xF90)` + **ffx_rva.h gerado** (354 constexpr RVA defines em namespace FFX_RVA, organizados por seção) |
 
 ## Próximas metas
 

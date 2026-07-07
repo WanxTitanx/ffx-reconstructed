@@ -7,6 +7,38 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.19.0.0] - 2026-07-07
+
+### Added — ffx_addresses.h sync total (DB + C++ simultaneamente)
+
+**Strategy pivot**: User flagged that DB functions are already 95% named, so the real bottleneck is **struct reconstruction**. Started cross-referencing `ffx_addresses.h` (590 lines of confirmed RVAs from runtime hooks) against IDA DB to fill struct gaps — DB AND C++ header updated together, never one without the other.
+
+#### FFXBattleActorData — 8 new fields confirmed (DB + ffx_structs.h)
+- `overdriveCharge` @ 0x5BC — `RVA_FFX_BATTLE_OVR_CHARGE_ZERO_AFTER_ACTION` ("mov [+5BCh],0")
+- `nulTideBlock` @ 0x60E — `FFX_BATTLE_ACTOR_NUL_TIDE_BLOCK_OFF` (ATEL case 55, blocks Water/Ice/Lightning tier)
+- `nulShockBlock` @ 0x610 — `FFX_BATTLE_ACTOR_NUL_SHOCK_BLOCK_OFF` (ATEL case 56, blocks Fire/Thunder/Water tier)
+- `nulHolyBlock` @ 0x613 — `FFX_BATTLE_ACTOR_NUL_HOLY_BLOCK_OFF` (Radiant Ward)
+- `nulDarkBlock` @ 0x614 — `FFX_BATTLE_ACTOR_NUL_DARK_BLOCK_OFF` (Umbral Ward)
+- `inlineActionId` @ 0x72C — `FFX_BATTLE_ACTOR_INLINE_ACTION_OFF`
+- `autoAbilities2` @ 0x6BE — `FFX_MEMORY_CHR_AUTO_ABILITIES_2_OFF` (Double/Triple Drop bits)
+- `actionSlot` @ 0xDE5 — `FFX_BATTLE_ACTOR_ACTION_SLOT_OFF`
+
+#### ffx_structs.h — byte-accurate layout
+- Struct rewritten with `#pragma pack(push, 1)` and **`static_assert(sizeof(FFXBattleActorData) == 0xF90)`** — locks the layout to the canonical `FFX_BATTLE_CHR_STRIDE` forever
+- All 105 members now have explicit offset comments tied to IDA addresses
+- `padXXX[]` arrays sized to match exact byte count
+
+#### ffx_rva.h — NEW header (354 constexpr RVAs)
+- Auto-generated from `RuntimeTools/FfxHooksDll/shared/ffx_addresses.h` (590 lines)
+- 354 `static constexpr` entries in `namespace FFX_RVA`
+- Grouped by section (FMOD, Battle, SphereGrid, Field, Save, Menu2D, Heap, Scan, Item)
+- Covers: function RVAs, global pointers, struct field offsets, command IDs, element flags
+
+### DB IDA — FFXBattleActorData corrected
+- Previous declaration broke offsets (shifted 5426B instead of 3984B); rebuilt byte-accurate
+- 6 battle functions force-recompiled after struct fix
+- DB saved + backup `ffxoficial_post_p11_20260707_093000.i64`
+
 ## [1.18.0.0] - 2026-07-07
 
 ### Added — FFXBattleActorData MAJOR expansion (8 stats + CTB + effective stats)
