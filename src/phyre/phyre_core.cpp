@@ -1276,34 +1276,23 @@ void *__stdcall Phyre_ThreadPool_GetSingleton()
 // Decompiled body:
 //   Configura o tamanho de stack das threads worker criadas pelo pool.
 //   Usado durante inicializacao antes de criar as threads.
+static unsigned int g_ThreadPool_StackSize = 0x10000;
+static unsigned int g_ThreadPool_MaxCount = 4;
+static unsigned int g_ThreadPool_MinCount = 1;
+
 void __stdcall Phyre_ThreadPool_SetStackSize(unsigned int stackSize)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 4 instructions — setter simples
-    // Global: dword_C0B958 = stackSize
+    g_ThreadPool_StackSize = stackSize;
 }
 
-// Function: Phyre_ThreadPool_SetMaxCount (0x44CEE0, 1 caller)
-// Decompiled body:
-//   Configura o numero maximo de threads worker no pool.
 void __stdcall Phyre_ThreadPool_SetMaxCount(unsigned int maxCount)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 4 instructions — setter simples
-    // Global: dword_C0B954 = maxCount
+    g_ThreadPool_MaxCount = maxCount;
 }
 
-// Function: Phyre_ThreadPool_SetMinCount (0x44CF00, 1 caller)
-// Decompiled body:
-//   Configura o numero minimo de threads worker no pool.
 void __stdcall Phyre_ThreadPool_SetMinCount(unsigned int minCount)
 {
-    // TODO: implement
-    FFX_LOG_STUB();
-    // 4 instructions — setter simples
-    // Global: dword_C0B950 (tambem usado como min count)
+    g_ThreadPool_MinCount = minCount;
 }
 
 // Function: Phyre_WorkerThread_CreateArray (0x44CF50, 1 caller)
