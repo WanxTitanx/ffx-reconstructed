@@ -1,4 +1,7 @@
 #include "../include/ffx_debug.h"
+#include <string.h>
+#include <stdarg.h>
+#include <stdio.h>
 // ============================================================================
 // FFX.EXE — PhyreEngine Core Implementation (Stub)
 // Gerado de analise IDA com decompilador Hex-Rays
@@ -1418,7 +1421,16 @@ void __thiscall Phyre_PArray_Swap(void *this, void *other) {
 
 // Phyre_PString_Format (0x4xxxxx)
 // Formata uma string estilo sprintf
-int __thiscall Phyre_PString_Format(void *this, const char *format, ...) { return 0; }
+int __thiscall Phyre_PString_Format(void *this, const char *format, ...) {
+    if (!this || !format) return 0;
+    char *str = *(char**)this;
+    if (!str) return 0;
+    va_list args;
+    va_start(args, format);
+    int len = _vsnprintf(str, 1024, format, args);
+    va_end(args);
+    return len;
+}
 
 // Phyre_PString_Append (0x4xxxxx)
 // Concatena string ao final
