@@ -9,6 +9,7 @@ add_executable(ffx_tests
     test_save_crc.cpp
     test_phyre_pclass_descriptor.cpp
     test_battle_hp_compute.cpp
+    test_rdata_dump.cpp
     test_stubs.cpp
 )
 
@@ -16,6 +17,7 @@ target_include_directories(ffx_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/src/include
     ${CMAKE_SOURCE_DIR}/stubs
     ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/data
 )
 
 target_link_libraries(ffx_tests PRIVATE gtest gtest_main)

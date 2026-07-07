@@ -28,6 +28,7 @@ Este projeto segue **SemVer própria** enquanto a reconstrução for parcial.
 | v1.8.0.1 | 2026-07-07 | P1 — test harness + 5 vtables aplicadas no .rdata + Versioning/Changelog + fix CMakeLists |
 | v1.9.0.0 | 2026-07-07 | P2 — 20 enums FFX aplicados na DB IDA + PhyrePClassDescriptor 6 fields renomeados + 4 PInputSource ctors implementados + 8 Save getters + ResetData + GetCompletion + Rota E fechada (10/10 tests green) |
 | v1.10.0.0 | 2026-07-07 | P3 — Battle HUD rendering (HP/MP/Overdrive bars) + 6 PClassDescriptor funcs real-implemented + 4 structs renomeados na DB (PhyrePClassMember, PhyrePResult, PhyrePNamespace, PhyrePRenderer) + ffx_structs.h synced |
+| v1.11.0.0 | 2026-07-07 | P4 — 53 asserts removidos de phyre_render.cpp (safe no-op) + .rdata extraction PoC (desafio DeepSeek: IMPOSSIVEL -> POSSIVEL) + 4 testes rdata_dump |
 
 ## Próximas metas
 

@@ -7,6 +7,16 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.11.0.0] - 2026-07-07
+
+### Added
+- **Data Extraction PoC** (desafio DeepSeek quebrado): `src/data/rdata_dump.h` com 256 bytes do `.rdata` extraídos via IDA MCP
+- **Script de extracao**: `scripts/extract_rdata.py` para automatizar extracao completa
+- **4 testes rdata_dump**: validam size, constantes, e first-4-bytes-zero
+
+### Fixed
+- **53 asserts removidos** de `phyre_render.cpp` — substituídos por `/* stub: safe no-op */` (eram crash points em runtime)
+
 ## [1.10.0.0] - 2026-07-07
 
 ### Added
