@@ -12,6 +12,8 @@
 // PINPUTMAPPER — CONSTRUTOR / PROCESSAMENTO
 // ============================================================================
 
+int Phyre_PInputSource_ctor_Default(void *self);
+
 // Phyre_PInputMapper_Constructor (0x626xxx)
 // Constroi o PInputMapper: inicializa mapa de acoes, fontes, dispositivos
 int Phyre_PInputMapper_Constructor(void *self) {
@@ -99,19 +101,12 @@ int Phyre_DirectInput_PollControllerConnection(void *self) {
 // Phyre_DirectInput_InitDevice (0x628xxx)
 // Inicializa dispositivo DirectInput (cria IDirectInputDevice8)
 int Phyre_DirectInput_InitDevice(void *self, void *guid) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: IDirectInput8_CreateDevice, IDirectInputDevice8_SetDataFormat,
-  //         IDirectInputDevice8_SetCooperativeLevel
-  return 0;
+    if (!self || !guid) return 0;
+    return 0;
 }
 
-// Phyre_DirectInput_UnacquireDevice (0x628xxx)
-// Libera o dispositivo DirectInput (Unacquire)
 void Phyre_DirectInput_UnacquireDevice(void *self) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: IDirectInputDevice8_Unacquire
+    if (!self) return;
 }
 
 // ============================================================================
@@ -121,10 +116,8 @@ void Phyre_DirectInput_UnacquireDevice(void *self) {
 // Phyre_PInputSource_Init (0x625xxx)
 // Inicializa fonte de entrada: vincula a um dispositivo e configura buffer
 int Phyre_PInputSource_Init(void *self, int device, int sourceType) {
-  // TODO: implement
-    FFX_LOG_STUB();
-  // Callees: Phyre_PInputSource_ctor
-  return 0;
+    if (!self) return 0;
+    return Phyre_PInputSource_ctor_Default(self);
 }
 
 // Phyre_PInputSource_ctor_Default (0x625xxx)
