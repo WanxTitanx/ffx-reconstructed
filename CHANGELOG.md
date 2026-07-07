@@ -7,6 +7,43 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.22.0.0] - 2026-07-07
+
+### Added — Massive IDA DB population (P17→P17h)
+
+#### 21 new enums (253 members total)
+- FFX_SCE_GS_PSM(13), FFX_OMD_ModelType(8), FFX_ScreenMode(3), FFX_VideoQuality(4), FFX_TextureQuality(3), FFX_PostAntiAliasing(6), FFX_EncounterRateMode(3), FFX_TextRenderMode(7), FFX_AtelPrimitiveType(9), FFX_AtelFinType(9), FFX_AtelResourceType(11), FFX_LuaOpcode(23), FFX_LuaType(11), FFX_PInputTypeSemantic(21), FFX_PInputAxisSemantic(9), FFX_PInputMouseButtonSemantic(3), FFX_PInputJoypadButtonSemantic(22), FFX_PInputKeySemantic(70), FFX_MkvTrackType(2), FFX_MkvBlockType(3), FFX_StdErrorCategory(3), FFX_PhyreSubsystem(19)
+
+#### 7 new structs
+- FFX_AtelOpcodeDescriptor(16B) — ATEL VM opcode table entry
+- FFX_BattleContext(~176KB) — Battle system master context (skeleton)
+- PInputMap — Input semantic mapping
+- PBitmapFontCharInfo — Bitmap font character metadata
+- PBitmapFont — Bitmap font container
+- FFX_FieldFormationSlot(448B) — Field character formation data
+- PhyreClassDescriptorEntry(32B) — PhyreEngine RTTI class registration record
+
+#### 23 new bookmarks (total 57)
+- ATEL VM Init, g_pBattleContext, Funcspace Registry, Common/Battle Funcspace, BattleEntrySM, VIRTUOS Magic PRX, Phyre PostFX, Config XML, Lua 5.2, g_FieldFormationSlots, g_pBattleState, g_partyMemberData, g_charStatBlock, g_InventoryAggregate, g_BattlePlayerList, g_MagicRuntimeRootTable, g_FieldActorManager, g_BattleCommandRingBasePtr, 4 Phyre RTTI Blocks, zlib 1.2.8
+
+#### 200+ functions typed
+- 9 FFX_System_Host* functions, 2 FFX_BattleContext* functions, FFX_Atel_RegisterFuncspace with FFX_AtelSubsystem enum, 190+ via infer_types (FFX_*, Phyre_*, Iggy_*, PhyreInit_*, FMOD_*)
+
+#### 50+ global/data comments
+- 11 ATEL funcspace tables (Common, Math, Debug, Camera, ChEvent, SgEvent, Battle, Map, Mount, Movie, AbilityMap)
+- 23 globals (g_pMenu2DContext, g_pBattleState, g_partyMemberData, g_charStatBlock, g_CommandKernelTable, g_ItemKernelTable, g_TakaraKernelTable, g_FFX_MagicRuntimeRootTable, g_FFX_FieldActorManager, g_FFX_BattleSubmenuCmdList, etc.)
+- 3 PhyreEngine Class Registry Table regions (0xBD5000, 0xBE5000, 0xBF5000)
+
+#### Typed data
+- g_AtelOpcodeTable (0xC54920) → FFX_AtelOpcodeDescriptor[82]
+- g_FieldFormationSlots (0x1136FE0) → FFX_FieldFormationSlot[3]
+- MagicHostContextTable (0xC64CE8) → void*[512] + 491/512 slot comments
+
+#### .rdata 100% mapped
+- 0xB0C8C0-0xB7D000: Strings (subsystems: rcBg/rcData, VIRTUOS Magic PRX, Phyre PostFX, PBitmapFont, Iggy SDK, Config XML, Lua 5.2, ATEL Debug)
+- 0xB7D000-0xC05000: RTTI metadata + PhyreEngine Class Descriptor Registration Tables (magic 0x19930522, ~1200-1500 entries)
+- zlib 1.2.8 found at 0xB7F6A8
+
 ## [1.21.0.0] - 2026-07-07
 
 ### Added — FFX_System_Host reconstruction (69096 bytes / 0x10DE8)
