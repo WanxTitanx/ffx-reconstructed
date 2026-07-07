@@ -1987,3 +1987,9 @@ void __cdecl FFX_Math_ClampVec3Max(float *out, float *in, float maxX, float maxY
     out[1] = (maxY > in[1]) ? in[1] : maxY;
     out[2] = (maxZ > in[2]) ? in[2] : maxZ;
 }
+
+extern "C" int FFX_Battle_ComputeEffectiveHp(int base, int debuff, int shield) {
+    int effective = base - debuff + shield;
+    if (effective < 0) effective = 0;
+    return effective;
+}

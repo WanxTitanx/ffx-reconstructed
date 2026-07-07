@@ -35,3 +35,11 @@ int Phyre_PClass_ConstructDefault(PhyrePClassDescriptor*s,PhyrePClassDescriptor*
 void Phyre_PClass_CopyMemberData(PhyrePClassDescriptor*s){}
 void Phyre_PClassDataMember_ValidateLayout(PhyrePClassDescriptor*s){}
 int Phyre_PClassMember_SerializeMember(int c,int*m){return 0;}
+
+extern "C" void Phyre_PClassDescriptor_Init(void* desc) {
+    if (desc) {
+        for (int i = 0; i < 0x94; i++) {
+            ((unsigned char*)desc)[i] = 0;
+        }
+    }
+}

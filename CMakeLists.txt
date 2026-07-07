@@ -125,3 +125,9 @@ target_link_libraries(FFX_Reconstructed
     winmm.lib
     advapi32.lib
 )
+
+# ============================================================================
+# Tests (Google Test via FetchContent)
+# ============================================================================
+enable_testing()
+add_subdirectory(test)
