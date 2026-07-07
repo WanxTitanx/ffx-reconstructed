@@ -7,6 +7,27 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.15.0.0] - 2026-07-07
+
+### Added
+- **FFX_System_Host discovery**: The global at 0xCCB9D8 is NOT FFXFieldMap (396B) — it's `FFX_System_Host`, a 69KB singleton (0x10DE8 bytes). Constructor: `FFX_System_Host_Constructor` @ 0x64ddb0. The FFXFieldMap struct in the IDB represents only the first 396 bytes of this massive singleton.
+- **FFXBattleActorData struct** (3984 bytes) declared in DB with offsets confirmed from battle function decompilation:
+  - `maxHp` @ offset 1428 (0x594)
+  - `maxMp` @ offset 1432 (0x598)
+  - `statusByte0-7` @ offsets 1448-1455 (0x5A8-0x5AF) — 8 status effect bytes
+  - `HP` @ offset 1488 (0x5D0)
+  - `MP` @ offset 1492 (0x5D4)
+  - `activeFlag3546` @ offset 3546 (0xDDA)
+  - `overdriveInit` @ offset 16 (0x10) — float, init=1.0
+  - `distanceThreshold` @ offset 52 (0x34)
+  - `initFlag447` @ offset 447 (0x1BF) — init=-1
+  - `byte1745` @ offset 1745 (0x6D1)
+- **FFXBtlActor/FFXActor identified as orphan structs** — both have ZERO xrefs, are theoretical models not used in code. The real battle actor struct (3984B) is accessed via `FFX_Battle_AccessCurrentActorData` using raw byte offsets.
+
+### Changed
+- DB IDA: FFXBattleActorData type applied via `idalib_declare_type`
+- DB saved + backup (post_p8.1, 70.9MB)
+
 ## [1.14.0.0] - 2026-07-07
 
 ### Added
