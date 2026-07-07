@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 // ============================================================================
 // FFX.EXE — PhyreEngine Core Implementation (Stub)
 // Gerado de analise IDA com decompilador Hex-Rays
@@ -1540,11 +1541,16 @@ int __thiscall Phyre_String_Find(void *this, const char *sub, unsigned int start
 
 // Phyre_Heap_BucketAlloc (0x4xxxxx)
 // Aloca de um bucket heap por tamanho fixo
-void *__thiscall Phyre_Heap_BucketAlloc(void *this, unsigned int size) { return 0; }
+void *__thiscall Phyre_Heap_BucketAlloc(void *this, unsigned int size) {
+    if (size == 0) return 0;
+    return malloc(size);
+}
 
-// Phyre_Heap_BucketFree (0x4xxxxx)
-// Libera bloco alocado via BucketAlloc
-int __thiscall Phyre_Heap_BucketFree(void *this, void *ptr) { return 0; }
+int __thiscall Phyre_Heap_BucketFree(void *this, void *ptr) {
+    if (!ptr) return 0;
+    free(ptr);
+    return 1;
+}
 
 // Phyre_List_UnlinkNode (0x43b460, 1228 xrefs)
 // Generic intrusive doubly-linked list unlink.
