@@ -532,4 +532,161 @@ typedef struct PhyreMatrix4 PhyreMatrix4;   // 4x4 matrix, 64 bytes
 struct struct_GUID;                         // GUID structure (used in DirectInput)
 // GUID is defined by Windows SDK (guiddef.h) - do not redefine
 
+// ============================================================================
+// FFXBATTLEACTORDATA — Per-actor battle data (3984 bytes / 0xF90)
+// Accessed via FFX_Battle_AccessCurrentActorData @ 0x794030
+// Layout confirmed by decompiling DamageFormulaDispatch, ComputeActorCtbWaitTimes,
+// SyncPartyStatsFromActors, ExchangeActorStatusFlags, ProcessAllActorsStateMachine
+// ============================================================================
+// Byte-accurate layout: 3984 bytes (0xF90) — matches FFX_BATTLE_CHR_STRIDE
+// Confirmed via ffx_addresses.h RVAs + IDA decompilation evidence
+#pragma pack(push, 1)
+typedef struct FFXBattleActorData {
+    // -- Identity (0x000-0x024) --
+    int             modelHandle;               // 0x000 — chr resource handle
+    int             fieldAttachId;             // 0x004 — character resource ID
+    char            pad8[6];                   // 0x008
+    short           formId;                    // 0x00E — actor def ID (0xFFFF = invalid)
+    char            pad16[20];                 // 0x010
+    char            isReadyToSpawn;            // 0x024 — active in formation flag
+    char            pad37[971];                // 0x025
+
+    // -- Action/Combat State (0x3F0-0x451) --
+    char            pendingCommandId;          // 0x3F0 — pending command type
+    char            pad1009;                   // 0x3F1
+    short           actionTargetSlot;          // 0x3F2
+    char            hasActiveAction;            // 0x3F4
+    char            pad1012;                   // 0x3F5
+    char            prevStateCache;            // 0x3F6
+    char            sourceStateValue;          // 0x3F7
+    char            pad1015[44];               // 0x3F8
+    char            currentMotionId;           // 0x424
+    char            pad1060[37];               // 0x425
+    char            menuActionState;           // 0x44A
+    char            pad1098[5];                // 0x44B
+    char            commandSubMode;            // 0x450 — overdrive disable flag
+    char            actionLockedFlag;          // 0x451
+    char            pad1105[138];              // 0x452
+
+    // -- Stats: HP/MP (0x4DC-0x4E0) --
+    float           maxHp;                     // 0x4DC
+    float           maxMp;                     // 0x4E0
+    char            pad1436[10];               // 0x4E4
+    char            turnDamagePercent;         // 0x4EE
+    char            pad1467[7];                // 0x4EF
+    char            commandStyle;              // 0x4F6
+    char            commandStyleCounter;       // 0x4F7
+    char            pad1476[68];               // 0x4F8
+
+    // -- Status Flags (0x53C-0x53E) --
+    char            statusFlagA;               // 0x53C
+    char            statusFlagB;               // 0x53D
+    char            statusFlagC;               // 0x53E
+    char            pad1547[50];               // 0x53F
+
+    // -- Overdrive State (0x571-0x572) --
+    char            overdriveActionState;      // 0x571
+    char            overdriveLevel;            // 0x572
+    char            pad1600[28];               // 0x573
+    char            preDeathStateCache;        // 0x58F
+    char            preDeathSourceValue;       // 0x590
+    char            pad1630[14];               // 0x591
+    char            reflectActiveFlag;         // 0x59F
+    char            pad1739_pre[8];            // 0x5A0
+
+    // -- Base Stats (0x5A8-0x5AF) — PROVEN by DamageFormulaDispatch --
+    // str^3/32+30 = canonical FFX physical damage formula
+    unsigned char   strength;                  // 0x5A8 — STR
+    unsigned char   defense;                   // 0x5A9 — DEF
+    unsigned char   magic;                     // 0x5AA — MAG
+    unsigned char   magicDefense;              // 0x5AB — MDF
+    unsigned char   agility;                   // 0x5AC — AGI (CTB wait table index)
+    unsigned char   luck;                      // 0x5AD — LCK
+    unsigned char   evasion;                   // 0x5AE — EVA
+    unsigned char   accuracy;                  // 0x5AF — ACC
+
+    // -- Overdrive Charge (0x5BC) — from ffx_addresses.h --
+    char            pad5B0[12];                // 0x5B0
+    int             overdriveCharge;           // 0x5BC — zeroed after action (RVA_FFX_BATTLE_OVR_CHARGE_ZERO_AFTER_ACTION)
+    char            pad5C0[74];                // 0x5C0
+    int             currentAnimId;             // 0x60A
+
+    // -- NulElement Block Flags (0x60E-0x614) — from ffx_addresses.h --
+    // ATEL bytecode cases 55-57: NulTide, NulShock, NulHoly (Radiant Ward), NulDark (Umbral Ward)
+    char            nulTideBlock;              // 0x60E — blocks Water/Ice/Lightning tier
+    char            pad60F;                    // 0x60F
+    char            nulShockBlock;             // 0x610 — blocks Fire/Thunder/Water tier
+    char            pad611[2];                 // 0x611
+    char            nulHolyBlock;              // 0x613 — Radiant Ward: blocks Holy
+    char            nulDarkBlock;              // 0x614 — Umbral Ward: blocks Dark
+    char            pad615[71];                // 0x615
+
+    // -- CTB System (0x65C-0x65D) --
+    char            ctbFinalWaitValue;         // 0x65C — final CTB wait after modifiers
+    char            ctbWaitTimeBase;            // 0x65D — base CTB wait (3 * table[agility])
+
+    // -- Status Charge Levels (0x65E-0x663) — 0-5 scale --
+    char            strChargeLevel;            // 0x65E — boosts STR in damage formula
+    char            defChargeLevel;             // 0x65F
+    char            magChargeLevel;             // 0x660 — boosts MAG in damage formula
+    char            mdefChargeLevel;            // 0x661
+    char            agiChargeLevel;             // 0x662
+    char            luckChargeLevel;            // 0x663
+    char            pad664[88];                // 0x664
+
+    // -- CTB Flags (0x6BC) --
+    char            ctbSkipDecrementFlag;      // 0x6BC
+    char            pad6BD;                    // 0x6BD
+    short           autoAbilities2;            // 0x6BE — FFX_MEMORY_CHR_AUTO_ABILITIES_2_OFF (Double/Triple Drop)
+    char            pad6C0[2];                 // 0x6C0
+    short           statusBitfieldB;           // 0x6C2
+    char            pad6C4[32];                // 0x6C4
+
+    // -- Effective Stats (0x6E4-0x6F4) — DWORD values --
+    int             currentStrength;           // 0x6E4 — effective STR (with equipment/modifiers)
+    int             currentMagic;              // 0x6E8 — effective MAG
+    int             currentAgility;            // 0x6EC — effective AGI
+    char            pad6F0[4];                 // 0x6F0
+    int             maxComputedStat;            // 0x6F4 — max(strFormula, magFormula)
+
+    // -- Inline Action (0x72C) — from ffx_addresses.h --
+    char            pad6F8[52];                // 0x6F8
+    int             inlineActionId;            // 0x72C — FFX_BATTLE_ACTOR_INLINE_ACTION_OFF
+    char            pad730[124];               // 0x730
+
+    // -- Overdrive Gauge (0x7AC) --
+    int             overdriveGauge;             // 0x7AC
+    char            pad7B0;                    // 0x7B0 — ctbParticipationFlag
+    char            damageFlag;                // 0x7B1
+    char            pad7B2[24];                // 0x7B2
+
+    // -- State Machine (0x7CA-0x7F8) --
+    char            hasQueuedAction;            // 0x7CA
+    char            subStateMode;              // 0x7CB
+    char            pad7CC[2];                 // 0x7CC
+    char            lastDamageSourceActorId;   // 0x7CE
+    char            pad7CF[2];                 // 0x7CF
+    char            actorTurnState;            // 0x7D1
+    char            pad7D2;                    // 0x7D2
+    char            turnSkipFlag;              // 0x7D3
+    char            pad7D4[5];                // 0x7D4
+    char            postDamageFlag;            // 0x7D9
+    char            pad7DA[2];                 // 0x7DA
+    char            mainStateMode;             // 0x7DC — primary state machine mode
+    char            pad7DD[27];                // 0x7DD
+    char            actionRingIndex;           // 0x7F8 — CTB turn order position
+    char            pad7F9[326];               // 0x7F9
+
+    // -- Status Bitfield (0x93F) --
+    char            statusBitfieldA;           // 0x93F
+    char            pad940[1189];              // 0x940
+
+    // -- Action Slot (0xDE5) — from ffx_addresses.h --
+    char            actionSlot;                // 0xDE5 — FFX_BATTLE_ACTOR_ACTION_SLOT_OFF
+    char            padDE6[426];               // 0xDE6
+} FFXBattleActorData;
+#pragma pack(pop)
+
+static_assert(sizeof(FFXBattleActorData) == 0xF90, "FFXBattleActorData must be 3984 bytes (FFX_BATTLE_CHR_STRIDE)");
+
 #endif // FFX_STRUCTS_H
