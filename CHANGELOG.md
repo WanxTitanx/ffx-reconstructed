@@ -7,6 +7,82 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.23.0.0] - 2026-07-07
+
+### Added — ATEL VM Interpreter Located + 76 Opcodes Extracted
+
+#### ATEL VM Dispatcher
+- `FFX_Field_EventParser_structural` @ 0x864180 — THE ATEL VM interpreter main loop
+  - 4208 bytes, 224 basic blocks, cyclomatic complexity 156
+  - Switch with 123 cases (0x00-0x7A = 0-122)
+  - Fetches opcodes via `FFX_Atel_FetchOpcode` @ 0x869D00
+  - Bookmark #58 + detailed case-by-case comment applied
+
+#### g_AtelOpcodeTable @ 0xC54920
+- 76 entries (indices 0-75), 16 bytes each
+- Struct: `{char* name, void* pad, void* pad, u16 flags, u16 argCount}`
+- Flags: 1=no-arg, 3=has-arg
+- All 75 valid opcode names extracted: NCJMP, JSR, RTS, CALL, REQ, REQSW, REQEW, PREQ, PREQSW, PREQEW, RET, RETN, RETT, RETTN, HALT, PUSHN, PUSHT, PUSHVP, PUSHFIX, FREQ, TREQ, BREQ, BFREQ, BTREQ, FREQSW, TREQSW, BREQSW, BFREQSW, BTREQSW, FREQEW, TREQEW, BREQEW, BFREQEW, BTREQEW, DRET, POPXJMP, POPXCJMP, NCJMP2, CALLPOPA, POPI0-3, POPF0-9, PUSHI0-3, PUSHF0-9, PUSHAINTER, ER, AIT, SYSTEM, REQWAIT, PREQWAIT, REQCHG, ACTREQ
+- NOTE: Table indices ≠ switch case numbers. FFX_AtelOpcode enum uses switch case numbers (0-81)
+
+#### FFXFieldScene (4304B/0x10D0)
+- Located as sub-struct within SceneState at 0x112CA90
+- `FFX_SceneState_GetBase()` returns `&MEMORY[0x112CA90]`
+- g_pScriptWorkerContext @ 0x1326AE8 (299 xrefs) — pointer to ATEL script worker context
+- Bookmark #59: g_SceneStateBase
+- Bookmark #51: g_pScriptWorkerContext
+
+### Added — FFX_BattleContext Expanded (30+ field offsets)
+
+#### Struct size confirmed: 0x2EC34 (192052 bytes)
+#### New field offsets discovered via FFX_Texture_ManagerInitArrays @ 0x67AEE0:
+- 0x15E0-0x15EC: Batch arrays (primary): 0x960B (600 ptrs) + 0xC80B (800 ptrs)
+- 0x2BD0-0x2BDC: Texture name arrays (primary): single + multi
+- 0x4238-0x4244: Batch arrays (alternate): 0x960B + 0xC80B
+- 0x5828-0x5834: Texture name arrays (alternate): single + multi
+- 0x2BE0-0x2BF0: D3D resources (4 pointers)
+- 0x2EC30: Last field (DWORD)
+- 0x5B74-0x5BA0: Flags, counts, debug console entry stride
+- 0x5B7C: Array selector flag (0 or 1, selects primary/alternate)
+
+#### Bookmark #60: FFX_Texture_ManagerInitArrays
+
+### Added — Top 10 PARTIAL Structs Cataloged
+
+#### Corrected catalog (6 structs reclassified PARTIAL → COMPLETE):
+- FFXBtlHudGauge (88B, 22 members, 0 padding) — ✅ COMPLETE
+- FFXMenu2DTextureSlot (124B, 31 members, 0 padding) — ✅ COMPLETE
+- FFXEncounterInstance (8B, 2 members, 0 padding) — ✅ COMPLETE
+- FFXHudTarget (16B, 4 members, 0 padding) — ✅ COMPLETE
+- BattleAnchor (16B, 4 members, 0 padding) — ✅ COMPLETE
+- FFXSaveSlotInfo (120B, 8 members, 0 padding) — ✅ COMPLETE
+
+#### Top 10 PARTIAL structs prioritized for expansion:
+1. FFXBtlActor (256B, 212B padding) — BATTLE
+2. FFXActionEntry (64B, 44B padding) — BATTLE
+3. FFXFormationSlot (32B, 28B padding) — BATTLE
+4. FFXSaveSlot (6954B, 6496B untyped) — SAVE
+5. MemoryChr (1014B, 952B padding) — MEMORY
+6. MemorySaveData (5658B, 4107B padding) — MEMORY
+7. FFXMagicHost (372B, ~70 unnamed fieldXX) — SCRIPT
+8. FFXSaveCharacterData (120B, 82B padding) — SAVE
+9. PostProcessContext (164B, 37 unnamed fieldXX) — ENGINE
+10. FmodVideoAudioStream (676B, 664B padding) — AUDIO
+
+### Added — .data Segment Globals Map (0xC0A000-0xC50000)
+
+#### 28 named globals found:
+- SYSTEM (5): g_randomSeed, g_pThreadPool, g_threadPoolMaxCount, g_threadPoolStackSize, g_pIoThreadPool
+- AUDIO (2): g_FFX_SoundCmdHandlerTable, g_FFX_SoundSpuCmdQueueCursor
+- ATEL (7): g_FFX_Atel_MovieFuncspaceTable, g_FFX_Atel_BattleFuncspaceTable, g_FFX_Atel_CameraFuncspaceTable, + 4 more
+- BATTLE/ENCOUNTER (2): g_FFX_Encounter_QueuedGroup_0, g_FFX_BattleStreamingSequenceId
+- BATTLE/MAGIC/monmagic (11): g_FFX_MagicOpcodeTable_core + 10 family tables
+- FIELD (1): g_FFX_EncounterFieldRowCount_0
+
+### Stats Update
+- Bookmarks: 60 (was 58)
+- 3 new bookmarks: g_SceneStateBase, g_pScriptWorkerContext, FFX_Texture_ManagerInitArrays
+
 ## [1.22.0.0] - 2026-07-07
 
 ### Added — Massive IDA DB population (P17→P17h)
