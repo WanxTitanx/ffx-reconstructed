@@ -242,11 +242,34 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         // Render frame
         FFX_Renderer_BeginFrame();
 
-        FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0000FF, 0xFF0000FF);
-        FFX_RenderQueue_PushRect(100, 100, 200, 200, 0x00FF00FF, 0x00FF00FF);
-        FFX_RenderQueue_Flush();
+        FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
 
-        FFX_Renderer_DrawTestTriangle();
+        FFX_RenderQueue_PushRect(0, 80, 1280, 3, 0xFF2A9D8F, 0xFF2A9D8F);
+        FFX_RenderQueue_PushRect(0, 637, 1280, 3, 0xFF2A9D8F, 0xFF2A9D8F);
+
+        FFX_RenderQueue_PushRect(340, 200, 600, 120, 0xFF0D1A2A, 0xFF081218);
+        FFX_RenderQueue_PushRect(340, 200, 600, 4, 0xFF2A9D8F, 0xFF2A9D8F);
+        FFX_RenderQueue_PushRect(340, 316, 600, 4, 0xFF2A9D8F, 0xFF2A9D8F);
+
+        FFX_RenderQueue_PushRect(440, 400, 400, 50, 0xFF0A0A1A, 0xFF05050A);
+        FFX_RenderQueue_PushRect(440, 400, 400, 2, 0xFF1A3A3A, 0xFF1A3A3A);
+
+        static float blinkTimer = 0.0f;
+        blinkTimer += dt;
+        if (blinkTimer < 0.6f) {
+            FFX_RenderQueue_PushRect(540, 410, 200, 30, 0x302A9D8F, 0x302A9D8F);
+        } else if (blinkTimer > 1.2f) {
+            blinkTimer = 0.0f;
+        }
+
+        float fpsPct = (dt > 0) ? (1.0f / 60.0f) / dt : 1.0f;
+        if (fpsPct > 1.0f) fpsPct = 1.0f;
+        uint32_t fpsColor = (fpsPct > 0.8f)  ? 0x00FF00FF
+                          : (fpsPct > 0.5f)  ? 0xFFFF00FF
+                          :                     0xFF0000FF;
+        FFX_RenderQueue_PushRect(10, 10, 200 * fpsPct, 12, fpsColor, fpsColor);
+
+        FFX_RenderQueue_Flush();
         FFX_Renderer_EndFrame();
     }
 
