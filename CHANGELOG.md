@@ -7,6 +7,47 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.25.0.0] - 2026-07-08
+
+### Added — WAVE 3+4 DB Reconstruction via idat.exe Batch Mode
+
+#### Structs Expanded (7 structs, 150+ fields)
+- `FFXBattleActorRecord` (3984B/0xF90) — 20+ new field offsets from WAVE 3 subagents
+- `FFX_BattleContext` (192KB/0x2EC34) — 30+ key fields named (battle state, CTB, rewards)
+- `FFX_FieldFormationSlot` (456B) — 27 fields named (formation ID, encounter rate, BGM, camera, transitions)
+- `FFXMagicHost` (372B) — 30+ fields named (magic_id, slot_count, slot_pairs, MP cost, power, accuracy, element, status)
+- `FFXSaveSlot` (6954B) — 4 named blocks (header[453], charData[7][672], aeonData[8][224], footer[5])
+- `FFX_System_Host` (69096B) — static_assert corrected (m_postProcess[5392]+tail[4])
+
+#### Enums Populated
+- `FFX_AtelOpcode` — 76 members populated from g_AtelOpcodeTable@0xC54920 (was empty, 0 members)
+- 21 known enums mapped for switch table application
+
+#### Comments Batch (5000+ target)
+- Pattern-based comments applied to all named functions across 40+ subsystems
+- ATEL VM, Battle, Magic, Save, Field, UI, System, PhyreEngine, Audio, Input, Render, etc.
+- DB grew +163KB from comments alone
+
+#### Bookmarks (92 → 140+)
+- 48+ new bookmarks added: ATEL VM (10), Battle core (10), Field/Scene (8), Magic (2), UI (2), PhyreEngine (6), segments (6)
+
+#### Globals Mapped
+- 30+ key globals bookmarked in 0x1000000-0x1400000 range
+- .data 0x1400000-0x25D7000 scanned for named globals and cross-references
+
+#### infer_types (15 batches)
+- Battle core, actors, actions, CTB, UI, render, end
+- ATEL VM (3 batches)
+- Magic, Save, Field, UI/Menu
+
+#### Methodology
+- All scripts executed via `idat.exe -A -S` batch mode (no MCP server needed)
+- 12 IDA Python scripts in `work/reverse/ida/scripts/00-11`
+- Pre/post backups made
+- DB: 76045686 → 76217485 bytes (+171KB)
+
+## [1.24.0.0] - 2026-07-08
+
 ## [1.23.0.0] - 2026-07-07
 
 ### Added — ATEL VM Interpreter Located + 76 Opcodes Extracted

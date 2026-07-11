@@ -2290,30 +2290,4 @@ int IsPhyreType(lua_State *L, int idx) {
     return 0; // Stub
 }
 
-// ============================================================================
-// Lua API — Push stubs com __stdcall (expansao para reconstrucao FFX.EXE)
-// ============================================================================
 
-// lua_pushnil (0x95xxxx) — Push nil value onto stack
-void __stdcall lua_pushnil(lua_State *L) { }
-
-// lua_pushnumber (0x95xxxx) — Push number (lua_Number = double) onto stack
-void __stdcall lua_pushnumber(lua_State *L, lua_Number n) { }
-
-// lua_pushinteger (0x95xxxx) — Push integer onto stack
-void __stdcall lua_pushinteger(lua_State *L, int n) { }
-
-// lua_pushboolean (0x95xxxx) — Push boolean onto stack
-void __stdcall lua_pushboolean(lua_State *L, int b) { }
-
-// lua_pushstring (0x95xxxx) — Push null-terminated string onto stack
-void __stdcall lua_pushstring(lua_State *L, const char *s) { }
-
-// lua_pushliteral (0x95xxxx) — Push string literal (macro wrapper)
-void __stdcall lua_pushliteral(lua_State *L, const char *s) { }
-
-// lua_pushcfunction (0x95xxxx) — Push C function onto stack
-void __stdcall lua_pushcfunction(lua_State *L, lua_CFunction f) { }
-
-// lua_pushlightuserdata (0x95xxxx) — Push light userdata pointer onto stack
-void __stdcall lua_pushlightuserdata(lua_State *L, void *p) { }

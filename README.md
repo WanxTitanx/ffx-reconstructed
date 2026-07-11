@@ -1,54 +1,117 @@
 # FFX Reconstructed
 
-**A functional engine for Final Fantasy X, rebuilt from the ground up through massive reverse engineering.**
+**A functional engine for Final Fantasy X, rebuilt from the ground up through massive reverse engineering of the original executable.**
 
-> **Version:** See [VERSIONING.md](VERSIONING.md) for the Semantic Versioning contract.
-> **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for the full release history.
-> **License:** MIT — free to use, modify, and distribute.
-
-This project is the result of one of the largest FFX reverse engineering efforts ever undertaken: **45,114 named functions**, **382 structs**, **101 vtables**, **65 enums**, **8,959 function comments**, and **thousands of hours** analyzing the Steam build of FFX (International version) using IDA Pro + Hex-Rays + IDAPython. All code is original, written in pure C++, compilable with MSVC, and produces a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
+> **License:** MIT — educational reverse engineering and research project. Contains no Square Enix code. Final Fantasy X is property of Square Enix.
 
 ---
 
-## Current Status
+## What is this project
 
-### ✅ Working Now
+This project is the result of one of the largest FFX reverse engineering efforts ever undertaken. The original `FFX.exe` executable (Steam, International version, 11MB) was analyzed in IDA Pro with Hex-Rays decompiler, producing a database with:
+
+- **47,432 functions** — 100% named (0 `sub_*` remaining)
+- **7,706 globals** in `.data` — 100% named
+- **117 enums** populated with members (~1,500+ values)
+- **119 named structs** — 37 FFX + 56 Phyre + 26 Bullet
+- **15,800+ comments** across functions, structs, and critical addresses
+- **40+ bookmarks** at critical engine addresses
+- **13,962 strings** mapped and categorized
+- **6 segments** fully mapped (.text, .rdata, .data, .idata, .rodata, _RDATA)
+
+From this knowledge base, we are rebuilding the engine in pure C++, compilable with MSVC/Clang, producing a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
+
+---
+
+## Key reverse engineering discoveries
+
+### Battle System
+- **FFXBattleActorRecord** = 3984 bytes (0xF90), 115+ binary-confirmed fields
+  - HP @ 0x5D0, MP @ 0x5D4, MaxHP @ 0x594, MaxMP @ 0x598
+  - STR @ 0x5A8, DEF @ 0x5A9, MAG @ 0x5AA, MDEF @ 0x5AB, AGI @ 0x5AC, LUCK @ 0x5AD, EVA @ 0x5AE, ACC @ 0x5AF
+  - Overdrive @ 0x5BC, CTB Gauge @ 0x0000, Status Flags A/B/C @ 0x1544-0x1546
+  - Accessor: `FFX_Battle_PoolActorByTargetType_structural` @ 0x7B2DD0 — 346-case switch mapping field IDs to offsets
+- **FFX_MagicHostContextTable** = 2048 bytes, 512 static function pointers with REAL names (`pfn_Chr_GetPosX`, `pfn_MagicHost_ApplyTransformPattern_M`, etc.)
+- **Target sentinel resolution** via `FFX_Battle_QueryActorBitmask` @ 0x794340: 0xFFF1=AllAeons, 0xFFF2=FrontlineChars, 0xFFF3=Self, 0xFFEF=LastAttacker
+- **ForcePerformCommand** = 0x705A (not 0x7050 which is reviveOrReinitialize)
+- **ATEL_DispatchOpcode** = 0x7018 (ability logger, not WriteChrProperty)
+
+### ATEL VM (Field Event Scripting)
+- **Interpreter** @ 0x864180 — `FFX_Field_EventParser_structural`
+  - 4208 bytes, 224 basic blocks, cyclomatic complexity 156
+  - 123-case switch (0x00-0x7A = 0-122)
+  - Fetches opcodes via `FFX_Atel_FetchOpcode` @ 0x869D00
+  - Opcodes: NCJMP, JSR, RTS, CALL, REQ, RET, HALT, PUSHN, PUSHT, PUSHVP, PUSHFIX, POPI0-3, POPF0-9, PUSHI0-3, PUSHF0-9, PUSHAINTER, ER, AIT, SYSTEM
+- **g_AtelOpcodeTable** @ 0xC54920 — 76 entries, 16 bytes each
+
+### PPP (Particle/Post-Process) System
+- **PPP Processor** @ 0x7170F0 — vtable dispatcher
+- **274 opcodes** cataloged (strings at 0xB4FEB0-0xB513D4)
+  - Categories: Draw(46), Ke/Kernel(106), Rand(33), Matrix(29), op/Special(14), Light(12), Move(7), Accele(4), Point(5), Color(2), Other(20), tt(1)
+- **Full pipeline**: PPP bytecode → PppProgramProcessor → PPP draw opcodes → PppDrawRecord_Build (0xA5C370) → VfxDrawDispatch (0xA5BF50) → BuildVfxTextureFromPath (0x714890, loads .dds.phyre) → RenderVfxParticles (0x7697D0)
+- **79 DXBC shader blobs** embedded in FFX.exe .rdata (0x82CAE4+)
+
+### PhyreEngine Type System
+- **PhyrePClassDescriptor** (148 bytes): +0x18 m_pClassName, +0x1C m_typeSize, +0x44 m_propertyList, +0x54 m_memberListHead
+- **PhyrePClassMember** (36 bytes): +0x10 m_pName, +0x14 m_offset, +0x18 m_size
+- **Namespace singleton** @ 0xC90B00 (lazy-init, zeros in static binary)
+- **InsertIntoPropertyList** @ 0x43C190 — 1228 xrefs (498 DATA from vtables in .rdata)
+- **Finding:** all PhyrePClassDescriptor instances are heap-allocated at runtime. Impossible to extract field names offline without a runtime memory dump.
+
+### Magic DLL System
+- **monmagic1.bin / monmagic2.bin** format FULLY mapped
+  - Container = EntryListFile (header 0x14 bytes + FirstFile=entry table + SecondFile=text pool)
+  - MonMagic entry = 0x5C (92 bytes): 16 bytes header + 76 bytes body (Ability_command with ~35 fields)
+  - Anim1Id/Anim2Id point to magic_{NNNN}.dll
+  - AI operand encoding: 0x4000|id = MonMagic1, 0x6000|id = MonMagic2
+- **Texture path swap** in magic DLLs PROVEN in-game (DLLs ID 0700+)
+- **Visible magic color** comes from TEXTURES (.dds.phyre), not float4/BGRA in .data
+
+### PS2 Source Code
+- **Original PS2 source code** found at `D:\FFX Extracted\FFX\ffx_ps2\ffx\yonishi_data`
+  - 130 .h files, 334 .ha files, 112 mag_NNNN directories
+  - 4,218 PPMPN() invocations across 120 files
+  - pppProg struct = 10 function pointers (40 bytes)
+  - bat_eff.h = super-catalog with 139 entries
+
+---
+
+## Current reconstruction status
+
+### ✅ Working
 - **Game loop** — Non-blocking PeekMessage, delta time via QueryPerformanceCounter, anti-spiral-of-death clamp
-- **Native D3D11** — Device, swap chain, render target view created via LoadLibrary + GetProcAddress (zero static dependency on d3d11.lib)
-- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile from embedded C strings
-- **Render queue** — Quad batching with dynamic vertex buffer (up to 2048 quads/frame), orthographic projection matrix, DrawIndexed with texture-based batch sorting
-- **Keyboard input** — Full 256-key polling via GetAsyncKeyState with rising-edge detection
-- **ESC menu** — Toggle with M key, arrow navigation, teal accent highlight (#2A9D8F), close with Enter/Esc
-- **Textures** — PNG/JPG/BMP/TGA loading via stb_image, 64-slot SRV cache, atlas registry by ID
-- **DrawWindow** — 9-slice windows with 2px borders, accent corners, title bar, gradient background
-- **DrawString** — Text rendering with colored-rect fallback, 3 font sizes, multi-line support
-- **DrawPlasma** — Animated gradient effect (placeholder for procedural plasma)
-- **Save system** — Full CRC-16 CCITT, real file I/O via CreateFile/ReadFile/WriteFile, 7-slot management, character data access (HP, MP, stats, equipment, aeons)
+- **D3D11 Renderer** — Device, swap chain, render target view via LoadLibrary + GetProcAddress (zero static dependency on d3d11.lib)
+- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile
+- **Render queue** — Quad batching with dynamic vertex buffer (up to 2048 quads/frame), orthographic projection, DrawIndexed with SRV-based batch sorting
+- **Texture manager** — PNG/JPG/BMP/TGA via stb_image, 64-slot SRV cache, atlas registry by ID
+- **Input** — Full 256-key polling via GetAsyncKeyState with rising-edge detection
+- **ESC menu** — Toggle with M, arrow navigation, teal accent highlight (#2A9D8F), confirm with Enter/Esc
+- **Save system** — Full CRC-16 CCITT, real file I/O via CreateFile/ReadFile/WriteFile, 7-slot management, character data (HP, MP, stats, equipment)
 - **Fullscreen** — F11 toggle, window resize with backbuffer recreation
-- **FPS counter** — Color-coded bar in top-left (green >48fps, yellow >30fps, red below)
+- **FPS counter** — Color-coded bar (green >48fps, yellow >30fps, red below)
 - **Lua 5.1** — Complete VM compiled and linked (27 .c files, unmodified)
 
 ### 🔄 In Progress
-- **Battle HUD** — Actor system (12 slots), action queue, CTB, ATEL scripts. Data model working, visual rendering being implemented
-- **Menu system** — 32-slot pool, per-menuId context, scroll, pages, navigation, confirm/cancel. High-level API working, config pages being built
-- **Atlas system** — 6 menu textures registered (meswin, menu_new, ffx_bg, stonetexture, summonbg, icon), atlas ID dispatch implemented
+- **Build system** — Project compiles with Clang 22 (x64), MSVC Win32 adjustments in progress
+- **Renderer fix** — Removed `D3D11_CREATE_DEVICE_DEBUG` that caused white screen on machines without debug layer
+- **Error handling** — Added return value checking in `FFX_Renderer_Init` and `FFX_RenderQueue_Init`
 
-### ❌ Stubbed (Next Steps)
-- **Field/3D** — Scene loading, 3D rendering, camera, lighting — 5% done
-- **Battle HUD rendering** — HP bars, CTB ring, overdrive gauge, status icons — 0% done
-- **Save/Load UI** — Save crystal orchestrator with scene freeze — 10% done
-- **PhyreEngine Type System** — PClassDescriptor, PNamespace — PClass partial, type system needed for asset loading
+### ❌ Stubbed (next steps)
+- **Field/3D** — Scene loading, 3D rendering, camera, lighting — 5%
+- **Battle HUD rendering** — HP bars, CTB ring, overdrive gauge, status icons — data model exists, visual rendering pending
+- **Save/Load UI** — Save crystal orchestrator — 10%
+- **PhyreEngine Type System** — PClassDescriptor partial, full type system needed for asset loading
 - **FMOD Audio** — Music and SFX — stub
 - **Steam API** — Achievements, cloud save — stub
 - **Iggy UI** — PhyreEngine UI middleware — stub
-- **DirectInput / XInput** — Gamepad, analog controls — stub
+- **DirectInput / XInput** — Gamepad — stub
 
 ---
 
 ## Architecture
 
 ```
-ffx-reconstructed/
+ffx_reconstructed/
 ├── src/
 │   ├── ffx/                    # Core game logic
 │   │   ├── main.cpp            # Entry point, game loop, init chain
@@ -56,19 +119,25 @@ ffx-reconstructed/
 │   │   ├── ffx_renderqueue.cpp # Deferred quad batching pipeline
 │   │   ├── ffx_texture.cpp     # Texture manager (stb_image + SRV cache)
 │   │   ├── ffx_input.cpp       # Keyboard input polling
-│   │   ├── ffx_menu.cpp        # Escape menu system + menu2D primitives
+│   │   ├── ffx_menu.cpp        # ESC menu + menu2D primitives
 │   │   ├── ffx_battle.cpp      # Battle data model + actions
+│   │   ├── ffx_battle_hud.cpp  # Battle HUD rendering
 │   │   ├── ffx_field.cpp       # Field/scene system
 │   │   ├── ffx_save.cpp        # Save/load + CRC-16 + slot management
 │   │   └── ffx_debug.cpp       # Debug logging + dev tools
 │   ├── phyre/                  # PhyreEngine stubs + implementations
 │   ├── include/                # Project headers
+│   │   ├── ffx_structs.h       # 20+ FFX/PhyreEngine structs with named fields
+│   │   ├── ffx_vtables.h       # 4 vtables with 35+ mapped entries
+│   │   ├── ffx_rva.h           # 354 constexpr RVAs from runtime hooks
+│   │   └── ffx_debug.h         # Debug logging interface
 │   ├── lua-real/               # Lua 5.1 VM (real, full)
 │   ├── bullet/                 # Bullet Physics stubs
 │   └── lua/                    # Lua bridge stubs
 ├── stubs/                      # Middleware stubs (Steam, FMOD, Iggy, D3D11, Win32)
 ├── include/                    # Third-party headers (Bullet, FMOD, ImGui, Lua, stb, zlib)
-└── CMakeLists.txt              # Visual Studio 2022/2026, Win32, /MD /O2 /LTCG
+├── test/                       # Google Test (CRC-16, PClassDescriptor, camera, etc.)
+└── CMakeLists.txt              # Build config
 ```
 
 ### Render Pipeline
@@ -76,7 +145,8 @@ ffx-reconstructed/
 ```
 FFX_Renderer_BeginFrame()
   ├── OMSetRenderTargets(1, &RTV, NULL)
-  └── ClearRenderTargetView(RTV, clearColor)
+  ├── RSSetViewports(backbuffer w/h)
+  └── ClearRenderTargetView(RTV, dark blue)
 
 [Scene drawing]
   ├── FFX_RenderQueue_PushRect()    — solid/gradient quads
@@ -86,7 +156,7 @@ FFX_Renderer_BeginFrame()
 
 FFX_RenderQueue_Flush()
   ├── Map vertex buffer (WRITE_DISCARD)
-  ├── Build orthographic projection matrix
+  ├── Build orthographic projection matrix (screen-space → clip-space)
   ├── Batch quads by SRV (minimize state changes)
   ├── Set IA/VS/PS state
   └── DrawIndexed()
@@ -101,17 +171,27 @@ FFX_Renderer_EndFrame()
 
 ### Requirements
 - **Windows 10+**
-- **Visual Studio 2022 or 2026** with C++ desktop workload
-- **CMake** 3.20+ (bundled with VS)
+- **Clang 22+** (or Visual Studio 2022 with C++ workload)
+- **Windows SDK** (for d3d11.h, dxgi.h, windows.h)
 
-### Build
+### Build with Clang
 ```bash
-cd ffx-reconstructed
+cd ffx_reconstructed
+mkdir build
+clang++ -Isrc\ffx -Isrc\include -Isrc -Iinclude -Istubs -Isrc\lua-real \
+    -std=c++17 -O2 -DWIN32_LEAN_AND_MEAN -D_CRT_SECURE_NO_WARNINGS \
+    -Wl,/SUBSYSTEM:WINDOWS \
+    -o build\FFX_Reconstructed.exe \
+    src\ffx\*.cpp src\phyre\*.cpp src\bullet\*.cpp stubs\*.cpp src\lua\lua_stubs.cpp \
+    -ld3d11 -ldxgi -ldinput8 -lxinput -lwinmm -ladvapi32 -luser32 -lgdi32 -lshell32 -lole32
+```
+
+### Build with CMake + Visual Studio
+```bash
+cd ffx_reconstructed
 cmake -S . -B build -G "Visual Studio 17 2022" -A Win32
 cmake --build build --config Release
 ```
-
-The executable will be at `build/Release/FFX_Reconstructed.exe`.
 
 ### Controls
 | Key | Action |
@@ -119,25 +199,55 @@ The executable will be at `build/Release/FFX_Reconstructed.exe`.
 | `M` | Toggle ESC menu |
 | `↑/↓` | Navigate menu |
 | `Enter` | Confirm / close menu |
-| `Esc` | Close menu / quit game |
+| `Esc` | Close menu / quit |
 | `F11` | Toggle fullscreen |
 
 ---
 
-## The Journey
+## IDA knowledge base
 
-This is the culmination of one of the largest Final Fantasy X reverse engineering efforts ever:
+The IDA database (`ffxoficial.exe.i64`) is the source of truth for the entire reconstruction. Current state:
 
-- **45,114 functions** completely analyzed and renamed in the IDA database
-- **291 structs** mapped, including PClassDescriptor (type system), PRenderer, PAnimation, Bullet physics, HUD system, and more
-- **91 vtables** identified and typed in .rdata
-- **~95.7%** of stubs converted to real implementations
-- **~76,500+ lines** of reconstruction code generated
-- **25+ open-source libraries** integrated: Bullet Physics, Lua 5.1, zlib, stb, ImGui, FMOD (stub), Steam (stub)
+| KPI | Target | Actual | Status |
+|-----|--------|--------|--------|
+| Function names | 100% | 47,432 (0 sub_*) | ✅ |
+| .data globals | ≥80% | 7,706/7,706 = 100% | ✅ |
+| Enums | ≥90% | 117 enums, all populated | ✅ |
+| Bookmarks | ≥140 | 40+ critical | ✅ |
+| Comments | ≥5,000 | 15,800+ | ✅ |
+| Struct coverage | ≥95% | ~68% (blocked: vtable dispatch) | 🟡 |
+| .text intact | verified | zero modifications | ✅ |
 
-The knowledge base is documented in:
-- `src/include/ffx_structs.h` — 20 FFX/PhyreEngine structs with named fields
-- `src/include/ffx_vtables.h` — 4 vtables with 35 mapped entries
+### Key mapped structs
+- **FFXBattleActorData** (3984B/115 fields) — HP, MP, stats, overdrive, CTB, status flags, animation
+- **FFXFieldMap** (284B/64 fields) — field flags, state, scene pointer
+- **FFX_MagicHostContextTable** (2048B/512 fields) — function pointers with real names
+- **FFXBattleState** (184B) — battle flags, formation, turn, overdrive
+- **FFXEncounterState** (340B) — flags, area, type, mode, formation, spawn, music
+- **FFXMenu2DContext** (228B/57 fields) — highRes, modifier, capture, geom/tex slots
+- **FFXMenuObject** (148B/33 fields) — callbacks, state machine, rows, scroll, window
+- **PhyrePClassDescriptor** (148B/37 fields) — RTTI class descriptor
+- **PhyrePClassMember** (36B/9 fields) — RTTI class member (name, offset, size)
+- **PhyrePCamera** (264B) — view/projection/view-projection matrices, fog, glow, DOF
+- **26 Bullet physics structs** — btRigidBody, btCollisionObject, btBoxShape, etc.
+
+### DB backups
+Incremental backups in `work/reverse/ida/backups_ffxoficial/`:
+- `ffxoficial_post_catalog_v2_20260711_150000.i64`
+- `ffxoficial_post_p4_enums_20260711_160000.i64`
+- `ffxoficial_post_p3_p4_p6_20260711_163000.i64`
+- `ffxoficial_post_p5_infer_20260711_164500.i64`
+
+---
+
+## Related documentation
+
+- `docs/history/FFX_IDA_DB_RECONSTRUCTION_FINAL_2026-07-11.md` — Final DB reconciliation report
+- `work/reverse/ida/STRUCT_CATALOG_20260711.md` — Struct catalog (v2.0)
+- `work/reverse/ida/DB_RECONSTRUCTION_MASTERPLAN.md` — 8-phase plan
+- `docs/ai/SESSION_HANDOFF.md` — Session handoff
+- `KNOWLEDGE_BASE.md` — Project long-term memory index
+- `PORT_STATUS.md` — Live operational status board
 
 ---
 

@@ -10,12 +10,12 @@
 // ============================================================================
 // Tipos base LinearMath (apenas estruturas de dados, sem classes completas)
 // ============================================================================
-#include <LinearMath/btVector3.h>
-#include <LinearMath/btTransform.h>
-#include <LinearMath/btAlignedObjectArray.h>
-#include <LinearMath/btMatrix3x3.h>
-#include <LinearMath/btQuaternion.h>
-#include <LinearMath/btScalar.h>
+#include "bullet/LinearMath/btVector3.h"
+#include "bullet/LinearMath/btTransform.h"
+#include "bullet/LinearMath/btAlignedObjectArray.h"
+#include "bullet/LinearMath/btMatrix3x3.h"
+#include "bullet/LinearMath/btQuaternion.h"
+#include "bullet/LinearMath/btScalar.h"
 
 // ============================================================================
 // Forward declarations — classes abstratas do Bullet (opacas para o linker)

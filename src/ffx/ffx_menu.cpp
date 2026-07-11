@@ -1,4 +1,5 @@
 #include "ffx_debug.h"
+#include <stdlib.h>
 // ============================================================================
 // ffx_menu.cpp — FFX Menu System Stubs
 // Phase 3-E: FFX Game Stubs

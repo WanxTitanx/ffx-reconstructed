@@ -1,5 +1,7 @@
 // FFX Reconstructed — Entry Point
 // Original: 0x9493c7 (start)
+#undef UNICODE
+#undef _UNICODE
 #include <windows.h>
 #include <cstdio>
 #include <cstring>
@@ -193,10 +195,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     FFX_Engine_InitApplication((int)appBuffer, 0, 0);
 
     // 5. Inicializa renderer
-    FFX_Renderer_Init(g_window, 1280, 720);
+    if (!FFX_Renderer_Init(g_window, 1280, 720)) {
+        MessageBoxA(g_window, "Failed to initialize D3D11 renderer.", "FFX Reconstructed", MB_ICONERROR);
+        return 1;
+    }
 
     // 5b. Inicializa render queue (deferred quad batching — usa device/context do renderer)
-    FFX_RenderQueue_Init();
+    if (!FFX_RenderQueue_Init()) {
+        MessageBoxA(g_window, "Failed to initialize render queue.", "FFX Reconstructed", MB_ICONERROR);
+        return 1;
+    }
 
     // 5c. Inicializa input state
     FFX_Input_Init(&g_input);

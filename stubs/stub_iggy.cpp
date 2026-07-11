@@ -3,6 +3,7 @@
 // Module: iggy_w32
 // ============================================================================
 #include <windows.h>
+#include <stdlib.h>
 
 // Iggy player uses __stdcall with decorated names (@n = total param bytes).
 // These are the FFX import names; we alias them via EXPORTS or link-time

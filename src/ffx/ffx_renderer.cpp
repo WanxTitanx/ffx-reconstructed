@@ -268,8 +268,7 @@ int FFX_Renderer_Init(HWND hwnd, int width, int height)
         NULL,                              /* adapter            */
         D3D_DRIVER_TYPE_HARDWARE,          /* driver type        */
         NULL,                              /* software module    */
-        D3D11_CREATE_DEVICE_DEBUG |
-        D3D11_CREATE_DEVICE_BGRA_SUPPORT,  /* flags              */
+        D3D11_CREATE_DEVICE_BGRA_SUPPORT,  /* flags (no DEBUG — fails without debug layer installed) */
         &level, 1,                         /* feature levels     */
         D3D11_SDK_VERSION,                 /* SDK version        */
         &scd,                              /* swap chain desc    */
@@ -278,8 +277,15 @@ int FFX_Renderer_Init(HWND hwnd, int width, int height)
         &outLev,                           /* out: feature level */
         &g_context);                       /* out: context       */
 
-    if (FAILED(hr))
-        return 0;
+    if (FAILED(hr)) {
+        /* Fallback: try without BGRA support (some older drivers) */
+        hr = g_D3D11CreateDeviceAndSwapChain(
+            NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0,
+            &level, 1, D3D11_SDK_VERSION, &scd,
+            &g_swapChain, &g_device, &outLev, &g_context);
+        if (FAILED(hr))
+            return 0;
+    }
 
     /* ---- create render-target view ---- */
     ID3D11Texture2D *backBuffer = NULL;

@@ -928,9 +928,257 @@ typedef struct FFX_System_Host {
     char            m_gap3814[64];                   // 0x3814
     int             m_fields3854[30];                // 0x3854 — buffer pool config
     char            m_runtimeWorkspace[49152];       // 0x38CC — runtime render targets
-    char            m_postProcess[5400];             // 0xF8CC — post-proc, mutex, color
+    char            m_postProcess[5392];             // 0xF8CC — post-proc, mutex, color
+    char            m_postProcessTail[4];            // 0x10DE4 — tail padding to reach 0x10DE8
 } FFX_System_Host;
 #pragma pack(pop)
 
 static_assert(sizeof(FFX_System_Host) == 69096, "FFX_System_Host must be 69096 bytes (0x10DE8), actual: see error message");
+
+// =============================================================================
+// FFX_SaveRamBlock — 26816 bytes (0x68C0)
+// The save RAM block at g_SaveRamBlock @ 0x112CA90.
+// Reconstructed evidence-based from decompiled accessors:
+//   - FFX_Btl_PrepareSaveCommandState @ 0x786BC0: MemSet(base, 26816)
+//   - FFX_Field_LoadStateRecordIntoSceneBlock @ 0x878170: memcpy(base, src+64, 0x68C0)
+//   - FFX_SphereGrid_InitializationStateMachine @ 0x8DB4C0: memcpy(base, src+64, 0x68C0) x3
+//   - FFX_Field_CheckEncounterAllowed @ 0x86BA70: GetBtlScenePathById(base->scene_id)
+//   - FFX_Save_ParseTextDataRecursive @ 0x8B5910: base[0x34A]==71, base[0x34B]==50
+// Save record has a 64-byte header BEFORE this block in the file.
+// =============================================================================
+#pragma pack(push, 1)
+typedef struct FFX_SaveRamBlock {
+    unsigned short  scene_id;                    // 0x0000 — proven by GetBtlScenePathById((u16)base) @0x86BA70
+    unsigned char   raw_header_0002[70];         // 0x0002
+    unsigned char   raw_block_0048[696];          // 0x0048
+    unsigned char   raw_block_0300[74];           // 0x0300
+    unsigned char   progress_flag_a;              // 0x034A — checked==71 for achievement 16 @0x8B5910
+    unsigned char   progress_flag_b;              // 0x034B — checked==50 for achievement 16 @0x8B5910
+    unsigned char   raw_block_034C[2208];         // 0x034C
+    unsigned int    return_state;                 // 0x0BEC — set to 5 when unk_133C8D0 @0x786BC0
+    unsigned char   raw_block_0BF0[5628];         // 0x0BF0
+    unsigned char   sphere_grid_runtime[6944];    // 0x21EC — passed to InitRuntimeStateFromAbmapResources @0x786BC0
+    unsigned char   table_entry_type3[28];        // 0x3D0C — 0x1C bytes from MSCD type 3 @0x786BC0
+    unsigned char   table_entry_type31[32];       // 0x3D28 — 0x20 bytes from MSCD type 31 @0x786BC0
+    unsigned char   raw_block_3D48[68];            // 0x3D48
+    unsigned short  party_ability_ids[8];          // 0x3D8C — 0xFFFF=empty, loop n8=0..7 @0x786BC0
+    unsigned char   party_ability_flags[8];       // 0x3D9C — 1 byte per ability slot @0x786BC0
+    unsigned char   raw_block_3DA4[40];            // 0x3DA4
+    unsigned short  ability_id_table[256];         // 0x3DCC — 0xFF=empty, loop to 256 @0x786BC0
+    unsigned char   ability_flag_table[256];       // 0x3FCC — @0x786BC0
+    unsigned char   raw_block_40CC[980];            // 0x40CC
+    unsigned char   battle_command_data[4400];    // 0x44A0 — 22B per entry, v17+=22 @0x786BC0
+    unsigned char   raw_block_55D0[2660];          // 0x55D0
+    unsigned char   party_data_entries[792];       // 0x6034 — 0x94 bytes each from ply_save @0x786BC0
+    unsigned char   battle_actor_data[1180];      // 0x634C — g_FFXBtlActorBattleData @0x786BC0
+    unsigned char   raw_tail[216];                 // 0x67E8
+} FFX_SaveRamBlock;
+#pragma pack(pop)
+
+static_assert(sizeof(FFX_SaveRamBlock) == 0x68C0, "FFX_SaveRamBlock must be 26816 bytes (0x68C0)");
+
+#pragma pack(push, 1)
+
+typedef struct FFXFieldMap {
+    dword           vfptr;
+    unsigned int    m_fieldFlags;
+    unsigned int    m_state;
+    char            mapName[32];
+    dword           m_pFieldScene;
+    unsigned char   raw_0030[348];
+} FFXFieldMap;
+static_assert(sizeof(FFXFieldMap) == 396, "FFXFieldMap must be 396 bytes");
+
+typedef struct FFXBattleState {
+    dword           vfptr;
+    unsigned int    m_battleFlags;
+    int             formationId;
+    int             actorCount;
+    unsigned int    m_turnIndex;
+    unsigned char   raw_0014[164];
+} FFXBattleState;
+static_assert(sizeof(FFXBattleState) == 184, "FFXBattleState must be 184 bytes");
+
+typedef struct FFXMenuObject {
+    dword           vfptr;
+    int             refCount;
+    dword           enterCb;
+    dword           updateCb;
+    dword           drawCb;
+    unsigned char   raw_0014[128];
+} FFXMenuObject;
+static_assert(sizeof(FFXMenuObject) == 148, "FFXMenuObject must be 148 bytes");
+
+typedef struct FFXMenuCtx {
+    int             activeFlag;
+    int             visibleFlag;
+    int             enabledFlag;
+    int             selectedRow;
+    int             totalRows;
+    unsigned char   raw_0014[56];
+} FFXMenuCtx;
+static_assert(sizeof(FFXMenuCtx) == 76, "FFXMenuCtx must be 76 bytes");
+
+typedef struct FFXActionEntry {
+    int             cmdId;
+    int             actorIdx;
+    int             targetIdx;
+    unsigned char   raw_000C[52];
+} FFXActionEntry;
+static_assert(sizeof(FFXActionEntry) == 64, "FFXActionEntry must be 64 bytes");
+
+typedef struct FFXActor {
+    dword           vfptr;
+    int             hp;
+    int             maxHp;
+    int             mp;
+    int             maxMp;
+    unsigned char   raw_0014[96];
+} FFXActor;
+static_assert(sizeof(FFXActor) == 116, "FFXActor must be 116 bytes");
+
+typedef struct FFXEncounterData {
+    int             countAndValid;
+    dword           instanceArray;
+    int             encounterType;
+    unsigned char   raw_000C[244];
+} FFXEncounterData;
+static_assert(sizeof(FFXEncounterData) == 256, "FFXEncounterData must be 256 bytes");
+
+typedef struct FFXEncounterState {
+    unsigned char   raw_0000[340];
+} FFXEncounterState;
+static_assert(sizeof(FFXEncounterState) == 340, "FFXEncounterState must be 340 bytes");
+
+typedef struct FFXColor {
+    unsigned char   r;
+    unsigned char   g;
+    unsigned char   b;
+    unsigned char   a;
+} FFXColor;
+static_assert(sizeof(FFXColor) == 4, "FFXColor must be 4 bytes");
+
+typedef struct FFXDroptableEntry {
+    int             itemId;
+    int             rate;
+} FFXDroptableEntry;
+static_assert(sizeof(FFXDroptableEntry) == 8, "FFXDroptableEntry must be 8 bytes");
+
+typedef struct FFXFormationSlot {
+    int             monsterId;
+    unsigned char   pad[28];
+} FFXFormationSlot;
+static_assert(sizeof(FFXFormationSlot) == 32, "FFXFormationSlot must be 32 bytes");
+
+typedef struct FFXHudTarget {
+    int             flags;
+    float           x;
+    float           y;
+    int             raw_000C;
+} FFXHudTarget;
+static_assert(sizeof(FFXHudTarget) == 16, "FFXHudTarget must be 16 bytes");
+
+typedef struct FFXBtlHudGauge {
+    dword           vfptr;
+    int             m_gaugeType;
+    int             m_animState;
+    int             m_displayMode;
+    int             m_targetValue;
+    unsigned char   raw_0014[68];
+} FFXBtlHudGauge;
+static_assert(sizeof(FFXBtlHudGauge) == 88, "FFXBtlHudGauge must be 88 bytes");
+
+typedef struct FFXMenuSlot {
+    dword           vfptr;
+    int             slotId;
+    int             itemId;
+    unsigned char   raw_000C[8];
+} FFXMenuSlot;
+static_assert(sizeof(FFXMenuSlot) == 20, "FFXMenuSlot must be 20 bytes");
+
+typedef struct FFXSfxSlotItem {
+    int             m_sfxId;
+    int             color;
+    int             m_volume;
+    int             raw_000C;
+} FFXSfxSlotItem;
+static_assert(sizeof(FFXSfxSlotItem) == 16, "FFXSfxSlotItem must be 16 bytes");
+
+typedef struct FFXEncounterTrigger {
+    int             countAndValid;
+    dword           instances;
+} FFXEncounterTrigger;
+static_assert(sizeof(FFXEncounterTrigger) == 8, "FFXEncounterTrigger must be 8 bytes");
+
+typedef struct FFXEncounterInstance {
+    int             flags;
+    dword           objectPtr;
+} FFXEncounterInstance;
+static_assert(sizeof(FFXEncounterInstance) == 8, "FFXEncounterInstance must be 8 bytes");
+
+typedef struct FFXSaveSlotInfo {
+    int             state;
+    int             playTime;
+    int             level;
+    unsigned char   raw_000C[108];
+} FFXSaveSlotInfo;
+static_assert(sizeof(FFXSaveSlotInfo) == 120, "FFXSaveSlotInfo must be 120 bytes");
+
+typedef struct FFXSaveCharacterData {
+    char            name[7];
+    char            padding[17];
+    unsigned int    hp;
+    unsigned int    mp;
+    unsigned int    maxHp;
+    unsigned char   raw_0024[84];
+} FFXSaveCharacterData;
+static_assert(sizeof(FFXSaveCharacterData) == 120, "FFXSaveCharacterData must be 120 bytes");
+
+typedef struct FFXPlayerSaveEntry {
+    int             baseHp;
+    int             baseMp;
+    unsigned char   baseStr;
+    unsigned char   raw_0009[69];
+} FFXPlayerSaveEntry;
+static_assert(sizeof(FFXPlayerSaveEntry) == 78, "FFXPlayerSaveEntry must be 78 bytes");
+
+typedef struct FFXSaveSlot {
+    char            headerFields[64];
+    unsigned short  crc16;
+    char            reserved[4];
+    unsigned char   raw_0046[6884];
+} FFXSaveSlot;
+static_assert(sizeof(FFXSaveSlot) == 6954, "FFXSaveSlot must be 6954 bytes");
+
+typedef struct FFXMagicHost {
+    dword           vfptr;
+    int             state_flags;
+    int             field8;
+    unsigned char   raw_000C[360];
+} FFXMagicHost;
+static_assert(sizeof(FFXMagicHost) == 372, "FFXMagicHost must be 372 bytes");
+
+typedef struct FFXField {
+    unsigned char   raw_0000[1362];
+} FFXField;
+static_assert(sizeof(FFXField) == 1362, "FFXField must be 1362 bytes");
+
+typedef struct FFX_AtelOpcodeDescriptor {
+    dword           name;
+    dword           pad1;
+    dword           pad2;
+    int             raw_000C;
+} FFX_AtelOpcodeDescriptor;
+static_assert(sizeof(FFX_AtelOpcodeDescriptor) == 16, "FFX_AtelOpcodeDescriptor must be 16 bytes");
+
+typedef struct FFX_MagicHostContextTable {
+    dword           pfn_Chr_AllocateActiveInstance;
+    dword           pfn_Chr_RebuildPoseMatricesAndCopySkinPalette;
+    dword           pfn_Chr_ReseatInstanceTransform;
+    unsigned char   raw_000C[2036];
+} FFX_MagicHostContextTable;
+static_assert(sizeof(FFX_MagicHostContextTable) == 2048, "FFX_MagicHostContextTable must be 2048 bytes");
+
+#pragma pack(pop)
+
 #endif // FFX_STRUCTS_H
