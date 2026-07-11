@@ -10,6 +10,7 @@
 #include "ffx_input.h"
 #include "ffx_renderqueue.h"
 #include "ffx_texture.h"
+#include "ffx_phyre_texture.h"
 #include "ffx_menu.h"
 
 // Input state
@@ -179,6 +180,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     // 5d. Inicializa texture manager e carrega assets
     FFX_Texture_Init();
+    const char *gameData = "E:\\Final Fantasy X-X2 - HD Remaster [FitGirl Re-repack]\\FFX\\data\\FFX_Data\\ffx_data\\gamedata\\ps3data";
+    char texPath[512];
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\meswin.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "meswin");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\icon.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "icon");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\battle.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "battle_tex");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\strtex.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "strtex");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\worldmap.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "worldmap");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\base_ftc\\d3d11\\font_0_0.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "font_0_0");
+    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\base_ftc\\d3d11\\font_0_1.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "font_0_1");
     FFX_Texture_Load("assets/title/titlemenu.png", "titlemenu");
     FFX_Texture_Load("assets/title/btn_ffx.png", "btn_ffx");
     FFX_Texture_Load("assets/title/btn_ffx_2.png", "btn_ffx_2");

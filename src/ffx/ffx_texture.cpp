@@ -14,6 +14,7 @@
 
 #include "ffx_texture.h"
 #include "ffx_renderer.h"
+#include "ffx_phyre_texture.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "../include/stb/stb_image.h"
@@ -82,6 +83,20 @@ int FFX_Texture_Load(const char *filePath, const char *name)
 
     int result = FFX_Texture_CreateFromMemory(data, w, h, 4, name);
     stbi_image_free(data);
+    return result;
+}
+
+int FFX_Texture_LoadPhyre(const char *filePath, const char *name)
+{
+    if (!filePath || !name)
+        return 0;
+
+    FFXPhyreTexture *tex = FFX_PhyreTexture_Load(filePath);
+    if (!tex)
+        return 0;
+
+    int result = FFX_Texture_CreateFromMemory(tex->rgba, tex->width, tex->height, 4, name);
+    FFX_PhyreTexture_Free(tex);
     return result;
 }
 

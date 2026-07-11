@@ -14,6 +14,7 @@ typedef struct FFXTexture {
 int  FFX_Texture_Init(void);
 void FFX_Texture_Shutdown(void);
 int  FFX_Texture_Load(const char *filePath, const char *name);
+int  FFX_Texture_LoadPhyre(const char *filePath, const char *name);
 int  FFX_Texture_CreateFromMemory(const unsigned char *data, int w, int h, int channels, const char *name);
 void *FFX_Texture_GetSRV(const char *name); // returns ID3D11ShaderResourceView*
 
