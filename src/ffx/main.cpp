@@ -177,6 +177,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     // 5c. Inicializa input state
     FFX_Input_Init(&g_input);
 
+    // 5d. Inicializa texture manager e carrega assets
+    FFX_Texture_Init();
+    FFX_Texture_Load("assets/title/titlemenu.png", "titlemenu");
+    FFX_Texture_Load("assets/title/btn_ffx.png", "btn_ffx");
+    FFX_Texture_Load("assets/title/btn_ffx_2.png", "btn_ffx_2");
+    FFX_Texture_Load("assets/title/btn_credits.png", "btn_credits");
+    FFX_Texture_Load("assets/title/btn_setting.png", "btn_setting");
+
     // 6. Inicializa timer do game loop
     QueryPerformanceFrequency(&g_freq);
     QueryPerformanceCounter(&g_lastTime);
@@ -242,22 +250,39 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         // Render frame
         FFX_Renderer_BeginFrame();
 
-        FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
+        void *titleSRV = FFX_Texture_GetSRV("titlemenu");
+        if (titleSRV) {
+            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, titleSRV);
+        } else {
+            FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
+        }
 
-        FFX_RenderQueue_PushRect(0, 80, 1280, 3, 0xFF2A9D8F, 0xFF2A9D8F);
-        FFX_RenderQueue_PushRect(0, 637, 1280, 3, 0xFF2A9D8F, 0xFF2A9D8F);
-
-        FFX_RenderQueue_PushRect(340, 200, 600, 120, 0xFF0D1A2A, 0xFF081218);
-        FFX_RenderQueue_PushRect(340, 200, 600, 4, 0xFF2A9D8F, 0xFF2A9D8F);
-        FFX_RenderQueue_PushRect(340, 316, 600, 4, 0xFF2A9D8F, 0xFF2A9D8F);
-
-        FFX_RenderQueue_PushRect(440, 400, 400, 50, 0xFF0A0A1A, 0xFF05050A);
-        FFX_RenderQueue_PushRect(440, 400, 400, 2, 0xFF1A3A3A, 0xFF1A3A3A);
-
+        static int sel = 0;
         static float blinkTimer = 0.0f;
         blinkTimer += dt;
+
+        if (g_input.keysPressed[VK_UP] && sel > 0) sel--;
+        if (g_input.keysPressed[VK_DOWN] && sel < 4) sel++;
+        if (g_input.keysPressed[VK_RETURN]) {
+            if (sel == 0) { }
+        }
+
+        const char *btnNames[] = {"btn_ffx", "btn_ffx_2", "btn_credits", "btn_setting"};
+        float btnY = 200;
+        for (int i = 0; i < 4; i++) {
+            void *btnSRV = FFX_Texture_GetSRV(btnNames[i]);
+            if (btnSRV) {
+                uint32_t color = (i == sel) ? 0xFFFFAA00 : 0xFFFFFFFF;
+                FFX_RenderQueue_PushQuadTex(50, btnY, 300, 50, 0, 0, 1, 1, color, color, color, color, btnSRV);
+            } else {
+                uint32_t bg = (i == sel) ? 0xFF2A9D8F : 0xFF1A2A3A;
+                FFX_RenderQueue_PushRect(50, btnY, 300, 50, bg, bg);
+            }
+            btnY += 60;
+        }
+
         if (blinkTimer < 0.6f) {
-            FFX_RenderQueue_PushRect(540, 410, 200, 30, 0x302A9D8F, 0x302A9D8F);
+            FFX_RenderQueue_PushRect(50, 200 + sel * 60, 4, 50, 0xFF2A9D8F, 0xFF2A9D8F);
         } else if (blinkTimer > 1.2f) {
             blinkTimer = 0.0f;
         }
