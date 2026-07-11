@@ -54,56 +54,24 @@ static const int vtable_FFXApplication[32] = {0};
 // Inicializa subsistemas FFX: storage, encoding, save, FMOD, PS3, async Q
 int FFX_Engine_InitApplication(int app, int a2, int a3) {
     FFX_Dbg_LogPrintf(10, "SKS: initApplication begin\n");
-
-    Phyre_Application_SetWindowTitle((int *)app, "FINAL FANTASY X");
-
-    *(float *)(app + 944) = 0.0f;  // field_3B0
-
-    // Engine_InitializeStorage();
-    // Engine_GraphicInitialize();
-    // FmodManager_CreateSingleton_w();
-    // FFX_Save_LoadSaveData();
-    // FFX_Encoding_LoadSjisForCurrentLocale();
-    // FFX_PS3_EnsureSingleton();
-    // FFX_AsyncQ_GetContext();
-    // FFX_BtlUI_HudTarget_InitRender();
-    // FFX_Menu2D_UploadTextureRegion();
-
-    // Carrega texturas de menu (atlas PNG) — fallback silencioso se arquivos nao existirem
     FFX_Menu2D_LoadTextures();
-
     FFX_Dbg_LogPrintf(10, "SKS: fiosInitialize finished\n");
-    FFX_Dbg_LogPrintf(10, "SKS: graphicInitialize finished\n");
-
     return 1;
 }
 
 // Boot: inicializa singleton FFXApplication
 static int FFX_Boot_Init(float *app) {
-    // Chama construtor base PhyreEngine
     Phyre_PApplication_Constructor(app);
-
-    // Substitui vtable para FFXApplication
-    *(const int **)app = vtable_FFXApplication;
-
-    // Configura campos padrao
-    *(float *)(app + 236) = 0.0f;
-    *((unsigned char *)app + 928) = 0;
-    *((unsigned short *)app + 470) = 1;
-    *((unsigned char *)app + 648) = 1;
-
     Phyre_Property_SetValue231(app, 101);
 
-    // Configura resolucao padrao (1280x720)
     int *ctx = (int *)GetGlobalSystemContext();
     if (ctx) {
-        ctx[155] = 1280;  // width
-        ctx[156] = 720;   // height
-        ctx[163] = 2;     // display mode
+        ctx[155] = 1280;
+        ctx[156] = 720;
+        ctx[163] = 2;
     }
 
     FFX_Debug_RedirectStdoutToFile();
-
     return 1;
 }
 
@@ -192,7 +160,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     FFX_Boot_Init(appBuffer);
 
     // 4. Inicializa subsistemas FFX
-    FFX_Engine_InitApplication((int)appBuffer, 0, 0);
+    FFX_Engine_InitApplication((int)(intptr_t)appBuffer, 0, 0);
 
     // 5. Inicializa renderer
     if (!FFX_Renderer_Init(g_window, 1280, 720)) {
@@ -316,7 +284,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     return (int)msg.wParam;
 }
 
-// CRT entry point wrapper
+// CRT entry point — use standard main with console subsystem for debugging
+#ifndef _MSC_VER
+// For clang/gcc: use main instead of WinMain
+int main() {
+    return WinMain(GetModuleHandleA(NULL), NULL, GetCommandLineA(), SW_SHOWDEFAULT);
+}
+#else
 void WinMainCRTStartup() {
     WinMain(GetModuleHandleA(NULL), NULL, GetCommandLineA(), SW_SHOWDEFAULT);
 }
+#endif
