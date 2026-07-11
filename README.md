@@ -78,25 +78,25 @@ From this knowledge base, we are rebuilding the engine in pure C++, compilable w
 
 ## Current reconstruction status
 
-### ✅ Code written (compiles partially, not yet producing a working .exe)
-- **Game loop** — PeekMessage + QueryPerformanceCounter + 0.05s clamp. Code is correct.
-- **D3D11 renderer** — Device, swap chain, RTV via LoadLibrary/GetProcAddress. Had a bug (`D3D11_CREATE_DEVICE_DEBUG` caused failure without debug layer) — now fixed with fallback.
-- **Render queue** — Quad batching with dynamic vertex buffer, ortho projection, DrawIndexed with SRV batch sorting. Code is correct but untested (build doesn't produce .exe yet).
-- **Texture manager** — stb_image integration, 64-slot SRV cache, atlas registry. No actual texture files exist in the project yet.
-- **Input** — 256-key polling via GetAsyncKeyState with rising-edge detection. Code is correct.
-- **ESC menu** — Toggle with M, arrow navigation, teal highlight. Drawing is inline in main.cpp, not a proper subsystem.
-- **Save system** — CRC-16 CCITT implementation, file I/O via Win32 APIs, 7-slot management. Untested.
-- **Lua 5.1** — 27 .c files included in repo. Current clang build uses lua_stubs.cpp instead (real Lua not linked yet).
+### ✅ Working (verified with running .exe)
+- **Window** — Opens a window titled "FINAL FANTASY X", 800x600, responds to input
+- **Game loop** — PeekMessage + QueryPerformanceCounter + 0.05s clamp, runs without crashing
+- **D3D11 Renderer** — Device, swap chain, render target view via LoadLibrary/GetProcAddress. Clears screen to dark blue. **Test triangle renders (RGB gradient visible)**
+- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile
+- **Render queue** — Quad batching pipeline with ortho projection and DrawIndexed (code present, needs verification)
+- **Input** — 256-key polling via GetAsyncKeyState with rising-edge detection
+- **Build** — Compiles with Clang 22 (x64), produces 548KB .exe
 
 ### 🔄 In progress
-- **Build system** — Project does not compile yet. Current blocker: duplicate symbol errors between phyre_core.cpp stub and other phyre_*.cpp files. Resolving.
-- **Renderer** — D3D11 debug flag removed, error checking added. Needs verification once build succeeds.
+- **FPS bar** — Code exists but not visible on screen (render queue flush may have issue)
+- **ESC menu** — Code exists, toggle with M key, untested visually
+- **Texture manager** — stb_image integration, 64-slot SRV cache. No texture files in project yet.
+- **Save system** — CRC-16 CCITT, file I/O. Untested.
 
 ### ⚠️ Honest assessment — what does NOT work
-- **No .exe is produced** — the build fails. The previous "working" claims were never verified.
+- **No FPS bar visible** — render queue may not be flushing correctly
 - **DrawString** — Placeholder using colored rectangles. Does NOT render actual text.
 - **DrawWindow** — Simplified 4-border rect. Does NOT do real 9-slice with atlas textures.
-- **DrawPlasma** — Just calls PushRect. Does NOT do procedural plasma.
 - **No textures loaded** — No PNG/DDS files exist in the project. Atlas registry is empty.
 - **No audio** — FMOD is a stub.
 - **No 3D rendering** — Field/scene system is 5% stub.
@@ -104,9 +104,10 @@ From this knowledge base, we are rebuilding the engine in pure C++, compilable w
 - **PhyreEngine** — All stubs. PClassDescriptor has partial implementation.
 - **Bullet Physics** — All stubs.
 - **Steam/Iggy** — All stubs.
+- **Lua 5.1** — 27 .c files in repo but not linked in current build (uses lua_stubs.cpp).
 
 ### 🎯 Immediate goal
-Get the build to produce a working .exe that opens a window, clears the screen to dark blue, and shows the test triangle + FPS bar. Then build toward a title screen.
+Get the render queue flushing correctly (FPS bar visible), then build toward a title screen with a background image and "Press Any Key" prompt.
 
 ---
 
