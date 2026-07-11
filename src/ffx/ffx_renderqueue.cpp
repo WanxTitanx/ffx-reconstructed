@@ -21,6 +21,7 @@
 #include <stdlib.h>       /* malloc, free */
 #include <string.h>       /* memset */
 #include <stdint.h>
+#include <stdio.h>        /* fopen, fprintf, fclose */
 
 /* ---- D3DCompile function-pointer typedef ------------------------------- */
 
@@ -53,6 +54,7 @@ static ID3D11PixelShader  *g_pixelShader    = NULL;
 static ID3D11PixelShader  *g_pixelShaderTex = NULL;
 static ID3D11SamplerState *g_sampler        = NULL;
 static ID3D11InputLayout  *g_inputLayout    = NULL;
+static ID3D11RasterizerState *g_rasterState = NULL;
 
 static FFXVertex2D  g_quadQueue[FFX_MAX_QUADS * FFX_VERTICES_PER_QUAD];
 static void        *g_quadSRVs[FFX_MAX_QUADS]; /* ID3D11ShaderResourceView* per quad, NULL = solid color */
@@ -324,10 +326,10 @@ static int CreateConstantBuffer(void)
 {
     D3D11_BUFFER_DESC bd;
     ZeroMemory(&bd, sizeof(bd));
-    bd.ByteWidth      = 16 * sizeof(float);  /* 4x4 matrix */
-    bd.Usage          = D3D11_USAGE_DEFAULT;
+    bd.ByteWidth      = 16 * sizeof(float);
+    bd.Usage          = D3D11_USAGE_DYNAMIC;
     bd.BindFlags      = D3D11_BIND_CONSTANT_BUFFER;
-    bd.CPUAccessFlags = 0;
+    bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 
     HRESULT hr = g_device->CreateBuffer(&bd, NULL, &g_constantBuffer);
     return SUCCEEDED(hr) ? 1 : 0;
@@ -337,31 +339,62 @@ static int CreateConstantBuffer(void)
 
 int FFX_RenderQueue_Init(void)
 {
-    /* Grab device/context from the renderer. */
+    FILE *log = fopen("ffx_debug.log", "a");
+    if (log) fprintf(log, "[RQ] Init start\n");
+
     g_device  = FFX_Renderer_GetDevice();
     g_context = FFX_Renderer_GetContext();
-    if (!g_device || !g_context)
+    if (!g_device || !g_context) {
+        if (log) { fprintf(log, "[RQ] FAIL: no device/context\n"); fclose(log); }
         return 0;
+    }
+    if (log) fprintf(log, "[RQ] device=%p context=%p\n", g_device, g_context);
 
-    /* Cache backbuffer size so we can build the ortho matrix in Flush(). */
     g_backbufferWidth  = FFX_Renderer_GetWidth();
     g_backbufferHeight = FFX_Renderer_GetHeight();
+    if (log) fprintf(log, "[RQ] backbuffer %dx%d\n", g_backbufferWidth, g_backbufferHeight);
 
-    /* Load d3dcompiler_47.dll at runtime — no static link. */
-    if (!LoadD3DCompiler())
+    if (!LoadD3DCompiler()) {
+        if (log) { fprintf(log, "[RQ] FAIL: d3dcompiler_47.dll not found\n"); fclose(log); }
         return 0;
+    }
+    if (log) fprintf(log, "[RQ] d3dcompiler loaded OK\n");
 
-    /* Create D3D11 resources. */
-    if (!CreateVertexBuffer())
+    if (!CreateVertexBuffer()) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateVertexBuffer\n"); fclose(log); }
         return 0;
-    if (!CreateIndexBuffer())
+    }
+    if (!CreateIndexBuffer()) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateIndexBuffer\n"); fclose(log); }
         return 0;
-    if (!CreateConstantBuffer())
+    }
+    if (!CreateConstantBuffer()) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateConstantBuffer\n"); fclose(log); }
         return 0;
-    if (!CreateShaders())
+    }
+    if (!CreateShaders()) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateShaders\n"); fclose(log); }
         return 0;
-    if (!CreateSampler())
+    }
+    if (log) fprintf(log, "[RQ] shaders compiled OK\n");
+
+    if (!CreateSampler()) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateSampler\n"); fclose(log); }
         return 0;
+    }
+
+    D3D11_RASTERIZER_DESC rd;
+    ZeroMemory(&rd, sizeof(rd));
+    rd.FillMode = D3D11_FILL_SOLID;
+    rd.CullMode = D3D11_CULL_NONE;
+    rd.ScissorEnable = FALSE;
+    rd.DepthClipEnable = FALSE;
+    if (FAILED(g_device->CreateRasterizerState(&rd, &g_rasterState))) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateRasterizerState\n"); fclose(log); }
+        return 0;
+    }
+
+    if (log) { fprintf(log, "[RQ] Init ALL OK\n"); fclose(log); }
 
     g_quadCount = 0;
     ZeroMemory(g_quadSRVs, sizeof(g_quadSRVs));
@@ -370,6 +403,7 @@ int FFX_RenderQueue_Init(void)
 
 void FFX_RenderQueue_Shutdown(void)
 {
+    if (g_rasterState)     { g_rasterState->Release();      g_rasterState     = NULL; }
     if (g_sampler)         { g_sampler->Release();          g_sampler         = NULL; }
     if (g_pixelShaderTex)  { g_pixelShaderTex->Release();   g_pixelShaderTex  = NULL; }
     if (g_inputLayout)     { g_inputLayout->Release();      g_inputLayout     = NULL; }
@@ -499,6 +533,9 @@ void FFX_RenderQueue_Flush(void)
         !g_vertexShader || !g_pixelShader || !g_inputLayout || !g_constantBuffer)
         return;
 
+    FILE *log = fopen("ffx_flush.log", "a");
+    if (log) fprintf(log, "[Flush] quads=%d stride=%d\n", g_quadCount, (int)sizeof(FFXVertex2D));
+
     /* ---- map vertex buffer and copy queued vertices ---- */
     D3D11_MAPPED_SUBRESOURCE mapped;
     HRESULT hr = g_context->Map(g_vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped);
@@ -518,12 +555,21 @@ void FFX_RenderQueue_Flush(void)
     float w = (float)g_backbufferWidth;
     float h = (float)g_backbufferHeight;
     float proj[16] = {
-        2.0f / w,  0.0f,       0.0f, 0.0f,   /* col 0 */
-        0.0f,     -2.0f / h,   0.0f, 0.0f,   /* col 1 */
-        0.0f,      0.0f,       1.0f, 0.0f,   /* col 2 */
-       -1.0f,      1.0f,       0.0f, 1.0f    /* col 3 */
+        2.0f / w,  0.0f,       0.0f, 0.0f,
+        0.0f,     -2.0f / h,   0.0f, 0.0f,
+        0.0f,      0.0f,       1.0f, 0.0f,
+       -1.0f,      1.0f,       0.0f, 1.0f
     };
-    g_context->UpdateSubresource(g_constantBuffer, 0, NULL, proj, 0, 0);
+    float projT[16];
+    for (int r = 0; r < 4; r++)
+        for (int c = 0; c < 4; c++)
+            projT[r * 4 + c] = proj[c * 4 + r];
+
+    D3D11_MAPPED_SUBRESOURCE cbMapped;
+    if (SUCCEEDED(g_context->Map(g_constantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &cbMapped))) {
+        memcpy(cbMapped.pData, projT, sizeof(projT));
+        g_context->Unmap(g_constantBuffer, 0);
+    }
 
     /* ---- IA stage ---- */
     UINT stride = sizeof(FFXVertex2D);
@@ -533,7 +579,9 @@ void FFX_RenderQueue_Flush(void)
     g_context->IASetVertexBuffers(0, 1, &g_vertexBuffer, &stride, &offset);
     g_context->IASetIndexBuffer(g_indexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
-    /* ---- VS stage ---- */
+    if (g_rasterState)
+        g_context->RSSetState(g_rasterState);
+
     g_context->VSSetShader(g_vertexShader, NULL, 0);
     g_context->VSSetConstantBuffers(0, 1, &g_constantBuffer);
 
@@ -577,11 +625,13 @@ void FFX_RenderQueue_Flush(void)
         g_context->DrawIndexed((UINT)batchSize * 6,
                                (UINT)batchStart * 6,
                                (UINT)batchStart * 4);
+        if (log) fprintf(log, "[Flush] DrawIndexed batch=%d size=%d\n", batchStart, batchSize);
 
         batchStart = batchEnd;
     }
 
-    /* ---- reset ---- */
+    if (log) { fprintf(log, "[Flush] done\n"); fclose(log); }
+
     g_quadCount = 0;
     ZeroMemory(g_quadSRVs, sizeof(g_quadSRVs));
 }

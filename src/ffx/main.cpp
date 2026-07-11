@@ -123,8 +123,8 @@ static HWND CreateMainWindow(HINSTANCE hInstance) {
         return NULL;
 
     HWND hwnd = CreateWindowEx(0, "FFX_Window", "FINAL FANTASY X",
-                               WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT,
-                               800, 600, NULL, NULL, hInstance, NULL);
+        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT,
+        1280, 720, NULL, NULL, hInstance, NULL);
     if (hwnd) {
         ShowWindow(hwnd, SW_SHOWDEFAULT);
         UpdateWindow(hwnd);
@@ -242,38 +242,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         // Render frame
         FFX_Renderer_BeginFrame();
 
-        // Draw menu if active (full game area)
-        if (g_EscMenuRoot && g_EscMenuRoot->activeFlag) {
-            // Dark background overlay
-            FFX_RenderQueue_PushRect(0, 0, 512, 416, 0xCC000010, 0xCC05000A);
-
-            // Title bar
-            FFX_RenderQueue_PushRect(0, 0, 512, 32, 0xFF1A2A3A, 0xFF0A1A2A);
-
-            // Menu items
-            float y = 50.0f;
-            for (int i = 0; i < g_EscMenuRoot->totalRows && i < 15; i++) {
-                uint32_t bgColor = (i == g_EscMenuRoot->selectedRow) ? 0x332A9D8F : 0x22000000;
-                FFX_RenderQueue_PushRect(20, y, 472, 28, bgColor, bgColor);
-                if (i == g_EscMenuRoot->selectedRow)
-                    FFX_RenderQueue_PushRect(18, y, 4, 28, 0xFF2A9D8F, 0xFF2A9D8F);
-                y += 32.0f;
-            }
-        } else {
-            // Test background rect (only when menu is closed)
-            FFX_RenderQueue_PushRect(10, 10, 1260, 700, 0x1A2A3AFF, 0x0A0F14FF);
-            FFX_Renderer_DrawTestTriangle();
-        }
-
-        // Draw FPS bar (top-left corner, width proportional to frame time)
-        float fpsPct = (dt > 0) ? (1.0f / 60.0f) / dt : 1.0f;
-        if (fpsPct > 1.0f) fpsPct = 1.0f;
-        uint32_t fpsColor = (fpsPct > 0.8f)  ? 0x00FF00FF
-                          : (fpsPct > 0.5f)  ? 0xFFFF00FF
-                          :                     0xFF0000FF;
-        FFX_RenderQueue_PushRect(10, 10, 100 * fpsPct, 8, fpsColor, 0xFFFFFFFF);
-
+        FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0000FF, 0xFF0000FF);
+        FFX_RenderQueue_PushRect(100, 100, 200, 200, 0x00FF00FF, 0x00FF00FF);
         FFX_RenderQueue_Flush();
+
+        FFX_Renderer_DrawTestTriangle();
         FFX_Renderer_EndFrame();
     }
 
