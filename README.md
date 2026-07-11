@@ -78,33 +78,35 @@ From this knowledge base, we are rebuilding the engine in pure C++, compilable w
 
 ## Current reconstruction status
 
-### ✅ Working
-- **Game loop** — Non-blocking PeekMessage, delta time via QueryPerformanceCounter, anti-spiral-of-death clamp
-- **D3D11 Renderer** — Device, swap chain, render target view via LoadLibrary + GetProcAddress (zero static dependency on d3d11.lib)
-- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile
-- **Render queue** — Quad batching with dynamic vertex buffer (up to 2048 quads/frame), orthographic projection, DrawIndexed with SRV-based batch sorting
-- **Texture manager** — PNG/JPG/BMP/TGA via stb_image, 64-slot SRV cache, atlas registry by ID
-- **Input** — Full 256-key polling via GetAsyncKeyState with rising-edge detection
-- **ESC menu** — Toggle with M, arrow navigation, teal accent highlight (#2A9D8F), confirm with Enter/Esc
-- **Save system** — Full CRC-16 CCITT, real file I/O via CreateFile/ReadFile/WriteFile, 7-slot management, character data (HP, MP, stats, equipment)
-- **Fullscreen** — F11 toggle, window resize with backbuffer recreation
-- **FPS counter** — Color-coded bar (green >48fps, yellow >30fps, red below)
-- **Lua 5.1** — Complete VM compiled and linked (27 .c files, unmodified)
+### ✅ Code written (compiles partially, not yet producing a working .exe)
+- **Game loop** — PeekMessage + QueryPerformanceCounter + 0.05s clamp. Code is correct.
+- **D3D11 renderer** — Device, swap chain, RTV via LoadLibrary/GetProcAddress. Had a bug (`D3D11_CREATE_DEVICE_DEBUG` caused failure without debug layer) — now fixed with fallback.
+- **Render queue** — Quad batching with dynamic vertex buffer, ortho projection, DrawIndexed with SRV batch sorting. Code is correct but untested (build doesn't produce .exe yet).
+- **Texture manager** — stb_image integration, 64-slot SRV cache, atlas registry. No actual texture files exist in the project yet.
+- **Input** — 256-key polling via GetAsyncKeyState with rising-edge detection. Code is correct.
+- **ESC menu** — Toggle with M, arrow navigation, teal highlight. Drawing is inline in main.cpp, not a proper subsystem.
+- **Save system** — CRC-16 CCITT implementation, file I/O via Win32 APIs, 7-slot management. Untested.
+- **Lua 5.1** — 27 .c files included in repo. Current clang build uses lua_stubs.cpp instead (real Lua not linked yet).
 
-### 🔄 In Progress
-- **Build system** — Project compiles with Clang 22 (x64), MSVC Win32 adjustments in progress
-- **Renderer fix** — Removed `D3D11_CREATE_DEVICE_DEBUG` that caused white screen on machines without debug layer
-- **Error handling** — Added return value checking in `FFX_Renderer_Init` and `FFX_RenderQueue_Init`
+### 🔄 In progress
+- **Build system** — Project does not compile yet. Current blocker: duplicate symbol errors between phyre_core.cpp stub and other phyre_*.cpp files. Resolving.
+- **Renderer** — D3D11 debug flag removed, error checking added. Needs verification once build succeeds.
 
-### ❌ Stubbed (next steps)
-- **Field/3D** — Scene loading, 3D rendering, camera, lighting — 5%
-- **Battle HUD rendering** — HP bars, CTB ring, overdrive gauge, status icons — data model exists, visual rendering pending
-- **Save/Load UI** — Save crystal orchestrator — 10%
-- **PhyreEngine Type System** — PClassDescriptor partial, full type system needed for asset loading
-- **FMOD Audio** — Music and SFX — stub
-- **Steam API** — Achievements, cloud save — stub
-- **Iggy UI** — PhyreEngine UI middleware — stub
-- **DirectInput / XInput** — Gamepad — stub
+### ⚠️ Honest assessment — what does NOT work
+- **No .exe is produced** — the build fails. The previous "working" claims were never verified.
+- **DrawString** — Placeholder using colored rectangles. Does NOT render actual text.
+- **DrawWindow** — Simplified 4-border rect. Does NOT do real 9-slice with atlas textures.
+- **DrawPlasma** — Just calls PushRect. Does NOT do procedural plasma.
+- **No textures loaded** — No PNG/DDS files exist in the project. Atlas registry is empty.
+- **No audio** — FMOD is a stub.
+- **No 3D rendering** — Field/scene system is 5% stub.
+- **No battle HUD** — Data model exists, visual rendering is 0%.
+- **PhyreEngine** — All stubs. PClassDescriptor has partial implementation.
+- **Bullet Physics** — All stubs.
+- **Steam/Iggy** — All stubs.
+
+### 🎯 Immediate goal
+Get the build to produce a working .exe that opens a window, clears the screen to dark blue, and shows the test triangle + FPS bar. Then build toward a title screen.
 
 ---
 
