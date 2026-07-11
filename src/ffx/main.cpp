@@ -182,25 +182,26 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     FFX_Texture_Init();
     const char *gameData = "E:\\Final Fantasy X-X2 - HD Remaster [FitGirl Re-repack]\\FFX\\data\\FFX_Data\\ffx_data\\gamedata\\ps3data";
     char texPath[512];
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\meswin.dds.phyre", gameData);
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\ffx_bg.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "ffx_bg");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\copyright_nagi.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "copyright");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\meswin.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "meswin");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\icon.dds.phyre", gameData);
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\menu_new.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "menu_new");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\icon.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "icon");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\battle.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "battle_tex");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\strtex.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "strtex");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\d3d11\\worldmap.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "worldmap");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\base_ftc\\d3d11\\font_0_0.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "font_0_0");
-    snprintf(texPath, sizeof(texPath), "%s\\menu_us\\base_ftc\\d3d11\\font_0_1.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "font_0_1");
-    FFX_Texture_Load("assets/title/titlemenu.png", "titlemenu");
-    FFX_Texture_Load("assets/title/btn_ffx.png", "btn_ffx");
-    FFX_Texture_Load("assets/title/btn_ffx_2.png", "btn_ffx_2");
-    FFX_Texture_Load("assets/title/btn_credits.png", "btn_credits");
-    FFX_Texture_Load("assets/title/btn_setting.png", "btn_setting");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\pause.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "pause");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\face_ply.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "face_ply");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\face_smn.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "face_smn");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\titl\\d3d11\\water_00.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "water_00");
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\loading\\d3d11\\loadingbg.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "loadingbg");
 
     // 6. Inicializa timer do game loop
     QueryPerformanceFrequency(&g_freq);
@@ -267,11 +268,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         // Render frame
         FFX_Renderer_BeginFrame();
 
-        void *titleSRV = FFX_Texture_GetSRV("titlemenu");
-        if (titleSRV) {
-            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, titleSRV);
+        void *bgSRV = FFX_Texture_GetSRV("ffx_bg");
+        if (bgSRV) {
+            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, bgSRV);
         } else {
             FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
+        }
+
+        void *waterSRV = FFX_Texture_GetSRV("water_00");
+        if (waterSRV) {
+            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, waterSRV);
+        }
+
+        void *copySRV = FFX_Texture_GetSRV("copyright");
+        if (copySRV) {
+            FFX_RenderQueue_PushQuadTex(340, 600, 600, 80, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, copySRV);
         }
 
         static int sel = 0;
@@ -279,27 +290,25 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         blinkTimer += dt;
 
         if (g_input.keysPressed[VK_UP] && sel > 0) sel--;
-        if (g_input.keysPressed[VK_DOWN] && sel < 4) sel++;
+        if (g_input.keysPressed[VK_DOWN] && sel < 3) sel++;
         if (g_input.keysPressed[VK_RETURN]) {
             if (sel == 0) { }
         }
 
-        const char *btnNames[] = {"btn_ffx", "btn_ffx_2", "btn_credits", "btn_setting"};
-        float btnY = 200;
+        const char *menuItems[] = {"NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS"};
+        float btnY = 350;
         for (int i = 0; i < 4; i++) {
-            void *btnSRV = FFX_Texture_GetSRV(btnNames[i]);
-            if (btnSRV) {
-                uint32_t color = (i == sel) ? 0xFFFFAA00 : 0xFFFFFFFF;
-                FFX_RenderQueue_PushQuadTex(50, btnY, 300, 50, 0, 0, 1, 1, color, color, color, color, btnSRV);
-            } else {
-                uint32_t bg = (i == sel) ? 0xFF2A9D8F : 0xFF1A2A3A;
-                FFX_RenderQueue_PushRect(50, btnY, 300, 50, bg, bg);
+            uint32_t bg = (i == sel) ? 0x802A9D8F : 0x40000000;
+            FFX_RenderQueue_PushRect(440, btnY, 400, 40, bg, bg);
+            if (i == sel) {
+                FFX_RenderQueue_PushRect(436, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+                FFX_RenderQueue_PushRect(836, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
             }
-            btnY += 60;
+            btnY += 50;
         }
 
         if (blinkTimer < 0.6f) {
-            FFX_RenderQueue_PushRect(50, 200 + sel * 60, 4, 50, 0xFF2A9D8F, 0xFF2A9D8F);
+            FFX_RenderQueue_PushRect(440, 350 + sel * 50, 400, 2, 0xFF2A9D8F, 0xFF2A9D8F);
         } else if (blinkTimer > 1.2f) {
             blinkTimer = 0.0f;
         }

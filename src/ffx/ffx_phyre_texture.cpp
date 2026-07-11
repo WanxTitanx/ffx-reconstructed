@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
 static int find_ascii(const unsigned char *bytes, int len, const char *needle, int start, int limit) {
     int nlen = (int)strlen(needle);
     int end = len - nlen;
@@ -64,7 +68,7 @@ static unsigned char *decode_l8(const unsigned char *bytes, int offset, int w, i
     return rgba;
 }
 
-static void decompress_dxt_color_block(const unsigned char *block, unsigned char *out, int bw, int bh) {
+static void decompress_dxt_color_block(const unsigned char *block, unsigned char *out) {
     unsigned short c0 = block[0] | (block[1] << 8);
     unsigned short c1 = block[2] | (block[3] << 8);
     unsigned char r[4], g[4], b[4];
@@ -86,11 +90,11 @@ static void decompress_dxt_color_block(const unsigned char *block, unsigned char
     }
 
     unsigned int indices = block[4] | (block[5] << 8) | (block[6] << 16) | (block[7] << 24);
-    for (int i = 0; i < bw * bh; i++) {
+    for (int i = 0; i < 16; i++) {
         int idx = (indices >> (i * 2)) & 3;
-        int px = i % bw;
-        int py = i / bw;
-        int dst = (py * 4 + 0) * 0 + px * 4;
+        int x = i % 4;
+        int y = i / 4;
+        int dst = (y * 4 + x) * 4;
         out[dst + 0] = r[idx];
         out[dst + 1] = g[idx];
         out[dst + 2] = b[idx];
@@ -109,7 +113,7 @@ static unsigned char *decode_dxt1(const unsigned char *bytes, int offset, int w,
             int px = bx * 4;
             int py = by * 4;
             unsigned char blockOut[4 * 4 * 4];
-            decompress_dxt_color_block(block, blockOut, 4, 4);
+            decompress_dxt_color_block(block, blockOut);
             for (int y = 0; y < 4 && py + y < h; y++) {
                 for (int x = 0; x < 4 && px + x < w; x++) {
                     int dst = ((py + y) * w + (px + x)) * 4;
@@ -134,7 +138,7 @@ static unsigned char *decode_dxt5(const unsigned char *bytes, int offset, int w,
         for (int bx = 0; bx < blocksX; bx++) {
             const unsigned char *block = bytes + offset + (by * blocksX + bx) * 16;
             unsigned char a0 = block[0], a1 = block[1];
-            unsigned long aIdx = block[2] | (block[3] << 8) | (block[4] << 16) | (block[5] << 24) | ((unsigned long)block[6] << 32) | ((unsigned long)block[7] << 40);
+            unsigned long long aIdx = (unsigned long long)block[2] | ((unsigned long long)block[3] << 8) | ((unsigned long long)block[4] << 16) | ((unsigned long long)block[5] << 24) | ((unsigned long long)block[6] << 32) | ((unsigned long long)block[7] << 40);
             unsigned char alpha[8];
             alpha[0] = a0; alpha[1] = a1;
             if (a0 > a1) {
@@ -149,7 +153,7 @@ static unsigned char *decode_dxt5(const unsigned char *bytes, int offset, int w,
             unsigned char colorBlock[8];
             memcpy(colorBlock, block + 8, 8);
             unsigned char blockOut[4 * 4 * 4];
-            decompress_dxt_color_block(colorBlock, blockOut, 4, 4);
+            decompress_dxt_color_block(colorBlock, blockOut);
             int px = bx * 4;
             int py = by * 4;
             for (int y = 0; y < 4 && py + y < h; y++) {
@@ -179,7 +183,7 @@ static unsigned char *decode_dxt3(const unsigned char *bytes, int offset, int w,
             unsigned char colorBlock[8];
             memcpy(colorBlock, block + 8, 8);
             unsigned char blockOut[4 * 4 * 4];
-            decompress_dxt_color_block(colorBlock, blockOut, 4, 4);
+            decompress_dxt_color_block(colorBlock, blockOut);
             int px = bx * 4;
             int py = by * 4;
             for (int y = 0; y < 4 && py + y < h; y++) {
