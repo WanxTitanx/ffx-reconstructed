@@ -7,6 +7,40 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.25.0.3] - 2026-07-11
+
+### Fixed — Access violation crash from bad pointer arithmetic in FFX_Boot_Init
+- Root cause: `FFX_Boot_Init` used `float*` pointer arithmetic with byte offsets (`app + 928` advanced 928 floats = 3712 bytes, but `appBuffer` is only 1024 bytes). On x64 this caused immediate access violation (0xC0000005).
+- Removed unsafe memory writes to arbitrary offsets in the app buffer (vtable assignment, field writes at offsets 236/928/470/648 were stubs that served no purpose).
+- Simplified `FFX_Engine_InitApplication` to remove unsafe pointer casts.
+- Used `intptr_t` for pointer-to-int cast in `FFX_Engine_InitApplication` call.
+- **Result:** `FFX_Reconstructed.exe` now runs without crashing, opens a window titled "FINAL FANTASY X", and stays responsive.
+
+### Verified — D3D11 renderer working
+- Screenshot proof in `build_test/screenshot.png` shows:
+  - Window titled "FINAL FANTASY X" open
+  - Dark blue background (clear color working)
+  - RGB test triangle rendering (vertex + pixel shaders compiled and executing)
+- Build: Clang 22, x64, 548KB .exe
+
+## [1.25.0.2] - 2026-07-11
+
+### Fixed — Duplicate symbols preventing compilation
+- `phyre_core.cpp`: removed duplicate function definitions that collided with `phyre_pclass.cpp`, `phyre_stubs.cpp`, and `ffx_debug.cpp`. Kept only `Phyre_PClassDescriptor_Destructor` (not defined elsewhere).
+- **Result:** Build produces working .exe (422KB with -O2).
+
+## [1.25.0.1] - 2026-07-11
+
+### Fixed — D3D11 renderer white screen + compile errors
+- `ffx_renderer.cpp`: removed `D3D11_CREATE_DEVICE_DEBUG` flag that caused device creation failure on machines without Direct3D debug layer installed. Added fallback without BGRA support for older drivers.
+- `main.cpp`: added return value checking for `FFX_Renderer_Init` and `FFX_RenderQueue_Init` with error dialogs. Added `#undef UNICODE`/`_UNICODE` for narrow-char Win32 API usage.
+- `phyre_core.cpp`: replaced broken IDA-pseudocode with minimal stubs. Removed invalid `this` usage outside member functions, `Engine_AlignedFree` typedef calls, and undefined IDA symbols.
+- `bullet_stubs.cpp`: fixed include paths from `<LinearMath/...>` to `"bullet/LinearMath/..."`.
+- `stub_iggy.cpp`: added `#include <stdlib.h>` for malloc/free.
+- `lua_stubs.cpp`: removed 7 duplicate `__stdcall lua_push*` function definitions.
+- `ffx_menu.cpp`: added `#include <stdlib.h>` for malloc.
+- `README.md`: rewritten with honest project status and RE discoveries.
+
 ## [1.25.0.0] - 2026-07-08
 
 ### Added — WAVE 3+4 DB Reconstruction via idat.exe Batch Mode
