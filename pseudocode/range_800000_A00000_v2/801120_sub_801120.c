@@ -1,0 +1,74 @@
+// Function: sub_801120
+// Address: 0x801120
+int __cdecl sub_801120(_DWORD *a1)
+{
+  int result; // eax
+
+  *a1 = unk_C8F508[0];
+  a1[1] = unk_C8F50C;
+  a1[2] = unk_C8F510;
+  a1[3] = unk_C8F514;
+  a1[4] = unk_C8F508[0];
+  a1[5] = unk_C8F50C;
+  a1[6] = unk_C8F510;
+  a1[7] = unk_C8F514;
+  a1[8] = unk_C8F508[0];
+  a1[9] = unk_C8F50C;
+  a1[10] = unk_C8F510;
+  a1[11] = unk_C8F514;
+  a1[12] = unk_C8F508[0];
+  a1[13] = unk_C8F50C;
+  a1[14] = unk_C8F510;
+  a1[15] = unk_C8F514;
+  a1[16] = unk_C8F508[0];
+  a1[17] = unk_C8F50C;
+  a1[18] = unk_C8F510;
+  a1[19] = unk_C8F514;
+  a1[20] = unk_C8F508[0];
+  a1[21] = unk_C8F50C;
+  a1[22] = unk_C8F510;
+  a1[23] = unk_C8F514;
+  a1[24] = unk_C8F508[0];
+  a1[25] = unk_C8F50C;
+  a1[26] = unk_C8F510;
+  a1[27] = unk_C8F514;
+  a1[28] = unk_C8F508[0];
+  a1[29] = unk_C8F50C;
+  a1[30] = unk_C8F510;
+  a1[31] = unk_C8F514;
+  a1[32] = unk_C8F508[0];
+  a1[33] = unk_C8F50C;
+  a1[34] = unk_C8F510;
+  a1[35] = unk_C8F514;
+  a1[36] = unk_C8F508[0];
+  a1[37] = unk_C8F50C;
+  a1[38] = unk_C8F510;
+  a1[39] = unk_C8F514;
+  a1[40] = unk_C8F508[0];
+  a1[41] = unk_C8F50C;
+  a1[42] = unk_C8F510;
+  a1[43] = unk_C8F514;
+  a1[44] = unk_C8F508[0];
+  a1[45] = unk_C8F50C;
+  a1[46] = unk_C8F510;
+  a1[47] = unk_C8F514;
+  a1[48] = unk_C8F508[0];
+  a1[49] = unk_C8F50C;
+  a1[50] = unk_C8F510;
+  a1[51] = unk_C8F514;
+  a1[52] = unk_C8F508[0];
+  a1[53] = unk_C8F50C;
+  a1[54] = unk_C8F510;
+  a1[55] = unk_C8F514;
+  a1[56] = unk_C8F508[0];
+  a1[57] = unk_C8F50C;
+  a1[58] = unk_C8F510;
+  a1[59] = unk_C8F514;
+  a1[60] = unk_C8F508[0];
+  a1[61] = unk_C8F50C;
+  a1[62] = unk_C8F510;
+  result = unk_C8F514;
+  a1[63] = unk_C8F514;
+  a1[50] = -2139062144;
+  return result;
+}
