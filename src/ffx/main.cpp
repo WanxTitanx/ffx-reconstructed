@@ -11,6 +11,9 @@
 #include "ffx_renderqueue.h"
 #include "ffx_texture.h"
 #include "ffx_phyre_texture.h"
+#include "ffx_ttf_font.h"
+#include "ffx_fmv_player.h"
+#include "ffx_menu2d.h"
 #include "ffx_menu.h"
 
 // Input state
@@ -180,7 +183,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     // 5d. Inicializa texture manager e carrega assets
     FFX_Texture_Init();
-    const char *gameData = "E:\\Final Fantasy X-X2 - HD Remaster [FitGirl Re-repack]\\FFX\\data\\FFX_Data\\ffx_data\\gamedata\\ps3data";
+    const char *gameData = "data";
     char texPath[512];
     snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\ffx_bg.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "ffx_bg");
@@ -198,10 +201,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     FFX_Texture_LoadPhyre(texPath, "face_ply");
     snprintf(texPath, sizeof(texPath), "%s\\menu\\d3d11\\face_smn.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "face_smn");
-    snprintf(texPath, sizeof(texPath), "%s\\menu\\titl\\d3d11\\water_00.dds.phyre", gameData);
-    FFX_Texture_LoadPhyre(texPath, "water_00");
+    for (int i = 0; i < 70; i++) {
+        char name[32];
+        snprintf(name, sizeof(name), "water_%02d", i);
+        snprintf(texPath, sizeof(texPath), "%s\\menu\\titl\\d3d11\\water_%02d.dds.phyre", gameData, i);
+        FFX_Texture_LoadPhyre(texPath, name);
+    }
+    snprintf(texPath, sizeof(texPath), "%s\\menu\\xfont1208\\d3d11\\font_0_0.dds.phyre", gameData);
+    FFX_Texture_LoadPhyre(texPath, "font_0_0");
     snprintf(texPath, sizeof(texPath), "%s\\menu\\loading\\d3d11\\loadingbg.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "loadingbg");
+
+    FFX_TTFFont_Init("C:\\Windows\\Fonts\\arial.ttf", 32);
 
     // 6. Inicializa timer do game loop
     QueryPerformanceFrequency(&g_freq);
@@ -265,52 +276,191 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             fpsTimeAccum -= 1.0f;
         }
 
-        // Render frame
-        FFX_Renderer_BeginFrame();
-
-        void *bgSRV = FFX_Texture_GetSRV("ffx_bg");
-        if (bgSRV) {
-            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, bgSRV);
-        } else {
-            FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
-        }
-
-        void *waterSRV = FFX_Texture_GetSRV("water_00");
-        if (waterSRV) {
-            FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, waterSRV);
-        }
-
-        void *copySRV = FFX_Texture_GetSRV("copyright");
-        if (copySRV) {
-            FFX_RenderQueue_PushQuadTex(340, 600, 600, 80, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, copySRV);
-        }
-
+        // 0=black, 1=square_logo, 2=second_logo, 3=intro_fmv, 4=title, 5=loading, 6=menu
+        static int screenState = 4;
+        static float stateTimer = 0.0f;
         static int sel = 0;
         static float blinkTimer = 0.0f;
+        static float waterAnimTimer = 0.0f;
+        static int waterFrame = 0;
+        static float fadeAlpha = 0.0f;
+
+        /* FFX internal render resolution: 512x416 (scaled from 1920x1080).
+           The real FFX.exe renders all menu elements at 512x416 and scales up.
+           ScaleX: 1920 → 512 (divide by 3.75), ScaleY: 1080 → 416 (divide by 2.596).
+           Color system: 128 = normal brightness, 0 = black, 255 = double brightness. */
         blinkTimer += dt;
-
-        if (g_input.keysPressed[VK_UP] && sel > 0) sel--;
-        if (g_input.keysPressed[VK_DOWN] && sel < 3) sel++;
-        if (g_input.keysPressed[VK_RETURN]) {
-            if (sel == 0) { }
+        waterAnimTimer += dt;
+        if (waterAnimTimer >= 1.0f / 30.0f) {
+            waterAnimTimer = 0.0f;
+            waterFrame = (waterFrame + 1) % 70;
         }
 
-        const char *menuItems[] = {"NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS"};
-        float btnY = 350;
-        for (int i = 0; i < 4; i++) {
-            uint32_t bg = (i == sel) ? 0x802A9D8F : 0x40000000;
-            FFX_RenderQueue_PushRect(440, btnY, 400, 40, bg, bg);
-            if (i == sel) {
-                FFX_RenderQueue_PushRect(436, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
-                FFX_RenderQueue_PushRect(836, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+        stateTimer += dt;
+
+        if (screenState == 1 || screenState == 2) {
+            FFX_FMV_NextFrame();
+        }
+
+        const float bootDurations[] = {1.0f, 8.0f, 6.0f, 0.5f, 0.0f, 0.0f, 0.0f};
+        if (screenState < 4 && stateTimer >= bootDurations[screenState]) {
+            screenState++;
+            stateTimer = 0.0f;
+            fadeAlpha = 1.0f;
+            if (screenState == 1) {
+                char fmvPath[512];
+                snprintf(fmvPath, sizeof(fmvPath), "%s\\movie\\opl_us.webm", gameData);
+                FFX_FMV_Load(fmvPath);
+            } else if (screenState == 2) {
+                char fmvPath[512];
+                snprintf(fmvPath, sizeof(fmvPath), "%s\\movie\\opk_us.webm", gameData);
+                FFX_FMV_Load(fmvPath);
+            } else if (screenState == 3) {
+                FFX_FMV_Shutdown();
             }
-            btnY += 50;
+        }
+        if (fadeAlpha > 0.0f) {
+            fadeAlpha -= dt * 2.0f;
+            if (fadeAlpha < 0.0f) fadeAlpha = 0.0f;
         }
 
-        if (blinkTimer < 0.6f) {
-            FFX_RenderQueue_PushRect(440, 350 + sel * 50, 400, 2, 0xFF2A9D8F, 0xFF2A9D8F);
-        } else if (blinkTimer > 1.2f) {
-            blinkTimer = 0.0f;
+        if (screenState == 4) {
+            if (g_input.keysPressed[VK_UP] && sel > 0) sel--;
+            if (g_input.keysPressed[VK_DOWN] && sel < 3) sel++;
+            if (g_input.keysPressed[VK_RETURN] || g_input.keysPressed[VK_SPACE]) {
+                screenState = 5;
+                stateTimer = 0.0f;
+            }
+        } else if (screenState == 5) {
+            if (stateTimer >= 2.0f) {
+                screenState = 6;
+                stateTimer = 0.0f;
+                sel = 0;
+            }
+        } else if (screenState == 6) {
+            if (g_input.keysPressed[VK_UP] && sel > 0) sel--;
+            if (g_input.keysPressed[VK_DOWN] && sel < 4) sel++;
+            if (g_input.keysPressed[VK_ESCAPE]) {
+                screenState = 4;
+                sel = 0;
+            }
+        }
+
+        FFX_Renderer_BeginFrame();
+
+        if (screenState == 0) {
+            FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF000000, 0xFF000000);
+        } else if (screenState == 1) {
+            void *fmvSRV = FFX_FMV_GetFrameSRV();
+            if (fmvSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, fmvSRV);
+            } else {
+                FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF000000, 0xFF000000);
+            }
+        } else if (screenState == 2) {
+            void *fmvSRV = FFX_FMV_GetFrameSRV();
+            if (fmvSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, fmvSRV);
+            } else {
+                FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF000000, 0xFF000000);
+            }
+        } else if (screenState == 3) {
+            FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF000000, 0xFF000000);
+            float introPct = stateTimer / 0.5f;
+            if (introPct > 1.0f) introPct = 1.0f;
+            FFX_RenderQueue_PushRect(0, 350, 1280 * introPct, 2, 0xFF2A9D8F, 0xFF2A9D8F);
+        } else if (screenState == 4) {
+            void *bgSRV = FFX_Texture_GetSRV("ffx_bg");
+            if (bgSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, bgSRV);
+            }
+
+            char waterName[32];
+            snprintf(waterName, sizeof(waterName), "water_%02d", waterFrame);
+            void *waterSRV = FFX_Texture_GetSRV(waterName);
+            if (waterSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, waterSRV);
+            }
+
+            void *copySRV = FFX_Texture_GetSRV("copyright");
+            if (copySRV) {
+                FFX_RenderQueue_PushQuadTex(340, 600, 600, 80, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, copySRV);
+            }
+
+            const char *titleItems[] = {"NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS"};
+            float btnY = 350;
+            void *fontSRV = FFX_TTFFont_GetAtlasSRV();
+            for (int i = 0; i < 4; i++) {
+                uint32_t bg = (i == sel) ? 0x802A9D8F : 0x40000000;
+                FFX_RenderQueue_PushRect(440, btnY, 400, 40, bg, bg);
+                if (i == sel) {
+                    FFX_RenderQueue_PushRect(436, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+                    FFX_RenderQueue_PushRect(836, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+                }
+                btnY += 50;
+            }
+            btnY = 350;
+            for (int i = 0; i < 4; i++) {
+                if (fontSRV) {
+                    uint32_t tc = (i == sel) ? 0xFFFFFF00 : 0xFFFFFFFF;
+                    FFX_TTFFont_DrawText(titleItems[i], 460, btnY + 8, 1.0f, tc, fontSRV);
+                }
+                btnY += 50;
+            }
+        } else if (screenState == 5) {
+            void *loadSRV = FFX_Texture_GetSRV("loadingbg");
+            if (loadSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, loadSRV);
+            } else {
+                FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF000000, 0xFF000000);
+            }
+            float pct = stateTimer / 2.0f;
+            if (pct > 1.0f) pct = 1.0f;
+            FFX_RenderQueue_PushRect(440, 360, 400, 16, 0x30000000, 0x30000000);
+            FFX_RenderQueue_PushRect(440, 360, (int)(400 * pct), 16, 0xFF2A9D8F, 0xFF2A9D8F);
+        } else if (screenState == 6) {
+            void *bgSRV = FFX_Texture_GetSRV("ffx_bg");
+            if (bgSRV) {
+                FFX_RenderQueue_PushQuadTex(0, 0, 1280, 720, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, bgSRV);
+            } else {
+                FFX_RenderQueue_PushRect(0, 0, 1280, 720, 0xFF0A0A1A, 0xFF05050F);
+            }
+
+            void *meswinSRV = FFX_Texture_GetSRV("meswin");
+            if (meswinSRV) {
+                FFX_RenderQueue_PushQuadTex(200, 100, 880, 520, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, meswinSRV);
+            } else {
+                FFX_RenderQueue_PushRect(200, 100, 880, 520, 0xCC0A0A1A, 0xCC05050F);
+            }
+
+            const char *menuItems[] = {"ITEMS", "ABILITIES", "EQUIPMENT", "STATUS", "FORMATION"};
+            float btnY = 150;
+            void *fontSRV2 = FFX_Texture_GetSRV("font_0_0");
+            for (int i = 0; i < 5; i++) {
+                uint32_t bg = (i == sel) ? 0x802A9D8F : 0x40000000;
+                FFX_RenderQueue_PushRect(240, btnY, 800, 40, bg, bg);
+                if (i == sel) {
+                    FFX_RenderQueue_PushRect(236, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+                    FFX_RenderQueue_PushRect(1036, btnY, 4, 40, 0xFF2A9D8F, 0xFF2A9D8F);
+                }
+                if (fontSRV2) {
+                    uint32_t tc = (i == sel) ? 0xFFFFD700 : 0xFFFFFFFF;
+                    FFX_RenderQueue_DrawText(menuItems[i], 260, btnY + 8, 2.0f, tc, fontSRV2, 16, 16, 8, 16);
+                }
+                btnY += 50;
+            }
+
+            if (blinkTimer < 0.6f) {
+                FFX_RenderQueue_PushRect(240, 150 + sel * 50, 800, 2, 0xFF2A9D8F, 0xFF2A9D8F);
+            } else if (blinkTimer > 1.2f) {
+                blinkTimer = 0.0f;
+            }
+        }
+
+        if (fadeAlpha > 0.0f) {
+            uint8_t a = (uint8_t)(fadeAlpha * 255.0f);
+            uint32_t fade = (a << 24) | 0x00000000;
+            FFX_RenderQueue_PushRect(0, 0, 1280, 720, fade, fade);
         }
 
         float fpsPct = (dt > 0) ? (1.0f / 60.0f) / dt : 1.0f;

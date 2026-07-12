@@ -23,3 +23,4 @@ void FFX_RenderQueue_Flush();
 void FFX_RenderQueue_Resize(int width, int height);
 void FFX_RenderQueue_Clear();
 void FFX_RenderQueue_UpdatePlasma(float time);
+void FFX_RenderQueue_DrawText(const char *text, float x, float y, float scale, uint32_t color, void *fontSRV, int fontCols, int fontRows, int charW, int charH);

@@ -1,0 +1,106 @@
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+
+const funcs = JSON.parse(fs.readFileSync(
+  'C:\\Users\\wande\\Documents\\ffx-editor-main\\ffx_reconstructed\\pseudocode\\range_600000_800000\\filtered_funcs.json', 'utf8'));
+
+const PORT = 49757;
+const BATCH = 50;
+const OUT = 'C:\\Users\\wande\\Documents\\ffx-editor-main\\ffx_reconstructed\\pseudocode\\range_600000_800000';
+const S = /[<>:"\\\/|?*@&$!#(){}]/g;
+
+function callMCP(queries) {
+  return new Promise((resolve, reject) => {
+    const body = JSON.stringify({
+      jsonrpc: '2.0', id: Math.random().toString(36).slice(2, 10),
+      method: 'tools/call',
+      params: { name: 'analyze_batch', arguments: { queries } }
+    });
+    const req = http.request({
+      hostname: '127.0.0.1', port: PORT, path: '/mcp',
+      method: 'POST', headers: { 'Content-Type': 'application/json' }
+    }, res => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.error) { reject(new Error(parsed.error.message)); return; }
+          const text = parsed.result?.content?.[0]?.text;
+          if (!text) { resolve([]); return; }
+          resolve(JSON.parse(text));
+        } catch (e) { reject(e); }
+      });
+    });
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
+async function main() {
+  let ok = 0, err = 0;
+  const total = funcs.length;
+
+  for (let i = 0; i < total; i += BATCH) {
+    const batch = funcs.slice(i, Math.min(i + BATCH, total));
+    const queries = batch.map(f => ({ addr: f.addr, include_decompile: true, include_proto: true }));
+
+    try {
+      const results = await callMCP(queries);
+      for (const r of results) {
+        if (!r || !r.addr) continue;
+        const addr = r.addr.replace('0x', '');
+        const name = (r.name || 'unk').replace(S, '_').replace(/__+/g, '_');
+        const proto = r.analysis?.prototype || '';
+        const sz = r.analysis?.size || '0';
+        let dec = r.analysis?.decompile || '';
+        let c = '// Function: ' + r.name + '\n// Address: ' + r.addr + '\n// Size: ' + sz + '\n';
+        if (proto) c += '// Prototype: ' + proto + '\n';
+        c += '\n' + dec;
+        if (!dec.endsWith('\n')) c += '\n';
+        try { fs.writeFileSync(path.join(OUT, addr + '_' + name + '.c'), c); ok++; } catch (e) { /* skip */ }
+      }
+    } catch (e) {
+      for (const f of batch) {
+        const name = f.name.replace(S, '_').replace(/__+/g, '_');
+        fs.writeFileSync(path.join(OUT, f.addr.replace('0x', '') + '_' + name + '.c'),
+          '// Function: ' + f.name + '\n// Address: ' + f.addr + '\n// Size: ' + f.size + '\n\n// ERROR: ' + e.message + '\n');
+        err++;
+      }
+    }
+
+    const done = Math.min(i + BATCH, total);
+    process.stdout.write('\r' + done + '/' + total + ' (' + ((done / total) * 100).toFixed(1) + '%)  OK:' + ok + '  ERR:' + err);
+  }
+
+  process.stdout.write('\n');
+  console.log('COMPLETE! OK: ' + ok + ' ERR: ' + err);
+
+  // INDEX
+  let index = '# Pseudocode Index: 0x600000 - 0x800000\n\n';
+  index += '- **Total functions:** ' + total + '\n';
+  index += '- **Decompiled:** ' + ok + '\n';
+  index += '- **Failed:** ' + err + '\n\n';
+  index += '## Function List\n\n';
+  index += '| # | Address | Name | Size | Status |\n';
+  index += '|---|---------|------|------|--------|\n';
+  for (let i = 0; i < total; i++) {
+    const f = funcs[i];
+    const fname = f.addr.replace('0x', '') + '_' + f.name.replace(S, '_').replace(/__+/g, '_') + '.c';
+    const fp = path.join(OUT, fname);
+    let status = '?';
+    if (fs.existsSync(fp)) {
+      const c = fs.readFileSync(fp, 'utf8');
+      if (c.includes('ERROR:')) status = 'ERR';
+      else if (c.includes('No decompilation')) status = 'EMP';
+      else status = 'OK';
+    } else status = 'MISS';
+    index += '| ' + (i + 1) + ' | ' + f.addr + ' | ' + f.name + ' | ' + f.size + ' | ' + status + ' |\n';
+  }
+  fs.writeFileSync(path.join(OUT, 'INDEX.md'), index);
+  console.log('INDEX.md written');
+}
+
+main().catch(e => { console.error('\nFATAL:', e); });

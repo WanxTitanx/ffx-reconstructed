@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-#define FFX_MAX_TEXTURES 64
+#define FFX_MAX_TEXTURES 256
 #define FFX_MAX_ATLASES  FFX_MAX_TEXTURES
 
 typedef struct FFXTexture {

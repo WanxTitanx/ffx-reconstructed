@@ -1,0 +1,7 @@
+// Function: sub_647640
+// Address: 0x647640
+// Size: 0x52
+//
+// NOT EXTRACTED - This function was not decompiled.
+// To decompile it, run:
+//   idalib_decompile(db, "0x647640")

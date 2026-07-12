@@ -1,0 +1,7 @@
+// Function: sub_734A80
+// Address: 0x734a80
+// Size: 0x72
+//
+// NOT EXTRACTED - This function was not decompiled.
+// To decompile it, run:
+//   idalib_decompile(db, "0x734a80")

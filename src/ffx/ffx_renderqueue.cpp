@@ -55,6 +55,8 @@ static ID3D11PixelShader  *g_pixelShaderTex = NULL;
 static ID3D11SamplerState *g_sampler        = NULL;
 static ID3D11InputLayout  *g_inputLayout    = NULL;
 static ID3D11RasterizerState *g_rasterState = NULL;
+static ID3D11BlendState      *g_blendState  = NULL;
+static ID3D11DepthStencilState *g_depthState = NULL;
 
 static FFXVertex2D  g_quadQueue[FFX_MAX_QUADS * FFX_VERTICES_PER_QUAD];
 static void        *g_quadSRVs[FFX_MAX_QUADS]; /* ID3D11ShaderResourceView* per quad, NULL = solid color */
@@ -263,7 +265,7 @@ static int CreateSampler(void)
 {
     D3D11_SAMPLER_DESC sd;
     ZeroMemory(&sd, sizeof(sd));
-    sd.Filter         = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+    sd.Filter         = D3D11_FILTER_MIN_MAG_MIP_POINT;
     sd.AddressU       = D3D11_TEXTURE_ADDRESS_WRAP;
     sd.AddressV       = D3D11_TEXTURE_ADDRESS_WRAP;
     sd.AddressW       = D3D11_TEXTURE_ADDRESS_WRAP;
@@ -394,6 +396,32 @@ int FFX_RenderQueue_Init(void)
         return 0;
     }
 
+    D3D11_BLEND_DESC bd;
+    ZeroMemory(&bd, sizeof(bd));
+    bd.RenderTarget[0].BlendEnable = TRUE;
+    bd.RenderTarget[0].SrcBlend = D3D11_BLEND_SRC_ALPHA;
+    bd.RenderTarget[0].DestBlend = D3D11_BLEND_INV_SRC_ALPHA;
+    bd.RenderTarget[0].BlendOp = D3D11_BLEND_OP_ADD;
+    bd.RenderTarget[0].SrcBlendAlpha = D3D11_BLEND_ONE;
+    bd.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ZERO;
+    bd.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
+    bd.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
+    if (FAILED(g_device->CreateBlendState(&bd, &g_blendState))) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateBlendState\n"); fclose(log); }
+        return 0;
+    }
+
+    D3D11_DEPTH_STENCIL_DESC dsd;
+    ZeroMemory(&dsd, sizeof(dsd));
+    dsd.DepthEnable = FALSE;
+    dsd.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ZERO;
+    dsd.DepthFunc = D3D11_COMPARISON_ALWAYS;
+    dsd.StencilEnable = FALSE;
+    if (FAILED(g_device->CreateDepthStencilState(&dsd, &g_depthState))) {
+        if (log) { fprintf(log, "[RQ] FAIL: CreateDepthStencilState\n"); fclose(log); }
+        return 0;
+    }
+
     if (log) { fprintf(log, "[RQ] Init ALL OK\n"); fclose(log); }
 
     g_quadCount = 0;
@@ -403,6 +431,8 @@ int FFX_RenderQueue_Init(void)
 
 void FFX_RenderQueue_Shutdown(void)
 {
+    if (g_depthState)       { g_depthState->Release();        g_depthState       = NULL; }
+    if (g_blendState)       { g_blendState->Release();        g_blendState      = NULL; }
     if (g_rasterState)     { g_rasterState->Release();      g_rasterState     = NULL; }
     if (g_sampler)         { g_sampler->Release();          g_sampler         = NULL; }
     if (g_pixelShaderTex)  { g_pixelShaderTex->Release();   g_pixelShaderTex  = NULL; }
@@ -525,6 +555,42 @@ void FFX_RenderQueue_PushQuadTex(float x, float y, float w, float h,
              g_quadQueue[base + 3].color = c3;
 }
 
+void FFX_RenderQueue_DrawText(const char *text, float x, float y, float scale,
+                              uint32_t color, void *fontSRV,
+                              int fontCols, int fontRows, int charW, int charH)
+{
+    if (!text || !fontSRV)
+        return;
+
+    FILE *log = fopen("ffx_text.log", "a");
+    if (log) { fprintf(log, "[Text] '%s' at (%.0f,%.0f) scale=%.1f cols=%d rows=%d cw=%d ch=%d srv=%p\n", text, x, y, scale, fontCols, fontRows, charW, charH, fontSRV); fclose(log); }
+
+    float glyphW = (float)charW * scale;
+    float glyphH = (float)charH * scale;
+    float texCellW = 1.0f / (float)fontCols;
+    float texCellH = 1.0f / (float)fontRows;
+
+    int i = 0;
+    float cx = x;
+    while (text[i]) {
+        unsigned char ch = (unsigned char)text[i];
+        int idx = ch - 0x20;
+        if (idx >= 0 && idx < fontCols * fontRows) {
+            int col = idx % fontCols;
+            int row = idx / fontCols;
+            float u0 = col * texCellW;
+            float v0 = row * texCellH;
+            float u1 = u0 + texCellW;
+            float v1 = v0 + texCellH;
+            FFX_RenderQueue_PushQuadTex(cx, y, glyphW, glyphH,
+                                       u0, v0, u1, v1,
+                                       color, color, color, color, fontSRV);
+        }
+        cx += glyphW;
+        i++;
+    }
+}
+
 void FFX_RenderQueue_Flush(void)
 {
     if (g_quadCount == 0)
@@ -533,7 +599,7 @@ void FFX_RenderQueue_Flush(void)
         !g_vertexShader || !g_pixelShader || !g_inputLayout || !g_constantBuffer)
         return;
 
-    FILE *log = fopen("ffx_flush.log", "a");
+    FILE *log = fopen("C:\\Users\\wande\\Documents\\ffx-editor-main\\ffx_reconstructed\\ffx_flush.log", "a");
     if (log) fprintf(log, "[Flush] quads=%d stride=%d\n", g_quadCount, (int)sizeof(FFXVertex2D));
 
     /* ---- map vertex buffer and copy queued vertices ---- */
@@ -581,56 +647,45 @@ void FFX_RenderQueue_Flush(void)
 
     if (g_rasterState)
         g_context->RSSetState(g_rasterState);
+    g_context->OMSetBlendState(g_blendState, NULL, 0xFFFFFFFF);
+    g_context->OMSetDepthStencilState(g_depthState, 0);
 
     g_context->VSSetShader(g_vertexShader, NULL, 0);
     g_context->VSSetConstantBuffers(0, 1, &g_constantBuffer);
 
-    /* ---- PS stage: draw in batches grouped by SRV ---- */
-    ID3D11ShaderResourceView *lastSRV = (ID3D11ShaderResourceView *)-1; /* force first bind */
+    /* ---- PS stage: draw all quads in a single batch ---- */
+    /* Simplified: no batch sorting, draw all quads at once.
+       Each quad's SRV is stored in g_quadSRVs but we can only bind one SRV
+       at a time. For mixed textured/solid quads, we draw them in order. */
     int batchStart = 0;
-
     while (batchStart < g_quadCount) {
         void *currentSRV = g_quadSRVs[batchStart];
-
-        /* Count consecutive quads sharing the same SRV. */
         int batchEnd = batchStart + 1;
         while (batchEnd < g_quadCount && g_quadSRVs[batchEnd] == currentSRV)
             batchEnd++;
-
         int batchSize = batchEnd - batchStart;
 
-        /* Bind shader/SRV/sampler only when state changes. */
         if (currentSRV) {
             if (g_pixelShaderTex) {
-                if (lastSRV != (ID3D11ShaderResourceView *)currentSRV) {
-                    ID3D11ShaderResourceView *srv = (ID3D11ShaderResourceView *)currentSRV;
-                    g_context->PSSetShader(g_pixelShaderTex, NULL, 0);
-                    g_context->PSSetShaderResources(0, 1, &srv);
-                    if (g_sampler)
-                        g_context->PSSetSamplers(0, 1, &g_sampler);
-                    lastSRV = srv;
-                }
+                ID3D11ShaderResourceView *srv = (ID3D11ShaderResourceView *)currentSRV;
+                g_context->PSSetShader(g_pixelShaderTex, NULL, 0);
+                g_context->PSSetShaderResources(0, 1, &srv);
+                if (g_sampler) g_context->PSSetSamplers(0, 1, &g_sampler);
             }
         } else {
-            if (lastSRV != NULL) {
-                g_context->PSSetShader(g_pixelShader, NULL, 0);
-                /* Unbind any previous SRV so it doesn't leak into solid-color draws. */
-                ID3D11ShaderResourceView *nullSRV = NULL;
-                g_context->PSSetShaderResources(0, 1, &nullSRV);
-                lastSRV = NULL;
-            }
+            g_context->PSSetShader(g_pixelShader, NULL, 0);
+            ID3D11ShaderResourceView *nullSRV = NULL;
+            g_context->PSSetShaderResources(0, 1, &nullSRV);
         }
 
-        /* Draw this batch. */
         g_context->DrawIndexed((UINT)batchSize * 6,
                                (UINT)batchStart * 6,
                                (UINT)batchStart * 4);
-        if (log) fprintf(log, "[Flush] DrawIndexed batch=%d size=%d\n", batchStart, batchSize);
 
         batchStart = batchEnd;
     }
 
-    if (log) { fprintf(log, "[Flush] done\n"); fclose(log); }
+    if (log) { fprintf(log, "[Flush] done quads=%d\n", g_quadCount); fclose(log); }
 
     g_quadCount = 0;
     ZeroMemory(g_quadSRVs, sizeof(g_quadSRVs));

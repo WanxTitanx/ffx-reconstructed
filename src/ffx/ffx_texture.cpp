@@ -92,8 +92,13 @@ int FFX_Texture_LoadPhyre(const char *filePath, const char *name)
         return 0;
 
     FFXPhyreTexture *tex = FFX_PhyreTexture_Load(filePath);
-    if (!tex)
+    if (!tex) {
+        FILE *log = fopen("ffx_texture.log", "a");
+        if (log) { fprintf(log, "[Tex] FAIL: %s -> %s\n", filePath, name); fclose(log); }
         return 0;
+    }
+    FILE *log = fopen("ffx_texture.log", "a");
+    if (log) { fprintf(log, "[Tex] OK: %s -> %s (%dx%d %s)\n", filePath, name, tex->width, tex->height, tex->format); fclose(log); }
 
     int result = FFX_Texture_CreateFromMemory(tex->rgba, tex->width, tex->height, 4, name);
     FFX_PhyreTexture_Free(tex);
