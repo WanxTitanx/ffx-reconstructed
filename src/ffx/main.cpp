@@ -212,7 +212,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     snprintf(texPath, sizeof(texPath), "%s\\menu\\loading\\d3d11\\loadingbg.dds.phyre", gameData);
     FFX_Texture_LoadPhyre(texPath, "loadingbg");
 
-    FFX_TTFFont_Init("C:\\Windows\\Fonts\\arial.ttf", 32);
+    FFX_TTFFont_Init("C:\\Windows\\Fonts\\arial.ttf", 24);
 
     // 6. Inicializa timer do game loop
     QueryPerformanceFrequency(&g_freq);
@@ -388,6 +388,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             }
 
             void *fontSRV = FFX_TTFFont_GetAtlasSRV();
+            if (fontSRV) {
+                FFX_TTFFont_DrawText("FINAL FANTASY X", 380, 150, 2.0f, 0xFFCCCCCC, fontSRV);
+            }
             const char *titleItems[] = {"NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS"};
             float btnY = 350;
             for (int i = 0; i < 4; i++) {
@@ -403,7 +406,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             for (int i = 0; i < 4; i++) {
                 if (fontSRV) {
                     uint32_t tc = (i == sel) ? 0xFFFFFF00 : 0xFFFFFFFF;
-                    FFX_TTFFont_DrawText(titleItems[i], 460, btnY + 8, 1.0f, tc, fontSRV);
+                    FFX_TTFFont_DrawText(titleItems[i], 460, btnY + 4, 1.0f, tc, fontSRV);
                 }
                 btnY += 50;
             }
