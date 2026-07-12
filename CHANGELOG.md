@@ -7,7 +7,94 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
-## [1.25.0.3] - 2026-07-11
+## [1.25.3.1] - 2026-07-11
+
+### Added — FMV player via Media Foundation
+- `ffx_fmv_player.cpp/h`: WebM playback using Windows Media Foundation
+  - `MFCreateSourceReaderFromURL` opens .webm files directly
+  - VP8/VP9 native decode on Windows 10+ (zero external dependencies)
+  - Output to D3D11 dynamic texture (`DXGI_FORMAT_B8G8R8A8_UNORM`)
+  - Vertical flip on upload (MF outputs top-down, D3D11 expects bottom-up)
+
+### Added — TTF font rendering via stb_truetype
+- `stb_truetype.h` downloaded from nothings/stb
+- `ffx_ttf_font.cpp/h`: Loads Arial TTF, builds 1024x1024 glyph atlas at runtime
+  - All 96 ASCII glyphs (0x20-0x7F) with valid metrics (w, h, xoff, yoff)
+  - `DrawText()` renders strings as textured quads with correct baseline
+  - Point sampling for crisp font edges (no linear blur)
+
+### Added — FFX Menu2D constants and scaling
+- `ffx_menu2d.h`: Internal resolution constants (512x416)
+  - `FFX_Menu2D_ScaleX(v)` = v * 512/1920
+  - `FFX_Menu2D_ScaleY(v)` = v * 416/1080
+  - Color system: 128=normal, 0=black, 255=double brightness
+  - Atlas IDs: meswin=15872, ffx_bg=16002, icon=15808, battle=16128
+
+### Added — Pseudocode extraction from IDA DB (14,300+ functions)
+- 4 DeepSeek V4 Flash workers extracting in parallel
+- `pseudocode/range_400000_600000/`: 3,385 functions
+- `pseudocode/range_600000_800000/`: 10,281 functions
+- `pseudocode/range_800000_A00000/`: 24 functions (partial)
+- `pseudocode/range_A00000_C00000/`: 573 functions (in progress)
+- `pseudocode/title_screen/`: 10 functions (manual batch)
+- `pseudocode/menu2d/`: 17 functions (manual batch)
+- `pseudocode/font/`: 7 functions (manual batch)
+- `pseudocode/boot/`: 3 functions (manual batch)
+- `pseudocode/README.md`: Full documentation with atlas IDs, color system, clip rect
+
+### Added — Documentation
+- `docs/RECONSTRUCTION_LOG.md`: Full architecture documentation
+  - D3D11 renderer, render queue, texture pipeline, Phyre decoder
+  - Boot sequence (7 states), font rendering, key discoveries
+  - Build instructions, file structure, current state
+
+### Fixed — Text rendering (ALL menu text fully legible)
+- Fix: stbtt baseline correction — added `g_fontAscent * scale` to `cy`
+  - Root cause: stbtt `yoff` is negative (-21 for most glyphs), meaning glyphs
+    are drawn above the baseline. Without ascent compensation, text was
+    positioned above the menu bars and clipped.
+- Fix: draw order — menu bars drawn first, then text on top (separate loops)
+  - Root cause: interleaving bars and text in the same loop caused batch
+    sorting to draw bars over text (bars use SRV=NULL, text uses fontSRV).
+- Fix: depth stencil state disabled (`DepthEnable = FALSE`)
+  - Root cause: D3D11 default depth test was rejecting text pixels that
+    had the same z=0.0f as the background quad.
+- Fix: alpha blending enabled (`SRC_ALPHA / INV_SRC_ALPHA`)
+  - Root cause: font atlas has transparent pixels (alpha=0) between glyphs.
+    Without blending, `tex.Sample() * color = (0,0,0,0)` replaced the
+    backbuffer with black, making glyphs invisible.
+- Fix: point sampling (`D3D11_FILTER_MIN_MAG_MIP_POINT`)
+  - Root cause: linear sampling blurred the 8x16 pixel glyphs.
+- Fix: texture cache overflow — `FFX_MAX_TEXTURES` increased from 64 to 256
+  - Root cause: 84 textures loaded (70 water + 10 menu + 1 font + 1 loadingbg
+    + 1 ffx_bg duplicate) exceeded the 64-slot limit, silently dropping the
+    font texture.
+- **Result:** "NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS" all fully legible
+
+### Fixed — Render queue projection matrix
+- Fix: transpose 4x4 matrix before uploading to constant buffer
+  - Root cause: HLSL `mul(vector, matrix)` treats matrix as column-major,
+    but C stores in row-major. Without transposition, quads were rendered
+    at wrong positions (only visible in a small corner of the screen).
+
+### Fixed — DXT texture decoder
+- Fix: output offset calculation in `decompress_dxt_color_block()`
+  - Root cause: `(py * 4 + 0) * 0 + px * 4` — the `* 0` nullified the row
+    offset, causing all 16 pixels in a 4x4 block to write to the same position.
+  - Correct: `(y * 4 + x) * 4` for each pixel in the 4x4 block.
+
+### Fixed — D3D11 white screen
+- Fix: removed `D3D11_CREATE_DEVICE_DEBUG` flag
+  - Root cause: if Direct3D debug layer is not installed (default on Windows),
+    `D3D11CreateDeviceAndSwapChain` fails with `E_FAIL`. Return value was
+    ignored, game loop ran with NULL device, backbuffer never presented.
+
+### Fixed — Access violation crash
+- Fix: `float*` pointer arithmetic with byte offsets on 1KB buffer
+  - Root cause: `ptr + 405` advanced 405 floats = 1620 bytes, but buffer is
+    only 1024 bytes. Cast to `char*` before adding byte offsets.
+
+## [1.25.0.8] - 2026-07-11
 
 ### Fixed — Access violation crash from bad pointer arithmetic in FFX_Boot_Init
 - Root cause: `FFX_Boot_Init` used `float*` pointer arithmetic with byte offsets (`app + 928` advanced 928 floats = 3712 bytes, but `appBuffer` is only 1024 bytes). On x64 this caused immediate access violation (0xC0000005).
