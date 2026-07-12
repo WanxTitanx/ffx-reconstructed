@@ -387,9 +387,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                 FFX_RenderQueue_PushQuadTex(340, 600, 600, 80, 0, 0, 1, 1, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, copySRV);
             }
 
+            void *fontSRV = FFX_TTFFont_GetAtlasSRV();
             const char *titleItems[] = {"NEW GAME", "LOAD GAME", "OPTIONS", "CREDITS"};
             float btnY = 350;
-            void *fontSRV = FFX_TTFFont_GetAtlasSRV();
             for (int i = 0; i < 4; i++) {
                 uint32_t bg = (i == sel) ? 0x802A9D8F : 0x40000000;
                 FFX_RenderQueue_PushRect(440, btnY, 400, 40, bg, bg);
