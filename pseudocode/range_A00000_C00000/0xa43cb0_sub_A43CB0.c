@@ -1,0 +1,11 @@
+// Function: sub_A43CB0
+// Address: 0xa43cb0
+// Size: 0x10
+// Prototype: 
+
+int sub_A43CB0()
+{
+  nullsub_34();
+  return 0;
+}
+

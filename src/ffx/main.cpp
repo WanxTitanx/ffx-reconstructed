@@ -406,7 +406,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
             for (int i = 0; i < 4; i++) {
                 if (fontSRV) {
                     uint32_t tc = (i == sel) ? 0xFFFFFF00 : 0xFFFFFFFF;
-                    FFX_TTFFont_DrawText(titleItems[i], 460, btnY + 4, 1.0f, tc, fontSRV);
+                    FFX_TTFFont_DrawText(titleItems[i], 460, btnY + 6, 1.5f, tc, fontSRV);
                 }
                 btnY += 50;
             }

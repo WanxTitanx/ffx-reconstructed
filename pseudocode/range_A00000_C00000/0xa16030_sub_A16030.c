@@ -1,0 +1,10 @@
+// Function: sub_A16030
+// Address: 0xa16030
+// Size: 0x1a
+// Prototype: 
+
+int __thiscall sub_A16030(_DWORD *this, int a2)
+{
+  return *(_DWORD *)(*(this + 9) - *(_DWORD *)(*(this + 3) + 136) + a2 + 4);
+}
+
