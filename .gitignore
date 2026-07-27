@@ -44,3 +44,24 @@ build_output.txt
 # Third-party includes bundled in extraction (not part of the project)
 third_party/
 include/stb_truetype.h
+
+# Compressed archives — too large for git, keep local only
+# (PS3 SDKs, PhyreEngine bundles, tool installers in EnginesExtras/)
+*.7z
+*.rar
+*.iso
+*.tgz
+*.tar
+*.bz2
+*.xz
+# ZIP: block in EnginesExtras (PS3 SDK install files) and tools root
+# but preserve tracked zips in tools/ghidra/, tools/x64dbg/, tools/class_informer/
+EnginesExtras/**/*.zip
+tools/*.zip
+
+# Torrent download metadata + padding (not source, just download artifacts)
+EnginesTORRENT/
+
+# PS3 SDK installers + extracted trees (35GB, available upstream, not source)
+# PhyreEngine SDK already copied to tools/phyreengine/ — that's the only piece we track
+EnginesExtras/
