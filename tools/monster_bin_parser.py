@@ -29,11 +29,17 @@ from typing import List, Optional
 
 @dataclass
 class MonsterHeader:
-    """Header of a monster .bin file."""
-    magic: int = 0
-    version: int = 0
-    monster_count: int = 0
-    data_offset: int = 0
+    """Header of a monster .bin file (32 bytes, from FfxLib/Monster/Monster_Structs.cs)."""
+    signature: int = 0           # Always 8
+    ai_file_pointer: int = 0     # Offset to ATEL AI bytecode
+    worker_file_pointer: int = 0 # Offset to worker data
+    stat_sheet_pointer: int = 0  # Offset to stats (name, HP, STR, etc)
+    spoils_file_pointer: int = 0 # Offset to spoils/drops
+    loot_file_pointer: int = 0   # Offset to loot table
+    audio_file_pointer: int = 0  # Offset to audio data
+    text_file_pointer: int = 0   # Offset to text data
+    file_size: int = 0           # Total file size
+    padding: bytes = b''         # 16 bytes padding (aligns to 32)
 
 
 @dataclass
@@ -100,22 +106,21 @@ class MonsterBinParser:
             return False
 
     def parse_header(self) -> MonsterHeader:
-        """Parse the file header."""
-        if not self.data or len(self.data) < 4:
+        """Parse the file header (32 bytes, from FfxLib Monster_Structs.cs)."""
+        if not self.data or len(self.data) < 32:
             return self.header
 
-        # Read first 4 bytes as header
-        self.header.magic = struct.unpack_from('<I', self.data, 0)[0]
-
-        # Try to detect format based on magic
-        if self.header.magic == 0x00000001:
-            # Kernel index format (monster1.bin)
-            if len(self.data) >= 6:
-                self.header.monster_count = struct.unpack_from('<H', self.data, 4)[0]
-        elif self.header.magic == 0x00640000:
-            # Individual monster format (mXXX.bin)
-            self.header.version = (self.header.magic >> 16) & 0xFFFF
-            self.header.monster_count = 1
+        # Read 32-byte header (8 x int32 + 16 bytes padding)
+        self.header.signature = struct.unpack_from('<I', self.data, 0)[0]
+        self.header.ai_file_pointer = struct.unpack_from('<I', self.data, 4)[0]
+        self.header.worker_file_pointer = struct.unpack_from('<I', self.data, 8)[0]
+        self.header.stat_sheet_pointer = struct.unpack_from('<I', self.data, 12)[0]
+        self.header.spoils_file_pointer = struct.unpack_from('<I', self.data, 16)[0]
+        self.header.loot_file_pointer = struct.unpack_from('<I', self.data, 20)[0]
+        self.header.audio_file_pointer = struct.unpack_from('<I', self.data, 24)[0]
+        self.header.text_file_pointer = struct.unpack_from('<I', self.data, 28)[0]
+        self.header.file_size = struct.unpack_from('<I', self.data, 32)[0] if len(self.data) >= 36 else 0
+        self.header.padding = self.data[36:52] if len(self.data) >= 52 else b''
 
         return self.header
 
@@ -252,8 +257,18 @@ class MonsterBinParser:
         print(f"{'='*60}")
         print(f"File: {self.filepath}")
         print(f"Size: {len(self.data) if self.data else 0} bytes")
-        print(f"Magic: 0x{self.header.magic:08X}")
-        print(f"Monster count: {self.header.monster_count}")
+        print(f"Signature: {self.header.signature} (expected: 8)")
+        print(f"File size field: {self.header.file_size}")
+
+        if self.header.signature == 8:
+            print(f"\nSection pointers:")
+            print(f"  AI file:      0x{self.header.ai_file_pointer:04X}")
+            print(f"  Worker file:  0x{self.header.worker_file_pointer:04X}")
+            print(f"  Stat sheet:   0x{self.header.stat_sheet_pointer:04X}")
+            print(f"  Spoils file:  0x{self.header.spoils_file_pointer:04X}")
+            print(f"  Loot file:    0x{self.header.loot_file_pointer:04X}")
+            print(f"  Audio file:   0x{self.header.audio_file_pointer:04X}")
+            print(f"  Text file:    0x{self.header.text_file_pointer:04X}")
 
         if self.entries:
             print(f"\nKernel entries ({len(self.entries)}):")
