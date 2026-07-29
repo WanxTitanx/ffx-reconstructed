@@ -7,6 +7,88 @@ e este projeto adere a [SemVer](https://semver.org/spec/v2.0.0.html) própria �
 
 ## [Unreleased]
 
+## [1.25.4.0] - 2026-07-27
+
+### Added — PhyreEngine systematic decompilation (19 batches, ~3.040+ funções)
+
+Esta sessão entregou a **decompilação completa por famílias** de todas as funções `Phyre_*` nomeadas no FFX.exe. Todos os documentos em `pseudocode/phyre/batch_*.md`.
+
+- **Batch 1** (`batch_0001_zlib_string.md`): zlib 1.2.8 (0x408DC0), CRC32 poly 0xEDB88320, Adler32 65521, alloc 7116B
+- **Batch 2** (`batch_0002_PClassDescriptor_part1.md`, `part2`, `inventory.md`): 100+ funções core + 1364 inventário completo
+- **Batch 3** (`batch_0003_PArray_part1.md`): PArray family
+- **Batch 4** (`batch_0004_PScript_part1.md`): PScript/Lua scripting — ~154 funções
+- **Batch 5** (`batch_0005_PType_part1.md`, `part2`): PType system — ~151 funções
+- **Batch 6** (`batch_0006_PNamespace.md`): PNamespace — 30 funções
+- **Batch 7** (`batch_0007_PAnimation_part1.md`): PAnimation — 150+ funções
+- **Batch 8** (`batch_0008_Animation_Input_Geometry.md`): Animation input geometry — 100+ funções
+- **Batch 9** (`batch_0009_PhyreMath.md`): PhyreMath — 50+ funções (PVector3/4, PMatrix3/4, PQuat, transformações SSE)
+- **Batch 10** (`batch_0010_Engine.md`): Engine — 25 funções
+- **Batch 11** (`batch_0011_Engine_2.md`): Engine Part 2 — 24 funções
+- **Batch 12** (`batch_0012_PhyrePPhysics.md`): PPhysics — 85 funções
+- **Batch 13** (`batch_0013_PhyrePInput.md`): PInput — 67 funções
+- **Batch 14** (`batch_0014_PhyrePRendering.md`): PRendering — 89 funções (BeginScene 64+ callers, render state 3-phase commit, D3D11, thread pool)
+- **Batch 15** (`batch_0015_PhyrePSceneNode.md`): PSceneNode — 126 funções
+- **Batch 16** (`batch_0016_PhyrePostProcessing.md`): PostProcessing — 648 funções
+- **Batch 17** (`batch_0017_PhyreGeometry.md`): PGeometry + PVertexStream + PMeshInstance — 283 funções
+  - PVertexStream struct: 64 bytes (16 DWORDs)
+  - PMeshInstance struct: 132 bytes com ~30 membros
+  - PMeshData struct: ~108 bytes
+  - Tagged pointer pattern: m_pDeclaration bit 31 (0x80000000) como ownership flag
+  - 5-element stride para stream arrays
+  - Small array optimization universal
+  - Spin-wait unbind pattern com Phyre_SleepMs(1)
+  - 2 funções misnamed confirmadas via RTTI
+- **Batch 18** (`batch_0018_PhyrePCaller.md`): PCaller — 409 funções (template smart pointer)
+  - Struct: 16 bytes — m_pPtr(+0), m_pSelf(+4), m_flags(+8), m_pData(+12)
+  - Self-reference sentinel: PCaller vazio tem m_pPtr=`this` (não NULL)
+  - Bit 31 de m_flags = ownership flag (signed test `>= 0`)
+  - Lista ligada tracking em offset -72 do objeto gerenciado
+  - 27 instanciações de template (matemáticos: PMatrix3/4/4x3, PPoint3, PQuat, PVector2 + cena/recursos)
+  - 408/409 são boilerplate COMDAT de template, só 1 função substantiva (Destructor_Release, 85B)
+- **Batch 19** (`batch_0019_PhyreRemnants.md`): 12 famílias remanescentes — ~445 funções
+  - PShader (89), PObject (77), PTimer (51), PTexture (41), PGetType (36), PStream (34), PRenderTarget (42), PGameSettings (31), PDataBlockD3D11 (22), PDynamicGeometry (17), PWorldMatrix (14), PLight (1)
+  - PDynamicGeometry mais complexo: modifier network graph (ExpandedClassDescriptor 1330B)
+  - PRenderTarget = pure abstract base
+  - PShaderCompiledProgram: m_shaderProfile em offset +1244
+
+### Added — Inventários complementares (`pseudocode/phyre/`)
+
+- `batch_PNamespace_inventory.md`: 27 funções (1982B total, avg 73B)
+- `batch_PMath_inventory.md`: 87 funções (31377B total — math family com SSE transforms, matrix ops)
+  - **Descoberta crítica**: prefixo correto é `Phyre_Math_*` (não `Phyre_PMath_*`)
+- `batch_PStream_inventory.md`: 65 funções (9314B total — I/O: Read/Write/Seek/Printf, Unpack variants)
+  - **Descoberta**: 65 funções com prefixo `Phyre_Stream_*` + 3 com `Phyre_PStream_*` (ctors)
+- `batch_PMemory_inventory.md`: 15 funções (1773B total — AlignedBuffer 805B)
+  - **Descoberta**: prefixo correto é `Phyre_Memory_*` (não `Phyre_PMemory_*`)
+- `batch_PGraphics_inventory.md`: 9 funções (841B total)
+  - **Descoberta**: prefixo correto é `Phyre_Graphics_*` (não `Phyre_PGraphics_*`)
+- `batch_0002_PClassDescriptor_inventory.md`: 1364 funções (tabela completa)
+
+### Added — Relatório completo PGeometry decompilation (`docs/phyre/pgeometry_decompilation_full.md`)
+
+- 87KB de análise completa via Hex-Rays + IDA MCP
+- 14 funções PGeometry principais decompiladas
+- Callees/callers/métricas (basic blocks, cyclomatic complexity) por função
+- Estruturas PDataBlock, PIndexDataBlock, PMeshData, PVertexStream, PMeshElementGroup, PVertexStreamArray reveladas via ClassDescriptor registration
+
+### Changed — Infraestrutura RE
+
+- IDB canônica: `F:\ffx-reconstructed\extras\ffxoficial.exe.i64` (80MB, 47432 funções, 95% nomeadas, MSVC 2012 v110, PhyreEngine 3.9.0.0 "SacSlicer")
+- Session MCP ativa: `09f6d736` via plugin ida-pro-mcp
+- Verificador independente PASS com 3 observações de precisão corrigidas (PRenderTarget count, PCaller ctor size, hex offsets PDynamicGeometry)
+
+### Notes
+
+- **Não foi necessário extrair ISO de PS3/PS2**: FFX HD Remaster alvo é PC (Steam), binário é FFX.exe PE32 x86. Virtuos portou PS3→PC, código PC é fonte canônica
+- **PS3 SDK 3.70 redundante**: só .7z extraído, installer nunca rodou (sem ps3dev/, sem ppu-lv2-gcc). PhyreEngine SDK 3.1.5.0 (PC) tem os headers C++ necessários
+- **PhyreEngine SDK 3.1.5.0 ESSENCIAL**: localizado em `C:/...Phyre Engine/` (1.3GB canônico, com CHM 42MB de referência API completa). Confirmou PhyreEngine 3.9.0.0 "SacSlicer" no FFX.exe via string `%%PVER%%3.9.0.0`. Base para os 19 batches.
+
+### Status
+
+- **Decompilação horizontal por famílias: 100% COMPLETA**
+- ~3.040+ funções Phyre_* decompiladas e documentadas
+- Próximo estágio natural: análise transversal (vtables, RTTI, call graphs) ou mapeamento de código FFX nativo (sub_*, FFX_*)
+
 ## [1.25.3.1] - 2026-07-11
 
 ### Added — FMV player via Media Foundation
