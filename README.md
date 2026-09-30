@@ -36,7 +36,11 @@ O usuário reportou que a baseline instalada abriu normalmente pela Steam no Lin
 
 O ambiente validado usa Linux, Python 3.14, `iced-x86==1.21.0`, LLVM/Clang 21, GNU binutils, GCC com suporte a i386 e `strace`. Os provedores C históricos usam **MSVC 2012 x86 17.00.50727.1**, com opções específicas registradas em cada pacote. A compilação desses provedores foi feita em uma VM Windows.
 
-Este repositório publica fontes, declarações preparadas e recibos. Instaladores, SDKs, ferramentas binárias, bancos IDA, ambientes virtuais, caches e executáveis gerados ficam no backup local. Um clone novo exige instalar as ferramentas e reconstruir os objetos C conforme as receitas abaixo; os recibos, sozinhos, não substituem esses objetos.
+Este repositório publica fontes, declarações preparadas e recibos. O [snapshot de compilação de 30/09/2026](https://github.com/WanxTitanx/ffx-reconstructed/releases/tag/build-backup-2026-09-30) está disponível como anexo da release (1,10 GiB), incluindo os fontes, objetos C, recibos, ferramentas Linux e toolchains VS2012/Python do Windows. `ExtrasExtras`, bancos IDA e instalações completas de jogos não fazem parte do pacote.
+
+O SHA-256 do pacote é `87497637d3d11e07622dcf9319dcb0e9a8c0e39136c5f319208922d567adbcc5`. A release inclui o arquivo `.sha256` e os relatórios de integridade e auditoria de segredos. Consulte `compact-info/README.md` dentro do pacote para preparar o ambiente.
+
+Em um clone sem esse snapshot, instale as ferramentas e reconstrua os objetos C conforme as receitas abaixo; os recibos, sozinhos, não substituem esses objetos.
 
 ```bash
 python3.14 -m venv recon/ffx/.venv-asm
