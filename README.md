@@ -45,7 +45,7 @@ recon/ffx/.venv-asm/bin/python -m pip install iced-x86==1.21.0 pytest==9.1.1
 
 Consulte as receitas de [`c_leaf`](recon/ffx/c_leaf/README.md), [`c_reloc`](recon/ffx/c_reloc/README.md) e [`byteproof`](recon/ffx/byteproof/README.md) para gerar os objetos e seus manifestos com a toolchain histórica. Preserve os diretórios `build/`, logs, snapshots de entrada e recibos produzidos.
 
-As evidências históricas registram caminhos absolutos do ambiente em que foram geradas. Em outra máquina, configure a referência usada por `tools/match/definitive_match.py` e regenere os recibos aplicáveis. Não edite hashes dos manifestos para contornar verificações.
+O `.gitattributes` preserva os bytes dos fontes, inclusive os finais de linha, em checkouts Linux e Windows. As evidências históricas registram caminhos absolutos do ambiente em que foram geradas. Em outra máquina, configure a referência usada por `tools/match/definitive_match.py` e regenere os recibos aplicáveis. Não edite hashes dos manifestos para contornar verificações.
 
 ## Reconstruir a baseline
 
