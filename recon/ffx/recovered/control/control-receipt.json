@@ -1,0 +1,95 @@
+{
+  "started_at": "2026-09-30T17:09:45.837979+00:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "tool_hashes": {
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\cl.exe": "a9b5f9825deac6514ce616f9fd01d1f487a6b8a94ca0503c43cb2d1f2a16e1ec",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\c1.dll": "badb49ba77061bc93b86b670337d5ba6121c9257527c196d61e610fe189d80cc",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\c1xx.dll": "5ae22b71f97691680aabc285391838f998706472e848b9be7893dfded0f13da7",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\c2.dll": "64087462602b68d21d7d3ae3d2a9e46f3a1e355be9c59358e1d7891ae151941f",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\link.exe": "efcb69f06b0851121ac1dbc12d08af5a7e20861d4a554b8b5e967ee4213265a3",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\mspdb110.dll": "5d74129fe046c7ff1e8c8dfc76abb0048b2151bb1fee3df090ba47357bf515b1",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\mspdbcore.dll": "260afe46be41fac0ad956ffbe3601a4ca4255e728155c15218e82b29cc312043",
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\Common7\\IDE\\mspdbsrv.exe": "31aaba443b9869e6e68c17125f8d7989cbd762fb38ae3a10e58f4759548a7745",
+    "C:\\Program Files\\Python314\\python.exe": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9"
+  },
+  "inputs": {
+    "control_compile.py": "0e4a10a2e170fc1285291a87f2b736e4a88700cd1fd18ad6c549b296a95b1ed0",
+    "recon\\ffx\\ffx_memcmp.c": "33f1b4e27f8d37c0235e2ab974ae4058c2ba8ee9a53e3413fb778b8fdc8fdbb1",
+    "recon\\ffx\\byteproof\\build_memcmp.bat": "ccfcf5cfec4c1005959deecf1bf0d6763833538c55bc942748f71b97486ce9bc",
+    "recon\\ffx\\byteproof\\build_memcmp.py": "93e93eb2cccf4e21860070139461f1fbb5c927171ea55d76f55a7da8a8917900",
+    "recon\\ffx\\c_leaf\\build.bat": "bc1c6403d921e09b8f763503299b37a04c32b06b48c5b473d75ab21cd441017b",
+    "recon\\ffx\\c_leaf\\ffx_leaf.c": "15c390fbefdea58bce3bad21c978b83e36be530e0fa30b41e35236a819afc408",
+    "recon\\ffx\\c_leaf\\jobs.json": "96e581ee06382a568e6aa75ab8b42686059b48c92142d8e77dae5065ced091b6",
+    "recon\\ffx\\c_leaf\\leaf_build.py": "e2565be20ad040df62cdedc0f4fba2ed9449c4d1ed73827da1f60fe6982c6ad0",
+    "recon\\ffx\\c_reloc\\build.bat": "ae12ff1047eb6817122f6e271b60adbb015c3c1faf4b16c9bc7e6a4cc4a54edc",
+    "recon\\ffx\\c_reloc\\generator.py": "80df0af1ecacfdfc3921aae9f482c4f762a19c86ddd39ff145648f5b6fc238ef",
+    "recon\\ffx\\c_reloc\\jobs.json": "20caeabe642041f99fe45e29c4636db4977b77e1e820c074f41abd8af369a71c",
+    "recon\\ffx\\c_reloc\\leaf_build.py": "e2565be20ad040df62cdedc0f4fba2ed9449c4d1ed73827da1f60fe6982c6ad0",
+    "recon\\ffx\\c_reloc\\relocation_build.py": "7fa0bf08a330b365f8b4f0a29671cd2495c4e510a319c1fd864de5d0bf243ca8",
+    "recon\\ffx\\c_reloc\\symbolic_leaf.c": "6fb19c9c49ad65663ff46f37cd5e550f6afbb574c6dc4fed1a7bf3b194cd01ee"
+  },
+  "commands": [
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\c_leaf\\leaf_build.py",
+        "--output-dir",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\c_leaf\\build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\c_reloc\\relocation_build.py",
+        "--output-dir",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\c_reloc\\build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\byteproof\\build_memcmp.py",
+        "--source",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\ffx_memcmp.c",
+        "--output-dir",
+        "C:\\IDA_DB\\cpp-recovery-41520\\control-a\\recon\\ffx\\byteproof\\build_c"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "outputs": {
+    "recon\\ffx\\c_leaf\\build\\build-manifest.json": "2be03b295e0038a30a0923371188cdccd8503bfee7f84949be6113c4818b1424",
+    "recon\\ffx\\c_leaf\\build\\build.log": "a3e70828842660fdbf07bf411a3089e91fccfd966298fcd86484f6bca85e1c5c",
+    "recon\\ffx\\c_leaf\\build\\O1.obj": "d09c612e8cd0f67a9a37cdae83ad15c8f24e6716becfec05e465b709770077b0",
+    "recon\\ffx\\c_leaf\\build\\O2.obj": "057da545e3f0c2f6bc65cd58aabe0e280e037105b27b46a8f9f42d05c679a975",
+    "recon\\ffx\\c_leaf\\build\\Oy.obj": "5c2f679509b4caf236ada48be048c8c033f977ac5e7c922b542c0142f75da9cc",
+    "recon\\ffx\\c_leaf\\build\\inputs\\build.bat": "bc1c6403d921e09b8f763503299b37a04c32b06b48c5b473d75ab21cd441017b",
+    "recon\\ffx\\c_leaf\\build\\inputs\\ffx_leaf.c": "15c390fbefdea58bce3bad21c978b83e36be530e0fa30b41e35236a819afc408",
+    "recon\\ffx\\c_leaf\\build\\inputs\\jobs.json": "96e581ee06382a568e6aa75ab8b42686059b48c92142d8e77dae5065ced091b6",
+    "recon\\ffx\\c_leaf\\build\\inputs\\leaf_build.py": "e2565be20ad040df62cdedc0f4fba2ed9449c4d1ed73827da1f60fe6982c6ad0",
+    "recon\\ffx\\c_reloc\\build\\build-manifest.json": "f895f33bd5ab2babf9e8297d67df13330fac168e329a708cd0d05a5b56c59571",
+    "recon\\ffx\\c_reloc\\build\\build.log": "f5d38bc28b9fd758b39511a0a38f39596d91782da27cd33d6cfd5863ffd7c291",
+    "recon\\ffx\\c_reloc\\build\\O1.obj": "43953fd0ab9c364f467c0dabaa2417e82c42753f1c26d823c58f56158d56783c",
+    "recon\\ffx\\c_reloc\\build\\O2.obj": "62926ac60873c437474780c686564de97b9d183cf8375edd6b1433600369a632",
+    "recon\\ffx\\c_reloc\\build\\Oy.obj": "122930ab82dd09e28626546e8307b87c963b9dd475e00a2cb94ff19f2fa49bb4",
+    "recon\\ffx\\c_reloc\\build\\inputs\\build.bat": "ae12ff1047eb6817122f6e271b60adbb015c3c1faf4b16c9bc7e6a4cc4a54edc",
+    "recon\\ffx\\c_reloc\\build\\inputs\\generator.py": "80df0af1ecacfdfc3921aae9f482c4f762a19c86ddd39ff145648f5b6fc238ef",
+    "recon\\ffx\\c_reloc\\build\\inputs\\jobs.json": "20caeabe642041f99fe45e29c4636db4977b77e1e820c074f41abd8af369a71c",
+    "recon\\ffx\\c_reloc\\build\\inputs\\leaf_build.py": "e2565be20ad040df62cdedc0f4fba2ed9449c4d1ed73827da1f60fe6982c6ad0",
+    "recon\\ffx\\c_reloc\\build\\inputs\\relocation_build.py": "7fa0bf08a330b365f8b4f0a29671cd2495c4e510a319c1fd864de5d0bf243ca8",
+    "recon\\ffx\\c_reloc\\build\\inputs\\symbolic_leaf.c": "6fb19c9c49ad65663ff46f37cd5e550f6afbb574c6dc4fed1a7bf3b194cd01ee",
+    "recon\\ffx\\byteproof\\build_c\\build-manifest.json": "9156c390b5d240264e74514866e51d86e8738be0a55029051c285069fe8c3b9b",
+    "recon\\ffx\\byteproof\\build_c\\build.log": "8e9b82ad0b3417af9afb9427b569a36fc50a9c12a15ad4e2aef66e653d870b45",
+    "recon\\ffx\\byteproof\\build_c\\ffx_memcmp.dis.txt": "e55b91aa388dfc99a1db0f7da316bd86d574200847bc9a06bbffc6646e0e445e",
+    "recon\\ffx\\byteproof\\build_c\\ffx_memcmp.exe": "85ea7d213bc1ee0841f4158fe8bdab3dd4092cc5f811e0f1abd5ab02c2478a0f",
+    "recon\\ffx\\byteproof\\build_c\\ffx_memcmp.map": "0f4faef026e80c092cfb69060005bd4f2bc56e068cbf852fdd9f2b1332381ceb",
+    "recon\\ffx\\byteproof\\build_c\\ffx_memcmp.obj": "2ebafbe07fcecf75890865c8ff966f27c73749af7119ef1a46a45fa1b63e1bb6",
+    "recon\\ffx\\byteproof\\build_c\\inputs\\build_memcmp.bat": "ccfcf5cfec4c1005959deecf1bf0d6763833538c55bc942748f71b97486ce9bc",
+    "recon\\ffx\\byteproof\\build_c\\inputs\\build_memcmp.py": "93e93eb2cccf4e21860070139461f1fbb5c927171ea55d76f55a7da8a8917900",
+    "recon\\ffx\\byteproof\\build_c\\inputs\\ffx_memcmp.c": "33f1b4e27f8d37c0235e2ab974ae4058c2ba8ee9a53e3413fb778b8fdc8fdbb1"
+  },
+  "status": "complete",
+  "finished_at": "2026-09-30T17:09:49.119542+00:00"
+}

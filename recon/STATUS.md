@@ -5,12 +5,12 @@
 Target: `FFX.exe`, 10,675,712 bytes, SHA256 `78ce34397da5e6f49b72c2aebadedaf4cd3f6720e1949d46a1b8ed67d3db5ced`.
 Ground truth: `tools/match/inventory.tsv`, 66,557 IDA function entries / 6,518,294 code bytes.
 
-The current manifest contains **19,593 unique addresses / 866,276 code bytes**. Of these, **16,148 carry strict byte proofs**: 7,395 `corpus-rel32-exact`, 5,419 `masked-rel32-exact`, 988 `dir32-rel32-exact`, 782 `phyre-rel32-exact`, 670 `lib-rel32-exact`, 382 `coff-rel32-exact`, 173 `sdk-pool-exact`, 106 `phyre-sdk-exact`, 75 `arch-ia32-exact`, 71 `retry-rel32-exact`, 61 `edx-rel32-exact`, 16 `complete-rel32-exact`, 5 `string-sym-exact`, 4 `flagmatrix-rel32-exact` and 1 `nearmiss-exact`. The remaining 3,445 entries still use the relocation-masked comparator and remain candidates. Every entry has the same size as its IDB function. The manifest is `recon/matched_functions.json`.
+The current manifest contains **19,593 unique addresses / 864,146 code bytes**. Of these, **16,148 carry strict byte proofs**: 7,395 `corpus-rel32-exact`, 5,419 `masked-rel32-exact`, 988 `dir32-rel32-exact`, 782 `phyre-rel32-exact`, 670 `lib-rel32-exact`, 382 `coff-rel32-exact`, 173 `sdk-pool-exact`, 106 `phyre-sdk-exact`, 75 `arch-ia32-exact`, 71 `retry-rel32-exact`, 61 `edx-rel32-exact`, 16 `complete-rel32-exact`, 5 `string-sym-exact`, 4 `flagmatrix-rel32-exact` and 1 `nearmiss-exact`. The remaining 3,445 entries still use the relocation-masked comparator and remain candidates. Every entry has the same size as its IDB function. The manifest is `recon/matched_functions.json`.
 
 | Measure | Verified |
 |---|---:|
 | Unique functions | **19,593 / 66,557 (29.43%)** |
-| Code bytes | **866,276 / 6,518,294 (13.28%)** |
+| Code bytes | **864,146 / 6,518,294 (13.26%)** |
 | Strict resolved functions | **16,148 / 66,557 (24.26%)** |
 | Strict resolved code bytes | **319,826 / 6,518,294 (4.90%)** |
 | Strict library sections (code and data) | **891 sections** |

@@ -1,5 +1,39 @@
 # FFX.exe reconstruction goal
 
+## Active stage — readable, compiled C/C++ migration (2026-09-30)
+
+The new objective is to replace instruction assembly progressively with readable
+C/C++ that actually supplies the final executable's bytes. Follow
+docs/superpowers/plans/2026-09-30-ffx-cpp-byte-identical.md. The historical mixed
+reconstruction and modification milestones below remain established; they do
+not mean the new migration is complete.
+
+The initial control was rebuilt from public revision 0591e41b in an isolated
+workspace. All three legacy C packages were freshly compiled with VS2012 x86
+17.00.50727.1, their complete bodies verified, and the full vanilla executable
+rebuilt with zero different bytes and the pinned SHA-256. The modification demo
+was independently compiled twice and passed 101,400 native calls; the full
+test suite passed 402 tests and 386 subtests. These are offline/native harness
+checks, not gameplay. Receipts and initial metrics: recovered/control/.
+
+The starting C contribution is 35,956 bytes, separate from 6,715,479 instruction
+assembly bytes, 144 manual assembly bytes, 583,710 padding bytes and 48,775 data
+bytes in .text. Credit comes from emitted provider intervals, not the match
+catalog. Every promotion requires new compiler objects, full relocation and ABI
+validation, complete-image equality, and a functional modification/disable cycle.
+Failed or stale promoted providers must fail the build; no assembly fallback.
+Intentional new behavior stays in the separate mods/ output with a different hash.
+
+The first recovered provider, FFX_Math_Vec3Normalize at 0x0093D3D0, now contributes
+102 newly compiled C bytes. Two fresh compiler runs and two full accepted vanilla
+builds raise emitted C to 36,058 bytes and remove 46 assembly instruction records.
+The PEs remain byte-identical. Native callee tests passed 331,776 comparisons,
+including x87 modes and an intentionally failing control. Details and reproducible
+commands are in recovered/README.md and recovered/HANDOFF.md. This is the first
+promotion, not completion of the high-level source migration.
+
+## Established mixed reconstruction and modification milestones
+
 Primary goal: COMPLETE for the demonstrated source-modification workflow —
 compile changed code/data into a standalone FFX.exe without runtime hooks.
 Baseline milestone: COMPLETE for literal executable reconstruction, verified

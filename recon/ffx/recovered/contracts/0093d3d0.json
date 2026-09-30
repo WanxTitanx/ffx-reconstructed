@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "va": 9688016,
+  "size": 102,
+  "symbol": "_FFX_Math_Vec3Normalize",
+  "reference_sha256": "606bc0171cbc13490751cce2d174a1f3d61547ab5073274552b3425fecebdbcb",
+  "abi": "PE32 x86 cdecl: void(FfxFloat4 *destination, const FfxFloat4 *source)",
+  "arguments": {"entry_esp_plus_4": "destination", "entry_esp_plus_8": "source"},
+  "return": "void; EAX is not a result, and is unspecified on the unchanged-output branch",
+  "preserved_registers": ["EBX", "ESI", "EDI", "EBP", "ESP after caller argument cleanup"],
+  "stack_cleanup": "caller removes 8 bytes; callee RET has no immediate",
+  "layout": {"size": 16, "alignment": 4, "float_bytes": 4, "offsets": {"x": 0, "y": 4, "z": 8, "w": 12}},
+  "memory": "reads four binary32 components; writes destination XYZ and then W only when the rounded length compares greater than zero; does not allocate",
+  "aliasing": "distinct 16-byte regions or exactly equal pointers; partial overlap is outside the supported contract",
+  "floating_point": "x87 instructions, inherited caller control word, binary32 length and reciprocal stores; W passes through x87, so signaling NaNs may be quieted",
+  "zero_or_nan_length": "all destination bytes remain unchanged",
+  "dependency": {"coff_symbol": "__CIsqrt", "thunk_va": 9738168, "iat_va": 11584416, "convention": "MSVC x86 _CIsqrt compiler intrinsic uses the x87 stack"},
+  "intrinsics": ["sqrt"],
+  "source_evidence": ["recon/arch_ia32_rel32_exact.json: 0x0093d3d0", "native function_ranges.tsv.gz entry [0x0093d3d0,0x0093d436)", "original reference body independently decoded during Task 0"],
+  "unknowns": ["gameplay meaning of the fourth component", "callers' intended domain and floating-point control-word policy"],
+  "gameplay_tested": false
+}

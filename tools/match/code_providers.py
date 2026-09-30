@@ -14,6 +14,7 @@ import leaf_build as support
 import symbolic_verify
 import verify_ffx_memcmp
 import mcwl_build
+import recovered_providers
 
 
 def section_for_symbol(obj,logical_name):
@@ -91,6 +92,10 @@ def load(root):
             'sha256':target['sha256'],'build_manifest_sha256':support.digest(receipt)}
     add_memcmp(root,providers,observed)
     add_mcwl(root,providers,observed)
+    recovered=recovered_providers.load(root,observed)
+    if providers.keys() & recovered.keys():
+        raise ValueError('recovered providers would overwrite an existing compiled provider')
+    providers.update(recovered)
     support.check_ranges([(r['va'],r['size']) for r in providers.values()],'compiled provider')
     support.check_unchanged(observed)
     return providers,observed
