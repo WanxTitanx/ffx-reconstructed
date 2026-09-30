@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00643100.obj
+
+File Type: COFF OBJECT
+
+_FFX_Distortion_SetEnabled:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_Distortion_GetSingleton
+  00000008: 80 78 7C 00        cmp         byte ptr [eax+7Ch],0
+  0000000C: 0F 94 C2           sete        dl
+  0000000F: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  00000013: 0F 95 C1           setne       cl
+  00000016: 88 48 7C           mov         byte ptr [eax+7Ch],cl
+  00000019: 84 D2              test        dl,dl
+  0000001B: 74 13              je          00000030
+  0000001D: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  00000021: 74 0D              je          00000030
+  00000023: D9 05 00 00 00 00  fld         dword ptr [__real@3e800000]
+  00000029: C6 40 7E 01        mov         byte ptr [eax+7Eh],1
+  0000002D: D9 58 78           fstp        dword ptr [eax+78h]
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          32 .text

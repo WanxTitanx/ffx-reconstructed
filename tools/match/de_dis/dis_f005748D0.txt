@@ -1,0 +1,112 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005748D0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Tree_RemoveNodeWithRotation@4:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B D9              mov         ebx,ecx
+  00000005: 8D 43 0C           lea         eax,[ebx+0Ch]
+  00000008: EB 06              jmp         00000010
+  0000000A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000010: 8B 30              mov         esi,dword ptr [eax]
+  00000012: 3B F3              cmp         esi,ebx
+  00000014: 0F 84 DD 00 00 00  je          000000F7
+  0000001A: 85 F6              test        esi,esi
+  0000001C: 0F 84 D5 00 00 00  je          000000F7
+  00000022: 39 36              cmp         dword ptr [esi],esi
+  00000024: 74 EC              je          00000012
+  00000026: 39 1E              cmp         dword ptr [esi],ebx
+  00000028: 74 13              je          0000003D
+  0000002A: 39 5E 04           cmp         dword ptr [esi+4],ebx
+  0000002D: 74 0E              je          0000003D
+  0000002F: 56                 push        esi
+  00000030: 53                 push        ebx
+  00000031: E8 00 00 00 00     call        _Phyre_Tree_GetPredecessor
+  00000036: 83 C4 08           add         esp,8
+  00000039: 8B F8              mov         edi,eax
+  0000003B: EB 02              jmp         0000003F
+  0000003D: 8B FE              mov         edi,esi
+  0000003F: 8B 0F              mov         ecx,dword ptr [edi]
+  00000041: 3B CB              cmp         ecx,ebx
+  00000043: 75 03              jne         00000048
+  00000045: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000048: 0F B6 47 08        movzx       eax,byte ptr [edi+8]
+  0000004C: 8B 57 08           mov         edx,dword ptr [edi+8]
+  0000004F: 83 E0 01           and         eax,1
+  00000052: 2B D0              sub         edx,eax
+  00000054: 0F B6 41 08        movzx       eax,byte ptr [ecx+8]
+  00000058: 83 E0 01           and         eax,1
+  0000005B: 03 C2              add         eax,edx
+  0000005D: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000060: 8D 43 0C           lea         eax,[ebx+0Ch]
+  00000063: 3B D0              cmp         edx,eax
+  00000065: 74 09              je          00000070
+  00000067: 3B 3A              cmp         edi,dword ptr [edx]
+  00000069: 74 05              je          00000070
+  0000006B: 89 4A 04           mov         dword ptr [edx+4],ecx
+  0000006E: EB 02              jmp         00000072
+  00000070: 89 0A              mov         dword ptr [edx],ecx
+  00000072: 3B FE              cmp         edi,esi
+  00000074: 75 20              jne         00000096
+  00000076: F6 47 08 01        test        byte ptr [edi+8],1
+  0000007A: 75 0D              jne         00000089
+  0000007C: 51                 push        ecx
+  0000007D: 53                 push        ebx
+  0000007E: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode
+  00000083: 83 C4 08           add         esp,8
+  00000086: 8D 43 0C           lea         eax,[ebx+0Ch]
+  00000089: 89 76 08           mov         dword ptr [esi+8],esi
+  0000008C: 89 36              mov         dword ptr [esi],esi
+  0000008E: 89 76 04           mov         dword ptr [esi+4],esi
+  00000091: E9 7A FF FF FF     jmp         00000010
+  00000096: F6 47 08 01        test        byte ptr [edi+8],1
+  0000009A: 75 0A              jne         000000A6
+  0000009C: 51                 push        ecx
+  0000009D: 53                 push        ebx
+  0000009E: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode
+  000000A3: 83 C4 08           add         esp,8
+  000000A6: 8B 06              mov         eax,dword ptr [esi]
+  000000A8: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000000AB: 8B 56 08           mov         edx,dword ptr [esi+8]
+  000000AE: 89 07              mov         dword ptr [edi],eax
+  000000B0: 89 4F 04           mov         dword ptr [edi+4],ecx
+  000000B3: 89 57 08           mov         dword ptr [edi+8],edx
+  000000B6: 8B 0E              mov         ecx,dword ptr [esi]
+  000000B8: 0F B6 41 08        movzx       eax,byte ptr [ecx+8]
+  000000BC: 83 E0 01           and         eax,1
+  000000BF: 03 C7              add         eax,edi
+  000000C1: 89 41 08           mov         dword ptr [ecx+8],eax
+  000000C4: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000000C7: 0F B6 41 08        movzx       eax,byte ptr [ecx+8]
+  000000CB: 83 E0 01           and         eax,1
+  000000CE: 03 C7              add         eax,edi
+  000000D0: 89 41 08           mov         dword ptr [ecx+8],eax
+  000000D3: 0F B6 46 08        movzx       eax,byte ptr [esi+8]
+  000000D7: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  000000DA: 83 E0 01           and         eax,1
+  000000DD: 2B C8              sub         ecx,eax
+  000000DF: 33 C0              xor         eax,eax
+  000000E1: 39 71 04           cmp         dword ptr [ecx+4],esi
+  000000E4: 0F 94 C0           sete        al
+  000000E7: 89 3C 81           mov         dword ptr [ecx+eax*4],edi
+  000000EA: 89 76 08           mov         dword ptr [esi+8],esi
+  000000ED: 89 36              mov         dword ptr [esi],esi
+  000000EF: 89 76 04           mov         dword ptr [esi+4],esi
+  000000F2: E9 0E FF FF FF     jmp         00000005
+  000000F7: 5F                 pop         edi
+  000000F8: 5E                 pop         esi
+  000000F9: 5B                 pop         ebx
+  000000FA: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          FB .text

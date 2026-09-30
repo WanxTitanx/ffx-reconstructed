@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007789B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Movie_HddRenderQuad:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 1D 00 00 00 00  mov         ebx,dword ptr [_g_MovieUnkVar_112A51C]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 68              je          0000007B
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        _FFX_Field_GetRenderContextPtr
+  00000019: 8B F0              mov         esi,eax
+  0000001B: E8 00 00 00 00     call        _FFX_RenderStub_Return0
+  00000020: 68 A0 01 00 00     push        1A0h
+  00000025: 68 00 02 00 00     push        200h
+  0000002A: 6A 00              push        0
+  0000002C: 6A 00              push        0
+  0000002E: 56                 push        esi
+  0000002F: E8 00 00 00 00     call        _FFX_Atel_BuildQuadRenderCmd
+  00000034: 83 C4 14           add         esp,14h
+  00000037: E8 00 00 00 00     call        _FlushCache
+  0000003C: E8 00 00 00 00     call        _sceDmaSend
+  00000041: E8 00 00 00 00     call        _FFX_GenericStub_Return0
+  00000046: B8 28 00 00 00     mov         eax,28h
+  0000004B: 85 DB              test        ebx,ebx
+  0000004D: 7E 1C              jle         0000006B
+  0000004F: 8B CB              mov         ecx,ebx
+  00000051: 80 3F 00           cmp         byte ptr [edi],0
+  00000054: 74 0F              je          00000065
+  00000056: 83 C0 10           add         eax,10h
+  00000059: 3D 10 01 00 00     cmp         eax,110h
+  0000005E: 7C 05              jl          00000065
+  00000060: B8 28 00 00 00     mov         eax,28h
+  00000065: 83 C7 10           add         edi,10h
+  00000068: 49                 dec         ecx
+  00000069: 75 E6              jne         00000051
+  0000006B: E8 00 00 00 00     call        _FFX_Virtuos_AsmNotImplemented_task_wait
+  00000070: 85 FF              test        edi,edi
+  00000072: 75 A0              jne         00000014
+  00000074: 5E                 pop         esi
+  00000075: 5F                 pop         edi
+  00000076: 5B                 pop         ebx
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C3                 ret
+  0000007B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000007E: 5F                 pop         edi
+  0000007F: 5B                 pop         ebx
+  00000080: 8B E5              mov         esp,ebp
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

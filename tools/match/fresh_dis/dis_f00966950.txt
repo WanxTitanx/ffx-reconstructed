@@ -1,0 +1,101 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00966950.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_processExpressionResult:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 56                 push        esi
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _LuaCodeGen_dischargeValue
+  00000012: 8B 06              mov         eax,dword ptr [esi]
+  00000014: 48                 dec         eax
+  00000015: 83 C4 08           add         esp,8
+  00000018: 83 F8 0A           cmp         eax,0Ah
+  0000001B: 77 69              ja          $LN1
+  0000001D: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN12[eax]
+            00
+  00000024: FF 24 85 00 00 00  jmp         dword ptr $LN14[eax*4]
+            00
+$LN7:
+  0000002B: C7 06 02 00 00 00  mov         dword ptr [esi],2
+  00000031: EB 53              jmp         $LN1
+$LN6:
+  00000033: C7 06 03 00 00 00  mov         dword ptr [esi],3
+  00000039: EB 4B              jmp         $LN1
+$LN5:
+  0000003B: 57                 push        edi
+  0000003C: E8 00 00 00 00     call        _LuaCodeGen_allocTemp
+  00000041: 83 C4 04           add         esp,4
+  00000044: 83 3E 06           cmp         dword ptr [esi],6
+  00000047: 75 16              jne         0000005F
+  00000049: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000004C: F7 C1 00 01 00 00  test        ecx,100h
+  00000052: 75 0B              jne         0000005F
+  00000054: 0F B6 47 2E        movzx       eax,byte ptr [edi+2Eh]
+  00000058: 3B C8              cmp         ecx,eax
+  0000005A: 7C 03              jl          0000005F
+  0000005C: FE 4F 30           dec         byte ptr [edi+30h]
+  0000005F: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000062: C1 E0 17           shl         eax,17h
+  00000065: 83 C8 14           or          eax,14h
+  00000068: 50                 push        eax
+  00000069: 57                 push        edi
+  0000006A: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  0000006F: 83 C4 08           add         esp,8
+  00000072: 89 46 04           mov         dword ptr [esi+4],eax
+  00000075: C7 06 0B 00 00 00  mov         dword ptr [esi],0Bh
+  0000007B: EB 09              jmp         $LN1
+$LN2:
+  0000007D: 57                 push        edi
+  0000007E: E8 00 00 00 00     call        _LuaCodeGen_patchJump
+  00000083: 83 C4 04           add         esp,4
+$LN1:
+  00000086: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000089: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  0000008C: 50                 push        eax
+  0000008D: 57                 push        edi
+  0000008E: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000091: 89 4E 08           mov         dword ptr [esi+8],ecx
+  00000094: E8 00 00 00 00     call        _LuaCodeGen_cleanupJmps
+  00000099: FF 76 08           push        dword ptr [esi+8]
+  0000009C: 57                 push        edi
+  0000009D: E8 00 00 00 00     call        _LuaCodeGen_cleanupJmps
+  000000A2: 83 C4 10           add         esp,10h
+  000000A5: 5F                 pop         edi
+  000000A6: 5E                 pop         esi
+  000000A7: 5D                 pop         ebp
+  000000A8: C3                 ret
+  000000A9: 8D 49 00           lea         ecx,[ecx]
+$LN14:
+  000000AC: 00 00              add         byte ptr [eax],al
+  000000AE: 00 00              add         byte ptr [eax],al
+  000000B0: 00 00              add         byte ptr [eax],al
+  000000B2: 00 00              add         byte ptr [eax],al
+  000000B4: 00 00              add         byte ptr [eax],al
+  000000B6: 00 00              add         byte ptr [eax],al
+  000000B8: 00 00              add         byte ptr [eax],al
+  000000BA: 00 00              add         byte ptr [eax],al
+  000000BC: 00 00              add         byte ptr [eax],al
+  000000BE: 00 00              add         byte ptr [eax],al
+$LN12:
+  000000C0: 00 01              add         byte ptr [ecx],al
+  000000C2: 00 01              add         byte ptr [ecx],al
+  000000C4: 01 02              add         dword ptr [edx],eax
+  000000C6: 04 04              add         al,4
+  000000C8: 04 03              add         al,3
+  000000CA: 02
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          CB .text

@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3CF40.obj
+
+File Type: COFF OBJECT
+
+_Iggy_GDraw_BeginScene:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000000B: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000E: 3B F8              cmp         edi,eax
+  00000010: 77 5C              ja          0000006E
+  00000012: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000015: 8B 81 B8 09 00 00  mov         eax,dword ptr [ecx+9B8h]
+  0000001B: 3B C7              cmp         eax,edi
+  0000001D: 77 02              ja          00000021
+  0000001F: 8B C7              mov         eax,edi
+  00000021: 89 81 B8 09 00 00  mov         dword ptr [ecx+9B8h],eax
+  00000027: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  0000002A: 56                 push        esi
+  0000002B: 8B 73 0C           mov         esi,dword ptr [ebx+0Ch]
+  0000002E: 2B D6              sub         edx,esi
+  00000030: 3B D7              cmp         edx,edi
+  00000032: 1B C0              sbb         eax,eax
+  00000034: F7 D0              not         eax
+  00000036: 23 C6              and         eax,esi
+  00000038: 0F 94 C1           sete        cl
+  0000003B: 3B D7              cmp         edx,edi
+  0000003D: 1B C0              sbb         eax,eax
+  0000003F: F7 D0              not         eax
+  00000041: 23 C6              and         eax,esi
+  00000043: 89 43 08           mov         dword ptr [ebx+8],eax
+  00000046: 0F BE C1           movsx       eax,cl
+  00000049: 50                 push        eax
+  0000004A: FF 33              push        dword ptr [ebx]
+  0000004C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000004F: FF 70 04           push        dword ptr [eax+4]
+  00000052: E8 00 00 00 00     call        _Iggy_GDraw_SetRenderState
+  00000057: 83 C4 0C           add         esp,0Ch
+  0000005A: 5E                 pop         esi
+  0000005B: 85 C0              test        eax,eax
+  0000005D: 74 22              je          00000081
+  0000005F: 8B 53 08           mov         edx,dword ptr [ebx+8]
+  00000062: 03 C2              add         eax,edx
+  00000064: 8D 0C 3A           lea         ecx,[edx+edi]
+  00000067: 5F                 pop         edi
+  00000068: 89 4B 0C           mov         dword ptr [ebx+0Ch],ecx
+  0000006B: 5B                 pop         ebx
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+  0000006E: 50                 push        eax
+  0000006F: 57                 push        edi
+  00000070: 68 00 00 00 00     push        offset ??_C@_0FF@HEEKPOGH@GDraw?5dynamic?5vertex?5buffer?5usag@
+  00000075: 6A 00              push        0
+  00000077: E8 00 00 00 00     call        _IggyGDrawSendWarning
+  0000007C: 83 C4 10           add         esp,10h
+  0000007F: 33 C0              xor         eax,eax
+  00000081: 5F                 pop         edi
+  00000082: 5B                 pop         ebx
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .rdata
+          85 .text

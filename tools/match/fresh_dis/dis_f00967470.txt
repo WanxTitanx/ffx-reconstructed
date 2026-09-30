@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00967470.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_loadToRegSimple:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 56                 push        esi
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _LuaCodeGen_dischargeValue
+  00000012: 83 C4 08           add         esp,8
+  00000015: 83 3E 06           cmp         dword ptr [esi],6
+  00000018: 75 22              jne         0000003C
+  0000001A: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000001D: 3B 46 0C           cmp         eax,dword ptr [esi+0Ch]
+  00000020: 74 24              je          00000046
+  00000022: 0F B6 47 2E        movzx       eax,byte ptr [edi+2Eh]
+  00000026: 39 46 04           cmp         dword ptr [esi+4],eax
+  00000029: 72 11              jb          0000003C
+  0000002B: 56                 push        esi
+  0000002C: 57                 push        edi
+  0000002D: E8 00 00 00 00     call        _LuaCodeGen_emitMove
+  00000032: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000035: 83 C4 08           add         esp,8
+  00000038: 5F                 pop         edi
+  00000039: 5E                 pop         esi
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+  0000003C: 56                 push        esi
+  0000003D: 57                 push        edi
+  0000003E: E8 00 00 00 00     call        _LuaCodeGen_allocAndLoadToReg
+  00000043: 83 C4 08           add         esp,8
+  00000046: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000049: 5F                 pop         edi
+  0000004A: 5E                 pop         esi
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

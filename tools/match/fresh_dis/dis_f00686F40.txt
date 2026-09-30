@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00686F40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_StringList_ClearAll@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 8B 03              mov         eax,dword ptr [ebx]
+  00000006: 8B 30              mov         esi,dword ptr [eax]
+  00000008: 89 00              mov         dword ptr [eax],eax
+  0000000A: 8B 03              mov         eax,dword ptr [ebx]
+  0000000C: 89 40 04           mov         dword ptr [eax+4],eax
+  0000000F: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  00000016: 3B 33              cmp         esi,dword ptr [ebx]
+  00000018: 74 3B              je          00000055
+  0000001A: 57                 push        edi
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 83 7E 1C 10        cmp         dword ptr [esi+1Ch],10h
+  00000024: 8B 3E              mov         edi,dword ptr [esi]
+  00000026: 72 0B              jb          00000033
+  00000028: FF 76 08           push        dword ptr [esi+8]
+  0000002B: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000030: 83 C4 04           add         esp,4
+  00000033: C7 46 1C 0F 00 00  mov         dword ptr [esi+1Ch],0Fh
+            00
+  0000003A: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  00000041: 56                 push        esi
+  00000042: C6 46 08 00        mov         byte ptr [esi+8],0
+  00000046: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000004B: 83 C4 04           add         esp,4
+  0000004E: 8B F7              mov         esi,edi
+  00000050: 3B 3B              cmp         edi,dword ptr [ebx]
+  00000052: 75 CC              jne         00000020
+  00000054: 5F                 pop         edi
+  00000055: 5E                 pop         esi
+  00000056: 5B                 pop         ebx
+  00000057: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          58 .text

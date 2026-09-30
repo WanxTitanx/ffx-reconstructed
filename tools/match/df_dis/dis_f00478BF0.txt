@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00478BF0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_478BF0@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: DD 45 08           fld         qword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: DD 05 00 00 00 00  fld         qword ptr [__real@43e0000000000000]
+  0000000E: 56                 push        esi
+  0000000F: D8 D1              fcom        st(1)
+  00000011: 33 DB              xor         ebx,ebx
+  00000013: 57                 push        edi
+  00000014: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000017: DF E0              fnstsw      ax
+  00000019: F6 C4 41           test        ah,41h
+  0000001C: 7A 10              jp          0000002E
+  0000001E: DC E9              fsub        st(1),st
+  00000020: D8 D1              fcom        st(1)
+  00000022: DF E0              fnstsw      ax
+  00000024: F6 C4 41           test        ah,41h
+  00000027: 75 05              jne         0000002E
+  00000029: BB 00 00 00 80     mov         ebx,80000000h
+  0000002E: D8 D1              fcom        st(1)
+  00000030: 33 F6              xor         esi,esi
+  00000032: 33 FF              xor         edi,edi
+  00000034: DF E0              fnstsw      ax
+  00000036: F6 C4 41           test        ah,41h
+  00000039: 7A 15              jp          00000050
+  0000003B: DC E9              fsub        st(1),st
+  0000003D: D8 D9              fcomp       st(1)
+  0000003F: DF E0              fnstsw      ax
+  00000041: F6 C4 41           test        ah,41h
+  00000044: 75 0C              jne         00000052
+  00000046: 03 F6              add         esi,esi
+  00000048: 81 D7 00 00 00 80  adc         edi,80000000h
+  0000004E: EB 02              jmp         00000052
+  00000050: DD D8              fstp        st(0)
+  00000052: E8 00 00 00 00     call        __ftol2
+  00000057: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000005A: 03 C6              add         eax,esi
+  0000005C: 13 D7              adc         edx,edi
+  0000005E: 83 C0 00           add         eax,0
+  00000061: 5F                 pop         edi
+  00000062: 13 D3              adc         edx,ebx
+  00000064: 5E                 pop         esi
+  00000065: 89 01              mov         dword ptr [ecx],eax
+  00000067: 89 51 04           mov         dword ptr [ecx+4],edx
+  0000006A: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000071: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000078: 8B C1              mov         eax,ecx
+  0000007A: 5B                 pop         ebx
+  0000007B: 8B E5              mov         esp,ebp
+  0000007D: 5D                 pop         ebp
+  0000007E: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          81 .text

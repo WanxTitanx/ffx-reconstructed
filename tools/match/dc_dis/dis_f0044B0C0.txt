@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0044B0C0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_44B0C0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 02              mov         eax,dword ptr [edx]
+  00000005: 83 EC 08           sub         esp,8
+  00000008: 53                 push        ebx
+  00000009: 56                 push        esi
+  0000000A: 8B F0              mov         esi,eax
+  0000000C: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000012: 57                 push        edi
+  00000013: 8B D9              mov         ebx,ecx
+  00000015: 83 FE 01           cmp         esi,1
+  00000018: 77 12              ja          0000002C
+  0000001A: 85 F6              test        esi,esi
+  0000001C: 74 05              je          00000023
+  0000001E: 8D 42 04           lea         eax,[edx+4]
+  00000021: EB 0C              jmp         0000002F
+  00000023: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002A: EB 08              jmp         00000034
+  0000002C: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000002F: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000032: 8B 02              mov         eax,dword ptr [edx]
+  00000034: 8D 7B 04           lea         edi,[ebx+4]
+  00000037: 83 FE 01           cmp         esi,1
+  0000003A: 76 12              jbe         0000004E
+  0000003C: C1 E0 02           shl         eax,2
+  0000003F: 6A 04              push        4
+  00000041: 50                 push        eax
+  00000042: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000047: 8B C8              mov         ecx,eax
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 8B F9              mov         edi,ecx
+  0000004E: 85 FF              test        edi,edi
+  00000050: 74 0E              je          00000060
+  00000052: 56                 push        esi
+  00000053: FF 75 FC           push        dword ptr [ebp-4]
+  00000056: 57                 push        edi
+  00000057: 51                 push        ecx
+  00000058: E8 00 00 00 00     call        _PStringArray_DeepCopy
+  0000005D: 83 C4 10           add         esp,10h
+  00000060: 56                 push        esi
+  00000061: 57                 push        edi
+  00000062: 53                 push        ebx
+  00000063: E8 00 00 00 00     call        _PStringArray_AssignReplace
+  00000068: 83 C4 0C           add         esp,0Ch
+  0000006B: 8B C3              mov         eax,ebx
+  0000006D: 5F                 pop         edi
+  0000006E: 5E                 pop         esi
+  0000006F: 5B                 pop         ebx
+  00000070: 8B E5              mov         esp,ebp
+  00000072: 5D                 pop         ebp
+  00000073: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          74 .text

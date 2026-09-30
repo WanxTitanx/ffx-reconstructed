@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file r32.obj
+
+File Type: COFF OBJECT
+
+_sub_800C80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 51 1C           mov         edx,dword ptr [ecx+1Ch]
+  0000000A: 66 8B 75 0C        mov         si,word ptr [ebp+0Ch]
+  0000000E: 57                 push        edi
+  0000000F: 0F B7 79 34        movzx       edi,word ptr [ecx+34h]
+  00000013: 33 C0              xor         eax,eax
+  00000015: 83 FF 01           cmp         edi,1
+  00000018: 74 1F              je          00000039
+  0000001A: 8D 9B 00 00 00 00  lea         ebx,[ebx+00000000h]
+  00000020: 0F B7 0C 42        movzx       ecx,word ptr [edx+eax*2]
+  00000024: 66 85 C9           test        cx,cx
+  00000027: 78 10              js          00000039
+  00000029: 66 3B CE           cmp         cx,si
+  0000002C: 74 0F              je          0000003D
+  0000002E: 8D 4F FF           lea         ecx,[edi-1]
+  00000031: 0F B7 C9           movzx       ecx,cx
+  00000034: 40                 inc         eax
+  00000035: 3B C1              cmp         eax,ecx
+  00000037: 7C E7              jl          00000020
+  00000039: 66 89 34 42        mov         word ptr [edx+eax*2],si
+  0000003D: 5F                 pop         edi
+  0000003E: 5E                 pop         esi
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+  Summary
+
+          64 .debug$S
+          2F .drectve
+          41 .text

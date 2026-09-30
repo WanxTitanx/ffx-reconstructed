@@ -1,0 +1,250 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00692FC0.obj
+
+File Type: COFF OBJECT
+
+@FFX_PostProcess_RenderScreenEffect@40:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 1C           sub         esp,1Ch
+  00000006: 8B C1              mov         eax,ecx
+  00000008: 53                 push        ebx
+  00000009: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000000C: 8B 80 08 12 00 00  mov         eax,dword ptr [eax+1208h]
+  00000012: 56                 push        esi
+  00000013: 8B 70 10           mov         esi,dword ptr [eax+10h]
+  00000016: 57                 push        edi
+  00000017: 8B FA              mov         edi,edx
+  00000019: 8B 16              mov         edx,dword ptr [esi]
+  0000001B: 81 E2 FF FF FF 7F  and         edx,7FFFFFFFh
+  00000021: 83 FA 01           cmp         edx,1
+  00000024: 77 0D              ja          00000033
+  00000026: 85 D2              test        edx,edx
+  00000028: 74 05              je          0000002F
+  0000002A: 8D 46 04           lea         eax,[esi+4]
+  0000002D: EB 07              jmp         00000036
+  0000002F: 33 C0              xor         eax,eax
+  00000031: EB 03              jmp         00000036
+  00000033: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000036: 8B 00              mov         eax,dword ptr [eax]
+  00000038: 8B 18              mov         ebx,dword ptr [eax]
+  0000003A: 83 FA 01           cmp         edx,1
+  0000003D: 77 0D              ja          0000004C
+  0000003F: 85 D2              test        edx,edx
+  00000041: 74 05              je          00000048
+  00000043: 8D 46 04           lea         eax,[esi+4]
+  00000046: EB 07              jmp         0000004F
+  00000048: 33 C0              xor         eax,eax
+  0000004A: EB 03              jmp         0000004F
+  0000004C: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000004F: 8B 00              mov         eax,dword ptr [eax]
+  00000051: 68 00 00 00 00     push        offset ??_C@_0M@HFNOMCKH@ColorBuffer?$AA@
+  00000056: 8B 70 04           mov         esi,dword ptr [eax+4]
+  00000059: 53                 push        ebx
+  0000005A: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000005F: 83 C4 08           add         esp,8
+  00000062: 85 C0              test        eax,eax
+  00000064: 74 1D              je          00000083
+  00000066: 8D 4D FC           lea         ecx,[ebp-4]
+  00000069: 51                 push        ecx
+  0000006A: 50                 push        eax
+  0000006B: 56                 push        esi
+  0000006C: C7 45 FC FF 00 00  mov         dword ptr [ebp-4],0FFh
+            00
+  00000073: E8 00 00 00 00     call        _FFX_Phyre_BindTextureHandleToShaderParam
+  00000078: 83 C4 0C           add         esp,0Ch
+  0000007B: 85 C0              test        eax,eax
+  0000007D: 0F 85 DA 01 00 00  jne         0000025D
+  00000083: 68 00 00 00 00     push        offset ??_C@_0L@LNAACFKB@ColorScale?$AA@
+  00000088: 53                 push        ebx
+  00000089: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000008E: 83 C4 08           add         esp,8
+  00000091: 85 C0              test        eax,eax
+  00000093: 74 4F              je          000000E4
+  00000095: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000098: 85 C9              test        ecx,ecx
+  0000009A: 75 0C              jne         000000A8
+  0000009C: 5F                 pop         edi
+  0000009D: 5E                 pop         esi
+  0000009E: 8D 41 01           lea         eax,[ecx+1]
+  000000A1: 5B                 pop         ebx
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C2 20 00           ret         20h
+  000000A8: 0F B7 50 0A        movzx       edx,word ptr [eax+0Ah]
+  000000AC: 0F B7 40 08        movzx       eax,word ptr [eax+8]
+  000000B0: 89 45 14           mov         dword ptr [ebp+14h],eax
+  000000B3: 0F B7 C0           movzx       eax,ax
+  000000B6: 81 E2 FF 1F 00 00  and         edx,1FFFh
+  000000BC: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000BF: 03 C2              add         eax,edx
+  000000C1: 3B 06              cmp         eax,dword ptr [esi]
+  000000C3: 0F 87 97 00 00 00  ja          00000160
+  000000C9: 66 83 7D 14 04     cmp         word ptr [ebp+14h],4
+  000000CE: 0F 82 8C 00 00 00  jb          00000160
+  000000D4: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000D7: 52                 push        edx
+  000000D8: 51                 push        ecx
+  000000D9: 03 C6              add         eax,esi
+  000000DB: 50                 push        eax
+  000000DC: E8 00 00 00 00     call        _memcpy
+  000000E1: 83 C4 0C           add         esp,0Ch
+  000000E4: 68 00 00 00 00     push        offset ??_C@_0M@CANMCMMJ@UvScaleBias?$AA@
+  000000E9: 53                 push        ebx
+  000000EA: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  000000EF: 83 C4 08           add         esp,8
+  000000F2: 85 C0              test        eax,eax
+  000000F4: 74 2E              je          00000124
+  000000F6: 80 7D 18 00        cmp         byte ptr [ebp+18h],0
+  000000FA: D9 E8              fld1
+  000000FC: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000FF: 74 15              je          00000116
+  00000101: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000104: 80 B9 D9 23 01 00  cmp         byte ptr [ecx+123D9h],0
+            00
+  0000010B: 74 09              je          00000116
+  0000010D: D9 05 00 00 00 00  fld         dword ptr [__real@3f2aaaab]
+  00000113: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000116: 8D 4D FC           lea         ecx,[ebp-4]
+  00000119: 51                 push        ecx
+  0000011A: 50                 push        eax
+  0000011B: 56                 push        esi
+  0000011C: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  00000121: 83 C4 0C           add         esp,0Ch
+  00000124: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000127: 6A 00              push        0
+  00000129: 85 F6              test        esi,esi
+  0000012B: 74 41              je          0000016E
+  0000012D: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000130: 56                 push        esi
+  00000131: 50                 push        eax
+  00000132: E8 00 00 00 00     call        _Phyre_ShaderParamSet3_Ctor
+  00000137: 6A 00              push        0
+  00000139: 8D 45 E4           lea         eax,[ebp-1Ch]
+  0000013C: 50                 push        eax
+  0000013D: 57                 push        edi
+  0000013E: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  00000143: 8B D8              mov         ebx,eax
+  00000145: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000148: 50                 push        eax
+  00000149: E8 00 00 00 00     call        _nullsub_24
+  0000014E: 83 C4 1C           add         esp,1Ch
+  00000151: 85 DB              test        ebx,ebx
+  00000153: 74 2C              je          00000181
+  00000155: 5F                 pop         edi
+  00000156: 5E                 pop         esi
+  00000157: 8B C3              mov         eax,ebx
+  00000159: 5B                 pop         ebx
+  0000015A: 8B E5              mov         esp,ebp
+  0000015C: 5D                 pop         ebp
+  0000015D: C2 20 00           ret         20h
+  00000160: 5F                 pop         edi
+  00000161: 5E                 pop         esi
+  00000162: B8 03 00 00 00     mov         eax,3
+  00000167: 5B                 pop         ebx
+  00000168: 8B E5              mov         esp,ebp
+  0000016A: 5D                 pop         ebp
+  0000016B: C2 20 00           ret         20h
+  0000016E: 6A 00              push        0
+  00000170: 57                 push        edi
+  00000171: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  00000176: 83 C4 0C           add         esp,0Ch
+  00000179: 85 C0              test        eax,eax
+  0000017B: 0F 85 DC 00 00 00  jne         0000025D
+  00000181: 6A 01              push        1
+  00000183: 6A 00              push        0
+  00000185: 57                 push        edi
+  00000186: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  0000018B: 83 C4 0C           add         esp,0Ch
+  0000018E: 85 C0              test        eax,eax
+  00000190: 0F 85 C7 00 00 00  jne         0000025D
+  00000196: 50                 push        eax
+  00000197: 57                 push        edi
+  00000198: E8 00 00 00 00     call        _Phyre_ShaderEffect_ConfigureFromParams
+  0000019D: 83 C4 08           add         esp,8
+  000001A0: 85 C0              test        eax,eax
+  000001A2: 0F 85 B5 00 00 00  jne         0000025D
+  000001A8: 85 F6              test        esi,esi
+  000001AA: 74 1F              je          000001CB
+  000001AC: 8A 46 04           mov         al,byte ptr [esi+4]
+  000001AF: 84 C0              test        al,al
+  000001B1: 74 0C              je          000001BF
+  000001B3: 33 C0              xor         eax,eax
+  000001B5: 33 C9              xor         ecx,ecx
+  000001B7: FF 70 20           push        dword ptr [eax+20h]
+  000001BA: FF 71 1C           push        dword ptr [ecx+1Ch]
+  000001BD: EB 24              jmp         000001E3
+  000001BF: 8B 06              mov         eax,dword ptr [esi]
+  000001C1: 8B C8              mov         ecx,eax
+  000001C3: FF 70 20           push        dword ptr [eax+20h]
+  000001C6: FF 71 1C           push        dword ptr [ecx+1Ch]
+  000001C9: EB 18              jmp         000001E3
+  000001CB: E8 00 00 00 00     call        _GetGlobalSystemContext
+  000001D0: 8B B0 70 02 00 00  mov         esi,dword ptr [eax+270h]
+  000001D6: E8 00 00 00 00     call        _GetGlobalSystemContext
+  000001DB: 8B 80 6C 02 00 00  mov         eax,dword ptr [eax+26Ch]
+  000001E1: 56                 push        esi
+  000001E2: 50                 push        eax
+  000001E3: 6A 00              push        0
+  000001E5: 6A 00              push        0
+  000001E7: 57                 push        edi
+  000001E8: E8 00 00 00 00     call        _Phyre_Renderer_SetViewport
+  000001ED: 83 C4 14           add         esp,14h
+  000001F0: 80 7D 20 00        cmp         byte ptr [ebp+20h],0
+  000001F4: 74 22              je          00000218
+  000001F6: 80 7D 24 00        cmp         byte ptr [ebp+24h],0
+  000001FA: 74 18              je          00000214
+  000001FC: 6A 03              push        3
+  000001FE: 57                 push        edi
+  000001FF: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  00000204: 83 C4 08           add         esp,8
+  00000207: 85 C0              test        eax,eax
+  00000209: 74 26              je          00000231
+  0000020B: 5F                 pop         edi
+  0000020C: 5E                 pop         esi
+  0000020D: 5B                 pop         ebx
+  0000020E: 8B E5              mov         esp,ebp
+  00000210: 5D                 pop         ebp
+  00000211: C2 20 00           ret         20h
+  00000214: 6A 01              push        1
+  00000216: EB E6              jmp         000001FE
+  00000218: 80 7D 24 00        cmp         byte ptr [ebp+24h],0
+  0000021C: 75 04              jne         00000222
+  0000021E: 6A 00              push        0
+  00000220: EB DC              jmp         000001FE
+  00000222: 6A 02              push        2
+  00000224: 57                 push        edi
+  00000225: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  0000022A: 83 C4 08           add         esp,8
+  0000022D: 85 C0              test        eax,eax
+  0000022F: 75 2C              jne         0000025D
+  00000231: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000234: FF B7 3C 01 00 00  push        dword ptr [edi+13Ch]
+  0000023A: 89 47 48           mov         dword ptr [edi+48h],eax
+  0000023D: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000240: 6A 00              push        0
+  00000242: 8B 80 08 12 00 00  mov         eax,dword ptr [eax+1208h]
+  00000248: FF 70 10           push        dword ptr [eax+10h]
+  0000024B: 50                 push        eax
+  0000024C: 57                 push        edi
+  0000024D: E8 00 00 00 00     call        _Phyre_Renderer_DispatchDraw
+  00000252: 6A 01              push        1
+  00000254: 57                 push        edi
+  00000255: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Deallocate
+  0000025A: 83 C4 1C           add         esp,1Ch
+  0000025D: 5F                 pop         edi
+  0000025E: 5E                 pop         esi
+  0000025F: 5B                 pop         ebx
+  00000260: 8B E5              mov         esp,ebp
+  00000262: 5D                 pop         ebp
+  00000263: C2 20 00           ret         20h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2B .rdata
+         266 .text

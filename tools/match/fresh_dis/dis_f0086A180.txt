@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086A180.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_Loose_86A180:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  0000000E: 8B 08              mov         ecx,dword ptr [eax]
+  00000010: 83 C4 04           add         esp,4
+  00000013: 8A 09              mov         cl,byte ptr [ecx]
+  00000015: 80 F9 04           cmp         cl,4
+  00000018: 75 1F              jne         00000039
+  0000001A: A1 90 00 00 00     mov         eax,dword ptr ds:[00000090h]
+  0000001F: DB 05 90 00 00 00  fild        dword ptr ds:[90h]
+  00000025: 85 C0              test        eax,eax
+  00000027: 79 06              jns         0000002F
+  00000029: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000002F: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000032: DD 45 F8           fld         qword ptr [ebp-8]
+  00000035: 8B E5              mov         esp,ebp
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+  00000039: 80 E9 05           sub         cl,5
+  0000003C: 80 F9 01           cmp         cl,1
+  0000003F: 76 0A              jbe         0000004B
+  00000041: D9 80 7C 05 00 00  fld         dword ptr [eax+57Ch]
+  00000047: 8B E5              mov         esp,ebp
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: D9 80 A8 02 00 00  fld         dword ptr [eax+2A8h]
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          55 .text

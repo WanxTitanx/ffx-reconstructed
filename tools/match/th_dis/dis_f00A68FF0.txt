@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A68FF0.obj
+
+File Type: COFF OBJECT
+
+_sub_A68FF0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: 56                 push        esi
+  00000007: 8D 45 E8           lea         eax,[ebp-18h]
+  0000000A: 50                 push        eax
+  0000000B: 6A 03              push        3
+  0000000D: E8 00 00 00 00     call        _sub_836170
+  00000012: DD 05 00 00 00 00  fld         qword ptr [__real@4070000000000000]
+  00000018: DD 05 00 00 00 00  fld         qword ptr [__real@406fe00000000000]
+  0000001E: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000021: D9 EE              fldz
+  00000023: 83 C4 08           add         esp,8
+  00000026: 33 F6              xor         esi,esi
+  00000028: D9 44 B5 E8        fld         dword ptr [ebp+esi*4-18h]
+  0000002C: D8 CB              fmul        st,st(3)
+  0000002E: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000031: D9 45 F8           fld         dword ptr [ebp-8]
+  00000034: D9 C0              fld         st(0)
+  00000036: D9 C9              fxch        st(1)
+  00000038: D8 DB              fcomp       st(3)
+  0000003A: DF E0              fnstsw      ax
+  0000003C: F6 C4 41           test        ah,41h
+  0000003F: 7A 24              jp          00000065
+  00000041: D8 D1              fcom        st(1)
+  00000043: DF E0              fnstsw      ax
+  00000045: F6 C4 01           test        ah,1
+  00000048: 75 0D              jne         00000057
+  0000004A: E8 00 00 00 00     call        __ftol2_sse
+  0000004F: 8B C8              mov         ecx,eax
+  00000051: 88 4C 35 FC        mov         byte ptr [ebp+esi-4],cl
+  00000055: EB 15              jmp         0000006C
+  00000057: DD D8              fstp        st(0)
+  00000059: 83 FE 04           cmp         esi,4
+  0000005C: 73 37              jae         00000095
+  0000005E: C6 44 35 FC 00     mov         byte ptr [ebp+esi-4],0
+  00000063: EB 07              jmp         0000006C
+  00000065: DD D8              fstp        st(0)
+  00000067: C6 44 35 FC FF     mov         byte ptr [ebp+esi-4],0FFh
+  0000006C: 46                 inc         esi
+  0000006D: 83 FE 04           cmp         esi,4
+  00000070: 7C B6              jl          00000028
+  00000072: 66 8B 4D FC        mov         cx,word ptr [ebp-4]
+  00000076: DD D8              fstp        st(0)
+  00000078: 0F B7 45 FC        movzx       eax,word ptr [ebp-4]
+  0000007C: DD D9              fstp        st(1)
+  0000007E: 0F B6 D5           movzx       edx,ch
+  00000081: DD D8              fstp        st(0)
+  00000083: C1 E0 08           shl         eax,8
+  00000086: 0B C2              or          eax,edx
+  00000088: 0F B6 C9           movzx       ecx,cl
+  0000008B: C1 E0 08           shl         eax,8
+  0000008E: 0B C1              or          eax,ecx
+  00000090: 5E                 pop         esi
+  00000091: 8B E5              mov         esp,ebp
+  00000093: 5D                 pop         ebp
+  00000094: C3                 ret
+  00000095: DD D8              fstp        st(0)
+  00000097: 51                 push        ecx
+  00000098: DD D9              fstp        st(1)
+  0000009A: DD D8              fstp        st(0)
+  0000009C: E8 00 00 00 00     call        ___report_rangecheckfailure
+$LN30:
+  000000A1: CC                 int         3
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          A2 .text

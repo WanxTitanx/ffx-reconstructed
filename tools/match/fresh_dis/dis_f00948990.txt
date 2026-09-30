@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00948990.obj
+
+File Type: COFF OBJECT
+
+@HeapCache_AllocEntry@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 75 12              jne         0000001C
+  0000000A: 56                 push        esi
+  0000000B: E8 00 00 00 00     call        _HeapCache_AllocPage
+  00000010: 83 C4 04           add         esp,4
+  00000013: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000016: 85 C0              test        eax,eax
+  00000018: 75 02              jne         0000001C
+  0000001A: 5E                 pop         esi
+  0000001B: C3                 ret
+  0000001C: 8B 50 04           mov         edx,dword ptr [eax+4]
+  0000001F: 8B 0A              mov         ecx,dword ptr [edx]
+  00000021: FF 40 08           inc         dword ptr [eax+8]
+  00000024: 89 48 04           mov         dword ptr [eax+4],ecx
+  00000027: 85 C9              test        ecx,ecx
+  00000029: 75 0D              jne         00000038
+  0000002B: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  0000002E: 89 4E 14           mov         dword ptr [esi+14h],ecx
+  00000031: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000038: 8B C2              mov         eax,edx
+  0000003A: 5E                 pop         esi
+  0000003B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3C .text

@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00871830.obj
+
+File Type: COFF OBJECT
+
+_FFX_Audio_PreloadAndFadeScene:
+  00000000: 53                 push        ebx
+  00000001: BB 01 00 00 00     mov         ebx,1
+  00000006: 8B C3              mov         eax,ebx
+  00000008: 0D 00 00 00 80     or          eax,80000000h
+  0000000D: 50                 push        eax
+  0000000E: E8 00 00 00 00     call        _FFX_SeSep_BankRequestSubmit
+  00000013: 83 C4 04           add         esp,4
+  00000016: F6 C3 0F           test        bl,0Fh
+  00000019: 75 0A              jne         00000025
+  0000001B: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  00000020: E8 00 00 00 00     call        _FFX_Sound_SpuCmdQueueProcess
+  00000025: 43                 inc         ebx
+  00000026: 83 FB 77           cmp         ebx,77h
+  00000029: 7E DB              jle         00000006
+  0000002B: 6A FF              push        0FFFFFFFFh
+  0000002D: E8 00 00 00 00     call        _FFX_Music_StopAndFadeOut
+  00000032: 6A FF              push        0FFFFFFFFh
+  00000034: E8 00 00 00 00     call        _FFX_Music_FadeOutAndPlayTrack
+  00000039: 83 C4 08           add         esp,8
+  0000003C: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  00000041: E8 00 00 00 00     call        _FFX_Sound_SpuCmdQueueProcess
+  00000046: E8 00 00 00 00     call        _FFX_Sound_QueueCmd44
+  0000004B: E8 00 00 00 00     call        _FFX_Sound_QueueCommandAsync_ww
+  00000050: 33 DB              xor         ebx,ebx
+  00000052: F6 C3 07           test        bl,7
+  00000055: 75 0A              jne         00000061
+  00000057: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  0000005C: E8 00 00 00 00     call        _FFX_Sound_SpuCmdQueueProcess
+  00000061: 43                 inc         ebx
+  00000062: 81 FB 00 01 00 00  cmp         ebx,100h
+  00000068: 7C E8              jl          00000052
+  0000006A: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  0000006F: E8 00 00 00 00     call        _FFX_Sound_SpuCmdQueueProcess
+  00000074: 6A FF              push        0FFFFFFFFh
+  00000076: E8 00 00 00 00     call        _FFX_Music_StopAndFadeOut
+  0000007B: 6A FF              push        0FFFFFFFFh
+  0000007D: E8 00 00 00 00     call        _FFX_Music_FadeOutAndPlayTrack
+  00000082: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  00000087: E8 00 00 00 00     call        _FFX_Sound_SpuCmdQueueProcess
+  0000008C: 6A 00              push        0
+  0000008E: E8 00 00 00 00     call        _SndSqsAllVoiceTerminate
+  00000093: 83 C4 0C           add         esp,0Ch
+  00000096: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  0000009B: 5B                 pop         ebx
+  0000009C: E9 00 00 00 00     jmp         _FFX_Sound_SpuCmdQueueProcess
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          A1 .text

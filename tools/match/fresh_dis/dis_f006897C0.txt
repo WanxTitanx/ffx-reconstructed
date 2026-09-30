@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006897C0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Menu2D_Slot_FreeBuffers@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 BE 58 01 00 00  cmp         dword ptr [esi+158h],0
+            00
+  0000000A: 7C 13              jl          0000001F
+  0000000C: 8B 86 5C 01 00 00  mov         eax,dword ptr [esi+15Ch]
+  00000012: 85 C0              test        eax,eax
+  00000014: 74 09              je          0000001F
+  00000016: 50                 push        eax
+  00000017: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 83 BE 50 01 00 00  cmp         dword ptr [esi+150h],0
+            00
+  00000026: C7 86 5C 01 00 00  mov         dword ptr [esi+15Ch],0
+            00 00 00 00
+  00000030: C7 86 58 01 00 00  mov         dword ptr [esi+158h],0
+            00 00 00 00
+  0000003A: 7C 13              jl          0000004F
+  0000003C: 8B 86 54 01 00 00  mov         eax,dword ptr [esi+154h]
+  00000042: 85 C0              test        eax,eax
+  00000044: 74 09              je          0000004F
+  00000046: 50                 push        eax
+  00000047: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: C7 86 54 01 00 00  mov         dword ptr [esi+154h],0
+            00 00 00 00
+  00000059: C7 86 50 01 00 00  mov         dword ptr [esi+150h],0
+            00 00 00 00
+  00000063: 5E                 pop         esi
+  00000064: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          65 .text

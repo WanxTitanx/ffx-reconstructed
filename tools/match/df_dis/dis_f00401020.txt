@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00401020.obj
+
+File Type: COFF OBJECT
+
+_FFX_memcmp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 75 02              jne         0000000C
+  0000000A: 5D                 pop         ebp
+  0000000B: C3                 ret
+  0000000C: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000F: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000012: 56                 push        esi
+  00000013: 8D 70 FC           lea         esi,[eax-4]
+  00000016: 83 F8 04           cmp         eax,4
+  00000019: 72 5F              jb          0000007A
+  0000001B: 8B 01              mov         eax,dword ptr [ecx]
+  0000001D: 3B 02              cmp         eax,dword ptr [edx]
+  0000001F: 75 19              jne         0000003A
+  00000021: 83 C1 04           add         ecx,4
+  00000024: 83 C2 04           add         edx,4
+  00000027: 83 FE 04           cmp         esi,4
+  0000002A: 0F 92 C0           setb        al
+  0000002D: 83 EE 04           sub         esi,4
+  00000030: 84 C0              test        al,al
+  00000032: 75 46              jne         0000007A
+  00000034: 8B 01              mov         eax,dword ptr [ecx]
+  00000036: 3B 02              cmp         eax,dword ptr [edx]
+  00000038: 74 E7              je          00000021
+  0000003A: 8A 01              mov         al,byte ptr [ecx]
+  0000003C: 53                 push        ebx
+  0000003D: 8A 1A              mov         bl,byte ptr [edx]
+  0000003F: 3A C3              cmp         al,bl
+  00000041: 75 2D              jne         00000070
+  00000043: 83 FE FD           cmp         esi,0FFFFFFFDh
+  00000046: 74 3C              je          00000084
+  00000048: 8A 41 01           mov         al,byte ptr [ecx+1]
+  0000004B: 8A 5A 01           mov         bl,byte ptr [edx+1]
+  0000004E: 3A C3              cmp         al,bl
+  00000050: 75 1E              jne         00000070
+  00000052: 83 FE FE           cmp         esi,0FFFFFFFEh
+  00000055: 74 2D              je          00000084
+  00000057: 8A 41 02           mov         al,byte ptr [ecx+2]
+  0000005A: 8A 5A 02           mov         bl,byte ptr [edx+2]
+  0000005D: 3A C3              cmp         al,bl
+  0000005F: 75 0F              jne         00000070
+  00000061: 83 FE FF           cmp         esi,0FFFFFFFFh
+  00000064: 74 1E              je          00000084
+  00000066: 8A 41 03           mov         al,byte ptr [ecx+3]
+  00000069: 8A 4A 03           mov         cl,byte ptr [edx+3]
+  0000006C: 3A C1              cmp         al,cl
+  0000006E: 74 14              je          00000084
+  00000070: 1B C0              sbb         eax,eax
+  00000072: 83 E0 FE           and         eax,0FFFFFFFEh
+  00000075: 5B                 pop         ebx
+  00000076: 40                 inc         eax
+  00000077: 5E                 pop         esi
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+  0000007A: 83 FE FC           cmp         esi,0FFFFFFFCh
+  0000007D: 75 BB              jne         0000003A
+  0000007F: 33 C0              xor         eax,eax
+  00000081: 5E                 pop         esi
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+  00000084: 5B                 pop         ebx
+  00000085: 33 C0              xor         eax,eax
+  00000087: 5E                 pop         esi
+  00000088: 5D                 pop         ebp
+  00000089: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8A .text

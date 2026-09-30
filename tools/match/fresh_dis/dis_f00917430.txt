@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00917430.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_FindBitPosition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 83 CE FF           or          esi,0FFFFFFFFh
+  0000000B: 33 D2              xor         edx,edx
+  0000000D: B9 01 00 00 00     mov         ecx,1
+  00000012: 85 CF              test        edi,ecx
+  00000014: 74 0F              je          00000025
+  00000016: 83 FE FF           cmp         esi,0FFFFFFFFh
+  00000019: 0F 94 C0           sete        al
+  0000001C: 8D 72 01           lea         esi,[edx+1]
+  0000001F: 84 C0              test        al,al
+  00000021: 74 02              je          00000025
+  00000023: 8B F2              mov         esi,edx
+  00000025: D1 C1              rol         ecx,1
+  00000027: 42                 inc         edx
+  00000028: 83 FA 10           cmp         edx,10h
+  0000002B: 7C E5              jl          00000012
+  0000002D: 5F                 pop         edi
+  0000002E: 8B C6              mov         eax,esi
+  00000030: 5E                 pop         esi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

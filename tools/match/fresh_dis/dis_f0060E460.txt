@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060E460.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PixelMapEntry_Serialize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F2              mov         esi,edx
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 56                 push        esi
+  0000000B: FF 73 04           push        dword ptr [ebx+4]
+  0000000E: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000011: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  00000016: 8B 43 20           mov         eax,dword ptr [ebx+20h]
+  00000019: 8D 4B 14           lea         ecx,[ebx+14h]
+  0000001C: 83 C4 08           add         esp,8
+  0000001F: 3B C1              cmp         eax,ecx
+  00000021: 74 0E              je          00000031
+  00000023: 85 C0              test        eax,eax
+  00000025: 74 0A              je          00000031
+  00000027: 8B D8              mov         ebx,eax
+  00000029: 8B 00              mov         eax,dword ptr [eax]
+  0000002B: 3B C1              cmp         eax,ecx
+  0000002D: 75 F8              jne         00000027
+  0000002F: EB 02              jmp         00000033
+  00000031: 8B D8              mov         ebx,eax
+  00000033: 3B D9              cmp         ebx,ecx
+  00000035: 74 3E              je          00000075
+  00000037: 57                 push        edi
+  00000038: 53                 push        ebx
+  00000039: 51                 push        ecx
+  0000003A: E8 00 00 00 00     call        _Phyre_Tree_GetPredecessor_COMDAT
+  0000003F: 8B 4B 0C           mov         ecx,dword ptr [ebx+0Ch]
+  00000042: 8B F8              mov         edi,eax
+  00000044: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000047: 83 C4 08           add         esp,8
+  0000004A: 81 38 00 01 00 00  cmp         dword ptr [eax],100h
+  00000050: 72 0C              jb          0000005E
+  00000052: 56                 push        esi
+  00000053: 51                 push        ecx
+  00000054: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  00000059: 83 C4 08           add         esp,8
+  0000005C: EB 06              jmp         00000064
+  0000005E: 8B 06              mov         eax,dword ptr [esi]
+  00000060: 88 08              mov         byte ptr [eax],cl
+  00000062: FF 06              inc         dword ptr [esi]
+  00000064: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000067: 83 C0 14           add         eax,14h
+  0000006A: 8B DF              mov         ebx,edi
+  0000006C: 3B F8              cmp         edi,eax
+  0000006E: 74 04              je          00000074
+  00000070: 57                 push        edi
+  00000071: 50                 push        eax
+  00000072: EB C6              jmp         0000003A
+  00000074: 5F                 pop         edi
+  00000075: 5E                 pop         esi
+  00000076: 5B                 pop         ebx
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7B .text

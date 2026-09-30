@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A49440.obj
+
+File Type: COFF OBJECT
+
+_sub_A49440:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 8D 45 08           lea         eax,[ebp+8]
+  0000000C: 50                 push        eax
+  0000000D: 0F B7 47 06        movzx       eax,word ptr [edi+6]
+  00000011: FF 35 00 00 00 00  push        dword ptr [_unk_1A860E0]
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _FFX_Table_GetEntryByIdRange
+  0000001D: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000020: 83 C4 0C           add         esp,0Ch
+  00000023: 8B 0E              mov         ecx,dword ptr [esi]
+  00000025: 8B D0              mov         edx,eax
+  00000027: 8A 59 0D           mov         bl,byte ptr [ecx+0Dh]
+  0000002A: 84 DB              test        bl,bl
+  0000002C: 74 32              je          00000060
+  0000002E: FF 76 04           push        dword ptr [esi+4]
+  00000031: 2B 3D 00 00 00 00  sub         edi,dword ptr [_dword_2305834]
+  00000037: 52                 push        edx
+  00000038: 81 EF 08 08 00 00  sub         edi,808h
+  0000003E: B8 CD CC CC CC     mov         eax,0CCCCCCCDh
+  00000043: F7 E7              mul         eax,edi
+  00000045: C1 EA 05           shr         edx,5
+  00000048: 0F B6 C3           movzx       eax,bl
+  0000004B: 52                 push        edx
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _sub_A5D120
+  00000052: 83 C4 10           add         esp,10h
+  00000055: 09 46 0C           or          dword ptr [esi+0Ch],eax
+  00000058: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000005B: 5F                 pop         edi
+  0000005C: 5E                 pop         esi
+  0000005D: 5B                 pop         ebx
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+  00000060: 8A 47 21           mov         al,byte ptr [edi+21h]
+  00000063: 84 46 08           test        byte ptr [esi+8],al
+  00000066: 75 14              jne         0000007C
+  00000068: 0F B7 42 10        movzx       eax,word ptr [edx+10h]
+  0000006C: A9 00 80 00 00     test        eax,8000h
+  00000071: 75 09              jne         0000007C
+  00000073: 0F B7 51 0A        movzx       edx,word ptr [ecx+0Ah]
+  00000077: 23 D0              and         edx,eax
+  00000079: 09 56 0C           or          dword ptr [esi+0Ch],edx
+  0000007C: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000007F: 5F                 pop         edi
+  00000080: 5E                 pop         esi
+  00000081: 5B                 pop         ebx
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

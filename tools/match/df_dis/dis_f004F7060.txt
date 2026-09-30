@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F7060.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Skinning_SetDefaultBoneMatrix@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 80 00 00 00  sub         esp,80h
+  00000009: 56                 push        esi
+  0000000A: 8B F1              mov         esi,ecx
+  0000000C: 57                 push        edi
+  0000000D: F6 46 6C 01        test        byte ptr [esi+6Ch],1
+  00000011: 8B FA              mov         edi,edx
+  00000013: 75 19              jne         0000002E
+  00000015: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 12              je          0000002E
+  0000001C: 50                 push        eax
+  0000001D: 8D 45 80           lea         eax,[ebp-80h]
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  00000026: 83 C4 08           add         esp,8
+  00000029: 8D 45 80           lea         eax,[ebp-80h]
+  0000002C: EB 37              jmp         00000065
+  0000002E: D9 E8              fld1
+  00000030: 8D 45 C0           lea         eax,[ebp-40h]
+  00000033: D9 55 C0           fst         dword ptr [ebp-40h]
+  00000036: D9 EE              fldz
+  00000038: D9 55 C4           fst         dword ptr [ebp-3Ch]
+  0000003B: D9 55 C8           fst         dword ptr [ebp-38h]
+  0000003E: D9 55 CC           fst         dword ptr [ebp-34h]
+  00000041: D9 55 D0           fst         dword ptr [ebp-30h]
+  00000044: D9 55 D8           fst         dword ptr [ebp-28h]
+  00000047: D9 55 DC           fst         dword ptr [ebp-24h]
+  0000004A: D9 55 E0           fst         dword ptr [ebp-20h]
+  0000004D: D9 55 E4           fst         dword ptr [ebp-1Ch]
+  00000050: D9 55 EC           fst         dword ptr [ebp-14h]
+  00000053: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000056: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  00000059: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000005C: D9 55 D4           fst         dword ptr [ebp-2Ch]
+  0000005F: D9 55 E8           fst         dword ptr [ebp-18h]
+  00000062: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000065: 50                 push        eax
+  00000066: 8D 47 C0           lea         eax,[edi-40h]
+  00000069: 50                 push        eax
+  0000006A: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  0000006F: 57                 push        edi
+  00000070: 56                 push        esi
+  00000071: E8 00 00 00 00     call        _Phyre_Skinning_ComputeBoneMatrix
+  00000076: 83 C4 10           add         esp,10h
+  00000079: 5F                 pop         edi
+  0000007A: 5E                 pop         esi
+  0000007B: 8B E5              mov         esp,ebp
+  0000007D: 5D                 pop         ebp
+  0000007E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          7F .text

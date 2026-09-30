@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00690F90.obj
+
+File Type: COFF OBJECT
+
+@AsyncQueue_AppendTaskParam@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F2              mov         esi,edx
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 85 F6              test        esi,esi
+  0000000B: 74 3D              je          0000004A
+  0000000D: FF 06              inc         dword ptr [esi]
+  0000000F: 8B 0E              mov         ecx,dword ptr [esi]
+  00000011: 3B 4E 04           cmp         ecx,dword ptr [esi+4]
+  00000014: 76 14              jbe         0000002A
+  00000016: 8B C1              mov         eax,ecx
+  00000018: C1 E8 03           shr         eax,3
+  0000001B: 83 C0 02           add         eax,2
+  0000001E: 03 C1              add         eax,ecx
+  00000020: 50                 push        eax
+  00000021: 56                 push        esi
+  00000022: E8 00 00 00 00     call        _Phyre_DynArray_Reallocate
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 8B 16              mov         edx,dword ptr [esi]
+  0000002C: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000002F: 4A                 dec         edx
+  00000030: 8D 14 91           lea         edx,[ecx+edx*4]
+  00000033: 85 D2              test        edx,edx
+  00000035: 74 0B              je          00000042
+  00000037: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000003A: 5F                 pop         edi
+  0000003B: 89 02              mov         dword ptr [edx],eax
+  0000003D: 5E                 pop         esi
+  0000003E: 5D                 pop         ebp
+  0000003F: C2 04 00           ret         4
+  00000042: 5F                 pop         edi
+  00000043: 8B C1              mov         eax,ecx
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C2 04 00           ret         4
+  0000004A: 6A FF              push        0FFFFFFFFh
+  0000004C: FF 77 10           push        dword ptr [edi+10h]
+  0000004F: E8 00 00 00 00     call        _WaitForSingleObject
+  00000054: 8B 47 38           mov         eax,dword ptr [edi+38h]
+  00000057: 83 C4 08           add         esp,8
+  0000005A: 8D 04 40           lea         eax,[eax+eax*2]
+  0000005D: FF 44 87 20        inc         dword ptr [edi+eax*4+20h]
+  00000061: 8B 4C 87 20        mov         ecx,dword ptr [edi+eax*4+20h]
+  00000065: 3B 4C 87 24        cmp         ecx,dword ptr [edi+eax*4+24h]
+  00000069: 8D 34 87           lea         esi,[edi+eax*4]
+  0000006C: 76 17              jbe         00000085
+  0000006E: 8B C1              mov         eax,ecx
+  00000070: C1 E8 03           shr         eax,3
+  00000073: 83 C0 02           add         eax,2
+  00000076: 03 C1              add         eax,ecx
+  00000078: 50                 push        eax
+  00000079: 8D 46 20           lea         eax,[esi+20h]
+  0000007C: 50                 push        eax
+  0000007D: E8 00 00 00 00     call        _Phyre_DynArray_Reallocate
+  00000082: 83 C4 08           add         esp,8
+  00000085: 8B 4E 20           mov         ecx,dword ptr [esi+20h]
+  00000088: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  0000008B: 49                 dec         ecx
+  0000008C: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  0000008F: 85 C9              test        ecx,ecx
+  00000091: 74 05              je          00000098
+  00000093: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000096: 89 01              mov         dword ptr [ecx],eax
+  00000098: FF 77 10           push        dword ptr [edi+10h]
+  0000009B: E8 00 00 00 00     call        _ReleaseMutex
+  000000A0: FF 77 08           push        dword ptr [edi+8]
+  000000A3: E8 00 00 00 00     call        _Sys_Semaphore_Release
+  000000A8: 83 C4 08           add         esp,8
+  000000AB: 5F                 pop         edi
+  000000AC: 5E                 pop         esi
+  000000AD: 5D                 pop         ebp
+  000000AE: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B1 .text

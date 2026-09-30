@@ -1,0 +1,133 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008509E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_ExecDirAndParseResult:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 48           sub         esp,48h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 68 00 00 01 00     push        10000h
+  0000000E: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000015: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000001A: 8B D8              mov         ebx,eax
+  0000001C: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  0000001F: C6 03 00           mov         byte ptr [ebx],0
+  00000022: E8 00 00 00 00     call        _dbgPrintf
+  00000027: 6A 00              push        0
+  00000029: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002C: E8 00 00 00 00     call        _FFX_FileSystem_BuildFFXPs2Path
+  00000031: E8 00 00 00 00     call        _dbgPrintf
+  00000036: 8D 45 FC           lea         eax,[ebp-4]
+  00000039: 50                 push        eax
+  0000003A: 68 00 00 00 00     push        offset ??_C@_0BD@PNMHAJED@host0?3sugilist?4tmp?$AA@
+  0000003F: E8 00 00 00 00     call        _FFX_Dbg_ReadFileToHeapBuffer
+  00000044: 8B F8              mov         edi,eax
+  00000046: 83 C4 14           add         esp,14h
+  00000049: 85 FF              test        edi,edi
+  0000004B: 74 20              je          0000006D
+  0000004D: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000050: 81 FE 00 00 01 00  cmp         esi,10000h
+  00000056: 7D 15              jge         0000006D
+  00000058: 56                 push        esi
+  00000059: 57                 push        edi
+  0000005A: 53                 push        ebx
+  0000005B: E8 00 00 00 00     call        _memcpy
+  00000060: 57                 push        edi
+  00000061: C6 04 1E 00        mov         byte ptr [esi+ebx],0
+  00000065: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  0000006A: 83 C4 10           add         esp,10h
+  0000006D: 68 00 00 00 00     push        offset ??_C@_0N@NCBNDILI@sugilist?4tmp?$AA@
+  00000072: 68 00 00 00 00     push        offset ??_C@_0N@NCBNDILI@sugilist?4tmp?$AA@
+  00000077: 8D 45 B8           lea         eax,[ebp-48h]
+  0000007A: 68 00 00 00 00     push        offset ??_C@_0CH@GKNHPGCD@host0?3EXEC?3cmd?5?1c?5move?5?1Y?5?2?$CFs?5?2?$CF@
+  0000007F: 50                 push        eax
+  00000080: E8 00 00 00 00     call        _sprintf
+  00000085: 8D 45 B8           lea         eax,[ebp-48h]
+  00000088: 6A 00              push        0
+  0000008A: 50                 push        eax
+  0000008B: E8 00 00 00 00     call        _FFX_FileSystem_BuildFFXPs2Path
+  00000090: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000093: 83 C4 18           add         esp,18h
+  00000096: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  0000009A: 74 39              je          000000D5
+  0000009C: 33 FF              xor         edi,edi
+  0000009E: 39 7E 04           cmp         dword ptr [esi+4],edi
+  000000A1: 7E 19              jle         000000BC
+  000000A3: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000A6: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  000000A9: 85 C0              test        eax,eax
+  000000AB: 74 09              je          000000B6
+  000000AD: 50                 push        eax
+  000000AE: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000B3: 83 C4 04           add         esp,4
+  000000B6: 47                 inc         edi
+  000000B7: 3B 7E 04           cmp         edi,dword ptr [esi+4]
+  000000BA: 7C E7              jl          000000A3
+  000000BC: FF 76 08           push        dword ptr [esi+8]
+  000000BF: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000C4: 83 C4 04           add         esp,4
+  000000C7: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  000000CE: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  000000D5: 8A 03              mov         al,byte ptr [ebx]
+  000000D7: 33 DB              xor         ebx,ebx
+  000000D9: 84 C0              test        al,al
+  000000DB: 74 10              je          000000ED
+  000000DD: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000E0: 41                 inc         ecx
+  000000E1: 3C 0A              cmp         al,0Ah
+  000000E3: 75 01              jne         000000E6
+  000000E5: 43                 inc         ebx
+  000000E6: 8A 01              mov         al,byte ptr [ecx]
+  000000E8: 41                 inc         ecx
+  000000E9: 84 C0              test        al,al
+  000000EB: 75 F4              jne         000000E1
+  000000ED: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  000000F4: 50                 push        eax
+  000000F5: 89 5E 04           mov         dword ptr [esi+4],ebx
+  000000F8: 33 FF              xor         edi,edi
+  000000FA: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  000000FF: 83 C4 04           add         esp,4
+  00000102: 89 46 08           mov         dword ptr [esi+8],eax
+  00000105: 85 DB              test        ebx,ebx
+  00000107: 7E 17              jle         00000120
+  00000109: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000110: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000113: 47                 inc         edi
+  00000114: C7 44 B8 FC 00 00  mov         dword ptr [eax+edi*4-4],0
+            00 00
+  0000011C: 3B FB              cmp         edi,ebx
+  0000011E: 7C F0              jl          00000110
+  00000120: FF 75 10           push        dword ptr [ebp+10h]
+  00000123: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000126: FF 76 08           push        dword ptr [esi+8]
+  00000129: 53                 push        ebx
+  0000012A: E8 00 00 00 00     call        _FFX_Dbg_TokenizeFileListFilterAnm
+  0000012F: 53                 push        ebx
+  00000130: 89 06              mov         dword ptr [esi],eax
+  00000132: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000137: 83 C4 10           add         esp,10h
+  0000013A: 5F                 pop         edi
+  0000013B: 5E                 pop         esi
+  0000013C: 5B                 pop         ebx
+  0000013D: 8B E5              mov         esp,ebp
+  0000013F: 5D                 pop         ebp
+  00000140: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          47 .rdata
+         141 .text

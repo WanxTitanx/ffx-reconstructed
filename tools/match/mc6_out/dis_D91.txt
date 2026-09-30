@@ -1,0 +1,87 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file obj_D91.obj
+
+File Type: COFF OBJECT
+
+_R:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000A: 8B 11              mov         edx,dword ptr [ecx]
+  0000000C: 8B 06              mov         eax,dword ptr [esi]
+  0000000E: 3B C2              cmp         eax,edx
+  00000010: 74 15              je          00000027
+  00000012: 3B D0              cmp         edx,eax
+  00000014: 76 08              jbe         0000001E
+  00000016: B8 01 00 00 00     mov         eax,1
+  0000001B: 5E                 pop         esi
+  0000001C: 5D                 pop         ebp
+  0000001D: C3                 ret
+  0000001E: 1B C0              sbb         eax,eax
+  00000020: 83 E0 FE           and         eax,0FFFFFFFEh
+  00000023: 40                 inc         eax
+  00000024: 5E                 pop         esi
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+  00000027: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000002A: 8B 56 04           mov         edx,dword ptr [esi+4]
+  0000002D: 3B C2              cmp         eax,edx
+  0000002F: 77 E5              ja          00000016
+  00000031: 75 61              jne         00000094
+  00000033: 8B 51 04           mov         edx,dword ptr [ecx+4]
+  00000036: 83 C1 08           add         ecx,8
+  00000039: 83 EA 04           sub         edx,4
+  0000003C: 83 C6 08           add         esi,8
+  0000003F: 83 EA 04           sub         edx,4
+  00000042: 72 11              jb          00000055
+  00000044: 8B 01              mov         eax,dword ptr [ecx]
+  00000046: 3B 06              cmp         eax,dword ptr [esi]
+  00000048: 75 10              jne         0000005A
+  0000004A: 83 C1 04           add         ecx,4
+  0000004D: 83 C6 04           add         esi,4
+  00000050: 83 EA 04           sub         edx,4
+  00000053: 73 EF              jae         00000044
+  00000055: 83 FA FC           cmp         edx,0FFFFFFFCh
+  00000058: 74 35              je          0000008F
+  0000005A: 8A 01              mov         al,byte ptr [ecx]
+  0000005C: 3A 06              cmp         al,byte ptr [esi]
+  0000005E: 75 27              jne         00000087
+  00000060: 83 FA FD           cmp         edx,0FFFFFFFDh
+  00000063: 74 2A              je          0000008F
+  00000065: 8A 41 01           mov         al,byte ptr [ecx+1]
+  00000068: 3A 46 01           cmp         al,byte ptr [esi+1]
+  0000006B: 75 1A              jne         00000087
+  0000006D: 83 FA FE           cmp         edx,0FFFFFFFEh
+  00000070: 74 1D              je          0000008F
+  00000072: 8A 41 02           mov         al,byte ptr [ecx+2]
+  00000075: 3A 46 02           cmp         al,byte ptr [esi+2]
+  00000078: 75 0D              jne         00000087
+  0000007A: 83 FA FF           cmp         edx,0FFFFFFFFh
+  0000007D: 74 10              je          0000008F
+  0000007F: 8A 41 03           mov         al,byte ptr [ecx+3]
+  00000082: 3A 46 03           cmp         al,byte ptr [esi+3]
+  00000085: 74 08              je          0000008F
+  00000087: 1B C0              sbb         eax,eax
+  00000089: 83 C8 01           or          eax,1
+  0000008C: 5E                 pop         esi
+  0000008D: 5D                 pop         ebp
+  0000008E: C3                 ret
+  0000008F: 33 C0              xor         eax,eax
+  00000091: 5E                 pop         esi
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+  00000094: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000097: 5E                 pop         esi
+  00000098: 5D                 pop         ebp
+  00000099: C3                 ret
+
+  Summary
+
+          70 .debug$S
+          2F .drectve
+          9A .text

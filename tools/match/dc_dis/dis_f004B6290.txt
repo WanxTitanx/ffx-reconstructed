@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004B6290.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4B6290:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5E                 pop         esi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 57                 push        edi
+  00000011: 8D 04 B5 00 00 00  lea         eax,[esi*4]
+            00
+  00000018: 6A 02              push        2
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000020: 8B F8              mov         edi,eax
+  00000022: 83 C4 08           add         esp,8
+  00000025: 85 FF              test        edi,edi
+  00000027: 74 13              je          0000003C
+  00000029: 56                 push        esi
+  0000002A: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002D: 57                 push        edi
+  0000002E: E8 00 00 00 00     call        _PShader_WordByteArray_Copy
+  00000033: 83 C4 0C           add         esp,0Ch
+  00000036: 8B C7              mov         eax,edi
+  00000038: 5F                 pop         edi
+  00000039: 5E                 pop         esi
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+  0000003C: 5F                 pop         edi
+  0000003D: 33 C0              xor         eax,eax
+  0000003F: 5E                 pop         esi
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          42 .text

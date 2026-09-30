@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008A2B00.obj
+
+File Type: COFF OBJECT
+
+_FFX_EscMenu_ScrollIndicatorDraw:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000007: C7 45 FC F0 F5 F9  mov         dword ptr [ebp-4],0FCF9F5F0h
+            FC
+  0000000E: 8A 4A 0F           mov         cl,byte ptr [edx+0Fh]
+  00000011: 0F BE C1           movsx       eax,cl
+  00000014: FE C1              inc         cl
+  00000016: 66 0F BE 44 05 FC  movsx       ax,byte ptr [ebp+eax-4]
+  0000001C: 66 01 42 10        add         word ptr [edx+10h],ax
+  00000020: 33 C0              xor         eax,eax
+  00000022: 88 4A 0F           mov         byte ptr [edx+0Fh],cl
+  00000025: 80 F9 04           cmp         cl,4
+  00000028: 7C 0E              jl          00000038
+  0000002A: 80 7A 0C 10        cmp         byte ptr [edx+0Ch],10h
+  0000002E: 88 42 0F           mov         byte ptr [edx+0Fh],al
+  00000031: 89 42 14           mov         dword ptr [edx+14h],eax
+  00000034: 72 02              jb          00000038
+  00000036: 88 02              mov         byte ptr [edx],al
+  00000038: 8B E5              mov         esp,ebp
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

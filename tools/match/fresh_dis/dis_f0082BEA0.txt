@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082BEA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_DrawFadeOverlay:
+  00000000: E8 00 00 00 00     call        _FFX_FieldParticle_GetDmaContext
+  00000005: 50                 push        eax
+  00000006: E8 00 00 00 00     call        _FFX_FieldDma_InitPacket
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: E8 00 00 00 00     call        _FFX_FieldDma_SetCount3
+  00000013: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldUnkVar_1300730],0
+            00
+  0000001A: 74 25              je          00000041
+  0000001C: 6A 00              push        0
+  0000001E: 68 D0 00 00 00     push        0D0h
+  00000023: E8 00 00 00 00     call        _FFX_FieldDma_PushGifTag76WithColor
+  00000028: 6A 00              push        0
+  0000002A: 68 D0 00 00 00     push        0D0h
+  0000002F: E8 00 00 00 00     call        _FFX_FieldDma_PushGifTag77WithColor
+  00000034: 83 C4 10           add         esp,10h
+  00000037: E8 00 00 00 00     call        _FFX_FieldDma_BuildChainPacket
+  0000003C: E9 00 00 00 00     jmp         _FFX_GS_GetDmaContext
+  00000041: E8 00 00 00 00     call        _FFX_Field_DispatchSceneQuad
+  00000046: E8 00 00 00 00     call        _FFX_FieldDma_BuildChainPacket
+  0000004B: E9 00 00 00 00     jmp         _FFX_GS_GetDmaContext
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          50 .text

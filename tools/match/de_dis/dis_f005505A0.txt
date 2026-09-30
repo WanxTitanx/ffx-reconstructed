@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005505A0.obj
+
+File Type: COFF OBJECT
+
+@strcmp_w@8:
+  00000000: 85 D2              test        edx,edx
+  00000002: 74 38              je          0000003C
+  00000004: 8B 01              mov         eax,dword ptr [ecx]
+  00000006: 8B 00              mov         eax,dword ptr [eax]
+  00000008: 85 C0              test        eax,eax
+  0000000A: 74 30              je          0000003C
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 8A 08              mov         cl,byte ptr [eax]
+  00000012: 3A 0A              cmp         cl,byte ptr [edx]
+  00000014: 75 1A              jne         00000030
+  00000016: 84 C9              test        cl,cl
+  00000018: 74 12              je          0000002C
+  0000001A: 8A 48 01           mov         cl,byte ptr [eax+1]
+  0000001D: 3A 4A 01           cmp         cl,byte ptr [edx+1]
+  00000020: 75 0E              jne         00000030
+  00000022: 83 C0 02           add         eax,2
+  00000025: 83 C2 02           add         edx,2
+  00000028: 84 C9              test        cl,cl
+  0000002A: 75 E4              jne         00000010
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: EB 05              jmp         00000035
+  00000030: 1B C0              sbb         eax,eax
+  00000032: 83 C8 01           or          eax,1
+  00000035: 85 C0              test        eax,eax
+  00000037: 75 03              jne         0000003C
+  00000039: B0 01              mov         al,1
+  0000003B: C3                 ret
+  0000003C: 32 C0              xor         al,al
+  0000003E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3F .text

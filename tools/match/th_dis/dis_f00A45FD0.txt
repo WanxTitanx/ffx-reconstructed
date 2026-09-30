@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A45FD0.obj
+
+File Type: COFF OBJECT
+
+_sub_A45FD0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000009: E8 00 00 00 00     call        _sub_8C6700
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 33 F6              xor         esi,esi
+  00000013: E8 00 00 00 00     call        _sub_8C66D0
+  00000018: 8B D8              mov         ebx,eax
+  0000001A: 85 DB              test        ebx,ebx
+  0000001C: 7E 2D              jle         0000004B
+  0000001E: 57                 push        edi
+  0000001F: 90                 nop
+  00000020: 56                 push        esi
+  00000021: E8 00 00 00 00     call        _sub_8C66E0
+  00000026: 8B F8              mov         edi,eax
+  00000028: 57                 push        edi
+  00000029: E8 00 00 00 00     call        _FFX_Inventory_GetItemCount
+  0000002E: 83 C4 08           add         esp,8
+  00000031: 85 C0              test        eax,eax
+  00000033: 7E 10              jle         00000045
+  00000035: 8D 45 FC           lea         eax,[ebp-4]
+  00000038: 50                 push        eax
+  00000039: 0F BF C7           movsx       eax,di
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _FFX_Battle_GetMagicEntryById
+  00000042: 83 C4 08           add         esp,8
+  00000045: 46                 inc         esi
+  00000046: 3B F3              cmp         esi,ebx
+  00000048: 7C D6              jl          00000020
+  0000004A: 5F                 pop         edi
+  0000004B: 5E                 pop         esi
+  0000004C: 5B                 pop         ebx
+  0000004D: 8B E5              mov         esp,ebp
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          51 .text

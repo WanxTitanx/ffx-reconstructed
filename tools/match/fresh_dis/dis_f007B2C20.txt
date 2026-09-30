@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B2C20.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckCanSwitchParty:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000008: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000000B: 6A 01              push        1
+  0000000D: FF D0              call        eax
+  0000000F: 83 C4 04           add         esp,4
+  00000012: 85 C0              test        eax,eax
+  00000014: 75 2D              jne         00000043
+  00000016: E8 00 00 00 00     call        _FFX_FieldDebug_IsSoundBusy
+  0000001B: 83 F8 01           cmp         eax,1
+  0000001E: 74 23              je          00000043
+  00000020: E8 00 00 00 00     call        _FFX_Sound_ReturnZero
+  00000025: 85 C0              test        eax,eax
+  00000027: 74 06              je          0000002F
+  00000029: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  0000002D: 75 14              jne         00000043
+  0000002F: E8 00 00 00 00     call        _FFX_Sound_AggregateStatusFlags
+  00000034: 85 C0              test        eax,eax
+  00000036: 75 0B              jne         00000043
+  00000038: E8 00 00 00 00     call        _FFX_Sound_GetPendingSeqLo
+  0000003D: F7 D8              neg         eax
+  0000003F: 1B C0              sbb         eax,eax
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086A070.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_ToggleActorControlState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000009: B8 00 00 00 00     mov         eax,0
+  0000000E: 0F B6 1E           movzx       ebx,byte ptr [esi]
+  00000011: D1 EB              shr         ebx,1
+  00000013: 83 E3 01           and         ebx,1
+  00000016: F6 06 22           test        byte ptr [esi],22h
+  00000019: 0F 95 C0           setne       al
+  0000001C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001F: E8 00 00 00 00     call        _FFX_Field_ClearControlledActorsAndMotionFlags
+  00000024: F6 46 01 04        test        byte ptr [esi+1],4
+  00000028: 75 11              jne         0000003B
+  0000002A: F6 46 03 84        test        byte ptr [esi+3],84h
+  0000002E: 75 0B              jne         0000003B
+  00000030: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000034: 74 05              je          0000003B
+  00000036: E8 00 00 00 00     call        _FFX_Field_SelectControlledActorInstance
+  0000003B: 8A C3              mov         al,bl
+  0000003D: B2 FE              mov         dl,0FEh
+  0000003F: F6 EA              imul        dl
+  00000041: 32 06              xor         al,byte ptr [esi]
+  00000043: 24 02              and         al,2
+  00000045: 30 06              xor         byte ptr [esi],al
+  00000047: 5E                 pop         esi
+  00000048: 5B                 pop         ebx
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

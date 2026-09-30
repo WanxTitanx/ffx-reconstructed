@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AFFB0.obj
+
+File Type: COFF OBJECT
+
+@FFX_AsyncQ_Loose_6AFFB0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 8B 06              mov         eax,dword ptr [esi]
+  00000008: 85 C0              test        eax,eax
+  0000000A: 74 09              je          00000015
+  0000000C: 50                 push        eax
+  0000000D: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000012: 83 C4 04           add         esp,4
+  00000015: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 09              je          00000025
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000022: 83 C4 04           add         esp,4
+  00000025: F6 C3 01           test        bl,1
+  00000028: 74 09              je          00000033
+  0000002A: 56                 push        esi
+  0000002B: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000030: 83 C4 04           add         esp,4
+  00000033: 8B C6              mov         eax,esi
+  00000035: 5E                 pop         esi
+  00000036: 5B                 pop         ebx
+  00000037: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          38 .text

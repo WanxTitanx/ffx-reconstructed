@@ -1,0 +1,148 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A5A4B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Abmap_SetupGlowPlacements:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 7C           sub         esp,7Ch
+  00000006: 53                 push        ebx
+  00000007: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 33 FF              xor         edi,edi
+  0000000E: 33 F6              xor         esi,esi
+  00000010: 57                 push        edi
+  00000011: C6 84 33 D6 10 01  mov         byte ptr [ebx+esi+110D6h],0
+            00 00
+  00000019: E8 00 00 00 00     call        _FFX_Abmap_UpdatePlacementSlotTransform
+  0000001E: 83 C6 50           add         esi,50h
+  00000021: 83 C4 04           add         esp,4
+  00000024: 47                 inc         edi
+  00000025: 81 FE 30 02 00 00  cmp         esi,230h
+  0000002B: 7C E3              jl          00000010
+  0000002D: 8B D3              mov         edx,ebx
+  0000002F: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000036: 0F B6 8A BC 15 01  movzx       ecx,byte ptr [edx+115BCh]
+            00
+  0000003D: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000040: 8D 5D 84           lea         ebx,[ebp-7Ch]
+  00000043: 8D 04 89           lea         eax,[ecx+ecx*4]
+  00000046: C1 E0 04           shl         eax,4
+  00000049: 05 88 10 01 00     add         eax,11088h
+  0000004E: 03 C2              add         eax,edx
+  00000050: 53                 push        ebx
+  00000051: 50                 push        eax
+  00000052: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000055: E8 00 00 00 00     call        _FFX_Abmap_GlowSetup
+  0000005A: 83 C4 08           add         esp,8
+  0000005D: 8D 49 00           lea         ecx,[ecx]
+  00000060: 33 F6              xor         esi,esi
+  00000062: 8D 7D 84           lea         edi,[ebp-7Ch]
+  00000065: 3B 75 FC           cmp         esi,dword ptr [ebp-4]
+  00000068: 7D 32              jge         0000009C
+  0000006A: 57                 push        edi
+  0000006B: 53                 push        ebx
+  0000006C: E8 00 00 00 00     call        _FFX_Abmap_TestBoundsOverlap
+  00000071: 83 C4 08           add         esp,8
+  00000074: 85 C0              test        eax,eax
+  00000076: 75 06              jne         0000007E
+  00000078: 46                 inc         esi
+  00000079: 83 C7 10           add         edi,10h
+  0000007C: EB E7              jmp         00000065
+  0000007E: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000081: FF 75 F8           push        dword ptr [ebp-8]
+  00000084: FE 46 4E           inc         byte ptr [esi+4Eh]
+  00000087: E8 00 00 00 00     call        _FFX_Abmap_UpdatePlacementSlotTransform
+  0000008C: 53                 push        ebx
+  0000008D: 56                 push        esi
+  0000008E: E8 00 00 00 00     call        _FFX_Abmap_GlowSetup
+  00000093: 83 C4 0C           add         esp,0Ch
+  00000096: 80 7E 4E 07        cmp         byte ptr [esi+4Eh],7
+  0000009A: 72 C4              jb          00000060
+  0000009C: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000009F: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  000000A2: 40                 inc         eax
+  000000A3: 33 C9              xor         ecx,ecx
+  000000A5: 46                 inc         esi
+  000000A6: 83 C3 10           add         ebx,10h
+  000000A9: 83 F8 06           cmp         eax,6
+  000000AC: 0F 9F C1           setg        cl
+  000000AF: 89 75 FC           mov         dword ptr [ebp-4],esi
+  000000B2: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000B5: 49                 dec         ecx
+  000000B6: 23 C8              and         ecx,eax
+  000000B8: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000000BB: 83 FE 07           cmp         esi,7
+  000000BE: 7C 83              jl          00000043
+  000000C0: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000C3: 33 D2              xor         edx,edx
+  000000C5: 0F B6 81 BC 15 01  movzx       eax,byte ptr [ecx+115BCh]
+            00
+  000000CC: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000CF: 89 55 F8           mov         dword ptr [ebp-8],edx
+  000000D2: 8D 5D 84           lea         ebx,[ebp-7Ch]
+  000000D5: 8D 04 80           lea         eax,[eax+eax*4]
+  000000D8: C1 E0 04           shl         eax,4
+  000000DB: 05 88 10 01 00     add         eax,11088h
+  000000E0: 03 C1              add         eax,ecx
+  000000E2: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000E5: 33 F6              xor         esi,esi
+  000000E7: 8D 7D 84           lea         edi,[ebp-7Ch]
+  000000EA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000F0: 83 FE 07           cmp         esi,7
+  000000F3: 7D 3C              jge         00000131
+  000000F5: 3B D6              cmp         edx,esi
+  000000F7: 74 11              je          0000010A
+  000000F9: 57                 push        edi
+  000000FA: 53                 push        ebx
+  000000FB: E8 00 00 00 00     call        _FFX_Abmap_TestBoundsOverlap
+  00000100: 83 C4 08           add         esp,8
+  00000103: 85 C0              test        eax,eax
+  00000105: 75 09              jne         00000110
+  00000107: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000010A: 46                 inc         esi
+  0000010B: 83 C7 10           add         edi,10h
+  0000010E: EB E0              jmp         000000F0
+  00000110: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000113: FF 75 FC           push        dword ptr [ebp-4]
+  00000116: FE 46 4E           inc         byte ptr [esi+4Eh]
+  00000119: E8 00 00 00 00     call        _FFX_Abmap_UpdatePlacementSlotTransform
+  0000011E: 53                 push        ebx
+  0000011F: 56                 push        esi
+  00000120: E8 00 00 00 00     call        _FFX_Abmap_GlowSetup
+  00000125: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000128: 83 C4 0C           add         esp,0Ch
+  0000012B: 80 7E 4E 07        cmp         byte ptr [esi+4Eh],7
+  0000012F: 72 B4              jb          000000E5
+  00000131: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000134: 41                 inc         ecx
+  00000135: 33 C0              xor         eax,eax
+  00000137: 42                 inc         edx
+  00000138: 83 C3 10           add         ebx,10h
+  0000013B: 83 F9 06           cmp         ecx,6
+  0000013E: 0F 9F C0           setg        al
+  00000141: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000144: 48                 dec         eax
+  00000145: 23 C1              and         eax,ecx
+  00000147: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000014A: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000014D: 83 FA 07           cmp         edx,7
+  00000150: 7C 83              jl          000000D5
+  00000152: 5F                 pop         edi
+  00000153: 5E                 pop         esi
+  00000154: 5B                 pop         ebx
+  00000155: 8B E5              mov         esp,ebp
+  00000157: 5D                 pop         ebp
+  00000158: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         159 .text

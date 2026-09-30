@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00605780.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_605780@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 6A 00              push        0
+  0000000B: 8D 7B 30           lea         edi,[ebx+30h]
+  0000000E: 6A 01              push        1
+  00000010: 57                 push        edi
+  00000011: C7 43 40 00 00 00  mov         dword ptr [ebx+40h],0
+            00
+  00000018: C6 43 48 01        mov         byte ptr [ebx+48h],1
+  0000001C: E8 00 00 00 00     call        _Phyre_Mutex_Unlock
+  00000021: 8D 73 38           lea         esi,[ebx+38h]
+  00000024: 56                 push        esi
+  00000025: E8 00 00 00 00     call        _Phyre_SpinLock_Release
+  0000002A: 8D 45 FC           lea         eax,[ebp-4]
+  0000002D: 50                 push        eax
+  0000002E: 8D 43 28           lea         eax,[ebx+28h]
+  00000031: 50                 push        eax
+  00000032: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000039: E8 00 00 00 00     call        _Phyre_Mutex_Lock
+  0000003E: E8 00 00 00 00     call        _Phyre_Atomic_Sub
+  00000043: 57                 push        edi
+  00000044: C6 43 2C 00        mov         byte ptr [ebx+2Ch],0
+  00000048: E8 00 00 00 00     call        _Phyre_Atomic_Add
+  0000004D: 56                 push        esi
+  0000004E: C6 43 34 00        mov         byte ptr [ebx+34h],0
+  00000052: E8 00 00 00 00     call        _Phyre_Atomic_Add
+  00000057: 8B 4B 18           mov         ecx,dword ptr [ebx+18h]
+  0000005A: 83 C4 20           add         esp,20h
+  0000005D: C6 43 3C 00        mov         byte ptr [ebx+3Ch],0
+  00000061: 85 C9              test        ecx,ecx
+  00000063: 74 0B              je          00000070
+  00000065: 8B 01              mov         eax,dword ptr [ecx]
+  00000067: BA 01 00 00 00     mov         edx,1
+  0000006C: 8B 00              mov         eax,dword ptr [eax]
+  0000006E: FF D0              call        eax
+  00000070: 8B 4B 14           mov         ecx,dword ptr [ebx+14h]
+  00000073: 85 C9              test        ecx,ecx
+  00000075: 74 0B              je          00000082
+  00000077: 8B 01              mov         eax,dword ptr [ecx]
+  00000079: BA 01 00 00 00     mov         edx,1
+  0000007E: 8B 00              mov         eax,dword ptr [eax]
+  00000080: FF D0              call        eax
+  00000082: 8B 4B 10           mov         ecx,dword ptr [ebx+10h]
+  00000085: 5F                 pop         edi
+  00000086: 5E                 pop         esi
+  00000087: 5B                 pop         ebx
+  00000088: 85 C9              test        ecx,ecx
+  0000008A: 74 0B              je          00000097
+  0000008C: 8B 01              mov         eax,dword ptr [ecx]
+  0000008E: BA 01 00 00 00     mov         edx,1
+  00000093: 8B 00              mov         eax,dword ptr [eax]
+  00000095: FF D0              call        eax
+  00000097: 33 C0              xor         eax,eax
+  00000099: 8B E5              mov         esp,ebp
+  0000009B: 5D                 pop         ebp
+  0000009C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          9D .text

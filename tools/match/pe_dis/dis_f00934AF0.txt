@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00934AF0.obj
+
+File Type: COFF OBJECT
+
+_sub_934AF0:
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_unk_193BF80]
+  00000005: 85 C0              test        eax,eax
+  00000007: 74 0B              je          00000014
+  00000009: 8B 00              mov         eax,dword ptr [eax]
+  0000000B: 85 C0              test        eax,eax
+  0000000D: 74 05              je          00000014
+  0000000F: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000012: EB 02              jmp         00000016
+  00000014: 33 C0              xor         eax,eax
+  00000016: 8B 15 00 00 00 00  mov         edx,dword ptr [_unk_193C0F0]
+  0000001C: 8B 8A 8C 02 00 00  mov         ecx,dword ptr [edx+28Ch]
+  00000022: 83 F9 01           cmp         ecx,1
+  00000025: 75 18              jne         0000003F
+  00000027: 8B 8A 88 02 00 00  mov         ecx,dword ptr [edx+288h]
+  0000002D: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000030: 8D 0C 49           lea         ecx,[ecx+ecx*2]
+  00000033: C1 E1 06           shl         ecx,6
+  00000036: 83 A4 01 B0 00 00  and         dword ptr [ecx+eax+0B0h],0FFFFFFFEh
+            00 FE
+  0000003E: C3                 ret
+  0000003F: 8D 51 FE           lea         edx,[ecx-2]
+  00000042: 83 F9 02           cmp         ecx,2
+  00000045: 75 21              jne         00000068
+  00000047: 33 C9              xor         ecx,ecx
+  00000049: 39 48 04           cmp         dword ptr [eax+4],ecx
+  0000004C: 7E 1A              jle         00000068
+  0000004E: 33 D2              xor         edx,edx
+  00000050: 56                 push        esi
+  00000051: 8B 70 08           mov         esi,dword ptr [eax+8]
+  00000054: 41                 inc         ecx
+  00000055: 83 24 32 FD        and         dword ptr [edx+esi],0FFFFFFFDh
+  00000059: 8D 92 C0 00 00 00  lea         edx,[edx+0C0h]
+  0000005F: 3B 48 04           cmp         ecx,dword ptr [eax+4]
+  00000062: 72 ED              jb          00000051
+  00000064: 8B C6              mov         eax,esi
+  00000066: 5E                 pop         esi
+  00000067: C3                 ret
+  00000068: 8B C2              mov         eax,edx
+  0000006A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6B .text

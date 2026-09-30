@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0088ED80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_88ED80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 20           sub         esp,20h
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000E: 57                 push        edi
+  0000000F: 33 FF              xor         edi,edi
+  00000011: 6A 1C              push        1Ch
+  00000013: 8D 45 E0           lea         eax,[ebp-20h]
+  00000016: 50                 push        eax
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _TkDecodeCompressedBytes
+  0000001D: 8B F0              mov         esi,eax
+  0000001F: 8D 45 E0           lea         eax,[ebp-20h]
+  00000022: 50                 push        eax
+  00000023: 53                 push        ebx
+  00000024: E8 00 00 00 00     call        _TkComputeCompressedByteCount
+  00000029: C1 E8 04           shr         eax,4
+  0000002C: 83 C4 14           add         esp,14h
+  0000002F: 03 F8              add         edi,eax
+  00000031: 85 F6              test        esi,esi
+  00000033: 75 DC              jne         00000011
+  00000035: 8B C7              mov         eax,edi
+  00000037: 5F                 pop         edi
+  00000038: 5E                 pop         esi
+  00000039: 5B                 pop         ebx
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

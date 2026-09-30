@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007D2E40.obj
+
+File Type: COFF OBJECT
+
+_FFX_Debug_FindStringIndexInList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B 06              mov         eax,dword ptr [esi]
+  0000000A: 33 FF              xor         edi,edi
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 75 07              jne         00000017
+  00000010: 5F                 pop         edi
+  00000011: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000014: 5E                 pop         esi
+  00000015: 5D                 pop         ebp
+  00000016: C3                 ret
+  00000017: 53                 push        ebx
+  00000018: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000001B: 50                 push        eax
+  0000001C: 53                 push        ebx
+  0000001D: E8 00 00 00 00     call        _FFX_String_CompareCaseInsensitive
+  00000022: 83 C4 08           add         esp,8
+  00000025: 85 C0              test        eax,eax
+  00000027: 75 1F              jne         00000048
+  00000029: 83 C6 04           add         esi,4
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 8B 06              mov         eax,dword ptr [esi]
+  00000032: 47                 inc         edi
+  00000033: 8D 76 04           lea         esi,[esi+4]
+  00000036: 85 C0              test        eax,eax
+  00000038: 74 15              je          0000004F
+  0000003A: 50                 push        eax
+  0000003B: 53                 push        ebx
+  0000003C: E8 00 00 00 00     call        _FFX_String_CompareCaseInsensitive
+  00000041: 83 C4 08           add         esp,8
+  00000044: 85 C0              test        eax,eax
+  00000046: 74 E8              je          00000030
+  00000048: 5B                 pop         ebx
+  00000049: 8B C7              mov         eax,edi
+  0000004B: 5F                 pop         edi
+  0000004C: 5E                 pop         esi
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+  0000004F: 5B                 pop         ebx
+  00000050: 5F                 pop         edi
+  00000051: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000054: 5E                 pop         esi
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          57 .text

@@ -1,0 +1,95 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E4070.obj
+
+File Type: COFF OBJECT
+
+@FFX_Field_SetViewport@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 86 B4 00 00 00  mov         eax,dword ptr [esi+0B4h]
+  0000000C: 83 F8 02           cmp         eax,2
+  0000000F: 0F 83 B3 00 00 00  jae         000000C8
+  00000015: D9 45 08           fld         dword ptr [ebp+8]
+  00000018: D8 86 B0 00 00 00  fadd        dword ptr [esi+0B0h]
+  0000001E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000021: D9 45 08           fld         dword ptr [ebp+8]
+  00000024: D9 C0              fld         st(0)
+  00000026: D9 C9              fxch        st(1)
+  00000028: D9 9E B0 00 00 00  fstp        dword ptr [esi+0B0h]
+  0000002E: D9 E8              fld1
+  00000030: D9 EE              fldz
+  00000032: D9 E8              fld1
+  00000034: 85 C0              test        eax,eax
+  00000036: 74 05              je          0000003D
+  00000038: D9 55 08           fst         dword ptr [ebp+8]
+  0000003B: EB 07              jmp         00000044
+  0000003D: D9 C9              fxch        st(1)
+  0000003F: D9 55 08           fst         dword ptr [ebp+8]
+  00000042: D9 C9              fxch        st(1)
+  00000044: D9 45 08           fld         dword ptr [ebp+8]
+  00000047: D9 C0              fld         st(0)
+  00000049: D8 EC              fsubr       st,st(4)
+  0000004B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000004E: D9 EE              fldz
+  00000050: D9 45 08           fld         dword ptr [ebp+8]
+  00000053: D9 C0              fld         st(0)
+  00000055: DE EB              fsubp       st(3),st
+  00000057: D9 CA              fxch        st(2)
+  00000059: DE CE              fmulp       st(6),st
+  0000005B: D9 CD              fxch        st(5)
+  0000005D: DE C1              faddp       st(1),st
+  0000005F: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000062: D9 45 08           fld         dword ptr [ebp+8]
+  00000065: D9 96 AC 00 00 00  fst         dword ptr [esi+0ACh]
+  0000006B: D8 D1              fcom        st(1)
+  0000006D: DF E0              fnstsw      ax
+  0000006F: DD D9              fstp        st(1)
+  00000071: F6 C4 41           test        ah,41h
+  00000074: 74 4A              je          000000C0
+  00000076: DD DA              fstp        st(2)
+  00000078: D9 C1              fld         st(1)
+  0000007A: D9 CA              fxch        st(2)
+  0000007C: DE D9              fcompp
+  0000007E: DF E0              fnstsw      ax
+  00000080: F6 C4 01           test        ah,1
+  00000083: 74 3F              je          000000C4
+  00000085: DD D8              fstp        st(0)
+  00000087: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000008A: 83 EC 08           sub         esp,8
+  0000008D: D9 45 08           fld         dword ptr [ebp+8]
+  00000090: D9 96 AC 00 00 00  fst         dword ptr [esi+0ACh]
+  00000096: DD 1C 24           fstp        qword ptr [esp]
+  00000099: 56                 push        esi
+  0000009A: E8 00 00 00 00     call        _FFX_Field_RenderPostProcess
+  0000009F: D9 E8              fld1
+  000000A1: D8 9E B0 00 00 00  fcomp       dword ptr [esi+0B0h]
+  000000A7: 83 C4 0C           add         esp,0Ch
+  000000AA: DF E0              fnstsw      ax
+  000000AC: F6 C4 05           test        ah,5
+  000000AF: 7A 1F              jp          000000D0
+  000000B1: C7 86 B4 00 00 00  mov         dword ptr [esi+0B4h],2
+            02 00 00 00
+  000000BB: 5E                 pop         esi
+  000000BC: 5D                 pop         ebp
+  000000BD: C2 04 00           ret         4
+  000000C0: DD D8              fstp        st(0)
+  000000C2: DD D8              fstp        st(0)
+  000000C4: DD D9              fstp        st(1)
+  000000C6: EB BF              jmp         00000087
+  000000C8: D9 EE              fldz
+  000000CA: D9 9E B0 00 00 00  fstp        dword ptr [esi+0B0h]
+  000000D0: 5E                 pop         esi
+  000000D1: 5D                 pop         ebp
+  000000D2: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          D5 .text

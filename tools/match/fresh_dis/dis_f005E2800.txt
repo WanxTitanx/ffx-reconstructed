@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005E2800.obj
+
+File Type: COFF OBJECT
+
+@Phyre_physics_calcForce@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 86 D0 00 00 00  test        byte ptr [esi+0D0h],1
+            01
+  0000000A: 75 0E              jne         0000001A
+  0000000C: FF B6 D0 00 00 00  push        dword ptr [esi+0D0h]
+  00000012: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8B 86 A0 00 00 00  mov         eax,dword ptr [esi+0A0h]
+  00000020: 85 C0              test        eax,eax
+  00000022: 78 18              js          0000003C
+  00000024: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000029: 83 F8 01           cmp         eax,1
+  0000002C: 76 0E              jbe         0000003C
+  0000002E: FF B6 A4 00 00 00  push        dword ptr [esi+0A4h]
+  00000034: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000039: 83 C4 04           add         esp,4
+  0000003C: C7 86 A4 00 00 00  mov         dword ptr [esi+0A4h],0
+            00 00 00 00
+  00000046: C7 86 A0 00 00 00  mov         dword ptr [esi+0A0h],0
+            00 00 00 00
+  00000050: 5E                 pop         esi
+  00000051: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          52 .text

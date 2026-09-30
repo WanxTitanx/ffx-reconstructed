@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00865A60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Event_TransitionMusicTrack:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 41 2C           mov         eax,dword ptr [ecx+2Ch]
+  00000009: 85 C0              test        eax,eax
+  0000000B: 0F 84 9F 00 00 00  je          000000B0
+  00000011: 03 C8              add         ecx,eax
+  00000013: 0F 84 97 00 00 00  je          000000B0
+  00000019: 8B 49 38           mov         ecx,dword ptr [ecx+38h]
+  0000001C: 85 C9              test        ecx,ecx
+  0000001E: 0F 89 8C 00 00 00  jns         000000B0
+  00000024: 56                 push        esi
+  00000025: 57                 push        edi
+  00000026: 8B F9              mov         edi,ecx
+  00000028: C1 FF 10           sar         edi,10h
+  0000002B: 50                 push        eax
+  0000002C: 81 E7 FF 7F 00 00  and         edi,7FFFh
+  00000032: 0F B7 F1           movzx       esi,cx
+  00000035: E8 00 00 00 00     call        _FFX_Music_GetCurrentTrack
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: 81 FE 00 01 00 00  cmp         esi,100h
+  00000043: 72 27              jb          0000006C
+  00000045: 85 C0              test        eax,eax
+  00000047: 78 14              js          0000005D
+  00000049: 0F BE 45 0B        movsx       eax,byte ptr [ebp+0Bh]
+  0000004D: 50                 push        eax
+  0000004E: E8 00 00 00 00     call        _FFX_Music_GetCurrentTrack
+  00000053: 57                 push        edi
+  00000054: 50                 push        eax
+  00000055: E8 00 00 00 00     call        _FFX_Music_CrossfadeParamUpdate
+  0000005A: 83 C4 0C           add         esp,0Ch
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: C7 45 08 FF FF FF  mov         dword ptr [ebp+8],0FFFFFFFFh
+            FF
+  00000066: 5D                 pop         ebp
+  00000067: E9 00 00 00 00     jmp         _FFX_Battle_SetMusicTrackIndex
+  0000006C: 85 C0              test        eax,eax
+  0000006E: 79 13              jns         00000083
+  00000070: 56                 push        esi
+  00000071: E8 00 00 00 00     call        _FFX_Music_PlayTrackWithPreload
+  00000076: 56                 push        esi
+  00000077: E8 00 00 00 00     call        _FFX_Battle_SetMusicTrackIndex
+  0000007C: 83 C4 08           add         esp,8
+  0000007F: 5F                 pop         edi
+  00000080: 5E                 pop         esi
+  00000081: 5D                 pop         ebp
+  00000082: C3                 ret
+  00000083: 0F BE 45 0B        movsx       eax,byte ptr [ebp+0Bh]
+  00000087: 50                 push        eax
+  00000088: E8 00 00 00 00     call        _FFX_Music_GetCurrentTrack
+  0000008D: 83 C4 04           add         esp,4
+  00000090: 3B C6              cmp         eax,esi
+  00000092: 74 1A              je          000000AE
+  00000094: 0F BE 45 0B        movsx       eax,byte ptr [ebp+0Bh]
+  00000098: 50                 push        eax
+  00000099: E8 00 00 00 00     call        _FFX_Music_GetCurrentTrack
+  0000009E: 57                 push        edi
+  0000009F: 56                 push        esi
+  000000A0: E8 00 00 00 00     call        _FFX_Music_CrossfadeToNewTrack
+  000000A5: 56                 push        esi
+  000000A6: E8 00 00 00 00     call        _FFX_Battle_SetMusicTrackIndex
+  000000AB: 83 C4 10           add         esp,10h
+  000000AE: 5F                 pop         edi
+  000000AF: 5E                 pop         esi
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B2 .text

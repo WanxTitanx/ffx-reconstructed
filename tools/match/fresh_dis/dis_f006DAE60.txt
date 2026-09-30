@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DAE60.obj
+
+File Type: COFF OBJECT
+
+@FFX_Phyre_Loose_6DAE60@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 80 B9 30 07 00 00  cmp         byte ptr [ecx+730h],0
+            00
+  0000000B: 0F 84 AF 00 00 00  je          000000C0
+  00000011: 8B 91 44 07 00 00  mov         edx,dword ptr [ecx+744h]
+  00000017: 01 91 40 07 00 00  add         dword ptr [ecx+740h],edx
+  0000001D: 8B 81 40 07 00 00  mov         eax,dword ptr [ecx+740h]
+  00000023: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000026: DB 45 FC           fild        dword ptr [ebp-4]
+  00000029: 57                 push        edi
+  0000002A: 8D B9 38 07 00 00  lea         edi,[ecx+738h]
+  00000030: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000033: D9 45 FC           fld         dword ptr [ebp-4]
+  00000036: DC 35 00 00 00 00  fdiv        qword ptr [__real@404e000000000000]
+  0000003C: D9 1F              fstp        dword ptr [edi]
+  0000003E: 83 F8 3C           cmp         eax,3Ch
+  00000041: 7C 12              jl          00000055
+  00000043: F7 DA              neg         edx
+  00000045: C7 81 40 07 00 00  mov         dword ptr [ecx+740h],3Ch
+            3C 00 00 00
+  0000004F: 89 91 44 07 00 00  mov         dword ptr [ecx+744h],edx
+  00000055: 83 B9 40 07 00 00  cmp         dword ptr [ecx+740h],0
+            00
+  0000005C: 7F 18              jg          00000076
+  0000005E: 8B 81 44 07 00 00  mov         eax,dword ptr [ecx+744h]
+  00000064: F7 D8              neg         eax
+  00000066: C7 81 40 07 00 00  mov         dword ptr [ecx+740h],0
+            00 00 00 00
+  00000070: 89 81 44 07 00 00  mov         dword ptr [ecx+744h],eax
+  00000076: 8B 81 3C 07 00 00  mov         eax,dword ptr [ecx+73Ch]
+  0000007C: 8B 48 10           mov         ecx,dword ptr [eax+10h]
+  0000007F: 8B 01              mov         eax,dword ptr [ecx]
+  00000081: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000086: 83 F8 01           cmp         eax,1
+  00000089: 77 0D              ja          00000098
+  0000008B: 85 C0              test        eax,eax
+  0000008D: 74 05              je          00000094
+  0000008F: 8D 41 04           lea         eax,[ecx+4]
+  00000092: EB 07              jmp         0000009B
+  00000094: 33 C0              xor         eax,eax
+  00000096: EB 03              jmp         0000009B
+  00000098: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000009B: 56                 push        esi
+  0000009C: 8B 30              mov         esi,dword ptr [eax]
+  0000009E: 68 00 00 00 00     push        offset ??_C@_0L@JOMAJGJL@alphaScale?$AA@
+  000000A3: FF 36              push        dword ptr [esi]
+  000000A5: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  000000AA: 83 C4 08           add         esp,8
+  000000AD: 85 C0              test        eax,eax
+  000000AF: 74 0D              je          000000BE
+  000000B1: 57                 push        edi
+  000000B2: 50                 push        eax
+  000000B3: FF 76 04           push        dword ptr [esi+4]
+  000000B6: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer
+  000000BB: 83 C4 0C           add         esp,0Ch
+  000000BE: 5E                 pop         esi
+  000000BF: 5F                 pop         edi
+  000000C0: 8B E5              mov         esp,ebp
+  000000C2: 5D                 pop         ebp
+  000000C3: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          13 .rdata
+          C4 .text

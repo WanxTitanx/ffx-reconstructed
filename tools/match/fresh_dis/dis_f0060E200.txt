@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060E200.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_60E200@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8A 5D 08           mov         bl,byte ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F2              mov         esi,edx
+  0000000B: 8B F9              mov         edi,ecx
+  0000000D: F6 C3 01           test        bl,1
+  00000010: 75 0E              jne         00000020
+  00000012: 8B 07              mov         eax,dword ptr [edi]
+  00000014: D1 C0              rol         eax,1
+  00000016: 56                 push        esi
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  0000001D: 83 C4 08           add         esp,8
+  00000020: F6 C3 02           test        bl,2
+  00000023: 75 0C              jne         00000031
+  00000025: 56                 push        esi
+  00000026: FF 77 04           push        dword ptr [edi+4]
+  00000029: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  0000002E: 83 C4 08           add         esp,8
+  00000031: F6 C3 08           test        bl,8
+  00000034: 75 0C              jne         00000042
+  00000036: 56                 push        esi
+  00000037: FF 77 08           push        dword ptr [edi+8]
+  0000003A: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  0000003F: 83 C4 08           add         esp,8
+  00000042: 56                 push        esi
+  00000043: FF 77 0C           push        dword ptr [edi+0Ch]
+  00000046: E8 00 00 00 00     call        _Serialize_WriteULEB128
+  0000004B: 83 C4 08           add         esp,8
+  0000004E: 5F                 pop         edi
+  0000004F: 5E                 pop         esi
+  00000050: 5B                 pop         ebx
+  00000051: 5D                 pop         ebp
+  00000052: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .text

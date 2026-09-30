@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082AC60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_CheckForceRenderCondition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 80 B8 81 01 00 00  cmp         byte ptr [eax+00000181h],0
+            00
+  0000000D: 75 21              jne         00000030
+  0000000F: F7 80 94 01 00 00  test        dword ptr [eax+00000194h],2000h
+            00 20 00 00
+  00000019: 75 15              jne         00000030
+  0000001B: D9 80 54 03 00 00  fld         dword ptr [eax+00000354h]
+  00000021: D9 EE              fldz
+  00000023: DA E9              fucompp
+  00000025: DF E0              fnstsw      ax
+  00000027: F6 C4 44           test        ah,44h
+  0000002A: 7B 04              jnp         00000030
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+  00000030: B8 01 00 00 00     mov         eax,1
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          37 .text

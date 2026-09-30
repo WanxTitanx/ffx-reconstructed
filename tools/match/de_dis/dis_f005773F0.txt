@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005773F0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_5773F0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B FA              mov         edi,edx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 33 F6              xor         esi,esi
+  00000009: 89 33              mov         dword ptr [ebx],esi
+  0000000B: 85 FF              test        edi,edi
+  0000000D: 74 23              je          00000032
+  0000000F: 8B C7              mov         eax,edi
+  00000011: 69 C0 94 00 00 00  imul        eax,eax,94h
+  00000017: 6A 04              push        4
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001F: 8B F0              mov         esi,eax
+  00000021: 83 C4 08           add         esp,8
+  00000024: 85 F6              test        esi,esi
+  00000026: 74 0A              je          00000032
+  00000028: 57                 push        edi
+  00000029: 56                 push        esi
+  0000002A: E8 00 00 00 00     call        _Phyre_Cluster_InitPMapPairPool
+  0000002F: 83 C4 08           add         esp,8
+  00000032: 89 73 04           mov         dword ptr [ebx+4],esi
+  00000035: F7 DE              neg         esi
+  00000037: 1B F6              sbb         esi,esi
+  00000039: 23 F7              and         esi,edi
+  0000003B: 5F                 pop         edi
+  0000003C: 89 33              mov         dword ptr [ebx],esi
+  0000003E: 5E                 pop         esi
+  0000003F: 8B C3              mov         eax,ebx
+  00000041: 5B                 pop         ebx
+  00000042: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          43 .text

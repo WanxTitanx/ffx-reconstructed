@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00439320.obj
+
+File Type: COFF OBJECT
+
+_Engine_ByteSwap64_to_BE:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: 8B D9              mov         ebx,ecx
+  0000000E: 8B C7              mov         eax,edi
+  00000010: 0F AC C3 10        shrd        ebx,eax,10h
+  00000014: 57                 push        edi
+  00000015: 51                 push        ecx
+  00000016: C1 E8 10           shr         eax,10h
+  00000019: 81 E3 00 00 00 FF  and         ebx,0FF000000h
+  0000001F: E8 00 00 00 00     call        _BYTE4
+  00000024: 8B D0              mov         edx,eax
+  00000026: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000029: 8B F0              mov         esi,eax
+  0000002B: 81 E6 00 00 00 00  and         esi,offset _kMask_FF0000
+  00000031: 33 C9              xor         ecx,ecx
+  00000033: 0F A4 F1 18        shld        ecx,esi,18h
+  00000037: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000003A: C1 FF 08           sar         edi,8
+  0000003D: 0F AC D3 08        shrd        ebx,edx,8
+  00000041: C1 E6 18           shl         esi,18h
+  00000044: C1 E0 10           shl         eax,10h
+  00000047: 81 E7 00 FF 00 00  and         edi,0FF00h
+  0000004D: 83 C4 08           add         esp,8
+  00000050: 0B F7              or          esi,edi
+  00000052: C1 E0 08           shl         eax,8
+  00000055: 0B F3              or          esi,ebx
+  00000057: 0F B6 C5           movzx       eax,ch
+  0000005A: 5F                 pop         edi
+  0000005B: C1 EA 08           shr         edx,8
+  0000005E: 0B C6              or          eax,esi
+  00000060: 5E                 pop         esi
+  00000061: 5B                 pop         ebx
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          64 .text

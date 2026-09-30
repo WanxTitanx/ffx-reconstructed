@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083D0A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_AllocateTextureMemory:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 8B 87 C4 01 00 00  mov         eax,dword ptr [edi+1C4h]
+  0000000D: 8B 50 14           mov         edx,dword ptr [eax+14h]
+  00000010: 85 D2              test        edx,edx
+  00000012: 74 6D              je          00000081
+  00000014: B8 29 10 00 00     mov         eax,1029h
+  00000019: 66 39 42 10        cmp         word ptr [edx+10h],ax
+  0000001D: 72 62              jb          00000081
+  0000001F: 0F B7 42 08        movzx       eax,word ptr [edx+8]
+  00000023: 0F B7 4A 0C        movzx       ecx,word ptr [edx+0Ch]
+  00000027: 03 C8              add         ecx,eax
+  00000029: 0F B7 42 04        movzx       eax,word ptr [edx+4]
+  0000002D: 56                 push        esi
+  0000002E: 8D 04 48           lea         eax,[eax+ecx*2]
+  00000031: C1 E0 05           shl         eax,5
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000003A: 8B F0              mov         esi,eax
+  0000003C: 56                 push        esi
+  0000003D: E8 00 00 00 00     call        _FFX_Mem_ConditionalDelete
+  00000042: 50                 push        eax
+  00000043: 6A 00              push        0
+  00000045: 56                 push        esi
+  00000046: E8 00 00 00 00     call        _memset
+  0000004B: E8 00 00 00 00     call        _Sg_MemSetStr
+  00000050: 57                 push        edi
+  00000051: 89 B7 DC 06 00 00  mov         dword ptr [edi+6DCh],esi
+  00000057: E8 00 00 00 00     call        _FFX_Field_RelocateChrInstanceData
+  0000005C: 83 C4 18           add         esp,18h
+  0000005F: 83 BF FC 06 00 00  cmp         dword ptr [edi+6FCh],0
+            00
+  00000066: 5E                 pop         esi
+  00000067: 74 18              je          00000081
+  00000069: 8B 87 C4 01 00 00  mov         eax,dword ptr [edi+1C4h]
+  0000006F: 57                 push        edi
+  00000070: FF 70 14           push        dword ptr [eax+14h]
+  00000073: E8 00 00 00 00     call        _FFX_Movie_AllocTextureAnimSlot
+  00000078: 83 C4 08           add         esp,8
+  0000007B: 89 87 00 07 00 00  mov         dword ptr [edi+700h],eax
+  00000081: 5F                 pop         edi
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007CF2B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_MenuDefDataFieldValue_8b:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B 7A 10           mov         edi,dword ptr [edx+10h]
+  0000000F: 33 C0              xor         eax,eax
+  00000011: 3B CF              cmp         ecx,edi
+  00000013: 7D 4D              jge         00000062
+  00000015: 8B 1A              mov         ebx,dword ptr [edx]
+  00000017: EB 07              jmp         00000020
+  00000019: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000020: 8D 71 01           lea         esi,[ecx+1]
+  00000023: 8A 4C 33 FF        mov         cl,byte ptr [ebx+esi-1]
+  00000027: 89 72 0C           mov         dword ptr [edx+0Ch],esi
+  0000002A: 80 F9 FF           cmp         cl,0FFh
+  0000002D: 74 36              je          00000065
+  0000002F: 84 C9              test        cl,cl
+  00000031: 74 32              je          00000065
+  00000033: 80 F9 80           cmp         cl,80h
+  00000036: 72 1D              jb          00000055
+  00000038: 3B F7              cmp         esi,edi
+  0000003A: 7D 45              jge         00000081
+  0000003C: 8A 1C 33           mov         bl,byte ptr [ebx+esi]
+  0000003F: 8D 4E 01           lea         ecx,[esi+1]
+  00000042: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  00000045: 80 FB FF           cmp         bl,0FFh
+  00000048: 74 1B              je          00000065
+  0000004A: 84 DB              test        bl,bl
+  0000004C: 74 17              je          00000065
+  0000004E: 8B 1A              mov         ebx,dword ptr [edx]
+  00000050: 83 C0 02           add         eax,2
+  00000053: EB 06              jmp         0000005B
+  00000055: 80 F9 0A           cmp         cl,0Ah
+  00000058: 74 19              je          00000073
+  0000005A: 40                 inc         eax
+  0000005B: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  0000005E: 3B CF              cmp         ecx,edi
+  00000060: 7C BE              jl          00000020
+  00000062: FF 42 0C           inc         dword ptr [edx+0Ch]
+  00000065: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  00000068: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000006B: 85 C9              test        ecx,ecx
+  0000006D: 7E 04              jle         00000073
+  0000006F: 49                 dec         ecx
+  00000070: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  00000073: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 5B                 pop         ebx
+  00000079: 85 C9              test        ecx,ecx
+  0000007B: 74 02              je          0000007F
+  0000007D: FF 01              inc         dword ptr [ecx]
+  0000007F: 5D                 pop         ebp
+  00000080: C3                 ret
+  00000081: 8D 46 01           lea         eax,[esi+1]
+  00000084: 89 42 0C           mov         dword ptr [edx+0Ch],eax
+  00000087: EB DC              jmp         00000065
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          89 .text

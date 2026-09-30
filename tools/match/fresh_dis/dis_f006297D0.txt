@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006297D0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Animation_FindMaxSphericalAngle@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: D9 EE              fldz
+  00000008: 8B C2              mov         eax,edx
+  0000000A: 53                 push        ebx
+  0000000B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000000E: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000011: 8B D9              mov         ebx,ecx
+  00000013: 85 C0              test        eax,eax
+  00000015: 75 07              jne         0000001E
+  00000017: D9 EE              fldz
+  00000019: 5B                 pop         ebx
+  0000001A: 8B E5              mov         esp,ebp
+  0000001C: 5D                 pop         ebp
+  0000001D: C3                 ret
+  0000001E: 56                 push        esi
+  0000001F: 57                 push        edi
+  00000020: 8B 78 08           mov         edi,dword ptr [eax+8]
+  00000023: 33 F6              xor         esi,esi
+  00000025: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000002B: 75 0B              jne         00000038
+  0000002D: D9 EE              fldz
+  0000002F: 5F                 pop         edi
+  00000030: 5E                 pop         esi
+  00000031: 5B                 pop         ebx
+  00000032: 8B E5              mov         esp,ebp
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+  00000036: DD D8              fstp        st(0)
+  00000038: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  0000003B: FF 34 B0           push        dword ptr [eax+esi*4]
+  0000003E: 51                 push        ecx
+  0000003F: E8 00 00 00 00     call        _CalculateSphericalAngleTransform
+  00000044: 83 C4 08           add         esp,8
+  00000047: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000004A: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  0000004D: 85 C0              test        eax,eax
+  0000004F: 79 06              jns         00000057
+  00000051: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000057: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000005A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000005D: D9 E1              fabs
+  0000005F: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000062: D9 45 F8           fld         dword ptr [ebp-8]
+  00000065: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000068: D9 C0              fld         st(0)
+  0000006A: D9 E1              fabs
+  0000006C: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000006F: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000072: D8 DA              fcomp       st(2)
+  00000074: DF E0              fnstsw      ax
+  00000076: DD D9              fstp        st(1)
+  00000078: F6 C4 41           test        ah,41h
+  0000007B: 75 05              jne         00000082
+  0000007D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000080: EB 02              jmp         00000084
+  00000082: DD D8              fstp        st(0)
+  00000084: D9 45 FC           fld         dword ptr [ebp-4]
+  00000087: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  0000008A: 46                 inc         esi
+  0000008B: 8B CB              mov         ecx,ebx
+  0000008D: 3B F7              cmp         esi,edi
+  0000008F: 72 A5              jb          00000036
+  00000091: 5F                 pop         edi
+  00000092: 5E                 pop         esi
+  00000093: 5B                 pop         ebx
+  00000094: 8B E5              mov         esp,ebp
+  00000096: 5D                 pop         ebp
+  00000097: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          98 .text

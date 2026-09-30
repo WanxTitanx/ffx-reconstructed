@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "kind": "parent-review-resolution-and-final-integration",
+  "status": "resolved-and-validated",
+  "base_implementation_commit": "def69026c",
+  "independent_review": {
+    "path": "review-worker1.json",
+    "sha256": "037d6277fe8ff2d270ee41d41b62533761296a7b681b8b2ad73590e819d88001",
+    "scope": "Bounded worker review and ELF/subsection fixes; later parent IR, interpreter, branch and alignment changes are validated here, not attributed to the worker."
+  },
+  "fixes": [
+    {
+      "id": "compiled-provider-unrelocated-branch",
+      "status": "resolved",
+      "change": "Check the real decoded near/far branch target and exempt only actual COFF operand relocations.",
+      "evidence": [
+        "tools/match/test_mod_link.py"
+      ],
+      "red_green": "Six near-call, short-jump and far-call entry/interior subcases failed before the guard correction and passed afterward."
+    },
+    {
+      "id": "absolute-address-without-relocation",
+      "status": "resolved-for-literal-pointers",
+      "change": "Inspect fresh typed compiler IR; require symbolic bindings for literal original-image pointers and preserve scalar constants with identical bits.",
+      "evidence": [
+        "tools/match/test_mod_admission.py",
+        "negative-address.json",
+        "negative-address.log"
+      ],
+      "limit": "Computed runtime addresses and ABI behavior remain subject to per-modification semantic review."
+    },
+    {
+      "id": "compiler-elf-dependency-closure",
+      "status": "resolved",
+      "change": "Fingerprint the actual loader dependency closure; prove both object/IR compiler processes consumed runtime libraries; identify kernel-loaded PT_INTERP separately.",
+      "evidence": [
+        "tools/match/test_mod_compile.py",
+        "tools/match/test_mod_acceptance.py",
+        "proof.json"
+      ]
+    },
+    {
+      "id": "coff-dollar-subsection-ordering",
+      "status": "resolved",
+      "change": "Sort subsections by suffix while preserving section-index symbol bindings.",
+      "evidence": [
+        "tools/match/test_mod_objects.py",
+        "subsection-layout.json"
+      ]
+    },
+    {
+      "id": "coff-explicit-alignment",
+      "status": "resolved",
+      "change": "Honor the alignment encoded in COFF instead of inserting a mandatory 16-byte gap.",
+      "evidence": [
+        "tools/match/test_mod_objects.py",
+        "subsection-layout.json"
+      ],
+      "red_green": "Four explicit-alignment subcases failed before the correction and passed afterward; genuine linker offsets also match."
+    },
+    {
+      "id": "deterministic-typed-ir",
+      "status": "resolved",
+      "change": "Set the compiler debug compilation directory option for both emissions; compare complete object and IR bytes between independent fresh builds.",
+      "evidence": [
+        "tools/match/test_mod_compile.py",
+        "tools/match/test_mod_acceptance.py",
+        "proof.json"
+      ],
+      "output_rewriting": false
+    }
+  ],
+  "validation": {
+    "tests": 396,
+    "test_command": "recon/ffx/.venv-asm/bin/python -m unittest discover -s tools/match -p \"test_*.py\" -v > recon/ffx/mods/evidence/test-suite.log 2>&1",
+    "test_log_sha256": "93234dd5ad4a7ad21f154c90825caf86e5cb2b238c00d04775f23e48e1ff22cd",
+    "acceptance_command": "recon/ffx/.venv-asm/bin/python tools/match/mod_acceptance.py --native-demo",
+    "acceptance_exit_code": 0,
+    "proof_sha256": "8a706801c95cad266d83a91d0fb23c1248bceca0f08f6c8875dc1241acd1ef62",
+    "candidate_sha256": "f9adb847cebf552678e7b3283f7c3bff8a9e468140f7304e616b2195f5c319d4",
+    "candidate_size": 10677248,
+    "manifest_sha256": "268fd0747bff0d58ed6b805e17d5da7283f1ac931bf9226d277c6d143d79985e",
+    "source_inputs": 666,
+    "elf_dependencies": 15,
+    "runtime_libraries": 14,
+    "literal_equalities": {
+      "whole_compiler_object_equal": true,
+      "whole_compiler_ir_equal": true,
+      "whole_manifest_equal": true,
+      "whole_image_equal_to_replay": true
+    },
+    "native_calls": 101400,
+    "native_load_bases": [
+      "0x00400000",
+      "0x10000000",
+      "0x50000000"
+    ],
+    "baseline_sha256": "78ce34397da5e6f49b72c2aebadedaf4cd3f6720e1949d46a1b8ed67d3db5ced",
+    "baseline_compared_bytes": 10675712,
+    "baseline_different_bytes": 0,
+    "baseline_cmp_exit_code": 0,
+    "preserved_baseline_cmp_exit_code": 0,
+    "changed_original_call_operands": 7,
+    "modified_existing_byte_positions": 99,
+    "appended_bytes": 1536
+  },
+  "current_code_and_test_sha256": {
+    "tools/match/mod_acceptance.py": "947747c95fc770cb85d40d0c165755a09383b8587f7a91620001fa0852cb469d",
+    "tools/match/mod_admission.py": "30ace19f1c4bf80d23b90cb1eb354d1ab97bb69dc779ffad813d972ed6154a0f",
+    "tools/match/mod_boundaries.py": "eb03d7ed486d8d894aa96d66f94f39789914035ad3cadbe13a4967daa43aabd4",
+    "tools/match/mod_compile.py": "c529c5d19c16995523622bc6d7709ce78c05998f3cd6ad39589894af1737a0c7",
+    "tools/match/mod_io.py": "950de4a261da56199f820efa2bea1a360840a5bb26381b4c4c2ea7e4ee561eb9",
+    "tools/match/mod_layout.py": "131c360e7fb801772b1d2c67ceb13aa176ec2a344b6dc0a8b27b7d5e5361a4ea",
+    "tools/match/mod_link.py": "4394a8cdf6ce0756570efa973d1b1c55c7e7d4715d27ecfae30709457f18c0f2",
+    "tools/match/mod_native.py": "d5b782c01205b0ce4f6b7fd79c643ac54bb6433e4136f04090d765ac83fa320c",
+    "tools/match/mod_objects.py": "a979e5f17979f334b6632c90b1307f6a3491d60d3f5b840c5e2d42a725851ee2",
+    "tools/match/test_mod_acceptance.py": "43075703270393eaf061356b61df0140f631916a931dda89645d1f2fd513f40f",
+    "tools/match/test_mod_admission.py": "85f28b4be714de3fc850bb59ecd994233da45ccdeb12334750160bc4bb38204e",
+    "tools/match/test_mod_boundaries.py": "2b55b83c25f8941edaa96a0a2156872a3d831239090c4fcf3975f803f4d60ff3",
+    "tools/match/test_mod_compile.py": "19dcb42de1243bbb6d11e0d5ebbdfc08f270eb042a9305c95f79263d2e0e4485",
+    "tools/match/test_mod_io.py": "030b921df2be7751f70327cfd23e5575e9925a269bd324efca6659e4a79803bb",
+    "tools/match/test_mod_layout.py": "09b78444abc3770d7c63ace8bbb4c43e6e2fd7db4304f53106f98fe0aa4fe9e5",
+    "tools/match/test_mod_link.py": "c7674c7bfb379bad54c9484efa0786f95b9f498fa669de228b12ad214990e76c",
+    "tools/match/test_mod_native.py": "df53ed7b0a54682270d092d28293aa0c1825c86da97e9c7d7d926851350206bc",
+    "tools/match/test_mod_objects.py": "96ac4f9a3e2cb57132666b1d0eee3ed9f72105c7bba1a8717a23d49db117d0ab"
+  },
+  "limits": [
+    "Native harness executes the callee resolved from an authentic relinked call operand, not the entire original caller or gameplay.",
+    "Legacy C providers are revalidated from retained toolchain receipts; no complete legacy compiler VM rebuild is claimed.",
+    "Computed addresses, external ABI contracts and gameplay semantics require tests specific to the intended modification.",
+    "The shared Codex coordination notice does not prove external thread acknowledgement."
+  ]
+}

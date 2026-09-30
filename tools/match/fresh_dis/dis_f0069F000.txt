@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069F000.obj
+
+File Type: COFF OBJECT
+
+@FFX_Shadowmap_Loose_69F000@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 56                 push        esi
+  00000005: 8A DA              mov         bl,dl
+  00000007: E8 00 00 00 00     call        _FFX_Shadowmap_InitLightSlots_Thunk
+  0000000C: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000000F: 83 C4 04           add         esp,4
+  00000012: 85 C9              test        ecx,ecx
+  00000014: 74 12              je          00000028
+  00000016: 8B 01              mov         eax,dword ptr [ecx]
+  00000018: BA 01 00 00 00     mov         edx,1
+  0000001D: 8B 00              mov         eax,dword ptr [eax]
+  0000001F: FF D0              call        eax
+  00000021: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000028: F6 C3 01           test        bl,1
+  0000002B: 74 09              je          00000036
+  0000002D: 56                 push        esi
+  0000002E: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000033: 83 C4 04           add         esp,4
+  00000036: 8B C6              mov         eax,esi
+  00000038: 5E                 pop         esi
+  00000039: 5B                 pop         ebx
+  0000003A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3B .text

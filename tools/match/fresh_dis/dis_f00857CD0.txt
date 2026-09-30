@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00857CD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldVM_Op_SetChrVisibilityBySlot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000000B: 57                 push        edi
+  0000000C: 56                 push        esi
+  0000000D: 53                 push        ebx
+  0000000E: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  00000013: 56                 push        esi
+  00000014: 53                 push        ebx
+  00000015: 8B F8              mov         edi,eax
+  00000017: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000001C: 33 DB              xor         ebx,ebx
+  0000001E: 83 C4 10           add         esp,10h
+  00000021: 8B C8              mov         ecx,eax
+  00000023: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000026: 85 FF              test        edi,edi
+  00000028: 0F B7 B0 14 0B 00  movzx       esi,word ptr [eax+0B14h]
+            00
+  0000002F: 0F 95 C3           setne       bl
+  00000032: BA 01 00 00 00     mov         edx,1
+  00000037: D3 E2              shl         edx,cl
+  00000039: 85 F2              test        edx,esi
+  0000003B: 74 24              je          00000061
+  0000003D: BA FF 00 00 00     mov         edx,0FFh
+  00000042: 66 39 94 48 04 0B  cmp         word ptr [eax+ecx*2+0B04h],dx
+            00 00
+  0000004A: 74 15              je          00000061
+  0000004C: 8B 84 88 F4 0A 00  mov         eax,dword ptr [eax+ecx*4+0AF4h]
+            00
+  00000053: 85 C0              test        eax,eax
+  00000055: 74 0A              je          00000061
+  00000057: 53                 push        ebx
+  00000058: 50                 push        eax
+  00000059: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  0000005E: 83 C4 08           add         esp,8
+  00000061: 5F                 pop         edi
+  00000062: 5E                 pop         esi
+  00000063: 8B C3              mov         eax,ebx
+  00000065: 5B                 pop         ebx
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          68 .text

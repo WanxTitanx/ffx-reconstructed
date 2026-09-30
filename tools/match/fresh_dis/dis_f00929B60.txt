@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00929B60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Audio_DispatchRotate:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: F6 07 01           test        byte ptr [edi],1
+  0000000A: 74 4A              je          00000056
+  0000000C: 8D 45 08           lea         eax,[ebp+8]
+  0000000F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000012: 0F BF 47 08        movsx       eax,word ptr [edi+8]
+  00000016: 56                 push        esi
+  00000017: 50                 push        eax
+  00000018: 57                 push        edi
+  00000019: E8 00 00 00 00     call        _FFX_Buffer_GetSlotAt
+  0000001E: 57                 push        edi
+  0000001F: 8B F0              mov         esi,eax
+  00000021: E8 00 00 00 00     call        _FFX_Buffer_GetLastSlot
+  00000026: 83 C4 0C           add         esp,0Ch
+  00000029: 2B C6              sub         eax,esi
+  0000002B: BA 00 01 00 00     mov         edx,100h
+  00000030: 8B 0E              mov         ecx,dword ptr [esi]
+  00000032: 81 C9 00 00 00 00  or          ecx,offset _g_UnkVar_FFFFFF
+  00000038: 89 0C 30           mov         dword ptr [eax+esi],ecx
+  0000003B: 8D 76 04           lea         esi,[esi+4]
+  0000003E: 4A                 dec         edx
+  0000003F: 75 EF              jne         00000030
+  00000041: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  00000044: 8B 41 30           mov         eax,dword ptr [ecx+30h]
+  00000047: 48                 dec         eax
+  00000048: 50                 push        eax
+  00000049: 51                 push        ecx
+  0000004A: E8 00 00 00 00     call        _FFX_Render_SetSceneTypeField60
+  0000004F: 83 C4 08           add         esp,8
+  00000052: 5E                 pop         esi
+  00000053: 5F                 pop         edi
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+  00000056: 8A 47 0A           mov         al,byte ptr [edi+0Ah]
+  00000059: 57                 push        edi
+  0000005A: 3C 01              cmp         al,1
+  0000005C: 75 0B              jne         00000069
+  0000005E: E8 00 00 00 00     call        _FFX_Audio_RotateSplitBuffer256
+  00000063: 83 C4 04           add         esp,4
+  00000066: 5F                 pop         edi
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+  00000069: 3C 02              cmp         al,2
+  0000006B: 75 0B              jne         00000078
+  0000006D: E8 00 00 00 00     call        _FFX_Audio_RotateBufferZeroFill256
+  00000072: 83 C4 04           add         esp,4
+  00000075: 5F                 pop         edi
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+  00000078: E8 00 00 00 00     call        _FFX_Audio_RotateBuffer256
+  0000007D: 83 C4 04           add         esp,4
+  00000080: 5F                 pop         edi
+  00000081: 5D                 pop         ebp
+  00000082: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          83 .text

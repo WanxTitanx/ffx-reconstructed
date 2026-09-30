@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008C30C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_FindLegendWeaponModel:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8D 45 FC           lea         eax,[ebp-4]
+  0000000F: 50                 push        eax
+  00000010: 6A 00              push        0
+  00000012: 6A FF              push        0FFFFFFFFh
+  00000014: 53                 push        ebx
+  00000015: E8 00 00 00 00     call        _FFX_Field_BuildModelList
+  0000001A: 83 C4 10           add         esp,10h
+  0000001D: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000021: 8B F0              mov         esi,eax
+  00000023: 7E 2E              jle         00000053
+  00000025: 0F B7 0E           movzx       ecx,word ptr [esi]
+  00000028: 8D 45 F8           lea         eax,[ebp-8]
+  0000002B: 50                 push        eax
+  0000002C: 51                 push        ecx
+  0000002D: E8 00 00 00 00     call        _FFX_Field_GetModelRecordByCode
+  00000032: 8B F8              mov         edi,eax
+  00000034: 83 C4 08           add         esp,8
+  00000037: F6 47 03 04        test        byte ptr [edi+3],4
+  0000003B: 74 08              je          00000045
+  0000003D: 0F B6 4F 04        movzx       ecx,byte ptr [edi+4]
+  00000041: 3B CB              cmp         ecx,ebx
+  00000043: 74 1C              je          00000061
+  00000045: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000048: 48                 dec         eax
+  00000049: 83 C6 02           add         esi,2
+  0000004C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000004F: 85 C0              test        eax,eax
+  00000051: 7F D2              jg          00000025
+  00000053: E8 00 00 00 00     call        _dbgPrintf
+  00000058: 5F                 pop         edi
+  00000059: 5E                 pop         esi
+  0000005A: 33 C0              xor         eax,eax
+  0000005C: 5B                 pop         ebx
+  0000005D: 8B E5              mov         esp,ebp
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+  00000061: E8 00 00 00 00     call        _dbgPrintf
+  00000066: 8B C7              mov         eax,edi
+  00000068: 5F                 pop         edi
+  00000069: 5E                 pop         esi
+  0000006A: 5B                 pop         ebx
+  0000006B: 8B E5              mov         esp,ebp
+  0000006D: 5D                 pop         ebp
+  0000006E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6F .text

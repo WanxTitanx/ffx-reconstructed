@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094B9E0.obj
+
+File Type: COFF OBJECT
+
+_PhyreBuffer_GetLength:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _PhyreBuffer_GetElement
+  0000000E: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000011: 83 E1 0F           and         ecx,0Fh
+  00000014: 83 C4 08           add         esp,8
+  00000017: 83 E9 04           sub         ecx,4
+  0000001A: 74 1F              je          0000003B
+  0000001C: 49                 dec         ecx
+  0000001D: 74 10              je          0000002F
+  0000001F: 83 E9 02           sub         ecx,2
+  00000022: 74 04              je          00000028
+  00000024: 33 C0              xor         eax,eax
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+  00000028: 8B 00              mov         eax,dword ptr [eax]
+  0000002A: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+  0000002F: FF 30              push        dword ptr [eax]
+  00000031: E8 00 00 00 00     call        _LuaH_realarraysize
+  00000036: 83 C4 04           add         esp,4
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+  0000003B: 8B 00              mov         eax,dword ptr [eax]
+  0000003D: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          42 .text

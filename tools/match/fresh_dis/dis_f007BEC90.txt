@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BEC90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_Internal_OpAR:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAL
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 29              je          0000003D
+  00000014: 0F BE 45 0C        movsx       eax,byte ptr [ebp+0Ch]
+  00000018: 0F B6 D3           movzx       edx,bl
+  0000001B: 83 E0 01           and         eax,1
+  0000001E: 69 D2 A0 0D 00 00  imul        edx,edx,0DA0h
+  00000024: 0F B6 CF           movzx       ecx,bh
+  00000027: 69 C0 1C 06 00 00  imul        eax,eax,61Ch
+  0000002D: 69 C9 30 01 00 00  imul        ecx,ecx,130h
+  00000033: 03 D0              add         edx,eax
+  00000035: C6 84 11 00 00 00  mov         byte ptr _g_CameraUnkVar_1137614[ecx+edx],0
+            00 00
+  0000003D: 5B                 pop         ebx
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

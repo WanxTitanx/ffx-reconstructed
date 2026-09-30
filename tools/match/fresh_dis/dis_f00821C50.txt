@@ -1,0 +1,102 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00821C50.obj
+
+File Type: COFF OBJECT
+
+_FFX_Sound_Loose_821C50:
+  00000000: 6A 00              push        0
+  00000002: 6A 00              push        0
+  00000004: 6A 00              push        0
+  00000006: E8 00 00 00 00     call        _FFX_Field_AccessEncounterProbability
+  0000000B: 0F B7 C0           movzx       eax,ax
+  0000000E: 8B D0              mov         edx,eax
+  00000010: 83 C4 0C           add         esp,0Ch
+  00000013: C7 05 00 00 00 00  mov         dword ptr [_dword_12FB89C],0
+            00 00 00 00
+  0000001D: 83 E2 08           and         edx,8
+  00000020: 74 51              je          00000073
+  00000022: 8B C8              mov         ecx,eax
+  00000024: 81 E1 00 80 00 00  and         ecx,8000h
+  0000002A: 75 07              jne         00000033
+  0000002C: A9 00 30 00 00     test        eax,3000h
+  00000031: 74 40              je          00000073
+  00000033: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB880],1
+            01 00 00 00
+  0000003D: 85 C9              test        ecx,ecx
+  0000003F: 74 0C              je          0000004D
+  00000041: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB888],1
+            01 00 00 00
+  0000004B: EB 33              jmp         00000080
+  0000004D: A9 00 10 00 00     test        eax,1000h
+  00000052: 74 0C              je          00000060
+  00000054: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB890],1
+            01 00 00 00
+  0000005E: EB 20              jmp         00000080
+  00000060: A9 00 20 00 00     test        eax,2000h
+  00000065: 74 19              je          00000080
+  00000067: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB898],1
+            01 00 00 00
+  00000071: EB 0D              jmp         00000080
+  00000073: 83 3D 00 00 00 00  cmp         dword ptr [_g_SoundFlag_12FB880],1
+            01
+  0000007A: 0F 85 AC 00 00 00  jne         0000012C
+  00000080: 85 D2              test        edx,edx
+  00000082: 0F 85 A4 00 00 00  jne         0000012C
+  00000088: A9 00 B0 00 00     test        eax,0B000h
+  0000008D: 0F 85 99 00 00 00  jne         0000012C
+  00000093: 83 3D 00 00 00 00  cmp         dword ptr [_g_SoundFlag_12FB888],1
+            01
+  0000009A: 89 15 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB880],edx
+  000000A0: 75 2B              jne         000000CD
+  000000A2: 33 C0              xor         eax,eax
+  000000A4: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB8A0],1
+            01
+  000000AB: C7 05 00 00 00 00  mov         dword ptr [_dword_12FB89C],1
+            01 00 00 00
+  000000B5: 0F 95 C0           setne       al
+  000000B8: 89 15 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB888],edx
+  000000BE: 50                 push        eax
+  000000BF: A3 00 00 00 00     mov         dword ptr [_dword_12FB8A0],eax
+  000000C4: E8 00 00 00 00     call        _FFX_Sound_QueueCmd58
+  000000C9: 83 C4 04           add         esp,4
+  000000CC: C3                 ret
+  000000CD: 83 3D 00 00 00 00  cmp         dword ptr [_g_SoundFlag_12FB890],1
+            01
+  000000D4: 75 27              jne         000000FD
+  000000D6: 33 C0              xor         eax,eax
+  000000D8: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB88C],1
+            01
+  000000DF: 6A 01              push        1
+  000000E1: 0F 95 C0           setne       al
+  000000E4: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB890],0
+            00 00 00 00
+  000000EE: 50                 push        eax
+  000000EF: A3 00 00 00 00     mov         dword ptr [_dword_12FB88C],eax
+  000000F4: E8 00 00 00 00     call        _FFX_Sound_QueueCmd0
+  000000F9: 83 C4 08           add         esp,8
+  000000FC: C3                 ret
+  000000FD: 83 3D 00 00 00 00  cmp         dword ptr [_g_SoundFlag_12FB898],1
+            01
+  00000104: 75 26              jne         0000012C
+  00000106: 33 C0              xor         eax,eax
+  00000108: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB894],1
+            01
+  0000010F: 6A 02              push        2
+  00000111: 0F 95 C0           setne       al
+  00000114: C7 05 00 00 00 00  mov         dword ptr [_g_SoundFlag_12FB898],0
+            00 00 00 00
+  0000011E: 50                 push        eax
+  0000011F: A3 00 00 00 00     mov         dword ptr [_dword_12FB894],eax
+  00000124: E8 00 00 00 00     call        _FFX_Sound_QueueCmd0
+  00000129: 83 C4 08           add         esp,8
+  0000012C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+         12D .text

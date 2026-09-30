@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00856300.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_SetFloatOffset72:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  0000000E: FF 75 10           push        dword ptr [ebp+10h]
+  00000011: 8B F0              mov         esi,eax
+  00000013: 57                 push        edi
+  00000014: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000019: 83 C4 0C           add         esp,0Ch
+  0000001C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001F: DB 45 08           fild        dword ptr [ebp+8]
+  00000022: 85 C0              test        eax,eax
+  00000024: 79 06              jns         0000002C
+  00000026: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002C: D9 5E 48           fstp        dword ptr [esi+48h]
+  0000002F: 66 83 4F 36 01     or          word ptr [edi+36h],1
+  00000034: 5F                 pop         edi
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 5E                 pop         esi
+  0000003B: 5D                 pop         ebp
+  0000003C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          3D .text

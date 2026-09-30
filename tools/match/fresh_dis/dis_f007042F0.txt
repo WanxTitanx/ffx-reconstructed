@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007042F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Math_Vec3NormalizeInPlace@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 56                 push        esi
+  0000000B: D9 06              fld         dword ptr [esi]
+  0000000D: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000010: D9 46 04           fld         dword ptr [esi+4]
+  00000013: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000016: D9 46 08           fld         dword ptr [esi+8]
+  00000019: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000001C: E8 00 00 00 00     call        _Phyre_Math_Vec3NormalizeCheck
+  00000021: 8A D8              mov         bl,al
+  00000023: 83 C4 04           add         esp,4
+  00000026: 84 DB              test        bl,bl
+  00000028: 74 50              je          0000007A
+  0000002A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000002D: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000030: D9 45 F8           fld         dword ptr [ebp-8]
+  00000033: DC C8              fmul        st(0),st
+  00000035: D9 CA              fxch        st(2)
+  00000037: DC C8              fmul        st(0),st
+  00000039: DE C2              faddp       st(2),st
+  0000003B: DC C8              fmul        st(0),st
+  0000003D: DE C1              faddp       st(1),st
+  0000003F: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000042: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000045: E8 00 00 00 00     call        __CIsqrt
+  0000004A: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000004D: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000050: 8A C3              mov         al,bl
+  00000052: D9 E8              fld1
+  00000054: DE F1              fdivrp      st(1),st
+  00000056: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000059: D9 06              fld         dword ptr [esi]
+  0000005B: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000005E: D9 C0              fld         st(0)
+  00000060: DE CA              fmulp       st(2),st
+  00000062: D9 C9              fxch        st(1)
+  00000064: D9 1E              fstp        dword ptr [esi]
+  00000066: D9 46 04           fld         dword ptr [esi+4]
+  00000069: D8 C9              fmul        st,st(1)
+  0000006B: D9 5E 04           fstp        dword ptr [esi+4]
+  0000006E: D8 4E 08           fmul        dword ptr [esi+8]
+  00000071: D9 5E 08           fstp        dword ptr [esi+8]
+  00000074: 5E                 pop         esi
+  00000075: 5B                 pop         ebx
+  00000076: 8B E5              mov         esp,ebp
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+  0000007A: D9 EE              fldz
+  0000007C: 8A C3              mov         al,bl
+  0000007E: D9 56 0C           fst         dword ptr [esi+0Ch]
+  00000081: D9 56 08           fst         dword ptr [esi+8]
+  00000084: D9 56 04           fst         dword ptr [esi+4]
+  00000087: D9 1E              fstp        dword ptr [esi]
+  00000089: 5E                 pop         esi
+  0000008A: 5B                 pop         ebx
+  0000008B: 8B E5              mov         esp,ebp
+  0000008D: 5D                 pop         ebp
+  0000008E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          8F .text

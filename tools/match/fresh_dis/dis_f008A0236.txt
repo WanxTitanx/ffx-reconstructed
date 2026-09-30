@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008A0236.obj
+
+File Type: COFF OBJECT
+
+_FFX_EscMenu_EventScriptListDraw@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000000A: 83 EC 08           sub         esp,8
+  0000000D: DB 46 D4           fild        dword ptr [esi-2Ch]
+  00000010: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000013: D9 45 10           fld         dword ptr [ebp+10h]
+  00000016: DD 5E C4           fstp        qword ptr [esi-3Ch]
+  00000019: DB 46 08           fild        dword ptr [esi+8]
+  0000001C: D9 5D 10           fstp        dword ptr [ebp+10h]
+  0000001F: D9 45 10           fld         dword ptr [ebp+10h]
+  00000022: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000025: D9 45 10           fld         dword ptr [ebp+10h]
+  00000028: D9 56 D4           fst         dword ptr [esi-2Ch]
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: DD 05 00 00 00 00  fld         qword ptr [__real@403c000000000000]
+  00000034: DD 1C 24           fstp        qword ptr [esp]
+  00000037: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920To512
+  0000003C: 89 45 10           mov         dword ptr [ebp+10h],eax
+  0000003F: DB 45 10           fild        dword ptr [ebp+10h]
+  00000042: 85 C0              test        eax,eax
+  00000044: 79 06              jns         0000004C
+  00000046: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000004C: 0F BE 45 08        movsx       eax,byte ptr [ebp+8]
+  00000050: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  00000053: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  00000056: DC 6E C4           fsubr       qword ptr [esi-3Ch]
+  00000059: D9 5D 10           fstp        dword ptr [ebp+10h]
+  0000005C: D9 45 10           fld         dword ptr [ebp+10h]
+  0000005F: D9 56 D4           fst         dword ptr [esi-2Ch]
+  00000062: DD 05 00 00 00 00  fld         qword ptr [__real@3fe8f5c27f40fdcc]
+  00000068: DD 1C 24           fstp        qword ptr [esp]
+  0000006B: 50                 push        eax
+  0000006C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000006F: 83 EC 10           sub         esp,10h
+  00000072: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000076: DD 1C 24           fstp        qword ptr [esp]
+  00000079: FF 76 E0           push        dword ptr [esi-20h]
+  0000007C: E8 00 00 00 00     call        _FFX_Menu2D_RenderNumberRightAligned
+  00000081: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000084: 83 C4 20           add         esp,20h
+  00000087: 0F BF 48 28        movsx       ecx,word ptr [eax+28h]
+  0000008B: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000008E: 83 46 E8 02        add         dword ptr [esi-18h],2
+  00000092: 40                 inc         eax
+  00000093: 89 46 EC           mov         dword ptr [esi-14h],eax
+  00000096: 3B C1              cmp         eax,ecx
+  00000098: 7D 0D              jge         000000A7
+  0000009A: 68 C0 FF 89 00     push        89FFC0h
+  0000009F: E8 00 00 00 00     call        _JUMPOUT
+  000000A4: 83 C4 04           add         esp,4
+  000000A7: 8B 46 F4           mov         eax,dword ptr [esi-0Ch]
+  000000AA: 40                 inc         eax
+  000000AB: 3B 46 E4           cmp         eax,dword ptr [esi-1Ch]
+  000000AE: 89 46 F4           mov         dword ptr [esi-0Ch],eax
+  000000B1: 5E                 pop         esi
+  000000B2: 73 0D              jae         000000C1
+  000000B4: 68 F1 FE 89 00     push        89FEF1h
+  000000B9: E8 00 00 00 00     call        _JUMPOUT
+  000000BE: 83 C4 04           add         esp,4
+  000000C1: 33 C0              xor         eax,eax
+  000000C3: 8B E5              mov         esp,ebp
+  000000C5: 5D                 pop         ebp
+  000000C6: C2 10 00           ret         10h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          C9 .text

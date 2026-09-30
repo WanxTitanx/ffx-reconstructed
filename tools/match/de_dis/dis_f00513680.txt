@@ -1,0 +1,93 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00513680.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationClip_Copy@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B FA              mov         edi,edx
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 8B 07              mov         eax,dword ptr [edi]
+  0000000F: 89 06              mov         dword ptr [esi],eax
+  00000011: 8B 5F 04           mov         ebx,dword ptr [edi+4]
+  00000014: FF 77 08           push        dword ptr [edi+8]
+  00000017: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  0000001D: 53                 push        ebx
+  0000001E: E8 00 00 00 00     call        _Phyre_PAnimationChannel_Copy
+  00000023: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000026: 83 C4 08           add         esp,8
+  00000029: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002C: 3B C8              cmp         ecx,eax
+  0000002E: 74 12              je          00000042
+  00000030: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000034: 7C 0C              jl          00000042
+  00000036: 51                 push        ecx
+  00000037: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003C: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 89 46 08           mov         dword ptr [esi+8],eax
+  00000045: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000048: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  0000004B: 8B 5F 0C           mov         ebx,dword ptr [edi+0Ch]
+  0000004E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000051: 33 C0              xor         eax,eax
+  00000053: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000059: 74 27              je          00000082
+  0000005B: 8B C3              mov         eax,ebx
+  0000005D: 6B C0 34           imul        eax,eax,34h
+  00000060: 6A 04              push        4
+  00000062: 50                 push        eax
+  00000063: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000068: 83 C4 08           add         esp,8
+  0000006B: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000006E: 85 C0              test        eax,eax
+  00000070: 74 10              je          00000082
+  00000072: 53                 push        ebx
+  00000073: FF 75 FC           push        dword ptr [ebp-4]
+  00000076: 50                 push        eax
+  00000077: E8 00 00 00 00     call        _PAnimationSlot_CopySlots
+  0000007C: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000007F: 83 C4 0C           add         esp,0Ch
+  00000082: 53                 push        ebx
+  00000083: 50                 push        eax
+  00000084: 8D 46 0C           lea         eax,[esi+0Ch]
+  00000087: 50                 push        eax
+  00000088: E8 00 00 00 00     call        _Phyre_PAnimationSlotSet_ProcessSlotAnimations
+  0000008D: D9 47 14           fld         dword ptr [edi+14h]
+  00000090: D9 5E 14           fstp        dword ptr [esi+14h]
+  00000093: 8D 56 1C           lea         edx,[esi+1Ch]
+  00000096: D9 47 18           fld         dword ptr [edi+18h]
+  00000099: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  0000009C: 83 C4 0C           add         esp,0Ch
+  0000009F: D9 5E 18           fstp        dword ptr [esi+18h]
+  000000A2: 3B D1              cmp         edx,ecx
+  000000A4: 74 13              je          000000B9
+  000000A6: 8B 09              mov         ecx,dword ptr [ecx]
+  000000A8: 8B C1              mov         eax,ecx
+  000000AA: 83 E0 01           and         eax,1
+  000000AD: 2B C8              sub         ecx,eax
+  000000AF: 51                 push        ecx
+  000000B0: 52                 push        edx
+  000000B1: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  000000B6: 83 C4 08           add         esp,8
+  000000B9: 5F                 pop         edi
+  000000BA: 8B C6              mov         eax,esi
+  000000BC: 5E                 pop         esi
+  000000BD: 5B                 pop         ebx
+  000000BE: 8B E5              mov         esp,ebp
+  000000C0: 5D                 pop         ebp
+  000000C1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C2 .text

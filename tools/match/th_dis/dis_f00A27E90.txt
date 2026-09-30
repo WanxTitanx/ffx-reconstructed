@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A27E90.obj
+
+File Type: COFF OBJECT
+
+@sub_A27E90@4:
+  00000000: 8B 81 E4 00 00 00  mov         eax,dword ptr [ecx+0E4h]
+  00000006: 83 F8 01           cmp         eax,1
+  00000009: 75 22              jne         0000002D
+  0000000B: 8B 81 A0 02 00 00  mov         eax,dword ptr [ecx+2A0h]
+  00000011: C7 81 E4 00 00 00  mov         dword ptr [ecx+0E4h],2
+            02 00 00 00
+  0000001B: 85 C0              test        eax,eax
+  0000001D: 74 32              je          00000051
+  0000001F: 6A 01              push        1
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _FMOD_Channel_setPaused
+  00000027: 83 C4 08           add         esp,8
+  0000002A: B0 01              mov         al,1
+  0000002C: C3                 ret
+  0000002D: 83 F8 02           cmp         eax,2
+  00000030: 75 1F              jne         00000051
+  00000032: 8B 81 A0 02 00 00  mov         eax,dword ptr [ecx+2A0h]
+  00000038: C7 81 E4 00 00 00  mov         dword ptr [ecx+0E4h],1
+            01 00 00 00
+  00000042: 85 C0              test        eax,eax
+  00000044: 74 0B              je          00000051
+  00000046: 6A 00              push        0
+  00000048: 50                 push        eax
+  00000049: E8 00 00 00 00     call        _FMOD_Channel_setPaused
+  0000004E: 83 C4 08           add         esp,8
+  00000051: B0 01              mov         al,1
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          54 .text

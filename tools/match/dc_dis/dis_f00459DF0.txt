@@ -1,0 +1,149 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00459DF0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_459DF0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 7E 10           mov         edi,dword ptr [esi+10h]
+  0000000E: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000011: 8B DA              mov         ebx,edx
+  00000013: 8B D0              mov         edx,eax
+  00000015: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000018: 81 E2 FF FF FF 7F  and         edx,7FFFFFFFh
+  0000001E: 8D 04 C7           lea         eax,[edi+eax*8]
+  00000021: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  00000024: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000027: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002E: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  00000031: 8B CF              mov         ecx,edi
+  00000033: 3B F8              cmp         edi,eax
+  00000035: 72 0C              jb          00000043
+  00000037: 5F                 pop         edi
+  00000038: 5E                 pop         esi
+  00000039: B8 13 00 00 00     mov         eax,13h
+  0000003E: 5B                 pop         ebx
+  0000003F: 8B E5              mov         esp,ebp
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: 8D 04 D5 07 00 00  lea         eax,[edx*8+7]
+            00
+  0000004A: 99                 cdq
+  0000004B: 83 E2 07           and         edx,7
+  0000004E: 03 C2              add         eax,edx
+  00000050: C1 F8 03           sar         eax,3
+  00000053: 33 D2              xor         edx,edx
+  00000055: 83 F8 02           cmp         eax,2
+  00000058: 7C 24              jl          0000007E
+  0000005A: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000005D: 48                 dec         eax
+  0000005E: 8D 04 C7           lea         eax,[edi+eax*8]
+  00000061: 8B F0              mov         esi,eax
+  00000063: 33 C0              xor         eax,eax
+  00000065: 39 19              cmp         dword ptr [ecx],ebx
+  00000067: 0F 94 C0           sete        al
+  0000006A: 01 45 FC           add         dword ptr [ebp-4],eax
+  0000006D: 33 C0              xor         eax,eax
+  0000006F: 39 59 08           cmp         dword ptr [ecx+8],ebx
+  00000072: 0F 94 C0           sete        al
+  00000075: 83 C1 10           add         ecx,10h
+  00000078: 03 D0              add         edx,eax
+  0000007A: 3B CE              cmp         ecx,esi
+  0000007C: 7C E5              jl          00000063
+  0000007E: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  00000081: 8D 04 F7           lea         eax,[edi+esi*8]
+  00000084: 8B 75 F0           mov         esi,dword ptr [ebp-10h]
+  00000087: 3B C8              cmp         ecx,eax
+  00000089: 73 09              jae         00000094
+  0000008B: 33 C0              xor         eax,eax
+  0000008D: 39 19              cmp         dword ptr [ecx],ebx
+  0000008F: 0F 94 C0           sete        al
+  00000092: EB 02              jmp         00000096
+  00000094: 33 C0              xor         eax,eax
+  00000096: 03 C2              add         eax,edx
+  00000098: 03 45 FC           add         eax,dword ptr [ebp-4]
+  0000009B: 74 9A              je          00000037
+  0000009D: 3B 45 E8           cmp         eax,dword ptr [ebp-18h]
+  000000A0: 74 72              je          00000114
+  000000A2: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000A5: 8D 04 CF           lea         eax,[edi+ecx*8]
+  000000A8: 8D 70 F8           lea         esi,[eax-8]
+  000000AB: 83 C0 F8           add         eax,0FFFFFFF8h
+  000000AE: 3B F8              cmp         edi,eax
+  000000B0: 77 1E              ja          000000D0
+  000000B2: 39 1F              cmp         dword ptr [edi],ebx
+  000000B4: 75 13              jne         000000C9
+  000000B6: 3B FE              cmp         edi,esi
+  000000B8: 74 0A              je          000000C4
+  000000BA: 56                 push        esi
+  000000BB: 57                 push        edi
+  000000BC: E8 00 00 00 00     call        _PNodeList_SwapNodes
+  000000C1: 83 C4 08           add         esp,8
+  000000C4: 83 EE 08           sub         esi,8
+  000000C7: EB 03              jmp         000000CC
+  000000C9: 83 C7 08           add         edi,8
+  000000CC: 3B FE              cmp         edi,esi
+  000000CE: 76 E2              jbe         000000B2
+  000000D0: 2B 75 F4           sub         esi,dword ptr [ebp-0Ch]
+  000000D3: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  000000D6: 83 C6 08           add         esi,8
+  000000D9: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  000000DC: 8B C8              mov         ecx,eax
+  000000DE: C1 FE 03           sar         esi,3
+  000000E1: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  000000E7: 3B CE              cmp         ecx,esi
+  000000E9: 72 02              jb          000000ED
+  000000EB: 8B CE              mov         ecx,esi
+  000000ED: 25 00 00 00 80     and         eax,80000000h
+  000000F2: 0B C1              or          eax,ecx
+  000000F4: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  000000F7: 75 41              jne         0000013A
+  000000F9: FF 77 10           push        dword ptr [edi+10h]
+  000000FC: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000101: 83 C4 04           add         esp,4
+  00000104: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  0000010B: 5F                 pop         edi
+  0000010C: 5E                 pop         esi
+  0000010D: 33 C0              xor         eax,eax
+  0000010F: 5B                 pop         ebx
+  00000110: 8B E5              mov         esp,ebp
+  00000112: 5D                 pop         ebp
+  00000113: C3                 ret
+  00000114: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000117: 85 C0              test        eax,eax
+  00000119: 74 1F              je          0000013A
+  0000011B: 85 FF              test        edi,edi
+  0000011D: 74 0D              je          0000012C
+  0000011F: 85 C0              test        eax,eax
+  00000121: 78 09              js          0000012C
+  00000123: 57                 push        edi
+  00000124: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000129: 83 C4 04           add         esp,4
+  0000012C: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000133: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000013A: 5F                 pop         edi
+  0000013B: 5E                 pop         esi
+  0000013C: 33 C0              xor         eax,eax
+  0000013E: 5B                 pop         ebx
+  0000013F: 8B E5              mov         esp,ebp
+  00000141: 5D                 pop         ebp
+  00000142: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         143 .text

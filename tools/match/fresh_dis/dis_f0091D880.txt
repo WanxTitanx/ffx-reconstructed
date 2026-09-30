@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0091D880.obj
+
+File Type: COFF OBJECT
+
+_FFX_BuildGuideMeshDimensions:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_GetActorDataPtrOrAlt
+  0000000E: 8B F0              mov         esi,eax
+  00000010: 8D 4F 10           lea         ecx,[edi+10h]
+  00000013: 68 80 00 00 00     push        80h
+  00000018: 56                 push        esi
+  00000019: 89 4E 40           mov         dword ptr [esi+40h],ecx
+  0000001C: E8 00 00 00 00     call        _FFX_RcBg_ForcePrimAlphaTo128
+  00000021: 8D 4F 50           lea         ecx,[edi+50h]
+  00000024: 51                 push        ecx
+  00000025: 81 C6 90 00 00 00  add         esi,90h
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _FFX_Render_SceneAllocArray
+  00000031: D9 46 10           fld         dword ptr [esi+10h]
+  00000034: D8 26              fsub        dword ptr [esi]
+  00000036: 83 C4 14           add         esp,14h
+  00000039: D9 5F 64           fstp        dword ptr [edi+64h]
+  0000003C: D9 46 18           fld         dword ptr [esi+18h]
+  0000003F: D8 66 08           fsub        dword ptr [esi+8]
+  00000042: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000045: D9 45 08           fld         dword ptr [ebp+8]
+  00000048: D9 C0              fld         st(0)
+  0000004A: D9 C9              fxch        st(1)
+  0000004C: D9 57 68           fst         dword ptr [edi+68h]
+  0000004F: D9 47 64           fld         dword ptr [edi+64h]
+  00000052: DE D9              fcompp
+  00000054: DF E0              fnstsw      ax
+  00000056: F6 C4 41           test        ah,41h
+  00000059: 75 05              jne         00000060
+  0000005B: DD D8              fstp        st(0)
+  0000005D: D9 47 64           fld         dword ptr [edi+64h]
+  00000060: 57                 push        edi
+  00000061: D9 5F 60           fstp        dword ptr [edi+60h]
+  00000064: E8 00 00 00 00     call        _FFX_AllocActorSceneData
+  00000069: 83 C4 04           add         esp,4
+  0000006C: 5F                 pop         edi
+  0000006D: 5E                 pop         esi
+  0000006E: 5D                 pop         ebp
+  0000006F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          70 .text

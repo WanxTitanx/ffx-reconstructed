@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A09B0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_array_sortCmp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 10              mov         edx,dword ptr [eax]
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: 0F B7 4A 02        movzx       ecx,word ptr [edx+2]
+  00000010: 8B 30              mov         esi,dword ptr [eax]
+  00000012: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  00000016: 66 3B C8           cmp         cx,ax
+  00000019: 76 06              jbe         00000021
+  0000001B: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C3                 ret
+  00000021: 73 08              jae         0000002B
+  00000023: B8 01 00 00 00     mov         eax,1
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+  0000002B: 8B 4A 08           mov         ecx,dword ptr [edx+8]
+  0000002E: 8B 56 08           mov         edx,dword ptr [esi+8]
+  00000031: 3B CA              cmp         ecx,edx
+  00000033: 7F E6              jg          0000001B
+  00000035: 33 C0              xor         eax,eax
+  00000037: 3B CA              cmp         ecx,edx
+  00000039: 0F 9C C0           setl        al
+  0000003C: 5E                 pop         esi
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

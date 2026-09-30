@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A6B80.obj
+
+File Type: COFF OBJECT
+
+@Phyre_AlignedAlloc_ZeroInts@8:
+  00000000: 56                 push        esi
+  00000001: 8B F2              mov         esi,edx
+  00000003: 8D 41 04           lea         eax,[ecx+4]
+  00000006: 83 FE 01           cmp         esi,1
+  00000009: 76 12              jbe         0000001D
+  0000000B: 8D 04 B5 00 00 00  lea         eax,[esi*4]
+            00
+  00000012: 6A 04              push        4
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 16              je          00000037
+  00000021: 85 F6              test        esi,esi
+  00000023: 74 12              je          00000037
+  00000025: 8B C8              mov         ecx,eax
+  00000027: 85 C9              test        ecx,ecx
+  00000029: 74 06              je          00000031
+  0000002B: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000031: 83 C1 04           add         ecx,4
+  00000034: 4E                 dec         esi
+  00000035: 75 F0              jne         00000027
+  00000037: 5E                 pop         esi
+  00000038: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          39 .text

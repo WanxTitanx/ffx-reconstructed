@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008753B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_ClearAllActorInstances:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 6A 00              push        0
+  00000008: E8 00 00 00 00     call        _FFX_Field_SwitchContextSlot
+  0000000D: 6A 00              push        0
+  0000000F: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000012: E8 00 00 00 00     call        _FFX_Field_InitScriptWorkerDefaults
+  00000017: 83 C4 08           add         esp,8
+  0000001A: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  0000001F: 0F B7 40 0C        movzx       eax,word ptr [eax+0Ch]
+  00000023: 33 C9              xor         ecx,ecx
+  00000025: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000028: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 74 6E              je          0000009D
+  0000002F: 53                 push        ebx
+  00000030: 56                 push        esi
+  00000031: 57                 push        edi
+  00000032: 51                 push        ecx
+  00000033: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  00000038: 8B D8              mov         ebx,eax
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: 80 BB AA 00 00 00  cmp         byte ptr [ebx+0AAh],1
+            01
+  00000044: 75 48              jne         0000008E
+  00000046: 8D B3 F4 0A 00 00  lea         esi,[ebx+0AF4h]
+  0000004C: BF 02 00 00 00     mov         edi,2
+  00000051: 8B 06              mov         eax,dword ptr [esi]
+  00000053: 85 C0              test        eax,eax
+  00000055: 74 0F              je          00000066
+  00000057: 50                 push        eax
+  00000058: E8 00 00 00 00     call        _FFX_Field_DisposeChrIfValid
+  0000005D: 83 C4 04           add         esp,4
+  00000060: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000066: 83 C6 04           add         esi,4
+  00000069: 4F                 dec         edi
+  0000006A: 75 E5              jne         00000051
+  0000006C: 8B 83 9C 00 00 00  mov         eax,dword ptr [ebx+9Ch]
+  00000072: 85 C0              test        eax,eax
+  00000074: 74 18              je          0000008E
+  00000076: 50                 push        eax
+  00000077: E8 00 00 00 00     call        _FFX_Field_DisposeChrIfValid
+  0000007C: B8 EF FF 00 00     mov         eax,0FFEFh
+  00000081: 83 C4 04           add         esp,4
+  00000084: 66 21 43 38        and         word ptr [ebx+38h],ax
+  00000088: 89 BB 9C 00 00 00  mov         dword ptr [ebx+9Ch],edi
+  0000008E: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000091: 41                 inc         ecx
+  00000092: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000095: 3B 4D F8           cmp         ecx,dword ptr [ebp-8]
+  00000098: 7C 98              jl          00000032
+  0000009A: 5F                 pop         edi
+  0000009B: 5E                 pop         esi
+  0000009C: 5B                 pop         ebx
+  0000009D: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000000A0: E8 00 00 00 00     call        _FFX_Field_SwapGlobalScriptContext
+  000000A5: 83 C4 04           add         esp,4
+  000000A8: 8B E5              mov         esp,ebp
+  000000AA: 5D                 pop         ebp
+  000000AB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AC .text

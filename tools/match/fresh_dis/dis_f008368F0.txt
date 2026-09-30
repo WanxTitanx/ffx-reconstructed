@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008368F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000B: 53                 push        ebx
+  0000000C: 56                 push        esi
+  0000000D: 6A 00              push        0
+  0000000F: E8 00 00 00 00     call        _FFX_Mgrp_FindRegistryEntry
+  00000014: 83 C4 0C           add         esp,0Ch
+  00000017: 85 C0              test        eax,eax
+  00000019: 75 59              jne         00000074
+  0000001B: 57                 push        edi
+  0000001C: 8B FE              mov         edi,esi
+  0000001E: C1 E7 10           shl         edi,10h
+  00000021: 0B FB              or          edi,ebx
+  00000023: 57                 push        edi
+  00000024: 6A 02              push        2
+  00000026: E8 00 00 00 00     call        _FFX_ResourceCache_QueryReadState
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: 83 F8 02           cmp         eax,2
+  00000031: 75 10              jne         00000043
+  00000033: 56                 push        esi
+  00000034: 53                 push        ebx
+  00000035: E8 00 00 00 00     call        _FFX_Mgrp_LoadResidentMotionAsync
+  0000003A: 83 C4 08           add         esp,8
+  0000003D: 85 C0              test        eax,eax
+  0000003F: 75 32              jne         00000073
+  00000041: EB 05              jmp         00000048
+  00000043: 83 F8 01           cmp         eax,1
+  00000046: 75 0A              jne         00000052
+  00000048: 6A 00              push        0
+  0000004A: E8 00 00 00 00     call        _FFX_Resource_PumpPendingReadsThunk
+  0000004F: 83 C4 04           add         esp,4
+  00000052: 57                 push        edi
+  00000053: 6A 02              push        2
+  00000055: E8 00 00 00 00     call        _FFX_ResourceCache_GetDataPtrWarnIfPending
+  0000005A: 57                 push        edi
+  0000005B: 6A 02              push        2
+  0000005D: 8B F0              mov         esi,eax
+  0000005F: E8 00 00 00 00     call        _FFX_ResourceCache_MarkEntryActive
+  00000064: 53                 push        ebx
+  00000065: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000068: 6A 00              push        0
+  0000006A: 56                 push        esi
+  0000006B: E8 00 00 00 00     call        _FFX_Mgrp_RegisterMseqRecords
+  00000070: 83 C4 20           add         esp,20h
+  00000073: 5F                 pop         edi
+  00000074: 5E                 pop         esi
+  00000075: 5B                 pop         ebx
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          78 .text

@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083C560.obj
+
+File Type: COFF OBJECT
+
+_SgMem_EncryptMCBSize:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 28              je          00000033
+  0000000B: FF 35 00 00 00 00  push        dword ptr [_g_SGUnkVar_C8F6F8]
+  00000011: E8 00 00 00 00     call        _FFX_SgMem_ComputeEncryptedSize
+  00000016: 8B 4E FC           mov         ecx,dword ptr [esi-4]
+  00000019: A1 00 00 00 00     mov         eax,dword ptr [_dword_1301970]
+  0000001E: C1 E0 04           shl         eax,4
+  00000021: 33 C1              xor         eax,ecx
+  00000023: 83 C4 04           add         esp,4
+  00000026: 25 F0 FF FF 03     and         eax,3FFFFF0h
+  0000002B: 33 C8              xor         ecx,eax
+  0000002D: 89 4E FC           mov         dword ptr [esi-4],ecx
+  00000030: 5E                 pop         esi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+  00000033: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000036: 5E                 pop         esi
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          39 .text

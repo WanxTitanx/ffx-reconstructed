@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085F8E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Cmd_SetActorPosition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  0000000D: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000010: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000013: 56                 push        esi
+  00000014: 57                 push        edi
+  00000015: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000001A: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000001D: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  00000020: 85 C0              test        eax,eax
+  00000022: 79 06              jns         0000002A
+  00000024: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002A: 56                 push        esi
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: 57                 push        edi
+  0000002F: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000034: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000037: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 79 06              jns         00000044
+  0000003E: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000044: 56                 push        esi
+  00000045: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000048: 57                 push        edi
+  00000049: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000004E: 83 C4 18           add         esp,18h
+  00000051: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000054: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  00000057: 85 C0              test        eax,eax
+  00000059: 79 06              jns         00000061
+  0000005B: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000061: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000064: 6A 00              push        0
+  00000066: D9 45 FC           fld         dword ptr [ebp-4]
+  00000069: 83 EC 18           sub         esp,18h
+  0000006C: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000070: D9 45 F8           fld         dword ptr [ebp-8]
+  00000073: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000077: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000007A: DD 1C 24           fstp        qword ptr [esp]
+  0000007D: 57                 push        edi
+  0000007E: E8 00 00 00 00     call        _FFX_Field_WarpActorToPosition
+  00000083: 83 C4 20           add         esp,20h
+  00000086: 33 C0              xor         eax,eax
+  00000088: 5F                 pop         edi
+  00000089: 5E                 pop         esi
+  0000008A: 8B E5              mov         esp,ebp
+  0000008C: 5D                 pop         ebp
+  0000008D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          8E .text

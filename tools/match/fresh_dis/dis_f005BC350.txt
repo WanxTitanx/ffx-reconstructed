@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005BC350.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_5BC350@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 09              je          00000013
+  0000000A: 50                 push        eax
+  0000000B: E8 00 00 00 00     call        _Phyre_SpinLock_Release
+  00000010: 83 C4 04           add         esp,4
+  00000013: 8D 46 1C           lea         eax,[esi+1Ch]
+  00000016: 50                 push        eax
+  00000017: C7 46 4C 00 00 00  mov         dword ptr [esi+4Ch],0
+            00
+  0000001E: C7 46 50 00 00 00  mov         dword ptr [esi+50h],0
+            00
+  00000025: E8 00 00 00 00     call        _Phyre_CircularBuffer_Advance
+  0000002A: 8D 46 30           lea         eax,[esi+30h]
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _Phyre_CircularBuffer_Advance
+  00000033: 83 C4 08           add         esp,8
+  00000036: 5E                 pop         esi
+  00000037: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          38 .text

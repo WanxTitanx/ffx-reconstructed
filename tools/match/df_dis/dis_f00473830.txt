@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00473830.obj
+
+File Type: COFF OBJECT
+
+_Phyre_ArrayCopy_Int32ToInt64_v4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000006: 53                 push        ebx
+  00000007: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000000E: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  00000011: 80 7E 0C 00        cmp         byte ptr [esi+0Ch],0
+  00000015: 57                 push        edi
+  00000016: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000019: 74 0B              je          00000026
+  0000001B: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000001E: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000021: 8B 50 08           mov         edx,dword ptr [eax+8]
+  00000024: EB 08              jmp         0000002E
+  00000026: 8B D0              mov         edx,eax
+  00000028: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000002B: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  0000002E: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000031: 8B 5E 08           mov         ebx,dword ptr [esi+8]
+  00000034: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000037: 8B 36              mov         esi,dword ptr [esi]
+  00000039: 03 55 08           add         edx,dword ptr [ebp+8]
+  0000003C: 03 C1              add         eax,ecx
+  0000003E: 85 F6              test        esi,esi
+  00000040: 74 12              je          00000054
+  00000042: 8B 0A              mov         ecx,dword ptr [edx]
+  00000044: 89 08              mov         dword ptr [eax],ecx
+  00000046: C7 40 04 00 00 00  mov         dword ptr [eax+4],0
+            00
+  0000004D: 03 D7              add         edx,edi
+  0000004F: 03 C3              add         eax,ebx
+  00000051: 4E                 dec         esi
+  00000052: 75 EE              jne         00000042
+  00000054: 5F                 pop         edi
+  00000055: 5E                 pop         esi
+  00000056: 5B                 pop         ebx
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          59 .text

@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00443FC0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Object_GetName@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 7E 08           mov         edi,dword ptr [esi+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 35              je          00000040
+  0000000B: 8B 07              mov         eax,dword ptr [edi]
+  0000000D: 8B 16              mov         edx,dword ptr [esi]
+  0000000F: 2B C7              sub         eax,edi
+  00000011: F7 D8              neg         eax
+  00000013: 1B C0              sbb         eax,eax
+  00000015: 23 07              and         eax,dword ptr [edi]
+  00000017: 89 46 08           mov         dword ptr [esi+8],eax
+  0000001A: 3B C2              cmp         eax,edx
+  0000001C: 75 22              jne         00000040
+  0000001E: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000021: 39 7A 10           cmp         dword ptr [edx+10h],edi
+  00000024: 76 0C              jbe         00000032
+  00000026: 8B 08              mov         ecx,dword ptr [eax]
+  00000028: 2B C1              sub         eax,ecx
+  0000002A: F7 D8              neg         eax
+  0000002C: 1B C0              sbb         eax,eax
+  0000002E: 23 C1              and         eax,ecx
+  00000030: EB 02              jmp         00000034
+  00000032: 33 C0              xor         eax,eax
+  00000034: 83 C2 14           add         edx,14h
+  00000037: 89 46 08           mov         dword ptr [esi+8],eax
+  0000003A: 89 16              mov         dword ptr [esi],edx
+  0000003C: 3B C2              cmp         eax,edx
+  0000003E: 74 E1              je          00000021
+  00000040: 5F                 pop         edi
+  00000041: 8B C6              mov         eax,esi
+  00000043: 5E                 pop         esi
+  00000044: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          45 .text

@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00644C70.obj
+
+File Type: COFF OBJECT
+
+_FFX_RenderNode_SetVisibility:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 3C              je          00000046
+  0000000A: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  0000000D: 56                 push        esi
+  0000000E: 57                 push        edi
+  0000000F: 8B 78 10           mov         edi,dword ptr [eax+10h]
+  00000012: 33 F6              xor         esi,esi
+  00000014: F7 07 FF FF FF 7F  test        dword ptr [edi],7FFFFFFFh
+  0000001A: 74 28              je          00000044
+  0000001C: 53                 push        ebx
+  0000001D: 33 DB              xor         ebx,ebx
+  0000001F: 39 5D 0C           cmp         dword ptr [ebp+0Ch],ebx
+  00000022: 0F 95 C3           setne       bl
+  00000025: 57                 push        edi
+  00000026: E8 00 00 00 00     call        _PRefCounted_GetDataPtr_B
+  0000002B: 53                 push        ebx
+  0000002C: FF 34 B0           push        dword ptr [eax+esi*4]
+  0000002F: E8 00 00 00 00     call        _FFX_RenderNode_SetTransparencyMode
+  00000034: 8B 07              mov         eax,dword ptr [edi]
+  00000036: 46                 inc         esi
+  00000037: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000003C: 83 C4 0C           add         esp,0Ch
+  0000003F: 3B F0              cmp         esi,eax
+  00000041: 72 E2              jb          00000025
+  00000043: 5B                 pop         ebx
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

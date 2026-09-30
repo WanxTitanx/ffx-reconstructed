@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009B5490.obj
+
+File Type: COFF OBJECT
+
+@sub_9B5490@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 33 C0              xor         eax,eax
+  00000006: 8B B7 FC 01 00 00  mov         esi,dword ptr [edi+000001FCh]
+  0000000C: 85 F6              test        esi,esi
+  0000000E: 7E 3D              jle         0000004D
+  00000010: 53                 push        ebx
+  00000011: 8B 9F 04 02 00 00  mov         ebx,dword ptr [edi+00000204h]
+  00000017: 8B CB              mov         ecx,ebx
+  00000019: 39 11              cmp         dword ptr [ecx],edx
+  0000001B: 74 0F              je          0000002C
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 40                 inc         eax
+  00000021: 8D 49 04           lea         ecx,[ecx+4]
+  00000024: 3B C6              cmp         eax,esi
+  00000026: 7D 24              jge         0000004C
+  00000028: 39 11              cmp         dword ptr [ecx],edx
+  0000002A: 75 F4              jne         00000020
+  0000002C: 3B C6              cmp         eax,esi
+  0000002E: 7D 1C              jge         0000004C
+  00000030: 8B 14 83           mov         edx,dword ptr [ebx+eax*4]
+  00000033: 8D 0C 83           lea         ecx,[ebx+eax*4]
+  00000036: 8B 44 B3 FC        mov         eax,dword ptr [ebx+esi*4-4]
+  0000003A: 89 01              mov         dword ptr [ecx],eax
+  0000003C: 8B 87 04 02 00 00  mov         eax,dword ptr [edi+00000204h]
+  00000042: 89 54 B0 FC        mov         dword ptr [eax+esi*4-4],edx
+  00000046: FF 8F FC 01 00 00  dec         dword ptr [edi+000001FCh]
+  0000004C: 5B                 pop         ebx
+  0000004D: 33 C0              xor         eax,eax
+  0000004F: 39 87 FC 01 00 00  cmp         dword ptr [edi+000001FCh],eax
+  00000055: 0F 9F C0           setg        al
+  00000058: 89 87 08 01 00 00  mov         dword ptr [edi+00000108h],eax
+  0000005E: 5F                 pop         edi
+  0000005F: 5E                 pop         esi
+  00000060: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          61 .text

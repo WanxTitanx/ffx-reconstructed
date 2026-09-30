@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00540CE0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PAnimationDescriptor_DestroyArray:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 85 DB              test        ebx,ebx
+  00000009: 74 38              je          00000043
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 26              je          00000039
+  00000013: 56                 push        esi
+  00000014: 8D 73 24           lea         esi,[ebx+24h]
+  00000017: 8D 46 14           lea         eax,[esi+14h]
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _Phyre_PAnimCtrl_VtableInit
+  00000020: 56                 push        esi
+  00000021: E8 00 00 00 00     call        _Phyre_PTimeScaleOffsetCtrl_VtableInit
+  00000026: 8D 46 E8           lea         eax,[esi-18h]
+  00000029: 50                 push        eax
+  0000002A: E8 00 00 00 00     call        _Phyre_PTimeIntervalCtrl_VtableInit
+  0000002F: 83 C4 0C           add         esp,0Ch
+  00000032: 83 C6 4C           add         esi,4Ch
+  00000035: 4F                 dec         edi
+  00000036: 75 DF              jne         00000017
+  00000038: 5E                 pop         esi
+  00000039: 53                 push        ebx
+  0000003A: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 5F                 pop         edi
+  00000043: 5B                 pop         ebx
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

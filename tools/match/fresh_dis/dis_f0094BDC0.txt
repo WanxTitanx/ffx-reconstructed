@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094BDC0.obj
+
+File Type: COFF OBJECT
+
+_PhyreStream_Reserve:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 85 D2              test        edx,edx
+  0000000B: 79 0C              jns         00000019
+  0000000D: 8D 0C D5 08 00 00  lea         ecx,[edx*8+00000008h]
+            00
+  00000014: 01 48 08           add         dword ptr [eax+8],ecx
+  00000017: 5D                 pop         ebp
+  00000018: C3                 ret
+  00000019: 8B 48 10           mov         ecx,dword ptr [eax+10h]
+  0000001C: 42                 inc         edx
+  0000001D: 8B 09              mov         ecx,dword ptr [ecx]
+  0000001F: 8D 14 D1           lea         edx,[ecx+edx*8]
+  00000022: 39 50 08           cmp         dword ptr [eax+8],edx
+  00000025: 73 1C              jae         00000043
+  00000027: EB 07              jmp         00000030
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000030: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00000033: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  0000003A: 83 40 08 08        add         dword ptr [eax+8],8
+  0000003E: 39 50 08           cmp         dword ptr [eax+8],edx
+  00000041: 72 ED              jb          00000030
+  00000043: 89 50 08           mov         dword ptr [eax+8],edx
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

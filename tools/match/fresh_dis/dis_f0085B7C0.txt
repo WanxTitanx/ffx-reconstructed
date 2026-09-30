@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085B7C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Common_grantAbilityFuncspaceCaller:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 0F B7 70 0C        movzx       esi,word ptr [eax+0Ch]
+  0000000B: 57                 push        edi
+  0000000C: 8B 78 08           mov         edi,dword ptr [eax+8]
+  0000000F: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  00000014: 80 60 03 FB        and         byte ptr [eax+3],0FBh
+  00000018: E8 00 00 00 00     call        _FFX_Field_ClearAndSelectActor
+  0000001D: 0F BF C6           movsx       eax,si
+  00000020: 6A 01              push        1
+  00000022: 50                 push        eax
+  00000023: 57                 push        edi
+  00000024: E8 00 00 00 00     call        _FFX_Event_GrantAbilityCommand
+  00000029: 83 C4 0C           add         esp,0Ch
+  0000002C: 5F                 pop         edi
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .text

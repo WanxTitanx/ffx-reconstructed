@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file obj_s_pi_none_while_ge4_len.obj
+
+File Type: COFF OBJECT
+
+_F:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: 56                 push        esi
+  0000000A: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000D: 83 F9 04           cmp         ecx,4
+  00000010: 72 14              jb          00000026
+  00000012: 8B 02              mov         eax,dword ptr [edx]
+  00000014: 3B 06              cmp         eax,dword ptr [esi]
+  00000016: 75 43              jne         0000005B
+  00000018: 83 E9 04           sub         ecx,4
+  0000001B: 83 C2 04           add         edx,4
+  0000001E: 83 C6 04           add         esi,4
+  00000021: 83 F9 04           cmp         ecx,4
+  00000024: 73 EC              jae         00000012
+  00000026: 53                 push        ebx
+  00000027: 83 F9 FC           cmp         ecx,0FFFFFFFCh
+  0000002A: 74 4B              je          00000077
+  0000002C: 8A 02              mov         al,byte ptr [edx]
+  0000002E: 8A 1E              mov         bl,byte ptr [esi]
+  00000030: 3A C3              cmp         al,bl
+  00000032: 75 1E              jne         00000052
+  00000034: 83 F9 FD           cmp         ecx,0FFFFFFFDh
+  00000037: 74 3E              je          00000077
+  00000039: 8A 42 01           mov         al,byte ptr [edx+1]
+  0000003C: 8A 5E 01           mov         bl,byte ptr [esi+1]
+  0000003F: 3A C3              cmp         al,bl
+  00000041: 75 0F              jne         00000052
+  00000043: 83 F9 FE           cmp         ecx,0FFFFFFFEh
+  00000046: 74 2F              je          00000077
+  00000048: 8A 42 02           mov         al,byte ptr [edx+2]
+  0000004B: 8A 5E 02           mov         bl,byte ptr [esi+2]
+  0000004E: 3A C3              cmp         al,bl
+  00000050: 74 11              je          00000063
+  00000052: 1B C0              sbb         eax,eax
+  00000054: 5B                 pop         ebx
+  00000055: 83 C8 01           or          eax,1
+  00000058: 5E                 pop         esi
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: B8 01 00 00 00     mov         eax,1
+  00000060: 5E                 pop         esi
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+  00000063: 83 F9 FF           cmp         ecx,0FFFFFFFFh
+  00000066: 74 0F              je          00000077
+  00000068: 8A 4A 03           mov         cl,byte ptr [edx+3]
+  0000006B: 33 C0              xor         eax,eax
+  0000006D: 3A 4E 03           cmp         cl,byte ptr [esi+3]
+  00000070: 5B                 pop         ebx
+  00000071: 0F 95 C0           setne       al
+  00000074: 5E                 pop         esi
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+  00000077: 5B                 pop         ebx
+  00000078: 33 C0              xor         eax,eax
+  0000007A: 5E                 pop         esi
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+
+  Summary
+
+          88 .debug$S
+          2F .drectve
+          7D .text

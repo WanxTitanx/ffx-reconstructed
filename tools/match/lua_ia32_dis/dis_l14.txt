@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file l14.obj
+
+File Type: COFF OBJECT
+
+_luaL_openlibs:
+  00000000: A1 04 00 00 00     mov         eax,dword ptr [_loadedlibs+4]
+  00000005: 56                 push        esi
+  00000006: 8B 74 24 08        mov         esi,dword ptr [esp+8]
+  0000000A: 57                 push        edi
+  0000000B: BF 00 00 00 00     mov         edi,offset _loadedlibs
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 20              je          00000034
+  00000014: 6A 01              push        1
+  00000016: 50                 push        eax
+  00000017: FF 37              push        dword ptr [edi]
+  00000019: 56                 push        esi
+  0000001A: E8 00 00 00 00     call        _luaL_requiref
+  0000001F: 6A FE              push        0FFFFFFFEh
+  00000021: 56                 push        esi
+  00000022: E8 00 00 00 00     call        _lua_settop
+  00000027: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000002A: 8D 7F 08           lea         edi,[edi+8]
+  0000002D: 83 C4 18           add         esp,18h
+  00000030: 85 C0              test        eax,eax
+  00000032: 75 E0              jne         00000014
+  00000034: 68 00 00 00 00     push        offset ??_C@_08LBNNGFKE@_PRELOAD?$AA@
+  00000039: 68 D8 B9 F0 FF     push        0FFF0B9D8h
+  0000003E: 56                 push        esi
+  0000003F: E8 00 00 00 00     call        _luaL_getsubtable
+  00000044: A1 04 00 00 00     mov         eax,dword ptr [_preloadedlibs+4]
+  00000049: 83 C4 0C           add         esp,0Ch
+  0000004C: BF 00 00 00 00     mov         edi,offset _preloadedlibs
+  00000051: 85 C0              test        eax,eax
+  00000053: 74 20              je          00000075
+  00000055: 6A 00              push        0
+  00000057: 50                 push        eax
+  00000058: 56                 push        esi
+  00000059: E8 00 00 00 00     call        _lua_pushcclosure
+  0000005E: FF 37              push        dword ptr [edi]
+  00000060: 6A FE              push        0FFFFFFFEh
+  00000062: 56                 push        esi
+  00000063: E8 00 00 00 00     call        _lua_setfield
+  00000068: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000006B: 8D 7F 08           lea         edi,[edi+8]
+  0000006E: 83 C4 18           add         esp,18h
+  00000071: 85 C0              test        eax,eax
+  00000073: 75 E0              jne         00000055
+  00000075: 6A FE              push        0FFFFFFFEh
+  00000077: 56                 push        esi
+  00000078: E8 00 00 00 00     call        _lua_settop
+  0000007D: 83 C4 08           add         esp,8
+  00000080: 5F                 pop         edi
+  00000081: 5E                 pop         esi
+  00000082: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          AA .rdata
+          83 .text

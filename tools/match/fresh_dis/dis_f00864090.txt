@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00864090.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_SetListItemSelect:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B D1              mov         edx,ecx
+  00000008: 85 C9              test        ecx,ecx
+  0000000A: 78 0C              js          00000018
+  0000000C: 83 F9 07           cmp         ecx,7
+  0000000F: 7E 09              jle         0000001A
+  00000011: BA 07 00 00 00     mov         edx,7
+  00000016: EB 02              jmp         0000001A
+  00000018: 33 D2              xor         edx,edx
+  0000001A: A1 00 00 00 00     mov         eax,dword ptr [_g_FieldU8_1326B42]
+  0000001F: 56                 push        esi
+  00000020: 8D 04 C2           lea         eax,[edx+eax*8]
+  00000023: 6B C0 2C           imul        eax,eax,2Ch
+  00000026: 05 00 00 00 00     add         eax,offset _g_FieldUnkVar_1326D30
+  0000002B: BE FF FF 00 00     mov         esi,0FFFFh
+  00000030: 0F B7 50 14        movzx       edx,word ptr [eax+14h]
+  00000034: 66 89 70 1E        mov         word ptr [eax+1Eh],si
+  00000038: 5E                 pop         esi
+  00000039: 66 85 D2           test        dx,dx
+  0000003C: 74 17              je          00000055
+  0000003E: 83 FA 03           cmp         edx,3
+  00000041: 74 12              je          00000055
+  00000043: BA 03 00 00 00     mov         edx,3
+  00000048: 66 89 50 14        mov         word ptr [eax+14h],dx
+  0000004C: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000004F: 5D                 pop         ebp
+  00000050: E9 00 00 00 00     jmp         _FFX_Menu_ListItemSelectCb
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          57 .text

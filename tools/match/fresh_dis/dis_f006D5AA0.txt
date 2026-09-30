@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D5AA0.obj
+
+File Type: COFF OBJECT
+
+@FFX_BrokenScreenEffect_FreeInstanceArray@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 83 7F 38 00        cmp         dword ptr [edi+38h],0
+  0000000B: 74 64              je          00000071
+  0000000D: 56                 push        esi
+  0000000E: 33 F6              xor         esi,esi
+  00000010: 39 77 34           cmp         dword ptr [edi+34h],esi
+  00000013: 76 47              jbe         0000005C
+  00000015: 8B 47 38           mov         eax,dword ptr [edi+38h]
+  00000018: 8B 0C B0           mov         ecx,dword ptr [eax+esi*4]
+  0000001B: 85 C9              test        ecx,ecx
+  0000001D: 74 25              je          00000044
+  0000001F: 8B 01              mov         eax,dword ptr [ecx]
+  00000021: 85 C0              test        eax,eax
+  00000023: 74 09              je          0000002E
+  00000025: 50                 push        eax
+  00000026: E8 00 00 00 00     call        _FFX_BucketAlloc_Thunk_6D3F30
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 8B 47 38           mov         eax,dword ptr [edi+38h]
+  00000031: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000034: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000037: 85 C9              test        ecx,ecx
+  00000039: 74 09              je          00000044
+  0000003B: 51                 push        ecx
+  0000003C: E8 00 00 00 00     call        _FFX_BucketAlloc_Thunk_6D3F30
+  00000041: 83 C4 04           add         esp,4
+  00000044: 46                 inc         esi
+  00000045: 3B 77 34           cmp         esi,dword ptr [edi+34h]
+  00000048: 72 CB              jb          00000015
+  0000004A: D9 E8              fld1
+  0000004C: 5E                 pop         esi
+  0000004D: D9 5F 08           fstp        dword ptr [edi+8]
+  00000050: C7 47 38 00 00 00  mov         dword ptr [edi+38h],0
+            00
+  00000057: 5F                 pop         edi
+  00000058: 8B E5              mov         esp,ebp
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+  0000005C: D9 E8              fld1
+  0000005E: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000061: 5E                 pop         esi
+  00000062: D9 5F 08           fstp        dword ptr [edi+8]
+  00000065: C7 47 38 00 00 00  mov         dword ptr [edi+38h],0
+            00
+  0000006C: 5F                 pop         edi
+  0000006D: 8B E5              mov         esp,ebp
+  0000006F: 5D                 pop         ebp
+  00000070: C3                 ret
+  00000071: D9 E8              fld1
+  00000073: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000076: D9 5F 08           fstp        dword ptr [edi+8]
+  00000079: 5F                 pop         edi
+  0000007A: 8B E5              mov         esp,ebp
+  0000007C: 5D                 pop         ebp
+  0000007D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          7E .text

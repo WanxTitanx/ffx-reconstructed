@@ -1,0 +1,71 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006B6550.obj
+
+File Type: COFF OBJECT
+
+@FFX_DebugConfigTree_ParseEntry@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B F2              mov         esi,edx
+  00000009: 33 FF              xor         edi,edi
+  0000000B: 8B D9              mov         ebx,ecx
+  0000000D: 85 F6              test        esi,esi
+  0000000F: 74 22              je          00000033
+  00000011: 81 FE 55 55 55 15  cmp         esi,15555555h
+  00000017: 77 15              ja          0000002E
+  00000019: 8D 04 76           lea         eax,[esi+esi*2]
+  0000001C: C1 E0 02           shl         eax,2
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000025: 8B F8              mov         edi,eax
+  00000027: 83 C4 04           add         esp,4
+  0000002A: 85 FF              test        edi,edi
+  0000002C: 75 05              jne         00000033
+  0000002E: E8 00 00 00 00     call        _std__Xbad_alloc
+  00000033: 57                 push        edi
+  00000034: FF 73 04           push        dword ptr [ebx+4]
+  00000037: FF 33              push        dword ptr [ebx]
+  00000039: E8 00 00 00 00     call        _FFX_TexAnim_Stub28
+  0000003E: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  00000041: 2B 0B              sub         ecx,dword ptr [ebx]
+  00000043: B8 AB AA AA 2A     mov         eax,2AAAAAABh
+  00000048: F7 E9              imul        ecx
+  0000004A: 8B 03              mov         eax,dword ptr [ebx]
+  0000004C: D1 FA              sar         edx,1
+  0000004E: 8B CA              mov         ecx,edx
+  00000050: C1 E9 1F           shr         ecx,1Fh
+  00000053: 03 CA              add         ecx,edx
+  00000055: 83 C4 0C           add         esp,0Ch
+  00000058: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000005B: 85 C0              test        eax,eax
+  0000005D: 74 0C              je          0000006B
+  0000005F: 50                 push        eax
+  00000060: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000065: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000068: 83 C4 04           add         esp,4
+  0000006B: 8D 04 76           lea         eax,[esi+esi*2]
+  0000006E: 89 3B              mov         dword ptr [ebx],edi
+  00000070: 8D 04 87           lea         eax,[edi+eax*4]
+  00000073: 89 43 08           mov         dword ptr [ebx+8],eax
+  00000076: 8D 04 49           lea         eax,[ecx+ecx*2]
+  00000079: 8D 04 87           lea         eax,[edi+eax*4]
+  0000007C: 5F                 pop         edi
+  0000007D: 5E                 pop         esi
+  0000007E: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000081: 5B                 pop         ebx
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          86 .text

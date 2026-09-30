@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059C500.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Texture_ReleaseResources8@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000007: 53                 push        ebx
+  00000008: 56                 push        esi
+  00000009: 8B D9              mov         ebx,ecx
+  0000000B: 57                 push        edi
+  0000000C: 8D 73 20           lea         esi,[ebx+20h]
+  0000000F: BF 02 00 00 00     mov         edi,2
+  00000014: 8B 16              mov         edx,dword ptr [esi]
+  00000016: 85 D2              test        edx,edx
+  00000018: 74 0E              je          00000028
+  0000001A: 8B 02              mov         eax,dword ptr [edx]
+  0000001C: 52                 push        edx
+  0000001D: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000020: FF D0              call        eax
+  00000022: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000028: 83 C6 04           add         esi,4
+  0000002B: 4F                 dec         edi
+  0000002C: 75 E6              jne         00000014
+  0000002E: 8D 73 28           lea         esi,[ebx+28h]
+  00000031: BF 02 00 00 00     mov         edi,2
+  00000036: 8B 0E              mov         ecx,dword ptr [esi]
+  00000038: 85 C9              test        ecx,ecx
+  0000003A: 74 0E              je          0000004A
+  0000003C: 8B 01              mov         eax,dword ptr [ecx]
+  0000003E: 51                 push        ecx
+  0000003F: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000042: FF D0              call        eax
+  00000044: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000004A: 83 C6 04           add         esi,4
+  0000004D: 4F                 dec         edi
+  0000004E: 75 E6              jne         00000036
+  00000050: 33 F6              xor         esi,esi
+  00000052: 8B 0C B3           mov         ecx,dword ptr [ebx+esi*4]
+  00000055: 85 C9              test        ecx,ecx
+  00000057: 74 0F              je          00000068
+  00000059: 8B 01              mov         eax,dword ptr [ecx]
+  0000005B: 51                 push        ecx
+  0000005C: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000005F: FF D0              call        eax
+  00000061: C7 04 B3 00 00 00  mov         dword ptr [ebx+esi*4],0
+            00
+  00000068: 8B 4C B3 08        mov         ecx,dword ptr [ebx+esi*4+8]
+  0000006C: 85 C9              test        ecx,ecx
+  0000006E: 74 10              je          00000080
+  00000070: 8B 01              mov         eax,dword ptr [ecx]
+  00000072: 51                 push        ecx
+  00000073: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000076: FF D0              call        eax
+  00000078: C7 44 B3 08 00 00  mov         dword ptr [ebx+esi*4+8],0
+            00 00
+  00000080: 46                 inc         esi
+  00000081: 83 FE 02           cmp         esi,2
+  00000084: 72 CC              jb          00000052
+  00000086: 5F                 pop         edi
+  00000087: 5E                 pop         esi
+  00000088: 5B                 pop         ebx
+  00000089: 8B E5              mov         esp,ebp
+  0000008B: 5D                 pop         ebp
+  0000008C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8D .text

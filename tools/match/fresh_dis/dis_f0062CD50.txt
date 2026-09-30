@@ -1,0 +1,115 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0062CD50.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_CalculateRenderTargetArea@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: D9 46 10           fld         dword ptr [esi+10h]
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: D9 E8              fld1
+  00000011: DA E9              fucompp
+  00000013: DF E0              fnstsw      ax
+  00000015: F6 C4 44           test        ah,44h
+  00000018: 7A 24              jp          0000003E
+  0000001A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000001D: 89 46 18           mov         dword ptr [esi+18h],eax
+  00000020: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000023: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  00000026: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000029: 89 46 20           mov         dword ptr [esi+20h],eax
+  0000002C: 8B 06              mov         eax,dword ptr [esi]
+  0000002E: 89 7E 14           mov         dword ptr [esi+14h],edi
+  00000031: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  00000034: FF D0              call        eax
+  00000036: 5F                 pop         edi
+  00000037: 5E                 pop         esi
+  00000038: 8B E5              mov         esp,ebp
+  0000003A: 5D                 pop         ebp
+  0000003B: C2 0C 00           ret         0Ch
+  0000003E: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000041: 53                 push        ebx
+  00000042: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000045: 85 DB              test        ebx,ebx
+  00000047: 79 06              jns         0000004F
+  00000049: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000004F: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000052: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000055: D8 76 10           fdiv        dword ptr [esi+10h]
+  00000058: E8 00 00 00 00     call        __ftol2
+  0000005D: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000060: 2B C8              sub         ecx,eax
+  00000062: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  00000065: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000068: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000006B: 79 06              jns         00000073
+  0000006D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000073: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000076: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000079: DD 05 00 00 00 00  fld         qword ptr [__real@bfe0000000000000]
+  0000007F: DC C9              fmul        st(1),st
+  00000081: D9 C9              fxch        st(1)
+  00000083: E8 00 00 00 00     call        __ftol2
+  00000088: DB 45 10           fild        dword ptr [ebp+10h]
+  0000008B: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000008E: 2B C8              sub         ecx,eax
+  00000090: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000093: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000096: 85 C0              test        eax,eax
+  00000098: 79 06              jns         000000A0
+  0000009A: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000A0: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000000A3: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000000A6: D8 4E 10           fmul        dword ptr [esi+10h]
+  000000A9: E8 00 00 00 00     call        __ftol2
+  000000AE: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000B1: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000B4: 85 D2              test        edx,edx
+  000000B6: 74 12              je          000000CA
+  000000B8: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000BB: 3B 4D 10           cmp         ecx,dword ptr [ebp+10h]
+  000000BE: 73 0A              jae         000000CA
+  000000C0: DD D8              fstp        st(0)
+  000000C2: 89 56 18           mov         dword ptr [esi+18h],edx
+  000000C5: 89 5E 1C           mov         dword ptr [esi+1Ch],ebx
+  000000C8: EB 2C              jmp         000000F6
+  000000CA: 2B D8              sub         ebx,eax
+  000000CC: 89 5D 0C           mov         dword ptr [ebp+0Ch],ebx
+  000000CF: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000000D2: 79 06              jns         000000DA
+  000000D4: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000DA: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000000DD: D8 4D 0C           fmul        dword ptr [ebp+0Ch]
+  000000E0: E8 00 00 00 00     call        __ftol2
+  000000E5: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  000000E8: 2B F8              sub         edi,eax
+  000000EA: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000ED: 89 46 18           mov         dword ptr [esi+18h],eax
+  000000F0: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000F3: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  000000F6: 8B 06              mov         eax,dword ptr [esi]
+  000000F8: 89 7E 14           mov         dword ptr [esi+14h],edi
+  000000FB: 89 4E 20           mov         dword ptr [esi+20h],ecx
+  000000FE: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  00000101: FF D0              call        eax
+  00000103: 5B                 pop         ebx
+  00000104: 5F                 pop         edi
+  00000105: 5E                 pop         esi
+  00000106: 8B E5              mov         esp,ebp
+  00000108: 5D                 pop         ebp
+  00000109: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+         10C .text

@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0089E570.obj
+
+File Type: COFF OBJECT
+
+_sub_89E570:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 30           sub         esp,30h
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8A 06              mov         al,byte ptr [esi]
+  0000000C: 84 C0              test        al,al
+  0000000E: 74 36              je          00000046
+  00000010: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000013: 2B F2              sub         esi,edx
+  00000015: 3C 30              cmp         al,30h
+  00000017: 7C 04              jl          0000001D
+  00000019: 3C 39              cmp         al,39h
+  0000001B: 7E 13              jle         00000030
+  0000001D: 3C 20              cmp         al,20h
+  0000001F: 74 13              je          00000034
+  00000021: 8D 48 D3           lea         ecx,[eax-2Dh]
+  00000024: 80 F9 02           cmp         cl,2
+  00000027: 77 0F              ja          00000038
+  00000029: 0F BE C8           movsx       ecx,al
+  0000002C: 8A 44 0D D0        mov         al,byte ptr [ebp+ecx-30h]
+  00000030: 88 02              mov         byte ptr [edx],al
+  00000032: EB 03              jmp         00000037
+  00000034: C6 02 3A           mov         byte ptr [edx],3Ah
+  00000037: 42                 inc         edx
+  00000038: 8A 04 16           mov         al,byte ptr [esi+edx]
+  0000003B: 84 C0              test        al,al
+  0000003D: 75 D6              jne         00000015
+  0000003F: 88 02              mov         byte ptr [edx],al
+  00000041: 5E                 pop         esi
+  00000042: 8B E5              mov         esp,ebp
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+  00000046: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000049: 5E                 pop         esi
+  0000004A: C6 00 00           mov         byte ptr [eax],0
+  0000004D: 8B E5              mov         esp,ebp
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          51 .text

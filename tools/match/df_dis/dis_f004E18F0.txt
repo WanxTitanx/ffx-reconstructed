@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004E18F0.obj
+
+File Type: COFF OBJECT
+
+@PRenderState_AssignExternalBuffer@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 71 24           mov         esi,dword ptr [ecx+24h]
+  0000000A: 2B B0 88 00 00 00  sub         esi,dword ptr [eax+88h]
+  00000010: 57                 push        edi
+  00000011: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000014: 03 F2              add         esi,edx
+  00000016: 85 FF              test        edi,edi
+  00000018: 79 0B              jns         00000025
+  0000001A: 5F                 pop         edi
+  0000001B: B8 05 00 00 00     mov         eax,5
+  00000020: 5E                 pop         esi
+  00000021: 5D                 pop         ebp
+  00000022: C2 08 00           ret         8
+  00000025: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000028: 53                 push        ebx
+  00000029: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000002C: 3B CB              cmp         ecx,ebx
+  0000002E: 74 15              je          00000045
+  00000030: 8B 06              mov         eax,dword ptr [esi]
+  00000032: 85 C0              test        eax,eax
+  00000034: 78 0F              js          00000045
+  00000036: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000003B: 50                 push        eax
+  0000003C: 51                 push        ecx
+  0000003D: E8 00 00 00 00     call        _PPtrQuadArray_FreeBlocksAndAlignedFree
+  00000042: 83 C4 08           add         esp,8
+  00000045: 81 CF 00 00 00 80  or          edi,80000000h
+  0000004B: 89 5E 04           mov         dword ptr [esi+4],ebx
+  0000004E: 5B                 pop         ebx
+  0000004F: 89 3E              mov         dword ptr [esi],edi
+  00000051: 5F                 pop         edi
+  00000052: 33 C0              xor         eax,eax
+  00000054: 5E                 pop         esi
+  00000055: 5D                 pop         ebp
+  00000056: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          59 .text

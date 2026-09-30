@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3C570.obj
+
+File Type: COFF OBJECT
+
+_Iggy_GDraw_SetDepthStencilState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: E8 00 00 00 00     call        _Iggy_GDraw_PoolFreeBlock
+  0000000A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000D: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000010: 3B 86 80 07 00 00  cmp         eax,dword ptr [esi+780h]
+  00000016: 75 45              jne         0000005D
+  00000018: FF B6 84 07 00 00  push        dword ptr [esi+784h]
+  0000001E: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000021: 8D 55 FC           lea         edx,[ebp-4]
+  00000024: 8B 08              mov         ecx,dword ptr [eax]
+  00000026: 52                 push        edx
+  00000027: 6A 01              push        1
+  00000029: 50                 push        eax
+  0000002A: 8B 81 84 00 00 00  mov         eax,dword ptr [ecx+84h]
+  00000030: FF D0              call        eax
+  00000032: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000035: 8B 86 90 07 00 00  mov         eax,dword ptr [esi+790h]
+  0000003B: 8B 11              mov         edx,dword ptr [ecx]
+  0000003D: FF B4 86 AC 07 00  push        dword ptr [esi+eax*4+7ACh]
+            00
+  00000044: 8B 82 AC 00 00 00  mov         eax,dword ptr [edx+0ACh]
+  0000004A: 51                 push        ecx
+  0000004B: FF D0              call        eax
+  0000004D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000050: 5E                 pop         esi
+  00000051: 66 83 09 20        or          word ptr [ecx],20h
+  00000055: 66 FF 41 0C        inc         word ptr [ecx+0Ch]
+  00000059: 8B E5              mov         esp,ebp
+  0000005B: 5D                 pop         ebp
+  0000005C: C3                 ret
+  0000005D: 8B 86 AC 0A 00 00  mov         eax,dword ptr [esi+0AACh]
+  00000063: 33 D2              xor         edx,edx
+  00000065: F6 40 14 0C        test        byte ptr [eax+14h],0Ch
+  00000069: 57                 push        edi
+  0000006A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000006D: 74 0B              je          0000007A
+  0000006F: 57                 push        edi
+  00000070: E8 00 00 00 00     call        _Iggy_GDraw_VertexBufferLock
+  00000075: 83 C4 04           add         esp,4
+  00000078: 8B D0              mov         edx,eax
+  0000007A: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000007D: 52                 push        edx
+  0000007E: 8B 01              mov         eax,dword ptr [ecx]
+  00000080: 8D 55 FC           lea         edx,[ebp-4]
+  00000083: 8B 80 84 00 00 00  mov         eax,dword ptr [eax+84h]
+  00000089: 52                 push        edx
+  0000008A: 6A 01              push        1
+  0000008C: 51                 push        ecx
+  0000008D: FF D0              call        eax
+  0000008F: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000092: FF B6 AC 07 00 00  push        dword ptr [esi+7ACh]
+  00000098: 8B 08              mov         ecx,dword ptr [eax]
+  0000009A: 50                 push        eax
+  0000009B: 8B 81 AC 00 00 00  mov         eax,dword ptr [ecx+0ACh]
+  000000A1: FF D0              call        eax
+  000000A3: 66 83 0F 20        or          word ptr [edi],20h
+  000000A7: 66 FF 47 0C        inc         word ptr [edi+0Ch]
+  000000AB: 5F                 pop         edi
+  000000AC: 5E                 pop         esi
+  000000AD: 8B E5              mov         esp,ebp
+  000000AF: 5D                 pop         ebp
+  000000B0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B1 .text

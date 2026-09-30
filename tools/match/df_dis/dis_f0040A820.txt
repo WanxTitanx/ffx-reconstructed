@@ -1,0 +1,102 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0040A820.obj
+
+File Type: COFF OBJECT
+
+@FFX_VpxFrameDecoder_SwapReferenceFrame@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8D B1 50 0F 00 00  lea         esi,[ecx+0F50h]
+  0000000B: 4A                 dec         edx
+  0000000C: 74 30              je          0000003E
+  0000000E: 4A                 dec         edx
+  0000000F: 74 25              je          00000036
+  00000011: 83 EA 02           sub         edx,2
+  00000014: 74 18              je          0000002E
+  00000016: 68 00 00 00 00     push        offset ??_C@_0BI@PBBHOMOB@Invalid?5reference?5frame?$AA@
+  0000001B: 6A 01              push        1
+  0000001D: 56                 push        esi
+  0000001E: E8 00 00 00 00     call        _FFX_VpxError_Raise
+  00000023: 8B 06              mov         eax,dword ptr [esi]
+  00000025: 83 C4 0C           add         esp,0Ch
+  00000028: 5F                 pop         edi
+  00000029: 5E                 pop         esi
+  0000002A: 5D                 pop         ebp
+  0000002B: C2 04 00           ret         4
+  0000002E: 8D B9 D4 17 00 00  lea         edi,[ecx+17D4h]
+  00000034: EB 0E              jmp         00000044
+  00000036: 8D B9 D0 17 00 00  lea         edi,[ecx+17D0h]
+  0000003C: EB 06              jmp         00000044
+  0000003E: 8D B9 CC 17 00 00  lea         edi,[ecx+17CCh]
+  00000044: 8B 07              mov         eax,dword ptr [edi]
+  00000046: 6B C0 1B           imul        eax,eax,1Bh
+  00000049: 53                 push        ebx
+  0000004A: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000004D: 8D 0C 86           lea         ecx,[esi+eax*4]
+  00000050: 8B 84 86 BC 06 00  mov         eax,dword ptr [esi+eax*4+6BCh]
+            00
+  00000057: 3B 43 04           cmp         eax,dword ptr [ebx+4]
+  0000005A: 75 6F              jne         000000CB
+  0000005C: 8B 81 B8 06 00 00  mov         eax,dword ptr [ecx+6B8h]
+  00000062: 3B 03              cmp         eax,dword ptr [ebx]
+  00000064: 75 65              jne         000000CB
+  00000066: 8B 81 D0 06 00 00  mov         eax,dword ptr [ecx+6D0h]
+  0000006C: 3B 43 18           cmp         eax,dword ptr [ebx+18h]
+  0000006F: 75 5A              jne         000000CB
+  00000071: 8B 81 CC 06 00 00  mov         eax,dword ptr [ecx+6CCh]
+  00000077: 3B 43 14           cmp         eax,dword ptr [ebx+14h]
+  0000007A: 75 4F              jne         000000CB
+  0000007C: 56                 push        esi
+  0000007D: E8 00 00 00 00     call        _FFX_VpxFrameDecoder_AllocRefSlot
+  00000082: 8B D0              mov         edx,eax
+  00000084: 83 C4 04           add         esp,4
+  00000087: FF 8C 96 68 08 00  dec         dword ptr [esi+edx*4+868h]
+            00
+  0000008E: 8B 0F              mov         ecx,dword ptr [edi]
+  00000090: 8B 84 8E 68 08 00  mov         eax,dword ptr [esi+ecx*4+868h]
+            00
+  00000097: 85 C0              test        eax,eax
+  00000099: 7E 08              jle         000000A3
+  0000009B: 48                 dec         eax
+  0000009C: 89 84 8E 68 08 00  mov         dword ptr [esi+ecx*4+868h],eax
+            00
+  000000A3: 89 17              mov         dword ptr [edi],edx
+  000000A5: FF 84 96 68 08 00  inc         dword ptr [esi+edx*4+868h]
+            00
+  000000AC: 8B 07              mov         eax,dword ptr [edi]
+  000000AE: 6B C0 6C           imul        eax,eax,6Ch
+  000000B1: 05 B8 06 00 00     add         eax,6B8h
+  000000B6: 03 C6              add         eax,esi
+  000000B8: 50                 push        eax
+  000000B9: 53                 push        ebx
+  000000BA: E8 00 00 00 00     call        _FFX_VpxFrame_CopyPlanes
+  000000BF: 8B 06              mov         eax,dword ptr [esi]
+  000000C1: 83 C4 08           add         esp,8
+  000000C4: 5B                 pop         ebx
+  000000C5: 5F                 pop         edi
+  000000C6: 5E                 pop         esi
+  000000C7: 5D                 pop         ebp
+  000000C8: C2 04 00           ret         4
+  000000CB: 68 00 00 00 00     push        offset ??_C@_0BM@KAADMCCK@Incorrect?5buffer?5dimensions?$AA@
+  000000D0: 6A 01              push        1
+  000000D2: 56                 push        esi
+  000000D3: E8 00 00 00 00     call        _FFX_VpxError_Raise
+  000000D8: 8B 06              mov         eax,dword ptr [esi]
+  000000DA: 83 C4 0C           add         esp,0Ch
+  000000DD: 5B                 pop         ebx
+  000000DE: 5F                 pop         edi
+  000000DF: 5E                 pop         esi
+  000000E0: 5D                 pop         ebp
+  000000E1: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .rdata
+          E4 .text

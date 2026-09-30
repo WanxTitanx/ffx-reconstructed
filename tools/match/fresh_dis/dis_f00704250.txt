@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00704250.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_704250@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 83 EC 08           sub         esp,8
+  0000000A: D9 46 04           fld         dword ptr [esi+4]
+  0000000D: D9 06              fld         dword ptr [esi]
+  0000000F: DC C8              fmul        st(0),st
+  00000011: D9 C9              fxch        st(1)
+  00000013: DC C8              fmul        st(0),st
+  00000015: DE C1              faddp       st(1),st
+  00000017: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001D: DD 1C 24           fstp        qword ptr [esp]
+  00000020: E8 00 00 00 00     call        __isnan
+  00000025: 83 C4 08           add         esp,8
+  00000028: 85 C0              test        eax,eax
+  0000002A: 75 51              jne         0000007D
+  0000002C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000002F: 83 EC 08           sub         esp,8
+  00000032: DD 1C 24           fstp        qword ptr [esp]
+  00000035: E8 00 00 00 00     call        __finite
+  0000003A: 83 C4 08           add         esp,8
+  0000003D: 85 C0              test        eax,eax
+  0000003F: 74 3C              je          0000007D
+  00000041: D9 45 FC           fld         dword ptr [ebp-4]
+  00000044: DC 15 00 00 00 00  fcom        qword ptr [__real@381000000b3aeeab]
+  0000004A: DF E0              fnstsw      ax
+  0000004C: F6 C4 41           test        ah,41h
+  0000004F: 7B 2A              jnp         0000007B
+  00000051: E8 00 00 00 00     call        __CIsqrt
+  00000056: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000059: D9 45 FC           fld         dword ptr [ebp-4]
+  0000005C: D9 E8              fld1
+  0000005E: DE F1              fdivrp      st(1),st
+  00000060: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000063: D9 06              fld         dword ptr [esi]
+  00000065: D9 45 FC           fld         dword ptr [ebp-4]
+  00000068: D9 C0              fld         st(0)
+  0000006A: DE CA              fmulp       st(2),st
+  0000006C: D9 C9              fxch        st(1)
+  0000006E: D9 1E              fstp        dword ptr [esi]
+  00000070: D8 4E 04           fmul        dword ptr [esi+4]
+  00000073: D9 5E 04           fstp        dword ptr [esi+4]
+  00000076: 5E                 pop         esi
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C3                 ret
+  0000007B: DD D8              fstp        st(0)
+  0000007D: D9 EE              fldz
+  0000007F: D9 56 0C           fst         dword ptr [esi+0Ch]
+  00000082: D9 56 08           fst         dword ptr [esi+8]
+  00000085: D9 56 04           fst         dword ptr [esi+4]
+  00000088: D9 1E              fstp        dword ptr [esi]
+  0000008A: 5E                 pop         esi
+  0000008B: 8B E5              mov         esp,ebp
+  0000008D: 5D                 pop         ebp
+  0000008E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+          8F .text

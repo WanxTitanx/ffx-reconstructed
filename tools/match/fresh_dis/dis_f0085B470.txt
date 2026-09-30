@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085B470.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_MenuWaitForBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _FFX_FieldOp_CheckMenuListBuffer
+  00000010: 0F B7 4E 0E        movzx       ecx,word ptr [esi+0Eh]
+  00000014: 83 C4 08           add         esp,8
+  00000017: 66 85 C9           test        cx,cx
+  0000001A: 74 20              je          0000003C
+  0000001C: 83 F9 01           cmp         ecx,1
+  0000001F: 75 0E              jne         0000002F
+  00000021: B8 02 00 00 00     mov         eax,2
+  00000026: 66 89 46 0E        mov         word ptr [esi+0Eh],ax
+  0000002A: 33 C0              xor         eax,eax
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+  0000002F: 83 F9 02           cmp         ecx,2
+  00000032: 75 15              jne         00000049
+  00000034: B8 05 00 00 00     mov         eax,5
+  00000039: 5E                 pop         esi
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+  0000003C: A8 01              test        al,1
+  0000003E: 74 09              je          00000049
+  00000040: B8 01 00 00 00     mov         eax,1
+  00000045: 66 89 46 0E        mov         word ptr [esi+0Eh],ax
+  00000049: 33 C0              xor         eax,eax
+  0000004B: 5E                 pop         esi
+  0000004C: 5D                 pop         ebp
+  0000004D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4E .text

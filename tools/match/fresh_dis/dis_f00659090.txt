@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00659090.obj
+
+File Type: COFF OBJECT
+
+@FFX_Scene_DisconnectAndRelease@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 83 BF 60 FB 00 00  cmp         dword ptr [edi+0FB60h],0
+            00
+  0000000A: 7F 32              jg          0000003E
+  0000000C: 80 BF 44 FB 00 00  cmp         byte ptr [edi+0FB44h],0
+            00
+  00000013: 75 29              jne         0000003E
+  00000015: 56                 push        esi
+  00000016: 8D B7 E4 11 00 00  lea         esi,[edi+11E4h]
+  0000001C: 8D 87 9C 00 00 00  lea         eax,[edi+9Ch]
+  00000022: 56                 push        esi
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        _PNode_DisconnectFromParent
+  00000029: 8D 47 7C           lea         eax,[edi+7Ch]
+  0000002C: 56                 push        esi
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _Phyre_Debug_OutputString
+  00000033: 83 C4 10           add         esp,10h
+  00000036: C6 87 44 FB 00 00  mov         byte ptr [edi+0FB44h],1
+            01
+  0000003D: 5E                 pop         esi
+  0000003E: 5F                 pop         edi
+  0000003F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          40 .text

@@ -1,0 +1,447 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059B560.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_ProvideDataBlock@28:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000000C: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000000F: 8B 54 90 20        mov         edx,dword ptr [eax+edx*4+20h]
+  00000013: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000016: 85 D2              test        edx,edx
+  00000018: 0F 84 40 03 00 00  je          0000035E
+  0000001E: 83 78 14 00        cmp         dword ptr [eax+14h],0
+  00000022: 0F 84 36 03 00 00  je          0000035E
+  00000028: 56                 push        esi
+  00000029: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000002C: 85 F6              test        esi,esi
+  0000002E: 75 09              jne         00000039
+  00000030: B0 01              mov         al,1
+  00000032: 5E                 pop         esi
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C2 14 00           ret         14h
+  00000039: 66 8B 45 18        mov         ax,word ptr [ebp+18h]
+  0000003D: 53                 push        ebx
+  0000003E: 0F B7 D8           movzx       ebx,ax
+  00000041: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  00000044: 66 85 C0           test        ax,ax
+  00000047: 75 0A              jne         00000053
+  00000049: 5B                 pop         ebx
+  0000004A: B0 01              mov         al,1
+  0000004C: 5E                 pop         esi
+  0000004D: 8B E5              mov         esp,ebp
+  0000004F: 5D                 pop         ebp
+  00000050: C2 14 00           ret         14h
+  00000053: 83 C6 04           add         esi,4
+  00000056: 57                 push        edi
+  00000057: 8D 46 FC           lea         eax,[esi-4]
+  0000005A: 89 45 18           mov         dword ptr [ebp+18h],eax
+  0000005D: 8D 49 00           lea         ecx,[ecx]
+  00000060: 0F B7 08           movzx       ecx,word ptr [eax]
+  00000063: 8B 3E              mov         edi,dword ptr [esi]
+  00000065: 03 CA              add         ecx,edx
+  00000067: 83 FF FF           cmp         edi,0FFFFFFFFh
+  0000006A: 0F 84 D0 02 00 00  je          00000340
+  00000070: 8B 11              mov         edx,dword ptr [ecx]
+  00000072: 8B 59 04           mov         ebx,dword ptr [ecx+4]
+  00000075: 8D 42 BE           lea         eax,[edx-42h]
+  00000078: 3D A0 00 00 00     cmp         eax,0A0h
+  0000007D: 0F 87 A0 02 00 00  ja          $LN2
+  00000083: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN59[eax]
+            00
+  0000008A: FF 24 85 00 00 00  jmp         dword ptr $LN65[eax*4]
+            00
+$LN44:
+  00000091: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000094: 33 C0              xor         eax,eax
+  00000096: 85 C9              test        ecx,ecx
+  00000098: 74 79              je          00000113
+  0000009A: 53                 push        ebx
+  0000009B: 51                 push        ecx
+  0000009C: E8 00 00 00 00     call        _Phyre_Shader_GetDataBlockFromArray
+  000000A1: EB 6D              jmp         00000110
+$LN42:
+  000000A3: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  000000A6: 33 C0              xor         eax,eax
+  000000A8: 85 C9              test        ecx,ecx
+  000000AA: 74 67              je          00000113
+  000000AC: 53                 push        ebx
+  000000AD: 51                 push        ecx
+  000000AE: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromVarArray
+  000000B3: EB 5B              jmp         00000110
+$LN40:
+  000000B5: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  000000B8: 33 C0              xor         eax,eax
+  000000BA: 85 C9              test        ecx,ecx
+  000000BC: 74 55              je          00000113
+  000000BE: 53                 push        ebx
+  000000BF: 51                 push        ecx
+  000000C0: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromArray_B
+  000000C5: EB 49              jmp         00000110
+$LN38:
+  000000C7: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  000000CA: 85 C0              test        eax,eax
+  000000CC: 74 05              je          000000D3
+  000000CE: 8B 40 20           mov         eax,dword ptr [eax+20h]
+  000000D1: EB 02              jmp         000000D5
+  000000D3: 33 C0              xor         eax,eax
+  000000D5: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  000000D8: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000DB: 89 84 BB 1C 02 00  mov         dword ptr [ebx+edi*4+21Ch],eax
+            00
+  000000E2: 8B 06              mov         eax,dword ptr [esi]
+  000000E4: 89 8C 83 9C 04 00  mov         dword ptr [ebx+eax*4+49Ch],ecx
+            00
+  000000EB: E9 47 02 00 00     jmp         00000337
+$LN35:
+  000000F0: 8B 51 0C           mov         edx,dword ptr [ecx+0Ch]
+  000000F3: 8B 49 10           mov         ecx,dword ptr [ecx+10h]
+  000000F6: 33 C0              xor         eax,eax
+  000000F8: 85 D2              test        edx,edx
+  000000FA: 74 09              je          00000105
+  000000FC: 53                 push        ebx
+  000000FD: 52                 push        edx
+  000000FE: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus4
+  00000103: EB 0B              jmp         00000110
+  00000105: 85 C9              test        ecx,ecx
+  00000107: 74 0A              je          00000113
+  00000109: 53                 push        ebx
+  0000010A: 51                 push        ecx
+  0000010B: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus4_v2
+  00000110: 83 C4 08           add         esp,8
+  00000113: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000116: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000119: 89 44 BB 1C        mov         dword ptr [ebx+edi*4+1Ch],eax
+  0000011D: 8B 06              mov         eax,dword ptr [esi]
+  0000011F: 89 8C 83 9C 02 00  mov         dword ptr [ebx+eax*4+29Ch],ecx
+            00
+  00000126: E9 0C 02 00 00     jmp         00000337
+$LN31:
+  0000012B: 8B 51 0C           mov         edx,dword ptr [ecx+0Ch]
+  0000012E: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  00000131: 33 C9              xor         ecx,ecx
+  00000133: 85 D2              test        edx,edx
+  00000135: 74 19              je          00000150
+  00000137: 53                 push        ebx
+  00000138: 52                 push        edx
+  00000139: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromPArray_B
+  0000013E: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000141: 83 C4 08           add         esp,8
+  00000144: 89 84 B9 5C 02 00  mov         dword ptr [ecx+edi*4+25Ch],eax
+            00
+  0000014B: E9 E7 01 00 00     jmp         00000337
+  00000150: 85 C0              test        eax,eax
+  00000152: 0F 84 EA 00 00 00  je          00000242
+  00000158: 53                 push        ebx
+  00000159: 50                 push        eax
+  0000015A: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus8
+  0000015F: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000162: 83 C4 08           add         esp,8
+  00000165: 89 84 B9 5C 02 00  mov         dword ptr [ecx+edi*4+25Ch],eax
+            00
+  0000016C: E9 C6 01 00 00     jmp         00000337
+$LN26:
+  00000171: 8B 79 0C           mov         edi,dword ptr [ecx+0Ch]
+  00000174: 33 D2              xor         edx,edx
+  00000176: 85 FF              test        edi,edi
+  00000178: 74 13              je          0000018D
+  0000017A: 53                 push        ebx
+  0000017B: 57                 push        edi
+  0000017C: E8 00 00 00 00     call        _Phyre_Shader_ProvideDataBlock_CopyConstants
+  00000181: 53                 push        ebx
+  00000182: 57                 push        edi
+  00000183: E8 00 00 00 00     call        _PDataBlockArray_Get16AlignedElement
+  00000188: 83 C4 10           add         esp,10h
+  0000018B: 8B D0              mov         edx,eax
+  0000018D: 8B 0E              mov         ecx,dword ptr [esi]
+  0000018F: 83 F9 08           cmp         ecx,8
+  00000192: 73 0F              jae         000001A3
+  00000194: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000197: 89 94 88 7C 02 00  mov         dword ptr [eax+ecx*4+27Ch],edx
+            00
+  0000019E: E9 94 01 00 00     jmp         00000337
+  000001A3: 51                 push        ecx
+  000001A4: 68 00 00 00 00     push        offset ??_C@_0CG@LBLNOALL@Invalid?5constant?5buffer?5location@
+  000001A9: E9 7F 01 00 00     jmp         0000032D
+$LN22:
+  000001AE: 8B 51 10           mov         edx,dword ptr [ecx+10h]
+  000001B1: 8B 41 14           mov         eax,dword ptr [ecx+14h]
+  000001B4: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  000001B7: 33 FF              xor         edi,edi
+  000001B9: 85 C9              test        ecx,ecx
+  000001BB: 74 1B              je          000001D8
+  000001BD: 53                 push        ebx
+  000001BE: 51                 push        ecx
+  000001BF: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromPArray_B
+  000001C4: 8B 0E              mov         ecx,dword ptr [esi]
+  000001C6: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000001C9: 83 C4 08           add         esp,8
+  000001CC: 89 84 8A 5C 02 00  mov         dword ptr [edx+ecx*4+25Ch],eax
+            00
+  000001D3: E9 5F 01 00 00     jmp         00000337
+  000001D8: 85 C0              test        eax,eax
+  000001DA: 74 18              je          000001F4
+  000001DC: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000001DF: C6 40 14 01        mov         byte ptr [eax+14h],1
+  000001E3: 8B 0E              mov         ecx,dword ptr [esi]
+  000001E5: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  000001E8: 89 84 8A 5C 02 00  mov         dword ptr [edx+ecx*4+25Ch],eax
+            00
+  000001EF: E9 43 01 00 00     jmp         00000337
+  000001F4: 85 D2              test        edx,edx
+  000001F6: 74 0C              je          00000204
+  000001F8: 53                 push        ebx
+  000001F9: 52                 push        edx
+  000001FA: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus8
+  000001FF: 83 C4 08           add         esp,8
+  00000202: 8B F8              mov         edi,eax
+  00000204: 8B 0E              mov         ecx,dword ptr [esi]
+  00000206: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000209: 89 BC 88 5C 02 00  mov         dword ptr [eax+ecx*4+25Ch],edi
+            00
+  00000210: E9 22 01 00 00     jmp         00000337
+$LN16:
+  00000215: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000218: 33 C9              xor         ecx,ecx
+  0000021A: 85 C0              test        eax,eax
+  0000021C: 74 24              je          00000242
+  0000021E: 53                 push        ebx
+  0000021F: 50                 push        eax
+  00000220: E8 00 00 00 00     call        _Phyre_Shader_GetDataBlockFromArray_PlusC
+  00000225: 8B C8              mov         ecx,eax
+  00000227: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000022A: 83 C4 08           add         esp,8
+  0000022D: 89 8C B8 5C 02 00  mov         dword ptr [eax+edi*4+25Ch],ecx
+            00
+  00000234: E9 FE 00 00 00     jmp         00000337
+$LN14:
+  00000239: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  0000023C: 33 C9              xor         ecx,ecx
+  0000023E: 85 C0              test        eax,eax
+  00000240: 75 0F              jne         00000251
+  00000242: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000245: 89 8C B8 5C 02 00  mov         dword ptr [eax+edi*4+25Ch],ecx
+            00
+  0000024C: E9 E6 00 00 00     jmp         00000337
+  00000251: 53                 push        ebx
+  00000252: 50                 push        eax
+  00000253: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromVarArray_Plus8
+  00000258: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000025B: 83 C4 08           add         esp,8
+  0000025E: 89 84 B9 5C 02 00  mov         dword ptr [ecx+edi*4+25Ch],eax
+            00
+  00000265: E9 CD 00 00 00     jmp         00000337
+$LN12:
+  0000026A: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  0000026D: 85 C0              test        eax,eax
+  0000026F: 74 17              je          00000288
+  00000271: 6A 00              push        0
+  00000273: 50                 push        eax
+  00000274: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus4_v2
+  00000279: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000027C: 83 C4 08           add         esp,8
+  0000027F: 89 44 B9 1C        mov         dword ptr [ecx+edi*4+1Ch],eax
+  00000283: E9 AF 00 00 00     jmp         00000337
+  00000288: FF 75 18           push        dword ptr [ebp+18h]
+  0000028B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000028E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000291: C7 44 B8 1C 00 00  mov         dword ptr [eax+edi*4+1Ch],0
+            00 00
+  00000299: E8 00 00 00 00     call        _Phyre_Shader_StubReturnZero
+  0000029E: 83 C4 08           add         esp,8
+  000002A1: 85 C0              test        eax,eax
+  000002A3: 74 12              je          000002B7
+  000002A5: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  000002A8: 8B C1              mov         eax,ecx
+  000002AA: 83 E0 01           and         eax,1
+  000002AD: 2B C8              sub         ecx,eax
+  000002AF: 51                 push        ecx
+  000002B0: 68 00 00 00 00     push        offset ??_C@_0EF@DGAGJOPE@Unable?5to?5provide?5a?5data?5block?5f@
+  000002B5: EB 76              jmp         0000032D
+  000002B7: 68 00 00 00 00     push        offset ??_C@_0EA@OPPIOACL@Unable?5to?5provide?5a?5data?5block?5f@
+  000002BC: 6A 01              push        1
+  000002BE: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  000002C3: 83 C4 08           add         esp,8
+  000002C6: EB 6F              jmp         00000337
+$LN7:
+  000002C8: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  000002CB: 85 C0              test        eax,eax
+  000002CD: 74 14              je          000002E3
+  000002CF: 6A 00              push        0
+  000002D1: 50                 push        eax
+  000002D2: E8 00 00 00 00     call        _PDataBlockArray_GetElementPlus4_v3
+  000002D7: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000002DA: 83 C4 08           add         esp,8
+  000002DD: 89 44 B9 1C        mov         dword ptr [ecx+edi*4+1Ch],eax
+  000002E1: EB 54              jmp         00000337
+  000002E3: FF 75 18           push        dword ptr [ebp+18h]
+  000002E6: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000002E9: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000002EC: C7 44 B8 1C 00 00  mov         dword ptr [eax+edi*4+1Ch],0
+            00 00
+  000002F4: E8 00 00 00 00     call        _Phyre_Shader_StubReturnZero
+  000002F9: 83 C4 08           add         esp,8
+  000002FC: 85 C0              test        eax,eax
+  000002FE: 74 12              je          00000312
+  00000300: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000303: 8B C1              mov         eax,ecx
+  00000305: 83 E0 01           and         eax,1
+  00000308: 2B C8              sub         ecx,eax
+  0000030A: 51                 push        ecx
+  0000030B: 68 00 00 00 00     push        offset ??_C@_0FC@CPKGMBJ@Unable?5to?5provide?5an?5index?5data?5@
+  00000310: EB 1B              jmp         0000032D
+  00000312: 68 00 00 00 00     push        offset ??_C@_0EN@KIHNIBDN@Unable?5to?5provide?5an?5index?5data?5@
+  00000317: 6A 01              push        1
+  00000319: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  0000031E: 83 C4 08           add         esp,8
+  00000321: EB 14              jmp         00000337
+$LN2:
+  00000323: 85 D2              test        edx,edx
+  00000325: 74 10              je          00000337
+  00000327: 52                 push        edx
+  00000328: 68 00 00 00 00     push        offset ??_C@_0DA@OPEFHDKC@Unknown?5texture?5type?5for?5capture@
+  0000032D: 6A 01              push        1
+  0000032F: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  00000334: 83 C4 0C           add         esp,0Ch
+  00000337: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000033A: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  0000033D: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000340: 83 C0 10           add         eax,10h
+  00000343: 83 C6 10           add         esi,10h
+  00000346: 4B                 dec         ebx
+  00000347: 89 45 18           mov         dword ptr [ebp+18h],eax
+  0000034A: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  0000034D: 0F 85 0D FD FF FF  jne         00000060
+  00000353: 5F                 pop         edi
+  00000354: 5B                 pop         ebx
+  00000355: B0 01              mov         al,1
+  00000357: 5E                 pop         esi
+  00000358: 8B E5              mov         esp,ebp
+  0000035A: 5D                 pop         ebp
+  0000035B: C2 14 00           ret         14h
+  0000035E: B0 01              mov         al,1
+  00000360: 8B E5              mov         esp,ebp
+  00000362: 5D                 pop         ebp
+  00000363: C2 14 00           ret         14h
+  00000366: 8B FF              mov         edi,edi
+$LN65:
+  00000368: 00 00              add         byte ptr [eax],al
+  0000036A: 00 00              add         byte ptr [eax],al
+  0000036C: 00 00              add         byte ptr [eax],al
+  0000036E: 00 00              add         byte ptr [eax],al
+  00000370: 00 00              add         byte ptr [eax],al
+  00000372: 00 00              add         byte ptr [eax],al
+  00000374: 00 00              add         byte ptr [eax],al
+  00000376: 00 00              add         byte ptr [eax],al
+  00000378: 00 00              add         byte ptr [eax],al
+  0000037A: 00 00              add         byte ptr [eax],al
+  0000037C: 00 00              add         byte ptr [eax],al
+  0000037E: 00 00              add         byte ptr [eax],al
+  00000380: 00 00              add         byte ptr [eax],al
+  00000382: 00 00              add         byte ptr [eax],al
+  00000384: 00 00              add         byte ptr [eax],al
+  00000386: 00 00              add         byte ptr [eax],al
+  00000388: 00 00              add         byte ptr [eax],al
+  0000038A: 00 00              add         byte ptr [eax],al
+  0000038C: 00 00              add         byte ptr [eax],al
+  0000038E: 00 00              add         byte ptr [eax],al
+  00000390: 00 00              add         byte ptr [eax],al
+  00000392: 00 00              add         byte ptr [eax],al
+  00000394: 00 00              add         byte ptr [eax],al
+  00000396: 00 00              add         byte ptr [eax],al
+  00000398: 00 00              add         byte ptr [eax],al
+  0000039A: 00 00              add         byte ptr [eax],al
+$LN59:
+  0000039C: 00 01              add         byte ptr [ecx],al
+  0000039E: 02 0C 0C           add         cl,byte ptr [esp+ecx]
+  000003A1: 03 04 05 06 04 07  add         eax,dword ptr [eax+8070406h]
+            08
+  000003A8: 09 0C 0C           or          dword ptr [esp+ecx],ecx
+  000003AB: 0C 0C              or          al,0Ch
+  000003AD: 0C 0C              or          al,0Ch
+  000003AF: 0C 0C              or          al,0Ch
+  000003B1: 0C 0C              or          al,0Ch
+  000003B3: 0C 0C              or          al,0Ch
+  000003B5: 0C 0C              or          al,0Ch
+  000003B7: 0C 0C              or          al,0Ch
+  000003B9: 0C 0C              or          al,0Ch
+  000003BB: 0C 0C              or          al,0Ch
+  000003BD: 0C 0C              or          al,0Ch
+  000003BF: 0C 0C              or          al,0Ch
+  000003C1: 0C 0C              or          al,0Ch
+  000003C3: 0C 0C              or          al,0Ch
+  000003C5: 0C 0C              or          al,0Ch
+  000003C7: 0C 0C              or          al,0Ch
+  000003C9: 0C 0C              or          al,0Ch
+  000003CB: 0C 0C              or          al,0Ch
+  000003CD: 0C 0C              or          al,0Ch
+  000003CF: 0C 0C              or          al,0Ch
+  000003D1: 0C 0C              or          al,0Ch
+  000003D3: 0C 0C              or          al,0Ch
+  000003D5: 0C 0C              or          al,0Ch
+  000003D7: 0C 0C              or          al,0Ch
+  000003D9: 0C 0C              or          al,0Ch
+  000003DB: 0C 0C              or          al,0Ch
+  000003DD: 0C 0C              or          al,0Ch
+  000003DF: 0C 0C              or          al,0Ch
+  000003E1: 0C 0C              or          al,0Ch
+  000003E3: 0C 0C              or          al,0Ch
+  000003E5: 0C 0C              or          al,0Ch
+  000003E7: 0C 0C              or          al,0Ch
+  000003E9: 0C 0C              or          al,0Ch
+  000003EB: 0C 0C              or          al,0Ch
+  000003ED: 0C 0C              or          al,0Ch
+  000003EF: 0C 0C              or          al,0Ch
+  000003F1: 0C 0C              or          al,0Ch
+  000003F3: 0C 0C              or          al,0Ch
+  000003F5: 0C 0C              or          al,0Ch
+  000003F7: 0C 0C              or          al,0Ch
+  000003F9: 0C 0C              or          al,0Ch
+  000003FB: 0C 0C              or          al,0Ch
+  000003FD: 0C 0C              or          al,0Ch
+  000003FF: 0C 0C              or          al,0Ch
+  00000401: 0C 0C              or          al,0Ch
+  00000403: 0C 0C              or          al,0Ch
+  00000405: 0C 0C              or          al,0Ch
+  00000407: 0C 0C              or          al,0Ch
+  00000409: 0C 0C              or          al,0Ch
+  0000040B: 0C 0C              or          al,0Ch
+  0000040D: 0C 0C              or          al,0Ch
+  0000040F: 0C 0C              or          al,0Ch
+  00000411: 0C 0C              or          al,0Ch
+  00000413: 0C 0C              or          al,0Ch
+  00000415: 0C 0C              or          al,0Ch
+  00000417: 0C 0C              or          al,0Ch
+  00000419: 0C 0C              or          al,0Ch
+  0000041B: 0C 0C              or          al,0Ch
+  0000041D: 0C 0C              or          al,0Ch
+  0000041F: 0C 0C              or          al,0Ch
+  00000421: 0C 0C              or          al,0Ch
+  00000423: 0C 0C              or          al,0Ch
+  00000425: 0C 0C              or          al,0Ch
+  00000427: 0C 0C              or          al,0Ch
+  00000429: 0C 0C              or          al,0Ch
+  0000042B: 0C 0C              or          al,0Ch
+  0000042D: 0C 0C              or          al,0Ch
+  0000042F: 0C 0C              or          al,0Ch
+  00000431: 0C 0C              or          al,0Ch
+  00000433: 0C 0C              or          al,0Ch
+  00000435: 0C 0C              or          al,0Ch
+  00000437: 0C 0A              or          al,0Ah
+  00000439: 0C 0C              or          al,0Ch
+  0000043B: 0C 0B              or          al,0Bh
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         17A .rdata
+         43D .text

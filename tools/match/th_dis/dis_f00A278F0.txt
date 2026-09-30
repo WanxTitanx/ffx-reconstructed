@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A278F0.obj
+
+File Type: COFF OBJECT
+
+@sub_A278F0@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 57                 push        edi
+  00000008: 8D BE 80 00 00 00  lea         edi,[esi+80h]
+  0000000E: 57                 push        edi
+  0000000F: E8 00 00 00 00     call        _sub_A3DEA0
+  00000014: FF B6 A0 02 00 00  push        dword ptr [esi+2A0h]
+  0000001A: E8 00 00 00 00     call        _FMOD_Channel_stop
+  0000001F: 83 C4 08           add         esp,8
+  00000022: 6A 00              push        0
+  00000024: 6A 00              push        0
+  00000026: 6A 00              push        0
+  00000028: 8D 45 FC           lea         eax,[ebp-4]
+  0000002B: 50                 push        eax
+  0000002C: FF B6 9C 02 00 00  push        dword ptr [esi+29Ch]
+  00000032: E8 00 00 00 00     call        _FMOD_Sound_getOpenState
+  00000037: 83 C4 14           add         esp,14h
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 75 E4              jne         00000022
+  0000003E: 39 45 FC           cmp         dword ptr [ebp-4],eax
+  00000041: 74 0C              je          0000004F
+  00000043: 6A 01              push        1
+  00000045: E8 00 00 00 00     call        _Sleep
+  0000004A: 83 C4 04           add         esp,4
+  0000004D: EB D3              jmp         00000022
+  0000004F: FF B6 9C 02 00 00  push        dword ptr [esi+29Ch]
+  00000055: E8 00 00 00 00     call        _FMOD_Sound_release
+  0000005A: 8D 86 20 02 00 00  lea         eax,[esi+220h]
+  00000060: 50                 push        eax
+  00000061: C7 86 9C 02 00 00  mov         dword ptr [esi+29Ch],0
+            00 00 00 00
+  0000006B: C7 86 A0 02 00 00  mov         dword ptr [esi+2A0h],0
+            00 00 00 00
+  00000075: E8 00 00 00 00     call        _sub_A92040
+  0000007A: 8D 86 B0 01 00 00  lea         eax,[esi+1B0h]
+  00000080: 50                 push        eax
+  00000081: E8 00 00 00 00     call        _sub_A917A0
+  00000086: 8D 86 A0 01 00 00  lea         eax,[esi+1A0h]
+  0000008C: 50                 push        eax
+  0000008D: E8 00 00 00 00     call        _sub_A90030
+  00000092: 81 C6 80 01 00 00  add         esi,180h
+  00000098: 56                 push        esi
+  00000099: E8 00 00 00 00     call        _sub_A8FD80
+  0000009E: 57                 push        edi
+  0000009F: E8 00 00 00 00     call        _sub_A3DF20
+  000000A4: 83 C4 18           add         esp,18h
+  000000A7: E8 00 00 00 00     call        _sub_42E200
+  000000AC: 5F                 pop         edi
+  000000AD: 5E                 pop         esi
+  000000AE: 8B E5              mov         esp,ebp
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B2 .text

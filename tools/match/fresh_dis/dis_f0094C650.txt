@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094C650.obj
+
+File Type: COFF OBJECT
+
+_LuaF_strcpy_toBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8D 4E 01           lea         ecx,[esi+1]
+  0000000B: EB 03              jmp         00000010
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8A 06              mov         al,byte ptr [esi]
+  00000012: 46                 inc         esi
+  00000013: 84 C0              test        al,al
+  00000015: 75 F9              jne         00000010
+  00000017: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000001A: 2B F1              sub         esi,ecx
+  0000001C: 56                 push        esi
+  0000001D: 57                 push        edi
+  0000001E: E8 00 00 00 00     call        _PhyreBuffer_AllocSpace
+  00000023: 56                 push        esi
+  00000024: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000027: 50                 push        eax
+  00000028: E8 00 00 00 00     call        _memcpy
+  0000002D: 83 C4 14           add         esp,14h
+  00000030: 01 77 08           add         dword ptr [edi+8],esi
+  00000033: 5F                 pop         edi
+  00000034: 5E                 pop         esi
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

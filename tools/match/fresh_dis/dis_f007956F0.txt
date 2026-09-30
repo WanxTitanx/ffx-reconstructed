@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007956F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_GetActorNodeWorldPos:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: E8 00 00 00 00     call        _FFX_Btl_IsValidBattleSlot
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 15              je          00000029
+  00000014: 0F B6 C3           movzx       eax,bl
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _FFX_Battle_AccessCurrentActorData
+  0000001D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _FFX_Battle_ReadActorNodeTranslation
+  00000026: 83 C4 0C           add         esp,0Ch
+  00000029: 33 C0              xor         eax,eax
+  0000002B: 5B                 pop         ebx
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2E .text

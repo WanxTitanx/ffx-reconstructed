@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004EB2E0.obj
+
+File Type: COFF OBJECT
+
+_PShaderPassInfo_ArrayAllocCopy:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5E                 pop         esi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 53                 push        ebx
+  00000011: 8D 04 B5 00 00 00  lea         eax,[esi*4]
+            00
+  00000018: 6A 04              push        4
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000020: 8B D8              mov         ebx,eax
+  00000022: 83 C4 08           add         esp,8
+  00000025: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  00000028: 85 DB              test        ebx,ebx
+  0000002A: 74 46              je          00000072
+  0000002C: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000002F: 8B CB              mov         ecx,ebx
+  00000031: 85 C0              test        eax,eax
+  00000033: 74 25              je          0000005A
+  00000035: 57                 push        edi
+  00000036: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000039: 8B D8              mov         ebx,eax
+  0000003B: EB 03              jmp         00000040
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: 8B D1              mov         edx,ecx
+  00000042: 83 C1 04           add         ecx,4
+  00000045: 85 D2              test        edx,edx
+  00000047: 74 07              je          00000050
+  00000049: 8B 07              mov         eax,dword ptr [edi]
+  0000004B: 89 02              mov         dword ptr [edx],eax
+  0000004D: 83 C7 04           add         edi,4
+  00000050: 4B                 dec         ebx
+  00000051: 75 ED              jne         00000040
+  00000053: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000056: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000059: 5F                 pop         edi
+  0000005A: 3B F0              cmp         esi,eax
+  0000005C: 74 14              je          00000072
+  0000005E: 2B F0              sub         esi,eax
+  00000060: C1 E6 02           shl         esi,2
+  00000063: 56                 push        esi
+  00000064: 8D 04 83           lea         eax,[ebx+eax*4]
+  00000067: 6A 00              push        0
+  00000069: 50                 push        eax
+  0000006A: E8 00 00 00 00     call        _memset
+  0000006F: 83 C4 0C           add         esp,0Ch
+  00000072: 8B C3              mov         eax,ebx
+  00000074: 5B                 pop         ebx
+  00000075: 5E                 pop         esi
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          78 .text

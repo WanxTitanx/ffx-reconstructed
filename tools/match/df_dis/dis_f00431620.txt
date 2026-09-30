@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00431620.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Timer_GetElapsed@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000009: 56                 push        esi
+  0000000A: FF D0              call        eax
+  0000000C: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000000F: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000012: 85 F6              test        esi,esi
+  00000014: 74 22              je          00000038
+  00000016: E8 00 00 00 00     call        _Phyre_PType_GetDouble
+  0000001B: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000001E: 75 18              jne         00000038
+  00000020: DD 45 F8           fld         qword ptr [ebp-8]
+  00000023: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000029: DD 5E 08           fstp        qword ptr [esi+8]
+  0000002C: B8 01 00 00 00     mov         eax,1
+  00000031: 5E                 pop         esi
+  00000032: 8B E5              mov         esp,ebp
+  00000034: 5D                 pop         ebp
+  00000035: C2 0C 00           ret         0Ch
+  00000038: 33 C0              xor         eax,eax
+  0000003A: 5E                 pop         esi
+  0000003B: 8B E5              mov         esp,ebp
+  0000003D: 5D                 pop         ebp
+  0000003E: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          41 .text

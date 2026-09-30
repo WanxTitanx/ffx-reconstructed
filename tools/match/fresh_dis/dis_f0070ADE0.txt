@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070ADE0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_UpdateEventState@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 80 7E 2C 00        cmp         byte ptr [esi+2Ch],0
+  0000000D: 0F 84 B7 00 00 00  je          000000CA
+  00000013: 8B 4E 30           mov         ecx,dword ptr [esi+30h]
+  00000016: 8D 41 FF           lea         eax,[ecx-1]
+  00000019: 89 46 30           mov         dword ptr [esi+30h],eax
+  0000001C: 85 C9              test        ecx,ecx
+  0000001E: 79 2D              jns         0000004D
+  00000020: D9 46 3C           fld         dword ptr [esi+3Ch]
+  00000023: 6A 01              push        1
+  00000025: 83 EC 08           sub         esp,8
+  00000028: DD 1C 24           fstp        qword ptr [esp]
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _FFX_FmodVoice_SetEventVolume
+  00000031: D9 EE              fldz
+  00000033: D9 56 34           fst         dword ptr [esi+34h]
+  00000036: 83 C4 10           add         esp,10h
+  00000039: D9 56 38           fst         dword ptr [esi+38h]
+  0000003C: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  00000043: D9 5E 3C           fstp        dword ptr [esi+3Ch]
+  00000046: 33 C0              xor         eax,eax
+  00000048: 5E                 pop         esi
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+  0000004D: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  00000051: 74 77              je          000000CA
+  00000053: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000058: 68 D1 02 00 00     push        2D1h
+  0000005D: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000062: 50                 push        eax
+  00000063: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000068: 83 C4 0C           add         esp,0Ch
+  0000006B: F6 45 FF 08        test        byte ptr [ebp-1],8
+  0000006F: 74 59              je          000000CA
+  00000071: D9 46 38           fld         dword ptr [esi+38h]
+  00000074: DC 0D 00 00 00 00  fmul        qword ptr [__real@405fc00000000000]
+  0000007A: D8 46 34           fadd        dword ptr [esi+34h]
+  0000007D: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000080: D9 45 F8           fld         dword ptr [ebp-8]
+  00000083: D9 56 38           fst         dword ptr [esi+38h]
+  00000086: D8 66 3C           fsub        dword ptr [esi+3Ch]
+  00000089: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000008C: D9 45 F8           fld         dword ptr [ebp-8]
+  0000008F: D9 E1              fabs
+  00000091: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000094: D9 45 F8           fld         dword ptr [ebp-8]
+  00000097: DC 1D 00 00 00 00  fcomp       qword ptr [__real@3eb0c6f7a0b5ed8d]
+  0000009D: DF E0              fnstsw      ax
+  0000009F: F6 C4 05           test        ah,5
+  000000A2: 7A 06              jp          000000AA
+  000000A4: D9 46 3C           fld         dword ptr [esi+3Ch]
+  000000A7: D9 5E 38           fstp        dword ptr [esi+38h]
+  000000AA: D9 46 38           fld         dword ptr [esi+38h]
+  000000AD: 6A 01              push        1
+  000000AF: 83 EC 08           sub         esp,8
+  000000B2: DD 1C 24           fstp        qword ptr [esp]
+  000000B5: 56                 push        esi
+  000000B6: E8 00 00 00 00     call        _FFX_FmodVoice_SetEventVolume
+  000000BB: D9 46 38           fld         dword ptr [esi+38h]
+  000000BE: DC 35 00 00 00 00  fdiv        qword ptr [__real@405fc00000000000]
+  000000C4: 83 C4 10           add         esp,10h
+  000000C7: D9 5E 38           fstp        dword ptr [esi+38h]
+  000000CA: 33 C0              xor         eax,eax
+  000000CC: 5E                 pop         esi
+  000000CD: 8B E5              mov         esp,ebp
+  000000CF: 5D                 pop         ebp
+  000000D0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2B .rdata
+          D1 .text

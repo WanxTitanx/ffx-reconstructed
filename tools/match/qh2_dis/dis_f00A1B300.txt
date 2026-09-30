@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A1B300.obj
+
+File Type: COFF OBJECT
+
+@sub_A1B300@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000A: 81 3E 00 00 00 00  cmp         dword ptr [esi],offset _unk_CA34CC
+  00000010: 75 0A              jne         0000001C
+  00000012: B8 07 00 00 00     mov         eax,7
+  00000017: 5E                 pop         esi
+  00000018: 8B E5              mov         esp,ebp
+  0000001A: 5D                 pop         ebp
+  0000001B: C3                 ret
+  0000001C: E8 00 00 00 00     call        _sub_596130
+  00000021: 84 C0              test        al,al
+  00000023: 75 0D              jne         00000032
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _sub_58DCE0
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 85 C0              test        eax,eax
+  00000030: 75 55              jne         00000087
+  00000032: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000035: 53                 push        ebx
+  00000036: 8B 5E 08           mov         ebx,dword ptr [esi+8]
+  00000039: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000003E: 57                 push        edi
+  0000003F: 83 F8 01           cmp         eax,1
+  00000042: 77 0D              ja          00000051
+  00000044: 85 C0              test        eax,eax
+  00000046: 74 05              je          0000004D
+  00000048: 8D 4E 2C           lea         ecx,[esi+2Ch]
+  0000004B: EB 07              jmp         00000054
+  0000004D: 33 C9              xor         ecx,ecx
+  0000004F: EB 03              jmp         00000054
+  00000051: 8B 4E 2C           mov         ecx,dword ptr [esi+2Ch]
+  00000054: 8D 04 9B           lea         eax,[ebx+ebx*4]
+  00000057: 83 7C 81 10 00     cmp         dword ptr [ecx+eax*4+10h],0
+  0000005C: 8D 3C 81           lea         edi,[ecx+eax*4]
+  0000005F: 7E 10              jle         00000071
+  00000061: 6A 01              push        1
+  00000063: E8 00 00 00 00     call        _PhyreThread_Sleep
+  00000068: 83 C4 04           add         esp,4
+  0000006B: 83 7F 10 00        cmp         dword ptr [edi+10h],0
+  0000006F: 7F F0              jg          00000061
+  00000071: FF 75 FC           push        dword ptr [ebp-4]
+  00000074: 53                 push        ebx
+  00000075: E8 00 00 00 00     call        _sub_597060
+  0000007A: 83 C4 08           add         esp,8
+  0000007D: 5F                 pop         edi
+  0000007E: 5B                 pop         ebx
+  0000007F: 85 C0              test        eax,eax
+  00000081: 75 04              jne         00000087
+  00000083: C6 46 04 01        mov         byte ptr [esi+4],1
+  00000087: 5E                 pop         esi
+  00000088: 8B E5              mov         esp,ebp
+  0000008A: 5D                 pop         ebp
+  0000008B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8C .text

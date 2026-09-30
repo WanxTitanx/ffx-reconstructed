@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00826960.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_DisposeAllActiveInstances:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000008: 85 FF              test        edi,edi
+  0000000A: 74 38              je          00000044
+  0000000C: 53                 push        ebx
+  0000000D: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000010: 69 DB 80 08 00 00  imul        ebx,ebx,880h
+  00000016: 03 DF              add         ebx,edi
+  00000018: 56                 push        esi
+  00000019: 8B F7              mov         esi,edi
+  0000001B: 3B FB              cmp         edi,ebx
+  0000001D: 74 1A              je          00000039
+  0000001F: 90                 nop
+  00000020: 80 7E 02 00        cmp         byte ptr [esi+2],0
+  00000024: 74 09              je          0000002F
+  00000026: 56                 push        esi
+  00000027: E8 00 00 00 00     call        _FFX_Chr_DisposeActiveInstance
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 81 C6 80 08 00 00  add         esi,880h
+  00000035: 3B F3              cmp         esi,ebx
+  00000037: 75 E7              jne         00000020
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 5E                 pop         esi
+  00000043: 5B                 pop         ebx
+  00000044: 5F                 pop         edi
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

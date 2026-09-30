@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00616E70.obj
+
+File Type: COFF OBJECT
+
+@Phyre_AnimationDataSource_FindSlotByOutput@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B B9 00 01 00 00  mov         edi,dword ptr [ecx+00000100h]
+  00000009: 33 F6              xor         esi,esi
+  0000000B: 8B DA              mov         ebx,edx
+  0000000D: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000013: 74 44              je          00000059
+  00000015: 8B 81 04 01 00 00  mov         eax,dword ptr [ecx+00000104h]
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000023: 8D 14 49           lea         edx,[ecx+ecx*2]
+  00000026: 8B 08              mov         ecx,dword ptr [eax]
+  00000028: 8B 89 0C 01 00 00  mov         ecx,dword ptr [ecx+0000010Ch]
+  0000002E: 8D 0C 91           lea         ecx,[ecx+edx*4]
+  00000031: 85 C9              test        ecx,ecx
+  00000033: 74 05              je          0000003A
+  00000035: 39 59 08           cmp         dword ptr [ecx+8],ebx
+  00000038: 74 0A              je          00000044
+  0000003A: 46                 inc         esi
+  0000003B: 3B F7              cmp         esi,edi
+  0000003D: 73 1A              jae         00000059
+  0000003F: 83 C0 08           add         eax,8
+  00000042: EB DC              jmp         00000020
+  00000044: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000047: 8B 00              mov         eax,dword ptr [eax]
+  00000049: 5F                 pop         edi
+  0000004A: 8B 80 0C 01 00 00  mov         eax,dword ptr [eax+0000010Ch]
+  00000050: 8D 0C 49           lea         ecx,[ecx+ecx*2]
+  00000053: 5E                 pop         esi
+  00000054: 8D 04 88           lea         eax,[eax+ecx*4]
+  00000057: 5B                 pop         ebx
+  00000058: C3                 ret
+  00000059: 5F                 pop         edi
+  0000005A: 5E                 pop         esi
+  0000005B: 33 C0              xor         eax,eax
+  0000005D: 5B                 pop         ebx
+  0000005E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5F .text

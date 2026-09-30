@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068B570.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_68B570@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000006: 83 EC 08           sub         esp,8
+  00000009: D9 45 08           fld         dword ptr [ebp+8]
+  0000000C: C7 41 04 FF FF FF  mov         dword ptr [ecx+4],0FFFFFFFFh
+            FF
+  00000013: 56                 push        esi
+  00000014: 33 F6              xor         esi,esi
+  00000016: 8D 51 12           lea         edx,[ecx+12h]
+  00000019: 0F BF 42 FC        movsx       eax,word ptr [edx-4]
+  0000001D: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000020: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000023: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000026: DD 45 F8           fld         qword ptr [ebp-8]
+  00000029: D8 D9              fcomp       st(1)
+  0000002B: DF E0              fnstsw      ax
+  0000002D: F6 C4 01           test        ah,1
+  00000030: 74 4A              je          0000007C
+  00000032: 0F BF 02           movsx       eax,word ptr [edx]
+  00000035: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000038: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000003B: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000003E: DD 45 F8           fld         qword ptr [ebp-8]
+  00000041: D8 D9              fcomp       st(1)
+  00000043: DF E0              fnstsw      ax
+  00000045: F6 C4 41           test        ah,41h
+  00000048: 7B 32              jnp         0000007C
+  0000004A: 0F BF 42 FE        movsx       eax,word ptr [edx-2]
+  0000004E: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000051: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000054: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000057: DD 45 F8           fld         qword ptr [ebp-8]
+  0000005A: D8 DA              fcomp       st(2)
+  0000005C: DF E0              fnstsw      ax
+  0000005E: F6 C4 01           test        ah,1
+  00000061: 74 19              je          0000007C
+  00000063: 0F BF 42 02        movsx       eax,word ptr [edx+2]
+  00000067: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000006A: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000006D: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000070: DD 45 F8           fld         qword ptr [ebp-8]
+  00000073: D8 DA              fcomp       st(2)
+  00000075: DF E0              fnstsw      ax
+  00000077: F6 C4 41           test        ah,41h
+  0000007A: 7A 0B              jp          00000087
+  0000007C: 46                 inc         esi
+  0000007D: 83 FE 20           cmp         esi,20h
+  00000080: 7D 08              jge         0000008A
+  00000082: 83 C2 0A           add         edx,0Ah
+  00000085: EB 92              jmp         00000019
+  00000087: 89 71 04           mov         dword ptr [ecx+4],esi
+  0000008A: DD D9              fstp        st(1)
+  0000008C: 5E                 pop         esi
+  0000008D: DD D8              fstp        st(0)
+  0000008F: 8B E5              mov         esp,ebp
+  00000091: 5D                 pop         ebp
+  00000092: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          95 .text

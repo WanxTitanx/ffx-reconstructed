@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A18270.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_A18270@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 57                 push        edi
+  00000006: 8B F9              mov         edi,ecx
+  00000008: 8B DA              mov         ebx,edx
+  0000000A: 83 7F 68 00        cmp         dword ptr [edi+68h],0
+  0000000E: 74 0D              je          0000001D
+  00000010: 5F                 pop         edi
+  00000011: B8 16 00 00 00     mov         eax,16h
+  00000016: 5B                 pop         ebx
+  00000017: 8B E5              mov         esp,ebp
+  00000019: 5D                 pop         ebp
+  0000001A: C2 08 00           ret         8
+  0000001D: 56                 push        esi
+  0000001E: 8D 45 FC           lea         eax,[ebp-4]
+  00000021: 50                 push        eax
+  00000022: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000025: 6A 00              push        0
+  00000027: 6A 00              push        0
+  00000029: C1 E8 02           shr         eax,2
+  0000002C: 68 00 00 00 00     push        offset _dword_CA2FCC
+  00000031: 50                 push        eax
+  00000032: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000035: C1 E8 02           shr         eax,2
+  00000038: 50                 push        eax
+  00000039: 53                 push        ebx
+  0000003A: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000041: E8 00 00 00 00     call        _Phyre_PostProcessing_Stub
+  00000046: 8B F0              mov         esi,eax
+  00000048: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000004B: 83 C4 1C           add         esp,1Ch
+  0000004E: 85 F6              test        esi,esi
+  00000050: 74 20              je          00000072
+  00000052: 85 C0              test        eax,eax
+  00000054: 75 1C              jne         00000072
+  00000056: 38 46 04           cmp         byte ptr [esi+4],al
+  00000059: 75 02              jne         0000005D
+  0000005B: 8B 06              mov         eax,dword ptr [esi]
+  0000005D: 83 60 14 FD        and         dword ptr [eax+14h],0FFFFFFFDh
+  00000061: 50                 push        eax
+  00000062: E8 00 00 00 00     call        _PTexture_CompareAndUpdateMax
+  00000067: 56                 push        esi
+  00000068: 53                 push        ebx
+  00000069: 57                 push        edi
+  0000006A: E8 00 00 00 00     call        _Phyre_PostProcessing_SetInputType
+  0000006F: 83 C4 10           add         esp,10h
+  00000072: 5E                 pop         esi
+  00000073: 5F                 pop         edi
+  00000074: 5B                 pop         ebx
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7B .text

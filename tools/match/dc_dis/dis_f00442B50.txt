@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00442B50.obj
+
+File Type: COFF OBJECT
+
+@PCaller_Destructor_Release@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 06              mov         eax,dword ptr [esi]
+  00000005: 3B C6              cmp         eax,esi
+  00000007: 74 20              je          00000029
+  00000009: 85 C0              test        eax,eax
+  0000000B: 74 1C              je          00000029
+  0000000D: 83 C0 B8           add         eax,0FFFFFFB8h
+  00000010: 74 17              je          00000029
+  00000012: C7 40 40 00 00 00  mov         dword ptr [eax+40h],0
+            00
+  00000019: 8B 40 48           mov         eax,dword ptr [eax+48h]
+  0000001C: 3B C6              cmp         eax,esi
+  0000001E: 74 09              je          00000029
+  00000020: 85 C0              test        eax,eax
+  00000022: 74 05              je          00000029
+  00000024: 83 C0 B8           add         eax,0FFFFFFB8h
+  00000027: 75 E9              jne         00000012
+  00000029: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  0000002D: 7C 10              jl          0000003F
+  0000002F: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000032: 85 C0              test        eax,eax
+  00000034: 74 09              je          0000003F
+  00000036: 50                 push        eax
+  00000037: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003C: 83 C4 04           add         esp,4
+  0000003F: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000046: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000004D: 5E                 pop         esi
+  0000004E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4F .text

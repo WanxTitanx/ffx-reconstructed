@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AB220.obj
+
+File Type: COFF OBJECT
+
+@FFX_AudioLight_UpdateFieldMapLights@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 80 BE CC 01 00 00  cmp         byte ptr [esi+1CCh],0
+            00
+  0000000A: 0F 84 91 00 00 00  je          000000A1
+  00000010: 89 96 20 02 00 00  mov         dword ptr [esi+220h],edx
+  00000016: 85 D2              test        edx,edx
+  00000018: 74 60              je          0000007A
+  0000001A: 68 00 00 00 00     push        offset ??_C@_06OPKEJDCD@znkd06?$AA@
+  0000001F: 52                 push        edx
+  00000020: E8 00 00 00 00     call        _strstr
+  00000025: 83 C4 08           add         esp,8
+  00000028: 85 C0              test        eax,eax
+  0000002A: 74 4E              je          0000007A
+  0000002C: D9 05 00 00 00 00  fld         dword ptr [__real@3c23d70a]
+  00000032: 6A 01              push        1
+  00000034: D9 9E 54 01 00 00  fstp        dword ptr [esi+154h]
+  0000003A: E8 00 00 00 00     call        _FFX_Render_AllocSortEntryArray
+  0000003F: DD 05 00 00 00 00  fld         qword ptr [__real@403e000000000000]
+  00000045: 83 C4 04           add         esp,4
+  00000048: 6A 00              push        0
+  0000004A: 6A 03              push        3
+  0000004C: 6A 03              push        3
+  0000004E: 6A 03              push        3
+  00000050: 83 EC 20           sub         esp,20h
+  00000053: DD 54 24 18        fst         qword ptr [esp+18h]
+  00000057: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000005B: DD 05 00 00 00 00  fld         qword ptr [__real@bff8000000000000]
+  00000061: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000065: DD 05 00 00 00 00  fld         qword ptr [__real@c031000000000000]
+  0000006B: DD 1C 24           fstp        qword ptr [esp]
+  0000006E: 6A 00              push        0
+  00000070: E8 00 00 00 00     call        _FFX_Render_SetDebugOverlayEntry
+  00000075: 83 C4 34           add         esp,34h
+  00000078: 5E                 pop         esi
+  00000079: C3                 ret
+  0000007A: D9 05 00 00 00 00  fld         dword ptr [__real@bf800000]
+  00000080: 6A 03              push        3
+  00000082: D9 9E 54 01 00 00  fstp        dword ptr [esi+154h]
+  00000088: 83 EC 18           sub         esp,18h
+  0000008B: D9 EE              fldz
+  0000008D: DD 54 24 10        fst         qword ptr [esp+10h]
+  00000091: DD 54 24 08        fst         qword ptr [esp+8]
+  00000095: DD 1C 24           fstp        qword ptr [esp]
+  00000098: 56                 push        esi
+  00000099: E8 00 00 00 00     call        _FFX_AudioLight_SetTypeDirectional
+  0000009E: 83 C4 20           add         esp,20h
+  000000A1: 5E                 pop         esi
+  000000A2: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2F .rdata
+          A3 .text

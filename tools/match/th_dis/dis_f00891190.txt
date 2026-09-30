@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00891190.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_HudOvrGaugeTick:
+  00000000: 53                 push        ebx
+  00000001: 33 DB              xor         ebx,ebx
+  00000003: 39 1D B0 C2 CF 04  cmp         dword ptr ds:[4CFC2B0h],ebx
+  00000009: 0F 86 A0 00 00 00  jbe         000000AF
+  0000000F: 56                 push        esi
+  00000010: 57                 push        edi
+  00000011: BE 00 00 00 00     mov         esi,offset _unk_133F94C
+  00000016: BF B0 C2 CF 04     mov         edi,4CFC2B0h
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8A 83 00 00 00 00  mov         al,byte ptr _unk_133F0B0[ebx]
+  00000026: 3C FF              cmp         al,0FFh
+  00000028: 74 77              je          000000A1
+  0000002A: 0F B6 C0           movzx       eax,al
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _FFX_Btl_UI_UpdateAndStoreOverdriveGaugePos
+  00000033: 83 C4 04           add         esp,4
+  00000036: 83 F8 01           cmp         eax,1
+  00000039: 75 66              jne         000000A1
+  0000003B: 0F B6 83 00 00 00  movzx       eax,byte ptr _unk_133F0B0[ebx]
+            00
+  00000042: 50                 push        eax
+  00000043: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveChargeMax
+  00000048: 83 C4 04           add         esp,4
+  0000004B: 85 C0              test        eax,eax
+  0000004D: 7F 09              jg          00000058
+  0000004F: C7 46 FC 00 00 00  mov         dword ptr [esi-4],0
+            00
+  00000056: EB 35              jmp         0000008D
+  00000058: 0F B6 83 00 00 00  movzx       eax,byte ptr _unk_133F0B0[ebx]
+            00
+  0000005F: 50                 push        eax
+  00000060: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveCharge
+  00000065: 0F B6 8B 00 00 00  movzx       ecx,byte ptr _unk_133F0B0[ebx]
+            00
+  0000006C: 8B F8              mov         edi,eax
+  0000006E: 0F AF 3D 00 00 00  imul        edi,dword ptr [_unk_25D0AA4]
+            00
+  00000075: 51                 push        ecx
+  00000076: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveChargeMax
+  0000007B: 8B C8              mov         ecx,eax
+  0000007D: 8B C7              mov         eax,edi
+  0000007F: 99                 cdq
+  00000080: 83 C4 08           add         esp,8
+  00000083: F7 F9              idiv        eax,ecx
+  00000085: BF B0 C2 CF 04     mov         edi,4CFC2B0h
+  0000008A: 89 46 FC           mov         dword ptr [esi-4],eax
+  0000008D: 8B 4E FC           mov         ecx,dword ptr [esi-4]
+  00000090: 8B 06              mov         eax,dword ptr [esi]
+  00000092: 3B C1              cmp         eax,ecx
+  00000094: 73 05              jae         0000009B
+  00000096: 83 C0 06           add         eax,6
+  00000099: 89 06              mov         dword ptr [esi],eax
+  0000009B: 39 0E              cmp         dword ptr [esi],ecx
+  0000009D: 76 02              jbe         000000A1
+  0000009F: 89 0E              mov         dword ptr [esi],ecx
+  000000A1: 43                 inc         ebx
+  000000A2: 83 C6 10           add         esi,10h
+  000000A5: 3B 1F              cmp         ebx,dword ptr [edi]
+  000000A7: 0F 82 73 FF FF FF  jb          00000020
+  000000AD: 5F                 pop         edi
+  000000AE: 5E                 pop         esi
+  000000AF: 5B                 pop         ebx
+  000000B0: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          B1 .text

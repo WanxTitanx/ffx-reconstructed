@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009143C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_SchedAllocEventC:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 3B B7 88 87 06 00  cmp         esi,dword ptr [edi+68788h]
+  00000011: 0F 83 B2 00 00 00  jae         000000C9
+  00000017: 33 D2              xor         edx,edx
+  00000019: 8D 87 C6 CA 09 00  lea         eax,[edi+9CAC6h]
+  0000001F: 90                 nop
+  00000020: F6 40 FA 01        test        byte ptr [eax-6],1
+  00000024: 74 0B              je          00000031
+  00000026: 0F B7 08           movzx       ecx,word ptr [eax]
+  00000029: 3B CE              cmp         ecx,esi
+  0000002B: 0F 84 98 00 00 00  je          000000C9
+  00000031: 42                 inc         edx
+  00000032: 83 FA 40           cmp         edx,40h
+  00000035: 7D 05              jge         0000003C
+  00000037: 83 C0 28           add         eax,28h
+  0000003A: EB E4              jmp         00000020
+  0000003C: 83 3D 00 00 00 00  cmp         dword ptr [_g_RenderUnkVar_193BB08],0
+            00
+  00000043: 74 07              je          0000004C
+  00000045: E8 00 00 00 00     call        _FFX_GetRenderTargetWidth
+  0000004A: EB 05              jmp         00000051
+  0000004C: E8 00 00 00 00     call        _FFX_GetRenderBufferStride
+  00000051: 8B D0              mov         edx,eax
+  00000053: 8D 87 C0 CA 09 00  lea         eax,[edi+9CAC0h]
+  00000059: 33 C9              xor         ecx,ecx
+  0000005B: F6 00 01           test        byte ptr [eax],1
+  0000005E: 74 0E              je          0000006E
+  00000060: 41                 inc         ecx
+  00000061: 83 F9 40           cmp         ecx,40h
+  00000064: 7D 63              jge         000000C9
+  00000066: 83 C0 28           add         eax,28h
+  00000069: F6 00 01           test        byte ptr [eax],1
+  0000006C: 75 F2              jne         00000060
+  0000006E: 8D 04 89           lea         eax,[ecx+ecx*4]
+  00000071: 8D 0C C7           lea         ecx,[edi+eax*8]
+  00000074: B8 04 00 00 00     mov         eax,4
+  00000079: 66 89 81 C4 CA 09  mov         word ptr [ecx+9CAC4h],ax
+            00
+  00000080: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000083: 89 81 CC CA 09 00  mov         dword ptr [ecx+9CACCh],eax
+  00000089: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000008C: 89 81 D0 CA 09 00  mov         dword ptr [ecx+9CAD0h],eax
+  00000092: 89 91 D4 CA 09 00  mov         dword ptr [ecx+9CAD4h],edx
+  00000098: 89 91 D8 CA 09 00  mov         dword ptr [ecx+9CAD8h],edx
+  0000009E: C7 81 C0 CA 09 00  mov         dword ptr [ecx+9CAC0h],5
+            05 00 00 00
+  000000A8: 66 89 B1 C6 CA 09  mov         word ptr [ecx+9CAC6h],si
+            00
+  000000AF: C7 81 C8 CA 09 00  mov         dword ptr [ecx+9CAC8h],0
+            00 00 00 00
+  000000B9: C7 81 E4 CA 09 00  mov         dword ptr [ecx+9CAE4h],0
+            00 00 00 00
+  000000C3: FF 87 BC CA 09 00  inc         dword ptr [edi+9CABCh]
+  000000C9: 5F                 pop         edi
+  000000CA: 33 C0              xor         eax,eax
+  000000CC: 5E                 pop         esi
+  000000CD: 5D                 pop         ebp
+  000000CE: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          CF .text

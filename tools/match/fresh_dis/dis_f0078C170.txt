@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0078C170.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ComputeDoublecastDamage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: B8 00 02 00 00     mov         eax,200h
+  0000000B: 66 85 81 06 06 00  test        word ptr [ecx+00000606h],ax
+            00
+  00000012: 74 1D              je          00000031
+  00000014: 66 8B 81 5C 0F 00  mov         ax,word ptr [ecx+00000F5Ch]
+            00
+  0000001B: 66 3B 81 C6 06 00  cmp         ax,word ptr [ecx+000006C6h]
+            00
+  00000022: 75 0D              jne         00000031
+  00000024: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000027: 8D 04 40           lea         eax,[eax+eax*2]
+  0000002A: 99                 cdq
+  0000002B: 2B C2              sub         eax,edx
+  0000002D: D1 F8              sar         eax,1
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          36 .text

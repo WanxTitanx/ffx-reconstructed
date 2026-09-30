@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009055C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_RenderNumberRightAligned:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: D9 EE              fldz
+  00000009: 33 F6              xor         esi,esi
+  0000000B: DA E9              fucompp
+  0000000D: 57                 push        edi
+  0000000E: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000011: DF E0              fnstsw      ax
+  00000013: F6 C4 44           test        ah,44h
+  00000016: 7A 07              jp          0000001F
+  00000018: BE 01 00 00 00     mov         esi,1
+  0000001D: EB 2C              jmp         0000004B
+  0000001F: 8B CF              mov         ecx,edi
+  00000021: B8 67 66 66 66     mov         eax,66666667h
+  00000026: F7 E9              imul        ecx
+  00000028: C1 FA 02           sar         edx,2
+  0000002B: 8B C2              mov         eax,edx
+  0000002D: C1 E8 1F           shr         eax,1Fh
+  00000030: 03 C2              add         eax,edx
+  00000032: 46                 inc         esi
+  00000033: 8D 0C 80           lea         ecx,[eax+eax*4]
+  00000036: 03 C9              add         ecx,ecx
+  00000038: B8 67 66 66 66     mov         eax,66666667h
+  0000003D: F7 E9              imul        ecx
+  0000003F: C1 FA 02           sar         edx,2
+  00000042: 8B CA              mov         ecx,edx
+  00000044: C1 E9 1F           shr         ecx,1Fh
+  00000047: 03 CA              add         ecx,edx
+  00000049: 75 D6              jne         00000021
+  0000004B: D9 45 18           fld         dword ptr [ebp+18h]
+  0000004E: 83 EC 08           sub         esp,8
+  00000051: 8D 45 08           lea         eax,[ebp+8]
+  00000054: DD 1C 24           fstp        qword ptr [esp]
+  00000057: 50                 push        eax
+  00000058: 57                 push        edi
+  00000059: 56                 push        esi
+  0000005A: E8 00 00 00 00     call        _FFX_Menu2D_MeasureWrappedTextHeight
+  0000005F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000062: D8 65 08           fsub        dword ptr [ebp+8]
+  00000065: 0F BE 45 14        movsx       eax,byte ptr [ebp+14h]
+  00000069: 83 C4 0C           add         esp,0Ch
+  0000006C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000006F: D9 45 18           fld         dword ptr [ebp+18h]
+  00000072: DD 1C 24           fstp        qword ptr [esp]
+  00000075: 50                 push        eax
+  00000076: D9 45 10           fld         dword ptr [ebp+10h]
+  00000079: 83 EC 10           sub         esp,10h
+  0000007C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000080: D9 45 08           fld         dword ptr [ebp+8]
+  00000083: DD 1C 24           fstp        qword ptr [esp]
+  00000086: 57                 push        edi
+  00000087: 56                 push        esi
+  00000088: E8 00 00 00 00     call        _FFX_Menu2D_RenderNumberText
+  0000008D: 83 C4 24           add         esp,24h
+  00000090: 5F                 pop         edi
+  00000091: 5E                 pop         esi
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          94 .text

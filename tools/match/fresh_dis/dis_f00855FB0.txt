@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00855FB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_SetFloatAtOffset52:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 56                 push        esi
+  00000009: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  0000000E: FF 75 10           push        dword ptr [ebp+10h]
+  00000011: 8B F8              mov         edi,eax
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000019: 83 C4 0C           add         esp,0Ch
+  0000001C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001F: DB 45 08           fild        dword ptr [ebp+8]
+  00000022: 85 C0              test        eax,eax
+  00000024: 79 06              jns         0000002C
+  00000026: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002C: 8B 0E              mov         ecx,dword ptr [esi]
+  0000002E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000031: 0F B6 09           movzx       ecx,byte ptr [ecx]
+  00000034: 83 F9 03           cmp         ecx,3
+  00000037: 74 05              je          0000003E
+  00000039: 83 F9 06           cmp         ecx,6
+  0000003C: 75 0B              jne         00000049
+  0000003E: D9 45 08           fld         dword ptr [ebp+8]
+  00000041: D9 5F 34           fstp        dword ptr [edi+34h]
+  00000044: 66 83 4E 36 01     or          word ptr [esi+36h],1
+  00000049: 5F                 pop         edi
+  0000004A: 33 C0              xor         eax,eax
+  0000004C: 5E                 pop         esi
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          4F .text

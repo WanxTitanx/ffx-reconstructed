@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004350F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_4350F0@8:
+  00000000: 8B 41 18           mov         eax,dword ptr [ecx+18h]
+  00000003: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000008: 83 F8 01           cmp         eax,1
+  0000000B: 77 0D              ja          0000001A
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 05              je          00000016
+  00000011: 83 C1 1C           add         ecx,1Ch
+  00000014: EB 07              jmp         0000001D
+  00000016: 33 C9              xor         ecx,ecx
+  00000018: EB 03              jmp         0000001D
+  0000001A: 8B 49 1C           mov         ecx,dword ptr [ecx+1Ch]
+  0000001D: 8D 04 92           lea         eax,[edx+edx*4]
+  00000020: 56                 push        esi
+  00000021: 83 7C 81 10 00     cmp         dword ptr [ecx+eax*4+10h],0
+  00000026: 8D 34 81           lea         esi,[ecx+eax*4]
+  00000029: 7E 15              jle         00000040
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 6A 01              push        1
+  00000032: E8 00 00 00 00     call        _Phyre_SleepMs
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  0000003E: 7F F0              jg          00000030
+  00000040: 5E                 pop         esi
+  00000041: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          42 .text

@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00837840.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mseq_RunScriptUntilClipOrEnd:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 56                 push        esi
+  00000009: E8 00 00 00 00     call        _FFX_Mseq_Run
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 8B F8              mov         edi,eax
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 F1              je          00000008
+  00000017: 83 F8 01           cmp         eax,1
+  0000001A: 74 23              je          0000003F
+  0000001C: 83 F8 02           cmp         eax,2
+  0000001F: 74 1E              je          0000003F
+  00000021: 83 F8 03           cmp         eax,3
+  00000024: 74 19              je          0000003F
+  00000026: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000029: 75 DD              jne         00000008
+  0000002B: 68 00 00 00 00     push        offset ??_C@_07CGLHIELM@seq?5err?$AA@
+  00000030: 68 00 00 00 00     push        offset ??_C@_0M@FHKKKKCL@SG?3SeqFrame?$AA@
+  00000035: 6A 00              push        0
+  00000037: E8 00 00 00 00     call        _Debug_AssertHandler
+  0000003C: 83 C4 0C           add         esp,0Ch
+  0000003F: 4F                 dec         edi
+  00000040: 74 36              je          00000078
+  00000042: 4F                 dec         edi
+  00000043: 74 15              je          0000005A
+  00000045: 4F                 dec         edi
+  00000046: 75 39              jne         00000081
+  00000048: 5F                 pop         edi
+  00000049: C6 86 34 07 00 00  mov         byte ptr [esi+734h],1
+            01
+  00000050: C6 86 36 07 00 00  mov         byte ptr [esi+736h],0
+            00
+  00000057: 5E                 pop         esi
+  00000058: 5D                 pop         ebp
+  00000059: C3                 ret
+  0000005A: 56                 push        esi
+  0000005B: E8 00 00 00 00     call        _FFX_Mseq_AdvanceClockAndDetectEnd
+  00000060: 83 C4 04           add         esp,4
+  00000063: 66 83 BE 28 07 00  cmp         word ptr [esi+728h],0
+            00 00
+  0000006B: 75 14              jne         00000081
+  0000006D: 5F                 pop         edi
+  0000006E: C6 86 36 07 00 00  mov         byte ptr [esi+736h],0
+            00
+  00000075: 5E                 pop         esi
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+  00000078: 56                 push        esi
+  00000079: E8 00 00 00 00     call        _FFX_Mseq_AdvanceClockAndDetectEnd
+  0000007E: 83 C4 04           add         esp,4
+  00000081: 5F                 pop         edi
+  00000082: 5E                 pop         esi
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+          85 .text

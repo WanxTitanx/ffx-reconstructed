@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079E6C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_InitEffectDataHeap:
+  00000000: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000005: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  00000008: 6A 0D              push        0Dh
+  0000000A: FF D0              call        eax
+  0000000C: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000011: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000014: 6A 07              push        7
+  00000016: FF D0              call        eax
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 3D F0 0F 05 00     cmp         eax,50FF0h
+  00000020: 7E 0D              jle         0000002F
+  00000022: 68 00 00 00 00     push        offset ??_C@_0N@PAPLMKCO@eff_mem_over?$AA@
+  00000027: E8 00 00 00 00     call        _FFX_Battle_InternalErrorAbort
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 6A 10              push        10h
+  00000031: 68 F0 0F 05 00     push        50FF0h
+  00000036: E8 00 00 00 00     call        _FFX_Heap_Alloc_w
+  0000003B: 68 F0 0F 05 00     push        50FF0h
+  00000040: 6A 00              push        0
+  00000042: 50                 push        eax
+  00000043: A3 80 82 4D 04     mov         dword ptr ds:[044D8280h],eax
+  00000048: E8 00 00 00 00     call        _memset
+  0000004D: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000052: 8B 00              mov         eax,dword ptr [eax]
+  00000054: 6A 00              push        0
+  00000056: 6A 00              push        0
+  00000058: FF 35 80 82 4D 04  push        dword ptr ds:[44D8280h]
+  0000005E: 6A 07              push        7
+  00000060: FF D0              call        eax
+  00000062: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000067: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000006A: 6A 00              push        0
+  0000006C: FF D0              call        eax
+  0000006E: FF 35 80 82 4D 04  push        dword ptr ds:[44D8280h]
+  00000074: E8 00 00 00 00     call        _FFX_Magic_SetEffectRootBuffer
+  00000079: 83 C4 2C           add         esp,2Ch
+  0000007C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           D .rdata
+          7D .text

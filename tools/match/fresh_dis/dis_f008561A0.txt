@@ -1,0 +1,104 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008561A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_AtelCt013D_LoadSeSepSegment_Status:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  0000000E: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000011: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000014: 8B 3E              mov         edi,dword ptr [esi]
+  00000016: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000019: 33 DB              xor         ebx,ebx
+  0000001B: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001E: 83 FF 03           cmp         edi,3
+  00000021: 0F 87 88 00 00 00  ja          000000AF
+  00000027: FF 24 BD 00 00 00  jmp         dword ptr $LN15[edi*4]
+            00
+$LN9:
+  0000002E: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000033: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000036: E8 00 00 00 00     call        _FFX_Sound_ReturnZero_thunk
+  0000003B: 85 C0              test        eax,eax
+  0000003D: 75 70              jne         000000AF
+  0000003F: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000042: 6A 01              push        1
+  00000044: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000047: FF D0              call        eax
+  00000049: 83 C4 04           add         esp,4
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 75 5F              jne         000000AF
+  00000050: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000053: FF 75 FC           push        dword ptr [ebp-4]
+  00000056: FF B0 04 02 00 00  push        dword ptr [eax+204h]
+  0000005C: FF 70 48           push        dword ptr [eax+48h]
+  0000005F: E8 00 00 00 00     call        _FFX_SeSep_SubmitSegmentByIndex
+  00000064: 83 C4 0C           add         esp,0Ch
+  00000067: C7 06 01 00 00 00  mov         dword ptr [esi],1
+  0000006D: 5F                 pop         edi
+  0000006E: 5E                 pop         esi
+  0000006F: 33 C0              xor         eax,eax
+  00000071: 5B                 pop         ebx
+  00000072: 8B E5              mov         esp,ebp
+  00000074: 5D                 pop         ebp
+  00000075: C3                 ret
+$LN6:
+  00000076: E8 00 00 00 00     call        _FFX_Sound_ReturnZero_thunk
+  0000007B: 85 C0              test        eax,eax
+  0000007D: 75 30              jne         000000AF
+  0000007F: E8 00 00 00 00     call        _FFX_Sound_MarkSyncDirty
+  00000084: 5F                 pop         edi
+  00000085: C7 06 02 00 00 00  mov         dword ptr [esi],2
+  0000008B: 5E                 pop         esi
+  0000008C: 33 C0              xor         eax,eax
+  0000008E: 5B                 pop         ebx
+  0000008F: 8B E5              mov         esp,ebp
+  00000091: 5D                 pop         ebp
+  00000092: C3                 ret
+$LN4:
+  00000093: E8 00 00 00 00     call        _FFX_Sound_ReturnZero_thunk
+  00000098: 85 C0              test        eax,eax
+  0000009A: 75 13              jne         000000AF
+  0000009C: 5F                 pop         edi
+  0000009D: C7 06 03 00 00 00  mov         dword ptr [esi],3
+  000000A3: 5E                 pop         esi
+  000000A4: 5B                 pop         ebx
+  000000A5: 8B E5              mov         esp,ebp
+  000000A7: 5D                 pop         ebp
+  000000A8: C3                 ret
+$LN2:
+  000000A9: FF 4E 08           dec         dword ptr [esi+8]
+  000000AC: 0F 98 C3           sets        bl
+  000000AF: 89 3E              mov         dword ptr [esi],edi
+  000000B1: 5F                 pop         edi
+  000000B2: 5E                 pop         esi
+  000000B3: 8B C3              mov         eax,ebx
+  000000B5: 5B                 pop         ebx
+  000000B6: 8B E5              mov         esp,ebp
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+  000000BA: 8B FF              mov         edi,edi
+$LN15:
+  000000BC: 00 00              add         byte ptr [eax],al
+  000000BE: 00 00              add         byte ptr [eax],al
+  000000C0: 00 00              add         byte ptr [eax],al
+  000000C2: 00 00              add         byte ptr [eax],al
+  000000C4: 00 00              add         byte ptr [eax],al
+  000000C6: 00 00              add         byte ptr [eax],al
+  000000C8: 00 00              add         byte ptr [eax],al
+  000000CA: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          CC .text

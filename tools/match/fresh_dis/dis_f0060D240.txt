@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060D240.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Stream_UnpackDataWithCallback_v2@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 53                 push        ebx
+  0000000D: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000010: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000013: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  00000018: 53                 push        ebx
+  00000019: 8B F0              mov         esi,eax
+  0000001B: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  00000020: 53                 push        ebx
+  00000021: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000024: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  00000029: 8B F8              mov         edi,eax
+  0000002B: 83 C4 0C           add         esp,0Ch
+  0000002E: 85 FF              test        edi,edi
+  00000030: 74 38              je          0000006A
+  00000032: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000035: 6A 1C              push        1Ch
+  00000037: FF 75 08           push        dword ptr [ebp+8]
+  0000003A: FF 33              push        dword ptr [ebx]
+  0000003C: E8 00 00 00 00     call        _qmemcpy
+  00000041: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000044: FF 30              push        dword ptr [eax]
+  00000046: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000049: 56                 push        esi
+  0000004A: FF 33              push        dword ptr [ebx]
+  0000004C: FF 55 F8           call        dword ptr [ebp-8]
+  0000004F: 83 03 1C           add         dword ptr [ebx],1Ch
+  00000052: 8B CF              mov         ecx,edi
+  00000054: 83 C4 1C           add         esp,1Ch
+  00000057: 4F                 dec         edi
+  00000058: 83 F9 01           cmp         ecx,1
+  0000005B: 75 04              jne         00000061
+  0000005D: 8A C9              mov         cl,cl
+  0000005F: EB 02              jmp         00000063
+  00000061: 32 C9              xor         cl,cl
+  00000063: 03 75 F4           add         esi,dword ptr [ebp-0Ch]
+  00000066: 84 C9              test        cl,cl
+  00000068: 74 CB              je          00000035
+  0000006A: 5F                 pop         edi
+  0000006B: 5E                 pop         esi
+  0000006C: 5B                 pop         ebx
+  0000006D: 8B E5              mov         esp,ebp
+  0000006F: 5D                 pop         ebp
+  00000070: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          73 .text

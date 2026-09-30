@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00419730.obj
+
+File Type: COFF OBJECT
+
+@Engine_Math_IntegerSqrt@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B C7              mov         eax,edi
+  00000006: D1 E8              shr         eax,1
+  00000008: BE 01 00 00 00     mov         esi,1
+  0000000D: 74 06              je          00000015
+  0000000F: 90                 nop
+  00000010: 46                 inc         esi
+  00000011: D1 E8              shr         eax,1
+  00000013: 75 FB              jne         00000010
+  00000015: D1 FE              sar         esi,1
+  00000017: 8B CE              mov         ecx,esi
+  00000019: BA 01 00 00 00     mov         edx,1
+  0000001E: D3 C2              rol         edx,cl
+  00000020: 33 C9              xor         ecx,ecx
+  00000022: 85 F6              test        esi,esi
+  00000024: 78 12              js          00000038
+  00000026: 0B CA              or          ecx,edx
+  00000028: 8B C1              mov         eax,ecx
+  0000002A: 0F AF C1           imul        eax,ecx
+  0000002D: 3B F8              cmp         edi,eax
+  0000002F: 73 02              jae         00000033
+  00000031: 2B CA              sub         ecx,edx
+  00000033: D1 CA              ror         edx,1
+  00000035: 4E                 dec         esi
+  00000036: 79 EE              jns         00000026
+  00000038: 8D 41 01           lea         eax,[ecx+1]
+  0000003B: 0F AF C1           imul        eax,ecx
+  0000003E: 40                 inc         eax
+  0000003F: 3B F8              cmp         edi,eax
+  00000041: 1B C0              sbb         eax,eax
+  00000043: 40                 inc         eax
+  00000044: 5F                 pop         edi
+  00000045: 03 C1              add         eax,ecx
+  00000047: 5E                 pop         esi
+  00000048: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          49 .text

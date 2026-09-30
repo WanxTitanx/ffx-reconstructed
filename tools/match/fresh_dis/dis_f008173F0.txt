@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008173F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicCoreOp_5C_Param:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: B9 00 F0 00 00     mov         ecx,0F000h
+  0000000D: 66 8B 87 1A 02 00  mov         ax,word ptr [edi+21Ah]
+            00
+  00000014: 66 23 C1           and         ax,cx
+  00000017: 74 32              je          0000004B
+  00000019: B9 00 10 00 00     mov         ecx,1000h
+  0000001E: 66 3B C1           cmp         ax,cx
+  00000021: 74 07              je          0000002A
+  00000023: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000026: 5F                 pop         edi
+  00000027: 5E                 pop         esi
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000002D: 0F B7 4E 02        movzx       ecx,word ptr [esi+2]
+  00000031: 51                 push        ecx
+  00000032: E8 00 00 00 00     call        _FFX_Battle_CheckEnemyBit
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 75 1D              jne         0000005B
+  0000003E: C6 87 10 02 00 00  mov         byte ptr [edi+210h],1
+            01
+  00000045: 5F                 pop         edi
+  00000046: 8B C6              mov         eax,esi
+  00000048: 5E                 pop         esi
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000004E: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  00000052: 50                 push        eax
+  00000053: E8 00 00 00 00     call        _FFX_Field_SetGlobalFlagB30
+  00000058: 83 C4 04           add         esp,4
+  0000005B: 5F                 pop         edi
+  0000005C: 8D 46 04           lea         eax,[esi+4]
+  0000005F: 5E                 pop         esi
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

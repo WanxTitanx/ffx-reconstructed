@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00618EC0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_TypeWriter_FromInt64:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _Phyre_PType_GetPInt64
+  00000008: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000000B: 74 04              je          00000011
+  0000000D: 32 C0              xor         al,al
+  0000000F: 5D                 pop         ebp
+  00000010: C3                 ret
+  00000011: 57                 push        edi
+  00000012: 6A 00              push        0
+  00000014: 6A FF              push        0FFFFFFFFh
+  00000016: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000019: E8 00 00 00 00     call        _PhyreBuffer_ReadNumAsInt
+  0000001E: 6A FE              push        0FFFFFFFEh
+  00000020: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000023: 8B F8              mov         edi,eax
+  00000025: E8 00 00 00 00     call        _PhyreStream_Reserve
+  0000002A: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000002D: 83 C4 14           add         esp,14h
+  00000030: 85 C9              test        ecx,ecx
+  00000032: 74 10              je          00000044
+  00000034: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  0000003A: 89 79 08           mov         dword ptr [ecx+8],edi
+  0000003D: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000044: B0 01              mov         al,1
+  00000046: 5F                 pop         edi
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

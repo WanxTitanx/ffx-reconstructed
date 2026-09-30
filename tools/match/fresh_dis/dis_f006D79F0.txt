@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D79F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Video_AllocRenderContext:
+  00000000: 6A 2C              push        2Ch
+  00000002: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000007: 83 C4 04           add         esp,4
+  0000000A: 85 C0              test        eax,eax
+  0000000C: 74 1C              je          0000002A
+  0000000E: 89 00              mov         dword ptr [eax],eax
+  00000010: 83 F8 FC           cmp         eax,0FFFFFFFCh
+  00000013: 74 03              je          00000018
+  00000015: 89 40 04           mov         dword ptr [eax+4],eax
+  00000018: 83 F8 F8           cmp         eax,0FFFFFFF8h
+  0000001B: 74 03              je          00000020
+  0000001D: 89 40 08           mov         dword ptr [eax+8],eax
+  00000020: B9 01 01 00 00     mov         ecx,101h
+  00000025: 66 89 48 0C        mov         word ptr [eax+0Ch],cx
+  00000029: C3                 ret
+  0000002A: E9 00 00 00 00     jmp         _std__Xbad_alloc
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2F .text

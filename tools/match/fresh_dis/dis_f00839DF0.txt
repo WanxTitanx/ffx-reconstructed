@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00839DF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_LerpFloatDamped:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 10           fld         dword ptr [ebp+10h]
+  00000006: D9 45 08           fld         dword ptr [ebp+8]
+  00000009: D9 C0              fld         st(0)
+  0000000B: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000000E: D9 C0              fld         st(0)
+  00000010: DE EA              fsubp       st(2),st
+  00000012: D9 C9              fxch        st(1)
+  00000014: D9 E1              fabs
+  00000016: D8 4D 18           fmul        dword ptr [ebp+18h]
+  00000019: DE EB              fsubp       st(3),st
+  0000001B: D9 CA              fxch        st(2)
+  0000001D: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000020: D9 45 10           fld         dword ptr [ebp+10h]
+  00000023: D9 C0              fld         st(0)
+  00000025: D9 45 14           fld         dword ptr [ebp+14h]
+  00000028: D8 D2              fcom        st(2)
+  0000002A: DF E0              fnstsw      ax
+  0000002C: DD DA              fstp        st(2)
+  0000002E: F6 C4 41           test        ah,41h
+  00000031: 75 04              jne         00000037
+  00000033: DD D8              fstp        st(0)
+  00000035: EB 02              jmp         00000039
+  00000037: DD D9              fstp        st(1)
+  00000039: D9 5D 10           fstp        dword ptr [ebp+10h]
+  0000003C: 83 EC 18           sub         esp,18h
+  0000003F: D9 45 10           fld         dword ptr [ebp+10h]
+  00000042: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000046: D9 C9              fxch        st(1)
+  00000048: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000004C: DD 1C 24           fstp        qword ptr [esp]
+  0000004F: E8 00 00 00 00     call        _FFX_Math_LerpFloat
+  00000054: 83 C4 18           add         esp,18h
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          59 .text

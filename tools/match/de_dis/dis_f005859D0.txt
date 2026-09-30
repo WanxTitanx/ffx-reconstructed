@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005859D0.obj
+
+File Type: COFF OBJECT
+
+@PTextureDescription_Destructor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _PTextureDescription_ReleaseResources
+  00000009: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: 85 C0              test        eax,eax
+  00000011: 78 1A              js          0000002D
+  00000013: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000018: 83 F8 01           cmp         eax,1
+  0000001B: 76 10              jbe         0000002D
+  0000001D: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000020: 85 C0              test        eax,eax
+  00000022: 74 09              je          0000002D
+  00000024: 50                 push        eax
+  00000025: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002A: 83 C4 04           add         esp,4
+  0000002D: 56                 push        esi
+  0000002E: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  00000035: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  0000003C: E8 00 00 00 00     call        _j_PTextureCommonBase_WarnDestroyWhileMapped
+  00000041: 83 C4 04           add         esp,4
+  00000044: 5E                 pop         esi
+  00000045: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          46 .text

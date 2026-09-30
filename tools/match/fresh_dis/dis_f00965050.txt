@@ -1,0 +1,271 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00965050.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_statement:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: B9 C8 00 00 00     mov         ecx,0C8h
+  0000000C: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  0000000F: 66 FF 40 26        inc         word ptr [eax+26h]
+  00000013: 66 39 48 26        cmp         word ptr [eax+26h],cx
+  00000017: 76 11              jbe         0000002A
+  00000019: 68 00 00 00 00     push        offset ??_C@_08CMAFAEJC@C?5levels?$AA@
+  0000001E: 51                 push        ecx
+  0000001F: FF 76 1C           push        dword ptr [esi+1Ch]
+  00000022: E8 00 00 00 00     call        _LuaParser_raiseLimitError
+  00000027: 83 C4 0C           add         esp,0Ch
+  0000002A: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000002D: 83 C0 C5           add         eax,0FFFFFFC5h
+  00000030: 3D E2 00 00 00     cmp         eax,0E2h
+  00000035: 0F 87 E4 00 00 00  ja          $LN1
+  0000003B: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN20[eax]
+            00
+  00000042: FF 24 85 00 00 00  jmp         dword ptr $LN23[eax*4]
+            00
+$LN14:
+  00000049: 56                 push        esi
+  0000004A: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  0000004F: 83 C4 04           add         esp,4
+  00000052: E9 D4 00 00 00     jmp         0000012B
+$LN13:
+  00000057: FF 75 08           push        dword ptr [ebp+8]
+  0000005A: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000005D: E8 00 00 00 00     call        _LuaCodeGen_emitJmp
+  00000062: 56                 push        esi
+  00000063: E8 00 00 00 00     call        _LuaParser_parseLabelStatement
+  00000068: 83 C4 0C           add         esp,0Ch
+  0000006B: E9 BB 00 00 00     jmp         0000012B
+$LN12:
+  00000070: 56                 push        esi
+  00000071: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  00000076: 56                 push        esi
+  00000077: E8 00 00 00 00     call        _LuaParser_enterScopeBlock
+  0000007C: 68 06 01 00 00     push        106h
+  00000081: 56                 push        esi
+  00000082: E8 00 00 00 00     call        _LuaParser_verifyBlockClose
+  00000087: 83 C4 10           add         esp,10h
+  0000008A: E9 9C 00 00 00     jmp         0000012B
+$LN11:
+  0000008F: 56                 push        esi
+  00000090: E8 00 00 00 00     call        _LuaParser_parseForStatement
+  00000095: 83 C4 04           add         esp,4
+  00000098: E9 8E 00 00 00     jmp         0000012B
+$LN10:
+  0000009D: 56                 push        esi
+  0000009E: E8 00 00 00 00     call        _LuaParser_parseMethodDefinition
+  000000A3: 83 C4 04           add         esp,4
+  000000A6: E9 80 00 00 00     jmp         0000012B
+$LN9:
+  000000AB: 56                 push        esi
+  000000AC: E8 00 00 00 00     call        _LuaParser_parseRepeatUntil
+  000000B1: 83 C4 04           add         esp,4
+  000000B4: EB 75              jmp         0000012B
+$LN8:
+  000000B6: 56                 push        esi
+  000000B7: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  000000BC: 68 09 01 00 00     push        109h
+  000000C1: 56                 push        esi
+  000000C2: E8 00 00 00 00     call        _LuaParser_consumeIfTokenMatch
+  000000C7: 83 C4 0C           add         esp,0Ch
+  000000CA: 56                 push        esi
+  000000CB: 85 C0              test        eax,eax
+  000000CD: 74 0A              je          000000D9
+  000000CF: E8 00 00 00 00     call        _LuaParser_parseLocalFunction
+  000000D4: 83 C4 04           add         esp,4
+  000000D7: EB 52              jmp         0000012B
+  000000D9: E8 00 00 00 00     call        _LuaParser_parseLocalDecl
+  000000DE: 83 C4 04           add         esp,4
+  000000E1: EB 48              jmp         0000012B
+$LN5:
+  000000E3: 56                 push        esi
+  000000E4: E8 00 00 00 00     call        _LuaParser_functionCallExpression
+  000000E9: 83 C4 04           add         esp,4
+  000000EC: EB 3D              jmp         0000012B
+$LN4:
+  000000EE: 56                 push        esi
+  000000EF: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  000000F4: 56                 push        esi
+  000000F5: E8 00 00 00 00     call        _LuaParser_parseReturnStmt
+  000000FA: EB 2C              jmp         00000128
+$LN3:
+  000000FC: 56                 push        esi
+  000000FD: E8 00 00 00 00     call        _LuaParser_whileStatement
+  00000102: 83 C4 04           add         esp,4
+  00000105: EB 24              jmp         0000012B
+$LN2:
+  00000107: 56                 push        esi
+  00000108: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  0000010D: 56                 push        esi
+  0000010E: E8 00 00 00 00     call        _LuaParser_parseForInClause
+  00000113: 50                 push        eax
+  00000114: 56                 push        esi
+  00000115: E8 00 00 00 00     call        _LuaParser_parseLabelWithDispatch
+  0000011A: 83 C4 10           add         esp,10h
+  0000011D: EB 0C              jmp         0000012B
+$LN1:
+  0000011F: FF 75 08           push        dword ptr [ebp+8]
+  00000122: 56                 push        esi
+  00000123: E8 00 00 00 00     call        _LuaParser_checkAssignmentOrExpr
+  00000128: 83 C4 08           add         esp,8
+  0000012B: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  0000012E: 8A 41 2E           mov         al,byte ptr [ecx+2Eh]
+  00000131: 88 41 30           mov         byte ptr [ecx+30h],al
+  00000134: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000137: B9 FF FF 00 00     mov         ecx,0FFFFh
+  0000013C: 66 01 48 26        add         word ptr [eax+26h],cx
+  00000140: 5E                 pop         esi
+  00000141: 5D                 pop         ebp
+  00000142: C3                 ret
+  00000143: 90                 nop
+$LN23:
+  00000144: 00 00              add         byte ptr [eax],al
+  00000146: 00 00              add         byte ptr [eax],al
+  00000148: 00 00              add         byte ptr [eax],al
+  0000014A: 00 00              add         byte ptr [eax],al
+  0000014C: 00 00              add         byte ptr [eax],al
+  0000014E: 00 00              add         byte ptr [eax],al
+  00000150: 00 00              add         byte ptr [eax],al
+  00000152: 00 00              add         byte ptr [eax],al
+  00000154: 00 00              add         byte ptr [eax],al
+  00000156: 00 00              add         byte ptr [eax],al
+  00000158: 00 00              add         byte ptr [eax],al
+  0000015A: 00 00              add         byte ptr [eax],al
+  0000015C: 00 00              add         byte ptr [eax],al
+  0000015E: 00 00              add         byte ptr [eax],al
+  00000160: 00 00              add         byte ptr [eax],al
+  00000162: 00 00              add         byte ptr [eax],al
+  00000164: 00 00              add         byte ptr [eax],al
+  00000166: 00 00              add         byte ptr [eax],al
+  00000168: 00 00              add         byte ptr [eax],al
+  0000016A: 00 00              add         byte ptr [eax],al
+  0000016C: 00 00              add         byte ptr [eax],al
+  0000016E: 00 00              add         byte ptr [eax],al
+  00000170: 00 00              add         byte ptr [eax],al
+  00000172: 00 00              add         byte ptr [eax],al
+$LN20:
+  00000174: 00 0B              add         byte ptr [ebx],cl
+  00000176: 0B 0B              or          ecx,dword ptr [ebx]
+  00000178: 0B 0B              or          ecx,dword ptr [ebx]
+  0000017A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000017C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000017E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000180: 0B 0B              or          ecx,dword ptr [ebx]
+  00000182: 0B 0B              or          ecx,dword ptr [ebx]
+  00000184: 0B 0B              or          ecx,dword ptr [ebx]
+  00000186: 0B 0B              or          ecx,dword ptr [ebx]
+  00000188: 0B 0B              or          ecx,dword ptr [ebx]
+  0000018A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000018C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000018E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000190: 0B 0B              or          ecx,dword ptr [ebx]
+  00000192: 0B 0B              or          ecx,dword ptr [ebx]
+  00000194: 0B 0B              or          ecx,dword ptr [ebx]
+  00000196: 0B 0B              or          ecx,dword ptr [ebx]
+  00000198: 0B 0B              or          ecx,dword ptr [ebx]
+  0000019A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000019C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000019E: 0B 0B              or          ecx,dword ptr [ebx]
+  000001A0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001A2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001A4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001A6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001A8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001AA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001AC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001AE: 0B 0B              or          ecx,dword ptr [ebx]
+  000001B0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001B2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001B4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001B6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001B8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001BA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001BC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001BE: 0B 0B              or          ecx,dword ptr [ebx]
+  000001C0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001C2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001C4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001C6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001C8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001CA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001CC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001CE: 0B 0B              or          ecx,dword ptr [ebx]
+  000001D0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001D2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001D4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001D6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001D8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001DA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001DC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001DE: 0B 0B              or          ecx,dword ptr [ebx]
+  000001E0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001E2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001E4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001E6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001E8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001EA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001EC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001EE: 0B 0B              or          ecx,dword ptr [ebx]
+  000001F0: 0B 0B              or          ecx,dword ptr [ebx]
+  000001F2: 0B 0B              or          ecx,dword ptr [ebx]
+  000001F4: 0B 0B              or          ecx,dword ptr [ebx]
+  000001F6: 0B 0B              or          ecx,dword ptr [ebx]
+  000001F8: 0B 0B              or          ecx,dword ptr [ebx]
+  000001FA: 0B 0B              or          ecx,dword ptr [ebx]
+  000001FC: 0B 0B              or          ecx,dword ptr [ebx]
+  000001FE: 0B 0B              or          ecx,dword ptr [ebx]
+  00000200: 0B 0B              or          ecx,dword ptr [ebx]
+  00000202: 0B 0B              or          ecx,dword ptr [ebx]
+  00000204: 0B 0B              or          ecx,dword ptr [ebx]
+  00000206: 0B 0B              or          ecx,dword ptr [ebx]
+  00000208: 0B 0B              or          ecx,dword ptr [ebx]
+  0000020A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000020C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000020E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000210: 0B 0B              or          ecx,dword ptr [ebx]
+  00000212: 0B 0B              or          ecx,dword ptr [ebx]
+  00000214: 0B 0B              or          ecx,dword ptr [ebx]
+  00000216: 0B 0B              or          ecx,dword ptr [ebx]
+  00000218: 0B 0B              or          ecx,dword ptr [ebx]
+  0000021A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000021C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000021E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000220: 0B 0B              or          ecx,dword ptr [ebx]
+  00000222: 0B 0B              or          ecx,dword ptr [ebx]
+  00000224: 0B 0B              or          ecx,dword ptr [ebx]
+  00000226: 0B 0B              or          ecx,dword ptr [ebx]
+  00000228: 0B 0B              or          ecx,dword ptr [ebx]
+  0000022A: 0B 0B              or          ecx,dword ptr [ebx]
+  0000022C: 0B 0B              or          ecx,dword ptr [ebx]
+  0000022E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000230: 0B 0B              or          ecx,dword ptr [ebx]
+  00000232: 0B 0B              or          ecx,dword ptr [ebx]
+  00000234: 0B 0B              or          ecx,dword ptr [ebx]
+  00000236: 0B 0B              or          ecx,dword ptr [ebx]
+  00000238: 0B 0B              or          ecx,dword ptr [ebx]
+  0000023A: 0B 01              or          eax,dword ptr [ecx]
+  0000023C: 02 0B              add         cl,byte ptr [ebx]
+  0000023E: 0B 0B              or          ecx,dword ptr [ebx]
+  00000240: 0B 03              or          eax,dword ptr [ebx]
+  00000242: 04 01              add         al,1
+  00000244: 05 0B 06 0B 0B     add         eax,0B0B060Bh
+  00000249: 0B 07              or          eax,dword ptr [edi]
+  0000024B: 08 0B              or          byte ptr [ebx],cl
+  0000024D: 0B 0B              or          ecx,dword ptr [ebx]
+  0000024F: 09 0B              or          dword ptr [ebx],ecx
+  00000251: 0B 0B              or          ecx,dword ptr [ebx]
+  00000253: 0B 0B              or          ecx,dword ptr [ebx]
+  00000255: 0B 0A              or          ecx,dword ptr [edx]
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           9 .rdata
+         257 .text

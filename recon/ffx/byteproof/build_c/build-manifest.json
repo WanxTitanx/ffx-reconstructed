@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "inputs": {
+    "source": {
+      "file": "inputs/ffx_memcmp.c",
+      "sha256": "33f1b4e27f8d37c0235e2ab974ae4058c2ba8ee9a53e3413fb778b8fdc8fdbb1"
+    },
+    "recipe": {
+      "file": "inputs/build_memcmp.bat",
+      "sha256": "ccfcf5cfec4c1005959deecf1bf0d6763833538c55bc942748f71b97486ce9bc"
+    },
+    "helper": {
+      "file": "inputs/build_memcmp.py",
+      "sha256": "93e93eb2cccf4e21860070139461f1fbb5c927171ea55d76f55a7da8a8917900"
+    }
+  },
+  "outputs": {
+    "candidate": {
+      "file": "ffx_memcmp.exe",
+      "sha256": "d7cd5a84a8653e638b3dc43481ad655490c45e172b45bedc0cea5a3b08c043ee"
+    },
+    "build_log": {
+      "file": "build.log",
+      "sha256": "8e9b82ad0b3417af9afb9427b569a36fc50a9c12a15ad4e2aef66e653d870b45"
+    }
+  },
+  "compiler_version": "17.00.50727.1",
+  "compiler_architecture": "x86",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\cl.exe",
+      "/c",
+      "/GS-",
+      "/O2",
+      "/MD",
+      "/Oy-",
+      "/Oi",
+      "/GL",
+      "inputs/ffx_memcmp.c",
+      "/Foffx_memcmp.obj"
+    ],
+    [
+      "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\link.exe",
+      "/nologo",
+      "/LTCG",
+      "/OUT:ffx_memcmp.exe",
+      "/MAP:ffx_memcmp.map",
+      "ffx_memcmp.obj",
+      "kernel32.lib",
+      "/SUBSYSTEM:CONSOLE",
+      "/ENTRY:FFX_memcmp"
+    ],
+    [
+      "C:\\Program Files (x86)\\Microsoft Visual Studio 11.0\\VC\\bin\\dumpbin.exe",
+      "/DISASM",
+      "ffx_memcmp.exe"
+    ]
+  ]
+}

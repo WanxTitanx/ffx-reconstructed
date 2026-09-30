@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00907F50.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_LoadEventIdTable:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldUnkVar_1934ECC],0
+            00
+  0000000D: 0F 85 9E 00 00 00  jne         000000B1
+  00000013: 57                 push        edi
+  00000014: 68 00 00 00 00     push        offset ??_C@_0CD@BGAODGAI@?1ffx?1proj?1event?1header?1eventid?4b@
+  00000019: E8 00 00 00 00     call        _FFX_FieldMap_ReadFfxmapIdFile
+  0000001E: 8B F8              mov         edi,eax
+  00000020: 83 C4 04           add         esp,4
+  00000023: 85 FF              test        edi,edi
+  00000025: 0F 84 85 00 00 00  je          000000B0
+  0000002B: 8B 07              mov         eax,dword ptr [edi]
+  0000002D: 99                 cdq
+  0000002E: 53                 push        ebx
+  0000002F: 83 E2 07           and         edx,7
+  00000032: 56                 push        esi
+  00000033: 8D 1C 02           lea         ebx,[edx+eax]
+  00000036: C1 FB 03           sar         ebx,3
+  00000039: 8B CB              mov         ecx,ebx
+  0000003B: C1 E1 04           shl         ecx,4
+  0000003E: 51                 push        ecx
+  0000003F: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00000042: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 8B F0              mov         esi,eax
+  0000004C: 89 75 FC           mov         dword ptr [ebp-4],esi
+  0000004F: 85 DB              test        ebx,ebx
+  00000051: 7E 51              jle         000000A4
+  00000053: 8B 0F              mov         ecx,dword ptr [edi]
+  00000055: 03 CF              add         ecx,edi
+  00000057: 51                 push        ecx
+  00000058: 56                 push        esi
+  00000059: E8 00 00 00 00     call        _sprintf
+  0000005E: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  00000065: BE 01 00 00 00     mov         esi,1
+  0000006A: 83 C4 08           add         esp,8
+  0000006D: 3B DE              cmp         ebx,esi
+  0000006F: 7E 33              jle         000000A4
+  00000071: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000074: 8D 58 10           lea         ebx,[eax+10h]
+  00000077: 83 C0 70           add         eax,70h
+  0000007A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000007D: 8D 49 00           lea         ecx,[ecx]
+  00000080: 8B 04 F7           mov         eax,dword ptr [edi+esi*8]
+  00000083: 03 C7              add         eax,edi
+  00000085: 50                 push        eax
+  00000086: 53                 push        ebx
+  00000087: E8 00 00 00 00     call        _sprintf
+  0000008C: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000008F: 83 C0 40           add         eax,40h
+  00000092: 89 70 C0           mov         dword ptr [eax-40h],esi
+  00000095: 46                 inc         esi
+  00000096: 83 C4 08           add         esp,8
+  00000099: 83 C3 10           add         ebx,10h
+  0000009C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000009F: 3B 75 F8           cmp         esi,dword ptr [ebp-8]
+  000000A2: 7C DC              jl          00000080
+  000000A4: 5E                 pop         esi
+  000000A5: C7 05 00 00 00 00  mov         dword ptr [_g_FieldUnkVar_1934ECC],1
+            01 00 00 00
+  000000AF: 5B                 pop         ebx
+  000000B0: 5F                 pop         edi
+  000000B1: 8B E5              mov         esp,ebp
+  000000B3: 5D                 pop         ebp
+  000000B4: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          23 .rdata
+          B5 .text

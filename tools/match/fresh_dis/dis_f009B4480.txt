@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009B4480.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_9B4480:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000009: D9 02              fld         dword ptr [edx]
+  0000000B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000E: D9 01              fld         dword ptr [ecx]
+  00000010: D9 45 08           fld         dword ptr [ebp+8]
+  00000013: D8 D1              fcom        st(1)
+  00000015: DF E0              fnstsw      ax
+  00000017: DD D9              fstp        st(1)
+  00000019: F6 C4 05           test        ah,5
+  0000001C: 7A 06              jp          00000024
+  0000001E: DD D8              fstp        st(0)
+  00000020: 8B C1              mov         eax,ecx
+  00000022: 5D                 pop         ebp
+  00000023: C3                 ret
+  00000024: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000027: D9 01              fld         dword ptr [ecx]
+  00000029: DE D9              fcompp
+  0000002B: DF E0              fnstsw      ax
+  0000002D: F6 C4 01           test        ah,1
+  00000030: 8B C2              mov         eax,edx
+  00000032: 74 02              je          00000036
+  00000034: 8B C1              mov         eax,ecx
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          38 .text

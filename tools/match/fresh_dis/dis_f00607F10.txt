@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00607F10.obj
+
+File Type: COFF OBJECT
+
+_Phyre_String_ToLower:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 1D              je          00000027
+  0000000A: 80 38 00           cmp         byte ptr [eax],0
+  0000000D: 74 18              je          00000027
+  0000000F: 90                 nop
+  00000010: 8A 08              mov         cl,byte ptr [eax]
+  00000012: 80 F9 41           cmp         cl,41h
+  00000015: 7C 0A              jl          00000021
+  00000017: 80 F9 5A           cmp         cl,5Ah
+  0000001A: 7F 05              jg          00000021
+  0000001C: 80 C1 20           add         cl,20h
+  0000001F: 88 08              mov         byte ptr [eax],cl
+  00000021: 40                 inc         eax
+  00000022: 80 38 00           cmp         byte ptr [eax],0
+  00000025: 75 E9              jne         00000010
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          29 .text

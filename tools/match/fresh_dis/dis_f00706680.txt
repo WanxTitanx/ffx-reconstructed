@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00706680.obj
+
+File Type: COFF OBJECT
+
+_FFX_FmodMusic_FreeDeinit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 57                 push        edi
+  00000009: 8B 7E 0C           mov         edi,dword ptr [esi+0Ch]
+  0000000C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000012: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000019: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000020: 85 FF              test        edi,edi
+  00000022: 74 0F              je          00000033
+  00000024: 57                 push        edi
+  00000025: E8 00 00 00 00     call        _FFX_FmodMusic_FreeEventBuffer
+  0000002A: 57                 push        edi
+  0000002B: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000030: 83 C4 08           add         esp,8
+  00000033: 8B 7E 10           mov         edi,dword ptr [esi+10h]
+  00000036: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000003D: 85 FF              test        edi,edi
+  0000003F: 74 0F              je          00000050
+  00000041: 57                 push        edi
+  00000042: E8 00 00 00 00     call        _FFX_FmodVoice_FreeVoiceState
+  00000047: 57                 push        edi
+  00000048: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000004D: 83 C4 08           add         esp,8
+  00000050: 8B 7E 14           mov         edi,dword ptr [esi+14h]
+  00000053: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000005A: 85 FF              test        edi,edi
+  0000005C: 74 0F              je          0000006D
+  0000005E: 57                 push        edi
+  0000005F: E8 00 00 00 00     call        _FFX_FmodSfx_Dtor
+  00000064: 57                 push        edi
+  00000065: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000006A: 83 C4 08           add         esp,8
+  0000006D: 5F                 pop         edi
+  0000006E: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000075: 5E                 pop         esi
+  00000076: 8B E5              mov         esp,ebp
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7A .text

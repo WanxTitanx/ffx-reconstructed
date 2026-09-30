@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007ECD70.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_7ECD70:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: D9 42 0C           fld         dword ptr [edx+0Ch]
+  00000009: D9 45 1C           fld         dword ptr [ebp+1Ch]
+  0000000C: D8 D1              fcom        st(1)
+  0000000E: DF E0              fnstsw      ax
+  00000010: F6 C4 05           test        ah,5
+  00000013: 7A 04              jp          00000019
+  00000015: B1 01              mov         cl,1
+  00000017: EB 02              jmp         0000001B
+  00000019: 32 C9              xor         cl,cl
+  0000001B: D9 C0              fld         st(0)
+  0000001D: DD EA              fucomp      st(2)
+  0000001F: DF E0              fnstsw      ax
+  00000021: DD D9              fstp        st(1)
+  00000023: F6 C4 44           test        ah,44h
+  00000026: 7A 04              jp          0000002C
+  00000028: B0 01              mov         al,1
+  0000002A: EB 02              jmp         0000002E
+  0000002C: 32 C0              xor         al,al
+  0000002E: 84 C9              test        cl,cl
+  00000030: 75 09              jne         0000003B
+  00000032: 84 C0              test        al,al
+  00000034: 75 05              jne         0000003B
+  00000036: DD D8              fstp        st(0)
+  00000038: D9 42 0C           fld         dword ptr [edx+0Ch]
+  0000003B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000003E: D9 58 0C           fstp        dword ptr [eax+0Ch]
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          43 .text

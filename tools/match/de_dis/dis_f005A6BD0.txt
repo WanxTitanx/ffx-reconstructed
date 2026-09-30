@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A6BD0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_RenderState_AllocWeightedBlendOpArr@8:
+  00000000: 56                 push        esi
+  00000001: 8B F2              mov         esi,edx
+  00000003: 8D 41 04           lea         eax,[ecx+4]
+  00000006: 83 FE 01           cmp         esi,1
+  00000009: 76 11              jbe         0000001C
+  0000000B: 8D 04 76           lea         eax,[esi+esi*2]
+  0000000E: C1 E0 02           shl         eax,2
+  00000011: 6A 04              push        4
+  00000013: 50                 push        eax
+  00000014: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 85 C0              test        eax,eax
+  0000001E: 74 28              je          00000048
+  00000020: 85 F6              test        esi,esi
+  00000022: 74 24              je          00000048
+  00000024: D9 E8              fld1
+  00000026: 8B C8              mov         ecx,eax
+  00000028: D9 EE              fldz
+  0000002A: 85 C9              test        ecx,ecx
+  0000002C: 74 10              je          0000003E
+  0000002E: D9 C9              fxch        st(1)
+  00000030: C7 41 08 04 00 00  mov         dword ptr [ecx+8],4
+            00
+  00000037: D9 11              fst         dword ptr [ecx]
+  00000039: D9 C9              fxch        st(1)
+  0000003B: D9 51 04           fst         dword ptr [ecx+4]
+  0000003E: 83 C1 0C           add         ecx,0Ch
+  00000041: 4E                 dec         esi
+  00000042: 75 E6              jne         0000002A
+  00000044: DD D9              fstp        st(1)
+  00000046: DD D8              fstp        st(0)
+  00000048: 5E                 pop         esi
+  00000049: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          4A .text

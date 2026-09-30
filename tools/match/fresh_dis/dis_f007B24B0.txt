@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B24B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckActorValidForAction:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 80 B8 CE 0D 00 00  cmp         byte ptr [eax+00000DCEh],0
+            00
+  0000000D: 75 53              jne         00000062
+  0000000F: 0F B7 88 06 06 00  movzx       ecx,word ptr [eax+00000606h]
+            00
+  00000016: F7 C1 00 03 00 00  test        ecx,300h
+  0000001C: 75 44              jne         00000062
+  0000001E: 80 B8 08 06 00 00  cmp         byte ptr [eax+00000608h],0
+            00
+  00000025: 75 3B              jne         00000062
+  00000027: F6 80 17 06 00 00  test        byte ptr [eax+00000617h],1
+            01
+  0000002E: 75 32              jne         00000062
+  00000030: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  00000034: 74 09              je          0000003F
+  00000036: 80 B8 C8 0D 00 00  cmp         byte ptr [eax+00000DC8h],0
+            00
+  0000003D: 74 23              je          00000062
+  0000003F: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000043: 74 08              je          0000004D
+  00000045: F7 C1 00 04 00 00  test        ecx,400h
+  0000004B: 75 15              jne         00000062
+  0000004D: 83 7D 14 00        cmp         dword ptr [ebp+14h],0
+  00000051: 74 08              je          0000005B
+  00000053: F7 C1 00 08 00 00  test        ecx,800h
+  00000059: 75 07              jne         00000062
+  0000005B: B8 01 00 00 00     mov         eax,1
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+  00000062: 33 C0              xor         eax,eax
+  00000064: 5D                 pop         ebp
+  00000065: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          66 .text

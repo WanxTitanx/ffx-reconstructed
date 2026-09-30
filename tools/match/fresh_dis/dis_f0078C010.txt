@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0078C010.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckStatModifiersActive:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 33 D2              xor         edx,edx
+  00000008: F6 40 20 10        test        byte ptr [eax+20h],10h
+  0000000C: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000000F: 74 10              je          00000021
+  00000011: 39 10              cmp         dword ptr [eax],edx
+  00000013: 7C 1A              jl          0000002F
+  00000015: 39 50 04           cmp         dword ptr [eax+4],edx
+  00000018: 7C 15              jl          0000002F
+  0000001A: 39 50 08           cmp         dword ptr [eax+8],edx
+  0000001D: 7D 15              jge         00000034
+  0000001F: EB 0E              jmp         0000002F
+  00000021: 39 10              cmp         dword ptr [eax],edx
+  00000023: 7F 0A              jg          0000002F
+  00000025: 39 50 04           cmp         dword ptr [eax+4],edx
+  00000028: 7F 05              jg          0000002F
+  0000002A: 39 50 08           cmp         dword ptr [eax+8],edx
+  0000002D: 7E 05              jle         00000034
+  0000002F: BA 01 00 00 00     mov         edx,1
+  00000034: 83 7D 18 00        cmp         dword ptr [ebp+18h],0
+  00000038: 74 11              je          0000004B
+  0000003A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000003D: C6 80 15 07 00 00  mov         byte ptr [eax+00000715h],1
+            01
+  00000044: B8 01 00 00 00     mov         eax,1
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: 85 D2              test        edx,edx
+  0000004D: 74 0A              je          00000059
+  0000004F: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000052: C6 81 15 07 00 00  mov         byte ptr [ecx+00000715h],1
+            01
+  00000059: 8B C2              mov         eax,edx
+  0000005B: 5D                 pop         ebp
+  0000005C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5D .text

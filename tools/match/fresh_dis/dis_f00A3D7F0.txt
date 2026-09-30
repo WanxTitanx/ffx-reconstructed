@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3D7F0.obj
+
+File Type: COFF OBJECT
+
+@Iggy_AS3_DispatchCallback@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 8B 5A 04           mov         ebx,dword ptr [edx+4]
+  0000000A: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000000D: 85 DB              test        ebx,ebx
+  0000000F: 74 3B              je          0000004C
+  00000011: 83 39 00           cmp         dword ptr [ecx],0
+  00000014: 74 36              je          0000004C
+  00000016: 56                 push        esi
+  00000017: 33 F6              xor         esi,esi
+  00000019: 39 73 08           cmp         dword ptr [ebx+8],esi
+  0000001C: 74 26              je          00000044
+  0000001E: 57                 push        edi
+  0000001F: 8D 7B 0C           lea         edi,[ebx+0Ch]
+  00000022: 8D 45 F0           lea         eax,[ebp-10h]
+  00000025: 50                 push        eax
+  00000026: 57                 push        edi
+  00000027: FF 31              push        dword ptr [ecx]
+  00000029: E8 00 00 00 00     call        _IggyPlayerDispatchEventRS
+  0000002E: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000031: 46                 inc         esi
+  00000032: 83 C4 0C           add         esp,0Ch
+  00000035: 83 C7 18           add         edi,18h
+  00000038: 3B 73 08           cmp         esi,dword ptr [ebx+8]
+  0000003B: 72 E5              jb          00000022
+  0000003D: 5F                 pop         edi
+  0000003E: 5E                 pop         esi
+  0000003F: 5B                 pop         ebx
+  00000040: 8B E5              mov         esp,ebp
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+  00000044: 5E                 pop         esi
+  00000045: 8B C2              mov         eax,edx
+  00000047: 5B                 pop         ebx
+  00000048: 8B E5              mov         esp,ebp
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+  0000004C: 8B C2              mov         eax,edx
+  0000004E: 5B                 pop         ebx
+  0000004F: 8B E5              mov         esp,ebp
+  00000051: 5D                 pop         ebp
+  00000052: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          53 .text

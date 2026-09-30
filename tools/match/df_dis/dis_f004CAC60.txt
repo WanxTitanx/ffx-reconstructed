@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004CAC60.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4CAC60:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5F                 pop         edi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 8B C7              mov         eax,edi
+  00000012: 69 C0 E0 00 00 00  imul        eax,eax,0E0h
+  00000018: 53                 push        ebx
+  00000019: 6A 04              push        4
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000021: 8B D8              mov         ebx,eax
+  00000023: 83 C4 08           add         esp,8
+  00000026: 85 DB              test        ebx,ebx
+  00000028: 74 2A              je          00000054
+  0000002A: 56                 push        esi
+  0000002B: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000002E: 56                 push        esi
+  0000002F: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000032: 53                 push        ebx
+  00000033: 53                 push        ebx
+  00000034: E8 00 00 00 00     call        _PVertexBlendData_ArrayCopy
+  00000039: 2B FE              sub         edi,esi
+  0000003B: 69 F6 E0 00 00 00  imul        esi,esi,0E0h
+  00000041: 57                 push        edi
+  00000042: 03 F3              add         esi,ebx
+  00000044: 56                 push        esi
+  00000045: E8 00 00 00 00     call        _PShadowSplit_ArrayInitialize
+  0000004A: 83 C4 18           add         esp,18h
+  0000004D: 8B C3              mov         eax,ebx
+  0000004F: 5E                 pop         esi
+  00000050: 5B                 pop         ebx
+  00000051: 5F                 pop         edi
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+  00000054: 5B                 pop         ebx
+  00000055: 33 C0              xor         eax,eax
+  00000057: 5F                 pop         edi
+  00000058: 5D                 pop         ebp
+  00000059: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5A .text

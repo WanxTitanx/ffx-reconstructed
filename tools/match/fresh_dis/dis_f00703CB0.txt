@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00703CB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Math_Vec3NormalizeCheck@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: D9 41 04           fld         dword ptr [ecx+4]
+  00000007: 83 EC 08           sub         esp,8
+  0000000A: D9 41 08           fld         dword ptr [ecx+8]
+  0000000D: D9 01              fld         dword ptr [ecx]
+  0000000F: DC C8              fmul        st(0),st
+  00000011: D9 CA              fxch        st(2)
+  00000013: DC C8              fmul        st(0),st
+  00000015: DE C2              faddp       st(2),st
+  00000017: DC C8              fmul        st(0),st
+  00000019: DE C1              faddp       st(1),st
+  0000001B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000021: DD 1C 24           fstp        qword ptr [esp]
+  00000024: E8 00 00 00 00     call        __isnan
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 75 2B              jne         0000005B
+  00000030: D9 45 FC           fld         dword ptr [ebp-4]
+  00000033: 83 EC 08           sub         esp,8
+  00000036: DD 1C 24           fstp        qword ptr [esp]
+  00000039: E8 00 00 00 00     call        __finite
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 85 C0              test        eax,eax
+  00000043: 74 16              je          0000005B
+  00000045: D9 45 FC           fld         dword ptr [ebp-4]
+  00000048: DC 1D 00 00 00 00  fcomp       qword ptr [__real@381000000b3aeeab]
+  0000004E: DF E0              fnstsw      ax
+  00000050: F6 C4 41           test        ah,41h
+  00000053: 75 06              jne         0000005B
+  00000055: B0 01              mov         al,1
+  00000057: 8B E5              mov         esp,ebp
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: 32 C0              xor         al,al
+  0000005D: 8B E5              mov         esp,ebp
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          61 .text

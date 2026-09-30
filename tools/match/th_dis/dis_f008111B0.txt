@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008111B0.obj
+
+File Type: COFF OBJECT
+
+_sub_8111B0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000006: 56                 push        esi
+  00000007: 0F B7 48 4C        movzx       ecx,word ptr [eax+4Ch]
+  0000000B: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000E: C1 E1 08           shl         ecx,8
+  00000011: 8B 40 20           mov         eax,dword ptr [eax+20h]
+  00000014: 0F B6 44 01 18     movzx       eax,byte ptr [ecx+eax+18h]
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _sub_800F50
+  0000001F: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000022: 8B F0              mov         esi,eax
+  00000024: B8 00 10 00 00     mov         eax,1000h
+  00000029: 83 C4 04           add         esp,4
+  0000002C: 66 85 81 1A 02 00  test        word ptr [ecx+21Ah],ax
+            00
+  00000033: 74 24              je          00000059
+  00000035: 8A 96 00 00 00 00  mov         dl,byte ptr _byte_119FEDC[esi]
+  0000003B: 0F B6 CA           movzx       ecx,dl
+  0000003E: 49                 dec         ecx
+  0000003F: 85 C9              test        ecx,ecx
+  00000041: 0F 9E C0           setle       al
+  00000044: FE C8              dec         al
+  00000046: FE CA              dec         dl
+  00000048: 22 C2              and         al,dl
+  0000004A: 88 86 00 00 00 00  mov         byte ptr _byte_119FEDC[esi],al
+  00000050: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000053: 83 C0 02           add         eax,2
+  00000056: 5E                 pop         esi
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+  00000059: 0F B6 86 00 00 00  movzx       eax,byte ptr _byte_119FEDC[esi]
+            00
+  00000060: 40                 inc         eax
+  00000061: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000064: 83 F8 7F           cmp         eax,7Fh
+  00000067: 7C 10              jl          00000079
+  00000069: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000006C: C6 86 00 00 00 00  mov         byte ptr _byte_119FEDC[esi],7Fh
+            7F
+  00000073: 83 C0 02           add         eax,2
+  00000076: 5E                 pop         esi
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+  00000079: 8A 45 14           mov         al,byte ptr [ebp+14h]
+  0000007C: 88 86 00 00 00 00  mov         byte ptr _byte_119FEDC[esi],al
+  00000082: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000085: 83 C0 02           add         eax,2
+  00000088: 5E                 pop         esi
+  00000089: 5D                 pop         ebp
+  0000008A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8B .text

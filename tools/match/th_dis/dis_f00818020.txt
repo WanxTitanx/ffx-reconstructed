@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00818020.obj
+
+File Type: COFF OBJECT
+
+_sub_818020:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 83 EC 08           sub         esp,8
+  00000009: B8 00 F0 00 00     mov         eax,0F000h
+  0000000E: 53                 push        ebx
+  0000000F: 8B 99 20 02 00 00  mov         ebx,dword ptr [ecx+220h]
+  00000015: 66 85 81 1A 02 00  test        word ptr [ecx+21Ah],ax
+            00
+  0000001C: 74 08              je          00000026
+  0000001E: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000021: 5B                 pop         ebx
+  00000022: 8B E5              mov         esp,ebp
+  00000024: 5D                 pop         ebp
+  00000025: C3                 ret
+  00000026: 56                 push        esi
+  00000027: 57                 push        edi
+  00000028: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000002B: 0F B7 47 02        movzx       eax,word ptr [edi+2]
+  0000002F: 0F B7 77 04        movzx       esi,word ptr [edi+4]
+  00000033: 50                 push        eax
+  00000034: 8D 81 00 03 00 00  lea         eax,[ecx+300h]
+  0000003A: 53                 push        ebx
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _sub_800F80
+  00000041: 05 90 00 00 00     add         eax,90h
+  00000046: 50                 push        eax
+  00000047: 8D 83 90 00 00 00  lea         eax,[ebx+90h]
+  0000004D: 50                 push        eax
+  0000004E: E8 00 00 00 00     call        _sub_7E7ED0
+  00000053: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000056: DB 45 08           fild        dword ptr [ebp+8]
+  00000059: 83 C4 14           add         esp,14h
+  0000005C: 8D 47 06           lea         eax,[edi+6]
+  0000005F: 5F                 pop         edi
+  00000060: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000063: DD 45 F8           fld         qword ptr [ebp-8]
+  00000066: DC 0D 00 00 00 00  fmul        qword ptr [__real@4030000000000000]
+  0000006C: D9 1C 1E           fstp        dword ptr [esi+ebx]
+  0000006F: 5E                 pop         esi
+  00000070: 5B                 pop         ebx
+  00000071: 8B E5              mov         esp,ebp
+  00000073: 5D                 pop         ebp
+  00000074: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          75 .text

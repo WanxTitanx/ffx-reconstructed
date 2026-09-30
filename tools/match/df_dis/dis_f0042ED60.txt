@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042ED60.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_42ED60@4:
+  00000000: 8B D1              mov         edx,ecx
+  00000002: 57                 push        edi
+  00000003: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000006: 8B 3A              mov         edi,dword ptr [edx]
+  00000008: 3B F8              cmp         edi,eax
+  0000000A: 7D 38              jge         00000044
+  0000000C: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000000F: 53                 push        ebx
+  00000010: 8B 5A 0C           mov         ebx,dword ptr [edx+0Ch]
+  00000013: 56                 push        esi
+  00000014: 0F B6 33           movzx       esi,byte ptr [ebx]
+  00000017: B9 07 00 00 00     mov         ecx,7
+  0000001C: 2A C8              sub         cl,al
+  0000001E: D3 EE              shr         esi,cl
+  00000020: 40                 inc         eax
+  00000021: 89 42 04           mov         dword ptr [edx+4],eax
+  00000024: 83 E6 01           and         esi,1
+  00000027: 83 F8 07           cmp         eax,7
+  0000002A: 7E 12              jle         0000003E
+  0000002C: 8D 4B 01           lea         ecx,[ebx+1]
+  0000002F: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  00000032: 8D 4F 01           lea         ecx,[edi+1]
+  00000035: C7 42 04 00 00 00  mov         dword ptr [edx+4],0
+            00
+  0000003C: 89 0A              mov         dword ptr [edx],ecx
+  0000003E: 8B C6              mov         eax,esi
+  00000040: 5E                 pop         esi
+  00000041: 5B                 pop         ebx
+  00000042: 5F                 pop         edi
+  00000043: C3                 ret
+  00000044: 89 02              mov         dword ptr [edx],eax
+  00000046: C7 42 0C 00 00 00  mov         dword ptr [edx+0Ch],0
+            00
+  0000004D: C7 42 04 01 00 00  mov         dword ptr [edx+4],1
+            00
+  00000054: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000057: 5F                 pop         edi
+  00000058: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          59 .text

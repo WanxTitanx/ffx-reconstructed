@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00671180.obj
+
+File Type: COFF OBJECT
+
+@FFX_Ps3Data_ReloadTexList@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 00 02 00 00  sub         esp,200h
+  00000009: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  0000000F: 56                 push        esi
+  00000010: 68 00 01 00 00     push        100h
+  00000015: 50                 push        eax
+  00000016: 68 00 00 00 00     push        offset ??_C@_0BL@BMELLMLH@?1FFX_Data?1GameData?1PS3Data?$AA@
+  0000001B: 8B F1              mov         esi,ecx
+  0000001D: E8 00 00 00 00     call        _FFX_FileSystem_BuildDataPath
+  00000022: 83 C4 0C           add         esp,0Ch
+  00000025: 80 7E 25 00        cmp         byte ptr [esi+25h],0
+  00000029: 75 07              jne         00000032
+  0000002B: 33 C0              xor         eax,eax
+  0000002D: 5E                 pop         esi
+  0000002E: 8B E5              mov         esp,ebp
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+  00000032: 0F B6 86 F0 FA 00  movzx       eax,byte ptr [esi+0FAF0h]
+            00
+  00000039: 8B 8E F0 FA 00 00  mov         ecx,dword ptr [esi+0FAF0h]
+  0000003F: 83 E0 01           and         eax,1
+  00000042: 3B C8              cmp         ecx,eax
+  00000044: 75 0A              jne         00000050
+  00000046: B8 05 00 00 00     mov         eax,5
+  0000004B: 5E                 pop         esi
+  0000004C: 8B E5              mov         esp,ebp
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+  00000050: 2B C8              sub         ecx,eax
+  00000052: 51                 push        ecx
+  00000053: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000059: 50                 push        eax
+  0000005A: 8D 85 00 FE FF FF  lea         eax,[ebp-200h]
+  00000060: 68 00 00 00 00     push        offset ??_C@_0BH@JGMIDOFA@?$CFs?$CFsfp?1tex?1TexList?4txt?$AA@
+  00000065: 50                 push        eax
+  00000066: C6 46 25 00        mov         byte ptr [esi+25h],0
+  0000006A: E8 00 00 00 00     call        _sprintf
+  0000006F: 6A FF              push        0FFFFFFFFh
+  00000071: 8D 85 00 FE FF FF  lea         eax,[ebp-200h]
+  00000077: 50                 push        eax
+  00000078: 56                 push        esi
+  00000079: E8 00 00 00 00     call        _FFX_Ps3Data_LoadTextureListAndRegisterEntries
+  0000007E: 83 C4 1C           add         esp,1Ch
+  00000081: 5E                 pop         esi
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          32 .rdata
+          86 .text

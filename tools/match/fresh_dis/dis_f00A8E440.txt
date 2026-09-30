@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A8E440.obj
+
+File Type: COFF OBJECT
+
+@btIsland_UnionFindUpdate@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000000A: 33 D2              xor         edx,edx
+  0000000C: 33 F6              xor         esi,esi
+  0000000E: 39 57 08           cmp         dword ptr [edi+8],edx
+  00000011: 76 30              jbe         00000043
+  00000013: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000016: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  00000019: F6 80 D8 00 00 00  test        byte ptr [eax+0D8h],3
+            03
+  00000020: 75 07              jne         00000029
+  00000022: 89 B0 DC 00 00 00  mov         dword ptr [eax+0DCh],esi
+  00000028: 46                 inc         esi
+  00000029: 42                 inc         edx
+  0000002A: C7 80 E0 00 00 00  mov         dword ptr [eax+0E0h],0FFFFFFFFh
+            FF FF FF FF
+  00000034: C7 80 FC 00 00 00  mov         dword ptr [eax+0FCh],3F800000h
+            00 00 80 3F
+  0000003E: 3B 57 08           cmp         edx,dword ptr [edi+8]
+  00000041: 72 D0              jb          00000013
+  00000043: 8D 59 04           lea         ebx,[ecx+4]
+  00000046: 53                 push        ebx
+  00000047: E8 00 00 00 00     call        _btAlignedObjectArray_InitIdentity
+  0000004C: 8B 4F 50           mov         ecx,dword ptr [edi+50h]
+  0000004F: 83 C4 04           add         esp,4
+  00000052: 8B 01              mov         eax,dword ptr [ecx]
+  00000054: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  00000057: FF D0              call        eax
+  00000059: 8B F0              mov         esi,eax
+  0000005B: 8B CE              mov         ecx,esi
+  0000005D: 8B 16              mov         edx,dword ptr [esi]
+  0000005F: 8B 52 20           mov         edx,dword ptr [edx+20h]
+  00000062: FF D2              call        edx
+  00000064: 8B 16              mov         edx,dword ptr [esi]
+  00000066: 8B CE              mov         ecx,esi
+  00000068: 8B 52 14           mov         edx,dword ptr [edx+14h]
+  0000006B: 8B F8              mov         edi,eax
+  0000006D: FF D2              call        edx
+  0000006F: 8B F0              mov         esi,eax
+  00000071: 85 FF              test        edi,edi
+  00000073: 7E 3E              jle         000000B3
+  00000075: 8B 0E              mov         ecx,dword ptr [esi]
+  00000077: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000007A: 8B 09              mov         ecx,dword ptr [ecx]
+  0000007C: 8B 00              mov         eax,dword ptr [eax]
+  0000007E: 85 C9              test        ecx,ecx
+  00000080: 74 2B              je          000000AD
+  00000082: F6 81 D8 00 00 00  test        byte ptr [ecx+0D8h],7
+            07
+  00000089: 75 22              jne         000000AD
+  0000008B: 85 C0              test        eax,eax
+  0000008D: 74 1E              je          000000AD
+  0000008F: F6 80 D8 00 00 00  test        byte ptr [eax+0D8h],7
+            07
+  00000096: 75 15              jne         000000AD
+  00000098: FF B0 DC 00 00 00  push        dword ptr [eax+0DCh]
+  0000009E: FF B1 DC 00 00 00  push        dword ptr [ecx+0DCh]
+  000000A4: 53                 push        ebx
+  000000A5: E8 00 00 00 00     call        _Bullet_btUnionFind_Unite
+  000000AA: 83 C4 0C           add         esp,0Ch
+  000000AD: 83 C6 10           add         esi,10h
+  000000B0: 4F                 dec         edi
+  000000B1: 75 C2              jne         00000075
+  000000B3: 5F                 pop         edi
+  000000B4: 5E                 pop         esi
+  000000B5: 5B                 pop         ebx
+  000000B6: 8B E5              mov         esp,ebp
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          BA .text

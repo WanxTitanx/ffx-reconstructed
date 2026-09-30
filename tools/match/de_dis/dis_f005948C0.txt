@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005948C0.obj
+
+File Type: COFF OBJECT
+
+@PDataBlockArray_GetElementPlus4_v2@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000006: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000B: 3B D0              cmp         edx,eax
+  0000000D: 73 2D              jae         0000003C
+  0000000F: F6 46 34 01        test        byte ptr [esi+34h],1
+  00000013: 74 27              je          0000003C
+  00000015: 83 F8 01           cmp         eax,1
+  00000018: 76 0C              jbe         00000026
+  0000001A: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000001D: 8D 0C 92           lea         ecx,[edx+edx*4]
+  00000020: 5E                 pop         esi
+  00000021: 8B 44 88 04        mov         eax,dword ptr [eax+ecx*4+4]
+  00000025: C3                 ret
+  00000026: 85 C0              test        eax,eax
+  00000028: 8D 04 92           lea         eax,[edx+edx*4]
+  0000002B: 74 06              je          00000033
+  0000002D: 8B 44 86 20        mov         eax,dword ptr [esi+eax*4+20h]
+  00000031: 5E                 pop         esi
+  00000032: C3                 ret
+  00000033: 8B 04 85 04 00 00  mov         eax,dword ptr [eax*4+00000004h]
+            00
+  0000003A: 5E                 pop         esi
+  0000003B: C3                 ret
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 5E                 pop         esi
+  0000003F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          40 .text

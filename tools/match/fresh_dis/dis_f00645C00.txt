@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00645C00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Animation_ReleaseAndSetParams:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 45              je          00000050
+  0000000B: 56                 push        esi
+  0000000C: E8 00 00 00 00     call        _Phyre_ResourceSlot_ReleaseEx
+  00000011: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000014: 51                 push        ecx
+  00000015: DD 1C 24           fstp        qword ptr [esp]
+  00000018: 56                 push        esi
+  00000019: E8 00 00 00 00     call        _Phyre_AnimationStruct_SetFloat_DC
+  0000001E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000021: 83 C4 0C           add         esp,0Ch
+  00000024: 85 C0              test        eax,eax
+  00000026: 74 0A              je          00000032
+  00000028: 50                 push        eax
+  00000029: 56                 push        esi
+  0000002A: E8 00 00 00 00     call        _Phyre_Struct_Set2Floats_E0
+  0000002F: 83 C4 08           add         esp,8
+  00000032: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000035: 85 C0              test        eax,eax
+  00000037: 74 0A              je          00000043
+  00000039: 50                 push        eax
+  0000003A: 56                 push        esi
+  0000003B: E8 00 00 00 00     call        _Phyre_Struct_Set4Floats_E8
+  00000040: 83 C4 08           add         esp,8
+  00000043: 8B 06              mov         eax,dword ptr [esi]
+  00000045: 8B CE              mov         ecx,esi
+  00000047: 8B 40 28           mov         eax,dword ptr [eax+28h]
+  0000004A: 33 D2              xor         edx,edx
+  0000004C: 5E                 pop         esi
+  0000004D: 5D                 pop         ebp
+  0000004E: FF E0              jmp         eax
+  00000050: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000053: 5E                 pop         esi
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

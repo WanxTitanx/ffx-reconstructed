@@ -1,0 +1,1434 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A54B40.obj
+
+File Type: COFF OBJECT
+
+_sub_A54B40@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: C7 05 00 00 00 00  mov         dword ptr [_unk_1A85F70],0
+            00 00 00 00
+  00000010: E8 00 00 00 00     call        _FFX_Game_GetRegion
+  00000015: 85 C0              test        eax,eax
+  00000017: 74 16              je          0000002F
+  00000019: 83 F8 08           cmp         eax,8
+  0000001C: 7E 05              jle         00000023
+  0000001E: 83 F8 0B           cmp         eax,0Bh
+  00000021: 7E 0C              jle         0000002F
+  00000023: C7 05 00 00 00 00  mov         dword ptr [_unk_1A85F74],0
+            00 00 00 00
+  0000002D: EB 0A              jmp         00000039
+  0000002F: C7 05 00 00 00 00  mov         dword ptr [_unk_1A85F74],1
+            01 00 00 00
+  00000039: 53                 push        ebx
+  0000003A: 56                 push        esi
+  0000003B: 57                 push        edi
+  0000003C: FF 75 08           push        dword ptr [ebp+8]
+  0000003F: FF 75 10           push        dword ptr [ebp+10h]
+  00000042: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000045: E8 00 00 00 00     call        _sub_A572E0
+  0000004A: FF 75 08           push        dword ptr [ebp+8]
+  0000004D: FF 75 08           push        dword ptr [ebp+8]
+  00000050: E8 00 00 00 00     call        _sub_A57620
+  00000055: 83 C4 14           add         esp,14h
+  00000058: E8 00 00 00 00     call        _FFX_Abmap_LoadCompiledLayoutAndDeriveNodeCells
+  0000005D: E8 00 00 00 00     call        _sub_901100
+  00000062: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  00000067: 33 F6              xor         esi,esi
+  00000069: C6 80 C9 15 01 00  mov         byte ptr [eax+115C9h],0
+            00
+  00000070: 56                 push        esi
+  00000071: E8 00 00 00 00     call        _FFX_Party_IsMemberActive
+  00000076: 83 C4 04           add         esp,4
+  00000079: 83 F8 01           cmp         eax,1
+  0000007C: 75 38              jne         000000B6
+  0000007E: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000084: 8B 15 00 00 00 00  mov         edx,dword ptr [_dword_2305834]
+  0000008A: 68 80 80 80 80     push        80808080h
+  0000008F: 68 40 40 40 80     push        80404040h
+  00000094: 68 40 40 40 80     push        80404040h
+  00000099: 83 EC 08           sub         esp,8
+  0000009C: 8A C0              mov         al,al
+  0000009E: 8B CE              mov         ecx,esi
+  000000A0: DD 1C 24           fstp        qword ptr [esp]
+  000000A3: D2 E0              shl         al,cl
+  000000A5: 6A 00              push        0
+  000000A7: 56                 push        esi
+  000000A8: 08 82 C9 15 01 00  or          byte ptr [edx+115C9h],al
+  000000AE: E8 00 00 00 00     call        _sub_A57F80
+  000000B3: 83 C4 1C           add         esp,1Ch
+  000000B6: 46                 inc         esi
+  000000B7: 83 FE 07           cmp         esi,7
+  000000BA: 7C B4              jl          00000070
+  000000BC: E8 00 00 00 00     call        _FFX_Abmap_ApplySphereGridStateToMenuRuntime
+  000000C1: D9 EE              fldz
+  000000C3: DD 05 00 00 00 00  fld         qword ptr [__real@4008000000000000]
+  000000C9: 8B 3D 00 00 00 00  mov         edi,dword ptr [_dword_2305834]
+  000000CF: D9 E8              fld1
+  000000D1: 33 DB              xor         ebx,ebx
+  000000D3: 33 F6              xor         esi,esi
+  000000D5: D9 84 3E C4 10 01  fld         dword ptr [esi+edi+110C4h]
+            00
+  000000DC: D8 DB              fcomp       st(3)
+  000000DE: DF E0              fnstsw      ax
+  000000E0: F6 C4 41           test        ah,41h
+  000000E3: 0F 85 95 00 00 00  jne         0000017E
+  000000E9: 0F B7 94 3E CC 10  movzx       edx,word ptr [esi+edi+110CCh]
+            01 00
+  000000F1: 53                 push        ebx
+  000000F2: 8D 0C 92           lea         ecx,[edx+edx*4]
+  000000F5: 0F BF 84 CF 08 08  movsx       eax,word ptr [edi+ecx*8+808h]
+            00 00
+  000000FD: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000100: DB 45 08           fild        dword ptr [ebp+8]
+  00000103: D9 9C 3E 88 10 01  fstp        dword ptr [esi+edi+11088h]
+            00
+  0000010A: 0F BF 84 CF 0A 08  movsx       eax,word ptr [edi+ecx*8+80Ah]
+            00 00
+  00000112: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000115: 8D 04 92           lea         eax,[edx+edx*4]
+  00000118: DB 45 08           fild        dword ptr [ebp+8]
+  0000011B: D9 9C 3E 8C 10 01  fstp        dword ptr [esi+edi+1108Ch]
+            00
+  00000122: D9 CA              fxch        st(2)
+  00000124: D9 9C 3E 90 10 01  fstp        dword ptr [esi+edi+11090h]
+            00
+  0000012B: D9 C9              fxch        st(1)
+  0000012D: D9 9C 3E 94 10 01  fstp        dword ptr [esi+edi+11094h]
+            00
+  00000134: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  0000013A: 0F B7 84 C1 0E 08  movzx       eax,word ptr [ecx+eax*8+80Eh]
+            00 00
+  00000142: 8D 04 40           lea         eax,[eax+eax*2]
+  00000145: 03 C0              add         eax,eax
+  00000147: 66 8B 84 C1 34 F8  mov         ax,word ptr [ecx+eax*8+0F834h]
+            00 00
+  0000014F: 66 D1 F8           sar         ax,1
+  00000152: 98                 cwde
+  00000153: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000156: DB 45 08           fild        dword ptr [ebp+8]
+  00000159: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000015C: DC 45 F8           fadd        qword ptr [ebp-8]
+  0000015F: D9 9C 3E C4 10 01  fstp        dword ptr [esi+edi+110C4h]
+            00
+  00000166: E8 00 00 00 00     call        _sub_A58080
+  0000016B: D9 EE              fldz
+  0000016D: 8B 3D 00 00 00 00  mov         edi,dword ptr [_dword_2305834]
+  00000173: DD 05 00 00 00 00  fld         qword ptr [__real@4008000000000000]
+  00000179: 83 C4 04           add         esp,4
+  0000017C: D9 E8              fld1
+  0000017E: 83 C6 50           add         esi,50h
+  00000181: 43                 inc         ebx
+  00000182: 81 FE 30 02 00 00  cmp         esi,230h
+  00000188: 0F 8C 47 FF FF FF  jl          000000D5
+  0000018E: C6 87 C7 15 01 00  mov         byte ptr [edi+115C7h],1
+            01
+  00000195: 8B 35 00 00 00 00  mov         esi,dword ptr [_dword_2305834]
+  0000019B: 0F B6 86 BC 15 01  movzx       eax,byte ptr [esi+115BCh]
+            00
+  000001A2: 8D 04 80           lea         eax,[eax+eax*4]
+  000001A5: 03 C0              add         eax,eax
+  000001A7: 0F B7 84 C6 CC 10  movzx       eax,word ptr [esi+eax*8+110CCh]
+            01 00
+  000001AF: 66 89 86 FC 12 01  mov         word ptr [esi+112FCh],ax
+            00
+  000001B6: 8D 14 80           lea         edx,[eax+eax*4]
+  000001B9: 0F BF 84 D6 08 08  movsx       eax,word ptr [esi+edx*8+808h]
+            00 00
+  000001C1: 89 45 08           mov         dword ptr [ebp+8],eax
+  000001C4: DB 45 08           fild        dword ptr [ebp+8]
+  000001C7: D9 9E B8 12 01 00  fstp        dword ptr [esi+112B8h]
+  000001CD: 0F BF 84 D6 0A 08  movsx       eax,word ptr [esi+edx*8+80Ah]
+            00 00
+  000001D5: 89 45 08           mov         dword ptr [ebp+8],eax
+  000001D8: DB 45 08           fild        dword ptr [ebp+8]
+  000001DB: D9 9E BC 12 01 00  fstp        dword ptr [esi+112BCh]
+  000001E1: D9 CA              fxch        st(2)
+  000001E3: D9 9E C0 12 01 00  fstp        dword ptr [esi+112C0h]
+  000001E9: D9 C9              fxch        st(1)
+  000001EB: D9 9E C4 12 01 00  fstp        dword ptr [esi+112C4h]
+  000001F1: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  000001F7: 0F B7 84 D1 0E 08  movzx       eax,word ptr [ecx+edx*8+80Eh]
+            00 00
+  000001FF: 8D 04 40           lea         eax,[eax+eax*2]
+  00000202: 03 C0              add         eax,eax
+  00000204: 66 8B 84 C1 34 F8  mov         ax,word ptr [ecx+eax*8+0F834h]
+            00 00
+  0000020C: 66 D1 F8           sar         ax,1
+  0000020F: 98                 cwde
+  00000210: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000213: C6 86 06 13 01 00  mov         byte ptr [esi+11306h],0
+            00
+  0000021A: C7 86 D8 12 01 00  mov         dword ptr [esi+112D8h],80808080h
+            80 80 80 80
+  00000224: DB 45 08           fild        dword ptr [ebp+8]
+  00000227: C7 86 DC 12 01 00  mov         dword ptr [esi+112DCh],80808080h
+            80 80 80 80
+  00000231: C7 86 E0 12 01 00  mov         dword ptr [esi+112E0h],80FFFFFFh
+            FF FF FF 80
+  0000023B: DE C1              faddp       st(1),st
+  0000023D: D9 9E F4 12 01 00  fstp        dword ptr [esi+112F4h]
+  00000243: D9 05 00 00 00 00  fld         dword ptr [__real@40000000]
+  00000249: D9 9E F8 12 01 00  fstp        dword ptr [esi+112F8h]
+  0000024F: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  00000255: 8B 81 B8 12 01 00  mov         eax,dword ptr [ecx+112B8h]
+  0000025B: 89 81 08 13 01 00  mov         dword ptr [ecx+11308h],eax
+  00000261: 8B 81 BC 12 01 00  mov         eax,dword ptr [ecx+112BCh]
+  00000267: 89 81 0C 13 01 00  mov         dword ptr [ecx+1130Ch],eax
+  0000026D: 8B 81 C0 12 01 00  mov         eax,dword ptr [ecx+112C0h]
+  00000273: 89 81 10 13 01 00  mov         dword ptr [ecx+11310h],eax
+  00000279: 8B 81 C4 12 01 00  mov         eax,dword ptr [ecx+112C4h]
+  0000027F: 89 81 14 13 01 00  mov         dword ptr [ecx+11314h],eax
+  00000285: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  0000028A: C7 80 68 16 01 00  mov         dword ptr [eax+11668h],offset _unk_1693160
+            00 00 00 00
+  00000294: E8 00 00 00 00     call        _FFX_Abmap_UpdateRuntimeLinkGeometry
+  00000299: E8 00 00 00 00     call        _sub_A57120
+  0000029E: E8 00 00 00 00     call        _sub_A5B030
+  000002A3: 68 00 D0 07 00     push        7D000h
+  000002A8: FF 35 00 00 00 00  push        dword ptr [_dword_16C1830]
+  000002AE: FF 35 00 00 00 00  push        dword ptr [_dword_2305800]
+  000002B4: FF 35 00 00 00 00  push        dword ptr [_dword_1A86034]
+  000002BA: E8 00 00 00 00     call        _FFX_MagicHost_AttachPppResourceBuffer
+  000002BF: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  000002C5: B8 01 01 00 00     mov         eax,101h
+  000002CA: C7 41 08 30 00 23  mov         dword ptr [ecx+8],230030h
+            00
+  000002D1: 66 89 41 22        mov         word ptr [ecx+22h],ax
+  000002D5: C7 41 0C A0 01 14  mov         dword ptr [ecx+0Ch],1401A0h
+            00
+  000002DC: C7 01 30 00 23 00  mov         dword ptr [ecx],230030h
+  000002E2: C7 41 04 A0 01 14  mov         dword ptr [ecx+4],1401A0h
+            00
+  000002E9: C7 41 14 1A 00 01  mov         dword ptr [ecx+14h],1001Ah
+            00
+  000002F0: C7 41 10 1A 00 01  mov         dword ptr [ecx+10h],1001Ah
+            00
+  000002F7: C7 41 1E 00 00 0F  mov         dword ptr [ecx+1Eh],0F0000h
+            00
+  000002FE: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F930]
+  00000303: 89 41 38           mov         dword ptr [ecx+38h],eax
+  00000306: A1 00 00 00 00     mov         eax,dword ptr [_sub_A570A0]
+  0000030B: 89 41 3C           mov         dword ptr [ecx+3Ch],eax
+  0000030E: 33 C0              xor         eax,eax
+  00000310: C7 41 18 00 00 00  mov         dword ptr [ecx+18h],0
+            00
+  00000317: 66 89 41 25        mov         word ptr [ecx+25h],ax
+  0000031B: 88 41 24           mov         byte ptr [ecx+24h],al
+  0000031E: 88 41 28           mov         byte ptr [ecx+28h],al
+  00000321: 89 41 34           mov         dword ptr [ecx+34h],eax
+  00000324: C7 81 C8 16 00 00  mov         dword ptr [ecx+16C8h],offset _unk_CD0030
+            00 00 00 00
+  0000032E: C7 81 CC 16 00 00  mov         dword ptr [ecx+16CCh],280050h
+            50 00 28 00
+  00000338: C7 81 C0 16 00 00  mov         dword ptr [ecx+16C0h],offset _unk_CD0030
+            00 00 00 00
+  00000342: C7 81 C4 16 00 00  mov         dword ptr [ecx+16C4h],280050h
+            50 00 28 00
+  0000034C: C7 81 D4 16 00 00  mov         dword ptr [ecx+16D4h],20005h
+            05 00 02 00
+  00000356: C7 81 D0 16 00 00  mov         dword ptr [ecx+16D0h],20005h
+            05 00 02 00
+  00000360: B8 01 00 00 00     mov         eax,1
+  00000365: 66 89 81 E2 16 00  mov         word ptr [ecx+16E2h],ax
+            00
+  0000036C: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F930]
+  00000371: 89 81 F8 16 00 00  mov         dword ptr [ecx+16F8h],eax
+  00000377: A1 00 00 00 00     mov         eax,dword ptr [_sub_A570A0]
+  0000037C: 89 81 FC 16 00 00  mov         dword ptr [ecx+16FCh],eax
+  00000382: A1 00 00 00 00     mov         eax,dword ptr [_unk_1A85F74]
+  00000387: F7 D8              neg         eax
+  00000389: 1B C0              sbb         eax,eax
+  0000038B: 25 00 00 08 00     and         eax,80000h
+  00000390: 05 00 00 0A 00     add         eax,0A0000h
+  00000395: 89 81 DE 16 00 00  mov         dword ptr [ecx+16DEh],eax
+  0000039B: 33 C0              xor         eax,eax
+  0000039D: C7 81 F4 16 00 00  mov         dword ptr [ecx+16F4h],0
+            00 00 00 00
+  000003A7: C6 81 E8 16 00 00  mov         byte ptr [ecx+16E8h],0
+            00
+  000003AE: C6 81 E4 16 00 00  mov         byte ptr [ecx+16E4h],0
+            00
+  000003B5: 66 89 81 E5 16 00  mov         word ptr [ecx+16E5h],ax
+            00
+  000003BC: 89 81 D8 16 00 00  mov         dword ptr [ecx+16D8h],eax
+  000003C2: E8 00 00 00 00     call        _sub_7852B0
+  000003C7: 0F BE C0           movsx       eax,al
+  000003CA: 83 E0 01           and         eax,1
+  000003CD: 50                 push        eax
+  000003CE: 6A 1F              push        1Fh
+  000003D0: 6A 09              push        9
+  000003D2: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  000003D7: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000003DD: 83 C4 1C           add         esp,1Ch
+  000003E0: 0F B7 B7 DE 16 00  movzx       esi,word ptr [edi+16DEh]
+            00
+  000003E7: 8B D8              mov         ebx,eax
+  000003E9: 66 83 FE 40        cmp         si,40h
+  000003ED: 7D 4E              jge         0000043D
+  000003EF: 0F BF C6           movsx       eax,si
+  000003F2: 8D 4E 01           lea         ecx,[esi+1]
+  000003F5: 8D 34 40           lea         esi,[eax+eax*2]
+  000003F8: 0F BF 87 D6 16 00  movsx       eax,word ptr [edi+16D6h]
+            00
+  000003FF: 0F B7 D1           movzx       edx,cx
+  00000402: 0F B6 8F E2 16 00  movzx       ecx,byte ptr [edi+16E2h]
+            00
+  00000409: 0F AF C8           imul        ecx,eax
+  0000040C: 0F BF C2           movsx       eax,dx
+  0000040F: 3B C1              cmp         eax,ecx
+  00000411: 0F 9F C0           setg        al
+  00000414: 88 87 E8 16 00 00  mov         byte ptr [edi+16E8h],al
+  0000041A: 66 89 97 DE 16 00  mov         word ptr [edi+16DEh],dx
+            00
+  00000421: 89 9C B7 00 17 00  mov         dword ptr [edi+esi*4+1700h],ebx
+            00
+  00000428: C7 84 B7 08 17 00  mov         dword ptr [edi+esi*4+1708h],1Fh
+            00 1F 00 00 00
+  00000433: C6 84 B7 04 17 00  mov         byte ptr [edi+esi*4+1704h],0
+            00 00
+  0000043B: EB 16              jmp         00000453
+  0000043D: E8 00 00 00 00     call        _nullsub_34
+  00000442: 6A 40              push        40h
+  00000444: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000449: 6A 00              push        0
+  0000044B: E8 00 00 00 00     call        _nullsub_35
+  00000450: 83 C4 0C           add         esp,0Ch
+  00000453: E8 00 00 00 00     call        _sub_7852B0
+  00000458: 0F BE C0           movsx       eax,al
+  0000045B: 83 E0 01           and         eax,1
+  0000045E: 50                 push        eax
+  0000045F: 6A 1E              push        1Eh
+  00000461: 6A 09              push        9
+  00000463: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000468: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  0000046E: 83 C4 0C           add         esp,0Ch
+  00000471: 0F B7 B7 DE 16 00  movzx       esi,word ptr [edi+16DEh]
+            00
+  00000478: 8B D8              mov         ebx,eax
+  0000047A: 66 83 FE 40        cmp         si,40h
+  0000047E: 7D 4E              jge         000004CE
+  00000480: 0F BF C6           movsx       eax,si
+  00000483: 8D 4E 01           lea         ecx,[esi+1]
+  00000486: 8D 34 40           lea         esi,[eax+eax*2]
+  00000489: 0F BF 87 D6 16 00  movsx       eax,word ptr [edi+16D6h]
+            00
+  00000490: 0F B7 D1           movzx       edx,cx
+  00000493: 0F B6 8F E2 16 00  movzx       ecx,byte ptr [edi+16E2h]
+            00
+  0000049A: 0F AF C8           imul        ecx,eax
+  0000049D: 0F BF C2           movsx       eax,dx
+  000004A0: 3B C1              cmp         eax,ecx
+  000004A2: 0F 9F C0           setg        al
+  000004A5: 88 87 E8 16 00 00  mov         byte ptr [edi+16E8h],al
+  000004AB: 66 89 97 DE 16 00  mov         word ptr [edi+16DEh],dx
+            00
+  000004B2: 89 9C B7 00 17 00  mov         dword ptr [edi+esi*4+1700h],ebx
+            00
+  000004B9: C7 84 B7 08 17 00  mov         dword ptr [edi+esi*4+1708h],1Eh
+            00 1E 00 00 00
+  000004C4: C6 84 B7 04 17 00  mov         byte ptr [edi+esi*4+1704h],0
+            00 00
+  000004CC: EB 1C              jmp         000004EA
+  000004CE: E8 00 00 00 00     call        _nullsub_34
+  000004D3: 6A 40              push        40h
+  000004D5: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  000004DA: 6A 00              push        0
+  000004DC: E8 00 00 00 00     call        _nullsub_35
+  000004E1: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000004E7: 83 C4 0C           add         esp,0Ch
+  000004EA: C7 87 08 1A 00 00  mov         dword ptr [edi+1A08h],offset _unk_CD0030
+            00 00 00 00
+  000004F4: C7 87 00 1A 00 00  mov         dword ptr [edi+1A00h],offset _unk_CD0030
+            00 00 00 00
+  000004FE: C7 87 1E 1A 00 00  mov         dword ptr [edi+1A1Eh],80000h
+            00 00 08 00
+  00000508: BB 01 00 00 00     mov         ebx,1
+  0000050D: 66 89 9F 22 1A 00  mov         word ptr [edi+1A22h],bx
+            00
+  00000514: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F630]
+  00000519: 89 87 38 1A 00 00  mov         dword ptr [edi+1A38h],eax
+  0000051F: A1 00 00 00 00     mov         eax,dword ptr [_sub_A57040]
+  00000524: 89 87 3C 1A 00 00  mov         dword ptr [edi+1A3Ch],eax
+  0000052A: 33 C0              xor         eax,eax
+  0000052C: C7 87 18 1A 00 00  mov         dword ptr [edi+1A18h],0
+            00 00 00 00
+  00000536: 66 89 87 25 1A 00  mov         word ptr [edi+1A25h],ax
+            00
+  0000053D: 88 87 24 1A 00 00  mov         byte ptr [edi+1A24h],al
+  00000543: 88 87 28 1A 00 00  mov         byte ptr [edi+1A28h],al
+  00000549: 89 87 34 1A 00 00  mov         dword ptr [edi+1A34h],eax
+  0000054F: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000555: 74 2A              je          00000581
+  00000557: C7 87 0C 1A 00 00  mov         dword ptr [edi+1A0Ch],500090h
+            90 00 50 00
+  00000561: C7 87 04 1A 00 00  mov         dword ptr [edi+1A04h],500090h
+            90 00 50 00
+  0000056B: C7 87 14 1A 00 00  mov         dword ptr [edi+1A14h],40009h
+            09 00 04 00
+  00000575: C7 87 10 1A 00 00  mov         dword ptr [edi+1A10h],40009h
+            09 00 04 00
+  0000057F: EB 28              jmp         000005A9
+  00000581: C7 87 0C 1A 00 00  mov         dword ptr [edi+1A0Ch],5000B0h
+            B0 00 50 00
+  0000058B: C7 87 04 1A 00 00  mov         dword ptr [edi+1A04h],5000B0h
+            B0 00 50 00
+  00000595: C7 87 14 1A 00 00  mov         dword ptr [edi+1A14h],4000Bh
+            0B 00 04 00
+  0000059F: C7 87 10 1A 00 00  mov         dword ptr [edi+1A10h],4000Bh
+            0B 00 04 00
+  000005A9: 33 C0              xor         eax,eax
+  000005AB: 6A 03              push        3
+  000005AD: 6A 08              push        8
+  000005AF: 66 89 87 1E 1A 00  mov         word ptr [edi+1A1Eh],ax
+            00
+  000005B6: E8 00 00 00 00     call        _sub_A45FD0
+  000005BB: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  000005C1: 83 C4 08           add         esp,8
+  000005C4: C7 81 88 13 00 00  mov         dword ptr [ecx+1388h],offset _unk_1640030
+            00 00 00 00
+  000005CE: C7 81 80 13 00 00  mov         dword ptr [ecx+1380h],offset _unk_1640030
+            00 00 00 00
+  000005D8: C7 81 9E 13 00 00  mov         dword ptr [ecx+139Eh],140000h
+            00 00 14 00
+  000005E2: 66 89 99 A2 13 00  mov         word ptr [ecx+13A2h],bx
+            00
+  000005E9: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F9E0]
+  000005EE: 89 81 B8 13 00 00  mov         dword ptr [ecx+13B8h],eax
+  000005F4: 33 C0              xor         eax,eax
+  000005F6: C7 81 98 13 00 00  mov         dword ptr [ecx+1398h],0
+            00 00 00 00
+  00000600: 66 89 81 A5 13 00  mov         word ptr [ecx+13A5h],ax
+            00
+  00000607: 88 81 A4 13 00 00  mov         byte ptr [ecx+13A4h],al
+  0000060D: 88 81 A8 13 00 00  mov         byte ptr [ecx+13A8h],al
+  00000613: 89 81 BC 13 00 00  mov         dword ptr [ecx+13BCh],eax
+  00000619: 89 81 B4 13 00 00  mov         dword ptr [ecx+13B4h],eax
+  0000061F: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000625: 74 2A              je          00000651
+  00000627: C7 81 8C 13 00 00  mov         dword ptr [ecx+138Ch],140080h
+            80 00 14 00
+  00000631: C7 81 84 13 00 00  mov         dword ptr [ecx+1384h],140080h
+            80 00 14 00
+  0000063B: C7 81 94 13 00 00  mov         dword ptr [ecx+1394h],10008h
+            08 00 01 00
+  00000645: C7 81 90 13 00 00  mov         dword ptr [ecx+1390h],10008h
+            08 00 01 00
+  0000064F: EB 28              jmp         00000679
+  00000651: C7 81 8C 13 00 00  mov         dword ptr [ecx+138Ch],1400B0h
+            B0 00 14 00
+  0000065B: C7 81 84 13 00 00  mov         dword ptr [ecx+1384h],1400B0h
+            B0 00 14 00
+  00000665: C7 81 94 13 00 00  mov         dword ptr [ecx+1394h],1000Bh
+            0B 00 01 00
+  0000066F: C7 81 90 13 00 00  mov         dword ptr [ecx+1390h],1000Bh
+            0B 00 01 00
+  00000679: E8 00 00 00 00     call        _sub_7852B0
+  0000067E: 0F BE C0           movsx       eax,al
+  00000681: 83 E0 01           and         eax,1
+  00000684: 50                 push        eax
+  00000685: 6A 23              push        23h
+  00000687: 6A 09              push        9
+  00000689: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  0000068E: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000694: 83 C4 0C           add         esp,0Ch
+  00000697: 0F B7 B7 9E 13 00  movzx       esi,word ptr [edi+139Eh]
+            00
+  0000069E: 8B D8              mov         ebx,eax
+  000006A0: 66 83 FE 40        cmp         si,40h
+  000006A4: 7D 4E              jge         000006F4
+  000006A6: 0F BF C6           movsx       eax,si
+  000006A9: 8D 4E 01           lea         ecx,[esi+1]
+  000006AC: 8D 34 40           lea         esi,[eax+eax*2]
+  000006AF: 0F BF 87 96 13 00  movsx       eax,word ptr [edi+1396h]
+            00
+  000006B6: 0F B7 D1           movzx       edx,cx
+  000006B9: 0F B6 8F A2 13 00  movzx       ecx,byte ptr [edi+13A2h]
+            00
+  000006C0: 0F AF C8           imul        ecx,eax
+  000006C3: 0F BF C2           movsx       eax,dx
+  000006C6: 3B C1              cmp         eax,ecx
+  000006C8: 0F 9F C0           setg        al
+  000006CB: 88 87 A8 13 00 00  mov         byte ptr [edi+13A8h],al
+  000006D1: 66 89 97 9E 13 00  mov         word ptr [edi+139Eh],dx
+            00
+  000006D8: 89 9C B7 C0 13 00  mov         dword ptr [edi+esi*4+13C0h],ebx
+            00
+  000006DF: C7 84 B7 C8 13 00  mov         dword ptr [edi+esi*4+13C8h],23h
+            00 23 00 00 00
+  000006EA: C6 84 B7 C4 13 00  mov         byte ptr [edi+esi*4+13C4h],0
+            00 00
+  000006F2: EB 1C              jmp         00000710
+  000006F4: E8 00 00 00 00     call        _nullsub_34
+  000006F9: 6A 40              push        40h
+  000006FB: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000700: 6A 00              push        0
+  00000702: E8 00 00 00 00     call        _nullsub_35
+  00000707: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  0000070D: 83 C4 0C           add         esp,0Ch
+  00000710: B8 02 00 00 00     mov         eax,2
+  00000715: 66 89 87 62 03 00  mov         word ptr [edi+362h],ax
+            00
+  0000071C: C7 87 5E 03 00 00  mov         dword ptr [edi+35Eh],200000h
+            00 00 20 00
+  00000726: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4FA30]
+  0000072B: 89 87 78 03 00 00  mov         dword ptr [edi+378h],eax
+  00000731: 33 C0              xor         eax,eax
+  00000733: C7 87 58 03 00 00  mov         dword ptr [edi+358h],0
+            00 00 00 00
+  0000073D: 66 89 87 65 03 00  mov         word ptr [edi+365h],ax
+            00
+  00000744: 88 87 64 03 00 00  mov         byte ptr [edi+364h],al
+  0000074A: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000750: 89 87 7C 03 00 00  mov         dword ptr [edi+37Ch],eax
+  00000756: 89 87 74 03 00 00  mov         dword ptr [edi+374h],eax
+  0000075C: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000762: 74 3E              je          000007A2
+  00000764: C7 87 48 03 00 00  mov         dword ptr [edi+348h],offset _unk_11400A0
+            00 00 00 00
+  0000076E: C7 87 4C 03 00 00  mov         dword ptr [edi+34Ch],offset _loc_6400C0
+            00 00 00 00
+  00000778: C7 87 40 03 00 00  mov         dword ptr [edi+340h],offset _unk_11400A0
+            00 00 00 00
+  00000782: C7 87 44 03 00 00  mov         dword ptr [edi+344h],offset _loc_6400C0
+            00 00 00 00
+  0000078C: C7 87 54 03 00 00  mov         dword ptr [edi+354h],5000Ch
+            0C 00 05 00
+  00000796: C7 87 50 03 00 00  mov         dword ptr [edi+350h],5000Ch
+            0C 00 05 00
+  000007A0: EB 3C              jmp         000007DE
+  000007A2: C7 87 48 03 00 00  mov         dword ptr [edi+348h],offset _unk_1140088
+            00 00 00 00
+  000007AC: C7 87 4C 03 00 00  mov         dword ptr [edi+34Ch],6400F0h
+            F0 00 64 00
+  000007B6: C7 87 40 03 00 00  mov         dword ptr [edi+340h],offset _unk_1140088
+            00 00 00 00
+  000007C0: C7 87 44 03 00 00  mov         dword ptr [edi+344h],6400F0h
+            F0 00 64 00
+  000007CA: C7 87 54 03 00 00  mov         dword ptr [edi+354h],5000Fh
+            0F 00 05 00
+  000007D4: C7 87 50 03 00 00  mov         dword ptr [edi+350h],5000Fh
+            0F 00 05 00
+  000007DE: E8 00 00 00 00     call        _sub_7852B0
+  000007E3: 0F BE C0           movsx       eax,al
+  000007E6: 83 E0 01           and         eax,1
+  000007E9: 50                 push        eax
+  000007EA: 6A 00              push        0
+  000007EC: 6A 0B              push        0Bh
+  000007EE: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  000007F3: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000007F9: 83 C4 0C           add         esp,0Ch
+  000007FC: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000803: 8B D8              mov         ebx,eax
+  00000805: 66 83 FE 40        cmp         si,40h
+  00000809: 7D 4E              jge         00000859
+  0000080B: 0F BF C6           movsx       eax,si
+  0000080E: 8D 4E 01           lea         ecx,[esi+1]
+  00000811: 8D 34 40           lea         esi,[eax+eax*2]
+  00000814: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  0000081B: 0F B7 D1           movzx       edx,cx
+  0000081E: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000825: 0F AF C8           imul        ecx,eax
+  00000828: 0F BF C2           movsx       eax,dx
+  0000082B: 3B C1              cmp         eax,ecx
+  0000082D: 0F 9F C0           setg        al
+  00000830: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000836: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  0000083D: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000844: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],0
+            00 00 00 00 00
+  0000084F: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000857: EB 16              jmp         0000086F
+  00000859: E8 00 00 00 00     call        _nullsub_34
+  0000085E: 6A 40              push        40h
+  00000860: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000865: 6A 00              push        0
+  00000867: E8 00 00 00 00     call        _nullsub_35
+  0000086C: 83 C4 0C           add         esp,0Ch
+  0000086F: E8 00 00 00 00     call        _sub_7852B0
+  00000874: 0F BE C0           movsx       eax,al
+  00000877: 83 E0 01           and         eax,1
+  0000087A: 50                 push        eax
+  0000087B: 6A 01              push        1
+  0000087D: 6A 0B              push        0Bh
+  0000087F: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000884: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  0000088A: 83 C4 0C           add         esp,0Ch
+  0000088D: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000894: 8B D8              mov         ebx,eax
+  00000896: 66 83 FE 40        cmp         si,40h
+  0000089A: 7D 4E              jge         000008EA
+  0000089C: 0F BF C6           movsx       eax,si
+  0000089F: 8D 4E 01           lea         ecx,[esi+1]
+  000008A2: 8D 34 40           lea         esi,[eax+eax*2]
+  000008A5: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  000008AC: 0F B7 D1           movzx       edx,cx
+  000008AF: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  000008B6: 0F AF C8           imul        ecx,eax
+  000008B9: 0F BF C2           movsx       eax,dx
+  000008BC: 3B C1              cmp         eax,ecx
+  000008BE: 0F 9F C0           setg        al
+  000008C1: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  000008C7: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  000008CE: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  000008D5: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],1
+            00 01 00 00 00
+  000008E0: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  000008E8: EB 16              jmp         00000900
+  000008EA: E8 00 00 00 00     call        _nullsub_34
+  000008EF: 6A 40              push        40h
+  000008F1: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  000008F6: 6A 00              push        0
+  000008F8: E8 00 00 00 00     call        _nullsub_35
+  000008FD: 83 C4 0C           add         esp,0Ch
+  00000900: E8 00 00 00 00     call        _sub_7852B0
+  00000905: 0F BE C0           movsx       eax,al
+  00000908: 83 E0 01           and         eax,1
+  0000090B: 50                 push        eax
+  0000090C: 6A 07              push        7
+  0000090E: 6A 0B              push        0Bh
+  00000910: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000915: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  0000091B: 83 C4 0C           add         esp,0Ch
+  0000091E: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000925: 8B D8              mov         ebx,eax
+  00000927: 66 83 FE 40        cmp         si,40h
+  0000092B: 7D 4E              jge         0000097B
+  0000092D: 0F BF C6           movsx       eax,si
+  00000930: 8D 4E 01           lea         ecx,[esi+1]
+  00000933: 8D 34 40           lea         esi,[eax+eax*2]
+  00000936: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  0000093D: 0F B7 D1           movzx       edx,cx
+  00000940: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000947: 0F AF C8           imul        ecx,eax
+  0000094A: 0F BF C2           movsx       eax,dx
+  0000094D: 3B C1              cmp         eax,ecx
+  0000094F: 0F 9F C0           setg        al
+  00000952: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000958: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  0000095F: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000966: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],2
+            00 02 00 00 00
+  00000971: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000979: EB 16              jmp         00000991
+  0000097B: E8 00 00 00 00     call        _nullsub_34
+  00000980: 6A 40              push        40h
+  00000982: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000987: 6A 00              push        0
+  00000989: E8 00 00 00 00     call        _nullsub_35
+  0000098E: 83 C4 0C           add         esp,0Ch
+  00000991: E8 00 00 00 00     call        _sub_7852B0
+  00000996: 0F BE C0           movsx       eax,al
+  00000999: 83 E0 01           and         eax,1
+  0000099C: 50                 push        eax
+  0000099D: 6A 0B              push        0Bh
+  0000099F: 6A 0B              push        0Bh
+  000009A1: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  000009A6: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000009AC: 83 C4 0C           add         esp,0Ch
+  000009AF: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  000009B6: 8B D8              mov         ebx,eax
+  000009B8: 66 83 FE 40        cmp         si,40h
+  000009BC: 7D 4E              jge         00000A0C
+  000009BE: 0F BF C6           movsx       eax,si
+  000009C1: 8D 4E 01           lea         ecx,[esi+1]
+  000009C4: 8D 34 40           lea         esi,[eax+eax*2]
+  000009C7: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  000009CE: 0F B7 D1           movzx       edx,cx
+  000009D1: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  000009D8: 0F AF C8           imul        ecx,eax
+  000009DB: 0F BF C2           movsx       eax,dx
+  000009DE: 3B C1              cmp         eax,ecx
+  000009E0: 0F 9F C0           setg        al
+  000009E3: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  000009E9: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  000009F0: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  000009F7: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],3
+            00 03 00 00 00
+  00000A02: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000A0A: EB 16              jmp         00000A22
+  00000A0C: E8 00 00 00 00     call        _nullsub_34
+  00000A11: 6A 40              push        40h
+  00000A13: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000A18: 6A 00              push        0
+  00000A1A: E8 00 00 00 00     call        _nullsub_35
+  00000A1F: 83 C4 0C           add         esp,0Ch
+  00000A22: E8 00 00 00 00     call        _sub_7852B0
+  00000A27: 0F BE C0           movsx       eax,al
+  00000A2A: 83 E0 01           and         eax,1
+  00000A2D: 50                 push        eax
+  00000A2E: 6A 08              push        8
+  00000A30: 6A 0B              push        0Bh
+  00000A32: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000A37: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000A3D: 83 C4 0C           add         esp,0Ch
+  00000A40: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000A47: 8B D8              mov         ebx,eax
+  00000A49: 66 83 FE 40        cmp         si,40h
+  00000A4D: 7D 4E              jge         00000A9D
+  00000A4F: 0F BF C6           movsx       eax,si
+  00000A52: 8D 4E 01           lea         ecx,[esi+1]
+  00000A55: 8D 34 40           lea         esi,[eax+eax*2]
+  00000A58: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000A5F: 0F B7 D1           movzx       edx,cx
+  00000A62: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000A69: 0F AF C8           imul        ecx,eax
+  00000A6C: 0F BF C2           movsx       eax,dx
+  00000A6F: 3B C1              cmp         eax,ecx
+  00000A71: 0F 9F C0           setg        al
+  00000A74: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000A7A: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000A81: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000A88: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],4
+            00 04 00 00 00
+  00000A93: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000A9B: EB 16              jmp         00000AB3
+  00000A9D: E8 00 00 00 00     call        _nullsub_34
+  00000AA2: 6A 40              push        40h
+  00000AA4: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000AA9: 6A 00              push        0
+  00000AAB: E8 00 00 00 00     call        _nullsub_35
+  00000AB0: 83 C4 0C           add         esp,0Ch
+  00000AB3: E8 00 00 00 00     call        _sub_7852B0
+  00000AB8: 0F BE C0           movsx       eax,al
+  00000ABB: 83 E0 01           and         eax,1
+  00000ABE: 50                 push        eax
+  00000ABF: 6A 0C              push        0Ch
+  00000AC1: 6A 0B              push        0Bh
+  00000AC3: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000AC8: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000ACE: 83 C4 0C           add         esp,0Ch
+  00000AD1: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000AD8: 8B D8              mov         ebx,eax
+  00000ADA: 66 83 FE 40        cmp         si,40h
+  00000ADE: 7D 4E              jge         00000B2E
+  00000AE0: 0F BF C6           movsx       eax,si
+  00000AE3: 8D 4E 01           lea         ecx,[esi+1]
+  00000AE6: 8D 34 40           lea         esi,[eax+eax*2]
+  00000AE9: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000AF0: 0F B7 D1           movzx       edx,cx
+  00000AF3: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000AFA: 0F AF C8           imul        ecx,eax
+  00000AFD: 0F BF C2           movsx       eax,dx
+  00000B00: 3B C1              cmp         eax,ecx
+  00000B02: 0F 9F C0           setg        al
+  00000B05: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000B0B: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000B12: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000B19: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],5
+            00 05 00 00 00
+  00000B24: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000B2C: EB 16              jmp         00000B44
+  00000B2E: E8 00 00 00 00     call        _nullsub_34
+  00000B33: 6A 40              push        40h
+  00000B35: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000B3A: 6A 00              push        0
+  00000B3C: E8 00 00 00 00     call        _nullsub_35
+  00000B41: 83 C4 0C           add         esp,0Ch
+  00000B44: E8 00 00 00 00     call        _sub_7852B0
+  00000B49: 0F BE C0           movsx       eax,al
+  00000B4C: 83 E0 01           and         eax,1
+  00000B4F: 50                 push        eax
+  00000B50: 6A 09              push        9
+  00000B52: 6A 0B              push        0Bh
+  00000B54: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000B59: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000B5F: 83 C4 0C           add         esp,0Ch
+  00000B62: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000B69: 8B D8              mov         ebx,eax
+  00000B6B: 66 83 FE 40        cmp         si,40h
+  00000B6F: 7D 4E              jge         00000BBF
+  00000B71: 0F BF C6           movsx       eax,si
+  00000B74: 8D 4E 01           lea         ecx,[esi+1]
+  00000B77: 8D 34 40           lea         esi,[eax+eax*2]
+  00000B7A: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000B81: 0F B7 D1           movzx       edx,cx
+  00000B84: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000B8B: 0F AF C8           imul        ecx,eax
+  00000B8E: 0F BF C2           movsx       eax,dx
+  00000B91: 3B C1              cmp         eax,ecx
+  00000B93: 0F 9F C0           setg        al
+  00000B96: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000B9C: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000BA3: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000BAA: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],6
+            00 06 00 00 00
+  00000BB5: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000BBD: EB 16              jmp         00000BD5
+  00000BBF: E8 00 00 00 00     call        _nullsub_34
+  00000BC4: 6A 40              push        40h
+  00000BC6: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000BCB: 6A 00              push        0
+  00000BCD: E8 00 00 00 00     call        _nullsub_35
+  00000BD2: 83 C4 0C           add         esp,0Ch
+  00000BD5: E8 00 00 00 00     call        _sub_7852B0
+  00000BDA: 0F BE C0           movsx       eax,al
+  00000BDD: 83 E0 01           and         eax,1
+  00000BE0: 50                 push        eax
+  00000BE1: 6A 0D              push        0Dh
+  00000BE3: 6A 0B              push        0Bh
+  00000BE5: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000BEA: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000BF0: 83 C4 0C           add         esp,0Ch
+  00000BF3: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000BFA: 8B D8              mov         ebx,eax
+  00000BFC: 66 83 FE 40        cmp         si,40h
+  00000C00: 7D 4E              jge         00000C50
+  00000C02: 0F BF C6           movsx       eax,si
+  00000C05: 8D 4E 01           lea         ecx,[esi+1]
+  00000C08: 8D 34 40           lea         esi,[eax+eax*2]
+  00000C0B: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000C12: 0F B7 D1           movzx       edx,cx
+  00000C15: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000C1C: 0F AF C8           imul        ecx,eax
+  00000C1F: 0F BF C2           movsx       eax,dx
+  00000C22: 3B C1              cmp         eax,ecx
+  00000C24: 0F 9F C0           setg        al
+  00000C27: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000C2D: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000C34: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000C3B: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],7
+            00 07 00 00 00
+  00000C46: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000C4E: EB 16              jmp         00000C66
+  00000C50: E8 00 00 00 00     call        _nullsub_34
+  00000C55: 6A 40              push        40h
+  00000C57: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000C5C: 6A 00              push        0
+  00000C5E: E8 00 00 00 00     call        _nullsub_35
+  00000C63: 83 C4 0C           add         esp,0Ch
+  00000C66: E8 00 00 00 00     call        _sub_7852B0
+  00000C6B: 0F BE C0           movsx       eax,al
+  00000C6E: 83 E0 01           and         eax,1
+  00000C71: 50                 push        eax
+  00000C72: 6A 0A              push        0Ah
+  00000C74: 6A 0B              push        0Bh
+  00000C76: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000C7B: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000C81: 83 C4 0C           add         esp,0Ch
+  00000C84: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000C8B: 8B D8              mov         ebx,eax
+  00000C8D: 66 83 FE 40        cmp         si,40h
+  00000C91: 7D 4E              jge         00000CE1
+  00000C93: 0F BF C6           movsx       eax,si
+  00000C96: 8D 4E 01           lea         ecx,[esi+1]
+  00000C99: 8D 34 40           lea         esi,[eax+eax*2]
+  00000C9C: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000CA3: 0F B7 D1           movzx       edx,cx
+  00000CA6: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000CAD: 0F AF C8           imul        ecx,eax
+  00000CB0: 0F BF C2           movsx       eax,dx
+  00000CB3: 3B C1              cmp         eax,ecx
+  00000CB5: 0F 9F C0           setg        al
+  00000CB8: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000CBE: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000CC5: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000CCC: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],8
+            00 08 00 00 00
+  00000CD7: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000CDF: EB 16              jmp         00000CF7
+  00000CE1: E8 00 00 00 00     call        _nullsub_34
+  00000CE6: 6A 40              push        40h
+  00000CE8: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000CED: 6A 00              push        0
+  00000CEF: E8 00 00 00 00     call        _nullsub_35
+  00000CF4: 83 C4 0C           add         esp,0Ch
+  00000CF7: E8 00 00 00 00     call        _sub_7852B0
+  00000CFC: 0F BE C0           movsx       eax,al
+  00000CFF: 83 E0 01           and         eax,1
+  00000D02: 50                 push        eax
+  00000D03: 6A 0E              push        0Eh
+  00000D05: 6A 0B              push        0Bh
+  00000D07: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00000D0C: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000D12: 83 C4 0C           add         esp,0Ch
+  00000D15: 0F B7 B7 5E 03 00  movzx       esi,word ptr [edi+35Eh]
+            00
+  00000D1C: 8B D8              mov         ebx,eax
+  00000D1E: 66 83 FE 40        cmp         si,40h
+  00000D22: 7D 4E              jge         00000D72
+  00000D24: 0F BF C6           movsx       eax,si
+  00000D27: 8D 4E 01           lea         ecx,[esi+1]
+  00000D2A: 8D 34 40           lea         esi,[eax+eax*2]
+  00000D2D: 0F BF 87 56 03 00  movsx       eax,word ptr [edi+356h]
+            00
+  00000D34: 0F B7 D1           movzx       edx,cx
+  00000D37: 0F B6 8F 62 03 00  movzx       ecx,byte ptr [edi+362h]
+            00
+  00000D3E: 0F AF C8           imul        ecx,eax
+  00000D41: 0F BF C2           movsx       eax,dx
+  00000D44: 3B C1              cmp         eax,ecx
+  00000D46: 0F 9F C0           setg        al
+  00000D49: 88 87 68 03 00 00  mov         byte ptr [edi+368h],al
+  00000D4F: 66 89 97 5E 03 00  mov         word ptr [edi+35Eh],dx
+            00
+  00000D56: 89 9C B7 80 03 00  mov         dword ptr [edi+esi*4+380h],ebx
+            00
+  00000D5D: C7 84 B7 88 03 00  mov         dword ptr [edi+esi*4+388h],9
+            00 09 00 00 00
+  00000D68: C6 84 B7 84 03 00  mov         byte ptr [edi+esi*4+384h],0
+            00 00
+  00000D70: EB 1C              jmp         00000D8E
+  00000D72: E8 00 00 00 00     call        _nullsub_34
+  00000D77: 6A 40              push        40h
+  00000D79: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00000D7E: 6A 00              push        0
+  00000D80: E8 00 00 00 00     call        _nullsub_35
+  00000D85: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00000D8B: 83 C4 0C           add         esp,0Ch
+  00000D8E: BB 03 00 00 00     mov         ebx,3
+  00000D93: C7 87 DE 09 00 00  mov         dword ptr [edi+9DEh],200000h
+            00 00 20 00
+  00000D9D: 66 89 9F E2 09 00  mov         word ptr [edi+9E2h],bx
+            00
+  00000DA4: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F250]
+  00000DA9: 89 87 F8 09 00 00  mov         dword ptr [edi+9F8h],eax
+  00000DAF: 33 C0              xor         eax,eax
+  00000DB1: C7 87 D8 09 00 00  mov         dword ptr [edi+9D8h],0
+            00 00 00 00
+  00000DBB: 66 89 87 E5 09 00  mov         word ptr [edi+9E5h],ax
+            00
+  00000DC2: 88 87 E4 09 00 00  mov         byte ptr [edi+9E4h],al
+  00000DC8: 88 87 E8 09 00 00  mov         byte ptr [edi+9E8h],al
+  00000DCE: 89 87 FC 09 00 00  mov         dword ptr [edi+9FCh],eax
+  00000DD4: 89 87 F4 09 00 00  mov         dword ptr [edi+9F4h],eax
+  00000DDA: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000DE0: 74 40              je          00000E22
+  00000DE2: C7 87 C8 09 00 00  mov         dword ptr [edi+9C8h],offset _unk_D8005F
+            00 00 00 00
+  00000DEC: A1 00 00 00 00     mov         eax,dword ptr [_sub_A00140]
+  00000DF1: 89 87 CC 09 00 00  mov         dword ptr [edi+9CCh],eax
+  00000DF7: C7 87 C0 09 00 00  mov         dword ptr [edi+9C0h],offset _unk_D8005F
+            00 00 00 00
+  00000E01: A1 00 00 00 00     mov         eax,dword ptr [_sub_A00140]
+  00000E06: 89 87 C4 09 00 00  mov         dword ptr [edi+9C4h],eax
+  00000E0C: C7 87 D4 09 00 00  mov         dword ptr [edi+9D4h],80014h
+            14 00 08 00
+  00000E16: C7 87 D0 09 00 00  mov         dword ptr [edi+9D0h],80014h
+            14 00 08 00
+  00000E20: EB 3C              jmp         00000E5E
+  00000E22: C7 87 C8 09 00 00  mov         dword ptr [edi+9C8h],offset _unk_D80048
+            00 00 00 00
+  00000E2C: C7 87 CC 09 00 00  mov         dword ptr [edi+9CCh],offset _loc_A00170
+            00 00 00 00
+  00000E36: C7 87 C0 09 00 00  mov         dword ptr [edi+9C0h],offset _unk_D80048
+            00 00 00 00
+  00000E40: C7 87 C4 09 00 00  mov         dword ptr [edi+9C4h],offset _loc_A00170
+            00 00 00 00
+  00000E4A: C7 87 D4 09 00 00  mov         dword ptr [edi+9D4h],80017h
+            17 00 08 00
+  00000E54: C7 87 D0 09 00 00  mov         dword ptr [edi+9D0h],80017h
+            17 00 08 00
+  00000E5E: 6A 40              push        40h
+  00000E60: 6A 03              push        3
+  00000E62: E8 00 00 00 00     call        _sub_A459E0
+  00000E67: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  00000E6D: 83 C4 08           add         esp,8
+  00000E70: C7 81 9E 06 00 00  mov         dword ptr [ecx+69Eh],200000h
+            00 00 20 00
+  00000E7A: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F9A0]
+  00000E7F: 89 81 B8 06 00 00  mov         dword ptr [ecx+6B8h],eax
+  00000E85: 33 C0              xor         eax,eax
+  00000E87: C7 81 98 06 00 00  mov         dword ptr [ecx+698h],0
+            00 00 00 00
+  00000E91: 66 89 81 A5 06 00  mov         word ptr [ecx+6A5h],ax
+            00
+  00000E98: 88 81 A4 06 00 00  mov         byte ptr [ecx+6A4h],al
+  00000E9E: 88 81 A8 06 00 00  mov         byte ptr [ecx+6A8h],al
+  00000EA4: 89 81 BC 06 00 00  mov         dword ptr [ecx+6BCh],eax
+  00000EAA: 89 81 B4 06 00 00  mov         dword ptr [ecx+6B4h],eax
+  00000EB0: 8D 70 04           lea         esi,[eax+4]
+  00000EB3: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000EB9: 74 45              je          00000F00
+  00000EBB: C7 81 88 06 00 00  mov         dword ptr [ecx+688h],offset _unk_1000060
+            00 00 00 00
+  00000EC5: C7 81 8C 06 00 00  mov         dword ptr [ecx+68Ch],offset _loc_780140
+            00 00 00 00
+  00000ECF: C7 81 80 06 00 00  mov         dword ptr [ecx+680h],offset _unk_1000060
+            00 00 00 00
+  00000ED9: C7 81 84 06 00 00  mov         dword ptr [ecx+684h],offset _loc_780140
+            00 00 00 00
+  00000EE3: C7 81 94 06 00 00  mov         dword ptr [ecx+694h],60014h
+            14 00 06 00
+  00000EED: C7 81 90 06 00 00  mov         dword ptr [ecx+690h],60014h
+            14 00 06 00
+  00000EF7: 66 89 B1 A2 06 00  mov         word ptr [ecx+6A2h],si
+            00
+  00000EFE: EB 43              jmp         00000F43
+  00000F00: C7 81 88 06 00 00  mov         dword ptr [ecx+688h],offset _unk_D80048
+            00 00 00 00
+  00000F0A: C7 81 8C 06 00 00  mov         dword ptr [ecx+68Ch],offset _loc_A00170
+            00 00 00 00
+  00000F14: C7 81 80 06 00 00  mov         dword ptr [ecx+680h],offset _unk_D80048
+            00 00 00 00
+  00000F1E: C7 81 84 06 00 00  mov         dword ptr [ecx+684h],offset _loc_A00170
+            00 00 00 00
+  00000F28: C7 81 94 06 00 00  mov         dword ptr [ecx+694h],80017h
+            17 00 08 00
+  00000F32: C7 81 90 06 00 00  mov         dword ptr [ecx+690h],80017h
+            17 00 08 00
+  00000F3C: 66 89 99 A2 06 00  mov         word ptr [ecx+6A2h],bx
+            00
+  00000F43: 6A 41              push        41h
+  00000F45: 6A 02              push        2
+  00000F47: E8 00 00 00 00     call        _sub_A459E0
+  00000F4C: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  00000F52: 83 C4 08           add         esp,8
+  00000F55: C7 81 1E 0D 00 00  mov         dword ptr [ecx+0D1Eh],200000h
+            00 00 20 00
+  00000F5F: 66 89 B1 22 0D 00  mov         word ptr [ecx+0D22h],si
+            00
+  00000F66: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F250]
+  00000F6B: 89 81 38 0D 00 00  mov         dword ptr [ecx+0D38h],eax
+  00000F71: 33 C0              xor         eax,eax
+  00000F73: C7 81 18 0D 00 00  mov         dword ptr [ecx+0D18h],0
+            00 00 00 00
+  00000F7D: 66 89 81 25 0D 00  mov         word ptr [ecx+0D25h],ax
+            00
+  00000F84: 88 81 24 0D 00 00  mov         byte ptr [ecx+0D24h],al
+  00000F8A: 88 81 28 0D 00 00  mov         byte ptr [ecx+0D28h],al
+  00000F90: 89 81 3C 0D 00 00  mov         dword ptr [ecx+0D3Ch],eax
+  00000F96: 89 81 34 0D 00 00  mov         dword ptr [ecx+0D34h],eax
+  00000F9C: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00000FA2: 74 3E              je          00000FE2
+  00000FA4: C7 81 08 0D 00 00  mov         dword ptr [ecx+0D08h],offset _unk_1000060
+            00 00 00 00
+  00000FAE: C7 81 0C 0D 00 00  mov         dword ptr [ecx+0D0Ch],offset _loc_780140
+            00 00 00 00
+  00000FB8: C7 81 00 0D 00 00  mov         dword ptr [ecx+0D00h],offset _unk_1000060
+            00 00 00 00
+  00000FC2: C7 81 04 0D 00 00  mov         dword ptr [ecx+0D04h],offset _loc_780140
+            00 00 00 00
+  00000FCC: C7 81 14 0D 00 00  mov         dword ptr [ecx+0D14h],60014h
+            14 00 06 00
+  00000FD6: C7 81 10 0D 00 00  mov         dword ptr [ecx+0D10h],60014h
+            14 00 06 00
+  00000FE0: EB 3C              jmp         0000101E
+  00000FE2: C7 81 08 0D 00 00  mov         dword ptr [ecx+0D08h],offset _unk_1000040
+            00 00 00 00
+  00000FEC: C7 81 0C 0D 00 00  mov         dword ptr [ecx+0D0Ch],offset _loc_780180
+            00 00 00 00
+  00000FF6: C7 81 00 0D 00 00  mov         dword ptr [ecx+0D00h],offset _unk_1000040
+            00 00 00 00
+  00001000: C7 81 04 0D 00 00  mov         dword ptr [ecx+0D04h],offset _loc_780180
+            00 00 00 00
+  0000100A: C7 81 14 0D 00 00  mov         dword ptr [ecx+0D14h],60018h
+            18 00 06 00
+  00001014: C7 81 10 0D 00 00  mov         dword ptr [ecx+0D10h],60018h
+            18 00 06 00
+  0000101E: 6A 45              push        45h
+  00001020: 6A 04              push        4
+  00001022: E8 00 00 00 00     call        _sub_A459E0
+  00001027: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  0000102D: 83 C4 08           add         esp,8
+  00001030: C7 81 5E 10 00 00  mov         dword ptr [ecx+105Eh],200000h
+            00 00 20 00
+  0000103A: 66 89 B1 62 10 00  mov         word ptr [ecx+1062h],si
+            00
+  00001041: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F250]
+  00001046: 89 81 78 10 00 00  mov         dword ptr [ecx+1078h],eax
+  0000104C: 33 C0              xor         eax,eax
+  0000104E: C7 81 58 10 00 00  mov         dword ptr [ecx+1058h],0
+            00 00 00 00
+  00001058: 66 89 81 65 10 00  mov         word ptr [ecx+1065h],ax
+            00
+  0000105F: 88 81 64 10 00 00  mov         byte ptr [ecx+1064h],al
+  00001065: 88 81 68 10 00 00  mov         byte ptr [ecx+1068h],al
+  0000106B: 89 81 7C 10 00 00  mov         dword ptr [ecx+107Ch],eax
+  00001071: 89 81 74 10 00 00  mov         dword ptr [ecx+1074h],eax
+  00001077: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  0000107D: 74 3E              je          000010BD
+  0000107F: C7 81 48 10 00 00  mov         dword ptr [ecx+1048h],offset _unk_1140060
+            00 00 00 00
+  00001089: C7 81 4C 10 00 00  mov         dword ptr [ecx+104Ch],640140h
+            40 01 64 00
+  00001093: C7 81 40 10 00 00  mov         dword ptr [ecx+1040h],offset _unk_1140060
+            00 00 00 00
+  0000109D: C7 81 44 10 00 00  mov         dword ptr [ecx+1044h],640140h
+            40 01 64 00
+  000010A7: C7 81 54 10 00 00  mov         dword ptr [ecx+1054h],50014h
+            14 00 05 00
+  000010B1: C7 81 50 10 00 00  mov         dword ptr [ecx+1050h],50014h
+            14 00 05 00
+  000010BB: EB 3C              jmp         000010F9
+  000010BD: C7 81 48 10 00 00  mov         dword ptr [ecx+1048h],offset _unk_1140040
+            00 00 00 00
+  000010C7: C7 81 4C 10 00 00  mov         dword ptr [ecx+104Ch],640180h
+            80 01 64 00
+  000010D1: C7 81 40 10 00 00  mov         dword ptr [ecx+1040h],offset _unk_1140040
+            00 00 00 00
+  000010DB: C7 81 44 10 00 00  mov         dword ptr [ecx+1044h],640180h
+            80 01 64 00
+  000010E5: C7 81 54 10 00 00  mov         dword ptr [ecx+1054h],50018h
+            18 00 05 00
+  000010EF: C7 81 50 10 00 00  mov         dword ptr [ecx+1050h],50018h
+            18 00 05 00
+  000010F9: 6A 44              push        44h
+  000010FB: 6A 05              push        5
+  000010FD: E8 00 00 00 00     call        _sub_A459E0
+  00001102: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_1A86108]
+  00001108: B8 01 00 00 00     mov         eax,1
+  0000110D: C7 81 48 1D 00 00  mov         dword ptr [ecx+1D48h],offset _unk_CD0030
+            00 00 00 00
+  00001117: 66 89 81 62 1D 00  mov         word ptr [ecx+1D62h],ax
+            00
+  0000111E: C7 81 40 1D 00 00  mov         dword ptr [ecx+1D40h],offset _unk_CD0030
+            00 00 00 00
+  00001128: C7 81 5E 1D 00 00  mov         dword ptr [ecx+1D5Eh],0A0000h
+            00 00 0A 00
+  00001132: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4FB70]
+  00001137: 89 81 78 1D 00 00  mov         dword ptr [ecx+1D78h],eax
+  0000113D: 33 C0              xor         eax,eax
+  0000113F: 83 C4 08           add         esp,8
+  00001142: C7 81 58 1D 00 00  mov         dword ptr [ecx+1D58h],0
+            00 00 00 00
+  0000114C: 66 89 81 65 1D 00  mov         word ptr [ecx+1D65h],ax
+            00
+  00001153: 88 81 64 1D 00 00  mov         byte ptr [ecx+1D64h],al
+  00001159: 88 81 68 1D 00 00  mov         byte ptr [ecx+1D68h],al
+  0000115F: 89 81 7C 1D 00 00  mov         dword ptr [ecx+1D7Ch],eax
+  00001165: 89 81 74 1D 00 00  mov         dword ptr [ecx+1D74h],eax
+  0000116B: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  00001171: 74 2A              je          0000119D
+  00001173: C7 81 4C 1D 00 00  mov         dword ptr [ecx+1D4Ch],140060h
+            60 00 14 00
+  0000117D: C7 81 44 1D 00 00  mov         dword ptr [ecx+1D44h],140060h
+            60 00 14 00
+  00001187: C7 81 54 1D 00 00  mov         dword ptr [ecx+1D54h],10006h
+            06 00 01 00
+  00001191: C7 81 50 1D 00 00  mov         dword ptr [ecx+1D50h],10006h
+            06 00 01 00
+  0000119B: EB 28              jmp         000011C5
+  0000119D: C7 81 4C 1D 00 00  mov         dword ptr [ecx+1D4Ch],140090h
+            90 00 14 00
+  000011A7: C7 81 44 1D 00 00  mov         dword ptr [ecx+1D44h],140090h
+            90 00 14 00
+  000011B1: C7 81 54 1D 00 00  mov         dword ptr [ecx+1D54h],10009h
+            09 00 01 00
+  000011BB: C7 81 50 1D 00 00  mov         dword ptr [ecx+1D50h],10009h
+            09 00 01 00
+  000011C5: E8 00 00 00 00     call        _sub_7852B0
+  000011CA: 0F BE C0           movsx       eax,al
+  000011CD: 83 E0 01           and         eax,1
+  000011D0: 50                 push        eax
+  000011D1: 6A 2B              push        2Bh
+  000011D3: 6A 09              push        9
+  000011D5: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  000011DA: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000011E0: 83 C4 0C           add         esp,0Ch
+  000011E3: 0F B7 B7 5E 1D 00  movzx       esi,word ptr [edi+1D5Eh]
+            00
+  000011EA: 8B D8              mov         ebx,eax
+  000011EC: 66 83 FE 40        cmp         si,40h
+  000011F0: 7D 4E              jge         00001240
+  000011F2: 0F BF C6           movsx       eax,si
+  000011F5: 8D 4E 01           lea         ecx,[esi+1]
+  000011F8: 8D 34 40           lea         esi,[eax+eax*2]
+  000011FB: 0F BF 87 56 1D 00  movsx       eax,word ptr [edi+1D56h]
+            00
+  00001202: 0F B7 D1           movzx       edx,cx
+  00001205: 0F B6 8F 62 1D 00  movzx       ecx,byte ptr [edi+1D62h]
+            00
+  0000120C: 0F AF C8           imul        ecx,eax
+  0000120F: 0F BF C2           movsx       eax,dx
+  00001212: 3B C1              cmp         eax,ecx
+  00001214: 0F 9F C0           setg        al
+  00001217: 88 87 68 1D 00 00  mov         byte ptr [edi+1D68h],al
+  0000121D: 66 89 97 5E 1D 00  mov         word ptr [edi+1D5Eh],dx
+            00
+  00001224: 89 9C B7 80 1D 00  mov         dword ptr [edi+esi*4+1D80h],ebx
+            00
+  0000122B: C7 84 B7 88 1D 00  mov         dword ptr [edi+esi*4+1D88h],2Bh
+            00 2B 00 00 00
+  00001236: C6 84 B7 84 1D 00  mov         byte ptr [edi+esi*4+1D84h],0
+            00 00
+  0000123E: EB 1C              jmp         0000125C
+  00001240: E8 00 00 00 00     call        _nullsub_34
+  00001245: 6A 40              push        40h
+  00001247: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  0000124C: 6A 00              push        0
+  0000124E: E8 00 00 00 00     call        _nullsub_35
+  00001253: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00001259: 83 C4 0C           add         esp,0Ch
+  0000125C: B8 01 00 00 00     mov         eax,1
+  00001261: 66 89 87 A2 20 00  mov         word ptr [edi+20A2h],ax
+            00
+  00001268: C7 87 88 20 00 00  mov         dword ptr [edi+2088h],offset _unk_CD0030
+            00 00 00 00
+  00001272: C7 87 80 20 00 00  mov         dword ptr [edi+2080h],offset _unk_CD0030
+            00 00 00 00
+  0000127C: C7 87 9E 20 00 00  mov         dword ptr [edi+209Eh],0A0000h
+            00 00 0A 00
+  00001286: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4FB70]
+  0000128B: 89 87 B8 20 00 00  mov         dword ptr [edi+20B8h],eax
+  00001291: 33 C0              xor         eax,eax
+  00001293: C7 87 98 20 00 00  mov         dword ptr [edi+2098h],0
+            00 00 00 00
+  0000129D: 66 89 87 A5 20 00  mov         word ptr [edi+20A5h],ax
+            00
+  000012A4: 88 87 A4 20 00 00  mov         byte ptr [edi+20A4h],al
+  000012AA: 88 87 A8 20 00 00  mov         byte ptr [edi+20A8h],al
+  000012B0: 89 87 BC 20 00 00  mov         dword ptr [edi+20BCh],eax
+  000012B6: 89 87 B4 20 00 00  mov         dword ptr [edi+20B4h],eax
+  000012BC: 39 05 00 00 00 00  cmp         dword ptr [_unk_1A85F74],eax
+  000012C2: 74 2A              je          000012EE
+  000012C4: C7 87 8C 20 00 00  mov         dword ptr [edi+208Ch],140070h
+            70 00 14 00
+  000012CE: C7 87 84 20 00 00  mov         dword ptr [edi+2084h],140070h
+            70 00 14 00
+  000012D8: C7 87 94 20 00 00  mov         dword ptr [edi+2094h],10007h
+            07 00 01 00
+  000012E2: C7 87 90 20 00 00  mov         dword ptr [edi+2090h],10007h
+            07 00 01 00
+  000012EC: EB 28              jmp         00001316
+  000012EE: C7 87 8C 20 00 00  mov         dword ptr [edi+208Ch],140090h
+            90 00 14 00
+  000012F8: C7 87 84 20 00 00  mov         dword ptr [edi+2084h],140090h
+            90 00 14 00
+  00001302: C7 87 94 20 00 00  mov         dword ptr [edi+2094h],10009h
+            09 00 01 00
+  0000130C: C7 87 90 20 00 00  mov         dword ptr [edi+2090h],10009h
+            09 00 01 00
+  00001316: E8 00 00 00 00     call        _sub_7852B0
+  0000131B: 0F BE C0           movsx       eax,al
+  0000131E: 83 E0 01           and         eax,1
+  00001321: 50                 push        eax
+  00001322: 6A 2E              push        2Eh
+  00001324: 6A 09              push        9
+  00001326: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  0000132B: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00001331: 83 C4 0C           add         esp,0Ch
+  00001334: 0F B7 B7 9E 20 00  movzx       esi,word ptr [edi+209Eh]
+            00
+  0000133B: 8B D8              mov         ebx,eax
+  0000133D: 66 83 FE 40        cmp         si,40h
+  00001341: 7D 4E              jge         00001391
+  00001343: 0F BF C6           movsx       eax,si
+  00001346: 8D 4E 01           lea         ecx,[esi+1]
+  00001349: 8D 34 40           lea         esi,[eax+eax*2]
+  0000134C: 0F BF 87 96 20 00  movsx       eax,word ptr [edi+2096h]
+            00
+  00001353: 0F B7 D1           movzx       edx,cx
+  00001356: 0F B6 8F A2 20 00  movzx       ecx,byte ptr [edi+20A2h]
+            00
+  0000135D: 0F AF C8           imul        ecx,eax
+  00001360: 0F BF C2           movsx       eax,dx
+  00001363: 66 89 97 9E 20 00  mov         word ptr [edi+209Eh],dx
+            00
+  0000136A: 3B C1              cmp         eax,ecx
+  0000136C: 0F 9F C0           setg        al
+  0000136F: 88 87 A8 20 00 00  mov         byte ptr [edi+20A8h],al
+  00001375: 89 9C B7 C0 20 00  mov         dword ptr [edi+esi*4+20C0h],ebx
+            00
+  0000137C: C7 84 B7 C8 20 00  mov         dword ptr [edi+esi*4+20C8h],2Eh
+            00 2E 00 00 00
+  00001387: C6 84 B7 C4 20 00  mov         byte ptr [edi+esi*4+20C4h],0
+            00 00
+  0000138F: EB 1C              jmp         000013AD
+  00001391: E8 00 00 00 00     call        _nullsub_34
+  00001396: 6A 40              push        40h
+  00001398: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  0000139D: 6A 00              push        0
+  0000139F: E8 00 00 00 00     call        _nullsub_35
+  000013A4: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000013AA: 83 C4 0C           add         esp,0Ch
+  000013AD: B8 01 00 00 00     mov         eax,1
+  000013B2: 66 89 87 E2 23 00  mov         word ptr [edi+23E2h],ax
+            00
+  000013B9: 33 C0              xor         eax,eax
+  000013BB: C7 87 C8 23 00 00  mov         dword ptr [edi+23C8h],offset _unk_F50030
+            00 00 00 00
+  000013C5: C7 87 CC 23 00 00  mov         dword ptr [edi+23CCh],280050h
+            50 00 28 00
+  000013CF: C7 87 C0 23 00 00  mov         dword ptr [edi+23C0h],offset _unk_F50030
+            00 00 00 00
+  000013D9: C7 87 C4 23 00 00  mov         dword ptr [edi+23C4h],280050h
+            50 00 28 00
+  000013E3: C7 87 D4 23 00 00  mov         dword ptr [edi+23D4h],20005h
+            05 00 02 00
+  000013ED: C7 87 D0 23 00 00  mov         dword ptr [edi+23D0h],20005h
+            05 00 02 00
+  000013F7: C7 87 DE 23 00 00  mov         dword ptr [edi+23DEh],0F0000h
+            00 00 0F 00
+  00001401: C7 87 D8 23 00 00  mov         dword ptr [edi+23D8h],0
+            00 00 00 00
+  0000140B: 66 89 87 E5 23 00  mov         word ptr [edi+23E5h],ax
+            00
+  00001412: 88 87 E4 23 00 00  mov         byte ptr [edi+23E4h],al
+  00001418: 88 87 E8 23 00 00  mov         byte ptr [edi+23E8h],al
+  0000141E: A1 00 00 00 00     mov         eax,dword ptr [_sub_A4F930]
+  00001423: 89 87 F8 23 00 00  mov         dword ptr [edi+23F8h],eax
+  00001429: C7 87 FC 23 00 00  mov         dword ptr [edi+23FCh],0
+            00 00 00 00
+  00001433: C7 87 F4 23 00 00  mov         dword ptr [edi+23F4h],0
+            00 00 00 00
+  0000143D: E8 00 00 00 00     call        _sub_7852B0
+  00001442: 0F BE C0           movsx       eax,al
+  00001445: 83 E0 01           and         eax,1
+  00001448: 50                 push        eax
+  00001449: 6A 2C              push        2Ch
+  0000144B: 6A 09              push        9
+  0000144D: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  00001452: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  00001458: 83 C4 0C           add         esp,0Ch
+  0000145B: 0F B7 B7 DE 23 00  movzx       esi,word ptr [edi+23DEh]
+            00
+  00001462: 8B D8              mov         ebx,eax
+  00001464: 66 83 FE 40        cmp         si,40h
+  00001468: 7D 4E              jge         000014B8
+  0000146A: 0F BF C6           movsx       eax,si
+  0000146D: 8D 4E 01           lea         ecx,[esi+1]
+  00001470: 8D 34 40           lea         esi,[eax+eax*2]
+  00001473: 0F BF 87 D6 23 00  movsx       eax,word ptr [edi+23D6h]
+            00
+  0000147A: 0F B7 D1           movzx       edx,cx
+  0000147D: 0F B6 8F E2 23 00  movzx       ecx,byte ptr [edi+23E2h]
+            00
+  00001484: 0F AF C8           imul        ecx,eax
+  00001487: 0F BF C2           movsx       eax,dx
+  0000148A: 66 89 97 DE 23 00  mov         word ptr [edi+23DEh],dx
+            00
+  00001491: 3B C1              cmp         eax,ecx
+  00001493: 0F 9F C0           setg        al
+  00001496: 88 87 E8 23 00 00  mov         byte ptr [edi+23E8h],al
+  0000149C: 89 9C B7 00 24 00  mov         dword ptr [edi+esi*4+2400h],ebx
+            00
+  000014A3: C7 84 B7 08 24 00  mov         dword ptr [edi+esi*4+2408h],2Ch
+            00 2C 00 00 00
+  000014AE: C6 84 B7 04 24 00  mov         byte ptr [edi+esi*4+2404h],0
+            00 00
+  000014B6: EB 16              jmp         000014CE
+  000014B8: E8 00 00 00 00     call        _nullsub_34
+  000014BD: 6A 40              push        40h
+  000014BF: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  000014C4: 6A 00              push        0
+  000014C6: E8 00 00 00 00     call        _nullsub_35
+  000014CB: 83 C4 0C           add         esp,0Ch
+  000014CE: E8 00 00 00 00     call        _sub_7852B0
+  000014D3: 0F BE C0           movsx       eax,al
+  000014D6: 83 E0 01           and         eax,1
+  000014D9: 50                 push        eax
+  000014DA: 6A 2D              push        2Dh
+  000014DC: 6A 09              push        9
+  000014DE: E8 00 00 00 00     call        _FFX_Table_GetKernelString
+  000014E3: 8B 3D 00 00 00 00  mov         edi,dword ptr [_unk_1A86108]
+  000014E9: 83 C4 0C           add         esp,0Ch
+  000014EC: 0F B7 B7 DE 23 00  movzx       esi,word ptr [edi+23DEh]
+            00
+  000014F3: 8B D8              mov         ebx,eax
+  000014F5: 66 83 FE 40        cmp         si,40h
+  000014F9: 7D 4E              jge         00001549
+  000014FB: 0F BF C6           movsx       eax,si
+  000014FE: 8D 4E 01           lea         ecx,[esi+1]
+  00001501: 8D 34 40           lea         esi,[eax+eax*2]
+  00001504: 0F BF 87 D6 23 00  movsx       eax,word ptr [edi+23D6h]
+            00
+  0000150B: 0F B7 D1           movzx       edx,cx
+  0000150E: 0F B6 8F E2 23 00  movzx       ecx,byte ptr [edi+23E2h]
+            00
+  00001515: 0F AF C8           imul        ecx,eax
+  00001518: 0F BF C2           movsx       eax,dx
+  0000151B: 66 89 97 DE 23 00  mov         word ptr [edi+23DEh],dx
+            00
+  00001522: 3B C1              cmp         eax,ecx
+  00001524: 0F 9F C0           setg        al
+  00001527: 88 87 E8 23 00 00  mov         byte ptr [edi+23E8h],al
+  0000152D: 89 9C B7 00 24 00  mov         dword ptr [edi+esi*4+2400h],ebx
+            00
+  00001534: C7 84 B7 08 24 00  mov         dword ptr [edi+esi*4+2408h],2Dh
+            00 2D 00 00 00
+  0000153F: C6 84 B7 04 24 00  mov         byte ptr [edi+esi*4+2404h],0
+            00 00
+  00001547: EB 16              jmp         0000155F
+  00001549: E8 00 00 00 00     call        _nullsub_34
+  0000154E: 6A 40              push        40h
+  00001550: 68 00 00 00 00     push        offset ??_C@_0DD@FOGGMFKG@addMenuPrim?5error?$CB?$CB?$CB?5?5menu?9?$DOmpri@
+  00001555: 6A 00              push        0
+  00001557: E8 00 00 00 00     call        _nullsub_35
+  0000155C: 83 C4 0C           add         esp,0Ch
+  0000155F: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  00001564: FF B0 A4 16 01 00  push        dword ptr [eax+116A4h]
+  0000156A: E8 00 00 00 00     call        _sub_639140
+  0000156F: E8 00 00 00 00     call        _sub_63DFF0
+  00001574: 6A 02              push        2
+  00001576: E8 00 00 00 00     call        _TimerSpeed_ClampSpeed
+  0000157B: FF 75 08           push        dword ptr [ebp+8]
+  0000157E: 68 00 02 00 00     push        200h
+  00001583: E8 00 00 00 00     call        _FFX_Memory_Alloc
+  00001588: FF 75 08           push        dword ptr [ebp+8]
+  0000158B: A3 00 00 00 00     mov         dword ptr [_dword_1A860EC],eax
+  00001590: 68 00 02 00 00     push        200h
+  00001595: E8 00 00 00 00     call        _FFX_Memory_Alloc
+  0000159A: 83 C4 18           add         esp,18h
+  0000159D: A3 00 00 00 00     mov         dword ptr [_unk_1A860F0],eax
+  000015A2: 5F                 pop         edi
+  000015A3: 5E                 pop         esi
+  000015A4: 5B                 pop         ebx
+  000015A5: 8B E5              mov         esp,ebp
+  000015A7: 5D                 pop         ebp
+  000015A8: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          53 .rdata
+        15AB .text

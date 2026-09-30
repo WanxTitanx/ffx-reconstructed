@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007E37B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Magic_Oef2SetParticleData:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 83 FE 08           cmp         esi,8
+  0000000A: 75 05              jne         00000011
+  0000000C: E8 00 00 00 00     call        _dbgPrintf
+  00000011: 8B C6              mov         eax,esi
+  00000013: 83 E8 02           sub         eax,2
+  00000016: 74 37              je          0000004F
+  00000018: 48                 dec         eax
+  00000019: 74 34              je          0000004F
+  0000001B: 83 E8 03           sub         eax,3
+  0000001E: 74 2F              je          0000004F
+  00000020: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000023: 0F B7 44 72 40     movzx       eax,word ptr [edx+esi*2+40h]
+  00000028: 66 85 C0           test        ax,ax
+  0000002B: 74 22              je          0000004F
+  0000002D: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000030: 04 03              add         al,3
+  00000032: 25 FC 00 00 00     and         eax,0FCh
+  00000037: 3B C1              cmp         eax,ecx
+  00000039: 7E 14              jle         0000004F
+  0000003B: 8B 04 B2           mov         eax,dword ptr [edx+esi*4]
+  0000003E: 5E                 pop         esi
+  0000003F: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  00000042: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000045: 89 04 11           mov         dword ptr [ecx+edx],eax
+  00000048: B8 01 00 00 00     mov         eax,1
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 5E                 pop         esi
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          54 .text

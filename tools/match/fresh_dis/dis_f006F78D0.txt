@@ -1,0 +1,31 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F78D0.obj
+
+File Type: COFF OBJECT
+
+_Flash_AllocGameplayOverlay:
+  00000000: 6A 40              push        40h
+  00000002: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000007: 83 C4 04           add         esp,4
+  0000000A: 85 C0              test        eax,eax
+  0000000C: 74 11              je          0000001F
+  0000000E: 50                 push        eax
+  0000000F: E8 00 00 00 00     call        _FFX_Flash_LoadGameplayOverlaySwf
+  00000014: A3 00 00 00 00     mov         dword ptr [_g_FlashVar_CE82D4],eax
+  00000019: 83 C4 04           add         esp,4
+  0000001C: B0 01              mov         al,1
+  0000001E: C3                 ret
+  0000001F: C7 05 00 00 00 00  mov         dword ptr [_g_FlashVar_CE82D4],0
+            00 00 00 00
+  00000029: B0 01              mov         al,1
+  0000002B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2C .text

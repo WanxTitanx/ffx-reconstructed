@@ -1,0 +1,140 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070F6A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodSfx_UpdateFadeState@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: D9 45 08           fld         dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: D9 EE              fldz
+  0000000A: 8B F1              mov         esi,ecx
+  0000000C: D8 56 0C           fcom        dword ptr [esi+0Ch]
+  0000000F: DF E0              fnstsw      ax
+  00000011: F6 C4 05           test        ah,5
+  00000014: 7A 31              jp          00000047
+  00000016: D9 46 0C           fld         dword ptr [esi+0Ch]
+  00000019: D8 E2              fsub        st,st(2)
+  0000001B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000021: D9 56 0C           fst         dword ptr [esi+0Ch]
+  00000024: D8 D9              fcomp       st(1)
+  00000026: DF E0              fnstsw      ax
+  00000028: F6 C4 41           test        ah,41h
+  0000002B: 7A 1A              jp          00000047
+  0000002D: FF 76 14           push        dword ptr [esi+14h]
+  00000030: DD D9              fstp        st(1)
+  00000032: D9 5E 0C           fstp        dword ptr [esi+0Ch]
+  00000035: FF 76 10           push        dword ptr [esi+10h]
+  00000038: 56                 push        esi
+  00000039: 56                 push        esi
+  0000003A: E8 00 00 00 00     call        _FFX_FmodSfx_StartEventsFromSequence
+  0000003F: D9 45 08           fld         dword ptr [ebp+8]
+  00000042: D9 EE              fldz
+  00000044: 83 C4 10           add         esp,10h
+  00000047: 8B 4E 18           mov         ecx,dword ptr [esi+18h]
+  0000004A: 85 C9              test        ecx,ecx
+  0000004C: 74 63              je          000000B1
+  0000004E: D9 41 08           fld         dword ptr [ecx+8]
+  00000051: D8 E2              fsub        st,st(2)
+  00000053: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000056: D9 45 FC           fld         dword ptr [ebp-4]
+  00000059: D9 51 08           fst         dword ptr [ecx+8]
+  0000005C: D9 41 0C           fld         dword ptr [ecx+0Ch]
+  0000005F: DE CB              fmulp       st(3),st
+  00000061: D9 41 04           fld         dword ptr [ecx+4]
+  00000064: DE C3              faddp       st(3),st
+  00000066: D9 CA              fxch        st(2)
+  00000068: D9 59 04           fstp        dword ptr [ecx+4]
+  0000006B: DE D9              fcompp
+  0000006D: DF E0              fnstsw      ax
+  0000006F: F6 C4 01           test        ah,1
+  00000072: 75 05              jne         00000079
+  00000074: D9 01              fld         dword ptr [ecx]
+  00000076: D9 59 04           fstp        dword ptr [ecx+4]
+  00000079: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000007C: 83 EC 08           sub         esp,8
+  0000007F: D9 40 04           fld         dword ptr [eax+4]
+  00000082: DD 1C 24           fstp        qword ptr [esp]
+  00000085: 56                 push        esi
+  00000086: E8 00 00 00 00     call        _FFX_FmodSfx_SetVolumeAll
+  0000008B: D9 EE              fldz
+  0000008D: 8B 4E 18           mov         ecx,dword ptr [esi+18h]
+  00000090: 83 C4 0C           add         esp,0Ch
+  00000093: D8 51 08           fcom        dword ptr [ecx+8]
+  00000096: DF E0              fnstsw      ax
+  00000098: F6 C4 01           test        ah,1
+  0000009B: 75 1A              jne         000000B7
+  0000009D: 51                 push        ecx
+  0000009E: DD D8              fstp        st(0)
+  000000A0: E8 00 00 00 00     call        _FFX_Heap_Free
+  000000A5: 83 C4 04           add         esp,4
+  000000A8: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  000000AF: EB 04              jmp         000000B5
+  000000B1: DD D9              fstp        st(1)
+  000000B3: DD D8              fstp        st(0)
+  000000B5: D9 EE              fldz
+  000000B7: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  000000BA: 85 C9              test        ecx,ecx
+  000000BC: 74 6E              je          0000012C
+  000000BE: D9 41 08           fld         dword ptr [ecx+8]
+  000000C1: D9 45 08           fld         dword ptr [ebp+8]
+  000000C4: D9 C0              fld         st(0)
+  000000C6: DE EA              fsubp       st(2),st
+  000000C8: D9 C9              fxch        st(1)
+  000000CA: D9 5D 08           fstp        dword ptr [ebp+8]
+  000000CD: D9 45 08           fld         dword ptr [ebp+8]
+  000000D0: D9 51 08           fst         dword ptr [ecx+8]
+  000000D3: D9 41 0C           fld         dword ptr [ecx+0Ch]
+  000000D6: DE CA              fmulp       st(2),st
+  000000D8: D9 41 04           fld         dword ptr [ecx+4]
+  000000DB: DE C2              faddp       st(2),st
+  000000DD: D9 C9              fxch        st(1)
+  000000DF: D9 59 04           fstp        dword ptr [ecx+4]
+  000000E2: DE D9              fcompp
+  000000E4: DF E0              fnstsw      ax
+  000000E6: F6 C4 41           test        ah,41h
+  000000E9: 7A 05              jp          000000F0
+  000000EB: D9 01              fld         dword ptr [ecx]
+  000000ED: D9 59 04           fstp        dword ptr [ecx+4]
+  000000F0: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  000000F3: D9 40 04           fld         dword ptr [eax+4]
+  000000F6: E8 00 00 00 00     call        __ftol2_sse
+  000000FB: 50                 push        eax
+  000000FC: 56                 push        esi
+  000000FD: 56                 push        esi
+  000000FE: E8 00 00 00 00     call        _FFX_FmodSfx_SetPan
+  00000103: D9 EE              fldz
+  00000105: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000108: 83 C4 0C           add         esp,0Ch
+  0000010B: D8 59 08           fcomp       dword ptr [ecx+8]
+  0000010E: DF E0              fnstsw      ax
+  00000110: F6 C4 01           test        ah,1
+  00000113: 75 19              jne         0000012E
+  00000115: 51                 push        ecx
+  00000116: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000011B: 83 C4 04           add         esp,4
+  0000011E: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  00000125: 5E                 pop         esi
+  00000126: 8B E5              mov         esp,ebp
+  00000128: 5D                 pop         ebp
+  00000129: C2 04 00           ret         4
+  0000012C: DD D8              fstp        st(0)
+  0000012E: 5E                 pop         esi
+  0000012F: 8B E5              mov         esp,ebp
+  00000131: 5D                 pop         ebp
+  00000132: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         135 .text

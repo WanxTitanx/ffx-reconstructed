@@ -1,0 +1,142 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008509E0.obj
+
+File Type: COFF OBJECT
+
+_sub_8509E0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 48           sub         esp,48h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: FF 75 08           push        dword ptr [ebp+8]
+  0000000C: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000013: 68 00 00 01 00     push        10000h
+  00000018: E8 00 00 00 00     call        _FFX_Memory_Alloc
+  0000001D: 8B D8              mov         ebx,eax
+  0000001F: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00000022: C6 03 00           mov         byte ptr [ebx],0
+  00000025: E8 00 00 00 00     call        _nullsub_34
+  0000002A: 6A 00              push        0
+  0000002C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002F: E8 00 00 00 00     call        _sub_62FBE0
+  00000034: E8 00 00 00 00     call        _nullsub_34
+  00000039: 8D 45 FC           lea         eax,[ebp-4]
+  0000003C: 50                 push        eax
+  0000003D: 68 00 00 00 00     push        offset ??_C@_0BD@PNMHAJED@host0?3sugilist?4tmp?$AA@
+  00000042: E8 00 00 00 00     call        _sub_84F1C0
+  00000047: 8B F8              mov         edi,eax
+  00000049: 83 C4 18           add         esp,18h
+  0000004C: 85 FF              test        edi,edi
+  0000004E: 74 23              je          00000073
+  00000050: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000053: 81 FE 00 00 01 00  cmp         esi,10000h
+  00000059: 7D 18              jge         00000073
+  0000005B: 56                 push        esi
+  0000005C: 57                 push        edi
+  0000005D: 53                 push        ebx
+  0000005E: E8 00 00 00 00     call        _memcpy
+  00000063: FF 75 08           push        dword ptr [ebp+8]
+  00000066: C6 04 1E 00        mov         byte ptr [esi+ebx],0
+  0000006A: 57                 push        edi
+  0000006B: E8 00 00 00 00     call        _FFX_Memory_Delete
+  00000070: 83 C4 14           add         esp,14h
+  00000073: 68 00 00 00 00     push        offset ??_C@_0N@NCBNDILI@sugilist?4tmp?$AA@
+  00000078: 68 00 00 00 00     push        offset ??_C@_0N@NCBNDILI@sugilist?4tmp?$AA@
+  0000007D: 8D 45 B8           lea         eax,[ebp-48h]
+  00000080: 68 00 00 00 00     push        offset ??_C@_0CH@GKNHPGCD@host0?3EXEC?3cmd?5?1c?5move?5?1Y?5?2?$CFs?5?2?$CF@
+  00000085: 50                 push        eax
+  00000086: E8 00 00 00 00     call        _sprintf
+  0000008B: 8D 45 B8           lea         eax,[ebp-48h]
+  0000008E: 6A 00              push        0
+  00000090: 50                 push        eax
+  00000091: E8 00 00 00 00     call        _sub_62FBE0
+  00000096: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000099: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000009C: 83 C4 18           add         esp,18h
+  0000009F: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  000000A3: 74 45              je          000000EA
+  000000A5: 33 FF              xor         edi,edi
+  000000A7: 39 7E 04           cmp         dword ptr [esi+4],edi
+  000000AA: 76 21              jbe         000000CD
+  000000AC: 8D 64 24 00        lea         esp,[esp]
+  000000B0: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000B3: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  000000B6: 85 C0              test        eax,eax
+  000000B8: 74 0D              je          000000C7
+  000000BA: 52                 push        edx
+  000000BB: 50                 push        eax
+  000000BC: E8 00 00 00 00     call        _FFX_Memory_Delete
+  000000C1: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000000C4: 83 C4 08           add         esp,8
+  000000C7: 47                 inc         edi
+  000000C8: 3B 7E 04           cmp         edi,dword ptr [esi+4]
+  000000CB: 72 E3              jb          000000B0
+  000000CD: 52                 push        edx
+  000000CE: FF 76 08           push        dword ptr [esi+8]
+  000000D1: E8 00 00 00 00     call        _FFX_Memory_Delete
+  000000D6: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000000D9: 83 C4 08           add         esp,8
+  000000DC: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  000000E3: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  000000EA: 8A 03              mov         al,byte ptr [ebx]
+  000000EC: 33 DB              xor         ebx,ebx
+  000000EE: 84 C0              test        al,al
+  000000F0: 74 10              je          00000102
+  000000F2: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000F5: 41                 inc         ecx
+  000000F6: 3C 0A              cmp         al,0Ah
+  000000F8: 75 01              jne         000000FB
+  000000FA: 43                 inc         ebx
+  000000FB: 8A 01              mov         al,byte ptr [ecx]
+  000000FD: 41                 inc         ecx
+  000000FE: 84 C0              test        al,al
+  00000100: 75 F4              jne         000000F6
+  00000102: 52                 push        edx
+  00000103: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  0000010A: 50                 push        eax
+  0000010B: 89 5E 04           mov         dword ptr [esi+4],ebx
+  0000010E: 33 FF              xor         edi,edi
+  00000110: E8 00 00 00 00     call        _FFX_Memory_Alloc
+  00000115: 83 C4 08           add         esp,8
+  00000118: 89 46 08           mov         dword ptr [esi+8],eax
+  0000011B: 85 DB              test        ebx,ebx
+  0000011D: 7E 11              jle         00000130
+  0000011F: 90                 nop
+  00000120: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000123: 47                 inc         edi
+  00000124: C7 44 B8 FC 00 00  mov         dword ptr [eax+edi*4-4],0
+            00 00
+  0000012C: 3B FB              cmp         edi,ebx
+  0000012E: 7C F0              jl          00000120
+  00000130: FF 75 10           push        dword ptr [ebp+10h]
+  00000133: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000136: FF 76 08           push        dword ptr [esi+8]
+  00000139: 53                 push        ebx
+  0000013A: E8 00 00 00 00     call        _sub_850590
+  0000013F: FF 75 08           push        dword ptr [ebp+8]
+  00000142: 89 06              mov         dword ptr [esi],eax
+  00000144: 53                 push        ebx
+  00000145: E8 00 00 00 00     call        _FFX_Memory_Delete
+  0000014A: 83 C4 14           add         esp,14h
+  0000014D: 5F                 pop         edi
+  0000014E: 5E                 pop         esi
+  0000014F: 5B                 pop         ebx
+  00000150: 8B E5              mov         esp,ebp
+  00000152: 5D                 pop         ebp
+  00000153: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          47 .rdata
+         154 .text

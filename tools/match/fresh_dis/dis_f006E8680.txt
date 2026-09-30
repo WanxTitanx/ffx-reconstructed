@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E8680.obj
+
+File Type: COFF OBJECT
+
+@FFX_BtlUI_HudCommand_Update@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 80 7E 15 00        cmp         byte ptr [esi+15h],0
+  0000000D: 0F 84 8A 00 00 00  je          0000009D
+  00000013: E8 00 00 00 00     call        _FFX_Engine_GetFrameDeltaTime_Bridge
+  00000018: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000001B: DB 45 F8           fild        dword ptr [ebp-8]
+  0000001E: 85 C0              test        eax,eax
+  00000020: 79 06              jns         00000028
+  00000022: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000028: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000002B: D9 45 F8           fld         dword ptr [ebp-8]
+  0000002E: D8 66 04           fsub        dword ptr [esi+4]
+  00000031: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000034: D9 45 F8           fld         dword ptr [ebp-8]
+  00000037: D9 C0              fld         st(0)
+  00000039: D9 46 0C           fld         dword ptr [esi+0Ch]
+  0000003C: DE FA              fdivp       st(2),st
+  0000003E: D9 E8              fld1
+  00000040: D8 D2              fcom        st(2)
+  00000042: DF E0              fnstsw      ax
+  00000044: F6 C4 05           test        ah,5
+  00000047: 7A 04              jp          0000004D
+  00000049: DD DA              fstp        st(2)
+  0000004B: EB 02              jmp         0000004F
+  0000004D: DD D8              fstp        st(0)
+  0000004F: D9 C9              fxch        st(1)
+  00000051: D9 5E 10           fstp        dword ptr [esi+10h]
+  00000054: D9 06              fld         dword ptr [esi]
+  00000056: D8 D9              fcomp       st(1)
+  00000058: DF E0              fnstsw      ax
+  0000005A: F6 C4 41           test        ah,41h
+  0000005D: 75 35              jne         00000094
+  0000005F: D9 06              fld         dword ptr [esi]
+  00000061: D8 66 0C           fsub        dword ptr [esi+0Ch]
+  00000064: DE D9              fcompp
+  00000066: DF E0              fnstsw      ax
+  00000068: F6 C4 05           test        ah,5
+  0000006B: 7A 29              jp          00000096
+  0000006D: C6 46 15 00        mov         byte ptr [esi+15h],0
+  00000071: E8 00 00 00 00     call        _FFX_Engine_GetFrameDeltaTime_Bridge
+  00000076: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000079: DB 45 F8           fild        dword ptr [ebp-8]
+  0000007C: 85 C0              test        eax,eax
+  0000007E: 79 06              jns         00000086
+  00000080: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000086: D9 5E 08           fstp        dword ptr [esi+8]
+  00000089: C6 46 16 01        mov         byte ptr [esi+16h],1
+  0000008D: B0 01              mov         al,1
+  0000008F: 5E                 pop         esi
+  00000090: 8B E5              mov         esp,ebp
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+  00000094: DD D8              fstp        st(0)
+  00000096: B0 01              mov         al,1
+  00000098: 5E                 pop         esi
+  00000099: 8B E5              mov         esp,ebp
+  0000009B: 5D                 pop         ebp
+  0000009C: C3                 ret
+  0000009D: 80 7E 16 00        cmp         byte ptr [esi+16h],0
+  000000A1: 74 4B              je          000000EE
+  000000A3: E8 00 00 00 00     call        _FFX_Engine_GetFrameDeltaTime_Bridge
+  000000A8: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000AB: DB 45 F8           fild        dword ptr [ebp-8]
+  000000AE: 85 C0              test        eax,eax
+  000000B0: 79 06              jns         000000B8
+  000000B2: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000B8: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000BB: D9 45 F8           fld         dword ptr [ebp-8]
+  000000BE: D8 66 08           fsub        dword ptr [esi+8]
+  000000C1: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000C4: D9 45 F8           fld         dword ptr [ebp-8]
+  000000C7: D9 C0              fld         st(0)
+  000000C9: D8 76 0C           fdiv        dword ptr [esi+0Ch]
+  000000CC: D9 E8              fld1
+  000000CE: DE E1              fsubrp      st(1),st
+  000000D0: D9 5E 10           fstp        dword ptr [esi+10h]
+  000000D3: D9 46 0C           fld         dword ptr [esi+0Ch]
+  000000D6: DE D9              fcompp
+  000000D8: DF E0              fnstsw      ax
+  000000DA: F6 C4 41           test        ah,41h
+  000000DD: 74 AE              je          0000008D
+  000000DF: C6 46 16 00        mov         byte ptr [esi+16h],0
+  000000E3: C6 46 14 00        mov         byte ptr [esi+14h],0
+  000000E7: 32 C0              xor         al,al
+  000000E9: 5E                 pop         esi
+  000000EA: 8B E5              mov         esp,ebp
+  000000EC: 5D                 pop         ebp
+  000000ED: C3                 ret
+  000000EE: 8A 45 FF           mov         al,byte ptr [ebp-1]
+  000000F1: 5E                 pop         esi
+  000000F2: 8B E5              mov         esp,ebp
+  000000F4: 5D                 pop         ebp
+  000000F5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          F6 .text

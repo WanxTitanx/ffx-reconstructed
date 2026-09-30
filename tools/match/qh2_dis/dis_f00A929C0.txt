@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A929C0.obj
+
+File Type: COFF OBJECT
+
+@sub_A929C0@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 71 04           mov         esi,dword ptr [ecx+4]
+  0000000B: 89 75 FC           mov         dword ptr [ebp-4],esi
+  0000000E: DB 45 FC           fild        dword ptr [ebp-4]
+  00000011: 57                 push        edi
+  00000012: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000015: D9 45 FC           fld         dword ptr [ebp-4]
+  00000018: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000001B: E8 00 00 00 00     call        _libm_sse2_pow_precise
+  00000020: DD 45 F8           fld         qword ptr [ebp-8]
+  00000023: 83 EC 08           sub         esp,8
+  00000026: DD 1C 24           fstp        qword ptr [esp]
+  00000029: E8 00 00 00 00     call        _LODWORD
+  0000002E: DD 45 F8           fld         qword ptr [ebp-8]
+  00000031: DD 1C 24           fstp        qword ptr [esp]
+  00000034: E8 00 00 00 00     call        _floor
+  00000039: 83 C4 08           add         esp,8
+  0000003C: E8 00 00 00 00     call        __ftol2_sse
+  00000041: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000044: 8B D0              mov         edx,eax
+  00000046: 8D 7A 01           lea         edi,[edx+1]
+  00000049: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000050: B9 01 00 00 00     mov         ecx,1
+  00000055: 8B C1              mov         eax,ecx
+  00000057: 85 DB              test        ebx,ebx
+  00000059: 7E 11              jle         0000006C
+  0000005B: 8B F3              mov         esi,ebx
+  0000005D: 8D 49 00           lea         ecx,[ecx]
+  00000060: 0F AF CA           imul        ecx,edx
+  00000063: 0F AF C7           imul        eax,edi
+  00000066: 4E                 dec         esi
+  00000067: 75 F7              jne         00000060
+  00000069: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000006C: 3B CE              cmp         ecx,esi
+  0000006E: 7F 08              jg          00000078
+  00000070: 3B C6              cmp         eax,esi
+  00000072: 7F 08              jg          0000007C
+  00000074: 42                 inc         edx
+  00000075: 47                 inc         edi
+  00000076: EB D8              jmp         00000050
+  00000078: 4A                 dec         edx
+  00000079: 4F                 dec         edi
+  0000007A: EB D4              jmp         00000050
+  0000007C: 5F                 pop         edi
+  0000007D: 5E                 pop         esi
+  0000007E: 8B C2              mov         eax,edx
+  00000080: 5B                 pop         ebx
+  00000081: 8B E5              mov         esp,ebp
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          85 .text

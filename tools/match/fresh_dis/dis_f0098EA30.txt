@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0098EA30.obj
+
+File Type: COFF OBJECT
+
+@btQuantizedBvh_Dequantize@4:
+  00000000: 80 79 48 00        cmp         byte ptr [ecx+48h],0
+  00000004: 75 0A              jne         00000010
+  00000006: 51                 push        ecx
+  00000007: E8 00 00 00 00     call        _btQuantizedBvh_DecompressAabbOverlap
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: C3                 ret
+  00000010: 8B 81 9C 00 00 00  mov         eax,dword ptr [ecx+9Ch]
+  00000016: 85 C0              test        eax,eax
+  00000018: 75 0A              jne         00000024
+  0000001A: 51                 push        ecx
+  0000001B: E8 00 00 00 00     call        _btQuantizedBvh_NodeAabbOverlapCallback
+  00000020: 83 C4 04           add         esp,4
+  00000023: C3                 ret
+  00000024: 48                 dec         eax
+  00000025: 75 0A              jne         00000031
+  00000027: 51                 push        ecx
+  00000028: E8 00 00 00 00     call        _btQuantizedBvh_SubtreeAabbOverlapReport
+  0000002D: 83 C4 04           add         esp,4
+  00000030: C3                 ret
+  00000031: 48                 dec         eax
+  00000032: 75 09              jne         0000003D
+  00000034: 51                 push        ecx
+  00000035: E8 00 00 00 00     call        _btQuantizedBvh_ReportAabbOverlappingNode
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3E .text

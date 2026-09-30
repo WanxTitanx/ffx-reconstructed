@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00431CF0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ManagedObject_Close@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 7E 30 00        cmp         dword ptr [esi+30h],0
+  00000008: 8D 7E 0C           lea         edi,[esi+0Ch]
+  0000000B: 7C 0B              jl          00000018
+  0000000D: FF 76 34           push        dword ptr [esi+34h]
+  00000010: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000015: 83 C4 04           add         esp,4
+  00000018: 57                 push        edi
+  00000019: C7 47 28 00 00 00  mov         dword ptr [edi+28h],0
+            00
+  00000020: C7 47 24 00 00 00  mov         dword ptr [edi+24h],0
+            00
+  00000027: E8 00 00 00 00     call        _Phyre_BufferManager_Destroy
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000033: 7C 10              jl          00000045
+  00000035: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000038: 85 C0              test        eax,eax
+  0000003A: 74 09              je          00000045
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000042: 83 C4 04           add         esp,4
+  00000045: 5F                 pop         edi
+  00000046: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000004D: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000054: 5E                 pop         esi
+  00000055: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          56 .text

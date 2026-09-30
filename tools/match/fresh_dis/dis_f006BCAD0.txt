@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006BCAD0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_String_AssignWithCopy:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000A: 3B C3              cmp         eax,ebx
+  0000000C: 75 06              jne         00000014
+  0000000E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000011: 5B                 pop         ebx
+  00000012: 5D                 pop         ebp
+  00000013: C3                 ret
+  00000014: 56                 push        esi
+  00000015: 57                 push        edi
+  00000016: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000019: 8B CF              mov         ecx,edi
+  0000001B: 2B C8              sub         ecx,eax
+  0000001D: 8D 70 10           lea         esi,[eax+10h]
+  00000020: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000023: 8D 46 F0           lea         eax,[esi-10h]
+  00000026: 3B F8              cmp         edi,eax
+  00000028: 74 6D              je          00000097
+  0000002A: 83 7F 14 10        cmp         dword ptr [edi+14h],10h
+  0000002E: 72 0D              jb          0000003D
+  00000030: FF 37              push        dword ptr [edi]
+  00000032: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000037: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: C7 47 14 0F 00 00  mov         dword ptr [edi+14h],0Fh
+            00
+  00000044: C7 04 31 00 00 00  mov         dword ptr [ecx+esi],0
+            00
+  0000004B: C6 07 00           mov         byte ptr [edi],0
+  0000004E: 83 7E 04 10        cmp         dword ptr [esi+4],10h
+  00000052: 72 0E              jb          00000062
+  00000054: 8B 46 F0           mov         eax,dword ptr [esi-10h]
+  00000057: 89 07              mov         dword ptr [edi],eax
+  00000059: C7 46 F0 00 00 00  mov         dword ptr [esi-10h],0
+            00
+  00000060: EB 19              jmp         0000007B
+  00000062: 8B 06              mov         eax,dword ptr [esi]
+  00000064: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000067: 74 12              je          0000007B
+  00000069: 40                 inc         eax
+  0000006A: 50                 push        eax
+  0000006B: 8D 46 F0           lea         eax,[esi-10h]
+  0000006E: 50                 push        eax
+  0000006F: 57                 push        edi
+  00000070: E8 00 00 00 00     call        _memmove
+  00000075: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000078: 83 C4 0C           add         esp,0Ch
+  0000007B: 8B 06              mov         eax,dword ptr [esi]
+  0000007D: 89 04 31           mov         dword ptr [ecx+esi],eax
+  00000080: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000083: 89 47 14           mov         dword ptr [edi+14h],eax
+  00000086: C7 46 04 0F 00 00  mov         dword ptr [esi+4],0Fh
+            00
+  0000008D: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000093: C6 46 F0 00        mov         byte ptr [esi-10h],0
+  00000097: 83 C6 18           add         esi,18h
+  0000009A: 83 C7 18           add         edi,18h
+  0000009D: 8D 4E F0           lea         ecx,[esi-10h]
+  000000A0: 3B CB              cmp         ecx,ebx
+  000000A2: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000A5: 0F 85 78 FF FF FF  jne         00000023
+  000000AB: 8B C7              mov         eax,edi
+  000000AD: 5F                 pop         edi
+  000000AE: 5E                 pop         esi
+  000000AF: 5B                 pop         ebx
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B2 .text

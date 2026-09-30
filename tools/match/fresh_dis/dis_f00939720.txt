@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00939720.obj
+
+File Type: COFF OBJECT
+
+_FFX_RcBg_Loose_939720:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 39 77 0C           cmp         dword ptr [edi+0Ch],esi
+  0000000D: 76 41              jbe         00000050
+  0000000F: 53                 push        ebx
+  00000010: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000013: 8B 1C B0           mov         ebx,dword ptr [eax+esi*4]
+  00000016: 81 3B 01 00 02 00  cmp         dword ptr [ebx],20001h
+  0000001C: 75 2B              jne         00000049
+  0000001E: 53                 push        ebx
+  0000001F: E8 00 00 00 00     call        _FFX_RcBg_CalcBufferSize
+  00000024: 05 28 01 00 00     add         eax,128h
+  00000029: 50                 push        eax
+  0000002A: E8 00 00 00 00     call        _FFX_Util_Align16Pad
+  0000002F: 6A 05              push        5
+  00000031: E8 00 00 00 00     call        _std__Get_future_error_what
+  00000036: E8 00 00 00 00     call        _FFX_Dbg_SceWriteWrapper
+  0000003B: 53                 push        ebx
+  0000003C: E8 00 00 00 00     call        _FFX_RcBg_SerializeBufferData
+  00000041: 83 C4 10           add         esp,10h
+  00000044: E8 00 00 00 00     call        _FFX_Dbg_SceWriteWrapper
+  00000049: 46                 inc         esi
+  0000004A: 3B 77 0C           cmp         esi,dword ptr [edi+0Ch]
+  0000004D: 72 C1              jb          00000010
+  0000004F: 5B                 pop         ebx
+  00000050: 8B C7              mov         eax,edi
+  00000052: 5F                 pop         edi
+  00000053: 5E                 pop         esi
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

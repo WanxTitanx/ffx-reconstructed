@@ -1,0 +1,27 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B2BF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckMenuOrMusicPlaying:
+  00000000: E8 00 00 00 00     call        _FFX_Sound_AggregateStatusFlags
+  00000005: 85 C0              test        eax,eax
+  00000007: 74 06              je          0000000F
+  00000009: B8 01 00 00 00     mov         eax,1
+  0000000E: C3                 ret
+  0000000F: E8 00 00 00 00     call        _FFX_Battle_CheckMenuStateFromSave
+  00000014: 33 C9              xor         ecx,ecx
+  00000016: 85 C0              test        eax,eax
+  00000018: 0F 95 C1           setne       cl
+  0000001B: 8B C1              mov         eax,ecx
+  0000001D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          1E .text

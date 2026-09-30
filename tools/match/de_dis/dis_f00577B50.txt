@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00577B50.obj
+
+File Type: COFF OBJECT
+
+@DEAD_PClusterImportRegionArray_FreeAll@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 57                 push        edi
+  00000008: 8B 3B              mov         edi,dword ptr [ebx]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 78 36              js          00000044
+  0000000E: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000011: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000017: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 26              je          00000044
+  0000001E: 85 FF              test        edi,edi
+  00000020: 74 19              je          0000003B
+  00000022: 56                 push        esi
+  00000023: 8B F0              mov         esi,eax
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _PClusterImportRegion_FullFree
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 81 C6 94 00 00 00  add         esi,94h
+  00000034: 4F                 dec         edi
+  00000035: 75 EE              jne         00000025
+  00000037: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000003A: 5E                 pop         esi
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000041: 83 C4 04           add         esp,4
+  00000044: 5F                 pop         edi
+  00000045: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  0000004C: C7 03 00 00 00 00  mov         dword ptr [ebx],0
+  00000052: 5B                 pop         ebx
+  00000053: 8B E5              mov         esp,ebp
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          57 .text

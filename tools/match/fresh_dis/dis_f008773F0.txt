@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008773F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Sound_UpdateViewMatrix:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 40           sub         esp,40h
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 68 00 00 00 00     push        offset _g_SoundUnkVar_1328288
+  0000000D: E8 00 00 00 00     call        _FFX_MagicHost_CopyViewMatrixA
+  00000012: 6A 00              push        0
+  00000014: C7 05 00 00 00 00  mov         dword ptr [_g_SoundUnkVar_13282C8],0FFFFFFFFh
+            FF FF FF FF
+  0000001E: E8 00 00 00 00     call        _FFX_Field_SwitchContextSlot
+  00000023: 83 C4 08           add         esp,8
+  00000026: 8B F8              mov         edi,eax
+  00000028: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  0000002D: 8B F0              mov         esi,eax
+  0000002F: B8 FF FF 00 00     mov         eax,0FFFFh
+  00000034: 68 00 00 00 00     push        offset _g_SoundUnkVar_1328288
+  00000039: 66 39 46 0A        cmp         word ptr [esi+0Ah],ax
+  0000003D: 75 1C              jne         0000005B
+  0000003F: 68 00 00 00 00     push        offset _g_SoundUnkVar_1328248
+  00000044: E8 00 00 00 00     call        _FFX_Matrix4x4_Copy16Dwords_Thunk
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 57                 push        edi
+  0000004D: E8 00 00 00 00     call        _FFX_Field_SwapGlobalScriptContext
+  00000052: 83 C4 04           add         esp,4
+  00000055: 5F                 pop         edi
+  00000056: 5E                 pop         esi
+  00000057: 8B E5              mov         esp,ebp
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: 8D 45 C0           lea         eax,[ebp-40h]
+  0000005E: 50                 push        eax
+  0000005F: E8 00 00 00 00     call        _FFXVu0InversMatrix
+  00000064: 0F B7 46 0A        movzx       eax,word ptr [esi+0Ah]
+  00000068: 50                 push        eax
+  00000069: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  0000006E: 50                 push        eax
+  0000006F: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  00000074: D9 00              fld         dword ptr [eax]
+  00000076: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000079: D9 40 04           fld         dword ptr [eax+4]
+  0000007C: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000007F: D9 40 08           fld         dword ptr [eax+8]
+  00000082: 8D 45 C0           lea         eax,[ebp-40h]
+  00000085: 50                 push        eax
+  00000086: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000089: 68 00 00 00 00     push        offset _g_SoundUnkVar_1328248
+  0000008E: E8 00 00 00 00     call        _FFXVu0InversMatrix
+  00000093: 83 C4 18           add         esp,18h
+  00000096: 57                 push        edi
+  00000097: E8 00 00 00 00     call        _FFX_Field_SwapGlobalScriptContext
+  0000009C: 83 C4 04           add         esp,4
+  0000009F: 5F                 pop         edi
+  000000A0: 5E                 pop         esi
+  000000A1: 8B E5              mov         esp,ebp
+  000000A3: 5D                 pop         ebp
+  000000A4: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A5 .text

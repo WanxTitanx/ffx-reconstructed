@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083BDA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_83BDA0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _dbgPrintf
+  00000009: E8 00 00 00 00     call        _dbgPrintf
+  0000000E: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000011: 56                 push        esi
+  00000012: E8 00 00 00 00     call        _SgMem_DumpMCB
+  00000017: 83 C4 04           add         esp,4
+  0000001A: E8 00 00 00 00     call        _dbgPrintf
+  0000001F: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000022: C1 E8 1B           shr         eax,1Bh
+  00000025: 83 E0 03           and         eax,3
+  00000028: 5E                 pop         esi
+  00000029: 8D 04 40           lea         eax,[eax+eax*2]
+  0000002C: 8D 04 C5 00 00 00  lea         eax,_g_SgMemUnkVar_1301928[eax*8]
+            00
+  00000033: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000036: 5D                 pop         ebp
+  00000037: E9 00 00 00 00     jmp         _SgMem_DumpHeap
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

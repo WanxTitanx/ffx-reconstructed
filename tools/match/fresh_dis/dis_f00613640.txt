@@ -1,0 +1,100 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00613640.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ResourceList_FindOrCreateNode@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 3C           sub         esp,3Ch
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8D 45 FC           lea         eax,[ebp-4]
+  0000000B: 8B F9              mov         edi,ecx
+  0000000D: 50                 push        eax
+  0000000E: 57                 push        edi
+  0000000F: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000012: E8 00 00 00 00     call        _Phyre_RBTree_SearchByKey_0
+  00000017: 83 C4 08           add         esp,8
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 0C              je          0000002A
+  0000001E: 8D 70 10           lea         esi,[eax+10h]
+  00000021: 83 F8 F0           cmp         eax,0FFFFFFF0h
+  00000024: 0F 85 85 00 00 00  jne         000000AF
+  0000002A: 8D 45 E0           lea         eax,[ebp-20h]
+  0000002D: 68 00 00 00 00     push        offset ??_C@_08BOFJIDPN@PMapPair?$AA@
+  00000032: 6A 04              push        4
+  00000034: 6A 08              push        8
+  00000036: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000039: 89 45 E0           mov         dword ptr [ebp-20h],eax
+  0000003C: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  0000003F: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000042: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000045: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000048: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  0000004B: 8D 45 C4           lea         eax,[ebp-3Ch]
+  0000004E: 6A 14              push        14h
+  00000050: 50                 push        eax
+  00000051: E8 00 00 00 00     call        _AlignedLinkedListBlock_Init
+  00000056: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000059: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000005C: 8D 45 F8           lea         eax,[ebp-8]
+  0000005F: 50                 push        eax
+  00000060: 8D 45 FC           lea         eax,[ebp-4]
+  00000063: 50                 push        eax
+  00000064: 57                 push        edi
+  00000065: E8 00 00 00 00     call        _Phyre_ResourceNode_AllocWithBackref
+  0000006A: 83 C4 20           add         esp,20h
+  0000006D: 85 C0              test        eax,eax
+  0000006F: 74 05              je          00000076
+  00000071: 8D 70 10           lea         esi,[eax+10h]
+  00000074: EB 02              jmp         00000078
+  00000076: 33 F6              xor         esi,esi
+  00000078: 8D 45 E0           lea         eax,[ebp-20h]
+  0000007B: 50                 push        eax
+  0000007C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000007F: E8 00 00 00 00     call        _PTree_Node_InitSelfRef
+  00000084: 8D 45 C4           lea         eax,[ebp-3Ch]
+  00000087: 50                 push        eax
+  00000088: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll_B
+  0000008D: 8D 45 C4           lea         eax,[ebp-3Ch]
+  00000090: 50                 push        eax
+  00000091: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll
+  00000096: 8D 45 E0           lea         eax,[ebp-20h]
+  00000099: 50                 push        eax
+  0000009A: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeWithRotation
+  0000009F: 8D 45 E0           lea         eax,[ebp-20h]
+  000000A2: 50                 push        eax
+  000000A3: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeWithRotation
+  000000A8: 83 C4 14           add         esp,14h
+  000000AB: 85 F6              test        esi,esi
+  000000AD: 74 1B              je          000000CA
+  000000AF: 8D 45 FC           lea         eax,[ebp-4]
+  000000B2: 50                 push        eax
+  000000B3: 8D 45 0C           lea         eax,[ebp+0Ch]
+  000000B6: 50                 push        eax
+  000000B7: 8D 46 04           lea         eax,[esi+4]
+  000000BA: 50                 push        eax
+  000000BB: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  000000C2: E8 00 00 00 00     call        _Phyre_ResourceList_InsertOrUpdateNode
+  000000C7: 83 C4 0C           add         esp,0Ch
+  000000CA: F7 DE              neg         esi
+  000000CC: 1B F6              sbb         esi,esi
+  000000CE: 83 E6 F3           and         esi,0FFFFFFF3h
+  000000D1: 5F                 pop         edi
+  000000D2: 8D 46 0D           lea         eax,[esi+0Dh]
+  000000D5: 5E                 pop         esi
+  000000D6: 8B E5              mov         esp,ebp
+  000000D8: 5D                 pop         ebp
+  000000D9: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           9 .rdata
+          DC .text

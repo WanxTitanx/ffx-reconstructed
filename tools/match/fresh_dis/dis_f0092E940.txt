@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092E940.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_Loose_92E940:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000006: 83 EC 08           sub         esp,8
+  00000009: DD 1C 24           fstp        qword ptr [esp]
+  0000000C: E8 00 00 00 00     call        _FFX_Math_NormalizeAngle2PI
+  00000011: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000014: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000017: 85 C0              test        eax,eax
+  00000019: 79 06              jns         00000021
+  0000001B: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000021: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000025: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000028: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000002B: DD 1C 24           fstp        qword ptr [esp]
+  0000002E: 50                 push        eax
+  0000002F: E8 00 00 00 00     call        _FFX_MagicHost_ContextSlot02A8_Handler
+  00000034: 83 C4 0C           add         esp,0Ch
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          39 .text

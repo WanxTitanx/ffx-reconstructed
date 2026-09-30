@@ -1,0 +1,91 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00944800.obj
+
+File Type: COFF OBJECT
+
+@ThreadPool_DeallocAddr@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 53                 push        ebx
+  0000000A: 8B FA              mov         edi,edx
+  0000000C: E8 00 00 00 00     call        _EnterCriticalSection
+  00000011: 8B 73 2C           mov         esi,dword ptr [ebx+2Ch]
+  00000014: 83 C4 04           add         esp,4
+  00000017: 85 F6              test        esi,esi
+  00000019: 74 1B              je          00000036
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 0E              mov         ecx,dword ptr [esi]
+  00000022: 3B F9              cmp         edi,ecx
+  00000024: 72 09              jb          0000002F
+  00000026: 8B 43 20           mov         eax,dword ptr [ebx+20h]
+  00000029: 03 C1              add         eax,ecx
+  0000002B: 3B F8              cmp         edi,eax
+  0000002D: 72 09              jb          00000038
+  0000002F: 8B 76 18           mov         esi,dword ptr [esi+18h]
+  00000032: 85 F6              test        esi,esi
+  00000034: 75 EA              jne         00000020
+  00000036: 33 F6              xor         esi,esi
+  00000038: 33 D2              xor         edx,edx
+  0000003A: 8B C7              mov         eax,edi
+  0000003C: 2B 06              sub         eax,dword ptr [esi]
+  0000003E: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000041: F7 73 18           div         eax,dword ptr [ebx+18h]
+  00000044: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000047: 99                 cdq
+  00000048: 83 E2 1F           and         edx,1Fh
+  0000004B: 03 C2              add         eax,edx
+  0000004D: C1 F8 05           sar         eax,5
+  00000050: 8D 14 81           lea         edx,[ecx+eax*4]
+  00000053: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000056: 83 E1 1F           and         ecx,1Fh
+  00000059: B8 01 00 00 00     mov         eax,1
+  0000005E: D3 E0              shl         eax,cl
+  00000060: F7 D0              not         eax
+  00000062: 21 02              and         dword ptr [edx],eax
+  00000064: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000067: 3B 46 0C           cmp         eax,dword ptr [esi+0Ch]
+  0000006A: 7D 03              jge         0000006F
+  0000006C: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000006F: FF 4E 10           dec         dword ptr [esi+10h]
+  00000072: 56                 push        esi
+  00000073: 50                 push        eax
+  00000074: 53                 push        ebx
+  00000075: E8 00 00 00 00     call        _ThreadPool_CheckPageMapped
+  0000007A: 83 C4 0C           add         esp,0Ch
+  0000007D: 85 C0              test        eax,eax
+  0000007F: 74 12              je          00000093
+  00000081: FF 73 1C           push        dword ptr [ebx+1Ch]
+  00000084: 81 E7 00 F0 FF FF  and         edi,0FFFFF000h
+  0000008A: 57                 push        edi
+  0000008B: E8 00 00 00 00     call        _Heap_AllocDispatchWrapper
+  00000090: 83 C4 08           add         esp,8
+  00000093: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  00000097: 75 0A              jne         000000A3
+  00000099: 56                 push        esi
+  0000009A: 53                 push        ebx
+  0000009B: E8 00 00 00 00     call        _ThreadPool_CleanupProc
+  000000A0: 83 C4 08           add         esp,8
+  000000A3: 53                 push        ebx
+  000000A4: E8 00 00 00 00     call        _LeaveCriticalSection
+  000000A9: 83 C4 04           add         esp,4
+  000000AC: 5F                 pop         edi
+  000000AD: 5E                 pop         esi
+  000000AE: 5B                 pop         ebx
+  000000AF: 8B E5              mov         esp,ebp
+  000000B1: 5D                 pop         ebp
+  000000B2: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B3 .text

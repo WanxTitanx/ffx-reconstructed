@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008168F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicCoreOp_F2_Transform:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: BA 00 F0 00 00     mov         edx,0F000h
+  0000000B: 66 8B 81 1A 02 00  mov         ax,word ptr [ecx+21Ah]
+            00
+  00000012: 57                 push        edi
+  00000013: 8B B9 20 02 00 00  mov         edi,dword ptr [ecx+220h]
+  00000019: 66 23 C2           and         ax,dx
+  0000001C: 74 4D              je          0000006B
+  0000001E: B9 00 10 00 00     mov         ecx,1000h
+  00000023: 66 3B C1           cmp         ax,cx
+  00000026: 75 36              jne         0000005E
+  00000028: DD 05 00 00 00 00  fld         qword ptr [__real@4030000000000000]
+  0000002E: 83 EC 08           sub         esp,8
+  00000031: 8D 87 90 00 00 00  lea         eax,[edi+90h]
+  00000037: DD 1C 24           fstp        qword ptr [esp]
+  0000003A: 50                 push        eax
+  0000003B: 8D 47 40           lea         eax,[edi+40h]
+  0000003E: 50                 push        eax
+  0000003F: C6 87 BA 00 00 00  mov         byte ptr [edi+0BAh],0
+            00
+  00000046: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  0000004B: 80 A7 B2 00 00 00  and         byte ptr [edi+0B2h],0FBh
+            FB
+  00000052: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000055: 83 C4 10           add         esp,10h
+  00000058: 83 C0 04           add         eax,4
+  0000005B: 5F                 pop         edi
+  0000005C: 5D                 pop         ebp
+  0000005D: C3                 ret
+  0000005E: 80 A7 B2 00 00 00  and         byte ptr [edi+0B2h],0FBh
+            FB
+  00000065: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000068: 5F                 pop         edi
+  00000069: 5D                 pop         ebp
+  0000006A: C3                 ret
+  0000006B: 56                 push        esi
+  0000006C: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000006F: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  00000073: 50                 push        eax
+  00000074: 8D 81 00 03 00 00  lea         eax,[ecx+300h]
+  0000007A: 57                 push        edi
+  0000007B: 50                 push        eax
+  0000007C: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  00000081: 83 C4 0C           add         esp,0Ch
+  00000084: 8D 4F 40           lea         ecx,[edi+40h]
+  00000087: D9 40 48           fld         dword ptr [eax+48h]
+  0000008A: 51                 push        ecx
+  0000008B: 83 EC 20           sub         esp,20h
+  0000008E: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  00000092: D9 40 40           fld         dword ptr [eax+40h]
+  00000095: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000099: D9 47 48           fld         dword ptr [edi+48h]
+  0000009C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000000A0: D9 01              fld         dword ptr [ecx]
+  000000A2: DD 1C 24           fstp        qword ptr [esp]
+  000000A5: E8 00 00 00 00     call        _FFX_Math_ComputeFixedAngle
+  000000AA: 83 C4 24           add         esp,24h
+  000000AD: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000B0: DB 45 08           fild        dword ptr [ebp+8]
+  000000B3: 85 C0              test        eax,eax
+  000000B5: 79 06              jns         000000BD
+  000000B7: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000BD: 80 A7 B2 00 00 00  and         byte ptr [edi+0B2h],0FBh
+            FB
+  000000C4: D9 5F 48           fstp        dword ptr [edi+48h]
+  000000C7: 8D 46 04           lea         eax,[esi+4]
+  000000CA: 5E                 pop         esi
+  000000CB: 5F                 pop         edi
+  000000CC: 5D                 pop         ebp
+  000000CD: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          CE .text

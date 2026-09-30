@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00559BC0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_PAttachableComponent_ScalarDeletingDtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: F6 46 54 01        test        byte ptr [esi+54h],1
+  0000000A: 75 0B              jne         00000017
+  0000000C: FF 76 54           push        dword ptr [esi+54h]
+  0000000F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000014: 83 C4 04           add         esp,4
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _PComponent_UnlinkFromEntityList
+  0000001D: 83 C4 04           add         esp,4
+  00000020: F6 C3 01           test        bl,1
+  00000023: 74 09              je          0000002E
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 8B C6              mov         eax,esi
+  00000030: 5E                 pop         esi
+  00000031: 5B                 pop         ebx
+  00000032: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          33 .text

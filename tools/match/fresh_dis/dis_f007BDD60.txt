@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BDD60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_AnimActiveGetter:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAL
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 49              je          0000005D
+  00000014: 0F B6 CB           movzx       ecx,bl
+  00000017: D9 45 10           fld         dword ptr [ebp+10h]
+  0000001A: 0F B6 C7           movzx       eax,bh
+  0000001D: 69 C9 A0 0D 00 00  imul        ecx,ecx,0DA0h
+  00000023: 69 C0 30 01 00 00  imul        eax,eax,130h
+  00000029: 03 C8              add         ecx,eax
+  0000002B: 0F BE 45 0C        movsx       eax,byte ptr [ebp+0Ch]
+  0000002F: 83 E0 01           and         eax,1
+  00000032: 69 C0 1C 06 00 00  imul        eax,eax,61Ch
+  00000038: D9 9C 01 00 00 00  fstp        dword ptr _g_CameraUnkVar_1137680[ecx+eax]
+            00
+  0000003F: D9 45 14           fld         dword ptr [ebp+14h]
+  00000042: D9 9C 01 00 00 00  fstp        dword ptr _unk_1137684[ecx+eax]
+            00
+  00000049: D9 45 18           fld         dword ptr [ebp+18h]
+  0000004C: D9 9C 01 00 00 00  fstp        dword ptr _unk_1137688[ecx+eax]
+            00
+  00000053: D9 45 1C           fld         dword ptr [ebp+1Ch]
+  00000056: D9 9C 01 00 00 00  fstp        dword ptr _g_CameraUnkVar_113768C[ecx+eax]
+            00
+  0000005D: 5B                 pop         ebx
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006ABF00.obj
+
+File Type: COFF OBJECT
+
+_Engine_AlignedAllocZeroInitPairs:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 34              je          0000003F
+  0000000B: 8D 04 F5 00 00 00  lea         eax,[esi*8]
+            00
+  00000012: 6A 04              push        4
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 8B C8              mov         ecx,eax
+  0000001F: 85 C0              test        eax,eax
+  00000021: 74 1C              je          0000003F
+  00000023: D9 EE              fldz
+  00000025: 85 C0              test        eax,eax
+  00000027: 74 09              je          00000032
+  00000029: D9 50 04           fst         dword ptr [eax+4]
+  0000002C: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000032: 83 C0 08           add         eax,8
+  00000035: 4E                 dec         esi
+  00000036: 75 ED              jne         00000025
+  00000038: DD D8              fstp        st(0)
+  0000003A: 8B C1              mov         eax,ecx
+  0000003C: 5E                 pop         esi
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+  0000003F: 33 C0              xor         eax,eax
+  00000041: 5E                 pop         esi
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          44 .text

@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092AC90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_DestroySceneArrayEx:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 86 A0 00 00 00  mov         eax,dword ptr [esi+0A0h]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 13              je          00000024
+  00000011: 50                 push        eax
+  00000012: E8 00 00 00 00     call        _FFX_Render_DestroyAndFreeSceneEntry
+  00000017: 83 C4 04           add         esp,4
+  0000001A: C7 86 A0 00 00 00  mov         dword ptr [esi+0A0h],0
+            00 00 00 00
+  00000024: 8B 86 BC 00 00 00  mov         eax,dword ptr [esi+0BCh]
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 74 13              je          00000041
+  0000002E: 50                 push        eax
+  0000002F: E8 00 00 00 00     call        _FFX_Render_DestroyAndFreeSceneEntry
+  00000034: 83 C4 04           add         esp,4
+  00000037: C7 86 BC 00 00 00  mov         dword ptr [esi+0BCh],0
+            00 00 00 00
+  00000041: 8D 86 90 00 00 00  lea         eax,[esi+90h]
+  00000047: 50                 push        eax
+  00000048: E8 00 00 00 00     call        _FFX_Render_FreeSceneSubResource
+  0000004D: 83 C4 04           add         esp,4
+  00000050: 5E                 pop         esi
+  00000051: 5D                 pop         ebp
+  00000052: E9 00 00 00 00     jmp         _rcbgPalFini
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          57 .text

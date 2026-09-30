@@ -1,0 +1,31 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0077E970.obj
+
+File Type: COFF OBJECT
+
+_FFX_Movie_BranchReadByMode:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 50                 push        eax
+  00000007: 80 B8 5C 07 05 00  cmp         byte ptr [eax+5075Ch],0
+            00
+  0000000E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000011: 74 0A              je          0000001D
+  00000013: E8 00 00 00 00     call        _FFX_Movie_SyncAndReadSectors
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 5D                 pop         ebp
+  0000001C: C3                 ret
+  0000001D: E8 00 00 00 00     call        _FFX_Movie_SyncWaitLoop
+  00000022: 83 C4 08           add         esp,8
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .text

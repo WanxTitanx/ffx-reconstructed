@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005E7080.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_physics_calcForce_Dtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 8B 8E DC 00 00 00  mov         ecx,dword ptr [esi+0DCh]
+  0000000C: 85 C9              test        ecx,ecx
+  0000000E: 74 0C              je          0000001C
+  00000010: 8B 01              mov         eax,dword ptr [ecx]
+  00000012: BA 01 00 00 00     mov         edx,1
+  00000017: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000001A: FF D0              call        eax
+  0000001C: 8B 8E E0 00 00 00  mov         ecx,dword ptr [esi+0E0h]
+  00000022: 85 C9              test        ecx,ecx
+  00000024: 74 0B              je          00000031
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: BA 01 00 00 00     mov         edx,1
+  0000002D: 8B 00              mov         eax,dword ptr [eax]
+  0000002F: FF D0              call        eax
+  00000031: 56                 push        esi
+  00000032: C7 86 E0 00 00 00  mov         dword ptr [esi+0E0h],0
+            00 00 00 00
+  0000003C: C7 86 DC 00 00 00  mov         dword ptr [esi+0DCh],0
+            00 00 00 00
+  00000046: C7 86 B0 00 00 00  mov         dword ptr [esi+0B0h],0
+            00 00 00 00
+  00000050: E8 00 00 00 00     call        _Phyre_physics_calcForce
+  00000055: 83 C4 04           add         esp,4
+  00000058: F6 C3 01           test        bl,1
+  0000005B: 74 09              je          00000066
+  0000005D: 56                 push        esi
+  0000005E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000063: 83 C4 04           add         esp,4
+  00000066: 8B C6              mov         eax,esi
+  00000068: 5E                 pop         esi
+  00000069: 5B                 pop         ebx
+  0000006A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6B .text

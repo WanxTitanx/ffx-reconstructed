@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A25990.obj
+
+File Type: COFF OBJECT
+
+_sub_A25990@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 3D 00 00 00 00  cmp         dword ptr [_unk_1984C68],0
+            00
+  0000000A: 75 5E              jne         0000006A
+  0000000C: 56                 push        esi
+  0000000D: FF 75 08           push        dword ptr [ebp+8]
+  00000010: 6A 7C              push        7Ch
+  00000012: E8 00 00 00 00     call        _FFX_Memory_Alloc_w
+  00000017: 8B F0              mov         esi,eax
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 85 F6              test        esi,esi
+  0000001E: 74 3F              je          0000005F
+  00000020: D9 05 00 00 00 00  fld         dword ptr [__real@bf800000]
+  00000026: 33 C0              xor         eax,eax
+  00000028: D9 56 04           fst         dword ptr [esi+4]
+  0000002B: 6A 17              push        17h
+  0000002D: D9 5E 08           fstp        dword ptr [esi+8]
+  00000030: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000037: C7 46 74 00 00 00  mov         dword ptr [esi+74h],0
+            00
+  0000003E: 66 89 06           mov         word ptr [esi],ax
+  00000041: 88 46 02           mov         byte ptr [esi+2],al
+  00000044: E8 00 00 00 00     call        _GetSystemMetrics
+  00000049: 83 C4 04           add         esp,4
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 0F 95 C0           setne       al
+  00000051: 88 46 78           mov         byte ptr [esi+78h],al
+  00000054: 89 35 00 00 00 00  mov         dword ptr [_unk_1984C68],esi
+  0000005A: 5E                 pop         esi
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 04 00           ret         4
+  0000005F: C7 05 00 00 00 00  mov         dword ptr [_unk_1984C68],0
+            00 00 00 00
+  00000069: 5E                 pop         esi
+  0000006A: 5D                 pop         ebp
+  0000006B: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          6E .text

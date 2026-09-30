@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008378E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mseq_PeekNextPlayClipRecord:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 86 14 07 00 00  mov         eax,dword ptr [esi+714h]
+  0000000E: 85 C0              test        eax,eax
+  00000010: 74 44              je          $LN8
+  00000012: 0F BE 08           movsx       ecx,byte ptr [eax]
+  00000015: 83 F9 06           cmp         ecx,6
+  00000018: 77 37              ja          00000051
+  0000001A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: FF 24 8D 00 00 00  jmp         dword ptr $LN19[ecx*4]
+            00
+$LN5:
+  00000027: 40                 inc         eax
+  00000028: EB 1F              jmp         00000049
+$LN4:
+  0000002A: 83 C0 03           add         eax,3
+  0000002D: EB 1A              jmp         00000049
+$LN3:
+  0000002F: 40                 inc         eax
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        _FFX_Mseq_ReadScriptI16
+  00000036: 0F B7 C0           movzx       eax,ax
+  00000039: 0F BF C8           movsx       ecx,ax
+  0000003C: 8B 47 08           mov         eax,dword ptr [edi+8]
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 0F BF 04 48        movsx       eax,word ptr [eax+ecx*2]
+  00000046: 03 47 0C           add         eax,dword ptr [edi+0Ch]
+  00000049: 0F BE 08           movsx       ecx,byte ptr [eax]
+  0000004C: 83 F9 06           cmp         ecx,6
+  0000004F: 76 CF              jbe         00000020
+  00000051: E8 00 00 00 00     call        _dbgPrintf
+$LN8:
+  00000056: 5F                 pop         edi
+  00000057: 33 C0              xor         eax,eax
+  00000059: 5E                 pop         esi
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+$LN6:
+  0000005C: 40                 inc         eax
+  0000005D: 50                 push        eax
+  0000005E: E8 00 00 00 00     call        _FFX_Mseq_ReadScriptI16
+  00000063: 8B 8E 10 07 00 00  mov         ecx,dword ptr [esi+710h]
+  00000069: 83 C4 04           add         esp,4
+  0000006C: 98                 cwde
+  0000006D: C1 E0 04           shl         eax,4
+  00000070: 03 41 10           add         eax,dword ptr [ecx+10h]
+  00000073: 5F                 pop         edi
+  00000074: 5E                 pop         esi
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+  00000077: 90                 nop
+$LN19:
+  00000078: 00 00              add         byte ptr [eax],al
+  0000007A: 00 00              add         byte ptr [eax],al
+  0000007C: 00 00              add         byte ptr [eax],al
+  0000007E: 00 00              add         byte ptr [eax],al
+  00000080: 00 00              add         byte ptr [eax],al
+  00000082: 00 00              add         byte ptr [eax],al
+  00000084: 00 00              add         byte ptr [eax],al
+  00000086: 00 00              add         byte ptr [eax],al
+  00000088: 00 00              add         byte ptr [eax],al
+  0000008A: 00 00              add         byte ptr [eax],al
+  0000008C: 00 00              add         byte ptr [eax],al
+  0000008E: 00 00              add         byte ptr [eax],al
+  00000090: 00 00              add         byte ptr [eax],al
+  00000092: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          94 .text

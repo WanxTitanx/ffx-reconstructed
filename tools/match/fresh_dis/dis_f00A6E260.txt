@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A6E260.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicVm_UpdateTextureFadeSlots:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 66 39 37           cmp         word ptr [edi],si
+  0000000D: 74 6E              je          0000007D
+  0000000F: 53                 push        ebx
+  00000010: 8D 47 3C           lea         eax,[edi+3Ch]
+  00000013: BB 80 00 00 00     mov         ebx,80h
+  00000018: EB 06              jmp         00000020
+  0000001A: 8D 9B 00 00 00 00  lea         ebx,[ebx+00000000h]
+  00000020: 0F B7 10           movzx       edx,word ptr [eax]
+  00000023: F7 C2 00 80 00 00  test        edx,8000h
+  00000029: 75 42              jne         0000006D
+  0000002B: 8A 48 02           mov         cl,byte ptr [eax+2]
+  0000002E: FE C1              inc         cl
+  00000030: 88 48 02           mov         byte ptr [eax+2],cl
+  00000033: 80 F9 20           cmp         cl,20h
+  00000036: 72 22              jb          0000005A
+  00000038: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  0000003B: 0F BF D2           movsx       edx,dx
+  0000003E: BB FE FF 00 00     mov         ebx,0FFFEh
+  00000043: 66 89 1C 51        mov         word ptr [ecx+edx*2],bx
+  00000047: B9 FF FF 00 00     mov         ecx,0FFFFh
+  0000004C: 66 89 08           mov         word ptr [eax],cx
+  0000004F: C6 40 02 00        mov         byte ptr [eax+2],0
+  00000053: BB 80 00 00 00     mov         ebx,80h
+  00000058: EB 13              jmp         0000006D
+  0000005A: 0F B6 C9           movzx       ecx,cl
+  0000005D: BA 20 00 00 00     mov         edx,20h
+  00000062: 66 2B D1           sub         dx,cx
+  00000065: 66 0F AF D3        imul        dx,bx
+  00000069: 66 89 50 52        mov         word ptr [eax+52h],dx
+  0000006D: 0F B7 0F           movzx       ecx,word ptr [edi]
+  00000070: 46                 inc         esi
+  00000071: 83 C0 60           add         eax,60h
+  00000074: 3B F1              cmp         esi,ecx
+  00000076: 7C A8              jl          00000020
+  00000078: 5B                 pop         ebx
+  00000079: 5F                 pop         edi
+  0000007A: 5E                 pop         esi
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+  0000007D: 5F                 pop         edi
+  0000007E: 33 C0              xor         eax,eax
+  00000080: 5E                 pop         esi
+  00000081: 5D                 pop         ebp
+  00000082: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          83 .text

@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085A510.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_AngleDistanceCompare:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: 56                 push        esi
+  0000000A: 0F B6 4A 32        movzx       ecx,byte ptr [edx+32h]
+  0000000E: 8B C1              mov         eax,ecx
+  00000010: C1 E0 04           shl         eax,4
+  00000013: 03 C1              add         eax,ecx
+  00000015: D9 84 82 90 08 00  fld         dword ptr [edx+eax*4+890h]
+            00
+  0000001C: DD 55 F8           fst         qword ptr [ebp-8]
+  0000001F: D9 EE              fldz
+  00000021: D8 D1              fcom        st(1)
+  00000023: DF E0              fnstsw      ax
+  00000025: F6 C4 05           test        ah,5
+  00000028: 7A 07              jp          00000031
+  0000002A: BE 01 00 00 00     mov         esi,1
+  0000002F: EB 02              jmp         00000033
+  00000031: 33 F6              xor         esi,esi
+  00000033: D8 D9              fcomp       st(1)
+  00000035: DF E0              fnstsw      ax
+  00000037: F6 C4 41           test        ah,41h
+  0000003A: 75 10              jne         0000004C
+  0000003C: D9 E0              fchs
+  0000003E: DD 55 F8           fst         qword ptr [ebp-8]
+  00000041: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000044: D9 45 08           fld         dword ptr [ebp+8]
+  00000047: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000004A: EB 02              jmp         0000004E
+  0000004C: DD D8              fstp        st(0)
+  0000004E: E8 00 00 00 00     call        _FFX_Field_GetGlobalAngleDouble
+  00000053: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000056: DB 45 08           fild        dword ptr [ebp+8]
+  00000059: 85 C0              test        eax,eax
+  0000005B: 79 06              jns         00000063
+  0000005D: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000063: DD 5D F0           fstp        qword ptr [ebp-10h]
+  00000066: DD 45 F0           fld         qword ptr [ebp-10h]
+  00000069: DC 0D 00 00 00 00  fmul        qword ptr [__real@400921fb5fffffff]
+  0000006F: DC 35 00 00 00 00  fdiv        qword ptr [__real@4066800000000000]
+  00000075: DC 5D F8           fcomp       qword ptr [ebp-8]
+  00000078: DF E0              fnstsw      ax
+  0000007A: F6 C4 41           test        ah,41h
+  0000007D: 7A 03              jp          00000082
+  0000007F: 83 CE 02           or          esi,2
+  00000082: 8B C6              mov         eax,esi
+  00000084: 5E                 pop         esi
+  00000085: 8B E5              mov         esp,ebp
+  00000087: 5D                 pop         ebp
+  00000088: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          20 .rdata
+          89 .text

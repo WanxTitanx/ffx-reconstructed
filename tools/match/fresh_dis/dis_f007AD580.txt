@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007AD580.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_SetSlotModelVisibility:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        _FFX_Battle_GetSlotDataPtr
+  00000011: 8B 30              mov         esi,dword ptr [eax]
+  00000013: 83 C4 08           add         esp,8
+  00000016: 85 F6              test        esi,esi
+  00000018: 74 27              je          00000041
+  0000001A: D9 EE              fldz
+  0000001C: 6A 00              push        0
+  0000001E: 83 EC 08           sub         esp,8
+  00000021: DD 1C 24           fstp        qword ptr [esp]
+  00000024: 56                 push        esi
+  00000025: E8 00 00 00 00     call        _FFX_Chr_SetByte398
+  0000002A: D9 E8              fld1
+  0000002C: 83 C4 10           add         esp,10h
+  0000002F: FF 75 10           push        dword ptr [ebp+10h]
+  00000032: 83 EC 08           sub         esp,8
+  00000035: DD 1C 24           fstp        qword ptr [esp]
+  00000038: 56                 push        esi
+  00000039: E8 00 00 00 00     call        _FFX_Chr_SetByte398
+  0000003E: 83 C4 10           add         esp,10h
+  00000041: 5E                 pop         esi
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          44 .text

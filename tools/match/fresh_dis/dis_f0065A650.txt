@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0065A650.obj
+
+File Type: COFF OBJECT
+
+@FFX_ClusterHandle_ReleaseBitmapFontTextRefs@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B D9              mov         ebx,ecx
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 83 D4 12 00 00  lea         eax,[ebx+12D4h]
+  00000010: 57                 push        edi
+  00000011: 8B FA              mov         edi,edx
+  00000013: 3B F0              cmp         esi,eax
+  00000015: 75 4C              jne         00000063
+  00000017: 8B F7              mov         esi,edi
+  00000019: 2B B3 CC FB 00 00  sub         esi,dword ptr [ebx+0FBCCh]
+  0000001F: B8 E1 83 0F 3E     mov         eax,3E0F83E1h
+  00000024: F7 EE              imul        esi
+  00000026: C1 FA 05           sar         edx,5
+  00000029: 8B F2              mov         esi,edx
+  0000002B: C1 EE 1F           shr         esi,1Fh
+  0000002E: 03 F2              add         esi,edx
+  00000030: 81 FE B7 0B 00 00  cmp         esi,0BB7h
+  00000036: 77 28              ja          00000060
+  00000038: 8B 83 E0 FB 00 00  mov         eax,dword ptr [ebx+0FBE0h]
+  0000003E: 57                 push        edi
+  0000003F: C6 04 06 00        mov         byte ptr [esi+eax],0
+  00000043: E8 00 00 00 00     call        _Phyre_PBitmapFontText_Destructor
+  00000048: 83 C4 04           add         esp,4
+  0000004B: 3B B3 E4 FB 00 00  cmp         esi,dword ptr [ebx+0FBE4h]
+  00000051: 73 3C              jae         0000008F
+  00000053: 5F                 pop         edi
+  00000054: 89 B3 E4 FB 00 00  mov         dword ptr [ebx+0FBE4h],esi
+  0000005A: 5E                 pop         esi
+  0000005B: 5B                 pop         ebx
+  0000005C: 5D                 pop         ebp
+  0000005D: C2 04 00           ret         4
+  00000060: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000063: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000066: 85 C0              test        eax,eax
+  00000068: 74 0A              je          00000074
+  0000006A: 50                 push        eax
+  0000006B: 56                 push        esi
+  0000006C: E8 00 00 00 00     call        _Phyre_PCluster_GetHandleByAddress
+  00000071: 83 C4 08           add         esp,8
+  00000074: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  00000077: 85 C0              test        eax,eax
+  00000079: 74 0A              je          00000085
+  0000007B: 50                 push        eax
+  0000007C: 56                 push        esi
+  0000007D: E8 00 00 00 00     call        _Phyre_PCluster_GetHandleByAddress
+  00000082: 83 C4 08           add         esp,8
+  00000085: 57                 push        edi
+  00000086: 56                 push        esi
+  00000087: E8 00 00 00 00     call        _Phyre_PCluster_GetHandleByAddress
+  0000008C: 83 C4 08           add         esp,8
+  0000008F: 5F                 pop         edi
+  00000090: 5E                 pop         esi
+  00000091: 5B                 pop         ebx
+  00000092: 5D                 pop         ebp
+  00000093: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          96 .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009470B0.obj
+
+File Type: COFF OBJECT
+
+@HeapPage_FreeList@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B 79 04           mov         edi,dword ptr [ecx+4]
+  00000008: 85 FF              test        edi,edi
+  0000000A: 74 2B              je          00000037
+  0000000C: 56                 push        esi
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8B 37              mov         esi,dword ptr [edi]
+  00000012: 68 00 10 00 00     push        1000h
+  00000017: 57                 push        edi
+  00000018: E8 00 00 00 00     call        _Memory_VirtualFreeTracked
+  0000001D: 68 00 10 00 00     push        1000h
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _Memory_VirtualFreeRelease
+  00000028: 83 C4 10           add         esp,10h
+  0000002B: 8B FE              mov         edi,esi
+  0000002D: 85 F6              test        esi,esi
+  0000002F: 75 DF              jne         00000010
+  00000031: 5E                 pop         esi
+  00000032: 5F                 pop         edi
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+  00000037: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000003A: 5F                 pop         edi
+  0000003B: 8B E5              mov         esp,ebp
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

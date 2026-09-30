@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00484A50.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_484A50@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F1              mov         esi,ecx
+  00000005: 8B FA              mov         edi,edx
+  00000007: 3B 7E 10           cmp         edi,dword ptr [esi+10h]
+  0000000A: 74 3E              je          0000004A
+  0000000C: 33 DB              xor         ebx,ebx
+  0000000E: 85 FF              test        edi,edi
+  00000010: 74 18              je          0000002A
+  00000012: 6A 01              push        1
+  00000014: 57                 push        edi
+  00000015: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001A: 8B D8              mov         ebx,eax
+  0000001C: 83 C4 08           add         esp,8
+  0000001F: 85 DB              test        ebx,ebx
+  00000021: 75 07              jne         0000002A
+  00000023: 5F                 pop         edi
+  00000024: 5E                 pop         esi
+  00000025: 8D 43 0D           lea         eax,[ebx+0Dh]
+  00000028: 5B                 pop         ebx
+  00000029: C3                 ret
+  0000002A: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000002D: 3B C3              cmp         eax,ebx
+  0000002F: 74 13              je          00000044
+  00000031: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  00000035: 7C 0D              jl          00000044
+  00000037: 85 C0              test        eax,eax
+  00000039: 74 09              je          00000044
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000041: 83 C4 04           add         esp,4
+  00000044: 89 5E 14           mov         dword ptr [esi+14h],ebx
+  00000047: 89 7E 10           mov         dword ptr [esi+10h],edi
+  0000004A: 5F                 pop         edi
+  0000004B: 5E                 pop         esi
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: 5B                 pop         ebx
+  0000004F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          50 .text

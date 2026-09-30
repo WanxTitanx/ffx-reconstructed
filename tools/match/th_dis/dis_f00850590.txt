@@ -1,0 +1,103 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00850590.obj
+
+File Type: COFF OBJECT
+
+_sub_850590:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 80 00 00 00  sub         esp,80h
+  00000009: 56                 push        esi
+  0000000A: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000D: 57                 push        edi
+  0000000E: 33 FF              xor         edi,edi
+  00000010: 80 3E 00           cmp         byte ptr [esi],0
+  00000013: 0F 84 B4 00 00 00  je          000000CD
+  00000019: 53                 push        ebx
+  0000001A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000020: 80 3E 00           cmp         byte ptr [esi],0
+  00000023: 8B CE              mov         ecx,esi
+  00000025: 74 1A              je          00000041
+  00000027: 8A 06              mov         al,byte ptr [esi]
+  00000029: 3C 0D              cmp         al,0Dh
+  0000002B: 75 05              jne         00000032
+  0000002D: C6 06 00           mov         byte ptr [esi],0
+  00000030: EB 04              jmp         00000036
+  00000032: 3C 0A              cmp         al,0Ah
+  00000034: 74 08              je          0000003E
+  00000036: 46                 inc         esi
+  00000037: 80 3E 00           cmp         byte ptr [esi],0
+  0000003A: 75 EB              jne         00000027
+  0000003C: EB 03              jmp         00000041
+  0000003E: C6 06 00           mov         byte ptr [esi],0
+  00000041: 8D 55 80           lea         edx,[ebp-80h]
+  00000044: 2B D1              sub         edx,ecx
+  00000046: 8A 01              mov         al,byte ptr [ecx]
+  00000048: 88 04 0A           mov         byte ptr [edx+ecx],al
+  0000004B: 8D 49 01           lea         ecx,[ecx+1]
+  0000004E: 84 C0              test        al,al
+  00000050: 75 F4              jne         00000046
+  00000052: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000056: 8D 45 80           lea         eax,[ebp-80h]
+  00000059: 74 57              je          000000B2
+  0000005B: 6A 2E              push        2Eh
+  0000005D: 50                 push        eax
+  0000005E: E8 00 00 00 00     call        _strchr
+  00000063: 8B D8              mov         ebx,eax
+  00000065: 83 C4 08           add         esp,8
+  00000068: 85 DB              test        ebx,ebx
+  0000006A: 74 56              je          000000C2
+  0000006C: B9 00 00 00 00     mov         ecx,offset ??_C@_04FGKMPKCB@?4anm?$AA@
+  00000071: 8A 10              mov         dl,byte ptr [eax]
+  00000073: 3A 11              cmp         dl,byte ptr [ecx]
+  00000075: 75 1A              jne         00000091
+  00000077: 84 D2              test        dl,dl
+  00000079: 74 12              je          0000008D
+  0000007B: 8A 50 01           mov         dl,byte ptr [eax+1]
+  0000007E: 3A 51 01           cmp         dl,byte ptr [ecx+1]
+  00000081: 75 0E              jne         00000091
+  00000083: 83 C0 02           add         eax,2
+  00000086: 83 C1 02           add         ecx,2
+  00000089: 84 D2              test        dl,dl
+  0000008B: 75 E4              jne         00000071
+  0000008D: 33 C9              xor         ecx,ecx
+  0000008F: EB 05              jmp         00000096
+  00000091: 1B C9              sbb         ecx,ecx
+  00000093: 83 C9 01           or          ecx,1
+  00000096: 85 C9              test        ecx,ecx
+  00000098: 74 12              je          000000AC
+  0000009A: 33 C0              xor         eax,eax
+  0000009C: 85 C9              test        ecx,ecx
+  0000009E: 0F 99 C0           setns       al
+  000000A1: 8D 04 45 FF FF FF  lea         eax,[eax*2-1]
+            FF
+  000000A8: 85 C0              test        eax,eax
+  000000AA: 75 16              jne         000000C2
+  000000AC: C6 03 00           mov         byte ptr [ebx],0
+  000000AF: 8D 45 80           lea         eax,[ebp-80h]
+  000000B2: 50                 push        eax
+  000000B3: E8 00 00 00 00     call        _sub_83F050
+  000000B8: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000BB: 83 C4 04           add         esp,4
+  000000BE: 89 04 B9           mov         dword ptr [ecx+edi*4],eax
+  000000C1: 47                 inc         edi
+  000000C2: 46                 inc         esi
+  000000C3: 80 3E 00           cmp         byte ptr [esi],0
+  000000C6: 0F 85 54 FF FF FF  jne         00000020
+  000000CC: 5B                 pop         ebx
+  000000CD: 8B C7              mov         eax,edi
+  000000CF: 5F                 pop         edi
+  000000D0: 5E                 pop         esi
+  000000D1: 8B E5              mov         esp,ebp
+  000000D3: 5D                 pop         ebp
+  000000D4: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           5 .rdata
+          D5 .text

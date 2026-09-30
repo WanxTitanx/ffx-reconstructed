@@ -1,0 +1,143 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008953F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_DrawOverdriveGaugeFill:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000009: A1 00 00 00 00     mov         eax,dword ptr [_unk_25D0AA8]
+  0000000E: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000011: 53                 push        ebx
+  00000012: 56                 push        esi
+  00000013: 48                 dec         eax
+  00000014: 57                 push        edi
+  00000015: 03 C2              add         eax,edx
+  00000017: 0F B7 F8           movzx       edi,ax
+  0000001A: A1 00 00 00 00     mov         eax,dword ptr [_unk_25D0AA6]
+  0000001F: 03 C1              add         eax,ecx
+  00000021: 0F B7 D8           movzx       ebx,ax
+  00000024: 68 80 00 00 00     push        80h
+  00000029: 0F B7 C0           movzx       eax,ax
+  0000002C: 6A 00              push        0
+  0000002E: 6A 00              push        0
+  00000030: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000033: 0F B7 05 00 00 00  movzx       eax,word ptr [_unk_25D0AA2]
+            00
+  0000003A: 6A 00              push        0
+  0000003C: FF 35 00 00 00 00  push        dword ptr [_unk_25D0AB0]
+  00000042: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000045: FF 35 00 00 00 00  push        dword ptr [_unk_25D0AB2]
+  0000004B: 0F BF C1           movsx       eax,cx
+  0000004E: 50                 push        eax
+  0000004F: 0F BF C2           movsx       eax,dx
+  00000052: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000055: 0F B7 1D 00 00 00  movzx       ebx,word ptr [_unk_25D0AA4]
+            00
+  0000005C: 50                 push        eax
+  0000005D: E8 00 00 00 00     call        _sub_8FB150
+  00000062: 0F B6 75 08        movzx       esi,byte ptr [ebp+8]
+  00000066: 56                 push        esi
+  00000067: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveChargeMax
+  0000006C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000006F: DB 45 08           fild        dword ptr [ebp+8]
+  00000072: 85 C0              test        eax,eax
+  00000074: 79 06              jns         0000007C
+  00000076: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000007C: 56                 push        esi
+  0000007D: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  00000080: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveCharge
+  00000085: 83 C4 28           add         esp,28h
+  00000088: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000008B: DB 45 08           fild        dword ptr [ebp+8]
+  0000008E: 85 C0              test        eax,eax
+  00000090: 79 06              jns         00000098
+  00000092: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000098: D9 EE              fldz
+  0000009A: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  0000009D: DD E1              fucom       st(1)
+  0000009F: DF E0              fnstsw      ax
+  000000A1: F6 C4 44           test        ah,44h
+  000000A4: 0F 8B 88 00 00 00  jnp         00000132
+  000000AA: D9 C9              fxch        st(1)
+  000000AC: DD EA              fucomp      st(2)
+  000000AE: DF E0              fnstsw      ax
+  000000B0: F6 C4 44           test        ah,44h
+  000000B3: 7B 7F              jnp         00000134
+  000000B5: D8 D1              fcom        st(1)
+  000000B7: DF E0              fnstsw      ax
+  000000B9: F6 C4 41           test        ah,41h
+  000000BC: 75 41              jne         000000FF
+  000000BE: 0F BF C3           movsx       eax,bx
+  000000C1: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000C4: 50                 push        eax
+  000000C5: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000C8: DB 45 08           fild        dword ptr [ebp+8]
+  000000CB: 68 E3 77 17 80     push        801777E3h
+  000000D0: 98                 cwde
+  000000D1: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  000000D4: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  000000D7: 68 FF F8 8A 80     push        808AF8FFh
+  000000DC: DE CA              fmulp       st(2),st
+  000000DE: 50                 push        eax
+  000000DF: DE F9              fdivp       st(1),st
+  000000E1: E8 00 00 00 00     call        __ftol2_sse
+  000000E6: 50                 push        eax
+  000000E7: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000EA: 98                 cwde
+  000000EB: 50                 push        eax
+  000000EC: 0F BF C7           movsx       eax,di
+  000000EF: 50                 push        eax
+  000000F0: E8 00 00 00 00     call        _sub_8F3EB0
+  000000F5: 83 C4 1C           add         esp,1Ch
+  000000F8: 5F                 pop         edi
+  000000F9: 5E                 pop         esi
+  000000FA: 5B                 pop         ebx
+  000000FB: 8B E5              mov         esp,ebp
+  000000FD: 5D                 pop         ebp
+  000000FE: C3                 ret
+  000000FF: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000102: DD D9              fstp        st(1)
+  00000104: 68 80 00 00 00     push        80h
+  00000109: DD D8              fstp        st(0)
+  0000010B: 6A 2E              push        2Eh
+  0000010D: 98                 cwde
+  0000010E: 6A 79              push        79h
+  00000110: 68 F7 00 00 00     push        0F7h
+  00000115: 50                 push        eax
+  00000116: 0F BF C3           movsx       eax,bx
+  00000119: 50                 push        eax
+  0000011A: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000011D: 98                 cwde
+  0000011E: 50                 push        eax
+  0000011F: 0F BF C7           movsx       eax,di
+  00000122: 50                 push        eax
+  00000123: E8 00 00 00 00     call        _sub_8FB150
+  00000128: 83 C4 20           add         esp,20h
+  0000012B: 5F                 pop         edi
+  0000012C: 5E                 pop         esi
+  0000012D: 5B                 pop         ebx
+  0000012E: 8B E5              mov         esp,ebp
+  00000130: 5D                 pop         ebp
+  00000131: C3                 ret
+  00000132: DD D9              fstp        st(1)
+  00000134: 5F                 pop         edi
+  00000135: DD D9              fstp        st(1)
+  00000137: 5E                 pop         esi
+  00000138: DD D8              fstp        st(0)
+  0000013A: 5B                 pop         ebx
+  0000013B: 8B E5              mov         esp,ebp
+  0000013D: 5D                 pop         ebp
+  0000013E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+         13F .text

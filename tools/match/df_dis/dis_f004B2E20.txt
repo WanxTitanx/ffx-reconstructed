@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004B2E20.obj
+
+File Type: COFF OBJECT
+
+_PShader_WordByteArray_Copy:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 23              je          0000002E
+  0000000B: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000000E: 56                 push        esi
+  0000000F: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000012: 8B C2              mov         eax,edx
+  00000014: 83 C2 04           add         edx,4
+  00000017: 85 C0              test        eax,eax
+  00000019: 74 0F              je          0000002A
+  0000001B: 66 8B 0E           mov         cx,word ptr [esi]
+  0000001E: 66 89 08           mov         word ptr [eax],cx
+  00000021: 8A 4E 02           mov         cl,byte ptr [esi+2]
+  00000024: 88 48 02           mov         byte ptr [eax+2],cl
+  00000027: 83 C6 04           add         esi,4
+  0000002A: 4F                 dec         edi
+  0000002B: 75 E5              jne         00000012
+  0000002D: 5E                 pop         esi
+  0000002E: 5F                 pop         edi
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          31 .text

@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00618F60.obj
+
+File Type: COFF OBJECT
+
+_Phyre_TypeWriter_FromBool:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _Phyre_PType_GetBool
+  00000008: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000000B: 74 04              je          00000011
+  0000000D: 32 C0              xor         al,al
+  0000000F: 5D                 pop         ebp
+  00000010: C3                 ret
+  00000011: 53                 push        ebx
+  00000012: 6A FF              push        0FFFFFFFFh
+  00000014: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000017: E8 00 00 00 00     call        _PhyreBuffer_IsValidValue
+  0000001C: 6A FE              push        0FFFFFFFEh
+  0000001E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000021: 8A D8              mov         bl,al
+  00000023: E8 00 00 00 00     call        _PhyreStream_Reserve
+  00000028: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000002B: 83 C4 10           add         esp,10h
+  0000002E: 85 C9              test        ecx,ecx
+  00000030: 74 09              je          0000003B
+  00000032: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000038: 88 59 04           mov         byte ptr [ecx+4],bl
+  0000003B: B0 01              mov         al,1
+  0000003D: 5B                 pop         ebx
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007D99D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_DebugGetTagLimitCount:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 25 00 00 0F 00     and         eax,0F0000h
+  0000000B: 56                 push        esi
+  0000000C: 3D 00 00 05 00     cmp         eax,50000h
+  00000011: 75 07              jne         0000001A
+  00000013: 33 F6              xor         esi,esi
+  00000015: 8D 46 1F           lea         eax,[esi+1Fh]
+  00000018: EB 10              jmp         0000002A
+  0000001A: BE 01 00 00 00     mov         esi,1
+  0000001F: E8 00 00 00 00     call        _FFX_Field_GetRemainingActorSlots
+  00000024: 85 C0              test        eax,eax
+  00000026: 7F 02              jg          0000002A
+  00000028: 8B C6              mov         eax,esi
+  0000002A: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000002D: 85 C9              test        ecx,ecx
+  0000002F: 74 02              je          00000033
+  00000031: 89 31              mov         dword ptr [ecx],esi
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          36 .text

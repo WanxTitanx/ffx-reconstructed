@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00785BD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Party_CheckAllMembersCanAct:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: B7 01              mov         bh,1
+  00000004: C7 05 5C A7 4A 04  mov         dword ptr ds:[44AA75Ch],1
+            01 00 00 00
+  0000000E: 32 DB              xor         bl,bl
+  00000010: BE 00 00 00 00     mov         esi,offset _unk_11320AA
+  00000015: 0F B6 C3           movzx       eax,bl
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _FFX_PartySlot_IsFlagBit0
+  0000001E: 83 C4 04           add         esp,4
+  00000021: 85 C0              test        eax,eax
+  00000023: 74 0C              je          00000031
+  00000025: 8A 06              mov         al,byte ptr [esi]
+  00000027: D0 E8              shr         al,1
+  00000029: F6 D0              not         al
+  0000002B: 24 01              and         al,1
+  0000002D: F6 D8              neg         al
+  0000002F: 22 F8              and         bh,al
+  00000031: 81 C6 94 00 00 00  add         esi,94h
+  00000037: FE C3              inc         bl
+  00000039: 3B 35 00 00 00 00  cmp         esi,dword ptr [_unk_1132B12]
+  0000003F: 7C D4              jl          00000015
+  00000041: 0F B6 C7           movzx       eax,bh
+  00000044: 5E                 pop         esi
+  00000045: A3 5C A7 4A 04     mov         dword ptr ds:[044AA75Ch],eax
+  0000004A: 5B                 pop         ebx
+  0000004B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4C .text

@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0049C6B0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_TimerQueue_Destructor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8D 46 18           lea         eax,[esi+18h]
+  00000006: 50                 push        eax
+  00000007: E8 00 00 00 00     call        _Phyre_Event_Reset
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  00000013: 74 17              je          0000002C
+  00000015: 8B 4E 14           mov         ecx,dword ptr [esi+14h]
+  00000018: 51                 push        ecx
+  00000019: 8B 01              mov         eax,dword ptr [ecx]
+  0000001B: 89 46 14           mov         dword ptr [esi+14h],eax
+  0000001E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000023: 83 C4 04           add         esp,4
+  00000026: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  0000002A: 75 E9              jne         00000015
+  0000002C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

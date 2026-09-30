@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F6B30.obj
+
+File Type: COFF OBJECT
+
+@DebugOverlay_AccumulateWrap@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D8 41 40           fadd        dword ptr [ecx+40h]
+  00000009: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000C: D9 45 08           fld         dword ptr [ebp+8]
+  0000000F: D9 51 40           fst         dword ptr [ecx+40h]
+  00000012: D8 1D 00 00 00 00  fcomp       dword ptr [__real@43960000]
+  00000018: DF E0              fnstsw      ax
+  0000001A: F6 C4 41           test        ah,41h
+  0000001D: 75 18              jne         00000037
+  0000001F: 8B 41 44           mov         eax,dword ptr [ecx+44h]
+  00000022: D9 EE              fldz
+  00000024: 40                 inc         eax
+  00000025: D9 59 40           fstp        dword ptr [ecx+40h]
+  00000028: 25 0F 00 00 80     and         eax,8000000Fh
+  0000002D: 79 05              jns         00000034
+  0000002F: 48                 dec         eax
+  00000030: 83 C8 F0           or          eax,0FFFFFFF0h
+  00000033: 40                 inc         eax
+  00000034: 89 41 44           mov         dword ptr [ecx+44h],eax
+  00000037: 5D                 pop         ebp
+  00000038: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          3B .text

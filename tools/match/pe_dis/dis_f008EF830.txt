@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008EF830.obj
+
+File Type: COFF OBJECT
+
+_sub_8EF830:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000006: 8B C8              mov         ecx,eax
+  00000008: C1 E1 08           shl         ecx,8
+  0000000B: 0B 4D 10           or          ecx,dword ptr [ebp+10h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000012: C1 E1 08           shl         ecx,8
+  00000015: 0B CF              or          ecx,edi
+  00000017: 51                 push        ecx
+  00000018: 99                 cdq
+  00000019: 8B C8              mov         ecx,eax
+  0000001B: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000001E: 0F A4 CA 08        shld        edx,ecx,8
+  00000022: C1 E1 08           shl         ecx,8
+  00000025: 0F AC D1 18        shrd        ecx,edx,18h
+  00000029: C1 EA 18           shr         edx,18h
+  0000002C: 99                 cdq
+  0000002D: 0F AC D0 18        shrd        eax,edx,18h
+  00000031: 0B C8              or          ecx,eax
+  00000033: C1 FF 1F           sar         edi,1Fh
+  00000036: 0B CF              or          ecx,edi
+  00000038: 51                 push        ecx
+  00000039: C1 EA 18           shr         edx,18h
+  0000003C: E8 00 00 00 00     call        ___PAIR64__
+  00000041: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000044: 99                 cdq
+  00000045: 83 C4 08           add         esp,8
+  00000048: 89 01              mov         dword ptr [ecx],eax
+  0000004A: 89 51 04           mov         dword ptr [ecx+4],edx
+  0000004D: C7 41 08 3D 00 00  mov         dword ptr [ecx+8],3Dh
+            00
+  00000054: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000005B: 8D 41 10           lea         eax,[ecx+10h]
+  0000005E: 5F                 pop         edi
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

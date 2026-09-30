@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085FB10.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_SetAtelActorPosition2F:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 57                 push        edi
+  00000007: FF 75 10           push        dword ptr [ebp+10h]
+  0000000A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000013: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000016: DB 45 F8           fild        dword ptr [ebp-8]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 79 06              jns         00000023
+  0000001D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000023: FF 75 10           push        dword ptr [ebp+10h]
+  00000026: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000029: 57                 push        edi
+  0000002A: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000002F: 83 C4 10           add         esp,10h
+  00000032: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000035: DB 45 F8           fild        dword ptr [ebp-8]
+  00000038: 85 C0              test        eax,eax
+  0000003A: 79 06              jns         00000042
+  0000003C: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000042: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000045: 6A 01              push        1
+  00000047: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004A: 83 EC 10           sub         esp,10h
+  0000004D: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000051: D9 45 F8           fld         dword ptr [ebp-8]
+  00000054: DD 1C 24           fstp        qword ptr [esp]
+  00000057: 57                 push        edi
+  00000058: E8 00 00 00 00     call        _FFX_Atel_SetActorPosition
+  0000005D: 83 C4 18           add         esp,18h
+  00000060: 33 C0              xor         eax,eax
+  00000062: 5F                 pop         edi
+  00000063: 8B E5              mov         esp,ebp
+  00000065: 5D                 pop         ebp
+  00000066: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          67 .text

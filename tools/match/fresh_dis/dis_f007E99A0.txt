@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007E99A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_ComposeMatrixRotateYXZ:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 57                 push        edi
+  00000008: D9 46 04           fld         dword ptr [esi+4]
+  0000000B: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000E: 83 EC 08           sub         esp,8
+  00000011: DD 1C 24           fstp        qword ptr [esp]
+  00000014: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000017: 57                 push        edi
+  00000018: E8 00 00 00 00     call        _FFX_Math_RotateMatrixY
+  0000001D: D9 46 08           fld         dword ptr [esi+8]
+  00000020: 83 C4 08           add         esp,8
+  00000023: DD 1C 24           fstp        qword ptr [esp]
+  00000026: 57                 push        edi
+  00000027: 57                 push        edi
+  00000028: E8 00 00 00 00     call        _FFX_Math_RotateMatrixX
+  0000002D: D9 06              fld         dword ptr [esi]
+  0000002F: 83 C4 08           add         esp,8
+  00000032: DD 1C 24           fstp        qword ptr [esp]
+  00000035: 57                 push        edi
+  00000036: 57                 push        edi
+  00000037: E8 00 00 00 00     call        _FFX_Math_RotateMatrixZ
+  0000003C: D9 47 30           fld         dword ptr [edi+30h]
+  0000003F: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000042: 83 C4 10           add         esp,10h
+  00000045: D8 00              fadd        dword ptr [eax]
+  00000047: D9 5F 30           fstp        dword ptr [edi+30h]
+  0000004A: D9 40 04           fld         dword ptr [eax+4]
+  0000004D: D8 47 34           fadd        dword ptr [edi+34h]
+  00000050: D9 5F 34           fstp        dword ptr [edi+34h]
+  00000053: D9 40 08           fld         dword ptr [eax+8]
+  00000056: D8 47 38           fadd        dword ptr [edi+38h]
+  00000059: D9 5F 38           fstp        dword ptr [edi+38h]
+  0000005C: 5F                 pop         edi
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

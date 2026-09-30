@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094EAD0.obj
+
+File Type: COFF OBJECT
+
+_LuaG_gcColorize:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  00000009: 80 78 32 02        cmp         byte ptr [eax+32h],2
+  0000000D: 74 1B              je          0000002A
+  0000000F: 80 78 31 01        cmp         byte ptr [eax+31h],1
+  00000013: 76 15              jbe         0000002A
+  00000015: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000018: 8A 48 30           mov         cl,byte ptr [eax+30h]
+  0000001B: 8A 42 05           mov         al,byte ptr [edx+5]
+  0000001E: 80 E1 03           and         cl,3
+  00000021: 24 B8              and         al,0B8h
+  00000023: 0A C8              or          cl,al
+  00000025: 88 4A 05           mov         byte ptr [edx+5],cl
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _LuaG_gcMarkObject
+  00000033: 83 C4 08           add         esp,8
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          38 .text

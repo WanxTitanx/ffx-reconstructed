@@ -1,0 +1,25 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081CD30.obj
+
+File Type: COFF OBJECT
+
+_FFX_SoundSpuDma_WaitAndSubmitTransfer_Alt:
+  00000000: E8 00 00 00 00     call        _FFX_SoundSpuDma_IsTransferBusy_stub
+  00000005: 85 C0              test        eax,eax
+  00000007: 75 F7              jne         _FFX_SoundSpuDma_WaitAndSubmitTransfer_Alt
+  00000009: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000010: E8 00 00 00 00     call        _FFX_SoundSpuDma_SubmitTransfer_stub
+  00000015: 85 C0              test        eax,eax
+  00000017: 78 F7              js          00000010
+  00000019: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          1A .text

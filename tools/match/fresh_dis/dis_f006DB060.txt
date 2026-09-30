@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DB060.obj
+
+File Type: COFF OBJECT
+
+@JobSchedule_ResolveDependencies@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 10              je          0000001A
+  0000000A: 50                 push        eax
+  0000000B: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000010: 83 C4 04           add         esp,4
+  00000013: C7 47 14 00 00 00  mov         dword ptr [edi+14h],0
+            00
+  0000001A: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000001D: 8B 08              mov         ecx,dword ptr [eax]
+  0000001F: 89 00              mov         dword ptr [eax],eax
+  00000021: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000024: 89 40 04           mov         dword ptr [eax+4],eax
+  00000027: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  0000002E: 3B 4F 0C           cmp         ecx,dword ptr [edi+0Ch]
+  00000031: 74 14              je          00000047
+  00000033: 56                 push        esi
+  00000034: 8B 31              mov         esi,dword ptr [ecx]
+  00000036: 51                 push        ecx
+  00000037: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000003C: 83 C4 04           add         esp,4
+  0000003F: 8B CE              mov         ecx,esi
+  00000041: 3B 77 0C           cmp         esi,dword ptr [edi+0Ch]
+  00000044: 75 EE              jne         00000034
+  00000046: 5E                 pop         esi
+  00000047: FF 77 0C           push        dword ptr [edi+0Ch]
+  0000004A: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000004F: 83 C4 04           add         esp,4
+  00000052: 5F                 pop         edi
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          54 .text

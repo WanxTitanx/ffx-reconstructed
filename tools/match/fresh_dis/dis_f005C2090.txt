@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005C2090.obj
+
+File Type: COFF OBJECT
+
+_Phyre_MeshData_AlignedFreeArray:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 85 DB              test        ebx,ebx
+  00000009: 74 3F              je          0000004A
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 2D              je          00000040
+  00000013: 56                 push        esi
+  00000014: 8D 73 0C           lea         esi,[ebx+0Ch]
+  00000017: 83 3E 00           cmp         dword ptr [esi],0
+  0000001A: 7C 10              jl          0000002C
+  0000001C: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000001F: 85 C0              test        eax,eax
+  00000021: 74 09              je          0000002C
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000029: 83 C4 04           add         esp,4
+  0000002C: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000033: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000039: 83 C6 14           add         esi,14h
+  0000003C: 4F                 dec         edi
+  0000003D: 75 D8              jne         00000017
+  0000003F: 5E                 pop         esi
+  00000040: 53                 push        ebx
+  00000041: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000046: 83 C4 04           add         esp,4
+  00000049: 5F                 pop         edi
+  0000004A: 5B                 pop         ebx
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

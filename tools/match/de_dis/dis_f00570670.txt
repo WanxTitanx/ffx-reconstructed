@@ -1,0 +1,92 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00570670.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_570670@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: 83 EC 10           sub         esp,10h
+  00000008: 56                 push        esi
+  00000009: 8B F1              mov         esi,ecx
+  0000000B: DD 46 18           fld         qword ptr [esi+18h]
+  0000000E: DA E9              fucompp
+  00000010: DF E0              fnstsw      ax
+  00000012: F6 C4 44           test        ah,44h
+  00000015: 7A 1C              jp          00000033
+  00000017: E8 00 00 00 00     call        _Phyre_Timer_GetHighPrecisionTime
+  0000001C: 2B 05 00 00 00 00  sub         eax,dword ptr [_g_PhyreF64_C90278]
+  00000022: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000025: DB 45 FC           fild        dword ptr [ebp-4]
+  00000028: 79 06              jns         00000030
+  0000002A: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000030: DD 5E 18           fstp        qword ptr [esi+18h]
+  00000033: E8 00 00 00 00     call        _Phyre_Timer_GetHighPrecisionTime
+  00000038: 2B 05 00 00 00 00  sub         eax,dword ptr [_g_PhyreF64_C90278]
+  0000003E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000041: DB 45 FC           fild        dword ptr [ebp-4]
+  00000044: 79 06              jns         0000004C
+  00000046: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000004C: DD 55 F0           fst         qword ptr [ebp-10h]
+  0000004F: DC 66 18           fsub        qword ptr [esi+18h]
+  00000052: D9 46 14           fld         dword ptr [esi+14h]
+  00000055: D8 D9              fcomp       st(1)
+  00000057: DF E0              fnstsw      ax
+  00000059: F6 C4 41           test        ah,41h
+  0000005C: 75 10              jne         0000006E
+  0000005E: 56                 push        esi
+  0000005F: DD D8              fstp        st(0)
+  00000061: E8 00 00 00 00     call        _PBitmapFontText_DrawChar
+  00000066: 83 C4 04           add         esp,4
+  00000069: 5E                 pop         esi
+  0000006A: 8B E5              mov         esp,ebp
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+  0000006E: DD 05 00 00 00 00  fld         qword ptr [__real@40c3880000000000]
+  00000074: DC C9              fmul        st(1),st
+  00000076: D9 C9              fxch        st(1)
+  00000078: E8 00 00 00 00     call        __ftol2
+  0000007D: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000080: DB 45 FC           fild        dword ptr [ebp-4]
+  00000083: 85 C0              test        eax,eax
+  00000085: 79 06              jns         0000008D
+  00000087: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000008D: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000090: 83 EC 08           sub         esp,8
+  00000093: D9 46 14           fld         dword ptr [esi+14h]
+  00000096: DE C9              fmulp       st(1),st
+  00000098: DC 7D F8           fdivr       qword ptr [ebp-8]
+  0000009B: DD 1C 24           fstp        qword ptr [esp]
+  0000009E: E8 00 00 00 00     call        _floor
+  000000A3: 83 C4 08           add         esp,8
+  000000A6: E8 00 00 00 00     call        __ftol2_sse
+  000000AB: 01 46 10           add         dword ptr [esi+10h],eax
+  000000AE: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  000000B1: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  000000B4: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  000000B7: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  000000BD: 3B C1              cmp         eax,ecx
+  000000BF: 72 07              jb          000000C8
+  000000C1: 33 D2              xor         edx,edx
+  000000C3: F7 F1              div         eax,ecx
+  000000C5: 89 56 10           mov         dword ptr [esi+10h],edx
+  000000C8: DD 45 F0           fld         qword ptr [ebp-10h]
+  000000CB: 56                 push        esi
+  000000CC: DD 5E 18           fstp        qword ptr [esi+18h]
+  000000CF: E8 00 00 00 00     call        _PBitmapFontText_DrawChar
+  000000D4: 83 C4 04           add         esp,4
+  000000D7: 5E                 pop         esi
+  000000D8: 8B E5              mov         esp,ebp
+  000000DA: 5D                 pop         ebp
+  000000DB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          DC .text

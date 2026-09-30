@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00654F60.obj
+
+File Type: COFF OBJECT
+
+@FFX_Vector_ReserveExact_B@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B FA              mov         edi,edx
+  00000006: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000000C: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000013: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000001A: 85 FF              test        edi,edi
+  0000001C: 75 05              jne         00000023
+  0000001E: 5F                 pop         edi
+  0000001F: 32 C0              xor         al,al
+  00000021: 5E                 pop         esi
+  00000022: C3                 ret
+  00000023: 81 FF FF FF FF 3F  cmp         edi,3FFFFFFFh
+  00000029: 76 0D              jbe         00000038
+  0000002B: 68 00 00 00 00     push        offset ??_C@_0BD@OLBABOEK@vector?$DMT?$DO?5too?5long?$AA@
+  00000030: E8 00 00 00 00     call        _std__Xlength_error
+  00000035: 83 C4 04           add         esp,4
+  00000038: 53                 push        ebx
+  00000039: 8D 1C BD 00 00 00  lea         ebx,[edi*4]
+            00
+  00000040: 53                 push        ebx
+  00000041: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000046: 8B F8              mov         edi,eax
+  00000048: 83 C4 04           add         esp,4
+  0000004B: 85 FF              test        edi,edi
+  0000004D: 75 12              jne         00000061
+  0000004F: E8 00 00 00 00     call        _std__Xbad_alloc
+  00000054: 68 C7 4F 65 00     push        654FC7h
+  00000059: E8 00 00 00 00     call        _JUMPOUT
+  0000005E: 83 C4 04           add         esp,4
+  00000061: 8D 04 3B           lea         eax,[ebx+edi]
+  00000064: 5B                 pop         ebx
+  00000065: 89 3E              mov         dword ptr [esi],edi
+  00000067: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000006A: 89 46 08           mov         dword ptr [esi+8],eax
+  0000006D: 5F                 pop         edi
+  0000006E: B0 01              mov         al,1
+  00000070: 5E                 pop         esi
+  00000071: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          13 .rdata
+          72 .text

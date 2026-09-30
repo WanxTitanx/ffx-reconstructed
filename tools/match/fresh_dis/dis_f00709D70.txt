@@ -1,0 +1,110 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00709D70.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_ReloadActiveEventsForProjectMode@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 57                 push        edi
+  00000007: 8B C2              mov         eax,edx
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  0000000E: 39 47 2C           cmp         dword ptr [edi+2Ch],eax
+  00000011: 0F 84 E4 00 00 00  je          000000FB
+  00000017: 53                 push        ebx
+  00000018: 56                 push        esi
+  00000019: 68 D8 02 00 00     push        2D8h
+  0000001E: 33 F6              xor         esi,esi
+  00000020: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  00000025: 68 D8 02 00 00     push        2D8h
+  0000002A: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002D: 33 DB              xor         ebx,ebx
+  0000002F: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  00000034: D9 EE              fldz
+  00000036: 83 C4 08           add         esp,8
+  00000039: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000003C: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000003F: 33 D2              xor         edx,edx
+  00000041: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  00000044: 83 3C 0A 00        cmp         dword ptr [edx+ecx],0
+  00000048: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000004B: 74 08              je          00000055
+  0000004D: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000050: 46                 inc         esi
+  00000051: 89 4C B0 FC        mov         dword ptr [eax+esi*4-4],ecx
+  00000055: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000058: 83 7C 10 20 00     cmp         dword ptr [eax+edx+20h],0
+  0000005D: 74 1D              je          0000007C
+  0000005F: D8 54 10 34        fcom        dword ptr [eax+edx+34h]
+  00000063: DF E0              fnstsw      ax
+  00000065: F6 C4 05           test        ah,5
+  00000068: 7A 12              jp          0000007C
+  0000006A: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  0000006D: 83 7C 10 08 00     cmp         dword ptr [eax+edx+8],0
+  00000072: 75 08              jne         0000007C
+  00000074: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000077: 43                 inc         ebx
+  00000078: 89 4C 98 FC        mov         dword ptr [eax+ebx*4-4],ecx
+  0000007C: 41                 inc         ecx
+  0000007D: 83 C2 3C           add         edx,3Ch
+  00000080: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000083: 81 FA A8 2A 00 00  cmp         edx,2AA8h
+  00000089: 7C B6              jl          00000041
+  0000008B: 57                 push        edi
+  0000008C: DD D8              fstp        st(0)
+  0000008E: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000091: 89 5D F0           mov         dword ptr [ebp-10h],ebx
+  00000094: E8 00 00 00 00     call        _FFX_FmodMusic_StopAllEvents
+  00000099: 57                 push        edi
+  0000009A: E8 00 00 00 00     call        _FFX_FmodMusic_ReleaseAllEventSlots
+  0000009F: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  000000A2: 33 F6              xor         esi,esi
+  000000A4: 83 C4 08           add         esp,8
+  000000A7: 89 47 2C           mov         dword ptr [edi+2Ch],eax
+  000000AA: 39 75 FC           cmp         dword ptr [ebp-4],esi
+  000000AD: 7E 1D              jle         000000CC
+  000000AF: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  000000B2: FF 75 08           push        dword ptr [ebp+8]
+  000000B5: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000B8: FF 34 B0           push        dword ptr [eax+esi*4]
+  000000BB: 57                 push        edi
+  000000BC: E8 00 00 00 00     call        _FFX_FmodMusic_ReadEventByRuntimeId
+  000000C1: 46                 inc         esi
+  000000C2: 83 C4 0C           add         esp,0Ch
+  000000C5: 3B F3              cmp         esi,ebx
+  000000C7: 7C E9              jl          000000B2
+  000000C9: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  000000CC: 33 F6              xor         esi,esi
+  000000CE: 85 DB              test        ebx,ebx
+  000000D0: 7E 14              jle         000000E6
+  000000D2: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000D5: FF 34 B0           push        dword ptr [eax+esi*4]
+  000000D8: 57                 push        edi
+  000000D9: E8 00 00 00 00     call        _FFX_FmodMusic_PlayTrackByIndex
+  000000DE: 46                 inc         esi
+  000000DF: 83 C4 08           add         esp,8
+  000000E2: 3B F3              cmp         esi,ebx
+  000000E4: 7C EC              jl          000000D2
+  000000E6: FF 75 F8           push        dword ptr [ebp-8]
+  000000E9: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  000000EE: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000000F1: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  000000F6: 83 C4 08           add         esp,8
+  000000F9: 5E                 pop         esi
+  000000FA: 5B                 pop         ebx
+  000000FB: 5F                 pop         edi
+  000000FC: 8B E5              mov         esp,ebp
+  000000FE: 5D                 pop         ebp
+  000000FF: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         102 .text

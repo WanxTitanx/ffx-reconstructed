@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00956CB0.obj
+
+File Type: COFF OBJECT
+
+_Lua_debug_nameresolve:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000006: 56                 push        esi
+  00000007: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  0000000A: F7 C1 00 01 00 00  test        ecx,100h
+  00000010: 74 24              je          00000036
+  00000012: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000015: 81 E1 FF FE FF FF  and         ecx,0FFFFFEFFh
+  0000001B: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000001E: 8D 0C C8           lea         ecx,[eax+ecx*8]
+  00000021: 8A 41 04           mov         al,byte ptr [ecx+4]
+  00000024: 24 0F              and         al,0Fh
+  00000026: 3C 04              cmp         al,4
+  00000028: 75 2E              jne         00000058
+  0000002A: 8B 09              mov         ecx,dword ptr [ecx]
+  0000002C: 8B C6              mov         eax,esi
+  0000002E: 83 C1 10           add         ecx,10h
+  00000031: 89 08              mov         dword ptr [eax],ecx
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+  00000036: 56                 push        esi
+  00000037: 51                 push        ecx
+  00000038: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003B: FF 75 08           push        dword ptr [ebp+8]
+  0000003E: E8 00 00 00 00     call        _Lua_debug_getname
+  00000043: 83 C4 10           add         esp,10h
+  00000046: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000049: 85 C0              test        eax,eax
+  0000004B: 74 08              je          00000055
+  0000004D: 80 38 63           cmp         byte ptr [eax],63h
+  00000050: 75 03              jne         00000055
+  00000052: 5E                 pop         esi
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+  00000055: 8A 45 10           mov         al,byte ptr [ebp+10h]
+  00000058: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_C@_01OGPIMHDM@?$DP?$AA@
+  0000005E: 5E                 pop         esi
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           2 .rdata
+          61 .text

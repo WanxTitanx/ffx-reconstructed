@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008A97A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_SphereGrid_Loose_8A97A0:
+  00000000: 56                 push        esi
+  00000001: 33 F6              xor         esi,esi
+  00000003: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectionIndex
+  00000008: 85 C0              test        eax,eax
+  0000000A: 7E 1D              jle         00000029
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 8D 86 00 A0 00 00  lea         eax,[esi+0A000h]
+  00000016: 50                 push        eax
+  00000017: E8 00 00 00 00     call        _FFX_Overdrive_ModelStateSetter
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 46                 inc         esi
+  00000020: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectionIndex
+  00000025: 3B F0              cmp         esi,eax
+  00000027: 7C E7              jl          00000010
+  00000029: 5E                 pop         esi
+  0000002A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2B .text

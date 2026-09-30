@@ -1,0 +1,99 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A0B550.obj
+
+File Type: COFF OBJECT
+
+_sub_A0B550:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 6A FF              push        0FFFFFFFFh
+  0000000B: 57                 push        edi
+  0000000C: E8 00 00 00 00     call        _Lua_ToPhyreObject
+  00000011: 8B D8              mov         ebx,eax
+  00000013: 83 C4 08           add         esp,8
+  00000016: 85 DB              test        ebx,ebx
+  00000018: 74 77              je          00000091
+  0000001A: 6A FE              push        0FFFFFFFEh
+  0000001C: 57                 push        edi
+  0000001D: E8 00 00 00 00     call        _Lua_Pop
+  00000022: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000025: 8B 1B              mov         ebx,dword ptr [ebx]
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002D: 85 C0              test        eax,eax
+  0000002F: 74 60              je          00000091
+  00000031: 85 DB              test        ebx,ebx
+  00000033: 74 53              je          00000088
+  00000035: 56                 push        esi
+  00000036: 8B F3              mov         esi,ebx
+  00000038: 81 FE 00 00 00 00  cmp         esi,offset _unk_19435E8
+  0000003E: 74 47              je          00000087
+  00000040: 8B 76 40           mov         esi,dword ptr [esi+40h]
+  00000043: 85 F6              test        esi,esi
+  00000045: 75 35              jne         0000007C
+  00000047: FF 35 00 00 00 00  push        dword ptr [_unk_1943600]
+  0000004D: C7 05 00 08 00 00  mov         dword ptr [_byte_C96298+800h],offset ??_C@_0EL@OMABJOMM@r?3?2hg_code?2middleware_w32?2phyree@
+            00 00 00 00
+  00000057: C7 05 04 08 00 00  mov         dword ptr [_byte_C96298+804h],6Ah
+            6A 00 00 00
+  00000061: C7 05 08 08 00 00  mov         dword ptr [_byte_C96298+808h],offset ??_C@_0GF@CEIJLMA@Phyre_PScripting_PScriptAccessor@
+            00 00 00 00
+  0000006B: FF 73 18           push        dword ptr [ebx+18h]
+  0000006E: 68 00 00 00 00     push        offset ??_C@_0GA@KGFFIKCP@Object?5pointer?5obtained?5from?5scr@
+  00000073: 57                 push        edi
+  00000074: E8 00 00 00 00     call        _Lua_Error
+  00000079: 83 C4 10           add         esp,10h
+  0000007C: 81 FE 00 00 00 00  cmp         esi,offset _unk_19435E8
+  00000082: 75 BC              jne         00000040
+  00000084: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000087: 5E                 pop         esi
+  00000088: 5F                 pop         edi
+  00000089: 83 C0 FC           add         eax,0FFFFFFFCh
+  0000008C: 5B                 pop         ebx
+  0000008D: 8B E5              mov         esp,ebp
+  0000008F: 5D                 pop         ebp
+  00000090: C3                 ret
+  00000091: 6A FF              push        0FFFFFFFFh
+  00000093: 57                 push        edi
+  00000094: E8 00 00 00 00     call        _Lua_Type
+  00000099: 83 C4 08           add         esp,8
+  0000009C: 85 C0              test        eax,eax
+  0000009E: 74 35              je          000000D5
+  000000A0: 6A FF              push        0FFFFFFFFh
+  000000A2: 57                 push        edi
+  000000A3: E8 00 00 00 00     call        _Lua_Type
+  000000A8: 50                 push        eax
+  000000A9: 68 00 00 00 00     push        offset ??_C@_0GA@DPHPJKEO@Unable?5to?5obtain?5object?5pointer?5@
+  000000AE: 57                 push        edi
+  000000AF: C7 05 00 08 00 00  mov         dword ptr [_byte_C96298+800h],offset ??_C@_0EL@OMABJOMM@r?3?2hg_code?2middleware_w32?2phyree@
+            00 00 00 00
+  000000B9: C7 05 04 08 00 00  mov         dword ptr [_byte_C96298+804h],76h
+            76 00 00 00
+  000000C3: C7 05 08 08 00 00  mov         dword ptr [_byte_C96298+808h],offset ??_C@_0GG@GNGGBBPD@Phyre_PScripting_PScriptAccessor@
+            00 00 00 00
+  000000CD: E8 00 00 00 00     call        _Lua_Error
+  000000D2: 83 C4 14           add         esp,14h
+  000000D5: 6A FE              push        0FFFFFFFEh
+  000000D7: 57                 push        edi
+  000000D8: E8 00 00 00 00     call        _Lua_Pop
+  000000DD: 83 C4 08           add         esp,8
+  000000E0: 33 C0              xor         eax,eax
+  000000E2: 5F                 pop         edi
+  000000E3: 5B                 pop         ebx
+  000000E4: 8B E5              mov         esp,ebp
+  000000E6: 5D                 pop         ebp
+  000000E7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         1D6 .rdata
+          E8 .text

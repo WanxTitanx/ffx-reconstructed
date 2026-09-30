@@ -1,0 +1,254 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00965470.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_postfixExpression:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: 8B 77 1C           mov         esi,dword ptr [edi+1Ch]
+  00000010: 89 75 08           mov         dword ptr [ebp+8],esi
+  00000013: E8 00 00 00 00     call        _LuaParser_parseParenExpr
+  00000018: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  0000001B: 83 E9 28           sub         ecx,28h
+  0000001E: 83 C4 04           add         esp,4
+  00000021: 81 F9 F9 00 00 00  cmp         ecx,0F9h
+  00000027: 0F 87 DB 00 00 00  ja          $LN1
+  0000002D: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000030: 0F B6 81 00 00 00  movzx       eax,byte ptr $LN18[ecx]
+            00
+  00000037: FF 24 85 00 00 00  jmp         dword ptr $LN20[eax*4]
+            00
+$LN8:
+  0000003E: 53                 push        ebx
+  0000003F: 56                 push        esi
+  00000040: E8 00 00 00 00     call        _LuaCodeGen_allocAndLoadToReg
+  00000045: 57                 push        edi
+  00000046: E8 00 00 00 00     call        _LuaParser_primaryExpression
+  0000004B: 83 C4 0C           add         esp,0Ch
+  0000004E: E9 A3 00 00 00     jmp         000000F6
+$LN7:
+  00000053: 53                 push        ebx
+  00000054: 57                 push        edi
+  00000055: E8 00 00 00 00     call        _LuaParser_parseForLoopVarList
+  0000005A: 83 C4 08           add         esp,8
+  0000005D: E9 94 00 00 00     jmp         000000F6
+$LN6:
+  00000062: 57                 push        edi
+  00000063: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  00000068: 83 C4 04           add         esp,4
+  0000006B: 81 7F 0C 20 01 00  cmp         dword ptr [edi+0Ch],120h
+            00
+  00000072: 74 0E              je          00000082
+  00000074: 68 20 01 00 00     push        120h
+  00000079: 57                 push        edi
+  0000007A: E8 00 00 00 00     call        _LuaParser_raiseExpectedError
+  0000007F: 83 C4 08           add         esp,8
+  00000082: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  00000085: 57                 push        edi
+  00000086: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  0000008B: 56                 push        esi
+  0000008C: FF 77 1C           push        dword ptr [edi+1Ch]
+  0000008F: E8 00 00 00 00     call        _LuaCodeGen_makeStringConstant
+  00000094: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000097: 53                 push        ebx
+  00000098: 50                 push        eax
+  00000099: 8B F0              mov         esi,eax
+  0000009B: E8 00 00 00 00     call        _LuaCodeGen_emitConcat
+  000000A0: 57                 push        edi
+  000000A1: E8 00 00 00 00     call        _LuaParser_primaryExpression
+  000000A6: 83 C4 18           add         esp,18h
+  000000A9: EB 4B              jmp         000000F6
+$LN4:
+  000000AB: 53                 push        ebx
+  000000AC: 56                 push        esi
+  000000AD: E8 00 00 00 00     call        _LuaCodeGen_forceToReg
+  000000B2: 57                 push        edi
+  000000B3: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  000000B8: 8D 45 F0           lea         eax,[ebp-10h]
+  000000BB: 50                 push        eax
+  000000BC: 57                 push        edi
+  000000BD: E8 00 00 00 00     call        _LuaParser_subExpr
+  000000C2: 8D 45 F0           lea         eax,[ebp-10h]
+  000000C5: 50                 push        eax
+  000000C6: FF 77 1C           push        dword ptr [edi+1Ch]
+  000000C9: E8 00 00 00 00     call        _LuaCodeGen_dischargeAndLoad
+  000000CE: 83 C4 1C           add         esp,1Ch
+  000000D1: 83 7F 0C 5D        cmp         dword ptr [edi+0Ch],5Dh
+  000000D5: 74 0B              je          000000E2
+  000000D7: 6A 5D              push        5Dh
+  000000D9: 57                 push        edi
+  000000DA: E8 00 00 00 00     call        _LuaParser_raiseExpectedError
+  000000DF: 83 C4 08           add         esp,8
+  000000E2: 57                 push        edi
+  000000E3: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  000000E8: 8D 45 F0           lea         eax,[ebp-10h]
+  000000EB: 50                 push        eax
+  000000EC: 53                 push        ebx
+  000000ED: 56                 push        esi
+  000000EE: E8 00 00 00 00     call        _LuaCodeGen_makeRKValue
+  000000F3: 83 C4 10           add         esp,10h
+  000000F6: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  000000F9: 83 E9 28           sub         ecx,28h
+  000000FC: 81 F9 F9 00 00 00  cmp         ecx,0F9h
+  00000102: 0F 86 28 FF FF FF  jbe         00000030
+$LN1:
+  00000108: 5F                 pop         edi
+  00000109: 5E                 pop         esi
+  0000010A: 8B C1              mov         eax,ecx
+  0000010C: 5B                 pop         ebx
+  0000010D: 8B E5              mov         esp,ebp
+  0000010F: 5D                 pop         ebp
+  00000110: C3                 ret
+  00000111: 8D 49 00           lea         ecx,[ecx]
+$LN20:
+  00000114: 00 00              add         byte ptr [eax],al
+  00000116: 00 00              add         byte ptr [eax],al
+  00000118: 00 00              add         byte ptr [eax],al
+  0000011A: 00 00              add         byte ptr [eax],al
+  0000011C: 00 00              add         byte ptr [eax],al
+  0000011E: 00 00              add         byte ptr [eax],al
+  00000120: 00 00              add         byte ptr [eax],al
+  00000122: 00 00              add         byte ptr [eax],al
+  00000124: 00 00              add         byte ptr [eax],al
+  00000126: 00 00              add         byte ptr [eax],al
+$LN18:
+  00000128: 00 04 04           add         byte ptr [esp+eax],al
+  0000012B: 04 04              add         al,4
+  0000012D: 04 01              add         al,1
+  0000012F: 04 04              add         al,4
+  00000131: 04 04              add         al,4
+  00000133: 04 04              add         al,4
+  00000135: 04 04              add         al,4
+  00000137: 04 04              add         al,4
+  00000139: 04 02              add         al,2
+  0000013B: 04 04              add         al,4
+  0000013D: 04 04              add         al,4
+  0000013F: 04 04              add         al,4
+  00000141: 04 04              add         al,4
+  00000143: 04 04              add         al,4
+  00000145: 04 04              add         al,4
+  00000147: 04 04              add         al,4
+  00000149: 04 04              add         al,4
+  0000014B: 04 04              add         al,4
+  0000014D: 04 04              add         al,4
+  0000014F: 04 04              add         al,4
+  00000151: 04 04              add         al,4
+  00000153: 04 04              add         al,4
+  00000155: 04 04              add         al,4
+  00000157: 04 04              add         al,4
+  00000159: 04 04              add         al,4
+  0000015B: 03 04 04           add         eax,dword ptr [esp+eax]
+  0000015E: 04 04              add         al,4
+  00000160: 04 04              add         al,4
+  00000162: 04 04              add         al,4
+  00000164: 04 04              add         al,4
+  00000166: 04 04              add         al,4
+  00000168: 04 04              add         al,4
+  0000016A: 04 04              add         al,4
+  0000016C: 04 04              add         al,4
+  0000016E: 04 04              add         al,4
+  00000170: 04 04              add         al,4
+  00000172: 04 04              add         al,4
+  00000174: 04 04              add         al,4
+  00000176: 04 04              add         al,4
+  00000178: 04 04              add         al,4
+  0000017A: 04 00              add         al,0
+  0000017C: 04 04              add         al,4
+  0000017E: 04 04              add         al,4
+  00000180: 04 04              add         al,4
+  00000182: 04 04              add         al,4
+  00000184: 04 04              add         al,4
+  00000186: 04 04              add         al,4
+  00000188: 04 04              add         al,4
+  0000018A: 04 04              add         al,4
+  0000018C: 04 04              add         al,4
+  0000018E: 04 04              add         al,4
+  00000190: 04 04              add         al,4
+  00000192: 04 04              add         al,4
+  00000194: 04 04              add         al,4
+  00000196: 04 04              add         al,4
+  00000198: 04 04              add         al,4
+  0000019A: 04 04              add         al,4
+  0000019C: 04 04              add         al,4
+  0000019E: 04 04              add         al,4
+  000001A0: 04 04              add         al,4
+  000001A2: 04 04              add         al,4
+  000001A4: 04 04              add         al,4
+  000001A6: 04 04              add         al,4
+  000001A8: 04 04              add         al,4
+  000001AA: 04 04              add         al,4
+  000001AC: 04 04              add         al,4
+  000001AE: 04 04              add         al,4
+  000001B0: 04 04              add         al,4
+  000001B2: 04 04              add         al,4
+  000001B4: 04 04              add         al,4
+  000001B6: 04 04              add         al,4
+  000001B8: 04 04              add         al,4
+  000001BA: 04 04              add         al,4
+  000001BC: 04 04              add         al,4
+  000001BE: 04 04              add         al,4
+  000001C0: 04 04              add         al,4
+  000001C2: 04 04              add         al,4
+  000001C4: 04 04              add         al,4
+  000001C6: 04 04              add         al,4
+  000001C8: 04 04              add         al,4
+  000001CA: 04 04              add         al,4
+  000001CC: 04 04              add         al,4
+  000001CE: 04 04              add         al,4
+  000001D0: 04 04              add         al,4
+  000001D2: 04 04              add         al,4
+  000001D4: 04 04              add         al,4
+  000001D6: 04 04              add         al,4
+  000001D8: 04 04              add         al,4
+  000001DA: 04 04              add         al,4
+  000001DC: 04 04              add         al,4
+  000001DE: 04 04              add         al,4
+  000001E0: 04 04              add         al,4
+  000001E2: 04 04              add         al,4
+  000001E4: 04 04              add         al,4
+  000001E6: 04 04              add         al,4
+  000001E8: 04 04              add         al,4
+  000001EA: 04 04              add         al,4
+  000001EC: 04 04              add         al,4
+  000001EE: 04 04              add         al,4
+  000001F0: 04 04              add         al,4
+  000001F2: 04 04              add         al,4
+  000001F4: 04 04              add         al,4
+  000001F6: 04 04              add         al,4
+  000001F8: 04 04              add         al,4
+  000001FA: 04 04              add         al,4
+  000001FC: 04 04              add         al,4
+  000001FE: 04 04              add         al,4
+  00000200: 04 04              add         al,4
+  00000202: 04 04              add         al,4
+  00000204: 04 04              add         al,4
+  00000206: 04 04              add         al,4
+  00000208: 04 04              add         al,4
+  0000020A: 04 04              add         al,4
+  0000020C: 04 04              add         al,4
+  0000020E: 04 04              add         al,4
+  00000210: 04 04              add         al,4
+  00000212: 04 04              add         al,4
+  00000214: 04 04              add         al,4
+  00000216: 04 04              add         al,4
+  00000218: 04 04              add         al,4
+  0000021A: 04 04              add         al,4
+  0000021C: 04 04              add         al,4
+  0000021E: 04 04              add         al,4
+  00000220: 04 00              add         al,0
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         222 .text

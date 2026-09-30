@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009D9E7B.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Array_RemoveAt@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B FA              mov         edi,edx
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 85 FF              test        edi,edi
+  00000008: 79 05              jns         0000000F
+  0000000A: 5F                 pop         edi
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5E                 pop         esi
+  0000000E: C3                 ret
+  0000000F: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000012: 3B FA              cmp         edi,edx
+  00000014: 7D F4              jge         0000000A
+  00000016: 8D 42 FF           lea         eax,[edx-1]
+  00000019: 3B F8              cmp         edi,eax
+  0000001B: 74 1C              je          00000039
+  0000001D: 8B 06              mov         eax,dword ptr [esi]
+  0000001F: 2B D7              sub         edx,edi
+  00000021: C1 E2 02           shl         edx,2
+  00000024: 8D 0C B8           lea         ecx,[eax+edi*4]
+  00000027: 8D 42 FC           lea         eax,[edx-4]
+  0000002A: 50                 push        eax
+  0000002B: 8D 41 04           lea         eax,[ecx+4]
+  0000002E: 50                 push        eax
+  0000002F: 52                 push        edx
+  00000030: 51                 push        ecx
+  00000031: E8 00 00 00 00     call        _Phyre_MemmoveSafe
+  00000036: 83 C4 10           add         esp,10h
+  00000039: FF 4E 04           dec         dword ptr [esi+4]
+  0000003C: 5F                 pop         edi
+  0000003D: B8 01 00 00 00     mov         eax,1
+  00000042: 5E                 pop         esi
+  00000043: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          44 .text

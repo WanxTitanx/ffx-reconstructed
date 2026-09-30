@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009589B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_9589B0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 8B 5F 0C           mov         ebx,dword ptr [edi+0Ch]
+  0000000C: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  0000000F: 8B 43 20           mov         eax,dword ptr [ebx+20h]
+  00000012: 39 43 1C           cmp         dword ptr [ebx+1Ch],eax
+  00000015: 72 13              jb          0000002A
+  00000017: 3D FE FF FF 3F     cmp         eax,3FFFFFFEh
+  0000001C: 7F 0C              jg          0000002A
+  0000001E: 03 C0              add         eax,eax
+  00000020: 50                 push        eax
+  00000021: 57                 push        edi
+  00000022: E8 00 00 00 00     call        _LuaH_resize
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 8B 4B 20           mov         ecx,dword ptr [ebx+20h]
+  0000002D: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000030: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  00000033: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000036: 49                 dec         ecx
+  00000037: 23 CE              and         ecx,esi
+  00000039: 6A 00              push        0
+  0000003B: 8D 04 88           lea         eax,[eax+ecx*4]
+  0000003E: 50                 push        eax
+  0000003F: 8D 43 11           lea         eax,[ebx+11h]
+  00000042: 50                 push        eax
+  00000043: 6A 04              push        4
+  00000045: 57                 push        edi
+  00000046: E8 00 00 00 00     call        _LuaC_newobj_alloc
+  0000004B: 8B F8              mov         edi,eax
+  0000004D: 53                 push        ebx
+  0000004E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000051: 8D 4F 10           lea         ecx,[edi+10h]
+  00000054: 51                 push        ecx
+  00000055: 89 5F 0C           mov         dword ptr [edi+0Ch],ebx
+  00000058: 89 77 08           mov         dword ptr [edi+8],esi
+  0000005B: C6 47 06 00        mov         byte ptr [edi+6],0
+  0000005F: E8 00 00 00 00     call        _memcpy
+  00000064: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000067: 83 C4 20           add         esp,20h
+  0000006A: C6 44 1F 10 00     mov         byte ptr [edi+ebx+10h],0
+  0000006F: FF 40 1C           inc         dword ptr [eax+1Ch]
+  00000072: 8B C7              mov         eax,edi
+  00000074: 5F                 pop         edi
+  00000075: 5E                 pop         esi
+  00000076: 5B                 pop         ebx
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          79 .text

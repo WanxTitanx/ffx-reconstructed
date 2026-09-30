@@ -1,0 +1,122 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A04460.obj
+
+File Type: COFF OBJECT
+
+_FFX_Flash_TextureBlit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000008: 57                 push        edi
+  00000009: 8B 06              mov         eax,dword ptr [esi]
+  0000000B: 83 78 08 0C        cmp         dword ptr [eax+8],0Ch
+  0000000F: 0F 85 F3 00 00 00  jne         00000108
+  00000015: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000018: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000001B: 3B 47 1C           cmp         eax,dword ptr [edi+1Ch]
+  0000001E: 0F 85 E4 00 00 00  jne         00000108
+  00000024: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000027: 3B 47 20           cmp         eax,dword ptr [edi+20h]
+  0000002A: 0F 85 D8 00 00 00  jne         00000108
+  00000030: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000033: 53                 push        ebx
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _Phyre_PArray_T_GetVersion
+  0000003A: 8D 45 0C           lea         eax,[ebp+0Ch]
+  0000003D: 50                 push        eax
+  0000003E: 56                 push        esi
+  0000003F: E8 00 00 00 00     call        _Phyre_PostProcessing_FlashTextureBlitImpl
+  00000044: 8B D8              mov         ebx,eax
+  00000046: 83 C4 0C           add         esp,0Ch
+  00000049: 85 DB              test        ebx,ebx
+  0000004B: 0F 85 A9 00 00 00  jne         000000FA
+  00000051: 39 45 0C           cmp         dword ptr [ebp+0Ch],eax
+  00000054: 0F 84 A0 00 00 00  je          000000FA
+  0000005A: 8D 45 FC           lea         eax,[ebp-4]
+  0000005D: 50                 push        eax
+  0000005E: E8 00 00 00 00     call        _Phyre_PArray_T_GetVersion
+  00000063: 8D 45 FC           lea         eax,[ebp-4]
+  00000066: 50                 push        eax
+  00000067: 57                 push        edi
+  00000068: E8 00 00 00 00     call        _Phyre_Texture_MapForWriteLazy
+  0000006D: 8B D8              mov         ebx,eax
+  0000006F: 83 C4 0C           add         esp,0Ch
+  00000072: 85 DB              test        ebx,ebx
+  00000074: 75 68              jne         000000DE
+  00000076: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000079: 85 D2              test        edx,edx
+  0000007B: 74 61              je          000000DE
+  0000007D: 0F BE 45 14        movsx       eax,byte ptr [ebp+14h]
+  00000081: D9 45 10           fld         dword ptr [ebp+10h]
+  00000084: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000087: 50                 push        eax
+  00000088: 83 EC 08           sub         esp,8
+  0000008B: 8D 04 8D 00 00 00  lea         eax,[ecx*4]
+            00
+  00000092: DD 1C 24           fstp        qword ptr [esp]
+  00000095: FF 37              push        dword ptr [edi]
+  00000097: 50                 push        eax
+  00000098: FF 76 20           push        dword ptr [esi+20h]
+  0000009B: 51                 push        ecx
+  0000009C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000009F: 52                 push        edx
+  000000A0: E8 00 00 00 00     call        _FFX_Flash_TextureAlloc
+  000000A5: 8B D8              mov         ebx,eax
+  000000A7: 8D 45 0C           lea         eax,[ebp+0Ch]
+  000000AA: 50                 push        eax
+  000000AB: FF 76 08           push        dword ptr [esi+8]
+  000000AE: 56                 push        esi
+  000000AF: E8 00 00 00 00     call        _Phyre_Texture_ReadSubResource_B
+  000000B4: 83 C4 30           add         esp,30h
+  000000B7: 85 C0              test        eax,eax
+  000000B9: 75 03              jne         000000BE
+  000000BB: 88 46 04           mov         byte ptr [esi+4],al
+  000000BE: 8D 45 FC           lea         eax,[ebp-4]
+  000000C1: 50                 push        eax
+  000000C2: 57                 push        edi
+  000000C3: E8 00 00 00 00     call        _Phyre_Texture_ReadPattern
+  000000C8: 83 C4 08           add         esp,8
+  000000CB: E8 00 00 00 00     call        _nullsub_19
+  000000D0: E8 00 00 00 00     call        _nullsub_19
+  000000D5: 8B C3              mov         eax,ebx
+  000000D7: 5B                 pop         ebx
+  000000D8: 5F                 pop         edi
+  000000D9: 5E                 pop         esi
+  000000DA: 8B E5              mov         esp,ebp
+  000000DC: 5D                 pop         ebp
+  000000DD: C3                 ret
+  000000DE: 8D 45 0C           lea         eax,[ebp+0Ch]
+  000000E1: 50                 push        eax
+  000000E2: FF 76 08           push        dword ptr [esi+8]
+  000000E5: 56                 push        esi
+  000000E6: E8 00 00 00 00     call        _Phyre_Texture_ReadSubResource_B
+  000000EB: 83 C4 0C           add         esp,0Ch
+  000000EE: 85 C0              test        eax,eax
+  000000F0: 75 03              jne         000000F5
+  000000F2: 88 46 04           mov         byte ptr [esi+4],al
+  000000F5: E8 00 00 00 00     call        _nullsub_19
+  000000FA: E8 00 00 00 00     call        _nullsub_19
+  000000FF: 8B C3              mov         eax,ebx
+  00000101: 5B                 pop         ebx
+  00000102: 5F                 pop         edi
+  00000103: 5E                 pop         esi
+  00000104: 8B E5              mov         esp,ebp
+  00000106: 5D                 pop         ebp
+  00000107: C3                 ret
+  00000108: 5F                 pop         edi
+  00000109: B8 05 00 00 00     mov         eax,5
+  0000010E: 5E                 pop         esi
+  0000010F: 8B E5              mov         esp,ebp
+  00000111: 5D                 pop         ebp
+  00000112: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         113 .text

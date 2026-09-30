@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004CD260.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PArray224_Resize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 33              mov         esi,dword ptr [ebx]
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000015: 3B 3B              cmp         edi,dword ptr [ebx]
+  00000017: 74 75              je          0000008E
+  00000019: 3B FE              cmp         edi,esi
+  0000001B: 73 02              jae         0000001F
+  0000001D: 8B F7              mov         esi,edi
+  0000001F: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000022: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000025: 33 C0              xor         eax,eax
+  00000027: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002A: 85 FF              test        edi,edi
+  0000002C: 74 3F              je          0000006D
+  0000002E: 8B C7              mov         eax,edi
+  00000030: 69 C0 E0 00 00 00  imul        eax,eax,0E0h
+  00000036: 6A 04              push        4
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000044: 85 C0              test        eax,eax
+  00000046: 74 4F              je          00000097
+  00000048: 56                 push        esi
+  00000049: FF 75 F8           push        dword ptr [ebp-8]
+  0000004C: 50                 push        eax
+  0000004D: 50                 push        eax
+  0000004E: E8 00 00 00 00     call        _PVertexBlendData_ArrayCopy
+  00000053: 8B C7              mov         eax,edi
+  00000055: 2B C6              sub         eax,esi
+  00000057: 69 F6 E0 00 00 00  imul        esi,esi,0E0h
+  0000005D: 03 75 FC           add         esi,dword ptr [ebp-4]
+  00000060: 50                 push        eax
+  00000061: 56                 push        esi
+  00000062: E8 00 00 00 00     call        _PShadowSplit_ArrayInitialize
+  00000067: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000006A: 83 C4 18           add         esp,18h
+  0000006D: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  00000070: 3B C8              cmp         ecx,eax
+  00000072: 74 15              je          00000089
+  00000074: 83 3B 00           cmp         dword ptr [ebx],0
+  00000077: 7C 10              jl          00000089
+  00000079: 85 C9              test        ecx,ecx
+  0000007B: 74 0C              je          00000089
+  0000007D: 51                 push        ecx
+  0000007E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000083: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000086: 83 C4 04           add         esp,4
+  00000089: 89 43 04           mov         dword ptr [ebx+4],eax
+  0000008C: 89 3B              mov         dword ptr [ebx],edi
+  0000008E: 5F                 pop         edi
+  0000008F: 5E                 pop         esi
+  00000090: 33 C0              xor         eax,eax
+  00000092: 5B                 pop         ebx
+  00000093: 8B E5              mov         esp,ebp
+  00000095: 5D                 pop         ebp
+  00000096: C3                 ret
+  00000097: 5F                 pop         edi
+  00000098: 5E                 pop         esi
+  00000099: B8 0D 00 00 00     mov         eax,0Dh
+  0000009E: 5B                 pop         ebx
+  0000009F: 8B E5              mov         esp,ebp
+  000000A1: 5D                 pop         ebp
+  000000A2: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A3 .text

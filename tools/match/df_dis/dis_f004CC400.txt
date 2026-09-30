@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004CC400.obj
+
+File Type: COFF OBJECT
+
+_PShadowCaster_scalar_dtor@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8D 46 44           lea         eax,[esi+44h]
+  0000000A: 50                 push        eax
+  0000000B: E8 00 00 00 00     call        _PShaderType_Dtor
+  00000010: 83 C4 04           add         esp,4
+  00000013: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  00000017: 7C 10              jl          00000029
+  00000019: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000001C: 85 C0              test        eax,eax
+  0000001E: 74 09              je          00000029
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000026: 83 C4 04           add         esp,4
+  00000029: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000030: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000037: B0 01              mov         al,1
+  00000039: 5E                 pop         esi
+  0000003A: 5D                 pop         ebp
+  0000003B: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

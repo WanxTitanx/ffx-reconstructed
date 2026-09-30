@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F39B0.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4F39B0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5F                 pop         edi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 53                 push        ebx
+  00000011: 8D 04 FF           lea         eax,[edi+edi*8]
+  00000014: C1 E0 02           shl         eax,2
+  00000017: 6A 04              push        4
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001F: 8B D8              mov         ebx,eax
+  00000021: 83 C4 08           add         esp,8
+  00000024: 85 DB              test        ebx,ebx
+  00000026: 74 28              je          00000050
+  00000028: 56                 push        esi
+  00000029: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000002C: 56                 push        esi
+  0000002D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000030: 53                 push        ebx
+  00000031: E8 00 00 00 00     call        _PVertexFormat_CaptureLocation_SingletonCtor
+  00000036: 8D 04 F6           lea         eax,[esi+esi*8]
+  00000039: 2B FE              sub         edi,esi
+  0000003B: 8D 04 83           lea         eax,[ebx+eax*4]
+  0000003E: 57                 push        edi
+  0000003F: 50                 push        eax
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _Phyre_PMeshInstance_GetClassDescF
+  00000046: 83 C4 18           add         esp,18h
+  00000049: 8B C3              mov         eax,ebx
+  0000004B: 5E                 pop         esi
+  0000004C: 5B                 pop         ebx
+  0000004D: 5F                 pop         edi
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+  00000050: 5B                 pop         ebx
+  00000051: 33 C0              xor         eax,eax
+  00000053: 5F                 pop         edi
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

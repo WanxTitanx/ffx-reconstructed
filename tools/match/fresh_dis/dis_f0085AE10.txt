@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085AE10.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_MenuSgSetReserveState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _FFX_FieldOp_CheckMenuListBuffer
+  00000010: 0F B7 4E 0A        movzx       ecx,word ptr [esi+0Ah]
+  00000014: 83 C4 08           add         esp,8
+  00000017: 66 85 C9           test        cx,cx
+  0000001A: 75 12              jne         0000002E
+  0000001C: A8 01              test        al,1
+  0000001E: 74 3B              je          0000005B
+  00000020: B8 01 00 00 00     mov         eax,1
+  00000025: 66 89 46 0A        mov         word ptr [esi+0Ah],ax
+  00000029: 33 C0              xor         eax,eax
+  0000002B: 5E                 pop         esi
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: 83 F9 01           cmp         ecx,1
+  00000031: 74 0B              je          0000003E
+  00000033: 33 C0              xor         eax,eax
+  00000035: 83 F9 02           cmp         ecx,2
+  00000038: 0F 94 C0           sete        al
+  0000003B: 5E                 pop         esi
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+  0000003E: 66 83 7E 08 00     cmp         word ptr [esi+8],0
+  00000043: 74 0D              je          00000052
+  00000045: 68 01 00 01 00     push        10001h
+  0000004A: E8 00 00 00 00     call        _FFX_SgMenu_SetReserve
+  0000004F: 83 C4 04           add         esp,4
+  00000052: B8 02 00 00 00     mov         eax,2
+  00000057: 66 89 46 0A        mov         word ptr [esi+0Ah],ax
+  0000005B: 33 C0              xor         eax,eax
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

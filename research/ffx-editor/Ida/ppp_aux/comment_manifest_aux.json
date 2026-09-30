@@ -1,0 +1,70 @@
+[
+ {
+  "addr": "0x7e3720",
+  "comment": "[PPP-AUX-2026-09-16] CONFIRMED kind-indexed accessor over a per-effect resource TOC. ctx = u32 array; ctx[k] = byte-offset of array-family k rel. to ctx. n8=2: rec array @ctx+ctx[2], 32B stride, returns rec if *(u32*)(rec+0x10)!=0 else NULL. n8=3: rec array @ctx+ctx[3], 16B stride, returns rec if *(u16*)(rec+2)!=0 else NULL. n8=6: rec array @ctx+ctx[6], 16B stride, unconditional. default(n8=k): u32 array @ctx+ctx[k], returns elem[a3] (blob-off/ptr, fixed up at load). n8==8 also fires a dbgPrintf() debug leftover. n8=8 yields per-slice PPP blob headers (+0x10/+14/+18/+1C = file-rel sub-array offsets, relocated by RelocatePppResourceBlob 0x712080). ctx obj embedded in each magic DLL .data (magic_0191: ctx@0x10005B50, fields=0x60/0x180/0x210/0x220/0x230/0x240 offsets). 58 call sites; n8 histogram {1:1,2:12,3:7,4:21,5:2,6:9,8:3,9:2}."
+ },
+ {
+  "addr": "0x9252ee",
+  "comment": "[PPP-AUX-2026-09-16] call: SelectRuntimeTableSlice(obj->f8_resToc, 8, i) -> ptr array elem = per-slice PPP resource-blob header. Record +0x14/+0x18/+0x1C read next are BLOB-HEADER offsets (not 40B dispatch-record fields) -> copied to host+0x20/+0x24/+0x28 then relocated."
+ },
+ {
+  "addr": "0x9252ff",
+  "comment": "[PPP-AUX-2026-09-16] reads sliceBlobHdr+0x14 (file-rel offset of aux array 2) -> host+0x20."
+ },
+ {
+  "addr": "0x925313",
+  "comment": "[PPP-AUX-2026-09-16] reads sliceBlobHdr+0x18 (file-rel offset of aux array 3) -> host+0x24."
+ },
+ {
+  "addr": "0x925343",
+  "comment": "[PPP-AUX-2026-09-16] RelocatePppResourceBlob(host=obj->f10, blob=sliceHdr[i], tbl=a6[i]) \u2014 per-slice dispatch table is CALLER-SUPPLIED (arg a6 array), not fixed pppSysProgTbl."
+ },
+ {
+  "addr": "0xc65b4c",
+  "comment": "[PPP-AUX-2026-09-16] VALID: static table entry = 0xC3BBA8 = &pppSysProgTbl[145] = band-B base exported as a distinct table pointer inside fptr_chr_C65A34 host-service array. A second consumer can relocate serialized idx 0..144 against this base and land on byte-identical alias records (dual numbering-space compatibility)."
+ },
+ {
+  "addr": "0xc3bba8",
+  "comment": "[PPP-AUX-2026-09-16] pppSysProgTbl[145] = START OF BAND B (slots 145-289). rec[145+i] is BYTE-IDENTICAL to rec[i] (name+all fn fields), verified for all 145 slots. Purpose: exported as a second table base (ptr @ 0xC65B4C in fptr_chr_C65A34) so a second index space aliases band A. No EXE code remaps idx into this band; serialized magic-DLL corpus (591 DLLs, 276514 prog slots + 44453 tail indices) never emits idx>=59."
+ },
+ {
+  "addr": "0xc3ac80",
+  "comment": "[PPP-AUX-2026-09-16] pppDrawMatrixWood: +0x14=0x734E60 FFX_Ppp_DrawMatrixWood_BuildWoodBasis \u2014 VALID real handler ptr in a CONFIRMED-dead field (no EXE reader of dispatch-rec +0x14). Legacy/dropped aux phase. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3c328",
+  "comment": "[PPP-AUX-2026-09-16] pppDrawMatrixWood (band-B alias of #48): same +0x14=0x734E60 dead aux. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3fcd8",
+  "comment": "[PPP-AUX-2026-09-16] pppDrawMatrixWood (pmcom copy): same +0x14=0x734E60 dead aux. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3dc00",
+  "comment": "[PPP-AUX-2026-09-16] pppDrawMatrixWoodLoop: +0x14=0x728AC0 SharedNullsub \u2014 dead aux field. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3e290",
+  "comment": "[PPP-AUX-2026-09-16] pppRyjMegaBirthFilter: +0x14=0x728AC0 SharedNullsub \u2014 dead aux. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3e2b8",
+  "comment": "[PPP-AUX-2026-09-16] pppRyjMegaBirthModelFilter: +0x14=0x728AC0 SharedNullsub \u2014 dead aux. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc3e2e0",
+  "comment": "[PPP-AUX-2026-09-16] pppKeAcmSolid: +0x18=0x75B770 PppOp_KeAcmSolid_NoopAux18 \u2014 dead aux field. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0xc40cf0",
+  "comment": "[PPP-AUX-2026-09-16] pppKeAcmSolid (pmcom copy): same +0x18=0x75B770 dead aux. Dispatch-rec +0x14/+0x18 have NO reader in EXE (411-handler + machinery scan; only live fields: +04/+08/+0C/+1C/+20/+24)."
+ },
+ {
+  "addr": "0x25d5a28",
+  "comment": "[PPP-AUX-2026-09-16] SUSPECTED: global/shared runtime-table-TOC ctx instance; passed as ctx to SelectRuntimeTableSlice(0x7E3720) by FFX_Audio_ManageBattleAudioBySlot(6), RegisterSlot2ResourceBySlot(6), InitEffectSlotBySlot(5). Fields = offsets of array families."
+ },
+ {
+  "addr": "0x925210",
+  "comment": "[PPP-AUX-2026-09-16] InitObjectBuffer(a1=objbuf, n2=magicId, a3=resToc ctx, a4=blobbuf, a5=size, a6=per-slice dispatch-tbl ptr array, a7=slice count, a8, a9=host/lppEnv). obj->f4=magicId, f8=resToc, fC=tblArray, f10=host, f14=sliceCount, f18=alloc(4*cnt) slice-hdr ptr array. Loop i<a7: f18[i]=SelectRuntimeTableSlice(f8,8,i)=slice blob hdr; hdr+14/+18/+1C offs -> host+20/+24/+28; RelocatePppResourceBlob(f10, hdr, a6[i])."
+ }
+]

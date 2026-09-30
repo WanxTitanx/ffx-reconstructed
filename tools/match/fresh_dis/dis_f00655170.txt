@@ -1,0 +1,95 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00655170.obj
+
+File Type: COFF OBJECT
+
+@Phyre_HashBucket_GrowTable@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000000D: DB 47 04           fild        dword ptr [edi+4]
+  00000010: 8B 77 18           mov         esi,dword ptr [edi+18h]
+  00000013: 85 C0              test        eax,eax
+  00000015: 79 06              jns         0000001D
+  00000017: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000001D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000020: D9 45 FC           fld         dword ptr [ebp-4]
+  00000023: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000026: DB 45 FC           fild        dword ptr [ebp-4]
+  00000029: 85 F6              test        esi,esi
+  0000002B: 79 06              jns         00000033
+  0000002D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000033: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000036: D8 75 FC           fdiv        dword ptr [ebp-4]
+  00000039: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000003C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003F: D9 47 1C           fld         dword ptr [edi+1Ch]
+  00000042: DE D9              fcompp
+  00000044: DF E0              fnstsw      ax
+  00000046: F6 C4 05           test        ah,5
+  00000049: 7A 70              jp          000000BB
+  0000004B: 81 FE 00 02 00 00  cmp         esi,200h
+  00000051: 72 0C              jb          0000005F
+  00000053: 81 FE FF FF FF 1F  cmp         esi,1FFFFFFFh
+  00000059: 73 07              jae         00000062
+  0000005B: 03 F6              add         esi,esi
+  0000005D: EB 03              jmp         00000062
+  0000005F: C1 E6 03           shl         esi,3
+  00000062: 8B 07              mov         eax,dword ptr [edi]
+  00000064: 53                 push        ebx
+  00000065: 8D 57 08           lea         edx,[edi+8]
+  00000068: 8D 0C 36           lea         ecx,[esi+esi]
+  0000006B: 8D 5D F8           lea         ebx,[ebp-8]
+  0000006E: 53                 push        ebx
+  0000006F: 51                 push        ecx
+  00000070: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000073: 8B 02              mov         eax,dword ptr [edx]
+  00000075: 50                 push        eax
+  00000076: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  00000079: 8D 45 F4           lea         eax,[ebp-0Ch]
+  0000007C: 50                 push        eax
+  0000007D: 51                 push        ecx
+  0000007E: 52                 push        edx
+  0000007F: E8 00 00 00 00     call        _VectorInsertWithReallocation
+  00000084: 8B 1F              mov         ebx,dword ptr [edi]
+  00000086: 8D 46 FF           lea         eax,[esi-1]
+  00000089: 83 C4 18           add         esp,18h
+  0000008C: 89 47 14           mov         dword ptr [edi+14h],eax
+  0000008F: 89 77 18           mov         dword ptr [edi+18h],esi
+  00000092: 39 1B              cmp         dword ptr [ebx],ebx
+  00000094: 74 24              je          000000BA
+  00000096: 8B 5B 04           mov         ebx,dword ptr [ebx+4]
+  00000099: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000000A0: 8B 07              mov         eax,dword ptr [edi]
+  000000A2: 8B 30              mov         esi,dword ptr [eax]
+  000000A4: 56                 push        esi
+  000000A5: 8D 46 08           lea         eax,[esi+8]
+  000000A8: 50                 push        eax
+  000000A9: 8D 45 EC           lea         eax,[ebp-14h]
+  000000AC: 50                 push        eax
+  000000AD: 57                 push        edi
+  000000AE: E8 00 00 00 00     call        _Phyre_HashBucket_Insert
+  000000B3: 83 C4 10           add         esp,10h
+  000000B6: 3B F3              cmp         esi,ebx
+  000000B8: 75 E6              jne         000000A0
+  000000BA: 5B                 pop         ebx
+  000000BB: 5F                 pop         edi
+  000000BC: 5E                 pop         esi
+  000000BD: 8B E5              mov         esp,ebp
+  000000BF: 5D                 pop         ebp
+  000000C0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          C1 .text

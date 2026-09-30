@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C7870.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Sort_HeapSiftUp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 8D 47 FF           lea         eax,[edi-1]
+  0000000E: 99                 cdq
+  0000000F: 2B C2              sub         eax,edx
+  00000011: 8B F0              mov         esi,eax
+  00000013: D1 FE              sar         esi,1
+  00000015: 39 7D 10           cmp         dword ptr [ebp+10h],edi
+  00000018: 7C 11              jl          0000002B
+  0000001A: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000001D: D9 00              fld         dword ptr [eax]
+  0000001F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000022: D9 1C B8           fstp        dword ptr [eax+edi*4]
+  00000025: 5F                 pop         edi
+  00000026: 5E                 pop         esi
+  00000027: 8B E5              mov         esp,ebp
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+  0000002B: 53                 push        ebx
+  0000002C: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000002F: 90                 nop
+  00000030: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000033: D9 7D 0E           fnstcw      word ptr [ebp+0Eh]
+  00000036: D9 00              fld         dword ptr [eax]
+  00000038: 0F B7 45 0E        movzx       eax,word ptr [ebp+0Eh]
+  0000003C: 0D 00 0C 00 00     or          eax,0C00h
+  00000041: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000044: D9 6D FC           fldcw       word ptr [ebp-4]
+  00000047: DF 7D F8           fistp       qword ptr [ebp-8]
+  0000004A: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000004D: 50                 push        eax
+  0000004E: D9 6D 0E           fldcw       word ptr [ebp+0Eh]
+  00000051: D9 04 B3           fld         dword ptr [ebx+esi*4]
+  00000054: D9 7D 0E           fnstcw      word ptr [ebp+0Eh]
+  00000057: 0F B7 45 0E        movzx       eax,word ptr [ebp+0Eh]
+  0000005B: 0D 00 0C 00 00     or          eax,0C00h
+  00000060: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000063: D9 6D FC           fldcw       word ptr [ebp-4]
+  00000066: DF 7D F8           fistp       qword ptr [ebp-8]
+  00000069: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000006C: 50                 push        eax
+  0000006D: D9 6D 0E           fldcw       word ptr [ebp+0Eh]
+  00000070: FF 55 18           call        dword ptr [ebp+18h]
+  00000073: 83 C4 08           add         esp,8
+  00000076: 85 C0              test        eax,eax
+  00000078: 74 17              je          00000091
+  0000007A: D9 04 B3           fld         dword ptr [ebx+esi*4]
+  0000007D: 8D 46 FF           lea         eax,[esi-1]
+  00000080: 99                 cdq
+  00000081: D9 1C BB           fstp        dword ptr [ebx+edi*4]
+  00000084: 8B FE              mov         edi,esi
+  00000086: 2B C2              sub         eax,edx
+  00000088: 8B F0              mov         esi,eax
+  0000008A: D1 FE              sar         esi,1
+  0000008C: 39 7D 10           cmp         dword ptr [ebp+10h],edi
+  0000008F: 7C 9F              jl          00000030
+  00000091: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000094: D9 00              fld         dword ptr [eax]
+  00000096: D9 1C BB           fstp        dword ptr [ebx+edi*4]
+  00000099: 5B                 pop         ebx
+  0000009A: 5F                 pop         edi
+  0000009B: 5E                 pop         esi
+  0000009C: 8B E5              mov         esp,ebp
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A0 .text

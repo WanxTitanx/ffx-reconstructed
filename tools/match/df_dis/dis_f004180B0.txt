@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004180B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Video_SAD_HalfPel_H_MMX:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 53                 push        ebx
+  0000000A: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000000D: 56                 push        esi
+  0000000E: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000011: 57                 push        edi
+  00000012: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000015: 8D 4D F4           lea         ecx,[ebp-0Ch]
+  00000018: 51                 push        ecx
+  00000019: 8D 4D F8           lea         ecx,[ebp-8]
+  0000001C: 51                 push        ecx
+  0000001D: 56                 push        esi
+  0000001E: 53                 push        ebx
+  0000001F: 57                 push        edi
+  00000020: 50                 push        eax
+  00000021: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000024: E8 00 00 00 00     call        _PhyreVideo_InterpolateQuarterPel
+  00000029: 8D 45 08           lea         eax,[ebp+8]
+  0000002C: 50                 push        eax
+  0000002D: 8D 45 10           lea         eax,[ebp+10h]
+  00000030: 50                 push        eax
+  00000031: 56                 push        esi
+  00000032: 8D 43 08           lea         eax,[ebx+8]
+  00000035: 50                 push        eax
+  00000036: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000039: 83 C0 08           add         eax,8
+  0000003C: 57                 push        edi
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _PhyreVideo_InterpolateQuarterPel
+  00000043: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000046: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  00000049: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  0000004C: 8D 0C 37           lea         ecx,[edi+esi]
+  0000004F: 89 08              mov         dword ptr [eax],ecx
+  00000051: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00000054: 03 4D 08           add         ecx,dword ptr [ebp+8]
+  00000057: 83 C4 30           add         esp,30h
+  0000005A: 0F AF C9           imul        ecx,ecx
+  0000005D: C1 E9 07           shr         ecx,7
+  00000060: 2B F9              sub         edi,ecx
+  00000062: 8D 04 3E           lea         eax,[esi+edi]
+  00000065: 5F                 pop         edi
+  00000066: 5E                 pop         esi
+  00000067: 5B                 pop         ebx
+  00000068: 8B E5              mov         esp,ebp
+  0000006A: 5D                 pop         ebp
+  0000006B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6C .text

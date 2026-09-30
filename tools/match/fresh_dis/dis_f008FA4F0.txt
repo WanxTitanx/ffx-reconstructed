@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008FA4F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_TableLookupDispatcher:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 81 FE C6 00 00 00  cmp         esi,0C6h
+  0000000D: 76 04              jbe         00000013
+  0000000F: 8B C6              mov         eax,esi
+  00000011: EB 09              jmp         0000001C
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        _FFX_Menu2D_TableLookupSpriteData
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 8D 8E 38 FF FF FF  lea         ecx,[esi-0C8h]
+  00000022: 81 F9 C6 00 00 00  cmp         ecx,0C6h
+  00000028: 77 09              ja          00000033
+  0000002A: 51                 push        ecx
+  0000002B: E8 00 00 00 00     call        _FFX_Menu2D_TableLookupSpriteData
+  00000030: 83 C4 04           add         esp,4
+  00000033: 8D 8E 70 FE FF FF  lea         ecx,[esi-190h]
+  00000039: 81 F9 C6 00 00 00  cmp         ecx,0C6h
+  0000003F: 77 09              ja          0000004A
+  00000041: 51                 push        ecx
+  00000042: E8 00 00 00 00     call        _FFX_Menu2D_TableLookupAtlasBase
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 81 C6 A8 FD FF FF  add         esi,0FFFFFDA8h
+  00000050: 83 FE 31           cmp         esi,31h
+  00000053: 77 09              ja          0000005E
+  00000055: 56                 push        esi
+  00000056: E8 00 00 00 00     call        _FFX_Menu2D_TableLookupPackData
+  0000005B: 83 C4 04           add         esp,4
+  0000005E: 5E                 pop         esi
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

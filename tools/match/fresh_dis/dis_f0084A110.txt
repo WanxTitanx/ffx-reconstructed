@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0084A110.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_FindStringInList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 74 71              je          0000007B
+  0000000A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000D: 53                 push        ebx
+  0000000E: 0F BF 58 04        movsx       ebx,word ptr [eax+4]
+  00000012: 56                 push        esi
+  00000013: 33 F6              xor         esi,esi
+  00000015: 85 DB              test        ebx,ebx
+  00000017: 7E 60              jle         00000079
+  00000019: 57                 push        edi
+  0000001A: 8B 78 08           mov         edi,dword ptr [eax+8]
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 07              mov         eax,dword ptr [edi]
+  00000022: 85 C0              test        eax,eax
+  00000024: 74 3E              je          00000064
+  00000026: 8A 10              mov         dl,byte ptr [eax]
+  00000028: 3A 11              cmp         dl,byte ptr [ecx]
+  0000002A: 75 1A              jne         00000046
+  0000002C: 84 D2              test        dl,dl
+  0000002E: 74 12              je          00000042
+  00000030: 8A 50 01           mov         dl,byte ptr [eax+1]
+  00000033: 3A 51 01           cmp         dl,byte ptr [ecx+1]
+  00000036: 75 0E              jne         00000046
+  00000038: 83 C0 02           add         eax,2
+  0000003B: 83 C1 02           add         ecx,2
+  0000003E: 84 D2              test        dl,dl
+  00000040: 75 E4              jne         00000026
+  00000042: 33 C9              xor         ecx,ecx
+  00000044: EB 05              jmp         0000004B
+  00000046: 1B C9              sbb         ecx,ecx
+  00000048: 83 C9 01           or          ecx,1
+  0000004B: 85 C9              test        ecx,ecx
+  0000004D: 74 22              je          00000071
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 85 C9              test        ecx,ecx
+  00000053: 0F 99 C0           setns       al
+  00000056: 8D 04 45 FF FF FF  lea         eax,[eax*2+FFFFFFFFh]
+            FF
+  0000005D: 85 C0              test        eax,eax
+  0000005F: 74 10              je          00000071
+  00000061: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000064: 46                 inc         esi
+  00000065: 83 C7 04           add         edi,4
+  00000068: 3B F3              cmp         esi,ebx
+  0000006A: 7C B4              jl          00000020
+  0000006C: 5F                 pop         edi
+  0000006D: 5E                 pop         esi
+  0000006E: 5B                 pop         ebx
+  0000006F: 5D                 pop         ebp
+  00000070: C3                 ret
+  00000071: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000074: 5F                 pop         edi
+  00000075: 66 89 70 02        mov         word ptr [eax+2],si
+  00000079: 5E                 pop         esi
+  0000007A: 5B                 pop         ebx
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7D .text

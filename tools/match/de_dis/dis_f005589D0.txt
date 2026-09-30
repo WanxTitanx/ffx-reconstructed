@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005589D0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_5589D0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 8B 7E 30           mov         edi,dword ptr [esi+30h]
+  00000008: 8B 8E BC 02 00 00  mov         ecx,dword ptr [esi+2BCh]
+  0000000E: 8B DA              mov         ebx,edx
+  00000010: 3B F9              cmp         edi,ecx
+  00000012: 74 49              je          0000005D
+  00000014: 85 C9              test        ecx,ecx
+  00000016: 74 2B              je          00000043
+  00000018: 8D 41 04           lea         eax,[ecx+4]
+  0000001B: 39 86 AC 00 00 00  cmp         dword ptr [esi+0ACh],eax
+  00000021: 75 20              jne         00000043
+  00000023: 8B 86 A8 00 00 00  mov         eax,dword ptr [esi+0A8h]
+  00000029: 89 81 B4 00 00 00  mov         dword ptr [ecx+0B4h],eax
+  0000002F: C7 86 A8 00 00 00  mov         dword ptr [esi+0A8h],0
+            00 00 00 00
+  00000039: C7 86 AC 00 00 00  mov         dword ptr [esi+0ACh],0
+            00 00 00 00
+  00000043: 85 FF              test        edi,edi
+  00000045: 74 0D              je          00000054
+  00000047: 8D 46 34           lea         eax,[esi+34h]
+  0000004A: 57                 push        edi
+  0000004B: 50                 push        eax
+  0000004C: E8 00 00 00 00     call        _Phyre_PSplineFollower_LinkToSpline
+  00000051: 83 C4 08           add         esp,8
+  00000054: 89 7E 30           mov         dword ptr [esi+30h],edi
+  00000057: 89 BE BC 02 00 00  mov         dword ptr [esi+2BCh],edi
+  0000005D: 85 DB              test        ebx,ebx
+  0000005F: 74 14              je          00000075
+  00000061: 8D 86 BC 00 00 00  lea         eax,[esi+0BCh]
+  00000067: 53                 push        ebx
+  00000068: 50                 push        eax
+  00000069: E8 00 00 00 00     call        _Phyre_Matrix_Multiply
+  0000006E: 83 C4 08           add         esp,8
+  00000071: 5F                 pop         edi
+  00000072: 5E                 pop         esi
+  00000073: 5B                 pop         ebx
+  00000074: C3                 ret
+  00000075: 5F                 pop         edi
+  00000076: 5E                 pop         esi
+  00000077: 33 C0              xor         eax,eax
+  00000079: 5B                 pop         ebx
+  0000007A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          7B .text

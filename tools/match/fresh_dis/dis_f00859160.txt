@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00859160.obj
+
+File Type: COFF OBJECT
+
+_FFX_AtelOp_CheckEventStructActive:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: FF 36              push        dword ptr [esi]
+  00000009: E8 00 00 00 00     call        _FFX_Field_GetEventStruct
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000015: 5E                 pop         esi
+  00000016: 74 12              je          0000002A
+  00000018: 0F B7 40 14        movzx       eax,word ptr [eax+14h]
+  0000001C: 66 85 C0           test        ax,ax
+  0000001F: 74 09              je          0000002A
+  00000021: 83 F8 04           cmp         eax,4
+  00000024: 74 04              je          0000002A
+  00000026: 33 C0              xor         eax,eax
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: B8 05 00 00 00     mov         eax,5
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          31 .text

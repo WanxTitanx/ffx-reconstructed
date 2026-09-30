@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00871980.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_ClearControlledActorsAndMotionFlags:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000000A: 33 F6              xor         esi,esi
+  0000000C: 0F B7 47 0C        movzx       eax,word ptr [edi+0Ch]
+  00000010: 8B D8              mov         ebx,eax
+  00000012: 66 85 C0           test        ax,ax
+  00000015: 0F 84 90 00 00 00  je          000000AB
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 85 F6              test        esi,esi
+  00000022: 78 7E              js          000000A2
+  00000024: 0F B7 47 0C        movzx       eax,word ptr [edi+0Ch]
+  00000028: 3B F0              cmp         esi,eax
+  0000002A: 7D 76              jge         000000A2
+  0000002C: 56                 push        esi
+  0000002D: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  00000032: 8B 00              mov         eax,dword ptr [eax]
+  00000034: 83 C4 04           add         esp,4
+  00000037: 80 38 01           cmp         byte ptr [eax],1
+  0000003A: 75 66              jne         000000A2
+  0000003C: 56                 push        esi
+  0000003D: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  00000042: 8B 08              mov         ecx,dword ptr [eax]
+  00000044: 83 C4 04           add         esp,4
+  00000047: 8A 09              mov         cl,byte ptr [ecx]
+  00000049: 80 F9 04           cmp         cl,4
+  0000004C: 75 04              jne         00000052
+  0000004E: 33 C9              xor         ecx,ecx
+  00000050: EB 14              jmp         00000066
+  00000052: 80 E9 05           sub         cl,5
+  00000055: 80 F9 01           cmp         cl,1
+  00000058: 8D 88 58 05 00 00  lea         ecx,[eax+558h]
+  0000005E: 77 06              ja          00000066
+  00000060: 8D 88 84 02 00 00  lea         ecx,[eax+284h]
+  00000066: 80 B8 AA 00 00 00  cmp         byte ptr [eax+0AAh],1
+            01
+  0000006D: 75 33              jne         000000A2
+  0000006F: 0F B7 50 34        movzx       edx,word ptr [eax+34h]
+  00000073: F6 C2 20           test        dl,20h
+  00000076: 74 2A              je          000000A2
+  00000078: D9 EE              fldz
+  0000007A: 81 E2 DF FF 00 00  and         edx,0FFDFh
+  00000080: 66 89 50 34        mov         word ptr [eax+34h],dx
+  00000084: D9 59 0C           fstp        dword ptr [ecx+0Ch]
+  00000087: 8B 80 9C 00 00 00  mov         eax,dword ptr [eax+9Ch]
+  0000008D: 85 C0              test        eax,eax
+  0000008F: 74 11              je          000000A2
+  00000091: D9 EE              fldz
+  00000093: 83 EC 08           sub         esp,8
+  00000096: DD 1C 24           fstp        qword ptr [esp]
+  00000099: 50                 push        eax
+  0000009A: E8 00 00 00 00     call        _FFX_Chr_SetInstanceMotionScalar340
+  0000009F: 83 C4 0C           add         esp,0Ch
+  000000A2: 46                 inc         esi
+  000000A3: 3B F3              cmp         esi,ebx
+  000000A5: 0F 8C 75 FF FF FF  jl          00000020
+  000000AB: 6A 00              push        0
+  000000AD: E8 00 00 00 00     call        _FFX_Chr_SetControlledInstance
+  000000B2: 83 C4 04           add         esp,4
+  000000B5: 80 27 FD           and         byte ptr [edi],0FDh
+  000000B8: 8B C7              mov         eax,edi
+  000000BA: 5F                 pop         edi
+  000000BB: 5E                 pop         esi
+  000000BC: 5B                 pop         ebx
+  000000BD: 8B E5              mov         esp,ebp
+  000000BF: 5D                 pop         ebp
+  000000C0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          C1 .text

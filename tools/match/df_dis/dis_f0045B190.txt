@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0045B190.obj
+
+File Type: COFF OBJECT
+
+_Phyre_LinkedList_RemoveEntry@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  0000000A: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  0000000D: 8D 56 0C           lea         edx,[esi+0Ch]
+  00000010: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000013: 89 08              mov         dword ptr [eax],ecx
+  00000015: F6 46 14 01        test        byte ptr [esi+14h],1
+  00000019: 89 12              mov         dword ptr [edx],edx
+  0000001B: 89 56 10           mov         dword ptr [esi+10h],edx
+  0000001E: 75 0B              jne         0000002B
+  00000020: FF 76 14           push        dword ptr [esi+14h]
+  00000023: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000028: 83 C4 04           add         esp,4
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _PComponent_UnlinkFromEntityList
+  00000031: 83 C4 04           add         esp,4
+  00000034: B0 01              mov         al,1
+  00000036: 5E                 pop         esi
+  00000037: 5D                 pop         ebp
+  00000038: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

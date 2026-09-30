@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00961D90.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_adjustRegisterDepth:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000000A: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000D: 00 58 2E           add         byte ptr [eax+2Eh],bl
+  00000010: 85 DB              test        ebx,ebx
+  00000012: 74 29              je          0000003D
+  00000014: 56                 push        esi
+  00000015: 0F B6 50 2E        movzx       edx,byte ptr [eax+2Eh]
+  00000019: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  0000001C: 2B D3              sub         edx,ebx
+  0000001E: 8B 49 2C           mov         ecx,dword ptr [ecx+2Ch]
+  00000021: 03 50 28           add         edx,dword ptr [eax+28h]
+  00000024: 8B 09              mov         ecx,dword ptr [ecx]
+  00000026: 0F BF 0C 51        movsx       ecx,word ptr [ecx+edx*2]
+  0000002A: 8D 34 49           lea         esi,[ecx+ecx*2]
+  0000002D: 8B 08              mov         ecx,dword ptr [eax]
+  0000002F: 8B 51 18           mov         edx,dword ptr [ecx+18h]
+  00000032: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  00000035: 89 4C B2 04        mov         dword ptr [edx+esi*4+4],ecx
+  00000039: 4B                 dec         ebx
+  0000003A: 75 D9              jne         00000015
+  0000003C: 5E                 pop         esi
+  0000003D: 5B                 pop         ebx
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

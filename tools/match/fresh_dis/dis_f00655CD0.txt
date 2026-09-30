@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00655CD0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Vector_ShrinkToFit@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B F2              mov         esi,edx
+  00000009: 33 FF              xor         edi,edi
+  0000000B: 8B D9              mov         ebx,ecx
+  0000000D: 85 F6              test        esi,esi
+  0000000F: 74 22              je          00000033
+  00000011: 81 FE AA AA AA 0A  cmp         esi,0AAAAAAAh
+  00000017: 77 15              ja          0000002E
+  00000019: 8D 04 76           lea         eax,[esi+esi*2]
+  0000001C: C1 E0 03           shl         eax,3
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000025: 8B F8              mov         edi,eax
+  00000027: 83 C4 04           add         esp,4
+  0000002A: 85 FF              test        edi,edi
+  0000002C: 75 05              jne         00000033
+  0000002E: E8 00 00 00 00     call        _std__Xbad_alloc
+  00000033: 57                 push        edi
+  00000034: FF 73 04           push        dword ptr [ebx+4]
+  00000037: FF 33              push        dword ptr [ebx]
+  00000039: E8 00 00 00 00     call        _Phyre_WStringArray_MoveAssign
+  0000003E: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  00000041: 2B 0B              sub         ecx,dword ptr [ebx]
+  00000043: B8 AB AA AA 2A     mov         eax,2AAAAAABh
+  00000048: F7 E9              imul        ecx
+  0000004A: 8B 03              mov         eax,dword ptr [ebx]
+  0000004C: C1 FA 02           sar         edx,2
+  0000004F: 8B CA              mov         ecx,edx
+  00000051: C1 E9 1F           shr         ecx,1Fh
+  00000054: 03 CA              add         ecx,edx
+  00000056: 83 C4 0C           add         esp,0Ch
+  00000059: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000005C: 85 C0              test        eax,eax
+  0000005E: 74 16              je          00000076
+  00000060: FF 73 04           push        dword ptr [ebx+4]
+  00000063: 50                 push        eax
+  00000064: E8 00 00 00 00     call        _FFX_SmallArray_DtorLoop_B
+  00000069: FF 33              push        dword ptr [ebx]
+  0000006B: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000070: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000073: 83 C4 0C           add         esp,0Ch
+  00000076: 8D 04 76           lea         eax,[esi+esi*2]
+  00000079: 89 3B              mov         dword ptr [ebx],edi
+  0000007B: 8D 04 C7           lea         eax,[edi+eax*8]
+  0000007E: 89 43 08           mov         dword ptr [ebx+8],eax
+  00000081: 8D 04 49           lea         eax,[ecx+ecx*2]
+  00000084: 8D 04 C7           lea         eax,[edi+eax*8]
+  00000087: 5F                 pop         edi
+  00000088: 5E                 pop         esi
+  00000089: 89 43 04           mov         dword ptr [ebx+4],eax
+  0000008C: 5B                 pop         ebx
+  0000008D: 8B E5              mov         esp,ebp
+  0000008F: 5D                 pop         ebp
+  00000090: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          91 .text

@@ -1,0 +1,154 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009232A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Tm2_ReadFileAndConvert:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: E8 00 00 00 00     call        _FFX_Rcdt_AllocChunkSlot
+  0000000C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000F: 8B F8              mov         edi,eax
+  00000011: 57                 push        edi
+  00000012: E8 00 00 00 00     call        _FFX_Render_DestroySceneSlot
+  00000017: 83 C4 08           add         esp,8
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 75 20              jne         0000003E
+  0000001E: 85 FF              test        edi,edi
+  00000020: 74 7E              je          000000A0
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _FFX_Mem_FreeAndNullDword
+  00000028: 83 C4 04           add         esp,4
+  0000002B: E8 00 00 00 00     call        _rcPrint
+  00000030: E8 00 00 00 00     call        _rcPrint
+  00000035: 5F                 pop         edi
+  00000036: 5E                 pop         esi
+  00000037: 33 C0              xor         eax,eax
+  00000039: 5B                 pop         ebx
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+  0000003E: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _FFX_Tm2_ConvertFileToRendered
+  00000047: E8 00 00 00 00     call        _FFX_Rsd_TokenBufAlloc
+  0000004C: 8B D8              mov         ebx,eax
+  0000004E: 57                 push        edi
+  0000004F: 53                 push        ebx
+  00000050: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000053: E8 00 00 00 00     call        _FFX_Rsd_TokenBufSetFile
+  00000058: 6A 10              push        10h
+  0000005A: 56                 push        esi
+  0000005B: 53                 push        ebx
+  0000005C: E8 00 00 00 00     call        _FFX_Serial_ReadData
+  00000061: 6A 30              push        30h
+  00000063: 83 C6 10           add         esi,10h
+  00000066: 56                 push        esi
+  00000067: 53                 push        ebx
+  00000068: E8 00 00 00 00     call        _FFX_Serial_ReadData
+  0000006D: 56                 push        esi
+  0000006E: E8 00 00 00 00     call        _FFX_Tm2_ResolvePixelFormat
+  00000073: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000076: 83 C4 28           add         esp,28h
+  00000079: 89 41 48           mov         dword ptr [ecx+48h],eax
+  0000007C: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000007F: 8A 41 13           mov         al,byte ptr [ecx+13h]
+  00000082: 0F B7 51 14        movzx       edx,word ptr [ecx+14h]
+  00000086: 0F B7 59 16        movzx       ebx,word ptr [ecx+16h]
+  0000008A: 3C 04              cmp         al,4
+  0000008C: 75 0E              jne         0000009C
+  0000008E: 0F AF DA           imul        ebx,edx
+  00000091: 8B C3              mov         eax,ebx
+  00000093: 99                 cdq
+  00000094: 2B C2              sub         eax,edx
+  00000096: 8B D8              mov         ebx,eax
+  00000098: D1 FB              sar         ebx,1
+  0000009A: EB 1A              jmp         000000B6
+  0000009C: 3C 05              cmp         al,5
+  0000009E: 74 13              je          000000B3
+  000000A0: E8 00 00 00 00     call        _rcPrint
+  000000A5: E8 00 00 00 00     call        _rcPrint
+  000000AA: 5F                 pop         edi
+  000000AB: 5E                 pop         esi
+  000000AC: 33 C0              xor         eax,eax
+  000000AE: 5B                 pop         ebx
+  000000AF: 8B E5              mov         esp,ebp
+  000000B1: 5D                 pop         ebp
+  000000B2: C3                 ret
+  000000B3: 0F AF DA           imul        ebx,edx
+  000000B6: 0F B7 71 0C        movzx       esi,word ptr [ecx+0Ch]
+  000000BA: 83 C6 10           add         esi,10h
+  000000BD: 56                 push        esi
+  000000BE: FF 75 FC           push        dword ptr [ebp-4]
+  000000C1: E8 00 00 00 00     call        _FFX_Rsd_TokenBufAdvanceFile
+  000000C6: 53                 push        ebx
+  000000C7: E8 00 00 00 00     call        _FFX_Heap_AllocGameArena
+  000000CC: 50                 push        eax
+  000000CD: E8 00 00 00 00     call        _Std_IdentityFunc_B
+  000000D2: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000D5: 50                 push        eax
+  000000D6: 89 41 40           mov         dword ptr [ecx+40h],eax
+  000000D9: E8 00 00 00 00     call        _Std_IdentityFunc
+  000000DE: 53                 push        ebx
+  000000DF: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  000000E2: 50                 push        eax
+  000000E3: 53                 push        ebx
+  000000E4: E8 00 00 00 00     call        _FFX_Serial_ReadData
+  000000E9: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000EC: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  000000EF: 03 C6              add         eax,esi
+  000000F1: 50                 push        eax
+  000000F2: 53                 push        ebx
+  000000F3: E8 00 00 00 00     call        _FFX_Rsd_TokenBufAdvanceFile
+  000000F8: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  000000FB: FF 76 14           push        dword ptr [esi+14h]
+  000000FE: E8 00 00 00 00     call        _FFX_Heap_AllocGameArena
+  00000103: 50                 push        eax
+  00000104: E8 00 00 00 00     call        _Std_IdentityFunc_B
+  00000109: 89 46 44           mov         dword ptr [esi+44h],eax
+  0000010C: 8B 76 14           mov         esi,dword ptr [esi+14h]
+  0000010F: 50                 push        eax
+  00000110: E8 00 00 00 00     call        _Std_IdentityFunc
+  00000115: 56                 push        esi
+  00000116: 50                 push        eax
+  00000117: 53                 push        ebx
+  00000118: E8 00 00 00 00     call        _FFX_Serial_ReadData
+  0000011D: 83 C4 40           add         esp,40h
+  00000120: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000124: 74 14              je          0000013A
+  00000126: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000129: FF 70 44           push        dword ptr [eax+44h]
+  0000012C: E8 00 00 00 00     call        _Std_IdentityFunc
+  00000131: 50                 push        eax
+  00000132: E8 00 00 00 00     call        _FFX_Render_ConvertAlphaByteToDword
+  00000137: 83 C4 08           add         esp,8
+  0000013A: 85 DB              test        ebx,ebx
+  0000013C: 74 09              je          00000147
+  0000013E: 53                 push        ebx
+  0000013F: E8 00 00 00 00     call        _rcFree
+  00000144: 83 C4 04           add         esp,4
+  00000147: 85 FF              test        edi,edi
+  00000149: 74 09              je          00000154
+  0000014B: 57                 push        edi
+  0000014C: E8 00 00 00 00     call        _FFX_Mem_FreeAndNullDword
+  00000151: 83 C4 04           add         esp,4
+  00000154: 5F                 pop         edi
+  00000155: 5E                 pop         esi
+  00000156: B8 01 00 00 00     mov         eax,1
+  0000015B: 5B                 pop         ebx
+  0000015C: 8B E5              mov         esp,ebp
+  0000015E: 5D                 pop         ebp
+  0000015F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         160 .text

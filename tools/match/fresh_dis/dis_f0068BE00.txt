@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068BE00.obj
+
+File Type: COFF OBJECT
+
+@FFX_Menu2D_SlotView_InitBuffer@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 83 3F 10           cmp         dword ptr [edi],10h
+  00000006: 0F 84 A5 00 00 00  je          000000B1
+  0000000C: 56                 push        esi
+  0000000D: 6A 04              push        4
+  0000000F: 6A 40              push        40h
+  00000011: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000016: 8B F0              mov         esi,eax
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 85 F6              test        esi,esi
+  0000001D: 0F 84 8D 00 00 00  je          000000B0
+  00000023: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000029: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000030: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000037: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000003E: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000045: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  0000004C: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  00000053: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  0000005A: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  00000061: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  00000068: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  0000006F: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  00000076: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  0000007D: C7 46 34 00 00 00  mov         dword ptr [esi+34h],0
+            00
+  00000084: C7 46 38 00 00 00  mov         dword ptr [esi+38h],0
+            00
+  0000008B: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  00000092: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000095: 3B C6              cmp         eax,esi
+  00000097: 74 0E              je          000000A7
+  00000099: 83 3F 00           cmp         dword ptr [edi],0
+  0000009C: 7C 09              jl          000000A7
+  0000009E: 50                 push        eax
+  0000009F: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000A4: 83 C4 04           add         esp,4
+  000000A7: 89 77 04           mov         dword ptr [edi+4],esi
+  000000AA: C7 07 10 00 00 00  mov         dword ptr [edi],10h
+  000000B0: 5E                 pop         esi
+  000000B1: 33 C9              xor         ecx,ecx
+  000000B3: F7 07 FF FF FF 7F  test        dword ptr [edi],7FFFFFFFh
+  000000B9: 74 1C              je          000000D7
+  000000BB: EB 03              jmp         000000C0
+  000000BD: 8D 49 00           lea         ecx,[ecx]
+  000000C0: 8B 47 04           mov         eax,dword ptr [edi+4]
+  000000C3: 41                 inc         ecx
+  000000C4: C7 44 88 FC 00 00  mov         dword ptr [eax+ecx*4-4],0
+            00 00
+  000000CC: 8B 07              mov         eax,dword ptr [edi]
+  000000CE: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  000000D3: 3B C8              cmp         ecx,eax
+  000000D5: 72 E9              jb          000000C0
+  000000D7: 5F                 pop         edi
+  000000D8: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          D9 .text

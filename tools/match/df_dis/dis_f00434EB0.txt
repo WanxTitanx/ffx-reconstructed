@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00434EB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_434EB0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B D9              mov         ebx,ecx
+  00000004: 8B F2              mov         esi,edx
+  00000006: 3B 33              cmp         esi,dword ptr [ebx]
+  00000008: 75 05              jne         0000000F
+  0000000A: 5E                 pop         esi
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5B                 pop         ebx
+  0000000E: C3                 ret
+  0000000F: 57                 push        edi
+  00000010: 33 FF              xor         edi,edi
+  00000012: 85 F6              test        esi,esi
+  00000014: 74 20              je          00000036
+  00000016: 8B C6              mov         eax,esi
+  00000018: 6B C0 6C           imul        eax,eax,6Ch
+  0000001B: 6A 04              push        4
+  0000001D: 50                 push        eax
+  0000001E: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000023: 8B F8              mov         edi,eax
+  00000025: 83 C4 08           add         esp,8
+  00000028: 85 FF              test        edi,edi
+  0000002A: 74 31              je          0000005D
+  0000002C: 56                 push        esi
+  0000002D: 57                 push        edi
+  0000002E: E8 00 00 00 00     call        _Phyre_Stream_WriteLine
+  00000033: 83 C4 08           add         esp,8
+  00000036: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  00000039: 3B CF              cmp         ecx,edi
+  0000003B: 74 15              je          00000052
+  0000003D: 8B 03              mov         eax,dword ptr [ebx]
+  0000003F: 85 C0              test        eax,eax
+  00000041: 78 0F              js          00000052
+  00000043: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000048: 50                 push        eax
+  00000049: 51                 push        ecx
+  0000004A: E8 00 00 00 00     call        _Phyre_Stream_Close
+  0000004F: 83 C4 08           add         esp,8
+  00000052: 89 7B 04           mov         dword ptr [ebx+4],edi
+  00000055: 5F                 pop         edi
+  00000056: 89 33              mov         dword ptr [ebx],esi
+  00000058: 5E                 pop         esi
+  00000059: 33 C0              xor         eax,eax
+  0000005B: 5B                 pop         ebx
+  0000005C: C3                 ret
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: B8 0D 00 00 00     mov         eax,0Dh
+  00000064: 5B                 pop         ebx
+  00000065: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          66 .text

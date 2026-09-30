@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0048F570.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PMeshDataBlock_CopyAssign_64Byte@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000007: 53                 push        ebx
+  00000008: 8B 1A              mov         ebx,dword ptr [edx]
+  0000000A: 56                 push        esi
+  0000000B: 33 F6              xor         esi,esi
+  0000000D: 57                 push        edi
+  0000000E: 8B F9              mov         edi,ecx
+  00000010: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000013: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000019: 74 24              je          0000003F
+  0000001B: 8B C3              mov         eax,ebx
+  0000001D: C1 E0 06           shl         eax,6
+  00000020: 6A 04              push        4
+  00000022: 50                 push        eax
+  00000023: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000028: 8B F0              mov         esi,eax
+  0000002A: 83 C4 08           add         esp,8
+  0000002D: 85 F6              test        esi,esi
+  0000002F: 74 0E              je          0000003F
+  00000031: 53                 push        ebx
+  00000032: FF 75 FC           push        dword ptr [ebp-4]
+  00000035: 56                 push        esi
+  00000036: 56                 push        esi
+  00000037: E8 00 00 00 00     call        _Engine_Memcpy64Loop
+  0000003C: 83 C4 10           add         esp,10h
+  0000003F: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000042: 3B C6              cmp         eax,esi
+  00000044: 74 12              je          00000058
+  00000046: 83 3F 00           cmp         dword ptr [edi],0
+  00000049: 7C 0D              jl          00000058
+  0000004B: 85 C0              test        eax,eax
+  0000004D: 74 09              je          00000058
+  0000004F: 50                 push        eax
+  00000050: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000055: 83 C4 04           add         esp,4
+  00000058: 89 77 04           mov         dword ptr [edi+4],esi
+  0000005B: 89 1F              mov         dword ptr [edi],ebx
+  0000005D: 8B C7              mov         eax,edi
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: 5B                 pop         ebx
+  00000062: 8B E5              mov         esp,ebp
+  00000064: 5D                 pop         ebp
+  00000065: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          66 .text

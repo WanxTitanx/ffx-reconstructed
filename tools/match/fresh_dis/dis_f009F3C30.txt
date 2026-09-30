@@ -1,0 +1,96 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009F3C30.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PRenderingUnit_FlushSecondary@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 90 00 00 00  sub         esp,90h
+  00000009: 8D 85 70 FF FF FF  lea         eax,[ebp-90h]
+  0000000F: 53                 push        ebx
+  00000010: 56                 push        esi
+  00000011: 57                 push        edi
+  00000012: 8B F2              mov         esi,edx
+  00000014: 56                 push        esi
+  00000015: 50                 push        eax
+  00000016: 8B D9              mov         ebx,ecx
+  00000018: E8 00 00 00 00     call        _Phyre_PMeshInstanceBounds_InitFromMemory
+  0000001D: 8D 45 90           lea         eax,[ebp-70h]
+  00000020: 56                 push        esi
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _Phyre_Stream_FileFormat_Read
+  00000027: FF 75 10           push        dword ptr [ebp+10h]
+  0000002A: 8D 45 B0           lea         eax,[ebp-50h]
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        _Phyre_Stream_FileFormat_Process
+  00000036: 8D 45 90           lea         eax,[ebp-70h]
+  00000039: 50                 push        eax
+  0000003A: 8D 45 B0           lea         eax,[ebp-50h]
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _Phyre_Calc_MatrixMul
+  00000043: 8D 45 B0           lea         eax,[ebp-50h]
+  00000046: 50                 push        eax
+  00000047: E8 00 00 00 00     call        _Phyre_CollectVisibleBatches_ProcessQueue
+  0000004C: 8D 85 70 FF FF FF  lea         eax,[ebp-90h]
+  00000052: 50                 push        eax
+  00000053: 8D 45 B0           lea         eax,[ebp-50h]
+  00000056: 50                 push        eax
+  00000057: E8 00 00 00 00     call        _Phyre_Calc_TransformPoint
+  0000005C: 8D 45 B0           lea         eax,[ebp-50h]
+  0000005F: 50                 push        eax
+  00000060: E8 00 00 00 00     call        _Phyre_VisibleBatch_JobProcessor
+  00000065: 8B F8              mov         edi,eax
+  00000067: 83 C4 34           add         esp,34h
+  0000006A: 85 FF              test        edi,edi
+  0000006C: 74 52              je          000000C0
+  0000006E: E8 00 00 00 00     call        _Phyre_Stats_GetSingleton
+  00000073: 8D 0C BD 00 00 00  lea         ecx,[edi*4]
+            00
+  0000007A: 51                 push        ecx
+  0000007B: 50                 push        eax
+  0000007C: E8 00 00 00 00     call        _Phyre_PPreprocessRingBuffer_AllocateAndSetFlag
+  00000081: 8B F0              mov         esi,eax
+  00000083: 8D 45 F0           lea         eax,[ebp-10h]
+  00000086: 50                 push        eax
+  00000087: 8D 4E 10           lea         ecx,[esi+10h]
+  0000008A: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  0000008D: 8D 45 F8           lea         eax,[ebp-8]
+  00000090: 50                 push        eax
+  00000091: 8D 4F 04           lea         ecx,[edi+4]
+  00000094: 8D 45 B0           lea         eax,[ebp-50h]
+  00000097: 8D 0C 8E           lea         ecx,[esi+ecx*4]
+  0000009A: 50                 push        eax
+  0000009B: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  0000009E: E8 00 00 00 00     call        _Phyre_VisibleBatch_SortAndInsert
+  000000A3: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000A6: 83 C0 08           add         eax,8
+  000000A9: 50                 push        eax
+  000000AA: FF 75 FC           push        dword ptr [ebp-4]
+  000000AD: FF 75 F8           push        dword ptr [ebp-8]
+  000000B0: 53                 push        ebx
+  000000B1: E8 00 00 00 00     call        _Phyre_Renderer_ThreadPoolJob_Execute_w
+  000000B6: 83 C4 24           add         esp,24h
+  000000B9: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  000000C0: 8D 45 B0           lea         eax,[ebp-50h]
+  000000C3: 50                 push        eax
+  000000C4: E8 00 00 00 00     call        _Phyre_RenderingStructure_ClearLists
+  000000C9: 83 C4 04           add         esp,4
+  000000CC: 33 C0              xor         eax,eax
+  000000CE: 5F                 pop         edi
+  000000CF: 5E                 pop         esi
+  000000D0: 5B                 pop         ebx
+  000000D1: 8B E5              mov         esp,ebp
+  000000D3: 5D                 pop         ebp
+  000000D4: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          D7 .text

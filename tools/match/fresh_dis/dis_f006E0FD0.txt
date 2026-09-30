@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E0FD0.obj
+
+File Type: COFF OBJECT
+
+_DEAD_Phyre_DynamicMesh_InitResources:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 68 00 00 00 00     push        offset _g_PhyreUnkVar_CDEE68
+  00000008: E8 00 00 00 00     call        _Phyre_PClassDescriptor_GetTotalSize
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 75 04              jne         00000018
+  00000014: 32 C0              xor         al,al
+  00000016: 5D                 pop         ebp
+  00000017: C3                 ret
+  00000018: 8D 48 FC           lea         ecx,[eax-4]
+  0000001B: 85 C9              test        ecx,ecx
+  0000001D: 74 F5              je          00000014
+  0000001F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000022: 85 C0              test        eax,eax
+  00000024: 74 0A              je          00000030
+  00000026: 51                 push        ecx
+  00000027: 50                 push        eax
+  00000028: E8 00 00 00 00     call        _Phyre_ClothMesh_CreateInstance
+  0000002D: 83 C4 08           add         esp,8
+  00000030: B0 01              mov         al,1
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .text

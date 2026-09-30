@@ -1,0 +1,277 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0093C3F0.obj
+
+File Type: COFF OBJECT
+
+_Dbg_TerminalInputHandler:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_Dbg_GetWindowField152
+  0000000E: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000011: 81 C1 FF 7F FF FF  add         ecx,0FFFF7FFFh
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8B F0              mov         esi,eax
+  0000001C: 83 F9 10           cmp         ecx,10h
+  0000001F: 0F 87 33 02 00 00  ja          $LN2
+  00000025: 0F B6 89 00 00 00  movzx       ecx,byte ptr $LN45[ecx]
+            00
+  0000002C: FF 24 8D 00 00 00  jmp         dword ptr $LN49[ecx*4]
+            00
+$LN35:
+  00000033: FF 35 00 00 00 00  push        dword ptr [_g_DbgTerminalInputHandlerTbl_C60EB0]
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _FFX_Dbg_CreateElementArray
+  0000003F: 83 C4 08           add         esp,8
+  00000042: 5F                 pop         edi
+  00000043: 5E                 pop         esi
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+$LN34:
+  00000046: 5F                 pop         edi
+  00000047: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000004D: 5E                 pop         esi
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+$LN33:
+  00000050: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000053: 83 F8 0E           cmp         eax,0Eh
+  00000056: 75 5F              jne         000000B7
+  00000058: 83 7E 08 0B        cmp         dword ptr [esi+8],0Bh
+  0000005C: 8D 46 0C           lea         eax,[esi+0Ch]
+  0000005F: 50                 push        eax
+  00000060: 75 2D              jne         0000008F
+  00000062: E8 00 00 00 00     call        _atof
+  00000067: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000006A: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000006D: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000070: 83 C4 04           add         esp,4
+  00000073: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000076: 57                 push        edi
+  00000077: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000007A: D9 18              fstp        dword ptr [eax]
+  0000007C: C7 46 28 01 00 00  mov         dword ptr [esi+28h],1
+            00
+  00000083: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  00000088: 83 C4 04           add         esp,4
+  0000008B: 5F                 pop         edi
+  0000008C: 5E                 pop         esi
+  0000008D: 5D                 pop         ebp
+  0000008E: C3                 ret
+  0000008F: E8 00 00 00 00     call        _atoi
+  00000094: 50                 push        eax
+  00000095: FF 76 08           push        dword ptr [esi+8]
+  00000098: FF 76 04           push        dword ptr [esi+4]
+  0000009B: E8 00 00 00 00     call        _Dbg_Terminal_WriteValueBySize
+  000000A0: 83 C4 10           add         esp,10h
+  000000A3: C7 46 28 01 00 00  mov         dword ptr [esi+28h],1
+            00
+  000000AA: 57                 push        edi
+  000000AB: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  000000B0: 83 C4 04           add         esp,4
+  000000B3: 5F                 pop         edi
+  000000B4: 5E                 pop         esi
+  000000B5: 5D                 pop         ebp
+  000000B6: C3                 ret
+  000000B7: 83 F8 0F           cmp         eax,0Fh
+  000000BA: 0F 85 98 01 00 00  jne         $LN2
+  000000C0: 57                 push        edi
+  000000C1: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  000000C6: 83 C4 04           add         esp,4
+  000000C9: 5F                 pop         edi
+  000000CA: 5E                 pop         esi
+  000000CB: 5D                 pop         ebp
+  000000CC: C3                 ret
+$LN27:
+  000000CD: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  000000D0: 83 FA 0C           cmp         edx,0Ch
+  000000D3: 0F 87 7F 01 00 00  ja          $LN2
+  000000D9: 0F B6 82 00 00 00  movzx       eax,byte ptr $LN46[edx]
+            00
+  000000E0: FF 24 85 00 00 00  jmp         dword ptr $LN50[eax*4]
+            00
+$LN24:
+  000000E7: 83 7E 20 00        cmp         dword ptr [esi+20h],0
+  000000EB: 74 1E              je          0000010B
+  000000ED: B8 30 00 00 00     mov         eax,30h
+  000000F2: 66 89 46 0C        mov         word ptr [esi+0Ch],ax
+  000000F6: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  000000FD: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  00000104: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  0000010B: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000010E: 83 F8 0A           cmp         eax,0Ah
+  00000111: 0F 8D 41 01 00 00  jge         $LN2
+  00000117: 83 7E 24 00        cmp         dword ptr [esi+24h],0
+  0000011B: 74 1D              je          0000013A
+  0000011D: 85 C0              test        eax,eax
+  0000011F: 75 07              jne         00000128
+  00000121: C7 46 1C 01 00 00  mov         dword ptr [esi+1Ch],1
+            00
+  00000128: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000012B: C6 44 30 0C 2E     mov         byte ptr [eax+esi+0Ch],2Eh
+  00000130: FF 46 1C           inc         dword ptr [esi+1Ch]
+  00000133: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  0000013A: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000013D: 8D 4A 30           lea         ecx,[edx+30h]
+  00000140: 88 4C 30 0C        mov         byte ptr [eax+esi+0Ch],cl
+  00000144: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00000147: C6 44 30 0D 00     mov         byte ptr [eax+esi+0Dh],0
+  0000014C: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000014F: 85 C0              test        eax,eax
+  00000151: 7F 08              jg          0000015B
+  00000153: 85 D2              test        edx,edx
+  00000155: 0F 84 FD 00 00 00  je          $LN2
+  0000015B: 40                 inc         eax
+  0000015C: 5F                 pop         edi
+  0000015D: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  00000160: 5E                 pop         esi
+  00000161: 5D                 pop         ebp
+  00000162: C3                 ret
+$LN17:
+  00000163: 83 7E 08 0B        cmp         dword ptr [esi+8],0Bh
+  00000167: 0F 85 EB 00 00 00  jne         $LN2
+  0000016D: 5F                 pop         edi
+  0000016E: C7 46 24 01 00 00  mov         dword ptr [esi+24h],1
+            00
+  00000175: 5E                 pop         esi
+  00000176: 5D                 pop         ebp
+  00000177: C3                 ret
+$LN15:
+  00000178: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  0000017B: 85 C9              test        ecx,ecx
+  0000017D: 0F 8E D5 00 00 00  jle         $LN2
+  00000183: 80 7E 0C 2D        cmp         byte ptr [esi+0Ch],2Dh
+  00000187: 75 27              jne         000001B0
+  00000189: BA F3 FF FF FF     mov         edx,0FFFFFFF3h
+  0000018E: 8D 4E 0D           lea         ecx,[esi+0Dh]
+  00000191: 2B D6              sub         edx,esi
+  00000193: 8A 01              mov         al,byte ptr [ecx]
+  00000195: 88 41 FF           mov         byte ptr [ecx-1],al
+  00000198: 8D 49 01           lea         ecx,[ecx+1]
+  0000019B: 8D 04 0A           lea         eax,[edx+ecx]
+  0000019E: 3B 46 1C           cmp         eax,dword ptr [esi+1Ch]
+  000001A1: 72 F0              jb          00000193
+  000001A3: FF 4E 1C           dec         dword ptr [esi+1Ch]
+  000001A6: 5F                 pop         edi
+  000001A7: 5E                 pop         esi
+  000001A8: 5D                 pop         ebp
+  000001A9: C3                 ret
+  000001AA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000001B0: 8A 44 0E 0C        mov         al,byte ptr [esi+ecx+0Ch]
+  000001B4: 49                 dec         ecx
+  000001B5: 88 44 0E 0E        mov         byte ptr [esi+ecx+0Eh],al
+  000001B9: 79 F5              jns         000001B0
+  000001BB: FF 46 1C           inc         dword ptr [esi+1Ch]
+  000001BE: 5F                 pop         edi
+  000001BF: C6 46 0C 2D        mov         byte ptr [esi+0Ch],2Dh
+  000001C3: 5E                 pop         esi
+  000001C4: 5D                 pop         ebp
+  000001C5: C3                 ret
+$LN5:
+  000001C6: B8 30 00 00 00     mov         eax,30h
+  000001CB: 5F                 pop         edi
+  000001CC: 66 89 46 0C        mov         word ptr [esi+0Ch],ax
+  000001D0: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  000001D7: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  000001DE: 5E                 pop         esi
+  000001DF: 5D                 pop         ebp
+  000001E0: C3                 ret
+$LN3:
+  000001E1: 85 F6              test        esi,esi
+  000001E3: 74 73              je          $LN2
+  000001E5: 83 3E 00           cmp         dword ptr [esi],0
+  000001E8: 74 6E              je          $LN2
+  000001EA: 57                 push        edi
+  000001EB: E8 00 00 00 00     call        _FFX_DbgOverlay_InitEntryBase
+  000001F0: 6A 02              push        2
+  000001F2: E8 00 00 00 00     call        _FFX_DbgOverlay_PushFormat3Entry
+  000001F7: 6A 00              push        0
+  000001F9: 6A 50              push        50h
+  000001FB: 6A 50              push        50h
+  000001FD: 6A 50              push        50h
+  000001FF: E8 00 00 00 00     call        _FFX_DbgOverlay_PushColoredEntry
+  00000204: 6A 00              push        0
+  00000206: 6A 02              push        2
+  00000208: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  0000020D: 6A 00              push        0
+  0000020F: 6A 60              push        60h
+  00000211: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  00000216: 6A 0A              push        0Ah
+  00000218: 6A 60              push        60h
+  0000021A: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  0000021F: 6A 0A              push        0Ah
+  00000221: 6A 02              push        2
+  00000223: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  00000228: 6A 00              push        0
+  0000022A: 6A 02              push        2
+  0000022C: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  00000231: 83 C4 40           add         esp,40h
+  00000234: E8 00 00 00 00     call        _FFX_DbgOverlay_UpdateDisplayCount
+  00000239: 6A 06              push        6
+  0000023B: E8 00 00 00 00     call        _FFX_DbgOverlay_AddCursorX
+  00000240: 6A 02              push        2
+  00000242: E8 00 00 00 00     call        _FFX_DbgOverlay_AddCursorY
+  00000247: 8D 46 0C           lea         eax,[esi+0Ch]
+  0000024A: 50                 push        eax
+  0000024B: 68 00 00 00 00     push        offset ??_C@_04FIBCPIPH@?$CF10s?$AA@
+  00000250: E8 00 00 00 00     call        _FFX_Dbg_PrintfFormatted
+  00000255: 83 C4 10           add         esp,10h
+$LN2:
+  00000258: 5F                 pop         edi
+  00000259: 5E                 pop         esi
+  0000025A: 5D                 pop         ebp
+  0000025B: C3                 ret
+$LN49:
+  0000025C: 00 00              add         byte ptr [eax],al
+  0000025E: 00 00              add         byte ptr [eax],al
+  00000260: 00 00              add         byte ptr [eax],al
+  00000262: 00 00              add         byte ptr [eax],al
+  00000264: 00 00              add         byte ptr [eax],al
+  00000266: 00 00              add         byte ptr [eax],al
+  00000268: 00 00              add         byte ptr [eax],al
+  0000026A: 00 00              add         byte ptr [eax],al
+  0000026C: 00 00              add         byte ptr [eax],al
+  0000026E: 00 00              add         byte ptr [eax],al
+  00000270: 00 00              add         byte ptr [eax],al
+  00000272: 00 00              add         byte ptr [eax],al
+$LN45:
+  00000274: 00 05 01 05 05 02  add         byte ptr ds:[2050501h],al
+  0000027A: 03 05 05 05 05 05  add         eax,dword ptr ds:[5050505h]
+  00000280: 05 05 05 05 04     add         eax,4050505h
+  00000285: 8D 49 00           lea         ecx,[ecx]
+$LN50:
+  00000288: 00 00              add         byte ptr [eax],al
+  0000028A: 00 00              add         byte ptr [eax],al
+  0000028C: 00 00              add         byte ptr [eax],al
+  0000028E: 00 00              add         byte ptr [eax],al
+  00000290: 00 00              add         byte ptr [eax],al
+  00000292: 00 00              add         byte ptr [eax],al
+  00000294: 00 00              add         byte ptr [eax],al
+  00000296: 00 00              add         byte ptr [eax],al
+$LN46:
+  00000298: 00 00              add         byte ptr [eax],al
+  0000029A: 00 00              add         byte ptr [eax],al
+  0000029C: 00 00              add         byte ptr [eax],al
+  0000029E: 00 00              add         byte ptr [eax],al
+  000002A0: 00 00              add         byte ptr [eax],al
+  000002A2: 01 02              add         dword ptr [edx],eax
+  000002A4: 03
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           5 .rdata
+         2A5 .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085DCF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldDebug_Loose_85DCF0:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000007: 75 0D              jne         00000016
+  00000009: 68 00 00 00 00     push        offset ??_C@_0BD@HGLFHJIF@VoiceStartResult?$CB?6?$AA@
+  0000000E: E8 00 00 00 00     call        _printf
+  00000013: 83 C4 04           add         esp,4
+  00000016: 56                 push        esi
+  00000017: E8 00 00 00 00     call        _FFX_FieldDebug_GetEncounterMusicVolume
+  0000001C: 8B F0              mov         esi,eax
+  0000001E: E8 00 00 00 00     call        _FFX_FieldDebug_GetEncounterMusicId
+  00000023: 56                 push        esi
+  00000024: 50                 push        eax
+  00000025: E8 00 00 00 00     call        _FFX_Btl_Sound_SeqPauseCmd
+  0000002A: 33 C0              xor         eax,eax
+  0000002C: 39 05 00 00 00 00  cmp         dword ptr [_g_FieldDebugFlag_1325AA0],eax
+  00000032: 6A 03              push        3
+  00000034: FF 35 00 00 00 00  push        dword ptr [_dword_1325AB0]
+  0000003A: 0F 95 C0           setne       al
+  0000003D: A3 00 00 00 00     mov         dword ptr [_g_FieldDebugFlag_1325AA4],eax
+  00000042: E8 00 00 00 00     call        _FFX_PS3_SyncLookupByDualKey
+  00000047: 33 C9              xor         ecx,ecx
+  00000049: 83 C4 10           add         esp,10h
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 0F 95 C1           setne       cl
+  00000051: A3 00 00 00 00     mov         dword ptr [_dword_1325AA8],eax
+  00000056: 33 C0              xor         eax,eax
+  00000058: 5E                 pop         esi
+  00000059: 89 0D 00 00 00 00  mov         dword ptr [_g_FieldDebugFlag_1325AAC],ecx
+  0000005F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          13 .rdata
+          60 .text

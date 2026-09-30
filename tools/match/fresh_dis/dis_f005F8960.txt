@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F8960.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PhysicsBody_ReleaseBodyData@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 86 CC 00 00 00  mov         eax,dword ptr [esi+0CCh]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 0A              je          0000001B
+  00000011: 56                 push        esi
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _Phyre_Misc_601880
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 56                 push        esi
+  0000001C: E8 00 00 00 00     call        _Phyre_PhysicsBody_ReleaseResources
+  00000021: 83 C4 04           add         esp,4
+  00000024: F6 86 00 01 00 00  test        byte ptr [esi+100h],1
+            01
+  0000002B: 75 0E              jne         0000003B
+  0000002D: FF B6 00 01 00 00  push        dword ptr [esi+100h]
+  00000033: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000038: 83 C4 04           add         esp,4
+  0000003B: B0 01              mov         al,1
+  0000003D: 5E                 pop         esi
+  0000003E: 5D                 pop         ebp
+  0000003F: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          42 .text

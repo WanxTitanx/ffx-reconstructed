@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004A8A00.obj
+
+File Type: COFF OBJECT
+
+@PShaderParamDef_ManagedArray_Free_B@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 04 01        test        byte ptr [esi+4],1
+  00000007: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000000E: 75 0B              jne         0000001B
+  00000010: FF 76 04           push        dword ptr [esi+4]
+  00000013: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000001E: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000025: 85 C0              test        eax,eax
+  00000027: 78 11              js          0000003A
+  00000029: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000002E: 50                 push        eax
+  0000002F: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000032: E8 00 00 00 00     call        _Phyre_Stream_IsEOF
+  00000037: 83 C4 08           add         esp,8
+  0000003A: F6 46 04 01        test        byte ptr [esi+4],1
+  0000003E: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000045: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000004C: 75 0B              jne         00000059
+  0000004E: FF 76 04           push        dword ptr [esi+4]
+  00000051: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000056: 83 C4 04           add         esp,4
+  00000059: 5E                 pop         esi
+  0000005A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5B .text

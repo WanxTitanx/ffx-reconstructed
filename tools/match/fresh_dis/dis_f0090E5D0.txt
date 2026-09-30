@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0090E5D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_ProcessTextureDmaPacket:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B 72 0C           mov         esi,dword ptr [edx+0Ch]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7A 04           mov         edi,dword ptr [edx+4]
+  00000012: 8D 8B A4 76 02 00  lea         ecx,[ebx+276A4h]
+  00000018: 8D 87 00 C4 FF FF  lea         eax,[edi-3C00h]
+  0000001E: 25 FF FF FF 03     and         eax,3FFFFFFh
+  00000023: C1 E0 08           shl         eax,8
+  00000026: 03 C8              add         ecx,eax
+  00000028: 85 F6              test        esi,esi
+  0000002A: 0F 84 82 00 00 00  je          000000B2
+  00000030: 83 C6 ED           add         esi,0FFFFFFEDh
+  00000033: 74 51              je          00000086
+  00000035: 4E                 dec         esi
+  00000036: 0F 85 B3 00 00 00  jne         000000EF
+  0000003C: 8B 72 14           mov         esi,dword ptr [edx+14h]
+  0000003F: 0F AF 72 10        imul        esi,dword ptr [edx+10h]
+  00000043: 8B C6              mov         eax,esi
+  00000045: 99                 cdq
+  00000046: 83 E2 1F           and         edx,1Fh
+  00000049: 8D 3C 02           lea         edi,[edx+eax]
+  0000004C: C1 FF 05           sar         edi,5
+  0000004F: 85 FF              test        edi,edi
+  00000051: 0F 8E 98 00 00 00  jle         000000EF
+  00000057: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  0000005A: 83 C2 08           add         edx,8
+  0000005D: 8D 49 00           lea         ecx,[ecx]
+  00000060: 8B 42 F8           mov         eax,dword ptr [edx-8]
+  00000063: 89 01              mov         dword ptr [ecx],eax
+  00000065: 8B 42 FC           mov         eax,dword ptr [edx-4]
+  00000068: 89 41 04           mov         dword ptr [ecx+4],eax
+  0000006B: 8B 02              mov         eax,dword ptr [edx]
+  0000006D: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000070: 8B 72 04           mov         esi,dword ptr [edx+4]
+  00000073: 89 71 0C           mov         dword ptr [ecx+0Ch],esi
+  00000076: 8D 49 10           lea         ecx,[ecx+10h]
+  00000079: 8D 52 10           lea         edx,[edx+10h]
+  0000007C: 4F                 dec         edi
+  0000007D: 75 E1              jne         00000060
+  0000007F: 5F                 pop         edi
+  00000080: 8B C6              mov         eax,esi
+  00000082: 5E                 pop         esi
+  00000083: 5B                 pop         ebx
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+  00000086: 8D 87 00 C4 FF FF  lea         eax,[edi-3C00h]
+  0000008C: 25 FF FF FF 03     and         eax,3FFFFFFh
+  00000091: C1 E0 08           shl         eax,8
+  00000094: 05 A4 76 02 00     add         eax,276A4h
+  00000099: 03 C3              add         eax,ebx
+  0000009B: 50                 push        eax
+  0000009C: FF 75 10           push        dword ptr [ebp+10h]
+  0000009F: FF 72 14           push        dword ptr [edx+14h]
+  000000A2: FF 72 10           push        dword ptr [edx+10h]
+  000000A5: E8 00 00 00 00     call        _FFX_Graphics_ConvertTiledTexture
+  000000AA: 83 C4 10           add         esp,10h
+  000000AD: 5F                 pop         edi
+  000000AE: 5E                 pop         esi
+  000000AF: 5B                 pop         ebx
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+  000000B2: 8B 72 14           mov         esi,dword ptr [edx+14h]
+  000000B5: 0F AF 72 10        imul        esi,dword ptr [edx+10h]
+  000000B9: 8B C6              mov         eax,esi
+  000000BB: 99                 cdq
+  000000BC: 83 E2 07           and         edx,7
+  000000BF: 8D 3C 02           lea         edi,[edx+eax]
+  000000C2: C1 FF 03           sar         edi,3
+  000000C5: 85 FF              test        edi,edi
+  000000C7: 7E 26              jle         000000EF
+  000000C9: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  000000CC: 83 C2 08           add         edx,8
+  000000CF: 90                 nop
+  000000D0: 8B 42 F8           mov         eax,dword ptr [edx-8]
+  000000D3: 89 01              mov         dword ptr [ecx],eax
+  000000D5: 8B 42 FC           mov         eax,dword ptr [edx-4]
+  000000D8: 89 41 04           mov         dword ptr [ecx+4],eax
+  000000DB: 8B 02              mov         eax,dword ptr [edx]
+  000000DD: 89 41 08           mov         dword ptr [ecx+8],eax
+  000000E0: 8B 72 04           mov         esi,dword ptr [edx+4]
+  000000E3: 89 71 0C           mov         dword ptr [ecx+0Ch],esi
+  000000E6: 8D 49 10           lea         ecx,[ecx+10h]
+  000000E9: 8D 52 10           lea         edx,[edx+10h]
+  000000EC: 4F                 dec         edi
+  000000ED: 75 E1              jne         000000D0
+  000000EF: 5F                 pop         edi
+  000000F0: 8B C6              mov         eax,esi
+  000000F2: 5E                 pop         esi
+  000000F3: 5B                 pop         ebx
+  000000F4: 5D                 pop         ebp
+  000000F5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          F6 .text

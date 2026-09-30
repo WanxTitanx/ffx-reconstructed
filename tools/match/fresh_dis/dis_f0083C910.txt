@@ -1,0 +1,29 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083C910.obj
+
+File Type: COFF OBJECT
+
+_FFX_Draw_IsTextureValid:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_g_DrawUnkVar_1301980],0
+            00
+  00000007: 75 1C              jne         00000025
+  00000009: E8 00 00 00 00     call        _FFX_Magic_GetModuleHandle
+  0000000E: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000011: 74 0C              je          0000001F
+  00000013: E8 00 00 00 00     call        _FFX_Magic_GetCurrentMagicId
+  00000018: 3D A0 02 00 00     cmp         eax,2A0h
+  0000001D: 74 06              je          00000025
+  0000001F: B8 01 00 00 00     mov         eax,1
+  00000024: C3                 ret
+  00000025: 33 C0              xor         eax,eax
+  00000027: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          28 .text

@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0063D200.obj
+
+File Type: COFF OBJECT
+
+_FFX_AudioLight_SetShadeColorForSlots:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: 57                 push        edi
+  00000007: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 0F 84 7C 00 00 00  je          0000008E
+  00000012: 53                 push        ebx
+  00000013: 33 DB              xor         ebx,ebx
+  00000015: F7 07 FF FF FF 7F  test        dword ptr [edi],7FFFFFFFh
+  0000001B: 74 70              je          0000008D
+  0000001D: D9 45 14           fld         dword ptr [ebp+14h]
+  00000020: 56                 push        esi
+  00000021: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000024: D9 45 10           fld         dword ptr [ebp+10h]
+  00000027: DD 5D F0           fstp        qword ptr [ebp-10h]
+  0000002A: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000002D: DD 5D E8           fstp        qword ptr [ebp-18h]
+  00000030: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000033: 8B 34 98           mov         esi,dword ptr [eax+ebx*4]
+  00000036: E8 00 00 00 00     call        _FFX_AudioListenerContext_GetPtr
+  0000003B: DD 45 F8           fld         qword ptr [ebp-8]
+  0000003E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000041: 83 EC 18           sub         esp,18h
+  00000044: D9 45 08           fld         dword ptr [ebp+8]
+  00000047: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000004B: DD 45 F0           fld         qword ptr [ebp-10h]
+  0000004E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000051: D9 45 08           fld         dword ptr [ebp+8]
+  00000054: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000058: DD 45 E8           fld         qword ptr [ebp-18h]
+  0000005B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000005E: D9 45 08           fld         dword ptr [ebp+8]
+  00000061: DD 1C 24           fstp        qword ptr [esp]
+  00000064: 56                 push        esi
+  00000065: 50                 push        eax
+  00000066: E8 00 00 00 00     call        _FFX_AudioLight_SetCharacterShadeColor
+  0000006B: D9 45 14           fld         dword ptr [ebp+14h]
+  0000006E: 8B 07              mov         eax,dword ptr [edi]
+  00000070: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000073: D9 45 10           fld         dword ptr [ebp+10h]
+  00000076: 43                 inc         ebx
+  00000077: DD 5D F0           fstp        qword ptr [ebp-10h]
+  0000007A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000007F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000082: 83 C4 20           add         esp,20h
+  00000085: DD 5D E8           fstp        qword ptr [ebp-18h]
+  00000088: 3B D8              cmp         ebx,eax
+  0000008A: 72 A4              jb          00000030
+  0000008C: 5E                 pop         esi
+  0000008D: 5B                 pop         ebx
+  0000008E: 5F                 pop         edi
+  0000008F: 8B E5              mov         esp,ebp
+  00000091: 5D                 pop         ebp
+  00000092: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          93 .text

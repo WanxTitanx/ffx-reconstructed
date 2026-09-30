@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008B90F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_FormatNumberString:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 83 EC 30           sub         esp,30h
+  00000009: 85 C0              test        eax,eax
+  0000000B: 7F 16              jg          00000023
+  0000000D: FF 75 08           push        dword ptr [ebp+8]
+  00000010: 8D 45 13           lea         eax,[ebp+13h]
+  00000013: 68 00 00 00 00     push        offset ??_C@_02DPKJAMEF@?$CFd?$AA@
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _sprintf
+  0000001E: 83 C4 0C           add         esp,0Ch
+  00000021: EB 22              jmp         00000045
+  00000023: 50                 push        eax
+  00000024: 8D 45 F0           lea         eax,[ebp-10h]
+  00000027: 68 00 00 00 00     push        offset ??_C@_05MJNOPIPO@?$CF?$CF?$CFdd?$AA@
+  0000002C: 50                 push        eax
+  0000002D: E8 00 00 00 00     call        _sprintf
+  00000032: FF 75 08           push        dword ptr [ebp+8]
+  00000035: 8D 45 F0           lea         eax,[ebp-10h]
+  00000038: 50                 push        eax
+  00000039: 8D 45 13           lea         eax,[ebp+13h]
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _sprintf
+  00000042: 83 C4 18           add         esp,18h
+  00000045: 8D 4D 13           lea         ecx,[ebp+13h]
+  00000048: 57                 push        edi
+  00000049: 33 FF              xor         edi,edi
+  0000004B: 8D 51 01           lea         edx,[ecx+1]
+  0000004E: 8B FF              mov         edi,edi
+  00000050: 8A 01              mov         al,byte ptr [ecx]
+  00000052: 41                 inc         ecx
+  00000053: 84 C0              test        al,al
+  00000055: 75 F9              jne         00000050
+  00000057: 2B CA              sub         ecx,edx
+  00000059: 8D 45 D0           lea         eax,[ebp-30h]
+  0000005C: 03 C1              add         eax,ecx
+  0000005E: 8D 4D D0           lea         ecx,[ebp-30h]
+  00000061: 3B C1              cmp         eax,ecx
+  00000063: 74 75              je          000000DA
+  00000065: 53                 push        ebx
+  00000066: 56                 push        esi
+  00000067: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000006A: 8B D9              mov         ebx,ecx
+  0000006C: 8D 64 24 00        lea         esp,[esp]
+  00000070: 8A 4C 3B FF        mov         cl,byte ptr [ebx+edi-1]
+  00000074: 8D 41 D0           lea         eax,[ecx-30h]
+  00000077: 3C 09              cmp         al,9
+  00000079: 77 04              ja          0000007F
+  0000007B: 88 0E              mov         byte ptr [esi],cl
+  0000007D: EB 38              jmp         000000B7
+  0000007F: 80 F9 20           cmp         cl,20h
+  00000082: 75 34              jne         000000B8
+  00000084: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  00000089: 85 C0              test        eax,eax
+  0000008B: 75 0E              jne         0000009B
+  0000008D: E8 00 00 00 00     call        _FFX_ReturnZero
+  00000092: 85 C0              test        eax,eax
+  00000094: 75 05              jne         0000009B
+  00000096: C6 06 5E           mov         byte ptr [esi],5Eh
+  00000099: EB 1C              jmp         000000B7
+  0000009B: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  000000A0: 83 F8 0A           cmp         eax,0Ah
+  000000A3: 74 0F              je          000000B4
+  000000A5: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  000000AA: 83 F8 09           cmp         eax,9
+  000000AD: 74 05              je          000000B4
+  000000AF: C6 06 FE           mov         byte ptr [esi],0FEh
+  000000B2: EB 03              jmp         000000B7
+  000000B4: C6 06 3A           mov         byte ptr [esi],3Ah
+  000000B7: 46                 inc         esi
+  000000B8: 8D 4D 13           lea         ecx,[ebp+13h]
+  000000BB: 8D 51 01           lea         edx,[ecx+1]
+  000000BE: 8B FF              mov         edi,edi
+  000000C0: 8A 01              mov         al,byte ptr [ecx]
+  000000C2: 41                 inc         ecx
+  000000C3: 84 C0              test        al,al
+  000000C5: 75 F9              jne         000000C0
+  000000C7: 2B CA              sub         ecx,edx
+  000000C9: 47                 inc         edi
+  000000CA: 3B F9              cmp         edi,ecx
+  000000CC: 72 A2              jb          00000070
+  000000CE: 88 06              mov         byte ptr [esi],al
+  000000D0: 8A 45 0F           mov         al,byte ptr [ebp+0Fh]
+  000000D3: 5E                 pop         esi
+  000000D4: 5B                 pop         ebx
+  000000D5: 5F                 pop         edi
+  000000D6: 8B E5              mov         esp,ebp
+  000000D8: 5D                 pop         ebp
+  000000D9: C3                 ret
+  000000DA: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000DD: C6 00 00           mov         byte ptr [eax],0
+  000000E0: 8A 45 0F           mov         al,byte ptr [ebp+0Fh]
+  000000E3: 5F                 pop         edi
+  000000E4: 8B E5              mov         esp,ebp
+  000000E6: 5D                 pop         ebp
+  000000E7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           9 .rdata
+          E8 .text

@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00709FA0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_CheckEventStopped@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B DA              mov         ebx,edx
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 81 FB B5 00 00 00  cmp         ebx,0B5h
+  0000000F: 77 49              ja          0000005A
+  00000011: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000014: 56                 push        esi
+  00000015: 8B F3              mov         esi,ebx
+  00000017: C1 E6 04           shl         esi,4
+  0000001A: 2B F3              sub         esi,ebx
+  0000001C: 83 3C B0 00        cmp         dword ptr [eax+esi*4],0
+  00000020: 74 37              je          00000059
+  00000022: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000027: 68 99 02 00 00     push        299h
+  0000002C: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  00000031: 50                 push        eax
+  00000032: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000037: 83 C4 0C           add         esp,0Ch
+  0000003A: F6 C3 08           test        bl,8
+  0000003D: 74 1A              je          00000059
+  0000003F: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000042: 6A 00              push        0
+  00000044: FF 75 08           push        dword ptr [ebp+8]
+  00000047: C7 44 B0 08 01 00  mov         dword ptr [eax+esi*4+8],1
+            00 00
+  0000004F: 53                 push        ebx
+  00000050: 57                 push        edi
+  00000051: E8 00 00 00 00     call        _FFX_FmodMusic_FadeEventVolume
+  00000056: 83 C4 10           add         esp,10h
+  00000059: 5E                 pop         esi
+  0000005A: 5F                 pop         edi
+  0000005B: 33 C0              xor         eax,eax
+  0000005D: 5B                 pop         ebx
+  0000005E: 5D                 pop         ebp
+  0000005F: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          62 .text

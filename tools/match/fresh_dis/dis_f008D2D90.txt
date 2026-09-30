@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008D2D90.obj
+
+File Type: COFF OBJECT
+
+_FFX_CustomizeMenu_FindSkillSlot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 33 D2              xor         edx,edx
+  00000005: 39 55 0C           cmp         dword ptr [ebp+0Ch],edx
+  00000008: 75 04              jne         0000000E
+  0000000A: 33 C0              xor         eax,eax
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+  0000000E: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000011: 8A 01              mov         al,byte ptr [ecx]
+  00000013: 3C FF              cmp         al,0FFh
+  00000015: 74 F3              je          0000000A
+  00000017: 56                 push        esi
+  00000018: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  0000001B: 57                 push        edi
+  0000001C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000001F: 83 C1 04           add         ecx,4
+  00000022: 0F B6 C0           movzx       eax,al
+  00000025: 3B C7              cmp         eax,edi
+  00000027: 75 08              jne         00000031
+  00000029: 0F B6 41 FD        movzx       eax,byte ptr [ecx-3]
+  0000002D: 3B C6              cmp         eax,esi
+  0000002F: 74 10              je          00000041
+  00000031: 8A 01              mov         al,byte ptr [ecx]
+  00000033: 83 C1 04           add         ecx,4
+  00000036: 42                 inc         edx
+  00000037: 3C FF              cmp         al,0FFh
+  00000039: 75 E7              jne         00000022
+  0000003B: 5F                 pop         edi
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 5E                 pop         esi
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+  00000041: 5F                 pop         edi
+  00000042: 8B C2              mov         eax,edx
+  00000044: 5E                 pop         esi
+  00000045: 5D                 pop         ebp
+  00000046: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          47 .text

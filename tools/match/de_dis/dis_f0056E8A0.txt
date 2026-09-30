@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056E8A0.obj
+
+File Type: COFF OBJECT
+
+@PBitmapFontText_SetCharRotation@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B B9 B8 00 00 00  mov         edi,dword ptr [ecx+0B8h]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 75 08              jne         00000016
+  0000000E: 8D 47 09           lea         eax,[edi+9]
+  00000011: 5F                 pop         edi
+  00000012: 5D                 pop         ebp
+  00000013: C2 04 00           ret         4
+  00000016: 8B 81 C8 00 00 00  mov         eax,dword ptr [ecx+0C8h]
+  0000001C: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000001F: 3B 41 20           cmp         eax,dword ptr [ecx+20h]
+  00000022: 72 0A              jb          0000002E
+  00000024: B8 05 00 00 00     mov         eax,5
+  00000029: 5F                 pop         edi
+  0000002A: 5D                 pop         ebp
+  0000002B: C2 04 00           ret         4
+  0000002E: D9 45 08           fld         dword ptr [ebp+8]
+  00000031: 56                 push        esi
+  00000032: 8D 34 40           lea         esi,[eax+eax*2]
+  00000035: 03 F6              add         esi,esi
+  00000037: E8 00 00 00 00     call        __CIsin
+  0000003C: D9 5C F7 08        fstp        dword ptr [edi+esi*8+8]
+  00000040: D9 45 08           fld         dword ptr [ebp+8]
+  00000043: E8 00 00 00 00     call        __CIcos
+  00000048: D9 5C F7 0C        fstp        dword ptr [edi+esi*8+0Ch]
+  0000004C: D9 45 08           fld         dword ptr [ebp+8]
+  0000004F: 33 C0              xor         eax,eax
+  00000051: D9 5C F7 2C        fstp        dword ptr [edi+esi*8+2Ch]
+  00000055: 5E                 pop         esi
+  00000056: 5F                 pop         edi
+  00000057: 5D                 pop         ebp
+  00000058: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5B .text

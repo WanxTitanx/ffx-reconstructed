@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A72310.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicHost_CalcDrawRecBufSize:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 33 F6              xor         esi,esi
+  0000000B: 33 FF              xor         edi,edi
+  0000000D: 8D 58 10           lea         ebx,[eax+10h]
+  00000010: 66 39 70 04        cmp         word ptr [eax+4],si
+  00000014: 74 4B              je          00000061
+  00000016: FF 33              push        dword ptr [ebx]
+  00000018: E8 00 00 00 00     call        _Std_IdentityFunc
+  0000001D: 83 C0 20           add         eax,20h
+  00000020: 83 C4 04           add         esp,4
+  00000023: 80 78 01 FF        cmp         byte ptr [eax+1],0FFh
+  00000027: 74 29              je          00000052
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000030: 0F BF 50 02        movsx       edx,word ptr [eax+2]
+  00000034: 8D 0C 52           lea         ecx,[edx+edx*2]
+  00000037: C1 E1 08           shl         ecx,8
+  0000003A: 03 F1              add         esi,ecx
+  0000003C: 8D 0C D5 00 00 00  lea         ecx,[edx*8]
+            00
+  00000043: 2B CA              sub         ecx,edx
+  00000045: 80 7C 88 21 FF     cmp         byte ptr [eax+ecx*4+21h],0FFh
+  0000004A: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  0000004D: 8D 41 20           lea         eax,[ecx+20h]
+  00000050: 75 DE              jne         00000030
+  00000052: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000055: 47                 inc         edi
+  00000056: 0F B7 40 04        movzx       eax,word ptr [eax+4]
+  0000005A: 83 C3 10           add         ebx,10h
+  0000005D: 3B F8              cmp         edi,eax
+  0000005F: 7C B5              jl          00000016
+  00000061: 5F                 pop         edi
+  00000062: 8D 46 40           lea         eax,[esi+40h]
+  00000065: 5E                 pop         esi
+  00000066: 5B                 pop         ebx
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          69 .text

@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00797030.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_SetActorVisibilityPriority:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000009: 57                 push        edi
+  0000000A: 8B 3A              mov         edi,dword ptr [edx]
+  0000000C: 83 F9 03           cmp         ecx,3
+  0000000F: 7D 07              jge         00000018
+  00000011: 8A 45 10           mov         al,byte ptr [ebp+10h]
+  00000014: 88 44 0A 26        mov         byte ptr [edx+ecx+26h],al
+  00000018: 53                 push        ebx
+  00000019: 56                 push        esi
+  0000001A: BE DA FF FF FF     mov         esi,0FFFFFFDAh
+  0000001F: 33 DB              xor         ebx,ebx
+  00000021: 8D 4A 26           lea         ecx,[edx+26h]
+  00000024: 2B F2              sub         esi,edx
+  00000026: 8A 01              mov         al,byte ptr [ecx]
+  00000028: 3C FF              cmp         al,0FFh
+  0000002A: 7E 07              jle         00000033
+  0000002C: 0F BE D8           movsx       ebx,al
+  0000002F: 84 C0              test        al,al
+  00000031: 74 09              je          0000003C
+  00000033: 41                 inc         ecx
+  00000034: 8D 04 0E           lea         eax,[esi+ecx]
+  00000037: 83 F8 03           cmp         eax,3
+  0000003A: 7C EA              jl          00000026
+  0000003C: 88 5A 25           mov         byte ptr [edx+25h],bl
+  0000003F: 8A 44 13 2A        mov         al,byte ptr [ebx+edx+2Ah]
+  00000043: 5E                 pop         esi
+  00000044: 88 42 29           mov         byte ptr [edx+29h],al
+  00000047: 5B                 pop         ebx
+  00000048: 85 FF              test        edi,edi
+  0000004A: 74 0D              je          00000059
+  0000004C: 0F BE C8           movsx       ecx,al
+  0000004F: 51                 push        ecx
+  00000050: 57                 push        edi
+  00000051: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityEnabled
+  00000056: 83 C4 08           add         esp,8
+  00000059: 8B C7              mov         eax,edi
+  0000005B: 5F                 pop         edi
+  0000005C: 5D                 pop         ebp
+  0000005D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5E .text

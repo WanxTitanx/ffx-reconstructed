@@ -1,0 +1,140 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A47D50.obj
+
+File Type: COFF OBJECT
+
+_sub_A47D50:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  0000000C: 56                 push        esi
+  0000000D: 0F B6 81 50 16 01  movzx       eax,byte ptr [ecx+11650h]
+            00
+  00000014: D9 81 2C 16 01 00  fld         dword ptr [ecx+1162Ch]
+  0000001A: D8 A1 28 16 01 00  fsub        dword ptr [ecx+11628h]
+  00000020: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000023: 57                 push        edi
+  00000024: 33 FF              xor         edi,edi
+  00000026: DB 45 FC           fild        dword ptr [ebp-4]
+  00000029: 8D B1 C4 10 01 00  lea         esi,[ecx+110C4h]
+  0000002F: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000032: DD 45 F8           fld         qword ptr [ebp-8]
+  00000035: DC 35 00 00 00 00  fdiv        qword ptr [__real@4044000000000000]
+  0000003B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000003E: D8 4D FC           fmul        dword ptr [ebp-4]
+  00000041: D8 81 28 16 01 00  fadd        dword ptr [ecx+11628h]
+  00000047: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004D: D9 EE              fldz
+  0000004F: D9 06              fld         dword ptr [esi]
+  00000051: D8 D9              fcomp       st(1)
+  00000053: DF E0              fnstsw      ax
+  00000055: F6 C4 41           test        ah,41h
+  00000058: 75 25              jne         0000007F
+  0000005A: 66 8B 46 08        mov         ax,word ptr [esi+8]
+  0000005E: 66 3B 81 4E 16 01  cmp         ax,word ptr [ecx+1164Eh]
+            00
+  00000065: 75 18              jne         0000007F
+  00000067: DD D8              fstp        st(0)
+  00000069: 57                 push        edi
+  0000006A: D9 1E              fstp        dword ptr [esi]
+  0000006C: E8 00 00 00 00     call        _sub_A58080
+  00000071: D9 45 FC           fld         dword ptr [ebp-4]
+  00000074: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  0000007A: D9 EE              fldz
+  0000007C: 83 C4 04           add         esp,4
+  0000007F: 47                 inc         edi
+  00000080: 83 C6 50           add         esi,50h
+  00000083: 83 FF 08           cmp         edi,8
+  00000086: 7C C7              jl          0000004F
+  00000088: 8A 81 50 16 01 00  mov         al,byte ptr [ecx+11650h]
+  0000008E: DD D8              fstp        st(0)
+  00000090: DD D8              fstp        st(0)
+  00000092: 3C 14              cmp         al,14h
+  00000094: 73 76              jae         0000010C
+  00000096: 0F B6 C0           movzx       eax,al
+  00000099: 40                 inc         eax
+  0000009A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000009D: 83 F8 14           cmp         eax,14h
+  000000A0: 7C 67              jl          00000109
+  000000A2: E8 00 00 00 00     call        _FFX_Abmap_SaveMenuRuntimeToSphereGridState
+  000000A7: E8 00 00 00 00     call        _FFX_Abmap_RecomputePartyStatsAndLearnedMoves
+  000000AC: 8B 15 00 00 00 00  mov         edx,dword ptr [_dword_2305834]
+  000000B2: 0F B7 82 4E 16 01  movzx       eax,word ptr [edx+1164Eh]
+            00
+  000000B9: 8D 0C 80           lea         ecx,[eax+eax*4]
+  000000BC: 66 8B 82 4C 16 01  mov         ax,word ptr [edx+1164Ch]
+            00
+  000000C3: 66 89 84 CA 0E 08  mov         word ptr [edx+ecx*8+80Eh],ax
+            00 00
+  000000CB: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  000000D1: 0F B7 81 4E 16 01  movzx       eax,word ptr [ecx+1164Eh]
+            00
+  000000D8: 89 81 A8 16 01 00  mov         dword ptr [ecx+116A8h],eax
+  000000DE: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  000000E3: C7 80 AC 16 01 00  mov         dword ptr [eax+116ACh],1
+            01 00 00 00
+  000000ED: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  000000F2: C7 80 68 16 01 00  mov         dword ptr [eax+11668h],offset _unk_1693160
+            00 00 00 00
+  000000FC: E8 00 00 00 00     call        _FFX_Abmap_UpdateRuntimeLinkGeometry
+  00000101: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  00000107: EB 03              jmp         0000010C
+  00000109: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  0000010C: FE 81 50 16 01 00  inc         byte ptr [ecx+11650h]
+  00000112: 83 3D 00 00 00 00  cmp         dword ptr [_unk_1A8607E],0
+            00
+  00000119: 0F 85 8A 00 00 00  jne         000001A9
+  0000011F: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  00000125: D9 EE              fldz
+  00000127: 33 FF              xor         edi,edi
+  00000129: 8D B1 C4 10 01 00  lea         esi,[ecx+110C4h]
+  0000012F: D9 06              fld         dword ptr [esi]
+  00000131: D8 D9              fcomp       st(1)
+  00000133: DF E0              fnstsw      ax
+  00000135: F6 C4 41           test        ah,41h
+  00000138: 75 28              jne         00000162
+  0000013A: 66 8B 46 08        mov         ax,word ptr [esi+8]
+  0000013E: 66 3B 81 4E 16 01  cmp         ax,word ptr [ecx+1164Eh]
+            00
+  00000145: 75 1B              jne         00000162
+  00000147: DD D8              fstp        st(0)
+  00000149: 57                 push        edi
+  0000014A: D9 81 2C 16 01 00  fld         dword ptr [ecx+1162Ch]
+  00000150: D9 1E              fstp        dword ptr [esi]
+  00000152: E8 00 00 00 00     call        _sub_A58080
+  00000157: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  0000015D: D9 EE              fldz
+  0000015F: 83 C4 04           add         esp,4
+  00000162: 47                 inc         edi
+  00000163: 83 C6 50           add         esi,50h
+  00000166: 83 FF 08           cmp         edi,8
+  00000169: 7C C4              jl          0000012F
+  0000016B: 8B 81 B0 15 01 00  mov         eax,dword ptr [ecx+115B0h]
+  00000171: DD D8              fstp        st(0)
+  00000173: 89 81 A8 15 01 00  mov         dword ptr [ecx+115A8h],eax
+  00000179: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  0000017E: C7 80 B0 15 01 00  mov         dword ptr [eax+115B0h],0
+            00 00 00 00
+  00000188: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_2305834]
+  0000018E: 8B 81 B4 15 01 00  mov         eax,dword ptr [ecx+115B4h]
+  00000194: 89 81 AC 15 01 00  mov         dword ptr [ecx+115ACh],eax
+  0000019A: A1 00 00 00 00     mov         eax,dword ptr [_dword_2305834]
+  0000019F: C7 80 B4 15 01 00  mov         dword ptr [eax+115B4h],0
+            00 00 00 00
+  000001A9: 5F                 pop         edi
+  000001AA: 5E                 pop         esi
+  000001AB: 8B E5              mov         esp,ebp
+  000001AD: 5D                 pop         ebp
+  000001AE: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+         1AF .text

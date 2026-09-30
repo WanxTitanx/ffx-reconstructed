@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00874050.obj
+
+File Type: COFF OBJECT
+
+_FFX_Movie_FreeBuffers:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_stop_prog
+  00000009: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  0000000D: 8B F0              mov         esi,eax
+  0000000F: 74 4C              je          0000005D
+  00000011: A1 00 00 00 00     mov         eax,dword ptr [_g_UnkVar_13270D8]
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 13              je          0000002D
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _FFX_File_FreeBuffer
+  00000020: 83 C4 04           add         esp,4
+  00000023: C7 05 00 00 00 00  mov         dword ptr [_g_UnkVar_13270D8],0
+            00 00 00 00
+  0000002D: A1 00 00 00 00     mov         eax,dword ptr [_g_UnkVar_13270D4]
+  00000032: 85 C0              test        eax,eax
+  00000034: 74 13              je          00000049
+  00000036: 50                 push        eax
+  00000037: E8 00 00 00 00     call        _FFX_File_FreeBuffer
+  0000003C: 83 C4 04           add         esp,4
+  0000003F: C7 05 00 00 00 00  mov         dword ptr [_g_UnkVar_13270D4],0
+            00 00 00 00
+  00000049: 85 F6              test        esi,esi
+  0000004B: 74 0E              je          0000005B
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _FFX_File_FreeBuffer
+  00000053: 83 C4 04           add         esp,4
+  00000056: 33 C0              xor         eax,eax
+  00000058: 5E                 pop         esi
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: 8B C6              mov         eax,esi
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

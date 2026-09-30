@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F5130.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PBitmapFontText_FreeSegments:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 85 DB              test        ebx,ebx
+  00000009: 74 45              je          00000050
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 33              je          00000046
+  00000013: 56                 push        esi
+  00000014: 8D 73 1C           lea         esi,[ebx+1Ch]
+  00000017: 8B 06              mov         eax,dword ptr [esi]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 78 15              js          00000032
+  0000001D: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000022: 83 F8 01           cmp         eax,1
+  00000025: 76 0B              jbe         00000032
+  00000027: FF 76 04           push        dword ptr [esi+4]
+  0000002A: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002F: 83 C4 04           add         esp,4
+  00000032: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000039: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000003F: 83 C6 24           add         esi,24h
+  00000042: 4F                 dec         edi
+  00000043: 75 D2              jne         00000017
+  00000045: 5E                 pop         esi
+  00000046: 53                 push        ebx
+  00000047: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: 5F                 pop         edi
+  00000050: 5B                 pop         ebx
+  00000051: 5D                 pop         ebp
+  00000052: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          53 .text

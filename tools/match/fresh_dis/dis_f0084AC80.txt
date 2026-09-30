@@ -1,0 +1,216 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0084AC80.obj
+
+File Type: COFF OBJECT
+
+_FFX_DbgOverlay_TraverseAndRenderNodes:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000000F: 85 F6              test        esi,esi
+  00000011: 0F 84 33 02 00 00  je          0000024A
+  00000017: FF 36              push        dword ptr [esi]
+  00000019: E8 00 00 00 00     call        _FFX_DbgOverlay_TraverseAndRenderNodes
+  0000001E: 8B 86 88 00 00 00  mov         eax,dword ptr [esi+88h]
+  00000024: 83 C4 04           add         esp,4
+  00000027: A8 02              test        al,2
+  00000029: 0F 85 1B 02 00 00  jne         0000024A
+  0000002F: A8 10              test        al,10h
+  00000031: 74 27              je          0000005A
+  00000033: 66 83 7E 20 00     cmp         word ptr [esi+20h],0
+  00000038: 75 20              jne         0000005A
+  0000003A: 66 83 7E 18 08     cmp         word ptr [esi+18h],8
+  0000003F: 7D 19              jge         0000005A
+  00000041: 83 E0 EF           and         eax,0FFFFFFEFh
+  00000044: 83 C8 02           or          eax,2
+  00000047: 89 86 88 00 00 00  mov         dword ptr [esi+88h],eax
+  0000004D: A8 20              test        al,20h
+  0000004F: 74 09              je          0000005A
+  00000051: 56                 push        esi
+  00000052: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  00000057: 83 C4 04           add         esp,4
+  0000005A: F6 86 88 00 00 00  test        byte ptr [esi+88h],8
+            08
+  00000061: 74 37              je          0000009A
+  00000063: 0F B7 46 20        movzx       eax,word ptr [esi+20h]
+  00000067: 66 3B 46 18        cmp         ax,word ptr [esi+18h]
+  0000006B: 7D 04              jge         00000071
+  0000006D: 66 89 46 18        mov         word ptr [esi+18h],ax
+  00000071: 0F B7 56 22        movzx       edx,word ptr [esi+22h]
+  00000075: 66 3B 56 1A        cmp         dx,word ptr [esi+1Ah]
+  00000079: 7D 04              jge         0000007F
+  0000007B: 66 89 56 1A        mov         word ptr [esi+1Ah],dx
+  0000007F: 0F B7 4E 18        movzx       ecx,word ptr [esi+18h]
+  00000083: 98                 cwde
+  00000084: 3B C1              cmp         eax,ecx
+  00000086: 75 12              jne         0000009A
+  00000088: 0F B7 4E 1A        movzx       ecx,word ptr [esi+1Ah]
+  0000008C: 0F BF C2           movsx       eax,dx
+  0000008F: 3B C1              cmp         eax,ecx
+  00000091: 75 07              jne         0000009A
+  00000093: 83 A6 88 00 00 00  and         dword ptr [esi+88h],0FFFFFFF7h
+            F7
+  0000009A: 0F BF 86 8E 00 00  movsx       eax,word ptr [esi+8Eh]
+            00
+  000000A1: 53                 push        ebx
+  000000A2: 57                 push        edi
+  000000A3: 50                 push        eax
+  000000A4: E8 00 00 00 00     call        _FFX_DbgOverlay_SetFontData
+  000000A9: 8B 86 88 00 00 00  mov         eax,dword ptr [esi+88h]
+  000000AF: 83 C4 04           add         esp,4
+  000000B2: A8 01              test        al,1
+  000000B4: 0F 84 A0 00 00 00  je          0000015A
+  000000BA: 0F BF 4E 16        movsx       ecx,word ptr [esi+16h]
+  000000BE: 0F BF 56 14        movsx       edx,word ptr [esi+14h]
+  000000C2: 8D 41 09           lea         eax,[ecx+9]
+  000000C5: 50                 push        eax
+  000000C6: 0F BF 46 18        movsx       eax,word ptr [esi+18h]
+  000000CA: 51                 push        ecx
+  000000CB: 03 C2              add         eax,edx
+  000000CD: 50                 push        eax
+  000000CE: 52                 push        edx
+  000000CF: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextLine
+  000000D4: 8D 46 0C           lea         eax,[esi+0Ch]
+  000000D7: 6A 00              push        0
+  000000D9: 50                 push        eax
+  000000DA: E8 00 00 00 00     call        _FFX_Field_RenderUpdate
+  000000DF: 56                 push        esi
+  000000E0: E8 00 00 00 00     call        _FFX_DbgOverlay_InitTextContext
+  000000E5: 8B 46 7C           mov         eax,dword ptr [esi+7Ch]
+  000000E8: 83 C4 1C           add         esp,1Ch
+  000000EB: 85 C0              test        eax,eax
+  000000ED: 74 0D              je          000000FC
+  000000EF: 6A 00              push        0
+  000000F1: 68 11 80 00 00     push        8011h
+  000000F6: 56                 push        esi
+  000000F7: FF D0              call        eax
+  000000F9: 83 C4 0C           add         esp,0Ch
+  000000FC: 56                 push        esi
+  000000FD: E8 00 00 00 00     call        _FFX_DbgOverlay_InitTextContext
+  00000102: 33 FF              xor         edi,edi
+  00000104: 83 C4 04           add         esp,4
+  00000107: 39 BE 90 00 00 00  cmp         dword ptr [esi+90h],edi
+  0000010D: 0F 8E 1F 01 00 00  jle         00000232
+  00000113: 33 DB              xor         ebx,ebx
+  00000115: EB 09              jmp         00000120
+  00000117: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  0000011E: 8B FF              mov         edi,edi
+  00000120: 8B 96 94 00 00 00  mov         edx,dword ptr [esi+94h]
+  00000126: 03 D3              add         edx,ebx
+  00000128: F6 42 40 01        test        byte ptr [edx+40h],1
+  0000012C: 75 1B              jne         00000149
+  0000012E: 66 83 7A 2C 06     cmp         word ptr [edx+2Ch],6
+  00000133: 75 14              jne         00000149
+  00000135: 0F BF 46 16        movsx       eax,word ptr [esi+16h]
+  00000139: 0F BF 4E 14        movsx       ecx,word ptr [esi+14h]
+  0000013D: 56                 push        esi
+  0000013E: 50                 push        eax
+  0000013F: 51                 push        ecx
+  00000140: 52                 push        edx
+  00000141: E8 00 00 00 00     call        _FFX_Field_GridNavigationRender
+  00000146: 83 C4 10           add         esp,10h
+  00000149: 47                 inc         edi
+  0000014A: 83 C3 44           add         ebx,44h
+  0000014D: 3B BE 90 00 00 00  cmp         edi,dword ptr [esi+90h]
+  00000153: 72 CB              jb          00000120
+  00000155: E9 D8 00 00 00     jmp         00000232
+  0000015A: 84 C0              test        al,al
+  0000015C: 79 18              jns         00000176
+  0000015E: E8 00 00 00 00     call        _FFX_DbgOverlay_GetAlpha128
+  00000163: 0F BF 8E 8C 00 00  movsx       ecx,word ptr [esi+8Ch]
+            00
+  0000016A: 51                 push        ecx
+  0000016B: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000016E: E8 00 00 00 00     call        _FFX_DbgOverlay_SetAlpha128
+  00000173: 83 C4 04           add         esp,4
+  00000176: 6A 03              push        3
+  00000178: 8D 7E 0C           lea         edi,[esi+0Ch]
+  0000017B: 6A 06              push        6
+  0000017D: 57                 push        edi
+  0000017E: E8 00 00 00 00     call        _FFX_DbgOverlay_RenderGridNavigationData
+  00000183: 6A 00              push        0
+  00000185: E8 00 00 00 00     call        _FFX_DbgOverlay_SetNodePutFunc
+  0000018A: 6A 00              push        0
+  0000018C: 57                 push        edi
+  0000018D: E8 00 00 00 00     call        _FFX_Field_RenderUpdate
+  00000192: 6A 01              push        1
+  00000194: E8 00 00 00 00     call        _FFX_DbgOverlay_SetNodePutFunc
+  00000199: 0F BF 4E 16        movsx       ecx,word ptr [esi+16h]
+  0000019D: 0F BF 46 1A        movsx       eax,word ptr [esi+1Ah]
+  000001A1: 0F BF 56 14        movsx       edx,word ptr [esi+14h]
+  000001A5: 03 C1              add         eax,ecx
+  000001A7: 50                 push        eax
+  000001A8: 0F BF 46 18        movsx       eax,word ptr [esi+18h]
+  000001AC: 51                 push        ecx
+  000001AD: 03 C2              add         eax,edx
+  000001AF: 50                 push        eax
+  000001B0: 52                 push        edx
+  000001B1: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextLine
+  000001B6: 56                 push        esi
+  000001B7: E8 00 00 00 00     call        _FFX_DbgOverlay_InitTextContext
+  000001BC: 8B 46 7C           mov         eax,dword ptr [esi+7Ch]
+  000001BF: 83 C4 30           add         esp,30h
+  000001C2: 85 C0              test        eax,eax
+  000001C4: 74 0D              je          000001D3
+  000001C6: 6A 00              push        0
+  000001C8: 68 11 80 00 00     push        8011h
+  000001CD: 56                 push        esi
+  000001CE: FF D0              call        eax
+  000001D0: 83 C4 0C           add         esp,0Ch
+  000001D3: 56                 push        esi
+  000001D4: E8 00 00 00 00     call        _FFX_DbgOverlay_InitTextContext
+  000001D9: 33 FF              xor         edi,edi
+  000001DB: 83 C4 04           add         esp,4
+  000001DE: 39 BE 90 00 00 00  cmp         dword ptr [esi+90h],edi
+  000001E4: 7E 38              jle         0000021E
+  000001E6: 33 DB              xor         ebx,ebx
+  000001E8: EB 06              jmp         000001F0
+  000001EA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000001F0: 8B 96 94 00 00 00  mov         edx,dword ptr [esi+94h]
+  000001F6: 03 D3              add         edx,ebx
+  000001F8: F6 42 40 01        test        byte ptr [edx+40h],1
+  000001FC: 75 14              jne         00000212
+  000001FE: 0F BF 46 16        movsx       eax,word ptr [esi+16h]
+  00000202: 0F BF 4E 14        movsx       ecx,word ptr [esi+14h]
+  00000206: 56                 push        esi
+  00000207: 50                 push        eax
+  00000208: 51                 push        ecx
+  00000209: 52                 push        edx
+  0000020A: E8 00 00 00 00     call        _FFX_Field_GridNavigationRender
+  0000020F: 83 C4 10           add         esp,10h
+  00000212: 47                 inc         edi
+  00000213: 83 C3 44           add         ebx,44h
+  00000216: 3B BE 90 00 00 00  cmp         edi,dword ptr [esi+90h]
+  0000021C: 72 D2              jb          000001F0
+  0000021E: 80 BE 88 00 00 00  cmp         byte ptr [esi+88h],0
+            00
+  00000225: 7D 0B              jge         00000232
+  00000227: FF 75 FC           push        dword ptr [ebp-4]
+  0000022A: E8 00 00 00 00     call        _FFX_DbgOverlay_SetAlpha128
+  0000022F: 83 C4 04           add         esp,4
+  00000232: 68 A0 01 00 00     push        1A0h
+  00000237: 6A 00              push        0
+  00000239: 68 00 02 00 00     push        200h
+  0000023E: 6A 00              push        0
+  00000240: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextLine
+  00000245: 83 C4 10           add         esp,10h
+  00000248: 5F                 pop         edi
+  00000249: 5B                 pop         ebx
+  0000024A: 5E                 pop         esi
+  0000024B: 8B E5              mov         esp,ebp
+  0000024D: 5D                 pop         ebp
+  0000024E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         24F .text

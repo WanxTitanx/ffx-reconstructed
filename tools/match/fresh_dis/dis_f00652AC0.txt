@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00652AC0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Render_CalcAspectRatio@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: E8 00 00 00 00     call        _GetGlobalSystemContext
+  0000000E: 8B 80 6C 02 00 00  mov         eax,dword ptr [eax+26Ch]
+  00000014: 89 86 D0 0D 01 00  mov         dword ptr [esi+10DD0h],eax
+  0000001A: E8 00 00 00 00     call        _GetGlobalSystemContext
+  0000001F: DB 86 D0 0D 01 00  fild        dword ptr [esi+10DD0h]
+  00000025: 8B 80 70 02 00 00  mov         eax,dword ptr [eax+270h]
+  0000002B: 89 86 D4 0D 01 00  mov         dword ptr [esi+10DD4h],eax
+  00000031: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  00000034: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000037: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  0000003A: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000003D: DB 45 FC           fild        dword ptr [ebp-4]
+  00000040: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000043: D9 45 F8           fld         dword ptr [ebp-8]
+  00000046: D9 C0              fld         st(0)
+  00000048: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004B: D9 C0              fld         st(0)
+  0000004D: DE FA              fdivp       st(2),st
+  0000004F: D9 C9              fxch        st(1)
+  00000051: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000054: D9 45 F8           fld         dword ptr [ebp-8]
+  00000057: DC 1D 00 00 00 00  fcomp       qword ptr [__real@3ffc71c71ffffffe]
+  0000005D: DF E0              fnstsw      ax
+  0000005F: F6 C4 41           test        ah,41h
+  00000062: 7A 1E              jp          00000082
+  00000064: DD D8              fstp        st(0)
+  00000066: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fb0000000000000]
+  0000006C: DC 0D 00 00 00 00  fmul        qword ptr [__real@4022000000000000]
+  00000072: E8 00 00 00 00     call        __ftol2_sse
+  00000077: 89 86 D4 0D 01 00  mov         dword ptr [esi+10DD4h],eax
+  0000007D: 5E                 pop         esi
+  0000007E: 8B E5              mov         esp,ebp
+  00000080: 5D                 pop         ebp
+  00000081: C3                 ret
+  00000082: DD D9              fstp        st(1)
+  00000084: DC 35 00 00 00 00  fdiv        qword ptr [__real@4022000000000000]
+  0000008A: DC 0D 00 00 00 00  fmul        qword ptr [__real@4030000000000000]
+  00000090: E8 00 00 00 00     call        __ftol2_sse
+  00000095: 89 86 D0 0D 01 00  mov         dword ptr [esi+10DD0h],eax
+  0000009B: 5E                 pop         esi
+  0000009C: 8B E5              mov         esp,ebp
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          20 .rdata
+          A0 .text

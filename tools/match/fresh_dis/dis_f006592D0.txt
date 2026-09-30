@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006592D0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Sort_CompareByDistance:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: DD 05 00 00 00 00  fld         qword ptr [__real@bff0000000000000]
+  0000000C: 8B 08              mov         ecx,dword ptr [eax]
+  0000000E: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000011: 8B 00              mov         eax,dword ptr [eax]
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 08              je          0000001F
+  00000017: D9 80 DC 00 00 00  fld         dword ptr [eax+0DCh]
+  0000001D: EB 06              jmp         00000025
+  0000001F: D9 05 00 00 00 00  fld         dword ptr [__real@bf800000]
+  00000025: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000028: 85 C9              test        ecx,ecx
+  0000002A: 74 08              je          00000034
+  0000002C: DD D8              fstp        st(0)
+  0000002E: D9 81 DC 00 00 00  fld         dword ptr [ecx+0DCh]
+  00000034: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000037: D9 45 08           fld         dword ptr [ebp+8]
+  0000003A: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000003D: DE D9              fcompp
+  0000003F: DF E0              fnstsw      ax
+  00000041: F6 C4 01           test        ah,1
+  00000044: 75 07              jne         0000004D
+  00000046: B8 01 00 00 00     mov         eax,1
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+  0000004D: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000050: 5D                 pop         ebp
+  00000051: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          52 .text

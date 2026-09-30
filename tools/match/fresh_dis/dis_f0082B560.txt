@@ -1,0 +1,34 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082B560.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_SetVisibility:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 88 81 80 01 00 00  mov         byte ptr [ecx+180h],al
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 12              je          00000025
+  00000013: 6A 00              push        0
+  00000015: FF B1 30 08 00 00  push        dword ptr [ecx+830h]
+  0000001B: E8 00 00 00 00     call        _SetVisibilityStateOnObjects
+  00000020: 83 C4 08           add         esp,8
+  00000023: 5D                 pop         ebp
+  00000024: C3                 ret
+  00000025: 6A 01              push        1
+  00000027: FF B1 30 08 00 00  push        dword ptr [ecx+830h]
+  0000002D: E8 00 00 00 00     call        _SetVisibilityStateOnObjects
+  00000032: 83 C4 08           add         esp,8
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

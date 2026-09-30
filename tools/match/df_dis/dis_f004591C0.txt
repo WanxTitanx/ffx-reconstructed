@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004591C0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PArrayPoolRef_Init:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 33 FF              xor         edi,edi
+  0000000A: 85 DB              test        ebx,ebx
+  0000000C: 74 1F              je          0000002D
+  0000000E: 56                 push        esi
+  0000000F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000012: 85 F6              test        esi,esi
+  00000014: 74 0E              je          00000024
+  00000016: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000001C: E8 00 00 00 00     call        _Phyre_GetDefaultPool
+  00000021: 89 46 04           mov         dword ptr [esi+4],eax
+  00000024: 47                 inc         edi
+  00000025: 83 C6 08           add         esi,8
+  00000028: 3B FB              cmp         edi,ebx
+  0000002A: 72 E6              jb          00000012
+  0000002C: 5E                 pop         esi
+  0000002D: 5F                 pop         edi
+  0000002E: 5B                 pop         ebx
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          31 .text

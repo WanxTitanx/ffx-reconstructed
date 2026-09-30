@@ -1,77 +1,61 @@
-# Corrupted artifact from previous .gitignore corruption
-NUL
-nul
-NUL.obj
-
-# Build output
-build/
+# Local build products and environments
+**/build/
 build_test/
+**/__pycache__/
+.pytest_cache/
+.venv*/
+**/.venv*/
+*.pyc
 *.obj
+*.exe
+*.dll
+*.pdb
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+*.i64
+*.bak*
 *.log
+*.trace
+*.dmp
 *.tlog
 *.recipe
-*.exe
+NUL
+nul
 CMakeCache.txt
 CMakeFiles/
+.vs/
 Release/
 Debug/
-.vs/
 
-# IDA extraction scripts (not part of the C project)
-*.py
-scripts/
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.netrc
 
-# Generated extraction data
-_pages/
-pseudocode/
-data/
-assets/
-docs/
-test/
-
-# Extraction metadata (regenerated per-session)
-_page_0.json
-all_functions.json
-filtered_functions_*.json
-raw_response.json
-
-# Per-session logs and test artifacts
-ffx_*.log
-test_size.cpp
-test_size.obj
-build_output.txt
-
-# Third-party includes bundled in extraction (not part of the project)
-third_party/
-include/stb_truetype.h
-
-# Compressed archives — too large for git, keep local only
-# (PS3 SDKs, PhyreEngine bundles, tool installers in EnginesExtras/)
+# SDKs, external binary tools, game installs and private backups
+ExtrasExtras/
+SuperExtra/
+EnginesExtras/
+EnginesTORRENT/
+extras/
+steam_install/
+work/
+tools/sdks/
+tools/ghidra/
+tools/ghidra*.zip
+tools/GameExtractor/
+tools/x64dbg/
+tools/class_informer/
+tools/phyreengine/
+*.iso
 *.7z
 *.rar
-*.iso
-*.tgz
-*.tar
-*.bz2
-*.xz
-# ZIP: block in EnginesExtras (PS3 SDK install files) and tools root
-# but preserve tracked zips in tools/ghidra/, tools/x64dbg/, tools/class_informer/
-EnginesExtras/**/*.zip
-tools/*.zip
-
-# Torrent download metadata + padding (not source, just download artifacts)
-EnginesTORRENT/
-
-# PS3 SDK installers + extracted trees (35GB, available upstream, not source)
-# PhyreEngine SDK already copied to tools/phyreengine/ — that's the only piece we track
-EnginesExtras/
-
-# Local SDK installers (VS2012, DirectX SDK, Windows SDK, CG Toolkit, etc)
-# These are build environment tools, not project source
-tools/sdks/
-
-# Extra SDKs / installers dump (user-managed, not source)
-# Contains: CG Toolkit, Windows SDK ISOs, VS2012 ISO, DirectX SDK, etc
-ExtrasExtras/
-tools/ghidra.zip
-tools/ghidra_12.1.2_PUBLIC/

@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00904A70.obj
+
+File Type: COFF OBJECT
+
+_FFX_Title_DrawCopyrightScreen:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 83 F8 20           cmp         eax,20h
+  00000009: 7C 11              jl          0000001C
+  0000000B: 3D 10 01 00 00     cmp         eax,110h
+  00000010: 7C 1E              jl          00000030
+  00000012: A1 90 59 1C 06     mov         eax,dword ptr ds:[061C5990h]
+  00000017: 83 E8 04           sub         eax,4
+  0000001A: EB 19              jmp         00000035
+  0000001C: A1 90 59 1C 06     mov         eax,dword ptr ds:[061C5990h]
+  00000021: 83 C0 04           add         eax,4
+  00000024: A3 90 59 1C 06     mov         dword ptr ds:[061C5990h],eax
+  00000029: 3D 80 00 00 00     cmp         eax,80h
+  0000002E: 76 0A              jbe         0000003A
+  00000030: B8 80 00 00 00     mov         eax,80h
+  00000035: A3 90 59 1C 06     mov         dword ptr ds:[061C5990h],eax
+  0000003A: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  0000003F: FF 75 08           push        dword ptr [ebp+8]
+  00000042: E8 00 00 00 00     call        _FFX_Menu_RenderEnqueue
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

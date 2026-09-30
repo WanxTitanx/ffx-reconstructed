@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00692A80.obj
+
+File Type: COFF OBJECT
+
+@PostProcessParamValue_Destructor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 7C 01        test        byte ptr [esi+7Ch],1
+  00000007: 75 0B              jne         00000014
+  00000009: FF 76 7C           push        dword ptr [esi+7Ch]
+  0000000C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000011: 83 C4 04           add         esp,4
+  00000014: 8B 46 74           mov         eax,dword ptr [esi+74h]
+  00000017: 85 C0              test        eax,eax
+  00000019: 78 11              js          0000002C
+  0000001B: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000020: 50                 push        eax
+  00000021: FF 76 78           push        dword ptr [esi+78h]
+  00000024: E8 00 00 00 00     call        _Phyre_Stream_IsEOF
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 8D 46 14           lea         eax,[esi+14h]
+  0000002F: 50                 push        eax
+  00000030: C7 46 78 00 00 00  mov         dword ptr [esi+78h],0
+            00
+  00000037: C7 46 74 00 00 00  mov         dword ptr [esi+74h],0
+            00
+  0000003E: E8 00 00 00 00     call        _Phyre_String_Destructor
+  00000043: 83 C4 04           add         esp,4
+  00000046: 5E                 pop         esi
+  00000047: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          48 .text

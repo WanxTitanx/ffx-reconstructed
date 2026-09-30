@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A5950.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Battle_SetMotionValue_INTRET:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 56                 push        esi
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000013: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000016: DB 45 FC           fild        dword ptr [ebp-4]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 79 06              jns         00000023
+  0000001D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000023: 56                 push        esi
+  00000024: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000027: 57                 push        edi
+  00000028: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000002D: 57                 push        edi
+  0000002E: 8B F0              mov         esi,eax
+  00000030: E8 00 00 00 00     call        _FFX_Field_GetScriptSelfActorIndexPtr
+  00000035: D9 45 FC           fld         dword ptr [ebp-4]
+  00000038: 0F B6 00           movzx       eax,byte ptr [eax]
+  0000003B: DD 5C 24 0C        fstp        qword ptr [esp+0Ch]
+  0000003F: 83 C4 0C           add         esp,0Ch
+  00000042: 56                 push        esi
+  00000043: 50                 push        eax
+  00000044: E8 00 00 00 00     call        _FFX_Battle_SetActorMotionParam
+  00000049: 83 C4 10           add         esp,10h
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: 5F                 pop         edi
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          54 .text

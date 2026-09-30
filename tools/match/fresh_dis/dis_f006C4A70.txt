@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C4A70.obj
+
+File Type: COFF OBJECT
+
+@FFX_Heap_Loose_6C4A70@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 8B 3E              mov         edi,dword ptr [esi]
+  00000007: 8A DA              mov         bl,dl
+  00000009: 85 FF              test        edi,edi
+  0000000B: 74 15              je          00000022
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _FFX_GaussianBlur_DestroyStruct
+  00000013: 57                 push        edi
+  00000014: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000019: 83 C4 08           add         esp,8
+  0000001C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000022: F6 C3 01           test        bl,1
+  00000025: 74 09              je          00000030
+  00000027: 56                 push        esi
+  00000028: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000002D: 83 C4 04           add         esp,4
+  00000030: 5F                 pop         edi
+  00000031: 8B C6              mov         eax,esi
+  00000033: 5E                 pop         esi
+  00000034: 5B                 pop         ebx
+  00000035: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          36 .text

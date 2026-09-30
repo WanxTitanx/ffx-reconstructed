@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007CF920.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_Loose_7CF920:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 00 01 00 00  sub         esp,100h
+  00000009: 33 D2              xor         edx,edx
+  0000000B: 53                 push        ebx
+  0000000C: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000F: 56                 push        esi
+  00000010: 8A 03              mov         al,byte ptr [ebx]
+  00000012: 57                 push        edi
+  00000013: 8D 4B 01           lea         ecx,[ebx+1]
+  00000016: 3C FF              cmp         al,0FFh
+  00000018: 74 1A              je          00000034
+  0000001A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000020: 84 C0              test        al,al
+  00000022: 74 10              je          00000034
+  00000024: 3C 0D              cmp         al,0Dh
+  00000026: 74 0C              je          00000034
+  00000028: 3C 0A              cmp         al,0Ah
+  0000002A: 74 08              je          00000034
+  0000002C: 8A 01              mov         al,byte ptr [ecx]
+  0000002E: 42                 inc         edx
+  0000002F: 41                 inc         ecx
+  00000030: 3C FF              cmp         al,0FFh
+  00000032: 75 EC              jne         00000020
+  00000034: 8D 7A 01           lea         edi,[edx+1]
+  00000037: 57                 push        edi
+  00000038: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000003D: 8B F0              mov         esi,eax
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 85 F6              test        esi,esi
+  00000044: 75 0A              jne         00000050
+  00000046: E8 00 00 00 00     call        _dbgPrintf
+  0000004B: E8 00 00 00 00     call        _debug_exit_trace
+  00000050: 83 3D 00 00 00 00  cmp         dword ptr [_dword_113E470],0
+            00
+  00000057: 74 27              je          00000080
+  00000059: 56                 push        esi
+  0000005A: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000060: 68 00 00 00 00     push        offset ??_C@_0N@HIPGFOO@malloc?5?$CF10d?6?$AA@
+  00000065: 50                 push        eax
+  00000066: E8 00 00 00 00     call        _sprintf
+  0000006B: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000071: 50                 push        eax
+  00000072: FF 35 00 00 00 00  push        dword ptr [_g_Menu2DUnkVar_23114E0]
+  00000078: E8 00 00 00 00     call        _FFX_Menu2D_MenuDefDataFieldValue_13b
+  0000007D: 83 C4 14           add         esp,14h
+  00000080: 57                 push        edi
+  00000081: 56                 push        esi
+  00000082: 53                 push        ebx
+  00000083: E8 00 00 00 00     call        _FFX_Menu2D_MenuDefDataFieldValue_11w
+  00000088: 83 C4 0C           add         esp,0Ch
+  0000008B: 8B C6              mov         eax,esi
+  0000008D: 5F                 pop         edi
+  0000008E: 5E                 pop         esi
+  0000008F: 5B                 pop         ebx
+  00000090: 8B E5              mov         esp,ebp
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           D .rdata
+          94 .text

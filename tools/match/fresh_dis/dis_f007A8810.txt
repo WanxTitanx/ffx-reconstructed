@@ -1,0 +1,122 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A8810.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ComputeVectorDirectionSector@28:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: DD 45 08           fld         qword ptr [ebp+8]
+  00000007: 8D 45 FC           lea         eax,[ebp-4]
+  0000000A: 50                 push        eax
+  0000000B: FF 75 18           push        dword ptr [ebp+18h]
+  0000000E: 83 EC 08           sub         esp,8
+  00000011: DD 1C 24           fstp        qword ptr [esp]
+  00000014: E8 00 00 00 00     call        _FFX_Battle_SetActorWorldPosition
+  00000019: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000020: D9 EE              fldz
+  00000022: DD 1C 24           fstp        qword ptr [esp]
+  00000025: E8 00 00 00 00     call        _FFX_Math_NormalizeAngleRad
+  0000002A: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000002D: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000030: 85 C0              test        eax,eax
+  00000032: 79 06              jns         0000003A
+  00000034: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000003A: FF 75 14           push        dword ptr [ebp+14h]
+  0000003D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000040: FF 75 10           push        dword ptr [ebp+10h]
+  00000043: E8 00 00 00 00     call        _FFX_Math_Vector4LengthWithBias
+  00000048: 83 C4 18           add         esp,18h
+  0000004B: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000004E: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000051: 85 C0              test        eax,eax
+  00000053: 79 06              jns         0000005B
+  00000055: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000005B: DD 5D 08           fstp        qword ptr [ebp+8]
+  0000005E: DD 45 08           fld         qword ptr [ebp+8]
+  00000061: D9 EE              fldz
+  00000063: DD E1              fucom       st(1)
+  00000065: DF E0              fnstsw      ax
+  00000067: DD D9              fstp        st(1)
+  00000069: F6 C4 44           test        ah,44h
+  0000006C: 7A 04              jp          00000072
+  0000006E: B0 01              mov         al,1
+  00000070: EB 02              jmp         00000074
+  00000072: 32 C0              xor         al,al
+  00000074: 84 C0              test        al,al
+  00000076: 75 46              jne         000000BE
+  00000078: 6A 00              push        0
+  0000007A: DD D8              fstp        st(0)
+  0000007C: 6A 00              push        0
+  0000007E: 8D 45 18           lea         eax,[ebp+18h]
+  00000081: 50                 push        eax
+  00000082: FF 75 14           push        dword ptr [ebp+14h]
+  00000085: FF 75 10           push        dword ptr [ebp+10h]
+  00000088: E8 00 00 00 00     call        _FFX_Camera_ComputeLookAtTransform
+  0000008D: D9 45 18           fld         dword ptr [ebp+18h]
+  00000090: 83 C4 04           add         esp,4
+  00000093: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000097: D9 45 FC           fld         dword ptr [ebp-4]
+  0000009A: DD 1C 24           fstp        qword ptr [esp]
+  0000009D: E8 00 00 00 00     call        _FFX_Math_NormalizeAngleRad
+  000000A2: 83 C4 10           add         esp,10h
+  000000A5: 89 45 14           mov         dword ptr [ebp+14h],eax
+  000000A8: DB 45 14           fild        dword ptr [ebp+14h]
+  000000AB: 85 C0              test        eax,eax
+  000000AD: 79 06              jns         000000B5
+  000000AF: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000B5: D9 5D 18           fstp        dword ptr [ebp+18h]
+  000000B8: D9 45 18           fld         dword ptr [ebp+18h]
+  000000BB: D8 65 FC           fsub        dword ptr [ebp-4]
+  000000BE: 83 7D 20 00        cmp         dword ptr [ebp+20h],0
+  000000C2: D9 5D 18           fstp        dword ptr [ebp+18h]
+  000000C5: D9 45 18           fld         dword ptr [ebp+18h]
+  000000C8: DC 0D 00 00 00 00  fmul        qword ptr [__real@4066800000000000]
+  000000CE: DC 35 00 00 00 00  fdiv        qword ptr [__real@400921fb5fffffff]
+  000000D4: 74 26              je          000000FC
+  000000D6: DD 05 00 00 00 00  fld         qword ptr [__real@4076800000000000]
+  000000DC: DC C1              fadd        st(1),st
+  000000DE: DB 45 1C           fild        dword ptr [ebp+1Ch]
+  000000E1: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000000E4: D9 45 14           fld         dword ptr [ebp+14h]
+  000000E7: DE CA              fmulp       st(2),st
+  000000E9: DE F9              fdivp       st(1),st
+  000000EB: E8 00 00 00 00     call        __ftol2_sse
+  000000F0: 99                 cdq
+  000000F1: F7 7D 1C           idiv        eax,dword ptr [ebp+1Ch]
+  000000F4: 8B C2              mov         eax,edx
+  000000F6: 8B E5              mov         esp,ebp
+  000000F8: 5D                 pop         ebp
+  000000F9: C2 1C 00           ret         1Ch
+  000000FC: DC 05 00 00 00 00  fadd        qword ptr [__real@4076800000000000]
+  00000102: DB 45 1C           fild        dword ptr [ebp+1Ch]
+  00000105: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000108: D8 4D 14           fmul        dword ptr [ebp+14h]
+  0000010B: DC 35 00 00 00 00  fdiv        qword ptr [__real@c066800000000000]
+  00000111: E8 00 00 00 00     call        __ftol2_sse
+  00000116: 8B 4D 1C           mov         ecx,dword ptr [ebp+1Ch]
+  00000119: BA 01 00 00 00     mov         edx,1
+  0000011E: 2B D0              sub         edx,eax
+  00000120: 8B C2              mov         eax,edx
+  00000122: 99                 cdq
+  00000123: 03 C9              add         ecx,ecx
+  00000125: F7 F9              idiv        eax,ecx
+  00000127: 8B C2              mov         eax,edx
+  00000129: 99                 cdq
+  0000012A: 2B C2              sub         eax,edx
+  0000012C: D1 F8              sar         eax,1
+  0000012E: 8B E5              mov         esp,ebp
+  00000130: 5D                 pop         ebp
+  00000131: C2 1C 00           ret         1Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .rdata
+         134 .text

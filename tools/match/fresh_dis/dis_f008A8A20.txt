@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008A8A20.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_SpriteAnimSetFrame:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 3D 00 00 00 00  cmp         dword ptr [_g_EscMenuUnkVar_1340412],1
+            01
+  0000000A: 75 14              jne         00000020
+  0000000C: 6A 02              push        2
+  0000000E: E8 00 00 00 00     call        _FFX_Menu_PlaySfx
+  00000013: 83 C4 04           add         esp,4
+  00000016: C7 05 00 00 00 00  mov         dword ptr [_g_EscMenuUnkVar_1340412],0
+            00 00 00 00
+  00000020: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000023: D9 81 E0 00 00 00  fld         dword ptr [ecx+0E0h]
+  00000029: DC 1D 00 00 00 00  fcomp       qword ptr [__real@3fdcccccbfffffff]
+  0000002F: DF E0              fnstsw      ax
+  00000031: F6 C4 01           test        ah,1
+  00000034: 75 09              jne         0000003F
+  00000036: 51                 push        ecx
+  00000037: E8 00 00 00 00     call        _FFX_Btl_AnimatedBgTextureSet
+  0000003C: 83 C4 04           add         esp,4
+  0000003F: B8 01 00 00 00     mov         eax,1
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          46 .text

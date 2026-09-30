@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0058D0B0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ShaderParam_LazyAcquire@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000B: 83 F8 01           cmp         eax,1
+  0000000E: 77 0D              ja          0000001D
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 05              je          00000019
+  00000014: 8D 46 10           lea         eax,[esi+10h]
+  00000017: EB 07              jmp         00000020
+  00000019: 33 C0              xor         eax,eax
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000020: 83 38 00           cmp         dword ptr [eax],0
+  00000023: 74 0B              je          00000030
+  00000025: C7 46 38 01 00 00  mov         dword ptr [esi+38h],1
+            00
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: 5E                 pop         esi
+  0000002F: C3                 ret
+  00000030: 6A 00              push        0
+  00000032: FF 36              push        dword ptr [esi]
+  00000034: 56                 push        esi
+  00000035: E8 00 00 00 00     call        _PConstantBuffer_AllocAndInit
+  0000003A: 83 C4 0C           add         esp,0Ch
+  0000003D: C7 46 38 01 00 00  mov         dword ptr [esi+38h],1
+            00
+  00000044: 5E                 pop         esi
+  00000045: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          46 .text

@@ -1,0 +1,102 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00920B00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_FieldActorTickGenki:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 57                 push        edi
+  0000000B: 39 73 04           cmp         dword ptr [ebx+4],esi
+  0000000E: 76 11              jbe         00000021
+  00000010: 6A 00              push        0
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        _FFX_TexAnim_SetActiveFlagWrapper
+  00000018: 46                 inc         esi
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 3B 73 04           cmp         esi,dword ptr [ebx+4]
+  0000001F: 72 EF              jb          00000010
+  00000021: 8B 7B 08           mov         edi,dword ptr [ebx+8]
+  00000024: 33 F6              xor         esi,esi
+  00000026: 39 73 04           cmp         dword ptr [ebx+4],esi
+  00000029: 0F 8E 9C 00 00 00  jle         000000CB
+  0000002F: 90                 nop
+  00000030: 56                 push        esi
+  00000031: 57                 push        edi
+  00000032: E8 00 00 00 00     call        _FFX_Render_FieldActorTickAudio
+  00000037: 83 C4 08           add         esp,8
+  0000003A: 83 FE 02           cmp         esi,2
+  0000003D: 75 29              jne         00000068
+  0000003F: E8 00 00 00 00     call        _FFX_FieldEngine_Dispatch_65DFF0
+  00000044: 68 00 00 00 00     push        offset ??_C@_06HGEHKOPL@genk12?$AA@
+  00000049: 50                 push        eax
+  0000004A: E8 00 00 00 00     call        _strstr
+  0000004F: 83 C4 08           add         esp,8
+  00000052: 85 C0              test        eax,eax
+  00000054: 74 0B              je          00000061
+  00000056: A1 00 00 00 00     mov         eax,dword ptr [_g_RenderFieldActorTickGenkiVar_C5E47C]
+  0000005B: 89 87 A4 00 00 00  mov         dword ptr [edi+0A4h],eax
+  00000061: BB 00 00 00 00     mov         ebx,offset ??_C@_06DIMEFCAL@genk05?$AA@
+  00000066: EB 72              jmp         000000DA
+  00000068: 83 FE 0D           cmp         esi,0Dh
+  0000006B: 75 63              jne         000000D0
+  0000006D: E8 00 00 00 00     call        _FFX_FieldEngine_Dispatch_65E010
+  00000072: 3D BC 0C 00 00     cmp         eax,0CBCh
+  00000077: 75 17              jne         00000090
+  00000079: E8 00 00 00 00     call        _FFX_Locale_GetCurrentLanguageId
+  0000007E: 83 F8 09           cmp         eax,9
+  00000081: 75 0D              jne         00000090
+  00000083: 8B 87 A0 00 00 00  mov         eax,dword ptr [edi+0A0h]
+  00000089: C7 40 3C 01 00 00  mov         dword ptr [eax+3Ch],1
+            00
+  00000090: 8B 87 A0 00 00 00  mov         eax,dword ptr [edi+0A0h]
+  00000096: FF 70 3C           push        dword ptr [eax+3Ch]
+  00000099: 56                 push        esi
+  0000009A: E8 00 00 00 00     call        _FFX_TexAnim_BindSetFrameIndexWrapper
+  0000009F: 83 C4 08           add         esp,8
+  000000A2: F6 07 03           test        byte ptr [edi],3
+  000000A5: 74 11              je          000000B8
+  000000A7: 56                 push        esi
+  000000A8: E8 00 00 00 00     call        _FFX_FieldEngine_LoadModelArray
+  000000AD: 6A 00              push        0
+  000000AF: 56                 push        esi
+  000000B0: E8 00 00 00 00     call        _FFX_TexAnim_GetIndexedValueAndUpdate
+  000000B5: 83 C4 0C           add         esp,0Ch
+  000000B8: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000BB: 46                 inc         esi
+  000000BC: 81 C7 C0 00 00 00  add         edi,0C0h
+  000000C2: 3B 70 04           cmp         esi,dword ptr [eax+4]
+  000000C5: 0F 82 65 FF FF FF  jb          00000030
+  000000CB: 5F                 pop         edi
+  000000CC: 5E                 pop         esi
+  000000CD: 5B                 pop         ebx
+  000000CE: 5D                 pop         ebp
+  000000CF: C3                 ret
+  000000D0: 83 FE 03           cmp         esi,3
+  000000D3: 75 BB              jne         00000090
+  000000D5: BB 00 00 00 00     mov         ebx,offset ??_C@_06HGEHKOPL@genk12?$AA@
+  000000DA: E8 00 00 00 00     call        _FFX_FieldEngine_Dispatch_65DFF0
+  000000DF: 53                 push        ebx
+  000000E0: 50                 push        eax
+  000000E1: E8 00 00 00 00     call        _strstr
+  000000E6: 83 C4 08           add         esp,8
+  000000E9: 85 C0              test        eax,eax
+  000000EB: 74 A3              je          00000090
+  000000ED: 6A 01              push        1
+  000000EF: 56                 push        esi
+  000000F0: E8 00 00 00 00     call        _FFX_TexAnim_SetActiveFlagWrapper
+  000000F5: EB A8              jmp         0000009F
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           E .rdata
+          F7 .text

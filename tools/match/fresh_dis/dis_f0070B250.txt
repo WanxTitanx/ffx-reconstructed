@@ -1,0 +1,126 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070B250.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_UpdatePlayback@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 83 7F 14 00        cmp         dword ptr [edi+14h],0
+  0000000B: 0F 84 3A 01 00 00  je          0000014B
+  00000011: 83 7F 58 00        cmp         dword ptr [edi+58h],0
+  00000015: 0F 84 30 01 00 00  je          0000014B
+  0000001B: 56                 push        esi
+  0000001C: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000021: 68 34 03 00 00     push        334h
+  00000026: 8B F0              mov         esi,eax
+  00000028: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  0000002D: 56                 push        esi
+  0000002E: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000033: 83 C4 0C           add         esp,0Ch
+  00000036: 85 F6              test        esi,esi
+  00000038: 74 77              je          000000B1
+  0000003A: 83 7F 64 05        cmp         dword ptr [edi+64h],5
+  0000003E: 0F 8C FF 00 00 00  jl          00000143
+  00000044: 8B 57 14           mov         edx,dword ptr [edi+14h]
+  00000047: 85 D2              test        edx,edx
+  00000049: 74 25              je          00000070
+  0000004B: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  0000004E: 85 C9              test        ecx,ecx
+  00000050: 74 1E              je          00000070
+  00000052: 8B 01              mov         eax,dword ptr [ecx]
+  00000054: 6A 01              push        1
+  00000056: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000059: 52                 push        edx
+  0000005A: 51                 push        ecx
+  0000005B: FF D0              call        eax
+  0000005D: 68 3C 03 00 00     push        33Ch
+  00000062: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000067: 50                 push        eax
+  00000068: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  0000006D: 83 C4 0C           add         esp,0Ch
+  00000070: C7 47 14 00 00 00  mov         dword ptr [edi+14h],0
+            00
+  00000077: C7 47 54 00 00 00  mov         dword ptr [edi+54h],0
+            00
+  0000007E: C7 47 40 00 00 00  mov         dword ptr [edi+40h],0
+            00
+  00000085: C7 47 44 00 00 00  mov         dword ptr [edi+44h],0
+            00
+  0000008C: C7 47 48 00 00 00  mov         dword ptr [edi+48h],0
+            00
+  00000093: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  0000009A: C7 47 6C 00 00 00  mov         dword ptr [edi+6Ch],0
+            00
+  000000A1: C7 47 70 00 00 00  mov         dword ptr [edi+70h],0
+            00
+  000000A8: C7 47 74 00 00 00  mov         dword ptr [edi+74h],0
+            00
+  000000AF: EB 76              jmp         00000127
+  000000B1: 83 7D FC 01        cmp         dword ptr [ebp-4],1
+  000000B5: 0F 85 88 00 00 00  jne         00000143
+  000000BB: E8 00 00 00 00     call        _FMOD_Event_setCallback
+  000000C0: FF 75 FC           push        dword ptr [ebp-4]
+  000000C3: 68 54 03 00 00     push        354h
+  000000C8: 50                 push        eax
+  000000C9: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  000000CE: 8B 77 14           mov         esi,dword ptr [edi+14h]
+  000000D1: E8 00 00 00 00     call        _FMOD_Event_start
+  000000D6: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  000000DB: 56                 push        esi
+  000000DC: 50                 push        eax
+  000000DD: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  000000E2: 83 C4 18           add         esp,18h
+  000000E5: E8 00 00 00 00     call        _FFX_Timer_GetMicrosecondsSinceBoot
+  000000EA: DD 05 00 00 00 00  fld         qword ptr [__real@405fc00000000000]
+  000000F0: 83 BF 80 00 00 00  cmp         dword ptr [edi+80h],1
+            01
+  000000F7: D9 05 00 00 00 00  fld         dword ptr [__real@42fe0000]
+  000000FD: D9 5F 50           fstp        dword ptr [edi+50h]
+  00000100: 89 47 70           mov         dword ptr [edi+70h],eax
+  00000103: C7 47 74 00 00 00  mov         dword ptr [edi+74h],0
+            00
+  0000010A: 75 04              jne         00000110
+  0000010C: DD D8              fstp        st(0)
+  0000010E: D9 EE              fldz
+  00000110: 6A 00              push        0
+  00000112: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000115: D9 45 FC           fld         dword ptr [ebp-4]
+  00000118: 83 EC 08           sub         esp,8
+  0000011B: DD 1C 24           fstp        qword ptr [esp]
+  0000011E: 57                 push        edi
+  0000011F: E8 00 00 00 00     call        _FFX_FmodVoice_SetEventVolume
+  00000124: 83 C4 10           add         esp,10h
+  00000127: C7 47 58 00 00 00  mov         dword ptr [edi+58h],0
+            00
+  0000012E: C7 47 64 00 00 00  mov         dword ptr [edi+64h],0
+            00
+  00000135: C7 47 60 00 00 00  mov         dword ptr [edi+60h],0
+            00
+  0000013C: C7 47 5C 00 00 00  mov         dword ptr [edi+5Ch],0
+            00
+  00000143: 5E                 pop         esi
+  00000144: 33 C0              xor         eax,eax
+  00000146: 5F                 pop         edi
+  00000147: 8B E5              mov         esp,ebp
+  00000149: 5D                 pop         ebp
+  0000014A: C3                 ret
+  0000014B: 33 C0              xor         eax,eax
+  0000014D: 5F                 pop         edi
+  0000014E: 8B E5              mov         esp,ebp
+  00000150: 5D                 pop         ebp
+  00000151: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2B .rdata
+         152 .text

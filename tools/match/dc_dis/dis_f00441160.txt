@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00441160.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_441160@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B FA              mov         edi,edx
+  00000009: 8B D1              mov         edx,ecx
+  0000000B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000E: 8B 72 1C           mov         esi,dword ptr [edx+1Ch]
+  00000011: 8D 5A 1C           lea         ebx,[edx+1Ch]
+  00000014: 3B DE              cmp         ebx,esi
+  00000016: 74 27              je          0000003F
+  00000018: 85 F6              test        esi,esi
+  0000001A: 74 23              je          0000003F
+  0000001C: 8D 64 24 00        lea         esp,[esp]
+  00000020: 39 7E 2C           cmp         dword ptr [esi+2Ch],edi
+  00000023: 75 0D              jne         00000032
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _PChunkAllocator_AllocInstance
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 85 C0              test        eax,eax
+  00000030: 75 4D              jne         0000007F
+  00000032: 8B 36              mov         esi,dword ptr [esi]
+  00000034: 3B DE              cmp         ebx,esi
+  00000036: 74 04              je          0000003C
+  00000038: 85 F6              test        esi,esi
+  0000003A: 75 E4              jne         00000020
+  0000003C: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000003F: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  00000042: 83 F8 04           cmp         eax,4
+  00000045: 72 36              jb          0000007D
+  00000047: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000004A: 85 C9              test        ecx,ecx
+  0000004C: 74 2F              je          0000007D
+  0000004E: 0F AF C1           imul        eax,ecx
+  00000051: 6A 00              push        0
+  00000053: 57                 push        edi
+  00000054: 51                 push        ecx
+  00000055: 50                 push        eax
+  00000056: 52                 push        edx
+  00000057: E8 00 00 00 00     call        _PCluster_AllocateInstances
+  0000005C: 8B F0              mov         esi,eax
+  0000005E: 83 C4 14           add         esp,14h
+  00000061: 85 F6              test        esi,esi
+  00000063: 74 18              je          0000007D
+  00000065: 56                 push        esi
+  00000066: E8 00 00 00 00     call        _PChunkAllocator_AllocNodes
+  0000006B: 56                 push        esi
+  0000006C: E8 00 00 00 00     call        _PChunkAllocator_AllocInstance
+  00000071: 83 C4 08           add         esp,8
+  00000074: 5F                 pop         edi
+  00000075: 5E                 pop         esi
+  00000076: 5B                 pop         ebx
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C2 04 00           ret         4
+  0000007D: 33 C0              xor         eax,eax
+  0000007F: 5F                 pop         edi
+  00000080: 5E                 pop         esi
+  00000081: 5B                 pop         ebx
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          88 .text

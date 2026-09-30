@@ -1,0 +1,165 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00829660.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_LoadNamedResourceAndAttachMotion:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 10 01 00 00  sub         esp,110h
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000E: 57                 push        edi
+  0000000F: 8D 46 01           lea         eax,[esi+1]
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _atoi
+  00000018: 0F BE 0E           movsx       ecx,byte ptr [esi]
+  0000001B: 51                 push        ecx
+  0000001C: 8B F8              mov         edi,eax
+  0000001E: E8 00 00 00 00     call        _FFX_Chr_ResTypeCharToCategoryNibble
+  00000023: 8B D8              mov         ebx,eax
+  00000025: C1 E3 0C           shl         ebx,0Ch
+  00000028: 83 C4 08           add         esp,8
+  0000002B: 0B DF              or          ebx,edi
+  0000002D: E8 00 00 00 00     call        _FFX_Chr_GetControlledInstance
+  00000032: 85 C0              test        eax,eax
+  00000034: 74 0C              je          00000042
+  00000036: 8D 45 F0           lea         eax,[ebp-10h]
+  00000039: 50                 push        eax
+  0000003A: E8 00 00 00 00     call        _FFX_Chr_CopyControlledInstancePosition
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 53                 push        ebx
+  00000043: E8 00 00 00 00     call        _FFX_Chr_AllocateActiveInstance
+  00000048: 8B F0              mov         esi,eax
+  0000004A: 83 C4 04           add         esp,4
+  0000004D: 85 F6              test        esi,esi
+  0000004F: 0F 84 5D 01 00 00  je          000001B2
+  00000055: D9 45 F8           fld         dword ptr [ebp-8]
+  00000058: 83 EC 18           sub         esp,18h
+  0000005B: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000005F: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000062: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000066: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000069: DD 1C 24           fstp        qword ptr [esp]
+  0000006C: 56                 push        esi
+  0000006D: E8 00 00 00 00     call        _FFX_Chr_SetWorldPosition
+  00000072: 56                 push        esi
+  00000073: E8 00 00 00 00     call        _FFX_Chr_LoadEffectResources
+  00000078: 56                 push        esi
+  00000079: E8 00 00 00 00     call        _FFX_Chr_SetControlledInstance
+  0000007E: 8B C3              mov         eax,ebx
+  00000080: C1 F8 0C           sar         eax,0Ch
+  00000083: 83 C4 24           add         esp,24h
+  00000086: 83 F8 01           cmp         eax,1
+  00000089: 0F 84 FE 00 00 00  je          0000018D
+  0000008F: 83 F8 03           cmp         eax,3
+  00000092: 0F 84 F5 00 00 00  je          0000018D
+  00000098: 83 F8 02           cmp         eax,2
+  0000009B: 0F 85 DA 00 00 00  jne         0000017B
+  000000A1: 8B BE C4 01 00 00  mov         edi,dword ptr [esi+1C4h]
+  000000A7: 81 A6 94 01 00 00  and         dword ptr [esi+194h],7FFFFFFFh
+            FF FF FF 7F
+  000000B1: 80 BF F8 00 00 00  cmp         byte ptr [edi+0F8h],0
+            00
+  000000B8: 0F 85 F4 00 00 00  jne         000001B2
+  000000BE: FF 76 04           push        dword ptr [esi+4]
+  000000C1: 8D 85 F0 FE FF FF  lea         eax,[ebp-110h]
+  000000C7: 68 00 00 00 00     push        offset ??_C@_0BD@DIAHLLM@?1ffx?1npcanm?1?$CFs?4anm?$AA@
+  000000CC: 50                 push        eax
+  000000CD: E8 00 00 00 00     call        _sprintf
+  000000D2: 8D 85 F0 FE FF FF  lea         eax,[ebp-110h]
+  000000D8: 50                 push        eax
+  000000D9: E8 00 00 00 00     call        _FFX_FieldMap_ReadFfxmapIdFile
+  000000DE: 83 C4 10           add         esp,10h
+  000000E1: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000E4: 85 C0              test        eax,eax
+  000000E6: 0F 84 8F 00 00 00  je          0000017B
+  000000EC: 8B 87 00 01 00 00  mov         eax,dword ptr [edi+100h]
+  000000F2: 85 C0              test        eax,eax
+  000000F4: 74 13              je          00000109
+  000000F6: 50                 push        eax
+  000000F7: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000FC: 83 C4 04           add         esp,4
+  000000FF: C7 87 00 01 00 00  mov         dword ptr [edi+100h],0
+            00 00 00 00
+  00000109: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000010C: 68 00 00 00 00     push        offset ??_C@_0M@EOHILBDM@default?4anm?$AA@
+  00000111: 89 9F 00 01 00 00  mov         dword ptr [edi+100h],ebx
+  00000117: E8 00 00 00 00     call        __strdup
+  0000011C: 83 C4 04           add         esp,4
+  0000011F: 89 87 04 01 00 00  mov         dword ptr [edi+104h],eax
+  00000125: 66 83 7B 08 02     cmp         word ptr [ebx+8],2
+  0000012A: 73 31              jae         0000015D
+  0000012C: 66 8B 03           mov         ax,word ptr [ebx]
+  0000012F: 66 89 87 FC 00 00  mov         word ptr [edi+0FCh],ax
+            00
+  00000136: 81 8E 94 01 00 00  or          dword ptr [esi+194h],80000000h
+            00 00 00 80
+  00000140: B8 00 01 00 00     mov         eax,100h
+  00000145: 5F                 pop         edi
+  00000146: C7 86 40 07 00 00  mov         dword ptr [esi+740h],0
+            00 00 00 00
+  00000150: 66 89 86 54 07 00  mov         word ptr [esi+754h],ax
+            00
+  00000157: 5E                 pop         esi
+  00000158: 5B                 pop         ebx
+  00000159: 8B E5              mov         esp,ebp
+  0000015B: 5D                 pop         ebp
+  0000015C: C3                 ret
+  0000015D: 8D 43 04           lea         eax,[ebx+4]
+  00000160: 50                 push        eax
+  00000161: 6A FF              push        0FFFFFFFFh
+  00000163: 6A 00              push        0
+  00000165: 6A 00              push        0
+  00000167: 6A 00              push        0
+  00000169: FF 33              push        dword ptr [ebx]
+  0000016B: 56                 push        esi
+  0000016C: E8 00 00 00 00     call        _FFX_Chr_PlayMotionWithChannel
+  00000171: 83 C4 1C           add         esp,1Ch
+  00000174: 5F                 pop         edi
+  00000175: 5E                 pop         esi
+  00000176: 5B                 pop         ebx
+  00000177: 8B E5              mov         esp,ebp
+  00000179: 5D                 pop         ebp
+  0000017A: C3                 ret
+  0000017B: 6A 00              push        0
+  0000017D: 53                 push        ebx
+  0000017E: E8 00 00 00 00     call        _FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered
+  00000183: 83 C4 08           add         esp,8
+  00000186: 5F                 pop         edi
+  00000187: 5E                 pop         esi
+  00000188: 5B                 pop         ebx
+  00000189: 8B E5              mov         esp,ebp
+  0000018B: 5D                 pop         ebp
+  0000018C: C3                 ret
+  0000018D: 6A 01              push        1
+  0000018F: 53                 push        ebx
+  00000190: E8 00 00 00 00     call        _FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered
+  00000195: 6A 01              push        1
+  00000197: 56                 push        esi
+  00000198: E8 00 00 00 00     call        _FFX_Chr_SetByte390
+  0000019D: 6A 10              push        10h
+  0000019F: 6A 01              push        1
+  000001A1: 56                 push        esi
+  000001A2: E8 00 00 00 00     call        _FFX_Mgrp_SelectResidentMotionForInstance
+  000001A7: 6A 00              push        0
+  000001A9: 56                 push        esi
+  000001AA: E8 00 00 00 00     call        _FFX_Chr_SetMotionFrame
+  000001AF: 83 C4 24           add         esp,24h
+  000001B2: 5F                 pop         edi
+  000001B3: 5E                 pop         esi
+  000001B4: 5B                 pop         ebx
+  000001B5: 8B E5              mov         esp,ebp
+  000001B7: 5D                 pop         ebp
+  000001B8: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1F .rdata
+         1B9 .text

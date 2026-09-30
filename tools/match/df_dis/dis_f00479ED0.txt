@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00479ED0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_479ED0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000010: 8A 10              mov         dl,byte ptr [eax]
+  00000012: 3A 11              cmp         dl,byte ptr [ecx]
+  00000014: 75 1A              jne         00000030
+  00000016: 84 D2              test        dl,dl
+  00000018: 74 12              je          0000002C
+  0000001A: 8A 50 01           mov         dl,byte ptr [eax+1]
+  0000001D: 3A 51 01           cmp         dl,byte ptr [ecx+1]
+  00000020: 75 0E              jne         00000030
+  00000022: 83 C0 02           add         eax,2
+  00000025: 83 C1 02           add         ecx,2
+  00000028: 84 D2              test        dl,dl
+  0000002A: 75 E4              jne         00000010
+  0000002C: 33 C9              xor         ecx,ecx
+  0000002E: EB 05              jmp         00000035
+  00000030: 1B C9              sbb         ecx,ecx
+  00000032: 83 C9 01           or          ecx,1
+  00000035: 33 C0              xor         eax,eax
+  00000037: 85 C9              test        ecx,ecx
+  00000039: 74 0A              je          00000045
+  0000003B: 0F 99 C0           setns       al
+  0000003E: 8D 04 45 FF FF FF  lea         eax,[eax*2+FFFFFFFFh]
+            FF
+  00000045: 5D                 pop         ebp
+  00000046: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

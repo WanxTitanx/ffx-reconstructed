@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0077B150.obj
+
+File Type: COFF OBJECT
+
+_FFX_Audio_MixDownStereoToMono:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000000A: 80 BB 67 07 05 00  cmp         byte ptr [ebx+50767h],0
+            00
+  00000011: 74 45              je          00000058
+  00000013: 56                 push        esi
+  00000014: 57                 push        edi
+  00000015: 8B F0              mov         esi,eax
+  00000017: BF 19 00 00 00     mov         edi,19h
+  0000001C: 8D 64 24 00        lea         esp,[esp]
+  00000020: 33 C9              xor         ecx,ecx
+  00000022: 0F BF 14 4E        movsx       edx,word ptr [esi+ecx*2]
+  00000026: 0F BF 84 4E 00 02  movsx       eax,word ptr [esi+ecx*2+200h]
+            00 00
+  0000002E: 03 C2              add         eax,edx
+  00000030: 99                 cdq
+  00000031: 2B C2              sub         eax,edx
+  00000033: D1 F8              sar         eax,1
+  00000035: 66 89 04 4E        mov         word ptr [esi+ecx*2],ax
+  00000039: 66 89 84 4E 00 02  mov         word ptr [esi+ecx*2+200h],ax
+            00 00
+  00000041: 41                 inc         ecx
+  00000042: 81 F9 00 01 00 00  cmp         ecx,100h
+  00000048: 7C D8              jl          00000022
+  0000004A: 81 C6 00 04 00 00  add         esi,400h
+  00000050: 4F                 dec         edi
+  00000051: 75 CD              jne         00000020
+  00000053: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000056: 5F                 pop         edi
+  00000057: 5E                 pop         esi
+  00000058: 53                 push        ebx
+  00000059: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000005C: 50                 push        eax
+  0000005D: E8 00 00 00 00     call        _FFX_Audio_CopyBufferToSpuQueue
+  00000062: 83 C4 0C           add         esp,0Ch
+  00000065: 5B                 pop         ebx
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          68 .text

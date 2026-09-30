@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004861F0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PMeshData_CopyChunk:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000006: 85 D2              test        edx,edx
+  00000008: 74 59              je          00000063
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000E: 56                 push        esi
+  0000000F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000012: 57                 push        edi
+  00000013: 8B C2              mov         eax,edx
+  00000015: 83 C3 30           add         ebx,30h
+  00000018: 8B CE              mov         ecx,esi
+  0000001A: 8B FE              mov         edi,esi
+  0000001C: 83 C6 40           add         esi,40h
+  0000001F: 85 C9              test        ecx,ecx
+  00000021: 74 37              je          0000005A
+  00000023: 8D 43 D0           lea         eax,[ebx-30h]
+  00000026: 50                 push        eax
+  00000027: 57                 push        edi
+  00000028: E8 00 00 00 00     call        _PSkinBoneRemapArray_CopyOp
+  0000002D: 8D 43 E8           lea         eax,[ebx-18h]
+  00000030: 50                 push        eax
+  00000031: 8D 47 18           lea         eax,[edi+18h]
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _PSkinBoneRemapArray_SubOp
+  0000003A: 8B 03              mov         eax,dword ptr [ebx]
+  0000003C: 89 47 30           mov         dword ptr [edi+30h],eax
+  0000003F: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000042: 89 47 34           mov         dword ptr [edi+34h],eax
+  00000045: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  00000048: 89 47 38           mov         dword ptr [edi+38h],eax
+  0000004B: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  0000004E: 83 C4 10           add         esp,10h
+  00000051: 89 47 3C           mov         dword ptr [edi+3Ch],eax
+  00000054: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000057: 83 C3 40           add         ebx,40h
+  0000005A: 48                 dec         eax
+  0000005B: 89 45 10           mov         dword ptr [ebp+10h],eax
+  0000005E: 75 B8              jne         00000018
+  00000060: 5F                 pop         edi
+  00000061: 5E                 pop         esi
+  00000062: 5B                 pop         ebx
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          65 .text

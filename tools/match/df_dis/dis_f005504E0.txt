@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005504E0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_AABB_CheckBounds@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 00 01 00 00  sub         esp,100h
+  00000009: D9 05 00 00 00 00  fld         dword ptr [__real@bf000000]
+  0000000F: 56                 push        esi
+  00000010: D9 55 E0           fst         dword ptr [ebp-20h]
+  00000013: 8B F2              mov         esi,edx
+  00000015: D9 55 E4           fst         dword ptr [ebp-1Ch]
+  00000018: 57                 push        edi
+  00000019: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000001C: 8D 46 10           lea         eax,[esi+10h]
+  0000001F: D9 05 00 00 00 00  fld         dword ptr [__real@3f000000]
+  00000025: 50                 push        eax
+  00000026: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000029: 8D 45 A0           lea         eax,[ebp-60h]
+  0000002C: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  0000002F: 50                 push        eax
+  00000030: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000033: 8B F9              mov         edi,ecx
+  00000035: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  0000003A: 8D 45 F0           lea         eax,[ebp-10h]
+  0000003D: 50                 push        eax
+  0000003E: 8D 45 E0           lea         eax,[ebp-20h]
+  00000041: 50                 push        eax
+  00000042: 8D 45 A0           lea         eax,[ebp-60h]
+  00000045: 50                 push        eax
+  00000046: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _Phyre_AABB_ToQuaternionTransform_Thunk
+  00000052: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000055: 8D 45 A0           lea         eax,[ebp-60h]
+  00000058: 50                 push        eax
+  00000059: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  0000005E: 8D 45 F0           lea         eax,[ebp-10h]
+  00000061: 50                 push        eax
+  00000062: 8D 45 E0           lea         eax,[ebp-20h]
+  00000065: 50                 push        eax
+  00000066: 8D 45 A0           lea         eax,[ebp-60h]
+  00000069: 50                 push        eax
+  0000006A: 8D 85 50 FF FF FF  lea         eax,[ebp-0B0h]
+  00000070: 50                 push        eax
+  00000071: E8 00 00 00 00     call        _Phyre_AABB_ToQuaternionTransform_Thunk
+  00000076: 8D 85 50 FF FF FF  lea         eax,[ebp-0B0h]
+  0000007C: 50                 push        eax
+  0000007D: 8D 47 54           lea         eax,[edi+54h]
+  00000080: 50                 push        eax
+  00000081: E8 00 00 00 00     call        _Phyre_AABB_IntersectRay
+  00000086: 8B F0              mov         esi,eax
+  00000088: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  0000008E: 50                 push        eax
+  0000008F: 8D 4F 04           lea         ecx,[edi+4]
+  00000092: 51                 push        ecx
+  00000093: E8 00 00 00 00     call        _Phyre_AABB_IntersectRay
+  00000098: 83 C4 40           add         esp,40h
+  0000009B: F7 D8              neg         eax
+  0000009D: 1B C0              sbb         eax,eax
+  0000009F: 83 E0 02           and         eax,2
+  000000A2: 5F                 pop         edi
+  000000A3: 0B C6              or          eax,esi
+  000000A5: 5E                 pop         esi
+  000000A6: 8B E5              mov         esp,ebp
+  000000A8: 5D                 pop         ebp
+  000000A9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          AA .text

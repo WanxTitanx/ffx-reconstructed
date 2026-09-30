@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0077B2E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Audio_DecodeAdpcmAndMixMono:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 33 DB              xor         ebx,ebx
+  0000000A: 33 F6              xor         esi,esi
+  0000000C: 39 5D 10           cmp         dword ptr [ebp+10h],ebx
+  0000000F: 7E 4E              jle         0000005F
+  00000011: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000014: 57                 push        edi
+  00000015: 8B F8              mov         edi,eax
+  00000017: 8A 04 0E           mov         al,byte ptr [esi+ecx]
+  0000001A: 84 C0              test        al,al
+  0000001C: 78 1D              js          0000003B
+  0000001E: 0F B6 4C 0E 01     movzx       ecx,byte ptr [esi+ecx+1]
+  00000023: 02 C0              add         al,al
+  00000025: 0F BE C0           movsx       eax,al
+  00000028: 99                 cdq
+  00000029: 2B C2              sub         eax,edx
+  0000002B: D1 F8              sar         eax,1
+  0000002D: C1 E0 08           shl         eax,8
+  00000030: 66 0B C1           or          ax,cx
+  00000033: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000036: 83 C6 02           add         esi,2
+  00000039: EB 0B              jmp         00000046
+  0000003B: 02 C0              add         al,al
+  0000003D: 0F BE C0           movsx       eax,al
+  00000040: 99                 cdq
+  00000041: 2B C2              sub         eax,edx
+  00000043: D1 F8              sar         eax,1
+  00000045: 46                 inc         esi
+  00000046: 0F B7 C0           movzx       eax,ax
+  00000049: 03 C3              add         eax,ebx
+  0000004B: 0F B7 C0           movzx       eax,ax
+  0000004E: 66 89 07           mov         word ptr [edi],ax
+  00000051: 83 C7 02           add         edi,2
+  00000054: 8B D8              mov         ebx,eax
+  00000056: 3B 75 10           cmp         esi,dword ptr [ebp+10h]
+  00000059: 7C BC              jl          00000017
+  0000005B: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000005E: 5F                 pop         edi
+  0000005F: FF 75 18           push        dword ptr [ebp+18h]
+  00000062: FF 75 14           push        dword ptr [ebp+14h]
+  00000065: 50                 push        eax
+  00000066: E8 00 00 00 00     call        _FFX_Audio_MixDownStereoToMono
+  0000006B: 83 C4 0C           add         esp,0Ch
+  0000006E: 5E                 pop         esi
+  0000006F: 5B                 pop         ebx
+  00000070: 5D                 pop         ebp
+  00000071: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          72 .text

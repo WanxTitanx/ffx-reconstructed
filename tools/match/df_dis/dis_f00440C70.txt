@@ -1,0 +1,133 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00440C70.obj
+
+File Type: COFF OBJECT
+
+@PCluster_AllocateInstances@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 85 D2              test        edx,edx
+  0000000C: 0F 84 F5 00 00 00  je          00000107
+  00000012: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 0F 84 EA 00 00 00  je          00000107
+  0000001D: 56                 push        esi
+  0000001E: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000021: F6 86 90 00 00 00  test        byte ptr [esi+90h],2
+            02
+  00000028: 74 1C              je          00000046
+  0000002A: FF 76 18           push        dword ptr [esi+18h]
+  0000002D: 68 00 00 00 00     push        offset ??_C@_0EB@MNDPNOHL@Class?5?8?$CFs?8?5is?5abstract?5and?5an?5in@
+  00000032: 6A 01              push        1
+  00000034: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  00000039: 83 C4 0C           add         esp,0Ch
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 5E                 pop         esi
+  0000003F: 5B                 pop         ebx
+  00000040: 8B E5              mov         esp,ebp
+  00000042: 5D                 pop         ebp
+  00000043: C2 0C 00           ret         0Ch
+  00000046: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00000049: 0F AF C1           imul        eax,ecx
+  0000004C: 3B D0              cmp         edx,eax
+  0000004E: 73 1F              jae         0000006F
+  00000050: 50                 push        eax
+  00000051: 52                 push        edx
+  00000052: FF 76 18           push        dword ptr [esi+18h]
+  00000055: 51                 push        ecx
+  00000056: 68 00 00 00 00     push        offset ??_C@_0FF@HNGDIEPG@Trying?5to?5allocate?5list?5of?5?$CFd?5?8?$CF@
+  0000005B: 6A 01              push        1
+  0000005D: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  00000062: 83 C4 18           add         esp,18h
+  00000065: 33 C0              xor         eax,eax
+  00000067: 5E                 pop         esi
+  00000068: 5B                 pop         ebx
+  00000069: 8B E5              mov         esp,ebp
+  0000006B: 5D                 pop         ebp
+  0000006C: C2 0C 00           ret         0Ch
+  0000006F: 8B 4B 28           mov         ecx,dword ptr [ebx+28h]
+  00000072: 57                 push        edi
+  00000073: 8D 7B 28           lea         edi,[ebx+28h]
+  00000076: 85 C9              test        ecx,ecx
+  00000078: 75 12              jne         0000008C
+  0000007A: FF 73 30           push        dword ptr [ebx+30h]
+  0000007D: 57                 push        edi
+  0000007E: E8 00 00 00 00     call        _Phyre_AlignedAllocList_Alloc
+  00000083: 8B 0F              mov         ecx,dword ptr [edi]
+  00000085: 83 C4 08           add         esp,8
+  00000088: 85 C9              test        ecx,ecx
+  0000008A: 74 70              je          000000FC
+  0000008C: 8B 01              mov         eax,dword ptr [ecx]
+  0000008E: 53                 push        ebx
+  0000008F: 56                 push        esi
+  00000090: 51                 push        ecx
+  00000091: 89 07              mov         dword ptr [edi],eax
+  00000093: E8 00 00 00 00     call        _PChunkAllocator_InitWithBuffer
+  00000098: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000009B: 03 75 10           add         esi,dword ptr [ebp+10h]
+  0000009E: 8B F8              mov         edi,eax
+  000000A0: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000A3: FF 70 20           push        dword ptr [eax+20h]
+  000000A6: 56                 push        esi
+  000000A7: 53                 push        ebx
+  000000A8: E8 00 00 00 00     call        _MemPool_AllocAligned
+  000000AD: 50                 push        eax
+  000000AE: 56                 push        esi
+  000000AF: FF 75 08           push        dword ptr [ebp+8]
+  000000B2: 57                 push        edi
+  000000B3: E8 00 00 00 00     call        _PChunkAllocator_AllocMemory
+  000000B8: 83 C4 28           add         esp,28h
+  000000BB: 85 C0              test        eax,eax
+  000000BD: 74 30              je          000000EF
+  000000BF: C6 47 49 01        mov         byte ptr [edi+49h],1
+  000000C3: 8B 4B 20           mov         ecx,dword ptr [ebx+20h]
+  000000C6: 8D 43 1C           lea         eax,[ebx+1Ch]
+  000000C9: 89 07              mov         dword ptr [edi],eax
+  000000CB: 89 4F 04           mov         dword ptr [edi+4],ecx
+  000000CE: 89 39              mov         dword ptr [ecx],edi
+  000000D0: 8B 43 40           mov         eax,dword ptr [ebx+40h]
+  000000D3: 89 7B 20           mov         dword ptr [ebx+20h],edi
+  000000D6: 85 C0              test        eax,eax
+  000000D8: 74 0A              je          000000E4
+  000000DA: 57                 push        edi
+  000000DB: 50                 push        eax
+  000000DC: E8 00 00 00 00     call        _Phyre_Debug_Trace
+  000000E1: 83 C4 08           add         esp,8
+  000000E4: 8B C7              mov         eax,edi
+  000000E6: 5F                 pop         edi
+  000000E7: 5E                 pop         esi
+  000000E8: 5B                 pop         ebx
+  000000E9: 8B E5              mov         esp,ebp
+  000000EB: 5D                 pop         ebp
+  000000EC: C2 0C 00           ret         0Ch
+  000000EF: 8D 43 28           lea         eax,[ebx+28h]
+  000000F2: 57                 push        edi
+  000000F3: 50                 push        eax
+  000000F4: E8 00 00 00 00     call        _Phyre_PCluster_InitInstances
+  000000F9: 83 C4 08           add         esp,8
+  000000FC: 5F                 pop         edi
+  000000FD: 5E                 pop         esi
+  000000FE: 33 C0              xor         eax,eax
+  00000100: 5B                 pop         ebx
+  00000101: 8B E5              mov         esp,ebp
+  00000103: 5D                 pop         ebp
+  00000104: C2 0C 00           ret         0Ch
+  00000107: 33 C0              xor         eax,eax
+  00000109: 5B                 pop         ebx
+  0000010A: 8B E5              mov         esp,ebp
+  0000010C: 5D                 pop         ebp
+  0000010D: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          96 .rdata
+         110 .text

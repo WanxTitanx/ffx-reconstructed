@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008C9B60.obj
+
+File Type: COFF OBJECT
+
+_FFX_SphereGrid_FindNextActiveSlot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000009: 3B C2              cmp         eax,edx
+  0000000B: 7D 22              jge         0000002F
+  0000000D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000010: 8D 0C 81           lea         ecx,[ecx+eax*4]
+  00000013: 83 C1 02           add         ecx,2
+  00000016: 80 39 00           cmp         byte ptr [ecx],0
+  00000019: 75 17              jne         00000032
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 40                 inc         eax
+  00000021: 3B C2              cmp         eax,edx
+  00000023: 7D 0A              jge         0000002F
+  00000025: 83 C1 04           add         ecx,4
+  00000028: 80 39 00           cmp         byte ptr [ecx],0
+  0000002B: 74 F3              je          00000020
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+  0000002F: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .text

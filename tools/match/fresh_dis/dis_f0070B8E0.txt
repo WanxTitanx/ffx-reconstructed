@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070B8E0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_SetEventVolume@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 57                 push        edi
+  00000007: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  0000000B: 8B FA              mov         edi,edx
+  0000000D: 74 41              je          00000050
+  0000000F: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000014: 68 1C 03 00 00     push        31Ch
+  00000019: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000024: 83 C4 0C           add         esp,0Ch
+  00000027: F6 45 0B 08        test        byte ptr [ebp+0Bh],8
+  0000002B: 74 23              je          00000050
+  0000002D: 83 FF 01           cmp         edi,1
+  00000030: 75 06              jne         00000038
+  00000032: D9 45 08           fld         dword ptr [ebp+8]
+  00000035: D9 5E 50           fstp        dword ptr [esi+50h]
+  00000038: E8 00 00 00 00     call        _FMOD_Event_setVolume
+  0000003D: 68 26 03 00 00     push        326h
+  00000042: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000047: 50                 push        eax
+  00000048: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  0000004D: 83 C4 0C           add         esp,0Ch
+  00000050: 5F                 pop         edi
+  00000051: 33 C0              xor         eax,eax
+  00000053: 5E                 pop         esi
+  00000054: 5D                 pop         ebp
+  00000055: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          58 .text

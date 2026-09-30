@@ -1,0 +1,30 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00912690.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_SubmitViaVif1Dma:
+  00000000: 56                 push        esi
+  00000001: E8 00 00 00 00     call        _FFX_GS_WaitVif1DmaSyncAndDumpTimeout
+  00000006: E8 00 00 00 00     call        _FFX_GenericStub_Return0
+  0000000B: E8 00 00 00 00     call        _FFX_RenderStub_Return0
+  00000010: 8B F0              mov         esi,eax
+  00000012: E8 00 00 00 00     call        _FFX_DmaStub_Return0
+  00000017: 8B 0E              mov         ecx,dword ptr [esi]
+  00000019: 81 E1 73 FF FF FF  and         ecx,0FFFFFF73h
+  0000001F: 83 C9 41           or          ecx,41h
+  00000022: 89 0E              mov         dword ptr [esi],ecx
+  00000024: E8 00 00 00 00     call        _FlushCache
+  00000029: E8 00 00 00 00     call        _sceDmaSendN
+  0000002E: 5E                 pop         esi
+  0000002F: E9 00 00 00 00     jmp         _FFX_GenericStub_Return0
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

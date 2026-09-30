@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068DA40.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_68DA40@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000009: 56                 push        esi
+  0000000A: 50                 push        eax
+  0000000B: 51                 push        ecx
+  0000000C: E8 00 00 00 00     call        _AsyncQueue_Entry_GetData
+  00000011: 8B 30              mov         esi,dword ptr [eax]
+  00000013: 83 C4 08           add         esp,8
+  00000016: 85 F6              test        esi,esi
+  00000018: 74 02              je          0000001C
+  0000001A: 8B 36              mov         esi,dword ptr [esi]
+  0000001C: 8B 50 08           mov         edx,dword ptr [eax+8]
+  0000001F: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000022: 8B C2              mov         eax,edx
+  00000024: C1 E8 02           shr         eax,2
+  00000027: 49                 dec         ecx
+  00000028: 23 C8              and         ecx,eax
+  0000002A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000002D: 83 E2 03           and         edx,3
+  00000030: 8B 04 88           mov         eax,dword ptr [eax+ecx*4]
+  00000033: 5E                 pop         esi
+  00000034: 8D 04 90           lea         eax,[eax+edx*4]
+  00000037: 8B E5              mov         esp,ebp
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

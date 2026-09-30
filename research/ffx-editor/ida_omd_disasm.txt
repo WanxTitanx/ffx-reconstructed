@@ -1,0 +1,2513 @@
+00a657c0: push    ebp; Renders capture without texture (color-only batch)
+00a657c1: mov     ebp, esp
+00a657c3: sub     esp, 448h
+00a657c9: mov     eax, ___security_cookie
+00a657ce: xor     eax, ebp
+00a657d0: mov     [ebp+var_4], eax
+00a657d3: cmp     dword ptr gParticleDoNotRender, 0
+00a657da: fld1
+00a657dc: mov     ecx, [ebp+n4]
+00a657df: fst     [ebp+var_14]
+00a657e2: fst     [ebp+var_10]
+00a657e5: push    esi
+00a657e6: mov     esi, [ebp+p_n4]
+00a657e9: fst     [ebp+var_C]
+00a657ec: fstp    [ebp+var_8]
+00a657ef: mov     [ebp+var_414], esi
+00a657f5: fld     ds:FFX_Kernel_Const_B51640
+00a657fb: mov     eax, [esi+44h]
+00a657fe: fst     [ebp+var_194]
+00a65804: fst     [ebp+var_190]
+00a6580a: fst     [ebp+var_18C]
+00a65810: fstp    [ebp+var_188]
+00a65816: fld     dword ptr [eax+38h]
+00a65819: fstp    [ebp+var_424]
+00a6581f: jnz     loc_A6810D
+00a65825: push    ebx
+00a65826: push    edi
+00a65827: push    ecx; int
+00a65828: push    offset aNotexture; "NoTexture"
+00a6582d: call    FFX_Menu2D_ResolveCaptureCtx; 2D menu rendering operation
+00a65832: mov     ebx, [eax+94h]
+00a65838: mov     eax, [ebp+arg_0]
+00a6583b: mov     [ebp+var_43C], ebx
+00a65841: movsx   ecx, word ptr [eax+10h]
+00a65845: mov     edx, [eax+4]
+00a65848: mov     [ebp+var_42C], ecx
+00a6584e: mov     ecx, [eax+8]
+00a65851: add     ecx, eax
+00a65853: add     edx, eax
+00a65855: mov     [ebp+hudContext], ecx
+00a6585b: mov     ecx, [eax+0Ch]
+00a6585e: add     ecx, eax
+00a65860: mov     eax, [esi+20h]
+00a65863: lea     edi, [edx+10h]
+00a65866: mov     [ebp+var_41C], edx
+00a6586c: mov     [ebp+var_440], ecx
+00a65872: fld     dword ptr [eax+30h]
+00a65875: mov     [ebp+var_418], edi
+00a6587b: fdiv    dword ptr [eax+3Ch]
+00a6587e: fld     ds:dbl_B51BC0
+00a65884: fsub    st(1), st
+00a65886: fxch    st(1)
+00a65888: fadd    ds:FFX_Battle_Const_B922E0
+00a6588e: fstp    [ebp+var_420]
+00a65894: fld     dword ptr [eax+34h]
+00a65897: fdiv    dword ptr [eax+3Ch]
+00a6589a: lea     eax, [ebp+b]
+00a658a0: push    eax; b
+00a658a1: lea     eax, [ebp+a]
+00a658a7: push    eax; a
+00a658a8: fsubrp  st(1), st
+00a658aa: fadd    ds:dbl_B54C68
+00a658b0: fstp    [ebp+var_40C]
+00a658b6: call    FFX_Menu2D_GetNativeViewportSize1920x1080_structural; 2D menu rendering operation
+00a658bb: fild    [ebp+a]
+00a658c1: add     esp, 10h
+00a658c4: fstp    [ebp+var_3F0]
+00a658ca: fld     [ebp+var_3F0]
+00a658d0: fstp    [ebp+var_3F0]
+00a658d6: fld     [ebp+var_3F0]
+00a658dc: fld     ds:dbl_B41CC8
+00a658e2: fmul    st, st(1)
+00a658e4: fstp    [ebp+var_434]
+00a658ea: fild    [ebp+b]
+00a658f0: fstp    [ebp+var_3F0]
+00a658f6: fld     [ebp+var_3F0]
+00a658fc: mov     eax, [esi+20h]
+00a658ff: fstp    [ebp+var_3F0]
+00a65905: fld     [ebp+var_3F0]
+00a6590b: fld     ds:dbl_B41D38
+00a65911: fdivr   st, st(1)
+00a65913: fstp    [ebp+var_438]
+00a65919: fld     dword ptr [eax+2Ch]
+00a6591c: fstp    [ebp+var_428]
+00a65922: fld     [ebp+var_428]
+00a65928: fldz
+00a6592a: fucomp  st(1)
+00a6592c: fnstsw  ax
+00a6592e: test    ah, 44h
+00a65931: jp      short loc_A65943
+00a65933: fstp    st
+00a65935: fld1
+00a65937: fstp    [ebp+var_428]
+00a6593d: fld     [ebp+var_428]
+00a65943: fld     [ebp+var_438]
+00a65949: movzx   eax, byte ptr [esi+18h]
+00a6594d: fmul    ds:dbl_B43D88
+00a65953: mov     [ebp+var_3F0], eax
+00a65959: fmulp   st(1), st
+00a6595b: fld     [ebp+var_434]
+00a65961: fmul    ds:dbl_B2C5D0
+00a65967: fdivp   st(1), st
+00a65969: fstp    [ebp+var_3FC]
+00a6596f: fld     ds:FFX_Engine_GlobalScaleConstant
+00a65975: fmul    st(2), st
+00a65977: fxch    st(2)
+00a65979: fstp    [ebp+var_3F8]
+00a6597f: fmulp   st(1), st
+00a65981: fstp    [ebp+var_408]
+00a65987: fild    [ebp+var_3F0]
+00a6598d: fstp    [ebp+var_3EC]
+00a65993: fld     [ebp+var_3EC]
+00a65999: movzx   eax, byte ptr [esi+19h]
+00a6599d: fmul    [ebp+var_14]
+00a659a0: mov     [ebp+var_3F0], eax
+00a659a6: fstp    [ebp+var_14]
+00a659a9: fild    [ebp+var_3F0]
+00a659af: fstp    [ebp+var_3EC]
+00a659b5: fld     [ebp+var_3EC]
+00a659bb: movzx   eax, byte ptr [esi+1Ah]
+00a659bf: fmul    [ebp+var_10]
+00a659c2: mov     [ebp+var_3F0], eax
+00a659c8: fstp    [ebp+var_10]
+00a659cb: fild    [ebp+var_3F0]
+00a659d1: fstp    [ebp+var_3EC]
+00a659d7: fld     [ebp+var_3EC]
+00a659dd: movzx   eax, byte ptr [esi+1Bh]
+00a659e1: fmul    [ebp+var_C]
+00a659e4: mov     [ebp+var_3F0], eax
+00a659ea: lea     eax, [ebp+var_14]
+00a659ed: push    eax
+00a659ee: fstp    [ebp+var_C]
+00a659f1: lea     eax, [ebp+var_194]
+00a659f7: fild    [ebp+var_3F0]
+00a659fd: push    eax
+00a659fe: lea     eax, [ebp+var_14]
+00a65a01: push    eax
+00a65a02: fstp    [ebp+var_3EC]
+00a65a08: fld     [ebp+var_3EC]
+00a65a0e: fmul    [ebp+var_8]
+00a65a11: fstp    [ebp+var_8]
+00a65a14: call    FFX_BtlUI_HudParty_GetTarget
+00a65a19: add     esp, 0Ch
+00a65a1c: test    byte ptr [esi], 40h
+00a65a1f: jz      loc_A65AE5
+00a65a25: mov     edi, [esi+2Ch]
+00a65a28: lea     ebx, [ebp+var_2C0]
+00a65a2e: mov     eax, ebx
+00a65a30: mov     [ebp+var_3F4], edi
+00a65a36: lea     esi, [edi+8]
+00a65a39: sub     edi, eax
+00a65a3b: mov     [ebp+var_410], 3
+00a65a45: fld     dword ptr [esi-4]
+00a65a48: fld     dword ptr [esi]
+00a65a4a: fld     dword ptr [ebx+edi]
+00a65a4d: fmul    st, st
+00a65a4f: fxch    st(2)
+00a65a51: fmul    st, st
+00a65a53: faddp   st(2), st
+00a65a55: fmul    st, st
+00a65a57: faddp   st(1), st
+00a65a59: call    _CIsqrt
+00a65a5e: fstp    [ebp+var_3F0]
+00a65a64: fld     [ebp+var_3F0]
+00a65a6a: add     ebx, 10h
+00a65a6d: fld1
+00a65a6f: add     esi, 10h
+00a65a72: dec     [ebp+var_410]
+00a65a78: fdivrp  st(1), st
+00a65a7a: fstp    [ebp+var_3F0]
+00a65a80: fld     dword ptr [ebx+edi-10h]
+00a65a84: fld     [ebp+var_3F0]
+00a65a8a: fld     st
+00a65a8c: fmulp   st(2), st
+00a65a8e: fxch    st(1)
+00a65a90: fstp    dword ptr [ebx-14h]
+00a65a93: fld     st
+00a65a95: fmul    dword ptr [esi-14h]
+00a65a98: fstp    dword ptr [ebx-10h]
+00a65a9b: fmul    dword ptr [esi-10h]
+00a65a9e: fstp    dword ptr [ebx-0Ch]
+00a65aa1: fld     dword ptr [esi-0Ch]
+00a65aa4: fstp    dword ptr [ebx-8]
+00a65aa7: jnz     short loc_A65A45
+00a65aa9: mov     eax, [ebp+var_3F4]
+00a65aaf: mov     ebx, [ebp+var_43C]
+00a65ab5: fld     dword ptr [eax+30h]
+00a65ab8: mov     edi, [ebp+var_418]
+00a65abe: mov     esi, [ebp+var_414]
+00a65ac4: fstp    [ebp+var_294]
+00a65aca: fld     dword ptr [eax+34h]
+00a65acd: fstp    [ebp+var_290]
+00a65ad3: fld     dword ptr [eax+38h]
+00a65ad6: fstp    [ebp+var_28C]
+00a65adc: fld     dword ptr [eax+3Ch]
+00a65adf: fstp    [ebp+var_288]
+00a65ae5: mov     edx, [ebp+var_42C]
+00a65aeb: test    edx, edx
+00a65aed: jle     loc_A6810B
+00a65af3: fld     [ebp+var_424]
+00a65af9: mov     ecx, [ebp+var_41C]
+00a65aff: fld     [ebp+var_420]
+00a65b05: fld     [ebp+var_40C]
+00a65b0b: fld     [ebp+var_3FC]
+00a65b11: fld     [ebp+var_3F8]
+00a65b17: movsx   eax, byte ptr [ecx+1]
+00a65b1b: cmp     eax, 7; switch 8 cases
+00a65b1e: ja      def_A65B24; jumptable 00A65B24 default case
+00a65b24: jmp     ds:jpt_A65B24[eax*4]; switch jump
+00a65b2b: xor     eax, eax; jumptable 00A65B24 case 0
+00a65b2d: mov     [ebp+var_410], 0
+00a65b37: cmp     ax, [ecx+2]
+00a65b3b: jge     def_A65B24; jumptable 00A65B24 default case
+00a65b41: mov     eax, [ebx+4]
+00a65b44: mov     edx, [ebp+hudContext]; hudContext
+00a65b4a: lea     ecx, [eax+eax*2]; charId
+00a65b4d: movzx   eax, word ptr [edi+0Ch]
+00a65b51: lea     eax, [eax+eax*2]
+00a65b54: movsx   eax, word ptr [edx+eax*2]
+00a65b58: mov     [ebp+var_3F0], eax
+00a65b5e: fild    [ebp+var_3F0]
+00a65b64: fstp    [ebp+var_3EC]
+00a65b6a: fld     [ebp+var_3EC]
+00a65b70: mov     eax, [ebx+0Ch]
+00a65b73: fmulp   st(2), st
+00a65b75: fld     st(3)
+00a65b77: faddp   st(2), st
+00a65b79: fld     [ebp+var_434]
+00a65b7f: fld     st
+00a65b81: fmulp   st(3), st
+00a65b83: fxch    st(2)
+00a65b85: fsubrp  st(1), st
+00a65b87: fstp    [ebp+var_3F0]
+00a65b8d: fld     [ebp+var_3F0]
+00a65b93: fstp    dword ptr [eax+ecx*4]
+00a65b96: movzx   eax, word ptr [edi+0Ch]
+00a65b9a: lea     eax, [eax+eax*2]
+00a65b9d: movsx   eax, word ptr [edx+eax*2+2]
+00a65ba2: mov     [ebp+var_3F0], eax
+00a65ba8: fild    [ebp+var_3F0]
+00a65bae: fstp    [ebp+var_3EC]
+00a65bb4: fld     [ebp+var_3EC]
+00a65bba: mov     eax, [ebx+0Ch]
+00a65bbd: fld     [ebp+var_428]
+00a65bc3: fld     st
+00a65bc5: fmulp   st(2), st
+00a65bc7: fld     st(3)
+00a65bc9: faddp   st(2), st
+00a65bcb: fld     [ebp+var_438]
+00a65bd1: fld     st
+00a65bd3: fmulp   st(3), st
+00a65bd5: fld     [ebp+var_408]
+00a65bdb: fsubp   st(3), st
+00a65bdd: fxch    st(2)
+00a65bdf: fstp    [ebp+var_3F0]
+00a65be5: fld     [ebp+var_3F0]
+00a65beb: fstp    dword ptr [eax+ecx*4+4]
+00a65bef: mov     eax, [ebx+0Ch]
+00a65bf2: fxch    st(5)
+00a65bf4: fst     dword ptr [eax+ecx*4+8]
+00a65bf8: movzx   eax, word ptr [edi+0Eh]
+00a65bfc: lea     eax, [eax+eax*2]
+00a65bff: movsx   eax, word ptr [edx+eax*2]
+00a65c03: mov     [ebp+var_3F0], eax
+00a65c09: fild    [ebp+var_3F0]
+00a65c0f: fstp    [ebp+var_3EC]
+00a65c15: fld     [ebp+var_3EC]
+00a65c1b: mov     eax, [ebx+0Ch]
+00a65c1e: fmul    [ebp+var_3FC]
+00a65c24: fadd    st, st(5)
+00a65c26: fmul    st, st(3)
+00a65c28: fsub    [ebp+var_3F8]
+00a65c2e: fstp    [ebp+var_3F0]
+00a65c34: fld     [ebp+var_3F0]
+00a65c3a: fstp    dword ptr [eax+ecx*4+0Ch]
+00a65c3e: movzx   eax, word ptr [edi+0Eh]
+00a65c42: lea     eax, [eax+eax*2]
+00a65c45: movsx   eax, word ptr [edx+eax*2+2]
+00a65c4a: mov     [ebp+var_3F0], eax
+00a65c50: fild    [ebp+var_3F0]
+00a65c56: fstp    [ebp+var_3EC]
+00a65c5c: fld     [ebp+var_3EC]
+00a65c62: mov     eax, [ebx+0Ch]
+00a65c65: fmul    st, st(6)
+00a65c67: fadd    st, st(4)
+00a65c69: fmul    st, st(2)
+00a65c6b: fsub    [ebp+var_408]
+00a65c71: fstp    [ebp+var_3F0]
+00a65c77: fld     [ebp+var_3F0]
+00a65c7d: fstp    dword ptr [eax+ecx*4+10h]
+00a65c81: mov     eax, [ebx+0Ch]
+00a65c84: fst     dword ptr [eax+ecx*4+14h]
+00a65c88: movzx   eax, word ptr [edi+10h]
+00a65c8c: lea     eax, [eax+eax*2]
+00a65c8f: movsx   eax, word ptr [edx+eax*2]
+00a65c93: mov     [ebp+var_3F0], eax
+00a65c99: fild    [ebp+var_3F0]
+00a65c9f: fstp    [ebp+var_3EC]
+00a65ca5: fld     [ebp+var_3EC]
+00a65cab: mov     eax, [ebx+0Ch]
+00a65cae: fmul    [ebp+var_3FC]
+00a65cb4: faddp   st(5), st
+00a65cb6: fxch    st(4)
+00a65cb8: fmulp   st(2), st
+00a65cba: fld     [ebp+var_3F8]
+00a65cc0: fsubp   st(2), st
+00a65cc2: fxch    st(1)
+00a65cc4: fstp    [ebp+var_3F0]
+00a65cca: fld     [ebp+var_3F0]
+00a65cd0: fstp    dword ptr [eax+ecx*4+18h]
+00a65cd4: movzx   eax, word ptr [edi+10h]
+00a65cd8: lea     eax, [eax+eax*2]
+00a65cdb: movsx   eax, word ptr [edx+eax*2+2]
+00a65ce0: mov     [ebp+var_3F0], eax
+00a65ce6: fild    [ebp+var_3F0]
+00a65cec: fstp    [ebp+var_3EC]
+00a65cf2: fld     [ebp+var_3EC]
+00a65cf8: mov     eax, [ebx+0Ch]
+00a65cfb: fmulp   st(4), st
+00a65cfd: fxch    st(3)
+00a65cff: faddp   st(1), st
+00a65d01: fmulp   st(2), st
+00a65d03: fld     [ebp+var_408]
+00a65d09: fsubp   st(2), st
+00a65d0b: fxch    st(1)
+00a65d0d: fstp    [ebp+var_3F0]
+00a65d13: fld     [ebp+var_3F0]
+00a65d19: fstp    dword ptr [eax+ecx*4+1Ch]
+00a65d1d: mov     eax, [ebx+0Ch]
+00a65d20: fstp    dword ptr [eax+ecx*4+20h]
+00a65d24: mov     eax, [ebx+10h]
+00a65d27: fldz
+00a65d29: fst     dword ptr [eax+ecx*4]
+00a65d2c: mov     eax, [ebx+10h]
+00a65d2f: fst     dword ptr [eax+ecx*4+4]
+00a65d33: mov     eax, [ebx+10h]
+00a65d36: fld1
+00a65d38: fst     dword ptr [eax+ecx*4+8]
+00a65d3c: mov     eax, [ebx+10h]
+00a65d3f: fxch    st(1)
+00a65d41: fst     dword ptr [eax+ecx*4+0Ch]
+00a65d45: mov     eax, [ebx+10h]
+00a65d48: fst     dword ptr [eax+ecx*4+10h]
+00a65d4c: mov     eax, [ebx+10h]
+00a65d4f: fxch    st(1)
+00a65d51: fst     dword ptr [eax+ecx*4+14h]
+00a65d55: mov     eax, [ebx+10h]
+00a65d58: fxch    st(1)
+00a65d5a: fst     dword ptr [eax+ecx*4+18h]
+00a65d5e: mov     eax, [ebx+10h]
+00a65d61: fstp    dword ptr [eax+ecx*4+1Ch]
+00a65d65: mov     eax, [ebx+10h]
+00a65d68: fstp    dword ptr [eax+ecx*4+20h]
+00a65d6c: movzx   eax, byte ptr [edi]
+00a65d6f: mov     [ebp+var_3F0], eax
+00a65d75: movzx   eax, byte ptr [edi+1]
+00a65d79: fild    [ebp+var_3F0]
+00a65d7f: mov     [ebp+var_3F0], eax
+00a65d85: movzx   eax, byte ptr [edi+2]
+00a65d89: fstp    [ebp+var_D4]
+00a65d8f: fild    [ebp+var_3F0]
+00a65d95: mov     [ebp+var_3F0], eax
+00a65d9b: movzx   eax, byte ptr [edi+3]
+00a65d9f: fstp    [ebp+var_D0]
+00a65da5: fild    [ebp+var_3F0]
+00a65dab: mov     [ebp+var_3F0], eax
+00a65db1: movzx   eax, byte ptr [edi+4]
+00a65db5: fstp    [ebp+var_CC]
+00a65dbb: fild    [ebp+var_3F0]
+00a65dc1: mov     [ebp+var_3F0], eax
+00a65dc7: movzx   eax, byte ptr [edi+5]
+00a65dcb: fstp    [ebp+var_C8]
+00a65dd1: fild    [ebp+var_3F0]
+00a65dd7: mov     [ebp+var_3F0], eax
+00a65ddd: fstp    [ebp+var_C4]
+00a65de3: fild    [ebp+var_3F0]
+00a65de9: movzx   eax, byte ptr [edi+6]
+00a65ded: mov     [ebp+var_3F0], eax
+00a65df3: movzx   eax, byte ptr [edi+7]
+00a65df7: fstp    [ebp+var_C0]
+00a65dfd: fild    [ebp+var_3F0]
+00a65e03: mov     [ebp+var_3F0], eax
+00a65e09: movzx   eax, byte ptr [edi+8]
+00a65e0d: fstp    [ebp+var_BC]
+00a65e13: fild    [ebp+var_3F0]
+00a65e19: mov     [ebp+var_3F0], eax
+00a65e1f: movzx   eax, byte ptr [edi+9]
+00a65e23: fstp    [ebp+var_B8]
+00a65e29: fild    [ebp+var_3F0]
+00a65e2f: mov     [ebp+var_3F0], eax
+00a65e35: movzx   eax, byte ptr [edi+0Ah]
+00a65e39: fstp    [ebp+var_B4]
+00a65e3f: fild    [ebp+var_3F0]
+00a65e45: mov     [ebp+var_3F0], eax
+00a65e4b: movzx   eax, byte ptr [edi+0Bh]
+00a65e4f: fstp    [ebp+var_B0]
+00a65e55: fild    [ebp+var_3F0]
+00a65e5b: mov     [ebp+var_3F0], eax
+00a65e61: lea     eax, [ebp+var_D4]
+00a65e67: push    eax
+00a65e68: fstp    [ebp+var_AC]
+00a65e6e: fild    [ebp+var_3F0]
+00a65e74: lea     eax, [ebp+var_14]
+00a65e77: push    eax
+00a65e78: lea     eax, [ebp+var_D4]
+00a65e7e: push    eax
+00a65e7f: fstp    [ebp+var_A8]
+00a65e85: call    FFX_BtlUI_HudParty_GetTarget
+00a65e8a: lea     eax, [ebp+var_C4]
+00a65e90: push    eax
+00a65e91: lea     eax, [ebp+var_14]
+00a65e94: push    eax
+00a65e95: lea     eax, [ebp+var_C4]
+00a65e9b: push    eax
+00a65e9c: call    FFX_BtlUI_HudParty_GetTarget
+00a65ea1: lea     eax, [ebp+var_B4]
+00a65ea7: push    eax
+00a65ea8: lea     eax, [ebp+var_14]
+00a65eab: push    eax
+00a65eac: lea     eax, [ebp+var_B4]
+00a65eb2: push    eax
+00a65eb3: call    FFX_BtlUI_HudParty_GetTarget
+00a65eb8: fld     [ebp+var_D4]
+00a65ebe: fld     ds:dbl_B170C8
+00a65ec4: mov     ecx, [ebx+4]
+00a65ec7: fdiv    st(1), st
+00a65ec9: mov     eax, [ebx+14h]
+00a65ecc: add     esp, 24h
+00a65ecf: shl     ecx, 2
+00a65ed2: fxch    st(1)
+00a65ed4: fstp    [ebp+var_3F0]
+00a65eda: fld     [ebp+var_3F0]
+00a65ee0: fstp    dword ptr [eax+ecx*4]
+00a65ee3: fld     [ebp+var_D0]
+00a65ee9: fdiv    st, st(1)
+00a65eeb: mov     eax, [ebx+14h]
+00a65eee: fstp    [ebp+var_3F0]
+00a65ef4: fld     [ebp+var_3F0]
+00a65efa: fstp    dword ptr [eax+ecx*4+4]
+00a65efe: fld     [ebp+var_CC]
+00a65f04: fdiv    st, st(1)
+00a65f06: mov     eax, [ebx+14h]
+00a65f09: fstp    [ebp+var_3F0]
+00a65f0f: fld     [ebp+var_3F0]
+00a65f15: fstp    dword ptr [eax+ecx*4+8]
+00a65f19: fld     [ebp+var_C8]
+00a65f1f: fdiv    st, st(1)
+00a65f21: mov     eax, [ebx+14h]
+00a65f24: fstp    [ebp+var_3F0]
+00a65f2a: fld     [ebp+var_3F0]
+00a65f30: fstp    dword ptr [eax+ecx*4+0Ch]
+00a65f34: fld     [ebp+var_C4]
+00a65f3a: fdiv    st, st(1)
+00a65f3c: mov     eax, [ebx+14h]
+00a65f3f: fstp    [ebp+var_3F0]
+00a65f45: fld     [ebp+var_3F0]
+00a65f4b: fstp    dword ptr [eax+ecx*4+10h]
+00a65f4f: mov     eax, [ebx+14h]
+00a65f52: fld     [ebp+var_C0]
+00a65f58: add     edi, 14h
+00a65f5b: fdiv    st, st(1)
+00a65f5d: fstp    [ebp+var_3F0]
+00a65f63: fld     [ebp+var_3F0]
+00a65f69: fstp    dword ptr [eax+ecx*4+14h]
+00a65f6d: fld     [ebp+var_BC]
+00a65f73: fdiv    st, st(1)
+00a65f75: mov     eax, [ebx+14h]
+00a65f78: fstp    [ebp+var_3F0]
+00a65f7e: fld     [ebp+var_3F0]
+00a65f84: fstp    dword ptr [eax+ecx*4+18h]
+00a65f88: fld     [ebp+var_B8]
+00a65f8e: fdiv    st, st(1)
+00a65f90: mov     eax, [ebx+14h]
+00a65f93: fstp    [ebp+var_3F0]
+00a65f99: fld     [ebp+var_3F0]
+00a65f9f: fstp    dword ptr [eax+ecx*4+1Ch]
+00a65fa3: fld     [ebp+var_B4]
+00a65fa9: fdiv    st, st(1)
+00a65fab: mov     eax, [ebx+14h]
+00a65fae: fstp    [ebp+var_3F0]
+00a65fb4: fld     [ebp+var_3F0]
+00a65fba: fstp    dword ptr [eax+ecx*4+20h]
+00a65fbe: fld     [ebp+var_B0]
+00a65fc4: fdiv    st, st(1)
+00a65fc6: mov     eax, [ebx+14h]
+00a65fc9: fstp    [ebp+var_3F0]
+00a65fcf: fld     [ebp+var_3F0]
+00a65fd5: fstp    dword ptr [eax+ecx*4+24h]
+00a65fd9: fld     [ebp+var_AC]
+00a65fdf: fdiv    st, st(1)
+00a65fe1: mov     eax, [ebx+14h]
+00a65fe4: fstp    [ebp+var_3F0]
+00a65fea: fld     [ebp+var_3F0]
+00a65ff0: fstp    dword ptr [eax+ecx*4+28h]
+00a65ff4: mov     eax, [ebx+14h]
+00a65ff7: fdivr   [ebp+var_A8]
+00a65ffd: fstp    [ebp+var_3F0]
+00a66003: fld     [ebp+var_3F0]
+00a66009: fstp    dword ptr [eax+ecx*4+2Ch]
+00a6600d: fld     [ebp+var_424]
+00a66013: mov     edx, [ebx+4]
+00a66016: fld     [ebp+var_420]
+00a6601c: mov     esi, [ebx+8]
+00a6601f: fld     [ebp+var_40C]
+00a66025: mov     eax, [ebx+1Ch]
+00a66028: fld     [ebp+var_3FC]
+00a6602e: fld     [ebp+var_3F8]
+00a66034: lea     ecx, [edx+1]
+00a66037: mov     [eax+esi*2], dx
+00a6603b: mov     eax, [ebx+1Ch]
+00a6603e: mov     [eax+esi*2+2], cx
+00a66043: mov     eax, [ebx+1Ch]
+00a66046: lea     ecx, [edx+2]
+00a66049: mov     [eax+esi*2+4], cx
+00a6604e: mov     eax, [ebp+var_41C]
+00a66054: add     dword ptr [ebx+4], 3
+00a66058: add     dword ptr [ebx+8], 3
+00a6605c: mov     ecx, [ebp+var_410]
+00a66062: movsx   eax, word ptr [eax+2]
+00a66066: inc     ecx
+00a66067: mov     [ebp+var_410], ecx
+00a6606d: cmp     ecx, eax
+00a6606f: jl      loc_A65B41
+00a66075: mov     esi, [ebp+var_414]
+00a6607b: fstp    st
+00a6607d: fstp    st
+00a6607f: fstp    st
+00a66081: fstp    st(1)
+00a66083: mov     ecx, [ebp+var_41C]
+00a66089: fstp    st
+00a6608b: fld     [ebp+var_424]
+00a66091: mov     edx, [ebp+var_42C]
+00a66097: fld     [ebp+var_420]
+00a6609d: fld     [ebp+var_40C]
+00a660a3: fld     [ebp+var_3FC]
+00a660a9: fld     [ebp+var_3F8]
+00a660af: jmp     def_A65B24; jumptable 00A65B24 default case
+00a660b4: xor     eax, eax; jumptable 00A65B24 case 1
+00a660b6: mov     [ebp+var_418], edi
+00a660bc: mov     [ebp+var_3F0], 0
+00a660c6: cmp     ax, [ecx+2]
+00a660ca: jge     def_A65B24; jumptable 00A65B24 default case
+00a660d0: fstp    st
+00a660d2: fstp    st(1)
+00a660d4: fldz
+00a660d6: jmp     short loc_A660E2
+00a660d8: fxch    st(2)
+00a660da: fxch    st(3)
+00a660dc: fxch    st(1)
+00a660de: fxch    st(2)
+00a660e0: fxch    st(1)
+00a660e2: mov     eax, [ebx+4]
+00a660e5: mov     edx, [ebp+hudContext]; hudContext
+00a660eb: lea     ecx, [eax+eax*2]; charId
+00a660ee: movzx   eax, word ptr [edi+0Ch]
+00a660f2: lea     eax, [eax+eax*2]
+00a660f5: movsx   eax, word ptr [edx+eax*2]
+00a660f9: mov     [ebp+var_3F4], eax
+00a660ff: fild    [ebp+var_3F4]
+00a66105: fstp    [ebp+var_3EC]
+00a6610b: fld     [ebp+var_3EC]
+00a66111: mov     eax, [ebx+0Ch]
+00a66114: fmulp   st(2), st
+00a66116: fld     st(2)
+00a66118: faddp   st(2), st
+00a6611a: fld     [ebp+var_434]
+00a66120: fld     st
+00a66122: fmulp   st(3), st
+00a66124: fld     [ebp+var_3F8]
+00a6612a: fsubp   st(3), st
+00a6612c: fxch    st(2)
+00a6612e: fstp    [ebp+var_3F4]
+00a66134: fld     [ebp+var_3F4]
+00a6613a: fstp    dword ptr [eax+ecx*4]
+00a6613d: movzx   eax, word ptr [edi+0Ch]
+00a66141: lea     eax, [eax+eax*2]
+00a66144: movsx   eax, word ptr [edx+eax*2+2]
+00a66149: mov     [ebp+var_3F4], eax
+00a6614f: fild    [ebp+var_3F4]
+00a66155: fstp    [ebp+var_3EC]
+00a6615b: fld     [ebp+var_3EC]
+00a66161: mov     eax, [ebx+0Ch]
+00a66164: fld     [ebp+var_428]
+00a6616a: fld     st
+00a6616c: fmulp   st(2), st
+00a6616e: fld     [ebp+var_40C]
+00a66174: faddp   st(2), st
+00a66176: fld     [ebp+var_438]
+00a6617c: fld     st
+00a6617e: fmulp   st(3), st
+00a66180: fld     [ebp+var_408]
+00a66186: fsubp   st(3), st
+00a66188: fxch    st(2)
+00a6618a: fstp    [ebp+var_3F4]
+00a66190: fld     [ebp+var_3F4]
+00a66196: fstp    dword ptr [eax+ecx*4+4]
+00a6619a: mov     eax, [ebx+0Ch]
+00a6619d: fxch    st(5)
+00a6619f: fst     dword ptr [eax+ecx*4+8]
+00a661a3: movzx   eax, word ptr [edi+0Eh]
+00a661a7: lea     eax, [eax+eax*2]
+00a661aa: movsx   eax, word ptr [edx+eax*2]
+00a661ae: mov     [ebp+var_3F4], eax
+00a661b4: fild    [ebp+var_3F4]
+00a661ba: fstp    [ebp+var_3EC]
+00a661c0: fld     [ebp+var_3EC]
+00a661c6: mov     eax, [ebx+0Ch]
+00a661c9: fmul    [ebp+var_3FC]
+00a661cf: fadd    st, st(5)
+00a661d1: fmul    st, st(4)
+00a661d3: fsub    [ebp+var_3F8]
+00a661d9: fstp    [ebp+var_3F4]
+00a661df: fld     [ebp+var_3F4]
+00a661e5: fstp    dword ptr [eax+ecx*4+0Ch]
+00a661e9: movzx   eax, word ptr [edi+0Eh]
+00a661ed: lea     eax, [eax+eax*2]
+00a661f0: movsx   eax, word ptr [edx+eax*2+2]
+00a661f5: mov     [ebp+var_3F4], eax
+00a661fb: fild    [ebp+var_3F4]
+00a66201: fstp    [ebp+var_3EC]
+00a66207: fld     [ebp+var_3EC]
+00a6620d: mov     eax, [ebx+0Ch]
+00a66210: fmul    st, st(6)
+00a66212: fadd    [ebp+var_40C]
+00a66218: fmul    st, st(2)
+00a6621a: fsub    [ebp+var_408]
+00a66220: fstp    [ebp+var_3F4]
+00a66226: fld     [ebp+var_3F4]
+00a6622c: fstp    dword ptr [eax+ecx*4+10h]
+00a66230: mov     eax, [ebx+0Ch]
+00a66233: fst     dword ptr [eax+ecx*4+14h]
+00a66237: movzx   eax, word ptr [edi+10h]
+00a6623b: lea     eax, [eax+eax*2]
+00a6623e: movsx   eax, word ptr [edx+eax*2]
+00a66242: mov     [ebp+var_3F4], eax
+00a66248: fild    [ebp+var_3F4]
+00a6624e: fstp    [ebp+var_3EC]
+00a66254: fld     [ebp+var_3EC]
+00a6625a: mov     eax, [ebx+0Ch]
+00a6625d: fmul    [ebp+var_3FC]
+00a66263: faddp   st(5), st
+00a66265: fxch    st(4)
+00a66267: fmulp   st(3), st
+00a66269: fld     [ebp+var_3F8]
+00a6626f: fsubp   st(3), st
+00a66271: fxch    st(2)
+00a66273: fstp    [ebp+var_3F4]
+00a66279: fld     [ebp+var_3F4]
+00a6627f: fstp    dword ptr [eax+ecx*4+18h]
+00a66283: movzx   eax, word ptr [edi+10h]
+00a66287: lea     eax, [eax+eax*2]
+00a6628a: movsx   eax, word ptr [edx+eax*2+2]
+00a6628f: mov     [ebp+var_3F4], eax
+00a66295: fild    [ebp+var_3F4]
+00a6629b: fstp    [ebp+var_3EC]
+00a662a1: fld     [ebp+var_3EC]
+00a662a7: mov     eax, [ebx+0Ch]
+00a662aa: fmulp   st(4), st
+00a662ac: fld     [ebp+var_40C]
+00a662b2: faddp   st(4), st
+00a662b4: fxch    st(3)
+00a662b6: fmulp   st(1), st
+00a662b8: fsub    [ebp+var_408]
+00a662be: fstp    [ebp+var_3F4]
+00a662c4: fld     [ebp+var_3F4]
+00a662ca: fstp    dword ptr [eax+ecx*4+1Ch]
+00a662ce: mov     eax, [ebx+0Ch]
+00a662d1: fstp    dword ptr [eax+ecx*4+20h]
+00a662d5: mov     eax, [ebx+10h]
+00a662d8: fst     dword ptr [eax+ecx*4]
+00a662db: mov     eax, [ebx+10h]
+00a662de: fst     dword ptr [eax+ecx*4+4]
+00a662e2: mov     eax, [ebx+10h]
+00a662e5: fld1
+00a662e7: fst     dword ptr [eax+ecx*4+8]
+00a662eb: mov     eax, [ebx+10h]
+00a662ee: fxch    st(1)
+00a662f0: fst     dword ptr [eax+ecx*4+0Ch]
+00a662f4: mov     eax, [ebx+10h]
+00a662f7: fst     dword ptr [eax+ecx*4+10h]
+00a662fb: mov     eax, [ebx+10h]
+00a662fe: fxch    st(1)
+00a66300: fst     dword ptr [eax+ecx*4+14h]
+00a66304: mov     eax, [ebx+10h]
+00a66307: fxch    st(1)
+00a66309: fst     dword ptr [eax+ecx*4+18h]
+00a6630d: mov     eax, [ebx+10h]
+00a66310: fstp    dword ptr [eax+ecx*4+1Ch]
+00a66314: mov     eax, [ebx+10h]
+00a66317: fstp    dword ptr [eax+ecx*4+20h]
+00a6631b: movzx   eax, byte ptr [edi]
+00a6631e: mov     [ebp+var_3F4], eax
+00a66324: movzx   eax, byte ptr [edi+1]
+00a66328: fild    [ebp+var_3F4]
+00a6632e: mov     [ebp+var_3F4], eax
+00a66334: movzx   eax, byte ptr [edi+2]
+00a66338: fstp    [ebp+var_44]
+00a6633b: fild    [ebp+var_3F4]
+00a66341: mov     [ebp+var_3F4], eax
+00a66347: movzx   eax, byte ptr [edi+3]
+00a6634b: fstp    [ebp+var_40]
+00a6634e: fild    [ebp+var_3F4]
+00a66354: mov     [ebp+var_3F4], eax
+00a6635a: movzx   eax, byte ptr [edi+4]
+00a6635e: fstp    [ebp+var_3C]
+00a66361: fild    [ebp+var_3F4]
+00a66367: mov     [ebp+var_3F4], eax
+00a6636d: movzx   eax, byte ptr [edi+5]
+00a66371: fstp    [ebp+var_38]
+00a66374: fild    [ebp+var_3F4]
+00a6637a: mov     [ebp+var_3F4], eax
+00a66380: fstp    [ebp+var_34]
+00a66383: fild    [ebp+var_3F4]
+00a66389: movzx   eax, byte ptr [edi+6]
+00a6638d: fstp    [ebp+var_30]
+00a66390: mov     [ebp+var_3F4], eax
+00a66396: movzx   eax, byte ptr [edi+7]
+00a6639a: fild    [ebp+var_3F4]
+00a663a0: mov     [ebp+var_3F4], eax
+00a663a6: movzx   eax, byte ptr [edi+8]
+00a663aa: fstp    [ebp+var_2C]
+00a663ad: fild    [ebp+var_3F4]
+00a663b3: mov     [ebp+var_3F4], eax
+00a663b9: movzx   eax, byte ptr [edi+9]
+00a663bd: fstp    [ebp+var_28]
+00a663c0: fild    [ebp+var_3F4]
+00a663c6: mov     [ebp+var_3F4], eax
+00a663cc: movzx   eax, byte ptr [edi+0Ah]
+00a663d0: fstp    [ebp+var_24]
+00a663d3: fild    [ebp+var_3F4]
+00a663d9: mov     [ebp+var_3F4], eax
+00a663df: movzx   eax, byte ptr [edi+0Bh]
+00a663e3: fstp    [ebp+var_20]
+00a663e6: fild    [ebp+var_3F4]
+00a663ec: mov     [ebp+var_3F4], eax
+00a663f2: lea     eax, [ebp+var_44]
+00a663f5: push    eax
+00a663f6: fstp    [ebp+var_1C]
+00a663f9: fild    [ebp+var_3F4]
+00a663ff: lea     eax, [ebp+var_14]
+00a66402: push    eax
+00a66403: lea     eax, [ebp+var_44]
+00a66406: push    eax
+00a66407: fstp    [ebp+var_18]
+00a6640a: call    FFX_BtlUI_HudParty_GetTarget
+00a6640f: lea     eax, [ebp+var_34]
+00a66412: push    eax
+00a66413: lea     eax, [ebp+var_14]
+00a66416: push    eax
+00a66417: lea     eax, [ebp+var_34]
+00a6641a: push    eax
+00a6641b: call    FFX_BtlUI_HudParty_GetTarget
+00a66420: lea     eax, [ebp+var_24]
+00a66423: push    eax
+00a66424: lea     eax, [ebp+var_14]
+00a66427: push    eax
+00a66428: lea     eax, [ebp+var_24]
+00a6642b: push    eax
+00a6642c: call    FFX_BtlUI_HudParty_GetTarget
+00a66431: add     esp, 24h
+00a66434: test    byte ptr [esi], 40h
+00a66437: jz      loc_A66A18
+00a6643d: movzx   eax, byte ptr [esi+4Dh]
+00a66441: mov     edx, [ebp+hudContext]
+00a66447: mov     [ebp+var_3F4], eax
+00a6644d: fild    [ebp+var_3F4]
+00a66453: fstp    [ebp+var_3EC]
+00a66459: fld     [ebp+var_3EC]
+00a6645f: movzx   eax, word ptr [edi+0Ch]
+00a66463: fmul    ds:dbl_B170C0
+00a66469: fstp    dword ptr [ebp+var_3EC+4]
+00a6646f: lea     ecx, [eax+eax*2]
+00a66472: movsx   eax, word ptr [edx+ecx*2]
+00a66476: mov     [ebp+var_3F4], eax
+00a6647c: fild    [ebp+var_3F4]
+00a66482: fstp    [ebp+var_144]
+00a66488: movsx   eax, word ptr [edx+ecx*2+2]
+00a6648d: mov     [ebp+var_3F4], eax
+00a66493: fild    [ebp+var_3F4]
+00a66499: fstp    [ebp+var_140]
+00a6649f: movsx   eax, word ptr [edx+ecx*2+4]
+00a664a4: mov     [ebp+var_3F4], eax
+00a664aa: movzx   eax, word ptr [edi+0Eh]
+00a664ae: fild    [ebp+var_3F4]
+00a664b4: fstp    [ebp+var_13C]
+00a664ba: fld1
+00a664bc: lea     ecx, [eax+eax*2]
+00a664bf: fst     [ebp+var_138]
+00a664c5: movsx   eax, word ptr [edx+ecx*2]
+00a664c9: mov     [ebp+var_3F4], eax
+00a664cf: fild    [ebp+var_3F4]
+00a664d5: fstp    [ebp+var_134]
+00a664db: movsx   eax, word ptr [edx+ecx*2+2]
+00a664e0: mov     [ebp+var_3F4], eax
+00a664e6: fild    [ebp+var_3F4]
+00a664ec: fstp    [ebp+var_130]
+00a664f2: movsx   eax, word ptr [edx+ecx*2+4]
+00a664f7: mov     [ebp+var_3F4], eax
+00a664fd: movzx   eax, word ptr [edi+10h]
+00a66501: fild    [ebp+var_3F4]
+00a66507: fstp    [ebp+var_12C]
+00a6650d: lea     ecx, [eax+eax*2]
+00a66510: fst     [ebp+var_128]
+00a66516: movsx   eax, word ptr [edx+ecx*2]
+00a6651a: mov     [ebp+var_3F4], eax
+00a66520: fild    [ebp+var_3F4]
+00a66526: fstp    [ebp+var_124]
+00a6652c: movsx   eax, word ptr [edx+ecx*2+2]
+00a66531: mov     [ebp+var_3F4], eax
+00a66537: fild    [ebp+var_3F4]
+00a6653d: fstp    [ebp+var_120]
+00a66543: movsx   eax, word ptr [edx+ecx*2+4]
+00a66548: mov     edx, [ebp+var_440]
+00a6654e: mov     [ebp+var_3F4], eax
+00a66554: movzx   eax, word ptr [edi+14h]
+00a66558: fild    [ebp+var_3F4]
+00a6655e: fstp    [ebp+var_11C]
+00a66564: lea     ecx, [eax+eax*2]
+00a66567: fstp    [ebp+var_118]
+00a6656d: movsx   eax, word ptr [edx+ecx*2]
+00a66571: mov     [ebp+var_3F4], eax
+00a66577: fild    [ebp+var_3F4]
+00a6657d: fstp    [ebp+var_404]
+00a66583: fld     [ebp+var_404]
+00a66589: fld     ds:dbl_B50190
+00a6658f: fmul    st(1), st
+00a66591: fxch    st(1)
+00a66593: fstp    [ebp+var_1C4]
+00a66599: movsx   eax, word ptr [edx+ecx*2+2]
+00a6659e: mov     [ebp+var_3F4], eax
+00a665a4: fild    [ebp+var_3F4]
+00a665aa: fstp    [ebp+var_404]
+00a665b0: fld     [ebp+var_404]
+00a665b6: fmul    st, st(1)
+00a665b8: fstp    [ebp+var_1C0]
+00a665be: movsx   eax, word ptr [edx+ecx*2+4]
+00a665c3: mov     [ebp+var_3F4], eax
+00a665c9: fild    [ebp+var_3F4]
+00a665cf: fstp    [ebp+var_404]
+00a665d5: fld     [ebp+var_404]
+00a665db: fmul    st, st(1)
+00a665dd: fstp    [ebp+var_1BC]
+00a665e3: fldz
+00a665e5: movzx   eax, word ptr [edi+16h]
+00a665e9: fst     [ebp+var_1B8]
+00a665ef: lea     ecx, [eax+eax*2]
+00a665f2: movsx   eax, word ptr [edx+ecx*2]
+00a665f6: mov     [ebp+var_3F4], eax
+00a665fc: fild    [ebp+var_3F4]
+00a66602: fstp    [ebp+var_404]
+00a66608: fld     [ebp+var_404]
+00a6660e: fmul    st, st(2)
+00a66610: fstp    [ebp+var_1B4]
+00a66616: movsx   eax, word ptr [edx+ecx*2+2]
+00a6661b: mov     [ebp+var_3F4], eax
+00a66621: fild    [ebp+var_3F4]
+00a66627: fstp    [ebp+var_404]
+00a6662d: fld     [ebp+var_404]
+00a66633: fmul    st, st(2)
+00a66635: fstp    [ebp+var_1B0]
+00a6663b: movsx   eax, word ptr [edx+ecx*2+4]
+00a66640: mov     [ebp+var_3F4], eax
+00a66646: fild    [ebp+var_3F4]
+00a6664c: fstp    [ebp+var_404]
+00a66652: fld     [ebp+var_404]
+00a66658: movzx   eax, word ptr [edi+18h]
+00a6665c: fmul    st, st(2)
+00a6665e: fstp    [ebp+var_1AC]
+00a66664: lea     ecx, [eax+eax*2]
+00a66667: fst     [ebp+var_1A8]
+00a6666d: movsx   eax, word ptr [edx+ecx*2]
+00a66671: mov     [ebp+var_3F4], eax
+00a66677: fild    [ebp+var_3F4]
+00a6667d: fstp    [ebp+var_404]
+00a66683: fld     [ebp+var_404]
+00a66689: fmul    st, st(2)
+00a6668b: fstp    [ebp+var_1A4]
+00a66691: movsx   eax, word ptr [edx+ecx*2+2]
+00a66696: mov     [ebp+var_3F4], eax
+00a6669c: fild    [ebp+var_3F4]
+00a666a2: fstp    [ebp+var_404]
+00a666a8: fld     [ebp+var_404]
+00a666ae: fmul    st, st(2)
+00a666b0: fstp    [ebp+var_1A0]
+00a666b6: movsx   eax, word ptr [edx+ecx*2+4]
+00a666bb: mov     [ebp+var_3F4], eax
+00a666c1: lea     eax, [ebp+var_144]
+00a666c7: push    eax
+00a666c8: fild    [ebp+var_3F4]
+00a666ce: fstp    [ebp+var_404]
+00a666d4: fld     [ebp+var_404]
+00a666da: push    dword ptr [esi+2Ch]
+00a666dd: fmulp   st(2), st
+00a666df: fxch    st(1)
+00a666e1: push    eax
+00a666e2: fstp    [ebp+var_19C]
+00a666e8: fstp    [ebp+var_198]
+00a666ee: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a666f3: lea     eax, [ebp+var_134]
+00a666f9: push    eax
+00a666fa: push    dword ptr [esi+2Ch]
+00a666fd: push    eax
+00a666fe: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a66703: lea     eax, [ebp+var_124]
+00a66709: push    eax
+00a6670a: push    dword ptr [esi+2Ch]
+00a6670d: push    eax
+00a6670e: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a66713: lea     eax, [ebp+var_140]
+00a66719: add     esp, 24h
+00a6671c: mov     [ebp+var_410], eax
+00a66722: mov     [ebp+var_3F4], 0
+00a6672c: jmp     short loc_A66732
+00a6672e: align 10h
+00a66730: fstp    st
+00a66732: mov     eax, [ebp+var_414]
+00a66738: fldz
+00a6673a: lea     ebx, [ebp+var_344]
+00a66740: mov     eax, [eax+28h]
+00a66743: xor     esi, esi
+00a66745: lea     ecx, [eax+0Ch]
+00a66748: lea     edx, [eax+8]
+00a6674b: sub     ebx, eax
+00a6674d: mov     eax, [ebp+var_410]
+00a66753: lea     edi, [ebp+var_340]
+00a66759: fld     dword ptr [edx-8]
+00a6675c: inc     esi
+00a6675d: fsub    dword ptr [eax-4]
+00a66760: add     edx, 10h
+00a66763: add     edi, 10h
+00a66766: add     ecx, 10h
+00a66769: fstp    dword ptr [ebp+var_404+4]
+00a6676f: fld     dword ptr [ebp+var_404+4]
+00a66775: fld     st
+00a66777: fld     dword ptr [edx-14h]
+00a6677a: fsub    dword ptr [eax]
+00a6677c: fstp    dword ptr [ebp+var_404+4]
+00a66782: fld     dword ptr [ebp+var_404+4]
+00a66788: fld     st
+00a6678a: fld     dword ptr [edx-10h]
+00a6678d: fsub    dword ptr [eax+4]
+00a66790: fstp    dword ptr [ebp+var_404+4]
+00a66796: fld     dword ptr [ebp+var_404+4]
+00a6679c: fld     st
+00a6679e: fxch    st(4)
+00a667a0: fmul    st, st
+00a667a2: fldz
+00a667a4: faddp   st(1), st
+00a667a6: fstp    dword ptr [ebp+var_404+4]
+00a667ac: fld     dword ptr [ebp+var_404+4]
+00a667b2: fxch    st(2)
+00a667b4: fmul    st, st
+00a667b6: faddp   st(2), st
+00a667b8: fxch    st(1)
+00a667ba: fstp    dword ptr [ebp+var_404+4]
+00a667c0: fld     dword ptr [ebp+var_404+4]
+00a667c6: fxch    st(3)
+00a667c8: fmul    st, st
+00a667ca: faddp   st(3), st
+00a667cc: fxch    st(2)
+00a667ce: fstp    dword ptr [ebp+var_404+4]
+00a667d4: fld     dword ptr [ebp+var_404+4]
+00a667da: fst     [ebp+esi*4+var_3D8]
+00a667e1: fld     dword ptr [ecx-10h]
+00a667e4: fmulp   st(4), st
+00a667e6: fxch    st(3)
+00a667e8: fstp    dword ptr [ebp+var_404+4]
+00a667ee: fld     dword ptr [ebp+var_404+4]
+00a667f4: fdiv    st, st(3)
+00a667f6: fstp    dword ptr [edi-14h]
+00a667f9: fmul    dword ptr [ecx-10h]
+00a667fc: fstp    dword ptr [ebp+var_404+4]
+00a66802: fld     dword ptr [ebp+var_404+4]
+00a66808: fdiv    st, st(2)
+00a6680a: fstp    dword ptr [edi-10h]
+00a6680d: fmul    dword ptr [ecx-10h]
+00a66810: fstp    dword ptr [ebp+var_404+4]
+00a66816: fdivr   dword ptr [ebp+var_404+4]
+00a6681c: fstp    dword ptr [ebx+edx-10h]
+00a66820: fst     dword ptr [ecx+ebx-10h]
+00a66824: cmp     esi, 4
+00a66827: jl      loc_A66759
+00a6682d: fstp    st
+00a6682f: xor     eax, eax
+00a66831: lea     ecx, [ebp+var_240]
+00a66837: jmp     short loc_A66840
+00a66839: align 10h
+00a66840: fld     [ebp+eax*4+var_344]
+00a66847: inc     eax
+00a66848: fstp    dword ptr [ecx-4]
+00a6684b: add     ecx, 10h
+00a6684e: fld     [ebp+eax*4+var_338]
+00a66855: fstp    dword ptr [ecx-10h]
+00a66858: fld     [ebp+eax*4+var_328]
+00a6685f: fstp    dword ptr [ecx-0Ch]
+00a66862: fld     [ebp+eax*4+var_318]
+00a66869: fstp    dword ptr [ecx-8]
+00a6686c: cmp     eax, 4
+00a6686f: jl      short loc_A66840
+00a66871: fld     [ebp+var_218]
+00a66877: lea     eax, [ebp+var_2C4]
+00a6687d: fld     [ebp+var_21C]
+00a66883: lea     ecx, [ebp+var_3C0]
+00a66889: fld     [ebp+var_220]
+00a6688f: mov     edx, 3
+00a66894: fld     [ebp+var_224]
+00a6689a: fld     [ebp+var_228]
+00a668a0: fld     [ebp+var_234]
+00a668a6: fmul    dword ptr [eax+4]
+00a668a9: add     eax, 10h
+00a668ac: fld     [ebp+var_244]
+00a668b2: add     ecx, 10h
+00a668b5: fmul    dword ptr [eax-10h]
+00a668b8: faddp   st(1), st
+00a668ba: fld     st(2)
+00a668bc: fmul    dword ptr [eax-8]
+00a668bf: faddp   st(1), st
+00a668c1: fstp    dword ptr [ecx-14h]
+00a668c4: fld     [ebp+var_230]
+00a668ca: fmul    dword ptr [eax-0Ch]
+00a668cd: fld     [ebp+var_240]
+00a668d3: fmul    dword ptr [eax-10h]
+00a668d6: faddp   st(1), st
+00a668d8: fld     st(3)
+00a668da: fmul    dword ptr [eax-8]
+00a668dd: faddp   st(1), st
+00a668df: fstp    dword ptr [ecx-10h]
+00a668e2: fld     [ebp+var_22C]
+00a668e8: fmul    dword ptr [eax-0Ch]
+00a668eb: fld     [ebp+var_23C]
+00a668f1: fmul    dword ptr [eax-10h]
+00a668f4: faddp   st(1), st
+00a668f6: fld     st(4)
+00a668f8: fmul    dword ptr [eax-8]
+00a668fb: faddp   st(1), st
+00a668fd: fstp    dword ptr [ecx-0Ch]
+00a66900: fld     st
+00a66902: fmul    dword ptr [eax-0Ch]
+00a66905: fld     [ebp+var_238]
+00a6690b: fmul    dword ptr [eax-10h]
+00a6690e: faddp   st(1), st
+00a66910: fld     st(5)
+00a66912: fmul    dword ptr [eax-8]
+00a66915: faddp   st(1), st
+00a66917: fstp    dword ptr [ecx-8]
+00a6691a: fld     [ebp+var_234]
+00a66920: dec     edx
+00a66921: jnz     short loc_A668A6
+00a66923: mov     esi, [ebp+var_414]
+00a66929: fstp    st
+00a6692b: mov     ebx, [ebp+var_3F4]
+00a66931: fstp    st(4)
+00a66933: mov     eax, [esi+2Ch]
+00a66936: fstp    st(2)
+00a66938: fstp    st
+00a6693a: fstp    st
+00a6693c: fstp    st
+00a6693e: fld     dword ptr [eax+30h]
+00a66941: fstp    [ebp+var_394]
+00a66947: fld     dword ptr [eax+34h]
+00a6694a: fstp    [ebp+var_390]
+00a66950: fld     dword ptr [eax+38h]
+00a66953: fstp    [ebp+var_38C]
+00a66959: fld     dword ptr [eax+3Ch]
+00a6695c: lea     eax, [ebp+var_1C4]
+00a66962: add     eax, ebx
+00a66964: fstp    [ebp+var_388]
+00a6696a: push    eax
+00a6696b: lea     eax, [ebp+var_3C4]
+00a66971: push    eax
+00a66972: lea     eax, [ebp+var_54]
+00a66975: push    eax
+00a66976: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a6697b: fldz
+00a6697d: add     esp, 0Ch
+00a66980: xor     ecx, ecx
+00a66982: fcom    [ebp+ecx*4+var_54]
+00a66986: fnstsw  ax
+00a66988: test    ah, 41h
+00a6698b: jnz     short loc_A66991
+00a6698d: fst     [ebp+ecx*4+var_54]
+00a66991: inc     ecx
+00a66992: cmp     ecx, 4
+00a66995: jl      short loc_A66982
+00a66997: lea     eax, [ebp+var_54]
+00a6699a: fstp    st
+00a6699c: push    eax
+00a6699d: push    dword ptr [esi+24h]
+00a669a0: push    eax
+00a669a1: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a669a6: fldz
+00a669a8: add     esp, 0Ch
+00a669ab: xor     ecx, ecx
+00a669ad: fcom    [ebp+ecx*4+var_54]
+00a669b1: fnstsw  ax
+00a669b3: test    ah, 41h
+00a669b6: jnz     short loc_A669BC
+00a669b8: fst     [ebp+ecx*4+var_54]
+00a669bc: fld     [ebp+ecx*4+var_54]
+00a669c0: inc     ecx
+00a669c1: fmul    dword ptr [ebp+var_3EC+4]
+00a669c7: fstp    [ebp+ecx*4+var_58]
+00a669cb: cmp     ecx, 4
+00a669ce: jl      short loc_A669AD
+00a669d0: fld     [ebp+var_54]
+00a669d3: add     [ebp+var_410], 10h
+00a669da: fmul    [ebp+ebx+var_44]
+00a669de: add     ebx, 10h
+00a669e1: mov     [ebp+var_3F4], ebx
+00a669e7: fstp    [ebp+ebx+var_54]
+00a669eb: fld     [ebp+var_50]
+00a669ee: fmul    [ebp+ebx+var_50]
+00a669f2: fstp    [ebp+ebx+var_50]
+00a669f6: fld     [ebp+var_4C]
+00a669f9: fmul    [ebp+ebx+var_4C]
+00a669fd: fstp    [ebp+ebx+var_4C]
+00a66a01: cmp     ebx, 30h ; '0'
+00a66a04: jl      loc_A66730
+00a66a0a: mov     ebx, [ebp+var_43C]
+00a66a10: mov     edi, [ebp+var_418]
+00a66a16: jmp     short loc_A66A1A
+00a66a18: fldz
+00a66a1a: fld     [ebp+var_44]
+00a66a1d: mov     ecx, [ebx+4]
+00a66a20: fld     ds:dbl_B170C8
+00a66a26: mov     eax, [ebx+14h]
+00a66a29: fdiv    st(1), st
+00a66a2b: shl     ecx, 2
+00a66a2e: fxch    st(1)
+00a66a30: fstp    dword ptr [ebp+var_3EC+4]
+00a66a36: fld     dword ptr [ebp+var_3EC+4]
+00a66a3c: fstp    dword ptr [eax+ecx*4]
+00a66a3f: fld     [ebp+var_40]
+00a66a42: fdiv    st, st(1)
+00a66a44: mov     eax, [ebx+14h]
+00a66a47: fstp    dword ptr [ebp+var_3EC+4]
+00a66a4d: fld     dword ptr [ebp+var_3EC+4]
+00a66a53: fstp    dword ptr [eax+ecx*4+4]
+00a66a57: fld     [ebp+var_3C]
+00a66a5a: fdiv    st, st(1)
+00a66a5c: mov     eax, [ebx+14h]
+00a66a5f: fstp    dword ptr [ebp+var_3EC+4]
+00a66a65: fld     dword ptr [ebp+var_3EC+4]
+00a66a6b: fstp    dword ptr [eax+ecx*4+8]
+00a66a6f: fld     [ebp+var_38]
+00a66a72: fdiv    st, st(1)
+00a66a74: mov     eax, [ebx+14h]
+00a66a77: fstp    dword ptr [ebp+var_3EC+4]
+00a66a7d: fld     dword ptr [ebp+var_3EC+4]
+00a66a83: fstp    dword ptr [eax+ecx*4+0Ch]
+00a66a87: fld     [ebp+var_34]
+00a66a8a: fdiv    st, st(1)
+00a66a8c: mov     eax, [ebx+14h]
+00a66a8f: fstp    dword ptr [ebp+var_3EC+4]
+00a66a95: fld     dword ptr [ebp+var_3EC+4]
+00a66a9b: fstp    dword ptr [eax+ecx*4+10h]
+00a66a9f: fld     [ebp+var_30]
+00a66aa2: fdiv    st, st(1)
+00a66aa4: mov     eax, [ebx+14h]
+00a66aa7: fstp    dword ptr [ebp+var_3EC+4]
+00a66aad: fld     dword ptr [ebp+var_3EC+4]
+00a66ab3: fstp    dword ptr [eax+ecx*4+14h]
+00a66ab7: fld     [ebp+var_2C]
+00a66aba: fdiv    st, st(1)
+00a66abc: mov     eax, [ebx+14h]
+00a66abf: fstp    dword ptr [ebp+var_3EC+4]
+00a66ac5: fld     dword ptr [ebp+var_3EC+4]
+00a66acb: fstp    dword ptr [eax+ecx*4+18h]
+00a66acf: fld     [ebp+var_28]
+00a66ad2: fdiv    st, st(1)
+00a66ad4: mov     eax, [ebx+14h]
+00a66ad7: fstp    dword ptr [ebp+var_3EC+4]
+00a66add: fld     dword ptr [ebp+var_3EC+4]
+00a66ae3: fstp    dword ptr [eax+ecx*4+1Ch]
+00a66ae7: fld     [ebp+var_24]
+00a66aea: fdiv    st, st(1)
+00a66aec: mov     eax, [ebx+14h]
+00a66aef: fstp    dword ptr [ebp+var_3EC+4]
+00a66af5: fld     dword ptr [ebp+var_3EC+4]
+00a66afb: fstp    dword ptr [eax+ecx*4+20h]
+00a66aff: fld     [ebp+var_20]
+00a66b02: fdiv    st, st(1)
+00a66b04: mov     eax, [ebx+14h]
+00a66b07: fstp    dword ptr [ebp+var_3EC+4]
+00a66b0d: fld     dword ptr [ebp+var_3EC+4]
+00a66b13: fstp    dword ptr [eax+ecx*4+24h]
+00a66b17: fld     [ebp+var_1C]
+00a66b1a: fdiv    st, st(1)
+00a66b1c: mov     eax, [ebx+14h]
+00a66b1f: fstp    dword ptr [ebp+var_3EC+4]
+00a66b25: fld     dword ptr [ebp+var_3EC+4]
+00a66b2b: fstp    dword ptr [eax+ecx*4+28h]
+00a66b2f: mov     eax, [ebx+14h]
+00a66b32: fdivr   [ebp+var_18]
+00a66b35: fstp    dword ptr [ebp+var_3EC+4]
+00a66b3b: fld     dword ptr [ebp+var_3EC+4]
+00a66b41: fstp    dword ptr [eax+ecx*4+2Ch]
+00a66b45: mov     eax, [ebx+1Ch]
+00a66b48: mov     esi, [ebx+8]
+00a66b4b: mov     edx, [ebx+4]
+00a66b4e: mov     [eax+esi*2], dx
+00a66b52: mov     eax, [ebx+1Ch]
+00a66b55: lea     ecx, [edx+1]
+00a66b58: fld     [ebp+var_424]
+00a66b5e: mov     [eax+esi*2+2], cx
+00a66b63: mov     eax, [ebx+1Ch]
+00a66b66: fld     [ebp+var_420]
+00a66b6c: fld     [ebp+var_3FC]
+00a66b72: lea     ecx, [edx+2]
+00a66b75: mov     [eax+esi*2+4], cx
+00a66b7a: mov     eax, [ebp+var_41C]
+00a66b80: add     dword ptr [ebx+4], 3
+00a66b84: add     dword ptr [ebx+8], 3
+00a66b88: mov     ecx, [ebp+var_3F0]
+00a66b8e: movsx   eax, word ptr [eax+2]
+00a66b92: mov     esi, [ebp+var_414]
+00a66b98: inc     ecx
+00a66b99: add     edi, 1Ch
+00a66b9c: mov     [ebp+var_3F0], ecx
+00a66ba2: mov     [ebp+var_418], edi
+00a66ba8: cmp     ecx, eax
+00a66baa: jl      loc_A660D8
+00a66bb0: mov     ecx, [ebp+var_41C]
+00a66bb6: fstp    st(3)
+00a66bb8: mov     edx, [ebp+var_42C]
+00a66bbe: fstp    st(2)
+00a66bc0: fstp    st
+00a66bc2: fstp    st
+00a66bc4: fld     [ebp+var_424]
+00a66bca: fld     [ebp+var_420]
+00a66bd0: fld     [ebp+var_40C]
+00a66bd6: fld     [ebp+var_3FC]
+00a66bdc: fld     [ebp+var_3F8]
+00a66be2: jmp     def_A65B24; jumptable 00A65B24 default case
+00a66be7: movsx   eax, word ptr [ecx+2]; jumptable 00A65B24 case 2
+00a66beb: test    eax, eax
+00a66bed: jle     def_A65B24; jumptable 00A65B24 default case
+00a66bf3: shl     eax, 5
+00a66bf6: jmp     loc_A680E0
+00a66bfb: movsx   eax, word ptr [ecx+2]; jumptable 00A65B24 cases 3,6
+00a66bff: test    eax, eax
+00a66c01: jle     def_A65B24; jumptable 00A65B24 default case
+00a66c07: lea     eax, [eax+eax*4]
+00a66c0a: lea     edi, [edi+eax*8]
+00a66c0d: jmp     def_A65B24; jumptable 00A65B24 default case
+00a66c12: xor     eax, eax; jumptable 00A65B24 case 4
+00a66c14: mov     [ebp+var_418], edi
+00a66c1a: mov     [ebp+var_3F0], 0
+00a66c24: cmp     ax, [ecx+2]
+00a66c28: jge     def_A65B24; jumptable 00A65B24 default case
+00a66c2e: mov     eax, [ebx+4]
+00a66c31: mov     edx, [ebp+hudContext]; hudContext
+00a66c37: lea     ecx, [eax+eax*2]; charId
+00a66c3a: movzx   eax, word ptr [edi+10h]
+00a66c3e: lea     eax, [eax+eax*2]
+00a66c41: movsx   eax, word ptr [edx+eax*2]
+00a66c45: mov     dword ptr [ebp+var_3EC+4], eax
+00a66c4b: fild    dword ptr [ebp+var_3EC+4]
+00a66c51: fstp    [ebp+var_3EC]
+00a66c57: fld     [ebp+var_3EC]
+00a66c5d: mov     eax, [ebx+0Ch]
+00a66c60: fmulp   st(2), st
+00a66c62: fld     st(3)
+00a66c64: faddp   st(2), st
+00a66c66: fld     [ebp+var_434]
+00a66c6c: fld     st
+00a66c6e: fmulp   st(3), st
+00a66c70: fxch    st(2)
+00a66c72: fsubrp  st(1), st
+00a66c74: fstp    dword ptr [ebp+var_3EC+4]
+00a66c7a: fld     dword ptr [ebp+var_3EC+4]
+00a66c80: fstp    dword ptr [eax+ecx*4]
+00a66c83: movzx   eax, word ptr [edi+10h]
+00a66c87: lea     eax, [eax+eax*2]
+00a66c8a: movsx   eax, word ptr [edx+eax*2+2]
+00a66c8f: mov     dword ptr [ebp+var_3EC+4], eax
+00a66c95: fild    dword ptr [ebp+var_3EC+4]
+00a66c9b: fstp    [ebp+var_3EC]
+00a66ca1: fld     [ebp+var_3EC]
+00a66ca7: mov     eax, [ebx+0Ch]
+00a66caa: fld     [ebp+var_428]
+00a66cb0: fld     st
+00a66cb2: fmulp   st(2), st
+00a66cb4: fld     st(3)
+00a66cb6: faddp   st(2), st
+00a66cb8: fld     [ebp+var_438]
+00a66cbe: fld     st
+00a66cc0: fmulp   st(3), st
+00a66cc2: fld     [ebp+var_408]
+00a66cc8: fsubp   st(3), st
+00a66cca: fxch    st(2)
+00a66ccc: fstp    dword ptr [ebp+var_3EC+4]
+00a66cd2: fld     dword ptr [ebp+var_3EC+4]
+00a66cd8: fstp    dword ptr [eax+ecx*4+4]
+00a66cdc: mov     eax, [ebx+0Ch]
+00a66cdf: fxch    st(5)
+00a66ce1: fst     dword ptr [eax+ecx*4+8]
+00a66ce5: movzx   eax, word ptr [edi+12h]
+00a66ce9: lea     eax, [eax+eax*2]
+00a66cec: movsx   eax, word ptr [edx+eax*2]
+00a66cf0: mov     dword ptr [ebp+var_3EC+4], eax
+00a66cf6: fild    dword ptr [ebp+var_3EC+4]
+00a66cfc: fstp    [ebp+var_3EC]
+00a66d02: fld     [ebp+var_3EC]
+00a66d08: mov     eax, [ebx+0Ch]
+00a66d0b: fmul    [ebp+var_3FC]
+00a66d11: fadd    st, st(5)
+00a66d13: fmul    st, st(3)
+00a66d15: fsub    [ebp+var_3F8]
+00a66d1b: fstp    dword ptr [ebp+var_3EC+4]
+00a66d21: fld     dword ptr [ebp+var_3EC+4]
+00a66d27: fstp    dword ptr [eax+ecx*4+0Ch]
+00a66d2b: movzx   eax, word ptr [edi+12h]
+00a66d2f: lea     eax, [eax+eax*2]
+00a66d32: movsx   eax, word ptr [edx+eax*2+2]
+00a66d37: mov     dword ptr [ebp+var_3EC+4], eax
+00a66d3d: fild    dword ptr [ebp+var_3EC+4]
+00a66d43: fstp    [ebp+var_3EC]
+00a66d49: fld     [ebp+var_3EC]
+00a66d4f: mov     eax, [ebx+0Ch]
+00a66d52: fmul    st, st(6)
+00a66d54: fadd    st, st(4)
+00a66d56: fmul    st, st(2)
+00a66d58: fsub    [ebp+var_408]
+00a66d5e: fstp    dword ptr [ebp+var_3EC+4]
+00a66d64: fld     dword ptr [ebp+var_3EC+4]
+00a66d6a: fstp    dword ptr [eax+ecx*4+10h]
+00a66d6e: mov     eax, [ebx+0Ch]
+00a66d71: fst     dword ptr [eax+ecx*4+14h]
+00a66d75: movzx   eax, word ptr [edi+14h]
+00a66d79: lea     eax, [eax+eax*2]
+00a66d7c: movsx   eax, word ptr [edx+eax*2]
+00a66d80: mov     dword ptr [ebp+var_3EC+4], eax
+00a66d86: fild    dword ptr [ebp+var_3EC+4]
+00a66d8c: fstp    [ebp+var_3EC]
+00a66d92: fld     [ebp+var_3EC]
+00a66d98: mov     eax, [ebx+0Ch]
+00a66d9b: fmul    [ebp+var_3FC]
+00a66da1: fadd    st, st(5)
+00a66da3: fmul    st, st(3)
+00a66da5: fsub    [ebp+var_3F8]
+00a66dab: fstp    dword ptr [ebp+var_3EC+4]
+00a66db1: fld     dword ptr [ebp+var_3EC+4]
+00a66db7: fstp    dword ptr [eax+ecx*4+18h]
+00a66dbb: movzx   eax, word ptr [edi+14h]
+00a66dbf: lea     eax, [eax+eax*2]
+00a66dc2: movsx   eax, word ptr [edx+eax*2+2]
+00a66dc7: mov     dword ptr [ebp+var_3EC+4], eax
+00a66dcd: fild    dword ptr [ebp+var_3EC+4]
+00a66dd3: fstp    [ebp+var_3EC]
+00a66dd9: fld     [ebp+var_3EC]
+00a66ddf: mov     eax, [ebx+0Ch]
+00a66de2: fmul    st, st(6)
+00a66de4: fadd    st, st(4)
+00a66de6: fmul    st, st(2)
+00a66de8: fsub    [ebp+var_408]
+00a66dee: fstp    dword ptr [ebp+var_3EC+4]
+00a66df4: fld     dword ptr [ebp+var_3EC+4]
+00a66dfa: fstp    dword ptr [eax+ecx*4+1Ch]
+00a66dfe: mov     eax, [ebx+0Ch]
+00a66e01: fst     dword ptr [eax+ecx*4+20h]
+00a66e05: movzx   eax, word ptr [edi+16h]
+00a66e09: lea     eax, [eax+eax*2]
+00a66e0c: movsx   eax, word ptr [edx+eax*2]
+00a66e10: mov     dword ptr [ebp+var_3EC+4], eax
+00a66e16: fild    dword ptr [ebp+var_3EC+4]
+00a66e1c: fstp    [ebp+var_3EC]
+00a66e22: fld     [ebp+var_3EC]
+00a66e28: mov     eax, [ebx+0Ch]
+00a66e2b: fmul    [ebp+var_3FC]
+00a66e31: faddp   st(5), st
+00a66e33: fxch    st(4)
+00a66e35: fmulp   st(2), st
+00a66e37: fld     [ebp+var_3F8]
+00a66e3d: fsubp   st(2), st
+00a66e3f: fxch    st(1)
+00a66e41: fstp    dword ptr [ebp+var_3EC+4]
+00a66e47: fld     dword ptr [ebp+var_3EC+4]
+00a66e4d: fstp    dword ptr [eax+ecx*4+24h]
+00a66e51: movzx   eax, word ptr [edi+16h]
+00a66e55: lea     eax, [eax+eax*2]
+00a66e58: movsx   eax, word ptr [edx+eax*2+2]
+00a66e5d: mov     dword ptr [ebp+var_3EC+4], eax
+00a66e63: fild    dword ptr [ebp+var_3EC+4]
+00a66e69: fstp    [ebp+var_3EC]
+00a66e6f: fld     [ebp+var_3EC]
+00a66e75: mov     eax, [ebx+0Ch]
+00a66e78: fmulp   st(4), st
+00a66e7a: fxch    st(3)
+00a66e7c: faddp   st(1), st
+00a66e7e: fmulp   st(2), st
+00a66e80: fld     [ebp+var_408]
+00a66e86: fsubp   st(2), st
+00a66e88: fxch    st(1)
+00a66e8a: fstp    dword ptr [ebp+var_3EC+4]
+00a66e90: fld     dword ptr [ebp+var_3EC+4]
+00a66e96: fstp    dword ptr [eax+ecx*4+28h]
+00a66e9a: mov     eax, [ebx+0Ch]
+00a66e9d: fstp    dword ptr [eax+ecx*4+2Ch]
+00a66ea1: mov     eax, [ebx+10h]
+00a66ea4: fldz
+00a66ea6: fst     dword ptr [eax+ecx*4]
+00a66ea9: mov     eax, [ebx+10h]
+00a66eac: fst     dword ptr [eax+ecx*4+4]
+00a66eb0: mov     eax, [ebx+10h]
+00a66eb3: fld1
+00a66eb5: fst     dword ptr [eax+ecx*4+8]
+00a66eb9: mov     eax, [ebx+10h]
+00a66ebc: fxch    st(1)
+00a66ebe: fst     dword ptr [eax+ecx*4+0Ch]
+00a66ec2: mov     eax, [ebx+10h]
+00a66ec5: fst     dword ptr [eax+ecx*4+10h]
+00a66ec9: mov     eax, [ebx+10h]
+00a66ecc: fxch    st(1)
+00a66ece: fst     dword ptr [eax+ecx*4+14h]
+00a66ed2: mov     eax, [ebx+10h]
+00a66ed5: fxch    st(1)
+00a66ed7: fst     dword ptr [eax+ecx*4+18h]
+00a66edb: mov     eax, [ebx+10h]
+00a66ede: fst     dword ptr [eax+ecx*4+1Ch]
+00a66ee2: mov     eax, [ebx+10h]
+00a66ee5: fxch    st(1)
+00a66ee7: fst     dword ptr [eax+ecx*4+20h]
+00a66eeb: mov     eax, [ebx+10h]
+00a66eee: fxch    st(1)
+00a66ef0: fst     dword ptr [eax+ecx*4+24h]
+00a66ef4: mov     eax, [ebx+10h]
+00a66ef7: fstp    dword ptr [eax+ecx*4+28h]
+00a66efb: mov     eax, [ebx+10h]
+00a66efe: fstp    dword ptr [eax+ecx*4+2Ch]
+00a66f02: movzx   eax, byte ptr [edi]
+00a66f05: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f0b: movzx   eax, byte ptr [edi+1]
+00a66f0f: fild    dword ptr [ebp+var_3EC+4]
+00a66f15: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f1b: movzx   eax, byte ptr [edi+2]
+00a66f1f: fstp    [ebp+var_114]
+00a66f25: fild    dword ptr [ebp+var_3EC+4]
+00a66f2b: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f31: movzx   eax, byte ptr [edi+3]
+00a66f35: fstp    [ebp+var_110]
+00a66f3b: fild    dword ptr [ebp+var_3EC+4]
+00a66f41: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f47: movzx   eax, byte ptr [edi+4]
+00a66f4b: fstp    [ebp+var_10C]
+00a66f51: fild    dword ptr [ebp+var_3EC+4]
+00a66f57: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f5d: movzx   eax, byte ptr [edi+5]
+00a66f61: fstp    [ebp+var_108]
+00a66f67: fild    dword ptr [ebp+var_3EC+4]
+00a66f6d: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f73: movzx   eax, byte ptr [edi+6]
+00a66f77: fstp    [ebp+var_104]
+00a66f7d: fild    dword ptr [ebp+var_3EC+4]
+00a66f83: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f89: movzx   eax, byte ptr [edi+7]
+00a66f8d: fstp    [ebp+var_100]
+00a66f93: fild    dword ptr [ebp+var_3EC+4]
+00a66f99: mov     dword ptr [ebp+var_3EC+4], eax
+00a66f9f: movzx   eax, byte ptr [edi+8]
+00a66fa3: fstp    [ebp+var_FC]
+00a66fa9: fild    dword ptr [ebp+var_3EC+4]
+00a66faf: mov     dword ptr [ebp+var_3EC+4], eax
+00a66fb5: movzx   eax, byte ptr [edi+9]
+00a66fb9: fstp    [ebp+var_F8]
+00a66fbf: fild    dword ptr [ebp+var_3EC+4]
+00a66fc5: mov     dword ptr [ebp+var_3EC+4], eax
+00a66fcb: movzx   eax, byte ptr [edi+0Ah]
+00a66fcf: fstp    [ebp+var_F4]
+00a66fd5: fild    dword ptr [ebp+var_3EC+4]
+00a66fdb: mov     dword ptr [ebp+var_3EC+4], eax
+00a66fe1: movzx   eax, byte ptr [edi+0Bh]
+00a66fe5: fstp    [ebp+var_F0]
+00a66feb: fild    dword ptr [ebp+var_3EC+4]
+00a66ff1: mov     dword ptr [ebp+var_3EC+4], eax
+00a66ff7: movzx   eax, byte ptr [edi+0Ch]
+00a66ffb: fstp    [ebp+var_EC]
+00a67001: fild    dword ptr [ebp+var_3EC+4]
+00a67007: mov     dword ptr [ebp+var_3EC+4], eax
+00a6700d: movzx   eax, byte ptr [edi+0Dh]
+00a67011: fstp    [ebp+var_E8]
+00a67017: fild    dword ptr [ebp+var_3EC+4]
+00a6701d: mov     dword ptr [ebp+var_3EC+4], eax
+00a67023: movzx   eax, byte ptr [edi+0Eh]
+00a67027: fstp    [ebp+var_E4]
+00a6702d: fild    dword ptr [ebp+var_3EC+4]
+00a67033: mov     dword ptr [ebp+var_3EC+4], eax
+00a67039: movzx   eax, byte ptr [edi+0Fh]
+00a6703d: fstp    [ebp+var_E0]
+00a67043: fild    dword ptr [ebp+var_3EC+4]
+00a67049: mov     dword ptr [ebp+var_3EC+4], eax
+00a6704f: fstp    [ebp+var_DC]
+00a67055: fild    dword ptr [ebp+var_3EC+4]
+00a6705b: lea     eax, [ebp+var_114]
+00a67061: fstp    [ebp+var_D8]
+00a67067: push    eax
+00a67068: lea     eax, [ebp+var_14]
+00a6706b: push    eax
+00a6706c: lea     eax, [ebp+var_114]
+00a67072: push    eax
+00a67073: call    FFX_BtlUI_HudParty_GetTarget
+00a67078: lea     eax, [ebp+var_104]
+00a6707e: push    eax
+00a6707f: lea     eax, [ebp+var_14]
+00a67082: push    eax
+00a67083: lea     eax, [ebp+var_104]
+00a67089: push    eax
+00a6708a: call    FFX_BtlUI_HudParty_GetTarget
+00a6708f: lea     eax, [ebp+var_F4]
+00a67095: push    eax
+00a67096: lea     eax, [ebp+var_14]
+00a67099: push    eax
+00a6709a: lea     eax, [ebp+var_F4]
+00a670a0: push    eax
+00a670a1: call    FFX_BtlUI_HudParty_GetTarget
+00a670a6: lea     eax, [ebp+var_E4]
+00a670ac: push    eax
+00a670ad: lea     eax, [ebp+var_14]
+00a670b0: push    eax
+00a670b1: lea     eax, [ebp+var_E4]
+00a670b7: push    eax
+00a670b8: call    FFX_BtlUI_HudParty_GetTarget
+00a670bd: fld     [ebp+var_114]
+00a670c3: fld     ds:dbl_B170C8
+00a670c9: mov     ecx, [ebx+4]
+00a670cc: fdiv    st(1), st
+00a670ce: mov     eax, [ebx+14h]
+00a670d1: add     esp, 30h
+00a670d4: shl     ecx, 2
+00a670d7: fxch    st(1)
+00a670d9: fstp    dword ptr [ebp+var_3EC+4]
+00a670df: fld     dword ptr [ebp+var_3EC+4]
+00a670e5: fstp    dword ptr [eax+ecx*4]
+00a670e8: fld     [ebp+var_110]
+00a670ee: fdiv    st, st(1)
+00a670f0: mov     eax, [ebx+14h]
+00a670f3: fstp    dword ptr [ebp+var_3EC+4]
+00a670f9: fld     dword ptr [ebp+var_3EC+4]
+00a670ff: fstp    dword ptr [eax+ecx*4+4]
+00a67103: fld     [ebp+var_10C]
+00a67109: fdiv    st, st(1)
+00a6710b: mov     eax, [ebx+14h]
+00a6710e: fstp    dword ptr [ebp+var_3EC+4]
+00a67114: fld     dword ptr [ebp+var_3EC+4]
+00a6711a: fstp    dword ptr [eax+ecx*4+8]
+00a6711e: fld     [ebp+var_108]
+00a67124: fdiv    st, st(1)
+00a67126: mov     eax, [ebx+14h]
+00a67129: fstp    dword ptr [ebp+var_3EC+4]
+00a6712f: fld     dword ptr [ebp+var_3EC+4]
+00a67135: fstp    dword ptr [eax+ecx*4+0Ch]
+00a67139: fld     [ebp+var_104]
+00a6713f: fdiv    st, st(1)
+00a67141: mov     eax, [ebx+14h]
+00a67144: fstp    dword ptr [ebp+var_3EC+4]
+00a6714a: fld     dword ptr [ebp+var_3EC+4]
+00a67150: fstp    dword ptr [eax+ecx*4+10h]
+00a67154: fld     [ebp+var_100]
+00a6715a: fdiv    st, st(1)
+00a6715c: mov     eax, [ebx+14h]
+00a6715f: fstp    dword ptr [ebp+var_3EC+4]
+00a67165: fld     dword ptr [ebp+var_3EC+4]
+00a6716b: fstp    dword ptr [eax+ecx*4+14h]
+00a6716f: fld     [ebp+var_FC]
+00a67175: fdiv    st, st(1)
+00a67177: mov     eax, [ebx+14h]
+00a6717a: fstp    dword ptr [ebp+var_3EC+4]
+00a67180: fld     dword ptr [ebp+var_3EC+4]
+00a67186: fstp    dword ptr [eax+ecx*4+18h]
+00a6718a: fld     [ebp+var_F8]
+00a67190: fdiv    st, st(1)
+00a67192: mov     eax, [ebx+14h]
+00a67195: fstp    dword ptr [ebp+var_3EC+4]
+00a6719b: fld     dword ptr [ebp+var_3EC+4]
+00a671a1: fstp    dword ptr [eax+ecx*4+1Ch]
+00a671a5: mov     eax, [ebx+14h]
+00a671a8: fld     [ebp+var_F4]
+00a671ae: fdiv    st, st(1)
+00a671b0: fstp    dword ptr [ebp+var_3EC+4]
+00a671b6: fld     dword ptr [ebp+var_3EC+4]
+00a671bc: fstp    dword ptr [eax+ecx*4+20h]
+00a671c0: fld     [ebp+var_F0]
+00a671c6: fdiv    st, st(1)
+00a671c8: mov     eax, [ebx+14h]
+00a671cb: fstp    dword ptr [ebp+var_3EC+4]
+00a671d1: fld     dword ptr [ebp+var_3EC+4]
+00a671d7: fstp    dword ptr [eax+ecx*4+24h]
+00a671db: fld     [ebp+var_EC]
+00a671e1: fdiv    st, st(1)
+00a671e3: mov     eax, [ebx+14h]
+00a671e6: fstp    dword ptr [ebp+var_3EC+4]
+00a671ec: fld     dword ptr [ebp+var_3EC+4]
+00a671f2: fstp    dword ptr [eax+ecx*4+28h]
+00a671f6: fld     [ebp+var_E8]
+00a671fc: fdiv    st, st(1)
+00a671fe: mov     eax, [ebx+14h]
+00a67201: fstp    dword ptr [ebp+var_3EC+4]
+00a67207: fld     dword ptr [ebp+var_3EC+4]
+00a6720d: fstp    dword ptr [eax+ecx*4+2Ch]
+00a67211: fld     [ebp+var_E4]
+00a67217: fdiv    st, st(1)
+00a67219: mov     eax, [ebx+14h]
+00a6721c: fstp    dword ptr [ebp+var_3EC+4]
+00a67222: fld     dword ptr [ebp+var_3EC+4]
+00a67228: fstp    dword ptr [eax+ecx*4+30h]
+00a6722c: fld     [ebp+var_E0]
+00a67232: fdiv    st, st(1)
+00a67234: mov     eax, [ebx+14h]
+00a67237: fstp    dword ptr [ebp+var_3EC+4]
+00a6723d: fld     dword ptr [ebp+var_3EC+4]
+00a67243: fstp    dword ptr [eax+ecx*4+34h]
+00a67247: fld     [ebp+var_DC]
+00a6724d: fdiv    st, st(1)
+00a6724f: mov     eax, [ebx+14h]
+00a67252: fstp    dword ptr [ebp+var_3EC+4]
+00a67258: fld     dword ptr [ebp+var_3EC+4]
+00a6725e: fstp    dword ptr [eax+ecx*4+38h]
+00a67262: mov     eax, [ebx+14h]
+00a67265: fdivr   [ebp+var_D8]
+00a6726b: fstp    dword ptr [ebp+var_3EC+4]
+00a67271: fld     dword ptr [ebp+var_3EC+4]
+00a67277: fstp    dword ptr [eax+ecx*4+3Ch]
+00a6727b: fld     [ebp+var_424]
+00a67281: mov     esi, [ebx+4]
+00a67284: fld     [ebp+var_420]
+00a6728a: mov     edi, [ebx+8]
+00a6728d: fld     [ebp+var_40C]
+00a67293: mov     eax, [ebx+1Ch]
+00a67296: fld     [ebp+var_3FC]
+00a6729c: fld     [ebp+var_3F8]
+00a672a2: lea     edx, [esi+1]
+00a672a5: mov     [eax+edi*2], si
+00a672a9: mov     eax, [ebx+1Ch]
+00a672ac: lea     ecx, [esi+2]
+00a672af: mov     [eax+edi*2+2], dx
+00a672b4: mov     eax, [ebx+1Ch]
+00a672b7: mov     [eax+edi*2+4], cx
+00a672bc: mov     eax, [ebx+1Ch]
+00a672bf: mov     [eax+edi*2+6], cx
+00a672c4: mov     eax, [ebx+1Ch]
+00a672c7: lea     ecx, [esi+3]
+00a672ca: mov     [eax+edi*2+8], dx
+00a672cf: mov     eax, [ebx+1Ch]
+00a672d2: mov     [eax+edi*2+0Ah], cx
+00a672d7: mov     eax, [ebp+var_41C]
+00a672dd: add     dword ptr [ebx+4], 4
+00a672e1: add     dword ptr [ebx+8], 6
+00a672e5: mov     ecx, [ebp+var_3F0]
+00a672eb: mov     edi, [ebp+var_418]
+00a672f1: movsx   eax, word ptr [eax+2]
+00a672f5: inc     ecx
+00a672f6: add     edi, 18h
+00a672f9: mov     [ebp+var_3F0], ecx
+00a672ff: mov     [ebp+var_418], edi
+00a67305: cmp     ecx, eax
+00a67307: jl      loc_A66C2E
+00a6730d: jmp     loc_A66075
+00a67312: xor     eax, eax; jumptable 00A65B24 case 5
+00a67314: mov     [ebp+var_418], edi
+00a6731a: mov     [ebp+var_3F4], 0
+00a67324: cmp     ax, [ecx+2]
+00a67328: jge     def_A65B24; jumptable 00A65B24 default case
+00a6732e: fstp    st
+00a67330: fstp    st(1)
+00a67332: fldz
+00a67334: jmp     short loc_A67340
+00a67336: fxch    st(2)
+00a67338: fxch    st(3)
+00a6733a: fxch    st(1)
+00a6733c: fxch    st(2)
+00a6733e: fxch    st(1)
+00a67340: mov     eax, [ebx+4]
+00a67343: mov     edx, [ebp+hudContext]; hudContext
+00a67349: lea     ecx, [eax+eax*2]; charId
+00a6734c: movzx   eax, word ptr [edi+10h]
+00a67350: lea     eax, [eax+eax*2]
+00a67353: movsx   eax, word ptr [edx+eax*2]
+00a67357: mov     dword ptr [ebp+var_3EC+4], eax
+00a6735d: fild    dword ptr [ebp+var_3EC+4]
+00a67363: fstp    [ebp+var_3EC]
+00a67369: fld     [ebp+var_3EC]
+00a6736f: mov     eax, [ebx+0Ch]
+00a67372: fmulp   st(2), st
+00a67374: fld     st(2)
+00a67376: faddp   st(2), st
+00a67378: fld     [ebp+var_434]
+00a6737e: fld     st
+00a67380: fmulp   st(3), st
+00a67382: fld     [ebp+var_3F8]
+00a67388: fsubp   st(3), st
+00a6738a: fxch    st(2)
+00a6738c: fstp    dword ptr [ebp+var_3EC+4]
+00a67392: fld     dword ptr [ebp+var_3EC+4]
+00a67398: fstp    dword ptr [eax+ecx*4]
+00a6739b: movzx   eax, word ptr [edi+10h]
+00a6739f: lea     eax, [eax+eax*2]
+00a673a2: movsx   eax, word ptr [edx+eax*2+2]
+00a673a7: mov     dword ptr [ebp+var_3EC+4], eax
+00a673ad: fild    dword ptr [ebp+var_3EC+4]
+00a673b3: fstp    [ebp+var_3EC]
+00a673b9: fld     [ebp+var_3EC]
+00a673bf: mov     eax, [ebx+0Ch]
+00a673c2: fld     [ebp+var_428]
+00a673c8: fld     st
+00a673ca: fmulp   st(2), st
+00a673cc: fld     [ebp+var_40C]
+00a673d2: faddp   st(2), st
+00a673d4: fld     [ebp+var_438]
+00a673da: fld     st
+00a673dc: fmulp   st(3), st
+00a673de: fld     [ebp+var_408]
+00a673e4: fsubp   st(3), st
+00a673e6: fxch    st(2)
+00a673e8: fstp    dword ptr [ebp+var_3EC+4]
+00a673ee: fld     dword ptr [ebp+var_3EC+4]
+00a673f4: fstp    dword ptr [eax+ecx*4+4]
+00a673f8: mov     eax, [ebx+0Ch]
+00a673fb: fxch    st(5)
+00a673fd: fst     dword ptr [eax+ecx*4+8]
+00a67401: movzx   eax, word ptr [edi+12h]
+00a67405: lea     eax, [eax+eax*2]
+00a67408: movsx   eax, word ptr [edx+eax*2]
+00a6740c: mov     dword ptr [ebp+var_3EC+4], eax
+00a67412: fild    dword ptr [ebp+var_3EC+4]
+00a67418: fstp    [ebp+var_3EC]
+00a6741e: fld     [ebp+var_3EC]
+00a67424: mov     eax, [ebx+0Ch]
+00a67427: fmul    [ebp+var_3FC]
+00a6742d: fadd    st, st(5)
+00a6742f: fmul    st, st(4)
+00a67431: fsub    [ebp+var_3F8]
+00a67437: fstp    dword ptr [ebp+var_3EC+4]
+00a6743d: fld     dword ptr [ebp+var_3EC+4]
+00a67443: fstp    dword ptr [eax+ecx*4+0Ch]
+00a67447: movzx   eax, word ptr [edi+12h]
+00a6744b: lea     eax, [eax+eax*2]
+00a6744e: movsx   eax, word ptr [edx+eax*2+2]
+00a67453: mov     dword ptr [ebp+var_3EC+4], eax
+00a67459: fild    dword ptr [ebp+var_3EC+4]
+00a6745f: fstp    [ebp+var_3EC]
+00a67465: fld     [ebp+var_3EC]
+00a6746b: mov     eax, [ebx+0Ch]
+00a6746e: fmul    st, st(6)
+00a67470: fadd    [ebp+var_40C]
+00a67476: fmul    st, st(2)
+00a67478: fsub    [ebp+var_408]
+00a6747e: fstp    dword ptr [ebp+var_3EC+4]
+00a67484: fld     dword ptr [ebp+var_3EC+4]
+00a6748a: fstp    dword ptr [eax+ecx*4+10h]
+00a6748e: mov     eax, [ebx+0Ch]
+00a67491: fst     dword ptr [eax+ecx*4+14h]
+00a67495: movzx   eax, word ptr [edi+14h]
+00a67499: lea     eax, [eax+eax*2]
+00a6749c: movsx   eax, word ptr [edx+eax*2]
+00a674a0: mov     dword ptr [ebp+var_3EC+4], eax
+00a674a6: fild    dword ptr [ebp+var_3EC+4]
+00a674ac: fstp    [ebp+var_3EC]
+00a674b2: fld     [ebp+var_3EC]
+00a674b8: mov     eax, [ebx+0Ch]
+00a674bb: fmul    [ebp+var_3FC]
+00a674c1: fadd    st, st(5)
+00a674c3: fmul    st, st(4)
+00a674c5: fsub    [ebp+var_3F8]
+00a674cb: fstp    dword ptr [ebp+var_3EC+4]
+00a674d1: fld     dword ptr [ebp+var_3EC+4]
+00a674d7: fstp    dword ptr [eax+ecx*4+18h]
+00a674db: movzx   eax, word ptr [edi+14h]
+00a674df: lea     eax, [eax+eax*2]
+00a674e2: movsx   eax, word ptr [edx+eax*2+2]
+00a674e7: mov     dword ptr [ebp+var_3EC+4], eax
+00a674ed: fild    dword ptr [ebp+var_3EC+4]
+00a674f3: fstp    [ebp+var_3EC]
+00a674f9: fld     [ebp+var_3EC]
+00a674ff: mov     eax, [ebx+0Ch]
+00a67502: fmul    st, st(6)
+00a67504: fadd    [ebp+var_40C]
+00a6750a: fmul    st, st(2)
+00a6750c: fsub    [ebp+var_408]
+00a67512: fstp    dword ptr [ebp+var_3EC+4]
+00a67518: fld     dword ptr [ebp+var_3EC+4]
+00a6751e: fstp    dword ptr [eax+ecx*4+1Ch]
+00a67522: mov     eax, [ebx+0Ch]
+00a67525: fst     dword ptr [eax+ecx*4+20h]
+00a67529: movzx   eax, word ptr [edi+16h]
+00a6752d: lea     eax, [eax+eax*2]
+00a67530: movsx   eax, word ptr [edx+eax*2]
+00a67534: mov     dword ptr [ebp+var_3EC+4], eax
+00a6753a: fild    dword ptr [ebp+var_3EC+4]
+00a67540: fstp    [ebp+var_3EC]
+00a67546: fld     [ebp+var_3EC]
+00a6754c: mov     eax, [ebx+0Ch]
+00a6754f: fmul    [ebp+var_3FC]
+00a67555: faddp   st(5), st
+00a67557: fxch    st(4)
+00a67559: fmulp   st(3), st
+00a6755b: fld     [ebp+var_3F8]
+00a67561: fsubp   st(3), st
+00a67563: fxch    st(2)
+00a67565: fstp    dword ptr [ebp+var_3EC+4]
+00a6756b: fld     dword ptr [ebp+var_3EC+4]
+00a67571: fstp    dword ptr [eax+ecx*4+24h]
+00a67575: movzx   eax, word ptr [edi+16h]
+00a67579: lea     eax, [eax+eax*2]
+00a6757c: movsx   eax, word ptr [edx+eax*2+2]
+00a67581: mov     dword ptr [ebp+var_3EC+4], eax
+00a67587: fild    dword ptr [ebp+var_3EC+4]
+00a6758d: fstp    [ebp+var_3EC]
+00a67593: fld     [ebp+var_3EC]
+00a67599: mov     eax, [ebx+0Ch]
+00a6759c: fmulp   st(4), st
+00a6759e: fld     [ebp+var_40C]
+00a675a4: faddp   st(4), st
+00a675a6: fxch    st(3)
+00a675a8: fmulp   st(1), st
+00a675aa: fsub    [ebp+var_408]
+00a675b0: fstp    dword ptr [ebp+var_3EC+4]
+00a675b6: fld     dword ptr [ebp+var_3EC+4]
+00a675bc: fstp    dword ptr [eax+ecx*4+28h]
+00a675c0: mov     eax, [ebx+0Ch]
+00a675c3: fstp    dword ptr [eax+ecx*4+2Ch]
+00a675c7: mov     eax, [ebx+10h]
+00a675ca: fst     dword ptr [eax+ecx*4]
+00a675cd: mov     eax, [ebx+10h]
+00a675d0: fst     dword ptr [eax+ecx*4+4]
+00a675d4: mov     eax, [ebx+10h]
+00a675d7: fld1
+00a675d9: fst     dword ptr [eax+ecx*4+8]
+00a675dd: mov     eax, [ebx+10h]
+00a675e0: fxch    st(1)
+00a675e2: fst     dword ptr [eax+ecx*4+0Ch]
+00a675e6: mov     eax, [ebx+10h]
+00a675e9: fst     dword ptr [eax+ecx*4+10h]
+00a675ed: mov     eax, [ebx+10h]
+00a675f0: fxch    st(1)
+00a675f2: fst     dword ptr [eax+ecx*4+14h]
+00a675f6: mov     eax, [ebx+10h]
+00a675f9: fxch    st(1)
+00a675fb: fst     dword ptr [eax+ecx*4+18h]
+00a675ff: mov     eax, [ebx+10h]
+00a67602: fst     dword ptr [eax+ecx*4+1Ch]
+00a67606: mov     eax, [ebx+10h]
+00a67609: fxch    st(1)
+00a6760b: fst     dword ptr [eax+ecx*4+20h]
+00a6760f: mov     eax, [ebx+10h]
+00a67612: fxch    st(1)
+00a67614: fst     dword ptr [eax+ecx*4+24h]
+00a67618: mov     eax, [ebx+10h]
+00a6761b: fstp    dword ptr [eax+ecx*4+28h]
+00a6761f: mov     eax, [ebx+10h]
+00a67622: fstp    dword ptr [eax+ecx*4+2Ch]
+00a67626: movzx   eax, byte ptr [edi]
+00a67629: mov     dword ptr [ebp+var_3EC+4], eax
+00a6762f: movzx   eax, byte ptr [edi+1]
+00a67633: fild    dword ptr [ebp+var_3EC+4]
+00a67639: mov     dword ptr [ebp+var_3EC+4], eax
+00a6763f: movzx   eax, byte ptr [edi+2]
+00a67643: fstp    [ebp+var_A4]
+00a67649: fild    dword ptr [ebp+var_3EC+4]
+00a6764f: mov     dword ptr [ebp+var_3EC+4], eax
+00a67655: movzx   eax, byte ptr [edi+3]
+00a67659: fstp    [ebp+var_A0]
+00a6765f: fild    dword ptr [ebp+var_3EC+4]
+00a67665: mov     dword ptr [ebp+var_3EC+4], eax
+00a6766b: movzx   eax, byte ptr [edi+4]
+00a6766f: fstp    [ebp+var_9C]
+00a67675: fild    dword ptr [ebp+var_3EC+4]
+00a6767b: mov     dword ptr [ebp+var_3EC+4], eax
+00a67681: movzx   eax, byte ptr [edi+5]
+00a67685: fstp    [ebp+var_98]
+00a6768b: fild    dword ptr [ebp+var_3EC+4]
+00a67691: mov     dword ptr [ebp+var_3EC+4], eax
+00a67697: movzx   eax, byte ptr [edi+6]
+00a6769b: fstp    [ebp+var_94]
+00a676a1: fild    dword ptr [ebp+var_3EC+4]
+00a676a7: mov     dword ptr [ebp+var_3EC+4], eax
+00a676ad: movzx   eax, byte ptr [edi+7]
+00a676b1: fstp    [ebp+var_90]
+00a676b7: fild    dword ptr [ebp+var_3EC+4]
+00a676bd: mov     dword ptr [ebp+var_3EC+4], eax
+00a676c3: movzx   eax, byte ptr [edi+8]
+00a676c7: fstp    [ebp+var_8C]
+00a676cd: fild    dword ptr [ebp+var_3EC+4]
+00a676d3: mov     dword ptr [ebp+var_3EC+4], eax
+00a676d9: movzx   eax, byte ptr [edi+9]
+00a676dd: fstp    [ebp+var_88]
+00a676e3: fild    dword ptr [ebp+var_3EC+4]
+00a676e9: mov     dword ptr [ebp+var_3EC+4], eax
+00a676ef: movzx   eax, byte ptr [edi+0Ah]
+00a676f3: fstp    [ebp+var_84]
+00a676f9: fild    dword ptr [ebp+var_3EC+4]
+00a676ff: mov     dword ptr [ebp+var_3EC+4], eax
+00a67705: movzx   eax, byte ptr [edi+0Bh]
+00a67709: fstp    [ebp+var_80]
+00a6770c: fild    dword ptr [ebp+var_3EC+4]
+00a67712: mov     dword ptr [ebp+var_3EC+4], eax
+00a67718: movzx   eax, byte ptr [edi+0Ch]
+00a6771c: fstp    [ebp+var_7C]
+00a6771f: fild    dword ptr [ebp+var_3EC+4]
+00a67725: mov     dword ptr [ebp+var_3EC+4], eax
+00a6772b: movzx   eax, byte ptr [edi+0Dh]
+00a6772f: fstp    [ebp+var_78]
+00a67732: fild    dword ptr [ebp+var_3EC+4]
+00a67738: mov     dword ptr [ebp+var_3EC+4], eax
+00a6773e: movzx   eax, byte ptr [edi+0Eh]
+00a67742: fstp    [ebp+var_74]
+00a67745: fild    dword ptr [ebp+var_3EC+4]
+00a6774b: mov     dword ptr [ebp+var_3EC+4], eax
+00a67751: movzx   eax, byte ptr [edi+0Fh]
+00a67755: fstp    [ebp+var_70]
+00a67758: fild    dword ptr [ebp+var_3EC+4]
+00a6775e: mov     dword ptr [ebp+var_3EC+4], eax
+00a67764: fstp    [ebp+var_6C]
+00a67767: fild    dword ptr [ebp+var_3EC+4]
+00a6776d: fstp    [ebp+var_68]
+00a67770: lea     eax, [ebp+var_A4]
+00a67776: push    eax
+00a67777: lea     eax, [ebp+var_14]
+00a6777a: push    eax
+00a6777b: lea     eax, [ebp+var_A4]
+00a67781: push    eax
+00a67782: call    FFX_BtlUI_HudParty_GetTarget
+00a67787: lea     eax, [ebp+var_94]
+00a6778d: push    eax
+00a6778e: lea     eax, [ebp+var_14]
+00a67791: push    eax
+00a67792: lea     eax, [ebp+var_94]
+00a67798: push    eax
+00a67799: call    FFX_BtlUI_HudParty_GetTarget
+00a6779e: lea     eax, [ebp+var_84]
+00a677a4: push    eax
+00a677a5: lea     eax, [ebp+var_14]
+00a677a8: push    eax
+00a677a9: lea     eax, [ebp+var_84]
+00a677af: push    eax
+00a677b0: call    FFX_BtlUI_HudParty_GetTarget
+00a677b5: lea     eax, [ebp+var_74]
+00a677b8: push    eax
+00a677b9: lea     eax, [ebp+var_14]
+00a677bc: push    eax
+00a677bd: lea     eax, [ebp+var_74]
+00a677c0: push    eax
+00a677c1: call    FFX_BtlUI_HudParty_GetTarget
+00a677c6: add     esp, 30h
+00a677c9: test    byte ptr [esi], 40h
+00a677cc: jz      loc_A67E93
+00a677d2: movzx   eax, byte ptr [esi+4Dh]
+00a677d6: mov     edx, [ebp+hudContext]
+00a677dc: mov     dword ptr [ebp+var_3EC+4], eax
+00a677e2: fild    dword ptr [ebp+var_3EC+4]
+00a677e8: fstp    [ebp+var_3EC]
+00a677ee: fld     [ebp+var_3EC]
+00a677f4: movzx   eax, word ptr [edi+10h]
+00a677f8: fmul    ds:dbl_B170C0
+00a677fe: fstp    dword ptr [ebp+var_404+4]
+00a67804: lea     ecx, [eax+eax*2]
+00a67807: movsx   eax, word ptr [edx+ecx*2]
+00a6780b: mov     dword ptr [ebp+var_3EC+4], eax
+00a67811: fild    dword ptr [ebp+var_3EC+4]
+00a67817: fstp    [ebp+var_184]
+00a6781d: movsx   eax, word ptr [edx+ecx*2+2]
+00a67822: mov     dword ptr [ebp+var_3EC+4], eax
+00a67828: fild    dword ptr [ebp+var_3EC+4]
+00a6782e: fstp    [ebp+var_180]
+00a67834: movsx   eax, word ptr [edx+ecx*2+4]
+00a67839: mov     dword ptr [ebp+var_3EC+4], eax
+00a6783f: movzx   eax, word ptr [edi+12h]
+00a67843: fild    dword ptr [ebp+var_3EC+4]
+00a67849: fstp    [ebp+var_17C]
+00a6784f: fld1
+00a67851: lea     ecx, [eax+eax*2]
+00a67854: fst     [ebp+var_178]
+00a6785a: movsx   eax, word ptr [edx+ecx*2]
+00a6785e: mov     dword ptr [ebp+var_3EC+4], eax
+00a67864: fild    dword ptr [ebp+var_3EC+4]
+00a6786a: fstp    [ebp+var_174]
+00a67870: movsx   eax, word ptr [edx+ecx*2+2]
+00a67875: mov     dword ptr [ebp+var_3EC+4], eax
+00a6787b: fild    dword ptr [ebp+var_3EC+4]
+00a67881: fstp    [ebp+var_170]
+00a67887: movsx   eax, word ptr [edx+ecx*2+4]
+00a6788c: mov     dword ptr [ebp+var_3EC+4], eax
+00a67892: movzx   eax, word ptr [edi+14h]
+00a67896: fild    dword ptr [ebp+var_3EC+4]
+00a6789c: fstp    [ebp+var_16C]
+00a678a2: lea     ecx, [eax+eax*2]
+00a678a5: fst     [ebp+var_168]
+00a678ab: movsx   eax, word ptr [edx+ecx*2]
+00a678af: mov     dword ptr [ebp+var_3EC+4], eax
+00a678b5: fild    dword ptr [ebp+var_3EC+4]
+00a678bb: fstp    [ebp+var_164]
+00a678c1: movsx   eax, word ptr [edx+ecx*2+2]
+00a678c6: mov     dword ptr [ebp+var_3EC+4], eax
+00a678cc: fild    dword ptr [ebp+var_3EC+4]
+00a678d2: fstp    [ebp+var_160]
+00a678d8: movsx   eax, word ptr [edx+ecx*2+4]
+00a678dd: mov     dword ptr [ebp+var_3EC+4], eax
+00a678e3: movzx   eax, word ptr [edi+16h]
+00a678e7: fild    dword ptr [ebp+var_3EC+4]
+00a678ed: fstp    [ebp+var_15C]
+00a678f3: lea     ecx, [eax+eax*2]
+00a678f6: fst     [ebp+var_158]
+00a678fc: movsx   eax, word ptr [edx+ecx*2]
+00a67900: mov     dword ptr [ebp+var_3EC+4], eax
+00a67906: fild    dword ptr [ebp+var_3EC+4]
+00a6790c: fstp    [ebp+var_154]
+00a67912: movsx   eax, word ptr [edx+ecx*2+2]
+00a67917: mov     dword ptr [ebp+var_3EC+4], eax
+00a6791d: fild    dword ptr [ebp+var_3EC+4]
+00a67923: fstp    [ebp+var_150]
+00a67929: movsx   eax, word ptr [edx+ecx*2+4]
+00a6792e: mov     edx, [ebp+var_440]
+00a67934: mov     dword ptr [ebp+var_3EC+4], eax
+00a6793a: movzx   eax, word ptr [edi+18h]
+00a6793e: fild    dword ptr [ebp+var_3EC+4]
+00a67944: fstp    [ebp+var_14C]
+00a6794a: lea     ecx, [eax+eax*2]
+00a6794d: fstp    [ebp+var_148]
+00a67953: movsx   eax, word ptr [edx+ecx*2]
+00a67957: mov     dword ptr [ebp+var_3EC+4], eax
+00a6795d: fild    dword ptr [ebp+var_3EC+4]
+00a67963: fstp    dword ptr [ebp+var_3EC+4]
+00a67969: fld     dword ptr [ebp+var_3EC+4]
+00a6796f: fld     ds:dbl_B50190
+00a67975: fmul    st(1), st
+00a67977: fxch    st(1)
+00a67979: fstp    [ebp+var_204]
+00a6797f: movsx   eax, word ptr [edx+ecx*2+2]
+00a67984: mov     dword ptr [ebp+var_3EC+4], eax
+00a6798a: fild    dword ptr [ebp+var_3EC+4]
+00a67990: fstp    dword ptr [ebp+var_3EC+4]
+00a67996: fld     dword ptr [ebp+var_3EC+4]
+00a6799c: fmul    st, st(1)
+00a6799e: fstp    [ebp+var_200]
+00a679a4: movsx   eax, word ptr [edx+ecx*2+4]
+00a679a9: mov     dword ptr [ebp+var_3EC+4], eax
+00a679af: fild    dword ptr [ebp+var_3EC+4]
+00a679b5: fstp    dword ptr [ebp+var_3EC+4]
+00a679bb: fld     dword ptr [ebp+var_3EC+4]
+00a679c1: movzx   eax, word ptr [edi+1Ah]
+00a679c5: fmul    st, st(1)
+00a679c7: fstp    [ebp+var_1FC]
+00a679cd: lea     ecx, [eax+eax*2]
+00a679d0: fldz
+00a679d2: fst     [ebp+var_1F8]
+00a679d8: movsx   eax, word ptr [edx+ecx*2]
+00a679dc: mov     dword ptr [ebp+var_3EC+4], eax
+00a679e2: fild    dword ptr [ebp+var_3EC+4]
+00a679e8: fstp    dword ptr [ebp+var_3EC+4]
+00a679ee: fld     dword ptr [ebp+var_3EC+4]
+00a679f4: fmul    st, st(2)
+00a679f6: fstp    [ebp+var_1F4]
+00a679fc: movsx   eax, word ptr [edx+ecx*2+2]
+00a67a01: mov     dword ptr [ebp+var_3EC+4], eax
+00a67a07: fild    dword ptr [ebp+var_3EC+4]
+00a67a0d: fstp    dword ptr [ebp+var_3EC+4]
+00a67a13: fld     dword ptr [ebp+var_3EC+4]
+00a67a19: fmul    st, st(2)
+00a67a1b: fstp    [ebp+var_1F0]
+00a67a21: movsx   eax, word ptr [edx+ecx*2+4]
+00a67a26: mov     dword ptr [ebp+var_3EC+4], eax
+00a67a2c: fild    dword ptr [ebp+var_3EC+4]
+00a67a32: fstp    dword ptr [ebp+var_3EC+4]
+00a67a38: fld     dword ptr [ebp+var_3EC+4]
+00a67a3e: movzx   eax, word ptr [edi+1Ch]
+00a67a42: fmul    st, st(2)
+00a67a44: fstp    [ebp+var_1EC]
+00a67a4a: lea     ecx, [eax+eax*2]
+00a67a4d: fst     [ebp+var_1E8]
+00a67a53: movsx   eax, word ptr [edx+ecx*2]
+00a67a57: mov     dword ptr [ebp+var_3EC+4], eax
+00a67a5d: fild    dword ptr [ebp+var_3EC+4]
+00a67a63: fstp    dword ptr [ebp+var_3EC+4]
+00a67a69: fld     dword ptr [ebp+var_3EC+4]
+00a67a6f: fmul    st, st(2)
+00a67a71: fstp    [ebp+var_1E4]
+00a67a77: movsx   eax, word ptr [edx+ecx*2+2]
+00a67a7c: mov     dword ptr [ebp+var_3EC+4], eax
+00a67a82: fild    dword ptr [ebp+var_3EC+4]
+00a67a88: fstp    dword ptr [ebp+var_3EC+4]
+00a67a8e: fld     dword ptr [ebp+var_3EC+4]
+00a67a94: fmul    st, st(2)
+00a67a96: fstp    [ebp+var_1E0]
+00a67a9c: movsx   eax, word ptr [edx+ecx*2+4]
+00a67aa1: mov     dword ptr [ebp+var_3EC+4], eax
+00a67aa7: fild    dword ptr [ebp+var_3EC+4]
+00a67aad: fstp    dword ptr [ebp+var_3EC+4]
+00a67ab3: fld     dword ptr [ebp+var_3EC+4]
+00a67ab9: movzx   eax, word ptr [edi+1Eh]
+00a67abd: fmul    st, st(2)
+00a67abf: fstp    [ebp+var_1DC]
+00a67ac5: lea     ecx, [eax+eax*2]
+00a67ac8: fst     [ebp+var_1D8]
+00a67ace: movsx   eax, word ptr [edx+ecx*2]
+00a67ad2: mov     dword ptr [ebp+var_3EC+4], eax
+00a67ad8: fild    dword ptr [ebp+var_3EC+4]
+00a67ade: fstp    dword ptr [ebp+var_3EC+4]
+00a67ae4: fld     dword ptr [ebp+var_3EC+4]
+00a67aea: fmul    st, st(2)
+00a67aec: fstp    [ebp+var_1D4]
+00a67af2: movsx   eax, word ptr [edx+ecx*2+2]
+00a67af7: mov     dword ptr [ebp+var_3EC+4], eax
+00a67afd: fild    dword ptr [ebp+var_3EC+4]
+00a67b03: fstp    dword ptr [ebp+var_3EC+4]
+00a67b09: fld     dword ptr [ebp+var_3EC+4]
+00a67b0f: fmul    st, st(2)
+00a67b11: fstp    [ebp+var_1D0]
+00a67b17: movsx   eax, word ptr [edx+ecx*2+4]
+00a67b1c: mov     dword ptr [ebp+var_3EC+4], eax
+00a67b22: fild    dword ptr [ebp+var_3EC+4]
+00a67b28: lea     eax, [ebp+var_184]
+00a67b2e: push    eax
+00a67b2f: fstp    dword ptr [ebp+var_3EC+4]
+00a67b35: fld     dword ptr [ebp+var_3EC+4]
+00a67b3b: push    dword ptr [esi+2Ch]
+00a67b3e: fmulp   st(2), st
+00a67b40: fxch    st(1)
+00a67b42: push    eax
+00a67b43: fstp    [ebp+var_1CC]
+00a67b49: fstp    [ebp+var_1C8]
+00a67b4f: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67b54: lea     eax, [ebp+var_174]
+00a67b5a: push    eax
+00a67b5b: push    dword ptr [esi+2Ch]
+00a67b5e: push    eax
+00a67b5f: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67b64: lea     eax, [ebp+var_164]
+00a67b6a: push    eax
+00a67b6b: push    dword ptr [esi+2Ch]
+00a67b6e: push    eax
+00a67b6f: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67b74: lea     eax, [ebp+var_154]
+00a67b7a: push    eax
+00a67b7b: push    dword ptr [esi+2Ch]
+00a67b7e: push    eax
+00a67b7f: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67b84: lea     eax, [ebp+var_180]
+00a67b8a: add     esp, 30h
+00a67b8d: mov     [ebp+var_410], eax
+00a67b93: mov     [ebp+var_3F0], 0
+00a67b9d: jmp     short loc_A67BA2
+00a67b9f: align 10h
+00a67ba0: fstp    st
+00a67ba2: mov     eax, [ebp+var_414]
+00a67ba8: fldz
+00a67baa: lea     ebx, [ebp+var_304]
+00a67bb0: mov     eax, [eax+28h]
+00a67bb3: xor     esi, esi
+00a67bb5: lea     ecx, [eax+0Ch]
+00a67bb8: lea     edx, [eax+8]
+00a67bbb: sub     ebx, eax
+00a67bbd: mov     eax, [ebp+var_410]
+00a67bc3: lea     edi, [ebp+var_300]
+00a67bc9: fld     dword ptr [edx-8]
+00a67bcc: inc     esi
+00a67bcd: fsub    dword ptr [eax-4]
+00a67bd0: add     edx, 10h
+00a67bd3: add     edi, 10h
+00a67bd6: add     ecx, 10h
+00a67bd9: fstp    dword ptr [ebp+var_3EC+4]
+00a67bdf: fld     dword ptr [ebp+var_3EC+4]
+00a67be5: fld     st
+00a67be7: fld     dword ptr [edx-14h]
+00a67bea: fsub    dword ptr [eax]
+00a67bec: fstp    dword ptr [ebp+var_3EC+4]
+00a67bf2: fld     dword ptr [ebp+var_3EC+4]
+00a67bf8: fld     st
+00a67bfa: fld     dword ptr [edx-10h]
+00a67bfd: fsub    dword ptr [eax+4]
+00a67c00: fstp    dword ptr [ebp+var_3EC+4]
+00a67c06: fld     dword ptr [ebp+var_3EC+4]
+00a67c0c: fld     st
+00a67c0e: fxch    st(4)
+00a67c10: fmul    st, st
+00a67c12: fldz
+00a67c14: faddp   st(1), st
+00a67c16: fstp    dword ptr [ebp+var_3EC+4]
+00a67c1c: fld     dword ptr [ebp+var_3EC+4]
+00a67c22: fxch    st(2)
+00a67c24: fmul    st, st
+00a67c26: faddp   st(2), st
+00a67c28: fxch    st(1)
+00a67c2a: fstp    dword ptr [ebp+var_3EC+4]
+00a67c30: fld     dword ptr [ebp+var_3EC+4]
+00a67c36: fxch    st(3)
+00a67c38: fmul    st, st
+00a67c3a: faddp   st(3), st
+00a67c3c: fxch    st(2)
+00a67c3e: fstp    dword ptr [ebp+var_3EC+4]
+00a67c44: fld     dword ptr [ebp+var_3EC+4]
+00a67c4a: fst     dword ptr [ebp+esi*4+var_3EC+4]
+00a67c51: fld     dword ptr [ecx-10h]
+00a67c54: fmulp   st(4), st
+00a67c56: fxch    st(3)
+00a67c58: fstp    dword ptr [ebp+var_3EC+4]
+00a67c5e: fld     dword ptr [ebp+var_3EC+4]
+00a67c64: fdiv    st, st(3)
+00a67c66: fstp    dword ptr [edi-14h]
+00a67c69: fmul    dword ptr [ecx-10h]
+00a67c6c: fstp    dword ptr [ebp+var_3EC+4]
+00a67c72: fld     dword ptr [ebp+var_3EC+4]
+00a67c78: fdiv    st, st(2)
+00a67c7a: fstp    dword ptr [edi-10h]
+00a67c7d: fmul    dword ptr [ecx-10h]
+00a67c80: fstp    dword ptr [ebp+var_3EC+4]
+00a67c86: fdivr   dword ptr [ebp+var_3EC+4]
+00a67c8c: fstp    dword ptr [ebx+edx-10h]
+00a67c90: fst     dword ptr [ebx+ecx-10h]
+00a67c94: cmp     esi, 4
+00a67c97: jl      loc_A67BC9
+00a67c9d: fstp    st
+00a67c9f: xor     eax, eax
+00a67ca1: lea     ecx, [ebp+var_280]
+00a67ca7: jmp     short loc_A67CB0
+00a67ca9: align 10h
+00a67cb0: fld     [ebp+eax*4+var_304]
+00a67cb7: inc     eax
+00a67cb8: fstp    dword ptr [ecx-4]
+00a67cbb: add     ecx, 10h
+00a67cbe: fld     [ebp+eax*4+var_2F8]
+00a67cc5: fstp    dword ptr [ecx-10h]
+00a67cc8: fld     [ebp+eax*4+var_2E8]
+00a67ccf: fstp    dword ptr [ecx-0Ch]
+00a67cd2: fld     [ebp+eax*4+var_2D8]
+00a67cd9: fstp    dword ptr [ecx-8]
+00a67cdc: cmp     eax, 4
+00a67cdf: jl      short loc_A67CB0
+00a67ce1: fld     [ebp+var_258]
+00a67ce7: lea     eax, [ebp+var_2C4]
+00a67ced: fld     [ebp+var_25C]
+00a67cf3: lea     ecx, [ebp+var_380]
+00a67cf9: fld     [ebp+var_260]
+00a67cff: mov     edx, 3
+00a67d04: fld     [ebp+var_264]
+00a67d0a: fld     [ebp+var_268]
+00a67d10: fld     [ebp+var_284]
+00a67d16: fmul    dword ptr [eax]
+00a67d18: add     eax, 10h
+00a67d1b: fld     [ebp+var_274]
+00a67d21: add     ecx, 10h
+00a67d24: fmul    dword ptr [eax-0Ch]
+00a67d27: faddp   st(1), st
+00a67d29: fld     st(2)
+00a67d2b: fmul    dword ptr [eax-8]
+00a67d2e: faddp   st(1), st
+00a67d30: fstp    dword ptr [ecx-14h]
+00a67d33: fld     [ebp+var_280]
+00a67d39: fmul    dword ptr [eax-10h]
+00a67d3c: fld     [ebp+var_270]
+00a67d42: fmul    dword ptr [eax-0Ch]
+00a67d45: faddp   st(1), st
+00a67d47: fld     st(3)
+00a67d49: fmul    dword ptr [eax-8]
+00a67d4c: faddp   st(1), st
+00a67d4e: fstp    dword ptr [ecx-10h]
+00a67d51: fld     [ebp+var_27C]
+00a67d57: fmul    dword ptr [eax-10h]
+00a67d5a: fld     [ebp+var_26C]
+00a67d60: fmul    dword ptr [eax-0Ch]
+00a67d63: faddp   st(1), st
+00a67d65: fld     st(4)
+00a67d67: fmul    dword ptr [eax-8]
+00a67d6a: faddp   st(1), st
+00a67d6c: fstp    dword ptr [ecx-0Ch]
+00a67d6f: fld     [ebp+var_278]
+00a67d75: fmul    dword ptr [eax-10h]
+00a67d78: fld     st(1)
+00a67d7a: fmul    dword ptr [eax-0Ch]
+00a67d7d: faddp   st(1), st
+00a67d7f: fld     st(5)
+00a67d81: fmul    dword ptr [eax-8]
+00a67d84: faddp   st(1), st
+00a67d86: fstp    dword ptr [ecx-8]
+00a67d89: fld     [ebp+var_284]
+00a67d8f: dec     edx
+00a67d90: jnz     short loc_A67D16
+00a67d92: mov     esi, [ebp+var_414]
+00a67d98: fstp    st
+00a67d9a: mov     ebx, [ebp+var_3F0]
+00a67da0: fstp    st(4)
+00a67da2: mov     eax, [esi+2Ch]
+00a67da5: fstp    st(2)
+00a67da7: fstp    st
+00a67da9: fstp    st
+00a67dab: fstp    st
+00a67dad: fld     dword ptr [eax+30h]
+00a67db0: fstp    [ebp+var_354]
+00a67db6: fld     dword ptr [eax+34h]
+00a67db9: fstp    [ebp+var_350]
+00a67dbf: fld     dword ptr [eax+38h]
+00a67dc2: fstp    [ebp+var_34C]
+00a67dc8: fld     dword ptr [eax+3Ch]
+00a67dcb: lea     eax, [ebp+var_204]
+00a67dd1: add     eax, ebx
+00a67dd3: fstp    [ebp+var_348]
+00a67dd9: push    eax
+00a67dda: lea     eax, [ebp+var_384]
+00a67de0: push    eax
+00a67de1: lea     eax, [ebp+var_64]
+00a67de4: push    eax
+00a67de5: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67dea: fldz
+00a67dec: add     esp, 0Ch
+00a67def: xor     ecx, ecx
+00a67df1: fcom    [ebp+ecx*4+var_64]
+00a67df5: fnstsw  ax
+00a67df7: test    ah, 41h
+00a67dfa: jnz     short loc_A67E00
+00a67dfc: fst     [ebp+ecx*4+var_64]
+00a67e00: inc     ecx
+00a67e01: cmp     ecx, 4
+00a67e04: jl      short loc_A67DF1
+00a67e06: lea     eax, [ebp+var_64]
+00a67e09: fstp    st
+00a67e0b: push    eax
+00a67e0c: push    dword ptr [esi+24h]
+00a67e0f: push    eax
+00a67e10: call    FFX_MagicHost_CopySmallTransformVec4_structural; Magic system function. Operates on FFXMagicHost (372B) or magic host context table (512 ptrs @ 0xC64CE8). (0x006ED420)
+00a67e15: fldz
+00a67e17: add     esp, 0Ch
+00a67e1a: xor     ecx, ecx
+00a67e1c: fcom    [ebp+ecx*4+var_64]
+00a67e20: fnstsw  ax
+00a67e22: test    ah, 41h
+00a67e25: jnz     short loc_A67E2B
+00a67e27: fst     [ebp+ecx*4+var_64]
+00a67e2b: fld     dword ptr [ebp+var_404+4]
+00a67e31: inc     ecx
+00a67e32: fmul    [ebp+ecx*4+var_68]
+00a67e36: fstp    [ebp+ecx*4+var_68]
+00a67e3a: cmp     ecx, 4
+00a67e3d: jl      short loc_A67E1C
+00a67e3f: fld     [ebp+var_64]
+00a67e42: add     [ebp+var_410], 10h
+00a67e49: fmul    [ebp+ebx+var_A4]
+00a67e50: add     ebx, 10h
+00a67e53: mov     [ebp+var_3F0], ebx
+00a67e59: fstp    [ebp+ebx+var_B4]
+00a67e60: fld     [ebp+var_60]
+00a67e63: fmul    [ebp+ebx+var_B0]
+00a67e6a: fstp    [ebp+ebx+var_B0]
+00a67e71: fld     [ebp+var_5C]
+00a67e74: fmul    [ebp+ebx+var_AC]
+00a67e7b: fstp    [ebp+ebx+var_AC]
+00a67e82: cmp     ebx, 40h ; '@'
+00a67e85: jl      loc_A67BA0
+00a67e8b: mov     ebx, [ebp+var_43C]
+00a67e91: jmp     short loc_A67E95
+00a67e93: fldz
+00a67e95: fld     [ebp+var_A4]
+00a67e9b: mov     ecx, [ebx+4]
+00a67e9e: fld     ds:dbl_B170C8
+00a67ea4: mov     eax, [ebx+14h]
+00a67ea7: fdiv    st(1), st
+00a67ea9: shl     ecx, 2
+00a67eac: fxch    st(1)
+00a67eae: fstp    dword ptr [ebp+var_3EC+4]
+00a67eb4: fld     dword ptr [ebp+var_3EC+4]
+00a67eba: fstp    dword ptr [eax+ecx*4]
+00a67ebd: fld     [ebp+var_A0]
+00a67ec3: fdiv    st, st(1)
+00a67ec5: mov     eax, [ebx+14h]
+00a67ec8: fstp    dword ptr [ebp+var_3EC+4]
+00a67ece: fld     dword ptr [ebp+var_3EC+4]
+00a67ed4: fstp    dword ptr [eax+ecx*4+4]
+00a67ed8: fld     [ebp+var_9C]
+00a67ede: fdiv    st, st(1)
+00a67ee0: mov     eax, [ebx+14h]
+00a67ee3: fstp    dword ptr [ebp+var_3EC+4]
+00a67ee9: fld     dword ptr [ebp+var_3EC+4]
+00a67eef: fstp    dword ptr [eax+ecx*4+8]
+00a67ef3: fld     [ebp+var_98]
+00a67ef9: fdiv    st, st(1)
+00a67efb: mov     eax, [ebx+14h]
+00a67efe: fstp    dword ptr [ebp+var_3EC+4]
+00a67f04: fld     dword ptr [ebp+var_3EC+4]
+00a67f0a: fstp    dword ptr [eax+ecx*4+0Ch]
+00a67f0e: fld     [ebp+var_94]
+00a67f14: fdiv    st, st(1)
+00a67f16: mov     eax, [ebx+14h]
+00a67f19: fstp    dword ptr [ebp+var_3EC+4]
+00a67f1f: fld     dword ptr [ebp+var_3EC+4]
+00a67f25: fstp    dword ptr [eax+ecx*4+10h]
+00a67f29: fld     [ebp+var_90]
+00a67f2f: fdiv    st, st(1)
+00a67f31: mov     eax, [ebx+14h]
+00a67f34: fstp    dword ptr [ebp+var_3EC+4]
+00a67f3a: fld     dword ptr [ebp+var_3EC+4]
+00a67f40: fstp    dword ptr [eax+ecx*4+14h]
+00a67f44: fld     [ebp+var_8C]
+00a67f4a: fdiv    st, st(1)
+00a67f4c: mov     eax, [ebx+14h]
+00a67f4f: fstp    dword ptr [ebp+var_3EC+4]
+00a67f55: fld     dword ptr [ebp+var_3EC+4]
+00a67f5b: fstp    dword ptr [eax+ecx*4+18h]
+00a67f5f: fld     [ebp+var_88]
+00a67f65: fdiv    st, st(1)
+00a67f67: mov     eax, [ebx+14h]
+00a67f6a: fstp    dword ptr [ebp+var_3EC+4]
+00a67f70: fld     dword ptr [ebp+var_3EC+4]
+00a67f76: fstp    dword ptr [eax+ecx*4+1Ch]
+00a67f7a: fld     [ebp+var_84]
+00a67f80: fdiv    st, st(1)
+00a67f82: mov     eax, [ebx+14h]
+00a67f85: fstp    dword ptr [ebp+var_3EC+4]
+00a67f8b: fld     dword ptr [ebp+var_3EC+4]
+00a67f91: fstp    dword ptr [eax+ecx*4+20h]
+00a67f95: fld     [ebp+var_80]
+00a67f98: fdiv    st, st(1)
+00a67f9a: mov     eax, [ebx+14h]
+00a67f9d: fstp    dword ptr [ebp+var_3EC+4]
+00a67fa3: fld     dword ptr [ebp+var_3EC+4]
+00a67fa9: fstp    dword ptr [eax+ecx*4+24h]
+00a67fad: fld     [ebp+var_7C]
+00a67fb0: fdiv    st, st(1)
+00a67fb2: mov     eax, [ebx+14h]
+00a67fb5: fstp    dword ptr [ebp+var_3EC+4]
+00a67fbb: fld     dword ptr [ebp+var_3EC+4]
+00a67fc1: fstp    dword ptr [eax+ecx*4+28h]
+00a67fc5: fld     [ebp+var_78]
+00a67fc8: fdiv    st, st(1)
+00a67fca: mov     eax, [ebx+14h]
+00a67fcd: fstp    dword ptr [ebp+var_3EC+4]
+00a67fd3: fld     dword ptr [ebp+var_3EC+4]
+00a67fd9: fstp    dword ptr [eax+ecx*4+2Ch]
+00a67fdd: fld     [ebp+var_74]
+00a67fe0: fdiv    st, st(1)
+00a67fe2: mov     eax, [ebx+14h]
+00a67fe5: fstp    dword ptr [ebp+var_3EC+4]
+00a67feb: fld     dword ptr [ebp+var_3EC+4]
+00a67ff1: fstp    dword ptr [eax+ecx*4+30h]
+00a67ff5: mov     eax, [ebx+14h]
+00a67ff8: fld     [ebp+var_70]
+00a67ffb: fdiv    st, st(1)
+00a67ffd: fstp    dword ptr [ebp+var_3EC+4]
+00a68003: fld     dword ptr [ebp+var_3EC+4]
+00a68009: fstp    dword ptr [eax+ecx*4+34h]
+00a6800d: fld     [ebp+var_6C]
+00a68010: fdiv    st, st(1)
+00a68012: mov     eax, [ebx+14h]
+00a68015: fstp    dword ptr [ebp+var_3EC+4]
+00a6801b: fld     dword ptr [ebp+var_3EC+4]
+00a68021: fstp    dword ptr [eax+ecx*4+38h]
+00a68025: mov     eax, [ebx+14h]
+00a68028: fdivr   [ebp+var_68]
+00a6802b: fstp    dword ptr [ebp+var_3EC+4]
+00a68031: fld     dword ptr [ebp+var_3EC+4]
+00a68037: fstp    dword ptr [eax+ecx*4+3Ch]
+00a6803b: fld     [ebp+var_424]
+00a68041: mov     esi, [ebx+4]
+00a68044: fld     [ebp+var_420]
+00a6804a: mov     edi, [ebx+8]
+00a6804d: fld     [ebp+var_3FC]
+00a68053: mov     eax, [ebx+1Ch]
+00a68056: lea     edx, [esi+1]
+00a68059: mov     [eax+edi*2], si
+00a6805d: mov     eax, [ebx+1Ch]
+00a68060: lea     ecx, [esi+2]
+00a68063: mov     [eax+edi*2+2], dx
+00a68068: mov     eax, [ebx+1Ch]
+00a6806b: mov     [eax+edi*2+4], cx
+00a68070: mov     eax, [ebx+1Ch]
+00a68073: mov     [eax+edi*2+6], cx
+00a68078: mov     eax, [ebx+1Ch]
+00a6807b: lea     ecx, [esi+3]
+00a6807e: mov     esi, [ebp+var_414]
+00a68084: mov     [eax+edi*2+8], dx
+00a68089: mov     eax, [ebx+1Ch]
+00a6808c: mov     [eax+edi*2+0Ah], cx
+00a68091: mov     eax, [ebp+var_41C]
+00a68097: add     dword ptr [ebx+4], 4
+00a6809b: add     dword ptr [ebx+8], 6
+00a6809f: mov     ecx, [ebp+var_3F4]
+00a680a5: mov     edi, [ebp+var_418]
+00a680ab: movsx   eax, word ptr [eax+2]
+00a680af: inc     ecx
+00a680b0: add     edi, 20h ; ' '
+00a680b3: mov     [ebp+var_3F4], ecx
+00a680b9: mov     [ebp+var_418], edi
+00a680bf: cmp     ecx, eax
+00a680c1: jl      loc_A67336
+00a680c7: fstp    st(3)
+00a680c9: fstp    st(2)
+00a680cb: fstp    st
+00a680cd: jmp     loc_A66083
+00a680d2: movsx   eax, word ptr [ecx+2]; jumptable 00A65B24 case 7
+00a680d6: test    eax, eax
+00a680d8: jle     short def_A65B24; jumptable 00A65B24 default case
+00a680da: lea     eax, [eax+eax*2]
+00a680dd: shl     eax, 4
+00a680e0: add     edi, eax
+00a680e2: movsx   eax, word ptr [ecx+2]; jumptable 00A65B24 default case
+00a680e6: sub     edx, eax
+00a680e8: mov     ecx, edi
+00a680ea: add     edi, 10h
+00a680ed: mov     [ebp+var_42C], edx
+00a680f3: mov     [ebp+var_41C], ecx
+00a680f9: test    edx, edx
+00a680fb: jg      loc_A65B17
+00a68101: fstp    st
+00a68103: fstp    st
+00a68105: fstp    st
+00a68107: fstp    st(1)
+00a68109: fstp    st
+00a6810b: pop     edi
+00a6810c: pop     ebx
+00a6810d: mov     ecx, [ebp+var_4]
+00a68110: xor     ecx, ebp; StackCookie
+00a68112: xor     eax, eax
+00a68114: pop     esi
+00a68115: call    __security_check_cookie(x)
+00a6811a: mov     esp, ebp
+00a6811c: pop     ebp
+00a6811d: retn

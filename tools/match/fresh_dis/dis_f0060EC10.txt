@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060EC10.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Registry_FlattenListToArray@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000009: 57                 push        edi
+  0000000A: 33 FF              xor         edi,edi
+  0000000C: 8B C6              mov         eax,esi
+  0000000E: 85 F6              test        esi,esi
+  00000010: 74 08              je          0000001A
+  00000012: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000015: 47                 inc         edi
+  00000016: 85 C0              test        eax,eax
+  00000018: 75 F8              jne         00000012
+  0000001A: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000001D: 3B 3B              cmp         edi,dword ptr [ebx]
+  0000001F: 74 66              je          00000087
+  00000021: 33 C0              xor         eax,eax
+  00000023: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000026: 85 FF              test        edi,edi
+  00000028: 74 40              je          0000006A
+  0000002A: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000031: 6A 04              push        4
+  00000033: 50                 push        eax
+  00000034: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000039: 83 C4 08           add         esp,8
+  0000003C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000003F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000042: 85 C0              test        eax,eax
+  00000044: 75 0E              jne         00000054
+  00000046: 5F                 pop         edi
+  00000047: 5E                 pop         esi
+  00000048: B8 0D 00 00 00     mov         eax,0Dh
+  0000004D: 5B                 pop         ebx
+  0000004E: 8B E5              mov         esp,ebp
+  00000050: 5D                 pop         ebp
+  00000051: C2 04 00           ret         4
+  00000054: 8D 0C BD 00 00 00  lea         ecx,[edi*4]
+            00
+  0000005B: 51                 push        ecx
+  0000005C: 6A 00              push        0
+  0000005E: 50                 push        eax
+  0000005F: E8 00 00 00 00     call        _memset
+  00000064: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000067: 83 C4 0C           add         esp,0Ch
+  0000006A: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  0000006D: 3B C8              cmp         ecx,eax
+  0000006F: 74 11              je          00000082
+  00000071: 83 3B 00           cmp         dword ptr [ebx],0
+  00000074: 7C 0C              jl          00000082
+  00000076: 51                 push        ecx
+  00000077: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000007C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000007F: 83 C4 04           add         esp,4
+  00000082: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000085: 89 3B              mov         dword ptr [ebx],edi
+  00000087: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000008A: 85 F6              test        esi,esi
+  0000008C: 74 0E              je          0000009C
+  0000008E: 8B FF              mov         edi,edi
+  00000090: 89 30              mov         dword ptr [eax],esi
+  00000092: 8B 76 04           mov         esi,dword ptr [esi+4]
+  00000095: 8D 40 04           lea         eax,[eax+4]
+  00000098: 85 F6              test        esi,esi
+  0000009A: 75 F4              jne         00000090
+  0000009C: 5F                 pop         edi
+  0000009D: 5E                 pop         esi
+  0000009E: 33 C0              xor         eax,eax
+  000000A0: 5B                 pop         ebx
+  000000A1: 8B E5              mov         esp,ebp
+  000000A3: 5D                 pop         ebp
+  000000A4: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A7 .text

@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004505E0.obj
+
+File Type: COFF OBJECT
+
+@PEntity_ReplaceInTree@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000008: 8B FA              mov         edi,edx
+  0000000A: 74 11              je          0000001D
+  0000000C: 8D 46 08           lea         eax,[esi+8]
+  0000000F: 50                 push        eax
+  00000010: 68 00 00 00 00     push        offset _pTo_off_C0BB70
+  00000015: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeEx_COMDAT
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 89 7E 04           mov         dword ptr [esi+4],edi
+  00000020: 85 FF              test        edi,edi
+  00000022: 74 45              je          00000069
+  00000024: 83 FE F8           cmp         esi,0FFFFFFF8h
+  00000027: 74 15              je          0000003E
+  00000029: 8D 46 08           lea         eax,[esi+8]
+  0000002C: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000002F: 89 00              mov         dword ptr [eax],eax
+  00000031: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000034: 89 7E 14           mov         dword ptr [esi+14h],edi
+  00000037: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  0000003E: 89 76 18           mov         dword ptr [esi+18h],esi
+  00000041: 83 C6 08           add         esi,8
+  00000044: 56                 push        esi
+  00000045: 68 00 00 00 00     push        offset _pTo_off_C0BB70
+  0000004A: E8 00 00 00 00     call        _PRBTree_Insert
+  0000004F: 8B F8              mov         edi,eax
+  00000051: 83 C4 08           add         esp,8
+  00000054: 85 FF              test        edi,edi
+  00000056: 75 11              jne         00000069
+  00000058: 56                 push        esi
+  00000059: 68 00 00 00 00     push        offset _pTo_off_C0BB70
+  0000005E: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode_COMDAT
+  00000063: 83 C4 08           add         esp,8
+  00000066: 5F                 pop         edi
+  00000067: 5E                 pop         esi
+  00000068: C3                 ret
+  00000069: 8B C7              mov         eax,edi
+  0000006B: 5F                 pop         edi
+  0000006C: 5E                 pop         esi
+  0000006D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6E .text

@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0050AC30.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationCurve_SetInterpolationType@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 59 08           mov         ebx,dword ptr [ecx+8]
+  00000007: 57                 push        edi
+  00000008: 8B 39              mov         edi,dword ptr [ecx]
+  0000000A: 8D 47 FF           lea         eax,[edi-1]
+  0000000D: 3B D0              cmp         edx,eax
+  0000000F: 72 02              jb          00000013
+  00000011: 8B D0              mov         edx,eax
+  00000013: D9 45 08           fld         dword ptr [ebp+8]
+  00000016: D9 C0              fld         st(0)
+  00000018: D9 44 93 04        fld         dword ptr [ebx+edx*4+4]
+  0000001C: D8 DA              fcomp       st(2)
+  0000001E: DF E0              fnstsw      ax
+  00000020: F6 C4 05           test        ah,5
+  00000023: 7A 1F              jp          00000044
+  00000025: 56                 push        esi
+  00000026: 8D 73 08           lea         esi,[ebx+8]
+  00000029: 8D 4A 01           lea         ecx,[edx+1]
+  0000002C: 8D 34 96           lea         esi,[esi+edx*4]
+  0000002F: 3B CF              cmp         ecx,edi
+  00000031: 73 10              jae         00000043
+  00000033: D9 06              fld         dword ptr [esi]
+  00000035: 83 C6 04           add         esi,4
+  00000038: D8 DA              fcomp       st(2)
+  0000003A: 42                 inc         edx
+  0000003B: 41                 inc         ecx
+  0000003C: DF E0              fnstsw      ax
+  0000003E: F6 C4 05           test        ah,5
+  00000041: 7B EC              jnp         0000002F
+  00000043: 5E                 pop         esi
+  00000044: DD D9              fstp        st(1)
+  00000046: D9 04 93           fld         dword ptr [ebx+edx*4]
+  00000049: D8 D9              fcomp       st(1)
+  0000004B: DF E0              fnstsw      ax
+  0000004D: F6 C4 41           test        ah,41h
+  00000050: 75 19              jne         0000006B
+  00000052: 8D 4B FC           lea         ecx,[ebx-4]
+  00000055: 8D 0C 91           lea         ecx,[ecx+edx*4]
+  00000058: 85 D2              test        edx,edx
+  0000005A: 74 0F              je          0000006B
+  0000005C: D9 01              fld         dword ptr [ecx]
+  0000005E: 4A                 dec         edx
+  0000005F: D8 D9              fcomp       st(1)
+  00000061: 83 E9 04           sub         ecx,4
+  00000064: DF E0              fnstsw      ax
+  00000066: F6 C4 41           test        ah,41h
+  00000069: 74 ED              je          00000058
+  0000006B: 8D 4A 01           lea         ecx,[edx+1]
+  0000006E: 3B CF              cmp         ecx,edi
+  00000070: 72 11              jb          00000083
+  00000072: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000075: DD D8              fstp        st(0)
+  00000077: D9 EE              fldz
+  00000079: 5F                 pop         edi
+  0000007A: D9 19              fstp        dword ptr [ecx]
+  0000007C: 8B C2              mov         eax,edx
+  0000007E: 5B                 pop         ebx
+  0000007F: 5D                 pop         ebp
+  00000080: C2 08 00           ret         8
+  00000083: D8 24 93           fsub        dword ptr [ebx+edx*4]
+  00000086: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000089: D9 44 93 04        fld         dword ptr [ebx+edx*4+4]
+  0000008D: 5F                 pop         edi
+  0000008E: D8 24 93           fsub        dword ptr [ebx+edx*4]
+  00000091: 5B                 pop         ebx
+  00000092: DE F9              fdivp       st(1),st
+  00000094: D9 18              fstp        dword ptr [eax]
+  00000096: 8B C2              mov         eax,edx
+  00000098: 5D                 pop         ebp
+  00000099: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          9C .text

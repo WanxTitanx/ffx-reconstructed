@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00800E80.obj
+
+File Type: COFF OBJECT
+
+_sub_800E80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 85 C9              test        ecx,ecx
+  0000000B: 74 08              je          00000015
+  0000000D: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000010: 8B 7D 14           mov         edi,dword ptr [ebp+14h]
+  00000013: EB 0E              jmp         00000023
+  00000015: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_12A4080]
+  0000001B: BF 01 00 00 00     mov         edi,1
+  00000020: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  00000023: 0F B6 40 1E        movzx       eax,byte ptr [eax+1Eh]
+  00000027: 8B 71 1C           mov         esi,dword ptr [ecx+1Ch]
+  0000002A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002D: 0F B7 06           movzx       eax,word ptr [esi]
+  00000030: 8B D0              mov         edx,eax
+  00000032: 66 85 C0           test        ax,ax
+  00000035: 79 08              jns         0000003F
+  00000037: 5F                 pop         edi
+  00000038: 33 C0              xor         eax,eax
+  0000003A: 5E                 pop         esi
+  0000003B: 8B E5              mov         esp,ebp
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+  0000003F: 0F BE 45 10        movsx       eax,byte ptr [ebp+10h]
+  00000043: 53                 push        ebx
+  00000044: 8B 59 20           mov         ebx,dword ptr [ecx+20h]
+  00000047: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000004A: 83 C6 02           add         esi,2
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 0F BF CA           movsx       ecx,dx
+  00000053: C1 E1 08           shl         ecx,8
+  00000056: 0F B6 84 19 BB 00  movzx       eax,byte ptr [ecx+ebx+0BBh]
+            00 00
+  0000005E: 3B 45 08           cmp         eax,dword ptr [ebp+8]
+  00000061: 75 0E              jne         00000071
+  00000063: 85 FF              test        edi,edi
+  00000065: 75 1E              jne         00000085
+  00000067: 0F B6 44 19 1E     movzx       eax,byte ptr [ecx+ebx+1Eh]
+  0000006C: 3B 45 FC           cmp         eax,dword ptr [ebp-4]
+  0000006F: 74 14              je          00000085
+  00000071: 0F B7 16           movzx       edx,word ptr [esi]
+  00000074: 83 C6 02           add         esi,2
+  00000077: 66 85 D2           test        dx,dx
+  0000007A: 79 D4              jns         00000050
+  0000007C: 5B                 pop         ebx
+  0000007D: 5F                 pop         edi
+  0000007E: 33 C0              xor         eax,eax
+  00000080: 5E                 pop         esi
+  00000081: 8B E5              mov         esp,ebp
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+  00000085: 0F BF C2           movsx       eax,dx
+  00000088: C1 E0 08           shl         eax,8
+  0000008B: 03 C3              add         eax,ebx
+  0000008D: 5B                 pop         ebx
+  0000008E: 5F                 pop         edi
+  0000008F: 5E                 pop         esi
+  00000090: 8B E5              mov         esp,ebp
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          94 .text

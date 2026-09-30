@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00611D80.obj
+
+File Type: COFF OBJECT
+
+_Phyre_StringKey_Compare@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 85 D2              test        edx,edx
+  00000008: 75 07              jne         00000011
+  0000000A: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000000D: 5D                 pop         ebp
+  0000000E: C2 08 00           ret         8
+  00000011: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000014: 85 C0              test        eax,eax
+  00000016: 75 09              jne         00000021
+  00000018: B8 01 00 00 00     mov         eax,1
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 08 00           ret         8
+  00000021: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  00000024: 8B 52 18           mov         edx,dword ptr [edx+18h]
+  00000027: 8B C8              mov         ecx,eax
+  00000029: 83 E1 01           and         ecx,1
+  0000002C: 2B C1              sub         eax,ecx
+  0000002E: 8B CA              mov         ecx,edx
+  00000030: 83 E1 01           and         ecx,1
+  00000033: 2B D1              sub         edx,ecx
+  00000035: 8A 0A              mov         cl,byte ptr [edx]
+  00000037: 3A 08              cmp         cl,byte ptr [eax]
+  00000039: 75 1A              jne         00000055
+  0000003B: 84 C9              test        cl,cl
+  0000003D: 74 12              je          00000051
+  0000003F: 8A 4A 01           mov         cl,byte ptr [edx+1]
+  00000042: 3A 48 01           cmp         cl,byte ptr [eax+1]
+  00000045: 75 0E              jne         00000055
+  00000047: 83 C2 02           add         edx,2
+  0000004A: 83 C0 02           add         eax,2
+  0000004D: 84 C9              test        cl,cl
+  0000004F: 75 E4              jne         00000035
+  00000051: 33 C9              xor         ecx,ecx
+  00000053: EB 05              jmp         0000005A
+  00000055: 1B C9              sbb         ecx,ecx
+  00000057: 83 C9 01           or          ecx,1
+  0000005A: 33 C0              xor         eax,eax
+  0000005C: 85 C9              test        ecx,ecx
+  0000005E: 74 0A              je          0000006A
+  00000060: 0F 99 C0           setns       al
+  00000063: 8D 04 45 FF FF FF  lea         eax,[eax*2+FFFFFFFFh]
+            FF
+  0000006A: 5D                 pop         ebp
+  0000006B: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6E .text

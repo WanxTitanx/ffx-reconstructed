@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00835F90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mem_Loose_835F90:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: BE 00 00 00 00     mov         esi,offset _unk_23C8D6C
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 83 7E 94 FF        cmp         dword ptr [esi-6Ch],0FFFFFFFFh
+  00000014: 74 3A              je          00000050
+  00000016: 8B 06              mov         eax,dword ptr [esi]
+  00000018: 50                 push        eax
+  00000019: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001C: E8 00 00 00 00     call        _FFX_Mem_ConditionalDelete
+  00000021: 68 80 00 00 00     push        80h
+  00000026: 8B F8              mov         edi,eax
+  00000028: E8 00 00 00 00     call        _SgMem_SetAlignment
+  0000002D: 57                 push        edi
+  0000002E: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000033: 57                 push        edi
+  00000034: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000037: 8B D8              mov         ebx,eax
+  00000039: 57                 push        edi
+  0000003A: 53                 push        ebx
+  0000003B: E8 00 00 00 00     call        _memcpy
+  00000040: 57                 push        edi
+  00000041: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000046: 57                 push        edi
+  00000047: 53                 push        ebx
+  00000048: E8 00 00 00 00     call        _FFX_Field_FindInitChrFromFfxmap
+  0000004D: 83 C4 24           add         esp,24h
+  00000050: 81 C6 2C 01 00 00  add         esi,12Ch
+  00000056: 81 FE 00 00 00 00  cmp         esi,offset _unk_23CBC4C
+  0000005C: 7C B2              jl          00000010
+  0000005E: 5F                 pop         edi
+  0000005F: 5E                 pop         esi
+  00000060: 5B                 pop         ebx
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          65 .text

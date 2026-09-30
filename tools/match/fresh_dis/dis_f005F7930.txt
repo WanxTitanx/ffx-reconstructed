@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F7930.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PhysicsBody_SetIdleState@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 86 DC 00 00 00  mov         eax,dword ptr [esi+0DCh]
+  0000000A: 0F B6 BE C4 00 00  movzx       edi,byte ptr [esi+0C4h]
+            00
+  00000011: 85 C0              test        eax,eax
+  00000013: 74 17              je          0000002C
+  00000015: 83 A0 D8 00 00 00  and         dword ptr [eax+0D8h],0FFFFFFFCh
+            FC
+  0000001C: 6A 01              push        1
+  0000001E: FF B6 DC 00 00 00  push        dword ptr [esi+0DCh]
+  00000024: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 80 BE BC 00 00 00  cmp         byte ptr [esi+0BCh],0Fh
+            0F
+  00000033: 75 07              jne         0000003C
+  00000035: C6 86 BC 00 00 00  mov         byte ptr [esi+0BCh],0
+            00
+  0000003C: 8B 86 B0 00 00 00  mov         eax,dword ptr [esi+0B0h]
+  00000042: 85 C0              test        eax,eax
+  00000044: 74 19              je          0000005F
+  00000046: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000049: 85 C0              test        eax,eax
+  0000004B: 74 12              je          0000005F
+  0000004D: 83 FF 02           cmp         edi,2
+  00000050: 75 0D              jne         0000005F
+  00000052: 83 C0 50           add         eax,50h
+  00000055: 50                 push        eax
+  00000056: 56                 push        esi
+  00000057: E8 00 00 00 00     call        _Phyre_Misc_601BE0
+  0000005C: 83 C4 08           add         esp,8
+  0000005F: 5F                 pop         edi
+  00000060: C6 86 C4 00 00 00  mov         byte ptr [esi+0C4h],1
+            01
+  00000067: 33 C0              xor         eax,eax
+  00000069: 5E                 pop         esi
+  0000006A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6B .text

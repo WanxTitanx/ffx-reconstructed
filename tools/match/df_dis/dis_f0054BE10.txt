@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0054BE10.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PArray_SplineControlPoint_PushBack@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B FA              mov         edi,edx
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 85 FF              test        edi,edi
+  0000000B: 75 09              jne         00000016
+  0000000D: 5F                 pop         edi
+  0000000E: 8D 42 0D           lea         eax,[edx+0Dh]
+  00000011: 5E                 pop         esi
+  00000012: 5D                 pop         ebp
+  00000013: C2 04 00           ret         4
+  00000016: 53                 push        ebx
+  00000017: 8B 1E              mov         ebx,dword ptr [esi]
+  00000019: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  0000001F: 53                 push        ebx
+  00000020: FF 76 04           push        dword ptr [esi+4]
+  00000023: 57                 push        edi
+  00000024: E8 00 00 00 00     call        _Phyre_PArray_SplineControlPoint_CopyElements
+  00000029: 8B D3              mov         edx,ebx
+  0000002B: C1 E2 04           shl         edx,4
+  0000002E: 83 C4 0C           add         esp,0Ch
+  00000031: 03 D7              add         edx,edi
+  00000033: 74 19              je          0000004E
+  00000035: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000038: 8B 01              mov         eax,dword ptr [ecx]
+  0000003A: 89 02              mov         dword ptr [edx],eax
+  0000003C: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000003F: 89 42 04           mov         dword ptr [edx+4],eax
+  00000042: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000045: 89 42 08           mov         dword ptr [edx+8],eax
+  00000048: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  0000004B: 89 42 0C           mov         dword ptr [edx+0Ch],eax
+  0000004E: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000051: 3B C7              cmp         eax,edi
+  00000053: 74 12              je          00000067
+  00000055: 83 3E 00           cmp         dword ptr [esi],0
+  00000058: 7C 0D              jl          00000067
+  0000005A: 85 C0              test        eax,eax
+  0000005C: 74 09              je          00000067
+  0000005E: 50                 push        eax
+  0000005F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000064: 83 C4 04           add         esp,4
+  00000067: 8D 43 01           lea         eax,[ebx+1]
+  0000006A: 5B                 pop         ebx
+  0000006B: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000006E: 89 06              mov         dword ptr [esi],eax
+  00000070: 5F                 pop         edi
+  00000071: 33 C0              xor         eax,eax
+  00000073: 5E                 pop         esi
+  00000074: 5D                 pop         ebp
+  00000075: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          78 .text

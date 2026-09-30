@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009BC560.obj
+
+File Type: COFF OBJECT
+
+@sub_9BC560@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 33 F6              xor         esi,esi
+  00000006: 80 BF F6 00 00 00  cmp         byte ptr [edi+0F6h],0
+            00
+  0000000D: 74 32              je          00000041
+  0000000F: 39 77 08           cmp         dword ptr [edi+8],esi
+  00000012: 7E 67              jle         0000007B
+  00000014: EB 0A              jmp         00000020
+  00000016: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000023: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000026: F6 80 F4 00 00 00  test        byte ptr [eax+0F4h],2
+            02
+  0000002D: 74 09              je          00000038
+  0000002F: 50                 push        eax
+  00000030: E8 00 00 00 00     call        _sub_9BC5E0
+  00000035: 83 C4 04           add         esp,4
+  00000038: 46                 inc         esi
+  00000039: 3B 77 08           cmp         esi,dword ptr [edi+8]
+  0000003C: 72 E2              jb          00000020
+  0000003E: 5F                 pop         edi
+  0000003F: 5E                 pop         esi
+  00000040: C3                 ret
+  00000041: 39 B7 D0 00 00 00  cmp         dword ptr [edi+0D0h],esi
+  00000047: 7E 32              jle         0000007B
+  00000049: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000050: 8B 87 D8 00 00 00  mov         eax,dword ptr [edi+0D8h]
+  00000056: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000059: 8B 88 E4 00 00 00  mov         ecx,dword ptr [eax+0E4h]
+  0000005F: 83 F9 02           cmp         ecx,2
+  00000062: 74 0E              je          00000072
+  00000064: 83 F9 05           cmp         ecx,5
+  00000067: 74 09              je          00000072
+  00000069: 50                 push        eax
+  0000006A: E8 00 00 00 00     call        _sub_9BC5E0
+  0000006F: 83 C4 04           add         esp,4
+  00000072: 46                 inc         esi
+  00000073: 3B B7 D0 00 00 00  cmp         esi,dword ptr [edi+0D0h]
+  00000079: 72 D5              jb          00000050
+  0000007B: 5F                 pop         edi
+  0000007C: 5E                 pop         esi
+  0000007D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          7E .text

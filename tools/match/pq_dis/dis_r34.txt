@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file r34.obj
+
+File Type: COFF OBJECT
+
+_sub_800D10:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 0F B7 42 02        movzx       eax,word ptr [edx+2]
+  0000000B: 8D 48 01           lea         ecx,[eax+1]
+  0000000E: 0F B7 F1           movzx       esi,cx
+  00000011: 66 83 F9 F0        cmp         cx,0FFF0h
+  00000015: 7C 0C              jl          00000023
+  00000017: B9 00 80 FF FF     mov         ecx,0FFFF8000h
+  0000001C: 66 89 4A 02        mov         word ptr [edx+2],cx
+  00000020: 5E                 pop         esi
+  00000021: 5D                 pop         ebp
+  00000022: C3                 ret
+  00000023: 66 89 72 02        mov         word ptr [edx+2],si
+  00000027: 5E                 pop         esi
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+
+  Summary
+
+          64 .debug$S
+          2F .drectve
+          2A .text

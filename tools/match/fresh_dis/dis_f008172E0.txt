@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008172E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicCoreOp_53_Transform:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 0F B7 43 02        movzx       eax,word ptr [ebx+2]
+  0000000C: 57                 push        edi
+  0000000D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000010: 50                 push        eax
+  00000011: 8B B7 20 02 00 00  mov         esi,dword ptr [edi+220h]
+  00000017: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  0000001D: 56                 push        esi
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  00000024: 8B C8              mov         ecx,eax
+  00000026: 83 C4 0C           add         esp,0Ch
+  00000029: 8A 81 BB 00 00 00  mov         al,byte ptr [ecx+0BBh]
+  0000002F: 3C 0A              cmp         al,0Ah
+  00000031: 75 4A              jne         0000007D
+  00000033: 3B F1              cmp         esi,ecx
+  00000035: 75 10              jne         00000047
+  00000037: 33 C0              xor         eax,eax
+  00000039: 66 89 45 08        mov         word ptr [ebp+8],ax
+  0000003D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000040: BA 01 00 00 00     mov         edx,1
+  00000045: EB 0D              jmp         00000054
+  00000047: 8B C6              mov         eax,esi
+  00000049: 2B 87 20 03 00 00  sub         eax,dword ptr [edi+320h]
+  0000004F: 33 D2              xor         edx,edx
+  00000051: C1 E8 08           shr         eax,8
+  00000054: 66 83 BF 12 02 00  cmp         word ptr [edi+212h],0
+            00 00
+  0000005C: 75 46              jne         000000A4
+  0000005E: 50                 push        eax
+  0000005F: 52                 push        edx
+  00000060: 8D 86 90 00 00 00  lea         eax,[esi+90h]
+  00000066: 50                 push        eax
+  00000067: FF B1 BC 00 00 00  push        dword ptr [ecx+0BCh]
+  0000006D: E8 00 00 00 00     call        _FFX_Magic_PushTextureCoordAndAccumDist
+  00000072: 83 C4 10           add         esp,10h
+  00000075: 8D 43 04           lea         eax,[ebx+4]
+  00000078: 5F                 pop         edi
+  00000079: 5E                 pop         esi
+  0000007A: 5B                 pop         ebx
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+  0000007D: 3C 11              cmp         al,11h
+  0000007F: 75 23              jne         000000A4
+  00000081: 66 83 BF 12 02 00  cmp         word ptr [edi+212h],0
+            00 00
+  00000089: 75 19              jne         000000A4
+  0000008B: 6A 00              push        0
+  0000008D: 6A 00              push        0
+  0000008F: 8D 86 90 00 00 00  lea         eax,[esi+90h]
+  00000095: 50                 push        eax
+  00000096: FF B6 BC 00 00 00  push        dword ptr [esi+0BCh]
+  0000009C: E8 00 00 00 00     call        _FFX_Magic_PushTextureCoordAndAccumDist
+  000000A1: 83 C4 10           add         esp,10h
+  000000A4: 5F                 pop         edi
+  000000A5: 5E                 pop         esi
+  000000A6: 8D 43 04           lea         eax,[ebx+4]
+  000000A9: 5B                 pop         ebx
+  000000AA: 5D                 pop         ebp
+  000000AB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AC .text

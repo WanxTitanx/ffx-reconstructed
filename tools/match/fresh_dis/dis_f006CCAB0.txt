@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006CCAB0.obj
+
+File Type: COFF OBJECT
+
+@HudActor_GetSpareGradMeshInstance@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B 3D 00 00 00 00  mov         edi,dword ptr [_g_BtlUIUnkVar_CDEC14]
+  00000009: 8B DA              mov         ebx,edx
+  0000000B: 03 FF              add         edi,edi
+  0000000D: 8B D1              mov         edx,ecx
+  0000000F: 33 C0              xor         eax,eax
+  00000011: 38 84 FA C4 0D 00  cmp         byte ptr [edx+edi*8+0DC4h],al
+            00
+  00000018: 8D 34 FA           lea         esi,[edx+edi*8]
+  0000001B: 74 13              je          00000030
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 40                 inc         eax
+  00000021: 83 F8 10           cmp         eax,10h
+  00000024: 7D 3F              jge         00000065
+  00000026: 80 BC 06 C4 0D 00  cmp         byte ptr [esi+eax+0DC4h],0
+            00 00
+  0000002E: 75 F0              jne         00000020
+  00000030: 8D 0C F8           lea         ecx,[eax+edi*8]
+  00000033: 5F                 pop         edi
+  00000034: C6 84 11 C4 0D 00  mov         byte ptr [ecx+edx+0DC4h],1
+            00 01
+  0000003C: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_BtlUIUnkVar_CDEC14]
+  00000042: C1 E1 04           shl         ecx,4
+  00000045: 03 C8              add         ecx,eax
+  00000047: 5E                 pop         esi
+  00000048: 8B 8C 8A 44 0D 00  mov         ecx,dword ptr [edx+ecx*4+0D44h]
+            00
+  0000004F: 89 0B              mov         dword ptr [ebx],ecx
+  00000051: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_BtlUIUnkVar_CDEC14]
+  00000057: C1 E1 04           shl         ecx,4
+  0000005A: 03 C8              add         ecx,eax
+  0000005C: 5B                 pop         ebx
+  0000005D: 8B 84 8A C4 0C 00  mov         eax,dword ptr [edx+ecx*4+0CC4h]
+            00
+  00000064: C3                 ret
+  00000065: 68 00 00 00 00     push        offset ??_C@_0EF@EMIOLNJF@GetASpareGradMeshInstance?$CI?$CJ?5?0?5Sh@
+  0000006A: E8 00 00 00 00     call        _printf
+  0000006F: 83 C4 04           add         esp,4
+  00000072: 33 C0              xor         eax,eax
+  00000074: 5F                 pop         edi
+  00000075: 5E                 pop         esi
+  00000076: 5B                 pop         ebx
+  00000077: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          45 .rdata
+          78 .text

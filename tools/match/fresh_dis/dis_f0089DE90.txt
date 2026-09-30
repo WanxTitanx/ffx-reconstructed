@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0089DE90.obj
+
+File Type: COFF OBJECT
+
+_FFX_TextLay_MeasureRunAdvance:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: D9 EE              fldz
+  0000000B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000E: 80 38 00           cmp         byte ptr [eax],0
+  00000011: D9 45 14           fld         dword ptr [ebp+14h]
+  00000014: 74 2A              je          00000040
+  00000016: D9 45 10           fld         dword ptr [ebp+10h]
+  00000019: DC 0D 00 00 00 00  fmul        qword ptr [__real@4024000000000000]
+  0000001F: DE C1              faddp       st(1),st
+  00000021: DD 55 F8           fst         qword ptr [ebp-8]
+  00000024: D8 45 08           fadd        dword ptr [ebp+8]
+  00000027: 50                 push        eax
+  00000028: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000002B: E8 00 00 00 00     call        _FFX_TextLay_AdvanceTextPtr
+  00000030: DD 45 F8           fld         qword ptr [ebp-8]
+  00000033: 83 C4 04           add         esp,4
+  00000036: 80 38 00           cmp         byte ptr [eax],0
+  00000039: 75 E9              jne         00000024
+  0000003B: DD D8              fstp        st(0)
+  0000003D: D9 45 14           fld         dword ptr [ebp+14h]
+  00000040: D8 6D 08           fsubr       dword ptr [ebp+8]
+  00000043: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000046: D9 18              fstp        dword ptr [eax]
+  00000048: 8B E5              mov         esp,ebp
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          4C .text

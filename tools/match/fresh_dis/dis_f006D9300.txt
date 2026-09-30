@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D9300.obj
+
+File Type: COFF OBJECT
+
+@FFX_FMVPlayer_InitDecoder@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8D 41 38           lea         eax,[ecx+38h]
+  00000007: 50                 push        eax
+  00000008: E8 00 00 00 00     call        _FFX_BtlUI_HudGetTimeCounter
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000013: DB 45 FC           fild        dword ptr [ebp-4]
+  00000016: 85 C0              test        eax,eax
+  00000018: 79 06              jns         00000020
+  0000001A: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000020: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000023: D9 45 FC           fld         dword ptr [ebp-4]
+  00000026: DC 0D 00 00 00 00  fmul        qword ptr [__real@403df851dfffffff]
+  0000002C: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f50624ddfffffff]
+  00000032: E8 00 00 00 00     call        __ftol2_sse
+  00000037: 8B E5              mov         esp,ebp
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+          3B .text

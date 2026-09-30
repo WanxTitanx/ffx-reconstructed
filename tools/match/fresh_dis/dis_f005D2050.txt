@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005D2050.obj
+
+File Type: COFF OBJECT
+
+_Phyre_AABB_IsVectorGreaterOrEqual:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: D9 41 08           fld         dword ptr [ecx+8]
+  0000000C: D9 42 08           fld         dword ptr [edx+8]
+  0000000F: DE D9              fcompp
+  00000011: DF E0              fnstsw      ax
+  00000013: F6 C4 41           test        ah,41h
+  00000016: 7A 20              jp          00000038
+  00000018: D9 41 04           fld         dword ptr [ecx+4]
+  0000001B: D9 42 04           fld         dword ptr [edx+4]
+  0000001E: DE D9              fcompp
+  00000020: DF E0              fnstsw      ax
+  00000022: F6 C4 41           test        ah,41h
+  00000025: 7A 11              jp          00000038
+  00000027: D9 01              fld         dword ptr [ecx]
+  00000029: D9 02              fld         dword ptr [edx]
+  0000002B: DE D9              fcompp
+  0000002D: DF E0              fnstsw      ax
+  0000002F: F6 C4 41           test        ah,41h
+  00000032: 7A 04              jp          00000038
+  00000034: B0 01              mov         al,1
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 32 C0              xor         al,al
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

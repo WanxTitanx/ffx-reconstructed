@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0078D100.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_AllocateHitResultSlot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 33 C0              xor         eax,eax
+  00000008: 80 BA 76 07 00 00  cmp         byte ptr [edx+776h],0FFh
+            FF
+  0000000F: 8D 8A 76 07 00 00  lea         ecx,[edx+776h]
+  00000015: 74 11              je          00000028
+  00000017: 40                 inc         eax
+  00000018: 83 F8 02           cmp         eax,2
+  0000001B: 7D 2D              jge         0000004A
+  0000001D: 81 C1 D8 02 00 00  add         ecx,2D8h
+  00000023: 80 39 FF           cmp         byte ptr [ecx],0FFh
+  00000026: 75 EF              jne         00000017
+  00000028: 69 C0 D8 02 00 00  imul        eax,eax,2D8h
+  0000002E: 56                 push        esi
+  0000002F: 8D B2 74 07 00 00  lea         esi,[edx+774h]
+  00000035: 03 F0              add         esi,eax
+  00000037: 68 D8 02 00 00     push        2D8h
+  0000003C: 56                 push        esi
+  0000003D: E8 00 00 00 00     call        _FFX_Battle_MemSet
+  00000042: 83 C4 08           add         esp,8
+  00000045: 8B C6              mov         eax,esi
+  00000047: 5E                 pop         esi
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+  0000004A: 33 C0              xor         eax,eax
+  0000004C: 5D                 pop         ebp
+  0000004D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4E .text

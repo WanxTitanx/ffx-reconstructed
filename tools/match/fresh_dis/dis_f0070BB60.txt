@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070BB60.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PMapTree_FindRight@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 77 0C           mov         esi,dword ptr [edi+0Ch]
+  00000007: 3B F7              cmp         esi,edi
+  00000009: 74 26              je          00000031
+  0000000B: 8B 12              mov         edx,dword ptr [edx]
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000013: 3B C2              cmp         eax,edx
+  00000015: 7F 07              jg          0000001E
+  00000017: 7D 1D              jge         00000036
+  00000019: 83 C9 FF           or          ecx,0FFFFFFFFh
+  0000001C: EB 05              jmp         00000023
+  0000001E: B9 01 00 00 00     mov         ecx,1
+  00000023: 33 C0              xor         eax,eax
+  00000025: 85 C9              test        ecx,ecx
+  00000027: 0F 98 C0           sets        al
+  0000002A: 8B 34 86           mov         esi,dword ptr [esi+eax*4]
+  0000002D: 3B F7              cmp         esi,edi
+  0000002F: 75 DF              jne         00000010
+  00000031: 5F                 pop         edi
+  00000032: 33 C0              xor         eax,eax
+  00000034: 5E                 pop         esi
+  00000035: C3                 ret
+  00000036: 5F                 pop         edi
+  00000037: 8B C6              mov         eax,esi
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3B .text

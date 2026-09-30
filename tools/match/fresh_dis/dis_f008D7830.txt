@@ -1,0 +1,153 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008D7830.obj
+
+File Type: COFF OBJECT
+
+_FFX_CustomizeMenu_ConfirmKaizouItem:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_MenuPad_ReadHeld_A
+  0000000E: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdgeRepeat_B
+  00000013: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdge_C
+  00000018: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000001B: 8B 43 28           mov         eax,dword ptr [ebx+28h]
+  0000001E: 83 F8 06           cmp         eax,6
+  00000021: 0F 87 2B 01 00 00  ja          $LN17
+  00000027: FF 24 85 00 00 00  jmp         dword ptr $LN30[eax*4]
+            00
+$LN13:
+  0000002E: B8 02 00 00 00     mov         eax,2
+  00000033: EB F2              jmp         00000027
+$LN12:
+  00000035: 8D 45 08           lea         eax,[ebp+8]
+  00000038: 50                 push        eax
+  00000039: FF 73 6C           push        dword ptr [ebx+6Ch]
+  0000003C: E8 00 00 00 00     call        _FFX_Field_GetModelRecordByCode
+  00000041: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000044: BA 00 00 00 00     mov         edx,offset _g_CustomizeMenuUnkVar_186AAE0
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 2B D1              sub         edx,ecx
+  0000004E: 8B FF              mov         edi,edi
+  00000050: 8A 01              mov         al,byte ptr [ecx]
+  00000052: 88 04 0A           mov         byte ptr [edx+ecx],al
+  00000055: 41                 inc         ecx
+  00000056: 84 C0              test        al,al
+  00000058: 75 F6              jne         00000050
+  0000005A: 68 00 00 00 00     push        offset _g_CustomizeMenuUnkVar_186AAE0
+  0000005F: 6A 00              push        0
+  00000061: 6A 00              push        0
+  00000063: E8 00 00 00 00     call        _FFX_Menu_SetKaizouItemCallback
+  00000068: 6A 29              push        29h
+  0000006A: E8 00 00 00 00     call        _FFX_CustomizeMenu_GetDisplayStringTable9
+  0000006F: 6A 1C              push        1Ch
+  00000071: 8B F8              mov         edi,eax
+  00000073: E8 00 00 00 00     call        _FFX_CustomizeMenu_GetDisplayStringTable9
+  00000078: 6A 1D              push        1Dh
+  0000007A: 8B F0              mov         esi,eax
+  0000007C: E8 00 00 00 00     call        _FFX_CustomizeMenu_GetDisplayStringTable9
+  00000081: 50                 push        eax
+  00000082: 56                 push        esi
+  00000083: 57                 push        edi
+  00000084: E8 00 00 00 00     call        _FFX_Menu_OpenYesNoPopup
+  00000089: E8 00 00 00 00     call        _FFX_Menu_GetCurrentPopup
+  0000008E: DD 05 00 00 00 00  fld         qword ptr [__real@407ed00000000000]
+  00000094: 8B F0              mov         esi,eax
+  00000096: DD 5C 24 1C        fstp        qword ptr [esp+1Ch]
+  0000009A: 83 C4 1C           add         esp,1Ch
+  0000009D: C6 46 3E 05        mov         byte ptr [esi+3Eh],5
+  000000A1: C6 46 37 00        mov         byte ptr [esi+37h],0
+  000000A5: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080To416
+  000000AA: 83 C4 08           add         esp,8
+  000000AD: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000B0: DB 45 FC           fild        dword ptr [ebp-4]
+  000000B3: 85 C0              test        eax,eax
+  000000B5: 79 06              jns         000000BD
+  000000B7: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  000000BD: DD 5D F8           fstp        qword ptr [ebp-8]
+  000000C0: DD 45 F8           fld         qword ptr [ebp-8]
+  000000C3: DC 25 00 00 00 00  fsub        qword ptr [__real@406a000000000000]
+  000000C9: E8 00 00 00 00     call        __ftol2_sse
+  000000CE: 89 46 60           mov         dword ptr [esi+60h],eax
+  000000D1: C7 43 28 03 00 00  mov         dword ptr [ebx+28h],3
+            00
+$LABEL_7$31:
+  000000D8: E8 00 00 00 00     call        _FFX_Menu_GetCurrentPopup
+  000000DD: 8A 48 45           mov         cl,byte ptr [eax+45h]
+  000000E0: 84 C9              test        cl,cl
+  000000E2: 79 0F              jns         000000F3
+  000000E4: E8 00 00 00 00     call        _FFX_Menu_CloseCurrentPopup
+  000000E9: B8 06 00 00 00     mov         eax,6
+  000000EE: E9 34 FF FF FF     jmp         00000027
+  000000F3: 74 5D              je          $LN17
+  000000F5: 0F BF 70 48        movsx       esi,word ptr [eax+48h]
+  000000F9: E8 00 00 00 00     call        _FFX_Menu_CloseCurrentPopup
+  000000FE: 85 F6              test        esi,esi
+  00000100: 74 0F              je          00000111
+  00000102: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000107: B8 06 00 00 00     mov         eax,6
+  0000010C: E9 16 FF FF FF     jmp         00000027
+  00000111: B8 04 00 00 00     mov         eax,4
+  00000116: E9 0C FF FF FF     jmp         00000027
+$LN14:
+  0000011B: 5F                 pop         edi
+  0000011C: 5E                 pop         esi
+  0000011D: C7 43 28 01 00 00  mov         dword ptr [ebx+28h],1
+            00
+  00000124: 33 C0              xor         eax,eax
+  00000126: 5B                 pop         ebx
+  00000127: 8B E5              mov         esp,ebp
+  00000129: 5D                 pop         ebp
+  0000012A: C3                 ret
+$LN3:
+  0000012B: 5F                 pop         edi
+  0000012C: 5E                 pop         esi
+  0000012D: C6 43 45 01        mov         byte ptr [ebx+45h],1
+  00000131: C7 43 28 05 00 00  mov         dword ptr [ebx+28h],5
+            00
+  00000138: B8 04 00 00 00     mov         eax,4
+  0000013D: 5B                 pop         ebx
+  0000013E: 8B E5              mov         esp,ebp
+  00000140: 5D                 pop         ebp
+  00000141: C3                 ret
+$LN2:
+  00000142: C6 43 45 FF        mov         byte ptr [ebx+45h],0FFh
+  00000146: C7 43 28 07 00 00  mov         dword ptr [ebx+28h],7
+            00
+  0000014D: B8 06 00 00 00     mov         eax,6
+$LN17:
+  00000152: 5F                 pop         edi
+  00000153: 5E                 pop         esi
+  00000154: 5B                 pop         ebx
+  00000155: 8B E5              mov         esp,ebp
+  00000157: 5D                 pop         ebp
+  00000158: C3                 ret
+  00000159: 8D 49 00           lea         ecx,[ecx]
+$LN30:
+  0000015C: 00 00              add         byte ptr [eax],al
+  0000015E: 00 00              add         byte ptr [eax],al
+  00000160: 00 00              add         byte ptr [eax],al
+  00000162: 00 00              add         byte ptr [eax],al
+  00000164: 00 00              add         byte ptr [eax],al
+  00000166: 00 00              add         byte ptr [eax],al
+  00000168: 00 00              add         byte ptr [eax],al
+  0000016A: 00 00              add         byte ptr [eax],al
+  0000016C: 00 00              add         byte ptr [eax],al
+  0000016E: 00 00              add         byte ptr [eax],al
+  00000170: 00 00              add         byte ptr [eax],al
+  00000172: 00 00              add         byte ptr [eax],al
+  00000174: 00 00              add         byte ptr [eax],al
+  00000176: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+         178 .text

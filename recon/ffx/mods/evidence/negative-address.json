@@ -1,0 +1,39 @@
+{
+  "kind": "actual-build-negative-admission",
+  "rejected": true,
+  "exit_code": 1,
+  "candidate_published": false,
+  "manifest_published": false,
+  "command": [
+    "/mnt/ssd-kingston/ffx-reconstructed/work/cos-byteproof-41719/recon/ffx/.venv-asm/bin/python",
+    "tools/match/run_source_only.py",
+    "tools/match/mod_link.py",
+    "--root",
+    "/mnt/ssd-kingston/ffx-reconstructed/work/cos-byteproof-41719",
+    "--package",
+    "/mnt/ssd-kingston/ffx-reconstructed/work/cos-byteproof-41719/recon/ffx/mods/build/absolute-rejection-goztekn8/package",
+    "--output",
+    "/mnt/ssd-kingston/ffx-reconstructed/work/cos-byteproof-41719/recon/ffx/mods/build/absolute-rejection-goztekn8/output"
+  ],
+  "source": "typedef int (__cdecl *Compare)(const void *, const void *, unsigned);\nint __cdecl changed(const void *a, const void *b, unsigned n) { return ((Compare)0x00401020)(a,b,n); }\n",
+  "recipe": {
+    "schema_version": 1,
+    "name": "absolute-rejection",
+    "source": "change.c",
+    "files": [
+      "change.c"
+    ],
+    "replacements": [
+      {
+        "symbol": "_sym_00401020",
+        "target": "_changed"
+      }
+    ],
+    "bindings": {}
+  },
+  "compiler_object_sha256": "1cd225504313bff37474bd8394a5b419cd058d3840dd5945e9a227d483e41a02",
+  "compiler_ir_sha256": "492a8db1c7d63cead9b800d3ab77566241fa7fcafa65386196de5cc0230a329a",
+  "elf_dependencies": 15,
+  "runtime_libraries": 14,
+  "log_sha256": "f35c17413617e250798b592b5fdcf493f22fae15e5fad7306a0549f6bb6c676c"
+}

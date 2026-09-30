@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085EE80.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_MapOverlayToBinary:
+  00000000: E8 00 00 00 00     call        _FFX_Encounter_GetOverlayDword
+  00000005: 83 F8 06           cmp         eax,6
+  00000008: 77 16              ja          $LN6
+  0000000A: 0F B6 88 00 00 00  movzx       ecx,byte ptr $LN8[eax]
+            00
+  00000011: FF 24 8D 00 00 00  jmp         dword ptr $LN10[ecx*4]
+            00
+$LN3:
+  00000018: 33 C0              xor         eax,eax
+  0000001A: C3                 ret
+$LN2:
+  0000001B: B8 01 00 00 00     mov         eax,1
+$LN6:
+  00000020: C3                 ret
+  00000021: 8D 49 00           lea         ecx,[ecx]
+$LN10:
+  00000024: 00 00              add         byte ptr [eax],al
+  00000026: 00 00              add         byte ptr [eax],al
+  00000028: 00 00              add         byte ptr [eax],al
+  0000002A: 00 00              add         byte ptr [eax],al
+  0000002C: 00 00              add         byte ptr [eax],al
+  0000002E: 00 00              add         byte ptr [eax],al
+$LN8:
+  00000030: 00 01              add         byte ptr [ecx],al
+  00000032: 02 01              add         al,byte ptr [ecx]
+  00000034: 02 01              add         al,byte ptr [ecx]
+  00000036: 00
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          37 .text

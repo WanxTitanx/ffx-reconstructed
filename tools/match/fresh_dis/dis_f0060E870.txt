@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060E870.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_60E870@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8A 5D 08           mov         bl,byte ptr [ebp+8]
+  00000008: 56                 push        esi
+  00000009: 8B F1              mov         esi,ecx
+  0000000B: 57                 push        edi
+  0000000C: 8B FA              mov         edi,edx
+  0000000E: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000011: F6 C3 01           test        bl,1
+  00000014: 75 1D              jne         00000033
+  00000016: 57                 push        edi
+  00000017: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  0000001C: 8B F0              mov         esi,eax
+  0000001E: 57                 push        edi
+  0000001F: C1 E6 1F           shl         esi,1Fh
+  00000022: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  00000027: D1 E8              shr         eax,1
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 0B C6              or          eax,esi
+  0000002E: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000031: 89 06              mov         dword ptr [esi],eax
+  00000033: F6 C3 02           test        bl,2
+  00000036: 75 0C              jne         00000044
+  00000038: 57                 push        edi
+  00000039: E8 00 00 00 00     call        _Phyre_Stream_ReadVarint
+  0000003E: 83 C4 04           add         esp,4
+  00000041: 89 46 04           mov         dword ptr [esi+4],eax
+  00000044: 0F BE C3           movsx       eax,bl
+  00000047: 50                 push        eax
+  00000048: 57                 push        edi
+  00000049: 56                 push        esi
+  0000004A: E8 00 00 00 00     call        _Phyre_PMapEntry_DeserializeFields
+  0000004F: 83 C4 0C           add         esp,0Ch
+  00000052: 5F                 pop         edi
+  00000053: 5E                 pop         esi
+  00000054: 5B                 pop         ebx
+  00000055: 8B E5              mov         esp,ebp
+  00000057: 5D                 pop         ebp
+  00000058: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5B .text

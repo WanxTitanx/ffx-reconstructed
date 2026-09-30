@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00793DA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_CreateModelResourcePacketIfNeeded:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 80 7E 3A 00        cmp         byte ptr [esi+3Ah],0
+  0000000B: 74 1B              je          00000028
+  0000000D: 8B 06              mov         eax,dword ptr [esi]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 15              je          00000028
+  00000013: 50                 push        eax
+  00000014: E8 00 00 00 00     call        _FFX_Chr_CreateModelResourcePacket
+  00000019: 83 C4 04           add         esp,4
+  0000001C: C6 46 3A 00        mov         byte ptr [esi+3Ah],0
+  00000020: B8 01 00 00 00     mov         eax,1
+  00000025: 5E                 pop         esi
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+  00000028: 33 C0              xor         eax,eax
+  0000002A: 88 46 3A           mov         byte ptr [esi+3Ah],al
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .text

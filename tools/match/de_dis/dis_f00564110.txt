@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00564110.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PVertexStreamArray_SetCount@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B FA              mov         edi,edx
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 83 FF 01           cmp         edi,1
+  0000000A: 77 05              ja          00000011
+  0000000C: BF 01 00 00 00     mov         edi,1
+  00000011: F6 46 34 01        test        byte ptr [esi+34h],1
+  00000015: 74 09              je          00000020
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _Phyre_PGeometry_UnbindDataBlocks
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000023: 8D 5E 18           lea         ebx,[esi+18h]
+  00000026: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000002B: 3B C7              cmp         eax,edi
+  0000002D: 75 06              jne         00000035
+  0000002F: 5F                 pop         edi
+  00000030: 5E                 pop         esi
+  00000031: 33 C0              xor         eax,eax
+  00000033: 5B                 pop         ebx
+  00000034: C3                 ret
+  00000035: 56                 push        esi
+  00000036: E8 00 00 00 00     call        _Phyre_PVertexStreamArray_WaitForUnbind
+  0000003B: 57                 push        edi
+  0000003C: 53                 push        ebx
+  0000003D: E8 00 00 00 00     call        _Phyre_PVertexStreamArray_ResizeAndCopy
+  00000042: 83 C4 0C           add         esp,0Ch
+  00000045: 5F                 pop         edi
+  00000046: 5E                 pop         esi
+  00000047: 5B                 pop         ebx
+  00000048: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          49 .text

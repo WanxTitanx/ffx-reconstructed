@@ -1,0 +1,106 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005D0400.obj
+
+File Type: COFF OBJECT
+
+@Phyre_AnimationEvent_InsertNode@28:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  0000000A: 56                 push        esi
+  0000000B: 8B C2              mov         eax,edx
+  0000000D: 8B F1              mov         esi,ecx
+  0000000F: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000012: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000015: 75 0C              jne         00000023
+  00000017: B8 01 00 00 00     mov         eax,1
+  0000001C: 5E                 pop         esi
+  0000001D: 8B E5              mov         esp,ebp
+  0000001F: 5D                 pop         ebp
+  00000020: C2 14 00           ret         14h
+  00000023: 6A 00              push        0
+  00000025: 8D 4D 10           lea         ecx,[ebp+10h]
+  00000028: 51                 push        ecx
+  00000029: 83 C0 08           add         eax,8
+  0000002C: 50                 push        eax
+  0000002D: E8 00 00 00 00     call        _Phyre_NameArray_FindString
+  00000032: 83 C4 0C           add         esp,0Ch
+  00000035: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000038: 85 C0              test        eax,eax
+  0000003A: 79 0C              jns         00000048
+  0000003C: B8 13 00 00 00     mov         eax,13h
+  00000041: 5E                 pop         esi
+  00000042: 8B E5              mov         esp,ebp
+  00000044: 5D                 pop         ebp
+  00000045: C2 14 00           ret         14h
+  00000048: 53                 push        ebx
+  00000049: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000004C: 83 FB 01           cmp         ebx,1
+  0000004F: 77 05              ja          00000056
+  00000051: BB 01 00 00 00     mov         ebx,1
+  00000056: 83 C6 04           add         esi,4
+  00000059: 57                 push        edi
+  0000005A: 8B 3E              mov         edi,dword ptr [esi]
+  0000005C: 85 FF              test        edi,edi
+  0000005E: 75 21              jne         00000081
+  00000060: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000063: FF 70 0C           push        dword ptr [eax+0Ch]
+  00000066: 56                 push        esi
+  00000067: E8 00 00 00 00     call        _Phyre_AlignedAllocList_Alloc
+  0000006C: 8B 3E              mov         edi,dword ptr [esi]
+  0000006E: 83 C4 08           add         esp,8
+  00000071: 85 FF              test        edi,edi
+  00000073: 75 0C              jne         00000081
+  00000075: 8D 47 0D           lea         eax,[edi+0Dh]
+  00000078: 5F                 pop         edi
+  00000079: 5B                 pop         ebx
+  0000007A: 5E                 pop         esi
+  0000007B: 8B E5              mov         esp,ebp
+  0000007D: 5D                 pop         ebp
+  0000007E: C2 14 00           ret         14h
+  00000081: 8B 07              mov         eax,dword ptr [edi]
+  00000083: 53                 push        ebx
+  00000084: FF 75 FC           push        dword ptr [ebp-4]
+  00000087: 89 06              mov         dword ptr [esi],eax
+  00000089: E8 00 00 00 00     call        _Phyre_AnimationScheduler_HistogramCompute
+  0000008E: 8B F0              mov         esi,eax
+  00000090: 53                 push        ebx
+  00000091: 56                 push        esi
+  00000092: FF 75 FC           push        dword ptr [ebp-4]
+  00000095: E8 00 00 00 00     call        _Phyre_AnimationScheduler_HistogramIncrement
+  0000009A: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000009D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000A0: 89 47 04           mov         dword ptr [edi+4],eax
+  000000A3: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  000000A6: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000A9: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  000000AC: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  000000AF: 89 4F 08           mov         dword ptr [edi+8],ecx
+  000000B2: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000B5: 66 89 5F 14        mov         word ptr [edi+14h],bx
+  000000B9: 66 89 77 16        mov         word ptr [edi+16h],si
+  000000BD: 89 47 1C           mov         dword ptr [edi+1Ch],eax
+  000000C0: 89 57 10           mov         dword ptr [edi+10h],edx
+  000000C3: C7 47 18 00 00 00  mov         dword ptr [edi+18h],0
+            00
+  000000CA: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  000000CD: 83 C4 14           add         esp,14h
+  000000D0: 89 07              mov         dword ptr [edi],eax
+  000000D2: 89 79 24           mov         dword ptr [ecx+24h],edi
+  000000D5: 5F                 pop         edi
+  000000D6: 5B                 pop         ebx
+  000000D7: 33 C0              xor         eax,eax
+  000000D9: 5E                 pop         esi
+  000000DA: 8B E5              mov         esp,ebp
+  000000DC: 5D                 pop         ebp
+  000000DD: C2 14 00           ret         14h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          E0 .text

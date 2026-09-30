@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A27880.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mkv_DemuxWorkerLoop:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 83 BE D0 00 00 00  cmp         dword ptr [esi+0D0h],1
+            01
+  0000000F: C7 86 D4 00 00 00  mov         dword ptr [esi+0D4h],1
+            01 00 00 00
+  00000019: 74 3C              je          00000057
+  0000001B: 57                 push        edi
+  0000001C: 8D BE AC 02 00 00  lea         edi,[esi+2ACh]
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _Phyre_SpinLock_TryAcquire
+  00000028: 8B 86 E4 00 00 00  mov         eax,dword ptr [esi+0E4h]
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 83 F8 01           cmp         eax,1
+  00000034: 74 05              je          0000003B
+  00000036: 83 F8 02           cmp         eax,2
+  00000039: 75 12              jne         0000004D
+  0000003B: 83 BE E8 00 00 00  cmp         dword ptr [esi+0E8h],2
+            02
+  00000042: 74 09              je          0000004D
+  00000044: 56                 push        esi
+  00000045: E8 00 00 00 00     call        _FFX_Mkv_DemuxBlocksToFrameQueue
+  0000004A: 83 C4 04           add         esp,4
+  0000004D: 83 BE D0 00 00 00  cmp         dword ptr [esi+0D0h],1
+            01
+  00000054: 75 CC              jne         00000022
+  00000056: 5F                 pop         edi
+  00000057: C7 86 D4 00 00 00  mov         dword ptr [esi+0D4h],2
+            02 00 00 00
+  00000061: 33 C0              xor         eax,eax
+  00000063: 5E                 pop         esi
+  00000064: 8B E5              mov         esp,ebp
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          68 .text

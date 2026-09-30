@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A0BD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_DispatchGetActorPosition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 25 FF FE FF FF     and         eax,0FFFFFEFFh
+  0000000B: 48                 dec         eax
+  0000000C: 83 F8 03           cmp         eax,3
+  0000000F: 77 45              ja          00000056
+  00000011: FF 24 85 00 00 00  jmp         dword ptr $LN12[eax*4]
+            00
+$LN5:
+  00000018: FF 75 10           push        dword ptr [ebp+10h]
+  0000001B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001E: E8 00 00 00 00     call        _FFX_Battle_GetActorNodeWorldPos
+  00000023: 83 C4 08           add         esp,8
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+$LN4:
+  00000028: FF 75 10           push        dword ptr [ebp+10h]
+  0000002B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002E: E8 00 00 00 00     call        _FFX_Battle_ReadActorWorldPositionWithHeight
+  00000033: 83 C4 08           add         esp,8
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+$LN3:
+  00000038: FF 75 10           push        dword ptr [ebp+10h]
+  0000003B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003E: E8 00 00 00 00     call        _FFX_Battle_ReadActorWorldPosition
+  00000043: 83 C4 08           add         esp,8
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+$LN2:
+  00000048: FF 75 10           push        dword ptr [ebp+10h]
+  0000004B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000004E: E8 00 00 00 00     call        _FFX_Battle_GetActorNodePos
+  00000053: 83 C4 08           add         esp,8
+  00000056: 5D                 pop         ebp
+  00000057: C3                 ret
+$LN12:
+  00000058: 00 00              add         byte ptr [eax],al
+  0000005A: 00 00              add         byte ptr [eax],al
+  0000005C: 00 00              add         byte ptr [eax],al
+  0000005E: 00 00              add         byte ptr [eax],al
+  00000060: 00 00              add         byte ptr [eax],al
+  00000062: 00 00              add         byte ptr [eax],al
+  00000064: 00 00              add         byte ptr [eax],al
+  00000066: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          68 .text

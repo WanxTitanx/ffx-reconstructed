@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00594120.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_GetElementFromPArray_B@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000006: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000B: 3B D0              cmp         edx,eax
+  0000000D: 72 04              jb          00000013
+  0000000F: 33 C0              xor         eax,eax
+  00000011: 5E                 pop         esi
+  00000012: C3                 ret
+  00000013: 83 F8 01           cmp         eax,1
+  00000016: 76 0C              jbe         00000024
+  00000018: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000001B: 8D 0C 92           lea         ecx,[edx+edx*4]
+  0000001E: 5E                 pop         esi
+  0000001F: 8B 44 88 08        mov         eax,dword ptr [eax+ecx*4+8]
+  00000023: C3                 ret
+  00000024: 85 C0              test        eax,eax
+  00000026: 8D 04 92           lea         eax,[edx+edx*4]
+  00000029: 74 06              je          00000031
+  0000002B: 8B 44 86 20        mov         eax,dword ptr [esi+eax*4+20h]
+  0000002F: 5E                 pop         esi
+  00000030: C3                 ret
+  00000031: 8B 04 85 08 00 00  mov         eax,dword ptr [eax*4+00000008h]
+            00
+  00000038: 5E                 pop         esi
+  00000039: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3A .text

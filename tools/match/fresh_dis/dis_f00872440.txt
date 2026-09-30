@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00872440.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckRuntimeFlag13:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: E8 00 00 00 00     call        _FFX_Battle_GetRuntimeContextPtr
+  0000000C: 8B F0              mov         esi,eax
+  0000000E: E8 00 00 00 00     call        _FFX_Mscd_GetStreamingContextPtr
+  00000013: 8B 0E              mov         ecx,dword ptr [esi]
+  00000015: C1 F9 0D           sar         ecx,0Dh
+  00000018: 83 E1 01           and         ecx,1
+  0000001B: 8B F8              mov         edi,eax
+  0000001D: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000020: B3 01              mov         bl,1
+  00000022: 75 02              jne         00000026
+  00000024: 8A D9              mov         bl,cl
+  00000026: E8 00 00 00 00     call        _FFX_Movie_GetHddFileCount
+  0000002B: 83 F8 03           cmp         eax,3
+  0000002E: 74 0A              je          0000003A
+  00000030: E8 00 00 00 00     call        _FFX_Movie_GetFileCheckValue
+  00000035: 83 F8 01           cmp         eax,1
+  00000038: 74 02              je          0000003C
+  0000003A: 32 DB              xor         bl,bl
+  0000003C: 88 5F 0E           mov         byte ptr [edi+0Eh],bl
+  0000003F: E8 00 00 00 00     call        _FFX_Sound_SpuDma_SubmitStrings
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: 8B E5              mov         esp,ebp
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4B .text

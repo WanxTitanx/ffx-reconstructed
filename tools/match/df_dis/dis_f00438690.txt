@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00438690.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_438690:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: FF 77 0C           push        dword ptr [edi+0Ch]
+  0000000B: FF 77 08           push        dword ptr [edi+8]
+  0000000E: E8 00 00 00 00     call        _Engine_ByteSwap64_to_BE
+  00000013: FF 77 04           push        dword ptr [edi+4]
+  00000016: 8B F0              mov         esi,eax
+  00000018: FF 37              push        dword ptr [edi]
+  0000001A: E8 00 00 00 00     call        _Engine_ByteSwap64_to_LE
+  0000001F: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000022: 83 C4 10           add         esp,10h
+  00000025: 89 37              mov         dword ptr [edi],esi
+  00000027: 89 4F 04           mov         dword ptr [edi+4],ecx
+  0000002A: 89 47 08           mov         dword ptr [edi+8],eax
+  0000002D: C7 47 0C 00 00 00  mov         dword ptr [edi+0Ch],0
+            00
+  00000034: 5F                 pop         edi
+  00000035: 33 D2              xor         edx,edx
+  00000037: 5E                 pop         esi
+  00000038: 5D                 pop         ebp
+  00000039: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3A .text

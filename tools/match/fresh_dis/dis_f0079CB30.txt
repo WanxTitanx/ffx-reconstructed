@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079CB30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_RefreshMonsterMenuStates:
+  00000000: 56                 push        esi
+  00000001: 33 F6              xor         esi,esi
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_Battle_GetEnemyListEntryBySlot
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 80 78 10 00        cmp         byte ptr [eax+10h],0
+  00000010: 74 0E              je          00000020
+  00000012: 8D 46 14           lea         eax,[esi+14h]
+  00000015: 50                 push        eax
+  00000016: 6A 00              push        0
+  00000018: E8 00 00 00 00     call        _FFX_Btl_RefreshActorMenuState
+  0000001D: 83 C4 08           add         esp,8
+  00000020: 46                 inc         esi
+  00000021: 83 FE 08           cmp         esi,8
+  00000024: 7C DD              jl          00000003
+  00000026: 5E                 pop         esi
+  00000027: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          28 .text

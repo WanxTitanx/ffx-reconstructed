@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005B5680.obj
+
+File Type: COFF OBJECT
+
+_Phyre_ShadowMesh_GetVertexSkinData:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8A 41 04           mov         al,byte ptr [ecx+4]
+  00000009: 84 C0              test        al,al
+  0000000B: 74 0F              je          0000001C
+  0000000D: 3C 01              cmp         al,1
+  0000000F: 74 0B              je          0000001C
+  00000011: 3C 02              cmp         al,2
+  00000013: 74 07              je          0000001C
+  00000015: B8 01 00 00 00     mov         eax,1
+  0000001A: 5D                 pop         ebp
+  0000001B: C3                 ret
+  0000001C: 56                 push        esi
+  0000001D: 8B 31              mov         esi,dword ptr [ecx]
+  0000001F: 85 F6              test        esi,esi
+  00000021: 74 32              je          00000055
+  00000023: 84 C0              test        al,al
+  00000025: 74 04              je          0000002B
+  00000027: 3C 01              cmp         al,1
+  00000029: 75 26              jne         00000051
+  0000002B: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000002E: C7 45 08 00 00 00  mov         dword ptr [ebp+8],0
+            00
+  00000035: C6 45 08 00        mov         byte ptr [ebp+8],0
+  00000039: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000003C: 4A                 dec         edx
+  0000003D: 23 D6              and         edx,esi
+  0000003F: 8B 4A 1C           mov         ecx,dword ptr [edx+1Ch]
+  00000042: 89 08              mov         dword ptr [eax],ecx
+  00000044: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000047: 8B 4A 20           mov         ecx,dword ptr [edx+20h]
+  0000004A: 89 08              mov         dword ptr [eax],ecx
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: 5E                 pop         esi
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+  00000051: 3C 02              cmp         al,2
+  00000053: 74 08              je          0000005D
+  00000055: B8 01 00 00 00     mov         eax,1
+  0000005A: 5E                 pop         esi
+  0000005B: 5D                 pop         ebp
+  0000005C: C3                 ret
+  0000005D: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000060: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000063: 89 08              mov         dword ptr [eax],ecx
+  00000065: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000068: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  0000006B: 89 08              mov         dword ptr [eax],ecx
+  0000006D: 33 C0              xor         eax,eax
+  0000006F: 5E                 pop         esi
+  00000070: 5D                 pop         ebp
+  00000071: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          72 .text

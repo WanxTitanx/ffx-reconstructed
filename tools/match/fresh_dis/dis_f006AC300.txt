@@ -1,0 +1,159 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AC300.obj
+
+File Type: COFF OBJECT
+
+@MenuIcon_AllocTextureSlotArray@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 3E 10           cmp         dword ptr [esi],10h
+  00000007: 89 56 24           mov         dword ptr [esi+24h],edx
+  0000000A: 74 56              je          00000062
+  0000000C: 6A 04              push        4
+  0000000E: 68 80 00 00 00     push        80h
+  00000013: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000018: 8B F8              mov         edi,eax
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 85 FF              test        edi,edi
+  0000001F: 0F 84 63 01 00 00  je          00000188
+  00000025: D9 EE              fldz
+  00000027: B9 10 00 00 00     mov         ecx,10h
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 74 09              je          00000039
+  00000030: D9 50 04           fst         dword ptr [eax+4]
+  00000033: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000039: 83 C0 08           add         eax,8
+  0000003C: 49                 dec         ecx
+  0000003D: 75 ED              jne         0000002C
+  0000003F: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000042: DD D8              fstp        st(0)
+  00000044: 3B C7              cmp         eax,edi
+  00000046: 74 11              je          00000059
+  00000048: 39 0E              cmp         dword ptr [esi],ecx
+  0000004A: 7C 0D              jl          00000059
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 74 09              je          00000059
+  00000050: 50                 push        eax
+  00000051: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000056: 83 C4 04           add         esp,4
+  00000059: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000005C: C7 06 10 00 00 00  mov         dword ptr [esi],10h
+  00000062: 83 7E 08 10        cmp         dword ptr [esi+8],10h
+  00000066: 74 56              je          000000BE
+  00000068: 6A 04              push        4
+  0000006A: 68 80 00 00 00     push        80h
+  0000006F: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000074: 8B F8              mov         edi,eax
+  00000076: 83 C4 08           add         esp,8
+  00000079: 85 FF              test        edi,edi
+  0000007B: 0F 84 07 01 00 00  je          00000188
+  00000081: B9 10 00 00 00     mov         ecx,10h
+  00000086: 85 C0              test        eax,eax
+  00000088: 74 0B              je          00000095
+  0000008A: D9 EE              fldz
+  0000008C: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000092: D9 58 04           fstp        dword ptr [eax+4]
+  00000095: 83 C0 08           add         eax,8
+  00000098: 49                 dec         ecx
+  00000099: 75 EB              jne         00000086
+  0000009B: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000009E: 3B C7              cmp         eax,edi
+  000000A0: 74 12              je          000000B4
+  000000A2: 39 4E 08           cmp         dword ptr [esi+8],ecx
+  000000A5: 7C 0D              jl          000000B4
+  000000A7: 85 C0              test        eax,eax
+  000000A9: 74 09              je          000000B4
+  000000AB: 50                 push        eax
+  000000AC: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000B1: 83 C4 04           add         esp,4
+  000000B4: 89 7E 0C           mov         dword ptr [esi+0Ch],edi
+  000000B7: C7 46 08 10 00 00  mov         dword ptr [esi+8],10h
+            00
+  000000BE: 83 7E 10 10        cmp         dword ptr [esi+10h],10h
+  000000C2: 74 56              je          0000011A
+  000000C4: 6A 04              push        4
+  000000C6: 68 80 00 00 00     push        80h
+  000000CB: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  000000D0: 8B F8              mov         edi,eax
+  000000D2: 83 C4 08           add         esp,8
+  000000D5: 85 FF              test        edi,edi
+  000000D7: 0F 84 AB 00 00 00  je          00000188
+  000000DD: B9 10 00 00 00     mov         ecx,10h
+  000000E2: 85 C0              test        eax,eax
+  000000E4: 74 0B              je          000000F1
+  000000E6: D9 EE              fldz
+  000000E8: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  000000EE: D9 58 04           fstp        dword ptr [eax+4]
+  000000F1: 83 C0 08           add         eax,8
+  000000F4: 49                 dec         ecx
+  000000F5: 75 EB              jne         000000E2
+  000000F7: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  000000FA: 3B C7              cmp         eax,edi
+  000000FC: 74 12              je          00000110
+  000000FE: 39 4E 10           cmp         dword ptr [esi+10h],ecx
+  00000101: 7C 0D              jl          00000110
+  00000103: 85 C0              test        eax,eax
+  00000105: 74 09              je          00000110
+  00000107: 50                 push        eax
+  00000108: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000010D: 83 C4 04           add         esp,4
+  00000110: 89 7E 14           mov         dword ptr [esi+14h],edi
+  00000113: C7 46 10 10 00 00  mov         dword ptr [esi+10h],10h
+            00
+  0000011A: 83 7E 18 10        cmp         dword ptr [esi+18h],10h
+  0000011E: 74 63              je          00000183
+  00000120: 6A 04              push        4
+  00000122: 68 00 01 00 00     push        100h
+  00000127: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000012C: 8B F8              mov         edi,eax
+  0000012E: 83 C4 08           add         esp,8
+  00000131: 85 FF              test        edi,edi
+  00000133: 74 53              je          00000188
+  00000135: 8D 4F 08           lea         ecx,[edi+8]
+  00000138: BA 10 00 00 00     mov         edx,10h
+  0000013D: 8D 49 00           lea         ecx,[ecx]
+  00000140: 83 F9 08           cmp         ecx,8
+  00000143: 74 15              je          0000015A
+  00000145: D9 EE              fldz
+  00000147: C7 41 F8 00 00 00  mov         dword ptr [ecx-8],0
+            00
+  0000014E: D9 51 FC           fst         dword ptr [ecx-4]
+  00000151: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000158: D9 19              fstp        dword ptr [ecx]
+  0000015A: 83 C1 10           add         ecx,10h
+  0000015D: 4A                 dec         edx
+  0000015E: 75 E0              jne         00000140
+  00000160: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00000163: 3B C7              cmp         eax,edi
+  00000165: 74 12              je          00000179
+  00000167: 39 56 18           cmp         dword ptr [esi+18h],edx
+  0000016A: 7C 0D              jl          00000179
+  0000016C: 85 C0              test        eax,eax
+  0000016E: 74 09              je          00000179
+  00000170: 50                 push        eax
+  00000171: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000176: 83 C4 04           add         esp,4
+  00000179: 89 7E 1C           mov         dword ptr [esi+1Ch],edi
+  0000017C: C7 46 18 10 00 00  mov         dword ptr [esi+18h],10h
+            00
+  00000183: 5F                 pop         edi
+  00000184: 33 C0              xor         eax,eax
+  00000186: 5E                 pop         esi
+  00000187: C3                 ret
+  00000188: 5F                 pop         edi
+  00000189: B8 0D 00 00 00     mov         eax,0Dh
+  0000018E: 5E                 pop         esi
+  0000018F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         190 .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BBF40.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_CountActiveBoundaries:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 83 FA 02           cmp         edx,2
+  00000009: 76 04              jbe         0000000F
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5D                 pop         ebp
+  0000000E: C3                 ret
+  0000000F: 0F BE 4D 0C        movsx       ecx,byte ptr [ebp+0Ch]
+  00000013: 83 E1 01           and         ecx,1
+  00000016: 8D 04 D5 00 00 00  lea         eax,[edx*8]
+            00
+  0000001D: 2B C2              sub         eax,edx
+  0000001F: 03 C8              add         ecx,eax
+  00000021: C1 E1 06           shl         ecx,6
+  00000024: 81 C1 00 00 00 00  add         ecx,offset _unk_11370BC
+  0000002A: 33 C0              xor         eax,eax
+  0000002C: 66 39 41 0C        cmp         word ptr [ecx+0Ch],ax
+  00000030: 0F 95 C0           setne       al
+  00000033: 66 83 79 1C 00     cmp         word ptr [ecx+1Ch],0
+  00000038: 74 01              je          0000003B
+  0000003A: 40                 inc         eax
+  0000003B: 66 83 79 2C 00     cmp         word ptr [ecx+2Ch],0
+  00000040: 74 01              je          00000043
+  00000042: 40                 inc         eax
+  00000043: 66 83 79 3C 00     cmp         word ptr [ecx+3Ch],0
+  00000048: 74 01              je          0000004B
+  0000004A: 40                 inc         eax
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

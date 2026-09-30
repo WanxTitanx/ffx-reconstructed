@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0088EB10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Map_SetLayerVisibilityBit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_GetVfxFlag_DED0C
+  00000009: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  0000000D: 8A 4D 08           mov         cl,byte ptr [ebp+8]
+  00000010: 8B F0              mov         esi,eax
+  00000012: 74 15              je          00000029
+  00000014: BA 01 00 00 00     mov         edx,1
+  00000019: D3 E2              shl         edx,cl
+  0000001B: 0B D6              or          edx,esi
+  0000001D: 52                 push        edx
+  0000001E: E8 00 00 00 00     call        _FFX_SetVfxFlag_DED0C
+  00000023: 83 C4 04           add         esp,4
+  00000026: 5E                 pop         esi
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+  00000029: B8 01 00 00 00     mov         eax,1
+  0000002E: D3 E0              shl         eax,cl
+  00000030: F7 D0              not         eax
+  00000032: 23 C6              and         eax,esi
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _FFX_SetVfxFlag_DED0C
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: 5E                 pop         esi
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

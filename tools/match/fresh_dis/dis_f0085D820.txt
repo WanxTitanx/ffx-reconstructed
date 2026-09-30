@@ -1,0 +1,99 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085D820.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_VoiceStartExec:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_12FB7C4]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000000E: 83 F9 01           cmp         ecx,1
+  00000011: 75 01              jne         00000014
+  00000013: 46                 inc         esi
+  00000014: 83 3D 00 00 00 00  cmp         dword ptr [_g_AtelUnkVar_1325A9C],1
+            01
+  0000001B: 75 47              jne         00000064
+  0000001D: A1 00 00 00 00     mov         eax,dword ptr [_g_AtelUnkVar_1325A98]
+  00000022: 85 C0              test        eax,eax
+  00000024: 75 31              jne         00000057
+  00000026: 83 F9 01           cmp         ecx,1
+  00000029: 75 0E              jne         00000039
+  0000002B: 56                 push        esi
+  0000002C: 68 00 00 00 00     push        offset ??_C@_0BO@NIIBIEAD@VoiceStartExec?3?5Frames?5?$DN?5?$CFd?$CB?6?$AA@
+  00000031: E8 00 00 00 00     call        _printf
+  00000036: 83 C4 08           add         esp,8
+  00000039: C7 05 00 00 00 00  mov         dword ptr [_g_AtelUnkVar_1325A98],0
+            00 00 00 00
+  00000043: C7 05 00 00 00 00  mov         dword ptr [_g_AtelUnkVar_1325A9C],0
+            00 00 00 00
+  0000004D: B8 05 00 00 00     mov         eax,5
+  00000052: 5E                 pop         esi
+  00000053: 8B E5              mov         esp,ebp
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+  00000057: 48                 dec         eax
+  00000058: A3 00 00 00 00     mov         dword ptr [_g_AtelUnkVar_1325A98],eax
+  0000005D: 33 C0              xor         eax,eax
+  0000005F: 5E                 pop         esi
+  00000060: 8B E5              mov         esp,ebp
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+  00000064: 57                 push        edi
+  00000065: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  0000006A: E8 00 00 00 00     call        _SndSqsIopSoundSystemStatus
+  0000006F: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000072: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000075: 85 C9              test        ecx,ecx
+  00000077: 74 0D              je          00000086
+  00000079: 83 F9 01           cmp         ecx,1
+  0000007C: 74 1F              je          0000009D
+  0000007E: 5F                 pop         edi
+  0000007F: 33 C0              xor         eax,eax
+  00000081: 5E                 pop         esi
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+  00000086: A9 00 00 01 00     test        eax,10000h
+  0000008B: 75 F1              jne         0000007E
+  0000008D: E8 00 00 00 00     call        _FFX_StubReturnZero_Common
+  00000092: 85 C0              test        eax,eax
+  00000094: 75 E8              jne         0000007E
+  00000096: C7 47 04 01 00 00  mov         dword ptr [edi+4],1
+            00
+  0000009D: 8B 07              mov         eax,dword ptr [edi]
+  0000009F: 85 C0              test        eax,eax
+  000000A1: 7E 0B              jle         000000AE
+  000000A3: 48                 dec         eax
+  000000A4: 89 07              mov         dword ptr [edi],eax
+  000000A6: 5F                 pop         edi
+  000000A7: 33 C0              xor         eax,eax
+  000000A9: 5E                 pop         esi
+  000000AA: 8B E5              mov         esp,ebp
+  000000AC: 5D                 pop         ebp
+  000000AD: C3                 ret
+  000000AE: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  000000B5: 75 0E              jne         000000C5
+  000000B7: 56                 push        esi
+  000000B8: 68 00 00 00 00     push        offset ??_C@_0BO@NIIBIEAD@VoiceStartExec?3?5Frames?5?$DN?5?$CFd?$CB?6?$AA@
+  000000BD: E8 00 00 00 00     call        _printf
+  000000C2: 83 C4 08           add         esp,8
+  000000C5: 5F                 pop         edi
+  000000C6: B8 05 00 00 00     mov         eax,5
+  000000CB: 5E                 pop         esi
+  000000CC: 8B E5              mov         esp,ebp
+  000000CE: 5D                 pop         ebp
+  000000CF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1E .rdata
+          D0 .text

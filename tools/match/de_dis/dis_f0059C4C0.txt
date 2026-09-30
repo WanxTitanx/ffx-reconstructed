@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059C4C0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Texture_ReleaseResources4@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 33 F6              xor         esi,esi
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8B 0C B7           mov         ecx,dword ptr [edi+esi*4]
+  00000013: 85 C9              test        ecx,ecx
+  00000015: 74 0F              je          00000026
+  00000017: 8B 01              mov         eax,dword ptr [ecx]
+  00000019: 51                 push        ecx
+  0000001A: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000001D: FF D0              call        eax
+  0000001F: C7 04 B7 00 00 00  mov         dword ptr [edi+esi*4],0
+            00
+  00000026: 8B 4C B7 08        mov         ecx,dword ptr [edi+esi*4+8]
+  0000002A: 85 C9              test        ecx,ecx
+  0000002C: 74 10              je          0000003E
+  0000002E: 8B 01              mov         eax,dword ptr [ecx]
+  00000030: 51                 push        ecx
+  00000031: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000034: FF D0              call        eax
+  00000036: C7 44 B7 08 00 00  mov         dword ptr [edi+esi*4+8],0
+            00 00
+  0000003E: 46                 inc         esi
+  0000003F: 83 FE 02           cmp         esi,2
+  00000042: 72 CC              jb          00000010
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 8B E5              mov         esp,ebp
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4A .text

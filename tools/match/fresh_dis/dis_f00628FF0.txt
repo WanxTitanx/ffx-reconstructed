@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00628FF0.obj
+
+File Type: COFF OBJECT
+
+_ParseInputBindingConfig_TokenizeLine:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000A: 3B CE              cmp         ecx,esi
+  0000000C: 72 05              jb          00000013
+  0000000E: 33 C0              xor         eax,eax
+  00000010: 5E                 pop         esi
+  00000011: 5D                 pop         ebp
+  00000012: C3                 ret
+  00000013: 8A 11              mov         dl,byte ptr [ecx]
+  00000015: 53                 push        ebx
+  00000016: 8A 5D 10           mov         bl,byte ptr [ebp+10h]
+  00000019: 57                 push        edi
+  0000001A: 0F BE FB           movsx       edi,bl
+  0000001D: 0F BE C2           movsx       eax,dl
+  00000020: 3B C7              cmp         eax,edi
+  00000022: 74 13              je          00000037
+  00000024: 84 D2              test        dl,dl
+  00000026: 74 0F              je          00000037
+  00000028: 3B CE              cmp         ecx,esi
+  0000002A: 74 0B              je          00000037
+  0000002C: 8A 51 01           mov         dl,byte ptr [ecx+1]
+  0000002F: 41                 inc         ecx
+  00000030: 0F BE C2           movsx       eax,dl
+  00000033: 3B C7              cmp         eax,edi
+  00000035: 75 ED              jne         00000024
+  00000037: 8A 01              mov         al,byte ptr [ecx]
+  00000039: 3A C3              cmp         al,bl
+  0000003B: 74 0B              je          00000048
+  0000003D: 84 C0              test        al,al
+  0000003F: 74 07              je          00000048
+  00000041: 5F                 pop         edi
+  00000042: 5B                 pop         ebx
+  00000043: 33 C0              xor         eax,eax
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+  00000048: 8D 51 01           lea         edx,[ecx+1]
+  0000004B: 8B CA              mov         ecx,edx
+  0000004D: 38 1A              cmp         byte ptr [edx],bl
+  0000004F: 74 12              je          00000063
+  00000051: 8A 01              mov         al,byte ptr [ecx]
+  00000053: 84 C0              test        al,al
+  00000055: 74 0C              je          00000063
+  00000057: 3B CE              cmp         ecx,esi
+  00000059: 74 08              je          00000063
+  0000005B: 8A 41 01           mov         al,byte ptr [ecx+1]
+  0000005E: 41                 inc         ecx
+  0000005F: 3A C3              cmp         al,bl
+  00000061: 75 F0              jne         00000053
+  00000063: 5F                 pop         edi
+  00000064: 5B                 pop         ebx
+  00000065: C6 01 00           mov         byte ptr [ecx],0
+  00000068: 8B C2              mov         eax,edx
+  0000006A: 5E                 pop         esi
+  0000006B: 5D                 pop         ebp
+  0000006C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6D .text

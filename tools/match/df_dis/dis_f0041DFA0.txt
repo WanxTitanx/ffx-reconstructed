@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041DFA0.obj
+
+File Type: COFF OBJECT
+
+@FFX_VpxBoolDecoder_DecodeAllMacroblocks@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B BE 70 19 00 00  mov         edi,dword ptr [esi+1970h]
+  00000011: 56                 push        esi
+  00000012: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_ReadKeyFrameHeader
+  00000017: 8B 8E 38 19 00 00  mov         ecx,dword ptr [esi+1938h]
+  0000001D: 8B C1              mov         eax,ecx
+  0000001F: C1 E0 07           shl         eax,7
+  00000022: 83 C0 80           add         eax,0FFFFFF80h
+  00000025: 89 86 64 0C 00 00  mov         dword ptr [esi+0C64h],eax
+  0000002B: 8B 86 3C 19 00 00  mov         eax,dword ptr [esi+193Ch]
+  00000031: 8B D8              mov         ebx,eax
+  00000033: C1 E3 07           shl         ebx,7
+  00000036: 33 D2              xor         edx,edx
+  00000038: 83 C3 80           add         ebx,0FFFFFF80h
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 89 96 60 0C 00 00  mov         dword ptr [esi+0C60h],edx
+  00000044: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000047: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000004A: 85 C9              test        ecx,ecx
+  0000004C: 7E 5D              jle         000000AB
+  0000004E: 8B CB              mov         ecx,ebx
+  00000050: 33 DB              xor         ebx,ebx
+  00000052: 89 9E 58 0C 00 00  mov         dword ptr [esi+0C58h],ebx
+  00000058: 89 8E 5C 0C 00 00  mov         dword ptr [esi+0C5Ch],ecx
+  0000005E: 85 C0              test        eax,eax
+  00000060: 7E 2C              jle         0000008E
+  00000062: 57                 push        edi
+  00000063: 56                 push        esi
+  00000064: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_DecodeMacroblock
+  00000069: 8B 86 3C 19 00 00  mov         eax,dword ptr [esi+193Ch]
+  0000006F: 83 86 58 0C 00 00  add         dword ptr [esi+0C58h],0FFFFFF80h
+            80
+  00000076: 83 86 5C 0C 00 00  add         dword ptr [esi+0C5Ch],0FFFFFF80h
+            80
+  0000007D: 43                 inc         ebx
+  0000007E: 83 C4 08           add         esp,8
+  00000081: 83 C7 4C           add         edi,4Ch
+  00000084: 3B D8              cmp         ebx,eax
+  00000086: 7C DA              jl          00000062
+  00000088: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000008B: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  0000008E: 83 86 60 0C 00 00  add         dword ptr [esi+0C60h],0FFFFFF80h
+            80
+  00000095: 83 86 64 0C 00 00  add         dword ptr [esi+0C64h],0FFFFFF80h
+            80
+  0000009C: 42                 inc         edx
+  0000009D: 83 C7 4C           add         edi,4Ch
+  000000A0: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000000A3: 3B 96 38 19 00 00  cmp         edx,dword ptr [esi+1938h]
+  000000A9: 7C A5              jl          00000050
+  000000AB: 5F                 pop         edi
+  000000AC: 5E                 pop         esi
+  000000AD: 8B C2              mov         eax,edx
+  000000AF: 5B                 pop         ebx
+  000000B0: 8B E5              mov         esp,ebp
+  000000B2: 5D                 pop         ebp
+  000000B3: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B4 .text

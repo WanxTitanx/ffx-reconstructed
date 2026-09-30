@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00782A70.obj
+
+File Type: COFF OBJECT
+
+_FFX_Encounter_ResolveTypeAndThreshold:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 33 FF              xor         edi,edi
+  00000007: 83 CE FF           or          esi,0FFFFFFFFh
+  0000000A: E8 00 00 00 00     call        _FFX_SceneState_GetEncounterTypeByte
+  0000000F: 8B C8              mov         ecx,eax
+  00000011: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000014: 3B C6              cmp         eax,esi
+  00000016: 74 2A              je          00000042
+  00000018: 48                 dec         eax
+  00000019: 83 F8 02           cmp         eax,2
+  0000001C: 76 0E              jbe         0000002C
+  0000001E: 8D 7E 32           lea         edi,[esi+32h]
+  00000021: 8B F1              mov         esi,ecx
+  00000023: F7 DE              neg         esi
+  00000025: 1B F6              sbb         esi,esi
+  00000027: 83 E6 02           and         esi,2
+  0000002A: EB 16              jmp         00000042
+  0000002C: 85 C9              test        ecx,ecx
+  0000002E: 74 0A              je          0000003A
+  00000030: BE 03 00 00 00     mov         esi,3
+  00000035: 8D 7E 3C           lea         edi,[esi+3Ch]
+  00000038: EB 08              jmp         00000042
+  0000003A: BE 01 00 00 00     mov         esi,1
+  0000003F: 8D 7E 64           lea         edi,[esi+64h]
+  00000042: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000045: 8B C6              mov         eax,esi
+  00000047: 85 C9              test        ecx,ecx
+  00000049: 74 02              je          0000004D
+  0000004B: 89 39              mov         dword ptr [ecx],edi
+  0000004D: 5F                 pop         edi
+  0000004E: 5E                 pop         esi
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          51 .text

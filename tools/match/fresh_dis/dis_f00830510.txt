@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00830510.obj
+
+File Type: COFF OBJECT
+
+_FFX_Ps3Data_BuildSlotFromGuidePolyEx:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 0C C5 00 00 00  lea         ecx,[eax*8]
+            00
+  00000011: 2B C8              sub         ecx,eax
+  00000013: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  00000019: 57                 push        edi
+  0000001A: FF 74 C8 04        push        dword ptr [eax+ecx*8+4]
+  0000001E: 8D 3C C8           lea         edi,[eax+ecx*8]
+  00000021: FF 77 08           push        dword ptr [edi+8]
+  00000024: E8 00 00 00 00     call        _FFX_FieldMap_AdvanceGuidePolyBuf
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 83 3D 00 00 00 00  cmp         dword ptr [_g_U8_13007A0],0
+            00
+  00000033: 74 0D              je          00000042
+  00000035: 8B 86 E0 06 00 00  mov         eax,dword ptr [esi+6E0h]
+  0000003B: A3 00 00 00 00     mov         dword ptr [_dword_23C44A0],eax
+  00000040: EB 0A              jmp         0000004C
+  00000042: C7 05 00 00 00 00  mov         dword ptr [_dword_23C44A0],0
+            00 00 00 00
+  0000004C: 56                 push        esi
+  0000004D: E8 00 00 00 00     call        _FFX_Ps3Data_ComputeSlotChecksum
+  00000052: FF 75 10           push        dword ptr [ebp+10h]
+  00000055: E8 00 00 00 00     call        _FFX_FieldMap_InitGuidePolyBuffer
+  0000005A: 57                 push        edi
+  0000005B: E8 00 00 00 00     call        _FFX_FieldMap_ParseEncounterGuidePoly
+  00000060: 83 C4 0C           add         esp,0Ch
+  00000063: 5F                 pop         edi
+  00000064: 5E                 pop         esi
+  00000065: 5D                 pop         ebp
+  00000066: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          67 .text

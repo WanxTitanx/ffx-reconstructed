@@ -1,0 +1,99 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0066D7A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Scene_UpdateEnabledLayers@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 8B DA              mov         ebx,edx
+  0000000C: 8B 8F A4 11 00 00  mov         ecx,dword ptr [edi+11A4h]
+  00000012: 8D 87 98 11 00 00  lea         eax,[edi+1198h]
+  00000018: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  0000001B: 3B C8              cmp         ecx,eax
+  0000001D: 0F 84 BD 00 00 00  je          000000E0
+  00000023: 85 C9              test        ecx,ecx
+  00000025: 0F 84 B5 00 00 00  je          000000E0
+  0000002B: 39 9F 14 FB 00 00  cmp         dword ptr [edi+0FB14h],ebx
+  00000031: 0F 84 A9 00 00 00  je          000000E0
+  00000037: 56                 push        esi
+  00000038: 50                 push        eax
+  00000039: 8D 45 FC           lea         eax,[ebp-4]
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _Phyre_Tree_IteratorInit
+  00000042: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000045: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000048: 83 C4 08           add         esp,8
+  0000004B: 3B F1              cmp         esi,ecx
+  0000004D: 0F 84 84 00 00 00  je          000000D7
+  00000053: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000056: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000059: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000060: 8B 7E 10           mov         edi,dword ptr [esi+10h]
+  00000063: 33 D2              xor         edx,edx
+  00000065: 39 17              cmp         dword ptr [edi],edx
+  00000067: 74 4F              je          000000B8
+  00000069: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000070: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000073: BE 01 00 00 00     mov         esi,1
+  00000078: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000007B: 8B 48 48           mov         ecx,dword ptr [eax+48h]
+  0000007E: D3 E6              shl         esi,cl
+  00000080: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00000083: 8B 89 14 FB 00 00  mov         ecx,dword ptr [ecx+0FB14h]
+  00000089: 33 CB              xor         ecx,ebx
+  0000008B: 85 CE              test        esi,ecx
+  0000008D: 74 1E              je          000000AD
+  0000008F: 85 F3              test        ebx,esi
+  00000091: 74 0C              je          0000009F
+  00000093: 8B 48 1C           mov         ecx,dword ptr [eax+1Ch]
+  00000096: 85 C9              test        ecx,ecx
+  00000098: 74 13              je          000000AD
+  0000009A: 89 41 1C           mov         dword ptr [ecx+1Ch],eax
+  0000009D: EB 0E              jmp         000000AD
+  0000009F: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  000000A2: 85 C0              test        eax,eax
+  000000A4: 74 07              je          000000AD
+  000000A6: C7 40 1C 00 00 00  mov         dword ptr [eax+1Ch],0
+            00
+  000000AD: 42                 inc         edx
+  000000AE: 3B 17              cmp         edx,dword ptr [edi]
+  000000B0: 72 BE              jb          00000070
+  000000B2: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000B5: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000B8: 8B F9              mov         edi,ecx
+  000000BA: 8B F0              mov         esi,eax
+  000000BC: 3B C1              cmp         eax,ecx
+  000000BE: 74 0D              je          000000CD
+  000000C0: 50                 push        eax
+  000000C1: 51                 push        ecx
+  000000C2: E8 00 00 00 00     call        _Phyre_Tree_GetPredecessor
+  000000C7: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000CA: 83 C4 08           add         esp,8
+  000000CD: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000D0: 3B F7              cmp         esi,edi
+  000000D2: 75 8C              jne         00000060
+  000000D4: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  000000D7: 89 9F 14 FB 00 00  mov         dword ptr [edi+0FB14h],ebx
+  000000DD: 8B C7              mov         eax,edi
+  000000DF: 5E                 pop         esi
+  000000E0: 5F                 pop         edi
+  000000E1: 5B                 pop         ebx
+  000000E2: 8B E5              mov         esp,ebp
+  000000E4: 5D                 pop         ebp
+  000000E5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          E6 .text

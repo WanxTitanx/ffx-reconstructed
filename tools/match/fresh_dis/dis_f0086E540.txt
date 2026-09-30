@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086E540.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_SyncVisibilityAndMotion:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 BE 9C 00 00 00  cmp         dword ptr [esi+9Ch],0
+            00
+  0000000E: 0F 84 21 01 00 00  je          00000135
+  00000014: B8 00 40 00 00     mov         eax,4000h
+  00000019: 66 85 46 36        test        word ptr [esi+36h],ax
+  0000001D: 74 12              je          00000031
+  0000001F: 0F B7 86 A8 00 00  movzx       eax,word ptr [esi+0A8h]
+            00
+  00000026: 6A 02              push        2
+  00000028: 50                 push        eax
+  00000029: E8 00 00 00 00     call        _FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered
+  0000002E: 83 C4 08           add         esp,8
+  00000031: B8 00 20 00 00     mov         eax,2000h
+  00000036: 66 85 46 36        test        word ptr [esi+36h],ax
+  0000003A: 74 12              je          0000004E
+  0000003C: 0F B7 86 A8 00 00  movzx       eax,word ptr [esi+0A8h]
+            00
+  00000043: 6A 00              push        0
+  00000045: 50                 push        eax
+  00000046: E8 00 00 00 00     call        _FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered
+  0000004B: 83 C4 08           add         esp,8
+  0000004E: FF B6 A4 00 00 00  push        dword ptr [esi+0A4h]
+  00000054: FF B6 9C 00 00 00  push        dword ptr [esi+9Ch]
+  0000005A: E8 00 00 00 00     call        _FFX_Mesh_CopyRayIntersectResult
+  0000005F: 8B 86 9C 00 00 00  mov         eax,dword ptr [esi+9Ch]
+  00000065: 83 C4 08           add         esp,8
+  00000068: 85 C0              test        eax,eax
+  0000006A: 74 19              je          00000085
+  0000006C: F6 46 33 40        test        byte ptr [esi+33h],40h
+  00000070: 74 13              je          00000085
+  00000072: 6A 01              push        1
+  00000074: 50                 push        eax
+  00000075: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  0000007A: 6A 01              push        1
+  0000007C: 56                 push        esi
+  0000007D: E8 00 00 00 00     call        _FFX_FieldActor_SyncVisibilitySlots
+  00000082: 83 C4 10           add         esp,10h
+  00000085: 80 66 33 BF        and         byte ptr [esi+33h],0BFh
+  00000089: 83 BE 9C 00 00 00  cmp         dword ptr [esi+9Ch],0
+            00
+  00000090: 74 28              je          000000BA
+  00000092: B8 00 10 00 00     mov         eax,1000h
+  00000097: 66 85 46 38        test        word ptr [esi+38h],ax
+  0000009B: 74 1D              je          000000BA
+  0000009D: E8 00 00 00 00     call        _dbgPrintf
+  000000A2: 6A 00              push        0
+  000000A4: FF B6 9C 00 00 00  push        dword ptr [esi+9Ch]
+  000000AA: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  000000AF: 6A 00              push        0
+  000000B1: 56                 push        esi
+  000000B2: E8 00 00 00 00     call        _FFX_FieldActor_SyncVisibilitySlots
+  000000B7: 83 C4 10           add         esp,10h
+  000000BA: B8 FF EF 00 00     mov         eax,0EFFFh
+  000000BF: 66 21 46 38        and         word ptr [esi+38h],ax
+  000000C3: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  000000C7: 74 40              je          00000109
+  000000C9: 8B 96 9C 00 00 00  mov         edx,dword ptr [esi+9Ch]
+  000000CF: 8B 4E 40           mov         ecx,dword ptr [esi+40h]
+  000000D2: 85 D2              test        edx,edx
+  000000D4: 74 33              je          00000109
+  000000D6: 83 F9 08           cmp         ecx,8
+  000000D9: 7D 2E              jge         00000109
+  000000DB: B8 01 00 00 00     mov         eax,1
+  000000E0: D3 E0              shl         eax,cl
+  000000E2: 85 05 00 00 00 00  test        dword ptr [_g_FieldActorUnkVar_1326B3C],eax
+  000000E8: 74 0C              je          000000F6
+  000000EA: 6A 00              push        0
+  000000EC: 52                 push        edx
+  000000ED: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  000000F2: 6A 00              push        0
+  000000F4: EB 0A              jmp         00000100
+  000000F6: 6A 01              push        1
+  000000F8: 52                 push        edx
+  000000F9: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  000000FE: 6A 01              push        1
+  00000100: 56                 push        esi
+  00000101: E8 00 00 00 00     call        _FFX_FieldActor_SyncVisibilitySlots
+  00000106: 83 C4 10           add         esp,10h
+  00000109: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  0000010D: 75 26              jne         00000135
+  0000010F: E8 00 00 00 00     call        _FFX_Magic_GetCurrentMagicId
+  00000114: 3D 6E 02 00 00     cmp         eax,26Eh
+  00000119: 72 0C              jb          00000127
+  0000011B: E8 00 00 00 00     call        _FFX_Magic_GetCurrentMagicId
+  00000120: 3D 75 02 00 00     cmp         eax,275h
+  00000125: 76 0E              jbe         00000135
+  00000127: FF B6 9C 00 00 00  push        dword ptr [esi+9Ch]
+  0000012D: E8 00 00 00 00     call        _FFX_Mseq_ResetPlaybackFlags
+  00000132: 83 C4 04           add         esp,4
+  00000135: 5E                 pop         esi
+  00000136: 5D                 pop         ebp
+  00000137: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         138 .text

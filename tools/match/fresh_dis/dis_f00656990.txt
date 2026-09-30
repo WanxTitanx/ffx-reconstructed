@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00656990.obj
+
+File Type: COFF OBJECT
+
+@FFX_IntSet_DeduplicatedInsert@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 33 F6              xor         esi,esi
+  00000006: 8B 8F 8C 38 00 00  mov         ecx,dword ptr [edi+388Ch]
+  0000000C: 85 C9              test        ecx,ecx
+  0000000E: 7E 1F              jle         0000002F
+  00000010: 8B 87 88 38 00 00  mov         eax,dword ptr [edi+3888h]
+  00000016: 39 10              cmp         dword ptr [eax],edx
+  00000018: 0F 84 89 00 00 00  je          000000A7
+  0000001E: 8B FF              mov         edi,edi
+  00000020: 46                 inc         esi
+  00000021: 8D 40 04           lea         eax,[eax+4]
+  00000024: 3B F1              cmp         esi,ecx
+  00000026: 7D 07              jge         0000002F
+  00000028: 39 10              cmp         dword ptr [eax],edx
+  0000002A: 75 F4              jne         00000020
+  0000002C: 5F                 pop         edi
+  0000002D: 5E                 pop         esi
+  0000002E: C3                 ret
+  0000002F: 8B 87 88 38 00 00  mov         eax,dword ptr [edi+3888h]
+  00000035: 89 14 88           mov         dword ptr [eax+ecx*4],edx
+  00000038: 8B 8F 84 38 00 00  mov         ecx,dword ptr [edi+3884h]
+  0000003E: FF 87 8C 38 00 00  inc         dword ptr [edi+388Ch]
+  00000044: 8B C1              mov         eax,ecx
+  00000046: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000004B: 39 87 8C 38 00 00  cmp         dword ptr [edi+388Ch],eax
+  00000051: 72 54              jb          000000A7
+  00000053: 8D B0 00 04 00 00  lea         esi,[eax+400h]
+  00000059: 3B F1              cmp         esi,ecx
+  0000005B: 74 4A              je          000000A7
+  0000005D: 3B F0              cmp         esi,eax
+  0000005F: 73 02              jae         00000063
+  00000061: 8B C6              mov         eax,esi
+  00000063: 53                 push        ebx
+  00000064: 50                 push        eax
+  00000065: FF B7 88 38 00 00  push        dword ptr [edi+3888h]
+  0000006B: 56                 push        esi
+  0000006C: E8 00 00 00 00     call        _Phyre_AllocAndCopyIntArray_B
+  00000071: 8B D8              mov         ebx,eax
+  00000073: 83 C4 0C           add         esp,0Ch
+  00000076: 85 DB              test        ebx,ebx
+  00000078: 75 04              jne         0000007E
+  0000007A: 85 F6              test        esi,esi
+  0000007C: 75 28              jne         000000A6
+  0000007E: 8B 87 88 38 00 00  mov         eax,dword ptr [edi+3888h]
+  00000084: 3B C3              cmp         eax,ebx
+  00000086: 74 12              je          0000009A
+  00000088: 83 BF 84 38 00 00  cmp         dword ptr [edi+3884h],0
+            00
+  0000008F: 7C 09              jl          0000009A
+  00000091: 50                 push        eax
+  00000092: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000097: 83 C4 04           add         esp,4
+  0000009A: 89 9F 88 38 00 00  mov         dword ptr [edi+3888h],ebx
+  000000A0: 89 B7 84 38 00 00  mov         dword ptr [edi+3884h],esi
+  000000A6: 5B                 pop         ebx
+  000000A7: 5F                 pop         edi
+  000000A8: 5E                 pop         esi
+  000000A9: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          AA .text

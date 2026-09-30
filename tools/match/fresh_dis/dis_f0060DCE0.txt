@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060DCE0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Cluster_UnpackPointerFixups:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 50 04           mov         edx,dword ptr [eax+4]
+  0000000A: 57                 push        edi
+  0000000B: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000E: 89 55 10           mov         dword ptr [ebp+10h],edx
+  00000011: 8B 1F              mov         ebx,dword ptr [edi]
+  00000013: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000019: 74 3A              je          00000055
+  0000001B: 8B 7F 04           mov         edi,dword ptr [edi+4]
+  0000001E: 83 C7 04           add         edi,4
+  00000021: 56                 push        esi
+  00000022: FF 37              push        dword ptr [edi]
+  00000024: 8B 77 18           mov         esi,dword ptr [edi+18h]
+  00000027: 56                 push        esi
+  00000028: 52                 push        edx
+  00000029: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002C: E8 00 00 00 00     call        _FFX2_BankStr_ByKey
+  00000031: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000034: 83 C4 10           add         esp,10h
+  00000037: 83 FB 01           cmp         ebx,1
+  0000003A: 0F 94 C1           sete        cl
+  0000003D: 8D 04 F5 00 00 00  lea         eax,[esi*8]
+            00
+  00000044: 2B C6              sub         eax,esi
+  00000046: 4B                 dec         ebx
+  00000047: 8D 14 82           lea         edx,[edx+eax*4]
+  0000004A: 89 55 10           mov         dword ptr [ebp+10h],edx
+  0000004D: 8D 7F 24           lea         edi,[edi+24h]
+  00000050: 84 C9              test        cl,cl
+  00000052: 74 CE              je          00000022
+  00000054: 5E                 pop         esi
+  00000055: 5F                 pop         edi
+  00000056: 33 C0              xor         eax,eax
+  00000058: 5B                 pop         ebx
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5B .text

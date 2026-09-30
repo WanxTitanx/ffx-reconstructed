@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085F2A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldVM_SetActorLighting:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  0000000E: 6A FF              push        0FFFFFFFFh
+  00000010: 57                 push        edi
+  00000011: 8B F0              mov         esi,eax
+  00000013: E8 00 00 00 00     call        _FFX_FieldActor_CopySlotFacingTarget
+  00000018: FF 75 10           push        dword ptr [ebp+10h]
+  0000001B: 57                 push        edi
+  0000001C: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000021: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000024: DB 45 08           fild        dword ptr [ebp+8]
+  00000027: 85 C0              test        eax,eax
+  00000029: 79 06              jns         00000031
+  0000002B: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000031: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000034: 83 C4 0C           add         esp,0Ch
+  00000037: D9 45 08           fld         dword ptr [ebp+8]
+  0000003A: DD 1C 24           fstp        qword ptr [esp]
+  0000003D: E8 00 00 00 00     call        _FFX_Field_BgAnimOpacityReader
+  00000042: 83 C4 08           add         esp,8
+  00000045: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000048: DB 45 08           fild        dword ptr [ebp+8]
+  0000004B: 85 C0              test        eax,eax
+  0000004D: 79 06              jns         00000055
+  0000004F: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000055: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000058: D9 45 08           fld         dword ptr [ebp+8]
+  0000005B: D9 56 24           fst         dword ptr [esi+24h]
+  0000005E: D9 56 30           fst         dword ptr [esi+30h]
+  00000061: 8A 87 AA 00 00 00  mov         al,byte ptr [edi+0AAh]
+  00000067: 2C 04              sub         al,4
+  00000069: 3C 01              cmp         al,1
+  0000006B: 77 0E              ja          0000007B
+  0000006D: 57                 push        edi
+  0000006E: DD D8              fstp        st(0)
+  00000070: E8 00 00 00 00     call        _FFX_Field_UpdateActorLighting
+  00000075: D9 45 08           fld         dword ptr [ebp+8]
+  00000078: 83 C4 04           add         esp,4
+  0000007B: 5F                 pop         edi
+  0000007C: 5E                 pop         esi
+  0000007D: 5D                 pop         ebp
+  0000007E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          7F .text

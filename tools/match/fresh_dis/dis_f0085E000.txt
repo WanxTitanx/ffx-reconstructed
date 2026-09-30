@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085E000.obj
+
+File Type: COFF OBJECT
+
+_FFX_VoiceStatusExec:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000007: 75 25              jne         0000002E
+  00000009: 83 3D 00 00 00 00  cmp         dword ptr [_g_AtelUnkVar_1325A8C],0
+            00
+  00000010: 75 16              jne         00000028
+  00000012: 68 00 00 00 00     push        offset ??_C@_0BD@CFNKEDAC@VoiceStatusStart?$CB?6?$AA@
+  00000017: E8 00 00 00 00     call        _printf
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000026: 75 06              jne         0000002E
+  00000028: FF 05 00 00 00 00  inc         dword ptr [_g_AtelUnkVar_1325A8C]
+  0000002E: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldDebugFlag_1325AA4],1
+            01
+  00000035: 56                 push        esi
+  00000036: 75 29              jne         00000061
+  00000038: A1 00 00 00 00     mov         eax,dword ptr [_g_FieldDebugFlag_1325AA0]
+  0000003D: 85 C0              test        eax,eax
+  0000003F: 74 08              je          00000049
+  00000041: 48                 dec         eax
+  00000042: A3 00 00 00 00     mov         dword ptr [_g_FieldDebugFlag_1325AA0],eax
+  00000047: EB 23              jmp         0000006C
+  00000049: C7 05 00 00 00 00  mov         dword ptr [_g_FieldDebugFlag_1325AA0],0
+            00 00 00 00
+  00000053: C7 05 00 00 00 00  mov         dword ptr [_g_FieldDebugFlag_1325AA4],0
+            00 00 00 00
+  0000005D: 33 F6              xor         esi,esi
+  0000005F: EB 10              jmp         00000071
+  00000061: E8 00 00 00 00     call        _FFX_Sound_AggregateStatusFlags
+  00000066: 8B F0              mov         esi,eax
+  00000068: 85 F6              test        esi,esi
+  0000006A: 74 05              je          00000071
+  0000006C: BE 01 00 00 00     mov         esi,1
+  00000071: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000078: 75 1D              jne         00000097
+  0000007A: 85 F6              test        esi,esi
+  0000007C: 75 19              jne         00000097
+  0000007E: FF 35 00 00 00 00  push        dword ptr [_g_AtelUnkVar_1325A8C]
+  00000084: 68 00 00 00 00     push        offset ??_C@_0BO@LGDHDDN@VoiceStatusExec?3?5Frame?5?$DN?5?$CFd?$CB?6?$AA@
+  00000089: E8 00 00 00 00     call        _printf
+  0000008E: 83 C4 08           add         esp,8
+  00000091: 89 35 00 00 00 00  mov         dword ptr [_g_AtelUnkVar_1325A8C],esi
+  00000097: 8B C6              mov         eax,esi
+  00000099: 5E                 pop         esi
+  0000009A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          31 .rdata
+          9B .text

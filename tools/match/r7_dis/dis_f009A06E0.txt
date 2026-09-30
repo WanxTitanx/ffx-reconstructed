@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009A06E0.obj
+
+File Type: COFF OBJECT
+
+@sub_9A06E0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000009: C7 06 00 00 00 00  mov         dword ptr [esi],offset _btSortedOverlappingPairCache
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 16              je          00000029
+  00000013: 80 7E 14 00        cmp         byte ptr [esi+14h],0
+  00000017: 74 09              je          00000022
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _sub_9D4D50
+  0000001F: 83 C4 04           add         esp,4
+  00000022: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000029: C6 46 14 01        mov         byte ptr [esi+14h],1
+  0000002D: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000034: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000003B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000042: C7 06 00 00 00 00  mov         dword ptr [esi],offset _btOverlappingPairCallback
+  00000048: F6 C3 01           test        bl,1
+  0000004B: 74 09              je          00000056
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _FFX_Memory_Free
+  00000053: 83 C4 04           add         esp,4
+  00000056: 8B C6              mov         eax,esi
+  00000058: 5E                 pop         esi
+  00000059: 5B                 pop         ebx
+  0000005A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5B .text

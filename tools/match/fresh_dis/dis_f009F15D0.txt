@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009F15D0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_HeapSort_Push_FloatPairs:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 8D 47 FF           lea         eax,[edi-1]
+  00000012: 99                 cdq
+  00000013: 2B C2              sub         eax,edx
+  00000015: 8B C8              mov         ecx,eax
+  00000017: D1 F9              sar         ecx,1
+  00000019: 39 7D 10           cmp         dword ptr [ebp+10h],edi
+  0000001C: 7D 31              jge         0000004F
+  0000001E: 8B FF              mov         edi,edi
+  00000020: D9 43 04           fld         dword ptr [ebx+4]
+  00000023: D9 44 CE 04        fld         dword ptr [esi+ecx*8+4]
+  00000027: DE D9              fcompp
+  00000029: DF E0              fnstsw      ax
+  0000002B: F6 C4 41           test        ah,41h
+  0000002E: 7B 1F              jnp         0000004F
+  00000030: 8B 04 CE           mov         eax,dword ptr [esi+ecx*8]
+  00000033: 89 04 FE           mov         dword ptr [esi+edi*8],eax
+  00000036: 8B 44 CE 04        mov         eax,dword ptr [esi+ecx*8+4]
+  0000003A: 89 44 FE 04        mov         dword ptr [esi+edi*8+4],eax
+  0000003E: 8D 41 FF           lea         eax,[ecx-1]
+  00000041: 99                 cdq
+  00000042: 8B F9              mov         edi,ecx
+  00000044: 2B C2              sub         eax,edx
+  00000046: 8B C8              mov         ecx,eax
+  00000048: D1 F9              sar         ecx,1
+  0000004A: 39 7D 10           cmp         dword ptr [ebp+10h],edi
+  0000004D: 7C D1              jl          00000020
+  0000004F: 8B 03              mov         eax,dword ptr [ebx]
+  00000051: 89 04 FE           mov         dword ptr [esi+edi*8],eax
+  00000054: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000057: 89 44 FE 04        mov         dword ptr [esi+edi*8+4],eax
+  0000005B: 5F                 pop         edi
+  0000005C: 5E                 pop         esi
+  0000005D: 5B                 pop         ebx
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00859570.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_PlayBattleMusic:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 10           push        dword ptr [ebp+10h]
+  00000007: FF 75 08           push        dword ptr [ebp+8]
+  0000000A: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000000F: 8B F0              mov         esi,eax
+  00000011: 33 C9              xor         ecx,ecx
+  00000013: 83 FE 25           cmp         esi,25h
+  00000016: 0F 94 C1           sete        cl
+  00000019: 56                 push        esi
+  0000001A: 89 0D 00 00 00 00  mov         dword ptr [_g_UnkVar_1325B00],ecx
+  00000020: E8 00 00 00 00     call        _FFX_Music_PrepBattleEntry
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _FFX_Music_PlayTrackWithPreload
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _FFX_Battle_SetMusicTrackIndex
+  00000031: 83 C4 14           add         esp,14h
+  00000034: B8 01 00 00 00     mov         eax,1
+  00000039: 5E                 pop         esi
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

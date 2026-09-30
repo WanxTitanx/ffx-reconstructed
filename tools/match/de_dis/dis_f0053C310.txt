@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0053C310.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PArray_PAnimationTarget_Resize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 33              mov         esi,dword ptr [ebx]
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000015: 3B 3B              cmp         edi,dword ptr [ebx]
+  00000017: 74 6E              je          00000087
+  00000019: 3B FE              cmp         edi,esi
+  0000001B: 73 02              jae         0000001F
+  0000001D: 8B F7              mov         esi,edi
+  0000001F: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000022: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000025: 33 C0              xor         eax,eax
+  00000027: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002A: 85 FF              test        edi,edi
+  0000002C: 74 38              je          00000066
+  0000002E: 8B C7              mov         eax,edi
+  00000030: C1 E0 04           shl         eax,4
+  00000033: 6A 10              push        10h
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000003B: 83 C4 08           add         esp,8
+  0000003E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000041: 85 C0              test        eax,eax
+  00000043: 74 4B              je          00000090
+  00000045: 56                 push        esi
+  00000046: FF 75 F8           push        dword ptr [ebp-8]
+  00000049: 50                 push        eax
+  0000004A: E8 00 00 00 00     call        _Phyre_AnimationTarget_BlendQuaternion_GetBlendSource
+  0000004F: 8B C7              mov         eax,edi
+  00000051: 2B C6              sub         eax,esi
+  00000053: C1 E6 04           shl         esi,4
+  00000056: 03 75 FC           add         esi,dword ptr [ebp-4]
+  00000059: 50                 push        eax
+  0000005A: 56                 push        esi
+  0000005B: E8 00 00 00 00     call        _Phyre_PArray_4DWORD_InitZero
+  00000060: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000063: 83 C4 14           add         esp,14h
+  00000066: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  00000069: 3B C8              cmp         ecx,eax
+  0000006B: 74 15              je          00000082
+  0000006D: 83 3B 00           cmp         dword ptr [ebx],0
+  00000070: 7C 10              jl          00000082
+  00000072: 85 C9              test        ecx,ecx
+  00000074: 74 0C              je          00000082
+  00000076: 51                 push        ecx
+  00000077: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000007C: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000007F: 83 C4 04           add         esp,4
+  00000082: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000085: 89 3B              mov         dword ptr [ebx],edi
+  00000087: 5F                 pop         edi
+  00000088: 5E                 pop         esi
+  00000089: 33 C0              xor         eax,eax
+  0000008B: 5B                 pop         ebx
+  0000008C: 8B E5              mov         esp,ebp
+  0000008E: 5D                 pop         ebp
+  0000008F: C3                 ret
+  00000090: 5F                 pop         edi
+  00000091: 5E                 pop         esi
+  00000092: B8 0D 00 00 00     mov         eax,0Dh
+  00000097: 5B                 pop         ebx
+  00000098: 8B E5              mov         esp,ebp
+  0000009A: 5D                 pop         ebp
+  0000009B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          9C .text

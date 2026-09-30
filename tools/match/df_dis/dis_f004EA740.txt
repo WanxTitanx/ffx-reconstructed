@@ -1,0 +1,140 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004EA740.obj
+
+File Type: COFF OBJECT
+
+@PhyrePRendering_CollectLights@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B FA              mov         edi,edx
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 8B 07              mov         eax,dword ptr [edi]
+  0000000C: 89 06              mov         dword ptr [esi],eax
+  0000000E: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000011: 8D 56 08           lea         edx,[esi+8]
+  00000014: 8D 4F 08           lea         ecx,[edi+8]
+  00000017: 89 46 04           mov         dword ptr [esi+4],eax
+  0000001A: 3B D1              cmp         edx,ecx
+  0000001C: 74 13              je          00000031
+  0000001E: 8B 09              mov         ecx,dword ptr [ecx]
+  00000020: 8B C1              mov         eax,ecx
+  00000022: 83 E0 01           and         eax,1
+  00000025: 2B C8              sub         ecx,eax
+  00000027: 51                 push        ecx
+  00000028: 52                 push        edx
+  00000029: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  0000002E: 83 C4 08           add         esp,8
+  00000031: 53                 push        ebx
+  00000032: 8B 5F 0C           mov         ebx,dword ptr [edi+0Ch]
+  00000035: FF 77 10           push        dword ptr [edi+10h]
+  00000038: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  0000003E: 53                 push        ebx
+  0000003F: E8 00 00 00 00     call        _PRendering_IntArray_AllocCopy
+  00000044: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  00000047: 83 C4 08           add         esp,8
+  0000004A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000004D: 3B C8              cmp         ecx,eax
+  0000004F: 74 12              je          00000063
+  00000051: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  00000055: 7C 0C              jl          00000063
+  00000057: 51                 push        ecx
+  00000058: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000005D: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000060: 83 C4 04           add         esp,4
+  00000063: 89 5E 0C           mov         dword ptr [esi+0Ch],ebx
+  00000066: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000069: 8B 5F 14           mov         ebx,dword ptr [edi+14h]
+  0000006C: FF 77 18           push        dword ptr [edi+18h]
+  0000006F: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000075: 53                 push        ebx
+  00000076: E8 00 00 00 00     call        _PRendering_IntArray_AllocCopyC
+  0000007B: 8B 4E 18           mov         ecx,dword ptr [esi+18h]
+  0000007E: 83 C4 08           add         esp,8
+  00000081: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000084: 3B C8              cmp         ecx,eax
+  00000086: 74 12              je          0000009A
+  00000088: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  0000008C: 7C 0C              jl          0000009A
+  0000008E: 51                 push        ecx
+  0000008F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000094: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000097: 83 C4 04           add         esp,4
+  0000009A: 89 5E 14           mov         dword ptr [esi+14h],ebx
+  0000009D: 89 46 18           mov         dword ptr [esi+18h],eax
+  000000A0: 8B 5F 1C           mov         ebx,dword ptr [edi+1Ch]
+  000000A3: FF 77 20           push        dword ptr [edi+20h]
+  000000A6: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  000000AC: 53                 push        ebx
+  000000AD: E8 00 00 00 00     call        _PRendering_IntArray_AllocCopyD
+  000000B2: 8B 4E 20           mov         ecx,dword ptr [esi+20h]
+  000000B5: 83 C4 08           add         esp,8
+  000000B8: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000BB: 3B C8              cmp         ecx,eax
+  000000BD: 74 12              je          000000D1
+  000000BF: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  000000C3: 7C 0C              jl          000000D1
+  000000C5: 51                 push        ecx
+  000000C6: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000CB: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000CE: 83 C4 04           add         esp,4
+  000000D1: 89 5E 1C           mov         dword ptr [esi+1Ch],ebx
+  000000D4: 89 46 20           mov         dword ptr [esi+20h],eax
+  000000D7: 8B 5F 24           mov         ebx,dword ptr [edi+24h]
+  000000DA: FF 77 28           push        dword ptr [edi+28h]
+  000000DD: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  000000E3: 53                 push        ebx
+  000000E4: E8 00 00 00 00     call        _PRendering_IntArray_AllocCopyB
+  000000E9: 8B 4E 28           mov         ecx,dword ptr [esi+28h]
+  000000EC: 83 C4 08           add         esp,8
+  000000EF: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000F2: 3B C8              cmp         ecx,eax
+  000000F4: 74 12              je          00000108
+  000000F6: 83 7E 24 00        cmp         dword ptr [esi+24h],0
+  000000FA: 7C 0C              jl          00000108
+  000000FC: 51                 push        ecx
+  000000FD: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000102: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000105: 83 C4 04           add         esp,4
+  00000108: 89 46 28           mov         dword ptr [esi+28h],eax
+  0000010B: 8D 47 2C           lea         eax,[edi+2Ch]
+  0000010E: 50                 push        eax
+  0000010F: 8D 46 2C           lea         eax,[esi+2Ch]
+  00000112: 50                 push        eax
+  00000113: 89 5E 24           mov         dword ptr [esi+24h],ebx
+  00000116: E8 00 00 00 00     call        _PRendering_SubPass
+  0000011B: 83 C4 08           add         esp,8
+  0000011E: 8D 56 34           lea         edx,[esi+34h]
+  00000121: 8D 4F 34           lea         ecx,[edi+34h]
+  00000124: 5B                 pop         ebx
+  00000125: 3B D1              cmp         edx,ecx
+  00000127: 74 13              je          0000013C
+  00000129: 8B 09              mov         ecx,dword ptr [ecx]
+  0000012B: 8B C1              mov         eax,ecx
+  0000012D: 83 E0 01           and         eax,1
+  00000130: 2B C8              sub         ecx,eax
+  00000132: 51                 push        ecx
+  00000133: 52                 push        edx
+  00000134: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  00000139: 83 C4 08           add         esp,8
+  0000013C: 8B 47 38           mov         eax,dword ptr [edi+38h]
+  0000013F: 89 46 38           mov         dword ptr [esi+38h],eax
+  00000142: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  00000145: 89 46 3C           mov         dword ptr [esi+3Ch],eax
+  00000148: 5F                 pop         edi
+  00000149: 8B C6              mov         eax,esi
+  0000014B: 5E                 pop         esi
+  0000014C: 8B E5              mov         esp,ebp
+  0000014E: 5D                 pop         ebp
+  0000014F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         150 .text

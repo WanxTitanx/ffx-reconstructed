@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086C840.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_GetActiveActorPriority:
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_g_FieldU8_1326B42]
+  00000005: 56                 push        esi
+  00000006: 33 C9              xor         ecx,ecx
+  00000008: 8D 34 C5 00 00 00  lea         esi,[eax*8]
+            00
+  0000000F: 90                 nop
+  00000010: 33 C0              xor         eax,eax
+  00000012: 85 C9              test        ecx,ecx
+  00000014: 0F 98 C0           sets        al
+  00000017: 48                 dec         eax
+  00000018: 23 C1              and         eax,ecx
+  0000001A: 03 C6              add         eax,esi
+  0000001C: 6B C0 2C           imul        eax,eax,2Ch
+  0000001F: 05 00 00 00 00     add         eax,offset _g_FieldUnkVar_1326D30
+  00000024: 0F B7 50 14        movzx       edx,word ptr [eax+14h]
+  00000028: 83 FA 02           cmp         edx,2
+  0000002B: 74 05              je          00000032
+  0000002D: 83 FA 01           cmp         edx,1
+  00000030: 75 14              jne         00000046
+  00000032: 8A 50 1D           mov         dl,byte ptr [eax+1Dh]
+  00000035: F6 C2 22           test        dl,22h
+  00000038: 75 1D              jne         00000057
+  0000003A: 66 83 78 16 00     cmp         word ptr [eax+16h],0
+  0000003F: 75 0F              jne         00000050
+  00000041: F6 C2 10           test        dl,10h
+  00000044: 75 0A              jne         00000050
+  00000046: 41                 inc         ecx
+  00000047: 83 F9 08           cmp         ecx,8
+  0000004A: 7C C4              jl          00000010
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: 5E                 pop         esi
+  0000004F: C3                 ret
+  00000050: B8 01 00 00 00     mov         eax,1
+  00000055: 5E                 pop         esi
+  00000056: C3                 ret
+  00000057: B8 02 00 00 00     mov         eax,2
+  0000005C: 5E                 pop         esi
+  0000005D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5E .text

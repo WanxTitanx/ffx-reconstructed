@@ -1,0 +1,90 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041DEF0.obj
+
+File Type: COFF OBJECT
+
+@FFX_VpxBoolDecoder_DecodeMacroblock@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 80 BE 35 0C 00 00  cmp         byte ptr [esi+0C35h],0
+            00
+  0000000C: 8B FA              mov         edi,edx
+  0000000E: 74 52              je          00000062
+  00000010: 80 BE 34 0C 00 00  cmp         byte ptr [esi+0C34h],0
+            00
+  00000017: 74 56              je          0000006F
+  00000019: 0F B6 86 38 0C 00  movzx       eax,byte ptr [esi+0C38h]
+            00
+  00000020: 50                 push        eax
+  00000021: 8D 9E D0 3C 00 00  lea         ebx,[esi+3CD0h]
+  00000027: 53                 push        ebx
+  00000028: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_ReadOneBit
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 85 C0              test        eax,eax
+  00000032: 74 18              je          0000004C
+  00000034: 0F B6 86 3A 0C 00  movzx       eax,byte ptr [esi+0C3Ah]
+            00
+  0000003B: 50                 push        eax
+  0000003C: 53                 push        ebx
+  0000003D: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_ReadOneBit
+  00000042: 83 C4 08           add         esp,8
+  00000045: 04 02              add         al,2
+  00000047: 88 47 0B           mov         byte ptr [edi+0Bh],al
+  0000004A: EB 23              jmp         0000006F
+  0000004C: 0F B6 86 39 0C 00  movzx       eax,byte ptr [esi+0C39h]
+            00
+  00000053: 50                 push        eax
+  00000054: 53                 push        ebx
+  00000055: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_ReadOneBit
+  0000005A: 83 C4 08           add         esp,8
+  0000005D: 88 47 0B           mov         byte ptr [edi+0Bh],al
+  00000060: EB 0D              jmp         0000006F
+  00000062: 83 BE 28 19 00 00  cmp         dword ptr [esi+1928h],0
+            00
+  00000069: 75 04              jne         0000006F
+  0000006B: C6 47 0B 00        mov         byte ptr [edi+0Bh],0
+  0000006F: 83 BE 44 19 00 00  cmp         dword ptr [esi+1944h],0
+            00
+  00000076: 74 1C              je          00000094
+  00000078: 0F B6 86 BF 3D 00  movzx       eax,byte ptr [esi+3DBFh]
+            00
+  0000007F: 50                 push        eax
+  00000080: 8D 86 D0 3C 00 00  lea         eax,[esi+3CD0h]
+  00000086: 50                 push        eax
+  00000087: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_ReadOneBit
+  0000008C: 83 C4 08           add         esp,8
+  0000008F: 88 47 09           mov         byte ptr [edi+9],al
+  00000092: EB 04              jmp         00000098
+  00000094: C6 47 09 00        mov         byte ptr [edi+9],0
+  00000098: C6 47 03 00        mov         byte ptr [edi+3],0
+  0000009C: 83 BE 28 19 00 00  cmp         dword ptr [esi+1928h],0
+            00
+  000000A3: 57                 push        edi
+  000000A4: 74 0E              je          000000B4
+  000000A6: 57                 push        edi
+  000000A7: 56                 push        esi
+  000000A8: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_DecodeTokens
+  000000AD: 83 C4 0C           add         esp,0Ch
+  000000B0: 5F                 pop         edi
+  000000B1: 5E                 pop         esi
+  000000B2: 5B                 pop         ebx
+  000000B3: C3                 ret
+  000000B4: 56                 push        esi
+  000000B5: E8 00 00 00 00     call        _FFX_VpxBoolDecoder_DecodeMBMode
+  000000BA: 83 C4 08           add         esp,8
+  000000BD: 5F                 pop         edi
+  000000BE: 5E                 pop         esi
+  000000BF: 5B                 pop         ebx
+  000000C0: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          C1 .text

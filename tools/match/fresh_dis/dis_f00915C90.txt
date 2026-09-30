@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00915C90.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_DecompressTextureTile:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 81 C7 84 3B 01 00  add         edi,13B84h
+  00000012: 8D 45 0B           lea         eax,[ebp+0Bh]
+  00000015: 83 E8 08           sub         eax,8
+  00000018: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000001B: 8D 87 60 04 00 00  lea         eax,[edi+00000460h]
+  00000021: C7 45 FC 48 00 00  mov         dword ptr [ebp-4],48h
+            00
+  00000028: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 8D 97 EC C4 FE FF  lea         edx,[edi+FFFEC4ECh]
+  00000036: C7 45 08 40 00 00  mov         dword ptr [ebp+8],40h
+            00
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: BE 04 00 00 00     mov         esi,4
+  00000045: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000048: 83 C2 04           add         edx,4
+  0000004B: 8D 40 10           lea         eax,[eax+10h]
+  0000004E: 4E                 dec         esi
+  0000004F: 75 F7              jne         00000048
+  00000051: 8D 5E 04           lea         ebx,[esi+4]
+  00000054: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000057: EB 07              jmp         00000060
+  00000059: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000060: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000063: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000066: 0F AC C1 18        shrd        ecx,eax,18h
+  0000006A: C1 F8 18           sar         eax,18h
+  0000006D: 0F B6 06           movzx       eax,byte ptr [esi]
+  00000070: C1 E1 08           shl         ecx,8
+  00000073: 0B C8              or          ecx,eax
+  00000075: 0F B6 46 FC        movzx       eax,byte ptr [esi-4]
+  00000079: C1 E1 08           shl         ecx,8
+  0000007C: 0B C8              or          ecx,eax
+  0000007E: 89 0F              mov         dword ptr [edi],ecx
+  00000080: 83 C7 04           add         edi,4
+  00000083: 8D 76 10           lea         esi,[esi+10h]
+  00000086: 4B                 dec         ebx
+  00000087: 75 D7              jne         00000060
+  00000089: FF 4D 08           dec         dword ptr [ebp+8]
+  0000008C: 75 B2              jne         00000040
+  0000008E: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000091: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000094: 8B C3              mov         eax,ebx
+  00000096: 4B                 dec         ebx
+  00000097: 8B F9              mov         edi,ecx
+  00000099: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000009C: 83 F8 01           cmp         eax,1
+  0000009F: 75 04              jne         000000A5
+  000000A1: 8A C0              mov         al,al
+  000000A3: EB 02              jmp         000000A7
+  000000A5: 32 C0              xor         al,al
+  000000A7: 81 C1 60 04 00 00  add         ecx,460h
+  000000AD: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000000B0: 84 C0              test        al,al
+  000000B2: 0F 84 78 FF FF FF  je          00000030
+  000000B8: 5F                 pop         edi
+  000000B9: 5E                 pop         esi
+  000000BA: 33 C0              xor         eax,eax
+  000000BC: 5B                 pop         ebx
+  000000BD: 8B E5              mov         esp,ebp
+  000000BF: 5D                 pop         ebp
+  000000C0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C1 .text

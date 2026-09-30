@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E2C60.obj
+
+File Type: COFF OBJECT
+
+@FFX_GameAllocWrapper_Loose_6E2C60@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 83 7C 81 10 00     cmp         dword ptr [ecx+eax*4+10h],0
+  0000000C: 56                 push        esi
+  0000000D: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000010: 57                 push        edi
+  00000011: 8D 3C 81           lea         edi,[ecx+eax*4]
+  00000014: 0F 94 C3           sete        bl
+  00000017: 89 97 10 10 00 00  mov         dword ptr [edi+1010h],edx
+  0000001D: 89 B7 10 14 00 00  mov         dword ptr [edi+1410h],esi
+  00000023: 84 DB              test        bl,bl
+  00000025: 74 1C              je          00000043
+  00000027: 56                 push        esi
+  00000028: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  0000002D: 56                 push        esi
+  0000002E: 6A 00              push        0
+  00000030: 50                 push        eax
+  00000031: 89 47 10           mov         dword ptr [edi+10h],eax
+  00000034: E8 00 00 00 00     call        _memset
+  00000039: 83 C4 10           add         esp,10h
+  0000003C: 5F                 pop         edi
+  0000003D: 5E                 pop         esi
+  0000003E: 5B                 pop         ebx
+  0000003F: 5D                 pop         ebp
+  00000040: C2 08 00           ret         8
+  00000043: 5F                 pop         edi
+  00000044: 5E                 pop         esi
+  00000045: 8B C2              mov         eax,edx
+  00000047: 5B                 pop         ebx
+  00000048: 5D                 pop         ebp
+  00000049: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

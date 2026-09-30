@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007CEEE0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Path_StripToDirectory:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B D0              mov         edx,eax
+  00000008: 8A 08              mov         cl,byte ptr [eax]
+  0000000A: 40                 inc         eax
+  0000000B: 80 F9 80           cmp         cl,80h
+  0000000E: 73 0E              jae         0000001E
+  00000010: 80 F9 5C           cmp         cl,5Ch
+  00000013: 74 05              je          0000001A
+  00000015: 80 F9 2F           cmp         cl,2Fh
+  00000018: 75 07              jne         00000021
+  0000001A: 8B D0              mov         edx,eax
+  0000001C: EB 03              jmp         00000021
+  0000001E: 8A 08              mov         cl,byte ptr [eax]
+  00000020: 40                 inc         eax
+  00000021: 84 C9              test        cl,cl
+  00000023: 75 E3              jne         00000008
+  00000025: 33 C0              xor         eax,eax
+  00000027: 8A 0C 10           mov         cl,byte ptr [eax+edx]
+  0000002A: 80 F9 80           cmp         cl,80h
+  0000002D: 73 12              jae         00000041
+  0000002F: 80 F9 2E           cmp         cl,2Eh
+  00000032: 75 12              jne         00000046
+  00000034: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000037: 85 C9              test        ecx,ecx
+  00000039: 74 02              je          0000003D
+  0000003B: 89 01              mov         dword ptr [ecx],eax
+  0000003D: 8B C2              mov         eax,edx
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+  00000041: 8A 4C 10 01        mov         cl,byte ptr [eax+edx+1]
+  00000045: 40                 inc         eax
+  00000046: 84 C9              test        cl,cl
+  00000048: 74 EA              je          00000034
+  0000004A: 40                 inc         eax
+  0000004B: EB DA              jmp         00000027
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

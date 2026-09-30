@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3E1F0.obj
+
+File Type: COFF OBJECT
+
+@Iggy_MenuSurface_DrawPrimitive@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B FA              mov         edi,edx
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 85 FF              test        edi,edi
+  00000008: 74 5C              je          00000066
+  0000000A: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  0000000E: 75 56              jne         00000066
+  00000010: 6A 08              push        8
+  00000012: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 14              je          00000032
+  0000001E: 6A 01              push        1
+  00000020: 6A 00              push        0
+  00000022: 6A 00              push        0
+  00000024: 6A 01              push        1
+  00000026: 57                 push        edi
+  00000027: 50                 push        eax
+  00000028: E8 00 00 00 00     call        _Phyre_PStreamReaderFile_section_ctor
+  0000002D: 83 C4 18           add         esp,18h
+  00000030: EB 02              jmp         00000034
+  00000032: 33 C0              xor         eax,eax
+  00000034: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000037: 85 C0              test        eax,eax
+  00000039: 74 1F              je          0000005A
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _Phyre_PStreamWriterFile_GetSize
+  00000041: 83 C4 04           add         esp,4
+  00000044: 89 46 08           mov         dword ptr [esi+8],eax
+  00000047: B1 01              mov         cl,1
+  00000049: 33 C0              xor         eax,eax
+  0000004B: 84 C9              test        cl,cl
+  0000004D: 5F                 pop         edi
+  0000004E: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000055: 0F 94 C0           sete        al
+  00000058: 5E                 pop         esi
+  00000059: C3                 ret
+  0000005A: 32 C9              xor         cl,cl
+  0000005C: 33 C0              xor         eax,eax
+  0000005E: 84 C9              test        cl,cl
+  00000060: 5F                 pop         edi
+  00000061: 0F 94 C0           sete        al
+  00000064: 5E                 pop         esi
+  00000065: C3                 ret
+  00000066: 5F                 pop         edi
+  00000067: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000006A: 5E                 pop         esi
+  0000006B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6C .text

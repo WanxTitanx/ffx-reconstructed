@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0057B700.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_57B700@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B D9              mov         ebx,ecx
+  00000008: 57                 push        edi
+  00000009: 8B 73 18           mov         esi,dword ptr [ebx+18h]
+  0000000C: 8D 7B 18           lea         edi,[ebx+18h]
+  0000000F: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000012: 85 F6              test        esi,esi
+  00000014: 75 1C              jne         00000032
+  00000016: FF 73 20           push        dword ptr [ebx+20h]
+  00000019: 57                 push        edi
+  0000001A: E8 00 00 00 00     call        _Phyre_AlignedAllocList_Alloc
+  0000001F: 8B 37              mov         esi,dword ptr [edi]
+  00000021: 83 C4 08           add         esp,8
+  00000024: 85 F6              test        esi,esi
+  00000026: 75 0A              jne         00000032
+  00000028: 5F                 pop         edi
+  00000029: 8D 46 0E           lea         eax,[esi+0Eh]
+  0000002C: 5E                 pop         esi
+  0000002D: 5B                 pop         ebx
+  0000002E: 8B E5              mov         esp,ebp
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+  00000032: 8B 06              mov         eax,dword ptr [esi]
+  00000034: 89 07              mov         dword ptr [edi],eax
+  00000036: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000039: 89 36              mov         dword ptr [esi],esi
+  0000003B: 89 76 04           mov         dword ptr [esi+4],esi
+  0000003E: 89 76 08           mov         dword ptr [esi+8],esi
+  00000041: 8B 00              mov         eax,dword ptr [eax]
+  00000043: 56                 push        esi
+  00000044: 53                 push        ebx
+  00000045: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000048: E8 00 00 00 00     call        _Phyre_RBTree_InsertNode
+  0000004D: 83 C4 08           add         esp,8
+  00000050: 56                 push        esi
+  00000051: 85 C0              test        eax,eax
+  00000053: 74 15              je          0000006A
+  00000055: 57                 push        edi
+  00000056: E8 00 00 00 00     call        _SList_Pop
+  0000005B: 83 C4 08           add         esp,8
+  0000005E: B8 12 00 00 00     mov         eax,12h
+  00000063: 5F                 pop         edi
+  00000064: 5E                 pop         esi
+  00000065: 5B                 pop         ebx
+  00000066: 8B E5              mov         esp,ebp
+  00000068: 5D                 pop         ebp
+  00000069: C3                 ret
+  0000006A: 53                 push        ebx
+  0000006B: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode_COMDAT
+  00000070: 83 C4 08           add         esp,8
+  00000073: 33 C0              xor         eax,eax
+  00000075: 5F                 pop         edi
+  00000076: 5E                 pop         esi
+  00000077: 5B                 pop         ebx
+  00000078: 8B E5              mov         esp,ebp
+  0000007A: 5D                 pop         ebp
+  0000007B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7C .text

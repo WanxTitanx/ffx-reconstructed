@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AF7E0.obj
+
+File Type: COFF OBJECT
+
+@TexAnimChannel_Destroy@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 1C 01        test        byte ptr [esi+1Ch],1
+  00000007: 75 0B              jne         00000014
+  00000009: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000000C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000011: 83 C4 04           add         esp,4
+  00000014: F6 46 18 01        test        byte ptr [esi+18h],1
+  00000018: 75 0B              jne         00000025
+  0000001A: FF 76 18           push        dword ptr [esi+18h]
+  0000001D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000022: 83 C4 04           add         esp,4
+  00000025: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  00000029: 7C 0B              jl          00000036
+  0000002B: FF 76 14           push        dword ptr [esi+14h]
+  0000002E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000033: 83 C4 04           add         esp,4
+  00000036: 8D 46 08           lea         eax,[esi+8]
+  00000039: 50                 push        eax
+  0000003A: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000041: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000048: E8 00 00 00 00     call        _AlignedArray_DestroyWithVtable
+  0000004D: 83 C4 04           add         esp,4
+  00000050: 83 3E 00           cmp         dword ptr [esi],0
+  00000053: 7C 0B              jl          00000060
+  00000055: FF 76 04           push        dword ptr [esi+4]
+  00000058: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000005D: 83 C4 04           add         esp,4
+  00000060: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000067: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000006D: 5E                 pop         esi
+  0000006E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6F .text

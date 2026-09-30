@@ -1,0 +1,158 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009D57A0.obj
+
+File Type: COFF OBJECT
+
+@PhyreRagdoll_BuildConstraintArray@28:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 7E 18           mov         edi,dword ptr [esi+18h]
+  0000000E: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000011: 33 D2              xor         edx,edx
+  00000013: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  00000016: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000019: 85 FF              test        edi,edi
+  0000001B: 7E 27              jle         00000044
+  0000001D: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000024: 6A 10              push        10h
+  00000026: 50                 push        eax
+  00000027: E8 00 00 00 00     call        _Phyre_Ragdoll_GetSolverIterations
+  0000002C: 83 C4 08           add         esp,8
+  0000002F: 8B D0              mov         edx,eax
+  00000031: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000034: 85 C0              test        eax,eax
+  00000036: 74 06              je          0000003E
+  00000038: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000003E: 83 C0 04           add         eax,4
+  00000041: 4F                 dec         edi
+  00000042: 75 F0              jne         00000034
+  00000044: 33 C9              xor         ecx,ecx
+  00000046: 39 4E 18           cmp         dword ptr [esi+18h],ecx
+  00000049: 7E 16              jle         00000061
+  0000004B: EB 03              jmp         00000050
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000053: 41                 inc         ecx
+  00000054: 8B 44 88 FC        mov         eax,dword ptr [eax+ecx*4-4]
+  00000058: 89 44 8A FC        mov         dword ptr [edx+ecx*4-4],eax
+  0000005C: 3B 4E 18           cmp         ecx,dword ptr [esi+18h]
+  0000005F: 7C EF              jl          00000050
+  00000061: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000064: 33 DB              xor         ebx,ebx
+  00000066: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000069: 85 FF              test        edi,edi
+  0000006B: 7E 2B              jle         00000098
+  0000006D: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000074: 6A 10              push        10h
+  00000076: 50                 push        eax
+  00000077: E8 00 00 00 00     call        _Phyre_Ragdoll_GetSolverIterations
+  0000007C: 8B D8              mov         ebx,eax
+  0000007E: 83 C4 08           add         esp,8
+  00000081: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000084: 8B CB              mov         ecx,ebx
+  00000086: 8B D7              mov         edx,edi
+  00000088: 85 C9              test        ecx,ecx
+  0000008A: 74 06              je          00000092
+  0000008C: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000092: 83 C1 04           add         ecx,4
+  00000095: 4A                 dec         edx
+  00000096: 75 F0              jne         00000088
+  00000098: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  0000009F: 50                 push        eax
+  000000A0: 6A 00              push        0
+  000000A2: 53                 push        ebx
+  000000A3: E8 00 00 00 00     call        _memset
+  000000A8: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  000000AB: 33 C9              xor         ecx,ecx
+  000000AD: 83 C4 0C           add         esp,0Ch
+  000000B0: 89 0F              mov         dword ptr [edi],ecx
+  000000B2: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  000000B5: 39 4D 18           cmp         dword ptr [ebp+18h],ecx
+  000000B8: 0F 8E 8D 00 00 00  jle         0000014B
+  000000BE: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  000000C1: 8B 1C 8A           mov         ebx,dword ptr [edx+ecx*4]
+  000000C4: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000C7: 8B 04 98           mov         eax,dword ptr [eax+ebx*4]
+  000000CA: 85 C0              test        eax,eax
+  000000CC: 74 06              je          000000D4
+  000000CE: 48                 dec         eax
+  000000CF: 89 04 8A           mov         dword ptr [edx+ecx*4],eax
+  000000D2: EB 67              jmp         0000013B
+  000000D4: 8B 07              mov         eax,dword ptr [edi]
+  000000D6: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  000000D9: 89 04 8A           mov         dword ptr [edx+ecx*4],eax
+  000000DC: 8B 07              mov         eax,dword ptr [edi]
+  000000DE: 8B 55 F4           mov         edx,dword ptr [ebp-0Ch]
+  000000E1: 8B CB              mov         ecx,ebx
+  000000E3: 03 C9              add         ecx,ecx
+  000000E5: 03 C0              add         eax,eax
+  000000E7: D9 04 CA           fld         dword ptr [edx+ecx*8]
+  000000EA: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  000000ED: D9 1C C2           fstp        dword ptr [edx+eax*8]
+  000000F0: 8B 07              mov         eax,dword ptr [edi]
+  000000F2: D9 44 CE 04        fld         dword ptr [esi+ecx*8+4]
+  000000F6: 03 C0              add         eax,eax
+  000000F8: D9 5C C2 04        fstp        dword ptr [edx+eax*8+4]
+  000000FC: 8B 07              mov         eax,dword ptr [edi]
+  000000FE: D9 44 CE 08        fld         dword ptr [esi+ecx*8+8]
+  00000102: 8B 75 F0           mov         esi,dword ptr [ebp-10h]
+  00000105: 03 C0              add         eax,eax
+  00000107: D9 5C C2 08        fstp        dword ptr [edx+eax*8+8]
+  0000010B: 33 D2              xor         edx,edx
+  0000010D: 39 56 18           cmp         dword ptr [esi+18h],edx
+  00000110: 7E 19              jle         0000012B
+  00000112: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000115: 39 1C 90           cmp         dword ptr [eax+edx*4],ebx
+  00000118: 75 0B              jne         00000125
+  0000011A: 8B 4E 20           mov         ecx,dword ptr [esi+20h]
+  0000011D: 8B 07              mov         eax,dword ptr [edi]
+  0000011F: 89 04 91           mov         dword ptr [ecx+edx*4],eax
+  00000122: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000125: 42                 inc         edx
+  00000126: 3B 56 18           cmp         edx,dword ptr [esi+18h]
+  00000129: 7C EA              jl          00000115
+  0000012B: FF 07              inc         dword ptr [edi]
+  0000012D: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000130: 8B 07              mov         eax,dword ptr [edi]
+  00000132: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000135: 89 04 99           mov         dword ptr [ecx+ebx*4],eax
+  00000138: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000013B: 41                 inc         ecx
+  0000013C: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000013F: 3B 4D 18           cmp         ecx,dword ptr [ebp+18h]
+  00000142: 0F 8C 79 FF FF FF  jl          000000C1
+  00000148: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000014B: 85 DB              test        ebx,ebx
+  0000014D: 74 09              je          00000158
+  0000014F: 53                 push        ebx
+  00000150: E8 00 00 00 00     call        _Phyre_Ragdoll_SetSolverIterations
+  00000155: 83 C4 04           add         esp,4
+  00000158: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000015B: 5F                 pop         edi
+  0000015C: 5E                 pop         esi
+  0000015D: 5B                 pop         ebx
+  0000015E: 85 C0              test        eax,eax
+  00000160: 74 09              je          0000016B
+  00000162: 50                 push        eax
+  00000163: E8 00 00 00 00     call        _Phyre_Ragdoll_SetSolverIterations
+  00000168: 83 C4 04           add         esp,4
+  0000016B: 8B E5              mov         esp,ebp
+  0000016D: 5D                 pop         ebp
+  0000016E: C2 14 00           ret         14h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         171 .text

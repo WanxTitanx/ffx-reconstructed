@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094C2E0.obj
+
+File Type: COFF OBJECT
+
+_PhyreBuffer_MoveElements:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 3B DF              cmp         ebx,edi
+  0000000D: 74 4C              je          0000005B
+  0000000F: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000012: 8B C2              mov         eax,edx
+  00000014: 6B C0 F8           imul        eax,eax,0FFFFFFF8h
+  00000017: 01 43 08           add         dword ptr [ebx+8],eax
+  0000001A: 8B CA              mov         ecx,edx
+  0000001C: F7 D9              neg         ecx
+  0000001E: 56                 push        esi
+  0000001F: C1 E1 03           shl         ecx,3
+  00000022: 33 F6              xor         esi,esi
+  00000024: 85 D2              test        edx,edx
+  00000026: 7E 2C              jle         00000054
+  00000028: EB 06              jmp         00000030
+  0000002A: 8D 9B 00 00 00 00  lea         ebx,[ebx+00000000h]
+  00000030: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  00000033: 8B 57 08           mov         edx,dword ptr [edi+8]
+  00000036: 8D 0C F0           lea         ecx,[eax+esi*8]
+  00000039: 8D 42 08           lea         eax,[edx+8]
+  0000003C: 89 47 08           mov         dword ptr [edi+8],eax
+  0000003F: 8B 01              mov         eax,dword ptr [ecx]
+  00000041: 89 02              mov         dword ptr [edx],eax
+  00000043: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000046: 46                 inc         esi
+  00000047: 89 42 04           mov         dword ptr [edx+4],eax
+  0000004A: 3B 75 10           cmp         esi,dword ptr [ebp+10h]
+  0000004D: 7C E1              jl          00000030
+  0000004F: 5E                 pop         esi
+  00000050: 5F                 pop         edi
+  00000051: 5B                 pop         ebx
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+  00000054: 5E                 pop         esi
+  00000055: 5F                 pop         edi
+  00000056: 8B C1              mov         eax,ecx
+  00000058: 5B                 pop         ebx
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000005E: 5F                 pop         edi
+  0000005F: 5B                 pop         ebx
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

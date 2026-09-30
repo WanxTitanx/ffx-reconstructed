@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00623630.obj
+
+File Type: COFF OBJECT
+
+_FFX_Steam_Init:
+  00000000: 6A 00              push        0
+  00000002: E8 00 00 00 00     call        _SteamAPI_RestartAppIfNecessary
+  00000007: 83 C4 04           add         esp,4
+  0000000A: 84 C0              test        al,al
+  0000000C: 75 75              jne         00000083
+  0000000E: E8 00 00 00 00     call        _SteamAPI_Init
+  00000013: 84 C0              test        al,al
+  00000015: 75 13              jne         0000002A
+  00000017: 68 00 00 00 00     push        offset ??_C@_0BI@OKFJMAON@SteamAPI_Init?$CI?$CJ?5failed?6?$AA@
+  0000001C: E8 00 00 00 00     call        _printf
+  00000021: 83 C4 04           add         esp,4
+  00000024: B8 01 00 00 00     mov         eax,1
+  00000029: C3                 ret
+  0000002A: 56                 push        esi
+  0000002B: 68 00 00 00 00     push        offset ??_C@_0BJ@JFMLHLLE@SteamAPI_Init?$CI?$CJ?5succeed?6?$AA@
+  00000030: C7 05 00 00 00 00  mov         dword ptr [_g_U8_CC9CF5],1
+            01 00 00 00
+  0000003A: E8 00 00 00 00     call        _printf
+  0000003F: 83 C4 04           add         esp,4
+  00000042: E8 00 00 00 00     call        _SteamUtils
+  00000047: 8B 30              mov         esi,dword ptr [eax]
+  00000049: 8B C8              mov         ecx,eax
+  0000004B: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  0000004E: BA 01 00 00 00     mov         edx,1
+  00000053: FF D0              call        eax
+  00000055: E8 00 00 00 00     call        _SteamUser
+  0000005A: 8B 10              mov         edx,dword ptr [eax]
+  0000005C: 8B C8              mov         ecx,eax
+  0000005E: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000061: FF D0              call        eax
+  00000063: 5E                 pop         esi
+  00000064: 84 C0              test        al,al
+  00000066: 74 0E              je          00000076
+  00000068: 68 00 00 00 00     push        offset ??_C@_0BJ@PELHEHLG@Steam?5user?5is?5logged?5in?6?$AA@
+  0000006D: E8 00 00 00 00     call        _printf
+  00000072: 83 C4 04           add         esp,4
+  00000075: C3                 ret
+  00000076: 68 00 00 00 00     push        offset ??_C@_0BN@JKEMLLPA@Steam?5user?5is?5not?5logged?5in?6?$AA@
+  0000007B: E8 00 00 00 00     call        _printf
+  00000080: 83 C4 04           add         esp,4
+  00000083: B8 01 00 00 00     mov         eax,1
+  00000088: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          67 .rdata
+          89 .text

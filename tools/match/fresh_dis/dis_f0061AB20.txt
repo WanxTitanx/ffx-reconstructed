@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061AB20.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PApplication_FileBufferCleanup@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 7E 18           mov         edi,dword ptr [esi+18h]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 25              je          00000030
+  0000000B: 8B 07              mov         eax,dword ptr [edi]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 0F              je          00000020
+  00000011: 50                 push        eax
+  00000012: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000017: 83 C4 04           add         esp,4
+  0000001A: C7 07 00 00 00 00  mov         dword ptr [edi],0
+  00000020: 57                 push        edi
+  00000021: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000026: 83 C4 04           add         esp,4
+  00000029: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  00000030: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000033: 85 C0              test        eax,eax
+  00000035: 74 10              je          00000047
+  00000037: 50                 push        eax
+  00000038: E8 00 00 00 00     call        _fclose
+  0000003D: 83 C4 04           add         esp,4
+  00000040: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000047: 5F                 pop         edi
+  00000048: 5E                 pop         esi
+  00000049: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4A .text

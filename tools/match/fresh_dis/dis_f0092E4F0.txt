@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092E4F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_BtlUI_HudGaugeRandomizeVec3:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: E8 00 00 00 00     call        _rand
+  0000000C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000000F: DB 45 08           fild        dword ptr [ebp+8]
+  00000012: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000015: D9 45 08           fld         dword ptr [ebp+8]
+  00000018: DC 35 00 00 00 00  fdiv        qword ptr [__real@40dfffc000000000]
+  0000001E: DC 0D 00 00 00 00  fmul        qword ptr [__real@4000000000000000]
+  00000024: D9 E8              fld1
+  00000026: DE E9              fsubp       st(1),st
+  00000028: D9 1E              fstp        dword ptr [esi]
+  0000002A: E8 00 00 00 00     call        _rand
+  0000002F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000032: DB 45 08           fild        dword ptr [ebp+8]
+  00000035: 56                 push        esi
+  00000036: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000039: D9 45 08           fld         dword ptr [ebp+8]
+  0000003C: DC 35 00 00 00 00  fdiv        qword ptr [__real@40dfffc000000000]
+  00000042: DC 0D 00 00 00 00  fmul        qword ptr [__real@4000000000000000]
+  00000048: D9 E8              fld1
+  0000004A: DE E9              fsubp       st(1),st
+  0000004C: D9 5E 08           fstp        dword ptr [esi+8]
+  0000004F: D9 EE              fldz
+  00000051: D9 56 0C           fst         dword ptr [esi+0Ch]
+  00000054: D9 5E 04           fstp        dword ptr [esi+4]
+  00000057: E8 00 00 00 00     call        _FFX_Math_Vec4Normalize
+  0000005C: D9 06              fld         dword ptr [esi]
+  0000005E: D9 EE              fldz
+  00000060: 83 C4 04           add         esp,4
+  00000063: DA E9              fucompp
+  00000065: DF E0              fnstsw      ax
+  00000067: F6 C4 44           test        ah,44h
+  0000006A: 7A 0E              jp          0000007A
+  0000006C: D9 46 08           fld         dword ptr [esi+8]
+  0000006F: D9 EE              fldz
+  00000071: DA E9              fucompp
+  00000073: DF E0              fnstsw      ax
+  00000075: F6 C4 44           test        ah,44h
+  00000078: 7B 8D              jnp         00000007
+  0000007A: 5E                 pop         esi
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          24 .rdata
+          7D .text

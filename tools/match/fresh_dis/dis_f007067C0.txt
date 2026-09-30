@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007067C0.obj
+
+File Type: COFF OBJECT
+
+_FMOD_Memory_AlignedAlloc@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 75 04              jne         0000000E
+  0000000A: 5D                 pop         ebp
+  0000000B: C2 0C 00           ret         0Ch
+  0000000E: 83 C0 10           add         eax,10h
+  00000011: 50                 push        eax
+  00000012: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000017: 8B D0              mov         edx,eax
+  00000019: 0F B6 CA           movzx       ecx,dl
+  0000001C: 83 E1 0F           and         ecx,0Fh
+  0000001F: 2B C1              sub         eax,ecx
+  00000021: 80 E2 0F           and         dl,0Fh
+  00000024: B1 10              mov         cl,10h
+  00000026: 2A CA              sub         cl,dl
+  00000028: 83 C4 04           add         esp,4
+  0000002B: 88 48 0F           mov         byte ptr [eax+0Fh],cl
+  0000002E: 83 C0 10           add         eax,10h
+  00000031: 5D                 pop         ebp
+  00000032: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          35 .text

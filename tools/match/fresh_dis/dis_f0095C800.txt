@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0095C800.obj
+
+File Type: COFF OBJECT
+
+_LuaLex_nextLine:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: 8B 56 24           mov         edx,dword ptr [esi+24h]
+  0000000C: 8B 1E              mov         ebx,dword ptr [esi]
+  0000000E: 8B 0A              mov         ecx,dword ptr [edx]
+  00000010: 8D 41 FF           lea         eax,[ecx-1]
+  00000013: 89 02              mov         dword ptr [edx],eax
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 74 11              je          0000002A
+  00000019: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  0000001C: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000001F: 8D 78 01           lea         edi,[eax+1]
+  00000022: 0F B6 00           movzx       eax,byte ptr [eax]
+  00000025: 89 79 04           mov         dword ptr [ecx+4],edi
+  00000028: EB 0D              jmp         00000037
+  0000002A: FF 76 24           push        dword ptr [esi+24h]
+  0000002D: E8 00 00 00 00     call        _LuaZ_fgetc
+  00000032: 83 C4 04           add         esp,4
+  00000035: 8B F8              mov         edi,eax
+  00000037: 89 06              mov         dword ptr [esi],eax
+  00000039: 83 F8 0A           cmp         eax,0Ah
+  0000003C: 74 05              je          00000043
+  0000003E: 83 F8 0D           cmp         eax,0Dh
+  00000041: 75 32              jne         00000075
+  00000043: 3B C3              cmp         eax,ebx
+  00000045: 74 2E              je          00000075
+  00000047: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  0000004A: 8B 11              mov         edx,dword ptr [ecx]
+  0000004C: 8D 42 FF           lea         eax,[edx-1]
+  0000004F: 89 01              mov         dword ptr [ecx],eax
+  00000051: 85 D2              test        edx,edx
+  00000053: 74 11              je          00000066
+  00000055: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00000058: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000005B: 8D 78 01           lea         edi,[eax+1]
+  0000005E: 0F B6 00           movzx       eax,byte ptr [eax]
+  00000061: 89 79 04           mov         dword ptr [ecx+4],edi
+  00000064: EB 0D              jmp         00000073
+  00000066: FF 76 24           push        dword ptr [esi+24h]
+  00000069: E8 00 00 00 00     call        _LuaZ_fgetc
+  0000006E: 83 C4 04           add         esp,4
+  00000071: 8B F8              mov         edi,eax
+  00000073: 89 06              mov         dword ptr [esi],eax
+  00000075: FF 46 04           inc         dword ptr [esi+4]
+  00000078: 81 7E 04 FD FF FF  cmp         dword ptr [esi+4],7FFFFFFDh
+            7F
+  0000007F: 7C 11              jl          00000092
+  00000081: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000084: 68 00 00 00 00     push        offset ??_C@_0BJ@LAKGPFF@chunk?5has?5too?5many?5lines?$AA@
+  00000089: 56                 push        esi
+  0000008A: E8 00 00 00 00     call        _LuaLex_syntaxError
+  0000008F: 83 C4 0C           add         esp,0Ch
+  00000092: 8B C7              mov         eax,edi
+  00000094: 5F                 pop         edi
+  00000095: 5E                 pop         esi
+  00000096: 5B                 pop         ebx
+  00000097: 5D                 pop         ebp
+  00000098: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          19 .rdata
+          99 .text

@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082BAB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_SetVisibilityMode:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: 53                 push        ebx
+  0000000A: 8A 9A 80 01 00 00  mov         bl,byte ptr [edx+00000180h]
+  00000010: 0F BE C3           movsx       eax,bl
+  00000013: 23 C1              and         eax,ecx
+  00000015: F7 D8              neg         eax
+  00000017: 1B C0              sbb         eax,eax
+  00000019: F7 D8              neg         eax
+  0000001B: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  0000001F: 74 0B              je          0000002C
+  00000021: 0A CB              or          cl,bl
+  00000023: 88 8A 80 01 00 00  mov         byte ptr [edx+00000180h],cl
+  00000029: 5B                 pop         ebx
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: 83 8A 20 08 00 00  or          dword ptr [edx+00000820h],4
+            04
+  00000033: F6 D1              not         cl
+  00000035: 22 CB              and         cl,bl
+  00000037: 88 8A 80 01 00 00  mov         byte ptr [edx+00000180h],cl
+  0000003D: 5B                 pop         ebx
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

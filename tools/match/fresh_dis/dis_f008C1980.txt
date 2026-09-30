@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008C1980.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_GetAAbilityNameOffset:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: E8 00 00 00 00     call        _AtelGetHiraMode
+  0000000A: 0F BF 4D 08        movsx       ecx,word ptr [ebp+8]
+  0000000E: F7 D8              neg         eax
+  00000010: 1B F6              sbb         esi,esi
+  00000012: 8D 45 FC           lea         eax,[ebp-4]
+  00000015: 50                 push        eax
+  00000016: 51                 push        ecx
+  00000017: F7 DE              neg         esi
+  00000019: E8 00 00 00 00     call        _FFX_Kernel_GetAAbilityEntryById
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 0F B7 04 B0        movzx       eax,word ptr [eax+esi*4]
+  00000025: 03 45 FC           add         eax,dword ptr [ebp-4]
+  00000028: 5E                 pop         esi
+  00000029: 8B E5              mov         esp,ebp
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2D .text

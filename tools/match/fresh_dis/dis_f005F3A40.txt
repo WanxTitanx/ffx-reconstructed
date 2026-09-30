@@ -1,0 +1,90 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F3A40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PhysicsBody_UpdateSkeletonNode@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B F2              mov         esi,edx
+  0000000D: 8B 4F 54           mov         ecx,dword ptr [edi+54h]
+  00000010: 8B 9E DC 00 00 00  mov         ebx,dword ptr [esi+0DCh]
+  00000016: 85 C9              test        ecx,ecx
+  00000018: 74 0D              je          00000027
+  0000001A: 85 DB              test        ebx,ebx
+  0000001C: 74 09              je          00000027
+  0000001E: 8B 01              mov         eax,dword ptr [ecx]
+  00000020: 8B D3              mov         edx,ebx
+  00000022: 8B 40 50           mov         eax,dword ptr [eax+50h]
+  00000025: FF D0              call        eax
+  00000027: 8A 86 C5 00 00 00  mov         al,byte ptr [esi+0C5h]
+  0000002D: 88 45 FF           mov         byte ptr [ebp-1],al
+  00000030: 84 C0              test        al,al
+  00000032: 74 30              je          00000064
+  00000034: 8B 86 B0 00 00 00  mov         eax,dword ptr [esi+0B0h]
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 74 1F              je          0000005D
+  0000003E: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000041: 85 C0              test        eax,eax
+  00000043: 74 18              je          0000005D
+  00000045: 8B 48 54           mov         ecx,dword ptr [eax+54h]
+  00000048: 85 C9              test        ecx,ecx
+  0000004A: 74 11              je          0000005D
+  0000004C: 8B 96 DC 00 00 00  mov         edx,dword ptr [esi+0DCh]
+  00000052: 85 D2              test        edx,edx
+  00000054: 74 07              je          0000005D
+  00000056: 8B 01              mov         eax,dword ptr [ecx]
+  00000058: 8B 40 50           mov         eax,dword ptr [eax+50h]
+  0000005B: FF D0              call        eax
+  0000005D: C6 86 C5 00 00 00  mov         byte ptr [esi+0C5h],0
+            00
+  00000064: 85 DB              test        ebx,ebx
+  00000066: 75 11              jne         00000079
+  00000068: 8D 45 F8           lea         eax,[ebp-8]
+  0000006B: 50                 push        eax
+  0000006C: 56                 push        esi
+  0000006D: E8 00 00 00 00     call        _Phyre_LightEffect_Render
+  00000072: 83 C4 08           add         esp,8
+  00000075: 85 C0              test        eax,eax
+  00000077: 75 37              jne         000000B0
+  00000079: 83 7F 54 00        cmp         dword ptr [edi+54h],0
+  0000007D: 75 16              jne         00000095
+  0000007F: 8D 45 F8           lea         eax,[ebp-8]
+  00000082: 50                 push        eax
+  00000083: 57                 push        edi
+  00000084: E8 00 00 00 00     call        _Phyre_Camera3D_ctor
+  00000089: 83 C4 08           add         esp,8
+  0000008C: 85 C0              test        eax,eax
+  0000008E: 75 20              jne         000000B0
+  00000090: 39 47 54           cmp         dword ptr [edi+54h],eax
+  00000093: 74 19              je          000000AE
+  00000095: 80 7D FF 00        cmp         byte ptr [ebp-1],0
+  00000099: 74 13              je          000000AE
+  0000009B: 0F B6 86 C5 00 00  movzx       eax,byte ptr [esi+0C5h]
+            00
+  000000A2: 50                 push        eax
+  000000A3: 6A 01              push        1
+  000000A5: 56                 push        esi
+  000000A6: E8 00 00 00 00     call        _Phyre_Skeleton_SetActiveNodeWeight
+  000000AB: 83 C4 0C           add         esp,0Ch
+  000000AE: 33 C0              xor         eax,eax
+  000000B0: 5F                 pop         edi
+  000000B1: 5E                 pop         esi
+  000000B2: 5B                 pop         ebx
+  000000B3: 8B E5              mov         esp,ebp
+  000000B5: 5D                 pop         ebp
+  000000B6: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B7 .text

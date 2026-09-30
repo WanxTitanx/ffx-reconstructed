@@ -1,0 +1,114 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059ADD0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_CompileAllPasses@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000009: 53                 push        ebx
+  0000000A: 8B 59 08           mov         ebx,dword ptr [ecx+8]
+  0000000D: 56                 push        esi
+  0000000E: 8B F2              mov         esi,edx
+  00000010: 8B 11              mov         edx,dword ptr [ecx]
+  00000012: 57                 push        edi
+  00000013: 8B 79 04           mov         edi,dword ptr [ecx+4]
+  00000016: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000019: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000001C: 89 56 10           mov         dword ptr [esi+10h],edx
+  0000001F: 89 7E 14           mov         dword ptr [esi+14h],edi
+  00000022: 89 5E 18           mov         dword ptr [esi+18h],ebx
+  00000025: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  00000028: 89 4E 0C           mov         dword ptr [esi+0Ch],ecx
+  0000002B: 85 D2              test        edx,edx
+  0000002D: 74 18              je          00000047
+  0000002F: 52                 push        edx
+  00000030: E8 00 00 00 00     call        _Phyre_Shader_CompileVertexPass
+  00000035: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 6A 00              push        0
+  0000003D: 6A 00              push        0
+  0000003F: FF B2 EC 04 00 00  push        dword ptr [edx+4ECh]
+  00000045: EB 06              jmp         0000004D
+  00000047: 6A 00              push        0
+  00000049: 6A 00              push        0
+  0000004B: 6A 00              push        0
+  0000004D: 8B 06              mov         eax,dword ptr [esi]
+  0000004F: 8B 40 70           mov         eax,dword ptr [eax+70h]
+  00000052: 50                 push        eax
+  00000053: 8B 08              mov         ecx,dword ptr [eax]
+  00000055: 8B 41 2C           mov         eax,dword ptr [ecx+2Ch]
+  00000058: FF D0              call        eax
+  0000005A: 85 DB              test        ebx,ebx
+  0000005C: 74 15              je          00000073
+  0000005E: 53                 push        ebx
+  0000005F: E8 00 00 00 00     call        _Phyre_Shader_CompileGeometryPass
+  00000064: 83 C4 04           add         esp,4
+  00000067: 6A 00              push        0
+  00000069: 6A 00              push        0
+  0000006B: FF B3 E0 04 00 00  push        dword ptr [ebx+4E0h]
+  00000071: EB 06              jmp         00000079
+  00000073: 6A 00              push        0
+  00000075: 6A 00              push        0
+  00000077: 6A 00              push        0
+  00000079: 8B 06              mov         eax,dword ptr [esi]
+  0000007B: 8B 40 70           mov         eax,dword ptr [eax+70h]
+  0000007E: 50                 push        eax
+  0000007F: 8B 08              mov         ecx,dword ptr [eax]
+  00000081: 8B 41 5C           mov         eax,dword ptr [ecx+5Ch]
+  00000084: FF D0              call        eax
+  00000086: 85 FF              test        edi,edi
+  00000088: 74 15              je          0000009F
+  0000008A: 57                 push        edi
+  0000008B: E8 00 00 00 00     call        _Phyre_Shader_CompilePixelPass
+  00000090: 83 C4 04           add         esp,4
+  00000093: 6A 00              push        0
+  00000095: 6A 00              push        0
+  00000097: FF B7 E0 04 00 00  push        dword ptr [edi+4E0h]
+  0000009D: EB 06              jmp         000000A5
+  0000009F: 6A 00              push        0
+  000000A1: 6A 00              push        0
+  000000A3: 6A 00              push        0
+  000000A5: 8B 06              mov         eax,dword ptr [esi]
+  000000A7: 8B 40 70           mov         eax,dword ptr [eax+70h]
+  000000AA: 50                 push        eax
+  000000AB: 8B 08              mov         ecx,dword ptr [eax]
+  000000AD: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  000000B0: FF D0              call        eax
+  000000B2: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  000000B5: 85 FF              test        edi,edi
+  000000B7: 74 15              je          000000CE
+  000000B9: 57                 push        edi
+  000000BA: E8 00 00 00 00     call        _Phyre_Shader_CompileComputePass
+  000000BF: 83 C4 04           add         esp,4
+  000000C2: 6A 00              push        0
+  000000C4: 6A 00              push        0
+  000000C6: FF B7 E0 04 00 00  push        dword ptr [edi+4E0h]
+  000000CC: EB 06              jmp         000000D4
+  000000CE: 6A 00              push        0
+  000000D0: 6A 00              push        0
+  000000D2: 6A 00              push        0
+  000000D4: 8B 06              mov         eax,dword ptr [esi]
+  000000D6: 8B 40 70           mov         eax,dword ptr [eax+70h]
+  000000D9: 50                 push        eax
+  000000DA: 8B 08              mov         ecx,dword ptr [eax]
+  000000DC: 8B 81 14 01 00 00  mov         eax,dword ptr [ecx+114h]
+  000000E2: FF D0              call        eax
+  000000E4: 33 C0              xor         eax,eax
+  000000E6: 5F                 pop         edi
+  000000E7: 5E                 pop         esi
+  000000E8: 5B                 pop         ebx
+  000000E9: 8B E5              mov         esp,ebp
+  000000EB: 5D                 pop         ebp
+  000000EC: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          ED .text

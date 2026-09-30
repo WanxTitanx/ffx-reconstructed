@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00648A90.obj
+
+File Type: COFF OBJECT
+
+_FFX_PS3_Loose_648A90:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 8D 43 FF           lea         eax,[ebx-1]
+  0000000A: 8D 4B FF           lea         ecx,[ebx-1]
+  0000000D: 83 F8 20           cmp         eax,20h
+  00000010: 77 26              ja          00000038
+  00000012: E8 00 00 00 00     call        _FFX_PS3_GetSaveDataPtr
+  00000017: 53                 push        ebx
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _FFX_PS3_SyncKeyIsValid
+  0000001E: 8A C8              mov         cl,al
+  00000020: 83 C4 08           add         esp,8
+  00000023: 84 C9              test        cl,cl
+  00000025: 75 11              jne         00000038
+  00000027: E8 00 00 00 00     call        _FFX_PS3_GetSaveDataPtr
+  0000002C: 53                 push        ebx
+  0000002D: E8 00 00 00 00     call        _nullsub_63
+  00000032: 83 C4 04           add         esp,4
+  00000035: 5B                 pop         ebx
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 8A C1              mov         al,cl
+  0000003A: 5B                 pop         ebx
+  0000003B: 5D                 pop         ebp
+  0000003C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3D .text

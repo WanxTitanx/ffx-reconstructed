@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E2BF0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Field_GetCameraMatrix@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 83 BC 81 10 02 00  cmp         dword ptr [ecx+eax*4+210h],0
+            00 00
+  0000000F: 56                 push        esi
+  00000010: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000013: 57                 push        edi
+  00000014: 8D 3C 81           lea         edi,[ecx+eax*4]
+  00000017: 0F 94 C3           sete        bl
+  0000001A: 89 97 10 0C 00 00  mov         dword ptr [edi+0C10h],edx
+  00000020: 89 B7 10 18 00 00  mov         dword ptr [edi+1810h],esi
+  00000026: 84 DB              test        bl,bl
+  00000028: 74 1F              je          00000049
+  0000002A: 56                 push        esi
+  0000002B: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  00000030: 56                 push        esi
+  00000031: 6A 00              push        0
+  00000033: 50                 push        eax
+  00000034: 89 87 10 02 00 00  mov         dword ptr [edi+210h],eax
+  0000003A: E8 00 00 00 00     call        _memset
+  0000003F: 83 C4 10           add         esp,10h
+  00000042: 5F                 pop         edi
+  00000043: 5E                 pop         esi
+  00000044: 5B                 pop         ebx
+  00000045: 5D                 pop         ebp
+  00000046: C2 08 00           ret         8
+  00000049: 5F                 pop         edi
+  0000004A: 5E                 pop         esi
+  0000004B: 8B C2              mov         eax,edx
+  0000004D: 5B                 pop         ebx
+  0000004E: 5D                 pop         ebp
+  0000004F: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          52 .text

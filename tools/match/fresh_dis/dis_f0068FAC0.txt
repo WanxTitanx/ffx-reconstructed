@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068FAC0.obj
+
+File Type: COFF OBJECT
+
+@FFEscMenu_SetShowHideFlags@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: E8 00 00 00 00     call        _FFX_Sound_SyncCmd65
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 74 09              je          00000019
+  00000010: C6 86 06 01 00 00  mov         byte ptr [esi+106h],0
+            00
+  00000017: EB 11              jmp         0000002A
+  00000019: 6A 01              push        1
+  0000001B: C6 86 06 01 00 00  mov         byte ptr [esi+106h],1
+            01
+  00000022: E8 00 00 00 00     call        _FFX_Sound_QueueCmd58
+  00000027: 83 C4 04           add         esp,4
+  0000002A: E8 00 00 00 00     call        _FFX_Sound_SyncCmd18
+  0000002F: 85 C0              test        eax,eax
+  00000031: 74 09              je          0000003C
+  00000033: C6 86 05 01 00 00  mov         byte ptr [esi+105h],0
+            00
+  0000003A: EB 11              jmp         0000004D
+  0000003C: 6A 01              push        1
+  0000003E: C6 86 05 01 00 00  mov         byte ptr [esi+105h],1
+            01
+  00000045: E8 00 00 00 00     call        _FFX_Sound_QueueCmd8
+  0000004A: 83 C4 04           add         esp,4
+  0000004D: E8 00 00 00 00     call        _FFX_Video_GetSubtitleFlag
+  00000052: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000055: 85 C0              test        eax,eax
+  00000057: 74 0C              je          00000065
+  00000059: C6 86 04 01 00 00  mov         byte ptr [esi+104h],0
+            00
+  00000060: 5E                 pop         esi
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+  00000065: C6 86 04 01 00 00  mov         byte ptr [esi+104h],1
+            01
+  0000006C: E8 00 00 00 00     call        _FFX_LocKit_GetStringTableByVideoSingleton
+  00000071: 5E                 pop         esi
+  00000072: 8B E5              mov         esp,ebp
+  00000074: 5D                 pop         ebp
+  00000075: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          76 .text

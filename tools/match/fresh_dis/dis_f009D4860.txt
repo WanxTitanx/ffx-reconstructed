@@ -1,0 +1,71 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009D4860.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Physics_CheckLimitByIndex@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 04 91           mov         eax,dword ptr [ecx+edx*4]
+  00000007: D9 44 91 10        fld         dword ptr [ecx+edx*4+10h]
+  0000000B: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000011: D8 D1              fcom        st(1)
+  00000013: DF E0              fnstsw      ax
+  00000015: F6 C4 41           test        ah,41h
+  00000018: 74 5B              je          00000075
+  0000001A: D9 45 08           fld         dword ptr [ebp+8]
+  0000001D: D9 C0              fld         st(0)
+  0000001F: D9 C9              fxch        st(1)
+  00000021: D8 DA              fcomp       st(2)
+  00000023: DF E0              fnstsw      ax
+  00000025: F6 C4 05           test        ah,5
+  00000028: 7A 21              jp          0000004B
+  0000002A: DD DA              fstp        st(2)
+  0000002C: C7 84 91 C0 00 00  mov         dword ptr [ecx+edx*4+000000C0h],2
+            00 02 00 00 00
+  00000037: DE E9              fsubp       st(1),st
+  00000039: B8 02 00 00 00     mov         eax,2
+  0000003E: D9 9C 91 A0 00 00  fstp        dword ptr [ecx+edx*4+000000A0h]
+            00
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C2 04 00           ret         4
+  0000004B: DD D9              fstp        st(1)
+  0000004D: D8 D1              fcom        st(1)
+  0000004F: DF E0              fnstsw      ax
+  00000051: F6 C4 41           test        ah,41h
+  00000054: 7B 23              jnp         00000079
+  00000056: DE E1              fsubrp      st(1),st
+  00000058: C7 84 91 C0 00 00  mov         dword ptr [ecx+edx*4+000000C0h],1
+            00 01 00 00 00
+  00000063: B8 01 00 00 00     mov         eax,1
+  00000068: D9 9C 91 A0 00 00  fstp        dword ptr [ecx+edx*4+000000A0h]
+            00
+  0000006F: 8B E5              mov         esp,ebp
+  00000071: 5D                 pop         ebp
+  00000072: C2 04 00           ret         4
+  00000075: DD D9              fstp        st(1)
+  00000077: EB 02              jmp         0000007B
+  00000079: DD D8              fstp        st(0)
+  0000007B: DD D8              fstp        st(0)
+  0000007D: D9 EE              fldz
+  0000007F: 33 C0              xor         eax,eax
+  00000081: D9 94 91 C0 00 00  fst         dword ptr [ecx+edx*4+000000C0h]
+            00
+  00000088: D9 9C 91 A0 00 00  fstp        dword ptr [ecx+edx*4+000000A0h]
+            00
+  0000008F: 8B E5              mov         esp,ebp
+  00000091: 5D                 pop         ebp
+  00000092: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          95 .text

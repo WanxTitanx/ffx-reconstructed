@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00534770.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationNetworkInstance_GetSlotSetByIndex@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F1              mov         esi,ecx
+  00000008: 8B 1E              mov         ebx,dword ptr [esi]
+  0000000A: 85 DB              test        ebx,ebx
+  0000000C: 78 34              js          00000042
+  0000000E: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000011: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000017: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 24              je          00000042
+  0000001E: 85 DB              test        ebx,ebx
+  00000020: 74 17              je          00000039
+  00000022: 57                 push        edi
+  00000023: 8B F8              mov         edi,eax
+  00000025: 8B 07              mov         eax,dword ptr [edi]
+  00000027: 33 D2              xor         edx,edx
+  00000029: 8B 00              mov         eax,dword ptr [eax]
+  0000002B: 8B CF              mov         ecx,edi
+  0000002D: FF D0              call        eax
+  0000002F: 83 C7 0C           add         edi,0Ch
+  00000032: 4B                 dec         ebx
+  00000033: 75 F0              jne         00000025
+  00000035: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000038: 5F                 pop         edi
+  00000039: 50                 push        eax
+  0000003A: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003F: 83 C4 04           add         esp,4
+  00000042: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000049: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000004F: 5E                 pop         esi
+  00000050: 5B                 pop         ebx
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .text

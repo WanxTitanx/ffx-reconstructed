@@ -1,0 +1,95 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070A590.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_StopVoiceEvent@8:
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B DA              mov         ebx,edx
+  00000006: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  00000009: 85 C0              test        eax,eax
+  0000000B: 0F 84 C9 00 00 00  je          000000DA
+  00000011: 56                 push        esi
+  00000012: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000017: 68 AE 00 00 00     push        0AEh
+  0000001C: 8B F0              mov         esi,eax
+  0000001E: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000023: 56                 push        esi
+  00000024: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000029: 83 C4 0C           add         esp,0Ch
+  0000002C: 85 F6              test        esi,esi
+  0000002E: 5E                 pop         esi
+  0000002F: 0F 84 A5 00 00 00  je          000000DA
+  00000035: 8B 57 14           mov         edx,dword ptr [edi+14h]
+  00000038: 85 D2              test        edx,edx
+  0000003A: 74 25              je          00000061
+  0000003C: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  0000003F: 85 C9              test        ecx,ecx
+  00000041: 74 1E              je          00000061
+  00000043: 8B 01              mov         eax,dword ptr [ecx]
+  00000045: 6A 01              push        1
+  00000047: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000004A: 52                 push        edx
+  0000004B: 51                 push        ecx
+  0000004C: FF D0              call        eax
+  0000004E: 68 B4 00 00 00     push        0B4h
+  00000053: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000058: 50                 push        eax
+  00000059: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  0000005E: 83 C4 0C           add         esp,0Ch
+  00000061: 83 7F 60 01        cmp         dword ptr [edi+60h],1
+  00000065: C7 47 14 00 00 00  mov         dword ptr [edi+14h],0
+            00
+  0000006C: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  00000073: C7 47 54 00 00 00  mov         dword ptr [edi+54h],0
+            00
+  0000007A: 75 18              jne         00000094
+  0000007C: 8B 47 5C           mov         eax,dword ptr [edi+5Ch]
+  0000007F: 85 C0              test        eax,eax
+  00000081: 74 11              je          00000094
+  00000083: FF 47 64           inc         dword ptr [edi+64h]
+  00000086: 53                 push        ebx
+  00000087: 50                 push        eax
+  00000088: 57                 push        edi
+  00000089: E8 00 00 00 00     call        _FFX_FmodVoice_ReadEventData
+  0000008E: 83 C4 0C           add         esp,0Ch
+  00000091: 5F                 pop         edi
+  00000092: 5B                 pop         ebx
+  00000093: C3                 ret
+  00000094: C7 47 5C 00 00 00  mov         dword ptr [edi+5Ch],0
+            00
+  0000009B: C7 47 40 00 00 00  mov         dword ptr [edi+40h],0
+            00
+  000000A2: C7 47 44 00 00 00  mov         dword ptr [edi+44h],0
+            00
+  000000A9: C7 47 60 00 00 00  mov         dword ptr [edi+60h],0
+            00
+  000000B0: C7 47 64 00 00 00  mov         dword ptr [edi+64h],0
+            00
+  000000B7: C7 47 58 00 00 00  mov         dword ptr [edi+58h],0
+            00
+  000000BE: C7 47 48 00 00 00  mov         dword ptr [edi+48h],0
+            00
+  000000C5: C7 47 6C 00 00 00  mov         dword ptr [edi+6Ch],0
+            00
+  000000CC: C7 47 70 00 00 00  mov         dword ptr [edi+70h],0
+            00
+  000000D3: C7 47 74 00 00 00  mov         dword ptr [edi+74h],0
+            00
+  000000DA: 5F                 pop         edi
+  000000DB: 5B                 pop         ebx
+  000000DC: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          DD .text

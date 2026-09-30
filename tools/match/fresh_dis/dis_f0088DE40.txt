@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0088DE40.obj
+
+File Type: COFF OBJECT
+
+_FFX_AnimatedBg_StateUpdate:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000007: 8B F0              mov         esi,eax
+  00000009: 6A 18              push        18h
+  0000000B: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  0000000E: FF D1              call        ecx
+  00000010: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000013: 6A 05              push        5
+  00000015: FF D0              call        eax
+  00000017: 6A 05              push        5
+  00000019: 6A 18              push        18h
+  0000001B: 8B F0              mov         esi,eax
+  0000001D: E8 00 00 00 00     call        _FFX_Field_AllocWalkStructHeapAnimatedBg
+  00000022: 8B F8              mov         edi,eax
+  00000024: 56                 push        esi
+  00000025: 57                 push        edi
+  00000026: E8 00 00 00 00     call        _SndStandbyShoutStream
+  0000002B: 6A 01              push        1
+  0000002D: E8 00 00 00 00     call        _FFX_Sound_ProbeAndCacheChannelReady
+  00000032: 83 C4 1C           add         esp,1Ch
+  00000035: 85 FF              test        edi,edi
+  00000037: 74 2B              je          00000064
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  0000003F: 68 E0 01 00 00     push        1E0h
+  00000044: 68 00 00 00 00     push        offset ??_C@_0BJ@OEIELDBA@?4?4?2ps2lib?2common?2tklib?4c?$AA@
+  00000049: 6A 00              push        0
+  0000004B: E8 00 00 00 00     call        _SgMem_CheckHeapIntegrity
+  00000050: 68 E1 01 00 00     push        1E1h
+  00000055: 68 00 00 00 00     push        offset ??_C@_0BJ@OEIELDBA@?4?4?2ps2lib?2common?2tklib?4c?$AA@
+  0000005A: 6A 01              push        1
+  0000005C: E8 00 00 00 00     call        _SgMem_CheckHeapIntegrity
+  00000061: 83 C4 1C           add         esp,1Ch
+  00000064: 5F                 pop         edi
+  00000065: 5E                 pop         esi
+  00000066: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          19 .rdata
+          67 .text

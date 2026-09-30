@@ -1,0 +1,94 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005535B0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PScriptableComponent_SetMatrixInverse@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B C1              mov         eax,ecx
+  00000008: 57                 push        edi
+  00000009: 8B FA              mov         edi,edx
+  0000000B: 8B 50 14           mov         edx,dword ptr [eax+14h]
+  0000000E: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00000011: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000014: 85 D2              test        edx,edx
+  00000016: 74 6D              je          00000085
+  00000018: 53                 push        ebx
+  00000019: 8B 1F              mov         ebx,dword ptr [edi]
+  0000001B: 56                 push        esi
+  0000001C: 0F BE 37           movsx       esi,byte ptr [edi]
+  0000001F: 83 E6 01           and         esi,1
+  00000022: 2B DE              sub         ebx,esi
+  00000024: 39 37              cmp         dword ptr [edi],esi
+  00000026: 74 40              je          00000068
+  00000028: 8B CB              mov         ecx,ebx
+  0000002A: 8D 43 01           lea         eax,[ebx+1]
+  0000002D: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000030: 8D 71 01           lea         esi,[ecx+1]
+  00000033: 8A 01              mov         al,byte ptr [ecx]
+  00000035: 41                 inc         ecx
+  00000036: 84 C0              test        al,al
+  00000038: 75 F9              jne         00000033
+  0000003A: 2B CE              sub         ecx,esi
+  0000003C: 8D 04 19           lea         eax,[ecx+ebx]
+  0000003F: 3B C3              cmp         eax,ebx
+  00000041: 74 25              je          00000068
+  00000043: 6A 00              push        0
+  00000045: 8D 45 FC           lea         eax,[ebp-4]
+  00000048: 50                 push        eax
+  00000049: 8D 42 08           lea         eax,[edx+8]
+  0000004C: 50                 push        eax
+  0000004D: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000050: E8 00 00 00 00     call        _Phyre_NameArray_FindString
+  00000055: 83 C4 0C           add         esp,0Ch
+  00000058: 85 C0              test        eax,eax
+  0000005A: 79 0C              jns         00000068
+  0000005C: 5E                 pop         esi
+  0000005D: 5B                 pop         ebx
+  0000005E: B8 13 00 00 00     mov         eax,13h
+  00000063: 5F                 pop         edi
+  00000064: 8B E5              mov         esp,ebp
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+  00000068: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000006B: 83 C0 10           add         eax,10h
+  0000006E: 3B C7              cmp         eax,edi
+  00000070: 74 0A              je          0000007C
+  00000072: 53                 push        ebx
+  00000073: 50                 push        eax
+  00000074: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  00000079: 83 C4 08           add         esp,8
+  0000007C: 5E                 pop         esi
+  0000007D: 5B                 pop         ebx
+  0000007E: 33 C0              xor         eax,eax
+  00000080: 5F                 pop         edi
+  00000081: 8B E5              mov         esp,ebp
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+  00000085: 8D 50 10           lea         edx,[eax+10h]
+  00000088: 3B D7              cmp         edx,edi
+  0000008A: 74 13              je          0000009F
+  0000008C: 8B 0F              mov         ecx,dword ptr [edi]
+  0000008E: 8B C1              mov         eax,ecx
+  00000090: 83 E0 01           and         eax,1
+  00000093: 2B C8              sub         ecx,eax
+  00000095: 51                 push        ecx
+  00000096: 52                 push        edx
+  00000097: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  0000009C: 83 C4 08           add         esp,8
+  0000009F: 33 C0              xor         eax,eax
+  000000A1: 5F                 pop         edi
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

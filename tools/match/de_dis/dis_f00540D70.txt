@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00540D70.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PAnimationDescriptor_ReleaseAnimationSources:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _PComponent_DataCopyLoop
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 85 C0              test        eax,eax
+  00000013: 75 68              jne         0000007D
+  00000015: 53                 push        ebx
+  00000016: 8B 5F 3C           mov         ebx,dword ptr [edi+3Ch]
+  00000019: 56                 push        esi
+  0000001A: 8B 77 30           mov         esi,dword ptr [edi+30h]
+  0000001D: 85 F6              test        esi,esi
+  0000001F: 74 05              je          00000026
+  00000021: 83 C6 FC           add         esi,0FFFFFFFCh
+  00000024: EB 02              jmp         00000028
+  00000026: 33 F6              xor         esi,esi
+  00000028: 8B 47 2C           mov         eax,dword ptr [edi+2Ch]
+  0000002B: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000002E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000031: 85 DB              test        ebx,ebx
+  00000033: 74 44              je          00000079
+  00000035: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  00000039: 74 09              je          00000044
+  0000003B: 56                 push        esi
+  0000003C: E8 00 00 00 00     call        _Phyre_PAnimationDescriptor_ApplyAnimationBinding
+  00000041: 83 C4 04           add         esp,4
+  00000044: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000047: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000004C: 83 F8 01           cmp         eax,1
+  0000004F: 75 22              jne         00000073
+  00000051: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000054: 8B 38              mov         edi,dword ptr [eax]
+  00000056: 85 FF              test        edi,edi
+  00000058: 74 19              je          00000073
+  0000005A: 57                 push        edi
+  0000005B: 56                 push        esi
+  0000005C: E8 00 00 00 00     call        _PhyrePAnimationDescriptor_Initialize
+  00000061: 83 C4 08           add         esp,8
+  00000064: 85 C0              test        eax,eax
+  00000066: 75 0B              jne         00000073
+  00000068: 57                 push        edi
+  00000069: 50                 push        eax
+  0000006A: 56                 push        esi
+  0000006B: E8 00 00 00 00     call        _Phyre_PAnimationDescriptor_UpdateSingleSlot
+  00000070: 83 C4 0C           add         esp,0Ch
+  00000073: 03 75 FC           add         esi,dword ptr [ebp-4]
+  00000076: 4B                 dec         ebx
+  00000077: 75 BC              jne         00000035
+  00000079: 5E                 pop         esi
+  0000007A: 33 C0              xor         eax,eax
+  0000007C: 5B                 pop         ebx
+  0000007D: 5F                 pop         edi
+  0000007E: 8B E5              mov         esp,ebp
+  00000080: 5D                 pop         ebp
+  00000081: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          82 .text

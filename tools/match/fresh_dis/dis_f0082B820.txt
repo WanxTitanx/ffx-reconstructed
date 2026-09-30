@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082B820.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_SetFloatOffset820:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 57                 push        edi
+  00000009: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000000C: 69 FF 80 08 00 00  imul        edi,edi,880h
+  00000012: 03 FE              add         edi,esi
+  00000014: 3B F7              cmp         esi,edi
+  00000016: 74 41              je          00000059
+  00000018: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000001B: 53                 push        ebx
+  0000001C: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000001F: 80 7E 02 00        cmp         byte ptr [esi+2],0
+  00000023: 74 27              je          0000004C
+  00000025: 3B F3              cmp         esi,ebx
+  00000027: 74 23              je          0000004C
+  00000029: 39 9E 9C 01 00 00  cmp         dword ptr [esi+19Ch],ebx
+  0000002F: 75 1B              jne         0000004C
+  00000031: FF 75 10           push        dword ptr [ebp+10h]
+  00000034: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000037: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003A: 83 EC 08           sub         esp,8
+  0000003D: DD 1C 24           fstp        qword ptr [esp]
+  00000040: 56                 push        esi
+  00000041: E8 00 00 00 00     call        _FFX_Chr_SetFloatOffset7A0
+  00000046: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000049: 83 C4 10           add         esp,10h
+  0000004C: 81 C6 80 08 00 00  add         esi,880h
+  00000052: 3B F7              cmp         esi,edi
+  00000054: 75 C9              jne         0000001F
+  00000056: DD D8              fstp        st(0)
+  00000058: 5B                 pop         ebx
+  00000059: 8B C7              mov         eax,edi
+  0000005B: 5F                 pop         edi
+  0000005C: 5E                 pop         esi
+  0000005D: 8B E5              mov         esp,ebp
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

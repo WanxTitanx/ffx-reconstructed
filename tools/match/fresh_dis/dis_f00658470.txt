@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00658470.obj
+
+File Type: COFF OBJECT
+
+@FFX_Phyre_SetMaterialColourAlpha@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 80 B9 3C 09 00 00  cmp         byte ptr [ecx+93Ch],0
+            00
+  0000000D: 56                 push        esi
+  0000000E: 8B F2              mov         esi,edx
+  00000010: 74 61              je          00000073
+  00000012: 83 B9 28 11 00 00  cmp         dword ptr [ecx+1128h],0
+            00
+  00000019: 74 58              je          00000073
+  0000001B: E8 00 00 00 00     call        _FFX_TexAnim_GetManagerSingleton
+  00000020: 56                 push        esi
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _TexAnim_GetIndexedValue
+  00000027: 8B F0              mov         esi,eax
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 85 F6              test        esi,esi
+  0000002E: 74 43              je          00000073
+  00000030: 68 00 00 00 00     push        offset ??_C@_0P@HOKCGMBK@MaterialColour?$AA@
+  00000035: FF 36              push        dword ptr [esi]
+  00000037: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000003C: 8B C8              mov         ecx,eax
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 85 C9              test        ecx,ecx
+  00000043: 74 2E              je          00000073
+  00000045: D9 E8              fld1
+  00000047: 8D 55 F0           lea         edx,[ebp-10h]
+  0000004A: D9 55 F0           fst         dword ptr [ebp-10h]
+  0000004D: 52                 push        edx
+  0000004E: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  00000051: 51                 push        ecx
+  00000052: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000055: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000058: DB 45 08           fild        dword ptr [ebp+8]
+  0000005B: 50                 push        eax
+  0000005C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000005F: D9 45 08           fld         dword ptr [ebp+8]
+  00000062: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f80000000000000]
+  00000068: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000006B: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  00000070: 83 C4 0C           add         esp,0Ch
+  00000073: 5E                 pop         esi
+  00000074: 8B E5              mov         esp,ebp
+  00000076: 5D                 pop         ebp
+  00000077: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1B .rdata
+          7A .text

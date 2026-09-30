@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061B1F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PApplication_TripleBufferCleanup@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 77 08           mov         esi,dword ptr [edi+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 20              je          0000002B
+  0000000B: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000E: 85 C0              test        eax,eax
+  00000010: 74 10              je          00000022
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000018: 83 C4 04           add         esp,4
+  0000001B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000022: 56                 push        esi
+  00000023: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000028: 83 C4 04           add         esp,4
+  0000002B: 8B 77 0C           mov         esi,dword ptr [edi+0Ch]
+  0000002E: 85 F6              test        esi,esi
+  00000030: 74 20              je          00000052
+  00000032: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000035: 85 C0              test        eax,eax
+  00000037: 74 10              je          00000049
+  00000039: 50                 push        eax
+  0000003A: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  0000003F: 83 C4 04           add         esp,4
+  00000042: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000049: 56                 push        esi
+  0000004A: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000004F: 83 C4 04           add         esp,4
+  00000052: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  00000055: 85 F6              test        esi,esi
+  00000057: 74 20              je          00000079
+  00000059: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000005C: 85 C0              test        eax,eax
+  0000005E: 74 10              je          00000070
+  00000060: 50                 push        eax
+  00000061: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000066: 83 C4 04           add         esp,4
+  00000069: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000070: 56                 push        esi
+  00000071: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000076: 83 C4 04           add         esp,4
+  00000079: 5F                 pop         edi
+  0000007A: 5E                 pop         esi
+  0000007B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          7C .text

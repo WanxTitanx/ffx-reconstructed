@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00795730.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicHost_GetActorPositionVec3:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 53                 push        ebx
+  00000009: E8 00 00 00 00     call        _FFX_Btl_IsValidBattleSlot
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 85 C0              test        eax,eax
+  00000013: 74 34              je          00000049
+  00000015: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000018: 85 F6              test        esi,esi
+  0000001A: 74 2D              je          00000049
+  0000001C: 0F B6 C3           movzx       eax,bl
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _FFX_Battle_AccessCurrentActorData
+  00000025: 83 C4 04           add         esp,4
+  00000028: D9 80 A0 03 00 00  fld         dword ptr [eax+3A0h]
+  0000002E: D9 1E              fstp        dword ptr [esi]
+  00000030: D9 80 A4 03 00 00  fld         dword ptr [eax+3A4h]
+  00000036: D9 5E 04           fstp        dword ptr [esi+4]
+  00000039: D9 80 A8 03 00 00  fld         dword ptr [eax+3A8h]
+  0000003F: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000042: D9 5E 08           fstp        dword ptr [esi+8]
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+  00000049: 5E                 pop         esi
+  0000004A: 33 C0              xor         eax,eax
+  0000004C: 5B                 pop         ebx
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4F .text

@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A34C0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_array_dtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 8D 46 3C           lea         eax,[esi+3Ch]
+  00000009: 50                 push        eax
+  0000000A: E8 00 00 00 00     call        _Phyre_POD_dtor
+  0000000F: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000012: 83 C4 04           add         esp,4
+  00000015: 85 C0              test        eax,eax
+  00000017: 78 1A              js          00000033
+  00000019: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000001E: 83 F8 01           cmp         eax,1
+  00000021: 76 10              jbe         00000033
+  00000023: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  00000026: 85 C0              test        eax,eax
+  00000028: 74 09              je          00000033
+  0000002A: 50                 push        eax
+  0000002B: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000030: 83 C4 04           add         esp,4
+  00000033: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  0000003A: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  00000041: F6 C3 01           test        bl,1
+  00000044: 74 09              je          0000004F
+  00000046: 56                 push        esi
+  00000047: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: 8B C6              mov         eax,esi
+  00000051: 5E                 pop         esi
+  00000052: 5B                 pop         ebx
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          54 .text

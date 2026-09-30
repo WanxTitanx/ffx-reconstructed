@@ -1,0 +1,119 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D6120.obj
+
+File Type: COFF OBJECT
+
+@Phyre_RBTree_IteratorNext@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000009: 8B D1              mov         edx,ecx
+  0000000B: 53                 push        ebx
+  0000000C: 8B 0A              mov         ecx,dword ptr [edx]
+  0000000E: 56                 push        esi
+  0000000F: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000012: B3 01              mov         bl,1
+  00000014: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000018: 57                 push        edi
+  00000019: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000001C: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  0000001F: 8B F1              mov         esi,ecx
+  00000021: 88 5D FC           mov         byte ptr [ebp-4],bl
+  00000024: 75 38              jne         0000005E
+  00000026: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000029: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000002C: 8B 09              mov         ecx,dword ptr [ecx]
+  0000002E: 8B FF              mov         edi,edi
+  00000030: 8B F0              mov         esi,eax
+  00000032: 84 D2              test        dl,dl
+  00000034: 74 08              je          0000003E
+  00000036: 39 48 10           cmp         dword ptr [eax+10h],ecx
+  00000039: 0F 9D C3           setge       bl
+  0000003C: EB 06              jmp         00000044
+  0000003E: 3B 48 10           cmp         ecx,dword ptr [eax+10h]
+  00000041: 0F 9C C3           setl        bl
+  00000044: 88 5D FC           mov         byte ptr [ebp-4],bl
+  00000047: 84 DB              test        bl,bl
+  00000049: 74 04              je          0000004F
+  0000004B: 8B 00              mov         eax,dword ptr [eax]
+  0000004D: EB 03              jmp         00000052
+  0000004F: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000052: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000056: 74 D8              je          00000030
+  00000058: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  0000005B: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000005E: 8B FE              mov         edi,esi
+  00000060: 89 75 08           mov         dword ptr [ebp+8],esi
+  00000063: 84 DB              test        bl,bl
+  00000065: 74 20              je          00000087
+  00000067: 8D 45 08           lea         eax,[ebp+8]
+  0000006A: 3B 31              cmp         esi,dword ptr [ecx]
+  0000006C: 75 0D              jne         0000007B
+  0000006E: FF 75 10           push        dword ptr [ebp+10h]
+  00000071: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000074: 56                 push        esi
+  00000075: 6A 01              push        1
+  00000077: 50                 push        eax
+  00000078: 52                 push        edx
+  00000079: EB 25              jmp         000000A0
+  0000007B: 50                 push        eax
+  0000007C: E8 00 00 00 00     call        _Phyre_RBTree_GetPrevNode
+  00000081: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000084: 83 C4 04           add         esp,4
+  00000087: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000008A: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  0000008D: 3B 01              cmp         eax,dword ptr [ecx]
+  0000008F: 73 2D              jae         000000BE
+  00000091: FF 75 10           push        dword ptr [ebp+10h]
+  00000094: 8D 45 08           lea         eax,[ebp+8]
+  00000097: 51                 push        ecx
+  00000098: 56                 push        esi
+  00000099: FF 75 FC           push        dword ptr [ebp-4]
+  0000009C: 50                 push        eax
+  0000009D: FF 75 F8           push        dword ptr [ebp-8]
+  000000A0: E8 00 00 00 00     call        _Phyre_Map_Insert_LinkAndRebalance_v2
+  000000A5: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  000000A8: 8B 00              mov         eax,dword ptr [eax]
+  000000AA: 83 C4 18           add         esp,18h
+  000000AD: 89 01              mov         dword ptr [ecx],eax
+  000000AF: 5F                 pop         edi
+  000000B0: 5E                 pop         esi
+  000000B1: C6 41 04 01        mov         byte ptr [ecx+4],1
+  000000B5: 8B C1              mov         eax,ecx
+  000000B7: 5B                 pop         ebx
+  000000B8: 8B E5              mov         esp,ebp
+  000000BA: 5D                 pop         ebp
+  000000BB: C2 0C 00           ret         0Ch
+  000000BE: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  000000C1: 83 7E 28 10        cmp         dword ptr [esi+28h],10h
+  000000C5: 72 0B              jb          000000D2
+  000000C7: FF 76 14           push        dword ptr [esi+14h]
+  000000CA: E8 00 00 00 00     call        _FFX_Heap_Free
+  000000CF: 83 C4 04           add         esp,4
+  000000D2: 56                 push        esi
+  000000D3: C7 46 28 0F 00 00  mov         dword ptr [esi+28h],0Fh
+            00
+  000000DA: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  000000E1: C6 46 14 00        mov         byte ptr [esi+14h],0
+  000000E5: E8 00 00 00 00     call        _FFX_Heap_Free
+  000000EA: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000ED: 83 C4 04           add         esp,4
+  000000F0: 89 38              mov         dword ptr [eax],edi
+  000000F2: 5F                 pop         edi
+  000000F3: 5E                 pop         esi
+  000000F4: C6 40 04 00        mov         byte ptr [eax+4],0
+  000000F8: 5B                 pop         ebx
+  000000F9: 8B E5              mov         esp,ebp
+  000000FB: 5D                 pop         ebp
+  000000FC: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          FF .text

@@ -1,0 +1,237 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056FFF0.obj
+
+File Type: COFF OBJECT
+
+@PBitmapFontText_DrawChar@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC B8 00 00 00  sub         esp,0B8h
+  00000009: 56                 push        esi
+  0000000A: 8B F1              mov         esi,ecx
+  0000000C: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 0F 84 5F 02 00 00  je          00000276
+  00000017: 80 78 05 00        cmp         byte ptr [eax+5],0
+  0000001B: 0F 84 55 02 00 00  je          00000276
+  00000021: 57                 push        edi
+  00000022: 8B 7E 0C           mov         edi,dword ptr [esi+0Ch]
+  00000025: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  00000028: 83 FF FF           cmp         edi,0FFFFFFFFh
+  0000002B: 75 26              jne         00000053
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _Phyre_PSprite_PArraySubTextureInfo_AcquireSlotPtr
+  00000033: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000036: 50                 push        eax
+  00000037: FF 76 04           push        dword ptr [esi+4]
+  0000003A: E8 00 00 00 00     call        _Phyre_PSprite_InstanceSwapBuffers
+  0000003F: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000042: FF 76 04           push        dword ptr [esi+4]
+  00000045: D9 5E 0C           fstp        dword ptr [esi+0Ch]
+  00000048: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  0000004B: E8 00 00 00 00     call        _PBitmapFontText_Flush
+  00000050: 83 C4 10           add         esp,10h
+  00000053: 83 7E 0C FF        cmp         dword ptr [esi+0Ch],0FFFFFFFFh
+  00000057: 0F 84 08 02 00 00  je          00000265
+  0000005D: FF 76 04           push        dword ptr [esi+4]
+  00000060: E8 00 00 00 00     call        _Phyre_PSprite_PArraySubTextureInfo_AcquireSlotPtr
+  00000065: FF 36              push        dword ptr [esi]
+  00000067: 8D 85 48 FF FF FF  lea         eax,[ebp-0B8h]
+  0000006D: 50                 push        eax
+  0000006E: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  00000073: 8D 45 B8           lea         eax,[ebp-48h]
+  00000076: 50                 push        eax
+  00000077: 8D 45 88           lea         eax,[ebp-78h]
+  0000007A: 50                 push        eax
+  0000007B: 8D 45 C8           lea         eax,[ebp-38h]
+  0000007E: 50                 push        eax
+  0000007F: 8D 85 48 FF FF FF  lea         eax,[ebp-0B8h]
+  00000085: 50                 push        eax
+  00000086: E8 00 00 00 00     call        _PMatrix3x3_DecomposeScale
+  0000008B: D9 EE              fldz
+  0000008D: D9 55 D8           fst         dword ptr [ebp-28h]
+  00000090: 8D 45 D8           lea         eax,[ebp-28h]
+  00000093: D9 E8              fld1
+  00000095: 50                 push        eax
+  00000096: 8D 45 E8           lea         eax,[ebp-18h]
+  00000099: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000009C: 50                 push        eax
+  0000009D: 8D 45 88           lea         eax,[ebp-78h]
+  000000A0: 50                 push        eax
+  000000A1: D9 5D E0           fstp        dword ptr [ebp-20h]
+  000000A4: E8 00 00 00 00     call        _Phyre_Matrix3x3_TransformVector3_PSpline
+  000000A9: D9 45 E8           fld         dword ptr [ebp-18h]
+  000000AC: 83 C4 28           add         esp,28h
+  000000AF: D9 EE              fldz
+  000000B1: DC C9              fmul        st(1),st
+  000000B3: D9 C9              fxch        st(1)
+  000000B5: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000B8: D9 45 FC           fld         dword ptr [ebp-4]
+  000000BB: D8 45 FC           fadd        dword ptr [ebp-4]
+  000000BE: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000C1: D9 45 F8           fld         dword ptr [ebp-8]
+  000000C4: DE C9              fmulp       st(1),st
+  000000C6: D8 45 FC           fadd        dword ptr [ebp-4]
+  000000C9: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000CC: D9 45 FC           fld         dword ptr [ebp-4]
+  000000CF: E8 00 00 00 00     call        __CIacos
+  000000D4: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000D7: D9 45 FC           fld         dword ptr [ebp-4]
+  000000DA: D9 EE              fldz
+  000000DC: DE C9              fmulp       st(1),st
+  000000DE: D8 65 E8           fsub        dword ptr [ebp-18h]
+  000000E1: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000E4: D9 45 FC           fld         dword ptr [ebp-4]
+  000000E7: D9 EE              fldz
+  000000E9: DE D9              fcompp
+  000000EB: DF E0              fnstsw      ax
+  000000ED: F6 C4 41           test        ah,41h
+  000000F0: 75 0C              jne         000000FE
+  000000F2: D9 45 F8           fld         dword ptr [ebp-8]
+  000000F5: DC 2D 00 00 00 00  fsubr       qword ptr [__real@401921fa00000000]
+  000000FB: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000FE: 8B 56 08           mov         edx,dword ptr [esi+8]
+  00000101: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  00000104: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000107: 8B 04 88           mov         eax,dword ptr [eax+ecx*4]
+  0000010A: 8D 0C 80           lea         ecx,[eax+eax*4]
+  0000010D: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000110: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000113: 8D 04 88           lea         eax,[eax+ecx*4]
+  00000116: 50                 push        eax
+  00000117: 8D 45 EC           lea         eax,[ebp-14h]
+  0000011A: 50                 push        eax
+  0000011B: E8 00 00 00 00     call        _PSpriteLabel_ctor
+  00000120: 8B 06              mov         eax,dword ptr [esi]
+  00000122: 83 EC 08           sub         esp,8
+  00000125: D9 40 24           fld         dword ptr [eax+24h]
+  00000128: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000012C: D9 40 20           fld         dword ptr [eax+20h]
+  0000012F: DD 1C 24           fstp        qword ptr [esp]
+  00000132: 57                 push        edi
+  00000133: FF 76 04           push        dword ptr [esi+4]
+  00000136: E8 00 00 00 00     call        _PBitmapFontText_SetCharXY
+  0000013B: 8B 06              mov         eax,dword ptr [esi]
+  0000013D: 83 C4 10           add         esp,10h
+  00000140: D9 40 28           fld         dword ptr [eax+28h]
+  00000143: DD 1C 24           fstp        qword ptr [esp]
+  00000146: 57                 push        edi
+  00000147: FF 76 04           push        dword ptr [esi+4]
+  0000014A: E8 00 00 00 00     call        _PBitmapFontText_SetCharZ
+  0000014F: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000152: 83 C4 10           add         esp,10h
+  00000155: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000158: 8B 08              mov         ecx,dword ptr [eax]
+  0000015A: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000015D: DB 41 20           fild        dword ptr [ecx+20h]
+  00000160: 85 C0              test        eax,eax
+  00000162: 79 06              jns         0000016A
+  00000164: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000016A: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000016D: D9 45 FC           fld         dword ptr [ebp-4]
+  00000170: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000173: D8 4D FC           fmul        dword ptr [ebp-4]
+  00000176: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000179: D8 4D CC           fmul        dword ptr [ebp-34h]
+  0000017C: D9 5D F0           fstp        dword ptr [ebp-10h]
+  0000017F: DB 45 FC           fild        dword ptr [ebp-4]
+  00000182: 85 C0              test        eax,eax
+  00000184: 79 06              jns         0000018C
+  00000186: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000400000]
+  0000018C: D9 45 F0           fld         dword ptr [ebp-10h]
+  0000018F: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  00000192: 83 EC 10           sub         esp,10h
+  00000195: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000199: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000019C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000019F: D8 4D FC           fmul        dword ptr [ebp-4]
+  000001A2: D8 4D C8           fmul        dword ptr [ebp-38h]
+  000001A5: D9 5D FC           fstp        dword ptr [ebp-4]
+  000001A8: D9 45 FC           fld         dword ptr [ebp-4]
+  000001AB: DD 1C 24           fstp        qword ptr [esp]
+  000001AE: 57                 push        edi
+  000001AF: FF 76 04           push        dword ptr [esi+4]
+  000001B2: E8 00 00 00 00     call        _PBitmapFontText_SetCharUV
+  000001B7: D9 45 F8           fld         dword ptr [ebp-8]
+  000001BA: 83 C4 10           add         esp,10h
+  000001BD: DD 1C 24           fstp        qword ptr [esp]
+  000001C0: 57                 push        edi
+  000001C1: FF 76 04           push        dword ptr [esi+4]
+  000001C4: E8 00 00 00 00     call        _PBitmapFontText_SetCharRotation
+  000001C9: D9 45 FC           fld         dword ptr [ebp-4]
+  000001CC: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000001CF: D9 55 F8           fst         dword ptr [ebp-8]
+  000001D2: D9 45 FC           fld         dword ptr [ebp-4]
+  000001D5: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  000001D8: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000001DB: D9 55 FC           fst         dword ptr [ebp-4]
+  000001DE: DD 05 00 00 00 00  fld         qword ptr [__real@bff0000000000000]
+  000001E4: 83 C4 10           add         esp,10h
+  000001E7: 80 7E 20 00        cmp         byte ptr [esi+20h],0
+  000001EB: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000001EE: 75 04              jne         000001F4
+  000001F0: DD DA              fstp        st(2)
+  000001F2: EB 0F              jmp         00000203
+  000001F4: D9 45 FC           fld         dword ptr [ebp-4]
+  000001F7: D8 C3              fadd        st,st(3)
+  000001F9: D9 5D F0           fstp        dword ptr [ebp-10h]
+  000001FC: DC CA              fmul        st(2),st
+  000001FE: D9 CA              fxch        st(2)
+  00000200: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000203: 80 7E 21 00        cmp         byte ptr [esi+21h],0
+  00000207: 74 13              je          0000021C
+  00000209: D9 55 FC           fst         dword ptr [ebp-4]
+  0000020C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000020F: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000212: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000215: DE C9              fmulp       st(1),st
+  00000217: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000021A: EB 04              jmp         00000220
+  0000021C: DD D8              fstp        st(0)
+  0000021E: DD D8              fstp        st(0)
+  00000220: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000223: 83 EC 10           sub         esp,10h
+  00000226: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000022A: D9 45 F0           fld         dword ptr [ebp-10h]
+  0000022D: DD 1C 24           fstp        qword ptr [esp]
+  00000230: 57                 push        edi
+  00000231: FF 76 04           push        dword ptr [esi+4]
+  00000234: E8 00 00 00 00     call        _PBitmapFontText_SetCharUV1
+  00000239: D9 45 FC           fld         dword ptr [ebp-4]
+  0000023C: 83 C4 08           add         esp,8
+  0000023F: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000243: D9 45 F8           fld         dword ptr [ebp-8]
+  00000246: DD 1C 24           fstp        qword ptr [esp]
+  00000249: 57                 push        edi
+  0000024A: FF 76 04           push        dword ptr [esi+4]
+  0000024D: E8 00 00 00 00     call        _PBitmapFontText_SetCharUV2
+  00000252: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000255: 83 C4 18           add         esp,18h
+  00000258: A8 01              test        al,1
+  0000025A: 75 09              jne         00000265
+  0000025C: 50                 push        eax
+  0000025D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000262: 83 C4 04           add         esp,4
+  00000265: FF 76 04           push        dword ptr [esi+4]
+  00000268: E8 00 00 00 00     call        _PBitmapFontText_Flush
+  0000026D: 83 C4 04           add         esp,4
+  00000270: 5F                 pop         edi
+  00000271: 5E                 pop         esi
+  00000272: 8B E5              mov         esp,ebp
+  00000274: 5D                 pop         ebp
+  00000275: C3                 ret
+  00000276: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000279: 5E                 pop         esi
+  0000027A: 8B E5              mov         esp,ebp
+  0000027C: 5D                 pop         ebp
+  0000027D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2C .rdata
+         27E .text

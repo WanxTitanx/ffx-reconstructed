@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009FE790.obj
+
+File Type: COFF OBJECT
+
+@PPostProcessEffect_GetShaderId@4:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F9              mov         edi,ecx
+  00000005: BB 02 00 00 00     mov         ebx,2
+  0000000A: 8D 77 08           lea         esi,[edi+8]
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: FF 36              push        dword ptr [esi]
+  00000012: E8 00 00 00 00     call        _Phyre_PostProcessing_SomeQueryFunc
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8D 76 04           lea         esi,[esi+4]
+  0000001D: 4B                 dec         ebx
+  0000001E: 75 F0              jne         00000010
+  00000020: 39 1F              cmp         dword ptr [edi],ebx
+  00000022: 7C 0B              jl          0000002F
+  00000024: FF 77 04           push        dword ptr [edi+4]
+  00000027: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: C7 47 04 00 00 00  mov         dword ptr [edi+4],0
+            00
+  00000036: C7 07 00 00 00 00  mov         dword ptr [edi],0
+  0000003C: 5F                 pop         edi
+  0000003D: 5E                 pop         esi
+  0000003E: 5B                 pop         ebx
+  0000003F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          40 .text

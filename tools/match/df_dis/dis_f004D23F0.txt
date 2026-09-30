@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004D23F0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Array_HeapSortPopUInt:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 2B F7              sub         esi,edi
+  0000000D: 8B C6              mov         eax,esi
+  0000000F: 83 E0 FC           and         eax,0FFFFFFFCh
+  00000012: 83 F8 04           cmp         eax,4
+  00000015: 7E 2F              jle         00000046
+  00000017: 8B 44 37 FC        mov         eax,dword ptr [edi+esi-4]
+  0000001B: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000001E: 8B 07              mov         eax,dword ptr [edi]
+  00000020: 89 44 37 FC        mov         dword ptr [edi+esi-4],eax
+  00000024: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000027: 50                 push        eax
+  00000028: 83 EE 04           sub         esi,4
+  0000002B: 8B C6              mov         eax,esi
+  0000002D: C1 F8 02           sar         eax,2
+  00000030: 50                 push        eax
+  00000031: 6A 00              push        0
+  00000033: 57                 push        edi
+  00000034: E8 00 00 00 00     call        _Phyre_Array_HeapSiftDownUInt
+  00000039: 8B C6              mov         eax,esi
+  0000003B: 83 E0 FC           and         eax,0FFFFFFFCh
+  0000003E: 83 C4 10           add         esp,10h
+  00000041: 83 F8 04           cmp         eax,4
+  00000044: 7F D1              jg          00000017
+  00000046: 5F                 pop         edi
+  00000047: 5E                 pop         esi
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4A .text

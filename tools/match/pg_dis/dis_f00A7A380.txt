@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A7A380.obj
+
+File Type: COFF OBJECT
+
+_sub_A7A380:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 56                 push        esi
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  00000013: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000016: DB 45 FC           fild        dword ptr [ebp-4]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 79 06              jns         00000023
+  0000001D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000023: 56                 push        esi
+  00000024: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000027: 57                 push        edi
+  00000028: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000002D: 57                 push        edi
+  0000002E: 8B F0              mov         esi,eax
+  00000030: E8 00 00 00 00     call        _FFX_TK_GetChrPointer
+  00000035: 83 C4 14           add         esp,14h
+  00000038: 85 C0              test        eax,eax
+  0000003A: 74 13              je          0000004F
+  0000003C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003F: 83 EC 08           sub         esp,8
+  00000042: DD 1C 24           fstp        qword ptr [esp]
+  00000045: 56                 push        esi
+  00000046: 50                 push        eax
+  00000047: E8 00 00 00 00     call        _sub_82AEB0
+  0000004C: 83 C4 10           add         esp,10h
+  0000004F: 5F                 pop         edi
+  00000050: 33 C0              xor         eax,eax
+  00000052: 5E                 pop         esi
+  00000053: 8B E5              mov         esp,ebp
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          57 .text

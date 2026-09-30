@@ -1,0 +1,238 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file h514.obj
+
+File Type: COFF OBJECT
+
+??A?$PArray@VPShaderParameterDefinition@PRendering@Phyre@@$03@Phyre@@QBEABVPShaderParameterDefinition@PRendering@1@I@Z (public: class Phyre::PRendering::PShaderParameterDefinition const & __thiscall Phyre::PArray<class Phyre::PRendering::PShaderParameterDefinition,4>::operator[](unsigned int)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 04           shl         eax,4
+  00000009: 03 41 04           add         eax,dword ptr [ecx+4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+
+??B?$PReference@$$CBVPEffect@PRendering@Phyre@@@Phyre@@QBEABVPEffect@PRendering@1@XZ (public: __thiscall Phyre::PReference<class Phyre::PRendering::PEffect const >::operator class Phyre::PRendering::PEffect const &(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C3                 ret
+
+??BPString@Phyre@@QBEPBDXZ (public: __thiscall Phyre::PString::operator char const *(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+??_I@YGXPAXIHP6EX0@Z@Z (void __stdcall `vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: 8B C3              mov         eax,ebx
+  00000011: 0F AF C7           imul        eax,edi
+  00000014: 03 F0              add         esi,eax
+  00000016: 4F                 dec         edi
+  00000017: 78 11              js          0000002A
+  00000019: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000020: 2B F3              sub         esi,ebx
+  00000022: 8B CE              mov         ecx,esi
+  00000024: FF 55 14           call        dword ptr [ebp+14h]
+  00000027: 4F                 dec         edi
+  00000028: 79 F6              jns         00000020
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 10 00           ret         10h
+
+?GetCurrentParamName@PShaderContext@PRendering@Phyre@@SAPBDW4PShaderParameterFrequency@23@ABVPShaderParameterCaptureBufferLocation@23@@Z (public: static char const * __cdecl Phyre::PRendering::PShaderContext::GetCurrentParamName(enum Phyre::PRendering::PShaderParameterFrequency,class Phyre::PRendering::PShaderParameterCaptureBufferLocation const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 0D 00 00 00 00  mov         ecx,dword ptr [?s_currentLiveInstance@PShaderContextBase@PRendering@Phyre@@2PAVPShaderContext@23@A]
+  00000009: 85 C9              test        ecx,ecx
+  0000000B: 74 1D              je          0000002A
+  0000000D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000010: FF 75 08           push        dword ptr [ebp+8]
+  00000013: E8 00 00 00 00     call        ?findShaderParameterDefinition@PShaderContextBase@PRendering@Phyre@@QBEPBVPShaderParameterDefinition@23@W4PShaderParameterFrequency@23@ABVPShaderParameterCaptureBufferLocation@23@@Z
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 0E              je          0000002A
+  0000001C: 0F B6 48 04        movzx       ecx,byte ptr [eax+4]
+  00000020: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000023: 83 E1 01           and         ecx,1
+  00000026: 2B C1              sub         eax,ecx
+  00000028: 75 05              jne         0000002F
+  0000002A: B8 00 00 00 00     mov         eax,offset ??_C@_07NBCGADJA@Unknown?$AA@
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+?GetCurrentShaderName@PShaderContext@PRendering@Phyre@@SAPBDXZ (public: static char const * __cdecl Phyre::PRendering::PShaderContext::GetCurrentShaderName(void)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [?s_currentLiveInstance@PShaderContextBase@PRendering@Phyre@@2PAVPShaderContext@23@A]
+  00000005: 85 C0              test        eax,eax
+  00000007: 74 17              je          00000020
+  00000009: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 74 10              je          00000020
+  00000010: 8B 00              mov         eax,dword ptr [eax]
+  00000012: 0F B6 48 08        movzx       ecx,byte ptr [eax+8]
+  00000016: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000019: 83 E1 01           and         ecx,1
+  0000001C: 2B C1              sub         eax,ecx
+  0000001E: 75 05              jne         00000025
+  00000020: B8 00 00 00 00     mov         eax,offset ??_C@_07NBCGADJA@Unknown?$AA@
+  00000025: C3                 ret
+
+?GetSingleton@PSceneWideParameters@PRendering@Phyre@@SAAAV123@XZ (public: static class Phyre::PRendering::PSceneWideParameters & __cdecl Phyre::PRendering::PSceneWideParameters::GetSingleton(void)):
+  00000000: B8 00 00 00 00     mov         eax,offset ?s_singleton@PSceneWideParameters@PRendering@Phyre@@1V123@A
+  00000005: C3                 ret
+
+?c_str@PString@Phyre@@QBEPBDXZ (public: char const * __thiscall Phyre::PString::c_str(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+?canFreeAllocatedBuffer@PString@Phyre@@ABE_NXZ (private: bool __thiscall Phyre::PString::canFreeAllocatedBuffer(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: F7 D0              not         eax
+  00000004: 83 E0 01           and         eax,1
+  00000007: C3                 ret
+
+?findShaderParameterDefinition@PShaderContextBase@PRendering@Phyre@@QBEPBVPShaderParameterDefinition@23@W4PShaderParameterFrequency@23@ABVPShaderParameterCaptureBufferLocation@23@@Z (public: class Phyre::PRendering::PShaderParameterDefinition const * __thiscall Phyre::PRendering::PShaderContextBase::findShaderParameterDefinition(enum Phyre::PRendering::PShaderParameterFrequency,class Phyre::PRendering::PShaderParameterCaptureBufferLocation const &)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 51 08           mov         edx,dword ptr [ecx+8]
+  00000006: 53                 push        ebx
+  00000007: 33 DB              xor         ebx,ebx
+  00000009: 85 D2              test        edx,edx
+  0000000B: 74 54              je          00000061
+  0000000D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000010: 83 F8 03           cmp         eax,3
+  00000013: 77 4C              ja          00000061
+  00000015: FF 24 85 00 00 00  jmp         dword ptr $LN33[eax*4]
+            00
+$LN9:
+  0000001C: BA 00 00 00 00     mov         edx,offset ?s_singleton@PSceneWideParameters@PRendering@Phyre@@1V123@A
+  00000021: EB 0C              jmp         0000002F
+$LN8:
+  00000023: 83 C2 20           add         edx,20h
+  00000026: EB 03              jmp         0000002B
+$LN7:
+  00000028: 83 C2 28           add         edx,28h
+  0000002B: 85 D2              test        edx,edx
+  0000002D: 74 32              je          00000061
+  0000002F: 56                 push        esi
+  00000030: 8B 32              mov         esi,dword ptr [edx]
+  00000032: 8B CB              mov         ecx,ebx
+  00000034: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  0000003A: 76 24              jbe         00000060
+  0000003C: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000003F: 57                 push        edi
+  00000040: 0F B7 38           movzx       edi,word ptr [eax]
+  00000043: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000046: 66 39 78 08        cmp         word ptr [eax+8],di
+  0000004A: 74 11              je          0000005D
+  0000004C: 41                 inc         ecx
+  0000004D: 83 C0 10           add         eax,10h
+  00000050: 3B CE              cmp         ecx,esi
+  00000052: 72 F2              jb          00000046
+  00000054: 5F                 pop         edi
+  00000055: 5E                 pop         esi
+  00000056: 8B C3              mov         eax,ebx
+  00000058: 5B                 pop         ebx
+  00000059: 5D                 pop         ebp
+  0000005A: C2 08 00           ret         8
+  0000005D: 8B D8              mov         ebx,eax
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: 8B C3              mov         eax,ebx
+  00000063: 5B                 pop         ebx
+  00000064: 5D                 pop         ebp
+  00000065: C2 08 00           ret         8
+$LN33:
+  00000068: 00 00              add         byte ptr [eax],al
+  0000006A: 00 00              add         byte ptr [eax],al
+  0000006C: 00 00              add         byte ptr [eax],al
+  0000006E: 00 00              add         byte ptr [eax],al
+  00000070: 00 00              add         byte ptr [eax],al
+  00000072: 00 00              add         byte ptr [eax],al
+  00000074: 00 00              add         byte ptr [eax],al
+  00000076: 00 00              add         byte ptr [eax],al
+
+?getCaptureBufferLocation@PShaderParameterDefinition@PRendering@Phyre@@QBEABVPShaderParameterCaptureBufferLocationSize@23@XZ (public: class Phyre::PRendering::PShaderParameterCaptureBufferLocationSize const & __thiscall Phyre::PRendering::PShaderParameterDefinition::getCaptureBufferLocation(void)const ):
+  00000000: 8D 41 08           lea         eax,[ecx+8]
+  00000003: C3                 ret
+
+?getCount@PArrayBase@Phyre@@QBEIXZ (public: unsigned int __thiscall Phyre::PArrayBase::getCount(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000007: C3                 ret
+
+?getEffect@PEffectVariant@PRendering@Phyre@@QBEABVPEffect@23@XZ (public: class Phyre::PRendering::PEffect const & __thiscall Phyre::PRendering::PEffectVariant::getEffect(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C3                 ret
+
+?getEffectFile@PEffect@PRendering@Phyre@@QBEABVPString@3@XZ (public: class Phyre::PString const & __thiscall Phyre::PRendering::PEffect::getEffectFile(void)const ):
+  00000000: 8D 41 08           lea         eax,[ecx+8]
+  00000003: C3                 ret
+
+?getEffectVariant@PShaderContextBase@PRendering@Phyre@@QBEPBVPEffectVariant@23@XZ (public: class Phyre::PRendering::PEffectVariant const * __thiscall Phyre::PRendering::PShaderContextBase::getEffectVariant(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?getName@PShaderParameterDefinition@PRendering@Phyre@@QBEPBDXZ (public: char const * __thiscall Phyre::PRendering::PShaderParameterDefinition::getName(void)const ):
+  00000000: 0F B6 51 04        movzx       edx,byte ptr [ecx+4]
+  00000004: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000007: 83 E2 01           and         edx,1
+  0000000A: 2B C2              sub         eax,edx
+  0000000C: C3                 ret
+
+?getParameterDefinitions@PSceneWideParameters@PRendering@Phyre@@QBEABV?$PArray@VPShaderParameterDefinition@PRendering@Phyre@@$03@3@XZ (public: class Phyre::PArray<class Phyre::PRendering::PShaderParameterDefinition,4> const & __thiscall Phyre::PRendering::PSceneWideParameters::getParameterDefinitions(void)const ):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+?getStart@PString@Phyre@@ABEPAXXZ (private: void * __thiscall Phyre::PString::getStart(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+  Summary
+
+           6 .bss
+          E0 .debug$F
+          6C .debug$S
+        1267 .drectve
+         269 .rdata
+         18C .text

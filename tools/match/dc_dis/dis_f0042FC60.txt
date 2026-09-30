@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042FC60.obj
+
+File Type: COFF OBJECT
+
+_Engine_AlignedAllocAlign:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 83 C0 04           add         eax,4
+  0000000E: 03 C7              add         eax,edi
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000016: 8B F0              mov         esi,eax
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 85 F6              test        esi,esi
+  0000001D: 74 1D              je          0000003C
+  0000001F: B8 FC FF FF FF     mov         eax,0FFFFFFFCh
+  00000024: 2B C6              sub         eax,esi
+  00000026: 8D 4F FF           lea         ecx,[edi-1]
+  00000029: 23 C1              and         eax,ecx
+  0000002B: 83 C0 04           add         eax,4
+  0000002E: 03 C6              add         eax,esi
+  00000030: 83 C9 FF           or          ecx,0FFFFFFFFh
+  00000033: 2B C8              sub         ecx,eax
+  00000035: 83 E1 03           and         ecx,3
+  00000038: 89 74 01 F9        mov         dword ptr [ecx+eax-7],esi
+  0000003C: 5F                 pop         edi
+  0000003D: 5E                 pop         esi
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

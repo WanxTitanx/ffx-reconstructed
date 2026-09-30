@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F93D0.obj
+
+File Type: COFF OBJECT
+
+@PPolygonRef_SetCullVisibility@8:
+  00000000: 85 D2              test        edx,edx
+  00000002: 74 19              je          0000001D
+  00000004: 56                 push        esi
+  00000005: 8B 71 1C           mov         esi,dword ptr [ecx+1Ch]
+  00000008: 85 F6              test        esi,esi
+  0000000A: 74 10              je          0000001C
+  0000000C: D9 EE              fldz
+  0000000E: D8 1A              fcomp       dword ptr [edx]
+  00000010: DF E0              fnstsw      ax
+  00000012: F6 C4 01           test        ah,1
+  00000015: 75 02              jne         00000019
+  00000017: 33 C9              xor         ecx,ecx
+  00000019: 89 4E 1C           mov         dword ptr [esi+1Ch],ecx
+  0000001C: 5E                 pop         esi
+  0000001D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          1E .text

@@ -1,0 +1,71 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C2AC0.obj
+
+File Type: COFF OBJECT
+
+@PTextureCommonBase_RefCountRelease@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8A 4E 04           mov         cl,byte ptr [esi+4]
+  00000006: 0F B6 D1           movzx       edx,cl
+  00000009: 8B C2              mov         eax,edx
+  0000000B: 84 C9              test        cl,cl
+  0000000D: 74 5A              je          00000069
+  0000000F: 8D 42 FF           lea         eax,[edx-1]
+  00000012: 80 F9 01           cmp         cl,1
+  00000015: 75 25              jne         0000003C
+  00000017: 8B 0E              mov         ecx,dword ptr [esi]
+  00000019: 85 C9              test        ecx,ecx
+  0000001B: 74 6F              je          0000008C
+  0000001D: 39 71 18           cmp         dword ptr [ecx+18h],esi
+  00000020: 75 6A              jne         0000008C
+  00000022: 81 61 14 FF FE FF  and         dword ptr [ecx+14h],0FFFFFEFFh
+            FF
+  00000029: 6A 00              push        0
+  0000002B: 51                 push        ecx
+  0000002C: E8 00 00 00 00     call        _PTextureCommonBase_CompareAndSetRef_SingleUse
+  00000031: 83 C4 08           add         esp,8
+  00000034: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000003A: 5E                 pop         esi
+  0000003B: C3                 ret
+  0000003C: 8D 42 FE           lea         eax,[edx-2]
+  0000003F: 80 F9 02           cmp         cl,2
+  00000042: 75 48              jne         0000008C
+  00000044: 8B 0E              mov         ecx,dword ptr [esi]
+  00000046: 85 C9              test        ecx,ecx
+  00000048: 74 42              je          0000008C
+  0000004A: 39 71 18           cmp         dword ptr [ecx+18h],esi
+  0000004D: 75 3D              jne         0000008C
+  0000004F: 81 61 14 FF FE FF  and         dword ptr [ecx+14h],0FFFFFEFFh
+            FF
+  00000056: 6A 00              push        0
+  00000058: 51                 push        ecx
+  00000059: E8 00 00 00 00     call        _PTextureCommonBase_CompareAndSetRef_DoubleUse
+  0000005E: 83 C4 08           add         esp,8
+  00000061: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000067: 5E                 pop         esi
+  00000068: C3                 ret
+  00000069: 8B 0E              mov         ecx,dword ptr [esi]
+  0000006B: 85 C9              test        ecx,ecx
+  0000006D: 74 1D              je          0000008C
+  0000006F: 39 71 18           cmp         dword ptr [ecx+18h],esi
+  00000072: 75 18              jne         0000008C
+  00000074: 81 61 14 FF FE FF  and         dword ptr [ecx+14h],0FFFFFEFFh
+            FF
+  0000007B: 6A 00              push        0
+  0000007D: 51                 push        ecx
+  0000007E: E8 00 00 00 00     call        _PTextureCommonBase_CompareAndSetRef
+  00000083: 83 C4 08           add         esp,8
+  00000086: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000008C: 5E                 pop         esi
+  0000008D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          8E .text

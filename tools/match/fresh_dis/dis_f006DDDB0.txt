@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DDDB0.obj
+
+File Type: COFF OBJECT
+
+@MenuIconFont_AllocAndInit@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 68 90 00 00 00     push        90h
+  0000000A: 8B F9              mov         edi,ecx
+  0000000C: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000011: 83 C4 04           add         esp,4
+  00000014: 85 C0              test        eax,eax
+  00000016: 74 0B              je          00000023
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _FFX_RenderTarget_InitTransform
+  0000001E: 83 C4 04           add         esp,4
+  00000021: EB 02              jmp         00000025
+  00000023: 33 C0              xor         eax,eax
+  00000025: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000028: 89 07              mov         dword ptr [edi],eax
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 0F 84 80 00 00 00  je          000000B2
+  00000032: E8 00 00 00 00     call        _DebugOverlay_InitShaderAsync
+  00000037: 85 C0              test        eax,eax
+  00000039: 74 11              je          0000004C
+  0000003B: 6A 00              push        0
+  0000003D: FF 37              push        dword ptr [edi]
+  0000003F: E8 00 00 00 00     call        _DebugOverlay_SetDirtyFlag
+  00000044: 83 C4 08           add         esp,8
+  00000047: 5F                 pop         edi
+  00000048: 8B E5              mov         esp,ebp
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+  0000004C: 56                 push        esi
+  0000004D: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  00000052: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  00000057: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  0000005C: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  00000061: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  00000066: 8D 87 D6 00 00 00  lea         eax,[edi+0D6h]
+  0000006C: 50                 push        eax
+  0000006D: 8D 77 06           lea         esi,[edi+6]
+  00000070: 68 80 00 00 00     push        80h
+  00000075: 56                 push        esi
+  00000076: E8 00 00 00 00     call        _sprintf_s
+  0000007B: 56                 push        esi
+  0000007C: FF 37              push        dword ptr [edi]
+  0000007E: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseFromPtr
+  00000083: DD 05 00 00 00 00  fld         qword ptr [__real@4031000000000000]
+  00000089: 83 C4 18           add         esp,18h
+  0000008C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000090: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000096: DD 1C 24           fstp        qword ptr [esp]
+  00000099: FF 37              push        dword ptr [edi]
+  0000009B: E8 00 00 00 00     call        _DebugOverlay_SetScale
+  000000A0: 6A 01              push        1
+  000000A2: FF 37              push        dword ptr [edi]
+  000000A4: E8 00 00 00 00     call        _DebugOverlay_SetDirtyFlag
+  000000A9: 83 C4 1C           add         esp,1Ch
+  000000AC: 5E                 pop         esi
+  000000AD: 5F                 pop         edi
+  000000AE: 8B E5              mov         esp,ebp
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+  000000B2: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  000000B5: 5F                 pop         edi
+  000000B6: 8B E5              mov         esp,ebp
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          12 .rdata
+          BA .text

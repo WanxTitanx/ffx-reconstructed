@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F2890.obj
+
+File Type: COFF OBJECT
+
+@FFX_DebugGrid_FindRow@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B D9              mov         ebx,ecx
+  00000004: 57                 push        edi
+  00000005: 8B BB A0 03 00 00  mov         edi,dword ptr [ebx+3A0h]
+  0000000B: 33 F6              xor         esi,esi
+  0000000D: 85 FF              test        edi,edi
+  0000000F: 7F 06              jg          00000017
+  00000011: 5F                 pop         edi
+  00000012: 5E                 pop         esi
+  00000013: 33 C0              xor         eax,eax
+  00000015: 5B                 pop         ebx
+  00000016: C3                 ret
+  00000017: 8B 8B 68 03 00 00  mov         ecx,dword ptr [ebx+368h]
+  0000001D: 83 C1 06           add         ecx,6
+  00000020: 0F B7 01           movzx       eax,word ptr [ecx]
+  00000023: 3B C2              cmp         eax,edx
+  00000025: 74 10              je          00000037
+  00000027: 46                 inc         esi
+  00000028: 3B F7              cmp         esi,edi
+  0000002A: 7D E5              jge         00000011
+  0000002C: 0F B7 41 20        movzx       eax,word ptr [ecx+20h]
+  00000030: 83 C1 20           add         ecx,20h
+  00000033: 3B C2              cmp         eax,edx
+  00000035: 75 F0              jne         00000027
+  00000037: 8B 8B 68 03 00 00  mov         ecx,dword ptr [ebx+368h]
+  0000003D: 8B 83 78 03 00 00  mov         eax,dword ptr [ebx+378h]
+  00000043: C1 E6 05           shl         esi,5
+  00000046: 03 CE              add         ecx,esi
+  00000048: 3B 41 08           cmp         eax,dword ptr [ecx+8]
+  0000004B: 76 C4              jbe         00000011
+  0000004D: 6A 20              push        20h
+  0000004F: 8D 83 70 03 00 00  lea         eax,[ebx+370h]
+  00000055: 50                 push        eax
+  00000056: 51                 push        ecx
+  00000057: E8 00 00 00 00     call        _qmemcpy
+  0000005C: 8B 83 68 03 00 00  mov         eax,dword ptr [ebx+368h]
+  00000062: 83 C4 0C           add         esp,0Ch
+  00000065: C6 44 06 18 02     mov         byte ptr [esi+eax+18h],2
+  0000006A: 8B 83 68 03 00 00  mov         eax,dword ptr [ebx+368h]
+  00000070: 5F                 pop         edi
+  00000071: 03 C6              add         eax,esi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          76 .text

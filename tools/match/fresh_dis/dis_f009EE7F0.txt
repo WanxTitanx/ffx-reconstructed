@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009EE7F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_9EE7F0@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 8B 01              mov         eax,dword ptr [ecx]
+  00000008: 33 D2              xor         edx,edx
+  0000000A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000F: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000012: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  00000015: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000018: 74 46              je          00000060
+  0000001A: 53                 push        ebx
+  0000001B: 56                 push        esi
+  0000001C: 57                 push        edi
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000023: 33 F6              xor         esi,esi
+  00000025: 8B 1C 90           mov         ebx,dword ptr [eax+edx*4]
+  00000028: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000002B: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000030: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000033: 74 1F              je          00000054
+  00000035: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  00000038: FF 34 B0           push        dword ptr [eax+esi*4]
+  0000003B: 8D 3C B0           lea         edi,[eax+esi*4]
+  0000003E: E8 00 00 00 00     call        _Object_DeepCopyWithRttiCheck
+  00000043: 46                 inc         esi
+  00000044: 83 C4 04           add         esp,4
+  00000047: 89 07              mov         dword ptr [edi],eax
+  00000049: 3B 75 F8           cmp         esi,dword ptr [ebp-8]
+  0000004C: 72 E7              jb          00000035
+  0000004E: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000051: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00000054: 42                 inc         edx
+  00000055: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000058: 3B 55 F0           cmp         edx,dword ptr [ebp-10h]
+  0000005B: 72 C3              jb          00000020
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: 5B                 pop         ebx
+  00000060: 8B E5              mov         esp,ebp
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          64 .text

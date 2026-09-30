@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006984B0.obj
+
+File Type: COFF OBJECT
+
+@FFX_PostProcess_Loose_6984B0@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 80 BE 80 01 00 00  cmp         byte ptr [esi+180h],0
+            00
+  0000000D: 74 57              je          00000066
+  0000000F: 6A 00              push        0
+  00000011: FF B6 7C 01 00 00  push        dword ptr [esi+17Ch]
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _FFX_PostProcess_DebugFormatFloatParam
+  0000001D: 8B 86 7C 01 00 00  mov         eax,dword ptr [esi+17Ch]
+  00000023: 83 C4 0C           add         esp,0Ch
+  00000026: 84 DB              test        bl,bl
+  00000028: 74 1E              je          00000048
+  0000002A: 40                 inc         eax
+  0000002B: 99                 cdq
+  0000002C: B9 16 00 00 00     mov         ecx,16h
+  00000031: F7 F9              idiv        eax,ecx
+  00000033: 6A 01              push        1
+  00000035: 52                 push        edx
+  00000036: 56                 push        esi
+  00000037: 89 96 7C 01 00 00  mov         dword ptr [esi+17Ch],edx
+  0000003D: E8 00 00 00 00     call        _FFX_PostProcess_DebugFormatFloatParam
+  00000042: 83 C4 0C           add         esp,0Ch
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: C3                 ret
+  00000048: 85 C0              test        eax,eax
+  0000004A: 74 03              je          0000004F
+  0000004C: 48                 dec         eax
+  0000004D: EB 05              jmp         00000054
+  0000004F: B8 15 00 00 00     mov         eax,15h
+  00000054: 6A 01              push        1
+  00000056: 50                 push        eax
+  00000057: 56                 push        esi
+  00000058: 89 86 7C 01 00 00  mov         dword ptr [esi+17Ch],eax
+  0000005E: E8 00 00 00 00     call        _FFX_PostProcess_DebugFormatFloatParam
+  00000063: 83 C4 0C           add         esp,0Ch
+  00000066: 5E                 pop         esi
+  00000067: 5B                 pop         ebx
+  00000068: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          69 .text

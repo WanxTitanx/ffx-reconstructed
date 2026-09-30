@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00920740.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_ReleaseAllEffects:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 39 77 0C           cmp         dword ptr [edi+0Ch],esi
+  0000000D: 76 1A              jbe         00000029
+  0000000F: 90                 nop
+  00000010: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000013: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000016: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  00000019: 85 C9              test        ecx,ecx
+  0000001B: 74 06              je          00000023
+  0000001D: 50                 push        eax
+  0000001E: FF D1              call        ecx
+  00000020: 83 C4 04           add         esp,4
+  00000023: 46                 inc         esi
+  00000024: 3B 77 0C           cmp         esi,dword ptr [edi+0Ch]
+  00000027: 72 E7              jb          00000010
+  00000029: 57                 push        edi
+  0000002A: E8 00 00 00 00     call        _FFX_Magic_SubmitGeometryStride32_w
+  0000002F: 83 C4 04           add         esp,4
+  00000032: 5F                 pop         edi
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          36 .text

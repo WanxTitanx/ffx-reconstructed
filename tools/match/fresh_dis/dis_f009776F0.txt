@@ -1,0 +1,110 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009776F0.obj
+
+File Type: COFF OBJECT
+
+@btAxisSweep3UI_queryAABB@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 8B 4F 78           mov         ecx,dword ptr [edi+78h]
+  0000000A: 85 C9              test        ecx,ecx
+  0000000C: 74 15              je          00000023
+  0000000E: FF 75 FC           push        dword ptr [ebp-4]
+  00000011: 8B 01              mov         eax,dword ptr [ecx]
+  00000013: FF 75 FC           push        dword ptr [ebp-4]
+  00000016: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000019: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  0000001C: FF D0              call        eax
+  0000001E: 5F                 pop         edi
+  0000001F: 8B E5              mov         esp,ebp
+  00000021: 5D                 pop         ebp
+  00000022: C3                 ret
+  00000023: 8B 47 40           mov         eax,dword ptr [edi+40h]
+  00000026: 56                 push        esi
+  00000027: BE 01 00 00 00     mov         esi,1
+  0000002C: 8D 04 45 01 00 00  lea         eax,[eax*2+00000001h]
+            00
+  00000033: 3B C6              cmp         eax,esi
+  00000035: 0F 86 A8 00 00 00  jbe         000000E3
+  0000003B: 53                 push        ebx
+  0000003C: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000003F: 90                 nop
+  00000040: 8B 47 50           mov         eax,dword ptr [edi+50h]
+  00000043: F6 04 F0 01        test        byte ptr [eax+esi*8],1
+  00000047: 0F 84 82 00 00 00  je          000000CF
+  0000004D: 8B 44 F0 04        mov         eax,dword ptr [eax+esi*8+4]
+  00000051: B1 01              mov         cl,1
+  00000053: 8D 14 80           lea         edx,[eax+eax*4]
+  00000056: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000059: C1 E2 04           shl         edx,4
+  0000005C: 03 57 48           add         edx,dword ptr [edi+48h]
+  0000005F: D9 00              fld         dword ptr [eax]
+  00000061: D9 42 20           fld         dword ptr [edx+20h]
+  00000064: DE D9              fcompp
+  00000066: DF E0              fnstsw      ax
+  00000068: F6 C4 05           test        ah,5
+  0000006B: 7B 0E              jnp         0000007B
+  0000006D: D9 42 10           fld         dword ptr [edx+10h]
+  00000070: D9 03              fld         dword ptr [ebx]
+  00000072: DE D9              fcompp
+  00000074: DF E0              fnstsw      ax
+  00000076: F6 C4 05           test        ah,5
+  00000079: 7A 02              jp          0000007D
+  0000007B: 32 C9              xor         cl,cl
+  0000007D: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000080: D9 40 08           fld         dword ptr [eax+8]
+  00000083: D9 42 28           fld         dword ptr [edx+28h]
+  00000086: DE D9              fcompp
+  00000088: DF E0              fnstsw      ax
+  0000008A: F6 C4 05           test        ah,5
+  0000008D: 7B 0F              jnp         0000009E
+  0000008F: D9 42 18           fld         dword ptr [edx+18h]
+  00000092: D9 43 08           fld         dword ptr [ebx+8]
+  00000095: DE D9              fcompp
+  00000097: DF E0              fnstsw      ax
+  00000099: F6 C4 05           test        ah,5
+  0000009C: 7A 02              jp          000000A0
+  0000009E: 32 C9              xor         cl,cl
+  000000A0: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000A3: D9 40 04           fld         dword ptr [eax+4]
+  000000A6: D9 42 24           fld         dword ptr [edx+24h]
+  000000A9: DE D9              fcompp
+  000000AB: DF E0              fnstsw      ax
+  000000AD: F6 C4 01           test        ah,1
+  000000B0: 75 1D              jne         000000CF
+  000000B2: D9 42 14           fld         dword ptr [edx+14h]
+  000000B5: D9 43 04           fld         dword ptr [ebx+4]
+  000000B8: DE D9              fcompp
+  000000BA: DF E0              fnstsw      ax
+  000000BC: F6 C4 01           test        ah,1
+  000000BF: 75 0E              jne         000000CF
+  000000C1: 84 C9              test        cl,cl
+  000000C3: 74 0A              je          000000CF
+  000000C5: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000C8: 8B 01              mov         eax,dword ptr [ecx]
+  000000CA: 8B 40 04           mov         eax,dword ptr [eax+4]
+  000000CD: FF D0              call        eax
+  000000CF: 8B 47 40           mov         eax,dword ptr [edi+40h]
+  000000D2: 46                 inc         esi
+  000000D3: 8D 04 45 01 00 00  lea         eax,[eax*2+00000001h]
+            00
+  000000DA: 3B F0              cmp         esi,eax
+  000000DC: 0F 82 5E FF FF FF  jb          00000040
+  000000E2: 5B                 pop         ebx
+  000000E3: 5E                 pop         esi
+  000000E4: 5F                 pop         edi
+  000000E5: 8B E5              mov         esp,ebp
+  000000E7: 5D                 pop         ebp
+  000000E8: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          E9 .text

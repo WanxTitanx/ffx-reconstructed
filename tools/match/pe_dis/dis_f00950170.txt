@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00950170.obj
+
+File Type: COFF OBJECT
+
+_LuaGC_MarkTableDefault:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: BA 01 00 00 00     mov         edx,1
+  00000011: 8A 4F 07           mov         cl,byte ptr [edi+7]
+  00000014: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000017: D3 E2              shl         edx,cl
+  00000019: 33 F6              xor         esi,esi
+  0000001B: 8D 0C 92           lea         ecx,[edx+edx*4]
+  0000001E: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  00000021: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  00000024: 39 77 1C           cmp         dword ptr [edi+1Ch],esi
+  00000027: 76 2C              jbe         00000055
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000030: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000033: F6 44 F0 04 40     test        byte ptr [eax+esi*8+4],40h
+  00000038: 8D 0C F0           lea         ecx,[eax+esi*8]
+  0000003B: 74 12              je          0000004F
+  0000003D: 8B 01              mov         eax,dword ptr [ecx]
+  0000003F: F6 40 05 03        test        byte ptr [eax+5],3
+  00000043: 74 0A              je          0000004F
+  00000045: 50                 push        eax
+  00000046: 53                 push        ebx
+  00000047: E8 00 00 00 00     call        _LuaGC_Mark
+  0000004C: 83 C4 08           add         esp,8
+  0000004F: 46                 inc         esi
+  00000050: 3B 77 1C           cmp         esi,dword ptr [edi+1Ch]
+  00000053: 72 DB              jb          00000030
+  00000055: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  00000058: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000005B: 3B F7              cmp         esi,edi
+  0000005D: 73 57              jae         000000B6
+  0000005F: 90                 nop
+  00000060: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000064: 74 33              je          00000099
+  00000066: F6 46 0C 40        test        byte ptr [esi+0Ch],40h
+  0000006A: 74 13              je          0000007F
+  0000006C: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000006F: F6 40 05 03        test        byte ptr [eax+5],3
+  00000073: 74 0A              je          0000007F
+  00000075: 50                 push        eax
+  00000076: 53                 push        ebx
+  00000077: E8 00 00 00 00     call        _LuaGC_Mark
+  0000007C: 83 C4 08           add         esp,8
+  0000007F: F6 46 04 40        test        byte ptr [esi+4],40h
+  00000083: 74 2A              je          000000AF
+  00000085: 8B 06              mov         eax,dword ptr [esi]
+  00000087: F6 40 05 03        test        byte ptr [eax+5],3
+  0000008B: 74 22              je          000000AF
+  0000008D: 50                 push        eax
+  0000008E: 53                 push        ebx
+  0000008F: E8 00 00 00 00     call        _LuaGC_Mark
+  00000094: 83 C4 08           add         esp,8
+  00000097: EB 16              jmp         000000AF
+  00000099: F6 46 0C 40        test        byte ptr [esi+0Ch],40h
+  0000009D: 74 10              je          000000AF
+  0000009F: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000A2: F6 40 05 03        test        byte ptr [eax+5],3
+  000000A6: 74 07              je          000000AF
+  000000A8: C7 46 0C 0B 00 00  mov         dword ptr [esi+0Ch],0Bh
+            00
+  000000AF: 83 C6 14           add         esi,14h
+  000000B2: 3B F7              cmp         esi,edi
+  000000B4: 72 AA              jb          00000060
+  000000B6: 5F                 pop         edi
+  000000B7: 5E                 pop         esi
+  000000B8: 5B                 pop         ebx
+  000000B9: 5D                 pop         ebp
+  000000BA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          BB .text

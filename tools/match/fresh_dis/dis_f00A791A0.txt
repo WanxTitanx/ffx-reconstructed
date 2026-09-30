@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A791A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_ChEvent_queryMotionStateNot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  0000000B: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000E: 8B 0E              mov         ecx,dword ptr [esi]
+  00000010: 50                 push        eax
+  00000011: 51                 push        ecx
+  00000012: 75 10              jne         00000024
+  00000014: E8 00 00 00 00     call        _FFX_Chr_QueryMotionResourceState
+  00000019: 83 C4 08           add         esp,8
+  0000001C: F7 D8              neg         eax
+  0000001E: 1B C0              sbb         eax,eax
+  00000020: 40                 inc         eax
+  00000021: 5E                 pop         esi
+  00000022: 5D                 pop         ebp
+  00000023: C3                 ret
+  00000024: E8 00 00 00 00     call        _FFX_Chr_QueryMotionResourceState
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000002F: B8 05 00 00 00     mov         eax,5
+  00000034: 5E                 pop         esi
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

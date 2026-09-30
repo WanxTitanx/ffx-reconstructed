@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0084ABD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_GarbageCollectElements:
+  00000000: 56                 push        esi
+  00000001: 8B 35 D0 DB C0 04  mov         esi,dword ptr ds:[4C0DBD0h]
+  00000007: 85 F6              test        esi,esi
+  00000009: 0F 84 B1 00 00 00  je          000000C0
+  0000000F: 53                 push        ebx
+  00000010: BB D0 DB C0 04     mov         ebx,4C0DBD0h
+  00000015: 57                 push        edi
+  00000016: F6 86 88 00 00 00  test        byte ptr [esi+88h],4
+            04
+  0000001D: 75 20              jne         0000003F
+  0000001F: 90                 nop
+  00000020: 8B CE              mov         ecx,esi
+  00000022: 8B 36              mov         esi,dword ptr [esi]
+  00000024: 85 F6              test        esi,esi
+  00000026: 0F 84 92 00 00 00  je          000000BE
+  0000002C: F6 86 88 00 00 00  test        byte ptr [esi+88h],4
+            04
+  00000033: 74 EB              je          00000020
+  00000035: 85 C9              test        ecx,ecx
+  00000037: 74 06              je          0000003F
+  00000039: 8B 06              mov         eax,dword ptr [esi]
+  0000003B: 89 01              mov         dword ptr [ecx],eax
+  0000003D: EB 04              jmp         00000043
+  0000003F: 8B 06              mov         eax,dword ptr [esi]
+  00000041: 89 03              mov         dword ptr [ebx],eax
+  00000043: 83 BE 94 00 00 00  cmp         dword ptr [esi+94h],0
+            00
+  0000004A: 74 4D              je          00000099
+  0000004C: 33 FF              xor         edi,edi
+  0000004E: 39 BE 90 00 00 00  cmp         dword ptr [esi+90h],edi
+  00000054: 7E 35              jle         0000008B
+  00000056: 33 DB              xor         ebx,ebx
+  00000058: EB 06              jmp         00000060
+  0000005A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000060: 8B 86 94 00 00 00  mov         eax,dword ptr [esi+94h]
+  00000066: 66 83 7C 18 26 00  cmp         word ptr [eax+ebx+26h],0
+  0000006C: 74 0C              je          0000007A
+  0000006E: FF 74 18 28        push        dword ptr [eax+ebx+28h]
+  00000072: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000077: 83 C4 04           add         esp,4
+  0000007A: 47                 inc         edi
+  0000007B: 83 C3 44           add         ebx,44h
+  0000007E: 3B BE 90 00 00 00  cmp         edi,dword ptr [esi+90h]
+  00000084: 72 DA              jb          00000060
+  00000086: BB D0 DB C0 04     mov         ebx,4C0DBD0h
+  0000008B: FF B6 94 00 00 00  push        dword ptr [esi+94h]
+  00000091: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000096: 83 C4 04           add         esp,4
+  00000099: 66 83 7E 5A 00     cmp         word ptr [esi+5Ah],0
+  0000009E: 74 0B              je          000000AB
+  000000A0: FF 76 5C           push        dword ptr [esi+5Ch]
+  000000A3: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000A8: 83 C4 04           add         esp,4
+  000000AB: 56                 push        esi
+  000000AC: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000B1: 8B 33              mov         esi,dword ptr [ebx]
+  000000B3: 83 C4 04           add         esp,4
+  000000B6: 85 F6              test        esi,esi
+  000000B8: 0F 85 58 FF FF FF  jne         00000016
+  000000BE: 5F                 pop         edi
+  000000BF: 5B                 pop         ebx
+  000000C0: 5E                 pop         esi
+  000000C1: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          C2 .text

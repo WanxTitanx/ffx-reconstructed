@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C4350.obj
+
+File Type: COFF OBJECT
+
+@PTexture_CompareAndUpdateMax@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 14 02        test        byte ptr [esi+14h],2
+  00000007: 74 12              je          0000001B
+  00000009: 6A 00              push        0
+  0000000B: FF 76 20           push        dword ptr [esi+20h]
+  0000000E: FF 76 1C           push        dword ptr [esi+1Ch]
+  00000011: E8 00 00 00 00     call        _PTexture_GetMaxOf3_FindHighestBit
+  00000016: 83 C4 0C           add         esp,0Ch
+  00000019: EB 03              jmp         0000001E
+  0000001B: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000001E: 3B 46 10           cmp         eax,dword ptr [esi+10h]
+  00000021: 74 03              je          00000026
+  00000023: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000026: 5E                 pop         esi
+  00000027: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          28 .text

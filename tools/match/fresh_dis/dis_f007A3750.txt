@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A3750.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldCmd_PlayMotionForceVisible:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: FF 75 08           push        dword ptr [ebp+8]
+  00000008: E8 00 00 00 00     call        _FFX_Field_GetScriptSelfActorIndexPtr
+  0000000D: 0F B6 00           movzx       eax,byte ptr [eax]
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        _FFX_Battle_AccessCurrentActorData
+  00000016: 6A 00              push        0
+  00000018: FF 75 10           push        dword ptr [ebp+10h]
+  0000001B: 8B F8              mov         edi,eax
+  0000001D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000020: 0F BE 5F 38        movsx       ebx,byte ptr [edi+38h]
+  00000024: FF 75 08           push        dword ptr [ebp+8]
+  00000027: C6 47 38 01        mov         byte ptr [edi+38h],1
+  0000002B: E8 00 00 00 00     call        _FFX_Field_ActorPlayMotionFromContext
+  00000030: 83 C4 18           add         esp,18h
+  00000033: 80 BF 34 04 00 00  cmp         byte ptr [edi+434h],0
+            00
+  0000003A: 88 5F 38           mov         byte ptr [edi+38h],bl
+  0000003D: 8B C3              mov         eax,ebx
+  0000003F: 74 07              je          00000048
+  00000041: C6 87 F3 03 00 00  mov         byte ptr [edi+3F3h],1
+            01
+  00000048: 5F                 pop         edi
+  00000049: 5B                 pop         ebx
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

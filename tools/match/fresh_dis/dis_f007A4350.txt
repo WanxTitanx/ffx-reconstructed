@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A4350.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Battle_BtlSetShadowHeight_INTRET:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: FF 75 08           push        dword ptr [ebp+8]
+  00000008: E8 00 00 00 00     call        _FFX_Field_GetScriptSelfActorIndexPtr
+  0000000D: FF 75 10           push        dword ptr [ebp+10h]
+  00000010: 0F B6 38           movzx       edi,byte ptr [eax]
+  00000013: FF 75 08           push        dword ptr [ebp+8]
+  00000016: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000001B: 83 C4 0C           add         esp,0Ch
+  0000001E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000021: DB 45 FC           fild        dword ptr [ebp-4]
+  00000024: 85 C0              test        eax,eax
+  00000026: 79 06              jns         0000002E
+  00000028: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000031: 81 FF FF 00 00 00  cmp         edi,0FFh
+  00000037: 74 1F              je          00000058
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _FFX_Battle_GetActorModelInstance
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 85 C0              test        eax,eax
+  00000044: 74 12              je          00000058
+  00000046: D9 45 FC           fld         dword ptr [ebp-4]
+  00000049: 83 EC 08           sub         esp,8
+  0000004C: DD 1C 24           fstp        qword ptr [esp]
+  0000004F: 50                 push        eax
+  00000050: E8 00 00 00 00     call        _FFX_Chr_SetShadowHeight
+  00000055: 83 C4 0C           add         esp,0Ch
+  00000058: 33 C0              xor         eax,eax
+  0000005A: 5F                 pop         edi
+  0000005B: 8B E5              mov         esp,ebp
+  0000005D: 5D                 pop         ebp
+  0000005E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          5F .text

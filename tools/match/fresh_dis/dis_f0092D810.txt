@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092D810.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_NormalizeAngle2PI:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D9 C0              fld         st(0)
+  00000008: D9 EE              fldz
+  0000000A: D8 DA              fcomp       st(2)
+  0000000C: DF E0              fnstsw      ax
+  0000000E: DD D9              fstp        st(1)
+  00000010: F6 C4 41           test        ah,41h
+  00000013: 7A 20              jp          00000035
+  00000015: DD 05 00 00 00 00  fld         qword ptr [__real@401921fb5fffffff]
+  0000001B: D8 D1              fcom        st(1)
+  0000001D: DF E0              fnstsw      ax
+  0000001F: F6 C4 05           test        ah,5
+  00000022: 7A 0D              jp          00000031
+  00000024: E8 00 00 00 00     call        __CIfmod
+  00000029: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000002C: D9 45 08           fld         dword ptr [ebp+8]
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: DD D8              fstp        st(0)
+  00000033: 5D                 pop         ebp
+  00000034: C3                 ret
+  00000035: D9 E0              fchs
+  00000037: DD 05 00 00 00 00  fld         qword ptr [__real@401921fb5fffffff]
+  0000003D: E8 00 00 00 00     call        __CIfmod
+  00000042: DC 2D 00 00 00 00  fsubr       qword ptr [__real@401921fb5fffffff]
+  00000048: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000004B: D9 45 08           fld         dword ptr [ebp+8]
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          50 .text

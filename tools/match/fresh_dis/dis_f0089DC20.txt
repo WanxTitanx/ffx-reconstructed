@@ -1,0 +1,120 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0089DC20.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_Loose_89DC20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000009: 53                 push        ebx
+  0000000A: 98                 cwde
+  0000000B: 56                 push        esi
+  0000000C: 57                 push        edi
+  0000000D: 0F BF 7D F4        movsx       edi,word ptr [ebp-0Ch]
+  00000011: 8B D8              mov         ebx,eax
+  00000013: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000001A: E8 00 00 00 00     call        _FFX_Menu_PoolAllocWrapper
+  0000001F: E8 00 00 00 00     call        _FFX_FieldRender_GetGameStateFlag_12FBB63
+  00000024: 68 A0 01 00 00     push        1A0h
+  00000029: 83 F8 04           cmp         eax,4
+  0000002C: 75 07              jne         00000035
+  0000002E: 68 7F 02 00 00     push        27Fh
+  00000033: EB 05              jmp         0000003A
+  00000035: 68 00 02 00 00     push        200h
+  0000003A: 6A 00              push        0
+  0000003C: 6A 00              push        0
+  0000003E: E8 00 00 00 00     call        _FFX_Menu2D_SetClipRect4
+  00000043: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000046: 83 C4 10           add         esp,10h
+  00000049: 8A 0E              mov         cl,byte ptr [esi]
+  0000004B: 84 C9              test        cl,cl
+  0000004D: 0F 84 C3 00 00 00  je          00000116
+  00000053: 80 F9 08           cmp         cl,8
+  00000056: 75 3C              jne         00000094
+  00000058: 0F BE 4E 01        movsx       ecx,byte ptr [esi+1]
+  0000005C: 0F BE 46 02        movsx       eax,byte ptr [esi+2]
+  00000060: 66 6B C9 64        imul        cx,cx,64h
+  00000064: 66 03 C8           add         cx,ax
+  00000067: 0F B7 C1           movzx       eax,cx
+  0000006A: 0F BE 4E 03        movsx       ecx,byte ptr [esi+3]
+  0000006E: 66 6B C9 64        imul        cx,cx,64h
+  00000072: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000075: 0F BE 46 04        movsx       eax,byte ptr [esi+4]
+  00000079: 66 03 C8           add         cx,ax
+  0000007C: 0F B7 C1           movzx       eax,cx
+  0000007F: 0F BF F8           movsx       edi,ax
+  00000082: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000085: 98                 cwde
+  00000086: 83 C6 05           add         esi,5
+  00000089: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000090: 8B D8              mov         ebx,eax
+  00000092: EB 78              jmp         0000010C
+  00000094: 80 F9 09           cmp         cl,9
+  00000097: 74 46              je          000000DF
+  00000099: 80 F9 0A           cmp         cl,0Ah
+  0000009C: 74 2E              je          000000CC
+  0000009E: 80 F9 20           cmp         cl,20h
+  000000A1: 7C 23              jl          000000C6
+  000000A3: 80 F9 7F           cmp         cl,7Fh
+  000000A6: 74 1E              je          000000C6
+  000000A8: 8D 41 9F           lea         eax,[ecx-61h]
+  000000AB: 3C 19              cmp         al,19h
+  000000AD: 77 03              ja          000000B2
+  000000AF: 80 C1 E0           add         cl,0E0h
+  000000B2: 57                 push        edi
+  000000B3: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000000B6: 53                 push        ebx
+  000000B7: 50                 push        eax
+  000000B8: 88 4D F4           mov         byte ptr [ebp-0Ch],cl
+  000000BB: E8 00 00 00 00     call        _FFX_Menu2D_DrawQuad_SolidWhiteAlpha
+  000000C0: 83 C4 0C           add         esp,0Ch
+  000000C3: 83 C3 0C           add         ebx,0Ch
+  000000C6: 46                 inc         esi
+  000000C7: FF 45 FC           inc         dword ptr [ebp-4]
+  000000CA: EB 40              jmp         0000010C
+  000000CC: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000CF: 98                 cwde
+  000000D0: 83 C7 0E           add         edi,0Eh
+  000000D3: 46                 inc         esi
+  000000D4: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  000000DB: 8B D8              mov         ebx,eax
+  000000DD: EB 2D              jmp         0000010C
+  000000DF: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000E2: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000000E5: 0F BF C1           movsx       eax,cx
+  000000E8: 83 C0 04           add         eax,4
+  000000EB: C1 F8 1F           sar         eax,1Fh
+  000000EE: 83 E0 03           and         eax,3
+  000000F1: 83 C1 04           add         ecx,4
+  000000F4: 03 C1              add         eax,ecx
+  000000F6: 25 FC FF 00 00     and         eax,0FFFCh
+  000000FB: 0F B7 C8           movzx       ecx,ax
+  000000FE: 98                 cwde
+  000000FF: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000102: 0F BF CA           movsx       ecx,dx
+  00000105: 8D 04 40           lea         eax,[eax+eax*2]
+  00000108: 46                 inc         esi
+  00000109: 8D 1C 81           lea         ebx,[ecx+eax*4]
+  0000010C: 8A 0E              mov         cl,byte ptr [esi]
+  0000010E: 84 C9              test        cl,cl
+  00000110: 0F 85 3D FF FF FF  jne         00000053
+  00000116: 5F                 pop         edi
+  00000117: 5E                 pop         esi
+  00000118: 5B                 pop         ebx
+  00000119: 8B E5              mov         esp,ebp
+  0000011B: 5D                 pop         ebp
+  0000011C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         11D .text

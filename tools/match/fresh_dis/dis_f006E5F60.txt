@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E5F60.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Loose_6E5F60:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000007: 56                 push        esi
+  00000008: 3D 00 00 00 00     cmp         eax,offset _FFX_Phyre_Global_C34FF4
+  0000000D: 74 14              je          00000023
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 10              je          00000023
+  00000013: 8B F0              mov         esi,eax
+  00000015: 8B 00              mov         eax,dword ptr [eax]
+  00000017: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001A: 3D 00 00 00 00     cmp         eax,offset _FFX_Phyre_Global_C34FF4
+  0000001F: 75 F2              jne         00000013
+  00000021: EB 02              jmp         00000025
+  00000023: 8B F0              mov         esi,eax
+  00000025: 81 FE 00 00 00 00  cmp         esi,offset _FFX_Phyre_Global_C34FF4
+  0000002B: 74 2A              je          00000057
+  0000002D: 57                 push        edi
+  0000002E: 56                 push        esi
+  0000002F: 68 00 00 00 00     push        offset _FFX_Phyre_Global_C34FF4
+  00000034: E8 00 00 00 00     call        _Phyre_Tree_GetPredecessor
+  00000039: 83 C4 08           add         esp,8
+  0000003C: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000003F: 8B F8              mov         edi,eax
+  00000041: E8 00 00 00 00     call        _FFX_BtlUI_HudIconCondition
+  00000046: 83 C4 04           add         esp,4
+  00000049: 8B F7              mov         esi,edi
+  0000004B: 81 FF 00 00 00 00  cmp         edi,offset _FFX_Phyre_Global_C34FF4
+  00000051: 74 03              je          00000056
+  00000053: 57                 push        edi
+  00000054: EB D9              jmp         0000002F
+  00000056: 5F                 pop         edi
+  00000057: 68 00 00 00 00     push        offset _FFX_Phyre_Global_C34FF4
+  0000005C: E8 00 00 00 00     call        _PTree_Node_InitSelfRef
+  00000061: FF 35 00 00 00 00  push        dword ptr [_FFX_Phyre_Global_C3500C]
+  00000067: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll_B
+  0000006C: 68 00 00 00 00     push        offset _FFX_Phyre_Global_C34FC4
+  00000071: E8 00 00 00 00     call        _PTree_Node_InitSelfRef
+  00000076: FF 35 00 00 00 00  push        dword ptr [_FFX_Phyre_Global_C34FDC]
+  0000007C: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll_B
+  00000081: 83 C4 10           add         esp,10h
+  00000084: 5E                 pop         esi
+  00000085: 8B E5              mov         esp,ebp
+  00000087: 5D                 pop         ebp
+  00000088: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          89 .text

@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006527B0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_WString_GrowBuffer@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B F2              mov         esi,edx
+  00000006: 8B 0F              mov         ecx,dword ptr [edi]
+  00000008: 8B 41 F4           mov         eax,dword ptr [ecx-0Ch]
+  0000000B: 3B C6              cmp         eax,esi
+  0000000D: 7E 02              jle         00000011
+  0000000F: 8B F0              mov         esi,eax
+  00000011: 83 79 FC 01        cmp         dword ptr [ecx-4],1
+  00000015: 7E 0D              jle         00000024
+  00000017: 56                 push        esi
+  00000018: 57                 push        edi
+  00000019: E8 00 00 00 00     call        _Phyre_WString_AssignCopyOnWrite
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 5F                 pop         edi
+  00000022: 5E                 pop         esi
+  00000023: C3                 ret
+  00000024: 8B 49 F8           mov         ecx,dword ptr [ecx-8]
+  00000027: 3B CE              cmp         ecx,esi
+  00000029: 7D 29              jge         00000054
+  0000002B: 81 F9 00 00 00 40  cmp         ecx,40000000h
+  00000031: 7F 0B              jg          0000003E
+  00000033: 8B C1              mov         eax,ecx
+  00000035: 99                 cdq
+  00000036: 2B C2              sub         eax,edx
+  00000038: D1 F8              sar         eax,1
+  0000003A: 03 C1              add         eax,ecx
+  0000003C: EB 06              jmp         00000044
+  0000003E: 8D 81 00 00 10 00  lea         eax,[ecx+100000h]
+  00000044: 3B C6              cmp         eax,esi
+  00000046: 7D 02              jge         0000004A
+  00000048: 8B C6              mov         eax,esi
+  0000004A: 50                 push        eax
+  0000004B: 57                 push        edi
+  0000004C: E8 00 00 00 00     call        _Phyre_WString_BufferRealloc
+  00000051: 83 C4 08           add         esp,8
+  00000054: 5F                 pop         edi
+  00000055: 5E                 pop         esi
+  00000056: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          57 .text

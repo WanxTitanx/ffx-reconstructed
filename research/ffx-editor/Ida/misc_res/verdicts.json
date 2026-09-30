@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-16",
+  "lane": "Jarvis-DEVIN",
+  "idb": "C:\\IDA_DB\\ffxoficial.exe.i64",
+  "items": [
+    {"id": "unk_112C9CE", "verdict": "CONFIRMED",
+     "result": "g_BattleIsUnderwater byte flag; writer 0x783F99 from g_EncounterDefSectionPtr[3]; 25 xrefs incl. _water motion paths, shout suppression, +half-height Y"},
+    {"id": "ebp_attr_bits", "verdict": "PARTIAL/SUSPECTED",
+     "result": "live reads reduce attr to boolean (non-zero=pending string/choice); UI bits 0x40/0x08/0x02 are a different event-struct byte; per-bit meaning unprovable from shipped image"},
+    {"id": "ppp_bandb_consumer", "verdict": "CONFIRMED fetched-but-unused",
+     "result": "591/591 magic_*.dll read ctx[0xE64]=slot922 at InitMagicPRX and store to per-DLL global; 590/591 never deref again; 4 extra-hit DLLs are unrelated struct offsets"},
+    {"id": "ctx922_neighbors", "verdict": "CONFIRMED",
+     "result": "mapped slots 889-933; 922 sits mid-run of generic host services; work/_misc_res/ctx_table_slot922_neighbors.md"},
+    {"id": "EbpMessageAdrs_second_consumer", "verdict": "CONFIRMED none",
+     "result": "find_bytes 8 hits=1W+7R, all in-register derefs, no store-onward; stale-pointer hazard confirmed, inert on shipped data"}
+  ]
+}

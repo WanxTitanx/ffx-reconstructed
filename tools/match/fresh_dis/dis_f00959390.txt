@@ -1,0 +1,119 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00959390.obj
+
+File Type: COFF OBJECT
+
+_LuaH_mainposition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000000B: 83 E0 3F           and         eax,3Fh
+  0000000E: 48                 dec         eax
+  0000000F: 83 F8 13           cmp         eax,13h
+  00000012: 77 7E              ja          $LN1
+  00000014: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN11[eax]
+            00
+  0000001B: FF 24 85 00 00 00  jmp         dword ptr $LN15[eax*4]
+            00
+$LN6:
+  00000022: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000025: BA 01 00 00 00     mov         edx,1
+  0000002A: 8A 48 07           mov         cl,byte ptr [eax+7]
+  0000002D: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  00000030: D3 E2              shl         edx,cl
+  00000032: 5E                 pop         esi
+  00000033: 4A                 dec         edx
+  00000034: 23 13              and         edx,dword ptr [ebx]
+  00000036: 5B                 pop         ebx
+  00000037: 8D 0C 92           lea         ecx,[edx+edx*4]
+  0000003A: 8D 04 88           lea         eax,[eax+ecx*4]
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+$LN5:
+  0000003F: D9 45 08           fld         dword ptr [ebp+8]
+  00000042: 83 EC 08           sub         esp,8
+  00000045: DD 1C 24           fstp        qword ptr [esp]
+  00000048: E8 00 00 00 00     call        _LuaH_hashfloat
+  0000004D: 83 C4 08           add         esp,8
+  00000050: 5E                 pop         esi
+  00000051: 5B                 pop         ebx
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+$LN3:
+  00000054: 8B 33              mov         esi,dword ptr [ebx]
+  00000056: 80 7E 06 00        cmp         byte ptr [esi+6],0
+  0000005A: 75 16              jne         $LABEL_5$16
+  0000005C: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000005F: 8D 46 10           lea         eax,[esi+10h]
+  00000062: 50                 push        eax
+  00000063: E8 00 00 00 00     call        _LuaS_hash
+  00000068: 83 C4 08           add         esp,8
+  0000006B: 89 46 08           mov         dword ptr [esi+8],eax
+  0000006E: C6 46 06 01        mov         byte ptr [esi+6],1
+$LABEL_5$16:
+  00000072: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000075: 8B 03              mov         eax,dword ptr [ebx]
+  00000077: 8A 4A 07           mov         cl,byte ptr [edx+7]
+  0000007A: BE 01 00 00 00     mov         esi,1
+  0000007F: D3 E6              shl         esi,cl
+  00000081: 4E                 dec         esi
+  00000082: 23 70 08           and         esi,dword ptr [eax+8]
+  00000085: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000088: 8D 0C B6           lea         ecx,[esi+esi*4]
+  0000008B: 5E                 pop         esi
+  0000008C: 8D 04 88           lea         eax,[eax+ecx*4]
+  0000008F: 5B                 pop         ebx
+  00000090: 5D                 pop         ebp
+  00000091: C3                 ret
+$LN1:
+  00000092: 8B 03              mov         eax,dword ptr [ebx]
+  00000094: 57                 push        edi
+  00000095: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000098: BE 01 00 00 00     mov         esi,1
+  0000009D: 8A 4F 07           mov         cl,byte ptr [edi+7]
+  000000A0: D3 E6              shl         esi,cl
+  000000A2: 33 D2              xor         edx,edx
+  000000A4: 4E                 dec         esi
+  000000A5: 83 CE 01           or          esi,1
+  000000A8: F7 F6              div         eax,esi
+  000000AA: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000AD: 5F                 pop         edi
+  000000AE: 5E                 pop         esi
+  000000AF: 5B                 pop         ebx
+  000000B0: 8D 0C 92           lea         ecx,[edx+edx*4]
+  000000B3: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000B6: 5D                 pop         ebp
+  000000B7: C3                 ret
+$LN15:
+  000000B8: 00 00              add         byte ptr [eax],al
+  000000BA: 00 00              add         byte ptr [eax],al
+  000000BC: 00 00              add         byte ptr [eax],al
+  000000BE: 00 00              add         byte ptr [eax],al
+  000000C0: 00 00              add         byte ptr [eax],al
+  000000C2: 00 00              add         byte ptr [eax],al
+  000000C4: 00 00              add         byte ptr [eax],al
+  000000C6: 00 00              add         byte ptr [eax],al
+  000000C8: 00 00              add         byte ptr [eax],al
+  000000CA: 00 00              add         byte ptr [eax],al
+$LN11:
+  000000CC: 00 04 01           add         byte ptr [ecx+eax],al
+  000000CF: 02 04 04           add         al,byte ptr [esp+eax]
+  000000D2: 04 04              add         al,4
+  000000D4: 04 04              add         al,4
+  000000D6: 04 04              add         al,4
+  000000D8: 04 04              add         al,4
+  000000DA: 04 04              add         al,4
+  000000DC: 04 04              add         al,4
+  000000DE: 04 03              add         al,3
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          E0 .text

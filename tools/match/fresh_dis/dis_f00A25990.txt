@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A25990.obj
+
+File Type: COFF OBJECT
+
+_Phyre_InitMouseWheelSingleton:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000008: 75 46              jne         00000050
+  0000000A: 56                 push        esi
+  0000000B: 6A 7C              push        7Ch
+  0000000D: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000012: 8B F0              mov         esi,eax
+  00000014: 83 C4 04           add         esp,4
+  00000017: 85 F6              test        esi,esi
+  00000019: 74 34              je          0000004F
+  0000001B: D9 05 00 00 00 00  fld         dword ptr [__real@bf800000]
+  00000021: 33 C0              xor         eax,eax
+  00000023: D9 56 04           fst         dword ptr [esi+4]
+  00000026: 6A 17              push        17h
+  00000028: D9 5E 08           fstp        dword ptr [esi+8]
+  0000002B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000032: C7 46 74 00 00 00  mov         dword ptr [esi+74h],0
+            00
+  00000039: 66 89 06           mov         word ptr [esi],ax
+  0000003C: 88 46 02           mov         byte ptr [esi+2],al
+  0000003F: E8 00 00 00 00     call        _GetSystemMetrics
+  00000044: 83 C4 04           add         esp,4
+  00000047: 85 C0              test        eax,eax
+  00000049: 0F 95 C0           setne       al
+  0000004C: 88 46 78           mov         byte ptr [esi+78h],al
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          54 .text

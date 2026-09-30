@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068A540.obj
+
+File Type: COFF OBJECT
+
+@FFX_Menu2D_UpdateHover@4:
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 6A 00              push        0
+  00000004: 6A 03              push        3
+  00000006: 8B F9              mov         edi,ecx
+  00000008: E8 00 00 00 00     call        _Phyre_InputDevice_EnumerateByType
+  0000000D: 57                 push        edi
+  0000000E: 8B D8              mov         ebx,eax
+  00000010: E8 00 00 00 00     call        _FFX_Menu2D_ResetBatchSlots
+  00000015: 83 C4 0C           add         esp,0Ch
+  00000018: 85 DB              test        ebx,ebx
+  0000001A: 74 51              je          0000006D
+  0000001C: 81 C3 64 01 00 00  add         ebx,164h
+  00000022: 56                 push        esi
+  00000023: 8B 33              mov         esi,dword ptr [ebx]
+  00000025: 3B DE              cmp         ebx,esi
+  00000027: 74 43              je          0000006C
+  00000029: 85 F6              test        esi,esi
+  0000002B: 74 3F              je          0000006C
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000033: 85 C0              test        eax,eax
+  00000035: 74 08              je          0000003F
+  00000037: 83 C0 FC           add         eax,0FFFFFFFCh
+  0000003A: 83 F8 01           cmp         eax,1
+  0000003D: 77 19              ja          00000058
+  0000003F: D9 46 0C           fld         dword ptr [esi+0Ch]
+  00000042: 83 EC 10           sub         esp,10h
+  00000045: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000049: D9 46 08           fld         dword ptr [esi+8]
+  0000004C: DD 1C 24           fstp        qword ptr [esp]
+  0000004F: 57                 push        edi
+  00000050: E8 00 00 00 00     call        _FFX_Menu2D_TestPointInSlot
+  00000055: 83 C4 14           add         esp,14h
+  00000058: 56                 push        esi
+  00000059: 57                 push        edi
+  0000005A: E8 00 00 00 00     call        _FFX_Menu2D_DetectHoveredSlot
+  0000005F: 8B 36              mov         esi,dword ptr [esi]
+  00000061: 83 C4 08           add         esp,8
+  00000064: 3B DE              cmp         ebx,esi
+  00000066: 74 04              je          0000006C
+  00000068: 85 F6              test        esi,esi
+  0000006A: 75 C4              jne         00000030
+  0000006C: 5E                 pop         esi
+  0000006D: 5F                 pop         edi
+  0000006E: 5B                 pop         ebx
+  0000006F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          70 .text

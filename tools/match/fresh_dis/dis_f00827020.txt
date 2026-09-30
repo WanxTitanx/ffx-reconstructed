@@ -1,0 +1,222 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00827020.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_RelocateInstanceMemory:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 83 3D 00 00 00 00  cmp         dword ptr [_g_ChrUnkVar_12FBD58],0
+            00
+  0000000D: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000014: 75 06              jne         0000001C
+  00000016: 33 C0              xor         eax,eax
+  00000018: 8B E5              mov         esp,ebp
+  0000001A: 5D                 pop         ebp
+  0000001B: C3                 ret
+  0000001C: 53                 push        ebx
+  0000001D: 56                 push        esi
+  0000001E: 57                 push        edi
+  0000001F: 68 52 0B 00 00     push        0B52h
+  00000024: 68 00 00 00 00     push        offset ??_C@_0BG@HNMNKCPN@?4?4?2proj?2src?2chr?2chr?4c?$AA@
+  00000029: E8 00 00 00 00     call        _FFX_Chr_DebugLogInstanceInfo
+  0000002E: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  00000031: 8B 75 F0           mov         esi,dword ptr [ebp-10h]
+  00000034: 69 DB 80 08 00 00  imul        ebx,ebx,880h
+  0000003A: 03 DE              add         ebx,esi
+  0000003C: 83 C4 08           add         esp,8
+  0000003F: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000046: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000049: 3B F3              cmp         esi,ebx
+  0000004B: 0F 84 AE 01 00 00  je          000001FF
+  00000051: 81 C6 98 01 00 00  add         esi,198h
+  00000057: EB 07              jmp         00000060
+  00000059: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000060: 80 BE 6A FE FF FF  cmp         byte ptr [esi-196h],0
+            00
+  00000067: 0F 84 7E 01 00 00  je          000001EB
+  0000006D: F7 06 00 0C 00 00  test        dword ptr [esi],0C00h
+  00000073: 0F 85 72 01 00 00  jne         000001EB
+  00000079: 8D 45 FC           lea         eax,[ebp-4]
+  0000007C: 50                 push        eax
+  0000007D: 8D 86 90 01 00 00  lea         eax,[esi+190h]
+  00000083: 50                 push        eax
+  00000084: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  00000089: 83 C4 08           add         esp,8
+  0000008C: 85 C0              test        eax,eax
+  0000008E: 74 10              je          000000A0
+  00000090: 50                 push        eax
+  00000091: 8D 86 68 FE FF FF  lea         eax,[esi-198h]
+  00000097: 50                 push        eax
+  00000098: E8 00 00 00 00     call        _FFX_Chr_RelocatePointersInBuffer
+  0000009D: 83 C4 08           add         esp,8
+  000000A0: 8D 45 FC           lea         eax,[ebp-4]
+  000000A3: 50                 push        eax
+  000000A4: 8D 86 B0 05 00 00  lea         eax,[esi+5B0h]
+  000000AA: 50                 push        eax
+  000000AB: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  000000B0: 83 C4 08           add         esp,8
+  000000B3: 85 C0              test        eax,eax
+  000000B5: 74 10              je          000000C7
+  000000B7: 50                 push        eax
+  000000B8: 8D 86 68 FE FF FF  lea         eax,[esi-198h]
+  000000BE: 50                 push        eax
+  000000BF: E8 00 00 00 00     call        _FFX_Chr_RelocateMotionPtrs
+  000000C4: 83 C4 08           add         esp,8
+  000000C7: 8D 45 FC           lea         eax,[ebp-4]
+  000000CA: 50                 push        eax
+  000000CB: 8D 7E 24           lea         edi,[esi+24h]
+  000000CE: 57                 push        edi
+  000000CF: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  000000D4: 8D 45 FC           lea         eax,[ebp-4]
+  000000D7: 50                 push        eax
+  000000D8: 8D 86 94 01 00 00  lea         eax,[esi+194h]
+  000000DE: 50                 push        eax
+  000000DF: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  000000E4: 83 C4 10           add         esp,10h
+  000000E7: 83 3F 00           cmp         dword ptr [edi],0
+  000000EA: 74 61              je          0000014D
+  000000EC: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  000000EF: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  000000F6: 66 83 78 06 00     cmp         word ptr [eax+6],0
+  000000FB: 74 50              je          0000014D
+  000000FD: 33 DB              xor         ebx,ebx
+  000000FF: 90                 nop
+  00000100: 8B 3F              mov         edi,dword ptr [edi]
+  00000102: 8D 45 FC           lea         eax,[ebp-4]
+  00000105: 50                 push        eax
+  00000106: 8D 43 08           lea         eax,[ebx+8]
+  00000109: 03 C7              add         eax,edi
+  0000010B: 50                 push        eax
+  0000010C: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  00000111: 8D 45 FC           lea         eax,[ebp-4]
+  00000114: 50                 push        eax
+  00000115: 8D 43 04           lea         eax,[ebx+4]
+  00000118: 03 C7              add         eax,edi
+  0000011A: 50                 push        eax
+  0000011B: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  00000120: 8D 45 FC           lea         eax,[ebp-4]
+  00000123: 50                 push        eax
+  00000124: 8D 47 0C           lea         eax,[edi+0Ch]
+  00000127: 03 C3              add         eax,ebx
+  00000129: 50                 push        eax
+  0000012A: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  0000012F: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000132: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000135: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  00000139: 41                 inc         ecx
+  0000013A: 83 C4 18           add         esp,18h
+  0000013D: 83 C3 38           add         ebx,38h
+  00000140: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000143: 8D 7E 24           lea         edi,[esi+24h]
+  00000146: 3B C8              cmp         ecx,eax
+  00000148: 7C B6              jl          00000100
+  0000014A: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  0000014D: 8D 45 FC           lea         eax,[ebp-4]
+  00000150: 50                 push        eax
+  00000151: 8D 86 44 05 00 00  lea         eax,[esi+544h]
+  00000157: 50                 push        eax
+  00000158: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  0000015D: 83 C4 08           add         esp,8
+  00000160: 85 C0              test        eax,eax
+  00000162: 74 0F              je          00000173
+  00000164: 8D 86 68 FE FF FF  lea         eax,[esi-198h]
+  0000016A: 50                 push        eax
+  0000016B: E8 00 00 00 00     call        _FFX_Field_RelocateChrInstanceData
+  00000170: 83 C4 04           add         esp,4
+  00000173: 83 BE 64 05 00 00  cmp         dword ptr [esi+564h],0
+            00
+  0000017A: 74 31              je          000001AD
+  0000017C: FF B6 68 05 00 00  push        dword ptr [esi+568h]
+  00000182: E8 00 00 00 00     call        _FFX_Chr_GetRelocationEntry
+  00000187: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000018A: 8D 45 FC           lea         eax,[ebp-4]
+  0000018D: 50                 push        eax
+  0000018E: 8D 45 F0           lea         eax,[ebp-10h]
+  00000191: 50                 push        eax
+  00000192: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  00000197: 83 C4 0C           add         esp,0Ch
+  0000019A: 85 C0              test        eax,eax
+  0000019C: 74 0F              je          000001AD
+  0000019E: 50                 push        eax
+  0000019F: FF B6 68 05 00 00  push        dword ptr [esi+568h]
+  000001A5: E8 00 00 00 00     call        _FFX_Movie_RelocateTextureAnimMemory
+  000001AA: 83 C4 08           add         esp,8
+  000001AD: 83 BE 6C 05 00 00  cmp         dword ptr [esi+56Ch],0
+            00
+  000001B4: 8D 86 6C 05 00 00  lea         eax,[esi+56Ch]
+  000001BA: 74 29              je          000001E5
+  000001BC: 8D 4D FC           lea         ecx,[ebp-4]
+  000001BF: 51                 push        ecx
+  000001C0: 50                 push        eax
+  000001C1: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  000001C6: 8D BE 68 FE FF FF  lea         edi,[esi-198h]
+  000001CC: 6A 00              push        0
+  000001CE: 57                 push        edi
+  000001CF: E8 00 00 00 00     call        _FFX_Draw_PopulateCLUTData
+  000001D4: 0F BE 86 70 05 00  movsx       eax,byte ptr [esi+570h]
+            00
+  000001DB: 50                 push        eax
+  000001DC: 57                 push        edi
+  000001DD: E8 00 00 00 00     call        _FFX_Draw_CopyCLUTToRenderBuffer
+  000001E2: 83 C4 18           add         esp,18h
+  000001E5: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  000001E9: 75 51              jne         0000023C
+  000001EB: 81 C6 80 08 00 00  add         esi,880h
+  000001F1: 8D 86 68 FE FF FF  lea         eax,[esi-198h]
+  000001F7: 3B C3              cmp         eax,ebx
+  000001F9: 0F 85 61 FE FF FF  jne         00000060
+  000001FF: 68 85 0B 00 00     push        0B85h
+  00000204: 68 00 00 00 00     push        offset ??_C@_0BG@HNMNKCPN@?4?4?2proj?2src?2chr?2chr?4c?$AA@
+  00000209: E8 00 00 00 00     call        _FFX_Chr_DebugLogInstanceInfo
+  0000020E: 83 C4 08           add         esp,8
+  00000211: E8 00 00 00 00     call        _FFX_Mgrp_ProcessReadyRegistryRelocation
+  00000216: 85 C0              test        eax,eax
+  00000218: 75 38              jne         00000252
+  0000021A: E8 00 00 00 00     call        _FFX_Render_GetSortEntryArray
+  0000021F: 8D 4D FC           lea         ecx,[ebp-4]
+  00000222: 51                 push        ecx
+  00000223: 50                 push        eax
+  00000224: E8 00 00 00 00     call        _SgMem_RelocateMCB
+  00000229: 83 C4 08           add         esp,8
+  0000022C: 85 C0              test        eax,eax
+  0000022E: 75 22              jne         00000252
+  00000230: 5F                 pop         edi
+  00000231: 5E                 pop         esi
+  00000232: A3 00 00 00 00     mov         dword ptr [_g_ChrUnkVar_12FBD58],eax
+  00000237: 5B                 pop         ebx
+  00000238: 8B E5              mov         esp,ebp
+  0000023A: 5D                 pop         ebp
+  0000023B: C3                 ret
+  0000023C: E8 00 00 00 00     call        _dbgPrintf
+  00000241: E8 00 00 00 00     call        _FFX_Ps3Data_ComputeSlotOffsets
+  00000246: 5F                 pop         edi
+  00000247: 5E                 pop         esi
+  00000248: B8 01 00 00 00     mov         eax,1
+  0000024D: 5B                 pop         ebx
+  0000024E: 8B E5              mov         esp,ebp
+  00000250: 5D                 pop         ebp
+  00000251: C3                 ret
+  00000252: E8 00 00 00 00     call        _dbgPrintf
+  00000257: 5F                 pop         edi
+  00000258: 5E                 pop         esi
+  00000259: B8 01 00 00 00     mov         eax,1
+  0000025E: 5B                 pop         ebx
+  0000025F: 8B E5              mov         esp,ebp
+  00000261: 5D                 pop         ebp
+  00000262: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          16 .rdata
+         263 .text

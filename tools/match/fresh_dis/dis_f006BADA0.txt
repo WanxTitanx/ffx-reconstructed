@@ -1,0 +1,76 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006BADA0.obj
+
+File Type: COFF OBJECT
+
+@DebugModelName_PageNav@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 80 BE D4 00 00 00  cmp         byte ptr [esi+0D4h],0
+            00
+  0000000E: 0F 84 87 00 00 00  je          0000009B
+  00000014: 57                 push        edi
+  00000015: 8B BE D0 00 00 00  mov         edi,dword ptr [esi+0D0h]
+  0000001B: 84 D2              test        dl,dl
+  0000001D: 74 13              je          00000032
+  0000001F: 8D 47 01           lea         eax,[edi+1]
+  00000022: 99                 cdq
+  00000023: B9 07 00 00 00     mov         ecx,7
+  00000028: F7 F9              idiv        eax,ecx
+  0000002A: 89 96 D0 00 00 00  mov         dword ptr [esi+0D0h],edx
+  00000030: EB 12              jmp         00000044
+  00000032: B8 06 00 00 00     mov         eax,6
+  00000037: 85 FF              test        edi,edi
+  00000039: 74 03              je          0000003E
+  0000003B: 8D 47 FF           lea         eax,[edi-1]
+  0000003E: 89 86 D0 00 00 00  mov         dword ptr [esi+0D0h],eax
+  00000044: 80 3E 00           cmp         byte ptr [esi],0
+  00000047: 74 23              je          0000006C
+  00000049: 8D 45 FC           lea         eax,[ebp-4]
+  0000004C: 50                 push        eax
+  0000004D: 57                 push        edi
+  0000004E: 56                 push        esi
+  0000004F: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000056: E8 00 00 00 00     call        _FFX_FieldDebug_FormatModelName
+  0000005B: 8D 45 FC           lea         eax,[ebp-4]
+  0000005E: 50                 push        eax
+  0000005F: 8D 46 04           lea         eax,[esi+4]
+  00000062: 57                 push        edi
+  00000063: 50                 push        eax
+  00000064: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  00000069: 83 C4 18           add         esp,18h
+  0000006C: 80 3E 00           cmp         byte ptr [esi],0
+  0000006F: 8B BE D0 00 00 00  mov         edi,dword ptr [esi+0D0h]
+  00000075: 74 23              je          0000009A
+  00000077: 8D 45 FC           lea         eax,[ebp-4]
+  0000007A: 50                 push        eax
+  0000007B: 57                 push        edi
+  0000007C: 56                 push        esi
+  0000007D: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000084: E8 00 00 00 00     call        _FFX_FieldDebug_FormatModelName
+  00000089: 8D 45 FC           lea         eax,[ebp-4]
+  0000008C: 50                 push        eax
+  0000008D: 8D 46 04           lea         eax,[esi+4]
+  00000090: 57                 push        edi
+  00000091: 50                 push        eax
+  00000092: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  00000097: 83 C4 18           add         esp,18h
+  0000009A: 5F                 pop         edi
+  0000009B: 5E                 pop         esi
+  0000009C: 8B E5              mov         esp,ebp
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A0 .text

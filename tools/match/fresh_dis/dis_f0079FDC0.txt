@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079FDC0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_PlayActorSoundEffectLoop:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_Battle_GetActorFormationData
+  00000008: 85 C0              test        eax,eax
+  0000000A: 75 02              jne         0000000E
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+  0000000E: 56                 push        esi
+  0000000F: 57                 push        edi
+  00000010: 0F B6 7D 08        movzx       edi,byte ptr [ebp+8]
+  00000014: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000017: 57                 push        edi
+  00000018: E8 00 00 00 00     call        _FFX_Battle_ResolveActorSoundEffectId
+  0000001D: 8B F0              mov         esi,eax
+  0000001F: 83 C4 08           add         esp,8
+  00000022: 85 F6              test        esi,esi
+  00000024: 75 04              jne         0000002A
+  00000026: 5F                 pop         edi
+  00000027: 5E                 pop         esi
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: 6A 00              push        0
+  0000002C: 6A 01              push        1
+  0000002E: 56                 push        esi
+  0000002F: 57                 push        edi
+  00000030: 6A 03              push        3
+  00000032: E8 00 00 00 00     call        _FFX_Battle_SeNodeLinkedList_AllocNode
+  00000037: 83 C4 14           add         esp,14h
+  0000003A: 8B C6              mov         eax,esi
+  0000003C: 5F                 pop         edi
+  0000003D: 5E                 pop         esi
+  0000003E: 5D                 pop         ebp
+  0000003F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          40 .text

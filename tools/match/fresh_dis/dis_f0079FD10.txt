@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079FD10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_FadeSoundEffect:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000007: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000A: 50                 push        eax
+  0000000B: E8 00 00 00 00     call        _FFX_Battle_ResolveActorSoundEffectId
+  00000010: 8B C8              mov         ecx,eax
+  00000012: 83 C4 08           add         esp,8
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 75 02              jne         0000001B
+  00000019: 5D                 pop         ebp
+  0000001A: C3                 ret
+  0000001B: 0F BF 45 10        movsx       eax,word ptr [ebp+10h]
+  0000001F: 50                 push        eax
+  00000020: 51                 push        ecx
+  00000021: E8 00 00 00 00     call        _FFX_Btl_Sound_SetNodeFadeValue
+  00000026: 83 C4 08           add         esp,8
+  00000029: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2E .text

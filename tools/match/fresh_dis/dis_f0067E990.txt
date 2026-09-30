@@ -1,0 +1,135 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0067E990.obj
+
+File Type: COFF OBJECT
+
+@FFX_Phyre_FlushTextureUnitBinds_PerDraw@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 57                 push        edi
+  0000000B: 83 BE 7C 5B 00 00  cmp         dword ptr [esi+5B7Ch],0
+            00
+  00000012: 0F 84 B0 00 00 00  je          000000C8
+  00000018: 83 BE 40 58 00 00  cmp         dword ptr [esi+5840h],0
+            00
+  0000001F: 0F 84 3C 01 00 00  je          00000161
+  00000025: 83 BE 44 58 00 00  cmp         dword ptr [esi+5844h],0
+            00
+  0000002C: 74 15              je          00000043
+  0000002E: 6A 01              push        1
+  00000030: 56                 push        esi
+  00000031: E8 00 00 00 00     call        _FFX_Scene_UpdateVertexBuffer
+  00000036: 83 C4 08           add         esp,8
+  00000039: C7 86 44 58 00 00  mov         dword ptr [esi+5844h],0
+            00 00 00 00
+  00000043: 33 DB              xor         ebx,ebx
+  00000045: 39 9E 40 58 00 00  cmp         dword ptr [esi+5840h],ebx
+  0000004B: 0F 84 10 01 00 00  je          00000161
+  00000051: 33 D2              xor         edx,edx
+  00000053: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000056: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000059: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000005C: 8D BE 48 42 00 00  lea         edi,[esi+4248h]
+  00000062: EB 0C              jmp         00000070
+  00000064: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  0000006B: EB 03              jmp         00000070
+  0000006D: 8D 49 00           lea         ecx,[ecx]
+  00000070: 8B 8F 10 EA FF FF  mov         ecx,dword ptr [edi-15F0h]
+  00000076: 83 B9 B0 00 00 00  cmp         dword ptr [ecx+0B0h],0
+            00
+  0000007D: 74 10              je          0000008F
+  0000007F: 8B 86 34 58 00 00  mov         eax,dword ptr [esi+5834h]
+  00000085: 03 C2              add         eax,edx
+  00000087: 83 C2 10           add         edx,10h
+  0000008A: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  0000008D: EB 11              jmp         000000A0
+  0000008F: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000092: 8B 86 2C 58 00 00  mov         eax,dword ptr [esi+582Ch]
+  00000098: 03 C2              add         eax,edx
+  0000009A: 83 C2 10           add         edx,10h
+  0000009D: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000000A0: 51                 push        ecx
+  000000A1: 50                 push        eax
+  000000A2: 89 07              mov         dword ptr [edi],eax
+  000000A4: E8 00 00 00 00     call        _FFX_Phyre_BindNamedTextureUnit_DrawTime
+  000000A9: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000AC: 8B 55 F4           mov         edx,dword ptr [ebp-0Ch]
+  000000AF: 43                 inc         ebx
+  000000B0: 83 C4 08           add         esp,8
+  000000B3: 83 C7 04           add         edi,4
+  000000B6: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000B9: 3B 9E 40 58 00 00  cmp         ebx,dword ptr [esi+5840h]
+  000000BF: 72 AF              jb          00000070
+  000000C1: 5F                 pop         edi
+  000000C2: 5E                 pop         esi
+  000000C3: 5B                 pop         ebx
+  000000C4: 8B E5              mov         esp,ebp
+  000000C6: 5D                 pop         ebp
+  000000C7: C3                 ret
+  000000C8: 83 BE 50 2C 00 00  cmp         dword ptr [esi+2C50h],0
+            00
+  000000CF: 0F 84 8C 00 00 00  je          00000161
+  000000D5: 83 BE 44 58 00 00  cmp         dword ptr [esi+5844h],0
+            00
+  000000DC: 74 15              je          000000F3
+  000000DE: 6A 00              push        0
+  000000E0: 56                 push        esi
+  000000E1: E8 00 00 00 00     call        _FFX_Scene_UpdateVertexBuffer
+  000000E6: 83 C4 08           add         esp,8
+  000000E9: C7 86 44 58 00 00  mov         dword ptr [esi+5844h],0
+            00 00 00 00
+  000000F3: 33 DB              xor         ebx,ebx
+  000000F5: 39 9E 50 2C 00 00  cmp         dword ptr [esi+2C50h],ebx
+  000000FB: 74 64              je          00000161
+  000000FD: 33 D2              xor         edx,edx
+  000000FF: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000102: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000105: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000108: 8D BE F0 15 00 00  lea         edi,[esi+15F0h]
+  0000010E: 8B FF              mov         edi,edi
+  00000110: 8B 8F 10 EA FF FF  mov         ecx,dword ptr [edi-15F0h]
+  00000116: 83 B9 B0 00 00 00  cmp         dword ptr [ecx+0B0h],0
+            00
+  0000011D: 74 10              je          0000012F
+  0000011F: 8B 86 DC 2B 00 00  mov         eax,dword ptr [esi+2BDCh]
+  00000125: 03 C2              add         eax,edx
+  00000127: 83 C2 10           add         edx,10h
+  0000012A: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000012D: EB 11              jmp         00000140
+  0000012F: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000132: 8B 86 D4 2B 00 00  mov         eax,dword ptr [esi+2BD4h]
+  00000138: 03 C2              add         eax,edx
+  0000013A: 83 C2 10           add         edx,10h
+  0000013D: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000140: 51                 push        ecx
+  00000141: 50                 push        eax
+  00000142: 89 07              mov         dword ptr [edi],eax
+  00000144: E8 00 00 00 00     call        _FFX_Phyre_BindNamedTextureUnit_DrawTime
+  00000149: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  0000014C: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000014F: 43                 inc         ebx
+  00000150: 83 C4 08           add         esp,8
+  00000153: 83 C7 04           add         edi,4
+  00000156: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000159: 3B 9E 50 2C 00 00  cmp         ebx,dword ptr [esi+2C50h]
+  0000015F: 72 AF              jb          00000110
+  00000161: 5F                 pop         edi
+  00000162: 5E                 pop         esi
+  00000163: 5B                 pop         ebx
+  00000164: 8B E5              mov         esp,ebp
+  00000166: 5D                 pop         ebp
+  00000167: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         168 .text

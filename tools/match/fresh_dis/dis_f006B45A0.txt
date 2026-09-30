@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006B45A0.obj
+
+File Type: COFF OBJECT
+
+@TextureAnimationInfo_AdvanceFrame@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 80 7E 1C 00        cmp         byte ptr [esi+1Ch],0
+  0000000A: 74 36              je          00000042
+  0000000C: D9 45 08           fld         dword ptr [ebp+8]
+  0000000F: D8 46 14           fadd        dword ptr [esi+14h]
+  00000012: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000015: D9 45 08           fld         dword ptr [ebp+8]
+  00000018: D9 56 14           fst         dword ptr [esi+14h]
+  0000001B: D9 46 10           fld         dword ptr [esi+10h]
+  0000001E: DE D9              fcompp
+  00000020: DF E0              fnstsw      ax
+  00000022: F6 C4 41           test        ah,41h
+  00000025: 7A 1B              jp          00000042
+  00000027: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000002A: D9 EE              fldz
+  0000002C: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000002F: D9 5E 14           fstp        dword ptr [esi+14h]
+  00000032: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  00000038: 40                 inc         eax
+  00000039: 03 C1              add         eax,ecx
+  0000003B: 33 D2              xor         edx,edx
+  0000003D: F7 F1              div         eax,ecx
+  0000003F: 89 56 18           mov         dword ptr [esi+18h],edx
+  00000042: 5E                 pop         esi
+  00000043: 5D                 pop         ebp
+  00000044: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          47 .text

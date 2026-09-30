@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00797AA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_FreeAllScriptData:
+  00000000: 56                 push        esi
+  00000001: BE 00 00 00 00     mov         esi,offset _g_AtelUnkVar_1134474
+  00000006: 8B 46 F8           mov         eax,dword ptr [esi-8]
+  00000009: 85 C0              test        eax,eax
+  0000000B: 74 09              je          00000016
+  0000000D: 50                 push        eax
+  0000000E: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000013: 83 C4 04           add         esp,4
+  00000016: 8B 06              mov         eax,dword ptr [esi]
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 09              je          00000025
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000022: 83 C4 04           add         esp,4
+  00000025: 83 C6 54           add         esi,54h
+  00000028: 81 FE 00 00 00 00  cmp         esi,offset _g_AtelUnkVar_113451C
+  0000002E: 7C D6              jl          00000006
+  00000030: E8 00 00 00 00     call        _FFX_Event_CheckAndResetSceneScriptState
+  00000035: 6A 02              push        2
+  00000037: E8 00 00 00 00     call        _AtelRemoveCtrlWork
+  0000003C: 6A 03              push        3
+  0000003E: E8 00 00 00 00     call        _AtelRemoveCtrlWork
+  00000043: 83 C4 08           add         esp,8
+  00000046: 5E                 pop         esi
+  00000047: E9 00 00 00 00     jmp         _FFX_Atel_ResetStateAndClearGlobals
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4C .text

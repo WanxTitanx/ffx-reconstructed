@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068DA80.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_68DA80@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000009: 50                 push        eax
+  0000000A: 51                 push        ecx
+  0000000B: E8 00 00 00 00     call        _AsyncQueue_Entry_GetData_2
+  00000010: 8B D0              mov         edx,eax
+  00000012: 83 C4 08           add         esp,8
+  00000015: 8B 02              mov         eax,dword ptr [edx]
+  00000017: 85 C0              test        eax,eax
+  00000019: 74 13              je          0000002E
+  0000001B: 8B 00              mov         eax,dword ptr [eax]
+  0000001D: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00000020: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000023: 49                 dec         ecx
+  00000024: 23 4A 08           and         ecx,dword ptr [edx+8]
+  00000027: 8B 04 88           mov         eax,dword ptr [eax+ecx*4]
+  0000002A: 8B E5              mov         esp,ebp
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: 8B 0D 20 00 00 00  mov         ecx,dword ptr ds:[20h]
+  00000034: 8B 52 08           mov         edx,dword ptr [edx+8]
+  00000037: A1 10 00 00 00     mov         eax,dword ptr ds:[00000010h]
+  0000003C: 49                 dec         ecx
+  0000003D: 23 D1              and         edx,ecx
+  0000003F: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  00000042: 8B E5              mov         esp,ebp
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

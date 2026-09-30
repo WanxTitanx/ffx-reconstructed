@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file c661.obj
+
+File Type: COFF OBJECT
+
+__Mtxdst:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: FF 15 00 00 00 00  call        dword ptr [__imp__DeleteCriticalSection@4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+
+__Mtxinit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 6A 00              push        0
+  00000005: 68 A0 0F 00 00     push        0FA0h
+  0000000A: FF 75 08           push        dword ptr [ebp+8]
+  0000000D: FF 15 00 00 00 00  call        dword ptr [__imp__InitializeCriticalSectionEx@12]
+  00000013: 5D                 pop         ebp
+  00000014: C3                 ret
+
+__Mtxlock:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: FF 15 00 00 00 00  call        dword ptr [__imp__EnterCriticalSection@4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+
+__Mtxunlock:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: FF 15 00 00 00 00  call        dword ptr [__imp__LeaveCriticalSection@4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+
+__Once:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 3E 02           cmp         dword ptr [esi],2
+  0000000A: 74 34              je          00000040
+  0000000C: 6A 01              push        1
+  0000000E: 56                 push        esi
+  0000000F: FF 15 00 00 00 00  call        dword ptr [__imp__InterlockedExchange@8]
+  00000015: 85 C0              test        eax,eax
+  00000017: 75 0C              jne         00000025
+  00000019: FF 55 0C           call        dword ptr [ebp+0Ch]
+  0000001C: C7 06 02 00 00 00  mov         dword ptr [esi],2
+  00000022: 5E                 pop         esi
+  00000023: 5D                 pop         ebp
+  00000024: C3                 ret
+  00000025: 83 F8 02           cmp         eax,2
+  00000028: 74 F2              je          0000001C
+  0000002A: 83 3E 02           cmp         dword ptr [esi],2
+  0000002D: 74 11              je          00000040
+  0000002F: 57                 push        edi
+  00000030: 8B 3D 00 00 00 00  mov         edi,dword ptr [__imp__Sleep@4]
+  00000036: 6A 01              push        1
+  00000038: FF D7              call        edi
+  0000003A: 83 3E 02           cmp         dword ptr [esi],2
+  0000003D: 75 F7              jne         00000036
+  0000003F: 5F                 pop         edi
+  00000040: 5E                 pop         esi
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          CB .drectve
+          82 .text

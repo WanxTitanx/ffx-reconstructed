@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A27E90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Video_TogglePauseFMOD:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000007: 8B 88 E4 00 00 00  mov         ecx,dword ptr [eax+0E4h]
+  0000000D: 83 F9 01           cmp         ecx,1
+  00000010: 75 25              jne         00000037
+  00000012: 8B 88 A0 02 00 00  mov         ecx,dword ptr [eax+2A0h]
+  00000018: C7 80 E4 00 00 00  mov         dword ptr [eax+0E4h],2
+            02 00 00 00
+  00000022: 85 C9              test        ecx,ecx
+  00000024: 74 35              je          0000005B
+  00000026: 6A 01              push        1
+  00000028: 51                 push        ecx
+  00000029: E8 00 00 00 00     call        _FMOD_Channel_setPaused
+  0000002E: 83 C4 08           add         esp,8
+  00000031: B0 01              mov         al,1
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+  00000037: 83 F9 02           cmp         ecx,2
+  0000003A: 75 1F              jne         0000005B
+  0000003C: 8B 88 A0 02 00 00  mov         ecx,dword ptr [eax+2A0h]
+  00000042: C7 80 E4 00 00 00  mov         dword ptr [eax+0E4h],1
+            01 00 00 00
+  0000004C: 85 C9              test        ecx,ecx
+  0000004E: 74 0B              je          0000005B
+  00000050: 6A 00              push        0
+  00000052: 51                 push        ecx
+  00000053: E8 00 00 00 00     call        _FMOD_Channel_setPaused
+  00000058: 83 C4 08           add         esp,8
+  0000005B: B0 01              mov         al,1
+  0000005D: 8B E5              mov         esp,ebp
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

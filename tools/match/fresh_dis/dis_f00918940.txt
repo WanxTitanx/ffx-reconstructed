@@ -1,0 +1,173 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00918940.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_UploadClutToGsMem:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 0F B7 86 0C 01 00  movzx       eax,word ptr [esi+10Ch]
+            00
+  0000000F: 83 C0 ED           add         eax,0FFFFFFEDh
+  00000012: 83 F8 19           cmp         eax,19h
+  00000015: 0F 87 55 01 00 00  ja          $LN1
+  0000001B: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN22[eax]
+            00
+  00000022: FF 24 85 00 00 00  jmp         dword ptr $LN24[eax*4]
+            00
+$LN17:
+  00000029: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000002C: 8B 87 20 7F 06 00  mov         eax,dword ptr [edi+67F20h]
+  00000032: 83 F8 04           cmp         eax,4
+  00000035: 77 5E              ja          00000095
+  00000037: FF 24 85 00 00 00  jmp         dword ptr $LN25[eax*4]
+            00
+$LN14:
+  0000003E: 68 00 01 00 00     push        100h
+  00000043: E8 00 00 00 00     call        _FFX_GS_AllocClut
+  00000048: 89 86 2C 01 00 00  mov         dword ptr [esi+12Ch],eax
+  0000004E: 33 C0              xor         eax,eax
+  00000050: 83 C4 04           add         esp,4
+  00000053: 66 89 86 34 01 00  mov         word ptr [esi+134h],ax
+            00
+  0000005A: E8 00 00 00 00     call        _FFX_DmaTextureStub_Return0_B
+  0000005F: E9 FD 00 00 00     jmp         00000161
+$LN13:
+  00000064: E8 00 00 00 00     call        _FFX_GS_GetPaletteBlendIndex
+  00000069: 66 89 86 38 01 00  mov         word ptr [esi+138h],ax
+            00
+  00000070: FF B7 20 7F 06 00  push        dword ptr [edi+67F20h]
+  00000076: E8 00 00 00 00     call        _FFX_FieldMap_PaletteBlendCycle
+  0000007B: 89 86 2C 01 00 00  mov         dword ptr [esi+12Ch],eax
+  00000081: 0F B7 86 38 01 00  movzx       eax,word ptr [esi+138h]
+            00
+  00000088: 50                 push        eax
+  00000089: FF 75 10           push        dword ptr [ebp+10h]
+  0000008C: 57                 push        edi
+  0000008D: E8 00 00 00 00     call        _FFX_FieldMap_CopyCelLightingRow
+  00000092: 83 C4 10           add         esp,10h
+  00000095: 33 C0              xor         eax,eax
+  00000097: 66 89 86 34 01 00  mov         word ptr [esi+134h],ax
+            00
+  0000009E: E8 00 00 00 00     call        _FFX_DmaTextureStub_Return0_B
+  000000A3: E9 B9 00 00 00     jmp         00000161
+$LN11:
+  000000A8: A1 00 00 00 00     mov         eax,dword ptr [_dword_25D17DC]
+  000000AD: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  000000B0: 66 89 86 34 01 00  mov         word ptr [esi+134h],ax
+            00
+  000000B7: 66 85 C0           test        ax,ax
+  000000BA: 75 45              jne         00000101
+  000000BC: 8B 87 20 7F 06 00  mov         eax,dword ptr [edi+67F20h]
+  000000C2: 83 F8 04           cmp         eax,4
+  000000C5: 77 3A              ja          00000101
+  000000C7: FF 24 85 00 00 00  jmp         dword ptr $LN26[eax*4]
+            00
+$LN6:
+  000000CE: 68 00 01 00 00     push        100h
+  000000D3: E8 00 00 00 00     call        _FFX_GS_AllocClut
+  000000D8: 83 C4 04           add         esp,4
+  000000DB: A3 00 00 00 00     mov         dword ptr [_dword_25D17E0],eax
+  000000E0: EB 24              jmp         00000106
+$LN5:
+  000000E2: E8 00 00 00 00     call        _FFX_GS_GetPaletteBlendIndex
+  000000E7: A3 00 00 00 00     mov         dword ptr [_g_GSUnkVar_25D17D8],eax
+  000000EC: FF B7 20 7F 06 00  push        dword ptr [edi+67F20h]
+  000000F2: E8 00 00 00 00     call        _FFX_FieldMap_PaletteBlendCycle
+  000000F7: 83 C4 04           add         esp,4
+  000000FA: A3 00 00 00 00     mov         dword ptr [_dword_25D17E0],eax
+  000000FF: EB 05              jmp         00000106
+  00000101: A1 00 00 00 00     mov         eax,dword ptr [_dword_25D17E0]
+  00000106: 89 86 2C 01 00 00  mov         dword ptr [esi+12Ch],eax
+  0000010C: 66 A1 00 00 00 00  mov         ax,word ptr [_g_GSUnkVar_25D17D8]
+  00000112: 66 89 86 38 01 00  mov         word ptr [esi+138h],ax
+            00
+  00000119: 8B 87 20 7F 06 00  mov         eax,dword ptr [edi+67F20h]
+  0000011F: 83 E8 02           sub         eax,2
+  00000122: 83 F8 02           cmp         eax,2
+  00000125: 77 1C              ja          00000143
+  00000127: 0F B7 86 34 01 00  movzx       eax,word ptr [esi+134h]
+            00
+  0000012E: 50                 push        eax
+  0000012F: 0F B7 86 38 01 00  movzx       eax,word ptr [esi+138h]
+            00
+  00000136: 50                 push        eax
+  00000137: FF 75 10           push        dword ptr [ebp+10h]
+  0000013A: 57                 push        edi
+  0000013B: E8 00 00 00 00     call        _FFX_FieldMap_SetCelLightingData
+  00000140: 83 C4 10           add         esp,10h
+  00000143: E8 00 00 00 00     call        _FFX_DmaTextureStub_Return0_B
+  00000148: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_25D17DC]
+  0000014E: 41                 inc         ecx
+  0000014F: B8 0F 00 00 00     mov         eax,0Fh
+  00000154: 3B C1              cmp         eax,ecx
+  00000156: 1B C0              sbb         eax,eax
+  00000158: F7 D0              not         eax
+  0000015A: 23 C1              and         eax,ecx
+  0000015C: A3 00 00 00 00     mov         dword ptr [_dword_25D17DC],eax
+  00000161: E8 00 00 00 00     call        _FlushCache
+  00000166: E8 00 00 00 00     call        _FFX_GenericStub_Return0
+  0000016B: E8 00 00 00 00     call        _FFX_DmaTextureStub_Return0
+$LN1:
+  00000170: 5F                 pop         edi
+  00000171: 33 C0              xor         eax,eax
+  00000173: 5E                 pop         esi
+  00000174: 5D                 pop         ebp
+  00000175: C3                 ret
+  00000176: 8B FF              mov         edi,edi
+$LN24:
+  00000178: 00 00              add         byte ptr [eax],al
+  0000017A: 00 00              add         byte ptr [eax],al
+  0000017C: 00 00              add         byte ptr [eax],al
+  0000017E: 00 00              add         byte ptr [eax],al
+  00000180: 00 00              add         byte ptr [eax],al
+  00000182: 00 00              add         byte ptr [eax],al
+$LN22:
+  00000184: 00 01              add         byte ptr [ecx],al
+  00000186: 02 02              add         al,byte ptr [edx]
+  00000188: 02 02              add         al,byte ptr [edx]
+  0000018A: 02 02              add         al,byte ptr [edx]
+  0000018C: 00 02              add         byte ptr [edx],al
+  0000018E: 02 02              add         al,byte ptr [edx]
+  00000190: 02 02              add         al,byte ptr [edx]
+  00000192: 02 02              add         al,byte ptr [edx]
+  00000194: 02 01              add         al,byte ptr [ecx]
+  00000196: 02 02              add         al,byte ptr [edx]
+  00000198: 02 02              add         al,byte ptr [edx]
+  0000019A: 02 02              add         al,byte ptr [edx]
+  0000019C: 02 01              add         al,byte ptr [ecx]
+  0000019E: 8B FF              mov         edi,edi
+$LN25:
+  000001A0: 00 00              add         byte ptr [eax],al
+  000001A2: 00 00              add         byte ptr [eax],al
+  000001A4: 00 00              add         byte ptr [eax],al
+  000001A6: 00 00              add         byte ptr [eax],al
+  000001A8: 00 00              add         byte ptr [eax],al
+  000001AA: 00 00              add         byte ptr [eax],al
+  000001AC: 00 00              add         byte ptr [eax],al
+  000001AE: 00 00              add         byte ptr [eax],al
+  000001B0: 00 00              add         byte ptr [eax],al
+  000001B2: 00 00              add         byte ptr [eax],al
+$LN26:
+  000001B4: 00 00              add         byte ptr [eax],al
+  000001B6: 00 00              add         byte ptr [eax],al
+  000001B8: 00 00              add         byte ptr [eax],al
+  000001BA: 00 00              add         byte ptr [eax],al
+  000001BC: 00 00              add         byte ptr [eax],al
+  000001BE: 00 00              add         byte ptr [eax],al
+  000001C0: 00 00              add         byte ptr [eax],al
+  000001C2: 00 00              add         byte ptr [eax],al
+  000001C4: 00 00              add         byte ptr [eax],al
+  000001C6: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         1C8 .text

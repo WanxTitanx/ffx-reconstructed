@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008CADB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_EscapeModeRead:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_Battle_GetRuntimeContextPtr
+  00000008: 8A 08              mov         cl,byte ptr [eax]
+  0000000A: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000000D: F6 D1              not         cl
+  0000000F: C7 42 0C 01 00 00  mov         dword ptr [edx+0Ch],1
+            00
+  00000016: C1 E9 05           shr         ecx,5
+  00000019: 83 E1 01           and         ecx,1
+  0000001C: 89 4A 08           mov         dword ptr [edx+8],ecx
+  0000001F: 8B 00              mov         eax,dword ptr [eax]
+  00000021: C1 E8 08           shr         eax,8
+  00000024: 83 E0 01           and         eax,1
+  00000027: F7 D8              neg         eax
+  00000029: 8B C8              mov         ecx,eax
+  0000002B: 83 E1 01           and         ecx,1
+  0000002E: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A8690.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Texture_WaitForSlotFree@8:
+  00000000: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  00000003: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000008: 83 F8 01           cmp         eax,1
+  0000000B: 77 0D              ja          0000001A
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 05              je          00000016
+  00000011: 83 C1 28           add         ecx,28h
+  00000014: EB 07              jmp         0000001D
+  00000016: 33 C9              xor         ecx,ecx
+  00000018: EB 03              jmp         0000001D
+  0000001A: 8B 49 28           mov         ecx,dword ptr [ecx+28h]
+  0000001D: 8D 04 D5 00 00 00  lea         eax,[edx*8]
+            00
+  00000024: 2B C2              sub         eax,edx
+  00000026: 83 7C 81 18 00     cmp         dword ptr [ecx+eax*4+18h],0
+  0000002B: 56                 push        esi
+  0000002C: 8D 34 81           lea         esi,[ecx+eax*4]
+  0000002F: 7E 10              jle         00000041
+  00000031: 6A 01              push        1
+  00000033: E8 00 00 00 00     call        _Phyre_SleepMs
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 83 7E 18 00        cmp         dword ptr [esi+18h],0
+  0000003F: 7F F0              jg          00000031
+  00000041: 5E                 pop         esi
+  00000042: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          43 .text

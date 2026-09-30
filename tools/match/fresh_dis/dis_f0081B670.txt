@@ -1,0 +1,331 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081B670.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicCoreOp_86_Transform:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 53                 push        ebx
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 0F B7 8F 1A 02 00  movzx       ecx,word ptr [edi+21Ah]
+            00
+  00000012: 8B 9F 20 02 00 00  mov         ebx,dword ptr [edi+220h]
+  00000018: 8B C1              mov         eax,ecx
+  0000001A: 25 00 F0 00 00     and         eax,0F000h
+  0000001F: 3D 00 20 00 00     cmp         eax,2000h
+  00000024: 76 39              jbe         0000005F
+  00000026: 3D 00 30 00 00     cmp         eax,3000h
+  0000002B: 75 29              jne         00000056
+  0000002D: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000030: C6 83 BA 00 00 00  mov         byte ptr [ebx+0BAh],0Ah
+            0A
+  00000037: 0F B7 41 02        movzx       eax,word ptr [ecx+2]
+  0000003B: 66 89 83 A0 00 00  mov         word ptr [ebx+0A0h],ax
+            00
+  00000042: 0F B7 41 04        movzx       eax,word ptr [ecx+4]
+  00000046: 66 89 83 A2 00 00  mov         word ptr [ebx+0A2h],ax
+            00
+  0000004D: 5F                 pop         edi
+  0000004E: 8D 41 06           lea         eax,[ecx+6]
+  00000051: 5B                 pop         ebx
+  00000052: 8B E5              mov         esp,ebp
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+  00000056: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000059: 5F                 pop         edi
+  0000005A: 5B                 pop         ebx
+  0000005B: 8B E5              mov         esp,ebp
+  0000005D: 5D                 pop         ebp
+  0000005E: C3                 ret
+  0000005F: 56                 push        esi
+  00000060: 3D 00 20 00 00     cmp         eax,2000h
+  00000065: 0F 85 52 01 00 00  jne         000001BD
+  0000006B: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000006E: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  00000072: 66 85 C0           test        ax,ax
+  00000075: 74 14              je          0000008B
+  00000077: 98                 cwde
+  00000078: 50                 push        eax
+  00000079: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  0000007F: 53                 push        ebx
+  00000080: 50                 push        eax
+  00000081: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  00000086: 83 C4 0C           add         esp,0Ch
+  00000089: EB 02              jmp         0000008D
+  0000008B: 8B C3              mov         eax,ebx
+  0000008D: 8B 88 BC 00 00 00  mov         ecx,dword ptr [eax+0BCh]
+  00000093: D9 43 4C           fld         dword ptr [ebx+4Ch]
+  00000096: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000099: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000009C: 0F BF 01           movsx       eax,word ptr [ecx]
+  0000009F: D9 45 FC           fld         dword ptr [ebp-4]
+  000000A2: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f70000000000000]
+  000000A8: 50                 push        eax
+  000000A9: FF 71 0C           push        dword ptr [ecx+0Ch]
+  000000AC: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000000AF: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000000B2: FF 71 08           push        dword ptr [ecx+8]
+  000000B5: 83 EC 08           sub         esp,8
+  000000B8: DD 1C 24           fstp        qword ptr [esp]
+  000000BB: 57                 push        edi
+  000000BC: E8 00 00 00 00     call        _FFX_Math_EvalCubicSpline3D
+  000000C1: D9 43 6C           fld         dword ptr [ebx+6Ch]
+  000000C4: D9 EE              fldz
+  000000C6: 83 C4 18           add         esp,18h
+  000000C9: DA E9              fucompp
+  000000CB: DF E0              fnstsw      ax
+  000000CD: F6 C4 44           test        ah,44h
+  000000D0: 7A 0B              jp          000000DD
+  000000D2: D9 45 FC           fld         dword ptr [ebp-4]
+  000000D5: DC 05 00 00 00 00  fadd        qword ptr [__real@3eb0c6f7a0000000]
+  000000DB: EB 06              jmp         000000E3
+  000000DD: D9 43 6C           fld         dword ptr [ebx+6Ch]
+  000000E0: D8 45 FC           fadd        dword ptr [ebp-4]
+  000000E3: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000000E6: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000000E9: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000000EC: 8D 4F 10           lea         ecx,[edi+10h]
+  000000EF: 0F BF 02           movsx       eax,word ptr [edx]
+  000000F2: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f70000000000000]
+  000000F8: 50                 push        eax
+  000000F9: FF 72 0C           push        dword ptr [edx+0Ch]
+  000000FC: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000000FF: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000102: FF 72 08           push        dword ptr [edx+8]
+  00000105: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000108: 83 EC 08           sub         esp,8
+  0000010B: DD 1C 24           fstp        qword ptr [esp]
+  0000010E: 51                 push        ecx
+  0000010F: E8 00 00 00 00     call        _FFX_Math_EvalCubicSpline3D
+  00000114: 83 C4 18           add         esp,18h
+  00000117: 83 EC 08           sub         esp,8
+  0000011A: 66 83 7E 04 00     cmp         word ptr [esi+4],0
+  0000011F: 8D 73 40           lea         esi,[ebx+40h]
+  00000122: 74 23              je          00000147
+  00000124: DD 05 00 00 00 00  fld         qword ptr [__real@4030000000000000]
+  0000012A: DD 1C 24           fstp        qword ptr [esp]
+  0000012D: 57                 push        edi
+  0000012E: 56                 push        esi
+  0000012F: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  00000134: DD 05 00 00 00 00  fld         qword ptr [__real@4030000000000000]
+  0000013A: 83 C4 08           add         esp,8
+  0000013D: 8D 47 10           lea         eax,[edi+10h]
+  00000140: DD 1C 24           fstp        qword ptr [esp]
+  00000143: 50                 push        eax
+  00000144: 50                 push        eax
+  00000145: EB 07              jmp         0000014E
+  00000147: D9 E8              fld1
+  00000149: DD 1C 24           fstp        qword ptr [esp]
+  0000014C: 57                 push        edi
+  0000014D: 56                 push        esi
+  0000014E: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  00000153: DD 05 00 00 00 00  fld         qword ptr [__real@3fb0000000000000]
+  00000159: 83 C4 10           add         esp,10h
+  0000015C: 83 EC 08           sub         esp,8
+  0000015F: 8D BB 90 00 00 00  lea         edi,[ebx+90h]
+  00000165: DD 1C 24           fstp        qword ptr [esp]
+  00000168: 56                 push        esi
+  00000169: 57                 push        edi
+  0000016A: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  0000016F: DD 05 00 00 00 00  fld         qword ptr [__real@3fb0000000000000]
+  00000175: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000178: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000017C: 83 C4 08           add         esp,8
+  0000017F: 50                 push        eax
+  00000180: 50                 push        eax
+  00000181: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  00000186: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000189: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000018C: 50                 push        eax
+  0000018D: 83 C6 40           add         esi,40h
+  00000190: 57                 push        edi
+  00000191: 56                 push        esi
+  00000192: E8 00 00 00 00     call        _FFX_Field_ComputeTransformOffset
+  00000197: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000019A: 05 80 02 00 00     add         eax,280h
+  0000019F: 56                 push        esi
+  000001A0: 50                 push        eax
+  000001A1: 8D 83 C0 00 00 00  lea         eax,[ebx+0C0h]
+  000001A7: 50                 push        eax
+  000001A8: E8 00 00 00 00     call        _FFX_Magic_CopyRuntimeTransformMatricesToGlobals
+  000001AD: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000001B0: 83 C4 28           add         esp,28h
+  000001B3: 83 C0 06           add         eax,6
+  000001B6: 5E                 pop         esi
+  000001B7: 5F                 pop         edi
+  000001B8: 5B                 pop         ebx
+  000001B9: 8B E5              mov         esp,ebp
+  000001BB: 5D                 pop         ebp
+  000001BC: C3                 ret
+  000001BD: F7 C1 00 F0 00 00  test        ecx,0F000h
+  000001C3: 0F 84 B5 00 00 00  je          0000027E
+  000001C9: 3D 00 10 00 00     cmp         eax,1000h
+  000001CE: 0F 85 A0 00 00 00  jne         00000274
+  000001D4: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000001D7: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  000001DB: 66 85 C0           test        ax,ax
+  000001DE: 74 14              je          000001F4
+  000001E0: 98                 cwde
+  000001E1: 50                 push        eax
+  000001E2: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  000001E8: 53                 push        ebx
+  000001E9: 50                 push        eax
+  000001EA: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  000001EF: 83 C4 0C           add         esp,0Ch
+  000001F2: EB 02              jmp         000001F6
+  000001F4: 8B C3              mov         eax,ebx
+  000001F6: 8B 88 BC 00 00 00  mov         ecx,dword ptr [eax+0BCh]
+  000001FC: D9 43 4C           fld         dword ptr [ebx+4Ch]
+  000001FF: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f70000000000000]
+  00000205: 0F BF 01           movsx       eax,word ptr [ecx]
+  00000208: 50                 push        eax
+  00000209: FF 71 0C           push        dword ptr [ecx+0Ch]
+  0000020C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000020F: D9 45 08           fld         dword ptr [ebp+8]
+  00000212: FF 71 08           push        dword ptr [ecx+8]
+  00000215: 83 EC 08           sub         esp,8
+  00000218: DD 1C 24           fstp        qword ptr [esp]
+  0000021B: 57                 push        edi
+  0000021C: E8 00 00 00 00     call        _FFX_Math_EvalCubicSpline3D
+  00000221: 83 C4 18           add         esp,18h
+  00000224: 66 83 7E 04 00     cmp         word ptr [esi+4],0
+  00000229: 74 08              je          00000233
+  0000022B: DD 05 00 00 00 00  fld         qword ptr [__real@4030000000000000]
+  00000231: EB 02              jmp         00000235
+  00000233: D9 E8              fld1
+  00000235: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000238: 83 EC 08           sub         esp,8
+  0000023B: D9 45 08           fld         dword ptr [ebp+8]
+  0000023E: 8D 73 40           lea         esi,[ebx+40h]
+  00000241: DD 1C 24           fstp        qword ptr [esp]
+  00000244: 57                 push        edi
+  00000245: 56                 push        esi
+  00000246: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  0000024B: DD 05 00 00 00 00  fld         qword ptr [__real@3fb0000000000000]
+  00000251: 83 C4 08           add         esp,8
+  00000254: 8D 83 90 00 00 00  lea         eax,[ebx+90h]
+  0000025A: DD 1C 24           fstp        qword ptr [esp]
+  0000025D: 56                 push        esi
+  0000025E: 50                 push        eax
+  0000025F: E8 00 00 00 00     call        _FFX_MagicVm_TransformDrawDispatch_helper
+  00000264: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000267: 83 C4 10           add         esp,10h
+  0000026A: 83 C0 06           add         eax,6
+  0000026D: 5E                 pop         esi
+  0000026E: 5F                 pop         edi
+  0000026F: 5B                 pop         ebx
+  00000270: 8B E5              mov         esp,ebp
+  00000272: 5D                 pop         ebp
+  00000273: C3                 ret
+  00000274: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000277: 5E                 pop         esi
+  00000278: 5F                 pop         edi
+  00000279: 5B                 pop         ebx
+  0000027A: 8B E5              mov         esp,ebp
+  0000027C: 5D                 pop         ebp
+  0000027D: C3                 ret
+  0000027E: FF B3 BC 00 00 00  push        dword ptr [ebx+0BCh]
+  00000284: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000287: FF B7 A8 03 00 00  push        dword ptr [edi+3A8h]
+  0000028D: 0F B7 70 02        movzx       esi,word ptr [eax+2]
+  00000291: E8 00 00 00 00     call        _FFX_Magic_UnlinkNodeFromDList
+  00000296: 0F BF C6           movsx       eax,si
+  00000299: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000029C: C1 E0 05           shl         eax,5
+  0000029F: 83 C0 10           add         eax,10h
+  000002A2: 50                 push        eax
+  000002A3: FF B7 A8 03 00 00  push        dword ptr [edi+3A8h]
+  000002A9: E8 00 00 00 00     call        _FFX_Magic_OpHeapAllocRecord
+  000002AE: 8B D0              mov         edx,eax
+  000002B0: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000002B3: 89 93 BC 00 00 00  mov         dword ptr [ebx+0BCh],edx
+  000002B9: 66 89 32           mov         word ptr [edx],si
+  000002BC: 8D 72 10           lea         esi,[edx+10h]
+  000002BF: 8D 48 01           lea         ecx,[eax+1]
+  000002C2: C1 E1 04           shl         ecx,4
+  000002C5: 03 CA              add         ecx,edx
+  000002C7: 89 72 08           mov         dword ptr [edx+8],esi
+  000002CA: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  000002CD: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000002D0: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  000002D3: 0F BF 4E 04        movsx       ecx,word ptr [esi+4]
+  000002D7: 03 CE              add         ecx,esi
+  000002D9: 0F B7 76 06        movzx       esi,word ptr [esi+6]
+  000002DD: 83 C4 10           add         esp,10h
+  000002E0: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  000002E3: 89 75 F8           mov         dword ptr [ebp-8],esi
+  000002E6: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  000002ED: 85 C0              test        eax,eax
+  000002EF: 7E 78              jle         00000369
+  000002F1: 8B 75 F0           mov         esi,dword ptr [ebp-10h]
+  000002F4: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  000002FA: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  000002FD: 8B D0              mov         edx,eax
+  000002FF: 8D 79 02           lea         edi,[ecx+2]
+  00000302: 83 C6 04           add         esi,4
+  00000305: 0F BF 01           movsx       eax,word ptr [ecx]
+  00000308: 50                 push        eax
+  00000309: 53                 push        ebx
+  0000030A: 52                 push        edx
+  0000030B: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  00000310: 83 C4 0C           add         esp,0Ch
+  00000313: 66 83 7D F8 00     cmp         word ptr [ebp-8],0
+  00000318: 74 19              je          00000333
+  0000031A: D9 80 90 00 00 00  fld         dword ptr [eax+90h]
+  00000320: D9 5E FC           fstp        dword ptr [esi-4]
+  00000323: D9 80 94 00 00 00  fld         dword ptr [eax+94h]
+  00000329: D9 1E              fstp        dword ptr [esi]
+  0000032B: D9 80 98 00 00 00  fld         dword ptr [eax+98h]
+  00000331: EB 0E              jmp         00000341
+  00000333: D9 40 40           fld         dword ptr [eax+40h]
+  00000336: D9 5E FC           fstp        dword ptr [esi-4]
+  00000339: D9 40 44           fld         dword ptr [eax+44h]
+  0000033C: D9 1E              fstp        dword ptr [esi]
+  0000033E: D9 40 48           fld         dword ptr [eax+48h]
+  00000341: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000344: D9 5E 04           fstp        dword ptr [esi+4]
+  00000347: 8B 55 EC           mov         edx,dword ptr [ebp-14h]
+  0000034A: 0F B7 C1           movzx       eax,cx
+  0000034D: 41                 inc         ecx
+  0000034E: 40                 inc         eax
+  0000034F: 98                 cwde
+  00000350: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000353: 8B CF              mov         ecx,edi
+  00000355: 83 C6 10           add         esi,10h
+  00000358: 83 C7 02           add         edi,2
+  0000035B: 3B 45 08           cmp         eax,dword ptr [ebp+8]
+  0000035E: 7C A5              jl          00000305
+  00000360: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000363: 8B 55 F4           mov         edx,dword ptr [ebp-0Ch]
+  00000366: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  00000369: 50                 push        eax
+  0000036A: FF 72 08           push        dword ptr [edx+8]
+  0000036D: FF 72 0C           push        dword ptr [edx+0Ch]
+  00000370: E8 00 00 00 00     call        _FFX_Math_ComputeCubicSplineCoeffs3D
+  00000375: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00000378: 83 C4 0C           add         esp,0Ch
+  0000037B: 66 85 F6           test        si,si
+  0000037E: 0F 94 C0           sete        al
+  00000381: 5E                 pop         esi
+  00000382: 88 41 07           mov         byte ptr [ecx+7],al
+  00000385: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000388: 5F                 pop         edi
+  00000389: 83 C0 08           add         eax,8
+  0000038C: 5B                 pop         ebx
+  0000038D: 8B E5              mov         esp,ebp
+  0000038F: 5D                 pop         ebp
+  00000390: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .rdata
+         391 .text

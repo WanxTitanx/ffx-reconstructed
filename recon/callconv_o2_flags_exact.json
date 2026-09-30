@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "target": {
+    "file": "FFX.exe",
+    "size": 10675712,
+    "sha256": "78CE34397DA5E6F49B72C2AEBADEDAF4CD3F6720E1949D46A1B8ED67D3DB5CED",
+    "idb_sha256": "BAB0B5B213FF01EABD5CA5E2EA8950B8766F79887A990462D44CA3AA2DDB368A"
+  },
+  "candidate_set": {
+    "origin": "Same-size/different-byte units in the existing 21,962-object fresh_decompilation pass",
+    "units": 697,
+    "units_with_single_argument_callconv_rewrite": 18,
+    "already_corrected_source_dir": "/tmp/proto_probe/o1_src"
+  },
+  "toolchain": {
+    "compiler": "Microsoft C/C++ Optimizing Compiler 17.00.50727.1 for x86",
+    "dumpbin": "11.00.50727.1",
+    "base_flags": [
+      "/nologo",
+      "/TC",
+      "/c",
+      "/MP",
+      "/GS-",
+      "/MD",
+      "/Oy-"
+    ],
+    "flag_variants": [
+      [
+        "/O2",
+        "/Ob1",
+        "/Oi"
+      ],
+      [
+        "/O2",
+        "/Oi-"
+      ]
+    ]
+  },
+  "verification": {
+    "tool": "tools/match/strict_rel32_verify.py",
+    "inventory": "tools/match/inventory.tsv",
+    "method": "Resolve each COFF .text REL32 field to its unique target VA, reconstruct all bytes, and compare against the PE at the declared IDB VA."
+  },
+  "summary": {
+    "compiled_objects_per_flag_variant": 697,
+    "strict_exact_functions_per_flag_variant": 4,
+    "previously_verified_functions_reproduced": 2,
+    "new_strict_exact_functions": 2,
+    "new_strict_exact_bytes": 413,
+    "additional_rel32_fixups": 7
+  },
+  "functions": [
+    {
+      "va": 7235680,
+      "size": 344,
+      "idb_name": "FFX_BtlUI_HudBar_Update",
+      "source_file": "recon/recovered_callconv_sources/f006E6860.c",
+      "source_sha256": "e88e51d9d776e56527599c8b1b59c1a55db579477649044321b1499928e02b85",
+      "byte_sha256": "a01df39eabdc7576e55ec2785d6eb8bc0ece635df80c307436a6e00d5c7e1478",
+      "relocations": [],
+      "verified_flag_sets": [
+        "/O2 /Ob1 /Oi",
+        "/O2 /Oi-"
+      ]
+    },
+    {
+      "va": 9557392,
+      "size": 69,
+      "idb_name": "FFX_FieldMap_SetGuideMeshSource",
+      "source_file": "recon/recovered_callconv_sources/f0091D590.c",
+      "source_sha256": "88db25d721416df0ac94ecdcd9c72ef19d965931921f14e553c5ef909c47172c",
+      "byte_sha256": "f53937deaef453818cc956799116d5a6bc1fe19b378d7cb26cb35c482722af38",
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "_FFX_RcBg_FreeModelBuffer",
+          "target_va": 9601024
+        },
+        {
+          "offset": 48,
+          "type": "REL32",
+          "symbol": "_FFX_BuildGuideMeshDimensions",
+          "target_va": 9558144
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "_FFX_FieldMap_BuildGuideMeshFromMapoutPolys",
+          "target_va": 9557472
+        }
+      ],
+      "verified_flag_sets": [
+        "/O2 /Ob1 /Oi",
+        "/O2 /Oi-"
+      ]
+    }
+  ]
+}

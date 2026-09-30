@@ -1,0 +1,107 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00966770.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_emitBinaryOp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000008: 56                 push        esi
+  00000009: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000C: 57                 push        edi
+  0000000D: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000010: 53                 push        ebx
+  00000011: 57                 push        edi
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        _LuaCodeGen_foldBinaryConstant
+  00000018: 83 C4 0C           add         esp,0Ch
+  0000001B: 85 C0              test        eax,eax
+  0000001D: 0F 85 C6 00 00 00  jne         000000E9
+  00000023: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000026: 83 FE 13           cmp         esi,13h
+  00000029: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000002C: 74 19              je          00000047
+  0000002E: 83 7D 0C 15        cmp         dword ptr [ebp+0Ch],15h
+  00000032: 74 13              je          00000047
+  00000034: 50                 push        eax
+  00000035: 53                 push        ebx
+  00000036: 56                 push        esi
+  00000037: E8 00 00 00 00     call        _LuaCodeGen_loadToReg
+  0000003C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000003F: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000042: 83 C4 0C           add         esp,0Ch
+  00000045: EB 07              jmp         0000004E
+  00000047: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000004E: 50                 push        eax
+  0000004F: 57                 push        edi
+  00000050: 56                 push        esi
+  00000051: E8 00 00 00 00     call        _LuaCodeGen_loadToReg
+  00000056: 8B C8              mov         ecx,eax
+  00000058: 83 C4 0C           add         esp,0Ch
+  0000005B: 3B 4D FC           cmp         ecx,dword ptr [ebp-4]
+  0000005E: 7F 25              jg          00000085
+  00000060: 83 3B 06           cmp         dword ptr [ebx],6
+  00000063: 75 16              jne         0000007B
+  00000065: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  00000068: F7 C2 00 01 00 00  test        edx,100h
+  0000006E: 75 0B              jne         0000007B
+  00000070: 0F B6 46 2E        movzx       eax,byte ptr [esi+2Eh]
+  00000074: 3B D0              cmp         edx,eax
+  00000076: 7C 03              jl          0000007B
+  00000078: FE 4E 30           dec         byte ptr [esi+30h]
+  0000007B: 83 3F 06           cmp         dword ptr [edi],6
+  0000007E: 75 3B              jne         000000BB
+  00000080: 8B 57 04           mov         edx,dword ptr [edi+4]
+  00000083: EB 23              jmp         000000A8
+  00000085: 83 3F 06           cmp         dword ptr [edi],6
+  00000088: 75 16              jne         000000A0
+  0000008A: 8B 57 04           mov         edx,dword ptr [edi+4]
+  0000008D: F7 C2 00 01 00 00  test        edx,100h
+  00000093: 75 0B              jne         000000A0
+  00000095: 0F B6 46 2E        movzx       eax,byte ptr [esi+2Eh]
+  00000099: 3B D0              cmp         edx,eax
+  0000009B: 7C 03              jl          000000A0
+  0000009D: FE 4E 30           dec         byte ptr [esi+30h]
+  000000A0: 83 3B 06           cmp         dword ptr [ebx],6
+  000000A3: 75 16              jne         000000BB
+  000000A5: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  000000A8: F7 C2 00 01 00 00  test        edx,100h
+  000000AE: 75 0B              jne         000000BB
+  000000B0: 0F B6 46 2E        movzx       eax,byte ptr [esi+2Eh]
+  000000B4: 3B D0              cmp         edx,eax
+  000000B6: 7C 03              jl          000000BB
+  000000B8: FE 4E 30           dec         byte ptr [esi+30h]
+  000000BB: C1 E1 09           shl         ecx,9
+  000000BE: 0B 4D FC           or          ecx,dword ptr [ebp-4]
+  000000C1: C1 E1 0E           shl         ecx,0Eh
+  000000C4: 0B 4D 0C           or          ecx,dword ptr [ebp+0Ch]
+  000000C7: 51                 push        ecx
+  000000C8: 56                 push        esi
+  000000C9: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  000000CE: 89 47 04           mov         dword ptr [edi+4],eax
+  000000D1: C7 07 0B 00 00 00  mov         dword ptr [edi],0Bh
+  000000D7: 8B 06              mov         eax,dword ptr [esi]
+  000000D9: 8B 56 14           mov         edx,dword ptr [esi+14h]
+  000000DC: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  000000DF: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000E2: 83 C4 08           add         esp,8
+  000000E5: 89 44 91 FC        mov         dword ptr [ecx+edx*4-4],eax
+  000000E9: 5F                 pop         edi
+  000000EA: 5E                 pop         esi
+  000000EB: 5B                 pop         ebx
+  000000EC: 8B E5              mov         esp,ebp
+  000000EE: 5D                 pop         ebp
+  000000EF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          F0 .text

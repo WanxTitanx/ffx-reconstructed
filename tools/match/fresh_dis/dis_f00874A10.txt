@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00874A10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SetEventTextureUV:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 78 0C              js          00000016
+  0000000A: 83 F8 7F           cmp         eax,7Fh
+  0000000D: 7E 09              jle         00000018
+  0000000F: B8 7F 00 00 00     mov         eax,7Fh
+  00000014: EB 02              jmp         00000018
+  00000016: 33 C0              xor         eax,eax
+  00000018: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000001B: 56                 push        esi
+  0000001C: DD 05 00 00 00 00  fld         qword ptr [__real@4070000000000000]
+  00000022: 8D 34 C5 00 00 00  lea         esi,[eax*8]
+            00
+  00000029: DC C9              fmul        st(1),st
+  0000002B: 2B F0              sub         esi,eax
+  0000002D: D9 C9              fxch        st(1)
+  0000002F: E8 00 00 00 00     call        __ftol2_sse
+  00000034: D8 4D 10           fmul        dword ptr [ebp+10h]
+  00000037: 66 89 04 B5 00 00  mov         word ptr _unk_1327110[esi*4],ax
+            00 00
+  0000003F: E8 00 00 00 00     call        __ftol2_sse
+  00000044: 66 89 04 B5 00 00  mov         word ptr _g_EncounterUnkVar_1327112[esi*4],ax
+            00 00
+  0000004C: 5E                 pop         esi
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          4F .text

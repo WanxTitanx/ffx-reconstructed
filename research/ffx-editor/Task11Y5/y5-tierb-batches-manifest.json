@@ -1,0 +1,92 @@
+{
+ "document_kind": "y5 tier-B virtual-batch manifest (X5 acceptance-cycle tracking; ADDITIVE — does not modify the pinned y5-batches.json sha 0ce67a99...)",
+ "generated": "2026-09-16",
+ "lane": "FFX-STRUCTURES / X5-Y5 acceptance cycle (onda Residual)",
+ "precedent": "docs/reverse/FFX_Y5_B24_ACCEPTANCE_2026-09-15.md; docs/reverse/task11/y5/y5-batches-status-2026-09-15.md; docs/reverse/task11/y5/y5-envelope.json",
+ "pinned_inputs": {
+  "atlas_legacy_sha256": "F5439414C1624ED6B9E049FE462AF737781C44BFAA59AE26B20CC2F03D2F2CC7",
+  "atlas_legacy_note": "working-tree docs/reverse/FFX_STRUCTURE_COMPLETE_2026-08-17.md was link-rewritten by commit ab0ce2d0 (2026-09-16) and now hashes 9947FE0293A4483320490E1E5AE2B0CAA557589C5AE040AB8C7C7555BEEE52C4; the pinned bytes are preserved + verified at work/_x5_tierb3/pins/FFX_STRUCTURE_COMPLETE_2026-08-17.F5439414.md and artifacts/2026-09-14/qa-win/FFX_STRUCTURE_COMPLETE_2026-08-17.md",
+  "atlas_source_units_sha256": "D67500CA1DBAA1F7F5BA84E778A5A7D985264DA4370FA0860DFBE0CD38849549",
+  "t11_accepted_seed_sha256": "ECF734A595A8B284E66136E8B54E811D7242627E9C8BBB3D9FC31D076E1DD875",
+  "y5_batches_json_sha256": "0CE67A990FBD85CFF7F34F2DEBC157FA0C9DF8A0CA0F30A443A1AFAAE1C8AB33",
+  "y5_batches_json_status": "PINNED/IMMUTABLE by X5-cycle decision — virtual batches b24/b25 are registered HERE, not in y5-batches.json",
+  "rederived_queue": "artifacts/2026-09-15/x5-rederivation/vnext_required.rederived.json (sha256 83526716d3c1c0f1a5c22a8bb5baf15ff65daf2e04438609dac3a6342e70075d; counts exact by construction, unit-level identity = quantified deterministic approximation; adoption as routing basis = LANE-OWNER decision)"
+ },
+ "virtual_batches": [
+  {
+   "batch_id": "y5-b24-tierb-secondpass",
+   "claim_group_id": "fsc-20260817-043",
+   "kind": "virtual — tier-B second pass over the 1,331 recorded tier-b-ambiguous skips of b01..b23",
+   "state": "CANDIDATE",
+   "claims": 494,
+   "units_skipped": 837,
+   "universe": 1331,
+   "draft_file": "artifacts/2026-09-14/y5/drafts/y5-draft-claims-y5-b24-tierb-secondpass.json",
+   "candidate_file": "artifacts/2026-09-14/y5/y5-candidate-b24-tierb.json",
+   "candidate_sha256": "1DF98464ACC096281885626CA9B2D94BEAA121AF29DCB41AF95EE60ACC2F61B8",
+   "candidate_bytes": 1266589,
+   "nvme_mirror": "/mnt/nvme-samsung/ffx-task-artifacts/glm-structures-exec-69f2d8/y5-drafts/y5-candidate-b24-tierb.json (byte-identical, re-verified 2026-09-16)",
+   "triage": "work/_y5_b24_accept/triage_b24.json (417 atlas-descriptive / 37 needs-ida / 40 borderline-editorial; 117/494 in re-derived queue)",
+   "gate_evidence": [
+    "2026-09-15 original cycle: draft gate PASS + promotion gate PASS (docs/reverse/FFX_Y5_B24_ACCEPTANCE_2026-09-15.md §2)",
+    "2026-09-16 RE-RUN (this lane): draft gate PASS — claims=494 sha=494/494 byte_slice=494/494 lines=494/494 shape=494/494 honesty=494/494 ids_unique=494/494 dup_vs_prior23=0 universe=1331 unaccounted=0 extras=0 double=0 a034=0 bad_shape=0 — work/_x5_tierb3/gates/b24_draft_gate_rerun_2026-09-16.txt",
+    "2026-09-16 RE-RUN: promotion gate PASS — claims_verbatim=494/494 anchors_ok+slice=494/494 anchors=494 relations=494 extensions=ok — work/_x5_tierb3/gates/b24_promotion_gate_rerun_2026-09-16.txt",
+    "rerun method: versioned validator y5_batcher_validate_tierb.py (sha CAF5A5D4...) loaded unmodified via work/_x5_tierb3/y5_b24_gate_rerun.py; only the module-level ATLAS_PATH constant repointed to the pinned bytes (working-tree atlas no longer matches the pin after commit ab0ce2d0)"
+   ],
+   "acceptance_blockers": [
+    "X/Y/Z review cycle with 2 INDEPENDENT attestations (reviewer X = derivation audit, reviewer Y = materialization/reproducibility) — by rule NOT self-attestable by the producing lane",
+    "lane-owner decision: adopt the re-derived X5 queue as routing basis (only 117/494 b24 claims are in-queue — 23.7%)",
+    "canonical-service recomputation of scope_id/boundary_id/candidate_vector_sha256 via CanonicalJson/ClaimAuditService at materialization (current ids are DRAFT-grade)",
+    "own acceptance envelope + Z attestations — docs/reverse/task11/y5/y5-envelope.json covers only b01..b03"
+   ]
+  },
+  {
+   "batch_id": "y5-b25-tierb-thirdpass",
+   "claim_group_id": "fsc-20260817-044",
+   "kind": "virtual — tier-B THIRD pass: the 163 b24 residual skips (reason tierb-residual-*) that are members of the re-derived queue",
+   "state": "CANDIDATE",
+   "claims": 163,
+   "units_skipped": 0,
+   "universe": 163,
+   "pass3_universe_rule": "b24 units_skipped(reason startswith tierb-residual-) ∩ vnext_required.rederived.json; ordering by atlas line_start then source_unit_id",
+   "draft_file": "work/_x5_tierb3/drafts/y5-draft-claims-y5-b25-tierb-thirdpass.json",
+   "draft_sha256": "E8EA630B2BFF8DED144CC520EBB4E2590F977520CCAABD60D21C67A80B33D37B",
+   "sidecar_file": "work/_x5_tierb3/drafts/y5-draft-claims-y5-b25-tierb-thirdpass.units.json",
+   "sidecar_sha256": "0414B5660F692C5DFD3B31FEDEA34364647A777A534FF1D1B7B0E1F34064990C",
+   "candidate_file": "work/_x5_tierb3/y5-candidate-b25-tierb3.json",
+   "candidate_sha256": "1CF8A753BA3FA4963A48C5DDA41E5F108FBBAD77A2851E7C1EF60A2B897B87AD",
+   "candidate_bytes": 441602,
+   "triage": "work/_x5_tierb3/triage_b25.json (120 atlas-descriptive / 11 needs-ida / 32 borderline-editorial; 163/163 in re-derived queue; 0 duplicate claim texts)",
+   "bucket_mix": {"prose": 115, "lead-in": 16, "bold-label": 12, "doc-ref": 14, "doc-meta": 6},
+   "kind_mix": {"list-item": 108, "paragraph": 55},
+   "queue_lots": {"C": 90, "D": 65, "B": 8},
+   "gate_evidence": [
+    "draft gate PASS (x2: original run + 2026-09-16 re-run) — claims=163 sha=163/163 byte_slice=163/163 lines=163/163 shape=163/163 honesty=163/163 ids_unique=163/163 dup_vs_prior24=0 universe=163 drafted=163 skipped=0 unaccounted=0 extras=0 double=0 a034=0 bad_shape=0 — work/_x5_tierb3/gates/tierb3_draft_gate.txt + tierb3_draft_plus_candidate_gate.txt",
+    "promotion gate PASS (x2) — claims_verbatim=163/163 anchors_ok+slice=163/163 anchors=163 relations=163 extensions=ok — work/_x5_tierb3/gates/tierb3_draft_plus_candidate_gate.txt",
+    "determinism: regeneration in scratch produced byte-identical draft + sidecar (same sha256) — work/_x5_tierb3/gates/b25_determinism_and_shas_2026-09-16.txt"
+   ],
+   "acceptance_blockers": [
+    "same ladder as b24: X/Y/Z cycle with 2 independent attestations; lane-owner queue decision (b25 is 100% in-queue BY CONSTRUCTION — the queue-membership gate argument is stronger than b24's 23.7%, but adoption of the re-derived list is still the lane-owner's call); canonical-service id recomputation; own envelope + Z"
+   ]
+  }
+ ],
+ "tierb_accounting": {
+  "tierb_universe": 1331,
+  "tierb_in_rederived_queue": 280,
+  "decomposition": "117 (b24 drafted in-queue) + 163 (b25 drafted in-queue) + 0 residual in-queue = 280 — every in-queue tier-B unit is now dispositioned with a DRAFT claim; invariant closed",
+  "out_of_queue_residual_deferred": 674,
+  "out_of_queue_note": "674 b24 residual skips are NOT in the re-derived queue — deferred, not drafted (honest scope: pass 3 only claims in-queue units)"
+ },
+ "generators_and_validators": {
+  "research_tools/Task11Y5/y5_draft_claims.py": "13B08572921DA401BBCE52BD5974B45AC6BF6C368ADADA205003F8B15515FF66 (versioned generator; b25 reuses its norm_fact/truncate/tierb_shape verbatim)",
+  "research_tools/Task11Y5/y5_batcher_validate_tierb.py": "CAF5A5D4B1815579A416D44EFBC82E772F80F48F775BC15A4745891E70CAA3C7 (b24 gates incl. --candidate promotion gate)",
+  "work/_x5_tierb3/y5_draft_claims_b25.py": "9E61FCF2CF8047D1A30FED06B0F97986C87077478A1610B6DC90EAA17B35C760",
+  "work/_x5_tierb3/y5_build_candidate_b25.py": "D84DBEFCC6A1D9FEFEF39CF3674E01B4FDA0C78E7F39E35B32FFF4CB76DD3879",
+  "work/_x5_tierb3/y5_batcher_validate_tierb3.py": "A1B2135F2C69C618134EB8E29EA592CEAF945F08EE1C1B816C90AB6864AA7DAE",
+  "work/_x5_tierb3/y5_b24_gate_rerun.py": "FB4A2A9546D46E171675BCCF3148AB93DBF5B32D8299B330947EB5E27BFB0921",
+  "work/_x5_tierb3/triage_b25.py": "EC8D4E4C0F986CDAE3E7175F4C23853B2E58CADD2D572A3CEB6C291CE2FFE722",
+  "work/_x5_tierb3/triage_b25.json": "10F5A4F4D18CA0C3F2A4A6FA382EEE036F07DD08BA41F438FA89DD26E50B38EC"
+ },
+ "report": "docs/reverse/FFX_X5_TIERB_PASS3_2026-09-16.md",
+ "status_summary": "b24 + b25 = CANDIDATE (both gates PASS, re-verified 2026-09-16). ACCEPTED requires human sign-off: 2 independent X/Y attestations + lane-owner X5-queue routing decision + canonical-service id recomputation. No Y5 batch has ever reached ACCEPTED (ceiling = REVIEWED-PASS-2/2 on b01..b03)."
+}

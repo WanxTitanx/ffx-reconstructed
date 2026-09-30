@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00810EB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Debug_ModelBrowser_ComputeFrameIndex:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 0F BF 46 02        movsx       eax,word ptr [esi+2]
+  0000000B: 03 45 14           add         eax,dword ptr [ebp+14h]
+  0000000E: 8A 4E 05           mov         cl,byte ptr [esi+5]
+  00000011: 8A 56 04           mov         dl,byte ptr [esi+4]
+  00000014: 88 48 2C           mov         byte ptr [eax+2Ch],cl
+  00000017: 84 C9              test        cl,cl
+  00000019: 74 06              je          00000021
+  0000001B: 79 06              jns         00000023
+  0000001D: F6 D9              neg         cl
+  0000001F: EB 02              jmp         00000023
+  00000021: B1 01              mov         cl,1
+  00000023: 0F B6 40 1C        movzx       eax,byte ptr [eax+1Ch]
+  00000027: 0F B6 D2           movzx       edx,dl
+  0000002A: 2B D0              sub         edx,eax
+  0000002C: 79 02              jns         00000030
+  0000002E: F7 DA              neg         edx
+  00000030: 8B C2              mov         eax,edx
+  00000032: 0F B6 C9           movzx       ecx,cl
+  00000035: 99                 cdq
+  00000036: F7 F9              idiv        eax,ecx
+  00000038: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000003B: 88 81 10 02 00 00  mov         byte ptr [ecx+00000210h],al
+  00000041: 8D 46 06           lea         eax,[esi+6]
+  00000044: 5E                 pop         esi
+  00000045: 5D                 pop         ebp
+  00000046: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          47 .text

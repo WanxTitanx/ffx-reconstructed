@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085B430.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_AlBhedReaderCheckReady:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: B9 45 50 00 00     mov         ecx,5045h
+  0000000B: 66 39 88 A8 00 00  cmp         word ptr [eax+0A8h],cx
+            00
+  00000012: 74 07              je          0000001B
+  00000014: B8 01 00 00 00     mov         eax,1
+  00000019: 5D                 pop         ebp
+  0000001A: C3                 ret
+  0000001B: E8 00 00 00 00     call        _FFX_FieldRender_ThunkToSceneSetup
+  00000020: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000023: 75 EF              jne         00000014
+  00000025: E8 00 00 00 00     call        _FFX_Field_IsSystemReady
+  0000002A: 33 C9              xor         ecx,ecx
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 0F 95 C1           setne       cl
+  00000031: 8B C1              mov         eax,ecx
+  00000033: 5D                 pop         ebp
+  00000034: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          35 .text

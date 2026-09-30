@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006650F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Texture_LoadTexList@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 00 02 00 00  sub         esp,200h
+  00000009: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  0000000F: 56                 push        esi
+  00000010: 68 00 01 00 00     push        100h
+  00000015: 50                 push        eax
+  00000016: 68 00 00 00 00     push        offset ??_C@_0BL@BMELLMLH@?1FFX_Data?1GameData?1PS3Data?$AA@
+  0000001B: 8B F1              mov         esi,ecx
+  0000001D: E8 00 00 00 00     call        _FFX_FileSystem_BuildDataPath
+  00000022: 83 C4 0C           add         esp,0Ch
+  00000025: 80 7E 25 00        cmp         byte ptr [esi+25h],0
+  00000029: 74 07              je          00000032
+  0000002B: 33 C0              xor         eax,eax
+  0000002D: 5E                 pop         esi
+  0000002E: 8B E5              mov         esp,ebp
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+  00000032: 0F B6 86 F0 FA 00  movzx       eax,byte ptr [esi+0FAF0h]
+            00
+  00000039: 8B 8E F0 FA 00 00  mov         ecx,dword ptr [esi+0FAF0h]
+  0000003F: 83 E0 01           and         eax,1
+  00000042: 2B C8              sub         ecx,eax
+  00000044: 75 08              jne         0000004E
+  00000046: 8D 41 05           lea         eax,[ecx+5]
+  00000049: 5E                 pop         esi
+  0000004A: 8B E5              mov         esp,ebp
+  0000004C: 5D                 pop         ebp
+  0000004D: C3                 ret
+  0000004E: 51                 push        ecx
+  0000004F: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000055: 50                 push        eax
+  00000056: 8D 85 00 FE FF FF  lea         eax,[ebp-200h]
+  0000005C: 68 00 00 00 00     push        offset ??_C@_0BH@JGMIDOFA@?$CFs?$CFsfp?1tex?1TexList?4txt?$AA@
+  00000061: 50                 push        eax
+  00000062: E8 00 00 00 00     call        _sprintf
+  00000067: 8D 85 00 FE FF FF  lea         eax,[ebp-200h]
+  0000006D: 50                 push        eax
+  0000006E: 6A 01              push        1
+  00000070: C6 46 25 01        mov         byte ptr [esi+25h],1
+  00000074: E8 00 00 00 00     call        _FFX_Texture_PushStringAsync
+  00000079: 83 C4 18           add         esp,18h
+  0000007C: 5E                 pop         esi
+  0000007D: 8B E5              mov         esp,ebp
+  0000007F: 5D                 pop         ebp
+  00000080: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          32 .rdata
+          81 .text

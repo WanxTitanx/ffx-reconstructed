@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DE3F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Shader_UpdateTextureBinding@4:
+  00000000: 56                 push        esi
+  00000001: 6A 00              push        0
+  00000003: 8B F1              mov         esi,ecx
+  00000005: 6A 00              push        0
+  00000007: 6A 00              push        0
+  00000009: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000010: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000017: E8 00 00 00 00     call        _CreateMutexW
+  0000001C: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  0000001F: 83 C4 0C           add         esp,0Ch
+  00000022: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000025: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000002B: C7 46 04 FF FF FF  mov         dword ptr [esi+4],0FFFFFFFFh
+            FF
+  00000032: 85 C9              test        ecx,ecx
+  00000034: 74 22              je          00000058
+  00000036: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000039: 85 C0              test        eax,eax
+  0000003B: 74 0D              je          0000004A
+  0000003D: 85 C9              test        ecx,ecx
+  0000003F: 78 09              js          0000004A
+  00000041: 50                 push        eax
+  00000042: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000047: 83 C4 04           add         esp,4
+  0000004A: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000051: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000058: 8B C6              mov         eax,esi
+  0000005A: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000061: 5E                 pop         esi
+  00000062: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          63 .text

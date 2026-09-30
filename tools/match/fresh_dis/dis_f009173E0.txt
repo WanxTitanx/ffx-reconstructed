@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009173E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_GS_CheckPowerOfTwo:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 CA FF           or          edx,0FFFFFFFFh
+  0000000A: 33 C9              xor         ecx,ecx
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: B8 01 00 00 00     mov         eax,1
+  00000015: D3 E0              shl         eax,cl
+  00000017: 85 C6              test        esi,eax
+  00000019: 74 07              je          00000022
+  0000001B: 83 FA FF           cmp         edx,0FFFFFFFFh
+  0000001E: 75 10              jne         00000030
+  00000020: 8B D1              mov         edx,ecx
+  00000022: 41                 inc         ecx
+  00000023: 83 F9 10           cmp         ecx,10h
+  00000026: 7C E8              jl          00000010
+  00000028: B8 01 00 00 00     mov         eax,1
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+  00000030: 33 C0              xor         eax,eax
+  00000032: 5E                 pop         esi
+  00000033: 5D                 pop         ebp
+  00000034: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          35 .text

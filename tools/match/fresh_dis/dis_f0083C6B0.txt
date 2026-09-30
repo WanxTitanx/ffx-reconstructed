@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083C6B0.obj
+
+File Type: COFF OBJECT
+
+_SgMem_DumpHeap:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 80 38 00           cmp         byte ptr [eax],0
+  0000000A: 8B 70 0C           mov         esi,dword ptr [eax+0Ch]
+  0000000D: 74 09              je          00000018
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        _SgMem_CoalesceHeap
+  00000015: 83 C4 04           add         esp,4
+  00000018: E8 00 00 00 00     call        _dbgPrintf
+  0000001D: 85 F6              test        esi,esi
+  0000001F: 74 21              je          00000042
+  00000021: 8B 06              mov         eax,dword ptr [esi]
+  00000023: 2B C6              sub         eax,esi
+  00000025: 83 E8 10           sub         eax,10h
+  00000028: 83 F8 3F           cmp         eax,3Fh
+  0000002B: 77 06              ja          00000033
+  0000002D: F6 46 0C 0F        test        byte ptr [esi+0Ch],0Fh
+  00000031: 74 09              je          0000003C
+  00000033: 56                 push        esi
+  00000034: E8 00 00 00 00     call        _SgMem_DumpMCB
+  00000039: 83 C4 04           add         esp,4
+  0000003C: 8B 36              mov         esi,dword ptr [esi]
+  0000003E: 85 F6              test        esi,esi
+  00000040: 75 DF              jne         00000021
+  00000042: 5E                 pop         esi
+  00000043: 5D                 pop         ebp
+  00000044: E9 00 00 00 00     jmp         _dbgPrintf
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

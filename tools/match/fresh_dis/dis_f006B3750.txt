@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006B3750.obj
+
+File Type: COFF OBJECT
+
+@FFX_TexAnim_SetActiveFlag@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 8B 77 0C           mov         esi,dword ptr [edi+0Ch]
+  0000000A: 03 77 08           add         esi,dword ptr [edi+8]
+  0000000D: 8B 47 74           mov         eax,dword ptr [edi+74h]
+  00000010: 03 F2              add         esi,edx
+  00000012: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000017: 3B F0              cmp         esi,eax
+  00000019: 73 2C              jae         00000047
+  0000001B: 8B 47 78           mov         eax,dword ptr [edi+78h]
+  0000001E: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000021: 85 C0              test        eax,eax
+  00000023: 74 22              je          00000047
+  00000025: 8B 48 10           mov         ecx,dword ptr [eax+10h]
+  00000028: 8B C1              mov         eax,ecx
+  0000002A: 83 E0 01           and         eax,1
+  0000002D: 2B C8              sub         ecx,eax
+  0000002F: 51                 push        ecx
+  00000030: 57                 push        edi
+  00000031: E8 00 00 00 00     call        _FFX_TexAnim_FindByName
+  00000036: 8B C8              mov         ecx,eax
+  00000038: 83 C4 08           add         esp,8
+  0000003B: 85 C9              test        ecx,ecx
+  0000003D: 74 08              je          00000047
+  0000003F: 8A 45 08           mov         al,byte ptr [ebp+8]
+  00000042: 88 41 1C           mov         byte ptr [ecx+1Ch],al
+  00000045: 8B C1              mov         eax,ecx
+  00000047: 5F                 pop         edi
+  00000048: 5E                 pop         esi
+  00000049: 5D                 pop         ebp
+  0000004A: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

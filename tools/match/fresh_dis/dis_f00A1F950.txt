@@ -1,0 +1,665 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A1F950.obj
+
+File Type: COFF OBJECT
+
+@FFX_Phyre_RenderShadowCasterMapForSplit@24:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 4C 03 00 00  sub         esp,34Ch
+  00000009: 8D 45 D4           lea         eax,[ebp-2Ch]
+  0000000C: 53                 push        ebx
+  0000000D: 56                 push        esi
+  0000000E: 57                 push        edi
+  0000000F: 6A 00              push        0
+  00000011: 52                 push        edx
+  00000012: 50                 push        eax
+  00000013: 8B F9              mov         edi,ecx
+  00000015: E8 00 00 00 00     call        _Phyre_ShaderParamSet3_Ctor
+  0000001A: 6A 00              push        0
+  0000001C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001F: 8D 85 C4 FE FF FF  lea         eax,[ebp-13Ch]
+  00000025: 50                 push        eax
+  00000026: E8 00 00 00 00     call        _Phyre_ShaderParamSet3_Ctor
+  0000002B: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000002E: 6A 00              push        0
+  00000030: 8D 45 D4           lea         eax,[ebp-2Ch]
+  00000033: 50                 push        eax
+  00000034: 53                 push        ebx
+  00000035: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  0000003A: 8B F0              mov         esi,eax
+  0000003C: 83 C4 24           add         esp,24h
+  0000003F: 85 F6              test        esi,esi
+  00000041: 0F 85 E6 07 00 00  jne         0000082D
+  00000047: 50                 push        eax
+  00000048: 53                 push        ebx
+  00000049: E8 00 00 00 00     call        _Phyre_ShaderEffect_ConfigureFromParams
+  0000004E: 8B F0              mov         esi,eax
+  00000050: 83 C4 08           add         esp,8
+  00000053: 85 F6              test        esi,esi
+  00000055: 0F 85 D2 07 00 00  jne         0000082D
+  0000005B: D9 EE              fldz
+  0000005D: 83 EC 20           sub         esp,20h
+  00000060: DD 54 24 18        fst         qword ptr [esp+18h]
+  00000064: DD 54 24 10        fst         qword ptr [esp+10h]
+  00000068: DD 54 24 08        fst         qword ptr [esp+8]
+  0000006C: DD 1C 24           fstp        qword ptr [esp]
+  0000006F: 53                 push        ebx
+  00000070: E8 00 00 00 00     call        _Phyre_Renderer_ClearColor
+  00000075: 8B F0              mov         esi,eax
+  00000077: 83 C4 24           add         esp,24h
+  0000007A: 85 F6              test        esi,esi
+  0000007C: 0F 85 AB 07 00 00  jne         0000082D
+  00000082: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000085: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  0000008B: 56                 push        esi
+  0000008C: 50                 push        eax
+  0000008D: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  00000092: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  00000098: 50                 push        eax
+  00000099: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  0000009F: 50                 push        eax
+  000000A0: E8 00 00 00 00     call        _Phyre_Matrix4x4_MultiplyAndStore
+  000000A5: 50                 push        eax
+  000000A6: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  000000AC: 50                 push        eax
+  000000AD: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  000000B2: 6A 40              push        40h
+  000000B4: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  000000BA: 50                 push        eax
+  000000BB: 8D 85 34 FE FF FF  lea         eax,[ebp-1CCh]
+  000000C1: 50                 push        eax
+  000000C2: E8 00 00 00 00     call        _qmemcpy
+  000000C7: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  000000CA: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000CD: D9 45 FC           fld         dword ptr [ebp-4]
+  000000D0: D9 E8              fld1
+  000000D2: 8D 45 F8           lea         eax,[ebp-8]
+  000000D5: DE F1              fdivrp      st(1),st
+  000000D7: 50                 push        eax
+  000000D8: 8D 85 74 FE FF FF  lea         eax,[ebp-18Ch]
+  000000DE: 50                 push        eax
+  000000DF: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000E2: E8 00 00 00 00     call        _Matrix4_SetDiagonalScaleFromVec3
+  000000E7: D9 46 6C           fld         dword ptr [esi+6Ch]
+  000000EA: DC 1D 00 00 00 00  fcomp       qword ptr [__real@3feff7cee0000000]
+  000000F0: 8B 46 60           mov         eax,dword ptr [esi+60h]
+  000000F3: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000F6: 83 C4 2C           add         esp,2Ch
+  000000F9: DF E0              fnstsw      ax
+  000000FB: F6 C4 41           test        ah,41h
+  000000FE: 75 30              jne         00000130
+  00000100: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  00000103: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000106: D9 45 FC           fld         dword ptr [ebp-4]
+  00000109: D9 E8              fld1
+  0000010B: 8D 45 F8           lea         eax,[ebp-8]
+  0000010E: DE F1              fdivrp      st(1),st
+  00000110: 50                 push        eax
+  00000111: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  00000117: 50                 push        eax
+  00000118: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000011B: E8 00 00 00 00     call        _Matrix4_SetDiagonalScaleFromVec3
+  00000120: 50                 push        eax
+  00000121: 8D 85 74 FE FF FF  lea         eax,[ebp-18Ch]
+  00000127: 50                 push        eax
+  00000128: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  0000012D: 83 C4 10           add         esp,10h
+  00000130: 8B 87 58 3F 00 00  mov         eax,dword ptr [edi+3F58h]
+  00000136: 85 C0              test        eax,eax
+  00000138: 74 27              je          00000161
+  0000013A: 8D 4D FC           lea         ecx,[ebp-4]
+  0000013D: 51                 push        ecx
+  0000013E: 50                 push        eax
+  0000013F: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000145: C7 45 FC 42 00 00  mov         dword ptr [ebp-4],42h
+            00
+  0000014C: FF 70 04           push        dword ptr [eax+4]
+  0000014F: E8 00 00 00 00     call        _PShaderParam_BindSamplerChecked
+  00000154: 8B F0              mov         esi,eax
+  00000156: 83 C4 0C           add         esp,0Ch
+  00000159: 85 F6              test        esi,esi
+  0000015B: 0F 85 CC 06 00 00  jne         0000082D
+  00000161: 8B 87 54 3F 00 00  mov         eax,dword ptr [edi+3F54h]
+  00000167: 85 C0              test        eax,eax
+  00000169: 74 27              je          00000192
+  0000016B: 8D 4D FC           lea         ecx,[ebp-4]
+  0000016E: 51                 push        ecx
+  0000016F: 50                 push        eax
+  00000170: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000176: C7 45 FC 42 00 00  mov         dword ptr [ebp-4],42h
+            00
+  0000017D: FF 70 04           push        dword ptr [eax+4]
+  00000180: E8 00 00 00 00     call        _PShaderParam_BindSamplerChecked
+  00000185: 8B F0              mov         esi,eax
+  00000187: 83 C4 0C           add         esp,0Ch
+  0000018A: 85 F6              test        esi,esi
+  0000018C: 0F 85 9B 06 00 00  jne         0000082D
+  00000192: 8B 8F 84 3F 00 00  mov         ecx,dword ptr [edi+3F84h]
+  00000198: 85 C9              test        ecx,ecx
+  0000019A: 74 34              je          000001D0
+  0000019C: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000019F: 8D 55 FC           lea         edx,[ebp-4]
+  000001A2: 8B 40 30           mov         eax,dword ptr [eax+30h]
+  000001A5: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000001A8: D9 45 FC           fld         dword ptr [ebp-4]
+  000001AB: D9 E8              fld1
+  000001AD: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  000001B3: DE F1              fdivrp      st(1),st
+  000001B5: 52                 push        edx
+  000001B6: 8B 40 04           mov         eax,dword ptr [eax+4]
+  000001B9: 51                 push        ecx
+  000001BA: 50                 push        eax
+  000001BB: D9 5D FC           fstp        dword ptr [ebp-4]
+  000001BE: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  000001C3: 8B F0              mov         esi,eax
+  000001C5: 83 C4 0C           add         esp,0Ch
+  000001C8: 85 F6              test        esi,esi
+  000001CA: 0F 85 5D 06 00 00  jne         0000082D
+  000001D0: 6A 01              push        1
+  000001D2: 53                 push        ebx
+  000001D3: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  000001D8: 8B F0              mov         esi,eax
+  000001DA: 83 C4 08           add         esp,8
+  000001DD: 85 F6              test        esi,esi
+  000001DF: 0F 85 48 06 00 00  jne         0000082D
+  000001E5: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000001E8: 85 F6              test        esi,esi
+  000001EA: 74 0C              je          000001F8
+  000001EC: 6B F6 7C           imul        esi,esi,7Ch
+  000001EF: 8D 5F 98           lea         ebx,[edi-68h]
+  000001F2: 03 DE              add         ebx,esi
+  000001F4: 8B F0              mov         esi,eax
+  000001F6: EB 06              jmp         000001FE
+  000001F8: 8D 9F 14 3E 00 00  lea         ebx,[edi+3E14h]
+  000001FE: 83 7B 64 00        cmp         dword ptr [ebx+64h],0
+  00000202: 0F 84 D4 05 00 00  je          000007DC
+  00000208: 8B 4B 68           mov         ecx,dword ptr [ebx+68h]
+  0000020B: 83 F9 04           cmp         ecx,4
+  0000020E: 0F 83 C8 05 00 00  jae         000007DC
+  00000214: 8B 43 78           mov         eax,dword ptr [ebx+78h]
+  00000217: 85 C0              test        eax,eax
+  00000219: 0F 84 BD 05 00 00  je          000007DC
+  0000021F: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000222: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000225: 85 C0              test        eax,eax
+  00000227: 0F 84 AF 05 00 00  je          000007DC
+  0000022D: 83 BF 5C 3F 00 00  cmp         dword ptr [edi+3F5Ch],0
+            00
+  00000234: C6 44 0D 0C 01     mov         byte ptr [ebp+ecx+0Ch],1
+  00000239: 0F 84 A9 00 00 00  je          000002E8
+  0000023F: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000245: 53                 push        ebx
+  00000246: 50                 push        eax
+  00000247: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  0000024C: 6A 40              push        40h
+  0000024E: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000254: 50                 push        eax
+  00000255: 8D 85 74 FD FF FF  lea         eax,[ebp-28Ch]
+  0000025B: 50                 push        eax
+  0000025C: E8 00 00 00 00     call        _qmemcpy
+  00000261: D9 43 58           fld         dword ptr [ebx+58h]
+  00000264: 83 C4 14           add         esp,14h
+  00000267: 83 7B 50 02        cmp         dword ptr [ebx+50h],2
+  0000026B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000026E: 0F 94 C0           sete        al
+  00000271: 84 C0              test        al,al
+  00000273: 74 14              je          00000289
+  00000275: D9 43 60           fld         dword ptr [ebx+60h]
+  00000278: E8 00 00 00 00     call        __CItan
+  0000027D: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000280: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000283: D8 4B 58           fmul        dword ptr [ebx+58h]
+  00000286: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000289: 8D 45 FC           lea         eax,[ebp-4]
+  0000028C: 50                 push        eax
+  0000028D: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  00000293: 50                 push        eax
+  00000294: E8 00 00 00 00     call        _Matrix4_SetDiagonalScaleFromVec3
+  00000299: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  0000029F: 50                 push        eax
+  000002A0: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  000002A6: 50                 push        eax
+  000002A7: 8D 85 74 FD FF FF  lea         eax,[ebp-28Ch]
+  000002AD: 50                 push        eax
+  000002AE: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000002B3: 50                 push        eax
+  000002B4: 8D 85 74 FD FF FF  lea         eax,[ebp-28Ch]
+  000002BA: 50                 push        eax
+  000002BB: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  000002C0: 8D 85 74 FD FF FF  lea         eax,[ebp-28Ch]
+  000002C6: 50                 push        eax
+  000002C7: FF B7 5C 3F 00 00  push        dword ptr [edi+3F5Ch]
+  000002CD: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  000002D3: FF 70 04           push        dword ptr [eax+4]
+  000002D6: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  000002DB: 8B F0              mov         esi,eax
+  000002DD: 83 C4 28           add         esp,28h
+  000002E0: 85 F6              test        esi,esi
+  000002E2: 0F 85 45 05 00 00  jne         0000082D
+  000002E8: 8D 45 94           lea         eax,[ebp-6Ch]
+  000002EB: 50                 push        eax
+  000002EC: E8 00 00 00 00     call        _Matrix4x4_SetIdentity
+  000002F1: D9 EE              fldz
+  000002F3: D9 55 C4           fst         dword ptr [ebp-3Ch]
+  000002F6: 83 C4 04           add         esp,4
+  000002F9: 83 BF 60 3F 00 00  cmp         dword ptr [edi+3F60h],0
+            00
+  00000300: D9 55 C8           fst         dword ptr [ebp-38h]
+  00000303: D9 5D CC           fstp        dword ptr [ebp-34h]
+  00000306: 74 7E              je          00000386
+  00000308: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000030B: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  0000030E: 8B 80 C0 00 00 00  mov         eax,dword ptr [eax+0C0h]
+  00000314: 85 C0              test        eax,eax
+  00000316: 74 0A              je          00000322
+  00000318: 80 78 04 00        cmp         byte ptr [eax+4],0
+  0000031C: 75 26              jne         00000344
+  0000031E: 8B 00              mov         eax,dword ptr [eax]
+  00000320: EB 24              jmp         00000346
+  00000322: 83 3D 00 00 00 00  cmp         dword ptr [_g_PhyreUnkVar_1944BC8],0
+            00
+  00000329: 75 19              jne         00000344
+  0000032B: 68 00 00 00 00     push        offset ??_C@_0DH@OMJCLAJI@Error?3?5shadow?5caster?5has?5no?5shad@
+  00000330: 6A 01              push        1
+  00000332: C7 05 00 00 00 00  mov         dword ptr [_g_PhyreUnkVar_1944BC8],1
+            01 00 00 00
+  0000033C: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  00000341: 83 C4 08           add         esp,8
+  00000344: 33 C0              xor         eax,eax
+  00000346: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000349: 8D 87 0C 3F 00 00  lea         eax,[edi+3F0Ch]
+  0000034F: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00000352: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000358: 8D 4D E4           lea         ecx,[ebp-1Ch]
+  0000035B: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000035E: 51                 push        ecx
+  0000035F: FF B7 60 3F 00 00  push        dword ptr [edi+3F60h]
+  00000365: C7 45 E4 42 00 00  mov         dword ptr [ebp-1Ch],42h
+            00
+  0000036C: 50                 push        eax
+  0000036D: C7 45 E8 00 00 00  mov         dword ptr [ebp-18h],0
+            00
+  00000374: E8 00 00 00 00     call        _PShaderParam_BindSamplerChecked
+  00000379: 8B F0              mov         esi,eax
+  0000037B: 83 C4 0C           add         esp,0Ch
+  0000037E: 85 F6              test        esi,esi
+  00000380: 0F 85 A7 04 00 00  jne         0000082D
+  00000386: 83 BF 64 3F 00 00  cmp         dword ptr [edi+3F64h],0
+            00
+  0000038D: 0F 84 8C 00 00 00  je          0000041F
+  00000393: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000396: 6A 40              push        40h
+  00000398: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  0000039B: 83 E8 80           sub         eax,0FFFFFF80h
+  0000039E: 50                 push        eax
+  0000039F: 8D 85 F4 FC FF FF  lea         eax,[ebp-30Ch]
+  000003A5: 50                 push        eax
+  000003A6: E8 00 00 00 00     call        _qmemcpy
+  000003AB: 8D 85 F4 FC FF FF  lea         eax,[ebp-30Ch]
+  000003B1: 50                 push        eax
+  000003B2: 8D 45 94           lea         eax,[ebp-6Ch]
+  000003B5: 50                 push        eax
+  000003B6: 8D 85 F4 FD FF FF  lea         eax,[ebp-20Ch]
+  000003BC: 50                 push        eax
+  000003BD: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  000003C2: 8D 8D 34 FE FF FF  lea         ecx,[ebp-1CCh]
+  000003C8: 51                 push        ecx
+  000003C9: 8D 8D 14 FF FF FF  lea         ecx,[ebp-0ECh]
+  000003CF: 51                 push        ecx
+  000003D0: 50                 push        eax
+  000003D1: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000003D6: 8D 8D 74 FE FF FF  lea         ecx,[ebp-18Ch]
+  000003DC: 51                 push        ecx
+  000003DD: 8D 8D 54 FF FF FF  lea         ecx,[ebp-0ACh]
+  000003E3: 51                 push        ecx
+  000003E4: 50                 push        eax
+  000003E5: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000003EA: 50                 push        eax
+  000003EB: 8D 85 F4 FC FF FF  lea         eax,[ebp-30Ch]
+  000003F1: 50                 push        eax
+  000003F2: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  000003F7: 8D 85 F4 FC FF FF  lea         eax,[ebp-30Ch]
+  000003FD: 50                 push        eax
+  000003FE: FF B7 64 3F 00 00  push        dword ptr [edi+3F64h]
+  00000404: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  0000040A: FF 70 04           push        dword ptr [eax+4]
+  0000040D: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  00000412: 8B F0              mov         esi,eax
+  00000414: 83 C4 44           add         esp,44h
+  00000417: 85 F6              test        esi,esi
+  00000419: 0F 85 0E 04 00 00  jne         0000082D
+  0000041F: 8B 8F 7C 3F 00 00  mov         ecx,dword ptr [edi+3F7Ch]
+  00000425: 85 C9              test        ecx,ecx
+  00000427: 74 20              je          00000449
+  00000429: 8D 43 6C           lea         eax,[ebx+6Ch]
+  0000042C: 50                 push        eax
+  0000042D: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000433: 51                 push        ecx
+  00000434: FF 70 04           push        dword ptr [eax+4]
+  00000437: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer
+  0000043C: 8B F0              mov         esi,eax
+  0000043E: 83 C4 0C           add         esp,0Ch
+  00000441: 85 F6              test        esi,esi
+  00000443: 0F 85 E4 03 00 00  jne         0000082D
+  00000449: 8B 8F 80 3F 00 00  mov         ecx,dword ptr [edi+3F80h]
+  0000044F: 85 C9              test        ecx,ecx
+  00000451: 74 34              je          00000487
+  00000453: D9 EE              fldz
+  00000455: 8B 43 68           mov         eax,dword ptr [ebx+68h]
+  00000458: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000045B: 8D 55 F8           lea         edx,[ebp-8]
+  0000045E: D9 E8              fld1
+  00000460: 52                 push        edx
+  00000461: D9 5C 85 0C        fstp        dword ptr [ebp+eax*4+0Ch]
+  00000465: 51                 push        ecx
+  00000466: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000469: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  0000046F: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000472: FF 70 04           push        dword ptr [eax+4]
+  00000475: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  0000047A: 8B F0              mov         esi,eax
+  0000047C: 83 C4 0C           add         esp,0Ch
+  0000047F: 85 F6              test        esi,esi
+  00000481: 0F 85 A6 03 00 00  jne         0000082D
+  00000487: 83 BF 68 3F 00 00  cmp         dword ptr [edi+3F68h],0
+            00
+  0000048E: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000491: 0F 84 99 00 00 00  je          00000530
+  00000497: F7 41 08 FF FF FF  test        dword ptr [ecx+8],7FFFFFFFh
+            7F
+  0000049E: 0F 84 8C 00 00 00  je          00000530
+  000004A4: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  000004A7: 83 E8 80           sub         eax,0FFFFFF80h
+  000004AA: 6A 40              push        40h
+  000004AC: 50                 push        eax
+  000004AD: 8D 85 B4 FD FF FF  lea         eax,[ebp-24Ch]
+  000004B3: 50                 push        eax
+  000004B4: E8 00 00 00 00     call        _qmemcpy
+  000004B9: 8D 85 B4 FD FF FF  lea         eax,[ebp-24Ch]
+  000004BF: 50                 push        eax
+  000004C0: 8D 45 94           lea         eax,[ebp-6Ch]
+  000004C3: 50                 push        eax
+  000004C4: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  000004CA: 50                 push        eax
+  000004CB: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  000004D0: 8D 8D 34 FE FF FF  lea         ecx,[ebp-1CCh]
+  000004D6: 51                 push        ecx
+  000004D7: 8D 8D 54 FF FF FF  lea         ecx,[ebp-0ACh]
+  000004DD: 51                 push        ecx
+  000004DE: 50                 push        eax
+  000004DF: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000004E4: 8D 8D 74 FE FF FF  lea         ecx,[ebp-18Ch]
+  000004EA: 51                 push        ecx
+  000004EB: 8D 8D F4 FD FF FF  lea         ecx,[ebp-20Ch]
+  000004F1: 51                 push        ecx
+  000004F2: 50                 push        eax
+  000004F3: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000004F8: 50                 push        eax
+  000004F9: 8D 85 B4 FD FF FF  lea         eax,[ebp-24Ch]
+  000004FF: 50                 push        eax
+  00000500: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  00000505: 8D 85 B4 FD FF FF  lea         eax,[ebp-24Ch]
+  0000050B: 50                 push        eax
+  0000050C: FF B7 68 3F 00 00  push        dword ptr [edi+3F68h]
+  00000512: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000518: FF 70 04           push        dword ptr [eax+4]
+  0000051B: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  00000520: 8B F0              mov         esi,eax
+  00000522: 83 C4 44           add         esp,44h
+  00000525: 85 F6              test        esi,esi
+  00000527: 0F 85 00 03 00 00  jne         0000082D
+  0000052D: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000530: 83 BF 6C 3F 00 00  cmp         dword ptr [edi+3F6Ch],0
+            00
+  00000537: 0F 84 9C 00 00 00  je          000005D9
+  0000053D: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000540: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000545: 83 F8 01           cmp         eax,1
+  00000548: 0F 86 8B 00 00 00  jbe         000005D9
+  0000054E: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000551: 05 60 01 00 00     add         eax,160h
+  00000556: 6A 40              push        40h
+  00000558: 50                 push        eax
+  00000559: 8D 85 34 FD FF FF  lea         eax,[ebp-2CCh]
+  0000055F: 50                 push        eax
+  00000560: E8 00 00 00 00     call        _qmemcpy
+  00000565: 8D 85 34 FD FF FF  lea         eax,[ebp-2CCh]
+  0000056B: 50                 push        eax
+  0000056C: 8D 45 94           lea         eax,[ebp-6Ch]
+  0000056F: 50                 push        eax
+  00000570: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000576: 50                 push        eax
+  00000577: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  0000057C: 8D 8D 34 FE FF FF  lea         ecx,[ebp-1CCh]
+  00000582: 51                 push        ecx
+  00000583: 8D 8D 54 FF FF FF  lea         ecx,[ebp-0ACh]
+  00000589: 51                 push        ecx
+  0000058A: 50                 push        eax
+  0000058B: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  00000590: 8D 8D 74 FE FF FF  lea         ecx,[ebp-18Ch]
+  00000596: 51                 push        ecx
+  00000597: 8D 8D F4 FD FF FF  lea         ecx,[ebp-20Ch]
+  0000059D: 51                 push        ecx
+  0000059E: 50                 push        eax
+  0000059F: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000005A4: 50                 push        eax
+  000005A5: 8D 85 34 FD FF FF  lea         eax,[ebp-2CCh]
+  000005AB: 50                 push        eax
+  000005AC: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  000005B1: 8D 85 34 FD FF FF  lea         eax,[ebp-2CCh]
+  000005B7: 50                 push        eax
+  000005B8: FF B7 6C 3F 00 00  push        dword ptr [edi+3F6Ch]
+  000005BE: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  000005C4: FF 70 04           push        dword ptr [eax+4]
+  000005C7: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  000005CC: 8B F0              mov         esi,eax
+  000005CE: 83 C4 44           add         esp,44h
+  000005D1: 85 F6              test        esi,esi
+  000005D3: 0F 85 54 02 00 00  jne         0000082D
+  000005D9: 83 BF 70 3F 00 00  cmp         dword ptr [edi+3F70h],0
+            00
+  000005E0: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  000005E3: 0F 84 9F 00 00 00  je          00000688
+  000005E9: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  000005EC: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  000005F1: 83 F8 02           cmp         eax,2
+  000005F4: 0F 86 8E 00 00 00  jbe         00000688
+  000005FA: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  000005FD: 05 40 02 00 00     add         eax,240h
+  00000602: 6A 40              push        40h
+  00000604: 50                 push        eax
+  00000605: 8D 85 B4 FC FF FF  lea         eax,[ebp-34Ch]
+  0000060B: 50                 push        eax
+  0000060C: E8 00 00 00 00     call        _qmemcpy
+  00000611: 8D 85 B4 FC FF FF  lea         eax,[ebp-34Ch]
+  00000617: 50                 push        eax
+  00000618: 8D 45 94           lea         eax,[ebp-6Ch]
+  0000061B: 50                 push        eax
+  0000061C: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000622: 50                 push        eax
+  00000623: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  00000628: 8D 8D 34 FE FF FF  lea         ecx,[ebp-1CCh]
+  0000062E: 51                 push        ecx
+  0000062F: 8D 8D 54 FF FF FF  lea         ecx,[ebp-0ACh]
+  00000635: 51                 push        ecx
+  00000636: 50                 push        eax
+  00000637: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  0000063C: 8D 8D 74 FE FF FF  lea         ecx,[ebp-18Ch]
+  00000642: 51                 push        ecx
+  00000643: 8D 8D F4 FD FF FF  lea         ecx,[ebp-20Ch]
+  00000649: 51                 push        ecx
+  0000064A: 50                 push        eax
+  0000064B: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  00000650: 50                 push        eax
+  00000651: 8D 85 B4 FC FF FF  lea         eax,[ebp-34Ch]
+  00000657: 50                 push        eax
+  00000658: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  0000065D: 8D 85 B4 FC FF FF  lea         eax,[ebp-34Ch]
+  00000663: 50                 push        eax
+  00000664: FF B7 70 3F 00 00  push        dword ptr [edi+3F70h]
+  0000066A: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000670: FF 70 04           push        dword ptr [eax+4]
+  00000673: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  00000678: 8B F0              mov         esi,eax
+  0000067A: 83 C4 44           add         esp,44h
+  0000067D: 85 F6              test        esi,esi
+  0000067F: 0F 85 A8 01 00 00  jne         0000082D
+  00000685: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000688: 83 BF 74 3F 00 00  cmp         dword ptr [edi+3F74h],0
+            00
+  0000068F: 0F 84 9C 00 00 00  je          00000731
+  00000695: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000698: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000069D: 83 F8 03           cmp         eax,3
+  000006A0: 0F 86 8B 00 00 00  jbe         00000731
+  000006A6: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  000006A9: 05 20 03 00 00     add         eax,320h
+  000006AE: 6A 40              push        40h
+  000006B0: 50                 push        eax
+  000006B1: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  000006B7: 50                 push        eax
+  000006B8: E8 00 00 00 00     call        _qmemcpy
+  000006BD: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  000006C3: 50                 push        eax
+  000006C4: 8D 45 94           lea         eax,[ebp-6Ch]
+  000006C7: 50                 push        eax
+  000006C8: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  000006CE: 50                 push        eax
+  000006CF: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  000006D4: 8D 8D 34 FE FF FF  lea         ecx,[ebp-1CCh]
+  000006DA: 51                 push        ecx
+  000006DB: 8D 8D 54 FF FF FF  lea         ecx,[ebp-0ACh]
+  000006E1: 51                 push        ecx
+  000006E2: 50                 push        eax
+  000006E3: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000006E8: 8D 8D 74 FE FF FF  lea         ecx,[ebp-18Ch]
+  000006EE: 51                 push        ecx
+  000006EF: 8D 8D F4 FD FF FF  lea         ecx,[ebp-20Ch]
+  000006F5: 51                 push        ecx
+  000006F6: 50                 push        eax
+  000006F7: E8 00 00 00 00     call        _PMatrix_TransformFrustum
+  000006FC: 50                 push        eax
+  000006FD: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  00000703: 50                 push        eax
+  00000704: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  00000709: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  0000070F: 50                 push        eax
+  00000710: FF B7 74 3F 00 00  push        dword ptr [edi+3F74h]
+  00000716: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  0000071C: FF 70 04           push        dword ptr [eax+4]
+  0000071F: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer_0
+  00000724: 8B F0              mov         esi,eax
+  00000726: 83 C4 44           add         esp,44h
+  00000729: 85 F6              test        esi,esi
+  0000072B: 0F 85 FC 00 00 00  jne         0000082D
+  00000731: 8B B7 78 3F 00 00  mov         esi,dword ptr [edi+3F78h]
+  00000737: 85 F6              test        esi,esi
+  00000739: 74 32              je          0000076D
+  0000073B: 8D 85 B4 FE FF FF  lea         eax,[ebp-14Ch]
+  00000741: 50                 push        eax
+  00000742: FF 75 14           push        dword ptr [ebp+14h]
+  00000745: E8 00 00 00 00     call        _Phyre_ShadowSplit_GetDistances
+  0000074A: 8D 85 B4 FE FF FF  lea         eax,[ebp-14Ch]
+  00000750: 50                 push        eax
+  00000751: 8B 87 D8 3E 00 00  mov         eax,dword ptr [edi+3ED8h]
+  00000757: 56                 push        esi
+  00000758: FF 70 04           push        dword ptr [eax+4]
+  0000075B: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  00000760: 8B F0              mov         esi,eax
+  00000762: 83 C4 14           add         esp,14h
+  00000765: 85 F6              test        esi,esi
+  00000767: 0F 85 C0 00 00 00  jne         0000082D
+  0000076D: 6A 08              push        8
+  0000076F: FF 75 10           push        dword ptr [ebp+10h]
+  00000772: E8 00 00 00 00     call        _Phyre_PostProcessing_QueueCommand
+  00000777: 8B F0              mov         esi,eax
+  00000779: 83 C4 08           add         esp,8
+  0000077C: 85 F6              test        esi,esi
+  0000077E: 0F 85 A9 00 00 00  jne         0000082D
+  00000784: 8B 43 50           mov         eax,dword ptr [ebx+50h]
+  00000787: 2B C6              sub         eax,esi
+  00000789: 74 2E              je          000007B9
+  0000078B: 48                 dec         eax
+  0000078C: 74 17              je          000007A5
+  0000078E: 48                 dec         eax
+  0000078F: 75 48              jne         000007D9
+  00000791: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000794: A1 00 00 00 00     mov         eax,dword ptr [_dword_1944BA8]
+  00000799: 89 43 48           mov         dword ptr [ebx+48h],eax
+  0000079C: FF B7 E4 3E 00 00  push        dword ptr [edi+3EE4h]
+  000007A2: 53                 push        ebx
+  000007A3: EB 26              jmp         000007CB
+  000007A5: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  000007A8: A1 00 00 00 00     mov         eax,dword ptr [_dword_1944BB8]
+  000007AD: 89 43 48           mov         dword ptr [ebx+48h],eax
+  000007B0: FF B7 DC 3E 00 00  push        dword ptr [edi+3EDCh]
+  000007B6: 53                 push        ebx
+  000007B7: EB 12              jmp         000007CB
+  000007B9: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  000007BC: A1 00 00 00 00     mov         eax,dword ptr [_dword_1944B98]
+  000007C1: 89 41 48           mov         dword ptr [ecx+48h],eax
+  000007C4: FF B7 E0 3E 00 00  push        dword ptr [edi+3EE0h]
+  000007CA: 51                 push        ecx
+  000007CB: E8 00 00 00 00     call        _Phyre_Renderer_DispatchDraw_w
+  000007D0: 8B F0              mov         esi,eax
+  000007D2: 83 C4 08           add         esp,8
+  000007D5: 85 F6              test        esi,esi
+  000007D7: 75 54              jne         0000082D
+  000007D9: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  000007DC: 46                 inc         esi
+  000007DD: 8B C6              mov         eax,esi
+  000007DF: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  000007E2: 3B B7 D0 3E 00 00  cmp         esi,dword ptr [edi+3ED0h]
+  000007E8: 0F 86 FA F9 FF FF  jbe         000001E8
+  000007EE: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  000007F1: 6A 01              push        1
+  000007F3: 6A 01              push        1
+  000007F5: 6A 01              push        1
+  000007F7: 6A 01              push        1
+  000007F9: 53                 push        ebx
+  000007FA: E8 00 00 00 00     call        _Phyre_Renderer_ClearColorByte
+  000007FF: 6A 01              push        1
+  00000801: 53                 push        ebx
+  00000802: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Deallocate
+  00000807: 8B F0              mov         esi,eax
+  00000809: 83 C4 1C           add         esp,1Ch
+  0000080C: 85 F6              test        esi,esi
+  0000080E: 75 1D              jne         0000082D
+  00000810: 50                 push        eax
+  00000811: 50                 push        eax
+  00000812: 53                 push        ebx
+  00000813: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  00000818: 8B F0              mov         esi,eax
+  0000081A: 83 C4 0C           add         esp,0Ch
+  0000081D: 85 F6              test        esi,esi
+  0000081F: 75 0C              jne         0000082D
+  00000821: 50                 push        eax
+  00000822: 53                 push        ebx
+  00000823: E8 00 00 00 00     call        _Phyre_ShaderEffect_ConfigureFromParams
+  00000828: 83 C4 08           add         esp,8
+  0000082B: 8B F0              mov         esi,eax
+  0000082D: 8D 85 C4 FE FF FF  lea         eax,[ebp-13Ch]
+  00000833: 50                 push        eax
+  00000834: E8 00 00 00 00     call        _nullsub_24
+  00000839: 8D 45 D4           lea         eax,[ebp-2Ch]
+  0000083C: 50                 push        eax
+  0000083D: E8 00 00 00 00     call        _nullsub_24
+  00000842: 83 C4 08           add         esp,8
+  00000845: 8B C6              mov         eax,esi
+  00000847: 5F                 pop         edi
+  00000848: 5E                 pop         esi
+  00000849: 5B                 pop         ebx
+  0000084A: 8B E5              mov         esp,ebp
+  0000084C: 5D                 pop         ebp
+  0000084D: C2 10 00           ret         10h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          57 .rdata
+         850 .text

@@ -1,0 +1,151 @@
+{
+  "branch": "cos/byteproof-41719",
+  "completion": {
+    "bounded_fixes_complete": true,
+    "handoff": "Parent owns final IR/interpreter integration, negative absolute-pointer validation and full acceptance.",
+    "remaining_worker_blockers": []
+  },
+  "constraints_observed": {
+    "child_agents": 0,
+    "commits": 0,
+    "pushes": 0,
+    "source_edits_after_ownership_transfer": 0,
+    "vm_builds": 0,
+    "whole_pe_builds": 0
+  },
+  "findings": [
+    {
+      "affected_area": "compiled module admission and PE rebasing",
+      "caveat": "A raw numeric-range rejection can produce false positives for integer constants whose value happens to equal an image VA. Admission should use typed IR or equivalent address-bearing semantics, with any exception explicit and audited.",
+      "description": "Compiled code and data containing an absolute image address could be emitted without a COFF relocation or HIGHLOW entry. Such bytes remain fixed at the preferred image base and become invalid after rebasing.",
+      "id": "absolute-address-without-relocation",
+      "reproduction": {
+        "command": "cd /mnt/ssd-kingston/ffx-reconstructed/work/cos-byteproof-41719 && recon/ffx/.venv-asm/bin/python /tmp/probe_mod_abs.py",
+        "compiled_c": "typedef int (__cdecl *fn)(int); __declspec(noinline) int changed(int x) { return ((fn)0x401020)(x); } void *absolute_pointer = (void*)0x401020;",
+        "observed": [
+          ".text bytes b820104000ffe0 contained 0x00401020 with no COFF relocation",
+          ".data bytes 20104000 contained 0x00401020 with no COFF relocation",
+          "mod_objects.emit_module accepted both sections",
+          "returned HIGHLOW site list was empty"
+        ],
+        "source_file": "/tmp/probe_mod_abs.py"
+      },
+      "severity": "Important",
+      "status": "reported; correction owned by parent"
+    },
+    {
+      "affected_files": [
+        "tools/match/mod_compile.py",
+        "tools/match/test_mod_compile.py"
+      ],
+      "failure_observed_before_fix": "The compiler receipt recorded the clang executable but omitted loaded shared objects including libclang-cpp.so.21.1 and libLLVM.so.21.1.",
+      "fix": [
+        "Run fresh compiler invocations with the ELF loader file trace enabled.",
+        "Resolve and read the loaded shared-object closure.",
+        "Require the discovered closure to remain deterministic across the checked invocations.",
+        "Add each dependency to observed inputs, content-addressed snapshots and the compiler receipt."
+      ],
+      "id": "compiler-elf-dependency-closure",
+      "integration_note": "The parent subsequently owns the final receipt contract using IR/object invocations, runtime_libraries and separate ELF-interpreter handling.",
+      "severity": "Important",
+      "status": "fixed in worker-owned implementation; parent owns final IR/interpreter integration",
+      "worker_receipt_field": {
+        "name": "elf_dependencies",
+        "observed_dependency_count": 15,
+        "required_examples": [
+          "libclang-cpp.so.21.1",
+          "libLLVM.so.21.1"
+        ],
+        "shape": "list of objects with absolute path and sha256"
+      }
+    },
+    {
+      "affected_files": [
+        "tools/match/mod_objects.py",
+        "tools/match/test_mod_objects.py"
+      ],
+      "failure_observed_before_fix": "Input object order .rdata$Z, .rdata$A, .rdata$M, .rdata was emitted in object-table order, while a genuine PE linker emitted .rdata, .rdata$A, .rdata$M, .rdata$Z.",
+      "fix": [
+        "Place an unsuffixed section before its $ subsections.",
+        "Sort subsection suffixes lexicographically by their original encoded bytes.",
+        "Keep equal suffixes stable in source object-table order.",
+        "Preserve original COFF section indexes and calculate symbol-index addresses from the reordered placement map."
+      ],
+      "id": "coff-dollar-subsection-ordering",
+      "independent_probe": {
+        "linked_order": [
+          ".rdata",
+          ".rdata$A",
+          ".rdata$M",
+          ".rdata$Z"
+        ],
+        "linker": "i686-w64-mingw32-ld"
+      },
+      "severity": "Important",
+      "status": "fixed"
+    }
+  ],
+  "review_base": "392f0150b",
+  "schema_version": 1,
+  "scope": {
+    "evidence_written": "recon/ffx/mods/evidence/review-worker1.json",
+    "parent_owned_and_preserved": [
+      "tools/match/mod_link.py",
+      "tools/match/test_mod_link.py",
+      "tools/match/mod_admission.py",
+      "tools/match/mod_acceptance.py",
+      "tools/match/test_mod_admission.py",
+      "tools/match/test_mod_acceptance.py",
+      "remaining IR and ELF-interpreter integration"
+    ],
+    "reviewed": [
+      "tools/match/mod_compile.py",
+      "tools/match/mod_objects.py",
+      "tools/match/mod_layout.py",
+      "tools/match/mod_boundaries.py",
+      "tools/match/mod_link.py",
+      "tools/match/test_mod_compile.py",
+      "tools/match/test_mod_objects.py",
+      "tools/match/test_mod_layout.py",
+      "tools/match/test_mod_boundaries.py",
+      "tools/match/test_mod_link.py"
+    ],
+    "source_edits_frozen": true,
+    "unreported_ir_edits_by_worker": false,
+    "worker_modified": [
+      "tools/match/mod_compile.py",
+      "tools/match/mod_objects.py",
+      "tools/match/test_mod_compile.py",
+      "tools/match/test_mod_objects.py"
+    ]
+  },
+  "status": "completed",
+  "task": "Review the standalone modification pipeline and implement the bounded fixes for compiler ELF input closure and COFF $ subsection ordering.",
+  "validation": [
+    {
+      "breakdown": {
+        "test_mod_compile": 11,
+        "test_mod_link": 7,
+        "test_mod_objects": 12
+      },
+      "command": "PYTHONPATH=tools/match recon/ffx/.venv-asm/bin/python -m unittest -v test_mod_compile test_mod_objects test_mod_link",
+      "result": "passed",
+      "tests": 30
+    },
+    {
+      "command": "recon/ffx/.venv-asm/bin/python -m py_compile tools/match/mod_compile.py tools/match/mod_objects.py tools/match/test_mod_compile.py tools/match/test_mod_objects.py",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "note": "Current full suite count reported by the parent after preserving these fixes.",
+      "result": "passed",
+      "source": "parent integration report",
+      "tests": 389
+    }
+  ],
+  "worker": "worker-1"
+}

@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00652A80.obj
+
+File Type: COFF OBJECT
+
+@Phyre_WString_BufferRealloc@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B F9              mov         edi,ecx
+  00000008: 8B F2              mov         esi,edx
+  0000000A: 8B 17              mov         edx,dword ptr [edi]
+  0000000C: 39 72 F8           cmp         dword ptr [edx-8],esi
+  0000000F: 73 2A              jae         0000003B
+  00000011: 85 F6              test        esi,esi
+  00000013: 7E 26              jle         0000003B
+  00000015: 8B 4A F0           mov         ecx,dword ptr [edx-10h]
+  00000018: 83 C2 F0           add         edx,0FFFFFFF0h
+  0000001B: 8B 01              mov         eax,dword ptr [ecx]
+  0000001D: 6A 02              push        2
+  0000001F: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000022: 56                 push        esi
+  00000023: FF D0              call        eax
+  00000025: 8B F0              mov         esi,eax
+  00000027: 85 F6              test        esi,esi
+  00000029: 75 18              jne         00000043
+  0000002B: E8 00 00 00 00     call        _FFX_ThrowCAtlException_E_NOTIMPL
+  00000030: 8D 46 10           lea         eax,[esi+10h]
+  00000033: 89 07              mov         dword ptr [edi],eax
+  00000035: 5F                 pop         edi
+  00000036: 5E                 pop         esi
+  00000037: 8B E5              mov         esp,ebp
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+  0000003B: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000003E: E8 00 00 00 00     call        _FFX_ThrowCAtlException_E_NOTIMPL
+  00000043: 8D 46 10           lea         eax,[esi+10h]
+  00000046: 89 07              mov         dword ptr [edi],eax
+  00000048: 5F                 pop         edi
+  00000049: 5E                 pop         esi
+  0000004A: 8B E5              mov         esp,ebp
+  0000004C: 5D                 pop         ebp
+  0000004D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4E .text

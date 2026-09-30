@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007CD480.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_Loose_7CD480:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  0000000B: 7E 0B              jle         00000018
+  0000000D: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000011: 74 05              je          00000018
+  00000013: E8 00 00 00 00     call        _FFX_Dbg_SceWriteWrapper
+  00000018: 8B 06              mov         eax,dword ptr [esi]
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 09              je          00000027
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _free
+  00000024: 83 C4 04           add         esp,4
+  00000027: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000002A: 5E                 pop         esi
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 7E 09              jle         00000038
+  0000002F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000032: 5D                 pop         ebp
+  00000033: E9 00 00 00 00     jmp         _FFX_Mem_FreeWrapper
+  00000038: 5D                 pop         ebp
+  00000039: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3A .text

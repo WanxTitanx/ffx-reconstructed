@@ -1,0 +1,83 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file z10.obj
+
+File Type: COFF OBJECT
+
+_uncompress:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 38           sub         esp,38h
+  00000006: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000009: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  0000000C: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000000F: 57                 push        edi
+  00000010: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000013: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00000016: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000019: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  0000001C: 8B 07              mov         eax,dword ptr [edi]
+  0000001E: 6A 38              push        38h
+  00000020: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  00000023: 8D 45 C8           lea         eax,[ebp-38h]
+  00000026: 68 00 00 00 00     push        offset ??_C@_05IAIEPMAK@1?42?48?$AA@
+  0000002B: 50                 push        eax
+  0000002C: C7 45 E8 00 00 00  mov         dword ptr [ebp-18h],0
+            00
+  00000033: C7 45 EC 00 00 00  mov         dword ptr [ebp-14h],0
+            00
+  0000003A: E8 00 00 00 00     call        _inflateInit_
+  0000003F: 83 C4 0C           add         esp,0Ch
+  00000042: 85 C0              test        eax,eax
+  00000044: 75 57              jne         0000009D
+  00000046: 56                 push        esi
+  00000047: 8D 45 C8           lea         eax,[ebp-38h]
+  0000004A: 6A 04              push        4
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _inflate
+  00000052: 8B F0              mov         esi,eax
+  00000054: 83 C4 08           add         esp,8
+  00000057: 83 FE 01           cmp         esi,1
+  0000005A: 74 2F              je          0000008B
+  0000005C: 8D 45 C8           lea         eax,[ebp-38h]
+  0000005F: 50                 push        eax
+  00000060: E8 00 00 00 00     call        _inflateEnd
+  00000065: 83 C4 04           add         esp,4
+  00000068: 83 FE 02           cmp         esi,2
+  0000006B: 74 13              je          00000080
+  0000006D: 83 FE FB           cmp         esi,0FFFFFFFBh
+  00000070: 75 06              jne         00000078
+  00000072: 83 7D CC 00        cmp         dword ptr [ebp-34h],0
+  00000076: 74 08              je          00000080
+  00000078: 8B C6              mov         eax,esi
+  0000007A: 5E                 pop         esi
+  0000007B: 5F                 pop         edi
+  0000007C: 8B E5              mov         esp,ebp
+  0000007E: 5D                 pop         ebp
+  0000007F: C3                 ret
+  00000080: 5E                 pop         esi
+  00000081: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  00000086: 5F                 pop         edi
+  00000087: 8B E5              mov         esp,ebp
+  00000089: 5D                 pop         ebp
+  0000008A: C3                 ret
+  0000008B: 8B 45 DC           mov         eax,dword ptr [ebp-24h]
+  0000008E: 89 07              mov         dword ptr [edi],eax
+  00000090: 8D 45 C8           lea         eax,[ebp-38h]
+  00000093: 50                 push        eax
+  00000094: E8 00 00 00 00     call        _inflateEnd
+  00000099: 83 C4 04           add         esp,4
+  0000009C: 5E                 pop         esi
+  0000009D: 5F                 pop         edi
+  0000009E: 8B E5              mov         esp,ebp
+  000000A0: 5D                 pop         ebp
+  000000A1: C3                 ret
+
+  Summary
+
+          64 .debug$S
+          2F .drectve
+           6 .rdata
+          A2 .text

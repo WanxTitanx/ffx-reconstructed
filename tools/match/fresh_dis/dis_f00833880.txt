@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00833880.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_ReseatAllInstanceTransforms:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 57                 push        edi
+  00000009: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000000C: 69 FF 80 08 00 00  imul        edi,edi,880h
+  00000012: 03 FE              add         edi,esi
+  00000014: 3B F7              cmp         esi,edi
+  00000016: 74 19              je          00000031
+  00000018: 80 7E 02 00        cmp         byte ptr [esi+2],0
+  0000001C: 74 09              je          00000027
+  0000001E: 56                 push        esi
+  0000001F: E8 00 00 00 00     call        _FFX_Chr_ReseatInstanceTransform
+  00000024: 83 C4 04           add         esp,4
+  00000027: 81 C6 80 08 00 00  add         esi,880h
+  0000002D: 3B F7              cmp         esi,edi
+  0000002F: 75 E7              jne         00000018
+  00000031: 8B C7              mov         eax,edi
+  00000033: 5F                 pop         edi
+  00000034: 5E                 pop         esi
+  00000035: 8B E5              mov         esp,ebp
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          39 .text

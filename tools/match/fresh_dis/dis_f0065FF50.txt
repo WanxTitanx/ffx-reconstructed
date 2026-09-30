@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0065FF50.obj
+
+File Type: COFF OBJECT
+
+@FFX_Allocator_AllocAndInsertToTree@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 56                 push        esi
+  00000008: 8D 73 18           lea         esi,[ebx+18h]
+  0000000B: 57                 push        edi
+  0000000C: 8B 3E              mov         edi,dword ptr [esi]
+  0000000E: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000011: 85 FF              test        edi,edi
+  00000013: 75 1E              jne         00000033
+  00000015: FF 73 20           push        dword ptr [ebx+20h]
+  00000018: 56                 push        esi
+  00000019: E8 00 00 00 00     call        _Phyre_AlignedAllocList_Alloc
+  0000001E: 8B 3E              mov         edi,dword ptr [esi]
+  00000020: 83 C4 08           add         esp,8
+  00000023: 85 FF              test        edi,edi
+  00000025: 75 0C              jne         00000033
+  00000027: 8D 47 0E           lea         eax,[edi+0Eh]
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: 8B E5              mov         esp,ebp
+  0000002F: 5D                 pop         ebp
+  00000030: C2 04 00           ret         4
+  00000033: FF 75 08           push        dword ptr [ebp+8]
+  00000036: 8B 07              mov         eax,dword ptr [edi]
+  00000038: FF 75 FC           push        dword ptr [ebp-4]
+  0000003B: 89 06              mov         dword ptr [esi],eax
+  0000003D: 57                 push        edi
+  0000003E: E8 00 00 00 00     call        _FFX_Allocator_CopyStringWithAlignment
+  00000043: 8B F8              mov         edi,eax
+  00000045: 57                 push        edi
+  00000046: 53                 push        ebx
+  00000047: E8 00 00 00 00     call        _Phyre_RBTree_NodeInsert
+  0000004C: 83 C4 14           add         esp,14h
+  0000004F: 57                 push        edi
+  00000050: 85 C0              test        eax,eax
+  00000052: 74 17              je          0000006B
+  00000054: 56                 push        esi
+  00000055: E8 00 00 00 00     call        _SList_MemPopAndFreeAligned
+  0000005A: 83 C4 08           add         esp,8
+  0000005D: B8 12 00 00 00     mov         eax,12h
+  00000062: 5F                 pop         edi
+  00000063: 5E                 pop         esi
+  00000064: 5B                 pop         ebx
+  00000065: 8B E5              mov         esp,ebp
+  00000067: 5D                 pop         ebp
+  00000068: C2 04 00           ret         4
+  0000006B: 53                 push        ebx
+  0000006C: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode_COMDAT
+  00000071: 83 C4 08           add         esp,8
+  00000074: 33 C0              xor         eax,eax
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 5B                 pop         ebx
+  00000079: 8B E5              mov         esp,ebp
+  0000007B: 5D                 pop         ebp
+  0000007C: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7F .text

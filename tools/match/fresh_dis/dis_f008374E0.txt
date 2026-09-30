@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008374E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_PlayMotionWithChannel:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _AtelGetEventSaveRamAdrs
+  00000009: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _FFX_Mseq_ResetPlaybackFlags
+  00000012: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000015: 56                 push        esi
+  00000016: E8 00 00 00 00     call        _FFX_Mgrp_BindMseqToActiveInstance
+  0000001B: 8B 45 1C           mov         eax,dword ptr [ebp+1Ch]
+  0000001E: C1 E0 08           shl         eax,8
+  00000021: 50                 push        eax
+  00000022: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000025: C1 E0 08           shl         eax,8
+  00000028: 50                 push        eax
+  00000029: 0F BF 45 14        movsx       eax,word ptr [ebp+14h]
+  0000002D: 50                 push        eax
+  0000002E: FF 75 20           push        dword ptr [ebp+20h]
+  00000031: 56                 push        esi
+  00000032: E8 00 00 00 00     call        _FFX_Mseq_SetupPlaybackRangeAndChannels
+  00000037: 83 C4 20           add         esp,20h
+  0000003A: C6 86 36 07 00 00  mov         byte ptr [esi+736h],1
+            01
+  00000041: C7 86 14 07 00 00  mov         dword ptr [esi+714h],offset _g_ChrUnkVar_C49789
+            00 00 00 00
+  0000004B: C6 86 38 07 00 00  mov         byte ptr [esi+738h],1
+            01
+  00000052: 5E                 pop         esi
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .text

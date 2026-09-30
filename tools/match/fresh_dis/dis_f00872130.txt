@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00872130.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_AllocateAndInitModel:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_Chr_AllocateActiveInstance
+  0000000E: 6A 00              push        0
+  00000010: 57                 push        edi
+  00000011: 8B F0              mov         esi,eax
+  00000013: E8 00 00 00 00     call        _FFX_Mgrp_EnsureResidentMotionLoadedAndRegistered
+  00000018: 83 C4 0C           add         esp,0Ch
+  0000001B: 85 F6              test        esi,esi
+  0000001D: 74 55              je          00000074
+  0000001F: 81 FF 75 10 00 00  cmp         edi,1075h
+  00000025: 7F 3C              jg          00000063
+  00000027: 74 42              je          0000006B
+  00000029: 83 FF 03           cmp         edi,3
+  0000002C: 74 18              je          00000046
+  0000002E: 83 FF 07           cmp         edi,7
+  00000031: 75 41              jne         00000074
+  00000033: 6A 00              push        0
+  00000035: 6A 01              push        1
+  00000037: 56                 push        esi
+  00000038: E8 00 00 00 00     call        _FFX_Model_SetHideFlag
+  0000003D: 83 C4 0C           add         esp,0Ch
+  00000040: 8B C6              mov         eax,esi
+  00000042: 5F                 pop         edi
+  00000043: 5E                 pop         esi
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+  00000046: 6A 01              push        1
+  00000048: 6A 01              push        1
+  0000004A: 56                 push        esi
+  0000004B: E8 00 00 00 00     call        _FFX_Model_SetHideFlag
+  00000050: 6A 00              push        0
+  00000052: 6A 02              push        2
+  00000054: 56                 push        esi
+  00000055: E8 00 00 00 00     call        _FFX_Model_SetHideFlag
+  0000005A: 83 C4 18           add         esp,18h
+  0000005D: 8B C6              mov         eax,esi
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+  00000063: 81 FF A0 10 00 00  cmp         edi,10A0h
+  00000069: 75 09              jne         00000074
+  0000006B: 56                 push        esi
+  0000006C: E8 00 00 00 00     call        _FFX_Chr_SetAlphaChannel
+  00000071: 83 C4 04           add         esp,4
+  00000074: 5F                 pop         edi
+  00000075: 8B C6              mov         eax,esi
+  00000077: 5E                 pop         esi
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7A .text

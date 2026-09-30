@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00709E70.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_IsEventStopped@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000006: 83 B8 C0 03 00 00  cmp         dword ptr [eax+3C0h],0
+            00
+  0000000D: 74 2C              je          0000003B
+  0000000F: 56                 push        esi
+  00000010: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000015: 68 DD 00 00 00     push        0DDh
+  0000001A: 8B F0              mov         esi,eax
+  0000001C: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  00000021: 56                 push        esi
+  00000022: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000027: 83 C4 0C           add         esp,0Ch
+  0000002A: 85 F6              test        esi,esi
+  0000002C: 5E                 pop         esi
+  0000002D: 75 0C              jne         0000003B
+  0000002F: 83 FF 02           cmp         edi,2
+  00000032: 75 07              jne         0000003B
+  00000034: B8 01 00 00 00     mov         eax,1
+  00000039: 5F                 pop         edi
+  0000003A: C3                 ret
+  0000003B: 33 C0              xor         eax,eax
+  0000003D: 5F                 pop         edi
+  0000003E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          3F .text

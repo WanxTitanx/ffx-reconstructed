@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C0010.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_Loose_7C0010:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: D9 45 08           fld         dword ptr [ebp+8]
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000F: 83 EC 20           sub         esp,20h
+  00000012: 8D 5F 20           lea         ebx,[edi+20h]
+  00000015: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  00000019: 8D 47 50           lea         eax,[edi+50h]
+  0000001C: D9 45 08           fld         dword ptr [ebp+8]
+  0000001F: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000023: D9 45 08           fld         dword ptr [ebp+8]
+  00000026: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000002A: D9 47 0C           fld         dword ptr [edi+0Ch]
+  0000002D: DD 1C 24           fstp        qword ptr [esp]
+  00000030: 53                 push        ebx
+  00000031: 50                 push        eax
+  00000032: 8D 45 E8           lea         eax,[ebp-18h]
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _FFX_Math_Vector3DiffWithBias
+  0000003B: 8D 45 E8           lea         eax,[ebp-18h]
+  0000003E: 50                 push        eax
+  0000003F: 8D 77 40           lea         esi,[edi+40h]
+  00000042: 56                 push        esi
+  00000043: 56                 push        esi
+  00000044: E8 00 00 00 00     call        _FFX_Camera_CommitTransformToGlobal
+  00000049: 56                 push        esi
+  0000004A: E8 00 00 00 00     call        _FFX_Math_Vector4LengthSqrtBias
+  0000004F: 83 C4 3C           add         esp,3Ch
+  00000052: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000055: DB 45 08           fild        dword ptr [ebp+8]
+  00000058: 85 C0              test        eax,eax
+  0000005A: 79 06              jns         00000062
+  0000005C: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000062: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000065: D9 47 08           fld         dword ptr [edi+8]
+  00000068: D9 45 08           fld         dword ptr [ebp+8]
+  0000006B: DE D9              fcompp
+  0000006D: DF E0              fnstsw      ax
+  0000006F: F6 C4 41           test        ah,41h
+  00000072: 75 22              jne         00000096
+  00000074: 56                 push        esi
+  00000075: 56                 push        esi
+  00000076: E8 00 00 00 00     call        _FFX_Draw_FlashDisplayPlayerName
+  0000007B: D9 47 08           fld         dword ptr [edi+8]
+  0000007E: FF 75 08           push        dword ptr [ebp+8]
+  00000081: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000084: FF 75 08           push        dword ptr [ebp+8]
+  00000087: FF 75 FC           push        dword ptr [ebp-4]
+  0000008A: FF 75 F8           push        dword ptr [ebp-8]
+  0000008D: 56                 push        esi
+  0000008E: E8 00 00 00 00     call        _FFX_Camera_ScaleVector4ByDivisor
+  00000093: 83 C4 1C           add         esp,1Ch
+  00000096: 56                 push        esi
+  00000097: 8D 47 50           lea         eax,[edi+50h]
+  0000009A: 53                 push        ebx
+  0000009B: 50                 push        eax
+  0000009C: E8 00 00 00 00     call        _FFX_Camera_CommitTransformToGlobal
+  000000A1: 83 C4 0C           add         esp,0Ch
+  000000A4: 5F                 pop         edi
+  000000A5: 5E                 pop         esi
+  000000A6: 5B                 pop         ebx
+  000000A7: 8B E5              mov         esp,ebp
+  000000A9: 5D                 pop         ebp
+  000000AA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          AB .text

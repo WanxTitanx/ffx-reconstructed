@@ -1,0 +1,135 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A914B0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Audio_Loose_A914B0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 5E 04           mov         ebx,dword ptr [esi+4]
+  0000000E: 8B 7B 1C           mov         edi,dword ptr [ebx+1Ch]
+  00000011: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00000014: 85 D2              test        edx,edx
+  00000016: 7E 41              jle         00000059
+  00000018: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000001B: 03 C2              add         eax,edx
+  0000001D: 3B 46 10           cmp         eax,dword ptr [esi+10h]
+  00000020: 7E 0C              jle         0000002E
+  00000022: 5F                 pop         edi
+  00000023: 5E                 pop         esi
+  00000024: B8 7D FF FF FF     mov         eax,0FFFFFF7Dh
+  00000029: 5B                 pop         ebx
+  0000002A: 8B E5              mov         esp,ebp
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  00000032: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000035: 0F 85 E0 00 00 00  jne         0000011B
+  0000003B: 2B 46 30           sub         eax,dword ptr [esi+30h]
+  0000003E: 3B 47 04           cmp         eax,dword ptr [edi+4]
+  00000041: 0F 86 D4 00 00 00  jbe         0000011B
+  00000047: 56                 push        esi
+  00000048: E8 00 00 00 00     call        _FFX_Audio_ChannelProcess
+  0000004D: 83 C4 04           add         esp,4
+  00000050: 33 C0              xor         eax,eax
+  00000052: 5F                 pop         edi
+  00000053: 5E                 pop         esi
+  00000054: 5B                 pop         ebx
+  00000055: 8B E5              mov         esp,ebp
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+  00000059: 68 80 00 00 00     push        80h
+  0000005E: E8 00 00 00 00     call        _alloca
+  00000063: 83 C4 04           add         esp,4
+  00000066: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  0000006A: 75 09              jne         00000075
+  0000006C: 56                 push        esi
+  0000006D: E8 00 00 00 00     call        _FFX_Audio_ChannelProcess
+  00000072: 83 C4 04           add         esp,4
+  00000075: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000078: 8D 04 40           lea         eax,[eax+eax*2]
+  0000007B: 50                 push        eax
+  0000007C: 56                 push        esi
+  0000007D: E8 00 00 00 00     call        _FFX_Audio_BufferExpand
+  00000082: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000085: 89 46 20           mov         dword ptr [esi+20h],eax
+  00000088: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  0000008B: 33 FF              xor         edi,edi
+  0000008D: 8D 04 48           lea         eax,[eax+ecx*2]
+  00000090: 03 C1              add         eax,ecx
+  00000092: 83 C4 08           add         esp,8
+  00000095: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000098: 39 7B 04           cmp         dword ptr [ebx+4],edi
+  0000009B: 7E 7E              jle         0000011B
+  0000009D: 8D 49 00           lea         ecx,[ecx]
+  000000A0: 8B 4E 20           mov         ecx,dword ptr [esi+20h]
+  000000A3: 83 F9 40           cmp         ecx,40h
+  000000A6: 7F 1F              jg          000000C7
+  000000A8: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  000000AB: 2B C1              sub         eax,ecx
+  000000AD: C1 E0 02           shl         eax,2
+  000000B0: 50                 push        eax
+  000000B1: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000B4: 6A 00              push        0
+  000000B6: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  000000B9: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000BC: 50                 push        eax
+  000000BD: E8 00 00 00 00     call        _memset
+  000000C2: 83 C4 0C           add         esp,0Ch
+  000000C5: EB 4E              jmp         00000115
+  000000C7: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000CA: 8B D1              mov         edx,ecx
+  000000CC: 8B 40 04           mov         eax,dword ptr [eax+4]
+  000000CF: 3B C8              cmp         ecx,eax
+  000000D1: 76 02              jbe         000000D5
+  000000D3: 8B D0              mov         edx,eax
+  000000D5: 6A 20              push        20h
+  000000D7: 52                 push        edx
+  000000D8: 8D 45 F8           lea         eax,[ebp-8]
+  000000DB: 50                 push        eax
+  000000DC: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000DF: 2B CA              sub         ecx,edx
+  000000E1: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  000000E4: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000E7: 50                 push        eax
+  000000E8: E8 00 00 00 00     call        _FFX_Audio_FormatConvert
+  000000ED: 8B 46 08           mov         eax,dword ptr [esi+8]
+  000000F0: 8B 4E 20           mov         ecx,dword ptr [esi+20h]
+  000000F3: 8B 14 B8           mov         edx,dword ptr [eax+edi*4]
+  000000F6: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  000000F9: 2B C1              sub         eax,ecx
+  000000FB: 50                 push        eax
+  000000FC: 8D 04 8A           lea         eax,[edx+ecx*4]
+  000000FF: 50                 push        eax
+  00000100: 8D 41 E0           lea         eax,[ecx-20h]
+  00000103: 6A 20              push        20h
+  00000105: 8D 04 82           lea         eax,[edx+eax*4]
+  00000108: 50                 push        eax
+  00000109: 8D 45 F8           lea         eax,[ebp-8]
+  0000010C: 50                 push        eax
+  0000010D: E8 00 00 00 00     call        _FFX_Audio_GainRamp
+  00000112: 83 C4 24           add         esp,24h
+  00000115: 47                 inc         edi
+  00000116: 3B 7B 04           cmp         edi,dword ptr [ebx+4]
+  00000119: 72 85              jb          000000A0
+  0000011B: 5F                 pop         edi
+  0000011C: 5E                 pop         esi
+  0000011D: 33 C0              xor         eax,eax
+  0000011F: 5B                 pop         ebx
+  00000120: 8B E5              mov         esp,ebp
+  00000122: 5D                 pop         ebp
+  00000123: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         124 .text

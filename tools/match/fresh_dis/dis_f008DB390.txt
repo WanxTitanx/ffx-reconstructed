@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008DB390.obj
+
+File Type: COFF OBJECT
+
+_FFX_CustomizeMenu_CalcItemPurchaseCost:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: FF 35 00 00 00 00  push        dword ptr [_g_CustomizeMenuUnkVar_186ABE8]
+  0000000D: 25 FF 0F 00 00     and         eax,0FFFh
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _FFX_CustomizeMenu_GetTableEntryByIdRange
+  00000018: 8B 30              mov         esi,dword ptr [eax]
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: E8 00 00 00 00     call        _FFX_Field_GetConstant100
+  00000022: 8B C8              mov         ecx,eax
+  00000024: 0F AF CE           imul        ecx,esi
+  00000027: B8 1F 85 EB 51     mov         eax,51EB851Fh
+  0000002C: F7 E1              mul         eax,ecx
+  0000002E: C1 EA 05           shr         edx,5
+  00000031: 5E                 pop         esi
+  00000032: B8 01 00 00 00     mov         eax,1
+  00000037: 85 D2              test        edx,edx
+  00000039: 74 02              je          0000003D
+  0000003B: 8B C2              mov         eax,edx
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A41D80.obj
+
+File Type: COFF OBJECT
+
+@PMap_StdMap_ClearMap@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 8B 03              mov         eax,dword ptr [ebx]
+  00000006: 57                 push        edi
+  00000007: 8B 78 04           mov         edi,dword ptr [eax+4]
+  0000000A: 8B F7              mov         esi,edi
+  0000000C: 80 7F 0D 00        cmp         byte ptr [edi+0Dh],0
+  00000010: 75 1B              jne         0000002D
+  00000012: FF 76 08           push        dword ptr [esi+8]
+  00000015: E8 00 00 00 00     call        _PMap_FreeNodeTree
+  0000001A: 8B 36              mov         esi,dword ptr [esi]
+  0000001C: 57                 push        edi
+  0000001D: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000022: 83 C4 08           add         esp,8
+  00000025: 80 7E 0D 00        cmp         byte ptr [esi+0Dh],0
+  00000029: 8B FE              mov         edi,esi
+  0000002B: 74 E5              je          00000012
+  0000002D: 8B 03              mov         eax,dword ptr [ebx]
+  0000002F: 5F                 pop         edi
+  00000030: 89 40 04           mov         dword ptr [eax+4],eax
+  00000033: 8B 03              mov         eax,dword ptr [ebx]
+  00000035: 5E                 pop         esi
+  00000036: 89 00              mov         dword ptr [eax],eax
+  00000038: 8B 03              mov         eax,dword ptr [ebx]
+  0000003A: 89 40 08           mov         dword ptr [eax+8],eax
+  0000003D: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  00000044: 5B                 pop         ebx
+  00000045: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          46 .text

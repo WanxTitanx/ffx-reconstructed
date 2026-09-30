@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00703570.obj
+
+File Type: COFF OBJECT
+
+@FFX_BlurEffect_RenderRadial@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 20           sub         esp,20h
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: 80 3E 00           cmp         byte ptr [esi],0
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: 75 08              jne         00000019
+  00000011: 5F                 pop         edi
+  00000012: 33 C0              xor         eax,eax
+  00000014: 5E                 pop         esi
+  00000015: 8B E5              mov         esp,ebp
+  00000017: 5D                 pop         ebp
+  00000018: C3                 ret
+  00000019: FF 76 10           push        dword ptr [esi+10h]
+  0000001C: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000001F: FF 76 08           push        dword ptr [esi+8]
+  00000022: FF 76 04           push        dword ptr [esi+4]
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _FFX_BlurEffect_WriteOutputScale
+  0000002B: 8D 46 30           lea         eax,[esi+30h]
+  0000002E: 50                 push        eax
+  0000002F: FF 76 64           push        dword ptr [esi+64h]
+  00000032: 56                 push        esi
+  00000033: E8 00 00 00 00     call        _FFX_BlurEffect_WriteConstBuffer
+  00000038: D9 46 14           fld         dword ptr [esi+14h]
+  0000003B: D9 E8              fld1
+  0000003D: D9 C0              fld         st(0)
+  0000003F: DE F2              fdivrp      st(2),st
+  00000041: D9 C9              fxch        st(1)
+  00000043: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000046: D9 46 18           fld         dword ptr [esi+18h]
+  00000049: D8 FA              fdivr       st,st(2)
+  0000004B: 0F BE 45 F0        movsx       eax,byte ptr [ebp-10h]
+  0000004F: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  00000052: D9 C2              fld         st(2)
+  00000054: DE E2              fsubrp      st(2),st
+  00000056: DD 05 00 00 00 00  fld         qword ptr [__real@3fe0000000000000]
+  0000005C: DC CA              fmul        st(2),st
+  0000005E: D9 CA              fxch        st(2)
+  00000060: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000063: DE EA              fsubp       st(2),st
+  00000065: DE C9              fmulp       st(1),st
+  00000067: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000006A: FF 75 FC           push        dword ptr [ebp-4]
+  0000006D: FF 75 F8           push        dword ptr [ebp-8]
+  00000070: FF 75 F4           push        dword ptr [ebp-0Ch]
+  00000073: 50                 push        eax
+  00000074: 56                 push        esi
+  00000075: E8 00 00 00 00     call        _FFX_BlurEffect_WriteUvScaleBias
+  0000007A: 6A 00              push        0
+  0000007C: 8D 45 E0           lea         eax,[ebp-20h]
+  0000007F: 57                 push        edi
+  00000080: 50                 push        eax
+  00000081: E8 00 00 00 00     call        _Phyre_ShaderParamSet3_Ctor
+  00000086: 83 C4 40           add         esp,40h
+  00000089: 8D 45 E0           lea         eax,[ebp-20h]
+  0000008C: 6A 00              push        0
+  0000008E: 50                 push        eax
+  0000008F: FF 76 1C           push        dword ptr [esi+1Ch]
+  00000092: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  00000097: 6A 00              push        0
+  00000099: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000009C: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  000000A1: 8B F8              mov         edi,eax
+  000000A3: 83 C4 14           add         esp,14h
+  000000A6: 85 FF              test        edi,edi
+  000000A8: 75 31              jne         000000DB
+  000000AA: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  000000AD: A1 00 00 00 00     mov         eax,dword ptr [_dword_CDEBB8]
+  000000B2: 89 41 48           mov         dword ptr [ecx+48h],eax
+  000000B5: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  000000B8: 8B 46 6C           mov         eax,dword ptr [esi+6Ch]
+  000000BB: FF B1 3C 01 00 00  push        dword ptr [ecx+13Ch]
+  000000C1: 57                 push        edi
+  000000C2: FF 70 10           push        dword ptr [eax+10h]
+  000000C5: 50                 push        eax
+  000000C6: 51                 push        ecx
+  000000C7: E8 00 00 00 00     call        _Phyre_Renderer_DispatchDraw
+  000000CC: 6A 01              push        1
+  000000CE: FF 76 1C           push        dword ptr [esi+1Ch]
+  000000D1: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Deallocate
+  000000D6: 83 C4 1C           add         esp,1Ch
+  000000D9: 8B F8              mov         edi,eax
+  000000DB: 8D 45 E0           lea         eax,[ebp-20h]
+  000000DE: 50                 push        eax
+  000000DF: E8 00 00 00 00     call        _nullsub_24
+  000000E4: 83 C4 04           add         esp,4
+  000000E7: 8B C7              mov         eax,edi
+  000000E9: 5F                 pop         edi
+  000000EA: 5E                 pop         esi
+  000000EB: 8B E5              mov         esp,ebp
+  000000ED: 5D                 pop         ebp
+  000000EE: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          EF .text

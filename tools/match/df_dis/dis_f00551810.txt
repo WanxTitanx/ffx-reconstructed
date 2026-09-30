@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00551810.obj
+
+File Type: COFF OBJECT
+
+@DEAD_PTriggerReceiverComponent_Destructor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 20 01        test        byte ptr [esi+20h],1
+  00000007: 75 0B              jne         00000014
+  00000009: FF 76 20           push        dword ptr [esi+20h]
+  0000000C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000011: 83 C4 04           add         esp,4
+  00000014: F6 46 14 01        test        byte ptr [esi+14h],1
+  00000018: 75 0B              jne         00000025
+  0000001A: FF 76 14           push        dword ptr [esi+14h]
+  0000001D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000022: 83 C4 04           add         esp,4
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _PComponent_UnlinkFromEntityList
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 5E                 pop         esi
+  0000002F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          30 .text

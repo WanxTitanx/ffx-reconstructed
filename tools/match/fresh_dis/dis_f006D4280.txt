@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D4280.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PCluster_ApplyTransform@4:
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: 83 F8 01           cmp         eax,1
+  00000005: 75 23              jne         0000002A
+  00000007: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000000A: C1 E0 02           shl         eax,2
+  0000000D: 33 D2              xor         edx,edx
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 42              je          00000055
+  00000013: D9 E8              fld1
+  00000015: 8B 41 48           mov         eax,dword ptr [ecx+48h]
+  00000018: 42                 inc         edx
+  00000019: D9 54 90 FC        fst         dword ptr [eax+edx*4-4]
+  0000001D: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000020: C1 E0 02           shl         eax,2
+  00000023: 3B D0              cmp         edx,eax
+  00000025: 72 EE              jb          00000015
+  00000027: DD D8              fstp        st(0)
+  00000029: C3                 ret
+  0000002A: 83 F8 02           cmp         eax,2
+  0000002D: 75 26              jne         00000055
+  0000002F: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000032: C1 E0 02           shl         eax,2
+  00000035: 33 D2              xor         edx,edx
+  00000037: 85 C0              test        eax,eax
+  00000039: 74 1A              je          00000055
+  0000003B: D9 05 00 00 00 00  fld         dword ptr [__real@3e4ccccd]
+  00000041: 8B 41 48           mov         eax,dword ptr [ecx+48h]
+  00000044: 42                 inc         edx
+  00000045: D9 54 90 FC        fst         dword ptr [eax+edx*4-4]
+  00000049: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000004C: C1 E0 02           shl         eax,2
+  0000004F: 3B D0              cmp         edx,eax
+  00000051: 72 EE              jb          00000041
+  00000053: DD D8              fstp        st(0)
+  00000055: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          56 .text

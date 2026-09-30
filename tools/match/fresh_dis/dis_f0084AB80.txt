@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0084AB80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_DestroyWindowRecursive:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 8B 47 7C           mov         eax,dword ptr [edi+7Ch]
+  0000000B: 85 C0              test        eax,eax
+  0000000D: 74 0D              je          0000001C
+  0000000F: 6A 00              push        0
+  00000011: 68 03 80 00 00     push        8003h
+  00000016: 57                 push        edi
+  00000017: FF D0              call        eax
+  00000019: 83 C4 0C           add         esp,0Ch
+  0000001C: 8B 35 D0 DB C0 04  mov         esi,dword ptr ds:[4C0DBD0h]
+  00000022: 83 8F 88 00 00 00  or          dword ptr [edi+88h],4
+            04
+  00000029: 85 F6              test        esi,esi
+  0000002B: 74 17              je          00000044
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 39 7E 08           cmp         dword ptr [esi+8],edi
+  00000033: 75 09              jne         0000003E
+  00000035: 56                 push        esi
+  00000036: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 8B 36              mov         esi,dword ptr [esi]
+  00000040: 85 F6              test        esi,esi
+  00000042: 75 EC              jne         00000030
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

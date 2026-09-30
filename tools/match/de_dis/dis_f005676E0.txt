@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005676E0.obj
+
+File Type: COFF OBJECT
+
+@PSkinBoneWeight_AlignedFree@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  00000007: 7C 10              jl          00000019
+  00000009: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000016: 83 C4 04           add         esp,4
+  00000019: F6 06 01           test        byte ptr [esi],1
+  0000001C: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000023: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002A: 75 0A              jne         00000036
+  0000002C: FF 36              push        dword ptr [esi]
+  0000002E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000033: 83 C4 04           add         esp,4
+  00000036: 5E                 pop         esi
+  00000037: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          38 .text

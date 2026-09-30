@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0091C4A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_ScriptOp_ResetAllResources:
+  00000000: 56                 push        esi
+  00000001: E8 00 00 00 00     call        _FFX_Render_ZeroAllResourceEntries
+  00000006: 33 F6              xor         esi,esi
+  00000008: E8 00 00 00 00     call        _FFX_FieldActor_GetActiveCount
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 15              je          00000026
+  00000011: 6A 00              push        0
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        _FFX_FieldActor_SetWord150_ByIndex
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 46                 inc         esi
+  0000001D: E8 00 00 00 00     call        _FFX_FieldActor_GetActiveCount
+  00000022: 3B F0              cmp         esi,eax
+  00000024: 72 EB              jb          00000011
+  00000026: B8 01 00 00 00     mov         eax,1
+  0000002B: 5E                 pop         esi
+  0000002C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2D .text

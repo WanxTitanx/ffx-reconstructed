@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00435090.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_435090@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8D 59 28           lea         ebx,[ecx+28h]
+  00000005: 8B F2              mov         esi,edx
+  00000007: 3B 33              cmp         esi,dword ptr [ebx]
+  00000009: 75 05              jne         00000010
+  0000000B: 5E                 pop         esi
+  0000000C: 33 C0              xor         eax,eax
+  0000000E: 5B                 pop         ebx
+  0000000F: C3                 ret
+  00000010: 57                 push        edi
+  00000011: 33 FF              xor         edi,edi
+  00000013: 85 F6              test        esi,esi
+  00000015: 74 20              je          00000037
+  00000017: 8B C6              mov         eax,esi
+  00000019: C1 E0 06           shl         eax,6
+  0000001C: 6A 04              push        4
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000024: 8B F8              mov         edi,eax
+  00000026: 83 C4 08           add         esp,8
+  00000029: 85 FF              test        edi,edi
+  0000002B: 74 1B              je          00000048
+  0000002D: 56                 push        esi
+  0000002E: 57                 push        edi
+  0000002F: E8 00 00 00 00     call        _Phyre_Stream_ReadLine
+  00000034: 83 C4 08           add         esp,8
+  00000037: 56                 push        esi
+  00000038: 57                 push        edi
+  00000039: 53                 push        ebx
+  0000003A: E8 00 00 00 00     call        _Phyre_Stream_ReadString
+  0000003F: 83 C4 0C           add         esp,0Ch
+  00000042: 33 C0              xor         eax,eax
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: C3                 ret
+  00000048: 5F                 pop         edi
+  00000049: 5E                 pop         esi
+  0000004A: B8 0D 00 00 00     mov         eax,0Dh
+  0000004F: 5B                 pop         ebx
+  00000050: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          51 .text

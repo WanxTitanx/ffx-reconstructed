@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060AE10.obj
+
+File Type: COFF OBJECT
+
+_Serialize_ComparePackedPixelEntry:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 0A              mov         ecx,dword ptr [edx]
+  00000009: 56                 push        esi
+  0000000A: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000D: 8B 06              mov         eax,dword ptr [esi]
+  0000000F: 85 C9              test        ecx,ecx
+  00000011: 79 27              jns         0000003A
+  00000013: 85 C0              test        eax,eax
+  00000015: 78 06              js          0000001D
+  00000017: 5E                 pop         esi
+  00000018: 33 C0              xor         eax,eax
+  0000001A: 5B                 pop         ebx
+  0000001B: 5D                 pop         ebp
+  0000001C: C3                 ret
+  0000001D: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  00000023: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000028: 3B C8              cmp         ecx,eax
+  0000002A: 0F 96 C3           setbe       bl
+  0000002D: 3B C8              cmp         ecx,eax
+  0000002F: 73 16              jae         00000047
+  00000031: 5E                 pop         esi
+  00000032: B8 01 00 00 00     mov         eax,1
+  00000037: 5B                 pop         ebx
+  00000038: 5D                 pop         ebp
+  00000039: C3                 ret
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 79 EA              jns         00000028
+  0000003E: 5E                 pop         esi
+  0000003F: B8 01 00 00 00     mov         eax,1
+  00000044: 5B                 pop         ebx
+  00000045: 5D                 pop         ebp
+  00000046: C3                 ret
+  00000047: 84 DB              test        bl,bl
+  00000049: 74 CC              je          00000017
+  0000004B: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  0000004E: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  00000051: 3B C1              cmp         eax,ecx
+  00000053: 72 DC              jb          00000031
+  00000055: 77 C0              ja          00000017
+  00000057: 8B 42 08           mov         eax,dword ptr [edx+8]
+  0000005A: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000005D: 3B C1              cmp         eax,ecx
+  0000005F: 72 D0              jb          00000031
+  00000061: 77 B4              ja          00000017
+  00000063: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000066: 39 42 04           cmp         dword ptr [edx+4],eax
+  00000069: 5E                 pop         esi
+  0000006A: 1B C0              sbb         eax,eax
+  0000006C: F7 D8              neg         eax
+  0000006E: 5B                 pop         ebx
+  0000006F: 5D                 pop         ebp
+  00000070: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          71 .text

@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00616A30.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimation_PAvoidOutputOverwritingInput_CanAcceptSlot@12:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 52                 push        edx
+  00000004: FF 76 04           push        dword ptr [esi+4]
+  00000007: E8 00 00 00 00     call        _Phyre_AnimationDataSource_FindSlotByOutput
+  0000000C: 83 C4 08           add         esp,8
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 0D              je          00000020
+  00000013: 8B 00              mov         eax,dword ptr [eax]
+  00000015: 3B 46 08           cmp         eax,dword ptr [esi+8]
+  00000018: 76 06              jbe         00000020
+  0000001A: 32 C0              xor         al,al
+  0000001C: 5E                 pop         esi
+  0000001D: C2 04 00           ret         4
+  00000020: B0 01              mov         al,1
+  00000022: 5E                 pop         esi
+  00000023: C2 04 00           ret         4
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          26 .text

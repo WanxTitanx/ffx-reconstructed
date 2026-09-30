@@ -1,0 +1,94 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00986860.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_986860:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: D9 01              fld         dword ptr [ecx]
+  0000000B: 53                 push        ebx
+  0000000C: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000000F: 56                 push        esi
+  00000010: D9 02              fld         dword ptr [edx]
+  00000012: 57                 push        edi
+  00000013: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000016: D9 C0              fld         st(0)
+  00000018: D9 E0              fchs
+  0000001A: D8 DA              fcomp       st(2)
+  0000001C: DF E0              fnstsw      ax
+  0000001E: F6 C4 41           test        ah,41h
+  00000021: 75 07              jne         0000002A
+  00000023: BB 01 00 00 00     mov         ebx,1
+  00000028: EB 02              jmp         0000002C
+  0000002A: 33 DB              xor         ebx,ebx
+  0000002C: DE D9              fcompp
+  0000002E: DF E0              fnstsw      ax
+  00000030: F6 C4 01           test        ah,1
+  00000033: 75 04              jne         00000039
+  00000035: 33 FF              xor         edi,edi
+  00000037: EB 05              jmp         0000003E
+  00000039: BF 08 00 00 00     mov         edi,8
+  0000003E: D9 41 04           fld         dword ptr [ecx+4]
+  00000041: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000044: D9 42 04           fld         dword ptr [edx+4]
+  00000047: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000004A: D9 C0              fld         st(0)
+  0000004C: D9 E0              fchs
+  0000004E: D8 DA              fcomp       st(2)
+  00000050: DF E0              fnstsw      ax
+  00000052: F6 C4 41           test        ah,41h
+  00000055: 7A 04              jp          0000005B
+  00000057: 33 F6              xor         esi,esi
+  00000059: EB 05              jmp         00000060
+  0000005B: BE 02 00 00 00     mov         esi,2
+  00000060: DE D9              fcompp
+  00000062: DF E0              fnstsw      ax
+  00000064: F6 C4 01           test        ah,1
+  00000067: 75 04              jne         0000006D
+  00000069: 33 D2              xor         edx,edx
+  0000006B: EB 05              jmp         00000072
+  0000006D: BA 10 00 00 00     mov         edx,10h
+  00000072: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000075: D9 40 08           fld         dword ptr [eax+8]
+  00000078: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000007B: D9 41 08           fld         dword ptr [ecx+8]
+  0000007E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000081: D9 45 08           fld         dword ptr [ebp+8]
+  00000084: D9 C0              fld         st(0)
+  00000086: D9 E0              fchs
+  00000088: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000008B: D8 D1              fcom        st(1)
+  0000008D: DF E0              fnstsw      ax
+  0000008F: DD D9              fstp        st(1)
+  00000091: F6 C4 01           test        ah,1
+  00000094: 75 04              jne         0000009A
+  00000096: 33 C9              xor         ecx,ecx
+  00000098: EB 05              jmp         0000009F
+  0000009A: B9 04 00 00 00     mov         ecx,4
+  0000009F: DE D9              fcompp
+  000000A1: 0B CA              or          ecx,edx
+  000000A3: 0B CE              or          ecx,esi
+  000000A5: DF E0              fnstsw      ax
+  000000A7: F6 C4 41           test        ah,41h
+  000000AA: 7B 03              jnp         000000AF
+  000000AC: 83 C9 20           or          ecx,20h
+  000000AF: 0B CF              or          ecx,edi
+  000000B1: 5F                 pop         edi
+  000000B2: 0B CB              or          ecx,ebx
+  000000B4: 5E                 pop         esi
+  000000B5: 8B C1              mov         eax,ecx
+  000000B7: 5B                 pop         ebx
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          BA .text

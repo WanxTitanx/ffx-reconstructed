@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006A29F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_StringMap_Insert@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 34           sub         esp,34h
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 56                 push        esi
+  0000000A: 8B F2              mov         esi,edx
+  0000000C: 57                 push        edi
+  0000000D: 80 3E 00           cmp         byte ptr [esi],0
+  00000010: 8B F9              mov         edi,ecx
+  00000012: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000015: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  0000001C: C6 45 E8 00        mov         byte ptr [ebp-18h],0
+  00000020: 75 04              jne         00000026
+  00000022: 33 D2              xor         edx,edx
+  00000024: EB 13              jmp         00000039
+  00000026: 8D 4A 01           lea         ecx,[edx+1]
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000030: 8A 02              mov         al,byte ptr [edx]
+  00000032: 42                 inc         edx
+  00000033: 84 C0              test        al,al
+  00000035: 75 F9              jne         00000030
+  00000037: 2B D1              sub         edx,ecx
+  00000039: 52                 push        edx
+  0000003A: 8D 45 E8           lea         eax,[ebp-18h]
+  0000003D: 56                 push        esi
+  0000003E: 50                 push        eax
+  0000003F: E8 00 00 00 00     call        _Engine_String_assign_range
+  00000044: 56                 push        esi
+  00000045: 57                 push        edi
+  00000046: E8 00 00 00 00     call        _Phyre_StringMap_Find
+  0000004B: 83 C4 14           add         esp,14h
+  0000004E: 85 C0              test        eax,eax
+  00000050: 75 3D              jne         0000008F
+  00000052: 8D 45 08           lea         eax,[ebp+8]
+  00000055: 50                 push        eax
+  00000056: 8D 45 E8           lea         eax,[ebp-18h]
+  00000059: 50                 push        eax
+  0000005A: 8D 45 CC           lea         eax,[ebp-34h]
+  0000005D: 50                 push        eax
+  0000005E: E8 00 00 00 00     call        _Phyre_StringMap_InsertHelper
+  00000063: 50                 push        eax
+  00000064: 57                 push        edi
+  00000065: E8 00 00 00 00     call        _Phyre_StringMapNode_Alloc
+  0000006A: 50                 push        eax
+  0000006B: 83 C0 10           add         eax,10h
+  0000006E: 50                 push        eax
+  0000006F: 6A 00              push        0
+  00000071: 8D 45 FC           lea         eax,[ebp-4]
+  00000074: 50                 push        eax
+  00000075: 57                 push        edi
+  00000076: E8 00 00 00 00     call        _Phyre_Map_Insert
+  0000007B: 83 C4 28           add         esp,28h
+  0000007E: 83 7D E0 10        cmp         dword ptr [ebp-20h],10h
+  00000082: 72 0B              jb          0000008F
+  00000084: FF 75 CC           push        dword ptr [ebp-34h]
+  00000087: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000008C: 83 C4 04           add         esp,4
+  0000008F: 5F                 pop         edi
+  00000090: 5E                 pop         esi
+  00000091: 8B E5              mov         esp,ebp
+  00000093: 5D                 pop         ebp
+  00000094: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          97 .text

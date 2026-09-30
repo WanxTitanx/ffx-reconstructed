@@ -1,0 +1,1522 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file b77.obj
+
+File Type: COFF OBJECT
+
+??$gim_down_heap@UGIM_RSORT_TOKEN@@VGIM_RSORT_TOKEN_COMPARATOR@@@@YAXPAUGIM_RSORT_TOKEN@@IIVGIM_RSORT_TOKEN_COMPARATOR@@@Z (void __cdecl gim_down_heap<struct GIM_RSORT_TOKEN,class GIM_RSORT_TOKEN_COMPARATOR>(struct GIM_RSORT_TOKEN *,unsigned int,unsigned int,class GIM_RSORT_TOKEN_COMPARATOR)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000E: 57                 push        edi
+  0000000F: 8B 44 F2 F8        mov         eax,dword ptr [edx+esi*8-8]
+  00000013: 8B 4C F2 FC        mov         ecx,dword ptr [edx+esi*8-4]
+  00000017: 8B FB              mov         edi,ebx
+  00000019: D1 EF              shr         edi,1
+  0000001B: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001E: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  00000021: 3B F7              cmp         esi,edi
+  00000023: 77 36              ja          0000005B
+  00000025: 8D 04 36           lea         eax,[esi+esi]
+  00000028: 3B C3              cmp         eax,ebx
+  0000002A: 7D 0A              jge         00000036
+  0000002C: 8B 4C C2 F8        mov         ecx,dword ptr [edx+eax*8-8]
+  00000030: 2B 0C C2           sub         ecx,dword ptr [edx+eax*8]
+  00000033: 79 01              jns         00000036
+  00000035: 40                 inc         eax
+  00000036: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000039: 2B 4C C2 F8        sub         ecx,dword ptr [edx+eax*8-8]
+  0000003D: 79 16              jns         00000055
+  0000003F: 8B 4C C2 F8        mov         ecx,dword ptr [edx+eax*8-8]
+  00000043: 89 4C F2 F8        mov         dword ptr [edx+esi*8-8],ecx
+  00000047: 8B 4C C2 FC        mov         ecx,dword ptr [edx+eax*8-4]
+  0000004B: 89 4C F2 FC        mov         dword ptr [edx+esi*8-4],ecx
+  0000004F: 8B F0              mov         esi,eax
+  00000051: 3B C7              cmp         eax,edi
+  00000053: 76 D0              jbe         00000025
+  00000055: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000058: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000005B: 5F                 pop         edi
+  0000005C: 89 44 F2 F8        mov         dword ptr [edx+esi*8-8],eax
+  00000060: 89 4C F2 FC        mov         dword ptr [edx+esi*8-4],ecx
+  00000064: 5E                 pop         esi
+  00000065: 5B                 pop         ebx
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+
+??$gim_heap_sort@UGIM_RSORT_TOKEN@@VGIM_RSORT_TOKEN_COMPARATOR@@@@YAXPAUGIM_RSORT_TOKEN@@IVGIM_RSORT_TOKEN_COMPARATOR@@@Z (void __cdecl gim_heap_sort<struct GIM_RSORT_TOKEN,class GIM_RSORT_TOKEN_COMPARATOR>(struct GIM_RSORT_TOKEN *,unsigned int,class GIM_RSORT_TOKEN_COMPARATOR)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: 8B F7              mov         esi,edi
+  0000000E: D1 EE              shr         esi,1
+  00000010: 74 11              je          00000023
+  00000012: FF 75 10           push        dword ptr [ebp+10h]
+  00000015: 57                 push        edi
+  00000016: 56                 push        esi
+  00000017: 53                 push        ebx
+  00000018: E8 00 00 00 00     call        ??$gim_down_heap@UGIM_RSORT_TOKEN@@VGIM_RSORT_TOKEN_COMPARATOR@@@@YAXPAUGIM_RSORT_TOKEN@@IIVGIM_RSORT_TOKEN_COMPARATOR@@@Z
+  0000001D: 83 C4 10           add         esp,10h
+  00000020: 4E                 dec         esi
+  00000021: 75 EF              jne         00000012
+  00000023: 83 FF 02           cmp         edi,2
+  00000026: 72 47              jb          0000006F
+  00000028: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000002B: 8D 04 FD F8 FF FF  lea         eax,[edi*8-8]
+            FF
+  00000032: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000035: 8B 04 18           mov         eax,dword ptr [eax+ebx]
+  00000038: 8B 0B              mov         ecx,dword ptr [ebx]
+  0000003A: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  0000003D: 89 03              mov         dword ptr [ebx],eax
+  0000003F: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000042: 56                 push        esi
+  00000043: 8B 44 18 04        mov         eax,dword ptr [eax+ebx+4]
+  00000047: 89 43 04           mov         dword ptr [ebx+4],eax
+  0000004A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000004D: 4F                 dec         edi
+  0000004E: 57                 push        edi
+  0000004F: 89 0C 18           mov         dword ptr [eax+ebx],ecx
+  00000052: 89 54 18 04        mov         dword ptr [eax+ebx+4],edx
+  00000056: 83 E8 08           sub         eax,8
+  00000059: 6A 01              push        1
+  0000005B: 53                 push        ebx
+  0000005C: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000005F: E8 00 00 00 00     call        ??$gim_down_heap@UGIM_RSORT_TOKEN@@VGIM_RSORT_TOKEN_COMPARATOR@@@@YAXPAUGIM_RSORT_TOKEN@@IIVGIM_RSORT_TOKEN_COMPARATOR@@@Z
+  00000064: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000067: 83 C4 10           add         esp,10h
+  0000006A: 83 FF 02           cmp         edi,2
+  0000006D: 73 C6              jae         00000035
+  0000006F: 5F                 pop         edi
+  00000070: 5E                 pop         esi
+  00000071: 5B                 pop         ebx
+  00000072: 5D                 pop         ebp
+  00000073: C3                 ret
+
+??$gim_swap_elements@UGIM_RSORT_TOKEN@@@@YAXPAUGIM_RSORT_TOKEN@@II@Z (void __cdecl gim_swap_elements<struct GIM_RSORT_TOKEN>(struct GIM_RSORT_TOKEN *,unsigned int,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000009: 56                 push        esi
+  0000000A: 8B 34 C1           mov         esi,dword ptr [ecx+eax*8]
+  0000000D: 8D 14 C1           lea         edx,[ecx+eax*8]
+  00000010: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000013: 57                 push        edi
+  00000014: 8B 7A 04           mov         edi,dword ptr [edx+4]
+  00000017: 8D 0C C1           lea         ecx,[ecx+eax*8]
+  0000001A: 8B 01              mov         eax,dword ptr [ecx]
+  0000001C: 89 02              mov         dword ptr [edx],eax
+  0000001E: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000021: 89 42 04           mov         dword ptr [edx+4],eax
+  00000024: 89 79 04           mov         dword ptr [ecx+4],edi
+  00000027: 5F                 pop         edi
+  00000028: 89 31              mov         dword ptr [ecx],esi
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+
+??0?$gim_array@UGIM_RSORT_TOKEN@@@@QAE@I@Z (public: __thiscall gim_array<struct GIM_RSORT_TOKEN>::gim_array<struct GIM_RSORT_TOKEN>(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000000F: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000016: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 06              je          00000027
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        ?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z
+  00000027: 8B C6              mov         eax,esi
+  00000029: 5E                 pop         esi
+  0000002A: 5D                 pop         ebp
+  0000002B: C2 04 00           ret         4
+
+??0GIM_CONTACT@@QAE@ABV0@@Z (public: __thiscall GIM_CONTACT::GIM_CONTACT(class GIM_CONTACT const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 02              mov         eax,dword ptr [edx]
+  00000008: 89 01              mov         dword ptr [ecx],eax
+  0000000A: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000000D: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000010: 8B 42 08           mov         eax,dword ptr [edx+8]
+  00000013: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000016: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  00000019: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  0000001C: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  0000001F: 89 41 10           mov         dword ptr [ecx+10h],eax
+  00000022: 8B 42 14           mov         eax,dword ptr [edx+14h]
+  00000025: 89 41 14           mov         dword ptr [ecx+14h],eax
+  00000028: 8B 42 18           mov         eax,dword ptr [edx+18h]
+  0000002B: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000002E: 8B 42 1C           mov         eax,dword ptr [edx+1Ch]
+  00000031: 89 41 1C           mov         dword ptr [ecx+1Ch],eax
+  00000034: D9 42 20           fld         dword ptr [edx+20h]
+  00000037: D9 59 20           fstp        dword ptr [ecx+20h]
+  0000003A: 8B 42 28           mov         eax,dword ptr [edx+28h]
+  0000003D: 89 41 28           mov         dword ptr [ecx+28h],eax
+  00000040: 8B 42 2C           mov         eax,dword ptr [edx+2Ch]
+  00000043: 89 41 2C           mov         dword ptr [ecx+2Ch],eax
+  00000046: 8B 02              mov         eax,dword ptr [edx]
+  00000048: 89 01              mov         dword ptr [ecx],eax
+  0000004A: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000004D: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000050: 8B 42 08           mov         eax,dword ptr [edx+8]
+  00000053: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000056: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  00000059: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  0000005C: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  0000005F: 89 41 10           mov         dword ptr [ecx+10h],eax
+  00000062: 8B 42 14           mov         eax,dword ptr [edx+14h]
+  00000065: 89 41 14           mov         dword ptr [ecx+14h],eax
+  00000068: 8B 42 18           mov         eax,dword ptr [edx+18h]
+  0000006B: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000006E: 8B 42 1C           mov         eax,dword ptr [edx+1Ch]
+  00000071: 89 41 1C           mov         dword ptr [ecx+1Ch],eax
+  00000074: D9 42 20           fld         dword ptr [edx+20h]
+  00000077: D9 59 20           fstp        dword ptr [ecx+20h]
+  0000007A: 8B 42 28           mov         eax,dword ptr [edx+28h]
+  0000007D: 89 41 28           mov         dword ptr [ecx+28h],eax
+  00000080: 8B 42 2C           mov         eax,dword ptr [edx+2Ch]
+  00000083: 89 41 2C           mov         dword ptr [ecx+2Ch],eax
+  00000086: 8B C1              mov         eax,ecx
+  00000088: 5D                 pop         ebp
+  00000089: C2 04 00           ret         4
+
+??0GIM_RSORT_TOKEN@@QAE@ABU0@@Z (public: __thiscall GIM_RSORT_TOKEN::GIM_RSORT_TOKEN(struct GIM_RSORT_TOKEN const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 02              mov         eax,dword ptr [edx]
+  00000008: 89 01              mov         dword ptr [ecx],eax
+  0000000A: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000000D: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000010: 8B C1              mov         eax,ecx
+  00000012: 5D                 pop         ebp
+  00000013: C2 04 00           ret         4
+
+??0GIM_RSORT_TOKEN@@QAE@XZ (public: __thiscall GIM_RSORT_TOKEN::GIM_RSORT_TOKEN(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0btVector3@@QAE@ABM00@Z (public: __thiscall btVector3::btVector3(float const &,float const &,float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: D9 00              fld         dword ptr [eax]
+  00000008: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000B: D9 19              fstp        dword ptr [ecx]
+  0000000D: D9 00              fld         dword ptr [eax]
+  0000000F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000012: D9 59 04           fstp        dword ptr [ecx+4]
+  00000015: D9 00              fld         dword ptr [eax]
+  00000017: 8B C1              mov         eax,ecx
+  00000019: D9 59 08           fstp        dword ptr [ecx+8]
+  0000001C: D9 EE              fldz
+  0000001E: D9 59 0C           fstp        dword ptr [ecx+0Ch]
+  00000021: 5D                 pop         ebp
+  00000022: C2 0C 00           ret         0Ch
+
+??0btVector3@@QAE@XZ (public: __thiscall btVector3::btVector3(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??1?$gim_array@UGIM_RSORT_TOKEN@@@@QAE@XZ (public: __thiscall gim_array<struct GIM_RSORT_TOKEN>::~gim_array<struct GIM_RSORT_TOKEN>(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 0C              je          00000016
+  0000000A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000010: 48                 dec         eax
+  00000011: 75 FD              jne         00000010
+  00000013: 89 46 04           mov         dword ptr [esi+4],eax
+  00000016: 8B 06              mov         eax,dword ptr [esi]
+  00000018: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000001F: 85 C0              test        eax,eax
+  00000021: 74 0F              je          00000032
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  00000029: 83 C4 04           add         esp,4
+  0000002C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+??A?$gim_array@UGIM_RSORT_TOKEN@@@@QAEAAUGIM_RSORT_TOKEN@@I@Z (public: struct GIM_RSORT_TOKEN & __thiscall gim_array<struct GIM_RSORT_TOKEN>::operator[](unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 09              mov         ecx,dword ptr [ecx]
+  00000005: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000008: 8D 04 C1           lea         eax,[ecx+eax*8]
+  0000000B: 5D                 pop         ebp
+  0000000C: C2 04 00           ret         4
+
+??A?$gim_array@VGIM_CONTACT@@@@QBEABVGIM_CONTACT@@I@Z (public: class GIM_CONTACT const & __thiscall gim_array<class GIM_CONTACT>::operator[](unsigned int)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8D 04 40           lea         eax,[eax+eax*2]
+  00000009: C1 E0 04           shl         eax,4
+  0000000C: 03 01              add         eax,dword ptr [ecx]
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+??BbtVector3@@QBEPBMXZ (public: __thiscall btVector3::operator float const *(void)const ):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??D@YA?AVbtVector3@@ABV0@ABM@Z (class btVector3 __cdecl operator*(class btVector3 const &,float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: D9 02              fld         dword ptr [edx]
+  0000000B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000E: D8 09              fmul        dword ptr [ecx]
+  00000010: D9 18              fstp        dword ptr [eax]
+  00000012: D9 42 04           fld         dword ptr [edx+4]
+  00000015: D8 09              fmul        dword ptr [ecx]
+  00000017: D9 58 04           fstp        dword ptr [eax+4]
+  0000001A: D9 42 08           fld         dword ptr [edx+8]
+  0000001D: D8 09              fmul        dword ptr [ecx]
+  0000001F: D9 58 08           fstp        dword ptr [eax+8]
+  00000022: D9 EE              fldz
+  00000024: D9 58 0C           fstp        dword ptr [eax+0Ch]
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+
+??RGIM_RSORT_TOKEN_COMPARATOR@@QAEHABUGIM_RSORT_TOKEN@@0@Z (public: int __thiscall GIM_RSORT_TOKEN_COMPARATOR::operator()(struct GIM_RSORT_TOKEN const &,struct GIM_RSORT_TOKEN const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000009: 8B 00              mov         eax,dword ptr [eax]
+  0000000B: 2B 01              sub         eax,dword ptr [ecx]
+  0000000D: 5D                 pop         ebp
+  0000000E: C2 08 00           ret         8
+
+??XbtVector3@@QAEAAV0@ABM@Z (public: class btVector3 & __thiscall btVector3::operator*=(float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: D9 00              fld         dword ptr [eax]
+  00000008: D8 09              fmul        dword ptr [ecx]
+  0000000A: D9 19              fstp        dword ptr [ecx]
+  0000000C: D9 00              fld         dword ptr [eax]
+  0000000E: D8 49 04           fmul        dword ptr [ecx+4]
+  00000011: D9 59 04           fstp        dword ptr [ecx+4]
+  00000014: D9 41 08           fld         dword ptr [ecx+8]
+  00000017: D8 08              fmul        dword ptr [eax]
+  00000019: 8B C1              mov         eax,ecx
+  0000001B: D9 59 08           fstp        dword ptr [ecx+8]
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??YbtVector3@@QAEAAV0@ABV0@@Z (public: class btVector3 & __thiscall btVector3::operator+=(class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: D9 00              fld         dword ptr [eax]
+  00000008: D8 01              fadd        dword ptr [ecx]
+  0000000A: D9 19              fstp        dword ptr [ecx]
+  0000000C: D9 40 04           fld         dword ptr [eax+4]
+  0000000F: D8 41 04           fadd        dword ptr [ecx+4]
+  00000012: D9 59 04           fstp        dword ptr [ecx+4]
+  00000015: D9 40 08           fld         dword ptr [eax+8]
+  00000018: 8B C1              mov         eax,ecx
+  0000001A: D8 41 08           fadd        dword ptr [ecx+8]
+  0000001D: D9 59 08           fstp        dword ptr [ecx+8]
+  00000020: 5D                 pop         ebp
+  00000021: C2 04 00           ret         4
+
+??_0btVector3@@QAEAAV0@ABM@Z (public: class btVector3 & __thiscall btVector3::operator/=(float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: D9 00              fld         dword ptr [eax]
+  00000008: 8B C1              mov         eax,ecx
+  0000000A: D9 E8              fld1
+  0000000C: DE F1              fdivrp      st(1),st
+  0000000E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000011: D9 01              fld         dword ptr [ecx]
+  00000013: D9 45 08           fld         dword ptr [ebp+8]
+  00000016: D9 C0              fld         st(0)
+  00000018: DE CA              fmulp       st(2),st
+  0000001A: D9 C9              fxch        st(1)
+  0000001C: D9 19              fstp        dword ptr [ecx]
+  0000001E: D9 41 04           fld         dword ptr [ecx+4]
+  00000021: D8 C9              fmul        st,st(1)
+  00000023: D9 59 04           fstp        dword ptr [ecx+4]
+  00000026: D8 49 08           fmul        dword ptr [ecx+8]
+  00000029: D9 59 08           fstp        dword ptr [ecx+8]
+  0000002C: 5D                 pop         ebp
+  0000002D: C2 04 00           ret         4
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+?back@?$gim_array@VGIM_CONTACT@@@@QAEAAVGIM_CONTACT@@XZ (public: class GIM_CONTACT & __thiscall gim_array<class GIM_CONTACT>::back(void)):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: 8D 14 40           lea         edx,[eax+eax*2]
+  00000006: 8B 01              mov         eax,dword ptr [ecx]
+  00000008: C1 E2 04           shl         edx,4
+  0000000B: 83 C0 D0           add         eax,0FFFFFFD0h
+  0000000E: 03 C2              add         eax,edx
+  00000010: C3                 ret
+
+?back@?$gim_array@VGIM_CONTACT@@@@QBEABVGIM_CONTACT@@XZ (public: class GIM_CONTACT const & __thiscall gim_array<class GIM_CONTACT>::back(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: 8D 14 40           lea         edx,[eax+eax*2]
+  00000006: 8B 01              mov         eax,dword ptr [ecx]
+  00000008: C1 E2 04           shl         edx,4
+  0000000B: 83 C0 D0           add         eax,0FFFFFFD0h
+  0000000E: 03 C2              add         eax,edx
+  00000010: C3                 ret
+
+?btFabs@@YAMM@Z (float __cdecl btFabs(float)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D9 E1              fabs
+  00000008: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000B: D9 45 08           fld         dword ptr [ebp+8]
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+
+?btSqrt@@YAMM@Z (float __cdecl btSqrt(float)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        __CIsqrt
+  0000000B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000E: D9 45 08           fld         dword ptr [ebp+8]
+  00000011: 5D                 pop         ebp
+  00000012: C3                 ret
+
+?calc_key_contact@GIM_CONTACT@@QBEIXZ (public: unsigned int __thiscall GIM_CONTACT::calc_key_contact(void)const ):
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F9              mov         edi,ecx
+  00000005: D9 07              fld         dword ptr [edi]
+  00000007: DC 0D 00 00 00 00  fmul        qword ptr [__real@408f400000000000]
+  0000000D: DC 05 00 00 00 00  fadd        qword ptr [__real@3ff0000000000000]
+  00000013: E8 00 00 00 00     call        __ftol2_sse
+  00000018: D9 47 04           fld         dword ptr [edi+4]
+  0000001B: DC 0D 00 00 00 00  fmul        qword ptr [__real@4094d40000000000]
+  00000021: 8B D8              mov         ebx,eax
+  00000023: E8 00 00 00 00     call        __ftol2_sse
+  00000028: D9 47 08           fld         dword ptr [edi+8]
+  0000002B: DC 0D 00 00 00 00  fmul        qword ptr [__real@40a0aa0000000000]
+  00000031: 8B F0              mov         esi,eax
+  00000033: DC 05 00 00 00 00  fadd        qword ptr [__real@4008000000000000]
+  00000039: E8 00 00 00 00     call        __ftol2_sse
+  0000003E: C1 E6 04           shl         esi,4
+  00000041: 03 F3              add         esi,ebx
+  00000043: C1 E0 08           shl         eax,8
+  00000046: 5F                 pop         edi
+  00000047: 03 C6              add         eax,esi
+  00000049: 5E                 pop         esi
+  0000004A: 5B                 pop         ebx
+  0000004B: C3                 ret
+
+?clear@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEXXZ (public: void __thiscall gim_array<struct GIM_RSORT_TOKEN>::clear(void)):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: 85 C0              test        eax,eax
+  00000005: 74 06              je          0000000D
+  00000007: 48                 dec         eax
+  00000008: 75 FD              jne         00000007
+  0000000A: 89 41 04           mov         dword ptr [ecx+4],eax
+  0000000D: C3                 ret
+
+?clear@?$gim_array@VGIM_CONTACT@@@@QAEXXZ (public: void __thiscall gim_array<class GIM_CONTACT>::clear(void)):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: 85 C0              test        eax,eax
+  00000005: 74 06              je          0000000D
+  00000007: 48                 dec         eax
+  00000008: 75 FD              jne         00000007
+  0000000A: 89 41 04           mov         dword ptr [ecx+4],eax
+  0000000D: C3                 ret
+
+?clear_memory@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEXXZ (public: void __thiscall gim_array<struct GIM_RSORT_TOKEN>::clear_memory(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 0C              je          00000016
+  0000000A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000010: 48                 dec         eax
+  00000011: 75 FD              jne         00000010
+  00000013: 89 46 04           mov         dword ptr [esi+4],eax
+  00000016: 8B 06              mov         eax,dword ptr [esi]
+  00000018: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000001F: 85 C0              test        eax,eax
+  00000021: 74 0F              je          00000032
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  00000029: 83 C4 04           add         esp,4
+  0000002C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+?clear_range@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEXI@Z (public: void __thiscall gim_array<struct GIM_RSORT_TOKEN>::clear_range(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: 3B C2              cmp         eax,edx
+  0000000B: 76 0B              jbe         00000018
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 48                 dec         eax
+  00000011: 3B C2              cmp         eax,edx
+  00000013: 77 FB              ja          00000010
+  00000015: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+
+?clear_range@?$gim_array@VGIM_CONTACT@@@@QAEXI@Z (public: void __thiscall gim_array<class GIM_CONTACT>::clear_range(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: 3B C2              cmp         eax,edx
+  0000000B: 76 0B              jbe         00000018
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 48                 dec         eax
+  00000011: 3B C2              cmp         eax,edx
+  00000013: 77 FB              ja          00000010
+  00000015: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+
+?destroyData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEXXZ (public: void __thiscall gim_array<struct GIM_RSORT_TOKEN>::destroyData(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 06              mov         eax,dword ptr [esi]
+  00000005: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 74 0F              je          0000001F
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000001F: 5E                 pop         esi
+  00000020: C3                 ret
+
+?destroyData@?$gim_array@VGIM_CONTACT@@@@QAEXXZ (public: void __thiscall gim_array<class GIM_CONTACT>::destroyData(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 06              mov         eax,dword ptr [esi]
+  00000005: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 74 0F              je          0000001F
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000001F: 5E                 pop         esi
+  00000020: C3                 ret
+
+?dot@btVector3@@QBEMABV1@@Z (public: float __thiscall btVector3::dot(class btVector3 const &)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: D9 40 04           fld         dword ptr [eax+4]
+  00000009: D8 49 04           fmul        dword ptr [ecx+4]
+  0000000C: D9 00              fld         dword ptr [eax]
+  0000000E: D8 09              fmul        dword ptr [ecx]
+  00000010: DE C1              faddp       st(1),st
+  00000012: D9 40 08           fld         dword ptr [eax+8]
+  00000015: D8 49 08           fmul        dword ptr [ecx+8]
+  00000018: DE C1              faddp       st(1),st
+  0000001A: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000001D: D9 45 08           fld         dword ptr [ebp+8]
+  00000020: 5D                 pop         ebp
+  00000021: C2 04 00           ret         4
+
+?growingCheck@?$gim_array@VGIM_CONTACT@@@@QAE_NXZ (public: bool __thiscall gim_array<class GIM_CONTACT>::growingCheck(void)):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: 8B 51 04           mov         edx,dword ptr [ecx+4]
+  00000006: 3B C2              cmp         eax,edx
+  00000008: 77 15              ja          0000001F
+  0000000A: 89 41 04           mov         dword ptr [ecx+4],eax
+  0000000D: 8D 04 55 04 00 00  lea         eax,[edx*2+4]
+            00
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        ?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z
+  0000001A: 84 C0              test        al,al
+  0000001C: 75 01              jne         0000001F
+  0000001E: C3                 ret
+  0000001F: B0 01              mov         al,1
+  00000021: C3                 ret
+
+?interpolate_normals@GIM_CONTACT@@QAEXPAVbtVector3@@I@Z (public: void __thiscall GIM_CONTACT::interpolate_normals(class btVector3 *,unsigned int)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 20           sub         esp,20h
+  00000019: 8B D1              mov         edx,ecx
+  0000001B: 8B 4B 0C           mov         ecx,dword ptr [ebx+0Ch]
+  0000001E: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000021: 89 45 E0           mov         dword ptr [ebp-20h],eax
+  00000024: 8B 42 14           mov         eax,dword ptr [edx+14h]
+  00000027: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  0000002A: 8B 42 18           mov         eax,dword ptr [edx+18h]
+  0000002D: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000030: 8B 42 1C           mov         eax,dword ptr [edx+1Ch]
+  00000033: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00000036: 85 C9              test        ecx,ecx
+  00000038: 74 27              je          00000061
+  0000003A: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000003D: 83 C0 08           add         eax,8
+  00000040: D9 40 F8           fld         dword ptr [eax-8]
+  00000043: 83 C0 10           add         eax,10h
+  00000046: D8 45 E0           fadd        dword ptr [ebp-20h]
+  00000049: D9 5D E0           fstp        dword ptr [ebp-20h]
+  0000004C: D9 40 EC           fld         dword ptr [eax-14h]
+  0000004F: D8 45 E4           fadd        dword ptr [ebp-1Ch]
+  00000052: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000055: D9 45 E8           fld         dword ptr [ebp-18h]
+  00000058: D8 40 F0           fadd        dword ptr [eax-10h]
+  0000005B: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000005E: 49                 dec         ecx
+  0000005F: 75 DF              jne         00000040
+  00000061: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000064: D9 C0              fld         st(0)
+  00000066: D9 45 E0           fld         dword ptr [ebp-20h]
+  00000069: D9 C0              fld         st(0)
+  0000006B: D9 45 E8           fld         dword ptr [ebp-18h]
+  0000006E: D9 C0              fld         st(0)
+  00000070: D9 CC              fxch        st(4)
+  00000072: DC C8              fmul        st(0),st
+  00000074: D9 CA              fxch        st(2)
+  00000076: DC C8              fmul        st(0),st
+  00000078: DE C2              faddp       st(2),st
+  0000007A: D9 CB              fxch        st(3)
+  0000007C: DC C8              fmul        st(0),st
+  0000007E: DE C1              faddp       st(1),st
+  00000080: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000083: D9 05 00 00 00 00  fld         dword ptr [__real@3727c5ac]
+  00000089: D9 45 FC           fld         dword ptr [ebp-4]
+  0000008C: D8 D1              fcom        st(1)
+  0000008E: DF E0              fnstsw      ax
+  00000090: DD D9              fstp        st(1)
+  00000092: F6 C4 05           test        ah,5
+  00000095: 0F 8B 8A 00 00 00  jnp         00000125
+  0000009B: DC 15 00 00 00 00  fcom        qword ptr [__real@3e7ad7f2a0000000]
+  000000A1: DF E0              fnstsw      ax
+  000000A3: F6 C4 41           test        ah,41h
+  000000A6: 7A 0A              jp          000000B2
+  000000A8: DD D8              fstp        st(0)
+  000000AA: D9 05 00 00 00 00  fld         dword ptr [__real@7f7fffff]
+  000000B0: EB 30              jmp         000000E2
+  000000B2: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  000000B8: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000BB: D1 E9              shr         ecx,1
+  000000BD: B8 DF 59 37 5F     mov         eax,5F3759DFh
+  000000C2: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000C5: 2B C1              sub         eax,ecx
+  000000C7: D9 45 F8           fld         dword ptr [ebp-8]
+  000000CA: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000CD: D9 45 FC           fld         dword ptr [ebp-4]
+  000000D0: D9 C0              fld         st(0)
+  000000D2: DE CA              fmulp       st(2),st
+  000000D4: D9 C0              fld         st(0)
+  000000D6: DE CA              fmulp       st(2),st
+  000000D8: DD 05 00 00 00 00  fld         qword ptr [__real@3ff8000000000000]
+  000000DE: DE E2              fsubrp      st(2),st
+  000000E0: DE C9              fmulp       st(1),st
+  000000E2: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000E5: D9 45 FC           fld         dword ptr [ebp-4]
+  000000E8: D9 C0              fld         st(0)
+  000000EA: DE CA              fmulp       st(2),st
+  000000EC: D9 C9              fxch        st(1)
+  000000EE: D9 5D E0           fstp        dword ptr [ebp-20h]
+  000000F1: 8B 45 E0           mov         eax,dword ptr [ebp-20h]
+  000000F4: 89 42 10           mov         dword ptr [edx+10h],eax
+  000000F7: D9 C0              fld         st(0)
+  000000F9: DE CB              fmulp       st(3),st
+  000000FB: D9 CA              fxch        st(2)
+  000000FD: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000100: 8B 45 E4           mov         eax,dword ptr [ebp-1Ch]
+  00000103: 89 42 14           mov         dword ptr [edx+14h],eax
+  00000106: DE C9              fmulp       st(1),st
+  00000108: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000010B: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  0000010E: D9 EE              fldz
+  00000110: 89 42 18           mov         dword ptr [edx+18h],eax
+  00000113: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000116: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000119: 89 42 1C           mov         dword ptr [edx+1Ch],eax
+  0000011C: 8B E5              mov         esp,ebp
+  0000011E: 5D                 pop         ebp
+  0000011F: 8B E3              mov         esp,ebx
+  00000121: 5B                 pop         ebx
+  00000122: C2 08 00           ret         8
+  00000125: DD D8              fstp        st(0)
+  00000127: DD DA              fstp        st(2)
+  00000129: DD D9              fstp        st(1)
+  0000012B: DD D8              fstp        st(0)
+  0000012D: 8B E5              mov         esp,ebp
+  0000012F: 5D                 pop         ebp
+  00000130: 8B E3              mov         esp,ebx
+  00000132: 5B                 pop         ebx
+  00000133: C2 08 00           ret         8
+
+?length2@btVector3@@QBEMXZ (public: float __thiscall btVector3::length2(void)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: D9 41 04           fld         dword ptr [ecx+4]
+  00000007: D9 41 08           fld         dword ptr [ecx+8]
+  0000000A: D9 01              fld         dword ptr [ecx]
+  0000000C: DC C8              fmul        st(0),st
+  0000000E: D9 CA              fxch        st(2)
+  00000010: DC C8              fmul        st(0),st
+  00000012: DE C2              faddp       st(2),st
+  00000014: DC C8              fmul        st(0),st
+  00000016: DE C1              faddp       st(1),st
+  00000018: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001E: 8B E5              mov         esp,ebp
+  00000020: 5D                 pop         ebp
+  00000021: C3                 ret
+
+?length@btVector3@@QBEMXZ (public: float __thiscall btVector3::length(void)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: D9 41 04           fld         dword ptr [ecx+4]
+  00000007: D9 41 08           fld         dword ptr [ecx+8]
+  0000000A: D9 01              fld         dword ptr [ecx]
+  0000000C: DC C8              fmul        st(0),st
+  0000000E: D9 CA              fxch        st(2)
+  00000010: DC C8              fmul        st(0),st
+  00000012: DE C2              faddp       st(2),st
+  00000014: DC C8              fmul        st(0),st
+  00000016: DE C1              faddp       st(1),st
+  00000018: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001E: E8 00 00 00 00     call        __CIsqrt
+  00000023: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000026: D9 45 FC           fld         dword ptr [ebp-4]
+  00000029: 8B E5              mov         esp,ebp
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+
+?merge_contacts@gim_contact_array@@QAEXABV1@_N@Z (public: void __thiscall gim_contact_array::merge_contacts(class gim_contact_array const &,bool)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 81 EC E8 00 00 00  sub         esp,0E8h
+  0000001C: 56                 push        esi
+  0000001D: 8B F1              mov         esi,ecx
+  0000001F: 57                 push        edi
+  00000020: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000023: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000026: 85 C0              test        eax,eax
+  00000028: 74 0C              je          00000036
+  0000002A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000030: 48                 dec         eax
+  00000031: 75 FD              jne         00000030
+  00000033: 89 46 04           mov         dword ptr [esi+4],eax
+  00000036: 8B 7B 08           mov         edi,dword ptr [ebx+8]
+  00000039: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000003C: 83 F8 01           cmp         eax,1
+  0000003F: 75 47              jne         00000088
+  00000041: 8B 07              mov         eax,dword ptr [edi]
+  00000043: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000046: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000049: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000004C: 3B C1              cmp         eax,ecx
+  0000004E: 77 12              ja          00000062
+  00000050: 89 46 04           mov         dword ptr [esi+4],eax
+  00000053: 8D 04 4D 04 00 00  lea         eax,[ecx*2+4]
+            00
+  0000005A: 50                 push        eax
+  0000005B: 8B CE              mov         ecx,esi
+  0000005D: E8 00 00 00 00     call        ?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z
+  00000062: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000065: B9 0C 00 00 00     mov         ecx,0Ch
+  0000006A: 8D 3C 40           lea         edi,[eax+eax*2]
+  0000006D: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000070: C1 E7 04           shl         edi,4
+  00000073: 03 3E              add         edi,dword ptr [esi]
+  00000075: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  00000078: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  0000007A: FF 40 04           inc         dword ptr [eax+4]
+  0000007D: 5F                 pop         edi
+  0000007E: 5E                 pop         esi
+  0000007F: 8B E5              mov         esp,ebp
+  00000081: 5D                 pop         ebp
+  00000082: 8B E3              mov         esp,ebx
+  00000084: 5B                 pop         ebx
+  00000085: C2 08 00           ret         8
+  00000088: 33 C9              xor         ecx,ecx
+  0000008A: 33 D2              xor         edx,edx
+  0000008C: 89 4D DC           mov         dword ptr [ebp-24h],ecx
+  0000008F: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000092: 89 55 E0           mov         dword ptr [ebp-20h],edx
+  00000095: 89 4D E4           mov         dword ptr [ebp-1Ch],ecx
+  00000098: 85 C0              test        eax,eax
+  0000009A: 74 12              je          000000AE
+  0000009C: 50                 push        eax
+  0000009D: 8D 4D DC           lea         ecx,[ebp-24h]
+  000000A0: E8 00 00 00 00     call        ?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z
+  000000A5: 8B 55 E0           mov         edx,dword ptr [ebp-20h]
+  000000A8: 8B 4D E4           mov         ecx,dword ptr [ebp-1Ch]
+  000000AB: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  000000AE: 8B 7F 04           mov         edi,dword ptr [edi+4]
+  000000B1: 3B FA              cmp         edi,edx
+  000000B3: 76 0F              jbe         000000C4
+  000000B5: 3B CF              cmp         ecx,edi
+  000000B7: 73 0D              jae         000000C6
+  000000B9: 57                 push        edi
+  000000BA: 8D 4D DC           lea         ecx,[ebp-24h]
+  000000BD: E8 00 00 00 00     call        ?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z
+  000000C2: EB 02              jmp         000000C6
+  000000C4: 73 03              jae         000000C9
+  000000C6: 89 7D E8           mov         dword ptr [ebp-18h],edi
+  000000C9: 8B 4B 08           mov         ecx,dword ptr [ebx+8]
+  000000CC: C7 45 F0 00 00 00  mov         dword ptr [ebp-10h],0
+            00
+  000000D3: 83 79 04 00        cmp         dword ptr [ecx+4],0
+  000000D7: 0F 86 89 00 00 00  jbe         00000166
+  000000DD: DD 05 00 00 00 00  fld         qword ptr [__real@408f400000000000]
+  000000E3: 33 C0              xor         eax,eax
+  000000E5: D9 E8              fld1
+  000000E7: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000EA: DD 05 00 00 00 00  fld         qword ptr [__real@4094d40000000000]
+  000000F0: DD 05 00 00 00 00  fld         qword ptr [__real@40a0aa0000000000]
+  000000F6: DD 05 00 00 00 00  fld         qword ptr [__real@4008000000000000]
+  000000FC: EB 02              jmp         00000100
+  000000FE: 8B CA              mov         ecx,edx
+  00000100: 8B 39              mov         edi,dword ptr [ecx]
+  00000102: 03 F8              add         edi,eax
+  00000104: D9 07              fld         dword ptr [edi]
+  00000106: D8 CD              fmul        st,st(5)
+  00000108: D8 C4              fadd        st,st(4)
+  0000010A: E8 00 00 00 00     call        __ftol2_sse
+  0000010F: D9 47 04           fld         dword ptr [edi+4]
+  00000112: D8 CB              fmul        st,st(3)
+  00000114: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000117: E8 00 00 00 00     call        __ftol2_sse
+  0000011C: D9 47 08           fld         dword ptr [edi+8]
+  0000011F: D8 CA              fmul        st,st(2)
+  00000121: 8B F0              mov         esi,eax
+  00000123: D8 C1              fadd        st,st(1)
+  00000125: E8 00 00 00 00     call        __ftol2_sse
+  0000012A: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  0000012D: 8B 7D DC           mov         edi,dword ptr [ebp-24h]
+  00000130: 8B 53 08           mov         edx,dword ptr [ebx+8]
+  00000133: C1 E0 04           shl         eax,4
+  00000136: 03 C6              add         eax,esi
+  00000138: C1 E0 04           shl         eax,4
+  0000013B: 03 45 F8           add         eax,dword ptr [ebp-8]
+  0000013E: 89 04 CF           mov         dword ptr [edi+ecx*8],eax
+  00000141: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000144: 89 4C CF 04        mov         dword ptr [edi+ecx*8+4],ecx
+  00000148: 41                 inc         ecx
+  00000149: 83 C0 30           add         eax,30h
+  0000014C: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  0000014F: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000152: 3B 4A 04           cmp         ecx,dword ptr [edx+4]
+  00000155: 72 A7              jb          000000FE
+  00000157: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  0000015A: DD DC              fstp        st(4)
+  0000015C: DD DA              fstp        st(2)
+  0000015E: DD D8              fstp        st(0)
+  00000160: DD D8              fstp        st(0)
+  00000162: DD D8              fstp        st(0)
+  00000164: EB 03              jmp         00000169
+  00000166: 8B 7D DC           mov         edi,dword ptr [ebp-24h]
+  00000169: C6 45 F8 00        mov         byte ptr [ebp-8],0
+  0000016D: FF 75 F8           push        dword ptr [ebp-8]
+  00000170: FF 75 E8           push        dword ptr [ebp-18h]
+  00000173: 57                 push        edi
+  00000174: E8 00 00 00 00     call        ??$gim_heap_sort@UGIM_RSORT_TOKEN@@VGIM_RSORT_TOKEN_COMPARATOR@@@@YAXPAUGIM_RSORT_TOKEN@@IVGIM_RSORT_TOKEN_COMPARATOR@@@Z
+  00000179: 8B 07              mov         eax,dword ptr [edi]
+  0000017B: 8B 4B 08           mov         ecx,dword ptr [ebx+8]
+  0000017E: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000181: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000184: 33 D2              xor         edx,edx
+  00000186: 8D 04 40           lea         eax,[eax+eax*2]
+  00000189: C1 E0 04           shl         eax,4
+  0000018C: 03 01              add         eax,dword ptr [ecx]
+  0000018E: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000191: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000194: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000197: 83 C4 0C           add         esp,0Ch
+  0000019A: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000019D: 3B C1              cmp         eax,ecx
+  0000019F: 77 14              ja          000001B5
+  000001A1: 89 46 04           mov         dword ptr [esi+4],eax
+  000001A4: 8D 04 4D 04 00 00  lea         eax,[ecx*2+4]
+            00
+  000001AB: 50                 push        eax
+  000001AC: 8B CE              mov         ecx,esi
+  000001AE: E8 00 00 00 00     call        ?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z
+  000001B3: 33 D2              xor         edx,edx
+  000001B5: 8B 46 04           mov         eax,dword ptr [esi+4]
+  000001B8: B9 0C 00 00 00     mov         ecx,0Ch
+  000001BD: 8D 3C 40           lea         edi,[eax+eax*2]
+  000001C0: C1 E7 04           shl         edi,4
+  000001C3: 03 3E              add         edi,dword ptr [esi]
+  000001C5: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  000001C8: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  000001CA: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  000001CD: BF 01 00 00 00     mov         edi,1
+  000001D2: FF 46 04           inc         dword ptr [esi+4]
+  000001D5: 8B 46 04           mov         eax,dword ptr [esi+4]
+  000001D8: 89 7D F8           mov         dword ptr [ebp-8],edi
+  000001DB: 8D 0C 40           lea         ecx,[eax+eax*2]
+  000001DE: 8B 06              mov         eax,dword ptr [esi]
+  000001E0: C1 E1 04           shl         ecx,4
+  000001E3: 83 C0 D0           add         eax,0FFFFFFD0h
+  000001E6: 03 C8              add         ecx,eax
+  000001E8: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  000001EB: 39 7D E8           cmp         dword ptr [ebp-18h],edi
+  000001EE: 0F 86 B6 02 00 00  jbe         000004AA
+  000001F4: DD 05 00 00 00 00  fld         qword ptr [__real@3ee4f8b580000000]
+  000001FA: D9 05 00 00 00 00  fld         dword ptr [__real@3727c5ac]
+  00000200: D9 05 00 00 00 00  fld         dword ptr [__real@7f7fffff]
+  00000206: EB 02              jmp         0000020A
+  00000208: D9 CA              fxch        st(2)
+  0000020A: 8B 45 DC           mov         eax,dword ptr [ebp-24h]
+  0000020D: 8B 34 F8           mov         esi,dword ptr [eax+edi*8]
+  00000210: 8B 44 F8 04        mov         eax,dword ptr [eax+edi*8+4]
+  00000214: 89 75 BC           mov         dword ptr [ebp-44h],esi
+  00000217: 8D 3C 40           lea         edi,[eax+eax*2]
+  0000021A: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000021D: C1 E7 04           shl         edi,4
+  00000220: 03 38              add         edi,dword ptr [eax]
+  00000222: 8B C6              mov         eax,esi
+  00000224: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  00000227: 89 7D B8           mov         dword ptr [ebp-48h],edi
+  0000022A: 39 45 F4           cmp         dword ptr [ebp-0Ch],eax
+  0000022D: 0F 85 98 00 00 00  jne         000002CB
+  00000233: D9 41 20           fld         dword ptr [ecx+20h]
+  00000236: DE E3              fsubrp      st(3),st
+  00000238: D9 47 20           fld         dword ptr [edi+20h]
+  0000023B: D8 DB              fcomp       st(3)
+  0000023D: DF E0              fnstsw      ax
+  0000023F: DD DA              fstp        st(2)
+  00000241: F6 C4 05           test        ah,5
+  00000244: 7A 19              jp          0000025F
+  00000246: 8B F7              mov         esi,edi
+  00000248: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  0000024B: B9 0C 00 00 00     mov         ecx,0Ch
+  00000250: 33 D2              xor         edx,edx
+  00000252: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  00000254: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  00000257: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000025A: E9 29 02 00 00     jmp         00000488
+  0000025F: 80 7B 0C 00        cmp         byte ptr [ebx+0Ch],0
+  00000263: 0F 84 1F 02 00 00  je          00000488
+  00000269: D9 41 20           fld         dword ptr [ecx+20h]
+  0000026C: D8 67 20           fsub        dword ptr [edi+20h]
+  0000026F: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000272: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000275: D9 E1              fabs
+  00000277: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000027A: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000027D: D8 D9              fcomp       st(1)
+  0000027F: DF E0              fnstsw      ax
+  00000281: F6 C4 05           test        ah,5
+  00000284: 0F 8A FE 01 00 00  jp          00000488
+  0000028A: 83 FA 08           cmp         edx,8
+  0000028D: 0F 83 F5 01 00 00  jae         00000488
+  00000293: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000296: 8B CA              mov         ecx,edx
+  00000298: 03 C9              add         ecx,ecx
+  0000029A: 42                 inc         edx
+  0000029B: 89 84 CD 20 FF FF  mov         dword ptr [ebp+ecx*8-0E0h],eax
+            FF
+  000002A2: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  000002A5: 89 84 CD 24 FF FF  mov         dword ptr [ebp+ecx*8-0DCh],eax
+            FF
+  000002AC: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  000002AF: 89 84 CD 28 FF FF  mov         dword ptr [ebp+ecx*8-0D8h],eax
+            FF
+  000002B6: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  000002B9: 89 84 CD 2C FF FF  mov         dword ptr [ebp+ecx*8-0D4h],eax
+            FF
+  000002C0: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  000002C3: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000002C6: E9 BD 01 00 00     jmp         00000488
+  000002CB: 80 7B 0C 00        cmp         byte ptr [ebx+0Ch],0
+  000002CF: DD DA              fstp        st(2)
+  000002D1: 0F 84 11 01 00 00  je          000003E8
+  000002D7: 85 D2              test        edx,edx
+  000002D9: 0F 84 09 01 00 00  je          000003E8
+  000002DF: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  000002E2: 89 45 C0           mov         dword ptr [ebp-40h],eax
+  000002E5: 8B 41 14           mov         eax,dword ptr [ecx+14h]
+  000002E8: 89 45 C4           mov         dword ptr [ebp-3Ch],eax
+  000002EB: 8B 41 18           mov         eax,dword ptr [ecx+18h]
+  000002EE: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  000002F1: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  000002F4: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  000002F7: 8D 85 28 FF FF FF  lea         eax,[ebp-0D8h]
+  000002FD: D9 40 F8           fld         dword ptr [eax-8]
+  00000300: 83 C0 10           add         eax,10h
+  00000303: D8 45 C0           fadd        dword ptr [ebp-40h]
+  00000306: D9 5D C0           fstp        dword ptr [ebp-40h]
+  00000309: D9 40 EC           fld         dword ptr [eax-14h]
+  0000030C: D8 45 C4           fadd        dword ptr [ebp-3Ch]
+  0000030F: D9 5D C4           fstp        dword ptr [ebp-3Ch]
+  00000312: D9 45 C8           fld         dword ptr [ebp-38h]
+  00000315: D8 40 F0           fadd        dword ptr [eax-10h]
+  00000318: D9 5D C8           fstp        dword ptr [ebp-38h]
+  0000031B: 4A                 dec         edx
+  0000031C: 75 DF              jne         000002FD
+  0000031E: D9 45 C0           fld         dword ptr [ebp-40h]
+  00000321: D9 C0              fld         st(0)
+  00000323: D9 45 C4           fld         dword ptr [ebp-3Ch]
+  00000326: D9 C0              fld         st(0)
+  00000328: D9 45 C8           fld         dword ptr [ebp-38h]
+  0000032B: D9 C0              fld         st(0)
+  0000032D: D9 CA              fxch        st(2)
+  0000032F: DC C8              fmul        st(0),st
+  00000331: D9 CC              fxch        st(4)
+  00000333: DC C8              fmul        st(0),st
+  00000335: DE C4              faddp       st(4),st
+  00000337: D9 C9              fxch        st(1)
+  00000339: DC C8              fmul        st(0),st
+  0000033B: DE C3              faddp       st(3),st
+  0000033D: D9 CA              fxch        st(2)
+  0000033F: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000342: D9 45 FC           fld         dword ptr [ebp-4]
+  00000345: D8 D4              fcom        st(4)
+  00000347: DF E0              fnstsw      ax
+  00000349: F6 C4 05           test        ah,5
+  0000034C: 0F 8B 89 00 00 00  jnp         000003DB
+  00000352: DD 05 00 00 00 00  fld         qword ptr [__real@3e7ad7f2a0000000]
+  00000358: D8 D9              fcomp       st(1)
+  0000035A: DF E0              fnstsw      ax
+  0000035C: F6 C4 01           test        ah,1
+  0000035F: 75 09              jne         0000036A
+  00000361: DD D8              fstp        st(0)
+  00000363: D9 CC              fxch        st(4)
+  00000365: D9 55 FC           fst         dword ptr [ebp-4]
+  00000368: EB 38              jmp         000003A2
+  0000036A: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  00000370: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000373: D1 E9              shr         ecx,1
+  00000375: B8 DF 59 37 5F     mov         eax,5F3759DFh
+  0000037A: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000037D: 2B C1              sub         eax,ecx
+  0000037F: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000382: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  00000385: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000388: D9 45 FC           fld         dword ptr [ebp-4]
+  0000038B: D9 C0              fld         st(0)
+  0000038D: DE CA              fmulp       st(2),st
+  0000038F: D9 C0              fld         st(0)
+  00000391: DE CA              fmulp       st(2),st
+  00000393: DD 05 00 00 00 00  fld         qword ptr [__real@3ff8000000000000]
+  00000399: DE E2              fsubrp      st(2),st
+  0000039B: DE C9              fmulp       st(1),st
+  0000039D: D9 5D FC           fstp        dword ptr [ebp-4]
+  000003A0: D9 CC              fxch        st(4)
+  000003A2: D9 45 FC           fld         dword ptr [ebp-4]
+  000003A5: D9 C0              fld         st(0)
+  000003A7: DE CC              fmulp       st(4),st
+  000003A9: D9 CB              fxch        st(3)
+  000003AB: D9 5D A0           fstp        dword ptr [ebp-60h]
+  000003AE: 8B 45 A0           mov         eax,dword ptr [ebp-60h]
+  000003B1: D9 C2              fld         st(2)
+  000003B3: 89 41 10           mov         dword ptr [ecx+10h],eax
+  000003B6: DE CD              fmulp       st(5),st
+  000003B8: D9 CC              fxch        st(4)
+  000003BA: D9 5D A4           fstp        dword ptr [ebp-5Ch]
+  000003BD: 8B 45 A4           mov         eax,dword ptr [ebp-5Ch]
+  000003C0: 89 41 14           mov         dword ptr [ecx+14h],eax
+  000003C3: DE C9              fmulp       st(1),st
+  000003C5: D9 5D A8           fstp        dword ptr [ebp-58h]
+  000003C8: 8B 45 A8           mov         eax,dword ptr [ebp-58h]
+  000003CB: D9 EE              fldz
+  000003CD: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000003D0: D9 5D AC           fstp        dword ptr [ebp-54h]
+  000003D3: 8B 45 AC           mov         eax,dword ptr [ebp-54h]
+  000003D6: 89 41 1C           mov         dword ptr [ecx+1Ch],eax
+  000003D9: EB 08              jmp         000003E3
+  000003DB: DD D8              fstp        st(0)
+  000003DD: DD DA              fstp        st(2)
+  000003DF: DD D9              fstp        st(1)
+  000003E1: DD D8              fstp        st(0)
+  000003E3: 33 D2              xor         edx,edx
+  000003E5: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000003E8: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  000003EB: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  000003EE: 3B CF              cmp         ecx,edi
+  000003F0: 77 68              ja          0000045A
+  000003F2: 8D 3C 7D 04 00 00  lea         edi,[edi*2+4]
+            00
+  000003F9: 89 4E 04           mov         dword ptr [esi+4],ecx
+  000003FC: 85 FF              test        edi,edi
+  000003FE: 75 1A              jne         0000041A
+  00000400: 8B 06              mov         eax,dword ptr [esi]
+  00000402: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000405: 85 C0              test        eax,eax
+  00000407: 74 51              je          0000045A
+  00000409: DD D8              fstp        st(0)
+  0000040B: 50                 push        eax
+  0000040C: DD D8              fstp        st(0)
+  0000040E: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  00000413: 83 C4 04           add         esp,4
+  00000416: 89 3E              mov         dword ptr [esi],edi
+  00000418: EB 2F              jmp         00000449
+  0000041A: 8D 04 7F           lea         eax,[edi+edi*2]
+  0000041D: DD D8              fstp        st(0)
+  0000041F: C1 E0 04           shl         eax,4
+  00000422: DD D8              fstp        st(0)
+  00000424: 50                 push        eax
+  00000425: 85 C9              test        ecx,ecx
+  00000427: 74 13              je          0000043C
+  00000429: 8D 04 49           lea         eax,[ecx+ecx*2]
+  0000042C: C1 E0 04           shl         eax,4
+  0000042F: 50                 push        eax
+  00000430: FF 36              push        dword ptr [esi]
+  00000432: E8 00 00 00 00     call        ?gim_realloc@@YAPAXPAXII@Z
+  00000437: 83 C4 0C           add         esp,0Ch
+  0000043A: EB 08              jmp         00000444
+  0000043C: E8 00 00 00 00     call        ?gim_alloc@@YAPAXI@Z
+  00000441: 83 C4 04           add         esp,4
+  00000444: 89 06              mov         dword ptr [esi],eax
+  00000446: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000449: D9 05 00 00 00 00  fld         dword ptr [__real@3727c5ac]
+  0000044F: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000452: D9 05 00 00 00 00  fld         dword ptr [__real@7f7fffff]
+  00000458: D9 C9              fxch        st(1)
+  0000045A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000045D: B9 0C 00 00 00     mov         ecx,0Ch
+  00000462: 8D 3C 40           lea         edi,[eax+eax*2]
+  00000465: C1 E7 04           shl         edi,4
+  00000468: 03 3E              add         edi,dword ptr [esi]
+  0000046A: 8B 75 B8           mov         esi,dword ptr [ebp-48h]
+  0000046D: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  0000046F: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  00000472: FF 46 04           inc         dword ptr [esi+4]
+  00000475: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000478: 8D 0C 40           lea         ecx,[eax+eax*2]
+  0000047B: 8B 06              mov         eax,dword ptr [esi]
+  0000047D: C1 E1 04           shl         ecx,4
+  00000480: 83 C0 D0           add         eax,0FFFFFFD0h
+  00000483: 03 C8              add         ecx,eax
+  00000485: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000488: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  0000048B: DD 05 00 00 00 00  fld         qword ptr [__real@3ee4f8b580000000]
+  00000491: 8B 45 BC           mov         eax,dword ptr [ebp-44h]
+  00000494: 47                 inc         edi
+  00000495: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000498: 89 7D F8           mov         dword ptr [ebp-8],edi
+  0000049B: 3B 7D E8           cmp         edi,dword ptr [ebp-18h]
+  0000049E: 0F 82 64 FD FF FF  jb          00000208
+  000004A4: DD D8              fstp        st(0)
+  000004A6: DD D8              fstp        st(0)
+  000004A8: DD D8              fstp        st(0)
+  000004AA: 8B 4D DC           mov         ecx,dword ptr [ebp-24h]
+  000004AD: 51                 push        ecx
+  000004AE: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  000004B3: 83 C4 04           add         esp,4
+  000004B6: 5F                 pop         edi
+  000004B7: 5E                 pop         esi
+  000004B8: 8B E5              mov         esp,ebp
+  000004BA: 5D                 pop         ebp
+  000004BB: 8B E3              mov         esp,ebx
+  000004BD: 5B                 pop         ebx
+  000004BE: C2 08 00           ret         8
+
+?merge_contacts_unique@gim_contact_array@@QAEXABV1@@Z (public: void __thiscall gim_contact_array::merge_contacts_unique(class gim_contact_array const &)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 58           sub         esp,58h
+  00000019: 8B D1              mov         edx,ecx
+  0000001B: 56                 push        esi
+  0000001C: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000001F: 57                 push        edi
+  00000020: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000023: 85 C0              test        eax,eax
+  00000025: 74 06              je          0000002D
+  00000027: 48                 dec         eax
+  00000028: 75 FD              jne         00000027
+  0000002A: 89 42 04           mov         dword ptr [edx+4],eax
+  0000002D: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  00000030: 8B 70 04           mov         esi,dword ptr [eax+4]
+  00000033: 83 FE 01           cmp         esi,1
+  00000036: 75 41              jne         00000079
+  00000038: 8B 30              mov         esi,dword ptr [eax]
+  0000003A: 8B 42 08           mov         eax,dword ptr [edx+8]
+  0000003D: 8B 4A 04           mov         ecx,dword ptr [edx+4]
+  00000040: 3B C1              cmp         eax,ecx
+  00000042: 77 15              ja          00000059
+  00000044: 89 42 04           mov         dword ptr [edx+4],eax
+  00000047: 8D 04 4D 04 00 00  lea         eax,[ecx*2+4]
+            00
+  0000004E: 50                 push        eax
+  0000004F: 8B CA              mov         ecx,edx
+  00000051: E8 00 00 00 00     call        ?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z
+  00000056: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000059: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000005C: B9 0C 00 00 00     mov         ecx,0Ch
+  00000061: 8D 3C 40           lea         edi,[eax+eax*2]
+  00000064: C1 E7 04           shl         edi,4
+  00000067: 03 3A              add         edi,dword ptr [edx]
+  00000069: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  0000006B: FF 42 04           inc         dword ptr [edx+4]
+  0000006E: 5F                 pop         edi
+  0000006F: 5E                 pop         esi
+  00000070: 8B E5              mov         esp,ebp
+  00000072: 5D                 pop         ebp
+  00000073: 8B E3              mov         esp,ebx
+  00000075: 5B                 pop         ebx
+  00000076: C2 04 00           ret         4
+  00000079: 8B 38              mov         edi,dword ptr [eax]
+  0000007B: 8D 04 76           lea         eax,[esi+esi*2]
+  0000007E: C1 E0 04           shl         eax,4
+  00000081: 83 C0 D0           add         eax,0FFFFFFD0h
+  00000084: 03 C7              add         eax,edi
+  00000086: 50                 push        eax
+  00000087: 8D 4D B0           lea         ecx,[ebp-50h]
+  0000008A: E8 00 00 00 00     call        ??0GIM_CONTACT@@QAE@ABV0@@Z
+  0000008F: 83 FE 01           cmp         esi,1
+  00000092: 76 65              jbe         000000F9
+  00000094: 8D 4F 30           lea         ecx,[edi+30h]
+  00000097: 8D 47 48           lea         eax,[edi+48h]
+  0000009A: 4E                 dec         esi
+  0000009B: EB 03              jmp         000000A0
+  0000009D: 8D 49 00           lea         ecx,[ecx]
+  000000A0: D9 01              fld         dword ptr [ecx]
+  000000A2: 83 C1 30           add         ecx,30h
+  000000A5: D8 45 B0           fadd        dword ptr [ebp-50h]
+  000000A8: 83 C0 30           add         eax,30h
+  000000AB: D9 5D B0           fstp        dword ptr [ebp-50h]
+  000000AE: D9 40 BC           fld         dword ptr [eax-44h]
+  000000B1: D8 45 B4           fadd        dword ptr [ebp-4Ch]
+  000000B4: D9 5D B4           fstp        dword ptr [ebp-4Ch]
+  000000B7: D9 40 C0           fld         dword ptr [eax-40h]
+  000000BA: D8 45 B8           fadd        dword ptr [ebp-48h]
+  000000BD: D9 5D B8           fstp        dword ptr [ebp-48h]
+  000000C0: D9 40 C8           fld         dword ptr [eax-38h]
+  000000C3: D8 48 D8           fmul        dword ptr [eax-28h]
+  000000C6: D9 5D E0           fstp        dword ptr [ebp-20h]
+  000000C9: D9 40 CC           fld         dword ptr [eax-34h]
+  000000CC: D8 48 D8           fmul        dword ptr [eax-28h]
+  000000CF: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000000D2: D9 40 D0           fld         dword ptr [eax-30h]
+  000000D5: D8 48 D8           fmul        dword ptr [eax-28h]
+  000000D8: D9 5D E8           fstp        dword ptr [ebp-18h]
+  000000DB: D9 45 C0           fld         dword ptr [ebp-40h]
+  000000DE: D8 45 E0           fadd        dword ptr [ebp-20h]
+  000000E1: D9 5D C0           fstp        dword ptr [ebp-40h]
+  000000E4: D9 45 C4           fld         dword ptr [ebp-3Ch]
+  000000E7: D8 45 E4           fadd        dword ptr [ebp-1Ch]
+  000000EA: D9 5D C4           fstp        dword ptr [ebp-3Ch]
+  000000ED: D9 45 C8           fld         dword ptr [ebp-38h]
+  000000F0: D8 45 E8           fadd        dword ptr [ebp-18h]
+  000000F3: D9 5D C8           fstp        dword ptr [ebp-38h]
+  000000F6: 4E                 dec         esi
+  000000F7: 75 A7              jne         000000A0
+  000000F9: 5F                 pop         edi
+  000000FA: 5E                 pop         esi
+  000000FB: 8B E5              mov         esp,ebp
+  000000FD: 5D                 pop         ebp
+  000000FE: 8B E3              mov         esp,ebx
+  00000100: 5B                 pop         ebx
+  00000101: C2 04 00           ret         4
+
+?pointer@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEPAUGIM_RSORT_TOKEN@@XZ (public: struct GIM_RSORT_TOKEN * __thiscall gim_array<struct GIM_RSORT_TOKEN>::pointer(void)):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C3                 ret
+
+?push_back@?$gim_array@VGIM_CONTACT@@@@QAEXABVGIM_CONTACT@@@Z (public: void __thiscall gim_array<class GIM_CONTACT>::push_back(class GIM_CONTACT const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B D9              mov         ebx,ecx
+  00000006: 56                 push        esi
+  00000007: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000000A: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  0000000D: 57                 push        edi
+  0000000E: 3B C1              cmp         eax,ecx
+  00000010: 77 12              ja          00000024
+  00000012: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000015: 8D 04 4D 04 00 00  lea         eax,[ecx*2+4]
+            00
+  0000001C: 50                 push        eax
+  0000001D: 8B CB              mov         ecx,ebx
+  0000001F: E8 00 00 00 00     call        ?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z
+  00000024: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000027: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000002A: 8D 3C 40           lea         edi,[eax+eax*2]
+  0000002D: C1 E7 04           shl         edi,4
+  00000030: 03 3B              add         edi,dword ptr [ebx]
+  00000032: B9 0C 00 00 00     mov         ecx,0Ch
+  00000037: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  00000039: FF 43 04           inc         dword ptr [ebx+4]
+  0000003C: 5F                 pop         edi
+  0000003D: 5E                 pop         esi
+  0000003E: 5B                 pop         ebx
+  0000003F: 5D                 pop         ebp
+  00000040: C2 04 00           ret         4
+
+?reserve@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z (public: bool __thiscall gim_array<struct GIM_RSORT_TOKEN>::reserve(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 39 41 08           cmp         dword ptr [ecx+8],eax
+  00000009: 72 06              jb          00000011
+  0000000B: 32 C0              xor         al,al
+  0000000D: 5D                 pop         ebp
+  0000000E: C2 04 00           ret         4
+  00000011: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000014: 5D                 pop         ebp
+  00000015: E9 00 00 00 00     jmp         ?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z
+
+?resize@?$gim_array@UGIM_RSORT_TOKEN@@@@QAEXI_N@Z (public: void __thiscall gim_array<struct GIM_RSORT_TOKEN>::resize(unsigned int,bool)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000010: 3B F8              cmp         edi,eax
+  00000012: 76 3A              jbe         0000004E
+  00000014: 39 7E 08           cmp         dword ptr [esi+8],edi
+  00000017: 73 06              jae         0000001F
+  00000019: 57                 push        edi
+  0000001A: E8 00 00 00 00     call        ?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z
+  0000001F: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00000023: 74 43              je          00000068
+  00000025: 39 7E 04           cmp         dword ptr [esi+4],edi
+  00000028: 73 41              jae         0000006B
+  0000002A: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000002D: 53                 push        ebx
+  0000002E: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000031: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000034: 8B 0E              mov         ecx,dword ptr [esi]
+  00000036: 89 1C C1           mov         dword ptr [ecx+eax*8],ebx
+  00000039: 89 54 C1 04        mov         dword ptr [ecx+eax*8+4],edx
+  0000003D: FF 46 04           inc         dword ptr [esi+4]
+  00000040: 39 7E 04           cmp         dword ptr [esi+4],edi
+  00000043: 72 EC              jb          00000031
+  00000045: 5B                 pop         ebx
+  00000046: 5F                 pop         edi
+  00000047: 5E                 pop         esi
+  00000048: 8B E5              mov         esp,ebp
+  0000004A: 5D                 pop         ebp
+  0000004B: C2 08 00           ret         8
+  0000004E: 73 1B              jae         0000006B
+  00000050: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00000054: 74 12              je          00000068
+  00000056: 3B C7              cmp         eax,edi
+  00000058: 76 0E              jbe         00000068
+  0000005A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000060: 48                 dec         eax
+  00000061: 3B C7              cmp         eax,edi
+  00000063: 77 FB              ja          00000060
+  00000065: 89 46 04           mov         dword ptr [esi+4],eax
+  00000068: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000006B: 5F                 pop         edi
+  0000006C: 5E                 pop         esi
+  0000006D: 8B E5              mov         esp,ebp
+  0000006F: 5D                 pop         ebp
+  00000070: C2 08 00           ret         8
+
+?resizeData@?$gim_array@UGIM_RSORT_TOKEN@@@@QAE_NI@Z (public: bool __thiscall gim_array<struct GIM_RSORT_TOKEN>::resizeData(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 75 1C              jne         0000002A
+  0000000E: 8B 06              mov         eax,dword ptr [esi]
+  00000010: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 4E              je          00000065
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 89 3E              mov         dword ptr [esi],edi
+  00000022: 5F                 pop         edi
+  00000023: B0 01              mov         al,1
+  00000025: 5E                 pop         esi
+  00000026: 5D                 pop         ebp
+  00000027: C2 04 00           ret         4
+  0000002A: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000002D: 8D 04 FD 00 00 00  lea         eax,[edi*8]
+            00
+  00000034: 50                 push        eax
+  00000035: 85 C9              test        ecx,ecx
+  00000037: 74 1F              je          00000058
+  00000039: 8D 04 CD 00 00 00  lea         eax,[ecx*8]
+            00
+  00000040: 50                 push        eax
+  00000041: FF 36              push        dword ptr [esi]
+  00000043: E8 00 00 00 00     call        ?gim_realloc@@YAPAXPAXII@Z
+  00000048: 83 C4 0C           add         esp,0Ch
+  0000004B: 89 7E 08           mov         dword ptr [esi+8],edi
+  0000004E: 89 06              mov         dword ptr [esi],eax
+  00000050: 5F                 pop         edi
+  00000051: B0 01              mov         al,1
+  00000053: 5E                 pop         esi
+  00000054: 5D                 pop         ebp
+  00000055: C2 04 00           ret         4
+  00000058: E8 00 00 00 00     call        ?gim_alloc@@YAPAXI@Z
+  0000005D: 83 C4 04           add         esp,4
+  00000060: 89 06              mov         dword ptr [esi],eax
+  00000062: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000065: 5F                 pop         edi
+  00000066: B0 01              mov         al,1
+  00000068: 5E                 pop         esi
+  00000069: 5D                 pop         ebp
+  0000006A: C2 04 00           ret         4
+
+?resizeData@?$gim_array@VGIM_CONTACT@@@@QAE_NI@Z (public: bool __thiscall gim_array<class GIM_CONTACT>::resizeData(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 75 1C              jne         0000002A
+  0000000E: 8B 06              mov         eax,dword ptr [esi]
+  00000010: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 4C              je          00000063
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        ?gim_free@@YAXPAX@Z
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 89 3E              mov         dword ptr [esi],edi
+  00000022: 5F                 pop         edi
+  00000023: B0 01              mov         al,1
+  00000025: 5E                 pop         esi
+  00000026: 5D                 pop         ebp
+  00000027: C2 04 00           ret         4
+  0000002A: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000002D: 8D 04 7F           lea         eax,[edi+edi*2]
+  00000030: C1 E0 04           shl         eax,4
+  00000033: 50                 push        eax
+  00000034: 85 C9              test        ecx,ecx
+  00000036: 74 1E              je          00000056
+  00000038: 8D 04 49           lea         eax,[ecx+ecx*2]
+  0000003B: C1 E0 04           shl         eax,4
+  0000003E: 50                 push        eax
+  0000003F: FF 36              push        dword ptr [esi]
+  00000041: E8 00 00 00 00     call        ?gim_realloc@@YAPAXPAXII@Z
+  00000046: 83 C4 0C           add         esp,0Ch
+  00000049: 89 7E 08           mov         dword ptr [esi+8],edi
+  0000004C: 89 06              mov         dword ptr [esi],eax
+  0000004E: 5F                 pop         edi
+  0000004F: B0 01              mov         al,1
+  00000051: 5E                 pop         esi
+  00000052: 5D                 pop         ebp
+  00000053: C2 04 00           ret         4
+  00000056: E8 00 00 00 00     call        ?gim_alloc@@YAPAXI@Z
+  0000005B: 83 C4 04           add         esp,4
+  0000005E: 89 06              mov         dword ptr [esi],eax
+  00000060: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000063: 5F                 pop         edi
+  00000064: B0 01              mov         al,1
+  00000066: 5E                 pop         esi
+  00000067: 5D                 pop         ebp
+  00000068: C2 04 00           ret         4
+
+?size@?$gim_array@UGIM_RSORT_TOKEN@@@@QBEIXZ (public: unsigned int __thiscall gim_array<struct GIM_RSORT_TOKEN>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?size@?$gim_array@VGIM_CONTACT@@@@QBEIXZ (public: unsigned int __thiscall gim_array<class GIM_CONTACT>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+_fabsf:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D9 E1              fabs
+  00000008: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000B: D9 45 08           fld         dword ptr [ebp+8]
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+
+_sqrtf:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        __CIsqrt
+  0000000B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000000E: D9 45 08           fld         dword ptr [ebp+8]
+  00000011: 5D                 pop         ebp
+  00000012: C3                 ret
+
+  Summary
+
+         100 .debug$F
+          6C .debug$S
+          C2 .drectve
+          54 .rdata
+         DF0 .text

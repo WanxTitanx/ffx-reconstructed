@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006BB030.obj
+
+File Type: COFF OBJECT
+
+@DebugFlagDisplay_PageNav@8:
+  00000000: 80 B9 F4 01 00 00  cmp         byte ptr [ecx+1F4h],0
+            00
+  00000007: 74 55              je          0000005E
+  00000009: 8B 81 E8 01 00 00  mov         eax,dword ptr [ecx+1E8h]
+  0000000F: 84 D2              test        dl,dl
+  00000011: 74 13              je          00000026
+  00000013: 40                 inc         eax
+  00000014: 56                 push        esi
+  00000015: 99                 cdq
+  00000016: BE 2A 00 00 00     mov         esi,2Ah
+  0000001B: F7 FE              idiv        eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 89 91 E8 01 00 00  mov         dword ptr [ecx+1E8h],edx
+  00000024: EB 12              jmp         00000038
+  00000026: 85 C0              test        eax,eax
+  00000028: 74 03              je          0000002D
+  0000002A: 48                 dec         eax
+  0000002B: EB 05              jmp         00000032
+  0000002D: B8 29 00 00 00     mov         eax,29h
+  00000032: 89 81 E8 01 00 00  mov         dword ptr [ecx+1E8h],eax
+  00000038: 8B 81 E8 01 00 00  mov         eax,dword ptr [ecx+1E8h]
+  0000003E: 83 E8 09           sub         eax,9
+  00000041: 89 81 EC 01 00 00  mov         dword ptr [ecx+1ECh],eax
+  00000047: 83 F8 20           cmp         eax,20h
+  0000004A: 7E 05              jle         00000051
+  0000004C: B8 20 00 00 00     mov         eax,20h
+  00000051: 51                 push        ecx
+  00000052: 89 81 EC 01 00 00  mov         dword ptr [ecx+1ECh],eax
+  00000058: E8 00 00 00 00     call        _FFX_DebugUI_FlagDisplayUpdate
+  0000005D: 59                 pop         ecx
+  0000005E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5F .text

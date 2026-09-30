@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085FF60.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldVM_SetActorRotation:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 57                 push        edi
+  00000007: FF 75 10           push        dword ptr [ebp+10h]
+  0000000A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000013: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000016: DB 45 F8           fild        dword ptr [ebp-8]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 79 06              jns         00000023
+  0000001D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000023: FF 75 10           push        dword ptr [ebp+10h]
+  00000026: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000029: 57                 push        edi
+  0000002A: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000002F: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000032: DB 45 F8           fild        dword ptr [ebp-8]
+  00000035: 85 C0              test        eax,eax
+  00000037: 79 06              jns         0000003F
+  00000039: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000003F: FF 75 FC           push        dword ptr [ebp-4]
+  00000042: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000045: FF 75 F8           push        dword ptr [ebp-8]
+  00000048: 57                 push        edi
+  00000049: E8 00 00 00 00     call        _FFX_FieldVM_SetActorRotationYZero
+  0000004E: 83 C4 1C           add         esp,1Ch
+  00000051: 33 C0              xor         eax,eax
+  00000053: 5F                 pop         edi
+  00000054: 8B E5              mov         esp,ebp
+  00000056: 5D                 pop         ebp
+  00000057: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          58 .text

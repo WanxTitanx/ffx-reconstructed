@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0052ED90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationHierarchyNode_Copy_A@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: D9 7D FE           fnstcw      word ptr [ebp-2]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B FA              mov         edi,edx
+  0000000E: 8B F1              mov         esi,ecx
+  00000010: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000013: 89 46 04           mov         dword ptr [esi+4],eax
+  00000016: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000019: 89 46 08           mov         dword ptr [esi+8],eax
+  0000001C: D9 47 0C           fld         dword ptr [edi+0Ch]
+  0000001F: 0F B7 45 FE        movzx       eax,word ptr [ebp-2]
+  00000023: FF 77 10           push        dword ptr [edi+10h]
+  00000026: 0D 00 0C 00 00     or          eax,0C00h
+  0000002B: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002E: D9 6D F8           fldcw       word ptr [ebp-8]
+  00000031: DF 7D F4           fistp       qword ptr [ebp-0Ch]
+  00000034: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00000037: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  0000003D: 53                 push        ebx
+  0000003E: D9 6D FE           fldcw       word ptr [ebp-2]
+  00000041: E8 00 00 00 00     call        _Phyre_AlignedAllocCopyIntArray_B
+  00000046: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000004F: 3B C8              cmp         ecx,eax
+  00000051: 74 15              je          00000068
+  00000053: F7 46 0C 00 00 00  test        dword ptr [esi+0Ch],80000000h
+            80
+  0000005A: 75 0C              jne         00000068
+  0000005C: 51                 push        ecx
+  0000005D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000062: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000065: 83 C4 04           add         esp,4
+  00000068: 89 46 10           mov         dword ptr [esi+10h],eax
+  0000006B: 8D 47 14           lea         eax,[edi+14h]
+  0000006E: 50                 push        eax
+  0000006F: 8D 46 14           lea         eax,[esi+14h]
+  00000072: 50                 push        eax
+  00000073: 89 5E 0C           mov         dword ptr [esi+0Ch],ebx
+  00000076: E8 00 00 00 00     call        _Phyre_PAnimationTarget_CopyTargets
+  0000007B: 83 C4 08           add         esp,8
+  0000007E: 8B C6              mov         eax,esi
+  00000080: 5F                 pop         edi
+  00000081: 5E                 pop         esi
+  00000082: 5B                 pop         ebx
+  00000083: 8B E5              mov         esp,ebp
+  00000085: 5D                 pop         ebp
+  00000086: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          87 .text

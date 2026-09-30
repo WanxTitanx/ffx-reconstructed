@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F79B0.obj
+
+File Type: COFF OBJECT
+
+@IggyMenu_Destroy7SlotArray@4:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B D9              mov         ebx,ecx
+  00000005: 33 F6              xor         esi,esi
+  00000007: 8B 3C B3           mov         edi,dword ptr [ebx+esi*4]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 74 16              je          00000024
+  0000000E: 57                 push        edi
+  0000000F: E8 00 00 00 00     call        _Phyre_IggyMenu_Destructor
+  00000014: 57                 push        edi
+  00000015: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: C7 04 B3 00 00 00  mov         dword ptr [ebx+esi*4],0
+            00
+  00000024: 46                 inc         esi
+  00000025: 83 FE 07           cmp         esi,7
+  00000028: 7C DD              jl          00000007
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2E .text

@@ -1,0 +1,192 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file b78.obj
+
+File Type: COFF OBJECT
+
+?gim_alloc@@YAPAXI@Z (void * __cdecl gim_alloc(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: A1 00 00 00 00     mov         eax,dword ptr [_g_allocfn]
+  00000008: 85 C0              test        eax,eax
+  0000000A: 74 03              je          0000000F
+  0000000C: 5D                 pop         ebp
+  0000000D: FF E0              jmp         eax
+  0000000F: 6A 10              push        10h
+  00000011: FF 75 08           push        dword ptr [ebp+8]
+  00000014: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 5D                 pop         ebp
+  0000001D: C3                 ret
+
+?gim_alloca@@YAPAXI@Z (void * __cdecl gim_alloca(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: A1 00 00 00 00     mov         eax,dword ptr [_g_allocafn]
+  00000008: 85 C0              test        eax,eax
+  0000000A: 74 03              je          0000000F
+  0000000C: 5D                 pop         ebp
+  0000000D: FF E0              jmp         eax
+  0000000F: A1 00 00 00 00     mov         eax,dword ptr [_g_allocfn]
+  00000014: 85 C0              test        eax,eax
+  00000016: 74 03              je          0000001B
+  00000018: 5D                 pop         ebp
+  00000019: FF E0              jmp         eax
+  0000001B: 6A 10              push        10h
+  0000001D: FF 75 08           push        dword ptr [ebp+8]
+  00000020: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000025: 83 C4 08           add         esp,8
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+
+?gim_free@@YAXPAX@Z (void __cdecl gim_free(void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 19              je          00000023
+  0000000A: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_freefn]
+  00000010: 85 C9              test        ecx,ecx
+  00000012: 74 06              je          0000001A
+  00000014: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000017: 5D                 pop         ebp
+  00000018: FF E1              jmp         ecx
+  0000001A: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001D: 5D                 pop         ebp
+  0000001E: E9 00 00 00 00     jmp         ?btAlignedFreeInternal@@YAXPAX@Z
+  00000023: 5D                 pop         ebp
+  00000024: C3                 ret
+
+?gim_get_alloc_handler@@YAP6APAXI@ZXZ (void * (__cdecl*__cdecl gim_get_alloc_handler(void))(unsigned int)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_g_allocfn]
+  00000005: C3                 ret
+
+?gim_get_alloca_handler@@YAP6APAXI@ZXZ (void * (__cdecl*__cdecl gim_get_alloca_handler(void))(unsigned int)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_g_allocafn]
+  00000005: C3                 ret
+
+?gim_get_free_handler@@YAP6AXPAX@ZXZ (void (__cdecl*__cdecl gim_get_free_handler(void))(void *)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_g_freefn]
+  00000005: C3                 ret
+
+?gim_get_realloc_handler@@YAP6APAXPAXII@ZXZ (void * (__cdecl*__cdecl gim_get_realloc_handler(void))(void *,unsigned int,unsigned int)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [_g_reallocfn]
+  00000005: C3                 ret
+
+?gim_realloc@@YAPAXPAXII@Z (void * __cdecl gim_realloc(void *,unsigned int,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: A1 00 00 00 00     mov         eax,dword ptr [_g_allocfn]
+  00000008: 56                 push        esi
+  00000009: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000000C: 57                 push        edi
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 08              je          00000019
+  00000011: 56                 push        esi
+  00000012: FF D0              call        eax
+  00000014: 83 C4 04           add         esp,4
+  00000017: EB 0B              jmp         00000024
+  00000019: 6A 10              push        10h
+  0000001B: 56                 push        esi
+  0000001C: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000021: 83 C4 08           add         esp,8
+  00000024: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000027: 8B F8              mov         edi,eax
+  00000029: 3B D6              cmp         edx,esi
+  0000002B: 72 02              jb          0000002F
+  0000002D: 8B D6              mov         edx,esi
+  0000002F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000032: 8B CE              mov         ecx,esi
+  00000034: 85 D2              test        edx,edx
+  00000036: 74 14              je          0000004C
+  00000038: 53                 push        ebx
+  00000039: 8B DF              mov         ebx,edi
+  0000003B: 2B DE              sub         ebx,esi
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: 8A 01              mov         al,byte ptr [ecx]
+  00000042: 88 04 0B           mov         byte ptr [ebx+ecx],al
+  00000045: 8D 49 01           lea         ecx,[ecx+1]
+  00000048: 4A                 dec         edx
+  00000049: 75 F5              jne         00000040
+  0000004B: 5B                 pop         ebx
+  0000004C: 85 F6              test        esi,esi
+  0000004E: 74 1D              je          0000006D
+  00000050: A1 00 00 00 00     mov         eax,dword ptr [_g_freefn]
+  00000055: 56                 push        esi
+  00000056: 85 C0              test        eax,eax
+  00000058: 74 0B              je          00000065
+  0000005A: FF D0              call        eax
+  0000005C: 83 C4 04           add         esp,4
+  0000005F: 8B C7              mov         eax,edi
+  00000061: 5F                 pop         edi
+  00000062: 5E                 pop         esi
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+  00000065: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000006A: 83 C4 04           add         esp,4
+  0000006D: 8B C7              mov         eax,edi
+  0000006F: 5F                 pop         edi
+  00000070: 5E                 pop         esi
+  00000071: 5D                 pop         ebp
+  00000072: C3                 ret
+
+?gim_set_alloc_handler@@YAXP6APAXI@Z@Z (void __cdecl gim_set_alloc_handler(void * (__cdecl*)(unsigned int))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: A3 00 00 00 00     mov         dword ptr [_g_allocfn],eax
+  0000000B: 5D                 pop         ebp
+  0000000C: C3                 ret
+
+?gim_set_alloca_handler@@YAXP6APAXI@Z@Z (void __cdecl gim_set_alloca_handler(void * (__cdecl*)(unsigned int))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: A3 00 00 00 00     mov         dword ptr [_g_allocafn],eax
+  0000000B: 5D                 pop         ebp
+  0000000C: C3                 ret
+
+?gim_set_free_handler@@YAXP6AXPAX@Z@Z (void __cdecl gim_set_free_handler(void (__cdecl*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: A3 00 00 00 00     mov         dword ptr [_g_freefn],eax
+  0000000B: 5D                 pop         ebp
+  0000000C: C3                 ret
+
+?gim_set_realloc_handler@@YAXP6APAXPAXII@Z@Z (void __cdecl gim_set_realloc_handler(void * (__cdecl*)(void *,unsigned int,unsigned int))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: A3 00 00 00 00     mov         dword ptr [_g_reallocfn],eax
+  0000000B: 5D                 pop         ebp
+  0000000C: C3                 ret
+
+?gim_simd_memcpy@@YAXPAXPBXI@Z (void __cdecl gim_simd_memcpy(void *,void const *,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000006: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000009: 85 D2              test        edx,edx
+  0000000B: 74 12              je          0000001F
+  0000000D: 56                 push        esi
+  0000000E: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000011: 2B F0              sub         esi,eax
+  00000013: 8A 08              mov         cl,byte ptr [eax]
+  00000015: 88 0C 06           mov         byte ptr [esi+eax],cl
+  00000018: 8D 40 01           lea         eax,[eax+1]
+  0000001B: 4A                 dec         edx
+  0000001C: 75 F5              jne         00000013
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C3                 ret
+
+  Summary
+
+          10 .bss
+          40 .debug$F
+          6C .debug$S
+          C2 .drectve
+         14D .text

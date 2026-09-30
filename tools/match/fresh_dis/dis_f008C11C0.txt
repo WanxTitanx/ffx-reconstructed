@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008C11C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_SphereGrid_DrawNodeStatWithHighlight:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: E8 00 00 00 00     call        _FFX_Menu_GetMenuStyleFlag
+  0000000A: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000000D: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000010: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000013: BA 01 00 00 00     mov         edx,1
+  00000018: D3 E2              shl         edx,cl
+  0000001A: 85 C2              test        edx,eax
+  0000001C: 74 2F              je          0000004D
+  0000001E: FF 35 00 00 00 00  push        dword ptr [_g_MenuStyleUnkVar_23CC140]
+  00000024: A1 00 00 00 00     mov         eax,dword ptr [_unk_23CC146]
+  00000029: FF 35 00 00 00 00  push        dword ptr [_g_MenuStyleUnkVar_23CC148]
+  0000002F: 03 C7              add         eax,edi
+  00000031: FF 35 00 00 00 00  push        dword ptr [_unk_23CC13E]
+  00000037: 68 00 02 00 00     push        200h
+  0000003C: 50                 push        eax
+  0000003D: A1 00 00 00 00     mov         eax,dword ptr [_g_MenuStyleUnkVar_23CC144]
+  00000042: 03 C3              add         eax,ebx
+  00000044: 50                 push        eax
+  00000045: E8 00 00 00 00     call        _FFX_Menu_DrawColoredQuadOverlay
+  0000004A: 83 C4 18           add         esp,18h
+  0000004D: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000050: 57                 push        edi
+  00000051: 53                 push        ebx
+  00000052: FF 75 10           push        dword ptr [ebp+10h]
+  00000055: 83 C0 40           add         eax,40h
+  00000058: 50                 push        eax
+  00000059: E8 00 00 00 00     call        _FFX_BtlUI_DrawStatCount
+  0000005E: 83 C4 10           add         esp,10h
+  00000061: 5F                 pop         edi
+  00000062: 5B                 pop         ebx
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          65 .text

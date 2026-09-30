@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00679E10.obj
+
+File Type: COFF OBJECT
+
+@Sys_Thread_WaitAndTerminate@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 7E 18 00        cmp         dword ptr [esi+18h],0
+  00000007: 74 1F              je          00000028
+  00000009: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000010: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000013: FF D0              call        eax
+  00000015: 6A 10              push        10h
+  00000017: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000001A: E8 00 00 00 00     call        _WaitForSingleObject
+  0000001F: 83 C4 08           add         esp,8
+  00000022: 83 7E 18 00        cmp         dword ptr [esi+18h],0
+  00000026: 75 E8              jne         00000010
+  00000028: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 74 21              je          00000050
+  0000002F: 6A 00              push        0
+  00000031: 50                 push        eax
+  00000032: E8 00 00 00 00     call        _TerminateThread
+  00000037: FF 76 04           push        dword ptr [esi+4]
+  0000003A: E8 00 00 00 00     call        _CloseHandle
+  0000003F: 83 C4 0C           add         esp,0Ch
+  00000042: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000049: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000050: 33 C0              xor         eax,eax
+  00000052: 5E                 pop         esi
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          54 .text

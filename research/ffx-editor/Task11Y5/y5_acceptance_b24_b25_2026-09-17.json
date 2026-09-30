@@ -1,0 +1,66 @@
+{
+  "document_kind": "y5-acceptance-envelope",
+  "generated": "2026-09-17",
+  "lane_owner": "Jarvis-DEVIN (orchestrator)",
+  "scope": "Y5 virtual tier-B batches b24 + b25",
+  "candidates": {
+    "b24": {
+      "file": "artifacts/2026-09-14/y5/y5-candidate-b24-tierb.json",
+      "claims_total": 494,
+      "claims_in_queue": 117,
+      "status": "ACCEPTED"
+    },
+    "b25": {
+      "file": "work/_x5_tierb3/y5-candidate-b25-tierb3.json",
+      "claims_total": 163,
+      "claims_in_queue": 163,
+      "status": "ACCEPTED"
+    }
+  },
+  "attestations": [
+    {
+      "id": "REVIEW-A",
+      "doc": "docs/reverse/FFX_Y5_B24B25_REVIEW_A_2026-09-17.md",
+      "verdict": "ATTEST x2",
+      "gates_rerun": "4/4 PASS (b24 draft 494/494 + promotion 494/494; b25 draft+promotion 163/163)",
+      "independent_rederivation": "657/657 claim_text exact; 657/657 unit-text <-> pinned-atlas byte-slice match",
+      "caveat": "6 hard-stale in-queue claims + 1 hedged -> errata register below travels with the batches"
+    },
+    {
+      "id": "REVIEW-B",
+      "doc": "docs/reverse/FFX_Y5_B24B25_REVIEW_B_2026-09-17.md",
+      "verdict": "ATTEST x2",
+      "gates_rerun": "4/4 PASS (same metrics reproduced)",
+      "spot_check": "60/60 verbatim-faithful (seeded RNG, not first-N); IDA-verified CTB cap-24, SelectRuntimeTableSlice=0x7E3720, section attribution 657/657",
+      "caveat": "borderline-editorial claims disclosed (40 b24 / 32 b25) — wording pass at materialization"
+    }
+  ],
+  "routing_basis_decision": {
+    "decision": "ADOPTED",
+    "basis": "tier-B in-queue invariant recomputed by both reviewers: 117 + 163 = 280 = full re-derived queue, zero unaccounted; queue_reconciliation identical in both candidates",
+    "pin": "research_tools/Task11Y5/y5-batches.json sha256 0ce67a990fbd85cff7f34f2debc157fa0c9df8a0ca0f30a443a1afaae1c8ab33 (untouched; orchestrator-verified in both locations)"
+  },
+  "errata_register": {
+    "policy": "batches are faithful provenance-tagged snapshots; the following claims are stale vs the newer dated audit docs (2026-09-16/17) and MUST be annotated/errata'd (or downgraded) at materialization — they are NOT silently rewritten",
+    "hard_stale_in_queue": [
+      "b24-307 (StatusMap 'probability' -> truth: additive weights clamped [0,5]; IDB comment @0x78D7F0; corrected by b25-153)",
+      "b24-435 (premise 'GetCharDisplayWidth indexes width table' -> decompiled @0x8B6590: range constants + font_scale_jimaku, no table)",
+      "b25-135 (same wrong premise as b24-435)",
+      "b25-136 (same)",
+      "b25-137 (same)"
+    ],
+    "hedged_in_queue": [
+      "b25-76 (hedged wording — keep with note)"
+    ],
+    "minor_wording": [
+      "b25-18 'tabela refletida' -> CRC is MSB-first non-reflected (FfxSaveChecksum.cs:47)",
+      "b24-355 'Bits 33..8' -> impl bits 7..33"
+    ],
+    "out_of_scope_note": "the big stale facts (FSB5=Vorbis, RYHP 0x50594852, 0x7e3730, '16x4B') live in batch b14 (runtime-23, runtime-348) — NOT in this promotion; they carry their own lineage"
+  },
+  "remaining_mechanical_steps": [
+    "canonical id recomputation via CanonicalJson/ClaimAuditService at materialization (claims still carry DRAFT-grade scope_id/boundary_id — honest per gate contract)",
+    "wording pass for the 72 disclosed borderline/editorial claims at materialization",
+    "claims keep confidence:'low' + notes:'DRAFT y5 candidate — NOT accepted' text verbatim until materialization rewrites them"
+  ]
+}

@@ -1,0 +1,103 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005B6AF0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ScratchBuffer_Deallocate@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  0000000C: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000F: A8 01              test        al,1
+  00000011: 75 0A              jne         0000001D
+  00000013: B8 16 00 00 00     mov         eax,16h
+  00000018: 5E                 pop         esi
+  00000019: 8B E5              mov         esp,ebp
+  0000001B: 5D                 pop         ebp
+  0000001C: C3                 ret
+  0000001D: 53                 push        ebx
+  0000001E: 8B 5E 24           mov         ebx,dword ptr [esi+24h]
+  00000021: 83 E0 FE           and         eax,0FFFFFFFEh
+  00000024: 57                 push        edi
+  00000025: 8B 7E 28           mov         edi,dword ptr [esi+28h]
+  00000028: 89 46 04           mov         dword ptr [esi+4],eax
+  0000002B: 8D 45 FC           lea         eax,[ebp-4]
+  0000002E: 50                 push        eax
+  0000002F: 6A 00              push        0
+  00000031: 8D 46 1C           lea         eax,[esi+1Ch]
+  00000034: 53                 push        ebx
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _Phyre_ScratchBuffer_AllocWithFallback
+  0000003B: 83 C4 10           add         esp,10h
+  0000003E: 39 5D FC           cmp         dword ptr [ebp-4],ebx
+  00000041: 72 0A              jb          0000004D
+  00000043: 3B DF              cmp         ebx,edi
+  00000045: 77 0A              ja          00000051
+  00000047: 3B C7              cmp         eax,edi
+  00000049: 77 32              ja          0000007D
+  0000004B: EB 04              jmp         00000051
+  0000004D: 3B DF              cmp         ebx,edi
+  0000004F: 76 2C              jbe         0000007D
+  00000051: 8B 7E 38           mov         edi,dword ptr [esi+38h]
+  00000054: 8B 5E 3C           mov         ebx,dword ptr [esi+3Ch]
+  00000057: 8D 45 F8           lea         eax,[ebp-8]
+  0000005A: 50                 push        eax
+  0000005B: 6A 48              push        48h
+  0000005D: 8D 46 30           lea         eax,[esi+30h]
+  00000060: 57                 push        edi
+  00000061: 50                 push        eax
+  00000062: E8 00 00 00 00     call        _Phyre_ScratchBuffer_AllocWithFallback
+  00000067: 83 C4 10           add         esp,10h
+  0000006A: 39 7D F8           cmp         dword ptr [ebp-8],edi
+  0000006D: 73 06              jae         00000075
+  0000006F: 3B FB              cmp         edi,ebx
+  00000071: 77 13              ja          00000086
+  00000073: EB 08              jmp         0000007D
+  00000075: 3B FB              cmp         edi,ebx
+  00000077: 77 0D              ja          00000086
+  00000079: 3B C3              cmp         eax,ebx
+  0000007B: 76 09              jbe         00000086
+  0000007D: 8B 06              mov         eax,dword ptr [esi]
+  0000007F: 8B CE              mov         ecx,esi
+  00000081: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000084: FF D0              call        eax
+  00000086: 8D 46 30           lea         eax,[esi+30h]
+  00000089: 6A 48              push        48h
+  0000008B: 50                 push        eax
+  0000008C: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Alloc
+  00000091: 83 C4 08           add         esp,8
+  00000094: 8B C8              mov         ecx,eax
+  00000096: 5F                 pop         edi
+  00000097: 5B                 pop         ebx
+  00000098: 85 C9              test        ecx,ecx
+  0000009A: 75 08              jne         000000A4
+  0000009C: 8D 41 0D           lea         eax,[ecx+0Dh]
+  0000009F: 5E                 pop         esi
+  000000A0: 8B E5              mov         esp,ebp
+  000000A2: 5D                 pop         ebp
+  000000A3: C3                 ret
+  000000A4: 83 7E 4C 00        cmp         dword ptr [esi+4Ch],0
+  000000A8: 75 03              jne         000000AD
+  000000AA: 89 4E 4C           mov         dword ptr [esi+4Ch],ecx
+  000000AD: 8D 41 48           lea         eax,[ecx+48h]
+  000000B0: 89 46 50           mov         dword ptr [esi+50h],eax
+  000000B3: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000B6: 89 41 08           mov         dword ptr [ecx+8],eax
+  000000B9: C7 01 15 00 00 00  mov         dword ptr [ecx],15h
+  000000BF: 33 C0              xor         eax,eax
+  000000C1: 5E                 pop         esi
+  000000C2: 8B E5              mov         esp,ebp
+  000000C4: 5D                 pop         ebp
+  000000C5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C6 .text

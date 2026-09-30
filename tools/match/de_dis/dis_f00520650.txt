@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00520650.obj
+
+File Type: COFF OBJECT
+
+_PAnimationInterpolation_GetWeight:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: D9 01              fld         dword ptr [ecx]
+  0000000B: D9 02              fld         dword ptr [edx]
+  0000000D: DE D9              fcompp
+  0000000F: DF E0              fnstsw      ax
+  00000011: F6 C4 01           test        ah,1
+  00000014: 75 18              jne         0000002E
+  00000016: D9 01              fld         dword ptr [ecx]
+  00000018: D9 02              fld         dword ptr [edx]
+  0000001A: DE D9              fcompp
+  0000001C: DF E0              fnstsw      ax
+  0000001E: F6 C4 41           test        ah,41h
+  00000021: 75 07              jne         0000002A
+  00000023: B8 01 00 00 00     mov         eax,1
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: 33 C0              xor         eax,eax
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

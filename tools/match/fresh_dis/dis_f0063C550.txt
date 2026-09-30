@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0063C550.obj
+
+File Type: COFF OBJECT
+
+_SetVisibilityStateOnObjects:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 4C              je          00000057
+  0000000B: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000000E: 56                 push        esi
+  0000000F: 33 F6              xor         esi,esi
+  00000011: 83 F9 01           cmp         ecx,1
+  00000014: 0F 94 C0           sete        al
+  00000017: F7 07 FF FF FF 7F  test        dword ptr [edi],7FFFFFFFh
+  0000001D: 88 47 14           mov         byte ptr [edi+14h],al
+  00000020: 74 2E              je          00000050
+  00000022: 53                 push        ebx
+  00000023: 33 DB              xor         ebx,ebx
+  00000025: 83 F9 01           cmp         ecx,1
+  00000028: 0F 94 C3           sete        bl
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000033: 53                 push        ebx
+  00000034: FF 34 B0           push        dword ptr [eax+esi*4]
+  00000037: E8 00 00 00 00     call        _Phyre_Node_SetChildVisibility
+  0000003C: 8B 07              mov         eax,dword ptr [edi]
+  0000003E: 46                 inc         esi
+  0000003F: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000044: 83 C4 08           add         esp,8
+  00000047: 3B F0              cmp         esi,eax
+  00000049: 72 E5              jb          00000030
+  0000004B: 5B                 pop         ebx
+  0000004C: 5E                 pop         esi
+  0000004D: 5F                 pop         edi
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+  00000050: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000053: 5E                 pop         esi
+  00000054: 5F                 pop         edi
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+  00000057: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000005A: 5F                 pop         edi
+  0000005B: 5D                 pop         ebp
+  0000005C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5D .text

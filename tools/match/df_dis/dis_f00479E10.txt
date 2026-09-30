@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00479E10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_479E10@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 75 07              jne         00000011
+  0000000A: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000000D: 5D                 pop         ebp
+  0000000E: C2 08 00           ret         8
+  00000011: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000014: 85 C9              test        ecx,ecx
+  00000016: 75 09              jne         00000021
+  00000018: B8 01 00 00 00     mov         eax,1
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 08 00           ret         8
+  00000021: 8B 49 18           mov         ecx,dword ptr [ecx+18h]
+  00000024: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  00000027: 8A 10              mov         dl,byte ptr [eax]
+  00000029: 3A 11              cmp         dl,byte ptr [ecx]
+  0000002B: 75 1A              jne         00000047
+  0000002D: 84 D2              test        dl,dl
+  0000002F: 74 12              je          00000043
+  00000031: 8A 50 01           mov         dl,byte ptr [eax+1]
+  00000034: 3A 51 01           cmp         dl,byte ptr [ecx+1]
+  00000037: 75 0E              jne         00000047
+  00000039: 83 C0 02           add         eax,2
+  0000003C: 83 C1 02           add         ecx,2
+  0000003F: 84 D2              test        dl,dl
+  00000041: 75 E4              jne         00000027
+  00000043: 33 C9              xor         ecx,ecx
+  00000045: EB 05              jmp         0000004C
+  00000047: 1B C9              sbb         ecx,ecx
+  00000049: 83 C9 01           or          ecx,1
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: 85 C9              test        ecx,ecx
+  00000050: 74 0A              je          0000005C
+  00000052: 0F 99 C0           setns       al
+  00000055: 8D 04 45 FF FF FF  lea         eax,[eax*2+FFFFFFFFh]
+            FF
+  0000005C: 5D                 pop         ebp
+  0000005D: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

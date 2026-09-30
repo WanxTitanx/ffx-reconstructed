@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00920670.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_ArrayRemoveByValue:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 39 77 0C           cmp         dword ptr [edi+0Ch],esi
+  0000000D: 76 56              jbe         00000065
+  0000000F: 53                 push        ebx
+  00000010: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000013: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000016: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000019: 3B C3              cmp         eax,ebx
+  0000001B: 75 41              jne         0000005E
+  0000001D: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000020: 85 C9              test        ecx,ecx
+  00000022: 74 06              je          0000002A
+  00000024: 50                 push        eax
+  00000025: FF D1              call        ecx
+  00000027: 83 C4 04           add         esp,4
+  0000002A: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000002D: 48                 dec         eax
+  0000002E: 3B F0              cmp         esi,eax
+  00000030: 73 14              jae         00000046
+  00000032: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000035: 8D 0C B0           lea         ecx,[eax+esi*4]
+  00000038: 46                 inc         esi
+  00000039: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000003C: 89 01              mov         dword ptr [ecx],eax
+  0000003E: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000041: 48                 dec         eax
+  00000042: 3B F0              cmp         esi,eax
+  00000044: 72 EC              jb          00000032
+  00000046: FF 4F 0C           dec         dword ptr [edi+0Ch]
+  00000049: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000004C: C1 E0 02           shl         eax,2
+  0000004F: 50                 push        eax
+  00000050: FF 77 10           push        dword ptr [edi+10h]
+  00000053: E8 00 00 00 00     call        _FFX_Mem_ReallocGameArena
+  00000058: 83 C4 08           add         esp,8
+  0000005B: 89 47 10           mov         dword ptr [edi+10h],eax
+  0000005E: 46                 inc         esi
+  0000005F: 3B 77 0C           cmp         esi,dword ptr [edi+0Ch]
+  00000062: 72 AF              jb          00000013
+  00000064: 5B                 pop         ebx
+  00000065: 5F                 pop         edi
+  00000066: 5E                 pop         esi
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          69 .text

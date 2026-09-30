@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00833950.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_GetFootstepBonePosition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 20           sub         esp,20h
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 45 F0           lea         eax,[ebp-10h]
+  0000000D: 50                 push        eax
+  0000000E: 6A 08              push        8
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _FFX_Chr_GetBoneTransform4
+  00000016: 8D 45 E0           lea         eax,[ebp-20h]
+  00000019: 50                 push        eax
+  0000001A: 6A 07              push        7
+  0000001C: 56                 push        esi
+  0000001D: E8 00 00 00 00     call        _FFX_Chr_GetBoneTransform4
+  00000022: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000025: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000028: 83 C4 18           add         esp,18h
+  0000002B: DE D9              fcompp
+  0000002D: 8D 4D F0           lea         ecx,[ebp-10h]
+  00000030: DF E0              fnstsw      ax
+  00000032: F6 C4 41           test        ah,41h
+  00000035: 7A 03              jp          0000003A
+  00000037: 8D 4D E0           lea         ecx,[ebp-20h]
+  0000003A: 51                 push        ecx
+  0000003B: 56                 push        esi
+  0000003C: E8 00 00 00 00     call        _FFX_Chr_SpawnFootstepEffectAtBone
+  00000041: 83 C4 08           add         esp,8
+  00000044: 5E                 pop         esi
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

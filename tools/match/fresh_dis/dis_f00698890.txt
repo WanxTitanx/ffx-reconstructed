@@ -1,0 +1,163 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00698890.obj
+
+File Type: COFF OBJECT
+
+_PostProcess_UpdateFrameBufferLetterbox@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  0000000A: 0F 85 5D 01 00 00  jne         0000016D
+  00000010: 53                 push        ebx
+  00000011: 57                 push        edi
+  00000012: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000017: 8B B8 6C 02 00 00  mov         edi,dword ptr [eax+26Ch]
+  0000001D: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000022: 8B 98 70 02 00 00  mov         ebx,dword ptr [eax+270h]
+  00000028: 89 7D 0C           mov         dword ptr [ebp+0Ch],edi
+  0000002B: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000002E: 85 FF              test        edi,edi
+  00000030: 79 06              jns         00000038
+  00000032: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000038: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000003B: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000003E: DB 45 FC           fild        dword ptr [ebp-4]
+  00000041: 85 DB              test        ebx,ebx
+  00000043: 79 06              jns         0000004B
+  00000045: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000004B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004E: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000051: D9 C0              fld         st(0)
+  00000053: D9 45 FC           fld         dword ptr [ebp-4]
+  00000056: D9 C0              fld         st(0)
+  00000058: D9 CB              fxch        st(3)
+  0000005A: DE F1              fdivrp      st(1),st
+  0000005C: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000005F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000062: D9 C0              fld         st(0)
+  00000064: DD 45 F8           fld         qword ptr [ebp-8]
+  00000067: DD E2              fucom       st(2)
+  00000069: DF E0              fnstsw      ax
+  0000006B: DD DA              fstp        st(2)
+  0000006D: F6 C4 44           test        ah,44h
+  00000070: 7A 34              jp          000000A6
+  00000072: 53                 push        ebx
+  00000073: DD D8              fstp        st(0)
+  00000075: 57                 push        edi
+  00000076: DD D8              fstp        st(0)
+  00000078: 6A 00              push        0
+  0000007A: DD D9              fstp        st(1)
+  0000007C: 6A 00              push        0
+  0000007E: DD D8              fstp        st(0)
+  00000080: FF 75 08           push        dword ptr [ebp+8]
+  00000083: E8 00 00 00 00     call        _Phyre_Renderer_SetViewport
+  00000088: 53                 push        ebx
+  00000089: 57                 push        edi
+  0000008A: 53                 push        ebx
+  0000008B: 57                 push        edi
+  0000008C: 6A 00              push        0
+  0000008E: 6A 00              push        0
+  00000090: FF 35 00 00 00 00  push        dword ptr [_g_UnkVar_1984C6C]
+  00000096: E8 00 00 00 00     call        _Phyre_FrameBuffer_UpdateAndProcess
+  0000009B: 83 C4 30           add         esp,30h
+  0000009E: 5F                 pop         edi
+  0000009F: 5B                 pop         ebx
+  000000A0: 8B E5              mov         esp,ebp
+  000000A2: 5D                 pop         ebp
+  000000A3: C2 08 00           ret         8
+  000000A6: D8 D1              fcom        st(1)
+  000000A8: 56                 push        esi
+  000000A9: DF E0              fnstsw      ax
+  000000AB: F6 C4 01           test        ah,1
+  000000AE: 75 57              jne         00000107
+  000000B0: DD DB              fstp        st(3)
+  000000B2: D9 E8              fld1
+  000000B4: D9 C0              fld         st(0)
+  000000B6: DE F4              fdivrp      st(4),st
+  000000B8: D9 CB              fxch        st(3)
+  000000BA: DE C9              fmulp       st(1),st
+  000000BC: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000000BF: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000000C2: D9 C0              fld         st(0)
+  000000C4: DE EB              fsubp       st(3),st
+  000000C6: D9 CA              fxch        st(2)
+  000000C8: D8 C9              fmul        st,st(1)
+  000000CA: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  000000D0: D9 CA              fxch        st(2)
+  000000D2: DE C9              fmulp       st(1),st
+  000000D4: DD 55 F8           fst         qword ptr [ebp-8]
+  000000D7: D9 C9              fxch        st(1)
+  000000D9: E8 00 00 00 00     call        __ftol2_sse
+  000000DE: 53                 push        ebx
+  000000DF: 8B F0              mov         esi,eax
+  000000E1: E8 00 00 00 00     call        __ftol2
+  000000E6: 52                 push        edx
+  000000E7: 50                 push        eax
+  000000E8: 6A 00              push        0
+  000000EA: 56                 push        esi
+  000000EB: FF 75 08           push        dword ptr [ebp+8]
+  000000EE: E8 00 00 00 00     call        _Phyre_Renderer_SetViewport
+  000000F3: DD 45 F8           fld         qword ptr [ebp-8]
+  000000F6: 83 C4 18           add         esp,18h
+  000000F9: 53                 push        ebx
+  000000FA: 57                 push        edi
+  000000FB: 53                 push        ebx
+  000000FC: E8 00 00 00 00     call        __ftol2_sse
+  00000101: 50                 push        eax
+  00000102: 6A 00              push        0
+  00000104: 56                 push        esi
+  00000105: EB 55              jmp         0000015C
+  00000107: DD D9              fstp        st(1)
+  00000109: DD D9              fstp        st(1)
+  0000010B: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe2000000000000]
+  00000111: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000114: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000117: D9 C0              fld         st(0)
+  00000119: D9 E8              fld1
+  0000011B: DE E1              fsubrp      st(1),st
+  0000011D: D8 CA              fmul        st,st(2)
+  0000011F: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  00000125: D9 C9              fxch        st(1)
+  00000127: DE CA              fmulp       st(2),st
+  00000129: D9 C9              fxch        st(1)
+  0000012B: DD 55 F8           fst         qword ptr [ebp-8]
+  0000012E: D9 C9              fxch        st(1)
+  00000130: E8 00 00 00 00     call        __ftol2_sse
+  00000135: 8B F0              mov         esi,eax
+  00000137: E8 00 00 00 00     call        __ftol2
+  0000013C: 52                 push        edx
+  0000013D: 50                 push        eax
+  0000013E: 57                 push        edi
+  0000013F: 56                 push        esi
+  00000140: 6A 00              push        0
+  00000142: FF 75 08           push        dword ptr [ebp+8]
+  00000145: E8 00 00 00 00     call        _Phyre_Renderer_SetViewport
+  0000014A: DD 45 F8           fld         qword ptr [ebp-8]
+  0000014D: 83 C4 18           add         esp,18h
+  00000150: 53                 push        ebx
+  00000151: 57                 push        edi
+  00000152: E8 00 00 00 00     call        __ftol2_sse
+  00000157: 50                 push        eax
+  00000158: 57                 push        edi
+  00000159: 56                 push        esi
+  0000015A: 6A 00              push        0
+  0000015C: FF 35 00 00 00 00  push        dword ptr [_g_UnkVar_1984C6C]
+  00000162: E8 00 00 00 00     call        _Phyre_FrameBuffer_UpdateAndProcess
+  00000167: 83 C4 1C           add         esp,1Ch
+  0000016A: 5E                 pop         esi
+  0000016B: 5F                 pop         edi
+  0000016C: 5B                 pop         ebx
+  0000016D: 8B E5              mov         esp,ebp
+  0000016F: 5D                 pop         ebp
+  00000170: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1C .rdata
+         173 .text

@@ -1,0 +1,142 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0088A9B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_ScriptOpcodeDispatchTable:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: D9 45 14           fld         dword ptr [ebp+14h]
+  00000008: D8 D1              fcom        st(1)
+  0000000A: DF E0              fnstsw      ax
+  0000000C: D9 E8              fld1
+  0000000E: F6 C4 01           test        ah,1
+  00000011: 75 23              jne         00000036
+  00000013: D8 D1              fcom        st(1)
+  00000015: DF E0              fnstsw      ax
+  00000017: F6 C4 01           test        ah,1
+  0000001A: 75 0D              jne         00000029
+  0000001C: D9 C9              fxch        st(1)
+  0000001E: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000021: D9 45 14           fld         dword ptr [ebp+14h]
+  00000024: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000027: EB 16              jmp         0000003F
+  00000029: DD D9              fstp        st(1)
+  0000002B: D9 55 14           fst         dword ptr [ebp+14h]
+  0000002E: D9 45 14           fld         dword ptr [ebp+14h]
+  00000031: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000034: EB 09              jmp         0000003F
+  00000036: DD D9              fstp        st(1)
+  00000038: D9 C9              fxch        st(1)
+  0000003A: D9 55 14           fst         dword ptr [ebp+14h]
+  0000003D: D9 C9              fxch        st(1)
+  0000003F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000042: 83 F8 04           cmp         eax,4
+  00000045: 0F 82 C6 00 00 00  jb          00000111
+  0000004B: 56                 push        esi
+  0000004C: 8D 70 FD           lea         esi,[eax-3]
+  0000004F: 89 75 10           mov         dword ptr [ebp+10h],esi
+  00000052: DB 45 10           fild        dword ptr [ebp+10h]
+  00000055: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000058: D9 45 10           fld         dword ptr [ebp+10h]
+  0000005B: D9 C0              fld         st(0)
+  0000005D: D9 E8              fld1
+  0000005F: D9 C0              fld         st(0)
+  00000061: DE F2              fdivrp      st(2),st
+  00000063: D9 C9              fxch        st(1)
+  00000065: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000068: D9 45 14           fld         dword ptr [ebp+14h]
+  0000006B: D9 C0              fld         st(0)
+  0000006D: D9 45 10           fld         dword ptr [ebp+10h]
+  00000070: D9 C0              fld         st(0)
+  00000072: DE FA              fdivp       st(2),st
+  00000074: D9 C9              fxch        st(1)
+  00000076: E8 00 00 00 00     call        __ftol2_sse
+  0000007B: 8B C8              mov         ecx,eax
+  0000007D: 89 4D 14           mov         dword ptr [ebp+14h],ecx
+  00000080: DB 45 14           fild        dword ptr [ebp+14h]
+  00000083: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000086: D8 4D 14           fmul        dword ptr [ebp+14h]
+  00000089: DE E9              fsubp       st(1),st
+  0000008B: DE CA              fmulp       st(2),st
+  0000008D: D9 C9              fxch        st(1)
+  0000008F: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000092: D9 45 14           fld         dword ptr [ebp+14h]
+  00000095: D8 D3              fcom        st(3)
+  00000097: DF E0              fnstsw      ax
+  00000099: F6 C4 05           test        ah,5
+  0000009C: 7A 12              jp          000000B0
+  0000009E: D8 C1              fadd        st,st(1)
+  000000A0: 49                 dec         ecx
+  000000A1: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000000A4: D9 45 14           fld         dword ptr [ebp+14h]
+  000000A7: D8 D3              fcom        st(3)
+  000000A9: DF E0              fnstsw      ax
+  000000AB: F6 C4 05           test        ah,5
+  000000AE: 7B EE              jnp         0000009E
+  000000B0: D8 D2              fcom        st(2)
+  000000B2: DF E0              fnstsw      ax
+  000000B4: F6 C4 41           test        ah,41h
+  000000B7: 75 12              jne         000000CB
+  000000B9: D8 E1              fsub        st,st(1)
+  000000BB: 41                 inc         ecx
+  000000BC: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000000BF: D9 45 14           fld         dword ptr [ebp+14h]
+  000000C2: D8 D2              fcom        st(2)
+  000000C4: DF E0              fnstsw      ax
+  000000C6: F6 C4 41           test        ah,41h
+  000000C9: 74 EE              je          000000B9
+  000000CB: DD D9              fstp        st(1)
+  000000CD: 85 C9              test        ecx,ecx
+  000000CF: 79 1F              jns         000000F0
+  000000D1: DD D8              fstp        st(0)
+  000000D3: 33 C9              xor         ecx,ecx
+  000000D5: D9 C9              fxch        st(1)
+  000000D7: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000000DA: D9 45 14           fld         dword ptr [ebp+14h]
+  000000DD: D9 C9              fxch        st(1)
+  000000DF: 3B CE              cmp         ecx,esi
+  000000E1: 7C 11              jl          000000F4
+  000000E3: DD D9              fstp        st(1)
+  000000E5: 8D 4E FF           lea         ecx,[esi-1]
+  000000E8: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000000EB: D9 45 14           fld         dword ptr [ebp+14h]
+  000000EE: EB 06              jmp         000000F6
+  000000F0: DD DA              fstp        st(2)
+  000000F2: EB EB              jmp         000000DF
+  000000F4: DD D8              fstp        st(0)
+  000000F6: FF 75 18           push        dword ptr [ebp+18h]
+  000000F9: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000000FC: 83 EC 08           sub         esp,8
+  000000FF: DD 1C 24           fstp        qword ptr [esp]
+  00000102: 51                 push        ecx
+  00000103: FF 75 08           push        dword ptr [ebp+8]
+  00000106: E8 00 00 00 00     call        _FFX_Field_ScriptOpcodeDispatcher
+  0000010B: 83 C4 18           add         esp,18h
+  0000010E: 5E                 pop         esi
+  0000010F: 5D                 pop         ebp
+  00000110: C3                 ret
+  00000111: FF 75 18           push        dword ptr [ebp+18h]
+  00000114: DD D8              fstp        st(0)
+  00000116: DD D8              fstp        st(0)
+  00000118: D9 45 14           fld         dword ptr [ebp+14h]
+  0000011B: 83 EC 08           sub         esp,8
+  0000011E: DD 1C 24           fstp        qword ptr [esp]
+  00000121: 50                 push        eax
+  00000122: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000125: FF 75 08           push        dword ptr [ebp+8]
+  00000128: E8 00 00 00 00     call        _FFX_Field_ScriptOpcodeExecLoop
+  0000012D: 83 C4 18           add         esp,18h
+  00000130: 5D                 pop         ebp
+  00000131: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+         132 .text

@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061B5F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Array_PushBackInt@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000008: 8B DA              mov         ebx,edx
+  0000000A: 8D 41 01           lea         eax,[ecx+1]
+  0000000D: A9 00 00 00 C0     test        eax,0C0000000h
+  00000012: 74 05              je          00000019
+  00000014: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000017: EB 07              jmp         00000020
+  00000019: 8D 04 8D 04 00 00  lea         eax,[ecx*4+4]
+            00
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  00000026: 33 C9              xor         ecx,ecx
+  00000028: 83 C4 04           add         esp,4
+  0000002B: 8B F8              mov         edi,eax
+  0000002D: 39 4E 1C           cmp         dword ptr [esi+1Ch],ecx
+  00000030: 76 11              jbe         00000043
+  00000032: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000035: 41                 inc         ecx
+  00000036: 8B 44 88 FC        mov         eax,dword ptr [eax+ecx*4-4]
+  0000003A: 89 44 8F FC        mov         dword ptr [edi+ecx*4-4],eax
+  0000003E: 3B 4E 1C           cmp         ecx,dword ptr [esi+1Ch]
+  00000041: 72 EF              jb          00000032
+  00000043: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00000046: 89 1C 87           mov         dword ptr [edi+eax*4],ebx
+  00000049: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  0000004D: 74 0B              je          0000005A
+  0000004F: FF 76 20           push        dword ptr [esi+20h]
+  00000052: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000057: 83 C4 04           add         esp,4
+  0000005A: FF 46 1C           inc         dword ptr [esi+1Ch]
+  0000005D: 89 7E 20           mov         dword ptr [esi+20h],edi
+  00000060: 5F                 pop         edi
+  00000061: 5E                 pop         esi
+  00000062: 5B                 pop         ebx
+  00000063: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          64 .text

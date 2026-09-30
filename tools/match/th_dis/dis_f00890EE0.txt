@@ -1,0 +1,196 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00890EE0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_SubmenuStateMachine:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 66 8B 0D 02 00 00  mov         cx,word ptr [_byte_133D6B2+2]
+            00
+  0000000A: 0F B7 C1           movzx       eax,cx
+  0000000D: 48                 dec         eax
+  0000000E: 83 EC 08           sub         esp,8
+  00000011: 83 F8 09           cmp         eax,9
+  00000014: 0F 87 C3 01 00 00  ja          000001DD
+  0000001A: FF 24 85 00 00 00  jmp         dword ptr $LN27[eax*4]
+            00
+$LN19:
+  00000021: 68 00 00 00 00     push        offset ??_C@_05EGKCDFAI@bauro?$AA@
+  00000026: 6A 02              push        2
+  00000028: C6 05 00 00 00 00  mov         byte ptr [_byte_133D6B2],0
+            00
+  0000002F: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimStartSimple
+  00000034: 83 C4 08           add         esp,8
+  00000037: 66 FF 05 02 00 00  inc         word ptr [_byte_133D6B2+2]
+            00
+  0000003E: 8B E5              mov         esp,ebp
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+$LN18:
+  00000042: 68 00 00 00 00     push        offset ??_C@_05EGKCDFAI@bauro?$AA@
+  00000047: 6A 02              push        2
+  00000049: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimIsPlaying
+  0000004E: 83 C4 08           add         esp,8
+  00000051: 85 C0              test        eax,eax
+  00000053: 0F 84 84 01 00 00  je          000001DD
+  00000059: 68 00 00 00 00     push        offset ??_C@_06ODONHOHG@bauro2?$AA@
+  0000005E: 6A 02              push        2
+  00000060: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimStart
+  00000065: 83 C4 08           add         esp,8
+  00000068: 66 FF 05 02 00 00  inc         word ptr [_byte_133D6B2+2]
+            00
+  0000006F: 8B E5              mov         esp,ebp
+  00000071: 5D                 pop         ebp
+  00000072: C3                 ret
+$LN16:
+  00000073: E8 00 00 00 00     call        _FFX_BtlHud_ShimmerStopOnEntry
+  00000078: 66 FF 05 02 00 00  inc         word ptr [_byte_133D6B2+2]
+            00
+  0000007F: 8B E5              mov         esp,ebp
+  00000081: 5D                 pop         ebp
+  00000082: C3                 ret
+$LN15:
+  00000083: E8 00 00 00 00     call        _FFX_BtlHud_ShimmerStart
+  00000088: DB 05 40 DD CF 04  fild        dword ptr ds:[4CFDD40h]
+  0000008E: A1 40 DD CF 04     mov         eax,dword ptr ds:[04CFDD40h]
+  00000093: 85 C0              test        eax,eax
+  00000095: 79 06              jns         0000009D
+  00000097: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000009D: DD 5D F8           fstp        qword ptr [ebp-8]
+  000000A0: DD 45 F8           fld         qword ptr [ebp-8]
+  000000A3: DC 1D 00 00 00 00  fcomp       qword ptr [__real@0000000000000000]
+  000000A9: DF E0              fnstsw      ax
+  000000AB: F6 C4 41           test        ah,41h
+  000000AE: 75 5D              jne         0000010D
+  000000B0: 8B 15 00 00 00 00  mov         edx,dword ptr [_unk_25D09D4]
+  000000B6: 85 D2              test        edx,edx
+  000000B8: 0F 84 1F 01 00 00  je          000001DD
+  000000BE: A1 00 00 00 00     mov         eax,dword ptr [_unk_133D6C4]
+  000000C3: 53                 push        ebx
+  000000C4: 8A 1D 00 00 00 00  mov         bl,byte ptr [_unk_133D6BC]
+  000000CA: 0F B6 CB           movzx       ecx,bl
+  000000CD: 0F B7 04 48        movzx       eax,word ptr [eax+ecx*2]
+  000000D1: 3B D0              cmp         edx,eax
+  000000D3: 75 0A              jne         000000DF
+  000000D5: 0F B6 C3           movzx       eax,bl
+  000000D8: 66 40              inc         ax
+  000000DA: 0F B7 C0           movzx       eax,ax
+  000000DD: EB 0C              jmp         000000EB
+  000000DF: 6A 69              push        69h
+  000000E1: E8 00 00 00 00     call        _FFX_Btl_MenuDispatchSfx
+  000000E6: 83 C4 04           add         esp,4
+  000000E9: 33 C0              xor         eax,eax
+  000000EB: A2 00 00 00 00     mov         byte ptr [_unk_133D6BC],al
+  000000F0: 98                 cwde
+  000000F1: 5B                 pop         ebx
+  000000F2: 3B 05 00 00 00 00  cmp         eax,dword ptr [_unk_133D6C0]
+  000000F8: 0F 82 DF 00 00 00  jb          000001DD
+  000000FE: B8 05 00 00 00     mov         eax,5
+  00000103: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  00000109: 8B E5              mov         esp,ebp
+  0000010B: 5D                 pop         ebp
+  0000010C: C3                 ret
+  0000010D: B8 07 00 00 00     mov         eax,7
+  00000112: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  00000118: 8B E5              mov         esp,ebp
+  0000011A: 5D                 pop         ebp
+  0000011B: C3                 ret
+$LN8:
+  0000011C: E8 00 00 00 00     call        _FFX_BtlHud_ShimmerStopOnExit
+  00000121: 68 00 00 00 00     push        offset ??_C@_05BEMJOLL@bgood?$AA@
+  00000126: 6A 02              push        2
+  00000128: C6 05 00 00 00 00  mov         byte ptr [_byte_133D6B2],1
+            01
+  0000012F: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimStart
+  00000134: 6A 68              push        68h
+  00000136: E8 00 00 00 00     call        _FFX_Btl_MenuDispatchSfx
+  0000013B: B8 06 00 00 00     mov         eax,6
+  00000140: 83 C4 0C           add         esp,0Ch
+  00000143: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  00000149: 8B E5              mov         esp,ebp
+  0000014B: 5D                 pop         ebp
+  0000014C: C3                 ret
+$LN7:
+  0000014D: 68 00 00 00 00     push        offset ??_C@_05BEMJOLL@bgood?$AA@
+  00000152: 6A 02              push        2
+  00000154: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimIsPlaying
+  00000159: 83 C4 08           add         esp,8
+  0000015C: 85 C0              test        eax,eax
+  0000015E: 74 7D              je          000001DD
+$LABEL_16$28:
+  00000160: 68 00 00 00 00     push        offset ??_C@_05EGKCDFAI@bauro?$AA@
+  00000165: 6A 02              push        2
+  00000167: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimStop
+  0000016C: 68 00 00 00 00     push        offset ??_C@_06ODONHOHG@bauro2?$AA@
+  00000171: 6A 02              push        2
+  00000173: E8 00 00 00 00     call        _FFX_BtlHud_NamedAnimStop
+  00000178: B8 09 00 00 00     mov         eax,9
+  0000017D: 83 C4 10           add         esp,10h
+  00000180: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  00000186: 8B E5              mov         esp,ebp
+  00000188: 5D                 pop         ebp
+  00000189: C3                 ret
+$LN5:
+  0000018A: E8 00 00 00 00     call        _FFX_BtlHud_ShimmerStopOnExit
+  0000018F: B8 08 00 00 00     mov         eax,8
+  00000194: C6 05 00 00 00 00  mov         byte ptr [_byte_133D6B2],0
+            00
+  0000019B: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  000001A1: 8B E5              mov         esp,ebp
+  000001A3: 5D                 pop         ebp
+  000001A4: C3                 ret
+$LN3:
+  000001A5: 66 41              inc         cx
+  000001A7: 66 89 0D 02 00 00  mov         word ptr [_byte_133D6B2+2],cx
+            00
+  000001AE: 8B E5              mov         esp,ebp
+  000001B0: 5D                 pop         ebp
+  000001B1: C3                 ret
+$LN2:
+  000001B2: FF 35 30 DD CF 04  push        dword ptr ds:[4CFDD30h]
+  000001B8: 0F B6 05 00 00 00  movzx       eax,byte ptr [_byte_133D6B2]
+            00
+  000001BF: FF 35 40 DD CF 04  push        dword ptr ds:[4CFDD40h]
+  000001C5: 50                 push        eax
+  000001C6: 6A 02              push        2
+  000001C8: E8 00 00 00 00     call        _FFX_BtlHud_SubmenuWriteFrameData
+  000001CD: 83 C4 10           add         esp,10h
+  000001D0: E8 00 00 00 00     call        _FFX_BtlHud_ShimmerResetAll
+  000001D5: 33 C0              xor         eax,eax
+  000001D7: 66 A3 02 00 00 00  mov         word ptr [_byte_133D6B2+2],ax
+  000001DD: 8B E5              mov         esp,ebp
+  000001DF: 5D                 pop         ebp
+  000001E0: C3                 ret
+  000001E1: 8D 49 00           lea         ecx,[ecx]
+$LN27:
+  000001E4: 00 00              add         byte ptr [eax],al
+  000001E6: 00 00              add         byte ptr [eax],al
+  000001E8: 00 00              add         byte ptr [eax],al
+  000001EA: 00 00              add         byte ptr [eax],al
+  000001EC: 00 00              add         byte ptr [eax],al
+  000001EE: 00 00              add         byte ptr [eax],al
+  000001F0: 00 00              add         byte ptr [eax],al
+  000001F2: 00 00              add         byte ptr [eax],al
+  000001F4: 00 00              add         byte ptr [eax],al
+  000001F6: 00 00              add         byte ptr [eax],al
+  000001F8: 00 00              add         byte ptr [eax],al
+  000001FA: 00 00              add         byte ptr [eax],al
+  000001FC: 00 00              add         byte ptr [eax],al
+  000001FE: 00 00              add         byte ptr [eax],al
+  00000200: 00 00              add         byte ptr [eax],al
+  00000202: 00 00              add         byte ptr [eax],al
+  00000204: 00 00              add         byte ptr [eax],al
+  00000206: 00 00              add         byte ptr [eax],al
+  00000208: 00 00              add         byte ptr [eax],al
+  0000020A: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          23 .rdata
+         20C .text

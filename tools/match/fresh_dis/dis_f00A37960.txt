@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A37960.obj
+
+File Type: COFF OBJECT
+
+_Iggy_GDraw_FullShutdown:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 34           sub         esp,34h
+  00000006: 56                 push        esi
+  00000007: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000000A: 85 F6              test        esi,esi
+  0000000C: 0F 84 10 01 00 00  je          00000122
+  00000012: 83 3E 00           cmp         dword ptr [esi],0
+  00000015: 0F 84 D8 00 00 00  je          000000F3
+  0000001B: 6A 30              push        30h
+  0000001D: 8D 45 CC           lea         eax,[ebp-34h]
+  00000020: 6A 00              push        0
+  00000022: 50                 push        eax
+  00000023: E8 00 00 00 00     call        _memset
+  00000028: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000002B: 83 C4 0C           add         esp,0Ch
+  0000002E: 8B 08              mov         ecx,dword ptr [eax]
+  00000030: 50                 push        eax
+  00000031: 8B 81 B8 01 00 00  mov         eax,dword ptr [ecx+1B8h]
+  00000037: FF D0              call        eax
+  00000039: E8 00 00 00 00     call        _Iggy_GDraw_FreeTempResources
+  0000003E: E8 00 00 00 00     call        _Iggy_GDraw_CleanupRenderStates
+  00000043: 8B 8E 98 07 00 00  mov         ecx,dword ptr [esi+798h]
+  00000049: 85 C9              test        ecx,ecx
+  0000004B: 74 12              je          0000005F
+  0000004D: 8B 01              mov         eax,dword ptr [ecx]
+  0000004F: 51                 push        ecx
+  00000050: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000053: FF D0              call        eax
+  00000055: C7 86 98 07 00 00  mov         dword ptr [esi+798h],0
+            00 00 00 00
+  0000005F: 8B 8E 9C 07 00 00  mov         ecx,dword ptr [esi+79Ch]
+  00000065: 85 C9              test        ecx,ecx
+  00000067: 74 12              je          0000007B
+  00000069: 8B 01              mov         eax,dword ptr [ecx]
+  0000006B: 51                 push        ecx
+  0000006C: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000006F: FF D0              call        eax
+  00000071: C7 86 9C 07 00 00  mov         dword ptr [esi+79Ch],0
+            00 00 00 00
+  0000007B: 8B 8E 98 09 00 00  mov         ecx,dword ptr [esi+998h]
+  00000081: 85 C9              test        ecx,ecx
+  00000083: 74 12              je          00000097
+  00000085: 8B 01              mov         eax,dword ptr [ecx]
+  00000087: 51                 push        ecx
+  00000088: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000008B: FF D0              call        eax
+  0000008D: C7 86 98 09 00 00  mov         dword ptr [esi+998h],0
+            00 00 00 00
+  00000097: 8B 8E A8 09 00 00  mov         ecx,dword ptr [esi+9A8h]
+  0000009D: 85 C9              test        ecx,ecx
+  0000009F: 74 12              je          000000B3
+  000000A1: 8B 01              mov         eax,dword ptr [ecx]
+  000000A3: 51                 push        ecx
+  000000A4: 8B 40 08           mov         eax,dword ptr [eax+8]
+  000000A7: FF D0              call        eax
+  000000A9: C7 86 A8 09 00 00  mov         dword ptr [esi+9A8h],0
+            00 00 00 00
+  000000B3: 8D 45 CC           lea         eax,[ebp-34h]
+  000000B6: 50                 push        eax
+  000000B7: E8 00 00 00 00     call        _Iggy_GDraw_Destroy
+  000000BC: 8B 86 B0 0A 00 00  mov         eax,dword ptr [esi+0AB0h]
+  000000C2: 83 C4 04           add         esp,4
+  000000C5: 85 C0              test        eax,eax
+  000000C7: 74 0D              je          000000D6
+  000000C9: 8D 4D CC           lea         ecx,[ebp-34h]
+  000000CC: 51                 push        ecx
+  000000CD: 50                 push        eax
+  000000CE: E8 00 00 00 00     call        _Iggy_GDraw_PoolEvict
+  000000D3: 83 C4 08           add         esp,8
+  000000D6: 8B 86 B4 0A 00 00  mov         eax,dword ptr [esi+0AB4h]
+  000000DC: 85 C0              test        eax,eax
+  000000DE: 74 0D              je          000000ED
+  000000E0: 8D 4D CC           lea         ecx,[ebp-34h]
+  000000E3: 51                 push        ecx
+  000000E4: 50                 push        eax
+  000000E5: E8 00 00 00 00     call        _Iggy_GDraw_PoolEvict
+  000000EA: 83 C4 08           add         esp,8
+  000000ED: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  000000F3: 8B 86 B0 0A 00 00  mov         eax,dword ptr [esi+0AB0h]
+  000000F9: 85 C0              test        eax,eax
+  000000FB: 74 09              je          00000106
+  000000FD: 50                 push        eax
+  000000FE: E8 00 00 00 00     call        _IggyGDrawFree
+  00000103: 83 C4 04           add         esp,4
+  00000106: 8B 86 B4 0A 00 00  mov         eax,dword ptr [esi+0AB4h]
+  0000010C: 85 C0              test        eax,eax
+  0000010E: 74 09              je          00000119
+  00000110: 50                 push        eax
+  00000111: E8 00 00 00 00     call        _IggyGDrawFree
+  00000116: 83 C4 04           add         esp,4
+  00000119: 56                 push        esi
+  0000011A: E8 00 00 00 00     call        _IggyGDrawFree
+  0000011F: 83 C4 04           add         esp,4
+  00000122: 5E                 pop         esi
+  00000123: 8B E5              mov         esp,ebp
+  00000125: 5D                 pop         ebp
+  00000126: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         127 .text

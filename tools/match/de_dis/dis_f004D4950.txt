@@ -1,0 +1,296 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004D4950.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_CompileDefines@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 68           sub         esp,68h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 52                 push        edx
+  0000000A: 8D 45 98           lea         eax,[ebp-68h]
+  0000000D: 50                 push        eax
+  0000000E: 8D 45 B8           lea         eax,[ebp-48h]
+  00000011: 50                 push        eax
+  00000012: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  00000015: E8 00 00 00 00     call        _Phyre_Shader_BuildCompileDefString
+  0000001A: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000001D: 8D 0C 00           lea         ecx,[eax+eax]
+  00000020: 83 C4 0C           add         esp,0Ch
+  00000023: 8D 71 01           lea         esi,[ecx+1]
+  00000026: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000029: 3B 33              cmp         esi,dword ptr [ebx]
+  0000002B: 74 5C              je          00000089
+  0000002D: 33 FF              xor         edi,edi
+  0000002F: 83 F9 FF           cmp         ecx,0FFFFFFFFh
+  00000032: 74 34              je          00000068
+  00000034: 8D 04 B5 00 00 00  lea         eax,[esi*4]
+            00
+  0000003B: 6A 04              push        4
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000043: 8B F8              mov         edi,eax
+  00000045: 83 C4 08           add         esp,8
+  00000048: 85 FF              test        edi,edi
+  0000004A: 0F 84 83 00 00 00  je          000000D3
+  00000050: 85 F6              test        esi,esi
+  00000052: 74 14              je          00000068
+  00000054: 8B CF              mov         ecx,edi
+  00000056: 8B D6              mov         edx,esi
+  00000058: 85 C9              test        ecx,ecx
+  0000005A: 74 06              je          00000062
+  0000005C: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000062: 83 C1 04           add         ecx,4
+  00000065: 4A                 dec         edx
+  00000066: 75 F0              jne         00000058
+  00000068: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  0000006B: 3B CF              cmp         ecx,edi
+  0000006D: 74 15              je          00000084
+  0000006F: 8B 03              mov         eax,dword ptr [ebx]
+  00000071: 85 C0              test        eax,eax
+  00000073: 78 0F              js          00000084
+  00000075: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000007A: 50                 push        eax
+  0000007B: 51                 push        ecx
+  0000007C: E8 00 00 00 00     call        _Phyre_Stream_IsEOF
+  00000081: 83 C4 08           add         esp,8
+  00000084: 89 7B 04           mov         dword ptr [ebx+4],edi
+  00000087: 89 33              mov         dword ptr [ebx],esi
+  00000089: 8D 45 D8           lea         eax,[ebp-28h]
+  0000008C: 68 00 00 00 00     push        offset ??_C@_02KEDOHJFP@?9D?$AA@
+  00000091: 50                 push        eax
+  00000092: E8 00 00 00 00     call        _Phyre_String_Assign
+  00000097: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  0000009A: FF 70 04           push        dword ptr [eax+4]
+  0000009D: 8D 45 D8           lea         eax,[ebp-28h]
+  000000A0: 50                 push        eax
+  000000A1: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  000000A6: 8D 45 D8           lea         eax,[ebp-28h]
+  000000A9: 68 00 00 00 00     push        offset ??_C@_13NMPKAAJP@?$AA?$DN?$AA?$AA@
+  000000AE: 50                 push        eax
+  000000AF: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  000000B4: FF 75 F8           push        dword ptr [ebp-8]
+  000000B7: 8D 45 D8           lea         eax,[ebp-28h]
+  000000BA: 50                 push        eax
+  000000BB: E8 00 00 00 00     call        _Phyre_String_Append
+  000000C0: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000C3: 8B 5B 04           mov         ebx,dword ptr [ebx+4]
+  000000C6: 83 C4 20           add         esp,20h
+  000000C9: 85 C0              test        eax,eax
+  000000CB: 74 18              je          000000E5
+  000000CD: 8B 7D DC           mov         edi,dword ptr [ebp-24h]
+  000000D0: 48                 dec         eax
+  000000D1: EB 16              jmp         000000E9
+  000000D3: 85 F6              test        esi,esi
+  000000D5: 74 91              je          00000068
+  000000D7: 5F                 pop         edi
+  000000D8: 5E                 pop         esi
+  000000D9: B8 0D 00 00 00     mov         eax,0Dh
+  000000DE: 5B                 pop         ebx
+  000000DF: 8B E5              mov         esp,ebp
+  000000E1: 5D                 pop         ebp
+  000000E2: C2 08 00           ret         8
+  000000E5: 33 FF              xor         edi,edi
+  000000E7: 33 C0              xor         eax,eax
+  000000E9: 40                 inc         eax
+  000000EA: 33 F6              xor         esi,esi
+  000000EC: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  000000EF: 85 FF              test        edi,edi
+  000000F1: 74 22              je          00000115
+  000000F3: 6A 02              push        2
+  000000F5: 50                 push        eax
+  000000F6: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  000000FB: 8B F0              mov         esi,eax
+  000000FD: 83 C4 08           add         esp,8
+  00000100: 85 F6              test        esi,esi
+  00000102: 0F 84 E6 01 00 00  je          000002EE
+  00000108: FF 75 EC           push        dword ptr [ebp-14h]
+  0000010B: 57                 push        edi
+  0000010C: 56                 push        esi
+  0000010D: E8 00 00 00 00     call        _memcpy
+  00000112: 83 C4 0C           add         esp,0Ch
+  00000115: F6 03 01           test        byte ptr [ebx],1
+  00000118: 75 0A              jne         00000124
+  0000011A: FF 33              push        dword ptr [ebx]
+  0000011C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000121: 83 C4 04           add         esp,4
+  00000124: 33 FF              xor         edi,edi
+  00000126: 89 33              mov         dword ptr [ebx],esi
+  00000128: 8D 5F 01           lea         ebx,[edi+1]
+  0000012B: 89 7D EC           mov         dword ptr [ebp-14h],edi
+  0000012E: 39 7D F8           cmp         dword ptr [ebp-8],edi
+  00000131: 0F 84 7A 01 00 00  je          000002B1
+  00000137: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000013A: F7 D8              neg         eax
+  0000013C: 1B C0              sbb         eax,eax
+  0000013E: 23 45 0C           and         eax,dword ptr [ebp+0Ch]
+  00000141: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000144: FF 74 BD B8        push        dword ptr [ebp+edi*4-48h]
+  00000148: E8 00 00 00 00     call        _PLightType_GetByBoundedIndex
+  0000014D: 8B F0              mov         esi,eax
+  0000014F: 8D 45 FC           lea         eax,[ebp-4]
+  00000152: 68 00 00 00 00     push        offset ??_C@_0N@DMDDCFEA@?9DLIGHTTYPE_?$AA@
+  00000157: 50                 push        eax
+  00000158: E8 00 00 00 00     call        _Phyre_String_Assign
+  0000015D: 8D 45 FC           lea         eax,[ebp-4]
+  00000160: 57                 push        edi
+  00000161: 50                 push        eax
+  00000162: E8 00 00 00 00     call        _Phyre_String_Append
+  00000167: 8D 45 FC           lea         eax,[ebp-4]
+  0000016A: 68 00 00 00 00     push        offset ??_C@_13NMPKAAJP@?$AA?$DN?$AA?$AA@
+  0000016F: 50                 push        eax
+  00000170: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000175: FF 76 04           push        dword ptr [esi+4]
+  00000178: 8D 45 FC           lea         eax,[ebp-4]
+  0000017B: 50                 push        eax
+  0000017C: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000181: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000184: 83 C4 24           add         esp,24h
+  00000187: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000018A: 8D 0C 98           lea         ecx,[eax+ebx*4]
+  0000018D: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000190: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000193: 85 C0              test        eax,eax
+  00000195: 74 03              je          0000019A
+  00000197: 48                 dec         eax
+  00000198: EB 02              jmp         0000019C
+  0000019A: 33 C0              xor         eax,eax
+  0000019C: 40                 inc         eax
+  0000019D: 33 F6              xor         esi,esi
+  0000019F: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  000001A2: 39 75 F4           cmp         dword ptr [ebp-0Ch],esi
+  000001A5: 74 27              je          000001CE
+  000001A7: 6A 02              push        2
+  000001A9: 50                 push        eax
+  000001AA: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  000001AF: 8B F0              mov         esi,eax
+  000001B1: 83 C4 08           add         esp,8
+  000001B4: 85 F6              test        esi,esi
+  000001B6: 0F 84 26 01 00 00  je          000002E2
+  000001BC: FF 75 E8           push        dword ptr [ebp-18h]
+  000001BF: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000001C2: 56                 push        esi
+  000001C3: E8 00 00 00 00     call        _memcpy
+  000001C8: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  000001CB: 83 C4 0C           add         esp,0Ch
+  000001CE: F6 01 01           test        byte ptr [ecx],1
+  000001D1: 75 0D              jne         000001E0
+  000001D3: FF 31              push        dword ptr [ecx]
+  000001D5: E8 00 00 00 00     call        _Engine_AlignedFree
+  000001DA: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  000001DD: 83 C4 04           add         esp,4
+  000001E0: 8B 44 BD 98        mov         eax,dword ptr [ebp+edi*4-68h]
+  000001E4: 43                 inc         ebx
+  000001E5: 89 31              mov         dword ptr [ecx],esi
+  000001E7: 85 C0              test        eax,eax
+  000001E9: 0F 84 A9 00 00 00  je          00000298
+  000001EF: 50                 push        eax
+  000001F0: E8 00 00 00 00     call        _Phyre_Shader_CompileDefines_Lookup
+  000001F5: 8B F0              mov         esi,eax
+  000001F7: 8D 45 E0           lea         eax,[ebp-20h]
+  000001FA: 68 00 00 00 00     push        offset ??_C@_0O@MICKNKHE@?9DSHADOWTYPE_?$AA@
+  000001FF: 50                 push        eax
+  00000200: E8 00 00 00 00     call        _Phyre_String_Assign
+  00000205: 8D 45 E0           lea         eax,[ebp-20h]
+  00000208: 57                 push        edi
+  00000209: 50                 push        eax
+  0000020A: E8 00 00 00 00     call        _Phyre_String_Append
+  0000020F: 8D 45 E0           lea         eax,[ebp-20h]
+  00000212: 68 00 00 00 00     push        offset ??_C@_13NMPKAAJP@?$AA?$DN?$AA?$AA@
+  00000217: 50                 push        eax
+  00000218: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  0000021D: FF 76 04           push        dword ptr [esi+4]
+  00000220: 8D 45 E0           lea         eax,[ebp-20h]
+  00000223: 50                 push        eax
+  00000224: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000229: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000022C: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000022F: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000232: 83 C4 24           add         esp,24h
+  00000235: 8D 04 98           lea         eax,[eax+ebx*4]
+  00000238: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000023B: 85 C9              test        ecx,ecx
+  0000023D: 74 06              je          00000245
+  0000023F: 8B 7D E4           mov         edi,dword ptr [ebp-1Ch]
+  00000242: 49                 dec         ecx
+  00000243: EB 04              jmp         00000249
+  00000245: 33 FF              xor         edi,edi
+  00000247: 33 C9              xor         ecx,ecx
+  00000249: 41                 inc         ecx
+  0000024A: 33 F6              xor         esi,esi
+  0000024C: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  0000024F: 85 FF              test        edi,edi
+  00000251: 74 21              je          00000274
+  00000253: 6A 02              push        2
+  00000255: 51                 push        ecx
+  00000256: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000025B: 8B F0              mov         esi,eax
+  0000025D: 83 C4 08           add         esp,8
+  00000260: 85 F6              test        esi,esi
+  00000262: 74 72              je          000002D6
+  00000264: FF 75 E8           push        dword ptr [ebp-18h]
+  00000267: 57                 push        edi
+  00000268: 56                 push        esi
+  00000269: E8 00 00 00 00     call        _memcpy
+  0000026E: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00000271: 83 C4 0C           add         esp,0Ch
+  00000274: F6 00 01           test        byte ptr [eax],1
+  00000277: 75 0D              jne         00000286
+  00000279: FF 30              push        dword ptr [eax]
+  0000027B: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000280: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00000283: 83 C4 04           add         esp,4
+  00000286: 89 30              mov         dword ptr [eax],esi
+  00000288: 8D 45 E0           lea         eax,[ebp-20h]
+  0000028B: 50                 push        eax
+  0000028C: 43                 inc         ebx
+  0000028D: E8 00 00 00 00     call        _Phyre_String_Destructor
+  00000292: 8B 7D EC           mov         edi,dword ptr [ebp-14h]
+  00000295: 83 C4 04           add         esp,4
+  00000298: 8D 45 FC           lea         eax,[ebp-4]
+  0000029B: 50                 push        eax
+  0000029C: E8 00 00 00 00     call        _Phyre_String_Destructor
+  000002A1: 47                 inc         edi
+  000002A2: 83 C4 04           add         esp,4
+  000002A5: 89 7D EC           mov         dword ptr [ebp-14h],edi
+  000002A8: 3B 7D F8           cmp         edi,dword ptr [ebp-8]
+  000002AB: 0F 82 93 FE FF FF  jb          00000144
+  000002B1: 53                 push        ebx
+  000002B2: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000002B5: E8 00 00 00 00     call        _PManagedArray_Truncate
+  000002BA: 83 C4 08           add         esp,8
+  000002BD: 33 F6              xor         esi,esi
+  000002BF: 8D 45 D8           lea         eax,[ebp-28h]
+  000002C2: 50                 push        eax
+  000002C3: E8 00 00 00 00     call        _Phyre_String_Destructor
+  000002C8: 83 C4 04           add         esp,4
+  000002CB: 8B C6              mov         eax,esi
+  000002CD: 5F                 pop         edi
+  000002CE: 5E                 pop         esi
+  000002CF: 5B                 pop         ebx
+  000002D0: 8B E5              mov         esp,ebp
+  000002D2: 5D                 pop         ebp
+  000002D3: C2 08 00           ret         8
+  000002D6: 8D 45 E0           lea         eax,[ebp-20h]
+  000002D9: 50                 push        eax
+  000002DA: E8 00 00 00 00     call        _Phyre_String_Destructor
+  000002DF: 83 C4 04           add         esp,4
+  000002E2: 8D 45 FC           lea         eax,[ebp-4]
+  000002E5: 50                 push        eax
+  000002E6: E8 00 00 00 00     call        _Phyre_String_Destructor
+  000002EB: 83 C4 04           add         esp,4
+  000002EE: BE 0D 00 00 00     mov         esi,0Dh
+  000002F3: EB CA              jmp         000002BF
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          22 .rdata
+         2F5 .text

@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00873940.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_ProcessEncounterInput:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000008: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000B: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000E: 74 05              je          00000015
+  00000010: E8 00 00 00 00     call        _FFX_Field_ResolveEncounterZoneIndices
+  00000015: 8D 45 FC           lea         eax,[ebp-4]
+  00000018: 50                 push        eax
+  00000019: 8D 45 08           lea         eax,[ebp+8]
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _FFX_Field_ExportEncounterZoneIndices
+  00000022: 0F BE 45 08        movsx       eax,byte ptr [ebp+8]
+  00000026: 03 C0              add         eax,eax
+  00000028: 50                 push        eax
+  00000029: 6A 00              push        0
+  0000002B: 6A 00              push        0
+  0000002D: E8 00 00 00 00     call        _FFX_Input_ReadButtonEdge
+  00000032: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000035: 03 C0              add         eax,eax
+  00000037: 50                 push        eax
+  00000038: 6A 00              push        0
+  0000003A: 6A 00              push        0
+  0000003C: E8 00 00 00 00     call        _FFX_Input_ReadButtonRepeat
+  00000041: 83 C4 20           add         esp,20h
+  00000044: 8B E5              mov         esp,ebp
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

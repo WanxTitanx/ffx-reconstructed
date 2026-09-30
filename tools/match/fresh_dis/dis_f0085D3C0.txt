@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085D3C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_MapCharacterStateOrSlotFallback:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: FF 75 10           push        dword ptr [ebp+10h]
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  00000012: 8B D8              mov         ebx,eax
+  00000014: 53                 push        ebx
+  00000015: 57                 push        edi
+  00000016: E8 00 00 00 00     call        _FFX_Field_MapCharacterState
+  0000001B: 8B F0              mov         esi,eax
+  0000001D: 83 C4 10           add         esp,10h
+  00000020: 85 F6              test        esi,esi
+  00000022: 79 31              jns         00000055
+  00000024: 57                 push        edi
+  00000025: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  0000002A: 0F B7 40 28        movzx       eax,word ptr [eax+28h]
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 3B D8              cmp         ebx,eax
+  00000033: 74 0A              je          0000003F
+  00000035: B9 FF FF 00 00     mov         ecx,0FFFFh
+  0000003A: 66 3B C1           cmp         ax,cx
+  0000003D: 75 16              jne         00000055
+  0000003F: 0F B7 77 36        movzx       esi,word ptr [edi+36h]
+  00000043: D1 EE              shr         esi,1
+  00000045: 83 E6 03           and         esi,3
+  00000048: 83 FE 03           cmp         esi,3
+  0000004B: 75 08              jne         00000055
+  0000004D: 5F                 pop         edi
+  0000004E: 5E                 pop         esi
+  0000004F: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000052: 5B                 pop         ebx
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+  00000055: 5F                 pop         edi
+  00000056: 8B C6              mov         eax,esi
+  00000058: 5E                 pop         esi
+  00000059: 5B                 pop         ebx
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5C .text

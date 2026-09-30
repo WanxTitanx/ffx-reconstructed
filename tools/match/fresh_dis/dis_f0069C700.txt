@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069C700.obj
+
+File Type: COFF OBJECT
+
+@Phyre_StringMapNode_Alloc@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 51                 push        ecx
+  00000003: 8B FA              mov         edi,edx
+  00000005: E8 00 00 00 00     call        _Phyre_StringMapNode_AllocStringNode
+  0000000A: 8B F0              mov         esi,eax
+  0000000C: 33 C0              xor         eax,eax
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 66 89 46 0C        mov         word ptr [esi+0Ch],ax
+  00000015: 83 FE F0           cmp         esi,0FFFFFFF0h
+  00000018: 74 13              je          0000002D
+  0000001A: 50                 push        eax
+  0000001B: 8D 4E 10           lea         ecx,[esi+10h]
+  0000001E: 57                 push        edi
+  0000001F: 51                 push        ecx
+  00000020: E8 00 00 00 00     call        _Phyre_StdString_Move
+  00000025: 83 C4 0C           add         esp,0Ch
+  00000028: 8B C6              mov         eax,esi
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: C3                 ret
+  0000002D: 5F                 pop         edi
+  0000002E: B8 F0 FF FF FF     mov         eax,0FFFFFFF0h
+  00000033: 5E                 pop         esi
+  00000034: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          35 .text

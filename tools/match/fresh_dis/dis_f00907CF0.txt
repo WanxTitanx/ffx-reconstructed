@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00907CF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Splash_AnimTick_RevealIn:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: B8 AA 02 00 00     mov         eax,2AAh
+  0000000C: 66 01 46 06        add         word ptr [esi+6],ax
+  00000010: B8 00 10 00 00     mov         eax,1000h
+  00000015: 66 39 46 06        cmp         word ptr [esi+6],ax
+  00000019: 7C 04              jl          0000001F
+  0000001B: 66 89 46 06        mov         word ptr [esi+6],ax
+  0000001F: 0F BF 46 10        movsx       eax,word ptr [esi+10h]
+  00000023: 0F BF 4E 06        movsx       ecx,word ptr [esi+6]
+  00000027: 0F AF C1           imul        eax,ecx
+  0000002A: 99                 cdq
+  0000002B: 81 E2 FF 0F 00 00  and         edx,0FFFh
+  00000031: 03 C2              add         eax,edx
+  00000033: C1 F8 0C           sar         eax,0Ch
+  00000036: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000039: DB 45 08           fild        dword ptr [ebp+8]
+  0000003C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000003F: D9 45 08           fld         dword ptr [ebp+8]
+  00000042: D8 46 28           fadd        dword ptr [esi+28h]
+  00000045: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000048: D9 45 08           fld         dword ptr [ebp+8]
+  0000004B: D9 56 50           fst         dword ptr [esi+50h]
+  0000004E: D9 46 30           fld         dword ptr [esi+30h]
+  00000051: DE D9              fcompp
+  00000053: DF E0              fnstsw      ax
+  00000055: F6 C4 41           test        ah,41h
+  00000058: 75 05              jne         0000005F
+  0000005A: 33 C0              xor         eax,eax
+  0000005C: 5E                 pop         esi
+  0000005D: 5D                 pop         ebp
+  0000005E: C3                 ret
+  0000005F: B8 02 00 00 00     mov         eax,2
+  00000064: 66 89 46 08        mov         word ptr [esi+8],ax
+  00000068: A1 00 00 00 00     mov         eax,dword ptr [_FFX_Menu_Nullsub_Ret0_907D70]
+  0000006D: 89 46 74           mov         dword ptr [esi+74h],eax
+  00000070: B8 01 00 00 00     mov         eax,1
+  00000075: 5E                 pop         esi
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          78 .text

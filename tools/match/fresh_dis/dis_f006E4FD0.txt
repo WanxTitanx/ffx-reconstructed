@@ -1,0 +1,119 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E4FD0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Particle_Emit@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: 80 3E 00           cmp         byte ptr [esi],0
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: 75 10              jne         00000021
+  00000011: 80 7E 01 00        cmp         byte ptr [esi+1],0
+  00000015: 75 0A              jne         00000021
+  00000017: 83 7E 10 02        cmp         dword ptr [esi+10h],2
+  0000001B: 0F 8C 0A 01 00 00  jl          0000012B
+  00000021: F7 46 20 FF FF FF  test        dword ptr [esi+20h],7FFFFFFFh
+            7F
+  00000028: 0F 84 FD 00 00 00  je          0000012B
+  0000002E: 83 7E 2C 00        cmp         dword ptr [esi+2Ch],0
+  00000032: 0F 84 F3 00 00 00  je          0000012B
+  00000038: 83 7E 30 00        cmp         dword ptr [esi+30h],0
+  0000003C: 0F 84 E9 00 00 00  je          0000012B
+  00000042: 6A 00              push        0
+  00000044: 6A 00              push        0
+  00000046: 57                 push        edi
+  00000047: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  0000004C: 6A 00              push        0
+  0000004E: 57                 push        edi
+  0000004F: E8 00 00 00 00     call        _Phyre_ShaderEffect_ConfigureFromParams
+  00000054: E8 00 00 00 00     call        _FFX_Phyre_GetRenderEngine
+  00000059: 6A 00              push        0
+  0000005B: 57                 push        edi
+  0000005C: E8 00 00 00 00     call        _PostProcess_UpdateFrameBufferLetterbox
+  00000061: 83 C4 1C           add         esp,1Ch
+  00000064: E8 00 00 00 00     call        _FFX_Phyre_GetRenderEngine
+  00000069: 83 7E 10 02        cmp         dword ptr [esi+10h],2
+  0000006D: D9 80 8C 23 01 00  fld         dword ptr [eax+1238Ch]
+  00000073: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000076: D9 80 90 23 01 00  fld         dword ptr [eax+12390h]
+  0000007C: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000007F: D9 80 94 23 01 00  fld         dword ptr [eax+12394h]
+  00000085: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000088: D9 45 FC           fld         dword ptr [ebp-4]
+  0000008B: D9 45 F8           fld         dword ptr [ebp-8]
+  0000008E: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000091: 76 13              jbe         000000A6
+  00000093: DD D8              fstp        st(0)
+  00000095: 6A 00              push        0
+  00000097: DD D8              fstp        st(0)
+  00000099: 57                 push        edi
+  0000009A: DD D8              fstp        st(0)
+  0000009C: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  000000A1: 83 C4 08           add         esp,8
+  000000A4: EB 25              jmp         000000CB
+  000000A6: D9 E8              fld1
+  000000A8: 83 EC 20           sub         esp,20h
+  000000AB: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  000000AF: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  000000B3: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000000B7: DD 1C 24           fstp        qword ptr [esp]
+  000000BA: 57                 push        edi
+  000000BB: E8 00 00 00 00     call        _Phyre_Renderer_ClearColor
+  000000C0: 6A 01              push        1
+  000000C2: 57                 push        edi
+  000000C3: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  000000C8: 83 C4 2C           add         esp,2Ch
+  000000CB: D9 05 00 00 00 00  fld         dword ptr [__real@3f000000]
+  000000D1: A1 00 00 00 00     mov         eax,dword ptr [_dword_CCC8D4]
+  000000D6: D9 45 FC           fld         dword ptr [ebp-4]
+  000000D9: 89 47 48           mov         dword ptr [edi+48h],eax
+  000000DC: D8 D9              fcomp       st(1)
+  000000DE: DF E0              fnstsw      ax
+  000000E0: F6 C4 41           test        ah,41h
+  000000E3: 7A 24              jp          00000109
+  000000E5: D9 45 F8           fld         dword ptr [ebp-8]
+  000000E8: D8 D9              fcomp       st(1)
+  000000EA: DF E0              fnstsw      ax
+  000000EC: F6 C4 41           test        ah,41h
+  000000EF: 7A 18              jp          00000109
+  000000F1: D8 5D F4           fcomp       dword ptr [ebp-0Ch]
+  000000F4: DF E0              fnstsw      ax
+  000000F6: F6 C4 01           test        ah,1
+  000000F9: 75 10              jne         0000010B
+  000000FB: FF 76 38           push        dword ptr [esi+38h]
+  000000FE: 57                 push        edi
+  000000FF: E8 00 00 00 00     call        _Phyre_Renderer_DispatchDraw_w
+  00000104: 83 C4 08           add         esp,8
+  00000107: EB 02              jmp         0000010B
+  00000109: DD D8              fstp        st(0)
+  0000010B: FF B7 3C 01 00 00  push        dword ptr [edi+13Ch]
+  00000111: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  00000114: 6A 00              push        0
+  00000116: FF 70 10           push        dword ptr [eax+10h]
+  00000119: 50                 push        eax
+  0000011A: 57                 push        edi
+  0000011B: E8 00 00 00 00     call        _Phyre_Renderer_DispatchDraw
+  00000120: 6A 01              push        1
+  00000122: 57                 push        edi
+  00000123: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Deallocate
+  00000128: 83 C4 1C           add         esp,1Ch
+  0000012B: 5F                 pop         edi
+  0000012C: 5E                 pop         esi
+  0000012D: 8B E5              mov         esp,ebp
+  0000012F: 5D                 pop         ebp
+  00000130: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+         131 .text

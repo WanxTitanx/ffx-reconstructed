@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DE070.obj
+
+File Type: COFF OBJECT
+
+@FFX_BtlUI_HudRegisterTemplates@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 84 D2              test        dl,dl
+  00000005: 74 0A              je          00000011
+  00000007: 80 7E 05 00        cmp         byte ptr [esi+5],0
+  0000000B: 74 04              je          00000011
+  0000000D: B0 01              mov         al,1
+  0000000F: EB 02              jmp         00000013
+  00000011: 32 C0              xor         al,al
+  00000013: 88 46 04           mov         byte ptr [esi+4],al
+  00000016: 84 C0              test        al,al
+  00000018: 74 37              je          00000051
+  0000001A: 80 7E 05 00        cmp         byte ptr [esi+5],0
+  0000001E: 74 31              je          00000051
+  00000020: FF B6 5C 01 00 00  push        dword ptr [esi+15Ch]
+  00000026: FF B6 58 01 00 00  push        dword ptr [esi+158h]
+  0000002C: FF 36              push        dword ptr [esi]
+  0000002E: E8 00 00 00 00     call        _Phyre_Matrix4x4_Interpolate
+  00000033: DD 05 00 00 00 00  fld         qword ptr [__real@4031000000000000]
+  00000039: 51                 push        ecx
+  0000003A: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000003E: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000044: DD 1C 24           fstp        qword ptr [esp]
+  00000047: FF 36              push        dword ptr [esi]
+  00000049: E8 00 00 00 00     call        _DebugOverlay_SetScale
+  0000004E: 83 C4 14           add         esp,14h
+  00000051: 5E                 pop         esi
+  00000052: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          53 .text

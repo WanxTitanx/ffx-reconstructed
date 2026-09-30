@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007974F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Event_CheckAndResetSceneScriptState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: B8 00 00 00 00     mov         eax,offset _g_FFX_EventScriptRegSentinel
+  00000009: 85 C0              test        eax,eax
+  0000000B: 74 13              je          00000020
+  0000000D: E8 00 00 00 00     call        _FFX_Event_ResetSceneScriptState
+  00000012: 6A 04              push        4
+  00000014: E8 00 00 00 00     call        _AtelRemoveCtrlWork
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 8B E5              mov         esp,ebp
+  0000001E: 5D                 pop         ebp
+  0000001F: C3                 ret
+  00000020: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000023: 8B E5              mov         esp,ebp
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .text

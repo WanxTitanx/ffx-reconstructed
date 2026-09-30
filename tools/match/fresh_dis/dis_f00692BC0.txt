@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00692BC0.obj
+
+File Type: COFF OBJECT
+
+_FFX_PostProcess_BlurEffectContext_LazyInit:
+  00000000: 83 3D 60 22 33 03  cmp         dword ptr ds:[3332260h],0
+            00
+  00000007: 75 2A              jne         00000033
+  00000009: 68 0C 24 01 00     push        1240Ch
+  0000000E: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000013: 83 C4 04           add         esp,4
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 0F              je          00000029
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _FFX_PostProcess_BlurEffectContext_Ctor
+  00000020: 83 C4 04           add         esp,4
+  00000023: A3 60 22 33 03     mov         dword ptr ds:[03332260h],eax
+  00000028: C3                 ret
+  00000029: C7 05 60 22 33 03  mov         dword ptr ds:[3332260h],0
+            00 00 00 00
+  00000033: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

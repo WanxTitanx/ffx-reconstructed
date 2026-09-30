@@ -1,0 +1,94 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00467A90.obj
+
+File Type: COFF OBJECT
+
+@Engine_MemAlloc_ArrayInsert@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 57                 push        edi
+  00000006: 8B F9              mov         edi,ecx
+  00000008: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000B: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000000E: 40                 inc         eax
+  0000000F: 69 C0 94 00 00 00  imul        eax,eax,94h
+  00000015: 50                 push        eax
+  00000016: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000001B: 8B D8              mov         ebx,eax
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 85 DB              test        ebx,ebx
+  00000022: 0F 84 92 00 00 00  je          000000BA
+  00000028: 8B 07              mov         eax,dword ptr [edi]
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 74 1B              je          00000049
+  0000002E: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000031: 69 C9 94 00 00 00  imul        ecx,ecx,94h
+  00000037: 51                 push        ecx
+  00000038: 50                 push        eax
+  00000039: 53                 push        ebx
+  0000003A: E8 00 00 00 00     call        _memcpy
+  0000003F: FF 37              push        dword ptr [edi]
+  00000041: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000046: 83 C4 10           add         esp,10h
+  00000049: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  0000004C: 56                 push        esi
+  0000004D: 8D 41 01           lea         eax,[ecx+1]
+  00000050: 69 C9 94 00 00 00  imul        ecx,ecx,94h
+  00000056: 89 47 04           mov         dword ptr [edi+4],eax
+  00000059: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000005C: 8D 34 19           lea         esi,[ecx+ebx]
+  0000005F: 89 1F              mov         dword ptr [edi],ebx
+  00000061: 89 06              mov         dword ptr [esi],eax
+  00000063: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000066: 89 46 04           mov         dword ptr [esi+4],eax
+  00000069: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000006C: 89 46 08           mov         dword ptr [esi+8],eax
+  0000006F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000072: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000079: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000080: 68 80 00 00 00     push        80h
+  00000085: 85 C0              test        eax,eax
+  00000087: 74 18              je          000000A1
+  00000089: 50                 push        eax
+  0000008A: 8D 46 14           lea         eax,[esi+14h]
+  0000008D: 50                 push        eax
+  0000008E: E8 00 00 00 00     call        _qmemcpy
+  00000093: 83 C4 0C           add         esp,0Ch
+  00000096: 8B C6              mov         eax,esi
+  00000098: 5E                 pop         esi
+  00000099: 5F                 pop         edi
+  0000009A: 5B                 pop         ebx
+  0000009B: 8B E5              mov         esp,ebp
+  0000009D: 5D                 pop         ebp
+  0000009E: C2 0C 00           ret         0Ch
+  000000A1: 8D 4E 14           lea         ecx,[esi+14h]
+  000000A4: 6A 00              push        0
+  000000A6: 51                 push        ecx
+  000000A7: E8 00 00 00 00     call        _memset
+  000000AC: 83 C4 0C           add         esp,0Ch
+  000000AF: 8B C6              mov         eax,esi
+  000000B1: 5E                 pop         esi
+  000000B2: 5F                 pop         edi
+  000000B3: 5B                 pop         ebx
+  000000B4: 8B E5              mov         esp,ebp
+  000000B6: 5D                 pop         ebp
+  000000B7: C2 0C 00           ret         0Ch
+  000000BA: 5F                 pop         edi
+  000000BB: 33 C0              xor         eax,eax
+  000000BD: 5B                 pop         ebx
+  000000BE: 8B E5              mov         esp,ebp
+  000000C0: 5D                 pop         ebp
+  000000C1: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C4 .text

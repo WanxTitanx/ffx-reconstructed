@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069B450.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Map_EraseByHash@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 52                 push        edx
+  00000008: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000B: 8B D9              mov         ebx,ecx
+  0000000D: E8 00 00 00 00     call        _FFX_Resource_Djb2NameHash
+  00000012: 8B 53 18           mov         edx,dword ptr [ebx+18h]
+  00000015: 6A FF              push        0FFFFFFFFh
+  00000017: FF 32              push        dword ptr [edx]
+  00000019: 8B F8              mov         edi,eax
+  0000001B: E8 00 00 00 00     call        _WaitForSingleObject
+  00000020: 8B 4B 10           mov         ecx,dword ptr [ebx+10h]
+  00000023: 83 C4 0C           add         esp,0Ch
+  00000026: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000029: 8B F1              mov         esi,ecx
+  0000002B: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000002F: 75 20              jne         00000051
+  00000031: 39 78 10           cmp         dword ptr [eax+10h],edi
+  00000034: 72 06              jb          0000003C
+  00000036: 8B F0              mov         esi,eax
+  00000038: 8B 00              mov         eax,dword ptr [eax]
+  0000003A: EB 03              jmp         0000003F
+  0000003C: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000003F: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000043: 74 EC              je          00000031
+  00000045: 3B F1              cmp         esi,ecx
+  00000047: 74 08              je          00000051
+  00000049: 89 75 FC           mov         dword ptr [ebp-4],esi
+  0000004C: 3B 7E 10           cmp         edi,dword ptr [esi+10h]
+  0000004F: 73 05              jae         00000056
+  00000051: 8B F1              mov         esi,ecx
+  00000053: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000056: 3B F1              cmp         esi,ecx
+  00000058: 74 38              je          00000092
+  0000005A: 8B 7E 14           mov         edi,dword ptr [esi+14h]
+  0000005D: 80 7F 14 00        cmp         byte ptr [edi+14h],0
+  00000061: 75 2F              jne         00000092
+  00000063: 8B 3F              mov         edi,dword ptr [edi]
+  00000065: 85 FF              test        edi,edi
+  00000067: 74 0F              je          00000078
+  00000069: 57                 push        edi
+  0000006A: E8 00 00 00 00     call        _Phyre_PCluster_Destructor
+  0000006F: 57                 push        edi
+  00000070: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000075: 83 C4 08           add         esp,8
+  00000078: FF 76 14           push        dword ptr [esi+14h]
+  0000007B: 53                 push        ebx
+  0000007C: E8 00 00 00 00     call        _Phyre_ChrPClusterSampleFree
+  00000081: 56                 push        esi
+  00000082: 8D 45 FC           lea         eax,[ebp-4]
+  00000085: 50                 push        eax
+  00000086: 8D 43 10           lea         eax,[ebx+10h]
+  00000089: 50                 push        eax
+  0000008A: E8 00 00 00 00     call        _Phyre_Map_Erase_Rebalance_v3
+  0000008F: 83 C4 14           add         esp,14h
+  00000092: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  00000095: FF 30              push        dword ptr [eax]
+  00000097: E8 00 00 00 00     call        _ReleaseMutex
+  0000009C: 83 C4 04           add         esp,4
+  0000009F: 5F                 pop         edi
+  000000A0: 5E                 pop         esi
+  000000A1: 5B                 pop         ebx
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

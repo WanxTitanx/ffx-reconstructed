@@ -1,0 +1,87 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00987C00.obj
+
+File Type: COFF OBJECT
+
+@sub_987C00@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000000C: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000000F: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000012: 3B C1              cmp         eax,ecx
+  00000014: 75 7D              jne         00000093
+  00000016: 57                 push        edi
+  00000017: 8D 3C 00           lea         edi,[eax+eax]
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 75 05              jne         00000023
+  0000001E: BF 01 00 00 00     mov         edi,1
+  00000023: 3B CF              cmp         ecx,edi
+  00000025: 7D 6B              jge         00000092
+  00000027: 85 FF              test        edi,edi
+  00000029: 74 14              je          0000003F
+  0000002B: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000032: 6A 10              push        10h
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _sub_9D4CE0
+  0000003A: 83 C4 08           add         esp,8
+  0000003D: EB 02              jmp         00000041
+  0000003F: 33 C0              xor         eax,eax
+  00000041: 53                 push        ebx
+  00000042: 8B 5E 04           mov         ebx,dword ptr [esi+4]
+  00000045: 33 D2              xor         edx,edx
+  00000047: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000004A: 85 DB              test        ebx,ebx
+  0000004C: 7E 16              jle         00000064
+  0000004E: 8B C8              mov         ecx,eax
+  00000050: 85 C9              test        ecx,ecx
+  00000052: 74 08              je          0000005C
+  00000054: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000057: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000005A: 89 01              mov         dword ptr [ecx],eax
+  0000005C: 42                 inc         edx
+  0000005D: 83 C1 04           add         ecx,4
+  00000060: 3B D3              cmp         edx,ebx
+  00000062: 7C EC              jl          00000050
+  00000064: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000067: 5B                 pop         ebx
+  00000068: 85 C0              test        eax,eax
+  0000006A: 74 16              je          00000082
+  0000006C: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000070: 74 09              je          0000007B
+  00000072: 50                 push        eax
+  00000073: E8 00 00 00 00     call        _sub_9D4D50
+  00000078: 83 C4 04           add         esp,4
+  0000007B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000082: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000085: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000088: C6 46 10 01        mov         byte ptr [esi+10h],1
+  0000008C: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000008F: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000092: 5F                 pop         edi
+  00000093: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000096: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000099: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  0000009C: 85 C9              test        ecx,ecx
+  0000009E: 74 04              je          000000A4
+  000000A0: 89 11              mov         dword ptr [ecx],edx
+  000000A2: 8B C2              mov         eax,edx
+  000000A4: FF 46 04           inc         dword ptr [esi+4]
+  000000A7: 5E                 pop         esi
+  000000A8: 8B E5              mov         esp,ebp
+  000000AA: 5D                 pop         ebp
+  000000AB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AC .text

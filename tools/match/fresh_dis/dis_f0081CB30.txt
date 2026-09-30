@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081CB30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_DrawBgAnim_ApplyTextureSlices:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000007: 56                 push        esi
+  00000008: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000B: 3B F3              cmp         esi,ebx
+  0000000D: 7F 2C              jg          0000003B
+  0000000F: 57                 push        edi
+  00000010: 8B 7D 14           mov         edi,dword ptr [ebp+14h]
+  00000013: 56                 push        esi
+  00000014: 6A 04              push        4
+  00000016: FF 75 08           push        dword ptr [ebp+8]
+  00000019: E8 00 00 00 00     call        _FFX_MagicHost_SelectRuntimeTableSlice
+  0000001E: 83 C4 0C           add         esp,0Ch
+  00000021: 85 C0              test        eax,eax
+  00000023: 74 10              je          00000035
+  00000025: 8B CF              mov         ecx,edi
+  00000027: C1 F9 1F           sar         ecx,1Fh
+  0000002A: 51                 push        ecx
+  0000002B: 57                 push        edi
+  0000002C: 50                 push        eax
+  0000002D: E8 00 00 00 00     call        _FFX_FieldBgAnim_ApplyDrawParamToOps
+  00000032: 83 C4 0C           add         esp,0Ch
+  00000035: 46                 inc         esi
+  00000036: 3B F3              cmp         esi,ebx
+  00000038: 7E D9              jle         00000013
+  0000003A: 5F                 pop         edi
+  0000003B: 5E                 pop         esi
+  0000003C: 5B                 pop         ebx
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

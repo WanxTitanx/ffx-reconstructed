@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00657AB0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Scene_ShutdownRenderOutputs@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 80 BF D1 F9 00 00  cmp         byte ptr [edi+0F9D1h],0
+            00
+  0000000A: 74 23              je          0000002F
+  0000000C: 8D 87 C4 28 00 00  lea         eax,[edi+28C4h]
+  00000012: 50                 push        eax
+  00000013: 8D 47 7C           lea         eax,[edi+7Ch]
+  00000016: 50                 push        eax
+  00000017: C6 87 D1 F9 00 00  mov         byte ptr [edi+0F9D1h],0
+            00
+  0000001E: E8 00 00 00 00     call        _Phyre_Debug_OutputString
+  00000023: 83 C4 08           add         esp,8
+  00000026: C6 87 D0 F9 00 00  mov         byte ptr [edi+0F9D0h],1
+            01
+  0000002D: 5F                 pop         edi
+  0000002E: C3                 ret
+  0000002F: 80 BF D0 F9 00 00  cmp         byte ptr [edi+0F9D0h],0
+            00
+  00000036: 75 29              jne         00000061
+  00000038: 56                 push        esi
+  00000039: 8D B7 C4 28 00 00  lea         esi,[edi+28C4h]
+  0000003F: 8D 87 BC 00 00 00  lea         eax,[edi+0BCh]
+  00000045: 56                 push        esi
+  00000046: 50                 push        eax
+  00000047: E8 00 00 00 00     call        _PNode_DisconnectFromParent
+  0000004C: 8D 47 7C           lea         eax,[edi+7Ch]
+  0000004F: 56                 push        esi
+  00000050: 50                 push        eax
+  00000051: E8 00 00 00 00     call        _Phyre_Debug_OutputString
+  00000056: 83 C4 10           add         esp,10h
+  00000059: C6 87 D0 F9 00 00  mov         byte ptr [edi+0F9D0h],1
+            01
+  00000060: 5E                 pop         esi
+  00000061: 5F                 pop         edi
+  00000062: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          63 .text

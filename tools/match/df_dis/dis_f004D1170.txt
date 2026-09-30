@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004D1170.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Array_HeapSiftDown4Byte:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 8D 34 45 02 00 00  lea         esi,[eax*2+00000002h]
+            00
+  00000012: 3B F1              cmp         esi,ecx
+  00000014: 8B D8              mov         ebx,eax
+  00000016: 0F 94 C0           sete        al
+  00000019: 57                 push        edi
+  0000001A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000001D: 3B F1              cmp         esi,ecx
+  0000001F: 7D 2D              jge         0000004E
+  00000021: FF 74 B7 FC        push        dword ptr [edi+esi*4-4]
+  00000025: FF 34 B7           push        dword ptr [edi+esi*4]
+  00000028: FF 55 18           call        dword ptr [ebp+18h]
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: 84 C0              test        al,al
+  00000030: 74 01              je          00000033
+  00000032: 4E                 dec         esi
+  00000033: 8B 04 B7           mov         eax,dword ptr [edi+esi*4]
+  00000036: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000039: 89 04 9F           mov         dword ptr [edi+ebx*4],eax
+  0000003C: 8B DE              mov         ebx,esi
+  0000003E: 8D 34 75 02 00 00  lea         esi,[esi*2+00000002h]
+            00
+  00000045: 3B F1              cmp         esi,ecx
+  00000047: 0F 94 C0           sete        al
+  0000004A: 3B F1              cmp         esi,ecx
+  0000004C: 7C D3              jl          00000021
+  0000004E: 84 C0              test        al,al
+  00000050: 74 0A              je          0000005C
+  00000052: 8B 44 8F FC        mov         eax,dword ptr [edi+ecx*4-4]
+  00000056: 89 04 9F           mov         dword ptr [edi+ebx*4],eax
+  00000059: 8D 59 FF           lea         ebx,[ecx-1]
+  0000005C: 8D 43 FF           lea         eax,[ebx-1]
+  0000005F: 99                 cdq
+  00000060: 2B C2              sub         eax,edx
+  00000062: 8B F0              mov         esi,eax
+  00000064: D1 FE              sar         esi,1
+  00000066: 39 5D 0C           cmp         dword ptr [ebp+0Ch],ebx
+  00000069: 7D 2E              jge         00000099
+  0000006B: EB 03              jmp         00000070
+  0000006D: 8D 49 00           lea         ecx,[ecx]
+  00000070: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000073: FF 30              push        dword ptr [eax]
+  00000075: FF 34 B7           push        dword ptr [edi+esi*4]
+  00000078: FF 55 18           call        dword ptr [ebp+18h]
+  0000007B: 83 C4 08           add         esp,8
+  0000007E: 84 C0              test        al,al
+  00000080: 74 17              je          00000099
+  00000082: 8B 04 B7           mov         eax,dword ptr [edi+esi*4]
+  00000085: 89 04 9F           mov         dword ptr [edi+ebx*4],eax
+  00000088: 8D 46 FF           lea         eax,[esi-1]
+  0000008B: 99                 cdq
+  0000008C: 8B DE              mov         ebx,esi
+  0000008E: 2B C2              sub         eax,edx
+  00000090: 8B F0              mov         esi,eax
+  00000092: D1 FE              sar         esi,1
+  00000094: 39 5D 0C           cmp         dword ptr [ebp+0Ch],ebx
+  00000097: 7C D7              jl          00000070
+  00000099: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000009C: 8B 00              mov         eax,dword ptr [eax]
+  0000009E: 89 04 9F           mov         dword ptr [edi+ebx*4],eax
+  000000A1: 5F                 pop         edi
+  000000A2: 5E                 pop         esi
+  000000A3: 5B                 pop         ebx
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

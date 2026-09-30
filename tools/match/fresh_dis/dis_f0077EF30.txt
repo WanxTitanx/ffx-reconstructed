@@ -1,0 +1,188 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0077EF30.obj
+
+File Type: COFF OBJECT
+
+_FFX_GsKit_UploadTextureToVramSingle:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: C1 7D 18 04        sar         dword ptr [ebp+18h],4
+  0000000A: 53                 push        ebx
+  0000000B: 56                 push        esi
+  0000000C: 57                 push        edi
+  0000000D: 8B 7D 14           mov         edi,dword ptr [ebp+14h]
+  00000010: 8B C7              mov         eax,edi
+  00000012: C1 F8 04           sar         eax,4
+  00000015: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000018: E8 00 00 00 00     call        _FlushCache
+  0000001D: 8B 75 20           mov         esi,dword ptr [ebp+20h]
+  00000020: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000023: 6A 03              push        3
+  00000025: 6A 00              push        0
+  00000027: 6A 01              push        1
+  00000029: 8B C6              mov         eax,esi
+  0000002B: F7 D8              neg         eax
+  0000002D: 1B C0              sbb         eax,eax
+  0000002F: 6A 00              push        0
+  00000031: 6A 00              push        0
+  00000033: 83 E0 E0           and         eax,0FFFFFFE0h
+  00000036: 83 C0 40           add         eax,40h
+  00000039: 81 CB 00 00 00 20  or          ebx,20000000h
+  0000003F: 6A 00              push        0
+  00000041: 53                 push        ebx
+  00000042: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000045: E8 00 00 00 00     call        _FFX_GsKit_PackGifTag2Words
+  0000004A: 6A 02              push        2
+  0000004C: 6A 00              push        0
+  0000004E: 6A 00              push        0
+  00000050: 6A 00              push        0
+  00000052: 6A 00              push        0
+  00000054: 6A 01              push        1
+  00000056: 6A 00              push        0
+  00000058: 8D 43 10           lea         eax,[ebx+10h]
+  0000005B: 6A 0E              push        0Eh
+  0000005D: 50                 push        eax
+  0000005E: E8 00 00 00 00     call        _FFX_GsKit_BuildPrimitiveGifTag
+  00000063: 8D 47 3F           lea         eax,[edi+3Fh]
+  00000066: C1 F8 1F           sar         eax,1Fh
+  00000069: 83 E0 3F           and         eax,3Fh
+  0000006C: 83 C7 3F           add         edi,3Fh
+  0000006F: 03 C7              add         eax,edi
+  00000071: 83 E0 C0           and         eax,0FFFFFFC0h
+  00000074: 99                 cdq
+  00000075: 83 C4 40           add         esp,40h
+  00000078: 83 E2 3F           and         edx,3Fh
+  0000007B: FF 75 24           push        dword ptr [ebp+24h]
+  0000007E: 03 C2              add         eax,edx
+  00000080: 56                 push        esi
+  00000081: C1 F8 06           sar         eax,6
+  00000084: 50                 push        eax
+  00000085: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000088: 8D 43 20           lea         eax,[ebx+20h]
+  0000008B: 50                 push        eax
+  0000008C: E8 00 00 00 00     call        _FFX_GsKit_BuildTexFlushGifTag
+  00000091: 6A 10              push        10h
+  00000093: 8D 43 30           lea         eax,[ebx+30h]
+  00000096: 6A 10              push        10h
+  00000098: 50                 push        eax
+  00000099: E8 00 00 00 00     call        _FFX_GsKit_BuildGifTagClut
+  0000009E: 33 C0              xor         eax,eax
+  000000A0: 8D 7B 40           lea         edi,[ebx+40h]
+  000000A3: 33 DB              xor         ebx,ebx
+  000000A5: 83 C4 20           add         esp,20h
+  000000A8: 89 5D 20           mov         dword ptr [ebp+20h],ebx
+  000000AB: 39 45 18           cmp         dword ptr [ebp+18h],eax
+  000000AE: 0F 8E E1 00 00 00  jle         00000195
+  000000B4: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  000000B7: 8B 4D 18           mov         ecx,dword ptr [ebp+18h]
+  000000BA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000C0: 33 F6              xor         esi,esi
+  000000C2: 85 D2              test        edx,edx
+  000000C4: 0F 8E BD 00 00 00  jle         00000187
+  000000CA: 49                 dec         ecx
+  000000CB: C1 E3 04           shl         ebx,4
+  000000CE: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000000D1: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  000000D4: 3B C1              cmp         eax,ecx
+  000000D6: 75 0E              jne         000000E6
+  000000D8: 8D 42 FF           lea         eax,[edx-1]
+  000000DB: 3B F0              cmp         esi,eax
+  000000DD: 75 07              jne         000000E6
+  000000DF: BB 01 00 00 00     mov         ebx,1
+  000000E4: EB 02              jmp         000000E8
+  000000E6: 33 DB              xor         ebx,ebx
+  000000E8: 6A 04              push        4
+  000000EA: 6A 00              push        0
+  000000EC: 6A 01              push        1
+  000000EE: 6A 00              push        0
+  000000F0: 6A 00              push        0
+  000000F2: 6A 00              push        0
+  000000F4: 57                 push        edi
+  000000F5: E8 00 00 00 00     call        _FFX_GsKit_PackGifTag2Words
+  000000FA: 6A 02              push        2
+  000000FC: 6A 00              push        0
+  000000FE: 6A 00              push        0
+  00000100: 6A 00              push        0
+  00000102: 6A 00              push        0
+  00000104: 6A 01              push        1
+  00000106: 6A 00              push        0
+  00000108: 83 C7 10           add         edi,10h
+  0000010B: 6A 0E              push        0Eh
+  0000010D: 57                 push        edi
+  0000010E: E8 00 00 00 00     call        _FFX_GsKit_BuildPrimitiveGifTag
+  00000113: 83 C4 40           add         esp,40h
+  00000116: 8B C6              mov         eax,esi
+  00000118: FF 75 08           push        dword ptr [ebp+8]
+  0000011B: C1 E0 04           shl         eax,4
+  0000011E: 50                 push        eax
+  0000011F: 83 C7 10           add         edi,10h
+  00000122: 6A 00              push        0
+  00000124: 57                 push        edi
+  00000125: E8 00 00 00 00     call        _FFX_GsKit_BuildTexCoordGifTag
+  0000012A: 83 C7 10           add         edi,10h
+  0000012D: 6A 00              push        0
+  0000012F: 57                 push        edi
+  00000130: E8 00 00 00 00     call        _FFX_GsKit_BuildGifTagDefault
+  00000135: FF 75 FC           push        dword ptr [ebp-4]
+  00000138: 83 C7 10           add         edi,10h
+  0000013B: 53                 push        ebx
+  0000013C: 6A 00              push        0
+  0000013E: 6A 00              push        0
+  00000140: 6A 02              push        2
+  00000142: 6A 00              push        0
+  00000144: 6A 00              push        0
+  00000146: 6A 00              push        0
+  00000148: 57                 push        edi
+  00000149: E8 00 00 00 00     call        _FFX_GsKit_BuildPrimitiveGifTag
+  0000014E: FF 75 18           push        dword ptr [ebp+18h]
+  00000151: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000154: 6A 00              push        0
+  00000156: 6A 03              push        3
+  00000158: 6A 00              push        0
+  0000015A: 53                 push        ebx
+  0000015B: 83 C7 10           add         edi,10h
+  0000015E: 6A 00              push        0
+  00000160: 57                 push        edi
+  00000161: E8 00 00 00 00     call        _FFX_GsKit_PackGifTag2Words
+  00000166: 03 5D 10           add         ebx,dword ptr [ebp+10h]
+  00000169: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  0000016C: 8B 45 20           mov         eax,dword ptr [ebp+20h]
+  0000016F: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000172: 46                 inc         esi
+  00000173: 83 C4 58           add         esp,58h
+  00000176: 83 C7 10           add         edi,10h
+  00000179: 89 5D 0C           mov         dword ptr [ebp+0Ch],ebx
+  0000017C: 3B F2              cmp         esi,edx
+  0000017E: 0F 8C 50 FF FF FF  jl          000000D4
+  00000184: 8B 4D 18           mov         ecx,dword ptr [ebp+18h]
+  00000187: 40                 inc         eax
+  00000188: 8B D8              mov         ebx,eax
+  0000018A: 89 45 20           mov         dword ptr [ebp+20h],eax
+  0000018D: 3B C1              cmp         eax,ecx
+  0000018F: 0F 8C 2B FF FF FF  jl          000000C0
+  00000195: 6A 00              push        0
+  00000197: 6A 00              push        0
+  00000199: 6A 07              push        7
+  0000019B: 6A 00              push        0
+  0000019D: 6A 00              push        0
+  0000019F: 6A 00              push        0
+  000001A1: 57                 push        edi
+  000001A2: E8 00 00 00 00     call        _FFX_GsKit_PackGifTag2Words
+  000001A7: 83 C4 1C           add         esp,1Ch
+  000001AA: E8 00 00 00 00     call        _FlushCache
+  000001AF: 5F                 pop         edi
+  000001B0: 5E                 pop         esi
+  000001B1: 5B                 pop         ebx
+  000001B2: 8B E5              mov         esp,ebp
+  000001B4: 5D                 pop         ebp
+  000001B5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         1B6 .text

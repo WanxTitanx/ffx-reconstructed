@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "target": {
+    "file": "FFX.exe",
+    "size": 10675712,
+    "sha256": "78CE34397DA5E6F49B72C2AEBADEDAF4CD3F6720E1949D46A1B8ED67D3DB5CED",
+    "idb_sha256": "BAB0B5B213FF01EABD5CA5E2EA8950B8766F79887A990462D44CA3AA2DDB368A"
+  },
+  "pass": {
+    "name": "O2 recompile of same-size baseline mismatches",
+    "starting_candidates": 697,
+    "callconv_corrected_source_units": 18,
+    "compiler": "Microsoft C/C++ Optimizing Compiler 17.00.50727.1 for x86",
+    "dumpbin": "11.00.50727.1",
+    "flags": [
+      "/nologo",
+      "/TC",
+      "/c",
+      "/GS-",
+      "/O2",
+      "/MD",
+      "/Oy-",
+      "/Oi"
+    ]
+  },
+  "verification": {
+    "tool": "tools/match/strict_rel32_verify.py",
+    "inventory": "tools/match/inventory.tsv",
+    "method": "Resolve each .text REL32 relocation against the unique inventory start VA, reconstruct the complete function byte run, and compare at the declared IDB address."
+  },
+  "summary": {
+    "compiled_objects": 18,
+    "strict_exact_functions": 2,
+    "strict_exact_code_bytes": 202,
+    "resolved_rel32_relocations": 8
+  },
+  "functions": [
+    {
+      "va": 6101504,
+      "size": 101,
+      "idb_name": "Phyre_PAsyncProcess_WaitCleanup",
+      "source_file": "recon/recovered_callconv_sources/f005D1A00.c",
+      "source_sha256": "ed264aeb91956560c904814214a0fbd3ccc3615c6f02dc61f5d3b867d47bd01b",
+      "source_variant": "fresh-units-callconv-corrected",
+      "byte_sha256": "b2fa6e2fc824d70daaa02df869ddc3c986934d9390b506f73f4f9b9c3091d86e",
+      "relocations": [
+        {
+          "offset": 5,
+          "type": "REL32",
+          "symbol": "@Phyre_Event_Reset@4",
+          "target_va": 4397648
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "_Phyre_PAsyncProcess_AdvanceHead",
+          "target_va": 6088624
+        },
+        {
+          "offset": 42,
+          "type": "REL32",
+          "symbol": "_Phyre_SleepMs",
+          "target_va": 4391200
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "_Phyre_PAsyncProcess_AdvanceHead",
+          "target_va": 6088624
+        }
+      ]
+    },
+    {
+      "va": 6476464,
+      "size": 101,
+      "idb_name": "Phyre_EventQueue_WaitDrainAndShutdown",
+      "source_file": "recon/recovered_callconv_sources/f0062D2B0.c",
+      "source_sha256": "4bb6e4940ea87488c16ded75e6e372c132fefb0121e716d5d3284fa54e67b2fb",
+      "source_variant": "fresh-units-callconv-corrected",
+      "byte_sha256": "2b1cce2695e02c57ce27b401066d66ed5dd686608fa5455a8f4fdc50f16b50dc",
+      "relocations": [
+        {
+          "offset": 5,
+          "type": "REL32",
+          "symbol": "@Phyre_Event_Reset@4",
+          "target_va": 4397648
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "_Phyre_LinkedList_SkipEmptyEntries",
+          "target_va": 6083136
+        },
+        {
+          "offset": 42,
+          "type": "REL32",
+          "symbol": "_Phyre_SleepMs",
+          "target_va": 4391200
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "_Phyre_LinkedList_SkipEmptyEntries",
+          "target_va": 6083136
+        }
+      ]
+    }
+  ]
+}

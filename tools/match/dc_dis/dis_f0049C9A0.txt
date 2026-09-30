@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0049C9A0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_AlignedAllocList_Alloc@8:
+  00000000: 56                 push        esi
+  00000001: 8B F2              mov         esi,edx
+  00000003: 57                 push        edi
+  00000004: 8B F9              mov         edi,ecx
+  00000006: 85 F6              test        esi,esi
+  00000008: 75 05              jne         0000000F
+  0000000A: 5F                 pop         edi
+  0000000B: 32 C0              xor         al,al
+  0000000D: 5E                 pop         esi
+  0000000E: C3                 ret
+  0000000F: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  00000012: 53                 push        ebx
+  00000013: 8B C1              mov         eax,ecx
+  00000015: F7 D8              neg         eax
+  00000017: 8D 59 0B           lea         ebx,[ecx+0Bh]
+  0000001A: 23 D8              and         ebx,eax
+  0000001C: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000001F: 0F AF C6           imul        eax,esi
+  00000022: 51                 push        ecx
+  00000023: 03 C3              add         eax,ebx
+  00000025: 50                 push        eax
+  00000026: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000002B: 8B D0              mov         edx,eax
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 85 D2              test        edx,edx
+  00000032: 75 06              jne         0000003A
+  00000034: 5B                 pop         ebx
+  00000035: 5F                 pop         edi
+  00000036: 32 C0              xor         al,al
+  00000038: 5E                 pop         esi
+  00000039: C3                 ret
+  0000003A: 8D 0C 1A           lea         ecx,[edx+ebx]
+  0000003D: 89 4A 04           mov         dword ptr [edx+4],ecx
+  00000040: 89 72 08           mov         dword ptr [edx+8],esi
+  00000043: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  00000046: 56                 push        esi
+  00000047: 51                 push        ecx
+  00000048: 89 02              mov         dword ptr [edx],eax
+  0000004A: 57                 push        edi
+  0000004B: 89 57 14           mov         dword ptr [edi+14h],edx
+  0000004E: E8 00 00 00 00     call        _AlignedLinkedList_AllocNodes
+  00000053: 83 C4 0C           add         esp,0Ch
+  00000056: B0 01              mov         al,1
+  00000058: 5B                 pop         ebx
+  00000059: 5F                 pop         edi
+  0000005A: 5E                 pop         esi
+  0000005B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5C .text

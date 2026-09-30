@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056E470.obj
+
+File Type: COFF OBJECT
+
+@P5FloatTransformArray_Resize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B F2              mov         esi,edx
+  0000000D: 8B 1F              mov         ebx,dword ptr [edi]
+  0000000F: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000015: 3B 37              cmp         esi,dword ptr [edi]
+  00000017: 74 7B              je          00000094
+  00000019: 3B F3              cmp         esi,ebx
+  0000001B: 73 02              jae         0000001F
+  0000001D: 8B DE              mov         ebx,esi
+  0000001F: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000022: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000025: 85 F6              test        esi,esi
+  00000027: 74 48              je          00000071
+  00000029: 8D 04 B6           lea         eax,[esi+esi*4]
+  0000002C: C1 E0 02           shl         eax,2
+  0000002F: 6A 04              push        4
+  00000031: 50                 push        eax
+  00000032: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000037: 83 C4 08           add         esp,8
+  0000003A: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000003D: 85 C0              test        eax,eax
+  0000003F: 75 0C              jne         0000004D
+  00000041: 5F                 pop         edi
+  00000042: 5E                 pop         esi
+  00000043: B8 0D 00 00 00     mov         eax,0Dh
+  00000048: 5B                 pop         ebx
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+  0000004D: 53                 push        ebx
+  0000004E: FF 75 FC           push        dword ptr [ebp-4]
+  00000051: 50                 push        eax
+  00000052: 50                 push        eax
+  00000053: E8 00 00 00 00     call        _Phyre_PGeometry_DeepCopy5DwordStrArray
+  00000058: 8B C6              mov         eax,esi
+  0000005A: 2B C3              sub         eax,ebx
+  0000005C: 50                 push        eax
+  0000005D: 8D 04 9B           lea         eax,[ebx+ebx*4]
+  00000060: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000063: 8D 04 83           lea         eax,[ebx+eax*4]
+  00000066: 50                 push        eax
+  00000067: E8 00 00 00 00     call        _Phyre_PSprite_InitTransform5FloatArray
+  0000006C: 83 C4 18           add         esp,18h
+  0000006F: EB 02              jmp         00000073
+  00000071: 33 DB              xor         ebx,ebx
+  00000073: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000076: 3B CB              cmp         ecx,ebx
+  00000078: 74 15              je          0000008F
+  0000007A: 8B 07              mov         eax,dword ptr [edi]
+  0000007C: 85 C0              test        eax,eax
+  0000007E: 78 0F              js          0000008F
+  00000080: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000085: 50                 push        eax
+  00000086: 51                 push        ecx
+  00000087: E8 00 00 00 00     call        _PSharray5Dword_FreeArray
+  0000008C: 83 C4 08           add         esp,8
+  0000008F: 89 5F 04           mov         dword ptr [edi+4],ebx
+  00000092: 89 37              mov         dword ptr [edi],esi
+  00000094: 5F                 pop         edi
+  00000095: 5E                 pop         esi
+  00000096: 33 C0              xor         eax,eax
+  00000098: 5B                 pop         ebx
+  00000099: 8B E5              mov         esp,ebp
+  0000009B: 5D                 pop         ebp
+  0000009C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          9D .text

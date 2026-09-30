@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0093A890.obj
+
+File Type: COFF OBJECT
+
+_Dbg_LoadTexFilesToScene:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 57                 push        edi
+  00000008: 68 06 00 02 00     push        20006h
+  0000000D: E8 00 00 00 00     call        _FFX_Render_SceneRemoveAllByKey
+  00000012: 68 00 00 00 00     push        offset ??_C@_03JDBMONBN@tex?$AA@
+  00000017: FF 75 08           push        dword ptr [ebp+8]
+  0000001A: E8 00 00 00 00     call        _Dbg_CountTextureFiles
+  0000001F: 8B D8              mov         ebx,eax
+  00000021: 83 C4 0C           add         esp,0Ch
+  00000024: 33 FF              xor         edi,edi
+  00000026: 85 DB              test        ebx,ebx
+  00000028: 7E 3A              jle         00000064
+  0000002A: 56                 push        esi
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: E8 00 00 00 00     call        _FFX_Render_AllocSceneTypeEntry
+  00000035: 57                 push        edi
+  00000036: 8B F0              mov         esi,eax
+  00000038: 8D 45 F0           lea         eax,[ebp-10h]
+  0000003B: 68 00 00 00 00     push        offset ??_C@_06ODOJMDF@tex?$CFd_?$AA@
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _sprintf
+  00000046: 6A 02              push        2
+  00000048: 8D 45 F0           lea         eax,[ebp-10h]
+  0000004B: 50                 push        eax
+  0000004C: FF 75 08           push        dword ptr [ebp+8]
+  0000004F: 56                 push        esi
+  00000050: E8 00 00 00 00     call        _Dbg_LoadTiledTexturesFromHost
+  00000055: 56                 push        esi
+  00000056: E8 00 00 00 00     call        _FFX_Render_ArrayRegisterItem
+  0000005B: 47                 inc         edi
+  0000005C: 83 C4 20           add         esp,20h
+  0000005F: 3B FB              cmp         edi,ebx
+  00000061: 7C CD              jl          00000030
+  00000063: 5E                 pop         esi
+  00000064: 5F                 pop         edi
+  00000065: 5B                 pop         ebx
+  00000066: 8B E5              mov         esp,ebp
+  00000068: 5D                 pop         ebp
+  00000069: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           B .rdata
+          6A .text

@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F5D80.obj
+
+File Type: COFF OBJECT
+
+@PSharedPtr_Dtor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000006: 85 D2              test        edx,edx
+  00000008: 74 37              je          00000041
+  0000000A: 8B C2              mov         eax,edx
+  0000000C: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000011: 83 F8 01           cmp         eax,1
+  00000014: 77 0D              ja          00000023
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 05              je          0000001F
+  0000001A: 8D 4E 08           lea         ecx,[esi+8]
+  0000001D: EB 07              jmp         00000026
+  0000001F: 33 C9              xor         ecx,ecx
+  00000021: EB 03              jmp         00000026
+  00000023: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000026: 8D 46 08           lea         eax,[esi+8]
+  00000029: 3B C8              cmp         ecx,eax
+  0000002B: 74 0D              je          0000003A
+  0000002D: 85 D2              test        edx,edx
+  0000002F: 78 09              js          0000003A
+  00000031: 51                 push        ecx
+  00000032: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000037: 83 C4 04           add         esp,4
+  0000003A: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000041: 8D 46 0C           lea         eax,[esi+0Ch]
+  00000044: 50                 push        eax
+  00000045: E8 00 00 00 00     call        _PShaderType_Dtor
+  0000004A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000004D: 83 C4 04           add         esp,4
+  00000050: 85 C0              test        eax,eax
+  00000052: 78 15              js          00000069
+  00000054: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000059: 83 F8 01           cmp         eax,1
+  0000005C: 76 0B              jbe         00000069
+  0000005E: FF 76 08           push        dword ptr [esi+8]
+  00000061: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000066: 83 C4 04           add         esp,4
+  00000069: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000070: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000077: 5E                 pop         esi
+  00000078: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          79 .text

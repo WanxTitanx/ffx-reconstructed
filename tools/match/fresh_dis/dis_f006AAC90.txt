@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AAC90.obj
+
+File Type: COFF OBJECT
+
+@FFX_AudioLight_ClearColor@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 FA 03           cmp         edx,3
+  00000007: 75 56              jne         0000005F
+  00000009: 80 7D 08 00        cmp         byte ptr [ebp+8],0
+  0000000D: 75 5F              jne         0000006E
+  0000000F: 8B 81 8C 01 00 00  mov         eax,dword ptr [ecx+18Ch]
+  00000015: D9 EE              fldz
+  00000017: D9 99 A4 01 00 00  fstp        dword ptr [ecx+1A4h]
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 70              je          00000091
+  00000021: D9 81 94 01 00 00  fld         dword ptr [ecx+194h]
+  00000027: D9 EE              fldz
+  00000029: DC C9              fmul        st(1),st
+  0000002B: D9 C9              fxch        st(1)
+  0000002D: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000030: D9 81 98 01 00 00  fld         dword ptr [ecx+198h]
+  00000036: D8 C9              fmul        st,st(1)
+  00000038: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000003B: D8 89 90 01 00 00  fmul        dword ptr [ecx+190h]
+  00000041: D9 98 AC 00 00 00  fstp        dword ptr [eax+0ACh]
+  00000047: D9 45 08           fld         dword ptr [ebp+8]
+  0000004A: D9 98 B0 00 00 00  fstp        dword ptr [eax+0B0h]
+  00000050: D9 45 FC           fld         dword ptr [ebp-4]
+  00000053: D9 98 B4 00 00 00  fstp        dword ptr [eax+0B4h]
+  00000059: 8B E5              mov         esp,ebp
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 04 00           ret         4
+  0000005F: 80 B9 CC 01 00 00  cmp         byte ptr [ecx+1CCh],0
+            00
+  00000066: 74 29              je          00000091
+  00000068: 80 7D 08 00        cmp         byte ptr [ebp+8],0
+  0000006C: 74 12              je          00000080
+  0000006E: 6A 00              push        0
+  00000070: 52                 push        edx
+  00000071: 51                 push        ecx
+  00000072: E8 00 00 00 00     call        _FFX_Audio_ComputeVolumeFromDistance
+  00000077: 83 C4 0C           add         esp,0Ch
+  0000007A: 8B E5              mov         esp,ebp
+  0000007C: 5D                 pop         ebp
+  0000007D: C2 04 00           ret         4
+  00000080: 8B 81 F0 00 00 00  mov         eax,dword ptr [ecx+0F0h]
+  00000086: D9 EE              fldz
+  00000088: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000008B: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000008E: D9 58 24           fstp        dword ptr [eax+24h]
+  00000091: 8B E5              mov         esp,ebp
+  00000093: 5D                 pop         ebp
+  00000094: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          97 .text

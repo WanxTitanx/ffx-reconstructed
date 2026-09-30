@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068A470.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_68A470@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B B9 50 01 00 00  mov         edi,dword ptr [ecx+00000150h]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000010: 74 34              je          00000046
+  00000012: 8B 89 54 01 00 00  mov         ecx,dword ptr [ecx+00000154h]
+  00000018: 8D 81 4C 01 00 00  lea         eax,[ecx+0000014Ch]
+  0000001E: 8B FF              mov         edi,edi
+  00000020: 80 B8 B5 FE FF FF  cmp         byte ptr [eax+FFFFFEB5h],0
+            00
+  00000027: 74 04              je          0000002D
+  00000029: 39 10              cmp         dword ptr [eax],edx
+  0000002B: 74 0C              je          00000039
+  0000002D: 46                 inc         esi
+  0000002E: 3B F7              cmp         esi,edi
+  00000030: 73 14              jae         00000046
+  00000032: 05 50 01 00 00     add         eax,150h
+  00000037: EB E7              jmp         00000020
+  00000039: 69 F6 50 01 00 00  imul        esi,esi,150h
+  0000003F: 5F                 pop         edi
+  00000040: 8B 44 0E 04        mov         eax,dword ptr [esi+ecx+4]
+  00000044: 5E                 pop         esi
+  00000045: C3                 ret
+  00000046: 5F                 pop         edi
+  00000047: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000004A: 5E                 pop         esi
+  0000004B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4C .text

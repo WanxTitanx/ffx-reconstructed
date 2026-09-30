@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00667900.obj
+
+File Type: COFF OBJECT
+
+@Phyre_WStringArray_PushBack@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000007: 8B FA              mov         edi,edx
+  00000009: 3B F9              cmp         edi,ecx
+  0000000B: 73 3A              jae         00000047
+  0000000D: 8B 06              mov         eax,dword ptr [esi]
+  0000000F: 3B C7              cmp         eax,edi
+  00000011: 77 34              ja          00000047
+  00000013: 2B F8              sub         edi,eax
+  00000015: B8 AB AA AA 2A     mov         eax,2AAAAAABh
+  0000001A: F7 EF              imul        edi
+  0000001C: C1 FA 02           sar         edx,2
+  0000001F: 8B FA              mov         edi,edx
+  00000021: C1 EF 1F           shr         edi,1Fh
+  00000024: 03 FA              add         edi,edx
+  00000026: 3B 4E 08           cmp         ecx,dword ptr [esi+8]
+  00000029: 75 0B              jne         00000036
+  0000002B: 6A 01              push        1
+  0000002D: 56                 push        esi
+  0000002E: E8 00 00 00 00     call        _Phyre_Vector_GrowStruct24
+  00000033: 83 C4 08           add         esp,8
+  00000036: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000039: 85 D2              test        edx,edx
+  0000003B: 74 40              je          0000007D
+  0000003D: 8B 06              mov         eax,dword ptr [esi]
+  0000003F: 8D 0C 7F           lea         ecx,[edi+edi*2]
+  00000042: 8D 3C C8           lea         edi,[eax+ecx*8]
+  00000045: EB 17              jmp         0000005E
+  00000047: 3B 4E 08           cmp         ecx,dword ptr [esi+8]
+  0000004A: 75 0B              jne         00000057
+  0000004C: 6A 01              push        1
+  0000004E: 56                 push        esi
+  0000004F: E8 00 00 00 00     call        _Phyre_Vector_GrowStruct24
+  00000054: 83 C4 08           add         esp,8
+  00000057: 8B 56 04           mov         edx,dword ptr [esi+4]
+  0000005A: 85 D2              test        edx,edx
+  0000005C: 74 1F              je          0000007D
+  0000005E: 6A FF              push        0FFFFFFFFh
+  00000060: 6A 00              push        0
+  00000062: 57                 push        edi
+  00000063: 52                 push        edx
+  00000064: C7 42 14 0F 00 00  mov         dword ptr [edx+14h],0Fh
+            00
+  0000006B: C7 42 10 00 00 00  mov         dword ptr [edx+10h],0
+            00
+  00000072: C6 02 00           mov         byte ptr [edx],0
+  00000075: E8 00 00 00 00     call        _Engine_String_assign
+  0000007A: 83 C4 10           add         esp,10h
+  0000007D: 83 46 04 18        add         dword ptr [esi+4],18h
+  00000081: 5F                 pop         edi
+  00000082: 5E                 pop         esi
+  00000083: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          84 .text

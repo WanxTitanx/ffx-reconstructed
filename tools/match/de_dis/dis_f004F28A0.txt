@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F28A0.obj
+
+File Type: COFF OBJECT
+
+@PCaptureLocation_AllocFromSource@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F1              mov         esi,ecx
+  00000008: 57                 push        edi
+  00000009: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000000F: 8B 3A              mov         edi,dword ptr [edx]
+  00000011: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000017: 83 FF 01           cmp         edi,1
+  0000001A: 77 0D              ja          00000029
+  0000001C: 85 FF              test        edi,edi
+  0000001E: 74 05              je          00000025
+  00000020: 8D 42 04           lea         eax,[edx+4]
+  00000023: EB 07              jmp         0000002C
+  00000025: 33 C0              xor         eax,eax
+  00000027: EB 03              jmp         0000002C
+  00000029: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000002C: 50                 push        eax
+  0000002D: 57                 push        edi
+  0000002E: 56                 push        esi
+  0000002F: E8 00 00 00 00     call        _Phyre_PMeshStreamBindingSharray_AllocCopy
+  00000034: 8B 0E              mov         ecx,dword ptr [esi]
+  00000036: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  0000003C: 83 C4 0C           add         esp,0Ch
+  0000003F: 8B D0              mov         edx,eax
+  00000041: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000044: 83 F9 01           cmp         ecx,1
+  00000047: 77 0D              ja          00000056
+  00000049: 85 C9              test        ecx,ecx
+  0000004B: 74 05              je          00000052
+  0000004D: 8D 46 04           lea         eax,[esi+4]
+  00000050: EB 07              jmp         00000059
+  00000052: 33 C0              xor         eax,eax
+  00000054: EB 03              jmp         00000059
+  00000056: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000059: 8D 5E 04           lea         ebx,[esi+4]
+  0000005C: 3B C2              cmp         eax,edx
+  0000005E: 74 15              je          00000075
+  00000060: 3B C3              cmp         eax,ebx
+  00000062: 74 11              je          00000075
+  00000064: 83 3E 00           cmp         dword ptr [esi],0
+  00000067: 7C 0C              jl          00000075
+  00000069: 50                 push        eax
+  0000006A: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000006F: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000072: 83 C4 04           add         esp,4
+  00000075: 89 3E              mov         dword ptr [esi],edi
+  00000077: 8B C6              mov         eax,esi
+  00000079: 3B D3              cmp         edx,ebx
+  0000007B: 74 02              je          0000007F
+  0000007D: 89 13              mov         dword ptr [ebx],edx
+  0000007F: 5F                 pop         edi
+  00000080: 5E                 pop         esi
+  00000081: 5B                 pop         ebx
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          86 .text

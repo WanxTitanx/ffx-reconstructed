@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A29030.obj
+
+File Type: COFF OBJECT
+
+_strskip_delimiters:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5F                 pop         edi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 56                 push        esi
+  00000011: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000014: 85 F6              test        esi,esi
+  00000016: 74 3E              je          00000056
+  00000018: 8A 06              mov         al,byte ptr [esi]
+  0000001A: 84 C0              test        al,al
+  0000001C: 74 38              je          00000056
+  0000001E: 0F BE C0           movsx       eax,al
+  00000021: 50                 push        eax
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _strchr
+  00000028: 83 C4 08           add         esp,8
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 74 1A              je          00000049
+  0000002F: 90                 nop
+  00000030: 8A 46 01           mov         al,byte ptr [esi+1]
+  00000033: 46                 inc         esi
+  00000034: 84 C0              test        al,al
+  00000036: 74 1E              je          00000056
+  00000038: 0F BE C0           movsx       eax,al
+  0000003B: 50                 push        eax
+  0000003C: 57                 push        edi
+  0000003D: E8 00 00 00 00     call        _strchr
+  00000042: 83 C4 08           add         esp,8
+  00000045: 85 C0              test        eax,eax
+  00000047: 75 E7              jne         00000030
+  00000049: 0F B6 06           movzx       eax,byte ptr [esi]
+  0000004C: F7 D8              neg         eax
+  0000004E: 1B C0              sbb         eax,eax
+  00000050: 23 C6              and         eax,esi
+  00000052: 5E                 pop         esi
+  00000053: 5F                 pop         edi
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+  00000056: 5E                 pop         esi
+  00000057: 33 C0              xor         eax,eax
+  00000059: 5F                 pop         edi
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5C .text

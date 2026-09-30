@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094A120.obj
+
+File Type: COFF OBJECT
+
+__IsNonwritableInCurrentImage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 68 00 00 40 00     push        400000h
+  00000009: E8 00 00 00 00     call        __ValidateImageBase
+  0000000E: 88 45 FC           mov         byte ptr [ebp-4],al
+  00000011: 83 C4 04           add         esp,4
+  00000014: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000018: 74 29              je          00000043
+  0000001A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000001D: 05 00 00 C0 FF     add         eax,0FFC00000h
+  00000022: 50                 push        eax
+  00000023: 68 00 00 40 00     push        400000h
+  00000028: E8 00 00 00 00     call        __FindPESection
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 85 C0              test        eax,eax
+  00000032: 74 0F              je          00000043
+  00000034: 83 78 24 00        cmp         dword ptr [eax+24h],0
+  00000038: 7C 09              jl          00000043
+  0000003A: B8 01 00 00 00     mov         eax,1
+  0000003F: 8B E5              mov         esp,ebp
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: 33 C0              xor         eax,eax
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004901F0.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4901F0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 75 02              jne         0000000C
+  0000000A: 5D                 pop         ebp
+  0000000B: C3                 ret
+  0000000C: 56                 push        esi
+  0000000D: C1 E0 06           shl         eax,6
+  00000010: 6A 04              push        4
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000018: 8B F0              mov         esi,eax
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 85 F6              test        esi,esi
+  0000001F: 74 15              je          00000036
+  00000021: FF 75 10           push        dword ptr [ebp+10h]
+  00000024: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000027: 56                 push        esi
+  00000028: 56                 push        esi
+  00000029: E8 00 00 00 00     call        _Engine_Memcpy64Loop
+  0000002E: 83 C4 10           add         esp,10h
+  00000031: 8B C6              mov         eax,esi
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+  00000036: 33 C0              xor         eax,eax
+  00000038: 5E                 pop         esi
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

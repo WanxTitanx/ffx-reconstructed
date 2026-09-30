@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00434460.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Stream_IsEOF:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 2C              je          00000037
+  0000000B: 53                 push        ebx
+  0000000C: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000F: 56                 push        esi
+  00000010: 33 F6              xor         esi,esi
+  00000012: 85 DB              test        ebx,ebx
+  00000014: 74 16              je          0000002C
+  00000016: F6 04 B7 01        test        byte ptr [edi+esi*4],1
+  0000001A: 75 0B              jne         00000027
+  0000001C: FF 34 B7           push        dword ptr [edi+esi*4]
+  0000001F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000024: 83 C4 04           add         esp,4
+  00000027: 46                 inc         esi
+  00000028: 3B F3              cmp         esi,ebx
+  0000002A: 72 EA              jb          00000016
+  0000002C: 57                 push        edi
+  0000002D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000032: 83 C4 04           add         esp,4
+  00000035: 5E                 pop         esi
+  00000036: 5B                 pop         ebx
+  00000037: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000003A: 5F                 pop         edi
+  0000003B: 5D                 pop         ebp
+  0000003C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3D .text

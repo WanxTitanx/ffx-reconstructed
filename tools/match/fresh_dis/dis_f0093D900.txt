@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0093D900.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_Matrix4x4Identity:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000008: D9 E8              fld1
+  0000000A: 33 C0              xor         eax,eax
+  0000000C: 56                 push        esi
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 04              je          00000015
+  00000011: D9 C1              fld         st(1)
+  00000013: EB 02              jmp         00000017
+  00000015: D9 C0              fld         st(0)
+  00000017: 8B C8              mov         ecx,eax
+  00000019: 03 C9              add         ecx,ecx
+  0000001B: 8D 34 85 00 00 00  lea         esi,[eax*4+00000000h]
+            00
+  00000022: D9 1C CA           fstp        dword ptr [edx+ecx*8]
+  00000025: 83 F8 01           cmp         eax,1
+  00000028: 75 04              jne         0000002E
+  0000002A: D9 C0              fld         st(0)
+  0000002C: EB 02              jmp         00000030
+  0000002E: D9 C1              fld         st(1)
+  00000030: D9 5C CA 04        fstp        dword ptr [edx+ecx*8+4]
+  00000034: 83 F8 02           cmp         eax,2
+  00000037: 75 04              jne         0000003D
+  00000039: D9 C0              fld         st(0)
+  0000003B: EB 02              jmp         0000003F
+  0000003D: D9 C1              fld         st(1)
+  0000003F: D9 5C CA 08        fstp        dword ptr [edx+ecx*8+8]
+  00000043: 83 F8 03           cmp         eax,3
+  00000046: 75 04              jne         0000004C
+  00000048: D9 C0              fld         st(0)
+  0000004A: EB 02              jmp         0000004E
+  0000004C: D9 C1              fld         st(1)
+  0000004E: 40                 inc         eax
+  0000004F: D9 5C B2 0C        fstp        dword ptr [edx+esi*4+0Ch]
+  00000053: 83 F8 04           cmp         eax,4
+  00000056: 7C B5              jl          0000000D
+  00000058: DD D9              fstp        st(1)
+  0000005A: 5E                 pop         esi
+  0000005B: DD D8              fstp        st(0)
+  0000005D: 5D                 pop         ebp
+  0000005E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          5F .text

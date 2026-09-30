@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A08C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_Sound_SetNodeFadeValue:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        _FFX_Battle_SeNodeLinkedList_FindByResourceId
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 85 C0              test        eax,eax
+  00000010: 74 1A              je          0000002C
+  00000012: 66 83 78 04 00     cmp         word ptr [eax+4],0
+  00000017: 75 13              jne         0000002C
+  00000019: 66 8B 4D 0C        mov         cx,word ptr [ebp+0Ch]
+  0000001D: 66 89 48 04        mov         word ptr [eax+4],cx
+  00000021: 66 89 48 06        mov         word ptr [eax+6],cx
+  00000025: B8 01 00 00 00     mov         eax,1
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .text

@@ -1,0 +1,121 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file btAlignedAllocator.obj
+
+File Type: COFF OBJECT
+
+?btAllocDefault@@YAPAXI@Z (void * __cdecl btAllocDefault(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 5D                 pop         ebp
+  00000004: FF 25 00 00 00 00  jmp         dword ptr [__imp__malloc]
+
+?btFreeDefault@@YAXPAX@Z (void __cdecl btFreeDefault(void *)):
+  00000000: FF 25 00 00 00 00  jmp         dword ptr [__imp__free]
+
+?btAlignedAllocDefault@@YAPAXIH@Z (void * __cdecl btAlignedAllocDefault(unsigned int,int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 83 C0 03           add         eax,3
+  0000000E: 03 C7              add         eax,edi
+  00000010: 50                 push        eax
+  00000011: FF 15 00 00 00 00  call        dword ptr [_sAllocFunc]
+  00000017: 8B F0              mov         esi,eax
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 85 F6              test        esi,esi
+  0000001E: 74 18              je          00000038
+  00000020: 8B D7              mov         edx,edi
+  00000022: 2B D6              sub         edx,esi
+  00000024: 83 EA 04           sub         edx,4
+  00000027: 8D 4F FF           lea         ecx,[edi-1]
+  0000002A: 8D 46 04           lea         eax,[esi+4]
+  0000002D: 23 D1              and         edx,ecx
+  0000002F: 03 C2              add         eax,edx
+  00000031: 5F                 pop         edi
+  00000032: 89 70 FC           mov         dword ptr [eax-4],esi
+  00000035: 5E                 pop         esi
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 5F                 pop         edi
+  00000039: 33 C0              xor         eax,eax
+  0000003B: 5E                 pop         esi
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+?btAlignedFreeDefault@@YAXPAX@Z (void __cdecl btAlignedFreeDefault(void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 0C              je          00000016
+  0000000A: FF 70 FC           push        dword ptr [eax-4]
+  0000000D: FF 15 00 00 00 00  call        dword ptr [_sFreeFunc]
+  00000013: 83 C4 04           add         esp,4
+  00000016: 5D                 pop         ebp
+  00000017: C3                 ret
+
+?btAlignedAllocInternal@@YAPAXIH@Z (void * __cdecl btAlignedAllocInternal(unsigned int,int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 05 00 00 00 00  inc         dword ptr [?gNumAlignedAllocs@@3HA]
+  00000009: 5D                 pop         ebp
+  0000000A: FF 25 00 00 00 00  jmp         dword ptr [_sAlignedAllocFunc]
+
+?btAlignedAllocSetCustom@@YAXP6APAXI@ZP6AXPAX@Z@Z (void __cdecl btAlignedAllocSetCustom(void * (__cdecl*)(unsigned int),void (__cdecl*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: B9 00 00 00 00     mov         ecx,offset ?btAllocDefault@@YAPAXI@Z
+  0000000D: 0F 45 C8           cmovne      ecx,eax
+  00000010: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000013: 89 0D 00 00 00 00  mov         dword ptr [_sAllocFunc],ecx
+  00000019: B9 00 00 00 00     mov         ecx,offset ?btFreeDefault@@YAXPAX@Z
+  0000001E: 85 C0              test        eax,eax
+  00000020: 0F 45 C8           cmovne      ecx,eax
+  00000023: 89 0D 00 00 00 00  mov         dword ptr [_sFreeFunc],ecx
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+
+?btAlignedAllocSetCustomAligned@@YAXP6APAXIH@ZP6AXPAX@Z@Z (void __cdecl btAlignedAllocSetCustomAligned(void * (__cdecl*)(unsigned int,int),void (__cdecl*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: B9 00 00 00 00     mov         ecx,offset ?btAlignedAllocDefault@@YAPAXIH@Z
+  0000000D: 0F 45 C8           cmovne      ecx,eax
+  00000010: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000013: 89 0D 00 00 00 00  mov         dword ptr [_sAlignedAllocFunc],ecx
+  00000019: B9 00 00 00 00     mov         ecx,offset ?btAlignedFreeDefault@@YAXPAX@Z
+  0000001E: 85 C0              test        eax,eax
+  00000020: 0F 45 C8           cmovne      ecx,eax
+  00000023: 89 0D 00 00 00 00  mov         dword ptr [_sAlignedFreeFunc],ecx
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+
+?btAlignedFreeInternal@@YAXPAX@Z (void __cdecl btAlignedFreeInternal(void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 10              je          0000001A
+  0000000A: FF 05 00 00 00 00  inc         dword ptr [?gNumAlignedFree@@3HA]
+  00000010: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000013: 5D                 pop         ebp
+  00000014: FF 25 00 00 00 00  jmp         dword ptr [_sAlignedFreeFunc]
+  0000001A: 5D                 pop         ebp
+  0000001B: C3                 ret
+
+  Summary
+
+           C .bss
+          10 .data
+          7C .debug$S
+          C2 .drectve
+          E8 .text

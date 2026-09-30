@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007ABE10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_LookupModelRecordTable:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_GetSaveFlagBit3
+  00000009: 6A 00              push        0
+  0000000B: FF 75 08           push        dword ptr [ebp+8]
+  0000000E: 8B F0              mov         esi,eax
+  00000010: E8 00 00 00 00     call        _FFX_Field_GetModelRecordByCode
+  00000015: 83 C4 08           add         esp,8
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 17              je          00000033
+  0000001C: 0F B6 48 04        movzx       ecx,byte ptr [eax+4]
+  00000020: 0F B7 00           movzx       eax,word ptr [eax]
+  00000023: 6A 00              push        0
+  00000025: 56                 push        esi
+  00000026: 51                 push        ecx
+  00000027: 50                 push        eax
+  00000028: E8 00 00 00 00     call        _FFX_Table_LookupEntryByRangeAndIndex
+  0000002D: 83 C4 10           add         esp,10h
+  00000030: 5E                 pop         esi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+  00000033: 33 C0              xor         eax,eax
+  00000035: 5E                 pop         esi
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          38 .text

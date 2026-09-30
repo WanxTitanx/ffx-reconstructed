@@ -1,0 +1,190 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A54860.obj
+
+File Type: COFF OBJECT
+
+_FFX_Abmap_RecomputePartyStatsAndLearnedMoves:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 54           sub         esp,54h
+  00000006: E8 00 00 00 00     call        _sub_798830
+  0000000B: 53                 push        ebx
+  0000000C: 56                 push        esi
+  0000000D: C7 45 EC 00 00 00  mov         dword ptr [ebp-14h],0
+            00
+  00000014: C7 45 AC 00 00 00  mov         dword ptr [ebp-54h],0
+            00
+  0000001B: C7 45 B0 01 00 00  mov         dword ptr [ebp-50h],1
+            00
+  00000022: C7 45 B4 02 00 00  mov         dword ptr [ebp-4Ch],2
+            00
+  00000029: C7 45 B8 03 00 00  mov         dword ptr [ebp-48h],3
+            00
+  00000030: C7 45 BC 04 00 00  mov         dword ptr [ebp-44h],4
+            00
+  00000037: C7 45 C0 05 00 00  mov         dword ptr [ebp-40h],5
+            00
+  0000003E: C7 45 C4 06 00 00  mov         dword ptr [ebp-3Ch],6
+            00
+  00000045: 33 C9              xor         ecx,ecx
+  00000047: 57                 push        edi
+  00000048: FF 74 0D AC        push        dword ptr [ebp+ecx-54h]
+  0000004C: 33 D2              xor         edx,edx
+  0000004E: 33 FF              xor         edi,edi
+  00000050: 89 55 DC           mov         dword ptr [ebp-24h],edx
+  00000053: 89 55 E0           mov         dword ptr [ebp-20h],edx
+  00000056: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000059: 89 55 F0           mov         dword ptr [ebp-10h],edx
+  0000005C: 33 DB              xor         ebx,ebx
+  0000005E: 89 7D D8           mov         dword ptr [ebp-28h],edi
+  00000061: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000064: 89 55 E4           mov         dword ptr [ebp-1Ch],edx
+  00000067: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000006A: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000006D: E8 00 00 00 00     call        _sub_798800
+  00000072: 83 C4 04           add         esp,4
+  00000075: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00000078: E8 00 00 00 00     call        _FFX_SphereGrid_GetRuntimeStateTable
+  0000007D: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  00000080: BA 01 00 00 00     mov         edx,1
+  00000085: 33 F6              xor         esi,esi
+  00000087: D3 C2              rol         edx,cl
+  00000089: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  0000008C: 89 55 D4           mov         dword ptr [ebp-2Ch],edx
+  0000008F: 89 55 D8           mov         dword ptr [ebp-28h],edx
+  00000092: 8A CA              mov         cl,dl
+  00000094: 84 4C 70 01        test        byte ptr [eax+esi*2+1],cl
+  00000098: 0F 84 B0 00 00 00  je          0000014E
+  0000009E: 0F B6 04 70        movzx       eax,byte ptr [eax+esi*2]
+  000000A2: 8D 4D C8           lea         ecx,[ebp-38h]
+  000000A5: 51                 push        ecx
+  000000A6: FF 35 00 00 00 00  push        dword ptr [_unk_1A860E0]
+  000000AC: 50                 push        eax
+  000000AD: E8 00 00 00 00     call        _FFX_Table_GetEntryByIdRange
+  000000B2: 0F B7 50 10        movzx       edx,word ptr [eax+10h]
+  000000B6: 83 C4 0C           add         esp,0Ch
+  000000B9: F6 C2 01           test        dl,1
+  000000BC: 74 07              je          000000C5
+  000000BE: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000C2: 01 4D F4           add         dword ptr [ebp-0Ch],ecx
+  000000C5: F6 C2 02           test        dl,2
+  000000C8: 74 07              je          000000D1
+  000000CA: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000CE: 01 4D F0           add         dword ptr [ebp-10h],ecx
+  000000D1: F6 C2 04           test        dl,4
+  000000D4: 74 06              je          000000DC
+  000000D6: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000DA: 03 D9              add         ebx,ecx
+  000000DC: F6 C2 08           test        dl,8
+  000000DF: 74 06              je          000000E7
+  000000E1: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000E5: 03 F9              add         edi,ecx
+  000000E7: F6 C2 10           test        dl,10h
+  000000EA: 74 07              je          000000F3
+  000000EC: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000F0: 01 4D E8           add         dword ptr [ebp-18h],ecx
+  000000F3: F6 C2 20           test        dl,20h
+  000000F6: 74 07              je          000000FF
+  000000F8: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  000000FC: 01 4D E4           add         dword ptr [ebp-1Ch],ecx
+  000000FF: F6 C2 40           test        dl,40h
+  00000102: 74 07              je          0000010B
+  00000104: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  00000108: 01 4D FC           add         dword ptr [ebp-4],ecx
+  0000010B: 84 D2              test        dl,dl
+  0000010D: 79 07              jns         00000116
+  0000010F: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  00000113: 01 4D F8           add         dword ptr [ebp-8],ecx
+  00000116: F7 C2 00 01 00 00  test        edx,100h
+  0000011C: 74 07              je          00000125
+  0000011E: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  00000122: 01 4D E0           add         dword ptr [ebp-20h],ecx
+  00000125: F7 C2 00 02 00 00  test        edx,200h
+  0000012B: 74 07              je          00000134
+  0000012D: 0F B6 48 14        movzx       ecx,byte ptr [eax+14h]
+  00000131: 01 4D DC           add         dword ptr [ebp-24h],ecx
+  00000134: 0F B7 40 12        movzx       eax,word ptr [eax+12h]
+  00000138: 50                 push        eax
+  00000139: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  0000013C: FF 74 85 AC        push        dword ptr [ebp+eax*4-54h]
+  00000140: E8 00 00 00 00     call        _FFX_SphereGrid_ApplyLearnedMove_structural
+  00000145: 8A 4D D4           mov         cl,byte ptr [ebp-2Ch]
+  00000148: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  0000014B: 83 C4 08           add         esp,8
+  0000014E: 46                 inc         esi
+  0000014F: 81 FE 00 04 00 00  cmp         esi,400h
+  00000155: 0F 8C 39 FF FF FF  jl          00000094
+  0000015B: 81 7D F4 FF 00 00  cmp         dword ptr [ebp-0Ch],0FFh
+            00
+  00000162: 89 7D D8           mov         dword ptr [ebp-28h],edi
+  00000165: 7E 04              jle         0000016B
+  00000167: C6 45 F4 FF        mov         byte ptr [ebp-0Ch],0FFh
+  0000016B: 81 7D F0 FF 00 00  cmp         dword ptr [ebp-10h],0FFh
+            00
+  00000172: 7E 04              jle         00000178
+  00000174: C6 45 F0 FF        mov         byte ptr [ebp-10h],0FFh
+  00000178: 81 FB FF 00 00 00  cmp         ebx,0FFh
+  0000017E: 7E 05              jle         00000185
+  00000180: BB FF 00 00 00     mov         ebx,0FFh
+  00000185: 8B 45 D8           mov         eax,dword ptr [ebp-28h]
+  00000188: 3D FF 00 00 00     cmp         eax,0FFh
+  0000018D: 7E 05              jle         00000194
+  0000018F: B8 FF 00 00 00     mov         eax,0FFh
+  00000194: 8B 4D E8           mov         ecx,dword ptr [ebp-18h]
+  00000197: 81 F9 FF 00 00 00  cmp         ecx,0FFh
+  0000019D: 7E 05              jle         000001A4
+  0000019F: B9 FF 00 00 00     mov         ecx,0FFh
+  000001A4: 8B 55 E4           mov         edx,dword ptr [ebp-1Ch]
+  000001A7: 81 FA FF 00 00 00  cmp         edx,0FFh
+  000001AD: 7E 05              jle         000001B4
+  000001AF: BA FF 00 00 00     mov         edx,0FFh
+  000001B4: 81 7D FC FF 00 00  cmp         dword ptr [ebp-4],0FFh
+            00
+  000001BB: 7E 07              jle         000001C4
+  000001BD: C7 45 FC FF 00 00  mov         dword ptr [ebp-4],0FFh
+            00
+  000001C4: 81 7D F8 FF 00 00  cmp         dword ptr [ebp-8],0FFh
+            00
+  000001CB: 7E 07              jle         000001D4
+  000001CD: C7 45 F8 FF 00 00  mov         dword ptr [ebp-8],0FFh
+            00
+  000001D4: 8B 75 CC           mov         esi,dword ptr [ebp-34h]
+  000001D7: 8B 7D E0           mov         edi,dword ptr [ebp-20h]
+  000001DA: 88 46 0B           mov         byte ptr [esi+0Bh],al
+  000001DD: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000001E0: 88 56 0D           mov         byte ptr [esi+0Dh],dl
+  000001E3: 8B 55 DC           mov         edx,dword ptr [ebp-24h]
+  000001E6: 88 46 0E           mov         byte ptr [esi+0Eh],al
+  000001E9: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000001EC: 88 4E 0C           mov         byte ptr [esi+0Ch],cl
+  000001EF: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  000001F2: 88 46 0F           mov         byte ptr [esi+0Fh],al
+  000001F5: 89 3E              mov         dword ptr [esi],edi
+  000001F7: 88 5E 0A           mov         byte ptr [esi+0Ah],bl
+  000001FA: 89 56 04           mov         dword ptr [esi+4],edx
+  000001FD: 8B 55 F4           mov         edx,dword ptr [ebp-0Ch]
+  00000200: 8D 41 01           lea         eax,[ecx+1]
+  00000203: 88 56 08           mov         byte ptr [esi+8],dl
+  00000206: 8B 55 F0           mov         edx,dword ptr [ebp-10h]
+  00000209: 8D 0C 8D 04 00 00  lea         ecx,[ecx*4+4]
+            00
+  00000210: 88 56 09           mov         byte ptr [esi+9],dl
+  00000213: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00000216: 83 F8 07           cmp         eax,7
+  00000219: 0F 8C 29 FE FF FF  jl          00000048
+  0000021F: E8 00 00 00 00     call        _sub_7869C0
+  00000224: 5F                 pop         edi
+  00000225: 5E                 pop         esi
+  00000226: 5B                 pop         ebx
+  00000227: 8B E5              mov         esp,ebp
+  00000229: 5D                 pop         ebp
+  0000022A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         22B .text

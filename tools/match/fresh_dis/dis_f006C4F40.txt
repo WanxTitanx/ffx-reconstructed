@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C4F40.obj
+
+File Type: COFF OBJECT
+
+@FFX_BlurEffectLens_PerFrameUpdate@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  00000007: 75 11              jne         0000001A
+  00000009: 56                 push        esi
+  0000000A: E8 00 00 00 00     call        _FFX_BlurEffectLens_InitShaderAndBuffers
+  0000000F: 83 C4 04           add         esp,4
+  00000012: 85 C0              test        eax,eax
+  00000014: 74 04              je          0000001A
+  00000016: C6 46 28 00        mov         byte ptr [esi+28h],0
+  0000001A: E8 00 00 00 00     call        _FFX_BlurEffect_GetSingleton
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _FFX_BlurEffect_GetIsActive
+  00000025: 83 C4 04           add         esp,4
+  00000028: 85 C0              test        eax,eax
+  0000002A: 74 04              je          00000030
+  0000002C: C6 46 28 00        mov         byte ptr [esi+28h],0
+  00000030: 80 7E 28 00        cmp         byte ptr [esi+28h],0
+  00000034: 74 07              je          0000003D
+  00000036: FF 46 3C           inc         dword ptr [esi+3Ch]
+  00000039: 33 C0              xor         eax,eax
+  0000003B: 5E                 pop         esi
+  0000003C: C3                 ret
+  0000003D: D9 EE              fldz
+  0000003F: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  00000046: D9 5E 38           fstp        dword ptr [esi+38h]
+  00000049: C7 46 2C FF FF FF  mov         dword ptr [esi+2Ch],0FFFFFFFFh
+            FF
+  00000050: 33 C0              xor         eax,eax
+  00000052: 5E                 pop         esi
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          54 .text

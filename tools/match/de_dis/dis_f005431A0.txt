@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005431A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_5431A0@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 8B 06              mov         eax,dword ptr [esi]
+  0000000B: 85 C0              test        eax,eax
+  0000000D: 74 3E              je          0000004D
+  0000000F: 8D 4D F8           lea         ecx,[ebp-8]
+  00000012: 51                 push        ecx
+  00000013: 8D 4D FC           lea         ecx,[ebp-4]
+  00000016: 51                 push        ecx
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _PhyrePAnimationDescriptor_UpdateTarget
+  0000001D: 83 C4 0C           add         esp,0Ch
+  00000020: 83 3E 00           cmp         dword ptr [esi],0
+  00000023: 74 0D              je          00000032
+  00000025: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000028: 8D 4E 0C           lea         ecx,[esi+0Ch]
+  0000002B: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  0000002E: FF D0              call        eax
+  00000030: EB 02              jmp         00000034
+  00000032: D9 EE              fldz
+  00000034: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000037: D9 45 F8           fld         dword ptr [ebp-8]
+  0000003A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003D: DE D9              fcompp
+  0000003F: DF E0              fnstsw      ax
+  00000041: F6 C4 41           test        ah,41h
+  00000044: 75 07              jne         0000004D
+  00000046: B0 01              mov         al,1
+  00000048: 5E                 pop         esi
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+  0000004D: 32 C0              xor         al,al
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          54 .text

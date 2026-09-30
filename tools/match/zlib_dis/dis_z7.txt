@@ -1,0 +1,2973 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file z7.obj
+
+File Type: COFF OBJECT
+
+_fixedtables:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C7 40 4C 00 00 00  mov         dword ptr [eax+4Ch],offset ?lenfix@?1??fixedtables@@9@9
+            00
+  0000000D: C7 40 54 09 00 00  mov         dword ptr [eax+54h],9
+            00
+  00000014: C7 40 50 00 00 00  mov         dword ptr [eax+50h],offset ?distfix@?1??fixedtables@@9@9
+            00
+  0000001B: C7 40 58 05 00 00  mov         dword ptr [eax+58h],5
+            00
+  00000022: 5D                 pop         ebp
+  00000023: C3                 ret
+
+_inflate:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 83 EC 38           sub         esp,38h
+  00000009: 85 C0              test        eax,eax
+  0000000B: 0F 84 05 16 00 00  je          00001616
+  00000011: 8B 48 1C           mov         ecx,dword ptr [eax+1Ch]
+  00000014: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000017: 85 C9              test        ecx,ecx
+  00000019: 0F 84 F7 15 00 00  je          00001616
+  0000001F: 83 78 0C 00        cmp         dword ptr [eax+0Ch],0
+  00000023: 0F 84 ED 15 00 00  je          00001616
+  00000029: 83 38 00           cmp         dword ptr [eax],0
+  0000002C: 75 0A              jne         00000038
+  0000002E: 83 78 04 00        cmp         dword ptr [eax+4],0
+  00000032: 0F 85 DE 15 00 00  jne         00001616
+  00000038: 83 39 0B           cmp         dword ptr [ecx],0Bh
+  0000003B: 75 06              jne         00000043
+  0000003D: C7 01 0C 00 00 00  mov         dword ptr [ecx],0Ch
+  00000043: 8B 50 0C           mov         edx,dword ptr [eax+0Ch]
+  00000046: 53                 push        ebx
+  00000047: 8B 58 04           mov         ebx,dword ptr [eax+4]
+  0000004A: 89 55 E0           mov         dword ptr [ebp-20h],edx
+  0000004D: 8B 50 10           mov         edx,dword ptr [eax+10h]
+  00000050: 56                 push        esi
+  00000051: 8B 71 3C           mov         esi,dword ptr [ecx+3Ch]
+  00000054: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000057: 8B 51 38           mov         edx,dword ptr [ecx+38h]
+  0000005A: 57                 push        edi
+  0000005B: 8B 38              mov         edi,dword ptr [eax]
+  0000005D: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  00000060: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000063: 33 C0              xor         eax,eax
+  00000065: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  00000068: 8B 01              mov         eax,dword ptr [ecx]
+  0000006A: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000006D: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000070: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000073: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000076: 89 5D C8           mov         dword ptr [ebp-38h],ebx
+  00000079: 83 F8 1E           cmp         eax,1Eh
+  0000007C: 0F 87 80 14 00 00  ja          00001502
+  00000082: FF 24 85 00 00 00  jmp         dword ptr $LN841[eax*4]
+            00
+$LN489:
+  00000089: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000008C: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  0000008F: 85 C0              test        eax,eax
+  00000091: 75 0B              jne         0000009E
+  00000093: C7 01 0C 00 00 00  mov         dword ptr [ecx],0Ch
+  00000099: E9 59 14 00 00     jmp         000014F7
+  0000009E: 83 FE 10           cmp         esi,10h
+  000000A1: 73 2D              jae         000000D0
+  000000A3: 85 DB              test        ebx,ebx
+  000000A5: 0F 84 C7 04 00 00  je          00000572
+  000000AB: 0F B6 07           movzx       eax,byte ptr [edi]
+  000000AE: 8B CE              mov         ecx,esi
+  000000B0: D3 E0              shl         eax,cl
+  000000B2: 83 C6 08           add         esi,8
+  000000B5: 4B                 dec         ebx
+  000000B6: 47                 inc         edi
+  000000B7: 03 D0              add         edx,eax
+  000000B9: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000000BC: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000000BF: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000000C2: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000000C5: 83 FE 10           cmp         esi,10h
+  000000C8: 72 D9              jb          000000A3
+  000000CA: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000CD: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000000D0: A8 02              test        al,2
+  000000D2: 74 4B              je          0000011F
+  000000D4: 81 FA 1F 8B 00 00  cmp         edx,8B1Fh
+  000000DA: 75 43              jne         0000011F
+  000000DC: 6A 00              push        0
+  000000DE: 6A 00              push        0
+  000000E0: 6A 00              push        0
+  000000E2: E8 00 00 00 00     call        _crc32
+  000000E7: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000EA: 6A 02              push        2
+  000000EC: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000000EF: 8D 45 E4           lea         eax,[ebp-1Ch]
+  000000F2: 50                 push        eax
+  000000F3: 66 C7 45 E4 1F 8B  mov         word ptr [ebp-1Ch],8B1Fh
+  000000F9: FF 71 18           push        dword ptr [ecx+18h]
+  000000FC: E8 00 00 00 00     call        _crc32
+  00000101: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000104: 33 D2              xor         edx,edx
+  00000106: 83 C4 18           add         esp,18h
+  00000109: 33 F6              xor         esi,esi
+  0000010B: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000010E: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000111: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000114: C7 01 01 00 00 00  mov         dword ptr [ecx],1
+  0000011A: E9 D8 13 00 00     jmp         000014F7
+  0000011F: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  00000122: C7 41 10 00 00 00  mov         dword ptr [ecx+10h],0
+            00
+  00000129: 85 C0              test        eax,eax
+  0000012B: 74 07              je          00000134
+  0000012D: C7 40 30 FF FF FF  mov         dword ptr [eax+30h],0FFFFFFFFh
+            FF
+  00000134: F6 41 08 01        test        byte ptr [ecx+8],1
+  00000138: 0F 84 B8 00 00 00  je          000001F6
+  0000013E: 0F B6 CA           movzx       ecx,dl
+  00000141: 8B C2              mov         eax,edx
+  00000143: C1 E1 08           shl         ecx,8
+  00000146: C1 E8 08           shr         eax,8
+  00000149: 03 C1              add         eax,ecx
+  0000014B: 33 D2              xor         edx,edx
+  0000014D: B9 1F 00 00 00     mov         ecx,1Fh
+  00000152: F7 F1              div         eax,ecx
+  00000154: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000157: 85 D2              test        edx,edx
+  00000159: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000015C: 0F 85 94 00 00 00  jne         000001F6
+  00000162: 8B C2              mov         eax,edx
+  00000164: 24 0F              and         al,0Fh
+  00000166: 3C 08              cmp         al,8
+  00000168: 74 0F              je          00000179
+  0000016A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000016D: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BL@IHKGDAEE@unknown?5compression?5method?$AA@
+            00
+  00000174: E9 78 13 00 00     jmp         000014F1
+  00000179: C1 EA 04           shr         edx,4
+  0000017C: 8B C2              mov         eax,edx
+  0000017E: 83 E0 0F           and         eax,0Fh
+  00000181: 83 EE 04           sub         esi,4
+  00000184: 83 C0 08           add         eax,8
+  00000187: 83 79 24 00        cmp         dword ptr [ecx+24h],0
+  0000018B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000018E: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000191: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00000194: 75 4C              jne         000001E2
+  00000196: 89 41 24           mov         dword ptr [ecx+24h],eax
+  00000199: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  0000019C: B8 01 00 00 00     mov         eax,1
+  000001A1: D3 E0              shl         eax,cl
+  000001A3: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000001A6: 6A 00              push        0
+  000001A8: 6A 00              push        0
+  000001AA: 6A 00              push        0
+  000001AC: 89 41 14           mov         dword ptr [ecx+14h],eax
+  000001AF: E8 00 00 00 00     call        _adler32
+  000001B4: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000001B7: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000001BA: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000001BD: 89 42 30           mov         dword ptr [edx+30h],eax
+  000001C0: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000001C3: C1 EA 08           shr         edx,8
+  000001C6: F7 D2              not         edx
+  000001C8: 83 E2 02           and         edx,2
+  000001CB: 83 CA 09           or          edx,9
+  000001CE: 89 11              mov         dword ptr [ecx],edx
+  000001D0: 33 D2              xor         edx,edx
+  000001D2: 83 C4 0C           add         esp,0Ch
+  000001D5: 33 F6              xor         esi,esi
+  000001D7: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000001DA: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000001DD: E9 15 13 00 00     jmp         000014F7
+  000001E2: 3B 41 24           cmp         eax,dword ptr [ecx+24h]
+  000001E5: 76 B2              jbe         00000199
+  000001E7: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000001EA: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BE@EMOGCLGO@invalid?5window?5size?$AA@
+            00
+  000001F1: E9 FB 12 00 00     jmp         000014F1
+  000001F6: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000001F9: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BH@LIBMMIGA@incorrect?5header?5check?$AA@
+            00
+  00000200: E9 EC 12 00 00     jmp         000014F1
+$LN457:
+  00000205: 83 FE 10           cmp         esi,10h
+  00000208: 73 30              jae         0000023A
+  0000020A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000210: 85 DB              test        ebx,ebx
+  00000212: 0F 84 5A 03 00 00  je          00000572
+  00000218: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000021B: 8B CE              mov         ecx,esi
+  0000021D: D3 E0              shl         eax,cl
+  0000021F: 83 C6 08           add         esi,8
+  00000222: 4B                 dec         ebx
+  00000223: 47                 inc         edi
+  00000224: 03 D0              add         edx,eax
+  00000226: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000229: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000022C: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000022F: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000232: 83 FE 10           cmp         esi,10h
+  00000235: 72 D9              jb          00000210
+  00000237: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000023A: 89 51 10           mov         dword ptr [ecx+10h],edx
+  0000023D: 80 FA 08           cmp         dl,8
+  00000240: 74 0F              je          00000251
+  00000242: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000245: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BL@IHKGDAEE@unknown?5compression?5method?$AA@
+            00
+  0000024C: E9 A0 12 00 00     jmp         000014F1
+  00000251: F7 C2 00 E0 00 00  test        edx,0E000h
+  00000257: 74 0F              je          00000268
+  00000259: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000025C: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BJ@BLBBCOMO@unknown?5header?5flags?5set?$AA@
+            00
+  00000263: E9 89 12 00 00     jmp         000014F1
+  00000268: 8B 71 20           mov         esi,dword ptr [ecx+20h]
+  0000026B: 85 F6              test        esi,esi
+  0000026D: 74 0A              je          00000279
+  0000026F: 8B C2              mov         eax,edx
+  00000271: C1 E8 08           shr         eax,8
+  00000274: 83 E0 01           and         eax,1
+  00000277: 89 06              mov         dword ptr [esi],eax
+  00000279: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  00000280: 74 20              je          000002A2
+  00000282: 88 55 E4           mov         byte ptr [ebp-1Ch],dl
+  00000285: 6A 02              push        2
+  00000287: 8D 45 E4           lea         eax,[ebp-1Ch]
+  0000028A: C1 EA 08           shr         edx,8
+  0000028D: 50                 push        eax
+  0000028E: 88 55 E5           mov         byte ptr [ebp-1Bh],dl
+  00000291: FF 71 18           push        dword ptr [ecx+18h]
+  00000294: E8 00 00 00 00     call        _crc32
+  00000299: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000029C: 83 C4 0C           add         esp,0Ch
+  0000029F: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000002A2: 33 D2              xor         edx,edx
+  000002A4: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000002A7: 33 F6              xor         esi,esi
+  000002A9: C7 01 02 00 00 00  mov         dword ptr [ecx],2
+  000002AF: EB 05              jmp         000002B6
+$LN437:
+  000002B1: 83 FE 20           cmp         esi,20h
+  000002B4: 73 27              jae         000002DD
+  000002B6: 85 DB              test        ebx,ebx
+  000002B8: 0F 84 B4 02 00 00  je          00000572
+  000002BE: 0F B6 07           movzx       eax,byte ptr [edi]
+  000002C1: 8B CE              mov         ecx,esi
+  000002C3: D3 E0              shl         eax,cl
+  000002C5: 4B                 dec         ebx
+  000002C6: 47                 inc         edi
+  000002C7: 83 C6 08           add         esi,8
+  000002CA: 03 D0              add         edx,eax
+  000002CC: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000002CF: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000002D2: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000002D5: 83 FE 20           cmp         esi,20h
+  000002D8: 72 DC              jb          000002B6
+  000002DA: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000002DD: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  000002E0: 85 C0              test        eax,eax
+  000002E2: 74 03              je          000002E7
+  000002E4: 89 50 04           mov         dword ptr [eax+4],edx
+  000002E7: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  000002EE: 74 30              je          00000320
+  000002F0: 8B C2              mov         eax,edx
+  000002F2: C1 E8 08           shr         eax,8
+  000002F5: 88 45 E5           mov         byte ptr [ebp-1Bh],al
+  000002F8: 8B C2              mov         eax,edx
+  000002FA: C1 E8 10           shr         eax,10h
+  000002FD: 88 45 E6           mov         byte ptr [ebp-1Ah],al
+  00000300: 88 55 E4           mov         byte ptr [ebp-1Ch],dl
+  00000303: 6A 04              push        4
+  00000305: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000308: C1 EA 18           shr         edx,18h
+  0000030B: 50                 push        eax
+  0000030C: 88 55 E7           mov         byte ptr [ebp-19h],dl
+  0000030F: FF 71 18           push        dword ptr [ecx+18h]
+  00000312: E8 00 00 00 00     call        _crc32
+  00000317: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000031A: 83 C4 0C           add         esp,0Ch
+  0000031D: 89 41 18           mov         dword ptr [ecx+18h],eax
+  00000320: 33 D2              xor         edx,edx
+  00000322: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000325: 33 F6              xor         esi,esi
+  00000327: C7 01 03 00 00 00  mov         dword ptr [ecx],3
+  0000032D: EB 05              jmp         00000334
+$LN419:
+  0000032F: 83 FE 10           cmp         esi,10h
+  00000332: 73 27              jae         0000035B
+  00000334: 85 DB              test        ebx,ebx
+  00000336: 0F 84 36 02 00 00  je          00000572
+  0000033C: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000033F: 8B CE              mov         ecx,esi
+  00000341: D3 E0              shl         eax,cl
+  00000343: 4B                 dec         ebx
+  00000344: 47                 inc         edi
+  00000345: 83 C6 08           add         esi,8
+  00000348: 03 D0              add         edx,eax
+  0000034A: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  0000034D: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000350: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000353: 83 FE 10           cmp         esi,10h
+  00000356: 72 DC              jb          00000334
+  00000358: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000035B: 8B 71 20           mov         esi,dword ptr [ecx+20h]
+  0000035E: 85 F6              test        esi,esi
+  00000360: 74 17              je          00000379
+  00000362: 0F B6 C2           movzx       eax,dl
+  00000365: 89 46 08           mov         dword ptr [esi+8],eax
+  00000368: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000036B: 8B CA              mov         ecx,edx
+  0000036D: 8B 40 20           mov         eax,dword ptr [eax+20h]
+  00000370: C1 E9 08           shr         ecx,8
+  00000373: 89 48 0C           mov         dword ptr [eax+0Ch],ecx
+  00000376: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000379: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  00000380: 74 20              je          000003A2
+  00000382: 88 55 E4           mov         byte ptr [ebp-1Ch],dl
+  00000385: 6A 02              push        2
+  00000387: 8D 45 E4           lea         eax,[ebp-1Ch]
+  0000038A: C1 EA 08           shr         edx,8
+  0000038D: 50                 push        eax
+  0000038E: 88 55 E5           mov         byte ptr [ebp-1Bh],dl
+  00000391: FF 71 18           push        dword ptr [ecx+18h]
+  00000394: E8 00 00 00 00     call        _crc32
+  00000399: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000039C: 83 C4 0C           add         esp,0Ch
+  0000039F: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000003A2: 33 D2              xor         edx,edx
+  000003A4: 33 F6              xor         esi,esi
+  000003A6: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000003A9: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000003AC: C7 01 04 00 00 00  mov         dword ptr [ecx],4
+$LN402:
+  000003B2: F7 41 10 00 04 00  test        dword ptr [ecx+10h],400h
+            00
+  000003B9: 74 70              je          0000042B
+  000003BB: 83 FE 10           cmp         esi,10h
+  000003BE: 73 27              jae         000003E7
+  000003C0: 85 DB              test        ebx,ebx
+  000003C2: 0F 84 AA 01 00 00  je          00000572
+  000003C8: 0F B6 07           movzx       eax,byte ptr [edi]
+  000003CB: 8B CE              mov         ecx,esi
+  000003CD: D3 E0              shl         eax,cl
+  000003CF: 4B                 dec         ebx
+  000003D0: 47                 inc         edi
+  000003D1: 83 C6 08           add         esi,8
+  000003D4: 03 D0              add         edx,eax
+  000003D6: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000003D9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000003DC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000003DF: 83 FE 10           cmp         esi,10h
+  000003E2: 72 DC              jb          000003C0
+  000003E4: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000003E7: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  000003EA: 89 51 40           mov         dword ptr [ecx+40h],edx
+  000003ED: 85 C0              test        eax,eax
+  000003EF: 74 03              je          000003F4
+  000003F1: 89 50 14           mov         dword ptr [eax+14h],edx
+  000003F4: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  000003FB: 74 20              je          0000041D
+  000003FD: 88 55 E4           mov         byte ptr [ebp-1Ch],dl
+  00000400: 6A 02              push        2
+  00000402: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000405: C1 EA 08           shr         edx,8
+  00000408: 50                 push        eax
+  00000409: 88 55 E5           mov         byte ptr [ebp-1Bh],dl
+  0000040C: FF 71 18           push        dword ptr [ecx+18h]
+  0000040F: E8 00 00 00 00     call        _crc32
+  00000414: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000417: 83 C4 0C           add         esp,0Ch
+  0000041A: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000041D: 33 F6              xor         esi,esi
+  0000041F: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000426: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000429: EB 0E              jmp         00000439
+  0000042B: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000042E: 85 C0              test        eax,eax
+  00000430: 74 07              je          00000439
+  00000432: C7 40 10 00 00 00  mov         dword ptr [eax+10h],0
+            00
+  00000439: C7 01 05 00 00 00  mov         dword ptr [ecx],5
+$LN381:
+  0000043F: F7 41 10 00 04 00  test        dword ptr [ecx+10h],400h
+            00
+  00000446: 0F 84 90 00 00 00  je          000004DC
+  0000044C: 8B 41 40           mov         eax,dword ptr [ecx+40h]
+  0000044F: 3B C3              cmp         eax,ebx
+  00000451: 8B D0              mov         edx,eax
+  00000453: 0F 47 D3           cmova       edx,ebx
+  00000456: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000459: 89 55 CC           mov         dword ptr [ebp-34h],edx
+  0000045C: 85 D2              test        edx,edx
+  0000045E: 74 72              je          000004D2
+  00000460: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  00000463: 85 C0              test        eax,eax
+  00000465: 74 3F              je          000004A6
+  00000467: 8B 78 10           mov         edi,dword ptr [eax+10h]
+  0000046A: 89 7D D8           mov         dword ptr [ebp-28h],edi
+  0000046D: 85 FF              test        edi,edi
+  0000046F: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000472: 74 32              je          000004A6
+  00000474: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  00000477: 2B 4D D0           sub         ecx,dword ptr [ebp-30h]
+  0000047A: 89 4D D0           mov         dword ptr [ebp-30h],ecx
+  0000047D: 8B 48 18           mov         ecx,dword ptr [eax+18h]
+  00000480: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000483: 03 C2              add         eax,edx
+  00000485: 3B C1              cmp         eax,ecx
+  00000487: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  0000048A: 76 04              jbe         00000490
+  0000048C: 2B C8              sub         ecx,eax
+  0000048E: EB 02              jmp         00000492
+  00000490: 8B CA              mov         ecx,edx
+  00000492: 03 45 D8           add         eax,dword ptr [ebp-28h]
+  00000495: 51                 push        ecx
+  00000496: 57                 push        edi
+  00000497: 50                 push        eax
+  00000498: E8 00 00 00 00     call        _memcpy
+  0000049D: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000004A0: 8B 55 CC           mov         edx,dword ptr [ebp-34h]
+  000004A3: 83 C4 0C           add         esp,0Ch
+  000004A6: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  000004AD: 74 13              je          000004C2
+  000004AF: 52                 push        edx
+  000004B0: 57                 push        edi
+  000004B1: FF 71 18           push        dword ptr [ecx+18h]
+  000004B4: E8 00 00 00 00     call        _crc32
+  000004B9: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000004BC: 83 C4 0C           add         esp,0Ch
+  000004BF: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000004C2: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000004C5: 2B D8              sub         ebx,eax
+  000004C7: 03 F8              add         edi,eax
+  000004C9: 29 41 40           sub         dword ptr [ecx+40h],eax
+  000004CC: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000004CF: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000004D2: 83 79 40 00        cmp         dword ptr [ecx+40h],0
+  000004D6: 0F 85 96 00 00 00  jne         00000572
+  000004DC: C7 41 40 00 00 00  mov         dword ptr [ecx+40h],0
+            00
+  000004E3: C7 01 06 00 00 00  mov         dword ptr [ecx],6
+$LN374:
+  000004E9: F7 41 10 00 08 00  test        dword ptr [ecx+10h],800h
+            00
+  000004F0: 0F 84 FC 00 00 00  je          000005F2
+  000004F6: 85 DB              test        ebx,ebx
+  000004F8: 74 78              je          00000572
+  000004FA: 33 D2              xor         edx,edx
+  000004FC: 8D 64 24 00        lea         esp,[esp]
+  00000500: 0F B6 04 3A        movzx       eax,byte ptr [edx+edi]
+  00000504: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000507: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000050A: 42                 inc         edx
+  0000050B: 85 C0              test        eax,eax
+  0000050D: 74 1E              je          0000052D
+  0000050F: 8B 70 1C           mov         esi,dword ptr [eax+1Ch]
+  00000512: 85 F6              test        esi,esi
+  00000514: 74 17              je          0000052D
+  00000516: 8B 71 40           mov         esi,dword ptr [ecx+40h]
+  00000519: 3B 70 20           cmp         esi,dword ptr [eax+20h]
+  0000051C: 73 0F              jae         0000052D
+  0000051E: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  00000521: 8B 5D D0           mov         ebx,dword ptr [ebp-30h]
+  00000524: 88 1C 30           mov         byte ptr [eax+esi],bl
+  00000527: FF 41 40           inc         dword ptr [ecx+40h]
+  0000052A: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  0000052D: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000530: 85 C0              test        eax,eax
+  00000532: 74 04              je          00000538
+  00000534: 3B D3              cmp         edx,ebx
+  00000536: 72 C8              jb          00000500
+  00000538: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  0000053F: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  00000542: 89 55 CC           mov         dword ptr [ebp-34h],edx
+  00000545: 74 19              je          00000560
+  00000547: 52                 push        edx
+  00000548: 57                 push        edi
+  00000549: FF 71 18           push        dword ptr [ecx+18h]
+  0000054C: E8 00 00 00 00     call        _crc32
+  00000551: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000554: 8B 55 CC           mov         edx,dword ptr [ebp-34h]
+  00000557: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000055A: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  0000055D: 83 C4 0C           add         esp,0Ch
+  00000560: 2B DA              sub         ebx,edx
+  00000562: 03 FA              add         edi,edx
+  00000564: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000567: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000056A: 85 C0              test        eax,eax
+  0000056C: 0F 84 8E 00 00 00  je          00000600
+  00000572: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000575: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000578: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000057B: 8B 4D E0           mov         ecx,dword ptr [ebp-20h]
+  0000057E: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000581: 89 4F 0C           mov         dword ptr [edi+0Ch],ecx
+  00000584: 8B 4D E8           mov         ecx,dword ptr [ebp-18h]
+  00000587: 89 4F 10           mov         dword ptr [edi+10h],ecx
+  0000058A: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  0000058D: 89 47 04           mov         dword ptr [edi+4],eax
+  00000590: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000593: 89 0F              mov         dword ptr [edi],ecx
+  00000595: 83 7B 28 00        cmp         dword ptr [ebx+28h],0
+  00000599: 89 73 3C           mov         dword ptr [ebx+3Ch],esi
+  0000059C: 8B 75 DC           mov         esi,dword ptr [ebp-24h]
+  0000059F: 89 43 38           mov         dword ptr [ebx+38h],eax
+  000005A2: 75 22              jne         000005C6
+  000005A4: 3B 77 10           cmp         esi,dword ptr [edi+10h]
+  000005A7: 0F 84 B9 0F 00 00  je          00001566
+  000005AD: 8B 03              mov         eax,dword ptr [ebx]
+  000005AF: 83 F8 1D           cmp         eax,1Dh
+  000005B2: 0F 8D AE 0F 00 00  jge         00001566
+  000005B8: 83 F8 1A           cmp         eax,1Ah
+  000005BB: 7C 09              jl          000005C6
+  000005BD: 83 FA 04           cmp         edx,4
+  000005C0: 0F 84 A0 0F 00 00  je          00001566
+  000005C6: 8B C6              mov         eax,esi
+  000005C8: 2B 47 10           sub         eax,dword ptr [edi+10h]
+  000005CB: 50                 push        eax
+  000005CC: FF 77 0C           push        dword ptr [edi+0Ch]
+  000005CF: 57                 push        edi
+  000005D0: E8 00 00 00 00     call        _updatewindow
+  000005D5: 83 C4 0C           add         esp,0Ch
+  000005D8: 85 C0              test        eax,eax
+  000005DA: 0F 84 86 0F 00 00  je          00001566
+  000005E0: C7 03 1E 00 00 00  mov         dword ptr [ebx],1Eh
+$LN13:
+  000005E6: 5F                 pop         edi
+  000005E7: 5E                 pop         esi
+  000005E8: B8 FC FF FF FF     mov         eax,0FFFFFFFCh
+  000005ED: 5B                 pop         ebx
+  000005EE: 8B E5              mov         esp,ebp
+  000005F0: 5D                 pop         ebp
+  000005F1: C3                 ret
+  000005F2: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  000005F5: 85 C0              test        eax,eax
+  000005F7: 74 07              je          00000600
+  000005F9: C7 40 1C 00 00 00  mov         dword ptr [eax+1Ch],0
+            00
+  00000600: C7 41 40 00 00 00  mov         dword ptr [ecx+40h],0
+            00
+  00000607: C7 01 07 00 00 00  mov         dword ptr [ecx],7
+$LN362:
+  0000060D: F7 41 10 00 10 00  test        dword ptr [ecx+10h],1000h
+            00
+  00000614: 0F 84 7E 00 00 00  je          00000698
+  0000061A: 85 DB              test        ebx,ebx
+  0000061C: 0F 84 50 FF FF FF  je          00000572
+  00000622: 33 D2              xor         edx,edx
+  00000624: 0F B6 04 3A        movzx       eax,byte ptr [edx+edi]
+  00000628: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  0000062B: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000062E: 42                 inc         edx
+  0000062F: 85 C0              test        eax,eax
+  00000631: 74 1E              je          00000651
+  00000633: 8B 70 24           mov         esi,dword ptr [eax+24h]
+  00000636: 85 F6              test        esi,esi
+  00000638: 74 17              je          00000651
+  0000063A: 8B 71 40           mov         esi,dword ptr [ecx+40h]
+  0000063D: 3B 70 28           cmp         esi,dword ptr [eax+28h]
+  00000640: 73 0F              jae         00000651
+  00000642: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  00000645: 8B 5D D0           mov         ebx,dword ptr [ebp-30h]
+  00000648: 88 1C 30           mov         byte ptr [eax+esi],bl
+  0000064B: FF 41 40           inc         dword ptr [ecx+40h]
+  0000064E: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00000651: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000654: 85 C0              test        eax,eax
+  00000656: 74 04              je          0000065C
+  00000658: 3B D3              cmp         edx,ebx
+  0000065A: 72 C8              jb          00000624
+  0000065C: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  00000663: 8B 75 EC           mov         esi,dword ptr [ebp-14h]
+  00000666: 89 55 CC           mov         dword ptr [ebp-34h],edx
+  00000669: 74 19              je          00000684
+  0000066B: 52                 push        edx
+  0000066C: 57                 push        edi
+  0000066D: FF 71 18           push        dword ptr [ecx+18h]
+  00000670: E8 00 00 00 00     call        _crc32
+  00000675: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000678: 8B 55 CC           mov         edx,dword ptr [ebp-34h]
+  0000067B: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000067E: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000681: 83 C4 0C           add         esp,0Ch
+  00000684: 2B DA              sub         ebx,edx
+  00000686: 03 FA              add         edi,edx
+  00000688: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  0000068B: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000068E: 85 C0              test        eax,eax
+  00000690: 0F 85 DC FE FF FF  jne         00000572
+  00000696: EB 0E              jmp         000006A6
+  00000698: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000069B: 85 C0              test        eax,eax
+  0000069D: 74 07              je          000006A6
+  0000069F: C7 40 24 00 00 00  mov         dword ptr [eax+24h],0
+            00
+  000006A6: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000006A9: C7 01 08 00 00 00  mov         dword ptr [ecx],8
+$LN350:
+  000006AF: F7 41 10 00 02 00  test        dword ptr [ecx+10h],200h
+            00
+  000006B6: 74 55              je          0000070D
+  000006B8: 83 FE 10           cmp         esi,10h
+  000006BB: 73 2D              jae         000006EA
+  000006BD: 8D 49 00           lea         ecx,[ecx]
+  000006C0: 85 DB              test        ebx,ebx
+  000006C2: 0F 84 AA FE FF FF  je          00000572
+  000006C8: 0F B6 07           movzx       eax,byte ptr [edi]
+  000006CB: 8B CE              mov         ecx,esi
+  000006CD: D3 E0              shl         eax,cl
+  000006CF: 83 C6 08           add         esi,8
+  000006D2: 4B                 dec         ebx
+  000006D3: 47                 inc         edi
+  000006D4: 03 D0              add         edx,eax
+  000006D6: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000006D9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000006DC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000006DF: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000006E2: 83 FE 10           cmp         esi,10h
+  000006E5: 72 D9              jb          000006C0
+  000006E7: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000006EA: 0F B7 41 18        movzx       eax,word ptr [ecx+18h]
+  000006EE: 3B D0              cmp         edx,eax
+  000006F0: 74 0F              je          00000701
+  000006F2: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000006F5: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BE@GONKLEPM@header?5crc?5mismatch?$AA@
+            00
+  000006FC: E9 F0 0D 00 00     jmp         000014F1
+  00000701: 33 F6              xor         esi,esi
+  00000703: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000070A: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  0000070D: 8B 51 20           mov         edx,dword ptr [ecx+20h]
+  00000710: 85 D2              test        edx,edx
+  00000712: 74 16              je          0000072A
+  00000714: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  00000717: C1 F8 09           sar         eax,9
+  0000071A: 83 E0 01           and         eax,1
+  0000071D: 89 42 2C           mov         dword ptr [edx+2Ch],eax
+  00000720: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  00000723: C7 40 30 01 00 00  mov         dword ptr [eax+30h],1
+            00
+  0000072A: 6A 00              push        0
+  0000072C: 6A 00              push        0
+  0000072E: 6A 00              push        0
+  00000730: E8 00 00 00 00     call        _crc32
+  00000735: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000738: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000073B: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000073E: 89 42 30           mov         dword ptr [edx+30h],eax
+  00000741: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000744: 83 C4 0C           add         esp,0Ch
+  00000747: C7 01 0B 00 00 00  mov         dword ptr [ecx],0Bh
+  0000074D: E9 A5 0D 00 00     jmp         000014F7
+$LN333:
+  00000752: 83 FE 20           cmp         esi,20h
+  00000755: 73 24              jae         0000077B
+  00000757: 85 DB              test        ebx,ebx
+  00000759: 0F 84 13 FE FF FF  je          00000572
+  0000075F: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000762: 8B CE              mov         ecx,esi
+  00000764: D3 E0              shl         eax,cl
+  00000766: 4B                 dec         ebx
+  00000767: 47                 inc         edi
+  00000768: 83 C6 08           add         esi,8
+  0000076B: 03 D0              add         edx,eax
+  0000076D: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000770: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000773: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000776: 83 FE 20           cmp         esi,20h
+  00000779: 72 DC              jb          00000757
+  0000077B: 8B CA              mov         ecx,edx
+  0000077D: 8B C2              mov         eax,edx
+  0000077F: C1 E0 10           shl         eax,10h
+  00000782: 81 E1 00 FF 00 00  and         ecx,0FF00h
+  00000788: 03 C8              add         ecx,eax
+  0000078A: 8B C2              mov         eax,edx
+  0000078C: C1 E8 08           shr         eax,8
+  0000078F: C1 E1 08           shl         ecx,8
+  00000792: 25 00 FF 00 00     and         eax,0FF00h
+  00000797: C1 EA 18           shr         edx,18h
+  0000079A: 03 C1              add         eax,ecx
+  0000079C: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000079F: 03 C2              add         eax,edx
+  000007A1: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000007A4: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000007A7: 89 42 30           mov         dword ptr [edx+30h],eax
+  000007AA: 33 D2              xor         edx,edx
+  000007AC: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000007AF: 33 F6              xor         esi,esi
+  000007B1: C7 01 0A 00 00 00  mov         dword ptr [ecx],0Ah
+$LN321:
+  000007B7: 83 79 0C 00        cmp         dword ptr [ecx+0Ch],0
+  000007BB: 0F 84 4D 0D 00 00  je          0000150E
+  000007C1: 6A 00              push        0
+  000007C3: 6A 00              push        0
+  000007C5: 6A 00              push        0
+  000007C7: E8 00 00 00 00     call        _adler32
+  000007CC: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000007CF: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000007D2: 89 41 18           mov         dword ptr [ecx+18h],eax
+  000007D5: 89 42 30           mov         dword ptr [edx+30h],eax
+  000007D8: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000007DB: 83 C4 0C           add         esp,0Ch
+  000007DE: C7 01 0B 00 00 00  mov         dword ptr [ecx],0Bh
+$LN316:
+  000007E4: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000007E7: 83 F8 05           cmp         eax,5
+  000007EA: 0F 84 82 FD FF FF  je          00000572
+  000007F0: 83 F8 06           cmp         eax,6
+  000007F3: 0F 84 79 FD FF FF  je          00000572
+$LN315:
+  000007F9: 83 79 04 00        cmp         dword ptr [ecx+4],0
+  000007FD: 74 1D              je          0000081C
+  000007FF: 8B CE              mov         ecx,esi
+  00000801: 83 E1 07           and         ecx,7
+  00000804: D3 EA              shr         edx,cl
+  00000806: 2B F1              sub         esi,ecx
+  00000808: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000080B: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  0000080E: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000811: C7 01 1A 00 00 00  mov         dword ptr [ecx],1Ah
+  00000817: E9 DB 0C 00 00     jmp         000014F7
+  0000081C: 83 FE 03           cmp         esi,3
+  0000081F: 73 27              jae         00000848
+  00000821: 85 DB              test        ebx,ebx
+  00000823: 0F 84 49 FD FF FF  je          00000572
+  00000829: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000082C: 8B CE              mov         ecx,esi
+  0000082E: D3 E0              shl         eax,cl
+  00000830: 4B                 dec         ebx
+  00000831: 47                 inc         edi
+  00000832: 83 C6 08           add         esi,8
+  00000835: 03 D0              add         edx,eax
+  00000837: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  0000083A: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000083D: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000840: 83 FE 03           cmp         esi,3
+  00000843: 72 DC              jb          00000821
+  00000845: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000848: 8B C2              mov         eax,edx
+  0000084A: 83 E0 01           and         eax,1
+  0000084D: D1 EA              shr         edx,1
+  0000084F: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000852: 8B C2              mov         eax,edx
+  00000854: 83 E0 03           and         eax,3
+  00000857: 83 F8 03           cmp         eax,3
+  0000085A: 0F 87 7B 00 00 00  ja          000008DB
+  00000860: FF 24 85 00 00 00  jmp         dword ptr $LN842[eax*4]
+            00
+$LN294:
+  00000867: C1 EA 02           shr         edx,2
+  0000086A: 83 EE 03           sub         esi,3
+  0000086D: C7 01 0D 00 00 00  mov         dword ptr [ecx],0Dh
+  00000873: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000876: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000879: E9 79 0C 00 00     jmp         000014F7
+$LN293:
+  0000087E: 83 7D 0C 06        cmp         dword ptr [ebp+0Ch],6
+  00000882: C7 41 4C 00 00 00  mov         dword ptr [ecx+4Ch],offset ?lenfix@?1??fixedtables@@9@9
+            00
+  00000889: C7 41 54 09 00 00  mov         dword ptr [ecx+54h],9
+            00
+  00000890: C7 41 50 00 00 00  mov         dword ptr [ecx+50h],offset ?distfix@?1??fixedtables@@9@9
+            00
+  00000897: C7 41 58 05 00 00  mov         dword ptr [ecx+58h],5
+            00
+  0000089E: C7 01 13 00 00 00  mov         dword ptr [ecx],13h
+  000008A4: 75 35              jne         000008DB
+  000008A6: C1 EA 02           shr         edx,2
+  000008A9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000008AC: 83 EE 03           sub         esi,3
+  000008AF: E9 BE FC FF FF     jmp         00000572
+$LN288:
+  000008B4: C1 EA 02           shr         edx,2
+  000008B7: 83 EE 03           sub         esi,3
+  000008BA: C7 01 10 00 00 00  mov         dword ptr [ecx],10h
+  000008C0: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000008C3: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000008C6: E9 2C 0C 00 00     jmp         000014F7
+$LN287:
+  000008CB: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000008CE: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BD@PJCBIDD@invalid?5block?5type?$AA@
+            00
+  000008D5: C7 01 1D 00 00 00  mov         dword ptr [ecx],1Dh
+  000008DB: C1 EA 02           shr         edx,2
+  000008DE: 83 EE 03           sub         esi,3
+  000008E1: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000008E4: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000008E7: E9 0B 0C 00 00     jmp         000014F7
+$LN282:
+  000008EC: 8B CE              mov         ecx,esi
+  000008EE: 83 E1 07           and         ecx,7
+  000008F1: D3 EA              shr         edx,cl
+  000008F3: 2B F1              sub         esi,ecx
+  000008F5: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000008F8: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000008FB: 83 FE 20           cmp         esi,20h
+  000008FE: 73 27              jae         00000927
+  00000900: 85 DB              test        ebx,ebx
+  00000902: 0F 84 6A FC FF FF  je          00000572
+  00000908: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000090B: 8B CE              mov         ecx,esi
+  0000090D: D3 E0              shl         eax,cl
+  0000090F: 83 C6 08           add         esi,8
+  00000912: 4B                 dec         ebx
+  00000913: 47                 inc         edi
+  00000914: 03 D0              add         edx,eax
+  00000916: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000919: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000091C: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000091F: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000922: 83 FE 20           cmp         esi,20h
+  00000925: 72 D9              jb          00000900
+  00000927: 8B C2              mov         eax,edx
+  00000929: 8B CA              mov         ecx,edx
+  0000092B: 81 E1 FF FF 00 00  and         ecx,0FFFFh
+  00000931: F7 D0              not         eax
+  00000933: C1 E8 10           shr         eax,10h
+  00000936: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000939: 3B C8              cmp         ecx,eax
+  0000093B: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000093E: 74 0F              je          0000094F
+  00000940: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000943: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BN@LGAADGOK@invalid?5stored?5block?5lengths?$AA@
+            00
+  0000094A: E9 A2 0B 00 00     jmp         000014F1
+  0000094F: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  00000952: 33 D2              xor         edx,edx
+  00000954: 33 F6              xor         esi,esi
+  00000956: 83 7D 0C 06        cmp         dword ptr [ebp+0Ch],6
+  0000095A: 89 41 40           mov         dword ptr [ecx+40h],eax
+  0000095D: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000960: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000963: C7 01 0E 00 00 00  mov         dword ptr [ecx],0Eh
+  00000969: 0F 84 03 FC FF FF  je          00000572
+$LN266:
+  0000096F: C7 01 0F 00 00 00  mov         dword ptr [ecx],0Fh
+$LN264:
+  00000975: 8B 41 40           mov         eax,dword ptr [ecx+40h]
+  00000978: 85 C0              test        eax,eax
+  0000097A: 0F 84 E0 06 00 00  je          00001060
+  00000980: 3B C3              cmp         eax,ebx
+  00000982: 0F 47 C3           cmova       eax,ebx
+  00000985: 3B 45 E8           cmp         eax,dword ptr [ebp-18h]
+  00000988: 0F 47 45 E8        cmova       eax,dword ptr [ebp-18h]
+  0000098C: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  0000098F: 85 C0              test        eax,eax
+  00000991: 0F 84 DB FB FF FF  je          00000572
+  00000997: 50                 push        eax
+  00000998: 57                 push        edi
+  00000999: FF 75 E0           push        dword ptr [ebp-20h]
+  0000099C: E8 00 00 00 00     call        _memcpy
+  000009A1: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000009A4: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000009A7: 29 45 E8           sub         dword ptr [ebp-18h],eax
+  000009AA: 01 45 E0           add         dword ptr [ebp-20h],eax
+  000009AD: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000009B0: 2B D8              sub         ebx,eax
+  000009B2: 03 F8              add         edi,eax
+  000009B4: 83 C4 0C           add         esp,0Ch
+  000009B7: 29 41 40           sub         dword ptr [ecx+40h],eax
+  000009BA: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000009BD: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000009C0: E9 32 0B 00 00     jmp         000014F7
+$LN258:
+  000009C5: 83 FE 0E           cmp         esi,0Eh
+  000009C8: 73 2D              jae         000009F7
+  000009CA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000009D0: 85 DB              test        ebx,ebx
+  000009D2: 0F 84 9A FB FF FF  je          00000572
+  000009D8: 0F B6 07           movzx       eax,byte ptr [edi]
+  000009DB: 8B CE              mov         ecx,esi
+  000009DD: D3 E0              shl         eax,cl
+  000009DF: 4B                 dec         ebx
+  000009E0: 47                 inc         edi
+  000009E1: 83 C6 08           add         esi,8
+  000009E4: 03 D0              add         edx,eax
+  000009E6: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000009E9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000009EC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000009EF: 83 FE 0E           cmp         esi,0Eh
+  000009F2: 72 DC              jb          000009D0
+  000009F4: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000009F7: 8B C2              mov         eax,edx
+  000009F9: 83 E0 1F           and         eax,1Fh
+  000009FC: 05 01 01 00 00     add         eax,101h
+  00000A01: 89 41 60           mov         dword ptr [ecx+60h],eax
+  00000A04: C1 EA 05           shr         edx,5
+  00000A07: 8B C2              mov         eax,edx
+  00000A09: 83 E0 1F           and         eax,1Fh
+  00000A0C: 40                 inc         eax
+  00000A0D: C1 EA 05           shr         edx,5
+  00000A10: 89 41 64           mov         dword ptr [ecx+64h],eax
+  00000A13: 8B C2              mov         eax,edx
+  00000A15: 83 E0 0F           and         eax,0Fh
+  00000A18: 83 C0 04           add         eax,4
+  00000A1B: C1 EA 04           shr         edx,4
+  00000A1E: 83 EE 0E           sub         esi,0Eh
+  00000A21: 81 79 60 1E 01 00  cmp         dword ptr [ecx+60h],11Eh
+            00
+  00000A28: 89 41 5C           mov         dword ptr [ecx+5Ch],eax
+  00000A2B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000A2E: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000A31: 0F 87 F6 00 00 00  ja          00000B2D
+  00000A37: 83 79 64 1E        cmp         dword ptr [ecx+64h],1Eh
+  00000A3B: 0F 87 EC 00 00 00  ja          00000B2D
+  00000A41: C7 41 68 00 00 00  mov         dword ptr [ecx+68h],0
+            00
+  00000A48: C7 01 11 00 00 00  mov         dword ptr [ecx],11h
+$LN527:
+  00000A4E: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000A51: 3B 41 5C           cmp         eax,dword ptr [ecx+5Ch]
+  00000A54: 73 65              jae         00000ABB
+  00000A56: 83 FE 03           cmp         esi,3
+  00000A59: 73 29              jae         00000A84
+  00000A5B: EB 03              jmp         00000A60
+  00000A5D: 8D 49 00           lea         ecx,[ecx]
+  00000A60: 85 DB              test        ebx,ebx
+  00000A62: 0F 84 0A FB FF FF  je          00000572
+  00000A68: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000A6B: 8B CE              mov         ecx,esi
+  00000A6D: D3 E0              shl         eax,cl
+  00000A6F: 4B                 dec         ebx
+  00000A70: 47                 inc         edi
+  00000A71: 83 C6 08           add         esi,8
+  00000A74: 03 D0              add         edx,eax
+  00000A76: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000A79: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000A7C: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000A7F: 83 FE 03           cmp         esi,3
+  00000A82: 72 DC              jb          00000A60
+  00000A84: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000A87: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  00000A8A: 8B 40 68           mov         eax,dword ptr [eax+68h]
+  00000A8D: 8B CA              mov         ecx,edx
+  00000A8F: 0F B7 04 45 00 00  movzx       eax,word ptr ?order@?1??inflate@@9@9[eax*2]
+            00 00
+  00000A97: 83 E1 07           and         ecx,7
+  00000A9A: 66 89 4C 47 70     mov         word ptr [edi+eax*2+70h],cx
+  00000A9F: 8B CF              mov         ecx,edi
+  00000AA1: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000AA4: FF 41 68           inc         dword ptr [ecx+68h]
+  00000AA7: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000AAA: C1 EA 03           shr         edx,3
+  00000AAD: 83 EE 03           sub         esi,3
+  00000AB0: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000AB3: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000AB6: 3B 41 5C           cmp         eax,dword ptr [ecx+5Ch]
+  00000AB9: 72 9B              jb          00000A56
+  00000ABB: 83 79 68 13        cmp         dword ptr [ecx+68h],13h
+  00000ABF: 73 1B              jae         00000ADC
+  00000AC1: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000AC4: 33 D2              xor         edx,edx
+  00000AC6: 0F B7 04 45 00 00  movzx       eax,word ptr ?order@?1??inflate@@9@9[eax*2]
+            00 00
+  00000ACE: 66 89 54 41 70     mov         word ptr [ecx+eax*2+70h],dx
+  00000AD3: FF 41 68           inc         dword ptr [ecx+68h]
+  00000AD6: 83 79 68 13        cmp         dword ptr [ecx+68h],13h
+  00000ADA: 72 E5              jb          00000AC1
+  00000ADC: 8D 81 30 05 00 00  lea         eax,[ecx+530h]
+  00000AE2: 8D 51 6C           lea         edx,[ecx+6Ch]
+  00000AE5: 89 41 4C           mov         dword ptr [ecx+4Ch],eax
+  00000AE8: 89 02              mov         dword ptr [edx],eax
+  00000AEA: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000AED: 05 F0 02 00 00     add         eax,2F0h
+  00000AF2: 50                 push        eax
+  00000AF3: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000AF6: 83 C1 54           add         ecx,54h
+  00000AF9: 51                 push        ecx
+  00000AFA: 52                 push        edx
+  00000AFB: 6A 13              push        13h
+  00000AFD: 83 C0 70           add         eax,70h
+  00000B00: 50                 push        eax
+  00000B01: 6A 00              push        0
+  00000B03: C7 01 07 00 00 00  mov         dword ptr [ecx],7
+  00000B09: E8 00 00 00 00     call        _inflate_table
+  00000B0E: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000B11: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000B14: 83 C4 18           add         esp,18h
+  00000B17: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  00000B1A: 85 C0              test        eax,eax
+  00000B1C: 74 1E              je          00000B3C
+  00000B1E: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000B21: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BJ@HDEPPGOH@invalid?5code?5lengths?5set?$AA@
+            00
+  00000B28: E9 C4 09 00 00     jmp         000014F1
+  00000B2D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000B30: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0CE@GMIGFPBB@too?5many?5length?5or?5distance?5symb@
+            00
+  00000B37: E9 B5 09 00 00     jmp         000014F1
+  00000B3C: C7 41 68 00 00 00  mov         dword ptr [ecx+68h],0
+            00
+  00000B43: C7 01 12 00 00 00  mov         dword ptr [ecx],12h
+$LN530:
+  00000B49: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000B4C: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000B4F: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  00000B52: 8B 41 64           mov         eax,dword ptr [ecx+64h]
+  00000B55: 03 41 60           add         eax,dword ptr [ecx+60h]
+  00000B58: 39 45 D8           cmp         dword ptr [ebp-28h],eax
+  00000B5B: 0F 83 0C 02 00 00  jae         00000D6D
+  00000B61: 8B 49 54           mov         ecx,dword ptr [ecx+54h]
+  00000B64: B8 01 00 00 00     mov         eax,1
+  00000B69: D3 E0              shl         eax,cl
+  00000B6B: 8D 48 FF           lea         ecx,[eax-1]
+  00000B6E: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000B71: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  00000B74: 8B 40 4C           mov         eax,dword ptr [eax+4Ch]
+  00000B77: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00000B7A: 8B C1              mov         eax,ecx
+  00000B7C: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000B7F: 23 C2              and         eax,edx
+  00000B81: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00000B84: 8B C8              mov         ecx,eax
+  00000B86: C1 E9 08           shr         ecx,8
+  00000B89: 0F B6 C9           movzx       ecx,cl
+  00000B8C: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000B8F: 3B CE              cmp         ecx,esi
+  00000B91: 76 39              jbe         00000BCC
+  00000B93: 85 DB              test        ebx,ebx
+  00000B95: 0F 84 D7 F9 FF FF  je          00000572
+  00000B9B: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000B9E: 8B CE              mov         ecx,esi
+  00000BA0: D3 E0              shl         eax,cl
+  00000BA2: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000BA5: 4B                 dec         ebx
+  00000BA6: 47                 inc         edi
+  00000BA7: 03 D0              add         edx,eax
+  00000BA9: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000BAC: 23 C2              and         eax,edx
+  00000BAE: 83 C6 08           add         esi,8
+  00000BB1: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00000BB4: 8B C8              mov         ecx,eax
+  00000BB6: C1 E9 08           shr         ecx,8
+  00000BB9: 0F B6 C9           movzx       ecx,cl
+  00000BBC: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000BBF: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000BC2: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000BC5: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000BC8: 3B CE              cmp         ecx,esi
+  00000BCA: 77 C7              ja          00000B93
+  00000BCC: 8B C8              mov         ecx,eax
+  00000BCE: C1 E9 10           shr         ecx,10h
+  00000BD1: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000BD4: 66 83 F9 10        cmp         cx,10h
+  00000BD8: 73 26              jae         00000C00
+  00000BDA: 8B 7D D8           mov         edi,dword ptr [ebp-28h]
+  00000BDD: C1 E8 08           shr         eax,8
+  00000BE0: 0F B6 C8           movzx       ecx,al
+  00000BE3: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  00000BE6: D3 EA              shr         edx,cl
+  00000BE8: 2B F1              sub         esi,ecx
+  00000BEA: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000BED: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000BF0: 66 89 44 79 70     mov         word ptr [ecx+edi*2+70h],ax
+  00000BF5: FF 41 68           inc         dword ptr [ecx+68h]
+  00000BF8: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000BFB: E9 55 01 00 00     jmp         00000D55
+  00000C00: 75 70              jne         00000C72
+  00000C02: 8B C8              mov         ecx,eax
+  00000C04: C1 E9 08           shr         ecx,8
+  00000C07: 0F B6 C9           movzx       ecx,cl
+  00000C0A: 83 C1 02           add         ecx,2
+  00000C0D: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000C10: 3B F1              cmp         esi,ecx
+  00000C12: 73 25              jae         00000C39
+  00000C14: 85 DB              test        ebx,ebx
+  00000C16: 0F 84 56 F9 FF FF  je          00000572
+  00000C1C: 0F B6 17           movzx       edx,byte ptr [edi]
+  00000C1F: 8B CE              mov         ecx,esi
+  00000C21: D3 E2              shl         edx,cl
+  00000C23: 4B                 dec         ebx
+  00000C24: 47                 inc         edi
+  00000C25: 83 C6 08           add         esi,8
+  00000C28: 01 55 FC           add         dword ptr [ebp-4],edx
+  00000C2B: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000C2E: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000C31: 3B 75 CC           cmp         esi,dword ptr [ebp-34h]
+  00000C34: 72 DE              jb          00000C14
+  00000C36: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000C39: 0F B6 CC           movzx       ecx,ah
+  00000C3C: D3 EA              shr         edx,cl
+  00000C3E: 2B F1              sub         esi,ecx
+  00000C40: 8B 4D D8           mov         ecx,dword ptr [ebp-28h]
+  00000C43: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000C46: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000C49: 85 C9              test        ecx,ecx
+  00000C4B: 0F 84 3E 01 00 00  je          00000D8F
+  00000C51: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000C54: 0F B7 4C 48 6E     movzx       ecx,word ptr [eax+ecx*2+6Eh]
+  00000C59: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000C5C: 8B CA              mov         ecx,edx
+  00000C5E: 83 E1 03           and         ecx,3
+  00000C61: 83 C1 03           add         ecx,3
+  00000C64: C1 EA 02           shr         edx,2
+  00000C67: 89 4D D0           mov         dword ptr [ebp-30h],ecx
+  00000C6A: 83 EE 02           sub         esi,2
+  00000C6D: E9 AA 00 00 00     jmp         00000D1C
+  00000C72: 66 83 7D D2 11     cmp         word ptr [ebp-2Eh],11h
+  00000C77: 0F B6 CC           movzx       ecx,ah
+  00000C7A: 75 4A              jne         00000CC6
+  00000C7C: 8D 41 03           lea         eax,[ecx+3]
+  00000C7F: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000C82: 3B F0              cmp         esi,eax
+  00000C84: 73 29              jae         00000CAF
+  00000C86: 85 DB              test        ebx,ebx
+  00000C88: 0F 84 E4 F8 FF FF  je          00000572
+  00000C8E: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000C91: 8B CE              mov         ecx,esi
+  00000C93: D3 E0              shl         eax,cl
+  00000C95: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000C98: 4B                 dec         ebx
+  00000C99: 47                 inc         edi
+  00000C9A: 03 D0              add         edx,eax
+  00000C9C: 83 C6 08           add         esi,8
+  00000C9F: 8D 41 03           lea         eax,[ecx+3]
+  00000CA2: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000CA5: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000CA8: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000CAB: 3B F0              cmp         esi,eax
+  00000CAD: 72 D7              jb          00000C86
+  00000CAF: D3 EA              shr         edx,cl
+  00000CB1: 8B C2              mov         eax,edx
+  00000CB3: 83 E0 07           and         eax,7
+  00000CB6: 83 C0 03           add         eax,3
+  00000CB9: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000CBC: C1 EA 03           shr         edx,3
+  00000CBF: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  00000CC4: EB 48              jmp         00000D0E
+  00000CC6: 8D 41 07           lea         eax,[ecx+7]
+  00000CC9: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000CCC: 3B F0              cmp         esi,eax
+  00000CCE: 73 29              jae         00000CF9
+  00000CD0: 85 DB              test        ebx,ebx
+  00000CD2: 0F 84 9A F8 FF FF  je          00000572
+  00000CD8: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000CDB: 8B CE              mov         ecx,esi
+  00000CDD: D3 E0              shl         eax,cl
+  00000CDF: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000CE2: 4B                 dec         ebx
+  00000CE3: 47                 inc         edi
+  00000CE4: 03 D0              add         edx,eax
+  00000CE6: 83 C6 08           add         esi,8
+  00000CE9: 8D 41 07           lea         eax,[ecx+7]
+  00000CEC: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000CEF: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000CF2: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000CF5: 3B F0              cmp         esi,eax
+  00000CF7: 72 D7              jb          00000CD0
+  00000CF9: D3 EA              shr         edx,cl
+  00000CFB: 8B C2              mov         eax,edx
+  00000CFD: 83 E0 7F           and         eax,7Fh
+  00000D00: 83 C0 0B           add         eax,0Bh
+  00000D03: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000D06: C1 EA 07           shr         edx,7
+  00000D09: B8 F9 FF FF FF     mov         eax,0FFFFFFF9h
+  00000D0E: 2B C1              sub         eax,ecx
+  00000D10: 03 F0              add         esi,eax
+  00000D12: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000D15: C7 45 CC 00 00 00  mov         dword ptr [ebp-34h],0
+            00
+  00000D1C: 8B 48 64           mov         ecx,dword ptr [eax+64h]
+  00000D1F: 03 48 60           add         ecx,dword ptr [eax+60h]
+  00000D22: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000D25: 03 45 D8           add         eax,dword ptr [ebp-28h]
+  00000D28: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000D2B: 3B C1              cmp         eax,ecx
+  00000D2D: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000D30: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000D33: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000D36: 77 69              ja          00000DA1
+  00000D38: 83 7D D0 00        cmp         dword ptr [ebp-30h],0
+  00000D3C: 74 1A              je          00000D58
+  00000D3E: 8B 7D D0           mov         edi,dword ptr [ebp-30h]
+  00000D41: 8B 5D CC           mov         ebx,dword ptr [ebp-34h]
+  00000D44: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000D47: 66 89 5C 41 70     mov         word ptr [ecx+eax*2+70h],bx
+  00000D4C: FF 41 68           inc         dword ptr [ecx+68h]
+  00000D4F: 4F                 dec         edi
+  00000D50: 75 F2              jne         00000D44
+  00000D52: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00000D55: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000D58: 8B 41 68           mov         eax,dword ptr [ecx+68h]
+  00000D5B: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  00000D5E: 8B 41 64           mov         eax,dword ptr [ecx+64h]
+  00000D61: 03 41 60           add         eax,dword ptr [ecx+60h]
+  00000D64: 39 45 D8           cmp         dword ptr [ebp-28h],eax
+  00000D67: 0F 82 F4 FD FF FF  jb          00000B61
+  00000D6D: 83 39 1D           cmp         dword ptr [ecx],1Dh
+  00000D70: 0F 84 81 07 00 00  je          000014F7
+  00000D76: 66 83 B9 70 02 00  cmp         word ptr [ecx+270h],0
+            00 00
+  00000D7E: 75 30              jne         00000DB0
+  00000D80: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000D83: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0CF@DGDMADCD@invalid?5code?5?9?9?5missing?5end?9of?9b@
+            00
+  00000D8A: E9 62 07 00 00     jmp         000014F1
+  00000D8F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000D92: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000D95: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BK@BMMPFBBH@invalid?5bit?5length?5repeat?$AA@
+            00
+  00000D9C: E9 50 07 00 00     jmp         000014F1
+  00000DA1: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000DA4: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BK@BMMPFBBH@invalid?5bit?5length?5repeat?$AA@
+            00
+  00000DAB: E9 41 07 00 00     jmp         000014F1
+  00000DB0: 8D 51 6C           lea         edx,[ecx+6Ch]
+  00000DB3: 8D 81 30 05 00 00  lea         eax,[ecx+530h]
+  00000DB9: 8D B9 F0 02 00 00  lea         edi,[ecx+2F0h]
+  00000DBF: 57                 push        edi
+  00000DC0: 89 02              mov         dword ptr [edx],eax
+  00000DC2: 89 41 4C           mov         dword ptr [ecx+4Ch],eax
+  00000DC5: 8D 41 54           lea         eax,[ecx+54h]
+  00000DC8: 50                 push        eax
+  00000DC9: 52                 push        edx
+  00000DCA: FF 71 60           push        dword ptr [ecx+60h]
+  00000DCD: C7 00 09 00 00 00  mov         dword ptr [eax],9
+  00000DD3: 8D 41 70           lea         eax,[ecx+70h]
+  00000DD6: 50                 push        eax
+  00000DD7: 6A 01              push        1
+  00000DD9: 89 55 CC           mov         dword ptr [ebp-34h],edx
+  00000DDC: 89 7D D0           mov         dword ptr [ebp-30h],edi
+  00000DDF: E8 00 00 00 00     call        _inflate_table
+  00000DE4: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000DE7: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000DEA: 83 C4 18           add         esp,18h
+  00000DED: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  00000DF0: 85 C0              test        eax,eax
+  00000DF2: 74 12              je          00000E06
+  00000DF4: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000DF7: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000DFA: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BM@IIMGAINC@invalid?5literal?1lengths?5set?$AA@
+            00
+  00000E01: E9 EB 06 00 00     jmp         000014F1
+  00000E06: 8B 55 CC           mov         edx,dword ptr [ebp-34h]
+  00000E09: FF 75 D0           push        dword ptr [ebp-30h]
+  00000E0C: 8B 02              mov         eax,dword ptr [edx]
+  00000E0E: 89 41 50           mov         dword ptr [ecx+50h],eax
+  00000E11: 8D 41 58           lea         eax,[ecx+58h]
+  00000E14: 50                 push        eax
+  00000E15: C7 00 06 00 00 00  mov         dword ptr [eax],6
+  00000E1B: 8B 41 60           mov         eax,dword ptr [ecx+60h]
+  00000E1E: 52                 push        edx
+  00000E1F: FF 71 64           push        dword ptr [ecx+64h]
+  00000E22: 83 C0 38           add         eax,38h
+  00000E25: 8D 04 41           lea         eax,[ecx+eax*2]
+  00000E28: 50                 push        eax
+  00000E29: 6A 02              push        2
+  00000E2B: E8 00 00 00 00     call        _inflate_table
+  00000E30: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000E33: 83 C4 18           add         esp,18h
+  00000E36: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  00000E39: 85 C0              test        eax,eax
+  00000E3B: 74 12              je          00000E4F
+  00000E3D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000E40: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000E43: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BG@GMDFCBGP@invalid?5distances?5set?$AA@
+            00
+  00000E4A: E9 A2 06 00 00     jmp         000014F1
+  00000E4F: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000E52: C7 01 13 00 00 00  mov         dword ptr [ecx],13h
+  00000E58: 83 FA 06           cmp         edx,6
+  00000E5B: 0F 84 FD 06 00 00  je          0000155E
+  00000E61: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+$LN148:
+  00000E64: C7 01 14 00 00 00  mov         dword ptr [ecx],14h
+$LN146:
+  00000E6A: 83 FB 06           cmp         ebx,6
+  00000E6D: 0F 82 73 00 00 00  jb          00000EE6
+  00000E73: 81 7D E8 02 01 00  cmp         dword ptr [ebp-18h],102h
+            00
+  00000E7A: 72 6A              jb          00000EE6
+  00000E7C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000E7F: 8B 7D E0           mov         edi,dword ptr [ebp-20h]
+  00000E82: FF 75 DC           push        dword ptr [ebp-24h]
+  00000E85: 89 78 0C           mov         dword ptr [eax+0Ch],edi
+  00000E88: 8B 7D E8           mov         edi,dword ptr [ebp-18h]
+  00000E8B: 89 78 10           mov         dword ptr [eax+10h],edi
+  00000E8E: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000E91: 89 38              mov         dword ptr [eax],edi
+  00000E93: 89 58 04           mov         dword ptr [eax+4],ebx
+  00000E96: 50                 push        eax
+  00000E97: 89 51 38           mov         dword ptr [ecx+38h],edx
+  00000E9A: 89 71 3C           mov         dword ptr [ecx+3Ch],esi
+  00000E9D: E8 00 00 00 00     call        _inflate_fast
+  00000EA2: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000EA5: 83 C4 08           add         esp,8
+  00000EA8: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  00000EAB: 8B 38              mov         edi,dword ptr [eax]
+  00000EAD: 8B 58 04           mov         ebx,dword ptr [eax+4]
+  00000EB0: 89 4D E0           mov         dword ptr [ebp-20h],ecx
+  00000EB3: 8B 48 10           mov         ecx,dword ptr [eax+10h]
+  00000EB6: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  00000EB9: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000EBC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000EBF: 83 39 0B           cmp         dword ptr [ecx],0Bh
+  00000EC2: 8B 51 38           mov         edx,dword ptr [ecx+38h]
+  00000EC5: 8B 71 3C           mov         esi,dword ptr [ecx+3Ch]
+  00000EC8: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000ECB: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000ECE: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00000ED1: 0F 85 20 06 00 00  jne         000014F7
+  00000ED7: C7 81 C4 1B 00 00  mov         dword ptr [ecx+1BC4h],0FFFFFFFFh
+            FF FF FF FF
+  00000EE1: E9 11 06 00 00     jmp         000014F7
+  00000EE6: C7 81 C4 1B 00 00  mov         dword ptr [ecx+1BC4h],0
+            00 00 00 00
+  00000EF0: 8B 49 54           mov         ecx,dword ptr [ecx+54h]
+  00000EF3: B8 01 00 00 00     mov         eax,1
+  00000EF8: D3 E0              shl         eax,cl
+  00000EFA: 48                 dec         eax
+  00000EFB: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000EFE: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000F01: 8B 48 4C           mov         ecx,dword ptr [eax+4Ch]
+  00000F04: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000F07: 23 C2              and         eax,edx
+  00000F09: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00000F0C: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00000F0F: 8B C8              mov         ecx,eax
+  00000F11: C1 E9 08           shr         ecx,8
+  00000F14: 0F B6 C9           movzx       ecx,cl
+  00000F17: 3B CE              cmp         ecx,esi
+  00000F19: 76 3B              jbe         00000F56
+  00000F1B: EB 03              jmp         00000F20
+  00000F1D: 8D 49 00           lea         ecx,[ecx]
+  00000F20: 85 DB              test        ebx,ebx
+  00000F22: 0F 84 4A F6 FF FF  je          00000572
+  00000F28: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000F2B: 8B CE              mov         ecx,esi
+  00000F2D: D3 E0              shl         eax,cl
+  00000F2F: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000F32: 4B                 dec         ebx
+  00000F33: 47                 inc         edi
+  00000F34: 03 D0              add         edx,eax
+  00000F36: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00000F39: 23 C2              and         eax,edx
+  00000F3B: 83 C6 08           add         esi,8
+  00000F3E: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00000F41: 8B C8              mov         ecx,eax
+  00000F43: C1 E9 08           shr         ecx,8
+  00000F46: 0F B6 C9           movzx       ecx,cl
+  00000F49: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000F4C: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000F4F: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000F52: 3B CE              cmp         ecx,esi
+  00000F54: 77 CA              ja          00000F20
+  00000F56: 84 C0              test        al,al
+  00000F58: 0F 84 BC 00 00 00  je          0000101A
+  00000F5E: A8 F0              test        al,0F0h
+  00000F60: 0F 85 B4 00 00 00  jne         0000101A
+  00000F66: 8B C8              mov         ecx,eax
+  00000F68: C1 E9 08           shr         ecx,8
+  00000F6B: 0F B6 F9           movzx       edi,cl
+  00000F6E: 89 4D D8           mov         dword ptr [ebp-28h],ecx
+  00000F71: 0F B6 C8           movzx       ecx,al
+  00000F74: 03 CF              add         ecx,edi
+  00000F76: BB 01 00 00 00     mov         ebx,1
+  00000F7B: D3 E3              shl         ebx,cl
+  00000F7D: 8B CF              mov         ecx,edi
+  00000F7F: 8B D0              mov         edx,eax
+  00000F81: C1 E8 10           shr         eax,10h
+  00000F84: 4B                 dec         ebx
+  00000F85: 23 5D FC           and         ebx,dword ptr [ebp-4]
+  00000F88: 89 55 D0           mov         dword ptr [ebp-30h],edx
+  00000F8B: D3 EB              shr         ebx,cl
+  00000F8D: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00000F90: 03 D8              add         ebx,eax
+  00000F92: 8B 04 99           mov         eax,dword ptr [ecx+ebx*4]
+  00000F95: 8B C8              mov         ecx,eax
+  00000F97: C1 E9 08           shr         ecx,8
+  00000F9A: 0F B6 F9           movzx       edi,cl
+  00000F9D: 8B 4D D8           mov         ecx,dword ptr [ebp-28h]
+  00000FA0: 0F B6 C9           movzx       ecx,cl
+  00000FA3: 03 F9              add         edi,ecx
+  00000FA5: 3B FE              cmp         edi,esi
+  00000FA7: 76 5B              jbe         00001004
+  00000FA9: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000FB0: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000FB3: 85 C0              test        eax,eax
+  00000FB5: 0F 84 BA F5 FF FF  je          00000575
+  00000FBB: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  00000FBE: 48                 dec         eax
+  00000FBF: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000FC2: 0F B6 03           movzx       eax,byte ptr [ebx]
+  00000FC5: 8B CE              mov         ecx,esi
+  00000FC7: D3 E0              shl         eax,cl
+  00000FC9: 43                 inc         ebx
+  00000FCA: 89 5D F0           mov         dword ptr [ebp-10h],ebx
+  00000FCD: 0F B6 DE           movzx       ebx,dh
+  00000FD0: 01 45 FC           add         dword ptr [ebp-4],eax
+  00000FD3: 0F B7 45 D2        movzx       eax,word ptr [ebp-2Eh]
+  00000FD7: 0F B6 CA           movzx       ecx,dl
+  00000FDA: 03 CB              add         ecx,ebx
+  00000FDC: BF 01 00 00 00     mov         edi,1
+  00000FE1: D3 E7              shl         edi,cl
+  00000FE3: 8B CB              mov         ecx,ebx
+  00000FE5: 83 C6 08           add         esi,8
+  00000FE8: 4F                 dec         edi
+  00000FE9: 23 7D FC           and         edi,dword ptr [ebp-4]
+  00000FEC: D3 EF              shr         edi,cl
+  00000FEE: 03 F8              add         edi,eax
+  00000FF0: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  00000FF3: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  00000FF6: 8B C8              mov         ecx,eax
+  00000FF8: C1 E9 08           shr         ecx,8
+  00000FFB: 0F B6 C9           movzx       ecx,cl
+  00000FFE: 03 CB              add         ecx,ebx
+  00001000: 3B CE              cmp         ecx,esi
+  00001002: 77 AC              ja          00000FB0
+  00001004: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00001007: 0F B6 CE           movzx       ecx,dh
+  0000100A: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000100D: D3 EA              shr         edx,cl
+  0000100F: 89 8B C4 1B 00 00  mov         dword ptr [ebx+1BC4h],ecx
+  00001015: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00001018: 2B F1              sub         esi,ecx
+  0000101A: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  0000101D: 8B C8              mov         ecx,eax
+  0000101F: C1 E9 08           shr         ecx,8
+  00001022: 0F B6 C9           movzx       ecx,cl
+  00001025: 01 8F C4 1B 00 00  add         dword ptr [edi+1BC4h],ecx
+  0000102B: D3 EA              shr         edx,cl
+  0000102D: 2B F1              sub         esi,ecx
+  0000102F: 8B C8              mov         ecx,eax
+  00001031: C1 E9 10           shr         ecx,10h
+  00001034: 89 4F 40           mov         dword ptr [edi+40h],ecx
+  00001037: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  0000103A: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000103D: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00001040: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00001043: 84 C0              test        al,al
+  00001045: 75 0B              jne         00001052
+  00001047: C7 01 19 00 00 00  mov         dword ptr [ecx],19h
+  0000104D: E9 A5 04 00 00     jmp         000014F7
+  00001052: A8 20              test        al,20h
+  00001054: 74 15              je          0000106B
+  00001056: C7 81 C4 1B 00 00  mov         dword ptr [ecx+1BC4h],0FFFFFFFFh
+            FF FF FF FF
+  00001060: C7 01 0B 00 00 00  mov         dword ptr [ecx],0Bh
+  00001066: E9 8C 04 00 00     jmp         000014F7
+  0000106B: A8 40              test        al,40h
+  0000106D: 74 0F              je          0000107E
+  0000106F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00001072: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BM@FFFLPBBC@invalid?5literal?1length?5code?$AA@
+            00
+  00001079: E9 73 04 00 00     jmp         000014F1
+  0000107E: 0F B6 C0           movzx       eax,al
+  00001081: 83 E0 0F           and         eax,0Fh
+  00001084: 89 41 48           mov         dword ptr [ecx+48h],eax
+  00001087: C7 01 15 00 00 00  mov         dword ptr [ecx],15h
+$LN113:
+  0000108D: 8B 41 48           mov         eax,dword ptr [ecx+48h]
+  00001090: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00001093: 85 C0              test        eax,eax
+  00001095: 74 55              je          000010EC
+  00001097: 3B F0              cmp         esi,eax
+  00001099: 73 29              jae         000010C4
+  0000109B: EB 03              jmp         000010A0
+  0000109D: 8D 49 00           lea         ecx,[ecx]
+  000010A0: 85 DB              test        ebx,ebx
+  000010A2: 0F 84 CA F4 FF FF  je          00000572
+  000010A8: 0F B6 07           movzx       eax,byte ptr [edi]
+  000010AB: 8B CE              mov         ecx,esi
+  000010AD: D3 E0              shl         eax,cl
+  000010AF: 4B                 dec         ebx
+  000010B0: 47                 inc         edi
+  000010B1: 83 C6 08           add         esi,8
+  000010B4: 03 D0              add         edx,eax
+  000010B6: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000010B9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000010BC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000010BF: 3B 75 CC           cmp         esi,dword ptr [ebp-34h]
+  000010C2: 72 DC              jb          000010A0
+  000010C4: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  000010C7: B8 01 00 00 00     mov         eax,1
+  000010CC: D3 E0              shl         eax,cl
+  000010CE: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000010D1: 48                 dec         eax
+  000010D2: 23 C2              and         eax,edx
+  000010D4: 01 41 40           add         dword ptr [ecx+40h],eax
+  000010D7: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000010DA: 8B C8              mov         ecx,eax
+  000010DC: D3 EA              shr         edx,cl
+  000010DE: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000010E1: 2B F0              sub         esi,eax
+  000010E3: 01 81 C4 1B 00 00  add         dword ptr [ecx+1BC4h],eax
+  000010E9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000010EC: 8B 41 40           mov         eax,dword ptr [ecx+40h]
+  000010EF: 89 81 C8 1B 00 00  mov         dword ptr [ecx+1BC8h],eax
+  000010F5: C7 01 16 00 00 00  mov         dword ptr [ecx],16h
+$LN539:
+  000010FB: 8B 49 58           mov         ecx,dword ptr [ecx+58h]
+  000010FE: B8 01 00 00 00     mov         eax,1
+  00001103: D3 E0              shl         eax,cl
+  00001105: 48                 dec         eax
+  00001106: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00001109: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000110C: 8B 48 50           mov         ecx,dword ptr [eax+50h]
+  0000110F: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  00001112: 23 C2              and         eax,edx
+  00001114: 89 4D CC           mov         dword ptr [ebp-34h],ecx
+  00001117: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  0000111A: 8B C8              mov         ecx,eax
+  0000111C: C1 E9 08           shr         ecx,8
+  0000111F: 0F B6 C9           movzx       ecx,cl
+  00001122: 3B CE              cmp         ecx,esi
+  00001124: 76 36              jbe         0000115C
+  00001126: 85 DB              test        ebx,ebx
+  00001128: 0F 84 44 F4 FF FF  je          00000572
+  0000112E: 0F B6 07           movzx       eax,byte ptr [edi]
+  00001131: 8B CE              mov         ecx,esi
+  00001133: D3 E0              shl         eax,cl
+  00001135: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  00001138: 4B                 dec         ebx
+  00001139: 47                 inc         edi
+  0000113A: 03 D0              add         edx,eax
+  0000113C: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  0000113F: 23 C2              and         eax,edx
+  00001141: 83 C6 08           add         esi,8
+  00001144: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00001147: 8B C8              mov         ecx,eax
+  00001149: C1 E9 08           shr         ecx,8
+  0000114C: 0F B6 C9           movzx       ecx,cl
+  0000114F: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00001152: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00001155: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00001158: 3B CE              cmp         ecx,esi
+  0000115A: 77 CA              ja          00001126
+  0000115C: A8 F0              test        al,0F0h
+  0000115E: 0F 85 B5 00 00 00  jne         00001219
+  00001164: 8B C8              mov         ecx,eax
+  00001166: C1 E9 08           shr         ecx,8
+  00001169: 0F B6 F9           movzx       edi,cl
+  0000116C: 89 4D D8           mov         dword ptr [ebp-28h],ecx
+  0000116F: 0F B6 C8           movzx       ecx,al
+  00001172: 03 CF              add         ecx,edi
+  00001174: BB 01 00 00 00     mov         ebx,1
+  00001179: D3 E3              shl         ebx,cl
+  0000117B: 8B CF              mov         ecx,edi
+  0000117D: 8B D0              mov         edx,eax
+  0000117F: C1 E8 10           shr         eax,10h
+  00001182: 4B                 dec         ebx
+  00001183: 23 5D FC           and         ebx,dword ptr [ebp-4]
+  00001186: 89 55 D0           mov         dword ptr [ebp-30h],edx
+  00001189: D3 EB              shr         ebx,cl
+  0000118B: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  0000118E: 03 D8              add         ebx,eax
+  00001190: 8B 04 99           mov         eax,dword ptr [ecx+ebx*4]
+  00001193: 8B C8              mov         ecx,eax
+  00001195: C1 E9 08           shr         ecx,8
+  00001198: 0F B6 F9           movzx       edi,cl
+  0000119B: 8B 4D D8           mov         ecx,dword ptr [ebp-28h]
+  0000119E: 0F B6 C9           movzx       ecx,cl
+  000011A1: 03 F9              add         edi,ecx
+  000011A3: 3B FE              cmp         edi,esi
+  000011A5: 76 5D              jbe         00001204
+  000011A7: EB 07              jmp         000011B0
+  000011A9: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000011B0: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000011B3: 85 C0              test        eax,eax
+  000011B5: 0F 84 BA F3 FF FF  je          00000575
+  000011BB: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  000011BE: 48                 dec         eax
+  000011BF: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000011C2: 0F B6 03           movzx       eax,byte ptr [ebx]
+  000011C5: 8B CE              mov         ecx,esi
+  000011C7: D3 E0              shl         eax,cl
+  000011C9: 43                 inc         ebx
+  000011CA: 89 5D F0           mov         dword ptr [ebp-10h],ebx
+  000011CD: 0F B6 DE           movzx       ebx,dh
+  000011D0: 01 45 FC           add         dword ptr [ebp-4],eax
+  000011D3: 0F B7 45 D2        movzx       eax,word ptr [ebp-2Eh]
+  000011D7: 0F B6 CA           movzx       ecx,dl
+  000011DA: 03 CB              add         ecx,ebx
+  000011DC: BF 01 00 00 00     mov         edi,1
+  000011E1: D3 E7              shl         edi,cl
+  000011E3: 8B CB              mov         ecx,ebx
+  000011E5: 83 C6 08           add         esi,8
+  000011E8: 4F                 dec         edi
+  000011E9: 23 7D FC           and         edi,dword ptr [ebp-4]
+  000011EC: D3 EF              shr         edi,cl
+  000011EE: 03 F8              add         edi,eax
+  000011F0: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000011F3: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  000011F6: 8B C8              mov         ecx,eax
+  000011F8: C1 E9 08           shr         ecx,8
+  000011FB: 0F B6 C9           movzx       ecx,cl
+  000011FE: 03 CB              add         ecx,ebx
+  00001200: 3B CE              cmp         ecx,esi
+  00001202: 77 AC              ja          000011B0
+  00001204: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00001207: 0F B6 CE           movzx       ecx,dh
+  0000120A: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000120D: D3 EA              shr         edx,cl
+  0000120F: 2B F1              sub         esi,ecx
+  00001211: 01 8B C4 1B 00 00  add         dword ptr [ebx+1BC4h],ecx
+  00001217: EB 03              jmp         0000121C
+  00001219: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  0000121C: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  0000121F: 8B C8              mov         ecx,eax
+  00001221: C1 E9 08           shr         ecx,8
+  00001224: 0F B6 C9           movzx       ecx,cl
+  00001227: 01 8B C4 1B 00 00  add         dword ptr [ebx+1BC4h],ecx
+  0000122D: D3 EA              shr         edx,cl
+  0000122F: 2B F1              sub         esi,ecx
+  00001231: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00001234: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00001237: A8 40              test        al,40h
+  00001239: 74 15              je          00001250
+  0000123B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000123E: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00001241: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00001244: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BG@LBKINIKP@invalid?5distance?5code?$AA@
+            00
+  0000124B: E9 A1 02 00 00     jmp         000014F1
+  00001250: 8B C8              mov         ecx,eax
+  00001252: C1 E9 10           shr         ecx,10h
+  00001255: 0F B6 C0           movzx       eax,al
+  00001258: 89 4B 44           mov         dword ptr [ebx+44h],ecx
+  0000125B: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000125E: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  00001261: 83 E0 0F           and         eax,0Fh
+  00001264: 89 41 48           mov         dword ptr [ecx+48h],eax
+  00001267: C7 01 17 00 00 00  mov         dword ptr [ecx],17h
+$LN76:
+  0000126D: 8B 41 48           mov         eax,dword ptr [ecx+48h]
+  00001270: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00001273: 85 C0              test        eax,eax
+  00001275: 74 58              je          000012CF
+  00001277: 3B F0              cmp         esi,eax
+  00001279: 73 29              jae         000012A4
+  0000127B: EB 03              jmp         00001280
+  0000127D: 8D 49 00           lea         ecx,[ecx]
+  00001280: 85 DB              test        ebx,ebx
+  00001282: 0F 84 EA F2 FF FF  je          00000572
+  00001288: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000128B: 8B CE              mov         ecx,esi
+  0000128D: D3 E0              shl         eax,cl
+  0000128F: 4B                 dec         ebx
+  00001290: 47                 inc         edi
+  00001291: 83 C6 08           add         esi,8
+  00001294: 03 D0              add         edx,eax
+  00001296: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00001299: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000129C: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000129F: 3B 75 CC           cmp         esi,dword ptr [ebp-34h]
+  000012A2: 72 DC              jb          00001280
+  000012A4: 8B 4D CC           mov         ecx,dword ptr [ebp-34h]
+  000012A7: B8 01 00 00 00     mov         eax,1
+  000012AC: D3 E0              shl         eax,cl
+  000012AE: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000012B1: 48                 dec         eax
+  000012B2: 23 C2              and         eax,edx
+  000012B4: 01 41 44           add         dword ptr [ecx+44h],eax
+  000012B7: 8B 45 CC           mov         eax,dword ptr [ebp-34h]
+  000012BA: 8B C8              mov         ecx,eax
+  000012BC: D3 EA              shr         edx,cl
+  000012BE: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000012C1: 2B F0              sub         esi,eax
+  000012C3: 01 81 C4 1B 00 00  add         dword ptr [ecx+1BC4h],eax
+  000012C9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000012CC: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000012CF: C7 01 18 00 00 00  mov         dword ptr [ecx],18h
+$LN62:
+  000012D5: 83 7D E8 00        cmp         dword ptr [ebp-18h],0
+  000012D9: 0F 84 93 F2 FF FF  je          00000572
+  000012DF: 8B 45 DC           mov         eax,dword ptr [ebp-24h]
+  000012E2: 2B 45 E8           sub         eax,dword ptr [ebp-18h]
+  000012E5: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  000012E8: 8B 41 44           mov         eax,dword ptr [ecx+44h]
+  000012EB: 3B 45 CC           cmp         eax,dword ptr [ebp-34h]
+  000012EE: 76 4E              jbe         0000133E
+  000012F0: 2B 45 CC           sub         eax,dword ptr [ebp-34h]
+  000012F3: 3B 41 2C           cmp         eax,dword ptr [ecx+2Ch]
+  000012F6: 76 18              jbe         00001310
+  000012F8: 83 B9 C0 1B 00 00  cmp         dword ptr [ecx+1BC0h],0
+            00
+  000012FF: 74 0F              je          00001310
+  00001301: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00001304: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BO@ECPMAOGG@invalid?5distance?5too?5far?5back?$AA@
+            00
+  0000130B: E9 E1 01 00 00     jmp         000014F1
+  00001310: 3B 41 30           cmp         eax,dword ptr [ecx+30h]
+  00001313: 76 10              jbe         00001325
+  00001315: 8B 79 34           mov         edi,dword ptr [ecx+34h]
+  00001318: 2B 41 30           sub         eax,dword ptr [ecx+30h]
+  0000131B: 03 79 28           add         edi,dword ptr [ecx+28h]
+  0000131E: 2B F8              sub         edi,eax
+  00001320: 89 7D D0           mov         dword ptr [ebp-30h],edi
+  00001323: EB 0B              jmp         00001330
+  00001325: 8B 59 34           mov         ebx,dword ptr [ecx+34h]
+  00001328: 2B D8              sub         ebx,eax
+  0000132A: 03 59 30           add         ebx,dword ptr [ecx+30h]
+  0000132D: 89 5D D0           mov         dword ptr [ebp-30h],ebx
+  00001330: 8B 79 40           mov         edi,dword ptr [ecx+40h]
+  00001333: 89 7D CC           mov         dword ptr [ebp-34h],edi
+  00001336: 3B C7              cmp         eax,edi
+  00001338: 76 13              jbe         0000134D
+  0000133A: 8B C7              mov         eax,edi
+  0000133C: EB 0F              jmp         0000134D
+  0000133E: 8B 5D E0           mov         ebx,dword ptr [ebp-20h]
+  00001341: 89 5D D0           mov         dword ptr [ebp-30h],ebx
+  00001344: 29 45 D0           sub         dword ptr [ebp-30h],eax
+  00001347: 8B 41 40           mov         eax,dword ptr [ecx+40h]
+  0000134A: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  0000134D: 8B 5D E8           mov         ebx,dword ptr [ebp-18h]
+  00001350: 3B C3              cmp         eax,ebx
+  00001352: 0F 47 C3           cmova       eax,ebx
+  00001355: 2B D8              sub         ebx,eax
+  00001357: 89 5D E8           mov         dword ptr [ebp-18h],ebx
+  0000135A: 8B 5D CC           mov         ebx,dword ptr [ebp-34h]
+  0000135D: 2B D8              sub         ebx,eax
+  0000135F: 89 59 40           mov         dword ptr [ecx+40h],ebx
+  00001362: 8B 5D D0           mov         ebx,dword ptr [ebp-30h]
+  00001365: 8B 4D E0           mov         ecx,dword ptr [ebp-20h]
+  00001368: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  0000136B: 2B D9              sub         ebx,ecx
+  0000136D: 8B F8              mov         edi,eax
+  0000136F: 90                 nop
+  00001370: 8A 04 0B           mov         al,byte ptr [ebx+ecx]
+  00001373: 88 01              mov         byte ptr [ecx],al
+  00001375: 41                 inc         ecx
+  00001376: 4F                 dec         edi
+  00001377: 75 F7              jne         00001370
+  00001379: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  0000137C: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  0000137F: 89 4D E0           mov         dword ptr [ebp-20h],ecx
+  00001382: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00001385: 83 79 40 00        cmp         dword ptr [ecx+40h],0
+  00001389: 0F 85 68 01 00 00  jne         000014F7
+  0000138F: C7 01 14 00 00 00  mov         dword ptr [ecx],14h
+  00001395: E9 5D 01 00 00     jmp         000014F7
+$LN48:
+  0000139A: 83 7D E8 00        cmp         dword ptr [ebp-18h],0
+  0000139E: 0F 84 CE F1 FF FF  je          00000572
+  000013A4: 8B 7D E0           mov         edi,dword ptr [ebp-20h]
+  000013A7: 8A 41 40           mov         al,byte ptr [ecx+40h]
+  000013AA: FF 45 E0           inc         dword ptr [ebp-20h]
+  000013AD: FF 4D E8           dec         dword ptr [ebp-18h]
+  000013B0: 88 07              mov         byte ptr [edi],al
+  000013B2: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  000013B5: C7 01 14 00 00 00  mov         dword ptr [ecx],14h
+  000013BB: E9 37 01 00 00     jmp         000014F7
+$LN46:
+  000013C0: 83 79 08 00        cmp         dword ptr [ecx+8],0
+  000013C4: 0F 84 CF 00 00 00  je          00001499
+  000013CA: 83 FE 20           cmp         esi,20h
+  000013CD: 73 2B              jae         000013FA
+  000013CF: 90                 nop
+  000013D0: 85 DB              test        ebx,ebx
+  000013D2: 0F 84 9A F1 FF FF  je          00000572
+  000013D8: 0F B6 07           movzx       eax,byte ptr [edi]
+  000013DB: 8B CE              mov         ecx,esi
+  000013DD: D3 E0              shl         eax,cl
+  000013DF: 83 C6 08           add         esi,8
+  000013E2: 4B                 dec         ebx
+  000013E3: 47                 inc         edi
+  000013E4: 03 D0              add         edx,eax
+  000013E6: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000013E9: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000013EC: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000013EF: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000013F2: 83 FE 20           cmp         esi,20h
+  000013F5: 72 D9              jb          000013D0
+  000013F7: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000013FA: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  000013FD: 29 45 DC           sub         dword ptr [ebp-24h],eax
+  00001400: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00001403: 8B 7D DC           mov         edi,dword ptr [ebp-24h]
+  00001406: 01 78 14           add         dword ptr [eax+14h],edi
+  00001409: 8B C7              mov         eax,edi
+  0000140B: 01 41 1C           add         dword ptr [ecx+1Ch],eax
+  0000140E: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00001411: 85 C0              test        eax,eax
+  00001413: 74 2F              je          00001444
+  00001415: 50                 push        eax
+  00001416: 8B 45 E0           mov         eax,dword ptr [ebp-20h]
+  00001419: 2B 45 DC           sub         eax,dword ptr [ebp-24h]
+  0000141C: 83 79 10 00        cmp         dword ptr [ecx+10h],0
+  00001420: 50                 push        eax
+  00001421: FF 71 18           push        dword ptr [ecx+18h]
+  00001424: 74 07              je          0000142D
+  00001426: E8 00 00 00 00     call        _crc32
+  0000142B: EB 05              jmp         00001432
+  0000142D: E8 00 00 00 00     call        _adler32
+  00001432: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00001435: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00001438: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000143B: 89 42 30           mov         dword ptr [edx+30h],eax
+  0000143E: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00001441: 83 C4 0C           add         esp,0Ch
+  00001444: 83 79 10 00        cmp         dword ptr [ecx+10h],0
+  00001448: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  0000144B: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  0000144E: 8B C2              mov         eax,edx
+  00001450: 75 2C              jne         0000147E
+  00001452: 25 00 FF 00 00     and         eax,0FF00h
+  00001457: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  0000145A: 8B C2              mov         eax,edx
+  0000145C: C1 E0 10           shl         eax,10h
+  0000145F: 01 45 D8           add         dword ptr [ebp-28h],eax
+  00001462: C1 65 D8 08        shl         dword ptr [ebp-28h],8
+  00001466: 8B C2              mov         eax,edx
+  00001468: C1 E8 08           shr         eax,8
+  0000146B: 25 00 FF 00 00     and         eax,0FF00h
+  00001470: 01 45 D8           add         dword ptr [ebp-28h],eax
+  00001473: 8B C2              mov         eax,edx
+  00001475: C1 E8 18           shr         eax,18h
+  00001478: 01 45 D8           add         dword ptr [ebp-28h],eax
+  0000147B: 8B 45 D8           mov         eax,dword ptr [ebp-28h]
+  0000147E: 3B 41 18           cmp         eax,dword ptr [ecx+18h]
+  00001481: 74 0C              je          0000148F
+  00001483: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00001486: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BF@MEIGEHBE@incorrect?5data?5check?$AA@
+            00
+  0000148D: EB 62              jmp         000014F1
+  0000148F: 33 D2              xor         edx,edx
+  00001491: 33 F6              xor         esi,esi
+  00001493: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00001496: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  00001499: C7 01 1B 00 00 00  mov         dword ptr [ecx],1Bh
+$LN30:
+  0000149F: 83 79 08 00        cmp         dword ptr [ecx+8],0
+  000014A3: 0F 84 97 00 00 00  je          00001540
+  000014A9: 83 79 10 00        cmp         dword ptr [ecx+10h],0
+  000014AD: 0F 84 8D 00 00 00  je          00001540
+  000014B3: 83 FE 20           cmp         esi,20h
+  000014B6: 73 2A              jae         000014E2
+  000014B8: 85 DB              test        ebx,ebx
+  000014BA: 0F 84 B2 F0 FF FF  je          00000572
+  000014C0: 0F B6 07           movzx       eax,byte ptr [edi]
+  000014C3: 8B CE              mov         ecx,esi
+  000014C5: D3 E0              shl         eax,cl
+  000014C7: 83 C6 08           add         esi,8
+  000014CA: 4B                 dec         ebx
+  000014CB: 47                 inc         edi
+  000014CC: 03 D0              add         edx,eax
+  000014CE: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  000014D1: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000014D4: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000014D7: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  000014DA: 83 FE 20           cmp         esi,20h
+  000014DD: 72 D9              jb          000014B8
+  000014DF: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000014E2: 3B 51 1C           cmp         edx,dword ptr [ecx+1Ch]
+  000014E5: 74 50              je          00001537
+  000014E7: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000014EA: C7 40 18 00 00 00  mov         dword ptr [eax+18h],offset ??_C@_0BH@FGKKJGOC@incorrect?5length?5check?$AA@
+            00
+  000014F1: C7 01 1D 00 00 00  mov         dword ptr [ecx],1Dh
+  000014F7: 8B 01              mov         eax,dword ptr [ecx]
+  000014F9: 83 F8 1E           cmp         eax,1Eh
+  000014FC: 0F 86 80 EB FF FF  jbe         00000082
+  00001502: 5F                 pop         edi
+  00001503: 5E                 pop         esi
+  00001504: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00001509: 5B                 pop         ebx
+  0000150A: 8B E5              mov         esp,ebp
+  0000150C: 5D                 pop         ebp
+  0000150D: C3                 ret
+  0000150E: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00001511: 8B 4D E0           mov         ecx,dword ptr [ebp-20h]
+  00001514: 89 48 0C           mov         dword ptr [eax+0Ch],ecx
+  00001517: 8B 4D E8           mov         ecx,dword ptr [ebp-18h]
+  0000151A: 89 48 10           mov         dword ptr [eax+10h],ecx
+  0000151D: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00001520: 89 38              mov         dword ptr [eax],edi
+  00001522: 89 58 04           mov         dword ptr [eax+4],ebx
+  00001525: 5F                 pop         edi
+  00001526: 89 71 3C           mov         dword ptr [ecx+3Ch],esi
+  00001529: 5E                 pop         esi
+  0000152A: 89 51 38           mov         dword ptr [ecx+38h],edx
+  0000152D: B8 02 00 00 00     mov         eax,2
+  00001532: 5B                 pop         ebx
+  00001533: 8B E5              mov         esp,ebp
+  00001535: 5D                 pop         ebp
+  00001536: C3                 ret
+  00001537: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000153E: 33 F6              xor         esi,esi
+  00001540: C7 01 1C 00 00 00  mov         dword ptr [ecx],1Ch
+$LN15:
+  00001546: C7 45 D4 01 00 00  mov         dword ptr [ebp-2Ch],1
+            00
+  0000154D: E9 20 F0 FF FF     jmp         00000572
+$LN14:
+  00001552: C7 45 D4 FD FF FF  mov         dword ptr [ebp-2Ch],0FFFFFFFDh
+            FF
+  00001559: E9 14 F0 FF FF     jmp         00000572
+  0000155E: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00001561: E9 12 F0 FF FF     jmp         00000578
+  00001566: 8B 45 C8           mov         eax,dword ptr [ebp-38h]
+  00001569: 2B 47 04           sub         eax,dword ptr [edi+4]
+  0000156C: 2B 77 10           sub         esi,dword ptr [edi+10h]
+  0000156F: 01 47 08           add         dword ptr [edi+8],eax
+  00001572: 01 77 14           add         dword ptr [edi+14h],esi
+  00001575: 01 73 1C           add         dword ptr [ebx+1Ch],esi
+  00001578: 83 7B 08 00        cmp         dword ptr [ebx+8],0
+  0000157C: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  0000157F: 89 75 DC           mov         dword ptr [ebp-24h],esi
+  00001582: 74 29              je          000015AD
+  00001584: 85 F6              test        esi,esi
+  00001586: 74 25              je          000015AD
+  00001588: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  0000158B: 56                 push        esi
+  0000158C: 2B C6              sub         eax,esi
+  0000158E: 83 7B 10 00        cmp         dword ptr [ebx+10h],0
+  00001592: 50                 push        eax
+  00001593: FF 73 18           push        dword ptr [ebx+18h]
+  00001596: 74 07              je          0000159F
+  00001598: E8 00 00 00 00     call        _crc32
+  0000159D: EB 05              jmp         000015A4
+  0000159F: E8 00 00 00 00     call        _adler32
+  000015A4: 89 43 18           mov         dword ptr [ebx+18h],eax
+  000015A7: 83 C4 0C           add         esp,0Ch
+  000015AA: 89 47 30           mov         dword ptr [edi+30h],eax
+  000015AD: 8B 13              mov         edx,dword ptr [ebx]
+  000015AF: 83 FA 13           cmp         edx,13h
+  000015B2: 74 09              je          000015BD
+  000015B4: 83 FA 0E           cmp         edx,0Eh
+  000015B7: 74 04              je          000015BD
+  000015B9: 33 F6              xor         esi,esi
+  000015BB: EB 05              jmp         000015C2
+  000015BD: BE 00 01 00 00     mov         esi,100h
+  000015C2: 8B 4B 04           mov         ecx,dword ptr [ebx+4]
+  000015C5: F7 D9              neg         ecx
+  000015C7: 1B C9              sbb         ecx,ecx
+  000015C9: 33 C0              xor         eax,eax
+  000015CB: 83 E1 40           and         ecx,40h
+  000015CE: 83 FA 0B           cmp         edx,0Bh
+  000015D1: C7 45 08 80 00 00  mov         dword ptr [ebp+8],80h
+            00
+  000015D8: 0F 44 45 08        cmove       eax,dword ptr [ebp+8]
+  000015DC: 03 CE              add         ecx,esi
+  000015DE: 03 C1              add         eax,ecx
+  000015E0: 03 43 3C           add         eax,dword ptr [ebx+3Ch]
+  000015E3: 89 47 2C           mov         dword ptr [edi+2Ch],eax
+  000015E6: 8B 45 C8           mov         eax,dword ptr [ebp-38h]
+  000015E9: 85 C0              test        eax,eax
+  000015EB: 75 05              jne         000015F2
+  000015ED: 39 45 DC           cmp         dword ptr [ebp-24h],eax
+  000015F0: 74 06              je          000015F8
+  000015F2: 83 7D 0C 04        cmp         dword ptr [ebp+0Ch],4
+  000015F6: 75 14              jne         0000160C
+  000015F8: 8B 45 D4           mov         eax,dword ptr [ebp-2Ch]
+  000015FB: 5F                 pop         edi
+  000015FC: B9 FB FF FF FF     mov         ecx,0FFFFFFFBh
+  00001601: 85 C0              test        eax,eax
+  00001603: 5E                 pop         esi
+  00001604: 0F 44 C1           cmove       eax,ecx
+  00001607: 5B                 pop         ebx
+  00001608: 8B E5              mov         esp,ebp
+  0000160A: 5D                 pop         ebp
+  0000160B: C3                 ret
+  0000160C: 8B 45 D4           mov         eax,dword ptr [ebp-2Ch]
+  0000160F: 5F                 pop         edi
+  00001610: 5E                 pop         esi
+  00001611: 5B                 pop         ebx
+  00001612: 8B E5              mov         esp,ebp
+  00001614: 5D                 pop         ebp
+  00001615: C3                 ret
+  00001616: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  0000161B: 8B E5              mov         esp,ebp
+  0000161D: 5D                 pop         ebp
+  0000161E: C3                 ret
+  0000161F: 90                 nop
+$LN841:
+  00001620: 00 00              add         byte ptr [eax],al
+  00001622: 00 00              add         byte ptr [eax],al
+  00001624: 00 00              add         byte ptr [eax],al
+  00001626: 00 00              add         byte ptr [eax],al
+  00001628: 00 00              add         byte ptr [eax],al
+  0000162A: 00 00              add         byte ptr [eax],al
+  0000162C: 00 00              add         byte ptr [eax],al
+  0000162E: 00 00              add         byte ptr [eax],al
+  00001630: 00 00              add         byte ptr [eax],al
+  00001632: 00 00              add         byte ptr [eax],al
+  00001634: 00 00              add         byte ptr [eax],al
+  00001636: 00 00              add         byte ptr [eax],al
+  00001638: 00 00              add         byte ptr [eax],al
+  0000163A: 00 00              add         byte ptr [eax],al
+  0000163C: 00 00              add         byte ptr [eax],al
+  0000163E: 00 00              add         byte ptr [eax],al
+  00001640: 00 00              add         byte ptr [eax],al
+  00001642: 00 00              add         byte ptr [eax],al
+  00001644: 00 00              add         byte ptr [eax],al
+  00001646: 00 00              add         byte ptr [eax],al
+  00001648: 00 00              add         byte ptr [eax],al
+  0000164A: 00 00              add         byte ptr [eax],al
+  0000164C: 00 00              add         byte ptr [eax],al
+  0000164E: 00 00              add         byte ptr [eax],al
+  00001650: 00 00              add         byte ptr [eax],al
+  00001652: 00 00              add         byte ptr [eax],al
+  00001654: 00 00              add         byte ptr [eax],al
+  00001656: 00 00              add         byte ptr [eax],al
+  00001658: 00 00              add         byte ptr [eax],al
+  0000165A: 00 00              add         byte ptr [eax],al
+  0000165C: 00 00              add         byte ptr [eax],al
+  0000165E: 00 00              add         byte ptr [eax],al
+  00001660: 00 00              add         byte ptr [eax],al
+  00001662: 00 00              add         byte ptr [eax],al
+  00001664: 00 00              add         byte ptr [eax],al
+  00001666: 00 00              add         byte ptr [eax],al
+  00001668: 00 00              add         byte ptr [eax],al
+  0000166A: 00 00              add         byte ptr [eax],al
+  0000166C: 00 00              add         byte ptr [eax],al
+  0000166E: 00 00              add         byte ptr [eax],al
+  00001670: 00 00              add         byte ptr [eax],al
+  00001672: 00 00              add         byte ptr [eax],al
+  00001674: 00 00              add         byte ptr [eax],al
+  00001676: 00 00              add         byte ptr [eax],al
+  00001678: 00 00              add         byte ptr [eax],al
+  0000167A: 00 00              add         byte ptr [eax],al
+  0000167C: 00 00              add         byte ptr [eax],al
+  0000167E: 00 00              add         byte ptr [eax],al
+  00001680: 00 00              add         byte ptr [eax],al
+  00001682: 00 00              add         byte ptr [eax],al
+  00001684: 00 00              add         byte ptr [eax],al
+  00001686: 00 00              add         byte ptr [eax],al
+  00001688: 00 00              add         byte ptr [eax],al
+  0000168A: 00 00              add         byte ptr [eax],al
+  0000168C: 00 00              add         byte ptr [eax],al
+  0000168E: 00 00              add         byte ptr [eax],al
+  00001690: 00 00              add         byte ptr [eax],al
+  00001692: 00 00              add         byte ptr [eax],al
+  00001694: 00 00              add         byte ptr [eax],al
+  00001696: 00 00              add         byte ptr [eax],al
+  00001698: 00 00              add         byte ptr [eax],al
+  0000169A: 00 00              add         byte ptr [eax],al
+$LN842:
+  0000169C: 00 00              add         byte ptr [eax],al
+  0000169E: 00 00              add         byte ptr [eax],al
+  000016A0: 00 00              add         byte ptr [eax],al
+  000016A2: 00 00              add         byte ptr [eax],al
+  000016A4: 00 00              add         byte ptr [eax],al
+  000016A6: 00 00              add         byte ptr [eax],al
+  000016A8: 00 00              add         byte ptr [eax],al
+  000016AA: 00 00              add         byte ptr [eax],al
+
+_inflateCopy:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  0000000A: 53                 push        ebx
+  0000000B: 56                 push        esi
+  0000000C: 0F 84 31 01 00 00  je          00000143
+  00000012: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000015: 85 F6              test        esi,esi
+  00000017: 0F 84 26 01 00 00  je          00000143
+  0000001D: 8B 5E 1C           mov         ebx,dword ptr [esi+1Ch]
+  00000020: 85 DB              test        ebx,ebx
+  00000022: 0F 84 1B 01 00 00  je          00000143
+  00000028: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 0F 84 10 01 00 00  je          00000143
+  00000033: 83 7E 24 00        cmp         dword ptr [esi+24h],0
+  00000037: 0F 84 06 01 00 00  je          00000143
+  0000003D: 57                 push        edi
+  0000003E: 68 CC 1B 00 00     push        1BCCh
+  00000043: 6A 01              push        1
+  00000045: FF 76 28           push        dword ptr [esi+28h]
+  00000048: FF D0              call        eax
+  0000004A: 8B F8              mov         edi,eax
+  0000004C: 83 C4 0C           add         esp,0Ch
+  0000004F: 89 7D F8           mov         dword ptr [ebp-8],edi
+  00000052: 85 FF              test        edi,edi
+  00000054: 74 38              je          0000008E
+  00000056: 83 7B 34 00        cmp         dword ptr [ebx+34h],0
+  0000005A: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000061: 74 37              je          0000009A
+  00000063: 8B 4B 24           mov         ecx,dword ptr [ebx+24h]
+  00000066: B8 01 00 00 00     mov         eax,1
+  0000006B: D3 E0              shl         eax,cl
+  0000006D: 6A 01              push        1
+  0000006F: 50                 push        eax
+  00000070: FF 76 28           push        dword ptr [esi+28h]
+  00000073: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000076: FF D0              call        eax
+  00000078: 83 C4 0C           add         esp,0Ch
+  0000007B: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000007E: 85 C0              test        eax,eax
+  00000080: 75 18              jne         0000009A
+  00000082: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  00000085: 57                 push        edi
+  00000086: FF 76 28           push        dword ptr [esi+28h]
+  00000089: FF D0              call        eax
+  0000008B: 83 C4 08           add         esp,8
+  0000008E: 5F                 pop         edi
+  0000008F: 5E                 pop         esi
+  00000090: B8 FC FF FF FF     mov         eax,0FFFFFFFCh
+  00000095: 5B                 pop         ebx
+  00000096: 8B E5              mov         esp,ebp
+  00000098: 5D                 pop         ebp
+  00000099: C3                 ret
+  0000009A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000009D: B9 0E 00 00 00     mov         ecx,0Eh
+  000000A2: 68 CC 1B 00 00     push        1BCCh
+  000000A7: F3 A5              rep movs    dword ptr es:[edi],dword ptr [esi]
+  000000A9: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  000000AC: 53                 push        ebx
+  000000AD: 56                 push        esi
+  000000AE: E8 00 00 00 00     call        _memcpy
+  000000B3: 8B 4B 4C           mov         ecx,dword ptr [ebx+4Ch]
+  000000B6: 8D 83 30 05 00 00  lea         eax,[ebx+530h]
+  000000BC: 83 C4 0C           add         esp,0Ch
+  000000BF: 3B C8              cmp         ecx,eax
+  000000C1: 72 38              jb          000000FB
+  000000C3: 8D 83 BC 1B 00 00  lea         eax,[ebx+1BBCh]
+  000000C9: 3B C8              cmp         ecx,eax
+  000000CB: 77 2E              ja          000000FB
+  000000CD: 2B CB              sub         ecx,ebx
+  000000CF: 8D 81 D0 FA FF FF  lea         eax,[ecx-530h]
+  000000D5: C1 F8 02           sar         eax,2
+  000000D8: 05 4C 01 00 00     add         eax,14Ch
+  000000DD: 8D 04 86           lea         eax,[esi+eax*4]
+  000000E0: 89 46 4C           mov         dword ptr [esi+4Ch],eax
+  000000E3: 8B 43 50           mov         eax,dword ptr [ebx+50h]
+  000000E6: 2B C3              sub         eax,ebx
+  000000E8: 2D 30 05 00 00     sub         eax,530h
+  000000ED: C1 F8 02           sar         eax,2
+  000000F0: 05 4C 01 00 00     add         eax,14Ch
+  000000F5: 8D 04 86           lea         eax,[esi+eax*4]
+  000000F8: 89 46 50           mov         dword ptr [esi+50h],eax
+  000000FB: 8B 43 6C           mov         eax,dword ptr [ebx+6Ch]
+  000000FE: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000101: 2B C3              sub         eax,ebx
+  00000103: 2D 30 05 00 00     sub         eax,530h
+  00000108: C1 F8 02           sar         eax,2
+  0000010B: 05 4C 01 00 00     add         eax,14Ch
+  00000110: 8D 04 86           lea         eax,[esi+eax*4]
+  00000113: 89 46 6C           mov         dword ptr [esi+6Ch],eax
+  00000116: 85 FF              test        edi,edi
+  00000118: 74 17              je          00000131
+  0000011A: 8B 4B 24           mov         ecx,dword ptr [ebx+24h]
+  0000011D: B8 01 00 00 00     mov         eax,1
+  00000122: D3 E0              shl         eax,cl
+  00000124: 50                 push        eax
+  00000125: FF 73 34           push        dword ptr [ebx+34h]
+  00000128: 57                 push        edi
+  00000129: E8 00 00 00 00     call        _memcpy
+  0000012E: 83 C4 0C           add         esp,0Ch
+  00000131: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000134: 89 7E 34           mov         dword ptr [esi+34h],edi
+  00000137: 5F                 pop         edi
+  00000138: 89 70 1C           mov         dword ptr [eax+1Ch],esi
+  0000013B: 5E                 pop         esi
+  0000013C: 33 C0              xor         eax,eax
+  0000013E: 5B                 pop         ebx
+  0000013F: 8B E5              mov         esp,ebp
+  00000141: 5D                 pop         ebp
+  00000142: C3                 ret
+  00000143: 5E                 pop         esi
+  00000144: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000149: 5B                 pop         ebx
+  0000014A: 8B E5              mov         esp,ebp
+  0000014C: 5D                 pop         ebp
+  0000014D: C3                 ret
+
+_inflateEnd:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 38              je          00000043
+  0000000B: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  0000000E: 85 C0              test        eax,eax
+  00000010: 74 31              je          00000043
+  00000012: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 74 2A              je          00000043
+  00000019: 8B 40 34           mov         eax,dword ptr [eax+34h]
+  0000001C: 85 C0              test        eax,eax
+  0000001E: 74 09              je          00000029
+  00000020: 50                 push        eax
+  00000021: FF 76 28           push        dword ptr [esi+28h]
+  00000024: FF D1              call        ecx
+  00000026: 83 C4 08           add         esp,8
+  00000029: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000002C: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  0000002F: FF 76 28           push        dword ptr [esi+28h]
+  00000032: FF D0              call        eax
+  00000034: 83 C4 08           add         esp,8
+  00000037: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  0000003E: 33 C0              xor         eax,eax
+  00000040: 5E                 pop         esi
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000048: 5E                 pop         esi
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+
+_inflateGetDictionary:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 50              je          0000005B
+  0000000B: 8B 76 1C           mov         esi,dword ptr [esi+1Ch]
+  0000000E: 85 F6              test        esi,esi
+  00000010: 74 49              je          0000005B
+  00000012: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  00000015: 85 C0              test        eax,eax
+  00000017: 74 31              je          0000004A
+  00000019: 57                 push        edi
+  0000001A: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000001D: 85 FF              test        edi,edi
+  0000001F: 74 28              je          00000049
+  00000021: 2B 46 30           sub         eax,dword ptr [esi+30h]
+  00000024: 50                 push        eax
+  00000025: 8B 46 34           mov         eax,dword ptr [esi+34h]
+  00000028: 03 46 30           add         eax,dword ptr [esi+30h]
+  0000002B: 50                 push        eax
+  0000002C: 57                 push        edi
+  0000002D: E8 00 00 00 00     call        _memcpy
+  00000032: 8B 4E 30           mov         ecx,dword ptr [esi+30h]
+  00000035: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  00000038: 51                 push        ecx
+  00000039: FF 76 34           push        dword ptr [esi+34h]
+  0000003C: 2B C1              sub         eax,ecx
+  0000003E: 03 C7              add         eax,edi
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _memcpy
+  00000046: 83 C4 18           add         esp,18h
+  00000049: 5F                 pop         edi
+  0000004A: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000004D: 85 C9              test        ecx,ecx
+  0000004F: 74 05              je          00000056
+  00000051: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  00000054: 89 01              mov         dword ptr [ecx],eax
+  00000056: 33 C0              xor         eax,eax
+  00000058: 5E                 pop         esi
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000060: 5E                 pop         esi
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+
+_inflateGetHeader:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 74 1E              je          00000028
+  0000000A: 8B 49 1C           mov         ecx,dword ptr [ecx+1Ch]
+  0000000D: 85 C9              test        ecx,ecx
+  0000000F: 74 17              je          00000028
+  00000011: F6 41 08 02        test        byte ptr [ecx+8],2
+  00000015: 74 11              je          00000028
+  00000017: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000001A: 89 41 20           mov         dword ptr [ecx+20h],eax
+  0000001D: C7 40 30 00 00 00  mov         dword ptr [eax+30h],0
+            00
+  00000024: 33 C0              xor         eax,eax
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+  00000028: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+
+_inflateInit2_:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 0F 84 A0 00 00 00  je          000000AE
+  0000000E: 80 38 31           cmp         byte ptr [eax],31h
+  00000011: 0F 85 97 00 00 00  jne         000000AE
+  00000017: 83 7D 14 38        cmp         dword ptr [ebp+14h],38h
+  0000001B: 0F 85 8D 00 00 00  jne         000000AE
+  00000021: 56                 push        esi
+  00000022: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000025: 85 F6              test        esi,esi
+  00000027: 75 06              jne         0000002F
+  00000029: 8D 46 FE           lea         eax,[esi-2]
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+  0000002F: 83 7E 20 00        cmp         dword ptr [esi+20h],0
+  00000033: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  0000003A: 75 0E              jne         0000004A
+  0000003C: C7 46 20 00 00 00  mov         dword ptr [esi+20h],offset _zcalloc
+            00
+  00000043: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  0000004A: 83 7E 24 00        cmp         dword ptr [esi+24h],0
+  0000004E: 75 07              jne         00000057
+  00000050: C7 46 24 00 00 00  mov         dword ptr [esi+24h],offset _zcfree
+            00
+  00000057: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  0000005A: 57                 push        edi
+  0000005B: 68 CC 1B 00 00     push        1BCCh
+  00000060: 6A 01              push        1
+  00000062: FF 76 28           push        dword ptr [esi+28h]
+  00000065: FF D0              call        eax
+  00000067: 8B F8              mov         edi,eax
+  00000069: 83 C4 0C           add         esp,0Ch
+  0000006C: 85 FF              test        edi,edi
+  0000006E: 75 07              jne         00000077
+  00000070: 8D 47 FC           lea         eax,[edi-4]
+  00000073: 5F                 pop         edi
+  00000074: 5E                 pop         esi
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+  00000077: 53                 push        ebx
+  00000078: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000007B: 89 7E 1C           mov         dword ptr [esi+1Ch],edi
+  0000007E: 56                 push        esi
+  0000007F: C7 47 34 00 00 00  mov         dword ptr [edi+34h],0
+            00
+  00000086: E8 00 00 00 00     call        _inflateReset2
+  0000008B: 8B D8              mov         ebx,eax
+  0000008D: 83 C4 08           add         esp,8
+  00000090: 85 DB              test        ebx,ebx
+  00000092: 74 13              je          000000A7
+  00000094: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00000097: 57                 push        edi
+  00000098: FF 76 28           push        dword ptr [esi+28h]
+  0000009B: FF D1              call        ecx
+  0000009D: 83 C4 08           add         esp,8
+  000000A0: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  000000A7: 8B C3              mov         eax,ebx
+  000000A9: 5B                 pop         ebx
+  000000AA: 5F                 pop         edi
+  000000AB: 5E                 pop         esi
+  000000AC: 5D                 pop         ebp
+  000000AD: C3                 ret
+  000000AE: B8 FA FF FF FF     mov         eax,0FFFFFFFAh
+  000000B3: 5D                 pop         ebp
+  000000B4: C3                 ret
+
+_inflateInit_:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 10           push        dword ptr [ebp+10h]
+  00000006: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000009: 6A 0F              push        0Fh
+  0000000B: FF 75 08           push        dword ptr [ebp+8]
+  0000000E: E8 00 00 00 00     call        _inflateInit2_
+  00000013: 83 C4 10           add         esp,10h
+  00000016: 5D                 pop         ebp
+  00000017: C3                 ret
+
+_inflateMark:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 48              je          00000052
+  0000000A: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 41              je          00000052
+  00000011: 8B 08              mov         ecx,dword ptr [eax]
+  00000013: 83 F9 0F           cmp         ecx,0Fh
+  00000016: 75 10              jne         00000028
+  00000018: 8B 48 40           mov         ecx,dword ptr [eax+40h]
+  0000001B: 8B 80 C4 1B 00 00  mov         eax,dword ptr [eax+00001BC4h]
+  00000021: C1 E0 10           shl         eax,10h
+  00000024: 03 C1              add         eax,ecx
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+  00000028: 83 F9 18           cmp         ecx,18h
+  0000002B: 75 16              jne         00000043
+  0000002D: 8B 88 C8 1B 00 00  mov         ecx,dword ptr [eax+00001BC8h]
+  00000033: 2B 48 40           sub         ecx,dword ptr [eax+40h]
+  00000036: 8B 80 C4 1B 00 00  mov         eax,dword ptr [eax+00001BC4h]
+  0000003C: C1 E0 10           shl         eax,10h
+  0000003F: 03 C1              add         eax,ecx
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: 8B 80 C4 1B 00 00  mov         eax,dword ptr [eax+00001BC4h]
+  00000049: 33 C9              xor         ecx,ecx
+  0000004B: C1 E0 10           shl         eax,10h
+  0000004E: 03 C1              add         eax,ecx
+  00000050: 5D                 pop         ebp
+  00000051: C3                 ret
+  00000052: B8 00 00 FF FF     mov         eax,0FFFF0000h
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+
+_inflatePrime:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 85 D2              test        edx,edx
+  00000008: 74 56              je          00000060
+  0000000A: 8B 52 1C           mov         edx,dword ptr [edx+1Ch]
+  0000000D: 85 D2              test        edx,edx
+  0000000F: 74 4F              je          00000060
+  00000011: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000014: 85 C9              test        ecx,ecx
+  00000016: 79 12              jns         0000002A
+  00000018: C7 42 38 00 00 00  mov         dword ptr [edx+38h],0
+            00
+  0000001F: C7 42 3C 00 00 00  mov         dword ptr [edx+3Ch],0
+            00
+  00000026: 33 C0              xor         eax,eax
+  00000028: 5D                 pop         ebp
+  00000029: C3                 ret
+  0000002A: 56                 push        esi
+  0000002B: 57                 push        edi
+  0000002C: 83 F9 10           cmp         ecx,10h
+  0000002F: 7F 26              jg          00000057
+  00000031: 8B 72 3C           mov         esi,dword ptr [edx+3Ch]
+  00000034: 8D 3C 0E           lea         edi,[esi+ecx]
+  00000037: 83 FF 20           cmp         edi,20h
+  0000003A: 77 1B              ja          00000057
+  0000003C: B8 01 00 00 00     mov         eax,1
+  00000041: D3 E0              shl         eax,cl
+  00000043: 8B CE              mov         ecx,esi
+  00000045: 89 7A 3C           mov         dword ptr [edx+3Ch],edi
+  00000048: 5F                 pop         edi
+  00000049: 48                 dec         eax
+  0000004A: 23 45 10           and         eax,dword ptr [ebp+10h]
+  0000004D: 5E                 pop         esi
+  0000004E: D3 E0              shl         eax,cl
+  00000050: 01 42 38           add         dword ptr [edx+38h],eax
+  00000053: 33 C0              xor         eax,eax
+  00000055: 5D                 pop         ebp
+  00000056: C3                 ret
+  00000057: 5F                 pop         edi
+  00000058: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+  00000060: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000065: 5D                 pop         ebp
+  00000066: C3                 ret
+
+_inflateReset:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 25              je          0000002F
+  0000000A: 8B 48 1C           mov         ecx,dword ptr [eax+1Ch]
+  0000000D: 85 C9              test        ecx,ecx
+  0000000F: 74 1E              je          0000002F
+  00000011: C7 41 28 00 00 00  mov         dword ptr [ecx+28h],0
+            00
+  00000018: C7 41 2C 00 00 00  mov         dword ptr [ecx+2Ch],0
+            00
+  0000001F: C7 41 30 00 00 00  mov         dword ptr [ecx+30h],0
+            00
+  00000026: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000029: 5D                 pop         ebp
+  0000002A: E9 00 00 00 00     jmp         _inflateResetKeep
+  0000002F: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+_inflateReset2:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 85 FF              test        edi,edi
+  0000000A: 0F 84 99 00 00 00  je          000000A9
+  00000010: 8B 5F 1C           mov         ebx,dword ptr [edi+1Ch]
+  00000013: 85 DB              test        ebx,ebx
+  00000015: 0F 84 8E 00 00 00  je          000000A9
+  0000001B: 56                 push        esi
+  0000001C: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000001F: 85 F6              test        esi,esi
+  00000021: 79 0B              jns         0000002E
+  00000023: C7 45 08 00 00 00  mov         dword ptr [ebp+8],0
+            00
+  0000002A: F7 DE              neg         esi
+  0000002C: EB 11              jmp         0000003F
+  0000002E: 8B C6              mov         eax,esi
+  00000030: C1 F8 04           sar         eax,4
+  00000033: 40                 inc         eax
+  00000034: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000037: 83 FE 30           cmp         esi,30h
+  0000003A: 7D 03              jge         0000003F
+  0000003C: 83 E6 0F           and         esi,0Fh
+  0000003F: 85 F6              test        esi,esi
+  00000041: 74 0A              je          0000004D
+  00000043: 83 FE 08           cmp         esi,8
+  00000046: 7C 57              jl          0000009F
+  00000048: 83 FE 0F           cmp         esi,0Fh
+  0000004B: 7F 52              jg          0000009F
+  0000004D: 8B 43 34           mov         eax,dword ptr [ebx+34h]
+  00000050: 85 C0              test        eax,eax
+  00000052: 74 18              je          0000006C
+  00000054: 39 73 24           cmp         dword ptr [ebx+24h],esi
+  00000057: 74 13              je          0000006C
+  00000059: 50                 push        eax
+  0000005A: FF 77 28           push        dword ptr [edi+28h]
+  0000005D: 8B 47 24           mov         eax,dword ptr [edi+24h]
+  00000060: FF D0              call        eax
+  00000062: 83 C4 08           add         esp,8
+  00000065: C7 43 34 00 00 00  mov         dword ptr [ebx+34h],0
+            00
+  0000006C: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006F: 89 43 08           mov         dword ptr [ebx+8],eax
+  00000072: 89 73 24           mov         dword ptr [ebx+24h],esi
+  00000075: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  00000078: 85 C0              test        eax,eax
+  0000007A: 74 23              je          0000009F
+  0000007C: 57                 push        edi
+  0000007D: C7 40 28 00 00 00  mov         dword ptr [eax+28h],0
+            00
+  00000084: C7 40 2C 00 00 00  mov         dword ptr [eax+2Ch],0
+            00
+  0000008B: C7 40 30 00 00 00  mov         dword ptr [eax+30h],0
+            00
+  00000092: E8 00 00 00 00     call        _inflateResetKeep
+  00000097: 83 C4 04           add         esp,4
+  0000009A: 5E                 pop         esi
+  0000009B: 5F                 pop         edi
+  0000009C: 5B                 pop         ebx
+  0000009D: 5D                 pop         ebp
+  0000009E: C3                 ret
+  0000009F: 5E                 pop         esi
+  000000A0: 5F                 pop         edi
+  000000A1: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  000000A6: 5B                 pop         ebx
+  000000A7: 5D                 pop         ebp
+  000000A8: C3                 ret
+  000000A9: 5F                 pop         edi
+  000000AA: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  000000AF: 5B                 pop         ebx
+  000000B0: 5D                 pop         ebp
+  000000B1: C3                 ret
+
+_inflateResetKeep:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 0F 84 8B 00 00 00  je          00000099
+  0000000E: 8B 48 1C           mov         ecx,dword ptr [eax+1Ch]
+  00000011: 85 C9              test        ecx,ecx
+  00000013: 0F 84 80 00 00 00  je          00000099
+  00000019: C7 41 1C 00 00 00  mov         dword ptr [ecx+1Ch],0
+            00
+  00000020: C7 40 14 00 00 00  mov         dword ptr [eax+14h],0
+            00
+  00000027: C7 40 08 00 00 00  mov         dword ptr [eax+8],0
+            00
+  0000002E: C7 40 18 00 00 00  mov         dword ptr [eax+18h],0
+            00
+  00000035: 8B 51 08           mov         edx,dword ptr [ecx+8]
+  00000038: 85 D2              test        edx,edx
+  0000003A: 74 06              je          00000042
+  0000003C: 83 E2 01           and         edx,1
+  0000003F: 89 50 30           mov         dword ptr [eax+30h],edx
+  00000042: 8D 81 30 05 00 00  lea         eax,[ecx+00000530h]
+  00000048: 89 41 6C           mov         dword ptr [ecx+6Ch],eax
+  0000004B: 89 41 50           mov         dword ptr [ecx+50h],eax
+  0000004E: 89 41 4C           mov         dword ptr [ecx+4Ch],eax
+  00000051: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000057: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  0000005E: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000065: C7 41 14 00 80 00  mov         dword ptr [ecx+14h],8000h
+            00
+  0000006C: C7 41 20 00 00 00  mov         dword ptr [ecx+20h],0
+            00
+  00000073: C7 41 38 00 00 00  mov         dword ptr [ecx+38h],0
+            00
+  0000007A: C7 41 3C 00 00 00  mov         dword ptr [ecx+3Ch],0
+            00
+  00000081: C7 81 C0 1B 00 00  mov         dword ptr [ecx+00001BC0h],1
+            01 00 00 00
+  0000008B: C7 81 C4 1B 00 00  mov         dword ptr [ecx+00001BC4h],0FFFFFFFFh
+            FF FF FF FF
+  00000095: 33 C0              xor         eax,eax
+  00000097: 5D                 pop         ebp
+  00000098: C3                 ret
+  00000099: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+
+_inflateSetDictionary:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 85 FF              test        edi,edi
+  0000000A: 74 7E              je          0000008A
+  0000000C: 8B 77 1C           mov         esi,dword ptr [edi+1Ch]
+  0000000F: 85 F6              test        esi,esi
+  00000011: 74 77              je          0000008A
+  00000013: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  00000017: 53                 push        ebx
+  00000018: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000001B: 74 0F              je          0000002C
+  0000001D: 83 3E 0A           cmp         dword ptr [esi],0Ah
+  00000020: 74 0F              je          00000031
+  00000022: 5B                 pop         ebx
+  00000023: 5F                 pop         edi
+  00000024: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000029: 5E                 pop         esi
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: 83 3E 0A           cmp         dword ptr [esi],0Ah
+  0000002F: 75 27              jne         00000058
+  00000031: 6A 00              push        0
+  00000033: 6A 00              push        0
+  00000035: 6A 00              push        0
+  00000037: E8 00 00 00 00     call        _adler32
+  0000003C: 53                 push        ebx
+  0000003D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _adler32
+  00000046: 83 C4 18           add         esp,18h
+  00000049: 3B 46 18           cmp         eax,dword ptr [esi+18h]
+  0000004C: 74 0A              je          00000058
+  0000004E: 5B                 pop         ebx
+  0000004F: 5F                 pop         edi
+  00000050: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  00000055: 5E                 pop         esi
+  00000056: 5D                 pop         ebp
+  00000057: C3                 ret
+  00000058: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000005B: 53                 push        ebx
+  0000005C: 03 C3              add         eax,ebx
+  0000005E: 50                 push        eax
+  0000005F: 57                 push        edi
+  00000060: E8 00 00 00 00     call        _updatewindow
+  00000065: 83 C4 0C           add         esp,0Ch
+  00000068: 85 C0              test        eax,eax
+  0000006A: 74 10              je          0000007C
+  0000006C: 5B                 pop         ebx
+  0000006D: 5F                 pop         edi
+  0000006E: C7 06 1E 00 00 00  mov         dword ptr [esi],1Eh
+  00000074: B8 FC FF FF FF     mov         eax,0FFFFFFFCh
+  00000079: 5E                 pop         esi
+  0000007A: 5D                 pop         ebp
+  0000007B: C3                 ret
+  0000007C: 5B                 pop         ebx
+  0000007D: 5F                 pop         edi
+  0000007E: C7 46 0C 01 00 00  mov         dword ptr [esi+0Ch],1
+            00
+  00000085: 33 C0              xor         eax,eax
+  00000087: 5E                 pop         esi
+  00000088: 5D                 pop         ebp
+  00000089: C3                 ret
+  0000008A: 5F                 pop         edi
+  0000008B: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000090: 5E                 pop         esi
+  00000091: 5D                 pop         ebp
+  00000092: C3                 ret
+
+_inflateSync:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 85 DB              test        ebx,ebx
+  0000000A: 0F 84 C6 00 00 00  je          000000D6
+  00000010: 8B 7B 1C           mov         edi,dword ptr [ebx+1Ch]
+  00000013: 85 FF              test        edi,edi
+  00000015: 0F 84 BB 00 00 00  je          000000D6
+  0000001B: 83 7B 04 00        cmp         dword ptr [ebx+4],0
+  0000001F: 75 0F              jne         00000030
+  00000021: 83 7F 3C 08        cmp         dword ptr [edi+3Ch],8
+  00000025: 73 09              jae         00000030
+  00000027: 5F                 pop         edi
+  00000028: B8 FB FF FF FF     mov         eax,0FFFFFFFBh
+  0000002D: 5B                 pop         ebx
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+  00000030: 83 3F 1F           cmp         dword ptr [edi],1Fh
+  00000033: 56                 push        esi
+  00000034: 74 50              je          00000086
+  00000036: 8B 57 3C           mov         edx,dword ptr [edi+3Ch]
+  00000039: 8B CA              mov         ecx,edx
+  0000003B: 83 E1 07           and         ecx,7
+  0000003E: D3 67 38           shl         dword ptr [edi+38h],cl
+  00000041: 2B D1              sub         edx,ecx
+  00000043: 33 C9              xor         ecx,ecx
+  00000045: C7 07 1F 00 00 00  mov         dword ptr [edi],1Fh
+  0000004B: 89 57 3C           mov         dword ptr [edi+3Ch],edx
+  0000004E: 83 FA 08           cmp         edx,8
+  00000051: 72 1C              jb          0000006F
+  00000053: 8B 77 38           mov         esi,dword ptr [edi+38h]
+  00000056: 8A 47 38           mov         al,byte ptr [edi+38h]
+  00000059: 88 44 0D 08        mov         byte ptr [ebp+ecx+8],al
+  0000005D: C1 EE 08           shr         esi,8
+  00000060: 83 EA 08           sub         edx,8
+  00000063: 41                 inc         ecx
+  00000064: 89 77 38           mov         dword ptr [edi+38h],esi
+  00000067: 83 FA 08           cmp         edx,8
+  0000006A: 73 EA              jae         00000056
+  0000006C: 89 57 3C           mov         dword ptr [edi+3Ch],edx
+  0000006F: 51                 push        ecx
+  00000070: 8D 4D 08           lea         ecx,[ebp+8]
+  00000073: 8D 47 68           lea         eax,[edi+68h]
+  00000076: 51                 push        ecx
+  00000077: 50                 push        eax
+  00000078: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000007E: E8 00 00 00 00     call        _syncsearch
+  00000083: 83 C4 0C           add         esp,0Ch
+  00000086: FF 73 04           push        dword ptr [ebx+4]
+  00000089: 8D 77 68           lea         esi,[edi+68h]
+  0000008C: FF 33              push        dword ptr [ebx]
+  0000008E: 56                 push        esi
+  0000008F: E8 00 00 00 00     call        _syncsearch
+  00000094: 29 43 04           sub         dword ptr [ebx+4],eax
+  00000097: 01 03              add         dword ptr [ebx],eax
+  00000099: 01 43 08           add         dword ptr [ebx+8],eax
+  0000009C: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000009F: 83 C4 0C           add         esp,0Ch
+  000000A2: 83 3E 04           cmp         dword ptr [esi],4
+  000000A5: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000A8: 74 0A              je          000000B4
+  000000AA: 5E                 pop         esi
+  000000AB: 5F                 pop         edi
+  000000AC: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  000000B1: 5B                 pop         ebx
+  000000B2: 5D                 pop         ebp
+  000000B3: C3                 ret
+  000000B4: 8B 73 14           mov         esi,dword ptr [ebx+14h]
+  000000B7: 53                 push        ebx
+  000000B8: E8 00 00 00 00     call        _inflateReset
+  000000BD: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000C0: 83 C4 04           add         esp,4
+  000000C3: 89 73 14           mov         dword ptr [ebx+14h],esi
+  000000C6: 89 43 08           mov         dword ptr [ebx+8],eax
+  000000C9: 5E                 pop         esi
+  000000CA: C7 07 0B 00 00 00  mov         dword ptr [edi],0Bh
+  000000D0: 5F                 pop         edi
+  000000D1: 33 C0              xor         eax,eax
+  000000D3: 5B                 pop         ebx
+  000000D4: 5D                 pop         ebp
+  000000D5: C3                 ret
+  000000D6: 5F                 pop         edi
+  000000D7: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  000000DC: 5B                 pop         ebx
+  000000DD: 5D                 pop         ebp
+  000000DE: C3                 ret
+
+_inflateSyncPoint:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 1D              je          00000027
+  0000000A: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 16              je          00000027
+  00000011: 83 38 0D           cmp         dword ptr [eax],0Dh
+  00000014: 75 0D              jne         00000023
+  00000016: 83 78 3C 00        cmp         dword ptr [eax+3Ch],0
+  0000001A: 75 07              jne         00000023
+  0000001C: B8 01 00 00 00     mov         eax,1
+  00000021: 5D                 pop         ebp
+  00000022: C3                 ret
+  00000023: 33 C0              xor         eax,eax
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+  00000027: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+
+_inflateUndermine:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 18              je          00000022
+  0000000A: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000000D: 85 C0              test        eax,eax
+  0000000F: 74 11              je          00000022
+  00000011: C7 80 C0 1B 00 00  mov         dword ptr [eax+00001BC0h],1
+            01 00 00 00
+  0000001B: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  00000020: 5D                 pop         ebp
+  00000021: C3                 ret
+  00000022: B8 FE FF FF FF     mov         eax,0FFFFFFFEh
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+
+_syncsearch:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 01              mov         eax,dword ptr [ecx]
+  00000009: 57                 push        edi
+  0000000A: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000D: 33 F6              xor         esi,esi
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 49              je          0000005C
+  00000013: 53                 push        ebx
+  00000014: 83 F8 04           cmp         eax,4
+  00000017: 73 37              jae         00000050
+  00000019: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000001C: 83 F8 02           cmp         eax,2
+  0000001F: 8A 1C 0E           mov         bl,byte ptr [esi+ecx]
+  00000022: 1B D2              sbb         edx,edx
+  00000024: 81 E2 01 FF FF FF  and         edx,0FFFFFF01h
+  0000002A: 0F B6 CB           movzx       ecx,bl
+  0000002D: 81 C2 FF 00 00 00  add         edx,0FFh
+  00000033: 3B CA              cmp         ecx,edx
+  00000035: 75 03              jne         0000003A
+  00000037: 40                 inc         eax
+  00000038: EB 11              jmp         0000004B
+  0000003A: 84 DB              test        bl,bl
+  0000003C: 74 04              je          00000042
+  0000003E: 33 C0              xor         eax,eax
+  00000040: EB 09              jmp         0000004B
+  00000042: B9 04 00 00 00     mov         ecx,4
+  00000047: 2B C8              sub         ecx,eax
+  00000049: 8B C1              mov         eax,ecx
+  0000004B: 46                 inc         esi
+  0000004C: 3B F7              cmp         esi,edi
+  0000004E: 72 C4              jb          00000014
+  00000050: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000053: 5B                 pop         ebx
+  00000054: 89 01              mov         dword ptr [ecx],eax
+  00000056: 5F                 pop         edi
+  00000057: 8B C6              mov         eax,esi
+  00000059: 5E                 pop         esi
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+  0000005C: 89 01              mov         dword ptr [ecx],eax
+  0000005E: 5F                 pop         edi
+  0000005F: 8B C6              mov         eax,esi
+  00000061: 5E                 pop         esi
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+_updatewindow:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 72 1C           mov         esi,dword ptr [edx+1Ch]
+  0000000A: 57                 push        edi
+  0000000B: 83 7E 34 00        cmp         dword ptr [esi+34h],0
+  0000000F: BF 01 00 00 00     mov         edi,1
+  00000014: 75 21              jne         00000037
+  00000016: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00000019: 8B C7              mov         eax,edi
+  0000001B: D3 E0              shl         eax,cl
+  0000001D: 57                 push        edi
+  0000001E: 50                 push        eax
+  0000001F: FF 72 28           push        dword ptr [edx+28h]
+  00000022: 8B 42 20           mov         eax,dword ptr [edx+20h]
+  00000025: FF D0              call        eax
+  00000027: 83 C4 0C           add         esp,0Ch
+  0000002A: 89 46 34           mov         dword ptr [esi+34h],eax
+  0000002D: 85 C0              test        eax,eax
+  0000002F: 75 06              jne         00000037
+  00000031: 8B C7              mov         eax,edi
+  00000033: 5F                 pop         edi
+  00000034: 5E                 pop         esi
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+  00000037: 83 7E 28 00        cmp         dword ptr [esi+28h],0
+  0000003B: 75 16              jne         00000053
+  0000003D: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  00000040: D3 E7              shl         edi,cl
+  00000042: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  00000049: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  00000050: 89 7E 28           mov         dword ptr [esi+28h],edi
+  00000053: 8B 7E 28           mov         edi,dword ptr [esi+28h]
+  00000056: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000059: 53                 push        ebx
+  0000005A: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000005D: 3B DF              cmp         ebx,edi
+  0000005F: 72 23              jb          00000084
+  00000061: 57                 push        edi
+  00000062: 2B C7              sub         eax,edi
+  00000064: 50                 push        eax
+  00000065: FF 76 34           push        dword ptr [esi+34h]
+  00000068: E8 00 00 00 00     call        _memcpy
+  0000006D: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000070: 83 C4 0C           add         esp,0Ch
+  00000073: 89 46 2C           mov         dword ptr [esi+2Ch],eax
+  00000076: 5B                 pop         ebx
+  00000077: 5F                 pop         edi
+  00000078: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  0000007F: 33 C0              xor         eax,eax
+  00000081: 5E                 pop         esi
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+  00000084: 2B 7E 30           sub         edi,dword ptr [esi+30h]
+  00000087: 3B FB              cmp         edi,ebx
+  00000089: 0F 47 FB           cmova       edi,ebx
+  0000008C: 2B C3              sub         eax,ebx
+  0000008E: 57                 push        edi
+  0000008F: 50                 push        eax
+  00000090: 8B 46 34           mov         eax,dword ptr [esi+34h]
+  00000093: 03 46 30           add         eax,dword ptr [esi+30h]
+  00000096: 50                 push        eax
+  00000097: E8 00 00 00 00     call        _memcpy
+  0000009C: 83 C4 0C           add         esp,0Ch
+  0000009F: 2B DF              sub         ebx,edi
+  000000A1: 74 22              je          000000C5
+  000000A3: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000A6: 53                 push        ebx
+  000000A7: 2B C3              sub         eax,ebx
+  000000A9: 50                 push        eax
+  000000AA: FF 76 34           push        dword ptr [esi+34h]
+  000000AD: E8 00 00 00 00     call        _memcpy
+  000000B2: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  000000B5: 83 C4 0C           add         esp,0Ch
+  000000B8: 89 5E 30           mov         dword ptr [esi+30h],ebx
+  000000BB: 5B                 pop         ebx
+  000000BC: 89 46 2C           mov         dword ptr [esi+2Ch],eax
+  000000BF: 5F                 pop         edi
+  000000C0: 33 C0              xor         eax,eax
+  000000C2: 5E                 pop         esi
+  000000C3: 5D                 pop         ebp
+  000000C4: C3                 ret
+  000000C5: 01 7E 30           add         dword ptr [esi+30h],edi
+  000000C8: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  000000CB: 33 D2              xor         edx,edx
+  000000CD: 3B 46 28           cmp         eax,dword ptr [esi+28h]
+  000000D0: 0F 44 C2           cmove       eax,edx
+  000000D3: 89 46 30           mov         dword ptr [esi+30h],eax
+  000000D6: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  000000D9: 3B 46 28           cmp         eax,dword ptr [esi+28h]
+  000000DC: 73 05              jae         000000E3
+  000000DE: 03 C7              add         eax,edi
+  000000E0: 89 46 2C           mov         dword ptr [esi+2Ch],eax
+  000000E3: 5B                 pop         ebx
+  000000E4: 5F                 pop         edi
+  000000E5: 33 C0              xor         eax,eax
+  000000E7: 5E                 pop         esi
+  000000E8: 5D                 pop         ebp
+  000000E9: C3                 ret
+
+  Summary
+
+          64 .debug$S
+          2F .drectve
+         A73 .rdata
+        1F27 .text

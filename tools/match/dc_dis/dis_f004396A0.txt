@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004396A0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PTypeDefault_PChar_RegisterName:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 7E 18           mov         edi,dword ptr [esi+18h]
+  0000000B: 85 FF              test        edi,edi
+  0000000D: 75 06              jne         00000015
+  0000000F: 5F                 pop         edi
+  00000010: 32 C0              xor         al,al
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C3                 ret
+  00000015: E8 00 00 00 00     call        _Phyre_PTypeDefault_PUInt64_SingletonInit
+  0000001A: 57                 push        edi
+  0000001B: 50                 push        eax
+  0000001C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001F: E8 00 00 00 00     call        _Phyre_PTypeDefault_PChar_Find
+  00000024: 83 C4 08           add         esp,8
+  00000027: 85 C0              test        eax,eax
+  00000029: 75 E4              jne         0000000F
+  0000002B: 8A 07              mov         al,byte ptr [edi]
+  0000002D: 53                 push        ebx
+  0000002E: 8B DF              mov         ebx,edi
+  00000030: BA B5 07 00 00     mov         edx,7B5h
+  00000035: 84 C0              test        al,al
+  00000037: 74 20              je          00000059
+  00000039: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000040: 0F BE C8           movsx       ecx,al
+  00000043: 8B C2              mov         eax,edx
+  00000045: C1 E0 05           shl         eax,5
+  00000048: 03 C2              add         eax,edx
+  0000004A: 83 E1 1F           and         ecx,1Fh
+  0000004D: 8D 5B 01           lea         ebx,[ebx+1]
+  00000050: 8D 14 08           lea         edx,[eax+ecx]
+  00000053: 8A 03              mov         al,byte ptr [ebx]
+  00000055: 84 C0              test        al,al
+  00000057: 75 E7              jne         00000040
+  00000059: 89 7E 14           mov         dword ptr [esi+14h],edi
+  0000005C: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000005F: 56                 push        esi
+  00000060: 57                 push        edi
+  00000061: 89 56 10           mov         dword ptr [esi+10h],edx
+  00000064: E8 00 00 00 00     call        _Phyre_PTypeDefault_PChar_BST_Insert
+  00000069: 83 C4 08           add         esp,8
+  0000006C: 5B                 pop         ebx
+  0000006D: 85 C0              test        eax,eax
+  0000006F: 75 9E              jne         0000000F
+  00000071: 8D 46 04           lea         eax,[esi+4]
+  00000074: 50                 push        eax
+  00000075: 57                 push        edi
+  00000076: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode_COMDAT
+  0000007B: 83 C4 08           add         esp,8
+  0000007E: B0 01              mov         al,1
+  00000080: 5F                 pop         edi
+  00000081: 5E                 pop         esi
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

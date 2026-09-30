@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F79A0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PhysicsBody_SetActiveState@4:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 8B 8E DC 00 00 00  mov         ecx,dword ptr [esi+0DCh]
+  0000000B: 0F B6 9E C4 00 00  movzx       ebx,byte ptr [esi+0C4h]
+            00
+  00000012: 85 C9              test        ecx,ecx
+  00000014: 74 22              je          00000038
+  00000016: 8B 81 D8 00 00 00  mov         eax,dword ptr [ecx+0D8h]
+  0000001C: 83 E0 FE           and         eax,0FFFFFFFEh
+  0000001F: 83 C8 02           or          eax,2
+  00000022: 89 81 D8 00 00 00  mov         dword ptr [ecx+0D8h],eax
+  00000028: 6A 04              push        4
+  0000002A: FF B6 DC 00 00 00  push        dword ptr [esi+0DCh]
+  00000030: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  00000035: 83 C4 08           add         esp,8
+  00000038: 80 BE BC 00 00 00  cmp         byte ptr [esi+0BCh],0Fh
+            0F
+  0000003F: 75 07              jne         00000048
+  00000041: C6 86 BC 00 00 00  mov         byte ptr [esi+0BCh],1
+            01
+  00000048: 8B BE B0 00 00 00  mov         edi,dword ptr [esi+0B0h]
+  0000004E: 85 FF              test        edi,edi
+  00000050: 74 26              je          00000078
+  00000052: 8B 7F 08           mov         edi,dword ptr [edi+8]
+  00000055: 85 FF              test        edi,edi
+  00000057: 74 1F              je          00000078
+  00000059: 83 FB 02           cmp         ebx,2
+  0000005C: 74 1A              je          00000078
+  0000005E: 8B 5F 50           mov         ebx,dword ptr [edi+50h]
+  00000061: 53                 push        ebx
+  00000062: 56                 push        esi
+  00000063: E8 00 00 00 00     call        _Phyre_PhysicsBody_IsInLinkedList
+  00000068: 83 C4 08           add         esp,8
+  0000006B: 85 C0              test        eax,eax
+  0000006D: 75 09              jne         00000078
+  0000006F: 89 9E B8 00 00 00  mov         dword ptr [esi+0B8h],ebx
+  00000075: 89 77 50           mov         dword ptr [edi+50h],esi
+  00000078: 5F                 pop         edi
+  00000079: C6 86 C4 00 00 00  mov         byte ptr [esi+0C4h],2
+            02
+  00000080: 5E                 pop         esi
+  00000081: 33 C0              xor         eax,eax
+  00000083: 5B                 pop         ebx
+  00000084: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          85 .text

@@ -1,0 +1,30 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00790C30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_SetGlobalFlagBit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F BF 4D 08        movsx       ecx,word ptr [ebp+8]
+  00000007: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000A: 8B D1              mov         edx,ecx
+  0000000C: C1 FA 04           sar         edx,4
+  0000000F: 81 E2 FF 00 00 00  and         edx,0FFh
+  00000015: 83 E1 0F           and         ecx,0Fh
+  00000018: 8D 14 50           lea         edx,[eax+edx*2]
+  0000001B: B8 01 00 00 00     mov         eax,1
+  00000020: 66 D3 E0           shl         ax,cl
+  00000023: 0F B7 C0           movzx       eax,ax
+  00000026: 66 09 02           or          word ptr [edx],ax
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2B .text

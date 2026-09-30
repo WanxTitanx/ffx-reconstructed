@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0066E940.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Scene_SetAllVisible@8:
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 33 C0              xor         eax,eax
+  00000006: 8A DA              mov         bl,dl
+  00000008: 39 87 C8 11 00 00  cmp         dword ptr [edi+000011C8h],eax
+  0000000E: 76 2B              jbe         0000003B
+  00000010: 56                 push        esi
+  00000011: 8B 8F D0 11 00 00  mov         ecx,dword ptr [edi+000011D0h]
+  00000017: 8B 14 81           mov         edx,dword ptr [ecx+eax*4]
+  0000001A: 85 D2              test        edx,edx
+  0000001C: 74 13              je          00000031
+  0000001E: 8B 72 1C           mov         esi,dword ptr [edx+1Ch]
+  00000021: 85 F6              test        esi,esi
+  00000023: 74 0C              je          00000031
+  00000025: 0F BE CB           movsx       ecx,bl
+  00000028: F7 D9              neg         ecx
+  0000002A: 1B C9              sbb         ecx,ecx
+  0000002C: 23 CA              and         ecx,edx
+  0000002E: 89 4E 1C           mov         dword ptr [esi+1Ch],ecx
+  00000031: 40                 inc         eax
+  00000032: 3B 87 C8 11 00 00  cmp         eax,dword ptr [edi+000011C8h]
+  00000038: 72 D7              jb          00000011
+  0000003A: 5E                 pop         esi
+  0000003B: 5F                 pop         edi
+  0000003C: 5B                 pop         ebx
+  0000003D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3E .text

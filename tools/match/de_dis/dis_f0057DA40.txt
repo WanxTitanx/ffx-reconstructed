@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0057DA40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Cluster_WriteFixupTable@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000C: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  0000000F: 83 E0 01           and         eax,1
+  00000012: 8D 4E 54           lea         ecx,[esi+54h]
+  00000015: 03 C8              add         ecx,eax
+  00000017: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000001A: 80 39 00           cmp         byte ptr [ecx],0
+  0000001D: 75 2B              jne         0000004A
+  0000001F: 53                 push        ebx
+  00000020: 57                 push        edi
+  00000021: 33 FF              xor         edi,edi
+  00000023: 8D 5E 30           lea         ebx,[esi+30h]
+  00000026: 8D 1C C3           lea         ebx,[ebx+eax*8]
+  00000029: 39 7E 08           cmp         dword ptr [esi+8],edi
+  0000002C: 74 17              je          00000045
+  0000002E: 8B FF              mov         edi,edi
+  00000030: 53                 push        ebx
+  00000031: E8 00 00 00 00     call        _Phyre_SpinLock_Release
+  00000036: 47                 inc         edi
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 3B 7E 08           cmp         edi,dword ptr [esi+8]
+  0000003D: 72 F1              jb          00000030
+  0000003F: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000042: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000045: 5F                 pop         edi
+  00000046: C6 01 01           mov         byte ptr [ecx],1
+  00000049: 5B                 pop         ebx
+  0000004A: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  0000004D: 89 42 08           mov         dword ptr [edx+8],eax
+  00000050: F6 46 40 01        test        byte ptr [esi+40h],1
+  00000054: 74 05              je          0000005B
+  00000056: 8B 46 48           mov         eax,dword ptr [esi+48h]
+  00000059: EB 03              jmp         0000005E
+  0000005B: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000005E: 8B 4E 4C           mov         ecx,dword ptr [esi+4Ch]
+  00000061: 3B 4E 14           cmp         ecx,dword ptr [esi+14h]
+  00000064: 72 0A              jb          00000070
+  00000066: B8 0E 00 00 00     mov         eax,0Eh
+  0000006B: 5E                 pop         esi
+  0000006C: 8B E5              mov         esp,ebp
+  0000006E: 5D                 pop         ebp
+  0000006F: C3                 ret
+  00000070: 89 14 88           mov         dword ptr [eax+ecx*4],edx
+  00000073: FF 46 4C           inc         dword ptr [esi+4Ch]
+  00000076: 33 C0              xor         eax,eax
+  00000078: 5E                 pop         esi
+  00000079: 8B E5              mov         esp,ebp
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7D .text

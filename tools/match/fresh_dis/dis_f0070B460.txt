@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070B460.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_SetPaused@8:
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B DA              mov         ebx,edx
+  00000006: 83 7F 14 00        cmp         dword ptr [edi+14h],0
+  0000000A: 74 4B              je          00000057
+  0000000C: 3B 5F 54           cmp         ebx,dword ptr [edi+54h]
+  0000000F: 74 43              je          00000054
+  00000011: E8 00 00 00 00     call        _FMOD_Event_getState
+  00000016: 68 76 02 00 00     push        276h
+  0000001B: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000026: 83 C4 0C           add         esp,0Ch
+  00000029: F6 C3 08           test        bl,8
+  0000002C: 74 26              je          00000054
+  0000002E: 56                 push        esi
+  0000002F: 8D 73 FF           lea         esi,[ebx-1]
+  00000032: F7 DE              neg         esi
+  00000034: 1B F6              sbb         esi,esi
+  00000036: 83 E6 05           and         esi,5
+  00000039: 81 C6 7D 02 00 00  add         esi,27Dh
+  0000003F: E8 00 00 00 00     call        _FMOD_Event_setPaused
+  00000044: 56                 push        esi
+  00000045: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  0000004A: 50                 push        eax
+  0000004B: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000050: 83 C4 0C           add         esp,0Ch
+  00000053: 5E                 pop         esi
+  00000054: 89 5F 54           mov         dword ptr [edi+54h],ebx
+  00000057: 5F                 pop         edi
+  00000058: 33 C0              xor         eax,eax
+  0000005A: 5B                 pop         ebx
+  0000005B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          5C .text

@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00627870.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_627870@8:
+  00000000: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000003: 56                 push        esi
+  00000004: 8B 71 10           mov         esi,dword ptr [ecx+10h]
+  00000007: 3B C6              cmp         eax,esi
+  00000009: 73 18              jae         00000023
+  0000000B: 0F B6 08           movzx       ecx,byte ptr [eax]
+  0000000E: 0F BE D2           movsx       edx,dl
+  00000011: 3B CA              cmp         ecx,edx
+  00000013: 74 10              je          00000025
+  00000015: 40                 inc         eax
+  00000016: 3B C6              cmp         eax,esi
+  00000018: 73 09              jae         00000023
+  0000001A: 0F B6 08           movzx       ecx,byte ptr [eax]
+  0000001D: 3B CA              cmp         ecx,edx
+  0000001F: 75 F4              jne         00000015
+  00000021: 5E                 pop         esi
+  00000022: C3                 ret
+  00000023: 33 C0              xor         eax,eax
+  00000025: 5E                 pop         esi
+  00000026: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          27 .text

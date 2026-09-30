@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FB400.obj
+
+File Type: COFF OBJECT
+
+@FFX_Sync_FindSlotById@8:
+  00000000: 56                 push        esi
+  00000001: 8D 42 FF           lea         eax,[edx-1]
+  00000004: 57                 push        edi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 3D F3 01 00 00     cmp         eax,1F3h
+  0000000C: 77 35              ja          00000043
+  0000000E: 39 56 0C           cmp         dword ptr [esi+0Ch],edx
+  00000011: 74 30              je          00000043
+  00000013: 8B 7E 18           mov         edi,dword ptr [esi+18h]
+  00000016: 33 C9              xor         ecx,ecx
+  00000018: 89 56 0C           mov         dword ptr [esi+0Ch],edx
+  0000001B: 89 4E 1C           mov         dword ptr [esi+1Ch],ecx
+  0000001E: 89 4E 08           mov         dword ptr [esi+8],ecx
+  00000021: 85 FF              test        edi,edi
+  00000023: 7E 1E              jle         00000043
+  00000025: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  00000028: 3B 10              cmp         edx,dword ptr [eax]
+  0000002A: 74 10              je          0000003C
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 41                 inc         ecx
+  00000031: 3B CF              cmp         ecx,edi
+  00000033: 7D 0E              jge         00000043
+  00000035: 83 C0 04           add         eax,4
+  00000038: 3B 10              cmp         edx,dword ptr [eax]
+  0000003A: 75 F4              jne         00000030
+  0000003C: C7 46 1C 01 00 00  mov         dword ptr [esi+1Ch],1
+            00
+  00000043: 5F                 pop         edi
+  00000044: 33 C0              xor         eax,eax
+  00000046: 5E                 pop         esi
+  00000047: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          48 .text

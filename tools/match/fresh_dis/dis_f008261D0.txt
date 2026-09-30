@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008261D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_ClearBackPointerInWorkBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 85 D2              test        edx,edx
+  00000008: 74 36              je          00000040
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000E: 69 F6 80 08 00 00  imul        esi,esi,880h
+  00000014: 03 F2              add         esi,edx
+  00000016: 3B D6              cmp         edx,esi
+  00000018: 74 25              je          0000003F
+  0000001A: 8D 82 9C 01 00 00  lea         eax,[edx+0000019Ch]
+  00000020: 8D 88 64 FE FF FF  lea         ecx,[eax+FFFFFE64h]
+  00000026: 39 10              cmp         dword ptr [eax],edx
+  00000028: 75 06              jne         00000030
+  0000002A: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000030: 81 C1 80 08 00 00  add         ecx,880h
+  00000036: 05 80 08 00 00     add         eax,880h
+  0000003B: 3B CE              cmp         ecx,esi
+  0000003D: 75 E7              jne         00000026
+  0000003F: 5E                 pop         esi
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          42 .text

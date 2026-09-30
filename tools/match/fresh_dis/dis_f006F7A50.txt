@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F7A50.obj
+
+File Type: COFF OBJECT
+
+@FFX_EscMenu_OpenItemSlot@8:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 83 FA 07           cmp         edx,7
+  00000006: 7C 04              jl          0000000C
+  00000008: 33 C0              xor         eax,eax
+  0000000A: 5F                 pop         edi
+  0000000B: C3                 ret
+  0000000C: 83 3C 97 00        cmp         dword ptr [edi+edx*4],0
+  00000010: 56                 push        esi
+  00000011: 8D 34 97           lea         esi,[edi+edx*4]
+  00000014: 75 2B              jne         00000041
+  00000016: 0F B6 44 17 38     movzx       eax,byte ptr [edi+edx+38h]
+  0000001B: 6B C0 35           imul        eax,eax,35h
+  0000001E: 6A 2B              push        2Bh
+  00000020: 6A 2B              push        2Bh
+  00000022: 6A 0A              push        0Ah
+  00000024: 83 C0 0A           add         eax,0Ah
+  00000027: 50                 push        eax
+  00000028: FF 74 97 1C        push        dword ptr [edi+edx*4+1Ch]
+  0000002C: E8 00 00 00 00     call        _FFX_BtlUI_HudMenu_Open
+  00000031: 89 06              mov         dword ptr [esi],eax
+  00000033: 0F BE 4F 3F        movsx       ecx,byte ptr [edi+3Fh]
+  00000037: 51                 push        ecx
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _FFX_EscMenu_SetVisibilityFlag
+  0000003E: 83 C4 1C           add         esp,1Ch
+  00000041: 8B 06              mov         eax,dword ptr [esi]
+  00000043: 5E                 pop         esi
+  00000044: 5F                 pop         edi
+  00000045: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          46 .text

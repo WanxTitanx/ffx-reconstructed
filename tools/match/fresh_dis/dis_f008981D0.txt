@@ -1,0 +1,94 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008981D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_UI_BuildOverdriveSubcommandList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: FF 75 08           push        dword ptr [ebp+8]
+  0000000A: 33 F6              xor         esi,esi
+  0000000C: E8 00 00 00 00     call        _FFX_Battle_GetActorStatusFlagsWord
+  00000011: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000014: 0F B7 C0           movzx       eax,ax
+  00000017: 8B C8              mov         ecx,eax
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000001F: 33 FF              xor         edi,edi
+  00000021: 83 FF 0B           cmp         edi,0Bh
+  00000024: 75 16              jne         0000003C
+  00000026: FF 75 08           push        dword ptr [ebp+8]
+  00000029: E8 00 00 00 00     call        _FFX_Battle_IsOverdriveReady
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 85 C0              test        eax,eax
+  00000033: 74 1C              je          00000051
+  00000035: B8 11 10 00 00     mov         eax,1011h
+  0000003A: EB 10              jmp         0000004C
+  0000003C: 66 8B CF           mov         cx,di
+  0000003F: 66 D3 E8           shr         ax,cl
+  00000042: A8 01              test        al,1
+  00000044: 74 0B              je          00000051
+  00000046: 8D 87 06 10 00 00  lea         eax,[edi+1006h]
+  0000004C: 66 89 04 73        mov         word ptr [ebx+esi*2],ax
+  00000050: 46                 inc         esi
+  00000051: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000054: 47                 inc         edi
+  00000055: 0F B7 C1           movzx       eax,cx
+  00000058: 83 FF 0C           cmp         edi,0Ch
+  0000005B: 7C C4              jl          00000021
+  0000005D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000060: 57                 push        edi
+  00000061: E8 00 00 00 00     call        _FFX_Battle_GetActorOverdriveThresholdPtr
+  00000066: 83 C4 04           add         esp,4
+  00000069: 8B D0              mov         edx,eax
+  0000006B: 33 C9              xor         ecx,ecx
+  0000006D: 8D 49 00           lea         ecx,[ecx]
+  00000070: 80 3C 11 00        cmp         byte ptr [ecx+edx],0
+  00000074: 74 0B              je          00000081
+  00000076: 8D 81 12 10 00 00  lea         eax,[ecx+1012h]
+  0000007C: 66 89 04 73        mov         word ptr [ebx+esi*2],ax
+  00000080: 46                 inc         esi
+  00000081: 41                 inc         ecx
+  00000082: 83 F9 0D           cmp         ecx,0Dh
+  00000085: 7C E9              jl          00000070
+  00000087: 57                 push        edi
+  00000088: E8 00 00 00 00     call        _FFX_Battle_GetActorOverdriveGauge
+  0000008D: 0F B7 C0           movzx       eax,ax
+  00000090: 8B C8              mov         ecx,eax
+  00000092: 83 C4 04           add         esp,4
+  00000095: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000098: 33 D2              xor         edx,edx
+  0000009A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000A0: 0F B7 FA           movzx       edi,dx
+  000000A3: 66 8B CF           mov         cx,di
+  000000A6: 66 D3 E8           shr         ax,cl
+  000000A9: A8 01              test        al,1
+  000000AB: 74 0B              je          000000B8
+  000000AD: 8D 87 20 10 00 00  lea         eax,[edi+1020h]
+  000000B3: 66 89 04 73        mov         word ptr [ebx+esi*2],ax
+  000000B7: 46                 inc         esi
+  000000B8: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000BB: 42                 inc         edx
+  000000BC: 0F B7 C0           movzx       eax,ax
+  000000BF: 83 FA 0F           cmp         edx,0Fh
+  000000C2: 7C DC              jl          000000A0
+  000000C4: 5F                 pop         edi
+  000000C5: 8B C6              mov         eax,esi
+  000000C7: 5E                 pop         esi
+  000000C8: 5B                 pop         ebx
+  000000C9: 8B E5              mov         esp,ebp
+  000000CB: 5D                 pop         ebp
+  000000CC: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          CD .text

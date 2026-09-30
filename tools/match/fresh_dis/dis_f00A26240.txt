@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A26240.obj
+
+File Type: COFF OBJECT
+
+_Phyre_FrameBufferSingleton_Init:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_g_UnkVar_1984C6C],0
+            00
+  00000007: 75 27              jne         00000030
+  00000009: 6A 34              push        34h
+  0000000B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000010: 83 C4 04           add         esp,4
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 0F              je          00000026
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _Phyre_FrameBufferSurface_Init
+  0000001D: 83 C4 04           add         esp,4
+  00000020: A3 00 00 00 00     mov         dword ptr [_g_UnkVar_1984C6C],eax
+  00000025: C3                 ret
+  00000026: C7 05 00 00 00 00  mov         dword ptr [_g_UnkVar_1984C6C],0
+            00 00 00 00
+  00000030: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          31 .text

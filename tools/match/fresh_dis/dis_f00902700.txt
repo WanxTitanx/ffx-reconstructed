@@ -1,0 +1,108 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00902700.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_DrawScrollbar:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 20           mov         edx,dword ptr [ebp+20h]
+  00000006: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000009: 8B 4D 1C           mov         ecx,dword ptr [ebp+1Ch]
+  0000000C: 83 EC 10           sub         esp,10h
+  0000000F: 3B D1              cmp         edx,ecx
+  00000011: 0F 8E D8 00 00 00  jle         000000EF
+  00000017: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000001A: 53                 push        ebx
+  0000001B: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000001E: 03 C3              add         eax,ebx
+  00000020: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000023: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000026: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000029: 56                 push        esi
+  0000002A: 57                 push        edi
+  0000002B: D9 C0              fld         st(0)
+  0000002D: D8 E2              fsub        st,st(2)
+  0000002F: DB 45 20           fild        dword ptr [ebp+20h]
+  00000032: DD 5D F0           fstp        qword ptr [ebp-10h]
+  00000035: DC 75 F0           fdiv        qword ptr [ebp-10h]
+  00000038: DB 45 18           fild        dword ptr [ebp+18h]
+  0000003B: DD 5D F0           fstp        qword ptr [ebp-10h]
+  0000003E: DD 45 F0           fld         qword ptr [ebp-10h]
+  00000041: D8 C9              fmul        st,st(1)
+  00000043: D8 C3              fadd        st,st(3)
+  00000045: DD 55 F0           fst         qword ptr [ebp-10h]
+  00000048: DB 45 1C           fild        dword ptr [ebp+1Ch]
+  0000004B: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000004E: DD 45 F8           fld         qword ptr [ebp-8]
+  00000051: DE CA              fmulp       st(2),st
+  00000053: DE C1              faddp       st(1),st
+  00000055: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000058: 85 C0              test        eax,eax
+  0000005A: 75 07              jne         00000063
+  0000005C: D9 C9              fxch        st(1)
+  0000005E: DD 5D F0           fstp        qword ptr [ebp-10h]
+  00000061: EB 02              jmp         00000065
+  00000063: DD D9              fstp        st(1)
+  00000065: 03 C1              add         eax,ecx
+  00000067: 3B C2              cmp         eax,edx
+  00000069: 7C 05              jl          00000070
+  0000006B: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000006E: EB 02              jmp         00000072
+  00000070: DD D8              fstp        st(0)
+  00000072: DD 05 00 00 00 00  fld         qword ptr [__real@4060000000000000]
+  00000078: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000007B: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000007E: 83 EC 20           sub         esp,20h
+  00000081: 03 F7              add         esi,edi
+  00000083: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  00000087: DD 05 00 00 00 00  fld         qword ptr [__real@4031000000000000]
+  0000008D: DD 54 24 10        fst         qword ptr [esp+10h]
+  00000091: DD 54 24 08        fst         qword ptr [esp+8]
+  00000095: DD 1C 24           fstp        qword ptr [esp]
+  00000098: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000009B: 56                 push        esi
+  0000009C: 53                 push        ebx
+  0000009D: 57                 push        edi
+  0000009E: E8 00 00 00 00     call        _FFX_System_InitSystemMenus
+  000000A3: DD 05 00 00 00 00  fld         qword ptr [__real@4060000000000000]
+  000000A9: 83 C4 10           add         esp,10h
+  000000AC: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  000000B0: DD 05 00 00 00 00  fld         qword ptr [__real@406e000000000000]
+  000000B6: DD 54 24 10        fst         qword ptr [esp+10h]
+  000000BA: DD 54 24 08        fst         qword ptr [esp+8]
+  000000BE: DD 1C 24           fstp        qword ptr [esp]
+  000000C1: DD 45 F8           fld         qword ptr [ebp-8]
+  000000C4: E8 00 00 00 00     call        __ftol2_sse
+  000000C9: DD 45 F0           fld         qword ptr [ebp-10h]
+  000000CC: 50                 push        eax
+  000000CD: 8D 46 FF           lea         eax,[esi-1]
+  000000D0: 50                 push        eax
+  000000D1: E8 00 00 00 00     call        __ftol2_sse
+  000000D6: 50                 push        eax
+  000000D7: 8D 47 01           lea         eax,[edi+1]
+  000000DA: 50                 push        eax
+  000000DB: E8 00 00 00 00     call        _FFX_System_InitSystemMenus
+  000000E0: 83 C4 30           add         esp,30h
+  000000E3: E8 00 00 00 00     call        _FFX_Menu_PoolAllocatorB
+  000000E8: 5F                 pop         edi
+  000000E9: 5E                 pop         esi
+  000000EA: 5B                 pop         ebx
+  000000EB: 8B E5              mov         esp,ebp
+  000000ED: 5D                 pop         ebp
+  000000EE: C3                 ret
+  000000EF: DD D8              fstp        st(0)
+  000000F1: 8B C1              mov         eax,ecx
+  000000F3: 8B E5              mov         esp,ebp
+  000000F5: 5D                 pop         ebp
+  000000F6: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          F7 .text

@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F61B0.obj
+
+File Type: COFF OBJECT
+
+@DebugOverlay_MatrixInverseByIndex@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 46 74           mov         eax,dword ptr [esi+74h]
+  00000009: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000E: 3B D0              cmp         edx,eax
+  00000010: 73 16              jae         00000028
+  00000012: 8B 46 78           mov         eax,dword ptr [esi+78h]
+  00000015: FF 75 08           push        dword ptr [ebp+8]
+  00000018: 8D 04 90           lea         eax,[eax+edx*4]
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  00000021: 83 C4 08           add         esp,8
+  00000024: C6 46 70 01        mov         byte ptr [esi+70h],1
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2D .text

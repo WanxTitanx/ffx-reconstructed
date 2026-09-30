@@ -1,0 +1,31 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00485110.obj
+
+File Type: COFF OBJECT
+
+@PIndexBuffer_DestroyIfDirtyAndUnbind@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _PVertexBuffer_IsFlaggedDirty
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 84 C0              test        al,al
+  0000000E: 74 09              je          00000019
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _Phyre_PGeometry_UnbindIndexDataBlocks
+  00000016: 83 C4 04           add         esp,4
+  00000019: 56                 push        esi
+  0000001A: E8 00 00 00 00     call        _PIndexBuffer_Destroy
+  0000001F: 83 C4 04           add         esp,4
+  00000022: 5E                 pop         esi
+  00000023: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          24 .text

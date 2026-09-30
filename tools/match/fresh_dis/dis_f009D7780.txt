@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009D7780.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_9D7780:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000009: D9 41 04           fld         dword ptr [ecx+4]
+  0000000C: D8 48 04           fmul        dword ptr [eax+4]
+  0000000F: D9 01              fld         dword ptr [ecx]
+  00000011: D8 08              fmul        dword ptr [eax]
+  00000013: DE C1              faddp       st(1),st
+  00000015: D9 41 08           fld         dword ptr [ecx+8]
+  00000018: D8 48 08           fmul        dword ptr [eax+8]
+  0000001B: DE C1              faddp       st(1),st
+  0000001D: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000020: D9 45 08           fld         dword ptr [ebp+8]
+  00000023: D8 41 10           fadd        dword ptr [ecx+10h]
+  00000026: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000029: D9 45 08           fld         dword ptr [ebp+8]
+  0000002C: D9 05 00 00 00 00  fld         dword ptr [_flt_C64BE8]
+  00000032: D8 D1              fcom        st(1)
+  00000034: DF E0              fnstsw      ax
+  00000036: F6 C4 01           test        ah,1
+  00000039: 75 16              jne         00000051
+  0000003B: D9 E0              fchs
+  0000003D: DE D9              fcompp
+  0000003F: DF E0              fnstsw      ax
+  00000041: F6 C4 41           test        ah,41h
+  00000044: 75 07              jne         0000004D
+  00000046: B8 01 00 00 00     mov         eax,1
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+  0000004D: 33 C0              xor         eax,eax
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+  00000051: DD D9              fstp        st(1)
+  00000053: B8 02 00 00 00     mov         eax,2
+  00000058: DD D8              fstp        st(0)
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5C .text

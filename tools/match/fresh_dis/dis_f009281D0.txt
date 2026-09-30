@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009281D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_RcBg_QuantizeVertPoolToS16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: D9 45 14           fld         dword ptr [ebp+14h]
+  00000009: 57                 push        edi
+  0000000A: D9 E8              fld1
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: DE F1              fdivrp      st(1),st
+  00000011: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000014: 85 FF              test        edi,edi
+  00000016: 7E 6A              jle         00000082
+  00000018: 0F B7 45 10        movzx       eax,word ptr [ebp+10h]
+  0000001C: D9 45 10           fld         dword ptr [ebp+10h]
+  0000001F: 53                 push        ebx
+  00000020: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000023: 56                 push        esi
+  00000024: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000027: 83 C6 04           add         esi,4
+  0000002A: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002D: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000030: 83 EC 08           sub         esp,8
+  00000033: D9 45 14           fld         dword ptr [ebp+14h]
+  00000036: 8D 45 E8           lea         eax,[ebp-18h]
+  00000039: DD 1C 24           fstp        qword ptr [esp]
+  0000003C: 53                 push        ebx
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _FFX_BtlUI_HudIconRegister
+  00000043: 8D 45 E8           lea         eax,[ebp-18h]
+  00000046: 50                 push        eax
+  00000047: 8D 45 FC           lea         eax,[ebp-4]
+  0000004A: 50                 push        eax
+  0000004B: E8 00 00 00 00     call        _FFX_Math_Vec4FloatToInt16
+  00000050: D9 45 10           fld         dword ptr [ebp+10h]
+  00000053: 66 8B 45 10        mov         ax,word ptr [ebp+10h]
+  00000057: 66 8B 4D FC        mov         cx,word ptr [ebp-4]
+  0000005B: 66 89 46 FE        mov         word ptr [esi-2],ax
+  0000005F: 66 8B 45 10        mov         ax,word ptr [ebp+10h]
+  00000063: 83 C4 18           add         esp,18h
+  00000066: 83 C3 10           add         ebx,10h
+  00000069: 66 89 4E FC        mov         word ptr [esi-4],cx
+  0000006D: 66 89 06           mov         word ptr [esi],ax
+  00000070: 8D 76 06           lea         esi,[esi+6]
+  00000073: 4F                 dec         edi
+  00000074: 75 B7              jne         0000002D
+  00000076: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000079: DD D8              fstp        st(0)
+  0000007B: 5E                 pop         esi
+  0000007C: 5B                 pop         ebx
+  0000007D: 5F                 pop         edi
+  0000007E: 8B E5              mov         esp,ebp
+  00000080: 5D                 pop         ebp
+  00000081: C3                 ret
+  00000082: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000085: 5F                 pop         edi
+  00000086: 8B E5              mov         esp,ebp
+  00000088: 5D                 pop         ebp
+  00000089: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          8A .text

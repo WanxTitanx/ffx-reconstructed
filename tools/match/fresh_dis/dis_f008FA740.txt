@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008FA740.obj
+
+File Type: COFF OBJECT
+
+_FFX_Font_CalcGlyphPosition:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000009: D9 45 10           fld         dword ptr [ebp+10h]
+  0000000C: 83 EC 10           sub         esp,10h
+  0000000F: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000013: D9 40 1C           fld         dword ptr [eax+1Ch]
+  00000016: DD 1C 24           fstp        qword ptr [esp]
+  00000019: E8 00 00 00 00     call        _FFX_Font_GetGlyphOffsetScale
+  0000001E: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000021: DB 45 10           fild        dword ptr [ebp+10h]
+  00000024: 85 C0              test        eax,eax
+  00000026: 79 06              jns         0000002E
+  00000028: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000002E: 0F BE 45 08        movsx       eax,byte ptr [ebp+8]
+  00000032: DD 5D F0           fstp        qword ptr [ebp-10h]
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _FFX_Font_GetGlyphWidthScale
+  0000003B: 83 C4 14           add         esp,14h
+  0000003E: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000041: DB 45 08           fild        dword ptr [ebp+8]
+  00000044: 85 C0              test        eax,eax
+  00000046: 79 06              jns         0000004E
+  00000048: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000004E: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000051: DD 45 F8           fld         qword ptr [ebp-8]
+  00000054: DC 45 F0           fadd        qword ptr [ebp-10h]
+  00000057: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000005A: D9 45 08           fld         dword ptr [ebp+8]
+  0000005D: 8B E5              mov         esp,ebp
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          61 .text

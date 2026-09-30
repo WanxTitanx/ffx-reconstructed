@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085D930.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_PopClampS8Call8869F0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: FF 75 10           push        dword ptr [ebp+10h]
+  00000007: FF 75 08           push        dword ptr [ebp+8]
+  0000000A: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000000F: 83 C4 08           add         esp,8
+  00000012: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000015: 83 F8 80           cmp         eax,0FFFFFF80h
+  00000018: 7C 1E              jl          00000038
+  0000001A: 83 F8 7F           cmp         eax,7Fh
+  0000001D: 7E 07              jle         00000026
+  0000001F: C6 45 FC 7F        mov         byte ptr [ebp-4],7Fh
+  00000023: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000026: 50                 push        eax
+  00000027: E8 00 00 00 00     call        _FFX_FieldVM_ThunkMusicVolume
+  0000002C: B8 01 00 00 00     mov         eax,1
+  00000031: 83 C4 04           add         esp,4
+  00000034: 8B E5              mov         esp,ebp
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 68 80 00 00 00     push        80h
+  0000003D: E8 00 00 00 00     call        _FFX_FieldVM_ThunkMusicVolume
+  00000042: B8 01 00 00 00     mov         eax,1
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 8B E5              mov         esp,ebp
+  0000004C: 5D                 pop         ebp
+  0000004D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4E .text

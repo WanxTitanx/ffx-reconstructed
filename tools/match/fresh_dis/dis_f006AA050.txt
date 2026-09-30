@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AA050.obj
+
+File Type: COFF OBJECT
+
+@FFX_DebugUI_CharacterLightingFPS@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 88 00 00 00  sub         esp,88h
+  00000009: 57                 push        edi
+  0000000A: 8B F9              mov         edi,ecx
+  0000000C: 8B C2              mov         eax,edx
+  0000000E: 80 BF C8 00 00 00  cmp         byte ptr [edi+0C8h],0
+            00
+  00000015: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000018: 0F 84 9A 00 00 00  je          000000B8
+  0000001E: 85 C0              test        eax,eax
+  00000020: 0F 84 92 00 00 00  je          000000B8
+  00000026: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000029: 53                 push        ebx
+  0000002A: 56                 push        esi
+  0000002B: 83 EC 08           sub         esp,8
+  0000002E: 8D 45 FC           lea         eax,[ebp-4]
+  00000031: DD 1C 24           fstp        qword ptr [esp]
+  00000034: 68 00 00 00 00     push        offset ??_C@_0BM@LFIGBCCF@CharacterLighting?3?5?$CF?42f?5fps?$AA@
+  00000039: 6A 20              push        20h
+  0000003B: 50                 push        eax
+  0000003C: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000043: E8 00 00 00 00     call        _sprintf_s
+  00000048: 8D 45 FC           lea         eax,[ebp-4]
+  0000004B: 50                 push        eax
+  0000004C: 8D 5F 04           lea         ebx,[edi+4]
+  0000004F: 53                 push        ebx
+  00000050: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseFromPtr
+  00000055: FF 75 08           push        dword ptr [ebp+8]
+  00000058: 57                 push        edi
+  00000059: E8 00 00 00 00     call        _FFX_Skinning_ComputeBlendedMatrices
+  0000005E: 83 C4 24           add         esp,24h
+  00000061: BE 06 00 00 00     mov         esi,6
+  00000066: 80 3F 00           cmp         byte ptr [edi],0
+  00000069: 74 32              je          0000009D
+  0000006B: 68 80 00 00 00     push        80h
+  00000070: 8D 85 78 FF FF FF  lea         eax,[ebp-88h]
+  00000076: 6A 00              push        0
+  00000078: 50                 push        eax
+  00000079: E8 00 00 00 00     call        _memset
+  0000007E: 8D 85 78 FF FF FF  lea         eax,[ebp-88h]
+  00000084: 50                 push        eax
+  00000085: 56                 push        esi
+  00000086: 57                 push        edi
+  00000087: E8 00 00 00 00     call        _FFX_Debug_FormatParamInfoToString
+  0000008C: 8D 85 78 FF FF FF  lea         eax,[ebp-88h]
+  00000092: 50                 push        eax
+  00000093: 56                 push        esi
+  00000094: 53                 push        ebx
+  00000095: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  0000009A: 83 C4 24           add         esp,24h
+  0000009D: 46                 inc         esi
+  0000009E: 83 FE 09           cmp         esi,9
+  000000A1: 7E C3              jle         00000066
+  000000A3: FF 75 F8           push        dword ptr [ebp-8]
+  000000A6: 53                 push        ebx
+  000000A7: E8 00 00 00 00     call        _FFX_DebugUI_RenderBitmapText
+  000000AC: 83 C4 08           add         esp,8
+  000000AF: 5E                 pop         esi
+  000000B0: 5B                 pop         ebx
+  000000B1: 5F                 pop         edi
+  000000B2: 8B E5              mov         esp,ebp
+  000000B4: 5D                 pop         ebp
+  000000B5: C2 08 00           ret         8
+  000000B8: 33 C0              xor         eax,eax
+  000000BA: 5F                 pop         edi
+  000000BB: 8B E5              mov         esp,ebp
+  000000BD: 5D                 pop         ebp
+  000000BE: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1C .rdata
+          C1 .text

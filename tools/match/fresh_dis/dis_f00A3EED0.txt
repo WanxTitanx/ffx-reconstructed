@@ -1,0 +1,103 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3EED0.obj
+
+File Type: COFF OBJECT
+
+@PMap_ProcessMeshData@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8B C1              mov         eax,ecx
+  00000008: 53                 push        ebx
+  00000009: 8B 08              mov         ecx,dword ptr [eax]
+  0000000B: 56                 push        esi
+  0000000C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000F: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000012: 57                 push        edi
+  00000013: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000017: 8B FA              mov         edi,edx
+  00000019: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000001C: B3 01              mov         bl,1
+  0000001E: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000021: 8B F1              mov         esi,ecx
+  00000023: 88 5D F4           mov         byte ptr [ebp-0Ch],bl
+  00000026: 75 33              jne         0000005B
+  00000028: 8B 0A              mov         ecx,dword ptr [edx]
+  0000002A: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 8B F0              mov         esi,eax
+  00000032: 84 D2              test        dl,dl
+  00000034: 74 08              je          0000003E
+  00000036: 39 48 10           cmp         dword ptr [eax+10h],ecx
+  00000039: 0F 93 C3           setae       bl
+  0000003C: EB 06              jmp         00000044
+  0000003E: 3B 48 10           cmp         ecx,dword ptr [eax+10h]
+  00000041: 0F 92 C3           setb        bl
+  00000044: 88 5D F4           mov         byte ptr [ebp-0Ch],bl
+  00000047: 84 DB              test        bl,bl
+  00000049: 74 04              je          0000004F
+  0000004B: 8B 00              mov         eax,dword ptr [eax]
+  0000004D: EB 03              jmp         00000052
+  0000004F: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000052: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000056: 74 D8              je          00000030
+  00000058: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000005B: 84 DB              test        bl,bl
+  0000005D: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000060: 8B CE              mov         ecx,esi
+  00000062: 89 75 08           mov         dword ptr [ebp+8],esi
+  00000065: 74 1E              je          00000085
+  00000067: 8B 03              mov         eax,dword ptr [ebx]
+  00000069: 3B 30              cmp         esi,dword ptr [eax]
+  0000006B: 8D 45 08           lea         eax,[ebp+8]
+  0000006E: 75 09              jne         00000079
+  00000070: FF 75 10           push        dword ptr [ebp+10h]
+  00000073: 52                 push        edx
+  00000074: 56                 push        esi
+  00000075: 6A 01              push        1
+  00000077: EB 21              jmp         0000009A
+  00000079: 50                 push        eax
+  0000007A: E8 00 00 00 00     call        _PMap_RbTreeFindPrev
+  0000007F: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000082: 83 C4 04           add         esp,4
+  00000085: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000088: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  0000008B: 3B 02              cmp         eax,dword ptr [edx]
+  0000008D: 73 28              jae         000000B7
+  0000008F: FF 75 10           push        dword ptr [ebp+10h]
+  00000092: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000095: 52                 push        edx
+  00000096: 56                 push        esi
+  00000097: FF 75 F4           push        dword ptr [ebp-0Ch]
+  0000009A: 50                 push        eax
+  0000009B: 53                 push        ebx
+  0000009C: E8 00 00 00 00     call        _Iggy_StdMap_NodeInsert
+  000000A1: 8B 00              mov         eax,dword ptr [eax]
+  000000A3: 83 C4 18           add         esp,18h
+  000000A6: 89 07              mov         dword ptr [edi],eax
+  000000A8: C6 47 04 01        mov         byte ptr [edi+4],1
+  000000AC: 8B C7              mov         eax,edi
+  000000AE: 5F                 pop         edi
+  000000AF: 5E                 pop         esi
+  000000B0: 5B                 pop         ebx
+  000000B1: 8B E5              mov         esp,ebp
+  000000B3: 5D                 pop         ebp
+  000000B4: C2 0C 00           ret         0Ch
+  000000B7: 89 0F              mov         dword ptr [edi],ecx
+  000000B9: C6 47 04 00        mov         byte ptr [edi+4],0
+  000000BD: 8B C7              mov         eax,edi
+  000000BF: 5F                 pop         edi
+  000000C0: 5E                 pop         esi
+  000000C1: 5B                 pop         ebx
+  000000C2: 8B E5              mov         esp,ebp
+  000000C4: 5D                 pop         ebp
+  000000C5: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C8 .text

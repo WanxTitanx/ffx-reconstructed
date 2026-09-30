@@ -1,0 +1,419 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C00A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_ComputeArcballPosition@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 40           sub         esp,40h
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: 53                 push        ebx
+  0000000A: 33 C0              xor         eax,eax
+  0000000C: 57                 push        edi
+  0000000D: 33 FF              xor         edi,edi
+  0000000F: 33 DB              xor         ebx,ebx
+  00000011: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000014: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000017: 38 41 04           cmp         byte ptr [ecx+4],al
+  0000001A: 0F 84 CC 03 00 00  je          000003EC
+  00000020: D9 EE              fldz
+  00000022: 56                 push        esi
+  00000023: D9 EE              fldz
+  00000025: 8D B1 A4 00 00 00  lea         esi,[ecx+0A4h]
+  0000002B: D9 EE              fldz
+  0000002D: 8B C1              mov         eax,ecx
+  0000002F: EB 04              jmp         00000035
+  00000031: D9 C9              fxch        st(1)
+  00000033: D9 CA              fxch        st(2)
+  00000035: 8B 4E EC           mov         ecx,dword ptr [esi-14h]
+  00000038: 83 F9 05           cmp         ecx,5
+  0000003B: 0F 87 87 03 00 00  ja          000003C8
+  00000041: FF 24 8D 00 00 00  jmp         dword ptr $LN89[ecx*4]
+            00
+$LN47:
+  00000048: DD D8              fstp        st(0)
+  0000004A: D9 46 F4           fld         dword ptr [esi-0Ch]
+  0000004D: DA E9              fucompp
+  0000004F: DF E0              fnstsw      ax
+  00000051: F6 C4 44           test        ah,44h
+  00000054: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000057: 7B 15              jnp         0000006E
+  00000059: DD D8              fstp        st(0)
+  0000005B: D9 46 FC           fld         dword ptr [esi-4]
+  0000005E: D8 48 50           fmul        dword ptr [eax+50h]
+  00000061: D9 40 58           fld         dword ptr [eax+58h]
+  00000064: D8 0E              fmul        dword ptr [esi]
+  00000066: DE C1              faddp       st(1),st
+  00000068: D8 46 F0           fadd        dword ptr [esi-10h]
+  0000006B: D8 76 F4           fdiv        dword ptr [esi-0Ch]
+  0000006E: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000071: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000074: D9 C0              fld         st(0)
+  00000076: D8 4E FC           fmul        dword ptr [esi-4]
+  00000079: D8 46 04           fadd        dword ptr [esi+4]
+  0000007C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000007F: D8 0E              fmul        dword ptr [esi]
+  00000081: D8 46 08           fadd        dword ptr [esi+8]
+  00000084: D9 5D D8           fstp        dword ptr [ebp-28h]
+  00000087: D9 40 50           fld         dword ptr [eax+50h]
+  0000008A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000008D: D9 C0              fld         st(0)
+  0000008F: DE EA              fsubp       st(2),st
+  00000091: D9 C9              fxch        st(1)
+  00000093: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000096: D9 40 58           fld         dword ptr [eax+58h]
+  00000099: D9 45 D8           fld         dword ptr [ebp-28h]
+  0000009C: D9 C0              fld         st(0)
+  0000009E: DE EA              fsubp       st(2),st
+  000000A0: D9 C9              fxch        st(1)
+  000000A2: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000000A5: 85 C9              test        ecx,ecx
+  000000A7: 74 28              je          000000D1
+  000000A9: D9 46 F8           fld         dword ptr [esi-8]
+  000000AC: D9 45 F0           fld         dword ptr [ebp-10h]
+  000000AF: D9 C0              fld         st(0)
+  000000B1: DE CA              fmulp       st(2),st
+  000000B3: D9 C9              fxch        st(1)
+  000000B5: DE C3              faddp       st(3),st
+  000000B7: D9 CA              fxch        st(2)
+  000000B9: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000BC: D9 46 F8           fld         dword ptr [esi-8]
+  000000BF: D9 45 EC           fld         dword ptr [ebp-14h]
+  000000C2: D9 C0              fld         st(0)
+  000000C4: DE CA              fmulp       st(2),st
+  000000C6: D9 C9              fxch        st(1)
+  000000C8: DE C2              faddp       st(2),st
+  000000CA: D9 C9              fxch        st(1)
+  000000CC: D9 5D D8           fstp        dword ptr [ebp-28h]
+  000000CF: EB 61              jmp         00000132
+  000000D1: DD D9              fstp        st(1)
+  000000D3: DD D8              fstp        st(0)
+  000000D5: D9 45 F0           fld         dword ptr [ebp-10h]
+  000000D8: D9 45 EC           fld         dword ptr [ebp-14h]
+  000000DB: DC C8              fmul        st(0),st
+  000000DD: D9 C9              fxch        st(1)
+  000000DF: DC C8              fmul        st(0),st
+  000000E1: DE C1              faddp       st(1),st
+  000000E3: E8 00 00 00 00     call        __CIsqrt
+  000000E8: D9 5D E8           fstp        dword ptr [ebp-18h]
+  000000EB: D9 46 F8           fld         dword ptr [esi-8]
+  000000EE: D9 EE              fldz
+  000000F0: DA E9              fucompp
+  000000F2: DF E0              fnstsw      ax
+  000000F4: F6 C4 44           test        ah,44h
+  000000F7: 7A 0A              jp          00000103
+  000000F9: D9 45 E8           fld         dword ptr [ebp-18h]
+  000000FC: D9 EE              fldz
+  000000FE: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000101: EB 1A              jmp         0000011D
+  00000103: D9 46 F8           fld         dword ptr [esi-8]
+  00000106: D8 4D E8           fmul        dword ptr [ebp-18h]
+  00000109: E8 00 00 00 00     call        __CIatan
+  0000010E: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000111: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000114: D8 76 F8           fdiv        dword ptr [esi-8]
+  00000117: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000011A: D9 45 E8           fld         dword ptr [ebp-18h]
+  0000011D: D9 EE              fldz
+  0000011F: DD E9              fucomp      st(1)
+  00000121: DF E0              fnstsw      ax
+  00000123: F6 C4 44           test        ah,44h
+  00000126: 7A 59              jp          00000181
+  00000128: DD D8              fstp        st(0)
+  0000012A: D9 45 EC           fld         dword ptr [ebp-14h]
+  0000012D: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000130: D9 C9              fxch        st(1)
+  00000132: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  00000135: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000138: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  0000013B: 83 EC 20           sub         esp,20h
+  0000013E: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  00000142: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000145: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000148: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000014C: D9 06              fld         dword ptr [esi]
+  0000014E: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000152: D9 46 FC           fld         dword ptr [esi-4]
+  00000155: DD 1C 24           fstp        qword ptr [esp]
+  00000158: E8 00 00 00 00     call        _FFX_Math_CrossProduct2DSign
+  0000015D: 83 C4 20           add         esp,20h
+  00000160: 85 C0              test        eax,eax
+  00000162: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000165: 74 13              je          0000017A
+  00000167: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000016A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000016D: 43                 inc         ebx
+  0000016E: D9 5A 50           fstp        dword ptr [edx+50h]
+  00000171: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00000174: D9 45 D8           fld         dword ptr [ebp-28h]
+  00000177: D9 5A 58           fstp        dword ptr [edx+58h]
+  0000017A: D9 EE              fldz
+  0000017C: E9 4B 02 00 00     jmp         000003CC
+  00000181: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000184: D9 C0              fld         st(0)
+  00000186: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000189: D9 C0              fld         st(0)
+  0000018B: DE CA              fmulp       st(2),st
+  0000018D: D9 C9              fxch        st(1)
+  0000018F: D8 F3              fdiv        st,st(3)
+  00000191: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000194: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000197: D9 45 EC           fld         dword ptr [ebp-14h]
+  0000019A: D9 C0              fld         st(0)
+  0000019C: DE CB              fmulp       st(3),st
+  0000019E: D9 CA              fxch        st(2)
+  000001A0: DE F3              fdivrp      st(3),st
+  000001A2: D9 45 D8           fld         dword ptr [ebp-28h]
+  000001A5: DE C3              faddp       st(3),st
+  000001A7: D9 CA              fxch        st(2)
+  000001A9: D9 5D D8           fstp        dword ptr [ebp-28h]
+  000001AC: EB 84              jmp         00000132
+$LN46:
+  000001AE: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  000001B1: DD D8              fstp        st(0)
+  000001B3: D9 46 04           fld         dword ptr [esi+4]
+  000001B6: D8 62 54           fsub        dword ptr [edx+54h]
+  000001B9: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000001BC: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  000001BF: D8 D1              fcom        st(1)
+  000001C1: DF E0              fnstsw      ax
+  000001C3: F6 C4 41           test        ah,41h
+  000001C6: 75 4D              jne         00000215
+  000001C8: D9 46 F8           fld         dword ptr [esi-8]
+  000001CB: 43                 inc         ebx
+  000001CC: DD EA              fucomp      st(2)
+  000001CE: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  000001D1: DF E0              fnstsw      ax
+  000001D3: F6 C4 44           test        ah,44h
+  000001D6: 7A 10              jp          000001E8
+  000001D8: DD D8              fstp        st(0)
+  000001DA: D9 55 E4           fst         dword ptr [ebp-1Ch]
+  000001DD: D9 46 04           fld         dword ptr [esi+4]
+  000001E0: D8 65 E4           fsub        dword ptr [ebp-1Ch]
+  000001E3: D9 5A 54           fstp        dword ptr [edx+54h]
+  000001E6: EB 2F              jmp         00000217
+  000001E8: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  000001EB: DD DA              fstp        st(2)
+  000001ED: DD D8              fstp        st(0)
+  000001EF: D8 4E F8           fmul        dword ptr [esi-8]
+  000001F2: E8 00 00 00 00     call        __CIatan
+  000001F7: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000001FA: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  000001FD: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000200: D8 76 F8           fdiv        dword ptr [esi-8]
+  00000203: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000206: D9 EE              fldz
+  00000208: D9 EE              fldz
+  0000020A: D9 46 04           fld         dword ptr [esi+4]
+  0000020D: D8 65 E4           fsub        dword ptr [ebp-1Ch]
+  00000210: D9 5A 54           fstp        dword ptr [edx+54h]
+  00000213: EB 02              jmp         00000217
+  00000215: DD D8              fstp        st(0)
+  00000217: D9 42 54           fld         dword ptr [edx+54h]
+  0000021A: D8 66 08           fsub        dword ptr [esi+8]
+  0000021D: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000220: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000223: D8 D1              fcom        st(1)
+  00000225: DF E0              fnstsw      ax
+  00000227: F6 C4 41           test        ah,41h
+  0000022A: 0F 8B 8B 01 00 00  jnp         000003BB
+  00000230: D9 46 F8           fld         dword ptr [esi-8]
+  00000233: DD EA              fucomp      st(2)
+  00000235: DF E0              fnstsw      ax
+  00000237: DD D9              fstp        st(1)
+  00000239: F6 C4 44           test        ah,44h
+  0000023C: 7B 18              jnp         00000256
+  0000023E: DD D9              fstp        st(1)
+  00000240: D8 4E F8           fmul        dword ptr [esi-8]
+  00000243: E8 00 00 00 00     call        __CIatan
+  00000248: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000024B: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  0000024E: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000251: D8 76 F8           fdiv        dword ptr [esi-8]
+  00000254: EB 02              jmp         00000258
+  00000256: DD D8              fstp        st(0)
+  00000258: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  0000025B: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000025E: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000261: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000264: D8 46 08           fadd        dword ptr [esi+8]
+  00000267: 43                 inc         ebx
+  00000268: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  0000026B: D9 5A 54           fstp        dword ptr [edx+54h]
+  0000026E: D9 EE              fldz
+  00000270: E9 57 01 00 00     jmp         000003CC
+$LN45:
+  00000275: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000278: DD D8              fstp        st(0)
+  0000027A: DD D9              fstp        st(1)
+  0000027C: D9 42 54           fld         dword ptr [edx+54h]
+  0000027F: D8 66 04           fsub        dword ptr [esi+4]
+  00000282: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000285: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000288: D8 D1              fcom        st(1)
+  0000028A: DF E0              fnstsw      ax
+  0000028C: F6 C4 41           test        ah,41h
+  0000028F: 75 0F              jne         000002A0
+  00000291: D8 4E F8           fmul        dword ptr [esi-8]
+  00000294: 43                 inc         ebx
+  00000295: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00000298: D8 46 04           fadd        dword ptr [esi+4]
+  0000029B: D9 5A 54           fstp        dword ptr [edx+54h]
+  0000029E: EB 02              jmp         000002A2
+  000002A0: DD D8              fstp        st(0)
+  000002A2: D9 42 54           fld         dword ptr [edx+54h]
+  000002A5: D8 66 08           fsub        dword ptr [esi+8]
+  000002A8: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000002AB: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  000002AE: D8 D1              fcom        st(1)
+  000002B0: DF E0              fnstsw      ax
+  000002B2: DD D9              fstp        st(1)
+  000002B4: F6 C4 05           test        ah,5
+  000002B7: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000002BA: 0F 8A F5 00 00 00  jp          000003B5
+  000002C0: D8 4E F8           fmul        dword ptr [esi-8]
+  000002C3: 43                 inc         ebx
+  000002C4: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  000002C7: D8 46 08           fadd        dword ptr [esi+8]
+  000002CA: D9 5A 54           fstp        dword ptr [edx+54h]
+  000002CD: D9 EE              fldz
+  000002CF: E9 F8 00 00 00     jmp         000003CC
+$LN44:
+  000002D4: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000002D7: DD D8              fstp        st(0)
+  000002D9: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  000002DC: DD D9              fstp        st(1)
+  000002DE: 6A 00              push        0
+  000002E0: DD D8              fstp        st(0)
+  000002E2: D9 40 58           fld         dword ptr [eax+58h]
+  000002E5: 8D 4D D8           lea         ecx,[ebp-28h]
+  000002E8: 51                 push        ecx
+  000002E9: 8D 4D E0           lea         ecx,[ebp-20h]
+  000002EC: 51                 push        ecx
+  000002ED: 8D 4D FC           lea         ecx,[ebp-4]
+  000002F0: 51                 push        ecx
+  000002F1: 83 EC 18           sub         esp,18h
+  000002F4: 8D 78 50           lea         edi,[eax+50h]
+  000002F7: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  000002FB: D9 40 54           fld         dword ptr [eax+54h]
+  000002FE: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000302: D9 07              fld         dword ptr [edi]
+  00000304: DD 1C 24           fstp        qword ptr [esp]
+  00000307: FF 73 08           push        dword ptr [ebx+8]
+  0000030A: E8 00 00 00 00     call        _FFX_Camera_ComputeProjectionTransform
+  0000030F: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  00000312: DB 45 E4           fild        dword ptr [ebp-1Ch]
+  00000315: EB 41              jmp         00000358
+$LN43:
+  00000317: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000031A: DD D8              fstp        st(0)
+  0000031C: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  0000031F: DD D9              fstp        st(1)
+  00000321: 6A 01              push        1
+  00000323: DD D8              fstp        st(0)
+  00000325: D9 40 58           fld         dword ptr [eax+58h]
+  00000328: 8D 4D D8           lea         ecx,[ebp-28h]
+  0000032B: 51                 push        ecx
+  0000032C: 8D 4D E0           lea         ecx,[ebp-20h]
+  0000032F: 51                 push        ecx
+  00000330: 8D 4D FC           lea         ecx,[ebp-4]
+  00000333: 51                 push        ecx
+  00000334: 83 EC 18           sub         esp,18h
+  00000337: 8D 78 50           lea         edi,[eax+50h]
+  0000033A: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000033E: D9 40 54           fld         dword ptr [eax+54h]
+  00000341: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000345: D9 07              fld         dword ptr [edi]
+  00000347: DD 1C 24           fstp        qword ptr [esp]
+  0000034A: FF 73 08           push        dword ptr [ebx+8]
+  0000034D: E8 00 00 00 00     call        _FFX_Camera_ComputeProjectionTransform
+  00000352: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  00000355: DB 45 E4           fild        dword ptr [ebp-1Ch]
+  00000358: 83 C4 2C           add         esp,2Ch
+  0000035B: 85 C0              test        eax,eax
+  0000035D: 79 06              jns         00000365
+  0000035F: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000365: 8D 45 FC           lea         eax,[ebp-4]
+  00000368: D9 5B 24           fstp        dword ptr [ebx+24h]
+  0000036B: 50                 push        eax
+  0000036C: 8D 45 C0           lea         eax,[ebp-40h]
+  0000036F: 57                 push        edi
+  00000370: 50                 push        eax
+  00000371: E8 00 00 00 00     call        _FFX_Math_Vector3SubAndNormalize
+  00000376: D9 43 20           fld         dword ptr [ebx+20h]
+  00000379: FF 75 10           push        dword ptr [ebp+10h]
+  0000037C: D9 5D D0           fstp        dword ptr [ebp-30h]
+  0000037F: 8D 45 C0           lea         eax,[ebp-40h]
+  00000382: FF 75 10           push        dword ptr [ebp+10h]
+  00000385: FF 75 08           push        dword ptr [ebp+8]
+  00000388: FF 75 D0           push        dword ptr [ebp-30h]
+  0000038B: 50                 push        eax
+  0000038C: E8 00 00 00 00     call        _FFX_Camera_ScaleVector4ByDivisor
+  00000391: 8D 45 C0           lea         eax,[ebp-40h]
+  00000394: 50                 push        eax
+  00000395: 8D 45 FC           lea         eax,[ebp-4]
+  00000398: 50                 push        eax
+  00000399: 57                 push        edi
+  0000039A: E8 00 00 00 00     call        _FFX_Camera_CommitTransformToGlobal
+  0000039F: D9 EE              fldz
+  000003A1: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000003A4: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  000003A7: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000003AA: 83 C4 2C           add         esp,2Ch
+  000003AD: 42                 inc         edx
+  000003AE: 89 55 F8           mov         dword ptr [ebp-8],edx
+  000003B1: 8B DA              mov         ebx,edx
+  000003B3: EB 17              jmp         000003CC
+  000003B5: DD D8              fstp        st(0)
+  000003B7: D9 EE              fldz
+  000003B9: EB 11              jmp         000003CC
+  000003BB: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000003BE: DD DA              fstp        st(2)
+  000003C0: DD D8              fstp        st(0)
+  000003C2: DD D8              fstp        st(0)
+  000003C4: D9 EE              fldz
+  000003C6: EB 04              jmp         000003CC
+  000003C8: DD DA              fstp        st(2)
+  000003CA: DD D8              fstp        st(0)
+  000003CC: 0F B6 48 04        movzx       ecx,byte ptr [eax+4]
+  000003D0: D9 C0              fld         st(0)
+  000003D2: D9 EE              fldz
+  000003D4: 47                 inc         edi
+  000003D5: 83 C6 20           add         esi,20h
+  000003D8: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  000003DB: 3B F9              cmp         edi,ecx
+  000003DD: 0F 8C 4E FC FF FF  jl          00000031
+  000003E3: DD DA              fstp        st(2)
+  000003E5: 8B C3              mov         eax,ebx
+  000003E7: DD D8              fstp        st(0)
+  000003E9: 5E                 pop         esi
+  000003EA: DD D8              fstp        st(0)
+  000003EC: 5F                 pop         edi
+  000003ED: 5B                 pop         ebx
+  000003EE: 8B E5              mov         esp,ebp
+  000003F0: 5D                 pop         ebp
+  000003F1: C2 0C 00           ret         0Ch
+$LN89:
+  000003F4: 00 00              add         byte ptr [eax],al
+  000003F6: 00 00              add         byte ptr [eax],al
+  000003F8: 00 00              add         byte ptr [eax],al
+  000003FA: 00 00              add         byte ptr [eax],al
+  000003FC: 00 00              add         byte ptr [eax],al
+  000003FE: 00 00              add         byte ptr [eax],al
+  00000400: 00 00              add         byte ptr [eax],al
+  00000402: 00 00              add         byte ptr [eax],al
+  00000404: 00 00              add         byte ptr [eax],al
+  00000406: 00 00              add         byte ptr [eax],al
+  00000408: 00 00              add         byte ptr [eax],al
+  0000040A: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+         40C .text

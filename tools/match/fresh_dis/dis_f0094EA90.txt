@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094EA90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_94EA90:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000009: F6 C1 40           test        cl,40h
+  0000000C: 74 20              je          0000002E
+  0000000E: 8B 00              mov         eax,dword ptr [eax]
+  00000010: 80 E1 0F           and         cl,0Fh
+  00000013: 80 F9 04           cmp         cl,4
+  00000016: 75 1A              jne         00000032
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 12              je          0000002E
+  0000001C: F6 40 05 03        test        byte ptr [eax+5],3
+  00000020: 74 0C              je          0000002E
+  00000022: 50                 push        eax
+  00000023: FF 75 08           push        dword ptr [ebp+8]
+  00000026: E8 00 00 00 00     call        _LuaG_gcMarkObject
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: 33 C0              xor         eax,eax
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+  00000032: 0F B6 40 05        movzx       eax,byte ptr [eax+5]
+  00000036: 83 E0 03           and         eax,3
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

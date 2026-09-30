@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00952DD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_952DD0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8A 01              mov         al,byte ptr [ecx]
+  00000008: 3C 25              cmp         al,25h
+  0000000A: 75 12              jne         0000001E
+  0000000C: 0F B6 41 01        movzx       eax,byte ptr [ecx+1]
+  00000010: 50                 push        eax
+  00000011: FF 75 08           push        dword ptr [ebp+8]
+  00000014: E8 00 00 00 00     call        _Lua_str_matchclass
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 5D                 pop         ebp
+  0000001D: C3                 ret
+  0000001E: 3C 2E              cmp         al,2Eh
+  00000020: 75 07              jne         00000029
+  00000022: B8 01 00 00 00     mov         eax,1
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+  00000029: 3C 5B              cmp         al,5Bh
+  0000002B: 75 10              jne         0000003D
+  0000002D: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000030: 48                 dec         eax
+  00000031: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000034: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  00000037: 5D                 pop         ebp
+  00000038: E9 00 00 00 00     jmp         _Lua_str_matchbracket
+  0000003D: 0F B6 C8           movzx       ecx,al
+  00000040: 33 C0              xor         eax,eax
+  00000042: 3B 4D 08           cmp         ecx,dword ptr [ebp+8]
+  00000045: 0F 94 C0           sete        al
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4A .text

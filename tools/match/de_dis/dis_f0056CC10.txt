@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056CC10.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PMeshSegment_DeepFree@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  0000000B: 7C 10              jl          0000001D
+  0000000D: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 09              je          0000001D
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000001A: 83 C4 04           add         esp,4
+  0000001D: F6 06 01           test        byte ptr [esi],1
+  00000020: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000027: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002E: 75 0A              jne         0000003A
+  00000030: FF 36              push        dword ptr [esi]
+  00000032: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000037: 83 C4 04           add         esp,4
+  0000003A: B0 01              mov         al,1
+  0000003C: 5E                 pop         esi
+  0000003D: 5D                 pop         ebp
+  0000003E: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          41 .text

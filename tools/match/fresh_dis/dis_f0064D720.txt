@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0064D720.obj
+
+File Type: COFF OBJECT
+
+@FFX_BtlUI_InitCursorRingState2@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 24           sub         esp,24h
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: 8B FA              mov         edi,edx
+  0000000C: 8D 45 DC           lea         eax,[ebp-24h]
+  0000000F: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000012: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000018: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  0000001F: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000026: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000029: 2B 07              sub         eax,dword ptr [edi]
+  0000002B: 89 75 EC           mov         dword ptr [ebp-14h],esi
+  0000002E: C1 E8 02           shr         eax,2
+  00000031: 50                 push        eax
+  00000032: 56                 push        esi
+  00000033: E8 00 00 00 00     call        _FFX_Vector_ReserveExact_A
+  00000038: 83 C4 08           add         esp,8
+  0000003B: 85 C0              test        eax,eax
+  0000003D: 74 19              je          00000058
+  0000003F: FF 36              push        dword ptr [esi]
+  00000041: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000048: FF 77 04           push        dword ptr [edi+4]
+  0000004B: FF 37              push        dword ptr [edi]
+  0000004D: E8 00 00 00 00     call        _Phyre_Array_CopyDwords
+  00000052: 83 C4 0C           add         esp,0Ch
+  00000055: 89 46 04           mov         dword ptr [esi+4],eax
+  00000058: 5F                 pop         edi
+  00000059: 8B C6              mov         eax,esi
+  0000005B: 5E                 pop         esi
+  0000005C: 8B E5              mov         esp,ebp
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

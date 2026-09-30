@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A1110.obj
+
+File Type: COFF OBJECT
+
+_Phyre_array_construct:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 62              je          0000006D
+  0000000B: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000000E: 83 C1 0C           add         ecx,0Ch
+  00000011: 53                 push        ebx
+  00000012: 89 4D 10           mov         dword ptr [ebp+10h],ecx
+  00000015: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000018: 56                 push        esi
+  00000019: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000001C: 8D 64 24 00        lea         esp,[esp]
+  00000020: 8B C6              mov         eax,esi
+  00000022: 8B DE              mov         ebx,esi
+  00000024: 83 C6 24           add         esi,24h
+  00000027: 85 C0              test        eax,eax
+  00000029: 74 38              je          00000063
+  0000002B: 8B 41 F4           mov         eax,dword ptr [ecx-0Ch]
+  0000002E: 89 03              mov         dword ptr [ebx],eax
+  00000030: 8D 43 04           lea         eax,[ebx+4]
+  00000033: 50                 push        eax
+  00000034: E8 00 00 00 00     call        _Phyre_renderState_init
+  00000039: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000003C: 83 C0 08           add         eax,8
+  0000003F: D9 40 F8           fld         dword ptr [eax-8]
+  00000042: 50                 push        eax
+  00000043: D9 5B 0C           fstp        dword ptr [ebx+0Ch]
+  00000046: D9 40 FC           fld         dword ptr [eax-4]
+  00000049: 8D 43 14           lea         eax,[ebx+14h]
+  0000004C: 50                 push        eax
+  0000004D: D9 5B 10           fstp        dword ptr [ebx+10h]
+  00000050: E8 00 00 00 00     call        _Phyre_array_assign
+  00000055: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000058: 83 C4 0C           add         esp,0Ch
+  0000005B: 83 C1 24           add         ecx,24h
+  0000005E: 8B D0              mov         edx,eax
+  00000060: 89 4D 10           mov         dword ptr [ebp+10h],ecx
+  00000063: 4F                 dec         edi
+  00000064: 75 BA              jne         00000020
+  00000066: 5E                 pop         esi
+  00000067: 5B                 pop         ebx
+  00000068: 8B C2              mov         eax,edx
+  0000006A: 5F                 pop         edi
+  0000006B: 5D                 pop         ebp
+  0000006C: C3                 ret
+  0000006D: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000070: 5F                 pop         edi
+  00000071: 5D                 pop         ebp
+  00000072: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          73 .text

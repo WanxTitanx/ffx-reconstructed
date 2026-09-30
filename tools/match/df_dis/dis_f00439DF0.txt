@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00439DF0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Endian_SwapDouble@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 EC 08           sub         esp,8
+  0000000A: DD 06              fld         qword ptr [esi]
+  0000000C: DD 1C 24           fstp        qword ptr [esp]
+  0000000F: E8 00 00 00 00     call        _COERCE_UNSIGNED_INT64
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _Engine_ByteSwap64_to_LE
+  0000001A: 83 C4 0C           add         esp,0Ch
+  0000001D: 89 06              mov         dword ptr [esi],eax
+  0000001F: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000026: B0 01              mov         al,1
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2D .text

@@ -1,0 +1,31 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085ECB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_CheckEffectModeAndGetFlags:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 0F B7 40 2E        movzx       eax,word ptr [eax+2Eh]
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        _FFX_Field_CheckEffectMode
+  00000011: 8B D8              mov         ebx,eax
+  00000013: 83 C4 04           add         esp,4
+  00000016: F6 C3 01           test        bl,1
+  00000019: 74 07              je          00000022
+  0000001B: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  00000020: 8B C3              mov         eax,ebx
+  00000022: 5B                 pop         ebx
+  00000023: 5D                 pop         ebp
+  00000024: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          25 .text

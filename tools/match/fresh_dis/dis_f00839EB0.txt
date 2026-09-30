@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00839EB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Motion_LerpAngle12bitSample:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000A: 81 E6 FF 0F 00 00  and         esi,0FFFh
+  00000010: 81 E2 FF 0F 00 00  and         edx,0FFFh
+  00000016: 8B CE              mov         ecx,esi
+  00000018: 2B CA              sub         ecx,edx
+  0000001A: 8B C1              mov         eax,ecx
+  0000001C: 81 F9 00 08 00 00  cmp         ecx,800h
+  00000022: 7C 0C              jl          00000030
+  00000024: 81 C2 00 10 00 00  add         edx,1000h
+  0000002A: 8B CE              mov         ecx,esi
+  0000002C: 2B CA              sub         ecx,edx
+  0000002E: 8B C1              mov         eax,ecx
+  00000030: 5E                 pop         esi
+  00000031: 3D 00 F8 FF FF     cmp         eax,0FFFFF800h
+  00000036: 7F 06              jg          0000003E
+  00000038: 8D 81 00 10 00 00  lea         eax,[ecx+00001000h]
+  0000003E: 0F AF 45 10        imul        eax,dword ptr [ebp+10h]
+  00000042: C1 F8 08           sar         eax,8
+  00000045: 03 C2              add         eax,edx
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

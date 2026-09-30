@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0066B2C0.obj
+
+File Type: COFF OBJECT
+
+@FFX_PostProcess_SetupColorBuffer@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 6A 00              push        0
+  00000004: 8B F9              mov         edi,ecx
+  00000006: 6A 00              push        0
+  00000008: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  0000000E: E8 00 00 00 00     call        _PShaderInput_LoadResource
+  00000013: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000018: 8B B0 70 02 00 00  mov         esi,dword ptr [eax+270h]
+  0000001E: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000023: 56                 push        esi
+  00000024: FF B0 6C 02 00 00  push        dword ptr [eax+26Ch]
+  0000002A: 6A 00              push        0
+  0000002C: 6A 00              push        0
+  0000002E: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  00000034: E8 00 00 00 00     call        _Phyre_Renderer_SetViewport
+  00000039: D9 E8              fld1
+  0000003B: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  0000003F: D9 EE              fldz
+  00000041: DD 54 24 10        fst         qword ptr [esp+10h]
+  00000045: DD 54 24 08        fst         qword ptr [esp+8]
+  00000049: DD 1C 24           fstp        qword ptr [esp]
+  0000004C: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  00000052: E8 00 00 00 00     call        _Phyre_Renderer_ClearColor
+  00000057: 6A 01              push        1
+  00000059: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  0000005F: E8 00 00 00 00     call        _Phyre_Renderer_BeginScene
+  00000064: 6A 01              push        1
+  00000066: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  0000006C: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Deallocate
+  00000071: 8B 87 CC 10 00 00  mov         eax,dword ptr [edi+10CCh]
+  00000077: 83 C4 34           add         esp,34h
+  0000007A: 8B 88 AC 00 00 00  mov         ecx,dword ptr [eax+0ACh]
+  00000080: 6A 00              push        0
+  00000082: 80 79 04 00        cmp         byte ptr [ecx+4],0
+  00000086: 74 14              je          0000009C
+  00000088: 6A 00              push        0
+  0000008A: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  00000090: 50                 push        eax
+  00000091: E8 00 00 00 00     call        _PostProcess_ConfigureColorBuffer
+  00000096: 83 C4 10           add         esp,10h
+  00000099: 5F                 pop         edi
+  0000009A: 5E                 pop         esi
+  0000009B: C3                 ret
+  0000009C: FF 31              push        dword ptr [ecx]
+  0000009E: FF B7 D0 00 00 00  push        dword ptr [edi+0D0h]
+  000000A4: 50                 push        eax
+  000000A5: E8 00 00 00 00     call        _PostProcess_ConfigureColorBuffer
+  000000AA: 83 C4 10           add         esp,10h
+  000000AD: 5F                 pop         edi
+  000000AE: 5E                 pop         esi
+  000000AF: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          B0 .text

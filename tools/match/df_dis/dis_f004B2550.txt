@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004B2550.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_4B2550@32:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000006: 56                 push        esi
+  00000007: 8B F2              mov         esi,edx
+  00000009: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000E: 3B F0              cmp         esi,eax
+  00000010: 72 0A              jb          0000001C
+  00000012: B8 03 00 00 00     mov         eax,3
+  00000017: 5E                 pop         esi
+  00000018: 5D                 pop         ebp
+  00000019: C2 18 00           ret         18h
+  0000001C: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000001F: 85 D2              test        edx,edx
+  00000021: 75 08              jne         0000002B
+  00000023: 8D 42 01           lea         eax,[edx+1]
+  00000026: 5E                 pop         esi
+  00000027: 5D                 pop         ebp
+  00000028: C2 18 00           ret         18h
+  0000002B: C1 E6 04           shl         esi,4
+  0000002E: 03 71 0C           add         esi,dword ptr [ecx+0Ch]
+  00000031: 0F B6 4E 04        movzx       ecx,byte ptr [esi+4]
+  00000035: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000038: 57                 push        edi
+  00000039: 8D 7E 04           lea         edi,[esi+4]
+  0000003C: 83 E1 01           and         ecx,1
+  0000003F: 2B C1              sub         eax,ecx
+  00000041: 3B D0              cmp         edx,eax
+  00000043: 74 0A              je          0000004F
+  00000045: 52                 push        edx
+  00000046: 57                 push        edi
+  00000047: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  0000004C: 83 C4 08           add         esp,8
+  0000004F: 8A 45 0C           mov         al,byte ptr [ebp+0Ch]
+  00000052: 0F B6 4D 14        movzx       ecx,byte ptr [ebp+14h]
+  00000056: 88 46 02           mov         byte ptr [esi+2],al
+  00000059: 8A 45 10           mov         al,byte ptr [ebp+10h]
+  0000005C: 88 46 03           mov         byte ptr [esi+3],al
+  0000005F: 66 8B 45 18        mov         ax,word ptr [ebp+18h]
+  00000063: 66 89 06           mov         word ptr [esi],ax
+  00000066: 8B 45 1C           mov         eax,dword ptr [ebp+1Ch]
+  00000069: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000006C: 0F B7 46 0A        movzx       eax,word ptr [esi+0Ah]
+  00000070: BA FF 1F 00 00     mov         edx,1FFFh
+  00000075: 66 C1 E1 0D        shl         cx,0Dh
+  00000079: 66 23 C2           and         ax,dx
+  0000007C: 66 0B C8           or          cx,ax
+  0000007F: 5F                 pop         edi
+  00000080: 66 89 4E 0A        mov         word ptr [esi+0Ah],cx
+  00000084: 33 C0              xor         eax,eax
+  00000086: 5E                 pop         esi
+  00000087: 5D                 pop         ebp
+  00000088: C2 18 00           ret         18h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8B .text

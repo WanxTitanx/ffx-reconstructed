@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059CA20.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Shader_ReleaseType_B@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 8E E0 04 00 00  mov         ecx,dword ptr [esi+4E0h]
+  00000009: 85 C9              test        ecx,ecx
+  0000000B: 74 12              je          0000001F
+  0000000D: 8B 01              mov         eax,dword ptr [ecx]
+  0000000F: 51                 push        ecx
+  00000010: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000013: FF D0              call        eax
+  00000015: C7 86 E0 04 00 00  mov         dword ptr [esi+4E0h],0
+            00 00 00 00
+  0000001F: 8B 0E              mov         ecx,dword ptr [esi]
+  00000021: 85 C9              test        ecx,ecx
+  00000023: 74 0E              je          00000033
+  00000025: 8B 01              mov         eax,dword ptr [ecx]
+  00000027: 51                 push        ecx
+  00000028: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000002B: FF D0              call        eax
+  0000002D: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000033: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000036: 85 C0              test        eax,eax
+  00000038: 74 22              je          0000005C
+  0000003A: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000003D: 85 C9              test        ecx,ecx
+  0000003F: 74 0D              je          0000004E
+  00000041: 85 C0              test        eax,eax
+  00000043: 78 09              js          0000004E
+  00000045: 51                 push        ecx
+  00000046: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000004B: 83 C4 04           add         esp,4
+  0000004E: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000055: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  0000005C: 5E                 pop         esi
+  0000005D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5E .text

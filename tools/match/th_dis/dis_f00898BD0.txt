@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00898BD0.obj
+
+File Type: COFF OBJECT
+
+_sub_898BD0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000C: 8D 45 FC           lea         eax,[ebp-4]
+  0000000F: 50                 push        eax
+  00000010: 0F B7 45 08        movzx       eax,word ptr [ebp+8]
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _FFX_Btl_LookupCommandDataById
+  0000001A: 8B D0              mov         edx,eax
+  0000001C: D9 7D 0A           fnstcw      word ptr [ebp+0Ah]
+  0000001F: 0F B7 45 0A        movzx       eax,word ptr [ebp+0Ah]
+  00000023: D9 42 1C           fld         dword ptr [edx+1Ch]
+  00000026: 0D 00 0C 00 00     or          eax,0C00h
+  0000002B: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002E: 83 C4 08           add         esp,8
+  00000031: D9 6D F8           fldcw       word ptr [ebp-8]
+  00000034: DB 5D F8           fistp       dword ptr [ebp-8]
+  00000037: 8A 4D F8           mov         cl,byte ptr [ebp-8]
+  0000003A: D9 6D 0A           fldcw       word ptr [ebp+0Ah]
+  0000003D: F6 C1 04           test        cl,4
+  00000040: 75 06              jne         00000048
+  00000042: 33 C0              xor         eax,eax
+  00000044: 8B E5              mov         esp,ebp
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+  00000048: 0F B7 02           movzx       eax,word ptr [edx]
+  0000004B: 03 45 FC           add         eax,dword ptr [ebp-4]
+  0000004E: 50                 push        eax
+  0000004F: 6A 01              push        1
+  00000051: E8 00 00 00 00     call        _sub_89DB10
+  00000056: 83 C4 08           add         esp,8
+  00000059: B8 01 00 00 00     mov         eax,1
+  0000005E: 8B E5              mov         esp,ebp
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00782960.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_RebuildEncounterGroupWeights:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: FF 75 08           push        dword ptr [ebp+8]
+  0000000A: E8 00 00 00 00     call        _FFX_Field_LookupEncounterFieldRowByKey
+  0000000F: 8B F0              mov         esi,eax
+  00000011: 83 C4 04           add         esp,4
+  00000014: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000017: 85 F6              test        esi,esi
+  00000019: 78 76              js          00000091
+  0000001B: 56                 push        esi
+  0000001C: E8 00 00 00 00     call        _FFX_Field_GetEncounterGroupTableBase
+  00000021: 33 C9              xor         ecx,ecx
+  00000023: 83 C4 04           add         esp,4
+  00000026: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000029: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000002C: 38 48 01           cmp         byte ptr [eax+1],cl
+  0000002F: 74 60              je          00000091
+  00000031: 53                 push        ebx
+  00000032: 57                 push        edi
+  00000033: 51                 push        ecx
+  00000034: 56                 push        esi
+  00000035: E8 00 00 00 00     call        _FFX_Field_GetEncounterGroupRecord
+  0000003A: 8B F8              mov         edi,eax
+  0000003C: 33 DB              xor         ebx,ebx
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 33 F6              xor         esi,esi
+  00000043: 38 1F              cmp         byte ptr [edi],bl
+  00000045: 74 30              je          00000077
+  00000047: 8D 4F 06           lea         ecx,[edi+6]
+  0000004A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000050: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  00000054: 75 0E              jne         00000064
+  00000056: 8A 11              mov         dl,byte ptr [ecx]
+  00000058: 80 E2 0F           and         dl,0Fh
+  0000005B: 8A C2              mov         al,dl
+  0000005D: C0 E0 04           shl         al,4
+  00000060: 0A C2              or          al,dl
+  00000062: 88 01              mov         byte ptr [ecx],al
+  00000064: 0F B6 01           movzx       eax,byte ptr [ecx]
+  00000067: C1 E8 04           shr         eax,4
+  0000006A: 03 D8              add         ebx,eax
+  0000006C: 0F B6 07           movzx       eax,byte ptr [edi]
+  0000006F: 46                 inc         esi
+  00000070: 83 C1 02           add         ecx,2
+  00000073: 3B F0              cmp         esi,eax
+  00000075: 7C D9              jl          00000050
+  00000077: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000007A: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000007D: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  00000080: 88 5F 04           mov         byte ptr [edi+4],bl
+  00000083: 0F B6 40 01        movzx       eax,byte ptr [eax+1]
+  00000087: 41                 inc         ecx
+  00000088: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000008B: 3B C8              cmp         ecx,eax
+  0000008D: 7C A4              jl          00000033
+  0000008F: 5F                 pop         edi
+  00000090: 5B                 pop         ebx
+  00000091: 5E                 pop         esi
+  00000092: 8B E5              mov         esp,ebp
+  00000094: 5D                 pop         ebp
+  00000095: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          96 .text

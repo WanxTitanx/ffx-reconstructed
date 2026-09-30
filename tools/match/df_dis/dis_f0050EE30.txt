@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0050EE30.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_50EE30@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 85 D2              test        edx,edx
+  00000009: 74 03              je          0000000E
+  0000000B: 89 57 1C           mov         dword ptr [edi+1Ch],edx
+  0000000E: 8B 77 1C           mov         esi,dword ptr [edi+1Ch]
+  00000011: 85 F6              test        esi,esi
+  00000013: 75 09              jne         0000001E
+  00000015: 5F                 pop         edi
+  00000016: 8D 46 07           lea         eax,[esi+7]
+  00000019: 5E                 pop         esi
+  0000001A: 5D                 pop         ebp
+  0000001B: C2 04 00           ret         4
+  0000001E: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00000021: B8 04 00 00 00     mov         eax,4
+  00000026: 3B F0              cmp         esi,eax
+  00000028: 72 02              jb          0000002C
+  0000002A: 8B C6              mov         eax,esi
+  0000002C: 0F AF 75 08        imul        esi,dword ptr [ebp+8]
+  00000030: 53                 push        ebx
+  00000031: 8B 5F 28           mov         ebx,dword ptr [edi+28h]
+  00000034: 03 F0              add         esi,eax
+  00000036: 8D 47 28           lea         eax,[edi+28h]
+  00000039: 56                 push        esi
+  0000003A: 50                 push        eax
+  0000003B: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000041: E8 00 00 00 00     call        _Phyre_PAnimationCurve_Compile
+  00000046: 83 C4 08           add         esp,8
+  00000049: 85 C0              test        eax,eax
+  0000004B: 75 22              jne         0000006F
+  0000004D: 3B F3              cmp         esi,ebx
+  0000004F: 76 16              jbe         00000067
+  00000051: 2B F3              sub         esi,ebx
+  00000053: C1 E6 02           shl         esi,2
+  00000056: 56                 push        esi
+  00000057: 50                 push        eax
+  00000058: 8B 47 2C           mov         eax,dword ptr [edi+2Ch]
+  0000005B: 8D 04 98           lea         eax,[eax+ebx*4]
+  0000005E: 50                 push        eax
+  0000005F: E8 00 00 00 00     call        _memset
+  00000064: 83 C4 0C           add         esp,0Ch
+  00000067: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006A: 89 47 30           mov         dword ptr [edi+30h],eax
+  0000006D: 33 C0              xor         eax,eax
+  0000006F: 5B                 pop         ebx
+  00000070: 5F                 pop         edi
+  00000071: 5E                 pop         esi
+  00000072: 5D                 pop         ebp
+  00000073: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          76 .text

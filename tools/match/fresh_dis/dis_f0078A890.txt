@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0078A890.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ComputeGuardDamage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8A 40 20           mov         al,byte ptr [eax+20h]
+  00000009: 24 03              and         al,3
+  0000000B: 3C 01              cmp         al,1
+  0000000D: 75 40              jne         0000004F
+  0000000F: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000012: B8 00 28 00 00     mov         eax,2800h
+  00000017: 66 85 41 16        test        word ptr [ecx+16h],ax
+  0000001B: 74 32              je          0000004F
+  0000001D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000020: C6 80 DA 06 00 00  mov         byte ptr [eax+000006DAh],1
+            01
+  00000027: B8 00 08 00 00     mov         eax,800h
+  0000002C: 66 85 41 16        test        word ptr [ecx+16h],ax
+  00000030: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000033: 74 0D              je          00000042
+  00000035: 83 08 08           or          dword ptr [eax],8
+  00000038: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  0000003B: 99                 cdq
+  0000003C: 2B C2              sub         eax,edx
+  0000003E: D1 F8              sar         eax,1
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+  00000042: 83 08 10           or          dword ptr [eax],10h
+  00000045: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000048: 99                 cdq
+  00000049: 2B C2              sub         eax,edx
+  0000004B: D1 F8              sar         eax,1
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+  0000004F: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          54 .text

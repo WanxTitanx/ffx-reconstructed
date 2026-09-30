@@ -1,0 +1,91 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00740A20.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicHost_CheckVfxChannelFlags:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 E8              fld1
+  00000005: 83 EC 08           sub         esp,8
+  00000008: 56                 push        esi
+  00000009: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000C: 57                 push        edi
+  0000000D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000010: C6 06 01           mov         byte ptr [esi],1
+  00000013: 80 7F 0D 00        cmp         byte ptr [edi+0Dh],0
+  00000017: 74 35              je          0000004E
+  00000019: 83 EC 08           sub         esp,8
+  0000001C: DD 1C 24           fstp        qword ptr [esp]
+  0000001F: E8 00 00 00 00     call        _FFX_Math_RandomJitterScale
+  00000024: 83 C4 08           add         esp,8
+  00000027: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000002A: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000002D: 85 C0              test        eax,eax
+  0000002F: 79 06              jns         00000037
+  00000031: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000037: DD 5D F8           fstp        qword ptr [ebp-8]
+  0000003A: DD 45 F8           fld         qword ptr [ebp-8]
+  0000003D: D9 EE              fldz
+  0000003F: DE D9              fcompp
+  00000041: DF E0              fnstsw      ax
+  00000043: D9 E8              fld1
+  00000045: F6 C4 05           test        ah,5
+  00000048: 7A 04              jp          0000004E
+  0000004A: C6 46 01 01        mov         byte ptr [esi+1],1
+  0000004E: 80 7F 0E 00        cmp         byte ptr [edi+0Eh],0
+  00000052: 74 35              je          00000089
+  00000054: 83 EC 08           sub         esp,8
+  00000057: DD 1C 24           fstp        qword ptr [esp]
+  0000005A: E8 00 00 00 00     call        _FFX_Math_RandomJitterScale
+  0000005F: 83 C4 08           add         esp,8
+  00000062: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000065: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000068: 85 C0              test        eax,eax
+  0000006A: 79 06              jns         00000072
+  0000006C: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000072: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000075: DD 45 F8           fld         qword ptr [ebp-8]
+  00000078: D9 EE              fldz
+  0000007A: DE D9              fcompp
+  0000007C: DF E0              fnstsw      ax
+  0000007E: F6 C4 05           test        ah,5
+  00000081: 7A 08              jp          0000008B
+  00000083: C6 46 02 01        mov         byte ptr [esi+2],1
+  00000087: EB 02              jmp         0000008B
+  00000089: DD D8              fstp        st(0)
+  0000008B: 80 7F 0F 00        cmp         byte ptr [edi+0Fh],0
+  0000008F: 74 35              je          000000C6
+  00000091: D9 E8              fld1
+  00000093: 83 EC 08           sub         esp,8
+  00000096: DD 1C 24           fstp        qword ptr [esp]
+  00000099: E8 00 00 00 00     call        _FFX_Math_RandomJitterScale
+  0000009E: 83 C4 08           add         esp,8
+  000000A1: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  000000A4: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000000A7: 85 C0              test        eax,eax
+  000000A9: 79 06              jns         000000B1
+  000000AB: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  000000B1: DD 5D F8           fstp        qword ptr [ebp-8]
+  000000B4: DD 45 F8           fld         qword ptr [ebp-8]
+  000000B7: D9 EE              fldz
+  000000B9: DE D9              fcompp
+  000000BB: DF E0              fnstsw      ax
+  000000BD: F6 C4 05           test        ah,5
+  000000C0: 7A 04              jp          000000C6
+  000000C2: C6 46 03 01        mov         byte ptr [esi+3],1
+  000000C6: 5F                 pop         edi
+  000000C7: 5E                 pop         esi
+  000000C8: 8B E5              mov         esp,ebp
+  000000CA: 5D                 pop         ebp
+  000000CB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          CC .text

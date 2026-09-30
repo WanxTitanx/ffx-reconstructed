@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00869F30.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_SyncOrientationFromInstance@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 18           mov         ecx,dword ptr [ebp+18h]
+  00000006: 56                 push        esi
+  00000007: 8B 01              mov         eax,dword ptr [ecx]
+  00000009: 8A 00              mov         al,byte ptr [eax]
+  0000000B: 3C 04              cmp         al,4
+  0000000D: 75 04              jne         00000013
+  0000000F: 33 F6              xor         esi,esi
+  00000011: EB 12              jmp         00000025
+  00000013: 2C 05              sub         al,5
+  00000015: 8D B1 58 05 00 00  lea         esi,[ecx+558h]
+  0000001B: 3C 01              cmp         al,1
+  0000001D: 77 06              ja          00000025
+  0000001F: 8D B1 84 02 00 00  lea         esi,[ecx+284h]
+  00000025: 80 B9 AA 00 00 00  cmp         byte ptr [ecx+0AAh],1
+            01
+  0000002C: 75 40              jne         0000006E
+  0000002E: 8B 81 9C 00 00 00  mov         eax,dword ptr [ecx+9Ch]
+  00000034: 85 C0              test        eax,eax
+  00000036: 74 36              je          0000006E
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _FFX_Chr_ComputeFromFloatAt344
+  0000003E: DD 45 08           fld         qword ptr [ebp+8]
+  00000041: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000044: 51                 push        ecx
+  00000045: D9 45 18           fld         dword ptr [ebp+18h]
+  00000048: DD 1C 24           fstp        qword ptr [esp]
+  0000004B: E8 00 00 00 00     call        _FFX_Field_BgAnimOpacityReader
+  00000050: 83 C4 08           add         esp,8
+  00000053: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000056: DB 45 18           fild        dword ptr [ebp+18h]
+  00000059: 85 C0              test        eax,eax
+  0000005B: 79 06              jns         00000063
+  0000005D: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000063: DD 45 10           fld         qword ptr [ebp+10h]
+  00000066: D9 5E 34           fstp        dword ptr [esi+34h]
+  00000069: 5E                 pop         esi
+  0000006A: 5D                 pop         ebp
+  0000006B: C2 14 00           ret         14h
+  0000006E: DD 45 08           fld         qword ptr [ebp+8]
+  00000071: 5E                 pop         esi
+  00000072: 5D                 pop         ebp
+  00000073: C2 14 00           ret         14h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          76 .text

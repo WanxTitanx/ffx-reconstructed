@@ -1,0 +1,93 @@
+===== 0x785300 =====
+name: FFX_SceneState_GetBase start: 0x785300
+  785300 mov eax, offset save_ram; [Jarvis naming goal 2026-06-17] proved/navigation name from aggressive-honest FFX.exe pass.
+  785305 retn
+===== 0x877720 =====
+name: FFX_Atel_DispatchNativeCall start: 0x877720
+  877720 push ebp; FFX_Atel_DispatchNativeCall — dispatches ATEL native function calls.
+  877721 mov ebp, esp
+  877723 mov ecx, [ebp+arg_0]
+  877726 mov eax, ecx
+  877728 shr eax, 0Ch
+  87772b push esi
+  87772c mov esi, [ebp+arg_4]
+  87772f cmp eax, 6
+  877732 jnz short loc_877744
+  877734 movzx edx, word ptr [esi+36h]
+  877738 test dl, 10h
+  87773b jnz short loc_877744
+  87773d or edx, 20h
+  877740 mov [esi+36h], dx
+  877744 mov eax, dword ptr AtelCallTargets[eax*4]
+  87774b and ecx, 0FFFh
+  877751 add ecx, ecx
+  877753 mov eax, [eax+ecx*8]
+  877756 test eax, eax
+  877758 jz short loc_877766
+  87775a push [ebp+arg_C]
+  87775d push [ebp+arg_8]
+  877760 push esi
+  877761 call eax
+  877763 add esp, 0Ch
+  877766 pop esi
+  877767 pop ebp
+  877768 retn
+===== 0x869D00 =====
+name: FFX_Atel_FetchOpcode start: 0x869d00
+  869d00 push ebp; FFX_Atel_FetchOpcode — fetches next ATEL opcode from script byte stream.
+  869d01 mov ebp, esp
+  869d03 mov eax, [ebp+ScriptWorkerContext_structural]
+  869d06 mov eax, [eax+18h]
+  869d09 mov dl, [eax]
+  869d0b test dl, dl
+  869d0d js short loc_869D1E
+  869d0f xor ecx, ecx
+  869d11 movzx eax, dl
+  869d14 movzx ecx, cx
+  869d17 shl eax, 18h
+  869d1a or eax, ecx
+  869d1c pop ebp
+  869d1d retn
+  869d1e movzx ecx, byte ptr [eax+2]
+  869d22 movzx eax, byte ptr [eax+1]
+  869d26 shl cx, 8
+  869d2a or cx, ax
+  869d2d and dl, 7Fh
+  869d30 movzx ecx, cx
+  869d33 movzx eax, dl
+  869d36 movzx ecx, cx
+  869d39 shl eax, 18h
+  869d3c or eax, ecx
+  869d3e pop ebp
+  869d3f retn
+===== 0x647F20 =====
+name: FFX_Save_ValidateChecksum start: 0x647f20
+  647f20 push esi; FFX_Save_ValidateChecksum: Validates CRC16 over 25784 bytes from struct+0x40. Returns 0 if checksum matches stored value at struct+0x1A, else error code.
+  647f21 push edi
+  647f22 call instance; Stub function (no-op)
+  647f27 mov ecx, eax
+  647f29 call getRefBuffer; Stub function (no-op)
+  647f2e mov esi, eax
+  647f30 movzx edi, word ptr [esi+1Ah]
+  647f34 mov byte ptr [esi+4], 0
+  647f38 cmp dword ptr ds:0CCB9A4h, 0
+  647f3f jz short loc_647F4D
+  647f41 pop edi
+  647f42 mov byte ptr [esi+4], 1
+  647f46 mov eax, 1
+  647f4b pop esi
+  647f4c retn
+  647f4d cmp edi, [esi+64F4h]
+  647f53 jnz short loc_647F75
+  647f55 lea eax, [esi+40h]
+  647f58 push eax; _BYTE *
+  647f59 push 64B8h; i
+  647f5e mov dword ptr [eax+64B4h], 0
+  647f68 call FFX_Save_ComputeCrc16; [Jarvis naming goal 2026-06-17] CRC16 routine for save checksum; polynomial 0x1021 over 0x64B8 bytes from save+0x40.
+  647f6d add esp, 8
+  647f70 cmp ax, di
+  647f73 jz short loc_647F41
+  647f75 pop edi
+  647f76 xor eax, eax
+  647f78 pop esi
+  647f79 retn

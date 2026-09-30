@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009A4180.obj
+
+File Type: COFF OBJECT
+
+@Phyre_CollisionMatrix_SlotAdd@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 8B C2              mov         eax,edx
+  0000000B: 8B B7 98 04 00 00  mov         esi,dword ptr [edi+498h]
+  00000011: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000014: 83 FE 04           cmp         esi,4
+  00000017: 75 34              jne         0000004D
+  00000019: 50                 push        eax
+  0000001A: 57                 push        edi
+  0000001B: E8 00 00 00 00     call        _Bullet_Tetrahedron_ClosestPoint
+  00000020: 8B F0              mov         esi,eax
+  00000022: 83 C4 08           add         esp,8
+  00000025: 8D 1C F6           lea         ebx,[esi+esi*8]
+  00000028: C1 E3 05           shl         ebx,5
+  0000002B: 8B 44 3B 7C        mov         eax,dword ptr [ebx+edi+7Ch]
+  0000002F: 85 C0              test        eax,eax
+  00000031: 74 23              je          00000056
+  00000033: B9 00 00 00 00     mov         ecx,offset _g_PhyreUnkVar_193F644
+  00000038: 85 C9              test        ecx,ecx
+  0000003A: 74 1A              je          00000056
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _g_PhyreUnkVar_193F644
+  00000042: D9 EE              fldz
+  00000044: D9 5C 3B 7C        fstp        dword ptr [ebx+edi+7Ch]
+  00000048: 83 C4 04           add         esp,4
+  0000004B: EB 09              jmp         00000056
+  0000004D: 8D 46 01           lea         eax,[esi+1]
+  00000050: 89 87 98 04 00 00  mov         dword ptr [edi+498h],eax
+  00000056: 33 DB              xor         ebx,ebx
+  00000058: 85 F6              test        esi,esi
+  0000005A: 0F 98 C3           sets        bl
+  0000005D: 68 20 01 00 00     push        120h
+  00000062: FF 75 FC           push        dword ptr [ebp-4]
+  00000065: 83 C7 10           add         edi,10h
+  00000068: 4B                 dec         ebx
+  00000069: 23 DE              and         ebx,esi
+  0000006B: 8D 0C DB           lea         ecx,[ebx+ebx*8]
+  0000006E: C1 E1 05           shl         ecx,5
+  00000071: 03 CF              add         ecx,edi
+  00000073: 51                 push        ecx
+  00000074: E8 00 00 00 00     call        _qmemcpy
+  00000079: 83 C4 0C           add         esp,0Ch
+  0000007C: 8B C3              mov         eax,ebx
+  0000007E: 5F                 pop         edi
+  0000007F: 5E                 pop         esi
+  00000080: 5B                 pop         ebx
+  00000081: 8B E5              mov         esp,ebp
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          85 .text

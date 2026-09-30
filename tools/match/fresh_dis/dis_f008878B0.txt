@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008878B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Sound_MagicVoicePoolInspect:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 0F BE 02           movsx       eax,byte ptr [edx]
+  00000009: 85 C0              test        eax,eax
+  0000000B: 74 18              je          00000025
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8D 48 9F           lea         ecx,[eax-61h]
+  00000013: 83 F9 19           cmp         ecx,19h
+  00000016: 77 04              ja          0000001C
+  00000018: 24 DF              and         al,0DFh
+  0000001A: 88 02              mov         byte ptr [edx],al
+  0000001C: 0F BE 42 01        movsx       eax,byte ptr [edx+1]
+  00000020: 42                 inc         edx
+  00000021: 85 C0              test        eax,eax
+  00000023: 75 EB              jne         00000010
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .text

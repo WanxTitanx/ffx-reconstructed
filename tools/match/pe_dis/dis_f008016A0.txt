@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008016A0.obj
+
+File Type: COFF OBJECT
+
+_sub_8016A0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 57                 push        edi
+  00000007: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000A: 33 C9              xor         ecx,ecx
+  0000000C: 8B 54 87 10        mov         edx,dword ptr [edi+eax*4+10h]
+  00000010: 0F B7 47 34        movzx       eax,word ptr [edi+34h]
+  00000014: 83 F8 01           cmp         eax,1
+  00000017: 75 06              jne         0000001F
+  00000019: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000001C: 5F                 pop         edi
+  0000001D: 5D                 pop         ebp
+  0000001E: C3                 ret
+  0000001F: 56                 push        esi
+  00000020: 66 39 0A           cmp         word ptr [edx],cx
+  00000023: 7C 1A              jl          0000003F
+  00000025: 48                 dec         eax
+  00000026: 0F B7 F0           movzx       esi,ax
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000030: 41                 inc         ecx
+  00000031: 0F BF C1           movsx       eax,cx
+  00000034: 3B C6              cmp         eax,esi
+  00000036: 7D 1C              jge         00000054
+  00000038: 66 83 3C 42 00     cmp         word ptr [edx+eax*2],0
+  0000003D: 7D F1              jge         00000030
+  0000003F: 66 8B 45 0C        mov         ax,word ptr [ebp+0Ch]
+  00000043: 0F BF C9           movsx       ecx,cx
+  00000046: 5E                 pop         esi
+  00000047: 66 89 04 4A        mov         word ptr [edx+ecx*2],ax
+  0000004B: 66 FF 47 38        inc         word ptr [edi+38h]
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 5F                 pop         edi
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+  00000054: 5E                 pop         esi
+  00000055: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000058: 5F                 pop         edi
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5B .text

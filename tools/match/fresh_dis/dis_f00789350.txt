@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00789350.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ApplyPierceDamageHalving:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 0F B7 40 20        movzx       eax,word ptr [eax+20h]
+  0000000A: 83 E0 03           and         eax,3
+  0000000D: 83 F8 01           cmp         eax,1
+  00000010: 75 16              jne         00000028
+  00000012: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000015: F6 80 06 06 00 00  test        byte ptr [eax+00000606h],10h
+            10
+  0000001C: 74 25              je          00000043
+  0000001E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000021: 99                 cdq
+  00000022: 2B C2              sub         eax,edx
+  00000024: D1 F8              sar         eax,1
+  00000026: 5D                 pop         ebp
+  00000027: C3                 ret
+  00000028: 83 F8 02           cmp         eax,2
+  0000002B: 75 16              jne         00000043
+  0000002D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000030: F6 80 06 06 00 00  test        byte ptr [eax+00000606h],20h
+            20
+  00000037: 74 0A              je          00000043
+  00000039: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000003C: 99                 cdq
+  0000003D: 2B C2              sub         eax,edx
+  0000003F: D1 F8              sar         eax,1
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+  00000043: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C4EF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_ResetCameraSlotData:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: E8 00 00 00 00     call        _FFX_Camera_MathOpAQ
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 3B C3              cmp         eax,ebx
+  00000012: 75 45              jne         00000059
+  00000014: 0F BE 45 0C        movsx       eax,byte ptr [ebp+0Ch]
+  00000018: D9 EE              fldz
+  0000001A: 0F B6 CB           movzx       ecx,bl
+  0000001D: 69 C9 A0 0D 00 00  imul        ecx,ecx,0DA0h
+  00000023: 83 E0 01           and         eax,1
+  00000026: 69 C0 1C 06 00 00  imul        eax,eax,61Ch
+  0000002C: D9 94 01 00 00 00  fst         dword ptr _unk_11375E0[ecx+eax]
+            00
+  00000033: C6 84 01 00 00 00  mov         byte ptr _g_FieldUnkVar_1137B00[ecx+eax],0
+            00 00
+  0000003B: D9 94 01 00 00 00  fst         dword ptr _g_FieldUnkVar_11375E4[ecx+eax]
+            00
+  00000042: C6 84 01 00 00 00  mov         byte ptr _g_FieldUnkVar_1137B24[ecx+eax],0
+            00 00
+  0000004A: D9 9C 01 00 00 00  fstp        dword ptr _unk_11375E8[ecx+eax]
+            00
+  00000051: C6 84 01 00 00 00  mov         byte ptr _g_FieldUnkVar_1137B48[ecx+eax],0
+            00 00
+  00000059: 5B                 pop         ebx
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          5C .text

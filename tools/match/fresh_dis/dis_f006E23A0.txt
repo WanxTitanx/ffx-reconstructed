@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E23A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_GameAllocWrapper_Loose_6E23A0@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 83 BC 83 10 1C 00  cmp         dword ptr [ebx+eax*4+1C10h],0
+            00 00
+  00000011: 75 74              jne         00000087
+  00000013: C1 EA 05           shr         edx,5
+  00000016: 56                 push        esi
+  00000017: 57                 push        edi
+  00000018: 8D 7A 01           lea         edi,[edx+1]
+  0000001B: C1 EF 1E           shr         edi,1Eh
+  0000001E: 8D 34 95 04 00 00  lea         esi,[edx*4+4]
+            00
+  00000025: 89 B4 83 10 1E 00  mov         dword ptr [ebx+eax*4+1E10h],esi
+            00
+  0000002C: 85 FF              test        edi,edi
+  0000002E: 74 05              je          00000035
+  00000030: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000033: EB 02              jmp         00000037
+  00000035: 8B C6              mov         eax,esi
+  00000037: 50                 push        eax
+  00000038: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  0000003D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000040: 83 C4 04           add         esp,4
+  00000043: 89 84 8B 10 1C 00  mov         dword ptr [ebx+ecx*4+1C10h],eax
+            00
+  0000004A: 85 FF              test        edi,edi
+  0000004C: 74 03              je          00000051
+  0000004E: 83 CE FF           or          esi,0FFFFFFFFh
+  00000051: 56                 push        esi
+  00000052: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  00000057: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000005A: FF B4 B3 10 1E 00  push        dword ptr [ebx+esi*4+1E10h]
+            00
+  00000061: 89 84 B3 10 04 00  mov         dword ptr [ebx+esi*4+410h],eax
+            00
+  00000068: 6A 00              push        0
+  0000006A: FF B4 B3 10 1C 00  push        dword ptr [ebx+esi*4+1C10h]
+            00
+  00000071: E8 00 00 00 00     call        _memset
+  00000076: 8B 84 B3 10 1C 00  mov         eax,dword ptr [ebx+esi*4+1C10h]
+            00
+  0000007D: 83 C4 10           add         esp,10h
+  00000080: 5F                 pop         edi
+  00000081: 5E                 pop         esi
+  00000082: 5B                 pop         ebx
+  00000083: 5D                 pop         ebp
+  00000084: C2 04 00           ret         4
+  00000087: 8B 84 83 10 1C 00  mov         eax,dword ptr [ebx+eax*4+1C10h]
+            00
+  0000008E: 5B                 pop         ebx
+  0000008F: 5D                 pop         ebp
+  00000090: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          93 .text

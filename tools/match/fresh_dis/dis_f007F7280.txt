@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007F7280.obj
+
+File Type: COFF OBJECT
+
+_FFX_Magic_ComputeRecordChainAllocSize:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000000B: 57                 push        edi
+  0000000C: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000012: 0F B7 43 06        movzx       eax,word ptr [ebx+6]
+  00000016: 50                 push        eax
+  00000017: E8 00 00 00 00     call        _FFX_Magic_ComputeRecordChainSize
+  0000001C: 01 06              add         dword ptr [esi],eax
+  0000001E: 0F B7 43 04        movzx       eax,word ptr [ebx+4]
+  00000022: 33 FF              xor         edi,edi
+  00000024: 83 C4 04           add         esp,4
+  00000027: 89 45 10           mov         dword ptr [ebp+10h],eax
+  0000002A: 66 39 7B 06        cmp         word ptr [ebx+6],di
+  0000002E: 74 31              je          00000061
+  00000030: 8A D8              mov         bl,al
+  00000032: 0F BF 45 10        movsx       eax,word ptr [ebp+10h]
+  00000036: 50                 push        eax
+  00000037: 6A 04              push        4
+  00000039: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003C: E8 00 00 00 00     call        _FFX_MagicHost_SelectRuntimeTableSlice
+  00000041: 0F BF 40 12        movsx       eax,word ptr [eax+12h]
+  00000045: 50                 push        eax
+  00000046: E8 00 00 00 00     call        _FFX_Magic_ComputeAllocSize
+  0000004B: 01 06              add         dword ptr [esi],eax
+  0000004D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000050: 47                 inc         edi
+  00000051: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  00000055: FE C3              inc         bl
+  00000057: 83 C4 10           add         esp,10h
+  0000005A: 88 5D 10           mov         byte ptr [ebp+10h],bl
+  0000005D: 3B F8              cmp         edi,eax
+  0000005F: 7C D1              jl          00000032
+  00000061: FF 36              push        dword ptr [esi]
+  00000063: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000068: 83 C4 04           add         esp,4
+  0000006B: 5F                 pop         edi
+  0000006C: 5E                 pop         esi
+  0000006D: 5B                 pop         ebx
+  0000006E: 5D                 pop         ebp
+  0000006F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          70 .text

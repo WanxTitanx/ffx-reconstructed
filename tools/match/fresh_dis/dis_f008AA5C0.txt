@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008AA5C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_PumpAliveCheck:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: E8 00 00 00 00     call        _FFX_Mscd_InvokeWalkStructFunc8
+  00000009: 85 C0              test        eax,eax
+  0000000B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000000E: 74 05              je          00000015
+  00000010: 0D 00 00 00 80     or          eax,80000000h
+  00000015: 85 C0              test        eax,eax
+  00000017: 75 1A              jne         00000033
+  00000019: E8 00 00 00 00     call        ___uncaught_exception
+  0000001E: 88 45 FC           mov         byte ptr [ebp-4],al
+  00000021: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000024: 48                 dec         eax
+  00000025: F7 D8              neg         eax
+  00000027: 1B C0              sbb         eax,eax
+  00000029: 25 00 00 00 80     and         eax,80000000h
+  0000002E: 05 00 00 00 80     add         eax,80000000h
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

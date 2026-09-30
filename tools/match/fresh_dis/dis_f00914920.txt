@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00914920.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_SchedDeallocById:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 33 FF              xor         edi,edi
+  0000000B: 33 DB              xor         ebx,ebx
+  0000000D: 8D B1 C0 CA 09 00  lea         esi,[ecx+9CAC0h]
+  00000013: F6 06 01           test        byte ptr [esi],1
+  00000016: 74 45              je          0000005D
+  00000018: 0F B7 46 06        movzx       eax,word ptr [esi+6]
+  0000001C: 3B 45 0C           cmp         eax,dword ptr [ebp+0Ch]
+  0000001F: 75 33              jne         00000054
+  00000021: 0F B7 46 04        movzx       eax,word ptr [esi+4]
+  00000025: 3B 45 10           cmp         eax,dword ptr [ebp+10h]
+  00000028: 75 2A              jne         00000054
+  0000002A: 83 F8 02           cmp         eax,2
+  0000002D: 75 0D              jne         0000003C
+  0000002F: 6A 00              push        0
+  00000031: E8 00 00 00 00     call        _FFX_System_SetSkipFieldDraw
+  00000036: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000039: 83 C4 04           add         esp,4
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 66 89 06           mov         word ptr [esi],ax
+  00000041: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000044: 89 46 18           mov         dword ptr [esi+18h],eax
+  00000047: 89 46 08           mov         dword ptr [esi+8],eax
+  0000004A: 66 89 46 06        mov         word ptr [esi+6],ax
+  0000004E: FF 89 BC CA 09 00  dec         dword ptr [ecx+9CABCh]
+  00000054: 47                 inc         edi
+  00000055: 3B B9 BC CA 09 00  cmp         edi,dword ptr [ecx+9CABCh]
+  0000005B: 73 09              jae         00000066
+  0000005D: 43                 inc         ebx
+  0000005E: 83 C6 28           add         esi,28h
+  00000061: 83 FB 40           cmp         ebx,40h
+  00000064: 7C AD              jl          00000013
+  00000066: 5F                 pop         edi
+  00000067: 5E                 pop         esi
+  00000068: 33 C0              xor         eax,eax
+  0000006A: 5B                 pop         ebx
+  0000006B: 5D                 pop         ebp
+  0000006C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6D .text

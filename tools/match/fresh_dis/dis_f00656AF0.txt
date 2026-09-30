@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00656AF0.obj
+
+File Type: COFF OBJECT
+
+@FFX_CommandQueue_Submit@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B FA              mov         edi,edx
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 07              mov         eax,dword ptr [edi]
+  00000008: 85 C0              test        eax,eax
+  0000000A: 78 3D              js          00000049
+  0000000C: 83 F8 07           cmp         eax,7
+  0000000F: 7D 38              jge         00000049
+  00000011: 8B 8E CC F8 00 00  mov         ecx,dword ptr [esi+0F8CCh]
+  00000017: 89 4F 04           mov         dword ptr [edi+4],ecx
+  0000001A: 8B 86 54 F9 00 00  mov         eax,dword ptr [esi+0F954h]
+  00000020: 85 C0              test        eax,eax
+  00000022: 7E 0C              jle         00000030
+  00000024: 8B 84 86 10 F9 00  mov         eax,dword ptr [esi+eax*4+0F910h]
+            00
+  0000002B: 03 C1              add         eax,ecx
+  0000002D: 89 47 04           mov         dword ptr [edi+4],eax
+  00000030: 8D 86 54 FB 00 00  lea         eax,[esi+0FB54h]
+  00000036: 57                 push        edi
+  00000037: 50                 push        eax
+  00000038: E8 00 00 00 00     call        _FFX_Struct16Array_PushBack
+  0000003D: 8B 07              mov         eax,dword ptr [edi]
+  0000003F: 83 C4 08           add         esp,8
+  00000042: FF 84 86 60 FB 00  inc         dword ptr [esi+eax*4+0FB60h]
+            00
+  00000049: 5F                 pop         edi
+  0000004A: 5E                 pop         esi
+  0000004B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4C .text

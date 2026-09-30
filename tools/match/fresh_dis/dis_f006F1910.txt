@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F1910.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_6F1910@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 80 79 4D 00        cmp         byte ptr [ecx+4Dh],0
+  00000008: 75 06              jne         00000010
+  0000000A: B0 01              mov         al,1
+  0000000C: 8B E5              mov         esp,ebp
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 51                 push        ecx
+  00000011: E8 00 00 00 00     call        _SteamUserStats
+  00000016: 83 C4 04           add         esp,4
+  00000019: 85 C0              test        eax,eax
+  0000001B: 75 06              jne         00000023
+  0000001D: 32 C0              xor         al,al
+  0000001F: 8B E5              mov         esp,ebp
+  00000021: 5D                 pop         ebp
+  00000022: C3                 ret
+  00000023: E8 00 00 00 00     call        _SteamUser
+  00000028: 85 C0              test        eax,eax
+  0000002A: 74 F1              je          0000001D
+  0000002C: E8 00 00 00 00     call        _SteamUser
+  00000031: 8B 10              mov         edx,dword ptr [eax]
+  00000033: 8B C8              mov         ecx,eax
+  00000035: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000038: FF D0              call        eax
+  0000003A: 84 C0              test        al,al
+  0000003C: 74 DF              je          0000001D
+  0000003E: FF 75 FC           push        dword ptr [ebp-4]
+  00000041: E8 00 00 00 00     call        _SteamUserStats
+  00000046: 8B 10              mov         edx,dword ptr [eax]
+  00000048: 8B C8              mov         ecx,eax
+  0000004A: 8B 02              mov         eax,dword ptr [edx]
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: FF D0              call        eax
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .text

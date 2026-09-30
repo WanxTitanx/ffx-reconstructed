@@ -1,0 +1,125 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008AFA40.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_CalcListItemGeometry:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 75 1C           mov         esi,dword ptr [ebp+1Ch]
+  0000000B: 48                 dec         eax
+  0000000C: 57                 push        edi
+  0000000D: 8B 7D 18           mov         edi,dword ptr [ebp+18h]
+  00000010: 83 F8 03           cmp         eax,3
+  00000013: 77 3E              ja          00000053
+  00000015: FF 24 85 00 00 00  jmp         dword ptr $LN20[eax*4]
+            00
+$LN13:
+  0000001C: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  0000001F: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000022: 2B D6              sub         edx,esi
+  00000024: EB 33              jmp         00000059
+$LN12:
+  00000026: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000029: 2B CF              sub         ecx,edi
+  0000002B: EB 29              jmp         00000056
+$LN11:
+  0000002D: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000030: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000033: 2B CF              sub         ecx,edi
+  00000035: 2B D6              sub         edx,esi
+  00000037: EB 20              jmp         00000059
+$LN10:
+  00000039: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000003C: 8B C7              mov         eax,edi
+  0000003E: 99                 cdq
+  0000003F: 2B C2              sub         eax,edx
+  00000041: D1 F8              sar         eax,1
+  00000043: 2B C8              sub         ecx,eax
+  00000045: 8B C6              mov         eax,esi
+  00000047: 99                 cdq
+  00000048: 2B C2              sub         eax,edx
+  0000004A: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  0000004D: D1 F8              sar         eax,1
+  0000004F: 2B D0              sub         edx,eax
+  00000051: EB 06              jmp         00000059
+  00000053: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000056: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000059: 81 FF 00 02 00 00  cmp         edi,200h
+  0000005F: 7F 0C              jg          0000006D
+  00000061: 33 DB              xor         ebx,ebx
+  00000063: 85 FF              test        edi,edi
+  00000065: 0F 98 C3           sets        bl
+  00000068: 4B                 dec         ebx
+  00000069: 23 DF              and         ebx,edi
+  0000006B: EB 05              jmp         00000072
+  0000006D: BB 00 02 00 00     mov         ebx,200h
+  00000072: 81 FE 9C 01 00 00  cmp         esi,19Ch
+  00000078: 7F 0C              jg          00000086
+  0000007A: 83 FE 04           cmp         esi,4
+  0000007D: 7D 0C              jge         0000008B
+  0000007F: BE 04 00 00 00     mov         esi,4
+  00000084: EB 05              jmp         0000008B
+  00000086: BE 9C 01 00 00     mov         esi,19Ch
+  0000008B: B8 00 02 00 00     mov         eax,200h
+  00000090: 2B C3              sub         eax,ebx
+  00000092: 3B C8              cmp         ecx,eax
+  00000094: 7F 0A              jg          000000A0
+  00000096: 33 C0              xor         eax,eax
+  00000098: 85 C9              test        ecx,ecx
+  0000009A: 0F 98 C0           sets        al
+  0000009D: 48                 dec         eax
+  0000009E: 23 C1              and         eax,ecx
+  000000A0: B9 9C 01 00 00     mov         ecx,19Ch
+  000000A5: 2B CE              sub         ecx,esi
+  000000A7: 3B D1              cmp         edx,ecx
+  000000A9: 7E 14              jle         000000BF
+  000000AB: 56                 push        esi
+  000000AC: 53                 push        ebx
+  000000AD: 51                 push        ecx
+  000000AE: 50                 push        eax
+  000000AF: FF 75 08           push        dword ptr [ebp+8]
+  000000B2: E8 00 00 00 00     call        _FFX_MenuRenderListItem
+  000000B7: 83 C4 14           add         esp,14h
+  000000BA: 5F                 pop         edi
+  000000BB: 5E                 pop         esi
+  000000BC: 5B                 pop         ebx
+  000000BD: 5D                 pop         ebp
+  000000BE: C3                 ret
+  000000BF: 83 FA 04           cmp         edx,4
+  000000C2: 7D 05              jge         000000C9
+  000000C4: BA 04 00 00 00     mov         edx,4
+  000000C9: 56                 push        esi
+  000000CA: 53                 push        ebx
+  000000CB: 52                 push        edx
+  000000CC: 50                 push        eax
+  000000CD: FF 75 08           push        dword ptr [ebp+8]
+  000000D0: E8 00 00 00 00     call        _FFX_MenuRenderListItem
+  000000D5: 83 C4 14           add         esp,14h
+  000000D8: 5F                 pop         edi
+  000000D9: 5E                 pop         esi
+  000000DA: 5B                 pop         ebx
+  000000DB: 5D                 pop         ebp
+  000000DC: C3                 ret
+  000000DD: 8D 49 00           lea         ecx,[ecx]
+$LN20:
+  000000E0: 00 00              add         byte ptr [eax],al
+  000000E2: 00 00              add         byte ptr [eax],al
+  000000E4: 00 00              add         byte ptr [eax],al
+  000000E6: 00 00              add         byte ptr [eax],al
+  000000E8: 00 00              add         byte ptr [eax],al
+  000000EA: 00 00              add         byte ptr [eax],al
+  000000EC: 00 00              add         byte ptr [eax],al
+  000000EE: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          F0 .text

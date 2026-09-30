@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E5150.obj
+
+File Type: COFF OBJECT
+
+@FFX_Particle_Update@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 8B 73 34           mov         esi,dword ptr [ebx+34h]
+  00000007: 57                 push        edi
+  00000008: 85 F6              test        esi,esi
+  0000000A: 74 0F              je          0000001B
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _Phyre_PCluster_Destructor
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000018: 83 C4 08           add         esp,8
+  0000001B: C7 43 34 00 00 00  mov         dword ptr [ebx+34h],0
+            00
+  00000022: 33 FF              xor         edi,edi
+  00000024: 8B 43 1C           mov         eax,dword ptr [ebx+1Ch]
+  00000027: 8B 34 07           mov         esi,dword ptr [edi+eax]
+  0000002A: E8 00 00 00 00     call        _FFX_TexAnim_GetFileCache
+  0000002F: 56                 push        esi
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        _TextureAnimationMap_RemoveEntry
+  00000036: 83 C7 04           add         edi,4
+  00000039: 83 C4 08           add         esp,8
+  0000003C: 83 FF 50           cmp         edi,50h
+  0000003F: 72 E3              jb          00000024
+  00000041: 8B 73 28           mov         esi,dword ptr [ebx+28h]
+  00000044: 85 F6              test        esi,esi
+  00000046: 74 13              je          0000005B
+  00000048: E8 00 00 00 00     call        _FFX_TexAnim_GetFileCache
+  0000004D: 56                 push        esi
+  0000004E: 50                 push        eax
+  0000004F: E8 00 00 00 00     call        _TextureAnimationMap_RemoveEntry
+  00000054: 83 C4 08           add         esp,8
+  00000057: 5F                 pop         edi
+  00000058: 5E                 pop         esi
+  00000059: 5B                 pop         ebx
+  0000005A: C3                 ret
+  0000005B: 5F                 pop         edi
+  0000005C: 5E                 pop         esi
+  0000005D: 33 C0              xor         eax,eax
+  0000005F: 5B                 pop         ebx
+  00000060: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          61 .text

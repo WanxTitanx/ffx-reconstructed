@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0040AE10.obj
+
+File Type: COFF OBJECT
+
+@FFX_VpxFrameDecoder_AllocIfNeeded@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 3E 00           cmp         dword ptr [esi],0
+  00000007: 8B FA              mov         edi,edx
+  00000009: 75 28              jne         00000033
+  0000000B: E8 00 00 00 00     call        _FFX_VpxFrameDecoder_AllocAndInit
+  00000010: 8B C8              mov         ecx,eax
+  00000012: 89 4E 04           mov         dword ptr [esi+4],ecx
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 75 06              jne         0000001F
+  00000019: 5F                 pop         edi
+  0000001A: 8D 41 01           lea         eax,[ecx+1]
+  0000001D: 5E                 pop         esi
+  0000001E: C3                 ret
+  0000001F: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000022: 89 81 58 3D 00 00  mov         dword ptr [ecx+3D58h],eax
+  00000028: FF 76 04           push        dword ptr [esi+4]
+  0000002B: E8 00 00 00 00     call        _FFX_VpxFrameDecoder_InitThreading
+  00000030: 83 C4 04           add         esp,4
+  00000033: 5F                 pop         edi
+  00000034: 33 C0              xor         eax,eax
+  00000036: 5E                 pop         esi
+  00000037: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          38 .text

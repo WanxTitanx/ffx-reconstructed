@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00766E00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_766E00:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 3B 5D 0C           cmp         ebx,dword ptr [ebp+0Ch]
+  0000000D: 0F 83 98 00 00 00  jae         000000AB
+  00000013: 56                 push        esi
+  00000014: 57                 push        edi
+  00000015: 8B 03              mov         eax,dword ptr [ebx]
+  00000017: 8B 7B 0C           mov         edi,dword ptr [ebx+0Ch]
+  0000001A: 8B 73 08           mov         esi,dword ptr [ebx+8]
+  0000001D: 25 FF 7F 00 00     and         eax,7FFFh
+  00000022: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000025: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000028: C1 E8 1C           shr         eax,1Ch
+  0000002B: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000002E: E8 00 00 00 00     call        _dbgPrintf
+  00000033: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000036: 83 C3 10           add         ebx,10h
+  00000039: 8B C1              mov         eax,ecx
+  0000003B: 85 C9              test        ecx,ecx
+  0000003D: 7E 61              jle         000000A0
+  0000003F: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000042: 85 C9              test        ecx,ecx
+  00000044: 7E 54              jle         0000009A
+  00000046: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000049: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000050: 8B C6              mov         eax,esi
+  00000052: 83 E0 0F           and         eax,0Fh
+  00000055: 83 F8 03           cmp         eax,3
+  00000058: 74 0F              je          00000069
+  0000005A: 83 F8 05           cmp         eax,5
+  0000005D: 74 0A              je          00000069
+  0000005F: 83 F8 0E           cmp         eax,0Eh
+  00000062: 75 0F              jne         00000073
+  00000064: E8 00 00 00 00     call        _dbgPrintf
+  00000069: E8 00 00 00 00     call        _dbgPrintf
+  0000006E: E8 00 00 00 00     call        _dbgPrintf
+  00000073: 8B CF              mov         ecx,edi
+  00000075: 33 C0              xor         eax,eax
+  00000077: 0F A4 C8 1C        shld        eax,ecx,1Ch
+  0000007B: C1 E1 1C           shl         ecx,1Ch
+  0000007E: 81 E1 00 00 00 F0  and         ecx,0F0000000h
+  00000084: C1 EE 04           shr         esi,4
+  00000087: 0B F1              or          esi,ecx
+  00000089: 83 C3 10           add         ebx,10h
+  0000008C: C1 EF 04           shr         edi,4
+  0000008F: FF 4D FC           dec         dword ptr [ebp-4]
+  00000092: 75 BC              jne         00000050
+  00000094: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000097: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  0000009A: 48                 dec         eax
+  0000009B: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000009E: 75 A2              jne         00000042
+  000000A0: 3B 5D 0C           cmp         ebx,dword ptr [ebp+0Ch]
+  000000A3: 0F 82 6C FF FF FF  jb          00000015
+  000000A9: 5F                 pop         edi
+  000000AA: 5E                 pop         esi
+  000000AB: 5B                 pop         ebx
+  000000AC: 8B E5              mov         esp,ebp
+  000000AE: 5D                 pop         ebp
+  000000AF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B0 .text

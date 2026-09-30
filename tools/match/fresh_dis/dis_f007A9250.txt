@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A9250.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckActorDistanceThreshold:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 20           sub         esp,20h
+  00000006: 8D 45 E0           lea         eax,[ebp-20h]
+  00000009: 50                 push        eax
+  0000000A: FF 75 08           push        dword ptr [ebp+8]
+  0000000D: E8 00 00 00 00     call        _FFX_Battle_GetActorNodeWorldPos
+  00000012: 8D 45 F0           lea         eax,[ebp-10h]
+  00000015: 50                 push        eax
+  00000016: FF 75 08           push        dword ptr [ebp+8]
+  00000019: E8 00 00 00 00     call        _FFX_Battle_ActorPlace_ChunkVerbatim
+  0000001E: 83 C4 10           add         esp,10h
+  00000021: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000025: 8D 45 F0           lea         eax,[ebp-10h]
+  00000028: 50                 push        eax
+  00000029: 8D 45 E0           lea         eax,[ebp-20h]
+  0000002C: 50                 push        eax
+  0000002D: 74 0D              je          0000003C
+  0000002F: E8 00 00 00 00     call        _FFX_Menu2D_SampleBlendBlock
+  00000034: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000037: DB 45 10           fild        dword ptr [ebp+10h]
+  0000003A: EB 0B              jmp         00000047
+  0000003C: E8 00 00 00 00     call        _FFX_Math_Vector4LengthWithBias
+  00000041: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000044: DB 45 10           fild        dword ptr [ebp+10h]
+  00000047: 83 C4 08           add         esp,8
+  0000004A: 85 C0              test        eax,eax
+  0000004C: 79 06              jns         00000054
+  0000004E: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000054: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000057: D9 80 F0 04 00 00  fld         dword ptr [eax+4F0h]
+  0000005D: D9 C9              fxch        st(1)
+  0000005F: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000062: D9 45 10           fld         dword ptr [ebp+10h]
+  00000065: DE D9              fcompp
+  00000067: DF E0              fnstsw      ax
+  00000069: F6 C4 01           test        ah,1
+  0000006C: 75 09              jne         00000077
+  0000006E: B8 01 00 00 00     mov         eax,1
+  00000073: 8B E5              mov         esp,ebp
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+  00000077: 33 C0              xor         eax,eax
+  00000079: 8B E5              mov         esp,ebp
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          7D .text

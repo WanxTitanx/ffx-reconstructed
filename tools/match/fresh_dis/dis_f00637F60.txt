@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00637F60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_637F60:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F B7 4D 08        movzx       ecx,word ptr [ebp+8]
+  00000007: 8B C1              mov         eax,ecx
+  00000009: 25 FF 7F 00 00     and         eax,7FFFh
+  0000000E: C1 E0 0D           shl         eax,0Dh
+  00000011: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000014: DB 45 08           fild        dword ptr [ebp+8]
+  00000017: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000001A: D9 45 08           fld         dword ptr [ebp+8]
+  0000001D: DC 0D 00 00 00 00  fmul        qword ptr [__real@46f000000224c978]
+  00000023: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000026: D9 05 00 00 00 00  fld         dword ptr [__real@47800000]
+  0000002C: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000002F: D8 5D 08           fcomp       dword ptr [ebp+8]
+  00000032: DF E0              fnstsw      ax
+  00000034: F6 C4 05           test        ah,5
+  00000037: 7A 06              jp          0000003F
+  00000039: 81 CA 00 00 80 7F  or          edx,7F800000h
+  0000003F: 81 E1 00 80 FF FF  and         ecx,0FFFF8000h
+  00000045: C1 E1 10           shl         ecx,10h
+  00000048: 0B CA              or          ecx,edx
+  0000004A: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000004D: DB 45 08           fild        dword ptr [ebp+8]
+  00000050: 79 06              jns         00000058
+  00000052: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000058: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000005B: D9 45 08           fld         dword ptr [ebp+8]
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          60 .text

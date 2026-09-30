@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069B5F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Map_FindByHash@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 52                 push        edx
+  00000004: 8B D9              mov         ebx,ecx
+  00000006: 33 FF              xor         edi,edi
+  00000008: E8 00 00 00 00     call        _FFX_Resource_Djb2NameHash
+  0000000D: 8B F0              mov         esi,eax
+  0000000F: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  00000012: 6A FF              push        0FFFFFFFFh
+  00000014: FF 30              push        dword ptr [eax]
+  00000016: E8 00 00 00 00     call        _WaitForSingleObject
+  0000001B: 8B 53 10           mov         edx,dword ptr [ebx+10h]
+  0000001E: 83 C4 0C           add         esp,0Ch
+  00000021: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000024: 8B CA              mov         ecx,edx
+  00000026: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000002A: 75 21              jne         0000004D
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 39 70 10           cmp         dword ptr [eax+10h],esi
+  00000033: 72 06              jb          0000003B
+  00000035: 8B C8              mov         ecx,eax
+  00000037: 8B 00              mov         eax,dword ptr [eax]
+  00000039: EB 03              jmp         0000003E
+  0000003B: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000003E: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000042: 74 EC              je          00000030
+  00000044: 3B CA              cmp         ecx,edx
+  00000046: 74 05              je          0000004D
+  00000048: 3B 71 10           cmp         esi,dword ptr [ecx+10h]
+  0000004B: 73 02              jae         0000004F
+  0000004D: 8B CA              mov         ecx,edx
+  0000004F: 3B CA              cmp         ecx,edx
+  00000051: 74 0B              je          0000005E
+  00000053: 8B 41 14           mov         eax,dword ptr [ecx+14h]
+  00000056: 83 78 04 01        cmp         dword ptr [eax+4],1
+  0000005A: 7C 02              jl          0000005E
+  0000005C: 8B 38              mov         edi,dword ptr [eax]
+  0000005E: 8B 4B 18           mov         ecx,dword ptr [ebx+18h]
+  00000061: FF 31              push        dword ptr [ecx]
+  00000063: E8 00 00 00 00     call        _ReleaseMutex
+  00000068: 83 C4 04           add         esp,4
+  0000006B: 8B C7              mov         eax,edi
+  0000006D: 5F                 pop         edi
+  0000006E: 5E                 pop         esi
+  0000006F: 5B                 pop         ebx
+  00000070: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          71 .text

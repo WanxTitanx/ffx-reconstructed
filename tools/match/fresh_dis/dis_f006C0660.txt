@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C0660.obj
+
+File Type: COFF OBJECT
+
+@FFX_ShaderParser_FreeListProcessLoopB@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000007: 8B F0              mov         esi,eax
+  00000009: 3B F7              cmp         esi,edi
+  0000000B: 74 2B              je          00000038
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 85 F6              test        esi,esi
+  00000012: 74 24              je          00000038
+  00000014: 50                 push        eax
+  00000015: 57                 push        edi
+  00000016: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeEx_COMDAT
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: F6 46 0C 01        test        byte ptr [esi+0Ch],1
+  00000022: 75 0B              jne         0000002F
+  00000024: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000027: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000032: 8B F0              mov         esi,eax
+  00000034: 3B F7              cmp         esi,edi
+  00000036: 75 D8              jne         00000010
+  00000038: 8D 47 18           lea         eax,[edi+18h]
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll_B
+  00000041: 83 C4 04           add         esp,4
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          47 .text

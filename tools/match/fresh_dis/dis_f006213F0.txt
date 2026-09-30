@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006213F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PApplication_BufferCleanup@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 BE A4 00 00 00  cmp         dword ptr [esi+0A4h],0
+            00
+  0000000A: 7C 0E              jl          0000001A
+  0000000C: FF B6 A8 00 00 00  push        dword ptr [esi+0A8h]
+  00000012: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 83 BE 9C 00 00 00  cmp         dword ptr [esi+9Ch],0
+            00
+  00000021: C7 86 A8 00 00 00  mov         dword ptr [esi+0A8h],0
+            00 00 00 00
+  0000002B: C7 86 A4 00 00 00  mov         dword ptr [esi+0A4h],0
+            00 00 00 00
+  00000035: 7C 0E              jl          00000045
+  00000037: FF B6 A0 00 00 00  push        dword ptr [esi+0A0h]
+  0000003D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000042: 83 C4 04           add         esp,4
+  00000045: C7 86 A0 00 00 00  mov         dword ptr [esi+0A0h],0
+            00 00 00 00
+  0000004F: C7 86 9C 00 00 00  mov         dword ptr [esi+9Ch],0
+            00 00 00 00
+  00000059: 5E                 pop         esi
+  0000005A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5B .text

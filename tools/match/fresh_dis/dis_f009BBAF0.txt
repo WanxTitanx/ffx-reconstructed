@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009BBAF0.obj
+
+File Type: COFF OBJECT
+
+@Bullet_btSequentialImpulseConstraintSolver_removeConstraint@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B D9              mov         ebx,ecx
+  00000004: 57                 push        edi
+  00000005: 8B BB BC 00 00 00  mov         edi,dword ptr [ebx+0BCh]
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 8B F2              mov         esi,edx
+  0000000F: 85 FF              test        edi,edi
+  00000011: 7E 3E              jle         00000051
+  00000013: 8B 93 C4 00 00 00  mov         edx,dword ptr [ebx+0C4h]
+  00000019: 8B CA              mov         ecx,edx
+  0000001B: 39 31              cmp         dword ptr [ecx],esi
+  0000001D: 74 0D              je          0000002C
+  0000001F: 90                 nop
+  00000020: 40                 inc         eax
+  00000021: 8D 49 04           lea         ecx,[ecx+4]
+  00000024: 3B C7              cmp         eax,edi
+  00000026: 7D 29              jge         00000051
+  00000028: 39 31              cmp         dword ptr [ecx],esi
+  0000002A: 75 F4              jne         00000020
+  0000002C: 3B C7              cmp         eax,edi
+  0000002E: 7D 21              jge         00000051
+  00000030: 8D 0C 82           lea         ecx,[edx+eax*4]
+  00000033: 8B 83 C4 00 00 00  mov         eax,dword ptr [ebx+0C4h]
+  00000039: 8B 11              mov         edx,dword ptr [ecx]
+  0000003B: 8B 44 B8 FC        mov         eax,dword ptr [eax+edi*4-4]
+  0000003F: 89 01              mov         dword ptr [ecx],eax
+  00000041: 8B 83 C4 00 00 00  mov         eax,dword ptr [ebx+0C4h]
+  00000047: 89 54 B8 FC        mov         dword ptr [eax+edi*4-4],edx
+  0000004B: FF 8B BC 00 00 00  dec         dword ptr [ebx+0BCh]
+  00000051: 56                 push        esi
+  00000052: FF 76 14           push        dword ptr [esi+14h]
+  00000055: E8 00 00 00 00     call        _Bullet_btRigidBody_removeConstraintRef
+  0000005A: 56                 push        esi
+  0000005B: FF 76 18           push        dword ptr [esi+18h]
+  0000005E: E8 00 00 00 00     call        _Bullet_btRigidBody_removeConstraintRef
+  00000063: 83 C4 10           add         esp,10h
+  00000066: 5F                 pop         edi
+  00000067: 5E                 pop         esi
+  00000068: 5B                 pop         ebx
+  00000069: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6A .text

@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A0E520.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PostProcessing_SomeQueryFunc:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 85 C0              test        eax,eax
+  00000009: 74 6B              je          00000076
+  0000000B: 8A 48 04           mov         cl,byte ptr [eax+4]
+  0000000E: 84 C9              test        cl,cl
+  00000010: 74 48              je          0000005A
+  00000012: 80 F9 01           cmp         cl,1
+  00000015: 75 1F              jne         00000036
+  00000017: 8B 30              mov         esi,dword ptr [eax]
+  00000019: 85 F6              test        esi,esi
+  0000001B: 74 59              je          00000076
+  0000001D: 56                 push        esi
+  0000001E: E8 00 00 00 00     call        _Phyre_PTexture3D_HasFlag64
+  00000023: 83 C4 04           add         esp,4
+  00000026: 84 C0              test        al,al
+  00000028: 74 4C              je          00000076
+  0000002A: 56                 push        esi
+  0000002B: E8 00 00 00 00     call        _Phyre_ClusterContext_Create
+  00000030: 83 C4 04           add         esp,4
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+  00000036: 80 F9 02           cmp         cl,2
+  00000039: 75 3B              jne         00000076
+  0000003B: 8B 30              mov         esi,dword ptr [eax]
+  0000003D: 85 F6              test        esi,esi
+  0000003F: 74 35              je          00000076
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _Phyre_PTextureCubeMap_HasFlag64
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 84 C0              test        al,al
+  0000004C: 74 28              je          00000076
+  0000004E: 56                 push        esi
+  0000004F: E8 00 00 00 00     call        _PTextureCubeMap_ReleaseResources
+  00000054: 83 C4 04           add         esp,4
+  00000057: 5E                 pop         esi
+  00000058: 5D                 pop         ebp
+  00000059: C3                 ret
+  0000005A: 8B 30              mov         esi,dword ptr [eax]
+  0000005C: 85 F6              test        esi,esi
+  0000005E: 74 16              je          00000076
+  00000060: 56                 push        esi
+  00000061: E8 00 00 00 00     call        _Phyre_PVideoTexture_HasTextureFlag70
+  00000066: 83 C4 04           add         esp,4
+  00000069: 84 C0              test        al,al
+  0000006B: 74 09              je          00000076
+  0000006D: 56                 push        esi
+  0000006E: E8 00 00 00 00     call        _PTextureDescription_ReleaseResources
+  00000073: 83 C4 04           add         esp,4
+  00000076: 5E                 pop         esi
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          79 .text

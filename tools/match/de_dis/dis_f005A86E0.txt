@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A86E0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Texture_ReadPattern@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000007: 8B 77 24           mov         esi,dword ptr [edi+24h]
+  0000000A: 40                 inc         eax
+  0000000B: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000011: 75 05              jne         00000018
+  00000013: BE 01 00 00 00     mov         esi,1
+  00000018: 2B F0              sub         esi,eax
+  0000001A: F7 DE              neg         esi
+  0000001C: 1B F6              sbb         esi,esi
+  0000001E: 52                 push        edx
+  0000001F: 23 F0              and         esi,eax
+  00000021: 56                 push        esi
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _Phyre_Type_ReadPatternData
+  00000028: 83 C4 0C           add         esp,0Ch
+  0000002B: 85 C0              test        eax,eax
+  0000002D: 75 06              jne         00000035
+  0000002F: 89 77 08           mov         dword ptr [edi+8],esi
+  00000032: 88 47 04           mov         byte ptr [edi+4],al
+  00000035: 5F                 pop         edi
+  00000036: 5E                 pop         esi
+  00000037: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          38 .text

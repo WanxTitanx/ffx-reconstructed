@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A22B60.obj
+
+File Type: COFF OBJECT
+
+@FFX_Iggy_TextureLayerBuf_Realloc16x16@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F1              mov         esi,ecx
+  00000005: 8B FA              mov         edi,edx
+  00000007: 3B 3E              cmp         edi,dword ptr [esi]
+  00000009: 74 41              je          0000004C
+  0000000B: 33 DB              xor         ebx,ebx
+  0000000D: 85 FF              test        edi,edi
+  0000000F: 74 1D              je          0000002E
+  00000011: 8B C7              mov         eax,edi
+  00000013: C1 E0 04           shl         eax,4
+  00000016: 6A 10              push        10h
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001E: 8B D8              mov         ebx,eax
+  00000020: 83 C4 08           add         esp,8
+  00000023: 85 DB              test        ebx,ebx
+  00000025: 75 07              jne         0000002E
+  00000027: 5F                 pop         edi
+  00000028: 5E                 pop         esi
+  00000029: 8D 43 0D           lea         eax,[ebx+0Dh]
+  0000002C: 5B                 pop         ebx
+  0000002D: C3                 ret
+  0000002E: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000031: 3B C3              cmp         eax,ebx
+  00000033: 74 12              je          00000047
+  00000035: 83 3E 00           cmp         dword ptr [esi],0
+  00000038: 7C 0D              jl          00000047
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 74 09              je          00000047
+  0000003E: 50                 push        eax
+  0000003F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000044: 83 C4 04           add         esp,4
+  00000047: 89 5E 04           mov         dword ptr [esi+4],ebx
+  0000004A: 89 3E              mov         dword ptr [esi],edi
+  0000004C: 5F                 pop         edi
+  0000004D: 5E                 pop         esi
+  0000004E: 33 C0              xor         eax,eax
+  00000050: 5B                 pop         ebx
+  00000051: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          52 .text

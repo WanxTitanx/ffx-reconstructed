@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081FDE0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Scene_FieldService_CheckState:
+  00000000: E8 00 00 00 00     call        _FFX_FieldEngine_GetByte1195
+  00000005: 85 C0              test        eax,eax
+  00000007: 74 09              je          00000012
+  00000009: E8 00 00 00 00     call        _FFX_FieldEngine_CheckFlag1196or1197
+  0000000E: 85 C0              test        eax,eax
+  00000010: 74 2D              je          0000003F
+  00000012: E8 00 00 00 00     call        _Global_CCB6D4_StripSign
+  00000017: 85 C0              test        eax,eax
+  00000019: 74 12              je          0000002D
+  0000001B: E8 00 00 00 00     call        _FFX_Area_IsMapInBoatList
+  00000020: 85 C0              test        eax,eax
+  00000022: 74 09              je          0000002D
+  00000024: E8 00 00 00 00     call        _FFX_FieldEngine_CheckFlag1196or1197
+  00000029: 85 C0              test        eax,eax
+  0000002B: 74 12              je          0000003F
+  0000002D: E8 00 00 00 00     call        _FFX_AsyncQueue_CheckIdle
+  00000032: 85 C0              test        eax,eax
+  00000034: 75 0F              jne         00000045
+  00000036: E8 00 00 00 00     call        _FFX_RenderEngine_GetFlag123A0
+  0000003B: 85 C0              test        eax,eax
+  0000003D: 74 06              je          00000045
+  0000003F: B8 01 00 00 00     mov         eax,1
+  00000044: C3                 ret
+  00000045: 33 C0              xor         eax,eax
+  00000047: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          48 .text

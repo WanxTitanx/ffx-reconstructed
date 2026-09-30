@@ -1,0 +1,98 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D8A70.obj
+
+File Type: COFF OBJECT
+
+@FFX_FMVPlayer_DecodeFrame@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000000A: 8B 03              mov         eax,dword ptr [ebx]
+  0000000C: 56                 push        esi
+  0000000D: 57                 push        edi
+  0000000E: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000011: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000014: 8B F7              mov         esi,edi
+  00000016: 3B 38              cmp         edi,dword ptr [eax]
+  00000018: 75 38              jne         00000052
+  0000001A: 3B C8              cmp         ecx,eax
+  0000001C: 75 34              jne         00000052
+  0000001E: FF 70 04           push        dword ptr [eax+4]
+  00000021: E8 00 00 00 00     call        _FFX_Video_ProcessQueue
+  00000026: 8B 03              mov         eax,dword ptr [ebx]
+  00000028: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000002B: 89 40 04           mov         dword ptr [eax+4],eax
+  0000002E: 8B 03              mov         eax,dword ptr [ebx]
+  00000030: 83 C4 04           add         esp,4
+  00000033: 89 00              mov         dword ptr [eax],eax
+  00000035: 8B 03              mov         eax,dword ptr [ebx]
+  00000037: 5F                 pop         edi
+  00000038: 89 40 08           mov         dword ptr [eax+8],eax
+  0000003B: 8B 03              mov         eax,dword ptr [ebx]
+  0000003D: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  00000044: 8B 00              mov         eax,dword ptr [eax]
+  00000046: 5E                 pop         esi
+  00000047: 89 01              mov         dword ptr [ecx],eax
+  00000049: 8B C1              mov         eax,ecx
+  0000004B: 5B                 pop         ebx
+  0000004C: 8B E5              mov         esp,ebp
+  0000004E: 5D                 pop         ebp
+  0000004F: C2 08 00           ret         8
+  00000052: 3B F9              cmp         edi,ecx
+  00000054: 74 5E              je          000000B4
+  00000056: 80 7F 0D 00        cmp         byte ptr [edi+0Dh],0
+  0000005A: 8B D7              mov         edx,edi
+  0000005C: 75 3E              jne         0000009C
+  0000005E: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000061: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000065: 74 1B              je          00000082
+  00000067: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000006A: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000006E: 75 2A              jne         0000009A
+  00000070: 3B 70 08           cmp         esi,dword ptr [eax+8]
+  00000073: 75 25              jne         0000009A
+  00000075: 8B F0              mov         esi,eax
+  00000077: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000007A: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000007E: 74 F0              je          00000070
+  00000080: EB 18              jmp         0000009A
+  00000082: 8B 08              mov         ecx,dword ptr [eax]
+  00000084: 80 79 0D 00        cmp         byte ptr [ecx+0Dh],0
+  00000088: 75 10              jne         0000009A
+  0000008A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000090: 8B C1              mov         eax,ecx
+  00000092: 8B 09              mov         ecx,dword ptr [ecx]
+  00000094: 80 79 0D 00        cmp         byte ptr [ecx+0Dh],0
+  00000098: 74 F6              je          00000090
+  0000009A: 8B F8              mov         edi,eax
+  0000009C: 52                 push        edx
+  0000009D: 8D 45 08           lea         eax,[ebp+8]
+  000000A0: 50                 push        eax
+  000000A1: 53                 push        ebx
+  000000A2: E8 00 00 00 00     call        _Phyre_Map_Erase_Rebalance_v2
+  000000A7: 83 C4 0C           add         esp,0Ch
+  000000AA: 8B F7              mov         esi,edi
+  000000AC: 3B 7D 0C           cmp         edi,dword ptr [ebp+0Ch]
+  000000AF: 75 A5              jne         00000056
+  000000B1: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000B4: 89 3A              mov         dword ptr [edx],edi
+  000000B6: 5F                 pop         edi
+  000000B7: 5E                 pop         esi
+  000000B8: 8B C2              mov         eax,edx
+  000000BA: 5B                 pop         ebx
+  000000BB: 8B E5              mov         esp,ebp
+  000000BD: 5D                 pop         ebp
+  000000BE: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C1 .text

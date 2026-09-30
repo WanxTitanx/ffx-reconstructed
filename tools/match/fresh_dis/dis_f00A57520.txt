@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A57520.obj
+
+File Type: COFF OBJECT
+
+_FFX_Abmap_ReadAndProcessInputState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: E8 00 00 00 00     call        _Abmap_GetScrollSpeedX
+  0000000A: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  0000000E: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000011: 66 89 06           mov         word ptr [esi],ax
+  00000014: 75 29              jne         0000003F
+  00000016: 6A FF              push        0FFFFFFFFh
+  00000018: 6A 03              push        3
+  0000001A: 6A 00              push        0
+  0000001C: 6A 00              push        0
+  0000001E: E8 00 00 00 00     call        _FFX_MenuPad_ReadMixEdgeMode
+  00000023: 04 80              add         al,80h
+  00000025: 83 C4 10           add         esp,10h
+  00000028: 3C C0              cmp         al,0C0h
+  0000002A: 7D 07              jge         00000033
+  0000002C: B8 00 10 00 00     mov         eax,1000h
+  00000031: EB 09              jmp         0000003C
+  00000033: 3C 40              cmp         al,40h
+  00000035: 7E 08              jle         0000003F
+  00000037: B8 00 40 00 00     mov         eax,4000h
+  0000003C: 66 09 06           or          word ptr [esi],ax
+  0000003F: 0F B7 0E           movzx       ecx,word ptr [esi]
+  00000042: 66 8B 46 04        mov         ax,word ptr [esi+4]
+  00000046: 8B D1              mov         edx,ecx
+  00000048: 66 F7 D0           not         ax
+  0000004B: 66 89 56 04        mov         word ptr [esi+4],dx
+  0000004F: 66 23 C1           and         ax,cx
+  00000052: BA 01 00 00 00     mov         edx,1
+  00000057: 66 89 46 02        mov         word ptr [esi+2],ax
+  0000005B: 8D 4E 1A           lea         ecx,[esi+1Ah]
+  0000005E: C7 46 06 00 00 00  mov         dword ptr [esi+6],0
+            00
+  00000065: 8D 7A 0F           lea         edi,[edx+0Fh]
+  00000068: 66 85 56 02        test        word ptr [esi+2],dx
+  0000006C: 74 0A              je          00000078
+  0000006E: 66 09 56 06        or          word ptr [esi+6],dx
+  00000072: 66 09 56 08        or          word ptr [esi+8],dx
+  00000076: EB 2F              jmp         000000A7
+  00000078: 66 85 16           test        word ptr [esi],dx
+  0000007B: 75 06              jne         00000083
+  0000007D: C6 41 F0 00        mov         byte ptr [ecx-10h],0
+  00000081: EB 21              jmp         000000A4
+  00000083: FE 41 F0           inc         byte ptr [ecx-10h]
+  00000086: 80 79 F0 06        cmp         byte ptr [ecx-10h],6
+  0000008A: 72 1B              jb          000000A7
+  0000008C: C6 41 F0 06        mov         byte ptr [ecx-10h],6
+  00000090: 66 09 56 06        or          word ptr [esi+6],dx
+  00000094: 80 39 00           cmp         byte ptr [ecx],0
+  00000097: 75 04              jne         0000009D
+  00000099: 66 09 56 08        or          word ptr [esi+8],dx
+  0000009D: FE 01              inc         byte ptr [ecx]
+  0000009F: 80 39 03           cmp         byte ptr [ecx],3
+  000000A2: 72 03              jb          000000A7
+  000000A4: C6 01 00           mov         byte ptr [ecx],0
+  000000A7: 41                 inc         ecx
+  000000A8: 8D 04 12           lea         eax,[edx+edx]
+  000000AB: 0F B7 D0           movzx       edx,ax
+  000000AE: 4F                 dec         edi
+  000000AF: 75 B7              jne         00000068
+  000000B1: 5F                 pop         edi
+  000000B2: 33 C0              xor         eax,eax
+  000000B4: 5E                 pop         esi
+  000000B5: 5D                 pop         ebp
+  000000B6: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B7 .text

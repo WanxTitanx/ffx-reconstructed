@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A23080.obj
+
+File Type: COFF OBJECT
+
+@FFX_Iggy_TextureMipMapArray_Resolve@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 81 2C 0F 00 00  mov         eax,dword ptr [ecx+0F2Ch]
+  0000000C: 53                 push        ebx
+  0000000D: 56                 push        esi
+  0000000E: 8B F2              mov         esi,edx
+  00000010: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000013: 8D 99 2C 0F 00 00  lea         ebx,[ecx+0F2Ch]
+  00000019: 57                 push        edi
+  0000001A: D1 EA              shr         edx,1
+  0000001C: D1 EE              shr         esi,1
+  0000001E: 33 FF              xor         edi,edi
+  00000020: 89 55 08           mov         dword ptr [ebp+8],edx
+  00000023: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000026: 85 C0              test        eax,eax
+  00000028: 74 63              je          0000008D
+  0000002A: 8B CE              mov         ecx,esi
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 80 78 04 00        cmp         byte ptr [eax+4],0
+  00000034: 75 57              jne         0000008D
+  00000036: 8B 30              mov         esi,dword ptr [eax]
+  00000038: 85 F6              test        esi,esi
+  0000003A: 74 51              je          0000008D
+  0000003C: 39 4E 1C           cmp         dword ptr [esi+1Ch],ecx
+  0000003F: 75 05              jne         00000046
+  00000041: 39 56 20           cmp         dword ptr [esi+20h],edx
+  00000044: 74 37              je          0000007D
+  00000046: 56                 push        esi
+  00000047: E8 00 00 00 00     call        _Phyre_PVideoTexture_HasTextureFlag70
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: 85 C0              test        eax,eax
+  00000051: 74 0D              je          00000060
+  00000053: 56                 push        esi
+  00000054: E8 00 00 00 00     call        _PTextureDescription_ReleaseResources
+  00000059: 83 C4 04           add         esp,4
+  0000005C: 85 C0              test        eax,eax
+  0000005E: 75 32              jne         00000092
+  00000060: 6A 00              push        0
+  00000062: FF 36              push        dword ptr [esi]
+  00000064: FF 75 08           push        dword ptr [ebp+8]
+  00000067: FF 75 FC           push        dword ptr [ebp-4]
+  0000006A: 56                 push        esi
+  0000006B: E8 00 00 00 00     call        _PTextureDescription_ValidateAndSetConfig
+  00000070: 83 C4 14           add         esp,14h
+  00000073: 85 C0              test        eax,eax
+  00000075: 75 1B              jne         00000092
+  00000077: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000007A: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000007D: 47                 inc         edi
+  0000007E: 83 FF 03           cmp         edi,3
+  00000081: 73 18              jae         0000009B
+  00000083: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000086: 83 C3 04           add         ebx,4
+  00000089: 85 C0              test        eax,eax
+  0000008B: 75 A3              jne         00000030
+  0000008D: B8 01 00 00 00     mov         eax,1
+  00000092: 5F                 pop         edi
+  00000093: 5E                 pop         esi
+  00000094: 5B                 pop         ebx
+  00000095: 8B E5              mov         esp,ebp
+  00000097: 5D                 pop         ebp
+  00000098: C2 04 00           ret         4
+  0000009B: 5F                 pop         edi
+  0000009C: 5E                 pop         esi
+  0000009D: 33 C0              xor         eax,eax
+  0000009F: 5B                 pop         ebx
+  000000A0: 8B E5              mov         esp,ebp
+  000000A2: 5D                 pop         ebp
+  000000A3: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

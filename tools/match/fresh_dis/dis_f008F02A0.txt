@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008F02A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_SphereGrid_DrawRewardItemList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000007: 85 C0              test        eax,eax
+  00000009: 74 11              je          0000001C
+  0000000B: 83 F8 01           cmp         eax,1
+  0000000E: 75 07              jne         00000017
+  00000010: B8 09 00 00 00     mov         eax,9
+  00000015: EB 0A              jmp         00000021
+  00000017: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000001A: EB 05              jmp         00000021
+  0000001C: B8 2D 00 00 00     mov         eax,2Dh
+  00000021: 56                 push        esi
+  00000022: 57                 push        edi
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        _FFX_Menu2D_TableLookupSpriteData
+  00000029: 68 00 3E 00 00     push        3E00h
+  0000002E: 8B F8              mov         edi,eax
+  00000030: E8 00 00 00 00     call        _FFX_Menu2D_TexHandleByAtlasId
+  00000035: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000038: 50                 push        eax
+  00000039: 8D 45 FC           lea         eax,[ebp-4]
+  0000003C: 50                 push        eax
+  0000003D: 68 00 3E 00 00     push        3E00h
+  00000042: E8 00 00 00 00     call        _FFX_Font_ResolveSheetDims
+  00000047: 8B 37              mov         esi,dword ptr [edi]
+  00000049: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000004C: 83 C4 14           add         esp,14h
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 85 F6              test        esi,esi
+  00000053: 74 12              je          00000067
+  00000055: 8D 4F 0A           lea         ecx,[edi+0Ah]
+  00000058: 85 C0              test        eax,eax
+  0000005A: 74 03              je          0000005F
+  0000005C: 0F B7 11           movzx       edx,word ptr [ecx]
+  0000005F: 40                 inc         eax
+  00000060: 83 C1 0C           add         ecx,0Ch
+  00000063: 3B C6              cmp         eax,esi
+  00000065: 72 F1              jb          00000058
+  00000067: 52                 push        edx
+  00000068: E8 00 00 00 00     call        _FFX_Menu_RenderEnqueue
+  0000006D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000070: 83 C4 04           add         esp,4
+  00000073: 5F                 pop         edi
+  00000074: 5E                 pop         esi
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          79 .text

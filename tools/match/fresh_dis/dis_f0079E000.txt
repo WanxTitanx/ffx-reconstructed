@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079E000.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_InitCameraDirection:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 3D 00 00 00 00  cmp         dword ptr [_g_UnkVar_112C9FC],0
+            00
+  0000000B: 74 39              je          00000046
+  0000000D: 56                 push        esi
+  0000000E: FF 75 08           push        dword ptr [ebp+8]
+  00000011: 6A 00              push        0
+  00000013: E8 00 00 00 00     call        _FFX_Battle_ApplyCameraRotation
+  00000018: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001B: 6A 00              push        0
+  0000001D: E8 00 00 00 00     call        _FFX_Battle_ApplyCameraRotation
+  00000022: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000025: A1 00 00 00 00     mov         eax,dword ptr [_g_BattleUnkVar_113609C]
+  0000002A: 56                 push        esi
+  0000002B: 89 B0 10 08 00 00  mov         dword ptr [eax+810h],esi
+  00000031: E8 00 00 00 00     call        _FFX_Field_InitDefaultDirectionVector
+  00000036: 56                 push        esi
+  00000037: 6A 00              push        0
+  00000039: E8 00 00 00 00     call        _FFX_Battle_ApplyCameraRotation
+  0000003E: 83 C4 1C           add         esp,1Ch
+  00000041: 5E                 pop         esi
+  00000042: 8B E5              mov         esp,ebp
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+  00000046: 8A 45 FF           mov         al,byte ptr [ebp-1]
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0047DFB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ClassDescriptor_FindField@8:
+  00000000: 83 79 20 00        cmp         dword ptr [ecx+20h],0
+  00000004: 57                 push        edi
+  00000005: 75 1A              jne         00000021
+  00000007: 8B 7A 7C           mov         edi,dword ptr [edx+7Ch]
+  0000000A: 56                 push        esi
+  0000000B: 8B 71 24           mov         esi,dword ptr [ecx+24h]
+  0000000E: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000014: 3B FE              cmp         edi,esi
+  00000016: 5E                 pop         esi
+  00000017: 73 08              jae         00000021
+  00000019: 8B 41 28           mov         eax,dword ptr [ecx+28h]
+  0000001C: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  0000001F: 5F                 pop         edi
+  00000020: C3                 ret
+  00000021: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  00000024: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000027: C1 E1 05           shl         ecx,5
+  0000002A: 03 C8              add         ecx,eax
+  0000002C: 3B C1              cmp         eax,ecx
+  0000002E: 73 13              jae         00000043
+  00000030: 39 50 08           cmp         dword ptr [eax+8],edx
+  00000033: 74 10              je          00000045
+  00000035: 83 C0 20           add         eax,20h
+  00000038: 3B C1              cmp         eax,ecx
+  0000003A: 73 07              jae         00000043
+  0000003C: 39 50 08           cmp         dword ptr [eax+8],edx
+  0000003F: 75 F4              jne         00000035
+  00000041: 5F                 pop         edi
+  00000042: C3                 ret
+  00000043: 33 C0              xor         eax,eax
+  00000045: 5F                 pop         edi
+  00000046: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          47 .text

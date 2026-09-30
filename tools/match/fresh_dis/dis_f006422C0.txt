@@ -1,0 +1,176 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006422C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Shader_SetVertexColorHeightParams:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 33 D2              xor         edx,edx
+  0000000B: F7 01 FF FF FF 7F  test        dword ptr [ecx],7FFFFFFFh
+  00000011: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000014: 0F 84 B2 01 00 00  je          000001CC
+  0000001A: 53                 push        ebx
+  0000001B: 56                 push        esi
+  0000001C: 57                 push        edi
+  0000001D: 33 F6              xor         esi,esi
+  0000001F: 90                 nop
+  00000020: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000023: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002A: 8B 34 06           mov         esi,dword ptr [esi+eax]
+  0000002D: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000030: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  00000033: 8B 00              mov         eax,dword ptr [eax]
+  00000035: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000003A: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000003D: 0F 84 62 01 00 00  je          000001A5
+  00000043: 33 C9              xor         ecx,ecx
+  00000045: 8B 76 10           mov         esi,dword ptr [esi+10h]
+  00000048: 8B 06              mov         eax,dword ptr [esi]
+  0000004A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000004F: 83 F8 01           cmp         eax,1
+  00000052: 77 0D              ja          00000061
+  00000054: 85 C0              test        eax,eax
+  00000056: 74 05              je          0000005D
+  00000058: 83 C6 04           add         esi,4
+  0000005B: EB 07              jmp         00000064
+  0000005D: 33 F6              xor         esi,esi
+  0000005F: EB 03              jmp         00000064
+  00000061: 8B 76 04           mov         esi,dword ptr [esi+4]
+  00000064: 8B 34 31           mov         esi,dword ptr [ecx+esi]
+  00000067: 68 00 00 00 00     push        offset ??_C@_0BF@NFCAKPJL@VertexColorHeightNow?$AA@
+  0000006C: FF 36              push        dword ptr [esi]
+  0000006E: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  00000073: 83 C4 08           add         esp,8
+  00000076: 85 C0              test        eax,eax
+  00000078: 74 35              je          000000AF
+  0000007A: 83 7D 14 00        cmp         dword ptr [ebp+14h],0
+  0000007E: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000081: 74 2C              je          000000AF
+  00000083: 0F B7 48 0A        movzx       ecx,word ptr [eax+0Ah]
+  00000087: 0F B7 78 08        movzx       edi,word ptr [eax+8]
+  0000008B: 81 E1 FF 1F 00 00  and         ecx,1FFFh
+  00000091: 8B DF              mov         ebx,edi
+  00000093: 8D 04 0B           lea         eax,[ebx+ecx]
+  00000096: 3B 02              cmp         eax,dword ptr [edx]
+  00000098: 77 15              ja          000000AF
+  0000009A: 83 FF 04           cmp         edi,4
+  0000009D: 72 10              jb          000000AF
+  0000009F: 51                 push        ecx
+  000000A0: FF 75 14           push        dword ptr [ebp+14h]
+  000000A3: 8D 04 13           lea         eax,[ebx+edx]
+  000000A6: 50                 push        eax
+  000000A7: E8 00 00 00 00     call        _memcpy
+  000000AC: 83 C4 0C           add         esp,0Ch
+  000000AF: 68 00 00 00 00     push        offset ??_C@_0BK@DKGKFGCE@VertexColorHeightGradient?$AA@
+  000000B4: FF 36              push        dword ptr [esi]
+  000000B6: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  000000BB: 83 C4 08           add         esp,8
+  000000BE: 85 C0              test        eax,eax
+  000000C0: 74 35              je          000000F7
+  000000C2: 83 7D 18 00        cmp         dword ptr [ebp+18h],0
+  000000C6: 8B 56 04           mov         edx,dword ptr [esi+4]
+  000000C9: 74 2C              je          000000F7
+  000000CB: 0F B7 48 0A        movzx       ecx,word ptr [eax+0Ah]
+  000000CF: 0F B7 78 08        movzx       edi,word ptr [eax+8]
+  000000D3: 81 E1 FF 1F 00 00  and         ecx,1FFFh
+  000000D9: 8B DF              mov         ebx,edi
+  000000DB: 8D 04 0B           lea         eax,[ebx+ecx]
+  000000DE: 3B 02              cmp         eax,dword ptr [edx]
+  000000E0: 77 15              ja          000000F7
+  000000E2: 83 FF 04           cmp         edi,4
+  000000E5: 72 10              jb          000000F7
+  000000E7: 51                 push        ecx
+  000000E8: FF 75 18           push        dword ptr [ebp+18h]
+  000000EB: 8D 04 13           lea         eax,[ebx+edx]
+  000000EE: 50                 push        eax
+  000000EF: E8 00 00 00 00     call        _memcpy
+  000000F4: 83 C4 0C           add         esp,0Ch
+  000000F7: 68 00 00 00 00     push        offset ??_C@_0BC@OBDFICBH@VertexColorOrigin?$AA@
+  000000FC: FF 36              push        dword ptr [esi]
+  000000FE: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  00000103: 83 C4 08           add         esp,8
+  00000106: 85 C0              test        eax,eax
+  00000108: 74 35              je          0000013F
+  0000010A: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  0000010E: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000111: 74 2C              je          0000013F
+  00000113: 0F B7 48 0A        movzx       ecx,word ptr [eax+0Ah]
+  00000117: 0F B7 78 08        movzx       edi,word ptr [eax+8]
+  0000011B: 81 E1 FF 1F 00 00  and         ecx,1FFFh
+  00000121: 8B DF              mov         ebx,edi
+  00000123: 8D 04 0B           lea         eax,[ebx+ecx]
+  00000126: 3B 02              cmp         eax,dword ptr [edx]
+  00000128: 77 15              ja          0000013F
+  0000012A: 83 FF 04           cmp         edi,4
+  0000012D: 72 10              jb          0000013F
+  0000012F: 51                 push        ecx
+  00000130: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000133: 8D 04 13           lea         eax,[ebx+edx]
+  00000136: 50                 push        eax
+  00000137: E8 00 00 00 00     call        _memcpy
+  0000013C: 83 C4 0C           add         esp,0Ch
+  0000013F: 68 00 00 00 00     push        offset ??_C@_0BC@NPHCPCFC@VertexColorModify?$AA@
+  00000144: FF 36              push        dword ptr [esi]
+  00000146: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000014B: 83 C4 08           add         esp,8
+  0000014E: 85 C0              test        eax,eax
+  00000150: 74 34              je          00000186
+  00000152: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000155: 8B 56 04           mov         edx,dword ptr [esi+4]
+  00000158: 85 DB              test        ebx,ebx
+  0000015A: 74 2A              je          00000186
+  0000015C: 0F B7 48 0A        movzx       ecx,word ptr [eax+0Ah]
+  00000160: 0F B7 70 08        movzx       esi,word ptr [eax+8]
+  00000164: 81 E1 FF 1F 00 00  and         ecx,1FFFh
+  0000016A: 8B FE              mov         edi,esi
+  0000016C: 8D 04 0F           lea         eax,[edi+ecx]
+  0000016F: 3B 02              cmp         eax,dword ptr [edx]
+  00000171: 77 13              ja          00000186
+  00000173: 83 FE 04           cmp         esi,4
+  00000176: 72 0E              jb          00000186
+  00000178: 51                 push        ecx
+  00000179: 8D 04 17           lea         eax,[edi+edx]
+  0000017C: 53                 push        ebx
+  0000017D: 50                 push        eax
+  0000017E: E8 00 00 00 00     call        _memcpy
+  00000183: 83 C4 0C           add         esp,0Ch
+  00000186: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000189: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  0000018C: 8D 41 01           lea         eax,[ecx+1]
+  0000018F: 8D 0C 8D 04 00 00  lea         ecx,[ecx*4+4]
+            00
+  00000196: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000199: 3B 45 F0           cmp         eax,dword ptr [ebp-10h]
+  0000019C: 0F 8C A3 FE FF FF  jl          00000045
+  000001A2: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000001A5: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000001A8: 8D 4A 01           lea         ecx,[edx+1]
+  000001AB: 8B 00              mov         eax,dword ptr [eax]
+  000001AD: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  000001B2: 8D 34 95 04 00 00  lea         esi,[edx*4+4]
+            00
+  000001B9: 8B D1              mov         edx,ecx
+  000001BB: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000001BE: 3B C8              cmp         ecx,eax
+  000001C0: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000001C3: 0F 82 57 FE FF FF  jb          00000020
+  000001C9: 5F                 pop         edi
+  000001CA: 5E                 pop         esi
+  000001CB: 5B                 pop         ebx
+  000001CC: 8B E5              mov         esp,ebp
+  000001CE: 5D                 pop         ebp
+  000001CF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          53 .rdata
+         1D0 .text

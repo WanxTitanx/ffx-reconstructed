@@ -1,0 +1,98 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00927630.obj
+
+File Type: COFF OBJECT
+
+_FFX_BtlUI_HudGaugeCalcCoordsFromFloat:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 1C           mov         esi,dword ptr [ebp+1Ch]
+  0000000E: 57                 push        edi
+  0000000F: D9 06              fld         dword ptr [esi]
+  00000011: 8B 7B 04           mov         edi,dword ptr [ebx+4]
+  00000014: E8 00 00 00 00     call        __ftol2_sse
+  00000019: 89 07              mov         dword ptr [edi],eax
+  0000001B: D9 46 04           fld         dword ptr [esi+4]
+  0000001E: E8 00 00 00 00     call        __ftol2_sse
+  00000023: 89 47 04           mov         dword ptr [edi+4],eax
+  00000026: D9 46 08           fld         dword ptr [esi+8]
+  00000029: E8 00 00 00 00     call        __ftol2_sse
+  0000002E: 89 47 08           mov         dword ptr [edi+8],eax
+  00000031: D9 46 0C           fld         dword ptr [esi+0Ch]
+  00000034: E8 00 00 00 00     call        __ftol2_sse
+  00000039: D9 45 14           fld         dword ptr [ebp+14h]
+  0000003C: DD 05 00 00 00 00  fld         qword ptr [__real@3fe0000000000000]
+  00000042: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  00000045: DC C9              fmul        st(1),st
+  00000047: 8D 45 F0           lea         eax,[ebp-10h]
+  0000004A: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000004D: 50                 push        eax
+  0000004E: D9 C0              fld         st(0)
+  00000050: 8D 45 08           lea         eax,[ebp+8]
+  00000053: D8 E3              fsub        st,st(3)
+  00000055: 50                 push        eax
+  00000056: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000059: D9 45 18           fld         dword ptr [ebp+18h]
+  0000005C: DE CA              fmulp       st(2),st
+  0000005E: D9 45 10           fld         dword ptr [ebp+10h]
+  00000061: D9 C0              fld         st(0)
+  00000063: D8 E3              fsub        st,st(3)
+  00000065: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000068: D9 C9              fxch        st(1)
+  0000006A: DE C3              faddp       st(3),st
+  0000006C: D9 CA              fxch        st(2)
+  0000006E: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000071: DE C1              faddp       st(1),st
+  00000073: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000076: E8 00 00 00 00     call        _FFX_Math_Vec4TransformFloat16
+  0000007B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000007E: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000081: 89 47 14           mov         dword ptr [edi+14h],eax
+  00000084: 89 47 24           mov         dword ptr [edi+24h],eax
+  00000087: 89 57 10           mov         dword ptr [edi+10h],edx
+  0000008A: C7 47 18 00 00 00  mov         dword ptr [edi+18h],0
+            00
+  00000091: C7 47 1C 00 00 00  mov         dword ptr [edi+1Ch],0
+            00
+  00000098: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000009B: 89 4F 20           mov         dword ptr [edi+20h],ecx
+  0000009E: C7 47 28 00 00 00  mov         dword ptr [edi+28h],0
+            00
+  000000A5: C7 47 2C 00 00 00  mov         dword ptr [edi+2Ch],0
+            00
+  000000AC: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000AF: 83 C4 08           add         esp,8
+  000000B2: 89 47 34           mov         dword ptr [edi+34h],eax
+  000000B5: 89 47 44           mov         dword ptr [edi+44h],eax
+  000000B8: 89 57 30           mov         dword ptr [edi+30h],edx
+  000000BB: C7 47 38 00 00 00  mov         dword ptr [edi+38h],0
+            00
+  000000C2: C7 47 3C 00 00 00  mov         dword ptr [edi+3Ch],0
+            00
+  000000C9: 89 4F 40           mov         dword ptr [edi+40h],ecx
+  000000CC: C7 47 48 00 00 00  mov         dword ptr [edi+48h],0
+            00
+  000000D3: C7 47 4C 00 00 00  mov         dword ptr [edi+4Ch],0
+            00
+  000000DA: 8D 47 50           lea         eax,[edi+50h]
+  000000DD: 5F                 pop         edi
+  000000DE: 5E                 pop         esi
+  000000DF: 89 43 04           mov         dword ptr [ebx+4],eax
+  000000E2: 5B                 pop         ebx
+  000000E3: 8B E5              mov         esp,ebp
+  000000E5: 5D                 pop         ebp
+  000000E6: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          E7 .text

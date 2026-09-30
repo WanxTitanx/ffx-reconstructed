@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A3CB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_FieldOpcode_GetActivePartyMemberParam:
+  00000000: 56                 push        esi
+  00000001: 33 F6              xor         esi,esi
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_OvDrive_GetWakkaReelStateEntry
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 80 38 00           cmp         byte ptr [eax],0
+  0000000F: 75 14              jne         00000025
+  00000011: 46                 inc         esi
+  00000012: 83 FE 04           cmp         esi,4
+  00000015: 7D 14              jge         0000002B
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _FFX_OvDrive_GetWakkaReelStateEntry
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 80 38 00           cmp         byte ptr [eax],0
+  00000023: 74 EC              je          00000011
+  00000025: 0F B6 40 01        movzx       eax,byte ptr [eax+1]
+  00000029: 5E                 pop         esi
+  0000002A: C3                 ret
+  0000002B: 33 C0              xor         eax,eax
+  0000002D: 5E                 pop         esi
+  0000002E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2F .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0079CDA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Model_GetMeshFromRegistry:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 85 F6              test        esi,esi
+  0000000A: 74 25              je          00000031
+  0000000C: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 78 1E              js          00000031
+  00000013: 0F B7 0E           movzx       ecx,word ptr [esi]
+  00000016: 3B C1              cmp         eax,ecx
+  00000018: 7D 17              jge         00000031
+  0000001A: 0F B7 54 46 02     movzx       edx,word ptr [esi+eax*2+2]
+  0000001F: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000022: 03 D6              add         edx,esi
+  00000024: 8B C6              mov         eax,esi
+  00000026: 89 91 F8 04 00 00  mov         dword ptr [ecx+000004F8h],edx
+  0000002C: 5E                 pop         esi
+  0000002D: 8B E5              mov         esp,ebp
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000034: D9 EE              fldz
+  00000036: D9 98 F8 04 00 00  fstp        dword ptr [eax+000004F8h]
+  0000003C: 8B C6              mov         eax,esi
+  0000003E: 5E                 pop         esi
+  0000003F: 8B E5              mov         esp,ebp
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          43 .text

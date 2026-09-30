@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00618E30.obj
+
+File Type: COFF OBJECT
+
+_Phyre_TypeWriter_FromDouble:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: E8 00 00 00 00     call        _Phyre_PType_GetDouble
+  0000000B: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000000E: 74 06              je          00000016
+  00000010: 32 C0              xor         al,al
+  00000012: 8B E5              mov         esp,ebp
+  00000014: 5D                 pop         ebp
+  00000015: C3                 ret
+  00000016: 6A 00              push        0
+  00000018: 6A FF              push        0FFFFFFFFh
+  0000001A: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001D: E8 00 00 00 00     call        _PhyreBuffer_ReadFloat
+  00000022: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000025: DB 45 08           fild        dword ptr [ebp+8]
+  00000028: 85 C0              test        eax,eax
+  0000002A: 79 06              jns         00000032
+  0000002C: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000032: 6A FE              push        0FFFFFFFEh
+  00000034: DD 5D F8           fstp        qword ptr [ebp-8]
+  00000037: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003A: E8 00 00 00 00     call        _PhyreStream_Reserve
+  0000003F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000042: 83 C4 14           add         esp,14h
+  00000045: 85 C0              test        eax,eax
+  00000047: 74 0C              je          00000055
+  00000049: DD 45 F8           fld         qword ptr [ebp-8]
+  0000004C: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000052: DD 58 08           fstp        qword ptr [eax+8]
+  00000055: B0 01              mov         al,1
+  00000057: 8B E5              mov         esp,ebp
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          5B .text

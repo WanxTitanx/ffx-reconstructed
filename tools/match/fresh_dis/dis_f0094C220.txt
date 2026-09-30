@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0094C220.obj
+
+File Type: COFF OBJECT
+
+_PhyreBuffer_GetFieldPtr:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _PhyreBuffer_GetElement
+  0000000E: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000011: 83 E1 3F           and         ecx,3Fh
+  00000014: 83 C4 08           add         esp,8
+  00000017: 83 F9 06           cmp         ecx,6
+  0000001A: 75 19              jne         00000035
+  0000001C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001F: FF 75 08           push        dword ptr [ebp+8]
+  00000022: E8 00 00 00 00     call        _PhyreBuffer_GetElement
+  00000027: 8B 08              mov         ecx,dword ptr [eax]
+  00000029: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000002C: 83 C4 08           add         esp,8
+  0000002F: 8B 44 81 0C        mov         eax,dword ptr [ecx+eax*4+0Ch]
+  00000033: 5D                 pop         ebp
+  00000034: C3                 ret
+  00000035: 83 F9 26           cmp         ecx,26h
+  00000038: 75 0B              jne         00000045
+  0000003A: 8B 08              mov         ecx,dword ptr [eax]
+  0000003C: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000003F: 40                 inc         eax
+  00000040: 8D 04 C1           lea         eax,[ecx+eax*8]
+  00000043: 5D                 pop         ebp
+  00000044: C3                 ret
+  00000045: 33 C0              xor         eax,eax
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

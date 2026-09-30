@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004BB9C0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_4BB9C0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B D9              mov         ebx,ecx
+  00000008: 57                 push        edi
+  00000009: C7 03 00 00 00 00  mov         dword ptr [ebx],0
+  0000000F: 8B 3A              mov         edi,dword ptr [edx]
+  00000011: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000014: 33 F6              xor         esi,esi
+  00000016: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000019: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000001F: 74 21              je          00000042
+  00000021: 8D 04 3F           lea         eax,[edi+edi]
+  00000024: 6A 02              push        2
+  00000026: 50                 push        eax
+  00000027: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000002C: 8B F0              mov         esi,eax
+  0000002E: 83 C4 08           add         esp,8
+  00000031: 85 F6              test        esi,esi
+  00000033: 74 0D              je          00000042
+  00000035: 57                 push        edi
+  00000036: FF 75 FC           push        dword ptr [ebp-4]
+  00000039: 56                 push        esi
+  0000003A: E8 00 00 00 00     call        _PShader_WordArray_Copy
+  0000003F: 83 C4 0C           add         esp,0Ch
+  00000042: 89 73 04           mov         dword ptr [ebx+4],esi
+  00000045: F7 DE              neg         esi
+  00000047: 1B F6              sbb         esi,esi
+  00000049: 23 F7              and         esi,edi
+  0000004B: 5F                 pop         edi
+  0000004C: 89 33              mov         dword ptr [ebx],esi
+  0000004E: 5E                 pop         esi
+  0000004F: 8B C3              mov         eax,ebx
+  00000051: 5B                 pop         ebx
+  00000052: 8B E5              mov         esp,ebp
+  00000054: 5D                 pop         ebp
+  00000055: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

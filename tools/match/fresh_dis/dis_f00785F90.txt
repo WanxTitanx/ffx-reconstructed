@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00785F90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ToggleLanguageFlag16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _FFX_Locale_GetLanguageId_Thunk
+  00000009: 8B F0              mov         esi,eax
+  0000000B: E8 00 00 00 00     call        _FFX_IsLanguageJapanese
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 18              je          0000002C
+  00000014: 83 FE 12           cmp         esi,12h
+  00000017: 74 13              je          0000002C
+  00000019: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000001C: C1 E1 10           shl         ecx,10h
+  0000001F: 33 C8              xor         ecx,eax
+  00000021: 81 E1 00 00 01 00  and         ecx,10000h
+  00000027: 33 C1              xor         eax,ecx
+  00000029: 5E                 pop         esi
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: 25 FF FF FE FF     and         eax,0FFFEFFFFh
+  00000031: 5E                 pop         esi
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .text

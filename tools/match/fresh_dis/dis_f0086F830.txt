@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086F830.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SetActorTargetAndRayQuery:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 06              mov         eax,dword ptr [esi]
+  00000009: 8A 56 32           mov         dl,byte ptr [esi+32h]
+  0000000C: 8A 00              mov         al,byte ptr [eax]
+  0000000E: 2C 05              sub         al,5
+  00000010: 0F B6 CA           movzx       ecx,dl
+  00000013: 3C 01              cmp         al,1
+  00000015: 76 0C              jbe         00000023
+  00000017: 80 FA 09           cmp         dl,9
+  0000001A: 72 11              jb          0000002D
+  0000001C: B9 08 00 00 00     mov         ecx,8
+  00000021: EB 0A              jmp         0000002D
+  00000023: 80 FA 02           cmp         dl,2
+  00000026: 72 05              jb          0000002D
+  00000028: B9 01 00 00 00     mov         ecx,1
+  0000002D: 6B C9 4C           imul        ecx,ecx,4Ch
+  00000030: 8B 84 31 74 01 00  mov         eax,dword ptr [ecx+esi+174h]
+            00
+  00000037: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000003A: 51                 push        ecx
+  0000003B: 66 89 08           mov         word ptr [eax],cx
+  0000003E: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  00000043: 8B 08              mov         ecx,dword ptr [eax]
+  00000045: 83 C4 04           add         esp,4
+  00000048: 8A 09              mov         cl,byte ptr [ecx]
+  0000004A: 80 F9 04           cmp         cl,4
+  0000004D: 75 04              jne         00000053
+  0000004F: 33 C0              xor         eax,eax
+  00000051: EB 14              jmp         00000067
+  00000053: 80 E9 05           sub         cl,5
+  00000056: 80 F9 01           cmp         cl,1
+  00000059: 76 07              jbe         00000062
+  0000005B: 05 58 05 00 00     add         eax,558h
+  00000060: EB 05              jmp         00000067
+  00000062: 05 84 02 00 00     add         eax,284h
+  00000067: D9 40 08           fld         dword ptr [eax+8]
+  0000006A: 83 EC 18           sub         esp,18h
+  0000006D: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000071: D9 40 04           fld         dword ptr [eax+4]
+  00000074: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000078: D9 00              fld         dword ptr [eax]
+  0000007A: DD 1C 24           fstp        qword ptr [esp]
+  0000007D: 56                 push        esi
+  0000007E: E8 00 00 00 00     call        _FFX_Field_SpatialRayQueryFromActor
+  00000083: 83 C4 1C           add         esp,1Ch
+  00000086: 5E                 pop         esi
+  00000087: 5D                 pop         ebp
+  00000088: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          89 .text

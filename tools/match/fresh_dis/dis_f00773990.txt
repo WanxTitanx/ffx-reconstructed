@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00773990.obj
+
+File Type: COFF OBJECT
+
+_FFX_SceneState_SetMenuContextBit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 83 E1 07           and         ecx,7
+  0000000A: BB 01 00 00 00     mov         ebx,1
+  0000000F: 57                 push        edi
+  00000010: D3 E3              shl         ebx,cl
+  00000012: E8 00 00 00 00     call        _FFX_SceneState_GetMenuContext
+  00000017: 8B F8              mov         edi,eax
+  00000019: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000001C: 99                 cdq
+  0000001D: 83 E2 07           and         edx,7
+  00000020: 03 C2              add         eax,edx
+  00000022: C1 F8 03           sar         eax,3
+  00000025: 03 F8              add         edi,eax
+  00000027: 80 C9 FF           or          cl,0FFh
+  0000002A: 2A CB              sub         cl,bl
+  0000002C: 20 0F              and         byte ptr [edi],cl
+  0000002E: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  00000032: 8A 07              mov         al,byte ptr [edi]
+  00000034: 74 04              je          0000003A
+  00000036: 0A C3              or          al,bl
+  00000038: 88 07              mov         byte ptr [edi],al
+  0000003A: 5F                 pop         edi
+  0000003B: 5B                 pop         ebx
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

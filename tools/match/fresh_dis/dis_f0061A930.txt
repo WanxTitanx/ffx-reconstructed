@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061A930.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PWorldMatrixController_GetDirection@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 24           sub         esp,24h
+  00000006: 56                 push        esi
+  00000007: 8D 41 04           lea         eax,[ecx+4]
+  0000000A: 50                 push        eax
+  0000000B: 8D 45 DC           lea         eax,[ebp-24h]
+  0000000E: 50                 push        eax
+  0000000F: 8B F2              mov         esi,edx
+  00000011: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  00000016: D9 45 FC           fld         dword ptr [ebp-4]
+  00000019: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001C: 83 C4 08           add         esp,8
+  0000001F: D9 45 FC           fld         dword ptr [ebp-4]
+  00000022: D9 CA              fxch        st(2)
+  00000024: DC C8              fmul        st(0),st
+  00000026: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000029: D9 45 FC           fld         dword ptr [ebp-4]
+  0000002C: D9 C9              fxch        st(1)
+  0000002E: DC C8              fmul        st(0),st
+  00000030: DE C1              faddp       st(1),st
+  00000032: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000035: D9 45 FC           fld         dword ptr [ebp-4]
+  00000038: D9 C9              fxch        st(1)
+  0000003A: DC C8              fmul        st(0),st
+  0000003C: DE C1              faddp       st(1),st
+  0000003E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000041: D9 45 FC           fld         dword ptr [ebp-4]
+  00000044: E8 00 00 00 00     call        __CIsqrt
+  00000049: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004C: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004F: 8B C6              mov         eax,esi
+  00000051: D9 E8              fld1
+  00000053: DE F1              fdivrp      st(1),st
+  00000055: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000058: D9 45 FC           fld         dword ptr [ebp-4]
+  0000005B: D9 C0              fld         st(0)
+  0000005D: D9 45 FC           fld         dword ptr [ebp-4]
+  00000060: DE CA              fmulp       st(2),st
+  00000062: D9 C9              fxch        st(1)
+  00000064: D9 1E              fstp        dword ptr [esi]
+  00000066: D9 45 FC           fld         dword ptr [ebp-4]
+  00000069: D8 C9              fmul        st,st(1)
+  0000006B: D9 5E 04           fstp        dword ptr [esi+4]
+  0000006E: D8 4D FC           fmul        dword ptr [ebp-4]
+  00000071: D9 5E 08           fstp        dword ptr [esi+8]
+  00000074: 5E                 pop         esi
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          79 .text

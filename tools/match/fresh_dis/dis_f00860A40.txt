@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00860A40.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_MenuListPostProcess:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: E8 00 00 00 00     call        _FFX_Field_GetEventStruct
+  0000000D: 0F B7 48 14        movzx       ecx,word ptr [eax+14h]
+  00000011: 83 C4 04           add         esp,4
+  00000014: 66 85 C9           test        cx,cx
+  00000017: 75 08              jne         00000021
+  00000019: B8 01 00 00 00     mov         eax,1
+  0000001E: 5F                 pop         edi
+  0000001F: 5D                 pop         ebp
+  00000020: C3                 ret
+  00000021: 83 F9 02           cmp         ecx,2
+  00000024: 74 0B              je          00000031
+  00000026: 33 C0              xor         eax,eax
+  00000028: 83 F9 04           cmp         ecx,4
+  0000002B: 0F 94 C0           sete        al
+  0000002E: 5F                 pop         edi
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 57                 push        edi
+  00000032: E8 00 00 00 00     call        _FFX_MenuText_GetItemKind
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 83 F8 03           cmp         eax,3
+  0000003D: 75 1A              jne         00000059
+  0000003F: 56                 push        esi
+  00000040: E8 00 00 00 00     call        _FFX_Field_GetGlobalFlags
+  00000045: 8B F0              mov         esi,eax
+  00000047: F6 06 04           test        byte ptr [esi],4
+  0000004A: 74 0C              je          00000058
+  0000004C: 57                 push        edi
+  0000004D: E8 00 00 00 00     call        _FFX_Menu_SetListItemSelect
+  00000052: 83 C4 04           add         esp,4
+  00000055: 80 26 FB           and         byte ptr [esi],0FBh
+  00000058: 5E                 pop         esi
+  00000059: 33 C0              xor         eax,eax
+  0000005B: 5F                 pop         edi
+  0000005C: 5D                 pop         ebp
+  0000005D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5E .text

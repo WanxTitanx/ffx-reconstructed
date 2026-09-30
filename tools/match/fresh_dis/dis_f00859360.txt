@@ -1,0 +1,27 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00859360.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_BattleStopMusic:
+  00000000: E8 00 00 00 00     call        _FFX_Battle_GetMusicTrackIndex
+  00000005: 85 C0              test        eax,eax
+  00000007: 78 09              js          00000012
+  00000009: 50                 push        eax
+  0000000A: E8 00 00 00 00     call        _FFX_Music_StopAndFadeOut
+  0000000F: 83 C4 04           add         esp,4
+  00000012: 6A FF              push        0FFFFFFFFh
+  00000014: E8 00 00 00 00     call        _FFX_Battle_SetMusicTrackIndex
+  00000019: 83 C4 04           add         esp,4
+  0000001C: B8 01 00 00 00     mov         eax,1
+  00000021: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          22 .text

@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DE990.obj
+
+File Type: COFF OBJECT
+
+@FFX_Shader_ResourceList_Clear@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B C1              mov         eax,ecx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000C: 33 FF              xor         edi,edi
+  0000000E: 8D 1C 90           lea         ebx,[eax+edx*4]
+  00000011: 8B 73 04           mov         esi,dword ptr [ebx+4]
+  00000014: 85 F6              test        esi,esi
+  00000016: 74 3E              je          00000056
+  00000018: 3B 7E 08           cmp         edi,dword ptr [esi+8]
+  0000001B: 73 39              jae         00000056
+  0000001D: 8B 76 10           mov         esi,dword ptr [esi+10h]
+  00000020: 8B 34 BE           mov         esi,dword ptr [esi+edi*4]
+  00000023: 85 F6              test        esi,esi
+  00000025: 74 2F              je          00000056
+  00000027: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 74 10              je          0000003E
+  0000002E: 50                 push        eax
+  0000002F: E8 00 00 00 00     call        _FFX_AsyncQ_BacktraceFreeAndHeapFree
+  00000034: 83 C4 04           add         esp,4
+  00000037: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  0000003E: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000041: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000048: E8 00 00 00 00     call        _CloseHandle
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000053: 83 C4 08           add         esp,8
+  00000056: 47                 inc         edi
+  00000057: 83 FF 02           cmp         edi,2
+  0000005A: 7C B5              jl          00000011
+  0000005C: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000005F: 85 C0              test        eax,eax
+  00000061: 74 2A              je          0000008D
+  00000063: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000066: 39 01              cmp         dword ptr [ecx],eax
+  00000068: 75 06              jne         00000070
+  0000006A: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000070: 8B 73 04           mov         esi,dword ptr [ebx+4]
+  00000073: 85 F6              test        esi,esi
+  00000075: 74 0F              je          00000086
+  00000077: 56                 push        esi
+  00000078: E8 00 00 00 00     call        _FFX_Shader_UploadConstants
+  0000007D: 56                 push        esi
+  0000007E: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000083: 83 C4 08           add         esp,8
+  00000086: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  0000008D: 5F                 pop         edi
+  0000008E: 5E                 pop         esi
+  0000008F: 5B                 pop         ebx
+  00000090: 8B E5              mov         esp,ebp
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          94 .text

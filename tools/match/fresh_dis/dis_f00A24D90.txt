@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A24D90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_A24D90@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 46 30 80        test        byte ptr [esi+30h],80h
+  00000007: 74 0C              je          00000015
+  00000009: 8D 46 14           lea         eax,[esi+14h]
+  0000000C: 50                 push        eax
+  0000000D: E8 00 00 00 00     call        _Phyre_Shader_CompilationCleanup
+  00000012: 83 C4 04           add         esp,4
+  00000015: F6 46 54 80        test        byte ptr [esi+54h],80h
+  00000019: 74 0C              je          00000027
+  0000001B: 8D 46 38           lea         eax,[esi+38h]
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _Phyre_Shader_CompilationCleanup
+  00000024: 83 C4 04           add         esp,4
+  00000027: 8B 46 68           mov         eax,dword ptr [esi+68h]
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 74 0A              je          00000038
+  0000002E: FF 30              push        dword ptr [eax]
+  00000030: E8 00 00 00 00     call        _Engine_ResourceHandle_Destructor
+  00000035: 83 C4 04           add         esp,4
+  00000038: C7 46 68 00 00 00  mov         dword ptr [esi+68h],0
+            00
+  0000003F: 5E                 pop         esi
+  00000040: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          41 .text

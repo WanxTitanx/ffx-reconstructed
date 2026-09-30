@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083F050.obj
+
+File Type: COFF OBJECT
+
+_FFX_String_Duplicate:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B CE              mov         ecx,esi
+  00000009: 8D 51 01           lea         edx,[ecx+1]
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 8A 01              mov         al,byte ptr [ecx]
+  00000012: 41                 inc         ecx
+  00000013: 84 C0              test        al,al
+  00000015: 75 F9              jne         00000010
+  00000017: 2B CA              sub         ecx,edx
+  00000019: 8D 41 01           lea         eax,[ecx+1]
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _FFX_Mem_AllocGameArena
+  00000022: 8B D0              mov         edx,eax
+  00000024: 83 C4 04           add         esp,4
+  00000027: 2B D6              sub         edx,esi
+  00000029: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000030: 8A 0E              mov         cl,byte ptr [esi]
+  00000032: 88 0C 32           mov         byte ptr [edx+esi],cl
+  00000035: 8D 76 01           lea         esi,[esi+1]
+  00000038: 84 C9              test        cl,cl
+  0000003A: 75 F4              jne         00000030
+  0000003C: 5E                 pop         esi
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

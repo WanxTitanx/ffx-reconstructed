@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A2A650.obj
+
+File Type: COFF OBJECT
+
+@PBitmapFont_SetTextColor@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: D9 02              fld         dword ptr [edx]
+  00000008: 56                 push        esi
+  00000009: 8B 31              mov         esi,dword ptr [ecx]
+  0000000B: D9 5D F0           fstp        dword ptr [ebp-10h]
+  0000000E: D9 42 04           fld         dword ptr [edx+4]
+  00000011: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000014: D9 42 08           fld         dword ptr [edx+8]
+  00000017: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000001A: D9 E8              fld1
+  0000001C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001F: 85 F6              test        esi,esi
+  00000021: 74 28              je          0000004B
+  00000023: 68 00 00 00 00     push        offset ??_C@_09CPGNEPBB@textColor?$AA@
+  00000028: FF 36              push        dword ptr [esi]
+  0000002A: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000002F: 83 C4 08           add         esp,8
+  00000032: 85 C0              test        eax,eax
+  00000034: 74 15              je          0000004B
+  00000036: 8D 4D F0           lea         ecx,[ebp-10h]
+  00000039: 51                 push        ecx
+  0000003A: 50                 push        eax
+  0000003B: FF 76 04           push        dword ptr [esi+4]
+  0000003E: E8 00 00 00 00     call        _FFX_Phyre_WritePParameterBufferMember
+  00000043: 83 C4 0C           add         esp,0Ch
+  00000046: 5E                 pop         esi
+  00000047: 8B E5              mov         esp,ebp
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: B8 09 00 00 00     mov         eax,9
+  00000050: 5E                 pop         esi
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           E .rdata
+          55 .text

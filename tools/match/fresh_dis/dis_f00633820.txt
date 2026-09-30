@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00633820.obj
+
+File Type: COFF OBJECT
+
+@FFX_AsyncJobQueue_Push@24:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  00000007: 69 DB E8 01 00 00  imul        ebx,ebx,1E8h
+  0000000D: 56                 push        esi
+  0000000E: 57                 push        edi
+  0000000F: 03 D9              add         ebx,ecx
+  00000011: 6A FF              push        0FFFFFFFFh
+  00000013: FF B3 34 02 00 00  push        dword ptr [ebx+234h]
+  00000019: 8B FA              mov         edi,edx
+  0000001B: E8 00 00 00 00     call        _WaitForSingleObject
+  00000020: 6A FF              push        0FFFFFFFFh
+  00000022: FF B3 FC 01 00 00  push        dword ptr [ebx+1FCh]
+  00000028: E8 00 00 00 00     call        _WaitForSingleObject
+  0000002D: 8B 83 F0 01 00 00  mov         eax,dword ptr [ebx+1F0h]
+  00000033: FF 8B F8 01 00 00  dec         dword ptr [ebx+1F8h]
+  00000039: 6A 00              push        0
+  0000003B: 48                 dec         eax
+  0000003C: 83 E0 07           and         eax,7
+  0000003F: 6A 01              push        1
+  00000041: FF B3 FC 01 00 00  push        dword ptr [ebx+1FCh]
+  00000047: 89 83 F0 01 00 00  mov         dword ptr [ebx+1F0h],eax
+  0000004D: 8B B4 83 D0 01 00  mov         esi,dword ptr [ebx+eax*4+1D0h]
+            00
+  00000054: E8 00 00 00 00     call        _ReleaseSemaphore
+  00000059: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000005C: 8D 56 20           lea         edx,[esi+20h]
+  0000005F: 8D 4E 24           lea         ecx,[esi+24h]
+  00000062: 89 02              mov         dword ptr [edx],eax
+  00000064: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000067: 89 01              mov         dword ptr [ecx],eax
+  00000069: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006C: 89 7E 0C           mov         dword ptr [esi+0Ch],edi
+  0000006F: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000072: 89 56 18           mov         dword ptr [esi+18h],edx
+  00000075: 89 4E 1C           mov         dword ptr [esi+1Ch],ecx
+  00000078: C7 46 10 03 00 00  mov         dword ptr [esi+10h],3
+            00
+  0000007F: 6A FF              push        0FFFFFFFFh
+  00000081: FF B3 2C 02 00 00  push        dword ptr [ebx+22Ch]
+  00000087: E8 00 00 00 00     call        _WaitForSingleObject
+  0000008C: 8B 83 24 02 00 00  mov         eax,dword ptr [ebx+224h]
+  00000092: 48                 dec         eax
+  00000093: 83 E0 07           and         eax,7
+  00000096: 6A 00              push        0
+  00000098: 89 83 24 02 00 00  mov         dword ptr [ebx+224h],eax
+  0000009E: 89 B4 83 00 02 00  mov         dword ptr [ebx+eax*4+200h],esi
+            00
+  000000A5: FF 83 28 02 00 00  inc         dword ptr [ebx+228h]
+  000000AB: 6A 01              push        1
+  000000AD: FF B3 2C 02 00 00  push        dword ptr [ebx+22Ch]
+  000000B3: E8 00 00 00 00     call        _ReleaseSemaphore
+  000000B8: 6A 00              push        0
+  000000BA: 6A 01              push        1
+  000000BC: FF B3 30 02 00 00  push        dword ptr [ebx+230h]
+  000000C2: E8 00 00 00 00     call        _ReleaseSemaphore
+  000000C7: 83 C4 3C           add         esp,3Ch
+  000000CA: 5F                 pop         edi
+  000000CB: 5E                 pop         esi
+  000000CC: 5B                 pop         ebx
+  000000CD: 5D                 pop         ebp
+  000000CE: C2 10 00           ret         10h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          D1 .text

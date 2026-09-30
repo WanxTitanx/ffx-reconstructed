@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009E2690.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_9E2690@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B 3A              mov         edi,dword ptr [edx]
+  00000005: FF 72 04           push        dword ptr [edx+4]
+  00000008: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000000E: 57                 push        edi
+  0000000F: 8B F1              mov         esi,ecx
+  00000011: E8 00 00 00 00     call        _Phyre_AllocCopyIntArray_dup
+  00000016: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000019: 8B D8              mov         ebx,eax
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: 3B CB              cmp         ecx,ebx
+  00000020: 74 0E              je          00000030
+  00000022: 83 3E 00           cmp         dword ptr [esi],0
+  00000025: 7C 09              jl          00000030
+  00000027: 51                 push        ecx
+  00000028: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002D: 83 C4 04           add         esp,4
+  00000030: 89 3E              mov         dword ptr [esi],edi
+  00000032: 5F                 pop         edi
+  00000033: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000036: 8B C6              mov         eax,esi
+  00000038: 5E                 pop         esi
+  00000039: 5B                 pop         ebx
+  0000003A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3B .text

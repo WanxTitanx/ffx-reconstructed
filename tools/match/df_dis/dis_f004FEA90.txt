@@ -1,0 +1,178 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004FEA90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_SceneParamBuffer_SetupData@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 84 00 00 00  sub         esp,84h
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: 53                 push        ebx
+  0000000D: 56                 push        esi
+  0000000E: 8B F1              mov         esi,ecx
+  00000010: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  00000013: 8B 40 10           mov         eax,dword ptr [eax+10h]
+  00000016: 57                 push        edi
+  00000017: 8B FA              mov         edi,edx
+  00000019: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001C: 8B 9F B0 00 00 00  mov         ebx,dword ptr [edi+0B0h]
+  00000022: 8D 47 30           lea         eax,[edi+30h]
+  00000025: 50                 push        eax
+  00000026: 56                 push        esi
+  00000027: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  0000002A: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  0000002F: D9 87 B8 00 00 00  fld         dword ptr [edi+0B8h]
+  00000035: DD 1C 24           fstp        qword ptr [esp]
+  00000038: 83 EC 08           sub         esp,8
+  0000003B: D9 87 B4 00 00 00  fld         dword ptr [edi+0B4h]
+  00000041: DD 1C 24           fstp        qword ptr [esp]
+  00000044: 56                 push        esi
+  00000045: E8 00 00 00 00     call        _Phyre_Camera_ComputeProjectionMatrix
+  0000004A: D9 07              fld         dword ptr [edi]
+  0000004C: D9 9E 80 00 00 00  fstp        dword ptr [esi+80h]
+  00000052: 8D 86 80 00 00 00  lea         eax,[esi+80h]
+  00000058: D9 47 04           fld         dword ptr [edi+4]
+  0000005B: 50                 push        eax
+  0000005C: D9 9E 84 00 00 00  fstp        dword ptr [esi+84h]
+  00000062: 8D 45 BC           lea         eax,[ebp-44h]
+  00000065: D9 47 08           fld         dword ptr [edi+8]
+  00000068: 50                 push        eax
+  00000069: D9 9E 88 00 00 00  fstp        dword ptr [esi+88h]
+  0000006F: D9 47 0C           fld         dword ptr [edi+0Ch]
+  00000072: D9 9E 8C 00 00 00  fstp        dword ptr [esi+8Ch]
+  00000078: D9 47 10           fld         dword ptr [edi+10h]
+  0000007B: D9 9E 90 00 00 00  fstp        dword ptr [esi+90h]
+  00000081: D9 47 14           fld         dword ptr [edi+14h]
+  00000084: D9 9E 94 00 00 00  fstp        dword ptr [esi+94h]
+  0000008A: D9 47 18           fld         dword ptr [edi+18h]
+  0000008D: D9 9E 98 00 00 00  fstp        dword ptr [esi+98h]
+  00000093: D9 47 1C           fld         dword ptr [edi+1Ch]
+  00000096: D9 9E 9C 00 00 00  fstp        dword ptr [esi+9Ch]
+  0000009C: D9 47 20           fld         dword ptr [edi+20h]
+  0000009F: D9 9E A0 00 00 00  fstp        dword ptr [esi+0A0h]
+  000000A5: D9 47 24           fld         dword ptr [edi+24h]
+  000000A8: D9 9E A4 00 00 00  fstp        dword ptr [esi+0A4h]
+  000000AE: D9 47 28           fld         dword ptr [edi+28h]
+  000000B1: D9 9E A8 00 00 00  fstp        dword ptr [esi+0A8h]
+  000000B7: D9 47 2C           fld         dword ptr [edi+2Ch]
+  000000BA: D9 9E AC 00 00 00  fstp        dword ptr [esi+0ACh]
+  000000C0: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  000000C5: 8D 45 BC           lea         eax,[ebp-44h]
+  000000C8: 50                 push        eax
+  000000C9: 8D 85 7C FF FF FF  lea         eax,[ebp-84h]
+  000000CF: 56                 push        esi
+  000000D0: 50                 push        eax
+  000000D1: E8 00 00 00 00     call        _Phyre_Matrix4x4_ComposeMultiply
+  000000D6: 50                 push        eax
+  000000D7: 8D 46 40           lea         eax,[esi+40h]
+  000000DA: 50                 push        eax
+  000000DB: E8 00 00 00 00     call        _Phyre_PMatrix4_copy16f
+  000000E0: D9 EE              fldz
+  000000E2: 83 C4 30           add         esp,30h
+  000000E5: 85 DB              test        ebx,ebx
+  000000E7: 74 13              je          000000FC
+  000000E9: 6A 30              push        30h
+  000000EB: DD D8              fstp        st(0)
+  000000ED: 8D 45 8C           lea         eax,[ebp-74h]
+  000000F0: 53                 push        ebx
+  000000F1: 50                 push        eax
+  000000F2: E8 00 00 00 00     call        _qmemcpy
+  000000F7: 83 C4 0C           add         esp,0Ch
+  000000FA: EB 42              jmp         0000013E
+  000000FC: D9 E8              fld1
+  000000FE: 8D 45 BC           lea         eax,[ebp-44h]
+  00000101: D9 55 BC           fst         dword ptr [ebp-44h]
+  00000104: 50                 push        eax
+  00000105: D9 55 D0           fst         dword ptr [ebp-30h]
+  00000108: 8D 45 8C           lea         eax,[ebp-74h]
+  0000010B: D9 55 E4           fst         dword ptr [ebp-1Ch]
+  0000010E: 50                 push        eax
+  0000010F: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000112: D9 55 C0           fst         dword ptr [ebp-40h]
+  00000115: D9 55 C4           fst         dword ptr [ebp-3Ch]
+  00000118: D9 55 C8           fst         dword ptr [ebp-38h]
+  0000011B: D9 55 CC           fst         dword ptr [ebp-34h]
+  0000011E: D9 55 D4           fst         dword ptr [ebp-2Ch]
+  00000121: D9 55 D8           fst         dword ptr [ebp-28h]
+  00000124: D9 55 DC           fst         dword ptr [ebp-24h]
+  00000127: D9 55 E0           fst         dword ptr [ebp-20h]
+  0000012A: D9 55 E8           fst         dword ptr [ebp-18h]
+  0000012D: D9 55 EC           fst         dword ptr [ebp-14h]
+  00000130: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000133: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000136: E8 00 00 00 00     call        _Matrix4x4_CopyTransposed
+  0000013B: 83 C4 08           add         esp,8
+  0000013E: D9 45 8C           fld         dword ptr [ebp-74h]
+  00000141: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000144: D9 9E B0 00 00 00  fstp        dword ptr [esi+0B0h]
+  0000014A: D9 45 90           fld         dword ptr [ebp-70h]
+  0000014D: D9 9E B4 00 00 00  fstp        dword ptr [esi+0B4h]
+  00000153: D9 45 94           fld         dword ptr [ebp-6Ch]
+  00000156: D9 9E B8 00 00 00  fstp        dword ptr [esi+0B8h]
+  0000015C: D9 45 98           fld         dword ptr [ebp-68h]
+  0000015F: D9 9E BC 00 00 00  fstp        dword ptr [esi+0BCh]
+  00000165: D9 45 9C           fld         dword ptr [ebp-64h]
+  00000168: D9 9E C0 00 00 00  fstp        dword ptr [esi+0C0h]
+  0000016E: D9 45 A0           fld         dword ptr [ebp-60h]
+  00000171: D9 9E C4 00 00 00  fstp        dword ptr [esi+0C4h]
+  00000177: D9 45 A4           fld         dword ptr [ebp-5Ch]
+  0000017A: D9 9E C8 00 00 00  fstp        dword ptr [esi+0C8h]
+  00000180: D9 45 A8           fld         dword ptr [ebp-58h]
+  00000183: D9 9E CC 00 00 00  fstp        dword ptr [esi+0CCh]
+  00000189: D9 45 AC           fld         dword ptr [ebp-54h]
+  0000018C: D9 9E D0 00 00 00  fstp        dword ptr [esi+0D0h]
+  00000192: D9 45 B0           fld         dword ptr [ebp-50h]
+  00000195: D9 9E D4 00 00 00  fstp        dword ptr [esi+0D4h]
+  0000019B: D9 45 B4           fld         dword ptr [ebp-4Ch]
+  0000019E: D9 9E D8 00 00 00  fstp        dword ptr [esi+0D8h]
+  000001A4: D9 45 B8           fld         dword ptr [ebp-48h]
+  000001A7: D9 9E DC 00 00 00  fstp        dword ptr [esi+0DCh]
+  000001AD: D9 87 B4 00 00 00  fld         dword ptr [edi+0B4h]
+  000001B3: D9 9E E0 00 00 00  fstp        dword ptr [esi+0E0h]
+  000001B9: D9 87 B8 00 00 00  fld         dword ptr [edi+0B8h]
+  000001BF: D9 9E E4 00 00 00  fstp        dword ptr [esi+0E4h]
+  000001C5: DB 45 FC           fild        dword ptr [ebp-4]
+  000001C8: 85 C0              test        eax,eax
+  000001CA: 79 06              jns         000001D2
+  000001CC: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000001D2: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  000001D6: D9 9E E8 00 00 00  fstp        dword ptr [esi+0E8h]
+  000001DC: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000001DF: 7D 06              jge         000001E7
+  000001E1: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000400000]
+  000001E7: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000001EA: D9 9E EC 00 00 00  fstp        dword ptr [esi+0ECh]
+  000001F0: 5F                 pop         edi
+  000001F1: D9 40 04           fld         dword ptr [eax+4]
+  000001F4: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000001F7: D9 40 08           fld         dword ptr [eax+8]
+  000001FA: D9 5D 08           fstp        dword ptr [ebp+8]
+  000001FD: D9 00              fld         dword ptr [eax]
+  000001FF: D9 9E F0 00 00 00  fstp        dword ptr [esi+0F0h]
+  00000205: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000208: D9 9E F4 00 00 00  fstp        dword ptr [esi+0F4h]
+  0000020E: D9 45 08           fld         dword ptr [ebp+8]
+  00000211: D9 9E F8 00 00 00  fstp        dword ptr [esi+0F8h]
+  00000217: D9 EE              fldz
+  00000219: D9 96 FC 00 00 00  fst         dword ptr [esi+0FCh]
+  0000021F: D9 80 D0 00 00 00  fld         dword ptr [eax+0D0h]
+  00000225: D9 9E 00 01 00 00  fstp        dword ptr [esi+100h]
+  0000022B: D9 96 04 01 00 00  fst         dword ptr [esi+104h]
+  00000231: D9 96 08 01 00 00  fst         dword ptr [esi+108h]
+  00000237: D9 9E 0C 01 00 00  fstp        dword ptr [esi+10Ch]
+  0000023D: 5E                 pop         esi
+  0000023E: 5B                 pop         ebx
+  0000023F: 8B E5              mov         esp,ebp
+  00000241: 5D                 pop         ebp
+  00000242: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+         245 .text

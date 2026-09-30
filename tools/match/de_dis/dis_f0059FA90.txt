@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0059FA90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ChunkAllocatorPair_Dtor@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 7E 08           mov         edi,dword ptr [esi+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 74 41              je          0000004C
+  0000000B: 3B 7E 04           cmp         edi,dword ptr [esi+4]
+  0000000E: 74 3C              je          0000004C
+  00000010: 57                 push        edi
+  00000011: E8 00 00 00 00     call        _PChunkAllocator_DtorCleanup
+  00000016: 8D 47 08           lea         eax,[edi+8]
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll
+  0000001F: 57                 push        edi
+  00000020: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000025: 83 C4 0C           add         esp,0Ch
+  00000028: 83 3E 02           cmp         dword ptr [esi],2
+  0000002B: 75 1F              jne         0000004C
+  0000002D: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000030: 85 FF              test        edi,edi
+  00000032: 74 18              je          0000004C
+  00000034: 57                 push        edi
+  00000035: E8 00 00 00 00     call        _PChunkAllocator_DtorCleanup
+  0000003A: 8D 47 08           lea         eax,[edi+8]
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll
+  00000043: 57                 push        edi
+  00000044: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000049: 83 C4 0C           add         esp,0Ch
+  0000004C: 5F                 pop         edi
+  0000004D: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000054: 5E                 pop         esi
+  00000055: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          56 .text

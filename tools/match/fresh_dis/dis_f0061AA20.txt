@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061AA20.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PApplication_InputBufferAlloc@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 6A 18              push        18h
+  00000006: C6 07 00           mov         byte ptr [edi],0
+  00000009: C7 47 08 00 00 00  mov         dword ptr [edi+8],0
+            00
+  00000010: C7 47 0C 00 00 00  mov         dword ptr [edi+0Ch],0
+            00
+  00000017: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  0000001E: C7 47 14 00 00 00  mov         dword ptr [edi+14h],0
+            00
+  00000025: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  0000002A: 8B F0              mov         esi,eax
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 85 F6              test        esi,esi
+  00000031: 74 31              je          00000064
+  00000033: 68 00 00 01 00     push        10000h
+  00000038: E8 00 00 00 00     call        _FFX_GameAllocWrapper
+  0000003D: 89 06              mov         dword ptr [esi],eax
+  0000003F: 83 C4 04           add         esp,4
+  00000042: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000049: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000050: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000057: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000005E: 89 77 18           mov         dword ptr [edi+18h],esi
+  00000061: 5F                 pop         edi
+  00000062: 5E                 pop         esi
+  00000063: C3                 ret
+  00000064: C7 47 18 00 00 00  mov         dword ptr [edi+18h],0
+            00
+  0000006B: 5F                 pop         edi
+  0000006C: 5E                 pop         esi
+  0000006D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6E .text

@@ -1,0 +1,17 @@
+EbpMessageAdrs (0x23CBD60) — exhaustive site census, find_bytes("60 BD 3C 02")
+==========================================================================
+8 hits total = 1 write + 7 reads. Constant materializes nowhere else.
+
+WRITE (sole):   0x8731AA  FFX_Event_LoadObjResources   — only when locale .bin sidecar exists
+READ (live):    0x86B127  FFX_Field_ResolveStringById  — fallback when record.off==0
+READ (dead):    0x86BA02  FFX_EventString_ResolveAltOff (0 xrefs)
+READ (live):    0x86BA48  FFX_EventString_ResolveAltOffSlot13 — fallback when offAlt==0
+READ (dead):    0x86BE71  FFX_EventString_ResolvePrimaryOff (0 xrefs)
+READ (live):    0x86BEEA  FFX_EventString_ResolveById  — fallback
+READ (dead):    0x86BF39  FFX_EventString_ResolveByIdDual (0 xrefs)
+READ (dead):    0x86BF4E  FFX_EventString_ResolveByIdDual (0 xrefs)
+
+All 7 readers: 'mov reg,EbpMessageAdrs; movzx r,word[reg+id*8(+4)]; add; ret'
+— pointer dereferenced in-register only, NEVER stored onward.
+=> CONFIRMED: no second post-free consumer. Hazard: written on .bin presence,
+never cleared at unload/reset => dangling for modded zero-offset records.

@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042FCB0.obj
+
+File Type: COFF OBJECT
+
+_Engine_AlignedRealloc:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 83 C0 14           add         eax,14h
+  0000000C: 56                 push        esi
+  0000000D: 50                 push        eax
+  0000000E: 85 C9              test        ecx,ecx
+  00000010: 74 37              je          00000049
+  00000012: 83 CE FF           or          esi,0FFFFFFFFh
+  00000015: 8B C6              mov         eax,esi
+  00000017: 2B C1              sub         eax,ecx
+  00000019: 83 E0 03           and         eax,3
+  0000001C: FF 74 08 F9        push        dword ptr [eax+ecx-7]
+  00000020: E8 00 00 00 00     call        _Engine_ThreadSafeHeapAllocThunk
+  00000025: 8B D0              mov         edx,eax
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 85 D2              test        edx,edx
+  0000002C: 74 42              je          00000070
+  0000002E: B9 FC FF FF FF     mov         ecx,0FFFFFFFCh
+  00000033: 2B CA              sub         ecx,edx
+  00000035: 83 E1 0F           and         ecx,0Fh
+  00000038: 8D 42 04           lea         eax,[edx+4]
+  0000003B: 03 C1              add         eax,ecx
+  0000003D: 2B F0              sub         esi,eax
+  0000003F: 83 E6 03           and         esi,3
+  00000042: 89 54 06 F9        mov         dword ptr [esi+eax-7],edx
+  00000046: 5E                 pop         esi
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+  00000049: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000004E: 83 C4 04           add         esp,4
+  00000051: 85 C0              test        eax,eax
+  00000053: 74 20              je          00000075
+  00000055: B9 FC FF FF FF     mov         ecx,0FFFFFFFCh
+  0000005A: 2B C8              sub         ecx,eax
+  0000005C: 83 E1 0F           and         ecx,0Fh
+  0000005F: 8D 50 04           lea         edx,[eax+4]
+  00000062: 03 D1              add         edx,ecx
+  00000064: 83 C9 FF           or          ecx,0FFFFFFFFh
+  00000067: 2B CA              sub         ecx,edx
+  00000069: 83 E1 03           and         ecx,3
+  0000006C: 89 44 11 F9        mov         dword ptr [ecx+edx-7],eax
+  00000070: 8B C2              mov         eax,edx
+  00000072: 5E                 pop         esi
+  00000073: 5D                 pop         ebp
+  00000074: C3                 ret
+  00000075: 33 C0              xor         eax,eax
+  00000077: 5E                 pop         esi
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7A .text

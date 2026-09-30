@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069B900.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Map_ContainsHash@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 52                 push        edx
+  0000000A: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000000D: E8 00 00 00 00     call        _FFX_Resource_Djb2NameHash
+  00000012: 8B 53 18           mov         edx,dword ptr [ebx+18h]
+  00000015: 6A FF              push        0FFFFFFFFh
+  00000017: FF 32              push        dword ptr [edx]
+  00000019: 8B F8              mov         edi,eax
+  0000001B: E8 00 00 00 00     call        _WaitForSingleObject
+  00000020: 8B 5B 10           mov         ebx,dword ptr [ebx+10h]
+  00000023: 83 C4 0C           add         esp,0Ch
+  00000026: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000029: 8B F3              mov         esi,ebx
+  0000002B: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000002F: 75 1D              jne         0000004E
+  00000031: 39 78 10           cmp         dword ptr [eax+10h],edi
+  00000034: 72 06              jb          0000003C
+  00000036: 8B F0              mov         esi,eax
+  00000038: 8B 00              mov         eax,dword ptr [eax]
+  0000003A: EB 03              jmp         0000003F
+  0000003C: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000003F: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000043: 74 EC              je          00000031
+  00000045: 3B F3              cmp         esi,ebx
+  00000047: 74 05              je          0000004E
+  00000049: 3B 7E 10           cmp         edi,dword ptr [esi+10h]
+  0000004C: 73 02              jae         00000050
+  0000004E: 8B F3              mov         esi,ebx
+  00000050: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000053: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  00000056: FF 30              push        dword ptr [eax]
+  00000058: E8 00 00 00 00     call        _ReleaseMutex
+  0000005D: 83 C4 04           add         esp,4
+  00000060: 33 C0              xor         eax,eax
+  00000062: 3B F3              cmp         esi,ebx
+  00000064: 5F                 pop         edi
+  00000065: 5E                 pop         esi
+  00000066: 0F 95 C0           setne       al
+  00000069: 5B                 pop         ebx
+  0000006A: 8B E5              mov         esp,ebp
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6E .text

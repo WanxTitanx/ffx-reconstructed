@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041A980.obj
+
+File Type: COFF OBJECT
+
+_PhyreVideo_WeightedSAD_MMX_Dispatch:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000006: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000009: 8D 55 14           lea         edx,[ebp+14h]
+  0000000C: 52                 push        edx
+  0000000D: C1 E1 04           shl         ecx,4
+  00000010: 8D 55 10           lea         edx,[ebp+10h]
+  00000013: 52                 push        edx
+  00000014: 81 C1 00 00 00 00  add         ecx,offset _g_VideoUnkVar_B812D0
+  0000001A: 51                 push        ecx
+  0000001B: C1 E0 04           shl         eax,4
+  0000001E: 05 00 00 00 00     add         eax,offset _g_VideoUnkVar_B812D0
+  00000023: 50                 push        eax
+  00000024: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000027: FF 75 18           push        dword ptr [ebp+18h]
+  0000002A: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: E8 00 00 00 00     call        _PhyreImage_WeightedSAD_MMX
+  00000035: 8B 4D 20           mov         ecx,dword ptr [ebp+20h]
+  00000038: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000003B: 89 01              mov         dword ptr [ecx],eax
+  0000003D: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000040: 0F AF C9           imul        ecx,ecx
+  00000043: C1 E9 04           shr         ecx,4
+  00000046: 83 C4 20           add         esp,20h
+  00000049: 2B C1              sub         eax,ecx
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

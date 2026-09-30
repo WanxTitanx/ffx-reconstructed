@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005E2A70.obj
+
+File Type: COFF OBJECT
+
+@Phyre_physics_integrate@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 53                 push        ebx
+  00000005: E8 00 00 00 00     call        _Phyre_Singleton_GetInstance
+  0000000A: 8B 73 4C           mov         esi,dword ptr [ebx+4Ch]
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 F6              test        esi,esi
+  00000012: 74 1E              je          00000032
+  00000014: 57                 push        edi
+  00000015: 8B 3E              mov         edi,dword ptr [esi]
+  00000017: 56                 push        esi
+  00000018: 53                 push        ebx
+  00000019: E8 00 00 00 00     call        _Phyre_Misc_601880
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 85 C0              test        eax,eax
+  00000023: 75 0C              jne         00000031
+  00000025: 89 86 CC 00 00 00  mov         dword ptr [esi+0CCh],eax
+  0000002B: 8B F7              mov         esi,edi
+  0000002D: 85 FF              test        edi,edi
+  0000002F: 75 E4              jne         00000015
+  00000031: 5F                 pop         edi
+  00000032: 53                 push        ebx
+  00000033: E8 00 00 00 00     call        _Phyre_skeleton_update
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 5E                 pop         esi
+  0000003C: 5B                 pop         ebx
+  0000003D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3E .text

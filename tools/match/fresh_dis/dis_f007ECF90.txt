@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007ECF90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_7ECF90:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: FF 76 18           push        dword ptr [esi+18h]
+  0000000A: E8 00 00 00 00     call        _Std_IdentityFunc
+  0000000F: 8B D0              mov         edx,eax
+  00000011: 83 C4 04           add         esp,4
+  00000014: 81 FA 00 00 10 00  cmp         edx,100000h
+  0000001A: 72 13              jb          0000002F
+  0000001C: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000001F: 8B 0C 8A           mov         ecx,dword ptr [edx+ecx*4]
+  00000022: 2B F1              sub         esi,ecx
+  00000024: F7 DE              neg         esi
+  00000026: 1B F6              sbb         esi,esi
+  00000028: 23 F1              and         esi,ecx
+  0000002A: 8B C6              mov         eax,esi
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C3                 ret
+  0000002F: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000032: 8D 04 82           lea         eax,[edx+eax*4]
+  00000035: 8B 04 30           mov         eax,dword ptr [eax+esi]
+  00000038: 85 C0              test        eax,eax
+  0000003A: 74 02              je          0000003E
+  0000003C: 03 C6              add         eax,esi
+  0000003E: 5E                 pop         esi
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          41 .text

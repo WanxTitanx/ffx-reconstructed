@@ -1,0 +1,119 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A234E0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_A234E0@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 56                 push        esi
+  00000008: 8B 73 5C           mov         esi,dword ptr [ebx+5Ch]
+  0000000B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000E: 85 F6              test        esi,esi
+  00000010: 75 0D              jne         0000001F
+  00000012: 5E                 pop         esi
+  00000013: B8 01 00 00 00     mov         eax,1
+  00000018: 5B                 pop         ebx
+  00000019: 8B E5              mov         esp,ebp
+  0000001B: 5D                 pop         ebp
+  0000001C: C2 04 00           ret         4
+  0000001F: 80 7E 04 00        cmp         byte ptr [esi+4],0
+  00000023: 75 ED              jne         00000012
+  00000025: 8B 36              mov         esi,dword ptr [esi]
+  00000027: 85 F6              test        esi,esi
+  00000029: 74 E7              je          00000012
+  0000002B: 39 56 1C           cmp         dword ptr [esi+1Ch],edx
+  0000002E: 75 08              jne         00000038
+  00000030: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000033: 39 4E 20           cmp         dword ptr [esi+20h],ecx
+  00000036: 74 3B              je          00000073
+  00000038: 56                 push        esi
+  00000039: E8 00 00 00 00     call        _Phyre_PVideoTexture_HasTextureFlag70
+  0000003E: 83 C4 04           add         esp,4
+  00000041: 85 C0              test        eax,eax
+  00000043: 74 11              je          00000056
+  00000045: 56                 push        esi
+  00000046: E8 00 00 00 00     call        _PTextureDescription_ReleaseResources
+  0000004B: 83 C4 04           add         esp,4
+  0000004E: 85 C0              test        eax,eax
+  00000050: 0F 85 8D 00 00 00  jne         000000E3
+  00000056: 6A 00              push        0
+  00000058: FF 36              push        dword ptr [esi]
+  0000005A: FF 75 08           push        dword ptr [ebp+8]
+  0000005D: FF 75 FC           push        dword ptr [ebp-4]
+  00000060: 56                 push        esi
+  00000061: E8 00 00 00 00     call        _PTextureDescription_ValidateAndSetConfig
+  00000066: 83 C4 14           add         esp,14h
+  00000069: 85 C0              test        eax,eax
+  0000006B: 75 76              jne         000000E3
+  0000006D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000070: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000073: 8B 43 60           mov         eax,dword ptr [ebx+60h]
+  00000076: 83 C3 60           add         ebx,60h
+  00000079: 57                 push        edi
+  0000007A: 33 FF              xor         edi,edi
+  0000007C: 85 C0              test        eax,eax
+  0000007E: 74 5D              je          000000DD
+  00000080: 80 78 04 00        cmp         byte ptr [eax+4],0
+  00000084: 75 57              jne         000000DD
+  00000086: 8B 30              mov         esi,dword ptr [eax]
+  00000088: 85 F6              test        esi,esi
+  0000008A: 74 51              je          000000DD
+  0000008C: 39 56 1C           cmp         dword ptr [esi+1Ch],edx
+  0000008F: 75 05              jne         00000096
+  00000091: 39 4E 20           cmp         dword ptr [esi+20h],ecx
+  00000094: 74 37              je          000000CD
+  00000096: 56                 push        esi
+  00000097: E8 00 00 00 00     call        _Phyre_PVideoTexture_HasTextureFlag70
+  0000009C: 83 C4 04           add         esp,4
+  0000009F: 85 C0              test        eax,eax
+  000000A1: 74 0D              je          000000B0
+  000000A3: 56                 push        esi
+  000000A4: E8 00 00 00 00     call        _PTextureDescription_ReleaseResources
+  000000A9: 83 C4 04           add         esp,4
+  000000AC: 85 C0              test        eax,eax
+  000000AE: 75 32              jne         000000E2
+  000000B0: 6A 00              push        0
+  000000B2: FF 36              push        dword ptr [esi]
+  000000B4: FF 75 08           push        dword ptr [ebp+8]
+  000000B7: FF 75 FC           push        dword ptr [ebp-4]
+  000000BA: 56                 push        esi
+  000000BB: E8 00 00 00 00     call        _PTextureDescription_ValidateAndSetConfig
+  000000C0: 83 C4 14           add         esp,14h
+  000000C3: 85 C0              test        eax,eax
+  000000C5: 75 1B              jne         000000E2
+  000000C7: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000CA: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000CD: 47                 inc         edi
+  000000CE: 83 FF 02           cmp         edi,2
+  000000D1: 73 18              jae         000000EB
+  000000D3: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  000000D6: 83 C3 04           add         ebx,4
+  000000D9: 85 C0              test        eax,eax
+  000000DB: 75 A3              jne         00000080
+  000000DD: B8 01 00 00 00     mov         eax,1
+  000000E2: 5F                 pop         edi
+  000000E3: 5E                 pop         esi
+  000000E4: 5B                 pop         ebx
+  000000E5: 8B E5              mov         esp,ebp
+  000000E7: 5D                 pop         ebp
+  000000E8: C2 04 00           ret         4
+  000000EB: 5F                 pop         edi
+  000000EC: 5E                 pop         esi
+  000000ED: 33 C0              xor         eax,eax
+  000000EF: 5B                 pop         ebx
+  000000F0: 8B E5              mov         esp,ebp
+  000000F2: 5D                 pop         ebp
+  000000F3: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          F6 .text

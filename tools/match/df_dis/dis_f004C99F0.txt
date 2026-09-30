@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C99F0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_PShadowSplit_DestroyAndFree@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8D 46 44           lea         eax,[esi+44h]
+  00000006: 50                 push        eax
+  00000007: E8 00 00 00 00     call        _PShaderType_Dtor
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  00000013: 7C 10              jl          00000025
+  00000015: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000018: 85 C0              test        eax,eax
+  0000001A: 74 09              je          00000025
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000022: 83 C4 04           add         esp,4
+  00000025: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002C: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000033: 5E                 pop         esi
+  00000034: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          35 .text

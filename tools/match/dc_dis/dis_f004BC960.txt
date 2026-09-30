@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004BC960.obj
+
+File Type: COFF OBJECT
+
+_PShader_DestroyQueueEntryArray:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 85 DB              test        ebx,ebx
+  00000009: 74 28              je          00000033
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 16              je          00000029
+  00000013: 56                 push        esi
+  00000014: 8B F3              mov         esi,ebx
+  00000016: 56                 push        esi
+  00000017: E8 00 00 00 00     call        _Phyre_Shader_BuildCommandBuffer
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 81 C6 54 02 00 00  add         esi,254h
+  00000025: 4F                 dec         edi
+  00000026: 75 EE              jne         00000016
+  00000028: 5E                 pop         esi
+  00000029: 53                 push        ebx
+  0000002A: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002F: 83 C4 04           add         esp,4
+  00000032: 5F                 pop         edi
+  00000033: 5B                 pop         ebx
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          36 .text

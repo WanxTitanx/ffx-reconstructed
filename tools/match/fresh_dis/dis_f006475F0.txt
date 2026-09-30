@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006475F0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_EndianSwapBuffer12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 57                 push        edi
+  00000007: 8D 78 0C           lea         edi,[eax+0Ch]
+  0000000A: 3B C7              cmp         eax,edi
+  0000000C: 73 31              jae         0000003F
+  0000000E: 56                 push        esi
+  0000000F: 90                 nop
+  00000010: 8B 10              mov         edx,dword ptr [eax]
+  00000012: 8B F2              mov         esi,edx
+  00000014: C1 E6 10           shl         esi,10h
+  00000017: 8B CA              mov         ecx,edx
+  00000019: 81 E1 00 FF 00 00  and         ecx,0FF00h
+  0000001F: 0B F1              or          esi,ecx
+  00000021: 0F B6 48 03        movzx       ecx,byte ptr [eax+3]
+  00000025: C1 EA 08           shr         edx,8
+  00000028: C1 E6 08           shl         esi,8
+  0000002B: 81 E2 00 FF 00 00  and         edx,0FF00h
+  00000031: 0B F2              or          esi,edx
+  00000033: 0B F1              or          esi,ecx
+  00000035: 89 30              mov         dword ptr [eax],esi
+  00000037: 83 C0 04           add         eax,4
+  0000003A: 3B C7              cmp         eax,edi
+  0000003C: 72 D2              jb          00000010
+  0000003E: 5E                 pop         esi
+  0000003F: B8 1C 00 00 00     mov         eax,1Ch
+  00000044: 5F                 pop         edi
+  00000045: 5D                 pop         ebp
+  00000046: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          47 .text

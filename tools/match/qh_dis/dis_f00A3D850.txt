@@ -1,0 +1,81 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A3D850.obj
+
+File Type: COFF OBJECT
+
+@sub_A3D850@24:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B FA              mov         edi,edx
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 85 FF              test        edi,edi
+  0000000B: 75 09              jne         00000016
+  0000000D: 5F                 pop         edi
+  0000000E: 8D 42 05           lea         eax,[edx+5]
+  00000011: 5E                 pop         esi
+  00000012: 5D                 pop         ebp
+  00000013: C2 10 00           ret         10h
+  00000016: 6A 00              push        0
+  00000018: 57                 push        edi
+  00000019: E8 00 00 00 00     call        _IggyPlayerCreateFromFileAndPlay
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 89 06              mov         dword ptr [esi],eax
+  00000023: 85 C0              test        eax,eax
+  00000025: 75 0B              jne         00000032
+  00000027: 5F                 pop         edi
+  00000028: B8 09 00 00 00     mov         eax,9
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C2 10 00           ret         10h
+  00000032: 53                 push        ebx
+  00000033: 50                 push        eax
+  00000034: E8 00 00 00 00     call        _IggyPlayerProperties
+  00000039: 8B D8              mov         ebx,eax
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 85 DB              test        ebx,ebx
+  00000040: 74 42              je          00000084
+  00000042: 57                 push        edi
+  00000043: 68 00 00 00 00     push        offset ??_C@_0O@GAOEGGNP@Playing?3?5?$CFs?3?6?$AA@
+  00000048: 6A 02              push        2
+  0000004A: E8 00 00 00 00     call        _Phyre_DebugPrintf
+  0000004F: FF 33              push        dword ptr [ebx]
+  00000051: 68 00 00 00 00     push        offset ??_C@_0CA@DBPKGBJJ@?7Movie?5width?5?$CIin?5pixels?$CJ?5?5?3?5?$CFd?6?$AA@
+  00000056: 6A 02              push        2
+  00000058: E8 00 00 00 00     call        _Phyre_DebugPrintf
+  0000005D: FF 73 04           push        dword ptr [ebx+4]
+  00000060: 68 00 00 00 00     push        offset ??_C@_0CA@DKOHKDGN@?7Movie?5height?5?$CIin?5pixels?$CJ?5?3?5?$CFd?6?$AA@
+  00000065: 6A 02              push        2
+  00000067: E8 00 00 00 00     call        _Phyre_DebugPrintf
+  0000006C: D9 43 0C           fld         dword ptr [ebx+0Ch]
+  0000006F: 83 C4 1C           add         esp,1Ch
+  00000072: DD 1C 24           fstp        qword ptr [esp]
+  00000075: 68 00 00 00 00     push        offset ??_C@_0CA@OGFIAMBM@?7Movie?5framerate?5?$CIin?5fps?$CJ?5?3?5?$CFf?6?$AA@
+  0000007A: 6A 02              push        2
+  0000007C: E8 00 00 00 00     call        _Phyre_DebugPrintf
+  00000081: 83 C4 10           add         esp,10h
+  00000084: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000087: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000008A: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000008D: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000090: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000093: 89 46 14           mov         dword ptr [esi+14h],eax
+  00000096: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000099: 5B                 pop         ebx
+  0000009A: 89 46 18           mov         dword ptr [esi+18h],eax
+  0000009D: 5F                 pop         edi
+  0000009E: 33 C0              xor         eax,eax
+  000000A0: 5E                 pop         esi
+  000000A1: 5D                 pop         ebp
+  000000A2: C2 10 00           ret         10h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6E .rdata
+          A5 .text

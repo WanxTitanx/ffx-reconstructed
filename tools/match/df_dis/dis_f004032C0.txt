@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004032C0.obj
+
+File Type: COFF OBJECT
+
+@Engine_streambuf_xsgetn_uflow@4:
+  00000000: 57                 push        edi
+  00000001: 8B 79 1C           mov         edi,dword ptr [ecx+1Ch]
+  00000004: 8B 17              mov         edx,dword ptr [edi]
+  00000006: 85 D2              test        edx,edx
+  00000008: 75 05              jne         0000000F
+  0000000A: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000000D: 5F                 pop         edi
+  0000000E: C3                 ret
+  0000000F: 56                 push        esi
+  00000010: 8B 71 2C           mov         esi,dword ptr [ecx+2Ch]
+  00000013: 8B 06              mov         eax,dword ptr [esi]
+  00000015: 03 C2              add         eax,edx
+  00000017: 3B D0              cmp         edx,eax
+  00000019: 73 06              jae         00000021
+  0000001B: 0F B6 02           movzx       eax,byte ptr [edx]
+  0000001E: 5E                 pop         esi
+  0000001F: 5F                 pop         edi
+  00000020: C3                 ret
+  00000021: F6 41 3C 04        test        byte ptr [ecx+3Ch],4
+  00000025: 75 2C              jne         00000053
+  00000027: 8B 41 20           mov         eax,dword ptr [ecx+20h]
+  0000002A: 8B 00              mov         eax,dword ptr [eax]
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 74 23              je          00000053
+  00000030: 3B C2              cmp         eax,edx
+  00000032: 77 05              ja          00000039
+  00000034: 39 51 38           cmp         dword ptr [ecx+38h],edx
+  00000037: 76 1A              jbe         00000053
+  00000039: 39 41 38           cmp         dword ptr [ecx+38h],eax
+  0000003C: 73 03              jae         00000041
+  0000003E: 89 41 38           mov         dword ptr [ecx+38h],eax
+  00000041: 8B 41 38           mov         eax,dword ptr [ecx+38h]
+  00000044: 2B 07              sub         eax,dword ptr [edi]
+  00000046: 89 06              mov         dword ptr [esi],eax
+  00000048: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  0000004B: 5E                 pop         esi
+  0000004C: 8B 00              mov         eax,dword ptr [eax]
+  0000004E: 5F                 pop         edi
+  0000004F: 0F B6 00           movzx       eax,byte ptr [eax]
+  00000052: C3                 ret
+  00000053: 5E                 pop         esi
+  00000054: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000057: 5F                 pop         edi
+  00000058: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          59 .text

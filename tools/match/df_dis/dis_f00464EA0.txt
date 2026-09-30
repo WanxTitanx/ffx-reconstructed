@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00464EA0.obj
+
+File Type: COFF OBJECT
+
+@ManagedStrIter_Next_WithGuard_E@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 57                 push        edi
+  00000004: E8 00 00 00 00     call        _ManagedStr_MatchCheck_E
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 85 C0              test        eax,eax
+  0000000E: 75 26              jne         00000036
+  00000010: 56                 push        esi
+  00000011: 8B 77 18           mov         esi,dword ptr [edi+18h]
+  00000014: 85 F6              test        esi,esi
+  00000016: 74 10              je          00000028
+  00000018: 8B 06              mov         eax,dword ptr [esi]
+  0000001A: 8B 77 14           mov         esi,dword ptr [edi+14h]
+  0000001D: 2B F0              sub         esi,eax
+  0000001F: F7 DE              neg         esi
+  00000021: 1B F6              sbb         esi,esi
+  00000023: 23 F0              and         esi,eax
+  00000025: 89 77 18           mov         dword ptr [edi+18h],esi
+  00000028: 57                 push        edi
+  00000029: E8 00 00 00 00     call        _ManagedStr_MatchCheck_E
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 85 C0              test        eax,eax
+  00000033: 74 DF              je          00000014
+  00000035: 5E                 pop         esi
+  00000036: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000039: 85 C0              test        eax,eax
+  0000003B: 74 0C              je          00000049
+  0000003D: 50                 push        eax
+  0000003E: 57                 push        edi
+  0000003F: E8 00 00 00 00     call        _Phyre_StringLiteral_GetLength
+  00000044: 83 C4 08           add         esp,8
+  00000047: 5F                 pop         edi
+  00000048: C3                 ret
+  00000049: C7 07 00 00 00 00  mov         dword ptr [edi],0
+  0000004F: C7 47 04 00 00 00  mov         dword ptr [edi+4],0
+            00
+  00000056: C7 47 08 00 00 00  mov         dword ptr [edi+8],0
+            00
+  0000005D: C7 47 0C 00 00 00  mov         dword ptr [edi+0Ch],0
+            00
+  00000064: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  0000006B: 33 C0              xor         eax,eax
+  0000006D: 5F                 pop         edi
+  0000006E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          6F .text

@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A74410.obj
+
+File Type: COFF OBJECT
+
+_FFX_Magic_VfxLoadAndTransformVerts:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: B8 00 F0 00 00     mov         eax,0F000h
+  0000000D: 8B 8F 20 02 00 00  mov         ecx,dword ptr [edi+220h]
+  00000013: 66 85 87 1A 02 00  test        word ptr [edi+21Ah],ax
+            00
+  0000001A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000001D: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000020: 0F 85 9D 00 00 00  jne         000000C3
+  00000026: 53                 push        ebx
+  00000027: 0F BF 58 04        movsx       ebx,word ptr [eax+4]
+  0000002B: 03 D8              add         ebx,eax
+  0000002D: 0F B7 40 02        movzx       eax,word ptr [eax+2]
+  00000031: 56                 push        esi
+  00000032: 50                 push        eax
+  00000033: 0F B6 41 1E        movzx       eax,byte ptr [ecx+1Eh]
+  00000037: 6A 04              push        4
+  00000039: FF B4 87 60 03 00  push        dword ptr [edi+eax*4+360h]
+            00
+  00000040: E8 00 00 00 00     call        _FFX_MagicHost_SelectRuntimeTableSlice
+  00000045: 8B F0              mov         esi,eax
+  00000047: 0F BF 4E 10        movsx       ecx,word ptr [esi+10h]
+  0000004B: C1 E1 08           shl         ecx,8
+  0000004E: 83 C1 20           add         ecx,20h
+  00000051: 51                 push        ecx
+  00000052: FF B7 A8 03 00 00  push        dword ptr [edi+3A8h]
+  00000058: E8 00 00 00 00     call        _FFX_Magic_OpHeapAllocRecord
+  0000005D: 8B F8              mov         edi,eax
+  0000005F: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000062: 53                 push        ebx
+  00000063: 89 B8 BC 00 00 00  mov         dword ptr [eax+0BCh],edi
+  00000069: 66 8B 0B           mov         cx,word ptr [ebx]
+  0000006C: 57                 push        edi
+  0000006D: 66 89 4F 12        mov         word ptr [edi+12h],cx
+  00000071: 56                 push        esi
+  00000072: 89 98 A8 00 00 00  mov         dword ptr [eax+0A8h],ebx
+  00000078: E8 00 00 00 00     call        _FFX_Magic_RenderTransformVertices
+  0000007D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000080: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000083: C6 83 BB 00 00 00  mov         byte ptr [ebx+0BBh],82h
+            82
+  0000008A: 0F B7 81 14 02 00  movzx       eax,word ptr [ecx+214h]
+            00
+  00000091: 50                 push        eax
+  00000092: 8D 81 00 03 00 00  lea         eax,[ecx+300h]
+  00000098: 50                 push        eax
+  00000099: E8 00 00 00 00     call        _FFX_Magic_FindOrCreateSlotInShortArray
+  0000009E: 6A 0A              push        0Ah
+  000000A0: 57                 push        edi
+  000000A1: 53                 push        ebx
+  000000A2: 6A 00              push        0
+  000000A4: E8 00 00 00 00     call        _FFX_Magic_VfxTexture_LoadByName
+  000000A9: 83 C4 38           add         esp,38h
+  000000AC: 85 C0              test        eax,eax
+  000000AE: 74 0B              je          000000BB
+  000000B0: 53                 push        ebx
+  000000B1: 6A 00              push        0
+  000000B3: E8 00 00 00 00     call        _FFX_TextureSlot_ValidateGeometry
+  000000B8: 83 C4 08           add         esp,8
+  000000BB: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000BE: 5E                 pop         esi
+  000000BF: 83 C0 06           add         eax,6
+  000000C2: 5B                 pop         ebx
+  000000C3: 5F                 pop         edi
+  000000C4: 8B E5              mov         esp,ebp
+  000000C6: 5D                 pop         ebp
+  000000C7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C8 .text

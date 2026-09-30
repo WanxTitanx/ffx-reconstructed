@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00795AD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_GetActorBoneTransform:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8A 86 3F 04 00 00  mov         al,byte ptr [esi+43Fh]
+  0000000D: 3C FF              cmp         al,0FFh
+  0000000F: 75 13              jne         00000024
+  00000011: 0F B6 46 0C        movzx       eax,byte ptr [esi+0Ch]
+  00000015: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _FFX_Battle_ActorPlace_ChunkVerbatim
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 5E                 pop         esi
+  00000022: 5D                 pop         ebp
+  00000023: C3                 ret
+  00000024: 0F B6 C0           movzx       eax,al
+  00000027: 50                 push        eax
+  00000028: E8 00 00 00 00     call        _FFX_Battle_GetActorModelInstance
+  0000002D: 83 C4 04           add         esp,4
+  00000030: 85 C0              test        eax,eax
+  00000032: 74 17              je          0000004B
+  00000034: 0F B6 8E 41 04 00  movzx       ecx,byte ptr [esi+441h]
+            00
+  0000003B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003E: 51                 push        ecx
+  0000003F: 50                 push        eax
+  00000040: E8 00 00 00 00     call        _FFX_Chr_GetBoneTransform4
+  00000045: 83 C4 0C           add         esp,0Ch
+  00000048: 5E                 pop         esi
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: 33 C0              xor         eax,eax
+  0000004D: 5E                 pop         esi
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          50 .text

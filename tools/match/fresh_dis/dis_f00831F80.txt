@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00831F80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Ps3Data_BuildSlotDmaPacket:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000008: 33 C0              xor         eax,eax
+  0000000A: 33 DB              xor         ebx,ebx
+  0000000C: 85 FF              test        edi,edi
+  0000000E: 7E 67              jle         00000077
+  00000010: 56                 push        esi
+  00000011: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000014: 83 C6 38           add         esi,38h
+  00000017: BA FF FF 00 00     mov         edx,0FFFFh
+  0000001C: 8D 64 24 00        lea         esp,[esp]
+  00000020: 0F B7 0E           movzx       ecx,word ptr [esi]
+  00000023: 66 3B CA           cmp         cx,dx
+  00000026: 74 35              je          0000005D
+  00000028: 8D 46 C8           lea         eax,[esi-38h]
+  0000002B: 50                 push        eax
+  0000002C: 66 89 4E 02        mov         word ptr [esi+2],cx
+  00000030: E8 00 00 00 00     call        _FFX_Ps3Data_XorSlotIntegrity
+  00000035: 83 C4 04           add         esp,4
+  00000038: 83 7E F8 00        cmp         dword ptr [esi-8],0
+  0000003C: 74 18              je          00000056
+  0000003E: E8 00 00 00 00     call        _FFX_DmaStub_Return0
+  00000043: E8 00 00 00 00     call        _FlushCache
+  00000048: E8 00 00 00 00     call        _sceDmaSend
+  0000004D: B8 01 00 00 00     mov         eax,1
+  00000052: 8B D8              mov         ebx,eax
+  00000054: EB 02              jmp         00000058
+  00000056: 8B C3              mov         eax,ebx
+  00000058: BA FF FF 00 00     mov         edx,0FFFFh
+  0000005D: 83 C6 40           add         esi,40h
+  00000060: 4F                 dec         edi
+  00000061: 75 BD              jne         00000020
+  00000063: 5E                 pop         esi
+  00000064: 85 C0              test        eax,eax
+  00000066: 74 0F              je          00000077
+  00000068: E8 00 00 00 00     call        _FFX_DmaStub_Return0
+  0000006D: E8 00 00 00 00     call        _FlushCache
+  00000072: E8 00 00 00 00     call        _sceDmaSend
+  00000077: 5F                 pop         edi
+  00000078: 5B                 pop         ebx
+  00000079: 5D                 pop         ebp
+  0000007A: E9 00 00 00 00     jmp         _FFX_DmaStub_Return0
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7F .text

@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006ED5A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_BtlUI_HudParty_ApplyStatus:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: 56                 push        esi
+  00000006: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000009: 33 D2              xor         edx,edx
+  0000000B: 8D 4E 08           lea         ecx,[esi+8]
+  0000000E: D9 41 F8           fld         dword ptr [ecx-8]
+  00000011: DD E9              fucomp      st(1)
+  00000013: DF E0              fnstsw      ax
+  00000015: F6 C4 44           test        ah,44h
+  00000018: 7A 23              jp          0000003D
+  0000001A: D9 41 FC           fld         dword ptr [ecx-4]
+  0000001D: DD E9              fucomp      st(1)
+  0000001F: DF E0              fnstsw      ax
+  00000021: F6 C4 44           test        ah,44h
+  00000024: 7A 17              jp          0000003D
+  00000026: D9 01              fld         dword ptr [ecx]
+  00000028: DD E9              fucomp      st(1)
+  0000002A: DF E0              fnstsw      ax
+  0000002C: F6 C4 44           test        ah,44h
+  0000002F: 7A 0C              jp          0000003D
+  00000031: D9 41 04           fld         dword ptr [ecx+4]
+  00000034: DD E9              fucomp      st(1)
+  00000036: DF E0              fnstsw      ax
+  00000038: F6 C4 44           test        ah,44h
+  0000003B: 7B 0B              jnp         00000048
+  0000003D: 42                 inc         edx
+  0000003E: 83 FA 04           cmp         edx,4
+  00000041: 7D 3C              jge         0000007F
+  00000043: 83 C1 10           add         ecx,10h
+  00000046: EB C6              jmp         0000000E
+  00000048: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000004B: D9 E8              fld1
+  0000004D: D9 10              fst         dword ptr [eax]
+  0000004F: 5E                 pop         esi
+  00000050: D9 50 14           fst         dword ptr [eax+14h]
+  00000053: D9 50 28           fst         dword ptr [eax+28h]
+  00000056: D9 58 3C           fstp        dword ptr [eax+3Ch]
+  00000059: D9 50 04           fst         dword ptr [eax+4]
+  0000005C: D9 50 08           fst         dword ptr [eax+8]
+  0000005F: D9 50 0C           fst         dword ptr [eax+0Ch]
+  00000062: D9 50 10           fst         dword ptr [eax+10h]
+  00000065: D9 50 18           fst         dword ptr [eax+18h]
+  00000068: D9 50 1C           fst         dword ptr [eax+1Ch]
+  0000006B: D9 50 20           fst         dword ptr [eax+20h]
+  0000006E: D9 50 24           fst         dword ptr [eax+24h]
+  00000071: D9 50 2C           fst         dword ptr [eax+2Ch]
+  00000074: D9 50 30           fst         dword ptr [eax+30h]
+  00000077: D9 50 34           fst         dword ptr [eax+34h]
+  0000007A: D9 58 38           fstp        dword ptr [eax+38h]
+  0000007D: 5D                 pop         ebp
+  0000007E: C3                 ret
+  0000007F: 56                 push        esi
+  00000080: DD D8              fstp        st(0)
+  00000082: FF 75 08           push        dword ptr [ebp+8]
+  00000085: E8 00 00 00 00     call        _Phyre_Math_Mat4x4Inverse
+  0000008A: 83 C4 08           add         esp,8
+  0000008D: 5E                 pop         esi
+  0000008E: 5D                 pop         ebp
+  0000008F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          90 .text

@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FB240.obj
+
+File Type: COFF OBJECT
+
+@FFX_Sync_ReadFloatEntry@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 57                 push        edi
+  00000007: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  0000000B: 8B FA              mov         edi,edx
+  0000000D: 74 71              je          00000080
+  0000000F: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  00000013: 74 6B              je          00000080
+  00000015: 83 7E 20 00        cmp         dword ptr [esi+20h],0
+  00000019: 75 15              jne         00000030
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 6A 05              push        5
+  00000022: E8 00 00 00 00     call        _Sys_Sleep
+  00000027: 83 C4 04           add         esp,4
+  0000002A: 83 7E 20 00        cmp         dword ptr [esi+20h],0
+  0000002E: 74 F0              je          00000020
+  00000030: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000033: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000036: D9 00              fld         dword ptr [eax]
+  00000038: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000003B: D9 1F              fstp        dword ptr [edi]
+  0000003D: 83 46 08 04        add         dword ptr [esi+8],4
+  00000041: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000044: D9 00              fld         dword ptr [eax]
+  00000046: D9 1A              fstp        dword ptr [edx]
+  00000048: 83 46 08 04        add         dword ptr [esi+8],4
+  0000004C: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000004F: 8B 00              mov         eax,dword ptr [eax]
+  00000051: 89 01              mov         dword ptr [ecx],eax
+  00000053: 83 46 08 04        add         dword ptr [esi+8],4
+  00000057: D9 07              fld         dword ptr [edi]
+  00000059: D9 E8              fld1
+  0000005B: DA E9              fucompp
+  0000005D: DF E0              fnstsw      ax
+  0000005F: F6 C4 44           test        ah,44h
+  00000062: 7A 27              jp          0000008B
+  00000064: D9 02              fld         dword ptr [edx]
+  00000066: D9 E8              fld1
+  00000068: DA E9              fucompp
+  0000006A: DF E0              fnstsw      ax
+  0000006C: F6 C4 44           test        ah,44h
+  0000006F: 7A 1A              jp          0000008B
+  00000071: 81 39 E7 03 00 00  cmp         dword ptr [ecx],3E7h
+  00000077: 75 12              jne         0000008B
+  00000079: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000080: 5F                 pop         edi
+  00000081: B8 E7 03 00 00     mov         eax,3E7h
+  00000086: 5E                 pop         esi
+  00000087: 5D                 pop         ebp
+  00000088: C2 08 00           ret         8
+  0000008B: 5F                 pop         edi
+  0000008C: 33 C0              xor         eax,eax
+  0000008E: 5E                 pop         esi
+  0000008F: 5D                 pop         ebp
+  00000090: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          93 .text

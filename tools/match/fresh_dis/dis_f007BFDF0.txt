@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BFDF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_MoveAlongPath:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000008: 53                 push        ebx
+  00000009: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAL
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000014: 85 C0              test        eax,eax
+  00000016: 74 79              je          00000091
+  00000018: 0F BE 4D 0C        movsx       ecx,byte ptr [ebp+0Ch]
+  0000001C: 83 E1 01           and         ecx,1
+  0000001F: 0F B6 C3           movzx       eax,bl
+  00000022: 69 C9 1C 06 00 00  imul        ecx,ecx,61Ch
+  00000028: 69 C0 A0 0D 00 00  imul        eax,eax,0DA0h
+  0000002E: 03 C8              add         ecx,eax
+  00000030: 0F B6 C7           movzx       eax,bh
+  00000033: 69 C0 30 01 00 00  imul        eax,eax,130h
+  00000039: 8D 89 00 00 00 00  lea         ecx,_g_CameraUnkVar_1137610[ecx]
+  0000003F: 03 C8              add         ecx,eax
+  00000041: 8A 41 04           mov         al,byte ptr [ecx+4]
+  00000044: 3C 05              cmp         al,5
+  00000046: 73 4C              jae         00000094
+  00000048: 0F B6 C0           movzx       eax,al
+  0000004B: C1 E0 03           shl         eax,3
+  0000004E: 83 7D 18 03        cmp         dword ptr [ebp+18h],3
+  00000052: 75 11              jne         00000065
+  00000054: C6 41 1E 01        mov         byte ptr [ecx+1Eh],1
+  00000058: C7 84 81 90 00 00  mov         dword ptr [ecx+eax*4+90h],5
+            00 05 00 00 00
+  00000063: EB 0F              jmp         00000074
+  00000065: C6 41 1E 00        mov         byte ptr [ecx+1Eh],0
+  00000069: C7 84 81 90 00 00  mov         dword ptr [ecx+eax*4+90h],4
+            00 04 00 00 00
+  00000074: FE 41 04           inc         byte ptr [ecx+4]
+  00000077: D9 45 14           fld         dword ptr [ebp+14h]
+  0000007A: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000007D: D9 59 20           fstp        dword ptr [ecx+20h]
+  00000080: D9 EE              fldz
+  00000082: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000085: D9 59 24           fstp        dword ptr [ecx+24h]
+  00000088: 5B                 pop         ebx
+  00000089: C6 41 1D 01        mov         byte ptr [ecx+1Dh],1
+  0000008D: 8B E5              mov         esp,ebp
+  0000008F: 5D                 pop         ebp
+  00000090: C3                 ret
+  00000091: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  00000094: 5B                 pop         ebx
+  00000095: 8B E5              mov         esp,ebp
+  00000097: 5D                 pop         ebp
+  00000098: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          99 .text

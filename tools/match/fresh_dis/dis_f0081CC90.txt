@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081CC90.obj
+
+File Type: COFF OBJECT
+
+_FFX_SoundSpuDma_Loose_81CC90:
+  00000000: 56                 push        esi
+  00000001: E8 00 00 00 00     call        _FFX_SoundSpuDma_WaitAndSubmitTransfer
+  00000006: A1 00 00 00 00     mov         eax,dword ptr [_FFX_Sound_Global_C49460]
+  0000000B: 8B 30              mov         esi,dword ptr [eax]
+  0000000D: 85 F6              test        esi,esi
+  0000000F: 74 22              je          00000033
+  00000011: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000014: 6B C0 64           imul        eax,eax,64h
+  00000017: 33 D2              xor         edx,edx
+  00000019: F7 F6              div         eax,esi
+  0000001B: 69 D2 E8 03 00 00  imul        edx,edx,3E8h
+  00000021: 8B C8              mov         ecx,eax
+  00000023: 8B C2              mov         eax,edx
+  00000025: 69 C9 E8 03 00 00  imul        ecx,ecx,3E8h
+  0000002B: 33 D2              xor         edx,edx
+  0000002D: F7 F6              div         eax,esi
+  0000002F: 5E                 pop         esi
+  00000030: 0B C1              or          eax,ecx
+  00000032: C3                 ret
+  00000033: 33 C0              xor         eax,eax
+  00000035: 5E                 pop         esi
+  00000036: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          37 .text

@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A2620.obj
+
+File Type: COFF OBJECT
+
+_FFX_Kernel_LoadWNameBin:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 68 00 58 02 00     push        25800h
+  0000000B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000010: 8B F8              mov         edi,eax
+  00000012: 57                 push        edi
+  00000013: 68 00 00 00 00     push        offset ??_C@_06ELJJOKNN@w_name?$AA@
+  00000018: E8 00 00 00 00     call        _FFX_Kernel_LoadRegionalBattleKernelBin
+  0000001D: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000020: 83 C4 0C           add         esp,0Ch
+  00000023: A3 00 00 00 00     mov         dword ptr [_g_UnkVar_11363A0],eax
+  00000028: 85 F6              test        esi,esi
+  0000002A: 75 28              jne         00000054
+  0000002C: 6A 40              push        40h
+  0000002E: E8 00 00 00 00     call        _SgMem_SetAlignment
+  00000033: FF 35 00 00 00 00  push        dword ptr [_g_UnkVar_11363A0]
+  00000039: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000003E: FF 35 00 00 00 00  push        dword ptr [_g_UnkVar_11363A0]
+  00000044: 8B F0              mov         esi,eax
+  00000046: 56                 push        esi
+  00000047: E8 00 00 00 00     call        _FFX_Kernel_AllocAlignedBufferSize
+  0000004C: A1 00 00 00 00     mov         eax,dword ptr [_g_UnkVar_11363A0]
+  00000051: 83 C4 10           add         esp,10h
+  00000054: 50                 push        eax
+  00000055: 57                 push        edi
+  00000056: 56                 push        esi
+  00000057: E8 00 00 00 00     call        _memcpy
+  0000005C: 57                 push        edi
+  0000005D: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000062: 83 C4 10           add         esp,10h
+  00000065: 5F                 pop         edi
+  00000066: 5E                 pop         esi
+  00000067: 8B E5              mov         esp,ebp
+  00000069: 5D                 pop         ebp
+  0000006A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           7 .rdata
+          6B .text

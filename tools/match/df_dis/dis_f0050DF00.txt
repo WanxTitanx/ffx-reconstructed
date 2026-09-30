@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0050DF00.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_PAnimationChannel_Reset@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 83 7E 28 00        cmp         dword ptr [esi+28h],0
+  00000007: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  0000000E: C7 46 30 00 00 00  mov         dword ptr [esi+30h],0
+            00
+  00000015: 7C 10              jl          00000027
+  00000017: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 09              je          00000027
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000024: 83 C4 04           add         esp,4
+  00000027: 56                 push        esi
+  00000028: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  0000002F: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  00000036: E8 00 00 00 00     call        _Phyre_PAnimationChannel_FreeBuffer
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 5E                 pop         esi
+  0000003F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          40 .text

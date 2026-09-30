@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060C090.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Sort_BuildHeap16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000E: 8B CB              mov         ecx,ebx
+  00000010: 2B CE              sub         ecx,esi
+  00000012: 8B C1              mov         eax,ecx
+  00000014: 83 E0 F0           and         eax,0FFFFFFF0h
+  00000017: 83 F8 10           cmp         eax,10h
+  0000001A: 7E 6A              jle         00000086
+  0000001C: 57                 push        edi
+  0000001D: 83 C3 F0           add         ebx,0FFFFFFF0h
+  00000020: 8B FB              mov         edi,ebx
+  00000022: 2B FE              sub         edi,esi
+  00000024: 83 C7 10           add         edi,10h
+  00000027: 8B 03              mov         eax,dword ptr [ebx]
+  00000029: FF 75 10           push        dword ptr [ebp+10h]
+  0000002C: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000002F: 8B 44 3E F4        mov         eax,dword ptr [esi+edi-0Ch]
+  00000033: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000036: 8B 44 3E F8        mov         eax,dword ptr [esi+edi-8]
+  0000003A: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000003D: 8B 44 3E FC        mov         eax,dword ptr [esi+edi-4]
+  00000041: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000044: 8B 06              mov         eax,dword ptr [esi]
+  00000046: 89 03              mov         dword ptr [ebx],eax
+  00000048: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000004B: 89 44 3E F4        mov         dword ptr [esi+edi-0Ch],eax
+  0000004F: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000052: 89 44 3E F8        mov         dword ptr [esi+edi-8],eax
+  00000056: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000059: 89 44 3E FC        mov         dword ptr [esi+edi-4],eax
+  0000005D: 8D 45 F0           lea         eax,[ebp-10h]
+  00000060: 50                 push        eax
+  00000061: 8D 41 F0           lea         eax,[ecx-10h]
+  00000064: C1 F8 04           sar         eax,4
+  00000067: 50                 push        eax
+  00000068: 6A 00              push        0
+  0000006A: 56                 push        esi
+  0000006B: E8 00 00 00 00     call        _Phyre_Sort_HeapSiftDown16
+  00000070: 83 EF 10           sub         edi,10h
+  00000073: 8B C7              mov         eax,edi
+  00000075: 83 E0 F0           and         eax,0FFFFFFF0h
+  00000078: 83 C4 14           add         esp,14h
+  0000007B: 8D 5B F0           lea         ebx,[ebx-10h]
+  0000007E: 8B CF              mov         ecx,edi
+  00000080: 83 F8 10           cmp         eax,10h
+  00000083: 7F A2              jg          00000027
+  00000085: 5F                 pop         edi
+  00000086: 5E                 pop         esi
+  00000087: 5B                 pop         ebx
+  00000088: 8B E5              mov         esp,ebp
+  0000008A: 5D                 pop         ebp
+  0000008B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8C .text

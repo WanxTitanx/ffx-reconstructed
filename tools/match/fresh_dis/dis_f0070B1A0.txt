@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070B1A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodVoice_ClearVoiceEventArray@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 57                 push        edi
+  00000005: E8 00 00 00 00     call        _FFX_FmodVoice_StopEvent
+  0000000A: 83 C4 04           add         esp,4
+  0000000D: C7 47 40 00 00 00  mov         dword ptr [edi+40h],0
+            00
+  00000014: C7 47 44 00 00 00  mov         dword ptr [edi+44h],0
+            00
+  0000001B: C7 47 4C 00 00 00  mov         dword ptr [edi+4Ch],0
+            00
+  00000022: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  00000029: 33 F6              xor         esi,esi
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000033: 8B 0C 06           mov         ecx,dword ptr [esi+eax]
+  00000036: 85 C9              test        ecx,ecx
+  00000038: 74 1B              je          00000055
+  0000003A: 8B 01              mov         eax,dword ptr [ecx]
+  0000003C: 51                 push        ecx
+  0000003D: 8B 40 28           mov         eax,dword ptr [eax+28h]
+  00000040: FF D0              call        eax
+  00000042: 68 5D 02 00 00     push        25Dh
+  00000047: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000052: 83 C4 0C           add         esp,0Ch
+  00000055: 83 C6 04           add         esi,4
+  00000058: 83 FE 54           cmp         esi,54h
+  0000005B: 7C D3              jl          00000030
+  0000005D: 6A 64              push        64h
+  0000005F: E8 00 00 00 00     call        _Sys_Sleep
+  00000064: 83 C4 04           add         esp,4
+  00000067: 33 F6              xor         esi,esi
+  00000069: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000070: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000073: 8B 0C 06           mov         ecx,dword ptr [esi+eax]
+  00000076: 85 C9              test        ecx,ecx
+  00000078: 74 24              je          0000009E
+  0000007A: 8B 01              mov         eax,dword ptr [ecx]
+  0000007C: 51                 push        ecx
+  0000007D: 8B 00              mov         eax,dword ptr [eax]
+  0000007F: FF D0              call        eax
+  00000081: 68 65 02 00 00     push        265h
+  00000086: 68 00 00 00 00     push        offset ??_C@_0BH@KEANJFPM@?4?4?2sound?2FmodVoice?4cpp?$AA@
+  0000008B: 50                 push        eax
+  0000008C: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000091: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000094: 83 C4 0C           add         esp,0Ch
+  00000097: C7 04 06 00 00 00  mov         dword ptr [esi+eax],0
+            00
+  0000009E: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  000000A1: 83 C6 04           add         esi,4
+  000000A4: C7 44 30 FC 00 00  mov         dword ptr [eax+esi-4],0
+            00 00
+  000000AC: 83 FE 54           cmp         esi,54h
+  000000AF: 7C BF              jl          00000070
+  000000B1: 5F                 pop         edi
+  000000B2: 33 C0              xor         eax,eax
+  000000B4: 5E                 pop         esi
+  000000B5: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          B6 .text

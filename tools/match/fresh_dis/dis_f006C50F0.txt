@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C50F0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_FFX_MotionBlur_CRT_DestroyWithFlag@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F9              mov         edi,ecx
+  00000005: 8A DA              mov         bl,dl
+  00000007: 8D 77 68           lea         esi,[edi+68h]
+  0000000A: 56                 push        esi
+  0000000B: E8 00 00 00 00     call        _Phyre_Shader_CompilationCleanup
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _PShaderType_Dtor
+  00000016: 57                 push        edi
+  00000017: E8 00 00 00 00     call        _Phyre_PCluster_Destructor
+  0000001C: 83 C4 0C           add         esp,0Ch
+  0000001F: F6 C3 01           test        bl,1
+  00000022: 74 09              je          0000002D
+  00000024: 57                 push        edi
+  00000025: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000002A: 83 C4 04           add         esp,4
+  0000002D: 8B C7              mov         eax,edi
+  0000002F: 5F                 pop         edi
+  00000030: 5E                 pop         esi
+  00000031: 5B                 pop         ebx
+  00000032: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          33 .text

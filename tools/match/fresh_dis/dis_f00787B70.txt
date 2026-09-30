@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00787B70.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicOverlay_InvokeSurfaceSlot32_Event671:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 7D 08 9F 02 00  cmp         dword ptr [ebp+8],29Fh
+            00
+  0000000A: 75 2B              jne         00000037
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _FFX_MagHost_GetOverlayTable
+  00000012: 8B F0              mov         esi,eax
+  00000014: E8 00 00 00 00     call        _FlushCache
+  00000019: E8 00 00 00 00     call        _FlushCache
+  0000001E: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_MagicFileUnkVar_113336C]
+  00000024: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000027: 6A 00              push        0
+  00000029: 6A 00              push        0
+  0000002B: 6A 02              push        2
+  0000002D: FF 31              push        dword ptr [ecx]
+  0000002F: FF D0              call        eax
+  00000031: 83 C4 10           add         esp,10h
+  00000034: 5E                 pop         esi
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+  00000037: 6A FF              push        0FFFFFFFFh
+  00000039: E8 00 00 00 00     call        _FFX_Magic_ClearSlotLinkedLists
+  0000003E: D9 45 08           fld         dword ptr [ebp+8]
+  00000041: 51                 push        ecx
+  00000042: DD 1C 24           fstp        qword ptr [esp]
+  00000045: E8 00 00 00 00     call        _FFX_Magic_FreeAllEffects
+  0000004A: 83 C4 08           add         esp,8
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4F .text

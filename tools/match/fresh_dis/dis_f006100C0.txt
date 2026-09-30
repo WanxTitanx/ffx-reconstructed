@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006100C0.obj
+
+File Type: COFF OBJECT
+
+_std_vector_DestructorRange88:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 3B F7              cmp         esi,edi
+  0000000D: 74 1A              je          00000029
+  0000000F: 90                 nop
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _PChunkAllocator_DtorCleanup
+  00000016: 8D 46 08           lea         eax,[esi+8]
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll
+  0000001F: 83 C6 58           add         esi,58h
+  00000022: 83 C4 08           add         esp,8
+  00000025: 3B F7              cmp         esi,edi
+  00000027: 75 E7              jne         00000010
+  00000029: 5F                 pop         edi
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2D .text

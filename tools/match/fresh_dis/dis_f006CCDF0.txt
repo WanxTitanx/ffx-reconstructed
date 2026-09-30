@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006CCDF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_6CCDF0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B C1              mov         eax,ecx
+  00000008: 99                 cdq
+  00000009: 2B C2              sub         eax,edx
+  0000000B: 8B D0              mov         edx,eax
+  0000000D: D1 FA              sar         edx,1
+  0000000F: 81 E1 01 00 00 80  and         ecx,80000001h
+  00000015: 79 05              jns         0000001C
+  00000017: 49                 dec         ecx
+  00000018: 83 C9 FE           or          ecx,0FFFFFFFEh
+  0000001B: 41                 inc         ecx
+  0000001C: 83 F9 01           cmp         ecx,1
+  0000001F: 75 08              jne         00000029
+  00000021: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000024: D9 04 91           fld         dword ptr [ecx+edx*4]
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+  00000029: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000002C: D9 44 90 FC        fld         dword ptr [eax+edx*4-4]
+  00000030: D8 04 90           fadd        dword ptr [eax+edx*4]
+  00000033: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  00000039: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000003C: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          41 .text

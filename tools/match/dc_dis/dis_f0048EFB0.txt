@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0048EFB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PMeshSegmentArray_Assign@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 56                 push        esi
+  00000008: C7 03 00 00 00 00  mov         dword ptr [ebx],0
+  0000000E: 8B 32              mov         esi,dword ptr [edx]
+  00000010: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000016: 57                 push        edi
+  00000017: 83 FE 01           cmp         esi,1
+  0000001A: 77 15              ja          00000031
+  0000001C: 85 F6              test        esi,esi
+  0000001E: 74 08              je          00000028
+  00000020: 8D 4A 04           lea         ecx,[edx+4]
+  00000023: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000026: EB 0F              jmp         00000037
+  00000028: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002F: EB 06              jmp         00000037
+  00000031: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000034: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000037: 8D 7B 04           lea         edi,[ebx+4]
+  0000003A: 83 FE 01           cmp         esi,1
+  0000003D: 76 13              jbe         00000052
+  0000003F: 8D 04 B6           lea         eax,[esi+esi*4]
+  00000042: C1 E0 02           shl         eax,2
+  00000045: 6A 04              push        4
+  00000047: 50                 push        eax
+  00000048: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000004D: 83 C4 08           add         esp,8
+  00000050: 8B F8              mov         edi,eax
+  00000052: 85 FF              test        edi,edi
+  00000054: 74 0D              je          00000063
+  00000056: 56                 push        esi
+  00000057: FF 75 FC           push        dword ptr [ebp-4]
+  0000005A: 57                 push        edi
+  0000005B: E8 00 00 00 00     call        _PIndexBuffer_ArrayCopy5
+  00000060: 83 C4 0C           add         esp,0Ch
+  00000063: 8B 13              mov         edx,dword ptr [ebx]
+  00000065: 8B C2              mov         eax,edx
+  00000067: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000006C: 8D 4B 04           lea         ecx,[ebx+4]
+  0000006F: 83 F8 01           cmp         eax,1
+  00000072: 77 08              ja          0000007C
+  00000074: F7 D8              neg         eax
+  00000076: 1B C0              sbb         eax,eax
+  00000078: 23 C1              and         eax,ecx
+  0000007A: EB 02              jmp         0000007E
+  0000007C: 8B 01              mov         eax,dword ptr [ecx]
+  0000007E: 3B C7              cmp         eax,edi
+  00000080: 74 15              je          00000097
+  00000082: 3B C1              cmp         eax,ecx
+  00000084: 74 11              je          00000097
+  00000086: 85 D2              test        edx,edx
+  00000088: 78 0D              js          00000097
+  0000008A: 85 C0              test        eax,eax
+  0000008C: 74 09              je          00000097
+  0000008E: 50                 push        eax
+  0000008F: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000094: 83 C4 04           add         esp,4
+  00000097: 8D 43 04           lea         eax,[ebx+4]
+  0000009A: 89 33              mov         dword ptr [ebx],esi
+  0000009C: 3B F8              cmp         edi,eax
+  0000009E: 74 02              je          000000A2
+  000000A0: 89 38              mov         dword ptr [eax],edi
+  000000A2: 5F                 pop         edi
+  000000A3: 5E                 pop         esi
+  000000A4: 8B C3              mov         eax,ebx
+  000000A6: 5B                 pop         ebx
+  000000A7: 8B E5              mov         esp,ebp
+  000000A9: 5D                 pop         ebp
+  000000AA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AB .text

@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00861FA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldVM_AsyncAudioOp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 06              mov         eax,dword ptr [esi]
+  00000009: 83 F8 03           cmp         eax,3
+  0000000C: 77 48              ja          00000056
+  0000000E: 8B FF              mov         edi,edi
+  00000010: FF 24 85 00 00 00  jmp         dword ptr $LN21[eax*4]
+            00
+$LN10:
+  00000017: C7 06 01 00 00 00  mov         dword ptr [esi],1
+$LABEL_4$22:
+  0000001D: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  00000022: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000025: 6A 01              push        1
+  00000027: FF D0              call        eax
+  00000029: 83 C4 04           add         esp,4
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 75 26              jne         00000056
+  00000030: E8 00 00 00 00     call        _FFX_Sound_ReturnZero
+  00000035: 85 C0              test        eax,eax
+  00000037: 75 1D              jne         00000056
+  00000039: C7 06 02 00 00 00  mov         dword ptr [esi],2
+  0000003F: B8 02 00 00 00     mov         eax,2
+  00000044: EB CA              jmp         00000010
+$LN6:
+  00000046: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_start_prog
+  0000004B: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_play_prog
+  00000050: C7 06 03 00 00 00  mov         dword ptr [esi],3
+  00000056: 33 C0              xor         eax,eax
+  00000058: 5E                 pop         esi
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+$LN5:
+  0000005B: 53                 push        ebx
+  0000005C: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_sync_prog
+  00000061: 8A D8              mov         bl,al
+  00000063: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_frame_prog
+  00000068: 85 C0              test        eax,eax
+  0000006A: 7E 25              jle         00000091
+  0000006C: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldVMUnkVar_1326B4C],0
+            00
+  00000073: 75 0E              jne         00000083
+  00000075: FF 35 00 00 00 00  push        dword ptr [_g_FieldVMUnkVar_1326B48]
+  0000007B: E8 00 00 00 00     call        _exit_1
+  00000080: 83 C4 04           add         esp,4
+  00000083: FF 35 00 00 00 00  push        dword ptr [_g_FieldVMUnkVar_1326B48]
+  00000089: E8 00 00 00 00     call        __tell
+  0000008E: 83 C4 04           add         esp,4
+  00000091: F6 C3 01           test        bl,1
+  00000094: 5B                 pop         ebx
+  00000095: 74 BF              je          00000056
+  00000097: E8 00 00 00 00     call        _FFX_Virtuos_MovieNotImplemented_movie_stop_prog
+  0000009C: B8 01 00 00 00     mov         eax,1
+  000000A1: 5E                 pop         esi
+  000000A2: 5D                 pop         ebp
+  000000A3: C3                 ret
+$LN21:
+  000000A4: 00 00              add         byte ptr [eax],al
+  000000A6: 00 00              add         byte ptr [eax],al
+  000000A8: 00 00              add         byte ptr [eax],al
+  000000AA: 00 00              add         byte ptr [eax],al
+  000000AC: 00 00              add         byte ptr [eax],al
+  000000AE: 00 00              add         byte ptr [eax],al
+  000000B0: 00 00              add         byte ptr [eax],al
+  000000B2: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B4 .text

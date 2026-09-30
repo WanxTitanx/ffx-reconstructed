@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00872320.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_SyncVisibilitySlots:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: 56                 push        esi
+  00000009: B9 02 00 00 00     mov         ecx,2
+  0000000E: 57                 push        edi
+  0000000F: 8D 71 FF           lea         esi,[ecx-1]
+  00000012: 8D B8 F4 0A 00 00  lea         edi,[eax+0AF4h]
+  00000018: 8D 98 04 0B 00 00  lea         ebx,[eax+0B04h]
+  0000001E: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000021: BA FF 00 00 00     mov         edx,0FFh
+  00000026: 66 85 B0 14 0B 00  test        word ptr [eax+0B14h],si
+            00
+  0000002D: 74 2B              je          0000005A
+  0000002F: 66 39 13           cmp         word ptr [ebx],dx
+  00000032: 74 26              je          0000005A
+  00000034: 8B 07              mov         eax,dword ptr [edi]
+  00000036: 85 C0              test        eax,eax
+  00000038: 74 1D              je          00000057
+  0000003A: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityConditional
+  00000043: 6A 00              push        0
+  00000045: FF 37              push        dword ptr [edi]
+  00000047: E8 00 00 00 00     call        _FFX_Chr_SetVisibilityEnabled
+  0000004C: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000004F: 83 C4 10           add         esp,10h
+  00000052: BA FF 00 00 00     mov         edx,0FFh
+  00000057: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000005A: D1 C6              rol         esi,1
+  0000005C: 83 C3 02           add         ebx,2
+  0000005F: 83 C7 04           add         edi,4
+  00000062: 49                 dec         ecx
+  00000063: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000066: 75 BE              jne         00000026
+  00000068: 5F                 pop         edi
+  00000069: 5E                 pop         esi
+  0000006A: 5B                 pop         ebx
+  0000006B: 8B E5              mov         esp,ebp
+  0000006D: 5D                 pop         ebp
+  0000006E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6F .text

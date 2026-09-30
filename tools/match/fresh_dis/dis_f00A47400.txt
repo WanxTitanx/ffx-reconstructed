@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A47400.obj
+
+File Type: COFF OBJECT
+
+_FFX_Abmap_ClearSlotEntryFlagsByMask:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000007: 0F B7 48 02        movzx       ecx,word ptr [eax+2]
+  0000000B: 0F BF D1           movsx       edx,cx
+  0000000E: 66 85 C9           test        cx,cx
+  00000011: 74 1F              je          00000032
+  00000013: 8A 4D 08           mov         cl,byte ptr [ebp+8]
+  00000016: 56                 push        esi
+  00000017: 05 2A 08 00 00     add         eax,82Ah
+  0000001C: BE FF FF 00 00     mov         esi,0FFFFh
+  00000021: 4A                 dec         edx
+  00000022: 66 39 70 E4        cmp         word ptr [eax-1Ch],si
+  00000026: 74 02              je          0000002A
+  00000028: 20 08              and         byte ptr [eax],cl
+  0000002A: 83 C0 28           add         eax,28h
+  0000002D: 85 D2              test        edx,edx
+  0000002F: 75 F0              jne         00000021
+  00000031: 5E                 pop         esi
+  00000032: 8B E5              mov         esp,ebp
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          36 .text

@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0088D1B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_AllocWalkStructHeapWithMin:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: E8 00 00 00 00     call        _FFX_Mscd_GetWalkStructSkyDataPtr
+  0000000A: FF 75 08           push        dword ptr [ebp+8]
+  0000000D: 8B F8              mov         edi,eax
+  0000000F: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  00000012: FF D1              call        ecx
+  00000014: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000017: 8B 4F 14           mov         ecx,dword ptr [edi+14h]
+  0000001A: FF D1              call        ecx
+  0000001C: 8B F0              mov         esi,eax
+  0000001E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000021: 83 C4 08           add         esp,8
+  00000024: 3B F0              cmp         esi,eax
+  00000026: 7D 02              jge         0000002A
+  00000028: 8B F0              mov         esi,eax
+  0000002A: 6A 40              push        40h
+  0000002C: E8 00 00 00 00     call        _SgMem_SetAlignment
+  00000031: 8D 86 FF 07 00 00  lea         eax,[esi+7FFh]
+  00000037: C1 F8 1F           sar         eax,1Fh
+  0000003A: 25 FF 07 00 00     and         eax,7FFh
+  0000003F: 81 C6 FF 07 00 00  add         esi,7FFh
+  00000045: 03 C6              add         eax,esi
+  00000047: 25 00 F8 FF FF     and         eax,0FFFFF800h
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000052: 8B F0              mov         esi,eax
+  00000054: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000005A: E8 00 00 00 00     call        _FlushCache
+  0000005F: 8B 0F              mov         ecx,dword ptr [edi]
+  00000061: 6A 00              push        0
+  00000063: 6A 00              push        0
+  00000065: 6A 00              push        0
+  00000067: 56                 push        esi
+  00000068: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000006B: FF D1              call        ecx
+  0000006D: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000070: 6A 00              push        0
+  00000072: FF D0              call        eax
+  00000074: 83 C4 20           add         esp,20h
+  00000077: E8 00 00 00 00     call        _FlushCache
+  0000007C: 5F                 pop         edi
+  0000007D: 8B C6              mov         eax,esi
+  0000007F: 5E                 pop         esi
+  00000080: 5D                 pop         ebp
+  00000081: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          82 .text

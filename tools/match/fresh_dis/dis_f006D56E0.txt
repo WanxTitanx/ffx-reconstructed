@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D56E0.obj
+
+File Type: COFF OBJECT
+
+@FFX_BrokenScreenEffect_StreamInstances@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 57                 push        edi
+  0000000A: 80 7E 74 00        cmp         byte ptr [esi+74h],0
+  0000000E: 8B FA              mov         edi,edx
+  00000010: 75 09              jne         0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        _Phyre_PCluster_StreamVertices
+  00000018: 83 C4 04           add         esp,4
+  0000001B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001E: D9 E8              fld1
+  00000020: 8B 46 38           mov         eax,dword ptr [esi+38h]
+  00000023: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000026: FF 75 08           push        dword ptr [ebp+8]
+  00000029: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  0000002C: D9 55 F8           fst         dword ptr [ebp-8]
+  0000002F: C6 46 75 01        mov         byte ptr [esi+75h],1
+  00000033: FF 76 50           push        dword ptr [esi+50h]
+  00000036: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000039: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  0000003C: FF 76 2C           push        dword ptr [esi+2Ch]
+  0000003F: FF 76 44           push        dword ptr [esi+44h]
+  00000042: FF 76 40           push        dword ptr [esi+40h]
+  00000045: FF 30              push        dword ptr [eax]
+  00000047: E8 00 00 00 00     call        _Phyre_PCluster_CopyData
+  0000004C: 8B 4E 38           mov         ecx,dword ptr [esi+38h]
+  0000004F: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000052: 8B 0C B9           mov         ecx,dword ptr [ecx+edi*4]
+  00000055: 8D 45 F0           lea         eax,[ebp-10h]
+  00000058: 50                 push        eax
+  00000059: FF 31              push        dword ptr [ecx]
+  0000005B: E8 00 00 00 00     call        _Phyre_PCluster_SelectLOD
+  00000060: 8B 06              mov         eax,dword ptr [esi]
+  00000062: 83 C4 24           add         esp,24h
+  00000065: 80 78 04 00        cmp         byte ptr [eax+4],0
+  00000069: 74 04              je          0000006F
+  0000006B: 33 C0              xor         eax,eax
+  0000006D: EB 02              jmp         00000071
+  0000006F: 8B 00              mov         eax,dword ptr [eax]
+  00000071: 6A 00              push        0
+  00000073: 50                 push        eax
+  00000074: 8B 46 38           mov         eax,dword ptr [esi+38h]
+  00000077: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  0000007A: FF 30              push        dword ptr [eax]
+  0000007C: E8 00 00 00 00     call        _Phyre_PCluster_ProcessLOD
+  00000081: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000084: 8B 46 38           mov         eax,dword ptr [esi+38h]
+  00000087: FF 75 08           push        dword ptr [ebp+8]
+  0000008A: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  0000008D: FF 76 50           push        dword ptr [esi+50h]
+  00000090: FF 76 2C           push        dword ptr [esi+2Ch]
+  00000093: FF 76 44           push        dword ptr [esi+44h]
+  00000096: FF 76 40           push        dword ptr [esi+40h]
+  00000099: FF 70 04           push        dword ptr [eax+4]
+  0000009C: E8 00 00 00 00     call        _Phyre_PCluster_CopyData
+  000000A1: 83 C4 28           add         esp,28h
+  000000A4: 5F                 pop         edi
+  000000A5: 5E                 pop         esi
+  000000A6: 8B E5              mov         esp,ebp
+  000000A8: 5D                 pop         ebp
+  000000A9: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          AC .text

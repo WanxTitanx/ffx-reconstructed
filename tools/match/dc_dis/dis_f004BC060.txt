@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004BC060.obj
+
+File Type: COFF OBJECT
+
+@PShaderArray_Cleanup@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 78 11              js          0000001B
+  0000000A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000F: 50                 push        eax
+  00000010: FF 76 18           push        dword ptr [esi+18h]
+  00000013: E8 00 00 00 00     call        _PShaderArray_StreamDef_Destroy
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000001E: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  00000025: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 78 11              js          00000041
+  00000030: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000035: 50                 push        eax
+  00000036: FF 76 10           push        dword ptr [esi+10h]
+  00000039: E8 00 00 00 00     call        _PShaderArray_ParamDef_Destroy
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 8D 46 04           lea         eax,[esi+4]
+  00000044: 50                 push        eax
+  00000045: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000004C: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000053: E8 00 00 00 00     call        _PShader_Array_DestroyElementsData
+  00000058: 83 C4 04           add         esp,4
+  0000005B: 5E                 pop         esi
+  0000005C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5D .text

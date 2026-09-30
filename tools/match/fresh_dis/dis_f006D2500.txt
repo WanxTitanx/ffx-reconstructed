@@ -1,0 +1,140 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D2500.obj
+
+File Type: COFF OBJECT
+
+_FFX_BucketAlloc_AllocInternal@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D9 C0              fld         st(0)
+  00000008: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000000B: D9 C0              fld         st(0)
+  0000000D: D9 C9              fxch        st(1)
+  0000000F: D8 DB              fcomp       st(3)
+  00000011: DF E0              fnstsw      ax
+  00000013: DD DA              fstp        st(2)
+  00000015: D9 EE              fldz
+  00000017: F6 C4 01           test        ah,1
+  0000001A: 0F 85 89 00 00 00  jne         000000A9
+  00000020: DD E1              fucom       st(1)
+  00000022: DF E0              fnstsw      ax
+  00000024: F6 C4 44           test        ah,44h
+  00000027: 7B 06              jnp         0000002F
+  00000029: DD D8              fstp        st(0)
+  0000002B: D9 C1              fld         st(1)
+  0000002D: D8 F1              fdiv        st,st(1)
+  0000002F: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000032: DB 45 18           fild        dword ptr [ebp+18h]
+  00000035: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000038: D9 45 08           fld         dword ptr [ebp+8]
+  0000003B: D8 D2              fcom        st(2)
+  0000003D: DF E0              fnstsw      ax
+  0000003F: F6 C4 41           test        ah,41h
+  00000042: 75 24              jne         00000068
+  00000044: DD D8              fstp        st(0)
+  00000046: D9 E8              fld1
+  00000048: DC C2              fadd        st(2),st
+  0000004A: D9 CA              fxch        st(2)
+  0000004C: E8 00 00 00 00     call        __ftol2_sse
+  00000051: DE C1              faddp       st(1),st
+  00000053: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000056: 89 01              mov         dword ptr [ecx],eax
+  00000058: E8 00 00 00 00     call        __ftol2_sse
+  0000005D: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000060: 8B D0              mov         edx,eax
+  00000062: 89 11              mov         dword ptr [ecx],edx
+  00000064: 5D                 pop         ebp
+  00000065: C2 14 00           ret         14h
+  00000068: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000006B: DD D9              fstp        st(1)
+  0000006D: 8B 4D 18           mov         ecx,dword ptr [ebp+18h]
+  00000070: DD D9              fstp        st(1)
+  00000072: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000075: 89 08              mov         dword ptr [eax],ecx
+  00000077: D9 EE              fldz
+  00000079: DD E9              fucomp      st(1)
+  0000007B: DF E0              fnstsw      ax
+  0000007D: F6 C4 44           test        ah,44h
+  00000080: 7A 13              jp          00000095
+  00000082: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000085: DD D9              fstp        st(1)
+  00000087: DD D8              fstp        st(0)
+  00000089: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000008F: 33 C0              xor         eax,eax
+  00000091: 5D                 pop         ebp
+  00000092: C2 14 00           ret         14h
+  00000095: DE F9              fdivp       st(1),st
+  00000097: E8 00 00 00 00     call        __ftol2_sse
+  0000009C: 8B D0              mov         edx,eax
+  0000009E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000A1: 89 10              mov         dword ptr [eax],edx
+  000000A3: 8B C2              mov         eax,edx
+  000000A5: 5D                 pop         ebp
+  000000A6: C2 14 00           ret         14h
+  000000A9: DD E2              fucom       st(2)
+  000000AB: DF E0              fnstsw      ax
+  000000AD: F6 C4 44           test        ah,44h
+  000000B0: 7B 06              jnp         000000B8
+  000000B2: DD D8              fstp        st(0)
+  000000B4: D9 C0              fld         st(0)
+  000000B6: D8 F2              fdiv        st,st(2)
+  000000B8: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000000BB: DB 45 18           fild        dword ptr [ebp+18h]
+  000000BE: D9 5D 08           fstp        dword ptr [ebp+8]
+  000000C1: D9 45 08           fld         dword ptr [ebp+8]
+  000000C4: D8 D1              fcom        st(1)
+  000000C6: DF E0              fnstsw      ax
+  000000C8: F6 C4 41           test        ah,41h
+  000000CB: 75 26              jne         000000F3
+  000000CD: DD D8              fstp        st(0)
+  000000CF: D9 E8              fld1
+  000000D1: DC C1              fadd        st(1),st
+  000000D3: D9 C9              fxch        st(1)
+  000000D5: E8 00 00 00 00     call        __ftol2_sse
+  000000DA: DE C1              faddp       st(1),st
+  000000DC: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  000000DF: 89 01              mov         dword ptr [ecx],eax
+  000000E1: E8 00 00 00 00     call        __ftol2_sse
+  000000E6: 8B D0              mov         edx,eax
+  000000E8: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  000000EB: 89 10              mov         dword ptr [eax],edx
+  000000ED: 8B C2              mov         eax,edx
+  000000EF: 5D                 pop         ebp
+  000000F0: C2 14 00           ret         14h
+  000000F3: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000F6: DD D9              fstp        st(1)
+  000000F8: 8B 4D 18           mov         ecx,dword ptr [ebp+18h]
+  000000FB: DD D9              fstp        st(1)
+  000000FD: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000100: 89 08              mov         dword ptr [eax],ecx
+  00000102: D9 EE              fldz
+  00000104: DD E9              fucomp      st(1)
+  00000106: DF E0              fnstsw      ax
+  00000108: F6 C4 44           test        ah,44h
+  0000010B: 7A 13              jp          00000120
+  0000010D: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000110: DD D9              fstp        st(1)
+  00000112: DD D8              fstp        st(0)
+  00000114: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000011A: 33 C0              xor         eax,eax
+  0000011C: 5D                 pop         ebp
+  0000011D: C2 14 00           ret         14h
+  00000120: DE F9              fdivp       st(1),st
+  00000122: E8 00 00 00 00     call        __ftol2_sse
+  00000127: 8B D0              mov         edx,eax
+  00000129: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  0000012C: 89 10              mov         dword ptr [eax],edx
+  0000012E: 8B C2              mov         eax,edx
+  00000130: 5D                 pop         ebp
+  00000131: C2 14 00           ret         14h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+         134 .text

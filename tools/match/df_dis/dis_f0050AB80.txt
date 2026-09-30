@@ -1,0 +1,93 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0050AB80.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationCurve_GetInterpolationType@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 8B 01              mov         eax,dword ptr [ecx]
+  00000008: 53                 push        ebx
+  00000009: 56                 push        esi
+  0000000A: 57                 push        edi
+  0000000B: 8B 79 08           mov         edi,dword ptr [ecx+8]
+  0000000E: 8D 48 FF           lea         ecx,[eax-1]
+  00000011: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000014: 8B DA              mov         ebx,edx
+  00000016: 8B C1              mov         eax,ecx
+  00000018: 99                 cdq
+  00000019: 2B C2              sub         eax,edx
+  0000001B: 8B D0              mov         edx,eax
+  0000001D: D1 FA              sar         edx,1
+  0000001F: 33 F6              xor         esi,esi
+  00000021: D9 04 97           fld         dword ptr [edi+edx*4]
+  00000024: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000027: D9 45 08           fld         dword ptr [ebp+8]
+  0000002A: 85 C9              test        ecx,ecx
+  0000002C: 74 34              je          00000062
+  0000002E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000031: D8 D9              fcomp       st(1)
+  00000033: DF E0              fnstsw      ax
+  00000035: F6 C4 41           test        ah,41h
+  00000038: 7A 0B              jp          00000045
+  0000003A: 8D 72 01           lea         esi,[edx+1]
+  0000003D: 3B F1              cmp         esi,ecx
+  0000003F: 7C 0D              jl          0000004E
+  00000041: 8B F1              mov         esi,ecx
+  00000043: EB 09              jmp         0000004E
+  00000045: 8D 4A FF           lea         ecx,[edx-1]
+  00000048: 3B CE              cmp         ecx,esi
+  0000004A: 7F 02              jg          0000004E
+  0000004C: 8B CE              mov         ecx,esi
+  0000004E: 8D 04 0E           lea         eax,[esi+ecx]
+  00000051: 99                 cdq
+  00000052: 2B C2              sub         eax,edx
+  00000054: 8B D0              mov         edx,eax
+  00000056: D1 FA              sar         edx,1
+  00000058: D9 04 97           fld         dword ptr [edi+edx*4]
+  0000005B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000005E: 3B F1              cmp         esi,ecx
+  00000060: 75 CC              jne         0000002E
+  00000062: 85 D2              test        edx,edx
+  00000064: 7E 0D              jle         00000073
+  00000066: D9 45 FC           fld         dword ptr [ebp-4]
+  00000069: D8 D9              fcomp       st(1)
+  0000006B: DF E0              fnstsw      ax
+  0000006D: F6 C4 41           test        ah,41h
+  00000070: 75 01              jne         00000073
+  00000072: 4A                 dec         edx
+  00000073: 8D 4A 01           lea         ecx,[edx+1]
+  00000076: 8B C2              mov         eax,edx
+  00000078: 3B 4D F8           cmp         ecx,dword ptr [ebp-8]
+  0000007B: 7C 0F              jl          0000008C
+  0000007D: DD D8              fstp        st(0)
+  0000007F: 5F                 pop         edi
+  00000080: D9 EE              fldz
+  00000082: 5E                 pop         esi
+  00000083: D9 1B              fstp        dword ptr [ebx]
+  00000085: 5B                 pop         ebx
+  00000086: 8B E5              mov         esp,ebp
+  00000088: 5D                 pop         ebp
+  00000089: C2 04 00           ret         4
+  0000008C: D8 24 97           fsub        dword ptr [edi+edx*4]
+  0000008F: D9 44 97 04        fld         dword ptr [edi+edx*4+4]
+  00000093: D8 24 97           fsub        dword ptr [edi+edx*4]
+  00000096: 5F                 pop         edi
+  00000097: 5E                 pop         esi
+  00000098: DE F9              fdivp       st(1),st
+  0000009A: D9 1B              fstp        dword ptr [ebx]
+  0000009C: 5B                 pop         ebx
+  0000009D: 8B E5              mov         esp,ebp
+  0000009F: 5D                 pop         ebp
+  000000A0: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          A3 .text

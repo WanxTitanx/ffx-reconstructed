@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006C1520.obj
+
+File Type: COFF OBJECT
+
+_FFX_ShaderParser_RequestShaderPackage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _AsyncQueue_GetGlobal
+  00000008: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  0000000C: 74 2C              je          0000003A
+  0000000E: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000011: 8B 08              mov         ecx,dword ptr [eax]
+  00000013: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000016: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000019: 8D 45 08           lea         eax,[ebp+8]
+  0000001C: 50                 push        eax
+  0000001D: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000020: 50                 push        eax
+  00000021: 51                 push        ecx
+  00000022: E8 00 00 00 00     call        _FFX_ShaderParser_AllocAndInitShaderPackage
+  00000027: E8 00 00 00 00     call        _GetGlobalSystemContext
+  0000002C: 8D 45 08           lea         eax,[ebp+8]
+  0000002F: 6A 01              push        1
+  00000031: 50                 push        eax
+  00000032: E8 00 00 00 00     call        _FFX_Shader_ResolveAndRefStrings
+  00000037: 83 C4 14           add         esp,14h
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

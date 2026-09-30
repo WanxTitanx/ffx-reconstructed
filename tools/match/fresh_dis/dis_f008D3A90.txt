@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008D3A90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_Loose_8D3A90:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: FF 75 14           push        dword ptr [ebp+14h]
+  0000000A: E8 00 00 00 00     call        _FFX_Menu_IsMenuActive
+  0000000F: FF 75 18           push        dword ptr [ebp+18h]
+  00000012: 8B F8              mov         edi,eax
+  00000014: E8 00 00 00 00     call        _FFX_Menu_IsMenuActive
+  00000019: FF 35 00 00 00 00  push        dword ptr [_g_MenuVar_186A9B0]
+  0000001F: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000022: FF 35 00 00 00 00  push        dword ptr [_dword_186A9AC]
+  00000028: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000002B: 53                 push        ebx
+  0000002C: 56                 push        esi
+  0000002D: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000030: E8 00 00 00 00     call        _FFX_Menu2D_SetClipRectCoord_thunk_A
+  00000035: 83 C4 18           add         esp,18h
+  00000038: E8 00 00 00 00     call        _FFX_SphereGrid_GetCurrentCharIndex
+  0000003D: 85 C0              test        eax,eax
+  0000003F: 74 0B              je          0000004C
+  00000041: 57                 push        edi
+  00000042: 53                 push        ebx
+  00000043: 56                 push        esi
+  00000044: E8 00 00 00 00     call        _FFX_Menu2D_ObjectAlloc_16B
+  00000049: 83 C4 0C           add         esp,0Ch
+  0000004C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000004F: 85 FF              test        edi,edi
+  00000051: 74 57              je          000000AA
+  00000053: 8B 35 00 00 00 00  mov         esi,dword ptr [_dword_186A9AC]
+  00000059: 0F AF F7           imul        esi,edi
+  0000005C: C1 EE 0C           shr         esi,0Ch
+  0000005F: 03 75 08           add         esi,dword ptr [ebp+8]
+  00000062: E8 00 00 00 00     call        _FFX_Menu_Restore128State
+  00000067: 57                 push        edi
+  00000068: E8 00 00 00 00     call        _abs32
+  0000006D: B9 00 10 00 00     mov         ecx,1000h
+  00000072: 2B C8              sub         ecx,eax
+  00000074: C1 F9 05           sar         ecx,5
+  00000077: 51                 push        ecx
+  00000078: 68 80 00 00 00     push        80h
+  0000007D: 68 80 00 00 00     push        80h
+  00000082: 68 80 00 00 00     push        80h
+  00000087: E8 00 00 00 00     call        _FFX_Menu_Set128State
+  0000008C: 83 C4 14           add         esp,14h
+  0000008F: E8 00 00 00 00     call        _FFX_SphereGrid_GetCurrentCharIndex
+  00000094: 85 C0              test        eax,eax
+  00000096: 74 0D              je          000000A5
+  00000098: FF 75 FC           push        dword ptr [ebp-4]
+  0000009B: 53                 push        ebx
+  0000009C: 56                 push        esi
+  0000009D: E8 00 00 00 00     call        _FFX_Menu2D_ObjectAlloc_16B
+  000000A2: 83 C4 0C           add         esp,0Ch
+  000000A5: E8 00 00 00 00     call        _FFX_Menu_Save128State
+  000000AA: E8 00 00 00 00     call        _FFX_Menu_DrawFullscreenClearQuad
+  000000AF: 5F                 pop         edi
+  000000B0: 5E                 pop         esi
+  000000B1: 5B                 pop         ebx
+  000000B2: 8B E5              mov         esp,ebp
+  000000B4: 5D                 pop         ebp
+  000000B5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B6 .text

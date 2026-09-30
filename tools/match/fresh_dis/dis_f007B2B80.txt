@@ -1,0 +1,31 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B2B80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_RequestSoundAndCheckSwitch:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_g_BattleUnkVar_112C8F0],0
+            00
+  00000007: 74 20              je          00000029
+  00000009: 6A 01              push        1
+  0000000B: E8 00 00 00 00     call        _FFX_Battle_CheckCanSwitchParty
+  00000010: 83 C4 04           add         esp,4
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 04              je          0000001B
+  00000017: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000001A: C3                 ret
+  0000001B: FF 35 00 00 00 00  push        dword ptr [_g_BattleUnkVar_112C8F0]
+  00000021: E8 00 00 00 00     call        _FFX_Btl_Sound_BankRequest
+  00000026: 83 C4 04           add         esp,4
+  00000029: 33 C0              xor         eax,eax
+  0000002B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2C .text

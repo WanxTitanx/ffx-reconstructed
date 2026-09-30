@@ -1,0 +1,303 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008358E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_PlayFootstepSound:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 66 8B 5D 0C        mov         bx,word ptr [ebp+0Ch]
+  00000008: 66 8B C3           mov         ax,bx
+  0000000B: 66 C1 F8 08        sar         ax,8
+  0000000F: 33 C9              xor         ecx,ecx
+  00000011: 56                 push        esi
+  00000012: 84 C0              test        al,al
+  00000014: 74 33              je          00000049
+  00000016: 3C 01              cmp         al,1
+  00000018: 0F 85 43 02 00 00  jne         00000261
+  0000001E: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000021: 0F B6 C3           movzx       eax,bl
+  00000024: 50                 push        eax
+  00000025: FF B6 8C 01 00 00  push        dword ptr [esi+18Ch]
+  0000002B: E8 00 00 00 00     call        _FFX_Battle_PlayFootstepSoundIfMoving
+  00000030: 83 C4 08           add         esp,8
+  00000033: 80 FB 06           cmp         bl,6
+  00000036: 0F 85 25 02 00 00  jne         00000261
+  0000003C: 56                 push        esi
+  0000003D: E8 00 00 00 00     call        _FFX_Chr_GetFootstepBonePosition
+  00000042: 83 C4 04           add         esp,4
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+  00000049: 0F BE C3           movsx       eax,bl
+  0000004C: 48                 dec         eax
+  0000004D: 83 F8 10           cmp         eax,10h
+  00000050: 0F 87 0B 02 00 00  ja          00000261
+  00000056: 57                 push        edi
+  00000057: FF 24 85 00 00 00  jmp         dword ptr $LN28[eax*4]
+            00
+$LN17:
+  0000005E: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000061: 57                 push        edi
+  00000062: 8B 97 2C 08 00 00  mov         edx,dword ptr [edi+82Ch]
+  00000068: 8A C2              mov         al,dl
+  0000006A: 8B F2              mov         esi,edx
+  0000006C: 83 E6 03           and         esi,3
+  0000006F: 8D 48 01           lea         ecx,[eax+1]
+  00000072: 0F B6 C0           movzx       eax,al
+  00000075: 33 C8              xor         ecx,eax
+  00000077: 83 E1 03           and         ecx,3
+  0000007A: 33 CA              xor         ecx,edx
+  0000007C: 89 8F 2C 08 00 00  mov         dword ptr [edi+82Ch],ecx
+  00000082: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  00000087: 56                 push        esi
+  00000088: 50                 push        eax
+  00000089: 0F BE 87 84 01 00  movsx       eax,byte ptr [edi+184h]
+            00
+  00000090: 50                 push        eax
+  00000091: 6A 01              push        1
+  00000093: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  00000098: 57                 push        edi
+  00000099: E8 00 00 00 00     call        _FFX_Chr_GetFootstepBonePosition
+  0000009E: 83 C4 18           add         esp,18h
+  000000A1: 5F                 pop         edi
+  000000A2: 5E                 pop         esi
+  000000A3: 5B                 pop         ebx
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+$LN16:
+  000000A6: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  000000A9: 57                 push        edi
+  000000AA: 8B 97 2C 08 00 00  mov         edx,dword ptr [edi+82Ch]
+  000000B0: 8A C2              mov         al,dl
+  000000B2: 8B F2              mov         esi,edx
+  000000B4: 83 E6 03           and         esi,3
+  000000B7: 8D 48 01           lea         ecx,[eax+1]
+  000000BA: 0F B6 C0           movzx       eax,al
+  000000BD: 33 C8              xor         ecx,eax
+  000000BF: 83 E1 03           and         ecx,3
+  000000C2: 33 CA              xor         ecx,edx
+  000000C4: 89 8F 2C 08 00 00  mov         dword ptr [edi+82Ch],ecx
+  000000CA: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  000000CF: 56                 push        esi
+  000000D0: 50                 push        eax
+  000000D1: 0F BE 87 84 01 00  movsx       eax,byte ptr [edi+184h]
+            00
+  000000D8: 50                 push        eax
+  000000D9: 6A 00              push        0
+  000000DB: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  000000E0: 57                 push        edi
+  000000E1: E8 00 00 00 00     call        _FFX_Chr_GetFootstepBonePosition
+  000000E6: 83 C4 18           add         esp,18h
+  000000E9: 5F                 pop         edi
+  000000EA: 5E                 pop         esi
+  000000EB: 5B                 pop         ebx
+  000000EC: 5D                 pop         ebp
+  000000ED: C3                 ret
+$LN15:
+  000000EE: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  000000F1: B9 FC 00 00 00     mov         ecx,0FCh
+  000000F6: 8B 97 2C 08 00 00  mov         edx,dword ptr [edi+82Ch]
+  000000FC: 8B C2              mov         eax,edx
+  000000FE: C1 E8 02           shr         eax,2
+  00000101: 8B F0              mov         esi,eax
+  00000103: C0 E0 02           shl         al,2
+  00000106: 2A C8              sub         cl,al
+  00000108: 0F B6 C2           movzx       eax,dl
+  0000010B: 57                 push        edi
+  0000010C: 83 E6 01           and         esi,1
+  0000010F: 33 C8              xor         ecx,eax
+  00000111: 83 E1 04           and         ecx,4
+  00000114: 33 CA              xor         ecx,edx
+  00000116: 89 8F 2C 08 00 00  mov         dword ptr [edi+82Ch],ecx
+  0000011C: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  00000121: 56                 push        esi
+  00000122: 50                 push        eax
+  00000123: 0F BE 87 84 01 00  movsx       eax,byte ptr [edi+184h]
+            00
+  0000012A: 50                 push        eax
+  0000012B: 6A 04              push        4
+  0000012D: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  00000132: 83 C4 14           add         esp,14h
+  00000135: 5F                 pop         edi
+  00000136: 5E                 pop         esi
+  00000137: 5B                 pop         ebx
+  00000138: 5D                 pop         ebp
+  00000139: C3                 ret
+$LN14:
+  0000013A: E8 00 00 00 00     call        _FFX_Chr_GetFootstepCounter
+  0000013F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000142: 85 C0              test        eax,eax
+  00000144: 74 0E              je          00000154
+  00000146: 56                 push        esi
+  00000147: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  0000014C: 83 C4 04           add         esp,4
+  0000014F: E8 00 00 00 00     call        _dbgPrintf
+  00000154: 8B 96 2C 08 00 00  mov         edx,dword ptr [esi+82Ch]
+  0000015A: 8A CA              mov         cl,dl
+  0000015C: 80 E1 F8           and         cl,0F8h
+  0000015F: 80 C1 08           add         cl,8
+  00000162: 0F B6 C2           movzx       eax,dl
+  00000165: 8B FA              mov         edi,edx
+  00000167: C1 EF 03           shr         edi,3
+  0000016A: 83 E7 03           and         edi,3
+  0000016D: 33 C8              xor         ecx,eax
+  0000016F: 8B 86 94 01 00 00  mov         eax,dword ptr [esi+194h]
+  00000175: C1 E8 1D           shr         eax,1Dh
+  00000178: 83 E1 18           and         ecx,18h
+  0000017B: 33 CA              xor         ecx,edx
+  0000017D: F6 D0              not         al
+  0000017F: 89 8E 2C 08 00 00  mov         dword ptr [esi+82Ch],ecx
+  00000185: 56                 push        esi
+  00000186: A8 01              test        al,1
+  00000188: 74 1E              je          000001A8
+  0000018A: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  0000018F: 57                 push        edi
+  00000190: 50                 push        eax
+  00000191: 0F BE 86 84 01 00  movsx       eax,byte ptr [esi+184h]
+            00
+  00000198: 50                 push        eax
+  00000199: 6A 02              push        2
+  0000019B: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  000001A0: 83 C4 14           add         esp,14h
+  000001A3: 5F                 pop         edi
+  000001A4: 5E                 pop         esi
+  000001A5: 5B                 pop         ebx
+  000001A6: 5D                 pop         ebp
+  000001A7: C3                 ret
+  000001A8: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  000001AD: 57                 push        edi
+  000001AE: 50                 push        eax
+  000001AF: 0F BE 86 84 01 00  movsx       eax,byte ptr [esi+184h]
+            00
+  000001B6: 50                 push        eax
+  000001B7: 6A 03              push        3
+  000001B9: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  000001BE: 83 C4 14           add         esp,14h
+  000001C1: 5F                 pop         edi
+  000001C2: 5E                 pop         esi
+  000001C3: 5B                 pop         ebx
+  000001C4: 5D                 pop         ebp
+  000001C5: C3                 ret
+$LN10:
+  000001C6: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  000001C9: 56                 push        esi
+  000001CA: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  000001CF: 6A 00              push        0
+  000001D1: 50                 push        eax
+  000001D2: 0F BE 86 84 01 00  movsx       eax,byte ptr [esi+184h]
+            00
+  000001D9: 50                 push        eax
+  000001DA: 6A 05              push        5
+  000001DC: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  000001E1: 83 C4 14           add         esp,14h
+  000001E4: 5F                 pop         edi
+  000001E5: 5E                 pop         esi
+  000001E6: 5B                 pop         ebx
+  000001E7: 5D                 pop         ebp
+  000001E8: C3                 ret
+$LN9:
+  000001E9: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  000001EC: 57                 push        edi
+  000001ED: 8B 97 2C 08 00 00  mov         edx,dword ptr [edi+82Ch]
+  000001F3: 8A C2              mov         al,dl
+  000001F5: 8B F2              mov         esi,edx
+  000001F7: 83 E6 03           and         esi,3
+  000001FA: 8D 48 01           lea         ecx,[eax+1]
+  000001FD: 0F B6 C0           movzx       eax,al
+  00000200: 33 C8              xor         ecx,eax
+  00000202: 83 E1 03           and         ecx,3
+  00000205: 33 CA              xor         ecx,edx
+  00000207: 89 8F 2C 08 00 00  mov         dword ptr [edi+82Ch],ecx
+  0000020D: E8 00 00 00 00     call        _FFX_Field_GetActorSurfaceFlags_Shift15
+  00000212: 56                 push        esi
+  00000213: 50                 push        eax
+  00000214: 0F BE 87 84 01 00  movsx       eax,byte ptr [edi+184h]
+            00
+  0000021B: 50                 push        eax
+  0000021C: 6A 00              push        0
+  0000021E: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  00000223: 83 C4 14           add         esp,14h
+  00000226: 5F                 pop         edi
+  00000227: 5E                 pop         esi
+  00000228: 5B                 pop         ebx
+  00000229: 5D                 pop         ebp
+  0000022A: C3                 ret
+$LN3:
+  0000022B: B9 01 00 00 00     mov         ecx,1
+$LABEL_14$29:
+  00000230: 41                 inc         ecx
+$LABEL_15$30:
+  00000231: 41                 inc         ecx
+$LABEL_16$31:
+  00000232: 41                 inc         ecx
+$LABEL_17$32:
+  00000233: 41                 inc         ecx
+$LABEL_18$33:
+  00000234: 8D 71 02           lea         esi,[ecx+2]
+  00000237: E8 00 00 00 00     call        _FFX_Chr_GetFootstepCounter
+  0000023C: 85 C0              test        eax,eax
+  0000023E: 74 05              je          00000245
+  00000240: E8 00 00 00 00     call        _dbgPrintf
+  00000245: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000248: 56                 push        esi
+  00000249: 0F BE 80 84 01 00  movsx       eax,byte ptr [eax+184h]
+            00
+  00000250: 6A 00              push        0
+  00000252: 50                 push        eax
+  00000253: 68 FF 00 00 00     push        0FFh
+  00000258: E8 00 00 00 00     call        _FFX_Sound_SpuCmdSeqProcessor
+  0000025D: 83 C4 10           add         esp,10h
+$LN26:
+  00000260: 5F                 pop         edi
+  00000261: 5E                 pop         esi
+  00000262: 5B                 pop         ebx
+  00000263: 5D                 pop         ebp
+  00000264: C3                 ret
+  00000265: 8D 49 00           lea         ecx,[ecx]
+$LN28:
+  00000268: 00 00              add         byte ptr [eax],al
+  0000026A: 00 00              add         byte ptr [eax],al
+  0000026C: 00 00              add         byte ptr [eax],al
+  0000026E: 00 00              add         byte ptr [eax],al
+  00000270: 00 00              add         byte ptr [eax],al
+  00000272: 00 00              add         byte ptr [eax],al
+  00000274: 00 00              add         byte ptr [eax],al
+  00000276: 00 00              add         byte ptr [eax],al
+  00000278: 00 00              add         byte ptr [eax],al
+  0000027A: 00 00              add         byte ptr [eax],al
+  0000027C: 00 00              add         byte ptr [eax],al
+  0000027E: 00 00              add         byte ptr [eax],al
+  00000280: 00 00              add         byte ptr [eax],al
+  00000282: 00 00              add         byte ptr [eax],al
+  00000284: 00 00              add         byte ptr [eax],al
+  00000286: 00 00              add         byte ptr [eax],al
+  00000288: 00 00              add         byte ptr [eax],al
+  0000028A: 00 00              add         byte ptr [eax],al
+  0000028C: 00 00              add         byte ptr [eax],al
+  0000028E: 00 00              add         byte ptr [eax],al
+  00000290: 00 00              add         byte ptr [eax],al
+  00000292: 00 00              add         byte ptr [eax],al
+  00000294: 00 00              add         byte ptr [eax],al
+  00000296: 00 00              add         byte ptr [eax],al
+  00000298: 00 00              add         byte ptr [eax],al
+  0000029A: 00 00              add         byte ptr [eax],al
+  0000029C: 00 00              add         byte ptr [eax],al
+  0000029E: 00 00              add         byte ptr [eax],al
+  000002A0: 00 00              add         byte ptr [eax],al
+  000002A2: 00 00              add         byte ptr [eax],al
+  000002A4: 00 00              add         byte ptr [eax],al
+  000002A6: 00 00              add         byte ptr [eax],al
+  000002A8: 00 00              add         byte ptr [eax],al
+  000002AA: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         2AC .text

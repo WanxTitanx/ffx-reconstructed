@@ -1,0 +1,108 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00966CB0.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_emitMove:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 53                 push        ebx
+  0000000D: 57                 push        edi
+  0000000E: E8 00 00 00 00     call        _LuaCodeGen_storeToReg
+  00000013: 83 C4 08           add         esp,8
+  00000016: 83 3B 0A           cmp         dword ptr [ebx],0Ah
+  00000019: 75 0D              jne         00000028
+  0000001B: 8D 43 08           lea         eax,[ebx+8]
+  0000001E: 50                 push        eax
+  0000001F: 57                 push        edi
+  00000020: E8 00 00 00 00     call        _LuaCodeGen_patchJmpTarget
+  00000025: 83 C4 08           add         esp,8
+  00000028: 8B 73 0C           mov         esi,dword ptr [ebx+0Ch]
+  0000002B: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000002E: 3B C6              cmp         eax,esi
+  00000030: 0F 84 A7 00 00 00  je          000000DD
+  00000036: 50                 push        eax
+  00000037: 57                 push        edi
+  00000038: E8 00 00 00 00     call        _LuaCodeGen_nextJumpTarget
+  0000003D: 83 C4 08           add         esp,8
+  00000040: 85 C0              test        eax,eax
+  00000042: 75 0E              jne         00000052
+  00000044: 56                 push        esi
+  00000045: 57                 push        edi
+  00000046: E8 00 00 00 00     call        _LuaCodeGen_nextJumpTarget
+  0000004B: 83 C4 08           add         esp,8
+  0000004E: 85 C0              test        eax,eax
+  00000050: 74 70              je          000000C2
+  00000052: 83 3B 0A           cmp         dword ptr [ebx],0Ah
+  00000055: 75 09              jne         00000060
+  00000057: C7 45 0C FF FF FF  mov         dword ptr [ebp+0Ch],0FFFFFFFFh
+            FF
+  0000005E: EB 22              jmp         00000082
+  00000060: 68 17 80 FF 7F     push        7FFF8017h
+  00000065: 57                 push        edi
+  00000066: C7 47 1C FF FF FF  mov         dword ptr [edi+1Ch],0FFFFFFFFh
+            FF
+  0000006D: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  00000072: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000075: 8D 45 0C           lea         eax,[ebp+0Ch]
+  00000078: 50                 push        eax
+  00000079: 57                 push        edi
+  0000007A: E8 00 00 00 00     call        _LuaCodeGen_patchJmpTarget
+  0000007F: 83 C4 10           add         esp,10h
+  00000082: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  00000085: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000088: 89 47 18           mov         dword ptr [edi+18h],eax
+  0000008B: C1 E6 06           shl         esi,6
+  0000008E: 8B C6              mov         eax,esi
+  00000090: 0D 03 40 00 00     or          eax,4003h
+  00000095: 50                 push        eax
+  00000096: 57                 push        edi
+  00000097: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  0000009C: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  0000009F: 81 CE 00 00 00 00  or          esi,offset _loc_800003
+  000000A5: 56                 push        esi
+  000000A6: 57                 push        edi
+  000000A7: 89 47 18           mov         dword ptr [edi+18h],eax
+  000000AA: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  000000AF: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  000000B2: 89 47 18           mov         dword ptr [edi+18h],eax
+  000000B5: 8D 47 1C           lea         eax,[edi+1Ch]
+  000000B8: 50                 push        eax
+  000000B9: 57                 push        edi
+  000000BA: E8 00 00 00 00     call        _LuaCodeGen_patchJmpTarget
+  000000BF: 83 C4 18           add         esp,18h
+  000000C2: 8B 47 14           mov         eax,dword ptr [edi+14h]
+  000000C5: 89 47 18           mov         dword ptr [edi+18h],eax
+  000000C8: FF 73 0C           push        dword ptr [ebx+0Ch]
+  000000CB: 57                 push        edi
+  000000CC: E8 00 00 00 00     call        _LuaCodeGen_resolveJmpChain
+  000000D1: FF 73 08           push        dword ptr [ebx+8]
+  000000D4: 57                 push        edi
+  000000D5: E8 00 00 00 00     call        _LuaCodeGen_resolveJmpChain
+  000000DA: 83 C4 10           add         esp,10h
+  000000DD: C7 43 08 FF FF FF  mov         dword ptr [ebx+8],0FFFFFFFFh
+            FF
+  000000E4: C7 43 0C FF FF FF  mov         dword ptr [ebx+0Ch],0FFFFFFFFh
+            FF
+  000000EB: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000EE: 5F                 pop         edi
+  000000EF: 89 43 04           mov         dword ptr [ebx+4],eax
+  000000F2: 5E                 pop         esi
+  000000F3: C7 03 06 00 00 00  mov         dword ptr [ebx],6
+  000000F9: 5B                 pop         ebx
+  000000FA: 5D                 pop         ebp
+  000000FB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          FC .text

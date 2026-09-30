@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A07D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_UI_BuildMainCommandRingTree:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_Battle_AccessCurrentActorData
+  0000000E: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000011: 83 C4 04           add         esp,4
+  00000014: 85 F6              test        esi,esi
+  00000016: 79 06              jns         0000001E
+  00000018: 5F                 pop         edi
+  00000019: 33 C0              xor         eax,eax
+  0000001B: 5E                 pop         esi
+  0000001C: 5D                 pop         ebp
+  0000001D: C3                 ret
+  0000001E: E8 00 00 00 00     call        _FFX_Btl_UI_ResetMenuTreeStack
+  00000023: 56                 push        esi
+  00000024: 83 C7 6D           add         edi,6Dh
+  00000027: 57                 push        edi
+  00000028: 6A 01              push        1
+  0000002A: 6A 02              push        2
+  0000002C: E8 00 00 00 00     call        _FFX_Btl_UI_PushMenuTreeEntry
+  00000031: 83 C4 10           add         esp,10h
+  00000034: E8 00 00 00 00     call        _FFX_Btl_UI_HasSecondaryMenuBlob
+  00000039: 85 C0              test        eax,eax
+  0000003B: 74 0E              je          0000004B
+  0000003D: 56                 push        esi
+  0000003E: 57                 push        edi
+  0000003F: 6A 00              push        0
+  00000041: 6A 02              push        2
+  00000043: E8 00 00 00 00     call        _FFX_Btl_UI_PushMenuTreeEntry
+  00000048: 83 C4 10           add         esp,10h
+  0000004B: FF 75 18           push        dword ptr [ebp+18h]
+  0000004E: 0F BE 45 10        movsx       eax,byte ptr [ebp+10h]
+  00000052: FF 75 14           push        dword ptr [ebp+14h]
+  00000055: 50                 push        eax
+  00000056: 57                 push        edi
+  00000057: 6A 00              push        0
+  00000059: 6A 02              push        2
+  0000005B: E8 00 00 00 00     call        _FFX_MsgQueue_ResolveRequests
+  00000060: 83 C4 18           add         esp,18h
+  00000063: B8 01 00 00 00     mov         eax,1
+  00000068: 5F                 pop         edi
+  00000069: 5E                 pop         esi
+  0000006A: 5D                 pop         ebp
+  0000006B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6C .text

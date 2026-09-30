@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006433B0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SetControlledActorFlags:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000009: 33 D2              xor         edx,edx
+  0000000B: 39 55 08           cmp         dword ptr [ebp+8],edx
+  0000000E: 8B F8              mov         edi,eax
+  00000010: 0F 95 C2           setne       dl
+  00000013: 0F B6 4F 1C        movzx       ecx,byte ptr [edi+1Ch]
+  00000017: 3B D1              cmp         edx,ecx
+  00000019: 0F 94 C1           sete        cl
+  0000001C: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  00000020: 0F 95 C0           setne       al
+  00000023: 88 47 1C           mov         byte ptr [edi+1Ch],al
+  00000026: 84 C9              test        cl,cl
+  00000028: 0F 94 C0           sete        al
+  0000002B: 88 47 1D           mov         byte ptr [edi+1Dh],al
+  0000002E: 8B C7              mov         eax,edi
+  00000030: 5F                 pop         edi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

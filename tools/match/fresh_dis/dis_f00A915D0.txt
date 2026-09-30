@@ -1,0 +1,107 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A915D0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Audio_ChannelProcess@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 48           sub         esp,48h
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 6A 40              push        40h
+  0000000A: 8B F9              mov         edi,ecx
+  0000000C: E8 00 00 00 00     call        _alloca
+  00000011: 8B 77 14           mov         esi,dword ptr [edi+14h]
+  00000014: 8D 04 B5 00 00 00  lea         eax,[esi*4]
+            00
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _alloca
+  00000021: 8B C6              mov         eax,esi
+  00000023: 2B 47 30           sub         eax,dword ptr [edi+30h]
+  00000026: 83 C4 08           add         esp,8
+  00000029: C7 47 1C 01 00 00  mov         dword ptr [edi+1Ch],1
+            00
+  00000030: 83 F8 20           cmp         eax,20h
+  00000033: 0F 8E B0 00 00 00  jle         000000E9
+  00000039: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000003C: 53                 push        ebx
+  0000003D: 33 DB              xor         ebx,ebx
+  0000003F: 39 58 04           cmp         dword ptr [eax+4],ebx
+  00000042: 0F 86 A0 00 00 00  jbe         000000E8
+  00000048: 33 D2              xor         edx,edx
+  0000004A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000050: 33 C0              xor         eax,eax
+  00000052: 85 F6              test        esi,esi
+  00000054: 7E 1A              jle         00000070
+  00000056: 8B 4F 08           mov         ecx,dword ptr [edi+8]
+  00000059: 8B 0C 11           mov         ecx,dword ptr [ecx+edx]
+  0000005C: 8D 56 FF           lea         edx,[esi-1]
+  0000005F: 8D 14 91           lea         edx,[ecx+edx*4]
+  00000062: 8B 0A              mov         ecx,dword ptr [edx]
+  00000064: 89 4C 85 B8        mov         dword ptr [ebp+eax*4-48h],ecx
+  00000068: 40                 inc         eax
+  00000069: 8D 52 FC           lea         edx,[edx-4]
+  0000006C: 3B C6              cmp         eax,esi
+  0000006E: 7C F2              jl          00000062
+  00000070: 2B 77 30           sub         esi,dword ptr [edi+30h]
+  00000073: 6A 10              push        10h
+  00000075: 8D 45 B8           lea         eax,[ebp-48h]
+  00000078: 56                 push        esi
+  00000079: 50                 push        eax
+  0000007A: 50                 push        eax
+  0000007B: E8 00 00 00 00     call        _FFX_Audio_FormatConvert
+  00000080: 8B 47 30           mov         eax,dword ptr [edi+30h]
+  00000083: 8B 4F 14           mov         ecx,dword ptr [edi+14h]
+  00000086: 50                 push        eax
+  00000087: 2B C8              sub         ecx,eax
+  00000089: 8D 45 B8           lea         eax,[ebp-48h]
+  0000008C: 8D 04 88           lea         eax,[eax+ecx*4]
+  0000008F: 50                 push        eax
+  00000090: 8D 84 8D 78 FF FF  lea         eax,[ebp+ecx*4-88h]
+            FF
+  00000097: 6A 10              push        10h
+  00000099: 50                 push        eax
+  0000009A: 8D 45 B8           lea         eax,[ebp-48h]
+  0000009D: 50                 push        eax
+  0000009E: E8 00 00 00 00     call        _FFX_Audio_GainRamp
+  000000A3: 8B 77 14           mov         esi,dword ptr [edi+14h]
+  000000A6: 83 C4 24           add         esp,24h
+  000000A9: 33 C9              xor         ecx,ecx
+  000000AB: 85 F6              test        esi,esi
+  000000AD: 7E 1F              jle         000000CE
+  000000AF: 8B 47 08           mov         eax,dword ptr [edi+8]
+  000000B2: 8D 56 FF           lea         edx,[esi-1]
+  000000B5: 8B 04 98           mov         eax,dword ptr [eax+ebx*4]
+  000000B8: 8D 14 90           lea         edx,[eax+edx*4]
+  000000BB: EB 03              jmp         000000C0
+  000000BD: 8D 49 00           lea         ecx,[ecx]
+  000000C0: 8B 44 8D B8        mov         eax,dword ptr [ebp+ecx*4-48h]
+  000000C4: 41                 inc         ecx
+  000000C5: 89 02              mov         dword ptr [edx],eax
+  000000C7: 8D 52 FC           lea         edx,[edx-4]
+  000000CA: 3B CE              cmp         ecx,esi
+  000000CC: 7C F2              jl          000000C0
+  000000CE: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  000000D1: 8D 43 01           lea         eax,[ebx+1]
+  000000D4: 8D 14 9D 04 00 00  lea         edx,[ebx*4+4]
+            00
+  000000DB: 8B D8              mov         ebx,eax
+  000000DD: 3B 41 04           cmp         eax,dword ptr [ecx+4]
+  000000E0: 0F 82 6A FF FF FF  jb          00000050
+  000000E6: 8B C1              mov         eax,ecx
+  000000E8: 5B                 pop         ebx
+  000000E9: 5F                 pop         edi
+  000000EA: 5E                 pop         esi
+  000000EB: 8B E5              mov         esp,ebp
+  000000ED: 5D                 pop         ebp
+  000000EE: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          EF .text

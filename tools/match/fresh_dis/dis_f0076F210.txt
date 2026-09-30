@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0076F210.obj
+
+File Type: COFF OBJECT
+
+_FFX_FileSystem_InitFileSystem:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        __cfltcvt_init_82
+  00000008: E8 00 00 00 00     call        _dbgPrintf
+  0000000D: E8 00 00 00 00     call        _FFX_System_GetPlatformFlag
+  00000012: 83 F8 01           cmp         eax,1
+  00000015: 75 25              jne         0000003C
+  00000017: 33 C0              xor         eax,eax
+  00000019: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000001C: 0F 95 C0           setne       al
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _FFX_Mscd_InitCdEnv
+  00000025: 83 C4 04           add         esp,4
+  00000028: E8 00 00 00 00     call        _FFX_System_IsEmbeddedSystem
+  0000002D: 85 C0              test        eax,eax
+  0000002F: 74 15              je          00000046
+  00000031: E8 00 00 00 00     call        _FFX_Battle_ResolveCdromPathByLanguage
+  00000036: 5D                 pop         ebp
+  00000037: E9 00 00 00 00     jmp         _dbgPrintf
+  0000003C: 6A 01              push        1
+  0000003E: E8 00 00 00 00     call        _FFX_Mscd_InitCdEnv
+  00000043: 83 C4 04           add         esp,4
+  00000046: 5D                 pop         ebp
+  00000047: E9 00 00 00 00     jmp         _dbgPrintf
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

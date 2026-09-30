@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042ED10.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_42ED10@4:
+  00000000: 8B D1              mov         edx,ecx
+  00000002: 56                 push        esi
+  00000003: 8B 32              mov         esi,dword ptr [edx]
+  00000005: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000008: 3B F0              cmp         esi,eax
+  0000000A: 7D 2D              jge         00000039
+  0000000C: 8A 4A 04           mov         cl,byte ptr [edx+4]
+  0000000F: 57                 push        edi
+  00000010: 8B 7A 0C           mov         edi,dword ptr [edx+0Ch]
+  00000013: 0F B6 07           movzx       eax,byte ptr [edi]
+  00000016: FF 42 04           inc         dword ptr [edx+4]
+  00000019: D3 E8              shr         eax,cl
+  0000001B: 83 E0 01           and         eax,1
+  0000001E: 83 7A 04 07        cmp         dword ptr [edx+4],7
+  00000022: 7E 12              jle         00000036
+  00000024: 8D 4F 01           lea         ecx,[edi+1]
+  00000027: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  0000002A: 8D 4E 01           lea         ecx,[esi+1]
+  0000002D: C7 42 04 00 00 00  mov         dword ptr [edx+4],0
+            00
+  00000034: 89 0A              mov         dword ptr [edx],ecx
+  00000036: 5F                 pop         edi
+  00000037: 5E                 pop         esi
+  00000038: C3                 ret
+  00000039: 89 02              mov         dword ptr [edx],eax
+  0000003B: C7 42 0C 00 00 00  mov         dword ptr [edx+0Ch],0
+            00
+  00000042: C7 42 04 01 00 00  mov         dword ptr [edx+4],1
+            00
+  00000049: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000004C: 5E                 pop         esi
+  0000004D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4E .text

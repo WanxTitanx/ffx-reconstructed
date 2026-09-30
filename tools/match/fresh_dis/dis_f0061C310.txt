@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0061C310.obj
+
+File Type: COFF OBJECT
+
+@BigFile_OpenFile@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F9              mov         edi,ecx
+  00000005: 33 F6              xor         esi,esi
+  00000007: 8D 47 10           lea         eax,[edi+10h]
+  0000000A: 8B DA              mov         ebx,edx
+  0000000C: 39 30              cmp         dword ptr [eax],esi
+  0000000E: 74 0E              je          0000001E
+  00000010: 46                 inc         esi
+  00000011: 83 FE 05           cmp         esi,5
+  00000014: 7D 21              jge         00000037
+  00000016: 83 C0 04           add         eax,4
+  00000019: 83 38 00           cmp         dword ptr [eax],0
+  0000001C: 75 F2              jne         00000010
+  0000001E: 6A 60              push        60h
+  00000020: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000025: 83 C4 04           add         esp,4
+  00000028: 85 C0              test        eax,eax
+  0000002A: 74 11              je          0000003D
+  0000002C: 50                 push        eax
+  0000002D: E8 00 00 00 00     call        _Phyre_BigFile_MapStructInit
+  00000032: 83 C4 04           add         esp,4
+  00000035: EB 08              jmp         0000003F
+  00000037: 5F                 pop         edi
+  00000038: 5E                 pop         esi
+  00000039: 32 C0              xor         al,al
+  0000003B: 5B                 pop         ebx
+  0000003C: C3                 ret
+  0000003D: 33 C0              xor         eax,eax
+  0000003F: 8D 3C B7           lea         edi,[edi+esi*4]
+  00000042: 89 47 10           mov         dword ptr [edi+10h],eax
+  00000045: 85 C0              test        eax,eax
+  00000047: 74 EE              je          00000037
+  00000049: 53                 push        ebx
+  0000004A: 50                 push        eax
+  0000004B: E8 00 00 00 00     call        _FFX_BigFile_ReadVerifyHeader
+  00000050: 8A D8              mov         bl,al
+  00000052: 83 C4 08           add         esp,8
+  00000055: 84 DB              test        bl,bl
+  00000057: 75 1D              jne         00000076
+  00000059: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  0000005C: 85 F6              test        esi,esi
+  0000005E: 74 0F              je          0000006F
+  00000060: 56                 push        esi
+  00000061: E8 00 00 00 00     call        _Phyre_BigFile_MapStructCleanup
+  00000066: 56                 push        esi
+  00000067: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000006C: 83 C4 08           add         esp,8
+  0000006F: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 8A C3              mov         al,bl
+  0000007A: 5B                 pop         ebx
+  0000007B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          7C .text

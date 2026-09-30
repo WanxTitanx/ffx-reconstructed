@@ -1,0 +1,127 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006BB5C0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FieldEncounter_UpdateTransition@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 04 01 00 00  sub         esp,104h
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 8A DA              mov         bl,dl
+  0000000D: 57                 push        edi
+  0000000E: 8B F1              mov         esi,ecx
+  00000010: 84 DB              test        bl,bl
+  00000012: 74 0D              je          00000021
+  00000014: 80 BE 10 01 00 00  cmp         byte ptr [esi+110h],0
+            00
+  0000001B: 74 04              je          00000021
+  0000001D: B0 01              mov         al,1
+  0000001F: EB 02              jmp         00000023
+  00000021: 32 C0              xor         al,al
+  00000023: 88 86 C4 01 00 00  mov         byte ptr [esi+1C4h],al
+  00000029: 0F BE C0           movsx       eax,al
+  0000002C: 50                 push        eax
+  0000002D: 8D BE 14 01 00 00  lea         edi,[esi+114h]
+  00000033: 57                 push        edi
+  00000034: E8 00 00 00 00     call        _DebugOverlay_SetDirtyFlag
+  00000039: 83 C4 08           add         esp,8
+  0000003C: 84 DB              test        bl,bl
+  0000003E: 0F 84 01 01 00 00  je          00000145
+  00000044: 80 BE C4 01 00 00  cmp         byte ptr [esi+1C4h],0
+            00
+  0000004B: 74 15              je          00000062
+  0000004D: FF B6 D0 01 00 00  push        dword ptr [esi+1D0h]
+  00000053: FF B6 CC 01 00 00  push        dword ptr [esi+1CCh]
+  00000059: 57                 push        edi
+  0000005A: E8 00 00 00 00     call        _Phyre_Matrix4x4_Interpolate
+  0000005F: 83 C4 0C           add         esp,0Ch
+  00000062: 8D 46 08           lea         eax,[esi+8]
+  00000065: 50                 push        eax
+  00000066: E8 00 00 00 00     call        _FFX_Field_ResolveCurrentFieldToken
+  0000006B: 83 C4 04           add         esp,4
+  0000006E: E8 00 00 00 00     call        _FFX_Encounter_GetRowCount
+  00000073: 89 06              mov         dword ptr [esi],eax
+  00000075: E8 00 00 00 00     call        _FFX_Encounter_GetCurrentRowDataPtr
+  0000007A: 80 BE 10 01 00 00  cmp         byte ptr [esi+110h],0
+            00
+  00000081: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000084: 89 46 04           mov         dword ptr [esi+4],eax
+  00000087: 0F 84 B5 00 00 00  je          00000142
+  0000008D: 68 00 01 00 00     push        100h
+  00000092: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  00000098: 6A 00              push        0
+  0000009A: 50                 push        eax
+  0000009B: E8 00 00 00 00     call        _memset
+  000000A0: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  000000A6: 50                 push        eax
+  000000A7: 6A 02              push        2
+  000000A9: 56                 push        esi
+  000000AA: E8 00 00 00 00     call        _FFX_DebugUI_FormatConfigValue
+  000000AF: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  000000B5: 50                 push        eax
+  000000B6: 6A 02              push        2
+  000000B8: 57                 push        edi
+  000000B9: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  000000BE: 83 C4 24           add         esp,24h
+  000000C1: 80 BE 10 01 00 00  cmp         byte ptr [esi+110h],0
+            00
+  000000C8: 74 7B              je          00000145
+  000000CA: 68 00 01 00 00     push        100h
+  000000CF: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  000000D5: 6A 00              push        0
+  000000D7: 50                 push        eax
+  000000D8: E8 00 00 00 00     call        _memset
+  000000DD: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  000000E3: 50                 push        eax
+  000000E4: 6A 01              push        1
+  000000E6: 56                 push        esi
+  000000E7: E8 00 00 00 00     call        _FFX_DebugUI_FormatConfigValue
+  000000EC: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  000000F2: 50                 push        eax
+  000000F3: 6A 01              push        1
+  000000F5: 57                 push        edi
+  000000F6: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  000000FB: 83 C4 24           add         esp,24h
+  000000FE: 80 BE 10 01 00 00  cmp         byte ptr [esi+110h],0
+            00
+  00000105: 74 3E              je          00000145
+  00000107: 68 00 01 00 00     push        100h
+  0000010C: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  00000112: 6A 00              push        0
+  00000114: 50                 push        eax
+  00000115: E8 00 00 00 00     call        _memset
+  0000011A: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  00000120: 50                 push        eax
+  00000121: 6A 00              push        0
+  00000123: 56                 push        esi
+  00000124: E8 00 00 00 00     call        _FFX_DebugUI_FormatConfigValue
+  00000129: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  0000012F: 50                 push        eax
+  00000130: 6A 00              push        0
+  00000132: 57                 push        edi
+  00000133: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  00000138: 83 C4 24           add         esp,24h
+  0000013B: 5F                 pop         edi
+  0000013C: 5E                 pop         esi
+  0000013D: 5B                 pop         ebx
+  0000013E: 8B E5              mov         esp,ebp
+  00000140: 5D                 pop         ebp
+  00000141: C3                 ret
+  00000142: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  00000145: 5F                 pop         edi
+  00000146: 5E                 pop         esi
+  00000147: 5B                 pop         ebx
+  00000148: 8B E5              mov         esp,ebp
+  0000014A: 5D                 pop         ebp
+  0000014B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         14C .text

@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0099C880.obj
+
+File Type: COFF OBJECT
+
+@sub_99C880@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 80 7E 08 00        cmp         byte ptr [esi+8],0
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset _btConvexPlaneCollisionAlgorithm
+  00000010: 74 11              je          00000023
+  00000012: 8B 56 0C           mov         edx,dword ptr [esi+0Ch]
+  00000015: 85 D2              test        edx,edx
+  00000017: 74 0A              je          00000023
+  00000019: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000001C: 8B 01              mov         eax,dword ptr [ecx]
+  0000001E: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  00000021: FF D0              call        eax
+  00000023: C7 06 00 00 00 00  mov         dword ptr [esi],offset _btCollisionAlgorithm
+  00000029: F6 C3 01           test        bl,1
+  0000002C: 74 09              je          00000037
+  0000002E: 56                 push        esi
+  0000002F: E8 00 00 00 00     call        _FFX_Memory_Free
+  00000034: 83 C4 04           add         esp,4
+  00000037: 8B C6              mov         eax,esi
+  00000039: 5E                 pop         esi
+  0000003A: 5B                 pop         ebx
+  0000003B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3C .text

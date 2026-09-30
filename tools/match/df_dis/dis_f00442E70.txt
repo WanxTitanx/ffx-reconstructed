@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00442E70.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_442E70:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5E                 pop         esi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 57                 push        edi
+  00000011: 8D 04 B6           lea         eax,[esi+esi*4]
+  00000014: C1 E0 02           shl         eax,2
+  00000017: 6A 04              push        4
+  00000019: 50                 push        eax
+  0000001A: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000001F: 8B F8              mov         edi,eax
+  00000021: 83 C4 08           add         esp,8
+  00000024: 85 FF              test        edi,edi
+  00000026: 74 10              je          00000038
+  00000028: 56                 push        esi
+  00000029: 57                 push        edi
+  0000002A: E8 00 00 00 00     call        _Phyre_Debug_FormatMessage
+  0000002F: 83 C4 08           add         esp,8
+  00000032: 8B C7              mov         eax,edi
+  00000034: 5F                 pop         edi
+  00000035: 5E                 pop         esi
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 5F                 pop         edi
+  00000039: 33 C0              xor         eax,eax
+  0000003B: 5E                 pop         esi
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

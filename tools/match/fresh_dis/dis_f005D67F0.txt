@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005D67F0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_LuaScript_ExtractModuleName:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 68 00 00 00 00     push        offset ??_C@_04BIAACBGB@?4lua?$AA@
+  00000010: 57                 push        edi
+  00000011: E8 00 00 00 00     call        _strstr
+  00000016: 8B D8              mov         ebx,eax
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 85 DB              test        ebx,ebx
+  0000001D: 74 36              je          00000055
+  0000001F: 56                 push        esi
+  00000020: 8B F3              mov         esi,ebx
+  00000022: 3B DF              cmp         ebx,edi
+  00000024: 76 0A              jbe         00000030
+  00000026: 80 3E 2F           cmp         byte ptr [esi],2Fh
+  00000029: 74 05              je          00000030
+  0000002B: 4E                 dec         esi
+  0000002C: 3B F7              cmp         esi,edi
+  0000002E: 77 F6              ja          00000026
+  00000030: 3B F7              cmp         esi,edi
+  00000032: 74 01              je          00000035
+  00000034: 46                 inc         esi
+  00000035: 2B DE              sub         ebx,esi
+  00000037: 8D 43 01           lea         eax,[ebx+1]
+  0000003A: 50                 push        eax
+  0000003B: E8 00 00 00 00     call        _alloca
+  00000040: 53                 push        ebx
+  00000041: 8D 7D F4           lea         edi,[ebp-0Ch]
+  00000044: 8B C7              mov         eax,edi
+  00000046: 56                 push        esi
+  00000047: 50                 push        eax
+  00000048: C6 45 F4 00        mov         byte ptr [ebp-0Ch],0
+  0000004C: E8 00 00 00 00     call        _strncat
+  00000051: 83 C4 10           add         esp,10h
+  00000054: 5E                 pop         esi
+  00000055: 57                 push        edi
+  00000056: FF 75 08           push        dword ptr [ebp+8]
+  00000059: E8 00 00 00 00     call        _Phyre_Math_MatrixInverse
+  0000005E: 83 C4 08           add         esp,8
+  00000061: 5F                 pop         edi
+  00000062: 5B                 pop         ebx
+  00000063: 8B E5              mov         esp,ebp
+  00000065: 5D                 pop         ebp
+  00000066: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           5 .rdata
+          67 .text

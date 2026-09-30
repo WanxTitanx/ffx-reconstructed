@@ -1,0 +1,92 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00404480.obj
+
+File Type: COFF OBJECT
+
+@Engine_String_reserve@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B FA              mov         edi,edx
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 83 FF FF           cmp         edi,0FFFFFFFFh
+  0000000C: 75 0D              jne         0000001B
+  0000000E: 68 00 00 00 00     push        offset ??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@
+  00000013: E8 00 00 00 00     call        _std__Xlength_error
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000001E: 3B C7              cmp         eax,edi
+  00000020: 72 74              jb          00000096
+  00000022: 80 7D 08 00        cmp         byte ptr [ebp+8],0
+  00000026: 74 50              je          00000078
+  00000028: 83 FF 10           cmp         edi,10h
+  0000002B: 73 4B              jae         00000078
+  0000002D: 53                 push        ebx
+  0000002E: 8B 5E 10           mov         ebx,dword ptr [esi+10h]
+  00000031: 3B FB              cmp         edi,ebx
+  00000033: 73 02              jae         00000037
+  00000035: 8B DF              mov         ebx,edi
+  00000037: 83 F8 10           cmp         eax,10h
+  0000003A: 72 20              jb          0000005C
+  0000003C: 8B 06              mov         eax,dword ptr [esi]
+  0000003E: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000041: 85 DB              test        ebx,ebx
+  00000043: 74 0E              je          00000053
+  00000045: 53                 push        ebx
+  00000046: 50                 push        eax
+  00000047: 56                 push        esi
+  00000048: E8 00 00 00 00     call        _memcpy
+  0000004D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000050: 83 C4 0C           add         esp,0Ch
+  00000053: 50                 push        eax
+  00000054: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000059: 83 C4 04           add         esp,4
+  0000005C: 89 5E 10           mov         dword ptr [esi+10h],ebx
+  0000005F: C7 46 14 0F 00 00  mov         dword ptr [esi+14h],0Fh
+            00
+  00000066: C6 04 33 00        mov         byte ptr [ebx+esi],0
+  0000006A: 5B                 pop         ebx
+  0000006B: 33 C0              xor         eax,eax
+  0000006D: 85 FF              test        edi,edi
+  0000006F: 5F                 pop         edi
+  00000070: 0F 95 C0           setne       al
+  00000073: 5E                 pop         esi
+  00000074: 5D                 pop         ebp
+  00000075: C2 04 00           ret         4
+  00000078: 85 FF              test        edi,edi
+  0000007A: 75 27              jne         000000A3
+  0000007C: 89 7E 10           mov         dword ptr [esi+10h],edi
+  0000007F: 83 F8 10           cmp         eax,10h
+  00000082: 72 02              jb          00000086
+  00000084: 8B 36              mov         esi,dword ptr [esi]
+  00000086: 33 C0              xor         eax,eax
+  00000088: 85 FF              test        edi,edi
+  0000008A: 5F                 pop         edi
+  0000008B: C6 06 00           mov         byte ptr [esi],0
+  0000008E: 0F 95 C0           setne       al
+  00000091: 5E                 pop         esi
+  00000092: 5D                 pop         ebp
+  00000093: C2 04 00           ret         4
+  00000096: FF 76 10           push        dword ptr [esi+10h]
+  00000099: 57                 push        edi
+  0000009A: 56                 push        esi
+  0000009B: E8 00 00 00 00     call        _Engine_String_grow
+  000000A0: 83 C4 0C           add         esp,0Ch
+  000000A3: 33 C0              xor         eax,eax
+  000000A5: 85 FF              test        edi,edi
+  000000A7: 5F                 pop         edi
+  000000A8: 0F 95 C0           setne       al
+  000000AB: 5E                 pop         esi
+  000000AC: 5D                 pop         ebp
+  000000AD: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          B0 .text

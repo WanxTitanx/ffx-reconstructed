@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082A180.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_IsResourceSlotActive:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 35 00 00 00 00  mov         esi,dword ptr [_g_ChrUnkVar_12FFB78]
+  0000000D: 33 C9              xor         ecx,ecx
+  0000000F: B8 00 00 00 00     mov         eax,offset _g_ChrUnkVar_12FC658
+  00000014: 85 C9              test        ecx,ecx
+  00000016: 75 0E              jne         00000026
+  00000018: 39 50 04           cmp         dword ptr [eax+4],edx
+  0000001B: 75 05              jne         00000022
+  0000001D: 80 38 01           cmp         byte ptr [eax],1
+  00000020: 74 04              je          00000026
+  00000022: 33 C9              xor         ecx,ecx
+  00000024: EB 05              jmp         0000002B
+  00000026: B9 01 00 00 00     mov         ecx,1
+  0000002B: 05 10 01 00 00     add         eax,110h
+  00000030: 3B C6              cmp         eax,esi
+  00000032: 7C E0              jl          00000014
+  00000034: 8B C1              mov         eax,ecx
+  00000036: 5E                 pop         esi
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          39 .text

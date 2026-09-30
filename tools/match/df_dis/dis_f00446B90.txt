@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00446B90.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_446B90@4:
+  00000000: 85 C9              test        ecx,ecx
+  00000002: 74 0D              je          00000011
+  00000004: 83 F9 FC           cmp         ecx,0FFFFFFFCh
+  00000007: 74 08              je          00000011
+  00000009: 8D 41 04           lea         eax,[ecx+4]
+  0000000C: 89 41 08           mov         dword ptr [ecx+8],eax
+  0000000F: 89 00              mov         dword ptr [eax],eax
+  00000011: 83 F9 E4           cmp         ecx,0FFFFFFE4h
+  00000014: 74 08              je          0000001E
+  00000016: 8D 41 1C           lea         eax,[ecx+1Ch]
+  00000019: 89 41 20           mov         dword ptr [ecx+20h],eax
+  0000001C: 89 00              mov         dword ptr [eax],eax
+  0000001E: 0F BE 41 2C        movsx       eax,byte ptr [ecx+2Ch]
+  00000022: 8B 51 2C           mov         edx,dword ptr [ecx+2Ch]
+  00000025: 83 61 14 FE        and         dword ptr [ecx+14h],0FFFFFFFEh
+  00000029: 83 E0 01           and         eax,1
+  0000002C: 2B D0              sub         edx,eax
+  0000002E: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000031: 89 51 10           mov         dword ptr [ecx+10h],edx
+  00000034: F6 80 90 00 00 00  test        byte ptr [eax+90h],1
+            01
+  0000003B: 74 0B              je          00000048
+  0000003D: 51                 push        ecx
+  0000003E: 50                 push        eax
+  0000003F: E8 00 00 00 00     call        _PClassDataMemberDynamic_SerializeToBuffer
+  00000044: 83 C4 08           add         esp,8
+  00000047: C3                 ret
+  00000048: 8B C2              mov         eax,edx
+  0000004A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4B .text

@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00928A60.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicVfx_StepToTime:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: DD 45 0C           fld         qword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: DD 56 10           fst         qword ptr [esi+10h]
+  0000000D: DC 1E              fcomp       qword ptr [esi]
+  0000000F: DF E0              fnstsw      ax
+  00000011: F6 C4 41           test        ah,41h
+  00000014: 75 1A              jne         00000030
+  00000016: 56                 push        esi
+  00000017: E8 00 00 00 00     call        _FFX_MagicVfx_AnimateServices
+  0000001C: DD 46 08           fld         qword ptr [esi+8]
+  0000001F: DC 06              fadd        qword ptr [esi]
+  00000021: 83 C4 04           add         esp,4
+  00000024: DD 16              fst         qword ptr [esi]
+  00000026: DC 5D 0C           fcomp       qword ptr [ebp+0Ch]
+  00000029: DF E0              fnstsw      ax
+  0000002B: F6 C4 05           test        ah,5
+  0000002E: 7B E6              jnp         00000016
+  00000030: 5E                 pop         esi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

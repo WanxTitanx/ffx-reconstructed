@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0044EEC0.obj
+
+File Type: COFF OBJECT
+
+@PEntityList_Clear@4:
+  00000000: 8B 11              mov         edx,dword ptr [ecx]
+  00000002: 85 D2              test        edx,edx
+  00000004: 74 1C              je          00000022
+  00000006: 39 4A 04           cmp         dword ptr [edx+4],ecx
+  00000009: 75 11              jne         0000001C
+  0000000B: 8B 02              mov         eax,dword ptr [edx]
+  0000000D: 89 01              mov         dword ptr [ecx],eax
+  0000000F: C7 02 00 00 00 00  mov         dword ptr [edx],0
+  00000015: C7 42 04 00 00 00  mov         dword ptr [edx+4],0
+            00
+  0000001C: 8B 11              mov         edx,dword ptr [ecx]
+  0000001E: 85 D2              test        edx,edx
+  00000020: 75 E4              jne         00000006
+  00000022: 83 79 04 00        cmp         dword ptr [ecx+4],0
+  00000026: 8D 41 08           lea         eax,[ecx+8]
+  00000029: 74 0F              je          0000003A
+  0000002B: 50                 push        eax
+  0000002C: 68 00 00 00 00     push        offset _pTo_off_C0BB70
+  00000031: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeEx_COMDAT
+  00000036: 83 C4 08           add         esp,8
+  00000039: C3                 ret
+  0000003A: 83 F9 F8           cmp         ecx,0FFFFFFF8h
+  0000003D: 74 16              je          00000055
+  0000003F: 89 00              mov         dword ptr [eax],eax
+  00000041: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  00000044: 89 41 10           mov         dword ptr [ecx+10h],eax
+  00000047: C7 41 14 00 00 00  mov         dword ptr [ecx+14h],0
+            00
+  0000004E: C7 41 18 00 00 00  mov         dword ptr [ecx+18h],0
+            00
+  00000055: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          56 .text

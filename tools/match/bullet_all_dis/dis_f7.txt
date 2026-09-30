@@ -1,0 +1,3281 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f7.obj
+
+File Type: COFF OBJECT
+
+??$quickSort@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@@Z (public: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::quickSort<class btMultiSapBroadphasePairSortPredicate>(class btMultiSapBroadphasePairSortPredicate)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000006: 83 F8 01           cmp         eax,1
+  00000009: 7E 0C              jle         00000017
+  0000000B: 48                 dec         eax
+  0000000C: 50                 push        eax
+  0000000D: 6A 00              push        0
+  0000000F: FF 75 08           push        dword ptr [ebp+8]
+  00000012: E8 00 00 00 00     call        ??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z
+  00000017: 5D                 pop         ebp
+  00000018: C2 04 00           ret         4
+
+??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z (public: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::quickSortInternal<class btMultiSapBroadphasePairSortPredicate>(class btMultiSapBroadphasePairSortPredicate,int,int)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 48           sub         esp,48h
+  00000019: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  0000001C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001F: 56                 push        esi
+  00000020: 8B 73 0C           mov         esi,dword ptr [ebx+0Ch]
+  00000023: 03 C6              add         eax,esi
+  00000025: 99                 cdq
+  00000026: 2B C2              sub         eax,edx
+  00000028: D1 F8              sar         eax,1
+  0000002A: C1 E0 04           shl         eax,4
+  0000002D: 03 41 0C           add         eax,dword ptr [ecx+0Ch]
+  00000030: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  00000033: 57                 push        edi
+  00000034: 8B 10              mov         edx,dword ptr [eax]
+  00000036: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000039: 8B 40 08           mov         eax,dword ptr [eax+8]
+  0000003C: 89 75 F8           mov         dword ptr [ebp-8],esi
+  0000003F: 89 55 E0           mov         dword ptr [ebp-20h],edx
+  00000042: 89 4D DC           mov         dword ptr [ebp-24h],ecx
+  00000045: 89 45 D0           mov         dword ptr [ebp-30h],eax
+  00000048: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  0000004B: 8B C6              mov         eax,esi
+  0000004D: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000050: C1 E0 04           shl         eax,4
+  00000053: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000056: 03 C1              add         eax,ecx
+  00000058: 8B 08              mov         ecx,dword ptr [eax]
+  0000005A: 85 C9              test        ecx,ecx
+  0000005C: 74 05              je          00000063
+  0000005E: 8B 79 08           mov         edi,dword ptr [ecx+8]
+  00000061: EB 02              jmp         00000065
+  00000063: 33 FF              xor         edi,edi
+  00000065: 8B 70 04           mov         esi,dword ptr [eax+4]
+  00000068: 85 F6              test        esi,esi
+  0000006A: 74 05              je          00000071
+  0000006C: 8B 76 08           mov         esi,dword ptr [esi+8]
+  0000006F: EB 02              jmp         00000073
+  00000071: 33 F6              xor         esi,esi
+  00000073: 85 D2              test        edx,edx
+  00000075: 74 05              je          0000007C
+  00000077: 8B 52 08           mov         edx,dword ptr [edx+8]
+  0000007A: EB 02              jmp         0000007E
+  0000007C: 33 D2              xor         edx,edx
+  0000007E: 8B 4D DC           mov         ecx,dword ptr [ebp-24h]
+  00000081: 85 C9              test        ecx,ecx
+  00000083: 74 05              je          0000008A
+  00000085: 8B 49 08           mov         ecx,dword ptr [ecx+8]
+  00000088: EB 02              jmp         0000008C
+  0000008A: 33 C9              xor         ecx,ecx
+  0000008C: 3B FA              cmp         edi,edx
+  0000008E: 77 10              ja          000000A0
+  00000090: 75 19              jne         000000AB
+  00000092: 3B F1              cmp         esi,ecx
+  00000094: 77 0A              ja          000000A0
+  00000096: 75 13              jne         000000AB
+  00000098: 8B 4D D0           mov         ecx,dword ptr [ebp-30h]
+  0000009B: 39 48 08           cmp         dword ptr [eax+8],ecx
+  0000009E: 76 0B              jbe         000000AB
+  000000A0: FF 45 F8           inc         dword ptr [ebp-8]
+  000000A3: 8B 55 E0           mov         edx,dword ptr [ebp-20h]
+  000000A6: 83 C0 10           add         eax,10h
+  000000A9: EB AD              jmp         00000058
+  000000AB: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000AE: C1 E0 04           shl         eax,4
+  000000B1: 03 45 F0           add         eax,dword ptr [ebp-10h]
+  000000B4: 8B 4D E0           mov         ecx,dword ptr [ebp-20h]
+  000000B7: 85 C9              test        ecx,ecx
+  000000B9: 74 05              je          000000C0
+  000000BB: 8B 79 08           mov         edi,dword ptr [ecx+8]
+  000000BE: EB 02              jmp         000000C2
+  000000C0: 33 FF              xor         edi,edi
+  000000C2: 8B 4D DC           mov         ecx,dword ptr [ebp-24h]
+  000000C5: 85 C9              test        ecx,ecx
+  000000C7: 74 05              je          000000CE
+  000000C9: 8B 71 08           mov         esi,dword ptr [ecx+8]
+  000000CC: EB 02              jmp         000000D0
+  000000CE: 33 F6              xor         esi,esi
+  000000D0: 8B 10              mov         edx,dword ptr [eax]
+  000000D2: 85 D2              test        edx,edx
+  000000D4: 74 05              je          000000DB
+  000000D6: 8B 52 08           mov         edx,dword ptr [edx+8]
+  000000D9: EB 02              jmp         000000DD
+  000000DB: 33 D2              xor         edx,edx
+  000000DD: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  000000E0: 85 C9              test        ecx,ecx
+  000000E2: 74 05              je          000000E9
+  000000E4: 8B 49 08           mov         ecx,dword ptr [ecx+8]
+  000000E7: EB 02              jmp         000000EB
+  000000E9: 33 C9              xor         ecx,ecx
+  000000EB: 3B FA              cmp         edi,edx
+  000000ED: 77 10              ja          000000FF
+  000000EF: 75 16              jne         00000107
+  000000F1: 3B F1              cmp         esi,ecx
+  000000F3: 77 0A              ja          000000FF
+  000000F5: 75 10              jne         00000107
+  000000F7: 8B 4D D0           mov         ecx,dword ptr [ebp-30h]
+  000000FA: 3B 48 08           cmp         ecx,dword ptr [eax+8]
+  000000FD: 76 08              jbe         00000107
+  000000FF: FF 4D FC           dec         dword ptr [ebp-4]
+  00000102: 83 E8 10           sub         eax,10h
+  00000105: EB AD              jmp         000000B4
+  00000107: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  0000010A: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000010D: 3B F7              cmp         esi,edi
+  0000010F: 7F 68              jg          00000179
+  00000111: 8B D6              mov         edx,esi
+  00000113: C1 E2 04           shl         edx,4
+  00000116: 03 55 F0           add         edx,dword ptr [ebp-10h]
+  00000119: 8B CF              mov         ecx,edi
+  0000011B: 03 C9              add         ecx,ecx
+  0000011D: 8B 02              mov         eax,dword ptr [edx]
+  0000011F: 89 45 C0           mov         dword ptr [ebp-40h],eax
+  00000122: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000125: 89 45 C4           mov         dword ptr [ebp-3Ch],eax
+  00000128: 8B 42 08           mov         eax,dword ptr [edx+8]
+  0000012B: 89 45 C8           mov         dword ptr [ebp-38h],eax
+  0000012E: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  00000131: 89 45 CC           mov         dword ptr [ebp-34h],eax
+  00000134: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00000137: 46                 inc         esi
+  00000138: F3 0F 7E 04 C8     movq        xmm0,mmword ptr [eax+ecx*8]
+  0000013D: 66 0F D6 02        movq        mmword ptr [edx],xmm0
+  00000141: F3 0F 7E 44 C8 08  movq        xmm0,mmword ptr [eax+ecx*8+8]
+  00000147: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  0000014A: 66 0F D6 42 08     movq        mmword ptr [edx+8],xmm0
+  0000014F: 8B 40 0C           mov         eax,dword ptr [eax+0Ch]
+  00000152: F3 0F 7E 45 C0     movq        xmm0,mmword ptr [ebp-40h]
+  00000157: 8B 55 E0           mov         edx,dword ptr [ebp-20h]
+  0000015A: 66 0F D6 04 C8     movq        mmword ptr [eax+ecx*8],xmm0
+  0000015F: F3 0F 7E 45 C8     movq        xmm0,mmword ptr [ebp-38h]
+  00000164: 4F                 dec         edi
+  00000165: 66 0F D6 44 C8 08  movq        mmword ptr [eax+ecx*8+8],xmm0
+  0000016B: 89 75 F8           mov         dword ptr [ebp-8],esi
+  0000016E: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00000171: 3B F7              cmp         esi,edi
+  00000173: 0F 8E CF FE FF FF  jle         00000048
+  00000179: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  0000017C: 3B C7              cmp         eax,edi
+  0000017E: 7D 11              jge         00000191
+  00000180: 57                 push        edi
+  00000181: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  00000184: 50                 push        eax
+  00000185: FF 73 08           push        dword ptr [ebx+8]
+  00000188: 8B CF              mov         ecx,edi
+  0000018A: E8 00 00 00 00     call        ??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z
+  0000018F: EB 03              jmp         00000194
+  00000191: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  00000194: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00000197: 3B F0              cmp         esi,eax
+  00000199: 7D 0C              jge         000001A7
+  0000019B: 50                 push        eax
+  0000019C: 56                 push        esi
+  0000019D: FF 73 08           push        dword ptr [ebx+8]
+  000001A0: 8B CF              mov         ecx,edi
+  000001A2: E8 00 00 00 00     call        ??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z
+  000001A7: 5F                 pop         edi
+  000001A8: 5E                 pop         esi
+  000001A9: 8B E5              mov         esp,ebp
+  000001AB: 5D                 pop         ebp
+  000001AC: 8B E3              mov         esp,ebx
+  000001AE: 5B                 pop         ebx
+  000001AF: C2 0C 00           ret         0Ch
+
+??0?$btAlignedAllocator@PAUbtBridgeProxy@btMultiSapBroadphase@@$0BA@@@QAE@XZ (public: __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btBridgeProxy *,16>::btAlignedAllocator<struct btMultiSapBroadphase::btBridgeProxy *,16>(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0?$btAlignedAllocator@PAUbtMultiSapProxy@btMultiSapBroadphase@@$0BA@@@QAE@XZ (public: __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btMultiSapProxy *,16>::btAlignedAllocator<struct btMultiSapBroadphase::btMultiSapProxy *,16>(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0?$btAlignedAllocator@PAVbtBroadphaseInterface@@$0BA@@@QAE@XZ (public: __thiscall btAlignedAllocator<class btBroadphaseInterface *,16>::btAlignedAllocator<class btBroadphaseInterface *,16>(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: 8B C1              mov         eax,ecx
+  0000001B: C3                 ret
+
+??0?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: 8B C1              mov         eax,ecx
+  0000001B: C3                 ret
+
+??0?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::btAlignedObjectArray<class btBroadphaseInterface *>(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: 8B C1              mov         eax,ecx
+  0000001B: C3                 ret
+
+??0MyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@QAE@PAV2@PAUbtMultiSapProxy@2@2@Z (public: __thiscall `public: virtual void __thiscall btMultiSapBroadphase::setAabb(struct btBroadphaseProxy *,class btVector3 const &,class btVector3 const &,class btDispatcher *)'::`2'::MyNodeOverlapCallback::MyNodeOverlapCallback(class btMultiSapBroadphase *,struct btMultiSapBroadphase::btMultiSapProxy *,class btDispatcher *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: 89 41 08           mov         dword ptr [ecx+8],eax
+  0000000F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000012: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  00000015: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7MyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@6B@
+  0000001B: 8B C1              mov         eax,ecx
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 0C 00           ret         0Ch
+
+??0btBroadphaseInterface@@QAE@XZ (public: __thiscall btBroadphaseInterface::btBroadphaseInterface(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btBroadphaseInterface@@6B@
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0btBroadphasePair@@QAE@ABU0@@Z (public: __thiscall btBroadphasePair::btBroadphasePair(struct btBroadphasePair const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 02              mov         eax,dword ptr [edx]
+  00000008: 89 01              mov         dword ptr [ecx],eax
+  0000000A: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000000D: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000010: 8B 42 08           mov         eax,dword ptr [edx+8]
+  00000013: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000016: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  00000019: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  0000001C: 8B C1              mov         eax,ecx
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??0btBroadphasePair@@QAE@XZ (public: __thiscall btBroadphasePair::btBroadphasePair(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000006: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  0000000D: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000014: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000001B: 8B C1              mov         eax,ecx
+  0000001D: C3                 ret
+
+??0btBroadphaseProxy@@QAE@ABVbtVector3@@0PAXFF1@Z (public: __thiscall btBroadphaseProxy::btBroadphaseProxy(class btVector3 const &,class btVector3 const &,void *,short,short,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 89 01              mov         dword ptr [ecx],eax
+  00000008: 66 8B 45 14        mov         ax,word ptr [ebp+14h]
+  0000000C: 66 89 41 04        mov         word ptr [ecx+4],ax
+  00000010: 66 8B 45 18        mov         ax,word ptr [ebp+18h]
+  00000014: 66 89 41 06        mov         word ptr [ecx+6],ax
+  00000018: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000001B: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  0000001F: 66 0F D6 41 10     movq        mmword ptr [ecx+10h],xmm0
+  00000024: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  00000029: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000002C: 66 0F D6 41 18     movq        mmword ptr [ecx+18h],xmm0
+  00000031: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  00000035: 66 0F D6 41 20     movq        mmword ptr [ecx+20h],xmm0
+  0000003A: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  0000003F: 8B 45 1C           mov         eax,dword ptr [ebp+1Ch]
+  00000042: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000045: 66 0F D6 41 28     movq        mmword ptr [ecx+28h],xmm0
+  0000004A: 8B C1              mov         eax,ecx
+  0000004C: 5D                 pop         ebp
+  0000004D: C2 18 00           ret         18h
+
+??0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z (public: __thiscall btMultiSapBroadphase::btMultiSapBroadphase(int,class btOverlappingPairCache *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btMultiSapBroadphase@@6B@
+  0000000F: C6 46 14 01        mov         byte ptr [esi+14h],1
+  00000013: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000001A: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000021: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000028: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  0000002B: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  00000032: C6 46 24 00        mov         byte ptr [esi+24h],0
+  00000036: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  0000003D: C6 46 40 01        mov         byte ptr [esi+40h],1
+  00000041: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  00000048: C7 46 34 00 00 00  mov         dword ptr [esi+34h],0
+            00
+  0000004F: C7 46 38 00 00 00  mov         dword ptr [esi+38h],0
+            00
+  00000056: 85 C0              test        eax,eax
+  00000058: 75 22              jne         0000007C
+  0000005A: 6A 10              push        10h
+  0000005C: 6A 24              push        24h
+  0000005E: C6 46 24 01        mov         byte ptr [esi+24h],1
+  00000062: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000067: 83 C4 08           add         esp,8
+  0000006A: 85 C0              test        eax,eax
+  0000006C: 74 09              je          00000077
+  0000006E: 8B C8              mov         ecx,eax
+  00000070: E8 00 00 00 00     call        ??0btSortedOverlappingPairCache@@QAE@XZ
+  00000075: EB 02              jmp         00000079
+  00000077: 33 C0              xor         eax,eax
+  00000079: 89 46 1C           mov         dword ptr [esi+1Ch],eax
+  0000007C: 6A 10              push        10h
+  0000007E: 6A 04              push        4
+  00000080: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000085: 8B D0              mov         edx,eax
+  00000087: 83 C4 08           add         esp,8
+  0000008A: 85 D2              test        edx,edx
+  0000008C: 74 19              je          000000A7
+  0000008E: C7 02 00 00 00 00  mov         dword ptr [edx],offset ??_7btMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@6B@
+  00000094: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000097: 89 56 28           mov         dword ptr [esi+28h],edx
+  0000009A: 8B 01              mov         eax,dword ptr [ecx]
+  0000009C: 52                 push        edx
+  0000009D: FF 50 28           call        dword ptr [eax+28h]
+  000000A0: 8B C6              mov         eax,esi
+  000000A2: 5E                 pop         esi
+  000000A3: 5D                 pop         ebp
+  000000A4: C2 08 00           ret         8
+  000000A7: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  000000AA: 33 D2              xor         edx,edx
+  000000AC: 89 56 28           mov         dword ptr [esi+28h],edx
+  000000AF: 8B 01              mov         eax,dword ptr [ecx]
+  000000B1: 52                 push        edx
+  000000B2: FF 50 28           call        dword ptr [eax+28h]
+  000000B5: 8B C6              mov         eax,esi
+  000000B7: 5E                 pop         esi
+  000000B8: 5D                 pop         ebp
+  000000B9: C2 08 00           ret         8
+
+??0btMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@QAE@XZ (public: __thiscall `public: __thiscall btMultiSapBroadphase::btMultiSapBroadphase(int,class btOverlappingPairCache *)'::`5'::btMultiSapOverlapFilterCallback::btMultiSapOverlapFilterCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@6B@
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0btMultiSapProxy@btMultiSapBroadphase@@QAE@ABVbtVector3@@0HPAXFF@Z (public: __thiscall btMultiSapBroadphase::btMultiSapProxy::btMultiSapProxy(class btVector3 const &,class btVector3 const &,int,void *,short,short)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000006: 8B D1              mov         edx,ecx
+  00000008: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000B: 89 02              mov         dword ptr [edx],eax
+  0000000D: 66 8B 45 18        mov         ax,word ptr [ebp+18h]
+  00000011: 66 89 42 04        mov         word ptr [edx+4],ax
+  00000015: 66 8B 45 1C        mov         ax,word ptr [ebp+1Ch]
+  00000019: 66 89 42 06        mov         word ptr [edx+6],ax
+  0000001D: F3 0F 7E 01        movq        xmm0,mmword ptr [ecx]
+  00000021: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000024: 66 0F D6 42 10     movq        mmword ptr [edx+10h],xmm0
+  00000029: F3 0F 7E 41 08     movq        xmm0,mmword ptr [ecx+8]
+  0000002E: 66 0F D6 42 18     movq        mmword ptr [edx+18h],xmm0
+  00000033: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  00000037: 66 0F D6 42 20     movq        mmword ptr [edx+20h],xmm0
+  0000003C: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  00000041: C7 42 08 00 00 00  mov         dword ptr [edx+8],0
+            00
+  00000048: 66 0F D6 42 28     movq        mmword ptr [edx+28h],xmm0
+  0000004D: C6 42 40 01        mov         byte ptr [edx+40h],1
+  00000051: C7 42 3C 00 00 00  mov         dword ptr [edx+3Ch],0
+            00
+  00000058: C7 42 34 00 00 00  mov         dword ptr [edx+34h],0
+            00
+  0000005F: C7 42 38 00 00 00  mov         dword ptr [edx+38h],0
+            00
+  00000066: F3 0F 7E 01        movq        xmm0,mmword ptr [ecx]
+  0000006A: 66 0F D6 42 50     movq        mmword ptr [edx+50h],xmm0
+  0000006F: F3 0F 7E 41 08     movq        xmm0,mmword ptr [ecx+8]
+  00000074: 66 0F D6 42 58     movq        mmword ptr [edx+58h],xmm0
+  00000079: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  0000007D: 66 0F D6 42 60     movq        mmword ptr [edx+60h],xmm0
+  00000082: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  00000087: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000008A: 89 42 70           mov         dword ptr [edx+70h],eax
+  0000008D: 66 0F D6 42 68     movq        mmword ptr [edx+68h],xmm0
+  00000092: 89 52 08           mov         dword ptr [edx+8],edx
+  00000095: 8B C2              mov         eax,edx
+  00000097: 5D                 pop         ebp
+  00000098: C2 18 00           ret         18h
+
+??0btNodeOverlapCallback@@QAE@XZ (public: __thiscall btNodeOverlapCallback::btNodeOverlapCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btNodeOverlapCallback@@6B@
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0btOverlapFilterCallback@@QAE@XZ (public: __thiscall btOverlapFilterCallback::btOverlapFilterCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btOverlapFilterCallback@@6B@
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0btVector3@@QAE@ABM00@Z (public: __thiscall btVector3::btVector3(float const &,float const &,float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 00              mov         eax,dword ptr [eax]
+  00000008: 89 01              mov         dword ptr [ecx],eax
+  0000000A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000D: 8B 00              mov         eax,dword ptr [eax]
+  0000000F: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000012: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000015: 8B 00              mov         eax,dword ptr [eax]
+  00000017: 89 41 08           mov         dword ptr [ecx+8],eax
+  0000001A: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000021: 8B C1              mov         eax,ecx
+  00000023: 5D                 pop         ebp
+  00000024: C2 0C 00           ret         0Ch
+
+??0btVector3@@QAE@XZ (public: __thiscall btVector3::btVector3(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??1?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::~btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+??1?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::~btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+??1?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@QAE@XZ (public: __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::~btAlignedObjectArray<class btBroadphaseInterface *>(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+??1MyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@UAE@XZ (public: virtual __thiscall `public: virtual void __thiscall btMultiSapBroadphase::setAabb(struct btBroadphaseProxy *,class btVector3 const &,class btVector3 const &,class btDispatcher *)'::`2'::MyNodeOverlapCallback::~MyNodeOverlapCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btNodeOverlapCallback@@6B@
+  00000006: C3                 ret
+
+??1btBroadphaseInterface@@UAE@XZ (public: virtual __thiscall btBroadphaseInterface::~btBroadphaseInterface(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btBroadphaseInterface@@6B@
+  00000006: C3                 ret
+
+??1btMultiSapBroadphase@@UAE@XZ (public: virtual __thiscall btMultiSapBroadphase::~btMultiSapBroadphase(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 80 7E 24 00        cmp         byte ptr [esi+24h],0
+  00000007: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btMultiSapBroadphase@@6B@
+  0000000D: 74 14              je          00000023
+  0000000F: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000012: 6A 00              push        0
+  00000014: 8B 01              mov         eax,dword ptr [ecx]
+  00000016: FF 10              call        dword ptr [eax]
+  00000018: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000001B: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000020: 83 C4 04           add         esp,4
+  00000023: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  00000026: 85 C0              test        eax,eax
+  00000028: 74 16              je          00000040
+  0000002A: 80 7E 40 00        cmp         byte ptr [esi+40h],0
+  0000002E: 74 09              je          00000039
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000036: 83 C4 04           add         esp,4
+  00000039: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  00000040: C6 46 40 01        mov         byte ptr [esi+40h],1
+  00000044: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  0000004B: C7 46 34 00 00 00  mov         dword ptr [esi+34h],0
+            00
+  00000052: C7 46 38 00 00 00  mov         dword ptr [esi+38h],0
+            00
+  00000059: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  0000005C: 85 C0              test        eax,eax
+  0000005E: 74 16              je          00000076
+  00000060: 80 7E 14 00        cmp         byte ptr [esi+14h],0
+  00000064: 74 09              je          0000006F
+  00000066: 50                 push        eax
+  00000067: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000006C: 83 C4 04           add         esp,4
+  0000006F: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000076: C6 46 14 01        mov         byte ptr [esi+14h],1
+  0000007A: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000081: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000088: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000008F: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btBroadphaseInterface@@6B@
+  00000095: 5E                 pop         esi
+  00000096: C3                 ret
+
+??1btMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@UAE@XZ (public: virtual __thiscall `public: __thiscall btMultiSapBroadphase::btMultiSapBroadphase(int,class btOverlappingPairCache *)'::`5'::btMultiSapOverlapFilterCallback::~btMultiSapOverlapFilterCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btOverlapFilterCallback@@6B@
+  00000006: C3                 ret
+
+??1btNodeOverlapCallback@@UAE@XZ (public: virtual __thiscall btNodeOverlapCallback::~btNodeOverlapCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btNodeOverlapCallback@@6B@
+  00000006: C3                 ret
+
+??1btOverlapFilterCallback@@UAE@XZ (public: virtual __thiscall btOverlapFilterCallback::~btOverlapFilterCallback(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7btOverlapFilterCallback@@6B@
+  00000006: C3                 ret
+
+??2@YAPAXIPAX@Z (void * __cdecl operator new(unsigned int,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 5D                 pop         ebp
+  00000007: C3                 ret
+
+??2btBroadphasePair@@SAPAXIPAX@Z (public: static void * __cdecl btBroadphasePair::operator new(unsigned int,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 5D                 pop         ebp
+  00000007: C3                 ret
+
+??2btBroadphaseProxy@@SAPAXIPAX@Z (public: static void * __cdecl btBroadphaseProxy::operator new(unsigned int,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 5D                 pop         ebp
+  00000007: C3                 ret
+
+??2btQuantizedBvh@@SAPAXI@Z (public: static void * __cdecl btQuantizedBvh::operator new(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 6A 10              push        10h
+  00000005: FF 75 08           push        dword ptr [ebp+8]
+  00000008: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000000D: 83 C4 08           add         esp,8
+  00000010: 5D                 pop         ebp
+  00000011: C3                 ret
+
+??2btQuantizedBvhNode@@SAPAXIPAX@Z (public: static void * __cdecl btQuantizedBvhNode::operator new(unsigned int,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 5D                 pop         ebp
+  00000007: C3                 ret
+
+??A?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEAAPAUbtBridgeProxy@btMultiSapBroadphase@@H@Z (public: struct btMultiSapBroadphase::btBridgeProxy * & __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::operator[](int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 8D 04 81           lea         eax,[ecx+eax*4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+
+??A?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAEAAPAUbtMultiSapProxy@btMultiSapBroadphase@@H@Z (public: struct btMultiSapBroadphase::btMultiSapProxy * & __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::operator[](int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 8D 04 81           lea         eax,[ecx+eax*4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+
+??A?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@QAEAAPAVbtBroadphaseInterface@@H@Z (public: class btBroadphaseInterface * & __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::operator[](int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 49 0C           mov         ecx,dword ptr [ecx+0Ch]
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 8D 04 81           lea         eax,[ecx+eax*4]
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+
+??A?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEAAUbtBroadphasePair@@H@Z (public: struct btBroadphasePair & __thiscall btAlignedObjectArray<struct btBroadphasePair>::operator[](int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 04           shl         eax,4
+  00000009: 03 41 0C           add         eax,dword ptr [ecx+0Ch]
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+
+??D@YA?AVbtVector3@@ABV0@0@Z (class btVector3 __cdecl operator*(class btVector3 const &,class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: F3 0F 10 02        movss       xmm0,dword ptr [edx]
+  0000000D: F3 0F 59 01        mulss       xmm0,dword ptr [ecx]
+  00000011: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000014: F3 0F 11 00        movss       dword ptr [eax],xmm0
+  00000018: F3 0F 10 42 04     movss       xmm0,dword ptr [edx+4]
+  0000001D: F3 0F 59 41 04     mulss       xmm0,dword ptr [ecx+4]
+  00000022: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000029: F3 0F 11 40 04     movss       dword ptr [eax+4],xmm0
+  0000002E: F3 0F 10 42 08     movss       xmm0,dword ptr [edx+8]
+  00000033: F3 0F 59 41 08     mulss       xmm0,dword ptr [ecx+8]
+  00000038: F3 0F 11 40 08     movss       dword ptr [eax+8],xmm0
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+??G@YA?AVbtVector3@@ABV0@0@Z (class btVector3 __cdecl operator-(class btVector3 const &,class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: F3 0F 10 02        movss       xmm0,dword ptr [edx]
+  0000000D: F3 0F 5C 01        subss       xmm0,dword ptr [ecx]
+  00000011: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000014: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  0000001B: F3 0F 11 00        movss       dword ptr [eax],xmm0
+  0000001F: F3 0F 10 42 04     movss       xmm0,dword ptr [edx+4]
+  00000024: F3 0F 5C 41 04     subss       xmm0,dword ptr [ecx+4]
+  00000029: F3 0F 11 40 04     movss       dword ptr [eax+4],xmm0
+  0000002E: F3 0F 10 42 08     movss       xmm0,dword ptr [edx+8]
+  00000033: F3 0F 5C 41 08     subss       xmm0,dword ptr [ecx+8]
+  00000038: F3 0F 11 40 08     movss       dword ptr [eax+8],xmm0
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+??RbtMultiSapBroadphasePairSortPredicate@@QAE_NABUbtBroadphasePair@@0@Z (public: bool __thiscall btMultiSapBroadphasePairSortPredicate::operator()(struct btBroadphasePair const &,struct btBroadphasePair const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 01              mov         eax,dword ptr [ecx]
+  00000009: 56                 push        esi
+  0000000A: 57                 push        edi
+  0000000B: 85 C0              test        eax,eax
+  0000000D: 74 05              je          00000014
+  0000000F: 8B 70 08           mov         esi,dword ptr [eax+8]
+  00000012: EB 02              jmp         00000016
+  00000014: 33 F6              xor         esi,esi
+  00000016: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000019: 85 C0              test        eax,eax
+  0000001B: 74 05              je          00000022
+  0000001D: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000020: EB 02              jmp         00000024
+  00000022: 33 C0              xor         eax,eax
+  00000024: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000027: 8B 1F              mov         ebx,dword ptr [edi]
+  00000029: 85 DB              test        ebx,ebx
+  0000002B: 74 05              je          00000032
+  0000002D: 8B 5B 08           mov         ebx,dword ptr [ebx+8]
+  00000030: EB 02              jmp         00000034
+  00000032: 33 DB              xor         ebx,ebx
+  00000034: 8B 57 04           mov         edx,dword ptr [edi+4]
+  00000037: 85 D2              test        edx,edx
+  00000039: 74 05              je          00000040
+  0000003B: 8B 52 08           mov         edx,dword ptr [edx+8]
+  0000003E: EB 02              jmp         00000042
+  00000040: 33 D2              xor         edx,edx
+  00000042: 3B F3              cmp         esi,ebx
+  00000044: 77 19              ja          0000005F
+  00000046: 75 0E              jne         00000056
+  00000048: 3B C2              cmp         eax,edx
+  0000004A: 77 13              ja          0000005F
+  0000004C: 75 08              jne         00000056
+  0000004E: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000051: 3B 47 08           cmp         eax,dword ptr [edi+8]
+  00000054: 77 09              ja          0000005F
+  00000056: 5F                 pop         edi
+  00000057: 5E                 pop         esi
+  00000058: 32 C0              xor         al,al
+  0000005A: 5B                 pop         ebx
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 08 00           ret         8
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: B0 01              mov         al,1
+  00000063: 5B                 pop         ebx
+  00000064: 5D                 pop         ebp
+  00000065: C2 08 00           ret         8
+
+??_GMyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@UAEPAXI@Z (public: virtual void * __thiscall `public: virtual void __thiscall btMultiSapBroadphase::setAabb(struct btBroadphaseProxy *,class btVector3 const &,class btVector3 const &,class btDispatcher *)'::`2'::MyNodeOverlapCallback::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btNodeOverlapCallback@@6B@
+  00000010: 74 09              je          0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B C6              mov         eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??_GbtBroadphaseInterface@@UAEPAXI@Z (public: virtual void * __thiscall btBroadphaseInterface::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btBroadphaseInterface@@6B@
+  00000010: 74 09              je          0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B C6              mov         eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??_GbtMultiSapBroadphase@@UAEPAXI@Z (public: virtual void * __thiscall btMultiSapBroadphase::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: E8 00 00 00 00     call        ??1btMultiSapBroadphase@@UAE@XZ
+  0000000B: F6 45 08 01        test        byte ptr [ebp+8],1
+  0000000F: 74 09              je          0000001A
+  00000011: 56                 push        esi
+  00000012: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8B C6              mov         eax,esi
+  0000001C: 5E                 pop         esi
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 04 00           ret         4
+
+??_GbtMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@UAEPAXI@Z (public: virtual void * __thiscall `public: __thiscall btMultiSapBroadphase::btMultiSapBroadphase(int,class btOverlappingPairCache *)'::`5'::btMultiSapOverlapFilterCallback::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btOverlapFilterCallback@@6B@
+  00000010: 74 09              je          0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B C6              mov         eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??_GbtNodeOverlapCallback@@UAEPAXI@Z (public: virtual void * __thiscall btNodeOverlapCallback::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btNodeOverlapCallback@@6B@
+  00000010: 74 09              je          0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B C6              mov         eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??_GbtOverlapFilterCallback@@UAEPAXI@Z (public: virtual void * __thiscall btOverlapFilterCallback::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7btOverlapFilterCallback@@6B@
+  00000010: 74 09              je          0000001B
+  00000012: 56                 push        esi
+  00000013: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000018: 83 C4 04           add         esp,4
+  0000001B: 8B C6              mov         eax,esi
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+?TestAabbAgainstAabb2@@YA_NABVbtVector3@@000@Z (bool __cdecl TestAabbAgainstAabb2(class btVector3 const &,class btVector3 const &,class btVector3 const &,class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000006: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000009: 56                 push        esi
+  0000000A: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000D: 57                 push        edi
+  0000000E: 8B 7D 14           mov         edi,dword ptr [ebp+14h]
+  00000011: F3 0F 10 06        movss       xmm0,dword ptr [esi]
+  00000015: 0F 2F 07           comiss      xmm0,dword ptr [edi]
+  00000018: B0 01              mov         al,1
+  0000001A: 77 09              ja          00000025
+  0000001C: F3 0F 10 01        movss       xmm0,dword ptr [ecx]
+  00000020: 0F 2F 02           comiss      xmm0,dword ptr [edx]
+  00000023: 76 02              jbe         00000027
+  00000025: 32 C0              xor         al,al
+  00000027: F3 0F 10 46 08     movss       xmm0,dword ptr [esi+8]
+  0000002C: 0F 2F 47 08        comiss      xmm0,dword ptr [edi+8]
+  00000030: 77 0B              ja          0000003D
+  00000032: F3 0F 10 41 08     movss       xmm0,dword ptr [ecx+8]
+  00000037: 0F 2F 42 08        comiss      xmm0,dword ptr [edx+8]
+  0000003B: 76 02              jbe         0000003F
+  0000003D: 32 C0              xor         al,al
+  0000003F: F3 0F 10 46 04     movss       xmm0,dword ptr [esi+4]
+  00000044: 0F 2F 47 04        comiss      xmm0,dword ptr [edi+4]
+  00000048: 5F                 pop         edi
+  00000049: 5E                 pop         esi
+  0000004A: 77 0B              ja          00000057
+  0000004C: F3 0F 10 41 04     movss       xmm0,dword ptr [ecx+4]
+  00000051: 0F 2F 42 04        comiss      xmm0,dword ptr [edx+4]
+  00000055: 76 02              jbe         00000059
+  00000057: 32 C0              xor         al,al
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+
+?addToChildBroadphase@btMultiSapBroadphase@@QAEXPAUbtMultiSapProxy@1@PAUbtBroadphaseProxy@@PAVbtBroadphaseInterface@@@Z (public: void __thiscall btMultiSapBroadphase::addToChildBroadphase(struct btMultiSapBroadphase::btMultiSapProxy *,struct btBroadphaseProxy *,class btBroadphaseInterface *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 6A 10              push        10h
+  00000008: 6A 08              push        8
+  0000000A: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000000F: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000012: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000015: 8B D0              mov         edx,eax
+  00000017: 83 C4 08           add         esp,8
+  0000001A: 89 0A              mov         dword ptr [edx],ecx
+  0000001C: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000001F: 89 4A 04           mov         dword ptr [edx+4],ecx
+  00000022: 8B 4E 38           mov         ecx,dword ptr [esi+38h]
+  00000025: 8B 7E 34           mov         edi,dword ptr [esi+34h]
+  00000028: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000002B: 3B F9              cmp         edi,ecx
+  0000002D: 0F 85 7F 00 00 00  jne         000000B2
+  00000033: 85 FF              test        edi,edi
+  00000035: 74 04              je          0000003B
+  00000037: 03 FF              add         edi,edi
+  00000039: EB 05              jmp         00000040
+  0000003B: BF 01 00 00 00     mov         edi,1
+  00000040: 3B CF              cmp         ecx,edi
+  00000042: 7D 6E              jge         000000B2
+  00000044: 85 FF              test        edi,edi
+  00000046: 74 14              je          0000005C
+  00000048: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  0000004F: 6A 10              push        10h
+  00000051: 50                 push        eax
+  00000052: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000057: 83 C4 08           add         esp,8
+  0000005A: EB 02              jmp         0000005E
+  0000005C: 33 C0              xor         eax,eax
+  0000005E: 53                 push        ebx
+  0000005F: 8B 5E 34           mov         ebx,dword ptr [esi+34h]
+  00000062: 33 D2              xor         edx,edx
+  00000064: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000067: 85 DB              test        ebx,ebx
+  00000069: 7E 19              jle         00000084
+  0000006B: 8B C8              mov         ecx,eax
+  0000006D: 8D 49 00           lea         ecx,[ecx]
+  00000070: 85 C9              test        ecx,ecx
+  00000072: 74 08              je          0000007C
+  00000074: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  00000077: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000007A: 89 01              mov         dword ptr [ecx],eax
+  0000007C: 42                 inc         edx
+  0000007D: 83 C1 04           add         ecx,4
+  00000080: 3B D3              cmp         edx,ebx
+  00000082: 7C EC              jl          00000070
+  00000084: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  00000087: 5B                 pop         ebx
+  00000088: 85 C0              test        eax,eax
+  0000008A: 74 16              je          000000A2
+  0000008C: 80 7E 40 00        cmp         byte ptr [esi+40h],0
+  00000090: 74 09              je          0000009B
+  00000092: 50                 push        eax
+  00000093: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000098: 83 C4 04           add         esp,4
+  0000009B: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  000000A2: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000A5: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000A8: C6 46 40 01        mov         byte ptr [esi+40h],1
+  000000AC: 89 46 3C           mov         dword ptr [esi+3Ch],eax
+  000000AF: 89 7E 38           mov         dword ptr [esi+38h],edi
+  000000B2: 8B 4E 34           mov         ecx,dword ptr [esi+34h]
+  000000B5: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  000000B8: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000BB: 85 C0              test        eax,eax
+  000000BD: 74 02              je          000000C1
+  000000BF: 89 10              mov         dword ptr [eax],edx
+  000000C1: FF 46 34           inc         dword ptr [esi+34h]
+  000000C4: 5F                 pop         edi
+  000000C5: 5E                 pop         esi
+  000000C6: 8B E5              mov         esp,ebp
+  000000C8: 5D                 pop         ebp
+  000000C9: C2 0C 00           ret         0Ch
+
+?allocSize@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IAEHH@Z (protected: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::allocSize(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 06              je          00000010
+  0000000A: 03 C0              add         eax,eax
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+  00000010: B8 01 00 00 00     mov         eax,1
+  00000015: 5D                 pop         ebp
+  00000016: C2 04 00           ret         4
+
+?allocSize@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IAEHH@Z (protected: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::allocSize(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 06              je          00000010
+  0000000A: 03 C0              add         eax,eax
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+  00000010: B8 01 00 00 00     mov         eax,1
+  00000015: 5D                 pop         ebp
+  00000016: C2 04 00           ret         4
+
+?allocSize@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@IAEHH@Z (protected: int __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::allocSize(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 06              je          00000010
+  0000000A: 03 C0              add         eax,eax
+  0000000C: 5D                 pop         ebp
+  0000000D: C2 04 00           ret         4
+  00000010: B8 01 00 00 00     mov         eax,1
+  00000015: 5D                 pop         ebp
+  00000016: C2 04 00           ret         4
+
+?allocate@?$btAlignedAllocator@PAUbtBridgeProxy@btMultiSapBroadphase@@$0BA@@@QAEPAPAUbtBridgeProxy@btMultiSapBroadphase@@HPAPBQAU23@@Z (public: struct btMultiSapBroadphase::btBridgeProxy * * __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btBridgeProxy *,16>::allocate(int,struct btMultiSapBroadphase::btBridgeProxy * const * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 02           shl         eax,2
+  00000009: 6A 10              push        10h
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000011: 83 C4 08           add         esp,8
+  00000014: 5D                 pop         ebp
+  00000015: C2 08 00           ret         8
+
+?allocate@?$btAlignedAllocator@PAUbtMultiSapProxy@btMultiSapBroadphase@@$0BA@@@QAEPAPAUbtMultiSapProxy@btMultiSapBroadphase@@HPAPBQAU23@@Z (public: struct btMultiSapBroadphase::btMultiSapProxy * * __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btMultiSapProxy *,16>::allocate(int,struct btMultiSapBroadphase::btMultiSapProxy * const * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 02           shl         eax,2
+  00000009: 6A 10              push        10h
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000011: 83 C4 08           add         esp,8
+  00000014: 5D                 pop         ebp
+  00000015: C2 08 00           ret         8
+
+?allocate@?$btAlignedAllocator@UbtBroadphasePair@@$0BA@@@QAEPAUbtBroadphasePair@@HPAPBU2@@Z (public: struct btBroadphasePair * __thiscall btAlignedAllocator<struct btBroadphasePair,16>::allocate(int,struct btBroadphasePair const * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 04           shl         eax,4
+  00000009: 6A 10              push        10h
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000011: 83 C4 08           add         esp,8
+  00000014: 5D                 pop         ebp
+  00000015: C2 08 00           ret         8
+
+?allocate@?$btAlignedAllocator@UbtQuantizedBvhNode@@$0BA@@@QAEPAUbtQuantizedBvhNode@@HPAPBU2@@Z (public: struct btQuantizedBvhNode * __thiscall btAlignedAllocator<struct btQuantizedBvhNode,16>::allocate(int,struct btQuantizedBvhNode const * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C1 E0 04           shl         eax,4
+  00000009: 6A 10              push        10h
+  0000000B: 50                 push        eax
+  0000000C: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000011: 83 C4 08           add         esp,8
+  00000014: 5D                 pop         ebp
+  00000015: C2 08 00           ret         8
+
+?allocate@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IAEPAXH@Z (protected: void * __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::allocate(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 12              je          0000001C
+  0000000A: C1 E0 02           shl         eax,2
+  0000000D: 6A 10              push        10h
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000015: 83 C4 08           add         esp,8
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+  0000001C: 33 C0              xor         eax,eax
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+?allocate@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IAEPAXH@Z (protected: void * __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::allocate(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 12              je          0000001C
+  0000000A: C1 E0 02           shl         eax,2
+  0000000D: 6A 10              push        10h
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000015: 83 C4 08           add         esp,8
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+  0000001C: 33 C0              xor         eax,eax
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+?allocate@?$btAlignedObjectArray@UbtBroadphasePair@@@@IAEPAXH@Z (protected: void * __thiscall btAlignedObjectArray<struct btBroadphasePair>::allocate(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 12              je          0000001C
+  0000000A: C1 E0 04           shl         eax,4
+  0000000D: 6A 10              push        10h
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000015: 83 C4 08           add         esp,8
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+  0000001C: 33 C0              xor         eax,eax
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+?allocate@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@IAEPAXH@Z (protected: void * __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::allocate(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 12              je          0000001C
+  0000000A: C1 E0 04           shl         eax,4
+  0000000D: 6A 10              push        10h
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000015: 83 C4 08           add         esp,8
+  00000018: 5D                 pop         ebp
+  00000019: C2 04 00           ret         4
+  0000001C: 33 C0              xor         eax,eax
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 04 00           ret         4
+
+?boxIsContainedWithinBox@@YA_NABVbtVector3@@000@Z (bool __cdecl boxIsContainedWithinBox(class btVector3 const &,class btVector3 const &,class btVector3 const &,class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: F3 0F 10 00        movss       xmm0,dword ptr [eax]
+  0000000D: 0F 2F 01           comiss      xmm0,dword ptr [ecx]
+  00000010: 56                 push        esi
+  00000011: 72 40              jb          00000053
+  00000013: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000016: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000019: F3 0F 10 02        movss       xmm0,dword ptr [edx]
+  0000001D: 0F 2F 06           comiss      xmm0,dword ptr [esi]
+  00000020: 72 31              jb          00000053
+  00000022: F3 0F 10 40 04     movss       xmm0,dword ptr [eax+4]
+  00000027: 0F 2F 41 04        comiss      xmm0,dword ptr [ecx+4]
+  0000002B: 72 26              jb          00000053
+  0000002D: F3 0F 10 42 04     movss       xmm0,dword ptr [edx+4]
+  00000032: 0F 2F 46 04        comiss      xmm0,dword ptr [esi+4]
+  00000036: 72 1B              jb          00000053
+  00000038: F3 0F 10 40 08     movss       xmm0,dword ptr [eax+8]
+  0000003D: 0F 2F 41 08        comiss      xmm0,dword ptr [ecx+8]
+  00000041: 72 10              jb          00000053
+  00000043: F3 0F 10 42 08     movss       xmm0,dword ptr [edx+8]
+  00000048: 0F 2F 46 08        comiss      xmm0,dword ptr [esi+8]
+  0000004C: 72 05              jb          00000053
+  0000004E: B0 01              mov         al,1
+  00000050: 5E                 pop         esi
+  00000051: 5D                 pop         ebp
+  00000052: C3                 ret
+  00000053: 32 C0              xor         al,al
+  00000055: 5E                 pop         esi
+  00000056: 5D                 pop         ebp
+  00000057: C3                 ret
+
+?buildTree@btMultiSapBroadphase@@QAEXABVbtVector3@@0@Z (public: void __thiscall btMultiSapBroadphase::buildTree(class btVector3 const &,class btVector3 const &)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 58           sub         esp,58h
+  00000019: 56                 push        esi
+  0000001A: 57                 push        edi
+  0000001B: 8B F1              mov         esi,ecx
+  0000001D: 6A 10              push        10h
+  0000001F: 68 C0 00 00 00     push        0C0h
+  00000024: 89 75 F8           mov         dword ptr [ebp-8],esi
+  00000027: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000002C: 83 C4 08           add         esp,8
+  0000002F: 85 C0              test        eax,eax
+  00000031: 74 09              je          0000003C
+  00000033: 8B C8              mov         ecx,eax
+  00000035: E8 00 00 00 00     call        ??0btQuantizedBvh@@QAE@XZ
+  0000003A: EB 02              jmp         0000003E
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 51                 push        ecx
+  0000003F: 8B C8              mov         ecx,eax
+  00000041: C7 04 24 00 00 80  mov         dword ptr [esp],3F800000h
+            3F
+  00000048: FF 73 0C           push        dword ptr [ebx+0Ch]
+  0000004B: 89 46 20           mov         dword ptr [esi+20h],eax
+  0000004E: FF 73 08           push        dword ptr [ebx+8]
+  00000051: E8 00 00 00 00     call        ?setQuantizationValues@btQuantizedBvh@@QAEXABVbtVector3@@0M@Z
+  00000056: 8B D6              mov         edx,esi
+  00000058: 33 FF              xor         edi,edi
+  0000005A: 8B 72 20           mov         esi,dword ptr [edx+20h]
+  0000005D: 89 7D EC           mov         dword ptr [ebp-14h],edi
+  00000060: 39 7A 08           cmp         dword ptr [edx+8],edi
+  00000063: 0F 8E D1 01 00 00  jle         0000023A
+  00000069: C7 45 FC FE FF 00  mov         dword ptr [ebp-4],0FFFEh
+            00
+  00000070: 8B 42 10           mov         eax,dword ptr [edx+10h]
+  00000073: 8D 55 B0           lea         edx,[ebp-50h]
+  00000076: 8B 0C B8           mov         ecx,dword ptr [eax+edi*4]
+  00000079: 52                 push        edx
+  0000007A: 8B 01              mov         eax,dword ptr [ecx]
+  0000007C: 8D 55 C0           lea         edx,[ebp-40h]
+  0000007F: 52                 push        edx
+  00000080: FF 50 28           call        dword ptr [eax+28h]
+  00000083: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000086: F3 0F 10 4D C0     movss       xmm1,dword ptr [ebp-40h]
+  0000008B: 8B 4A 20           mov         ecx,dword ptr [edx+20h]
+  0000008E: F3 0F 10 55 C4     movss       xmm2,dword ptr [ebp-3Ch]
+  00000093: F3 0F 5C 49 10     subss       xmm1,dword ptr [ecx+10h]
+  00000098: F3 0F 10 41 30     movss       xmm0,dword ptr [ecx+30h]
+  0000009D: F3 0F 5C 51 14     subss       xmm2,dword ptr [ecx+14h]
+  000000A2: F3 0F 10 5D C8     movss       xmm3,dword ptr [ebp-38h]
+  000000A7: F3 0F 5C 59 18     subss       xmm3,dword ptr [ecx+18h]
+  000000AC: F3 0F 59 C1        mulss       xmm0,xmm1
+  000000B0: F3 0F 10 49 34     movss       xmm1,dword ptr [ecx+34h]
+  000000B5: F3 0F 59 CA        mulss       xmm1,xmm2
+  000000B9: F3 0F 10 51 38     movss       xmm2,dword ptr [ecx+38h]
+  000000BE: F3 0F 2C C0        cvttss2si   eax,xmm0
+  000000C2: F3 0F 10 45 B4     movss       xmm0,dword ptr [ebp-4Ch]
+  000000C7: 66 23 45 FC        and         ax,word ptr [ebp-4]
+  000000CB: F3 0F 5C 41 14     subss       xmm0,dword ptr [ecx+14h]
+  000000D0: 66 89 45 D0        mov         word ptr [ebp-30h],ax
+  000000D4: F3 0F 2C C1        cvttss2si   eax,xmm1
+  000000D8: F3 0F 10 4D B8     movss       xmm1,dword ptr [ebp-48h]
+  000000DD: 66 23 45 FC        and         ax,word ptr [ebp-4]
+  000000E1: F3 0F 5C 49 18     subss       xmm1,dword ptr [ecx+18h]
+  000000E6: F3 0F 59 D3        mulss       xmm2,xmm3
+  000000EA: F3 0F 10 5D B0     movss       xmm3,dword ptr [ebp-50h]
+  000000EF: F3 0F 5C 59 10     subss       xmm3,dword ptr [ecx+10h]
+  000000F4: 66 89 45 D2        mov         word ptr [ebp-2Eh],ax
+  000000F8: F3 0F 2C C2        cvttss2si   eax,xmm2
+  000000FC: F3 0F 10 51 34     movss       xmm2,dword ptr [ecx+34h]
+  00000101: 66 23 45 FC        and         ax,word ptr [ebp-4]
+  00000105: F3 0F 59 59 30     mulss       xmm3,dword ptr [ecx+30h]
+  0000010A: F3 0F 59 D0        mulss       xmm2,xmm0
+  0000010E: F3 0F 10 41 38     movss       xmm0,dword ptr [ecx+38h]
+  00000113: F3 0F 59 C1        mulss       xmm0,xmm1
+  00000117: F3 0F 10 0D 00 00  movss       xmm1,dword ptr [__real@3f800000]
+            00 00
+  0000011F: 66 89 45 D4        mov         word ptr [ebp-2Ch],ax
+  00000123: F3 0F 58 D9        addss       xmm3,xmm1
+  00000127: F3 0F 58 D1        addss       xmm2,xmm1
+  0000012B: 8B 4E 7C           mov         ecx,dword ptr [esi+7Ch]
+  0000012E: F3 0F 58 C1        addss       xmm0,xmm1
+  00000132: 89 7D DC           mov         dword ptr [ebp-24h],edi
+  00000135: F3 0F 2C C3        cvttss2si   eax,xmm3
+  00000139: 66 83 C8 01        or          ax,1
+  0000013D: 66 89 45 D6        mov         word ptr [ebp-2Ah],ax
+  00000141: F3 0F 2C C2        cvttss2si   eax,xmm2
+  00000145: 66 83 C8 01        or          ax,1
+  00000149: 66 89 45 D8        mov         word ptr [ebp-28h],ax
+  0000014D: F3 0F 2C C0        cvttss2si   eax,xmm0
+  00000151: 66 83 C8 01        or          ax,1
+  00000155: 66 89 45 DA        mov         word ptr [ebp-26h],ax
+  00000159: 8B 46 78           mov         eax,dword ptr [esi+78h]
+  0000015C: 3B C1              cmp         eax,ecx
+  0000015E: 0F 85 A5 00 00 00  jne         00000209
+  00000164: 85 C0              test        eax,eax
+  00000166: 74 04              je          0000016C
+  00000168: 03 C0              add         eax,eax
+  0000016A: EB 05              jmp         00000171
+  0000016C: B8 01 00 00 00     mov         eax,1
+  00000171: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000174: 3B C8              cmp         ecx,eax
+  00000176: 0F 8D 8D 00 00 00  jge         00000209
+  0000017C: 85 C0              test        eax,eax
+  0000017E: 74 10              je          00000190
+  00000180: C1 E0 04           shl         eax,4
+  00000183: 6A 10              push        10h
+  00000185: 50                 push        eax
+  00000186: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000018B: 83 C4 08           add         esp,8
+  0000018E: EB 02              jmp         00000192
+  00000190: 33 C0              xor         eax,eax
+  00000192: 8B 7E 78           mov         edi,dword ptr [esi+78h]
+  00000195: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000198: 85 FF              test        edi,edi
+  0000019A: 7E 2B              jle         000001C7
+  0000019C: 33 D2              xor         edx,edx
+  0000019E: 8B C8              mov         ecx,eax
+  000001A0: 85 C9              test        ecx,ecx
+  000001A2: 74 1A              je          000001BE
+  000001A4: 8B 86 80 00 00 00  mov         eax,dword ptr [esi+80h]
+  000001AA: F3 0F 7E 04 10     movq        xmm0,mmword ptr [eax+edx]
+  000001AF: 66 0F D6 01        movq        mmword ptr [ecx],xmm0
+  000001B3: F3 0F 7E 44 10 08  movq        xmm0,mmword ptr [eax+edx+8]
+  000001B9: 66 0F D6 41 08     movq        mmword ptr [ecx+8],xmm0
+  000001BE: 83 C2 10           add         edx,10h
+  000001C1: 83 C1 10           add         ecx,10h
+  000001C4: 4F                 dec         edi
+  000001C5: 75 D9              jne         000001A0
+  000001C7: 8B 86 80 00 00 00  mov         eax,dword ptr [esi+80h]
+  000001CD: 85 C0              test        eax,eax
+  000001CF: 74 1C              je          000001ED
+  000001D1: 80 BE 84 00 00 00  cmp         byte ptr [esi+84h],0
+            00
+  000001D8: 74 09              je          000001E3
+  000001DA: 50                 push        eax
+  000001DB: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  000001E0: 83 C4 04           add         esp,4
+  000001E3: C7 86 80 00 00 00  mov         dword ptr [esi+80h],0
+            00 00 00 00
+  000001ED: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000001F0: 8B 7D EC           mov         edi,dword ptr [ebp-14h]
+  000001F3: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000001F6: 89 86 80 00 00 00  mov         dword ptr [esi+80h],eax
+  000001FC: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  000001FF: C6 86 84 00 00 00  mov         byte ptr [esi+84h],1
+            01
+  00000206: 89 46 7C           mov         dword ptr [esi+7Ch],eax
+  00000209: 8B 46 78           mov         eax,dword ptr [esi+78h]
+  0000020C: C1 E0 04           shl         eax,4
+  0000020F: 03 86 80 00 00 00  add         eax,dword ptr [esi+80h]
+  00000215: 74 13              je          0000022A
+  00000217: F3 0F 7E 45 D0     movq        xmm0,mmword ptr [ebp-30h]
+  0000021C: 66 0F D6 00        movq        mmword ptr [eax],xmm0
+  00000220: F3 0F 7E 45 D8     movq        xmm0,mmword ptr [ebp-28h]
+  00000225: 66 0F D6 40 08     movq        mmword ptr [eax+8],xmm0
+  0000022A: FF 46 78           inc         dword ptr [esi+78h]
+  0000022D: 47                 inc         edi
+  0000022E: 89 7D EC           mov         dword ptr [ebp-14h],edi
+  00000231: 3B 7A 08           cmp         edi,dword ptr [edx+8]
+  00000234: 0F 8C 36 FE FF FF  jl          00000070
+  0000023A: 8B 4A 20           mov         ecx,dword ptr [edx+20h]
+  0000023D: E8 00 00 00 00     call        ?buildInternal@btQuantizedBvh@@QAEXXZ
+  00000242: 5F                 pop         edi
+  00000243: 5E                 pop         esi
+  00000244: 8B E5              mov         esp,ebp
+  00000246: 5D                 pop         ebp
+  00000247: 8B E3              mov         esp,ebx
+  00000249: 5B                 pop         ebx
+  0000024A: C2 08 00           ret         8
+
+?calculateOverlappingPairs@btMultiSapBroadphase@@UAEXPAVbtDispatcher@@@Z (public: virtual void __thiscall btMultiSapBroadphase::calculateOverlappingPairs(class btDispatcher *)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 38           sub         esp,38h
+  00000019: 80 3D 00 00 00 00  cmp         byte ptr [?stopUpdating@@3_NA],0
+            00
+  00000020: 56                 push        esi
+  00000021: 8B F1              mov         esi,ecx
+  00000023: 57                 push        edi
+  00000024: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000027: 0F 85 98 03 00 00  jne         000003C5
+  0000002D: 8B 06              mov         eax,dword ptr [esi]
+  0000002F: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  00000032: FF D0              call        eax
+  00000034: 8B 10              mov         edx,dword ptr [eax]
+  00000036: 8B C8              mov         ecx,eax
+  00000038: 8B 42 34           mov         eax,dword ptr [edx+34h]
+  0000003B: FF D0              call        eax
+  0000003D: 84 C0              test        al,al
+  0000003F: 0F 84 80 03 00 00  je          000003C5
+  00000045: 8B 06              mov         eax,dword ptr [esi]
+  00000047: 8B CE              mov         ecx,esi
+  00000049: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  0000004C: FF D0              call        eax
+  0000004E: 8B 10              mov         edx,dword ptr [eax]
+  00000050: 8B C8              mov         ecx,eax
+  00000052: 8B 42 18           mov         eax,dword ptr [edx+18h]
+  00000055: FF D0              call        eax
+  00000057: 8B F0              mov         esi,eax
+  00000059: C6 45 EC 00        mov         byte ptr [ebp-14h],0
+  0000005D: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000060: 83 F9 01           cmp         ecx,1
+  00000063: 7E 0E              jle         00000073
+  00000065: 49                 dec         ecx
+  00000066: 51                 push        ecx
+  00000067: 6A 00              push        0
+  00000069: FF 75 EC           push        dword ptr [ebp-14h]
+  0000006C: 8B CE              mov         ecx,esi
+  0000006E: E8 00 00 00 00     call        ??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z
+  00000073: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000076: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000079: 8B F8              mov         edi,eax
+  0000007B: 2B 79 2C           sub         edi,dword ptr [ecx+2Ch]
+  0000007E: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000081: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  00000084: 3B F8              cmp         edi,eax
+  00000086: 0F 8C DC 00 00 00  jl          00000168
+  0000008C: 0F 8E 9E 00 00 00  jle         00000130
+  00000092: 39 7E 08           cmp         dword ptr [esi+8],edi
+  00000095: 0F 8D 95 00 00 00  jge         00000130
+  0000009B: 85 FF              test        edi,edi
+  0000009D: 74 12              je          000000B1
+  0000009F: 8B C7              mov         eax,edi
+  000000A1: C1 E0 04           shl         eax,4
+  000000A4: 6A 10              push        10h
+  000000A6: 50                 push        eax
+  000000A7: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  000000AC: 83 C4 08           add         esp,8
+  000000AF: EB 02              jmp         000000B3
+  000000B1: 33 C0              xor         eax,eax
+  000000B3: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000000B6: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000B9: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000000BC: 85 C9              test        ecx,ecx
+  000000BE: 7E 43              jle         00000103
+  000000C0: 8D 50 08           lea         edx,[eax+8]
+  000000C3: B8 F8 FF FF FF     mov         eax,0FFFFFFF8h
+  000000C8: 2B 45 F8           sub         eax,dword ptr [ebp-8]
+  000000CB: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  000000CE: 8B F8              mov         edi,eax
+  000000D0: 8D 42 F8           lea         eax,[edx-8]
+  000000D3: 85 C0              test        eax,eax
+  000000D5: 74 20              je          000000F7
+  000000D7: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  000000DA: 03 CF              add         ecx,edi
+  000000DC: 03 CA              add         ecx,edx
+  000000DE: 8B 01              mov         eax,dword ptr [ecx]
+  000000E0: 89 42 F8           mov         dword ptr [edx-8],eax
+  000000E3: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  000000E6: 89 42 FC           mov         dword ptr [edx-4],eax
+  000000E9: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  000000EC: 89 02              mov         dword ptr [edx],eax
+  000000EE: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  000000F1: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  000000F4: 89 42 04           mov         dword ptr [edx+4],eax
+  000000F7: 83 C2 10           add         edx,10h
+  000000FA: 49                 dec         ecx
+  000000FB: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000000FE: 75 D0              jne         000000D0
+  00000100: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000103: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000106: 85 C0              test        eax,eax
+  00000108: 74 16              je          00000120
+  0000010A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000010E: 74 09              je          00000119
+  00000110: 50                 push        eax
+  00000111: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000116: 83 C4 04           add         esp,4
+  00000119: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000120: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000123: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000126: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  00000129: C6 46 10 01        mov         byte ptr [esi+10h],1
+  0000012D: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000130: 3B C7              cmp         eax,edi
+  00000132: 7D 34              jge         00000168
+  00000134: 8B C8              mov         ecx,eax
+  00000136: 8B D7              mov         edx,edi
+  00000138: C1 E1 04           shl         ecx,4
+  0000013B: 2B D0              sub         edx,eax
+  0000013D: 8D 49 00           lea         ecx,[ecx]
+  00000140: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000143: 03 C1              add         eax,ecx
+  00000145: 74 1B              je          00000162
+  00000147: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000014D: C7 40 04 00 00 00  mov         dword ptr [eax+4],0
+            00
+  00000154: C7 40 08 00 00 00  mov         dword ptr [eax+8],0
+            00
+  0000015B: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000162: 83 C1 10           add         ecx,10h
+  00000165: 4A                 dec         edx
+  00000166: 75 D8              jne         00000140
+  00000168: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000016B: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000016E: C7 40 2C 00 00 00  mov         dword ptr [eax+2Ch],0
+            00
+  00000175: 33 C0              xor         eax,eax
+  00000177: 33 D2              xor         edx,edx
+  00000179: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000017C: 39 46 04           cmp         dword ptr [esi+4],eax
+  0000017F: 0F 8E 1D 01 00 00  jle         000002A2
+  00000185: 33 C9              xor         ecx,ecx
+  00000187: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  0000018A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000190: 8B 7E 0C           mov         edi,dword ptr [esi+0Ch]
+  00000193: 03 F9              add         edi,ecx
+  00000195: 8B 0F              mov         ecx,dword ptr [edi]
+  00000197: 85 C9              test        ecx,ecx
+  00000199: 74 08              je          000001A3
+  0000019B: 8B 49 08           mov         ecx,dword ptr [ecx+8]
+  0000019E: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000001A1: EB 07              jmp         000001AA
+  000001A3: C7 45 F4 00 00 00  mov         dword ptr [ebp-0Ch],0
+            00
+  000001AA: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  000001AD: 85 C9              test        ecx,ecx
+  000001AF: 74 08              je          000001B9
+  000001B1: 8B 49 08           mov         ecx,dword ptr [ecx+8]
+  000001B4: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000001B7: EB 07              jmp         000001C0
+  000001B9: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  000001C0: 85 C0              test        eax,eax
+  000001C2: 74 05              je          000001C9
+  000001C4: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  000001C7: EB 02              jmp         000001CB
+  000001C9: 33 C9              xor         ecx,ecx
+  000001CB: 85 D2              test        edx,edx
+  000001CD: 74 05              je          000001D4
+  000001CF: 8B 42 08           mov         eax,dword ptr [edx+8]
+  000001D2: EB 02              jmp         000001D6
+  000001D4: 33 C0              xor         eax,eax
+  000001D6: 39 4D F4           cmp         dword ptr [ebp-0Ch],ecx
+  000001D9: 75 09              jne         000001E4
+  000001DB: 39 45 F8           cmp         dword ptr [ebp-8],eax
+  000001DE: 75 04              jne         000001E4
+  000001E0: B0 01              mov         al,1
+  000001E2: EB 02              jmp         000001E6
+  000001E4: 32 C0              xor         al,al
+  000001E6: F3 0F 7E 07        movq        xmm0,mmword ptr [edi]
+  000001EA: 66 0F D6 45 D0     movq        mmword ptr [ebp-30h],xmm0
+  000001EF: F3 0F 7E 47 08     movq        xmm0,mmword ptr [edi+8]
+  000001F4: 66 0F D6 45 D8     movq        mmword ptr [ebp-28h],xmm0
+  000001F9: 84 C0              test        al,al
+  000001FB: 75 57              jne         00000254
+  000001FD: 8B 07              mov         eax,dword ptr [edi]
+  000001FF: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000202: 8B 40 08           mov         eax,dword ptr [eax+8]
+  00000205: 8B 49 08           mov         ecx,dword ptr [ecx+8]
+  00000208: F3 0F 10 40 50     movss       xmm0,dword ptr [eax+50h]
+  0000020D: 0F 2F 41 60        comiss      xmm0,dword ptr [ecx+60h]
+  00000211: B2 01              mov         dl,1
+  00000213: 77 0B              ja          00000220
+  00000215: F3 0F 10 41 50     movss       xmm0,dword ptr [ecx+50h]
+  0000021A: 0F 2F 40 60        comiss      xmm0,dword ptr [eax+60h]
+  0000021E: 76 02              jbe         00000222
+  00000220: 32 D2              xor         dl,dl
+  00000222: F3 0F 10 40 58     movss       xmm0,dword ptr [eax+58h]
+  00000227: 0F 2F 41 68        comiss      xmm0,dword ptr [ecx+68h]
+  0000022B: 77 0B              ja          00000238
+  0000022D: F3 0F 10 41 58     movss       xmm0,dword ptr [ecx+58h]
+  00000232: 0F 2F 40 68        comiss      xmm0,dword ptr [eax+68h]
+  00000236: 76 02              jbe         0000023A
+  00000238: 32 D2              xor         dl,dl
+  0000023A: F3 0F 10 40 54     movss       xmm0,dword ptr [eax+54h]
+  0000023F: 0F 2F 41 64        comiss      xmm0,dword ptr [ecx+64h]
+  00000243: 77 0F              ja          00000254
+  00000245: F3 0F 10 41 54     movss       xmm0,dword ptr [ecx+54h]
+  0000024A: 0F 2F 40 64        comiss      xmm0,dword ptr [eax+64h]
+  0000024E: 77 04              ja          00000254
+  00000250: 84 D2              test        dl,dl
+  00000252: 75 2E              jne         00000282
+  00000254: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000257: 8B 01              mov         eax,dword ptr [ecx]
+  00000259: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  0000025C: FF D0              call        eax
+  0000025E: FF 73 08           push        dword ptr [ebx+8]
+  00000261: 8B 10              mov         edx,dword ptr [eax]
+  00000263: 57                 push        edi
+  00000264: 8B C8              mov         ecx,eax
+  00000266: FF 52 1C           call        dword ptr [edx+1Ch]
+  00000269: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000026C: C7 07 00 00 00 00  mov         dword ptr [edi],0
+  00000272: C7 47 04 00 00 00  mov         dword ptr [edi+4],0
+            00
+  00000279: FF 40 2C           inc         dword ptr [eax+2Ch]
+  0000027C: FF 0D 00 00 00 00  dec         dword ptr [?gOverlappingPairs@@3HA]
+  00000282: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00000285: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  00000288: 40                 inc         eax
+  00000289: 83 C1 10           add         ecx,10h
+  0000028C: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000028F: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  00000292: 3B 46 04           cmp         eax,dword ptr [esi+4]
+  00000295: 7D 0B              jge         000002A2
+  00000297: 8B 55 D4           mov         edx,dword ptr [ebp-2Ch]
+  0000029A: 8B 45 D0           mov         eax,dword ptr [ebp-30h]
+  0000029D: E9 EE FE FF FF     jmp         00000190
+  000002A2: 8B 46 04           mov         eax,dword ptr [esi+4]
+  000002A5: C6 45 E8 00        mov         byte ptr [ebp-18h],0
+  000002A9: 83 F8 01           cmp         eax,1
+  000002AC: 7E 0E              jle         000002BC
+  000002AE: 48                 dec         eax
+  000002AF: 50                 push        eax
+  000002B0: 6A 00              push        0
+  000002B2: FF 75 E8           push        dword ptr [ebp-18h]
+  000002B5: 8B CE              mov         ecx,esi
+  000002B7: E8 00 00 00 00     call        ??$quickSortInternal@VbtMultiSapBroadphasePairSortPredicate@@@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXVbtMultiSapBroadphasePairSortPredicate@@HH@Z
+  000002BC: 8B 46 04           mov         eax,dword ptr [esi+4]
+  000002BF: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000002C2: 8B F8              mov         edi,eax
+  000002C4: 2B 79 2C           sub         edi,dword ptr [ecx+2Ch]
+  000002C7: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000002CA: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  000002CD: 3B F8              cmp         edi,eax
+  000002CF: 0F 8C E3 00 00 00  jl          000003B8
+  000002D5: 0F 8E A5 00 00 00  jle         00000380
+  000002DB: 39 7E 08           cmp         dword ptr [esi+8],edi
+  000002DE: 0F 8D 9C 00 00 00  jge         00000380
+  000002E4: 85 FF              test        edi,edi
+  000002E6: 74 12              je          000002FA
+  000002E8: 8B C7              mov         eax,edi
+  000002EA: C1 E0 04           shl         eax,4
+  000002ED: 6A 10              push        10h
+  000002EF: 50                 push        eax
+  000002F0: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  000002F5: 83 C4 08           add         esp,8
+  000002F8: EB 02              jmp         000002FC
+  000002FA: 33 C0              xor         eax,eax
+  000002FC: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000002FF: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000302: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  00000305: 85 C9              test        ecx,ecx
+  00000307: 7E 4A              jle         00000353
+  00000309: 8D 50 08           lea         edx,[eax+8]
+  0000030C: B8 F8 FF FF FF     mov         eax,0FFFFFFF8h
+  00000311: 2B 45 F8           sub         eax,dword ptr [ebp-8]
+  00000314: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000317: 8B F8              mov         edi,eax
+  00000319: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000320: 8D 42 F8           lea         eax,[edx-8]
+  00000323: 85 C0              test        eax,eax
+  00000325: 74 20              je          00000347
+  00000327: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  0000032A: 03 CF              add         ecx,edi
+  0000032C: 03 CA              add         ecx,edx
+  0000032E: 8B 01              mov         eax,dword ptr [ecx]
+  00000330: 89 42 F8           mov         dword ptr [edx-8],eax
+  00000333: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000336: 89 42 FC           mov         dword ptr [edx-4],eax
+  00000339: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000033C: 89 02              mov         dword ptr [edx],eax
+  0000033E: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000341: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  00000344: 89 42 04           mov         dword ptr [edx+4],eax
+  00000347: 83 C2 10           add         edx,10h
+  0000034A: 49                 dec         ecx
+  0000034B: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  0000034E: 75 D0              jne         00000320
+  00000350: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  00000353: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000356: 85 C0              test        eax,eax
+  00000358: 74 16              je          00000370
+  0000035A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000035E: 74 09              je          00000369
+  00000360: 50                 push        eax
+  00000361: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000366: 83 C4 04           add         esp,4
+  00000369: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000370: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000373: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000376: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000379: C6 46 10 01        mov         byte ptr [esi+10h],1
+  0000037D: 89 7E 08           mov         dword ptr [esi+8],edi
+  00000380: 3B C7              cmp         eax,edi
+  00000382: 7D 34              jge         000003B8
+  00000384: 8B C8              mov         ecx,eax
+  00000386: 8B D7              mov         edx,edi
+  00000388: C1 E1 04           shl         ecx,4
+  0000038B: 2B D0              sub         edx,eax
+  0000038D: 8D 49 00           lea         ecx,[ecx]
+  00000390: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000393: 03 C1              add         eax,ecx
+  00000395: 74 1B              je          000003B2
+  00000397: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000039D: C7 40 04 00 00 00  mov         dword ptr [eax+4],0
+            00
+  000003A4: C7 40 08 00 00 00  mov         dword ptr [eax+8],0
+            00
+  000003AB: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  000003B2: 83 C1 10           add         ecx,10h
+  000003B5: 4A                 dec         edx
+  000003B6: 75 D8              jne         00000390
+  000003B8: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000003BB: 89 7E 04           mov         dword ptr [esi+4],edi
+  000003BE: C7 40 2C 00 00 00  mov         dword ptr [eax+2Ch],0
+            00
+  000003C5: 5F                 pop         edi
+  000003C6: 5E                 pop         esi
+  000003C7: 8B E5              mov         esp,ebp
+  000003C9: 5D                 pop         ebp
+  000003CA: 8B E3              mov         esp,ebx
+  000003CC: 5B                 pop         ebx
+  000003CD: C2 04 00           ret         4
+
+?capacity@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::capacity(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?capacity@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::capacity(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?capacity@?$btAlignedObjectArray@UbtBroadphasePair@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btBroadphasePair>::capacity(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?capacity@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::capacity(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?clear@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEXXZ (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::clear(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+?clear@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAEXXZ (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::clear(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+?clear@?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@QAEXXZ (public: void __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::clear(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000032: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+?copy@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IBEXHHPAPAUbtBridgeProxy@btMultiSapBroadphase@@@Z (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::copy(int,int,struct btMultiSapBroadphase::btBridgeProxy * *)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000A: 57                 push        edi
+  0000000B: 8B F9              mov         edi,ecx
+  0000000D: 3B C6              cmp         eax,esi
+  0000000F: 7D 1A              jge         0000002B
+  00000011: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000014: 8D 14 82           lea         edx,[edx+eax*4]
+  00000017: 85 D2              test        edx,edx
+  00000019: 74 08              je          00000023
+  0000001B: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  0000001E: 8B 0C 81           mov         ecx,dword ptr [ecx+eax*4]
+  00000021: 89 0A              mov         dword ptr [edx],ecx
+  00000023: 40                 inc         eax
+  00000024: 83 C2 04           add         edx,4
+  00000027: 3B C6              cmp         eax,esi
+  00000029: 7C EC              jl          00000017
+  0000002B: 5F                 pop         edi
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 0C 00           ret         0Ch
+
+?copy@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IBEXHHPAPAUbtMultiSapProxy@btMultiSapBroadphase@@@Z (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::copy(int,int,struct btMultiSapBroadphase::btMultiSapProxy * *)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000A: 57                 push        edi
+  0000000B: 8B F9              mov         edi,ecx
+  0000000D: 3B C6              cmp         eax,esi
+  0000000F: 7D 1A              jge         0000002B
+  00000011: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000014: 8D 14 82           lea         edx,[edx+eax*4]
+  00000017: 85 D2              test        edx,edx
+  00000019: 74 08              je          00000023
+  0000001B: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  0000001E: 8B 0C 81           mov         ecx,dword ptr [ecx+eax*4]
+  00000021: 89 0A              mov         dword ptr [edx],ecx
+  00000023: 40                 inc         eax
+  00000024: 83 C2 04           add         edx,4
+  00000027: 3B C6              cmp         eax,esi
+  00000029: 7C EC              jl          00000017
+  0000002B: 5F                 pop         edi
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 0C 00           ret         0Ch
+
+?copy@?$btAlignedObjectArray@UbtBroadphasePair@@@@IBEXHHPAUbtBroadphasePair@@@Z (protected: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::copy(int,int,struct btBroadphasePair *)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 3B FE              cmp         edi,esi
+  0000000E: 7D 43              jge         00000053
+  00000010: 8B C7              mov         eax,edi
+  00000012: C1 E0 04           shl         eax,4
+  00000015: 53                 push        ebx
+  00000016: 83 C0 08           add         eax,8
+  00000019: 03 45 10           add         eax,dword ptr [ebp+10h]
+  0000001C: BB F8 FF FF FF     mov         ebx,0FFFFFFF8h
+  00000021: 2B 5D 10           sub         ebx,dword ptr [ebp+10h]
+  00000024: 2B F7              sub         esi,edi
+  00000026: 8B F9              mov         edi,ecx
+  00000028: 8D 48 F8           lea         ecx,[eax-8]
+  0000002B: 85 C9              test        ecx,ecx
+  0000002D: 74 1D              je          0000004C
+  0000002F: 8B 57 0C           mov         edx,dword ptr [edi+0Ch]
+  00000032: 03 D3              add         edx,ebx
+  00000034: 03 D0              add         edx,eax
+  00000036: 8B 0A              mov         ecx,dword ptr [edx]
+  00000038: 89 48 F8           mov         dword ptr [eax-8],ecx
+  0000003B: 8B 4A 04           mov         ecx,dword ptr [edx+4]
+  0000003E: 89 48 FC           mov         dword ptr [eax-4],ecx
+  00000041: 8B 4A 08           mov         ecx,dword ptr [edx+8]
+  00000044: 89 08              mov         dword ptr [eax],ecx
+  00000046: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  00000049: 89 48 04           mov         dword ptr [eax+4],ecx
+  0000004C: 83 C0 10           add         eax,10h
+  0000004F: 4E                 dec         esi
+  00000050: 75 D6              jne         00000028
+  00000052: 5B                 pop         ebx
+  00000053: 5F                 pop         edi
+  00000054: 5E                 pop         esi
+  00000055: 8B E5              mov         esp,ebp
+  00000057: 5D                 pop         ebp
+  00000058: C2 0C 00           ret         0Ch
+
+?copy@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@IBEXHHPAUbtQuantizedBvhNode@@@Z (protected: void __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::copy(int,int,struct btQuantizedBvhNode *)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000D: 3B CE              cmp         ecx,esi
+  0000000F: 7D 33              jge         00000044
+  00000011: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000014: 8B D1              mov         edx,ecx
+  00000016: C1 E2 04           shl         edx,4
+  00000019: 03 C2              add         eax,edx
+  0000001B: 2B F1              sub         esi,ecx
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 85 C0              test        eax,eax
+  00000022: 74 17              je          0000003B
+  00000024: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  00000027: F3 0F 7E 04 11     movq        xmm0,mmword ptr [ecx+edx]
+  0000002C: 66 0F D6 00        movq        mmword ptr [eax],xmm0
+  00000030: F3 0F 7E 44 11 08  movq        xmm0,mmword ptr [ecx+edx+8]
+  00000036: 66 0F D6 40 08     movq        mmword ptr [eax+8],xmm0
+  0000003B: 83 C2 10           add         edx,10h
+  0000003E: 83 C0 10           add         eax,10h
+  00000041: 4E                 dec         esi
+  00000042: 75 DC              jne         00000020
+  00000044: 5F                 pop         edi
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C2 0C 00           ret         0Ch
+
+?createProxy@btMultiSapBroadphase@@UAEPAUbtBroadphaseProxy@@ABVbtVector3@@0HPAXFFPAVbtDispatcher@@1@Z (public: virtual struct btBroadphaseProxy * __thiscall btMultiSapBroadphase::createProxy(class btVector3 const &,class btVector3 const &,int,void *,short,short,class btDispatcher *,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 6A 10              push        10h
+  00000008: 68 80 00 00 00     push        80h
+  0000000D: 8B F1              mov         esi,ecx
+  0000000F: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000014: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000017: 83 C4 08           add         esp,8
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 1C              je          0000003A
+  0000001E: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000021: 8B C8              mov         ecx,eax
+  00000023: FF 75 18           push        dword ptr [ebp+18h]
+  00000026: FF 75 14           push        dword ptr [ebp+14h]
+  00000029: FF 75 10           push        dword ptr [ebp+10h]
+  0000002C: 53                 push        ebx
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: E8 00 00 00 00     call        ??0btMultiSapProxy@btMultiSapBroadphase@@QAE@ABVbtVector3@@0HPAXFF@Z
+  00000035: 89 45 1C           mov         dword ptr [ebp+1Ch],eax
+  00000038: EB 07              jmp         00000041
+  0000003A: C7 45 1C 00 00 00  mov         dword ptr [ebp+1Ch],0
+            00
+  00000041: 8B 4E 38           mov         ecx,dword ptr [esi+38h]
+  00000044: 8B 46 34           mov         eax,dword ptr [esi+34h]
+  00000047: 3B C1              cmp         eax,ecx
+  00000049: 75 79              jne         000000C4
+  0000004B: 8D 1C 00           lea         ebx,[eax+eax]
+  0000004E: 85 C0              test        eax,eax
+  00000050: 75 05              jne         00000057
+  00000052: BB 01 00 00 00     mov         ebx,1
+  00000057: 3B CB              cmp         ecx,ebx
+  00000059: 7D 66              jge         000000C1
+  0000005B: 85 DB              test        ebx,ebx
+  0000005D: 74 14              je          00000073
+  0000005F: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  00000066: 6A 10              push        10h
+  00000068: 50                 push        eax
+  00000069: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000006E: 83 C4 08           add         esp,8
+  00000071: EB 02              jmp         00000075
+  00000073: 33 C0              xor         eax,eax
+  00000075: 8B 7E 34           mov         edi,dword ptr [esi+34h]
+  00000078: 33 D2              xor         edx,edx
+  0000007A: 89 45 18           mov         dword ptr [ebp+18h],eax
+  0000007D: 85 FF              test        edi,edi
+  0000007F: 7E 16              jle         00000097
+  00000081: 8B C8              mov         ecx,eax
+  00000083: 85 C9              test        ecx,ecx
+  00000085: 74 08              je          0000008F
+  00000087: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  0000008A: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000008D: 89 01              mov         dword ptr [ecx],eax
+  0000008F: 42                 inc         edx
+  00000090: 83 C1 04           add         ecx,4
+  00000093: 3B D7              cmp         edx,edi
+  00000095: 7C EC              jl          00000083
+  00000097: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  0000009A: 85 C0              test        eax,eax
+  0000009C: 74 16              je          000000B4
+  0000009E: 80 7E 40 00        cmp         byte ptr [esi+40h],0
+  000000A2: 74 09              je          000000AD
+  000000A4: 50                 push        eax
+  000000A5: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  000000AA: 83 C4 04           add         esp,4
+  000000AD: C7 46 3C 00 00 00  mov         dword ptr [esi+3Ch],0
+            00
+  000000B4: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  000000B7: C6 46 40 01        mov         byte ptr [esi+40h],1
+  000000BB: 89 46 3C           mov         dword ptr [esi+3Ch],eax
+  000000BE: 89 5E 38           mov         dword ptr [esi+38h],ebx
+  000000C1: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  000000C4: 8B 4E 34           mov         ecx,dword ptr [esi+34h]
+  000000C7: 8B 46 3C           mov         eax,dword ptr [esi+3Ch]
+  000000CA: 8B 7D 1C           mov         edi,dword ptr [ebp+1Ch]
+  000000CD: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000D0: 85 C0              test        eax,eax
+  000000D2: 74 02              je          000000D6
+  000000D4: 89 38              mov         dword ptr [eax],edi
+  000000D6: FF 75 20           push        dword ptr [ebp+20h]
+  000000D9: FF 46 34           inc         dword ptr [esi+34h]
+  000000DC: 8B 06              mov         eax,dword ptr [esi]
+  000000DE: 53                 push        ebx
+  000000DF: FF 75 08           push        dword ptr [ebp+8]
+  000000E2: 8B CE              mov         ecx,esi
+  000000E4: 57                 push        edi
+  000000E5: FF 50 0C           call        dword ptr [eax+0Ch]
+  000000E8: 8B C7              mov         eax,edi
+  000000EA: 5F                 pop         edi
+  000000EB: 5E                 pop         esi
+  000000EC: 5B                 pop         ebx
+  000000ED: 5D                 pop         ebp
+  000000EE: C2 20 00           ret         20h
+
+?deallocate@?$btAlignedAllocator@PAUbtBridgeProxy@btMultiSapBroadphase@@$0BA@@@QAEXPAPAUbtBridgeProxy@btMultiSapBroadphase@@@Z (public: void __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btBridgeProxy *,16>::deallocate(struct btMultiSapBroadphase::btBridgeProxy * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+?deallocate@?$btAlignedAllocator@PAUbtMultiSapProxy@btMultiSapBroadphase@@$0BA@@@QAEXPAPAUbtMultiSapProxy@btMultiSapBroadphase@@@Z (public: void __thiscall btAlignedAllocator<struct btMultiSapBroadphase::btMultiSapProxy *,16>::deallocate(struct btMultiSapBroadphase::btMultiSapProxy * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+?deallocate@?$btAlignedAllocator@PAVbtBroadphaseInterface@@$0BA@@@QAEXPAPAVbtBroadphaseInterface@@@Z (public: void __thiscall btAlignedAllocator<class btBroadphaseInterface *,16>::deallocate(class btBroadphaseInterface * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+?deallocate@?$btAlignedAllocator@UbtBroadphasePair@@$0BA@@@QAEXPAUbtBroadphasePair@@@Z (public: void __thiscall btAlignedAllocator<struct btBroadphasePair,16>::deallocate(struct btBroadphasePair *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+?deallocate@?$btAlignedAllocator@UbtQuantizedBvhNode@@$0BA@@@QAEXPAUbtQuantizedBvhNode@@@Z (public: void __thiscall btAlignedAllocator<struct btQuantizedBvhNode,16>::deallocate(struct btQuantizedBvhNode *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: 5D                 pop         ebp
+  0000000F: C2 04 00           ret         4
+
+?deallocate@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::deallocate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: 5E                 pop         esi
+  00000021: C3                 ret
+
+?deallocate@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::deallocate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: 5E                 pop         esi
+  00000021: C3                 ret
+
+?deallocate@?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::deallocate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: 5E                 pop         esi
+  00000021: C3                 ret
+
+?deallocate@?$btAlignedObjectArray@UbtBroadphasePair@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::deallocate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: 5E                 pop         esi
+  00000021: C3                 ret
+
+?deallocate@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::deallocate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 16              je          00000020
+  0000000A: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  0000000E: 74 09              je          00000019
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000016: 83 C4 04           add         esp,4
+  00000019: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000020: 5E                 pop         esi
+  00000021: C3                 ret
+
+?destroy@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IAEXHH@Z (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::destroy(int,int)):
+  00000000: C2 08 00           ret         8
+
+?destroy@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IAEXHH@Z (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::destroy(int,int)):
+  00000000: C2 08 00           ret         8
+
+?destroy@?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@IAEXHH@Z (protected: void __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::destroy(int,int)):
+  00000000: C2 08 00           ret         8
+
+?destroy@?$btAlignedObjectArray@UbtBroadphasePair@@@@IAEXHH@Z (protected: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::destroy(int,int)):
+  00000000: C2 08 00           ret         8
+
+?destroy@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@IAEXHH@Z (protected: void __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::destroy(int,int)):
+  00000000: C2 08 00           ret         8
+
+?destroyProxy@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@PAVbtDispatcher@@@Z (public: virtual void __thiscall btMultiSapBroadphase::destroyProxy(struct btBroadphaseProxy *,class btDispatcher *)):
+  00000000: C2 08 00           ret         8
+
+?getAabb@btMultiSapBroadphase@@UBEXPAUbtBroadphaseProxy@@AAVbtVector3@@1@Z (public: virtual void __thiscall btMultiSapBroadphase::getAabb(struct btBroadphaseProxy *,class btVector3 &,class btVector3 &)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000009: F3 0F 7E 41 50     movq        xmm0,mmword ptr [ecx+50h]
+  0000000E: 66 0F D6 00        movq        mmword ptr [eax],xmm0
+  00000012: F3 0F 7E 41 58     movq        xmm0,mmword ptr [ecx+58h]
+  00000017: 66 0F D6 40 08     movq        mmword ptr [eax+8],xmm0
+  0000001C: F3 0F 7E 41 60     movq        xmm0,mmword ptr [ecx+60h]
+  00000021: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000024: 66 0F D6 00        movq        mmword ptr [eax],xmm0
+  00000028: F3 0F 7E 41 68     movq        xmm0,mmword ptr [ecx+68h]
+  0000002D: 66 0F D6 40 08     movq        mmword ptr [eax+8],xmm0
+  00000032: 5D                 pop         ebp
+  00000033: C2 0C 00           ret         0Ch
+
+?getBroadphaseAabb@btMultiSapBroadphase@@UBEXAAVbtVector3@@0@Z (public: virtual void __thiscall btMultiSapBroadphase::getBroadphaseAabb(class btVector3 &,class btVector3 &)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C7 00 6B 0B 5E DD  mov         dword ptr [eax],0DD5E0B6Bh
+  0000000C: C7 40 04 6B 0B 5E  mov         dword ptr [eax+4],0DD5E0B6Bh
+            DD
+  00000013: C7 40 08 6B 0B 5E  mov         dword ptr [eax+8],0DD5E0B6Bh
+            DD
+  0000001A: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000021: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000024: C7 00 6B 0B 5E 5D  mov         dword ptr [eax],5D5E0B6Bh
+  0000002A: C7 40 04 6B 0B 5E  mov         dword ptr [eax+4],5D5E0B6Bh
+            5D
+  00000031: C7 40 08 6B 0B 5E  mov         dword ptr [eax+8],5D5E0B6Bh
+            5D
+  00000038: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  0000003F: 5D                 pop         ebp
+  00000040: C2 08 00           ret         8
+
+?getBroadphaseArray@btMultiSapBroadphase@@QAEAAV?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@XZ (public: class btAlignedObjectArray<class btBroadphaseInterface *> & __thiscall btMultiSapBroadphase::getBroadphaseArray(void)):
+  00000000: 8D 41 04           lea         eax,[ecx+4]
+  00000003: C3                 ret
+
+?getLeafNodeArray@btQuantizedBvh@@QAEAAV?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@XZ (public: class btAlignedObjectArray<struct btQuantizedBvhNode> & __thiscall btQuantizedBvh::getLeafNodeArray(void)):
+  00000000: 8D 41 74           lea         eax,[ecx+74h]
+  00000003: C3                 ret
+
+?getOverlappingPairCache@btMultiSapBroadphase@@UAEPAVbtOverlappingPairCache@@XZ (public: virtual class btOverlappingPairCache * __thiscall btMultiSapBroadphase::getOverlappingPairCache(void)):
+  00000000: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000003: C3                 ret
+
+?getOverlappingPairCache@btMultiSapBroadphase@@UBEPBVbtOverlappingPairCache@@XZ (public: virtual class btOverlappingPairCache const * __thiscall btMultiSapBroadphase::getOverlappingPairCache(void)const ):
+  00000000: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000003: C3                 ret
+
+?getX@btVector3@@QBEABMXZ (public: float const & __thiscall btVector3::getX(void)const ):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+?getY@btVector3@@QBEABMXZ (public: float const & __thiscall btVector3::getY(void)const ):
+  00000000: 8D 41 04           lea         eax,[ecx+4]
+  00000003: C3                 ret
+
+?getZ@btVector3@@QBEABMXZ (public: float const & __thiscall btVector3::getZ(void)const ):
+  00000000: 8D 41 08           lea         eax,[ecx+8]
+  00000003: C3                 ret
+
+?init@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::init(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: C3                 ret
+
+?init@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::init(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: C3                 ret
+
+?init@?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@IAEXXZ (protected: void __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::init(void)):
+  00000000: C6 41 10 01        mov         byte ptr [ecx+10h],1
+  00000004: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000000B: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000012: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000019: C3                 ret
+
+?needBroadphaseCollision@btMultiSapOverlapFilterCallback@?4???0btMultiSapBroadphase@@QAE@HPAVbtOverlappingPairCache@@@Z@UBE_NPAUbtBroadphaseProxy@@1@Z (public: virtual bool __thiscall `public: __thiscall btMultiSapBroadphase::btMultiSapBroadphase(int,class btOverlappingPairCache *)'::`5'::btMultiSapOverlapFilterCallback::needBroadphaseCollision(struct btBroadphaseProxy *,struct btBroadphaseProxy *)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: 8B 50 08           mov         edx,dword ptr [eax+8]
+  0000000F: 66 8B 42 06        mov         ax,word ptr [edx+6]
+  00000013: 66 85 41 04        test        word ptr [ecx+4],ax
+  00000017: 74 10              je          00000029
+  00000019: 66 8B 42 04        mov         ax,word ptr [edx+4]
+  0000001D: 66 85 41 06        test        word ptr [ecx+6],ax
+  00000021: 74 06              je          00000029
+  00000023: B0 01              mov         al,1
+  00000025: 5D                 pop         ebp
+  00000026: C2 08 00           ret         8
+  00000029: 32 C0              xor         al,al
+  0000002B: 5D                 pop         ebp
+  0000002C: C2 08 00           ret         8
+
+?pop_back@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEXXZ (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::pop_back(void)):
+  00000000: FF 49 04           dec         dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?printStats@btMultiSapBroadphase@@UAEXXZ (public: virtual void __thiscall btMultiSapBroadphase::printStats(void)):
+  00000000: C3                 ret
+
+?processNode@MyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@UAEXHH@Z (public: virtual void __thiscall `public: virtual void __thiscall btMultiSapBroadphase::setAabb(struct btBroadphaseProxy *,class btVector3 const &,class btVector3 const &,class btDispatcher *)'::`2'::MyNodeOverlapCallback::processNode(int,int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 56                 push        esi
+  00000008: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000000B: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000000E: 8B 50 10           mov         edx,dword ptr [eax+10h]
+  00000011: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000014: 8B 5B 08           mov         ebx,dword ptr [ebx+8]
+  00000017: 57                 push        edi
+  00000018: 8B 3C 82           mov         edi,dword ptr [edx+eax*4]
+  0000001B: 8B 73 34           mov         esi,dword ptr [ebx+34h]
+  0000001E: 33 C0              xor         eax,eax
+  00000020: 85 F6              test        esi,esi
+  00000022: 7E 18              jle         0000003C
+  00000024: 8B 53 3C           mov         edx,dword ptr [ebx+3Ch]
+  00000027: 8B 0A              mov         ecx,dword ptr [edx]
+  00000029: 39 79 04           cmp         dword ptr [ecx+4],edi
+  0000002C: 74 0A              je          00000038
+  0000002E: 40                 inc         eax
+  0000002F: 83 C2 04           add         edx,4
+  00000032: 3B C6              cmp         eax,esi
+  00000034: 7C F1              jl          00000027
+  00000036: EB 04              jmp         0000003C
+  00000038: 85 C0              test        eax,eax
+  0000003A: 79 32              jns         0000006E
+  0000003C: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000003F: 0F B7 43 06        movzx       eax,word ptr [ebx+6]
+  00000043: 8B 17              mov         edx,dword ptr [edi]
+  00000045: 53                 push        ebx
+  00000046: FF 76 0C           push        dword ptr [esi+0Ch]
+  00000049: 8B CF              mov         ecx,edi
+  0000004B: 50                 push        eax
+  0000004C: 0F B7 43 04        movzx       eax,word ptr [ebx+4]
+  00000050: 50                 push        eax
+  00000051: FF 33              push        dword ptr [ebx]
+  00000053: 8D 43 60           lea         eax,[ebx+60h]
+  00000056: FF 73 70           push        dword ptr [ebx+70h]
+  00000059: 50                 push        eax
+  0000005A: 8D 43 50           lea         eax,[ebx+50h]
+  0000005D: 50                 push        eax
+  0000005E: FF 52 04           call        dword ptr [edx+4]
+  00000061: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000064: 57                 push        edi
+  00000065: 50                 push        eax
+  00000066: FF 76 08           push        dword ptr [esi+8]
+  00000069: E8 00 00 00 00     call        ?addToChildBroadphase@btMultiSapBroadphase@@QAEXPAUbtMultiSapProxy@1@PAUbtBroadphaseProxy@@PAVbtBroadphaseInterface@@@Z
+  0000006E: 5F                 pop         edi
+  0000006F: 5E                 pop         esi
+  00000070: 5B                 pop         ebx
+  00000071: 8B E5              mov         esp,ebp
+  00000073: 5D                 pop         ebp
+  00000074: C2 08 00           ret         8
+
+?push_back@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEXABQAUbtBridgeProxy@btMultiSapBroadphase@@@Z (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::push_back(struct btMultiSapBroadphase::btBridgeProxy * const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000000A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000D: 3B C1              cmp         eax,ecx
+  0000000F: 75 7F              jne         00000090
+  00000011: 57                 push        edi
+  00000012: 8D 3C 00           lea         edi,[eax+eax]
+  00000015: 85 C0              test        eax,eax
+  00000017: 75 05              jne         0000001E
+  00000019: BF 01 00 00 00     mov         edi,1
+  0000001E: 3B CF              cmp         ecx,edi
+  00000020: 7D 6D              jge         0000008F
+  00000022: 85 FF              test        edi,edi
+  00000024: 74 14              je          0000003A
+  00000026: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  0000002D: 6A 10              push        10h
+  0000002F: 50                 push        eax
+  00000030: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000035: 83 C4 08           add         esp,8
+  00000038: EB 02              jmp         0000003C
+  0000003A: 33 C0              xor         eax,eax
+  0000003C: 53                 push        ebx
+  0000003D: 8B 5E 04           mov         ebx,dword ptr [esi+4]
+  00000040: 33 D2              xor         edx,edx
+  00000042: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000045: 85 DB              test        ebx,ebx
+  00000047: 7E 1B              jle         00000064
+  00000049: 8B C8              mov         ecx,eax
+  0000004B: EB 03              jmp         00000050
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 85 C9              test        ecx,ecx
+  00000052: 74 08              je          0000005C
+  00000054: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000057: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000005A: 89 01              mov         dword ptr [ecx],eax
+  0000005C: 42                 inc         edx
+  0000005D: 83 C1 04           add         ecx,4
+  00000060: 3B D3              cmp         edx,ebx
+  00000062: 7C EC              jl          00000050
+  00000064: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000067: 5B                 pop         ebx
+  00000068: 85 C0              test        eax,eax
+  0000006A: 74 16              je          00000082
+  0000006C: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000070: 74 09              je          0000007B
+  00000072: 50                 push        eax
+  00000073: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000078: 83 C4 04           add         esp,4
+  0000007B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000082: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000085: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000089: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000008C: 89 7E 08           mov         dword ptr [esi+8],edi
+  0000008F: 5F                 pop         edi
+  00000090: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000093: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000096: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  00000099: 85 C9              test        ecx,ecx
+  0000009B: 74 07              je          000000A4
+  0000009D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000A0: 8B 00              mov         eax,dword ptr [eax]
+  000000A2: 89 01              mov         dword ptr [ecx],eax
+  000000A4: FF 46 04           inc         dword ptr [esi+4]
+  000000A7: 5E                 pop         esi
+  000000A8: 8B E5              mov         esp,ebp
+  000000AA: 5D                 pop         ebp
+  000000AB: C2 04 00           ret         4
+
+?push_back@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAEXABQAUbtMultiSapProxy@btMultiSapBroadphase@@@Z (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::push_back(struct btMultiSapBroadphase::btMultiSapProxy * const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  0000000A: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000000D: 3B C1              cmp         eax,ecx
+  0000000F: 75 7F              jne         00000090
+  00000011: 57                 push        edi
+  00000012: 8D 3C 00           lea         edi,[eax+eax]
+  00000015: 85 C0              test        eax,eax
+  00000017: 75 05              jne         0000001E
+  00000019: BF 01 00 00 00     mov         edi,1
+  0000001E: 3B CF              cmp         ecx,edi
+  00000020: 7D 6D              jge         0000008F
+  00000022: 85 FF              test        edi,edi
+  00000024: 74 14              je          0000003A
+  00000026: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  0000002D: 6A 10              push        10h
+  0000002F: 50                 push        eax
+  00000030: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000035: 83 C4 08           add         esp,8
+  00000038: EB 02              jmp         0000003C
+  0000003A: 33 C0              xor         eax,eax
+  0000003C: 53                 push        ebx
+  0000003D: 8B 5E 04           mov         ebx,dword ptr [esi+4]
+  00000040: 33 D2              xor         edx,edx
+  00000042: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000045: 85 DB              test        ebx,ebx
+  00000047: 7E 1B              jle         00000064
+  00000049: 8B C8              mov         ecx,eax
+  0000004B: EB 03              jmp         00000050
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 85 C9              test        ecx,ecx
+  00000052: 74 08              je          0000005C
+  00000054: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000057: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  0000005A: 89 01              mov         dword ptr [ecx],eax
+  0000005C: 42                 inc         edx
+  0000005D: 83 C1 04           add         ecx,4
+  00000060: 3B D3              cmp         edx,ebx
+  00000062: 7C EC              jl          00000050
+  00000064: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000067: 5B                 pop         ebx
+  00000068: 85 C0              test        eax,eax
+  0000006A: 74 16              je          00000082
+  0000006C: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000070: 74 09              je          0000007B
+  00000072: 50                 push        eax
+  00000073: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000078: 83 C4 04           add         esp,4
+  0000007B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000082: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000085: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000089: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000008C: 89 7E 08           mov         dword ptr [esi+8],edi
+  0000008F: 5F                 pop         edi
+  00000090: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000093: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000096: 8D 0C 88           lea         ecx,[eax+ecx*4]
+  00000099: 85 C9              test        ecx,ecx
+  0000009B: 74 07              je          000000A4
+  0000009D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000A0: 8B 00              mov         eax,dword ptr [eax]
+  000000A2: 89 01              mov         dword ptr [ecx],eax
+  000000A4: FF 46 04           inc         dword ptr [esi+4]
+  000000A7: 5E                 pop         esi
+  000000A8: 8B E5              mov         esp,ebp
+  000000AA: 5D                 pop         ebp
+  000000AB: C2 04 00           ret         4
+
+?push_back@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@QAEXABUbtQuantizedBvhNode@@@Z (public: void __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::push_back(struct btQuantizedBvhNode const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F1              mov         esi,ecx
+  00000008: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000000B: 8B 5E 04           mov         ebx,dword ptr [esi+4]
+  0000000E: 3B D8              cmp         ebx,eax
+  00000010: 0F 85 89 00 00 00  jne         0000009F
+  00000016: 85 DB              test        ebx,ebx
+  00000018: 74 04              je          0000001E
+  0000001A: 03 DB              add         ebx,ebx
+  0000001C: EB 05              jmp         00000023
+  0000001E: BB 01 00 00 00     mov         ebx,1
+  00000023: 3B C3              cmp         eax,ebx
+  00000025: 7D 78              jge         0000009F
+  00000027: 85 DB              test        ebx,ebx
+  00000029: 74 12              je          0000003D
+  0000002B: 8B C3              mov         eax,ebx
+  0000002D: C1 E0 04           shl         eax,4
+  00000030: 6A 10              push        10h
+  00000032: 50                 push        eax
+  00000033: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000038: 83 C4 08           add         esp,8
+  0000003B: EB 02              jmp         0000003F
+  0000003D: 33 C0              xor         eax,eax
+  0000003F: 57                 push        edi
+  00000040: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000043: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000046: 85 FF              test        edi,edi
+  00000048: 7E 2A              jle         00000074
+  0000004A: 33 D2              xor         edx,edx
+  0000004C: 8B C8              mov         ecx,eax
+  0000004E: 8B FF              mov         edi,edi
+  00000050: 85 C9              test        ecx,ecx
+  00000052: 74 17              je          0000006B
+  00000054: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000057: F3 0F 7E 04 10     movq        xmm0,mmword ptr [eax+edx]
+  0000005C: 66 0F D6 01        movq        mmword ptr [ecx],xmm0
+  00000060: F3 0F 7E 44 10 08  movq        xmm0,mmword ptr [eax+edx+8]
+  00000066: 66 0F D6 41 08     movq        mmword ptr [ecx+8],xmm0
+  0000006B: 83 C2 10           add         edx,10h
+  0000006E: 83 C1 10           add         ecx,10h
+  00000071: 4F                 dec         edi
+  00000072: 75 DC              jne         00000050
+  00000074: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000077: 5F                 pop         edi
+  00000078: 85 C0              test        eax,eax
+  0000007A: 74 16              je          00000092
+  0000007C: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000080: 74 09              je          0000008B
+  00000082: 50                 push        eax
+  00000083: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000088: 83 C4 04           add         esp,4
+  0000008B: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000092: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000095: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000099: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000009C: 89 5E 08           mov         dword ptr [esi+8],ebx
+  0000009F: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000000A2: C1 E1 04           shl         ecx,4
+  000000A5: 03 4E 0C           add         ecx,dword ptr [esi+0Ch]
+  000000A8: 74 15              je          000000BF
+  000000AA: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000AD: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  000000B1: 66 0F D6 01        movq        mmword ptr [ecx],xmm0
+  000000B5: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  000000BA: 66 0F D6 41 08     movq        mmword ptr [ecx+8],xmm0
+  000000BF: FF 46 04           inc         dword ptr [esi+4]
+  000000C2: 5E                 pop         esi
+  000000C3: 5B                 pop         ebx
+  000000C4: 8B E5              mov         esp,ebp
+  000000C6: 5D                 pop         ebp
+  000000C7: C2 04 00           ret         4
+
+?quantize@btQuantizedBvh@@QBEXPAGABVbtVector3@@H@Z (public: void __thiscall btQuantizedBvh::quantize(unsigned short *,class btVector3 const &,int)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000007: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000A: F3 0F 10 59 34     movss       xmm3,dword ptr [ecx+34h]
+  0000000F: F3 0F 10 10        movss       xmm2,dword ptr [eax]
+  00000013: F3 0F 5C 51 10     subss       xmm2,dword ptr [ecx+10h]
+  00000018: F3 0F 10 40 04     movss       xmm0,dword ptr [eax+4]
+  0000001D: F3 0F 10 48 08     movss       xmm1,dword ptr [eax+8]
+  00000022: F3 0F 5C 41 14     subss       xmm0,dword ptr [ecx+14h]
+  00000027: F3 0F 5C 49 18     subss       xmm1,dword ptr [ecx+18h]
+  0000002C: F3 0F 10 61 38     movss       xmm4,dword ptr [ecx+38h]
+  00000031: F3 0F 59 51 30     mulss       xmm2,dword ptr [ecx+30h]
+  00000036: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000039: F3 0F 59 D8        mulss       xmm3,xmm0
+  0000003D: F3 0F 59 E1        mulss       xmm4,xmm1
+  00000041: 74 3B              je          0000007E
+  00000043: F3 0F 10 05 00 00  movss       xmm0,dword ptr [__real@3f800000]
+            00 00
+  0000004B: F3 0F 58 D0        addss       xmm2,xmm0
+  0000004F: F3 0F 58 D8        addss       xmm3,xmm0
+  00000053: F3 0F 58 E0        addss       xmm4,xmm0
+  00000057: F3 0F 2C C2        cvttss2si   eax,xmm2
+  0000005B: 66 83 C8 01        or          ax,1
+  0000005F: 66 89 01           mov         word ptr [ecx],ax
+  00000062: F3 0F 2C C3        cvttss2si   eax,xmm3
+  00000066: 66 83 C8 01        or          ax,1
+  0000006A: 66 89 41 02        mov         word ptr [ecx+2],ax
+  0000006E: F3 0F 2C C4        cvttss2si   eax,xmm4
+  00000072: 66 83 C8 01        or          ax,1
+  00000076: 66 89 41 04        mov         word ptr [ecx+4],ax
+  0000007A: 5D                 pop         ebp
+  0000007B: C2 0C 00           ret         0Ch
+  0000007E: F3 0F 2C C2        cvttss2si   eax,xmm2
+  00000082: BA FE FF 00 00     mov         edx,0FFFEh
+  00000087: 66 23 C2           and         ax,dx
+  0000008A: 66 89 01           mov         word ptr [ecx],ax
+  0000008D: F3 0F 2C C3        cvttss2si   eax,xmm3
+  00000091: 66 23 C2           and         ax,dx
+  00000094: 66 89 41 02        mov         word ptr [ecx+2],ax
+  00000098: F3 0F 2C C4        cvttss2si   eax,xmm4
+  0000009C: 66 23 C2           and         ax,dx
+  0000009F: 66 89 41 04        mov         word ptr [ecx+4],ax
+  000000A3: 5D                 pop         ebp
+  000000A4: C2 0C 00           ret         0Ch
+
+?rayTest@btMultiSapBroadphase@@UAEXABVbtVector3@@0AAUbtBroadphaseRayCallback@@00@Z (public: virtual void __thiscall btMultiSapBroadphase::rayTest(class btVector3 const &,class btVector3 const &,struct btBroadphaseRayCallback &,class btVector3 const &,class btVector3 const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 33 F6              xor         esi,esi
+  00000009: 39 77 34           cmp         dword ptr [edi+34h],esi
+  0000000C: 7E 18              jle         00000026
+  0000000E: 53                 push        ebx
+  0000000F: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000012: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  00000015: 8B 13              mov         edx,dword ptr [ebx]
+  00000017: FF 34 B0           push        dword ptr [eax+esi*4]
+  0000001A: 8B CB              mov         ecx,ebx
+  0000001C: FF 52 04           call        dword ptr [edx+4]
+  0000001F: 46                 inc         esi
+  00000020: 3B 77 34           cmp         esi,dword ptr [edi+34h]
+  00000023: 7C ED              jl          00000012
+  00000025: 5B                 pop         ebx
+  00000026: 5F                 pop         edi
+  00000027: 5E                 pop         esi
+  00000028: 5D                 pop         ebp
+  00000029: C2 14 00           ret         14h
+
+?reserve@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEXH@Z (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::reserve(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 39 5E 08           cmp         dword ptr [esi+8],ebx
+  0000000D: 7D 68              jge         00000077
+  0000000F: 85 DB              test        ebx,ebx
+  00000011: 74 14              je          00000027
+  00000013: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  0000001A: 6A 10              push        10h
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000022: 83 C4 08           add         esp,8
+  00000025: EB 02              jmp         00000029
+  00000027: 33 C0              xor         eax,eax
+  00000029: 57                 push        edi
+  0000002A: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  0000002D: 33 D2              xor         edx,edx
+  0000002F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000032: 85 FF              test        edi,edi
+  00000034: 7E 16              jle         0000004C
+  00000036: 8B C8              mov         ecx,eax
+  00000038: 85 C9              test        ecx,ecx
+  0000003A: 74 08              je          00000044
+  0000003C: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000003F: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  00000042: 89 01              mov         dword ptr [ecx],eax
+  00000044: 42                 inc         edx
+  00000045: 83 C1 04           add         ecx,4
+  00000048: 3B D7              cmp         edx,edi
+  0000004A: 7C EC              jl          00000038
+  0000004C: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000004F: 5F                 pop         edi
+  00000050: 85 C0              test        eax,eax
+  00000052: 74 16              je          0000006A
+  00000054: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000058: 74 09              je          00000063
+  0000005A: 50                 push        eax
+  0000005B: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000060: 83 C4 04           add         esp,4
+  00000063: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000006A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006D: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000071: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000074: 89 5E 08           mov         dword ptr [esi+8],ebx
+  00000077: 5E                 pop         esi
+  00000078: 5B                 pop         ebx
+  00000079: 5D                 pop         ebp
+  0000007A: C2 04 00           ret         4
+
+?reserve@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QAEXH@Z (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::reserve(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 39 5E 08           cmp         dword ptr [esi+8],ebx
+  0000000D: 7D 68              jge         00000077
+  0000000F: 85 DB              test        ebx,ebx
+  00000011: 74 14              je          00000027
+  00000013: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  0000001A: 6A 10              push        10h
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000022: 83 C4 08           add         esp,8
+  00000025: EB 02              jmp         00000029
+  00000027: 33 C0              xor         eax,eax
+  00000029: 57                 push        edi
+  0000002A: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  0000002D: 33 D2              xor         edx,edx
+  0000002F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000032: 85 FF              test        edi,edi
+  00000034: 7E 16              jle         0000004C
+  00000036: 8B C8              mov         ecx,eax
+  00000038: 85 C9              test        ecx,ecx
+  0000003A: 74 08              je          00000044
+  0000003C: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000003F: 8B 04 90           mov         eax,dword ptr [eax+edx*4]
+  00000042: 89 01              mov         dword ptr [ecx],eax
+  00000044: 42                 inc         edx
+  00000045: 83 C1 04           add         ecx,4
+  00000048: 3B D7              cmp         edx,edi
+  0000004A: 7C EC              jl          00000038
+  0000004C: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000004F: 5F                 pop         edi
+  00000050: 85 C0              test        eax,eax
+  00000052: 74 16              je          0000006A
+  00000054: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000058: 74 09              je          00000063
+  0000005A: 50                 push        eax
+  0000005B: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000060: 83 C4 04           add         esp,4
+  00000063: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000006A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006D: C6 46 10 01        mov         byte ptr [esi+10h],1
+  00000071: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000074: 89 5E 08           mov         dword ptr [esi+8],ebx
+  00000077: 5E                 pop         esi
+  00000078: 5B                 pop         ebx
+  00000079: 5D                 pop         ebp
+  0000007A: C2 04 00           ret         4
+
+?reserve@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXH@Z (public: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::reserve(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 39 5E 08           cmp         dword ptr [esi+8],ebx
+  00000010: 0F 8D 92 00 00 00  jge         000000A8
+  00000016: 85 DB              test        ebx,ebx
+  00000018: 74 17              je          00000031
+  0000001A: 8B C3              mov         eax,ebx
+  0000001C: C1 E0 04           shl         eax,4
+  0000001F: 6A 10              push        10h
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 8B C8              mov         ecx,eax
+  0000002C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002F: EB 05              jmp         00000036
+  00000031: 33 C9              xor         ecx,ecx
+  00000033: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000036: 57                 push        edi
+  00000037: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  0000003A: 85 FF              test        edi,edi
+  0000003C: 7E 3F              jle         0000007D
+  0000003E: BA F8 FF FF FF     mov         edx,0FFFFFFF8h
+  00000043: 2B D1              sub         edx,ecx
+  00000045: 8D 41 08           lea         eax,[ecx+8]
+  00000048: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000004B: 8B DA              mov         ebx,edx
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 8D 48 F8           lea         ecx,[eax-8]
+  00000053: 85 C9              test        ecx,ecx
+  00000055: 74 1D              je          00000074
+  00000057: 8B 56 0C           mov         edx,dword ptr [esi+0Ch]
+  0000005A: 03 D3              add         edx,ebx
+  0000005C: 03 D0              add         edx,eax
+  0000005E: 8B 0A              mov         ecx,dword ptr [edx]
+  00000060: 89 48 F8           mov         dword ptr [eax-8],ecx
+  00000063: 8B 4A 04           mov         ecx,dword ptr [edx+4]
+  00000066: 89 48 FC           mov         dword ptr [eax-4],ecx
+  00000069: 8B 4A 08           mov         ecx,dword ptr [edx+8]
+  0000006C: 89 08              mov         dword ptr [eax],ecx
+  0000006E: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  00000071: 89 48 04           mov         dword ptr [eax+4],ecx
+  00000074: 83 C0 10           add         eax,10h
+  00000077: 4F                 dec         edi
+  00000078: 75 D6              jne         00000050
+  0000007A: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000007D: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000080: 5F                 pop         edi
+  00000081: 85 C0              test        eax,eax
+  00000083: 74 16              je          0000009B
+  00000085: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000089: 74 09              je          00000094
+  0000008B: 50                 push        eax
+  0000008C: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  00000091: 83 C4 04           add         esp,4
+  00000094: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000009B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000009E: C6 46 10 01        mov         byte ptr [esi+10h],1
+  000000A2: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  000000A5: 89 5E 08           mov         dword ptr [esi+8],ebx
+  000000A8: 5E                 pop         esi
+  000000A9: 5B                 pop         ebx
+  000000AA: 8B E5              mov         esp,ebp
+  000000AC: 5D                 pop         ebp
+  000000AD: C2 04 00           ret         4
+
+?reserve@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@QAEXH@Z (public: void __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::reserve(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 39 5E 08           cmp         dword ptr [esi+8],ebx
+  0000000D: 7D 76              jge         00000085
+  0000000F: 85 DB              test        ebx,ebx
+  00000011: 74 12              je          00000025
+  00000013: 8B C3              mov         eax,ebx
+  00000015: C1 E0 04           shl         eax,4
+  00000018: 6A 10              push        10h
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  00000020: 83 C4 08           add         esp,8
+  00000023: EB 02              jmp         00000027
+  00000025: 33 C0              xor         eax,eax
+  00000027: 57                 push        edi
+  00000028: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  0000002B: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000002E: 85 FF              test        edi,edi
+  00000030: 7E 28              jle         0000005A
+  00000032: 33 D2              xor         edx,edx
+  00000034: 8B C8              mov         ecx,eax
+  00000036: 85 C9              test        ecx,ecx
+  00000038: 74 17              je          00000051
+  0000003A: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000003D: F3 0F 7E 04 10     movq        xmm0,mmword ptr [eax+edx]
+  00000042: 66 0F D6 01        movq        mmword ptr [ecx],xmm0
+  00000046: F3 0F 7E 44 10 08  movq        xmm0,mmword ptr [eax+edx+8]
+  0000004C: 66 0F D6 41 08     movq        mmword ptr [ecx+8],xmm0
+  00000051: 83 C2 10           add         edx,10h
+  00000054: 83 C1 10           add         ecx,10h
+  00000057: 4F                 dec         edi
+  00000058: 75 DC              jne         00000036
+  0000005A: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000005D: 5F                 pop         edi
+  0000005E: 85 C0              test        eax,eax
+  00000060: 74 16              je          00000078
+  00000062: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000066: 74 09              je          00000071
+  00000068: 50                 push        eax
+  00000069: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  0000006E: 83 C4 04           add         esp,4
+  00000071: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000078: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000007B: C6 46 10 01        mov         byte ptr [esi+10h],1
+  0000007F: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000082: 89 5E 08           mov         dword ptr [esi+8],ebx
+  00000085: 5E                 pop         esi
+  00000086: 5B                 pop         ebx
+  00000087: 5D                 pop         ebp
+  00000088: C2 04 00           ret         4
+
+?resetPool@btBroadphaseInterface@@UAEXPAVbtDispatcher@@@Z (public: virtual void __thiscall btBroadphaseInterface::resetPool(class btDispatcher *)):
+  00000000: C2 04 00           ret         4
+
+?resetPool@btMultiSapBroadphase@@UAEXPAVbtDispatcher@@@Z (public: virtual void __thiscall btMultiSapBroadphase::resetPool(class btDispatcher *)):
+  00000000: C2 04 00           ret         4
+
+?resize@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXHABUbtBroadphasePair@@@Z (public: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::resize(int,struct btBroadphasePair const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000010: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  00000013: 3B D9              cmp         ebx,ecx
+  00000015: 0F 8C EA 00 00 00  jl          00000105
+  0000001B: 57                 push        edi
+  0000001C: 0F 8E 99 00 00 00  jle         000000BB
+  00000022: 39 5E 08           cmp         dword ptr [esi+8],ebx
+  00000025: 0F 8D 90 00 00 00  jge         000000BB
+  0000002B: 85 DB              test        ebx,ebx
+  0000002D: 74 17              je          00000046
+  0000002F: 8B C3              mov         eax,ebx
+  00000031: C1 E0 04           shl         eax,4
+  00000034: 6A 10              push        10h
+  00000036: 50                 push        eax
+  00000037: E8 00 00 00 00     call        ?btAlignedAllocInternal@@YAPAXIH@Z
+  0000003C: 83 C4 08           add         esp,8
+  0000003F: 8B C8              mov         ecx,eax
+  00000041: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000044: EB 05              jmp         0000004B
+  00000046: 33 C9              xor         ecx,ecx
+  00000048: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000004B: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  0000004E: 85 FF              test        edi,edi
+  00000050: 7E 3C              jle         0000008E
+  00000052: B8 F8 FF FF FF     mov         eax,0FFFFFFF8h
+  00000057: 2B C1              sub         eax,ecx
+  00000059: 8D 51 08           lea         edx,[ecx+8]
+  0000005C: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000005F: 8B D8              mov         ebx,eax
+  00000061: 8D 42 F8           lea         eax,[edx-8]
+  00000064: 85 C0              test        eax,eax
+  00000066: 74 1D              je          00000085
+  00000068: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  0000006B: 03 CB              add         ecx,ebx
+  0000006D: 03 CA              add         ecx,edx
+  0000006F: 8B 01              mov         eax,dword ptr [ecx]
+  00000071: 89 42 F8           mov         dword ptr [edx-8],eax
+  00000074: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000077: 89 42 FC           mov         dword ptr [edx-4],eax
+  0000007A: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  0000007D: 89 02              mov         dword ptr [edx],eax
+  0000007F: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  00000082: 89 42 04           mov         dword ptr [edx+4],eax
+  00000085: 83 C2 10           add         edx,10h
+  00000088: 4F                 dec         edi
+  00000089: 75 D6              jne         00000061
+  0000008B: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000008E: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000091: 85 C0              test        eax,eax
+  00000093: 74 16              je          000000AB
+  00000095: 80 7E 10 00        cmp         byte ptr [esi+10h],0
+  00000099: 74 09              je          000000A4
+  0000009B: 50                 push        eax
+  0000009C: E8 00 00 00 00     call        ?btAlignedFreeInternal@@YAXPAX@Z
+  000000A1: 83 C4 04           add         esp,4
+  000000A4: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  000000AB: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000AE: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  000000B1: C6 46 10 01        mov         byte ptr [esi+10h],1
+  000000B5: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  000000B8: 89 5E 08           mov         dword ptr [esi+8],ebx
+  000000BB: 3B CB              cmp         ecx,ebx
+  000000BD: 7D 3A              jge         000000F9
+  000000BF: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  000000C2: 8B D1              mov         edx,ecx
+  000000C4: 8B C3              mov         eax,ebx
+  000000C6: C1 E2 04           shl         edx,4
+  000000C9: 2B C1              sub         eax,ecx
+  000000CB: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000CE: 8B FF              mov         edi,edi
+  000000D0: 8B 4E 0C           mov         ecx,dword ptr [esi+0Ch]
+  000000D3: 03 CA              add         ecx,edx
+  000000D5: 74 19              je          000000F0
+  000000D7: 8B 07              mov         eax,dword ptr [edi]
+  000000D9: 89 01              mov         dword ptr [ecx],eax
+  000000DB: 8B 47 04           mov         eax,dword ptr [edi+4]
+  000000DE: 89 41 04           mov         dword ptr [ecx+4],eax
+  000000E1: 8B 47 08           mov         eax,dword ptr [edi+8]
+  000000E4: 89 41 08           mov         dword ptr [ecx+8],eax
+  000000E7: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  000000EA: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  000000ED: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000F0: 83 C2 10           add         edx,10h
+  000000F3: 48                 dec         eax
+  000000F4: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000F7: 75 D7              jne         000000D0
+  000000F9: 5F                 pop         edi
+  000000FA: 89 5E 04           mov         dword ptr [esi+4],ebx
+  000000FD: 5E                 pop         esi
+  000000FE: 5B                 pop         ebx
+  000000FF: 8B E5              mov         esp,ebp
+  00000101: 5D                 pop         ebp
+  00000102: C2 08 00           ret         8
+  00000105: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000108: 5E                 pop         esi
+  00000109: 5B                 pop         ebx
+  0000010A: 8B E5              mov         esp,ebp
+  0000010C: 5D                 pop         ebp
+  0000010D: C2 08 00           ret         8
+
+?setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z (public: virtual void __thiscall btMultiSapBroadphase::setAabb(struct btBroadphaseProxy *,class btVector3 const &,class btVector3 const &,class btDispatcher *)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 48           sub         esp,48h
+  00000019: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  0000001C: 8B 53 10           mov         edx,dword ptr [ebx+10h]
+  0000001F: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  00000023: 56                 push        esi
+  00000024: 8B 73 14           mov         esi,dword ptr [ebx+14h]
+  00000027: 57                 push        edi
+  00000028: 8B 7B 08           mov         edi,dword ptr [ebx+8]
+  0000002B: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  0000002E: 66 0F D6 47 50     movq        mmword ptr [edi+50h],xmm0
+  00000033: F3 0F 7E 40 08     movq        xmm0,mmword ptr [eax+8]
+  00000038: 66 0F D6 47 58     movq        mmword ptr [edi+58h],xmm0
+  0000003D: F3 0F 7E 02        movq        xmm0,mmword ptr [edx]
+  00000041: 66 0F D6 47 60     movq        mmword ptr [edi+60h],xmm0
+  00000046: F3 0F 7E 42 08     movq        xmm0,mmword ptr [edx+8]
+  0000004B: 66 0F D6 47 68     movq        mmword ptr [edi+68h],xmm0
+  00000050: 8B 49 20           mov         ecx,dword ptr [ecx+20h]
+  00000053: C7 45 EC 00 00 00  mov         dword ptr [ebp-14h],offset ??_7MyNodeOverlapCallback@?1??setAabb@btMultiSapBroadphase@@UAEXPAUbtBroadphaseProxy@@ABVbtVector3@@1PAVbtDispatcher@@@Z@6B@
+            00
+  0000005A: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  0000005D: 89 75 F8           mov         dword ptr [ebp-8],esi
+  00000060: 85 C9              test        ecx,ecx
+  00000062: 74 0B              je          0000006F
+  00000064: 52                 push        edx
+  00000065: 50                 push        eax
+  00000066: 8D 45 EC           lea         eax,[ebp-14h]
+  00000069: 50                 push        eax
+  0000006A: E8 00 00 00 00     call        ?reportAabbOverlappingNodex@btQuantizedBvh@@QBEXPAVbtNodeOverlapCallback@@ABVbtVector3@@1@Z
+  0000006F: 33 F6              xor         esi,esi
+  00000071: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000074: 39 77 34           cmp         dword ptr [edi+34h],esi
+  00000077: 0F 8E AB 00 00 00  jle         00000128
+  0000007D: 8D 49 00           lea         ecx,[ecx]
+  00000080: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  00000083: 8D 55 C0           lea         edx,[ebp-40h]
+  00000086: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000089: 52                 push        edx
+  0000008A: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  0000008D: 8D 55 D0           lea         edx,[ebp-30h]
+  00000090: 8B 01              mov         eax,dword ptr [ecx]
+  00000092: 52                 push        edx
+  00000093: FF 50 28           call        dword ptr [eax+28h]
+  00000096: F3 0F 10 45 D0     movss       xmm0,dword ptr [ebp-30h]
+  0000009B: 0F 2F 47 60        comiss      xmm0,dword ptr [edi+60h]
+  0000009F: B0 01              mov         al,1
+  000000A1: 77 0B              ja          000000AE
+  000000A3: F3 0F 10 47 50     movss       xmm0,dword ptr [edi+50h]
+  000000A8: 0F 2F 45 C0        comiss      xmm0,dword ptr [ebp-40h]
+  000000AC: 76 02              jbe         000000B0
+  000000AE: 32 C0              xor         al,al
+  000000B0: F3 0F 10 45 D8     movss       xmm0,dword ptr [ebp-28h]
+  000000B5: 0F 2F 47 68        comiss      xmm0,dword ptr [edi+68h]
+  000000B9: 77 0B              ja          000000C6
+  000000BB: F3 0F 10 47 58     movss       xmm0,dword ptr [edi+58h]
+  000000C0: 0F 2F 45 C8        comiss      xmm0,dword ptr [ebp-38h]
+  000000C4: 76 02              jbe         000000C8
+  000000C6: 32 C0              xor         al,al
+  000000C8: F3 0F 10 45 D4     movss       xmm0,dword ptr [ebp-2Ch]
+  000000CD: 0F 2F 47 64        comiss      xmm0,dword ptr [edi+64h]
+  000000D1: 77 0F              ja          000000E2
+  000000D3: F3 0F 10 47 54     movss       xmm0,dword ptr [edi+54h]
+  000000D8: 0F 2F 45 C4        comiss      xmm0,dword ptr [ebp-3Ch]
+  000000DC: 77 04              ja          000000E2
+  000000DE: 84 C0              test        al,al
+  000000E0: 75 39              jne         0000011B
+  000000E2: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  000000E5: FF 73 14           push        dword ptr [ebx+14h]
+  000000E8: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  000000EB: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  000000EE: FF 30              push        dword ptr [eax]
+  000000F0: 8B 11              mov         edx,dword ptr [ecx]
+  000000F2: FF 52 08           call        dword ptr [edx+8]
+  000000F5: 8B 4F 3C           mov         ecx,dword ptr [edi+3Ch]
+  000000F8: 8B 77 34           mov         esi,dword ptr [edi+34h]
+  000000FB: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000FE: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000101: 8B 14 81           mov         edx,dword ptr [ecx+eax*4]
+  00000104: 8B 44 B1 FC        mov         eax,dword ptr [ecx+esi*4-4]
+  00000108: 89 04 B9           mov         dword ptr [ecx+edi*4],eax
+  0000010B: 8B 7B 08           mov         edi,dword ptr [ebx+8]
+  0000010E: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  00000111: 89 54 B0 FC        mov         dword ptr [eax+esi*4-4],edx
+  00000115: FF 4F 34           dec         dword ptr [edi+34h]
+  00000118: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000011B: 46                 inc         esi
+  0000011C: 89 75 FC           mov         dword ptr [ebp-4],esi
+  0000011F: 3B 77 34           cmp         esi,dword ptr [edi+34h]
+  00000122: 0F 8C 58 FF FF FF  jl          00000080
+  00000128: 33 F6              xor         esi,esi
+  0000012A: 39 77 34           cmp         dword ptr [edi+34h],esi
+  0000012D: 7E 20              jle         0000014F
+  0000012F: 90                 nop
+  00000130: FF 73 14           push        dword ptr [ebx+14h]
+  00000133: 8B 47 3C           mov         eax,dword ptr [edi+3Ch]
+  00000136: FF 73 10           push        dword ptr [ebx+10h]
+  00000139: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  0000013C: FF 73 0C           push        dword ptr [ebx+0Ch]
+  0000013F: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000142: FF 30              push        dword ptr [eax]
+  00000144: 8B 11              mov         edx,dword ptr [ecx]
+  00000146: FF 52 0C           call        dword ptr [edx+0Ch]
+  00000149: 46                 inc         esi
+  0000014A: 3B 77 34           cmp         esi,dword ptr [edi+34h]
+  0000014D: 7C E1              jl          00000130
+  0000014F: 5F                 pop         edi
+  00000150: 5E                 pop         esi
+  00000151: 8B E5              mov         esp,ebp
+  00000153: 5D                 pop         ebp
+  00000154: 8B E3              mov         esp,ebx
+  00000156: 5B                 pop         ebx
+  00000157: C2 10 00           ret         10h
+
+?setValue@btVector3@@QAEXABM00@Z (public: void __thiscall btVector3::setValue(float const &,float const &,float const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 00              mov         eax,dword ptr [eax]
+  00000008: 89 01              mov         dword ptr [ecx],eax
+  0000000A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000D: 8B 00              mov         eax,dword ptr [eax]
+  0000000F: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000012: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000015: 8B 00              mov         eax,dword ptr [eax]
+  00000017: 89 41 08           mov         dword ptr [ecx+8],eax
+  0000001A: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000021: 5D                 pop         ebp
+  00000022: C2 0C 00           ret         0Ch
+
+?size@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?size@?$btAlignedObjectArray@PAUbtMultiSapProxy@btMultiSapBroadphase@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btMultiSapProxy *>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?size@?$btAlignedObjectArray@PAVbtBroadphaseInterface@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<class btBroadphaseInterface *>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?size@?$btAlignedObjectArray@UbtBroadphasePair@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btBroadphasePair>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?size@?$btAlignedObjectArray@UbtQuantizedBvhNode@@@@QBEHXZ (public: int __thiscall btAlignedObjectArray<struct btQuantizedBvhNode>::size(void)const ):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?swap@?$btAlignedObjectArray@PAUbtBridgeProxy@btMultiSapBroadphase@@@@QAEXHH@Z (public: void __thiscall btAlignedObjectArray<struct btMultiSapBroadphase::btBridgeProxy *>::swap(int,int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 7B 0C           mov         edi,dword ptr [ebx+0Ch]
+  0000000E: 8B 0C 87           mov         ecx,dword ptr [edi+eax*4]
+  00000011: 8D 34 87           lea         esi,[edi+eax*4]
+  00000014: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000017: 8D 14 85 00 00 00  lea         edx,[eax*4+00000000h]
+            00
+  0000001E: 8B 04 3A           mov         eax,dword ptr [edx+edi]
+  00000021: 89 06              mov         dword ptr [esi],eax
+  00000023: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  00000026: 5F                 pop         edi
+  00000027: 5E                 pop         esi
+  00000028: 89 0C 02           mov         dword ptr [edx+eax],ecx
+  0000002B: 5B                 pop         ebx
+  0000002C: 5D                 pop         ebp
+  0000002D: C2 08 00           ret         8
+
+?swap@?$btAlignedObjectArray@UbtBroadphasePair@@@@QAEXHH@Z (public: void __thiscall btAlignedObjectArray<struct btBroadphasePair>::swap(int,int)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 83 EC 18           sub         esp,18h
+  00000019: 56                 push        esi
+  0000001A: 8B 73 08           mov         esi,dword ptr [ebx+8]
+  0000001D: 57                 push        edi
+  0000001E: 8B F9              mov         edi,ecx
+  00000020: 8B 4B 0C           mov         ecx,dword ptr [ebx+0Ch]
+  00000023: 8B 57 0C           mov         edx,dword ptr [edi+0Ch]
+  00000026: C1 E6 04           shl         esi,4
+  00000029: 03 F2              add         esi,edx
+  0000002B: 03 C9              add         ecx,ecx
+  0000002D: 8B 06              mov         eax,dword ptr [esi]
+  0000002F: F3 0F 7E 04 CA     movq        xmm0,mmword ptr [edx+ecx*8]
+  00000034: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000037: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000003A: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000003D: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000040: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000043: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000046: 66 0F D6 06        movq        mmword ptr [esi],xmm0
+  0000004A: F3 0F 7E 44 CA 08  movq        xmm0,mmword ptr [edx+ecx*8+8]
+  00000050: 66 0F D6 46 08     movq        mmword ptr [esi+8],xmm0
+  00000055: F3 0F 7E 45 F0     movq        xmm0,mmword ptr [ebp-10h]
+  0000005A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000005D: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000060: 5F                 pop         edi
+  00000061: 66 0F D6 04 C8     movq        mmword ptr [eax+ecx*8],xmm0
+  00000066: F3 0F 7E 45 F8     movq        xmm0,mmword ptr [ebp-8]
+  0000006B: 66 0F D6 44 C8 08  movq        mmword ptr [eax+ecx*8+8],xmm0
+  00000071: 5E                 pop         esi
+  00000072: 8B E5              mov         esp,ebp
+  00000074: 5D                 pop         ebp
+  00000075: 8B E3              mov         esp,ebx
+  00000077: 5B                 pop         ebx
+  00000078: C2 08 00           ret         8
+
+?testAabbOverlap@btMultiSapBroadphase@@QAE_NPAUbtBroadphaseProxy@@0@Z (public: bool __thiscall btMultiSapBroadphase::testAabbOverlap(struct btBroadphaseProxy *,struct btBroadphaseProxy *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: F3 0F 10 41 50     movss       xmm0,dword ptr [ecx+50h]
+  00000011: 8B 50 08           mov         edx,dword ptr [eax+8]
+  00000014: B0 01              mov         al,1
+  00000016: 0F 2F 42 60        comiss      xmm0,dword ptr [edx+60h]
+  0000001A: 77 0B              ja          00000027
+  0000001C: F3 0F 10 42 50     movss       xmm0,dword ptr [edx+50h]
+  00000021: 0F 2F 41 60        comiss      xmm0,dword ptr [ecx+60h]
+  00000025: 76 02              jbe         00000029
+  00000027: 32 C0              xor         al,al
+  00000029: F3 0F 10 41 58     movss       xmm0,dword ptr [ecx+58h]
+  0000002E: 0F 2F 42 68        comiss      xmm0,dword ptr [edx+68h]
+  00000032: 77 0B              ja          0000003F
+  00000034: F3 0F 10 42 58     movss       xmm0,dword ptr [edx+58h]
+  00000039: 0F 2F 41 68        comiss      xmm0,dword ptr [ecx+68h]
+  0000003D: 76 02              jbe         00000041
+  0000003F: 32 C0              xor         al,al
+  00000041: F3 0F 10 41 54     movss       xmm0,dword ptr [ecx+54h]
+  00000046: 0F 2F 42 64        comiss      xmm0,dword ptr [edx+64h]
+  0000004A: 77 0B              ja          00000057
+  0000004C: F3 0F 10 42 54     movss       xmm0,dword ptr [edx+54h]
+  00000051: 0F 2F 41 64        comiss      xmm0,dword ptr [ecx+64h]
+  00000055: 76 02              jbe         00000059
+  00000057: 32 C0              xor         al,al
+  00000059: 5D                 pop         ebp
+  0000005A: C2 08 00           ret         8
+
+  Summary
+
+           1 .bss
+         17F .data
+         3A0 .debug$F
+          70 .debug$S
+          C2 .drectve
+          AA .rdata
+         1AA .rdata$r
+        1F3B .text

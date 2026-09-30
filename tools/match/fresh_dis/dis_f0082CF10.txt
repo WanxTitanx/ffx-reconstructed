@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082CF10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_DrawSceneQuad:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldUnkVar_12FFA9C],0
+            00
+  00000007: 0F 84 B9 00 00 00  je          000000C6
+  0000000D: 68 00 00 00 00     push        offset _g_FieldUnkVar_12FFAB8
+  00000012: E8 00 00 00 00     call        _FFX_FieldDma_InitPacket
+  00000017: E8 00 00 00 00     call        _FFX_FieldDma_PushGifTagHeader
+  0000001C: 6A 00              push        0
+  0000001E: 68 D0 00 00 00     push        0D0h
+  00000023: E8 00 00 00 00     call        _FFX_FieldDma_PushGifTag76WithColor
+  00000028: E8 00 00 00 00     call        _FFX_FieldDma_PushEndMarker63
+  0000002D: E8 00 00 00 00     call        _FFX_FieldDma_GetCurrentWritePtr
+  00000032: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_FieldUnkVar_12FFAB4]
+  00000038: C1 E9 06           shr         ecx,6
+  0000003B: 81 E1 FF 3F 00 00  and         ecx,3FFFh
+  00000041: 81 C9 00 00 12 24  or          ecx,24120000h
+  00000047: C7 40 08 06 00 00  mov         dword ptr [eax+8],6
+            00
+  0000004E: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000055: 89 08              mov         dword ptr [eax],ecx
+  00000057: C7 40 04 29 00 00  mov         dword ptr [eax+4],29h
+            00
+  0000005E: E8 00 00 00 00     call        _FFX_FieldDma_AdvanceWriteCount
+  00000063: 6A 00              push        0
+  00000065: E8 00 00 00 00     call        _FFX_FieldDma_PushScissorRect
+  0000006A: 68 16 01 00 00     push        116h
+  0000006F: E8 00 00 00 00     call        _FFX_FieldDma_PushQwordData
+  00000074: 6A 00              push        0
+  00000076: 6A 00              push        0
+  00000078: E8 00 00 00 00     call        _FFX_FieldDma_PushScreenOffset
+  0000007D: 6A 00              push        0
+  0000007F: 6A 00              push        0
+  00000081: E8 00 00 00 00     call        _FFX_FieldDma_PushCenteredQuad4
+  00000086: 68 A0 01 00 00     push        1A0h
+  0000008B: 68 00 02 00 00     push        200h
+  00000090: E8 00 00 00 00     call        _FFX_FieldDma_PushScreenOffsetAligned
+  00000095: 68 A0 01 00 00     push        1A0h
+  0000009A: 68 00 02 00 00     push        200h
+  0000009F: E8 00 00 00 00     call        _FFX_FieldDma_PushCenteredQuad4
+  000000A4: A1 00 00 00 00     mov         eax,dword ptr [_g_FieldUnkVar_12FFAB4]
+  000000A9: C1 E8 0B           shr         eax,0Bh
+  000000AC: 6A 00              push        0
+  000000AE: 50                 push        eax
+  000000AF: E8 00 00 00 00     call        _FFX_FieldDma_PushGifTag76
+  000000B4: 83 C4 3C           add         esp,3Ch
+  000000B7: C7 05 00 00 00 00  mov         dword ptr [_g_FieldUnkVar_12FFA9C],0
+            00 00 00 00
+  000000C1: E9 00 00 00 00     jmp         _FFX_FieldDma_FlushPacket
+  000000C6: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          C7 .text

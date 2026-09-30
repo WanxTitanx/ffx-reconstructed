@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A59800.obj
+
+File Type: COFF OBJECT
+
+_sub_A59800:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: FE 43 29           inc         byte ptr [ebx+29h]
+  0000000D: 8A 43 29           mov         al,byte ptr [ebx+29h]
+  00000010: 88 45 0B           mov         byte ptr [ebp+0Bh],al
+  00000013: 3C 03              cmp         al,3
+  00000015: 73 54              jae         0000006B
+  00000017: 56                 push        esi
+  00000018: 0F BF 73 06        movsx       esi,word ptr [ebx+6]
+  0000001C: 57                 push        edi
+  0000001D: 6A 00              push        0
+  0000001F: 8B C6              mov         eax,esi
+  00000021: 99                 cdq
+  00000022: 68 AB AA AA 2A     push        2AAAAAABh
+  00000027: 52                 push        edx
+  00000028: 50                 push        eax
+  00000029: E8 00 00 00 00     call        __allmul
+  0000002E: 0F B6 4D 0B        movzx       ecx,byte ptr [ebp+0Bh]
+  00000032: 0F AF CE           imul        ecx,esi
+  00000035: 8B FA              mov         edi,edx
+  00000037: B8 56 55 55 55     mov         eax,55555556h
+  0000003C: F7 E9              imul        ecx
+  0000003E: 8B CA              mov         ecx,edx
+  00000040: C1 E9 1F           shr         ecx,1Fh
+  00000043: 8B C7              mov         eax,edi
+  00000045: 03 CA              add         ecx,edx
+  00000047: C1 E8 1F           shr         eax,1Fh
+  0000004A: 03 C8              add         ecx,eax
+  0000004C: 66 03 4B 02        add         cx,word ptr [ebx+2]
+  00000050: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000057: 66 03 CF           add         cx,di
+  0000005A: 0F B7 C1           movzx       eax,cx
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: 66 89 43 0A        mov         word ptr [ebx+0Ah],ax
+  00000063: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000066: 5B                 pop         ebx
+  00000067: 8B E5              mov         esp,ebp
+  00000069: 5D                 pop         ebp
+  0000006A: C3                 ret
+  0000006B: C6 43 23 00        mov         byte ptr [ebx+23h],0
+  0000006F: C7 43 34 00 00 00  mov         dword ptr [ebx+34h],0
+            00
+  00000076: 5B                 pop         ebx
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7B .text

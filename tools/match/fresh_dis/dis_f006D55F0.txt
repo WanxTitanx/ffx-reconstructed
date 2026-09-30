@@ -1,0 +1,90 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D55F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_BrokenScreenEffect_BuildInstances@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8D 04 95 FF FF FF  lea         eax,[edx*4-1]
+            FF
+  0000000C: 83 E0 F0           and         eax,0FFFFFFF0h
+  0000000F: 56                 push        esi
+  00000010: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000013: 8B D9              mov         ebx,ecx
+  00000015: 83 C0 10           add         eax,10h
+  00000018: 33 C9              xor         ecx,ecx
+  0000001A: 03 C6              add         eax,esi
+  0000001C: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000001F: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000022: 89 53 34           mov         dword ptr [ebx+34h],edx
+  00000025: 89 73 38           mov         dword ptr [ebx+38h],esi
+  00000028: 85 D2              test        edx,edx
+  0000002A: 0F 8E 92 00 00 00  jle         000000C2
+  00000030: 57                 push        edi
+  00000031: 33 FF              xor         edi,edi
+  00000033: 85 C0              test        eax,eax
+  00000035: 74 1F              je          00000056
+  00000037: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000003D: C7 40 04 00 00 00  mov         dword ptr [eax+4],0
+            00
+  00000044: C7 40 08 00 00 00  mov         dword ptr [eax+8],0
+            00
+  0000004B: C7 40 0C 00 00 00  mov         dword ptr [eax+0Ch],0
+            00
+  00000052: 8B C8              mov         ecx,eax
+  00000054: EB 02              jmp         00000058
+  00000056: 33 C9              xor         ecx,ecx
+  00000058: 8D 70 10           lea         esi,[eax+10h]
+  0000005B: 8B 43 38           mov         eax,dword ptr [ebx+38h]
+  0000005E: 89 0C 07           mov         dword ptr [edi+eax],ecx
+  00000061: 85 F6              test        esi,esi
+  00000063: 75 04              jne         00000069
+  00000065: 33 C9              xor         ecx,ecx
+  00000067: EB 0D              jmp         00000076
+  00000069: 6A 01              push        1
+  0000006B: 56                 push        esi
+  0000006C: E8 00 00 00 00     call        _FFX_BrokenScreenEffect_InitShardRecord
+  00000071: 83 C4 08           add         esp,8
+  00000074: 8B C8              mov         ecx,eax
+  00000076: 8B 43 38           mov         eax,dword ptr [ebx+38h]
+  00000079: 8B 04 07           mov         eax,dword ptr [edi+eax]
+  0000007C: 89 08              mov         dword ptr [eax],ecx
+  0000007E: 81 C6 B0 00 00 00  add         esi,0B0h
+  00000084: 75 04              jne         0000008A
+  00000086: 33 D2              xor         edx,edx
+  00000088: EB 0D              jmp         00000097
+  0000008A: 6A 02              push        2
+  0000008C: 56                 push        esi
+  0000008D: E8 00 00 00 00     call        _FFX_BrokenScreenEffect_InitShardRecord
+  00000092: 83 C4 08           add         esp,8
+  00000095: 8B D0              mov         edx,eax
+  00000097: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000009A: 41                 inc         ecx
+  0000009B: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000009E: 8D 3C 8D 00 00 00  lea         edi,[ecx*4]
+            00
+  000000A5: 8B 4B 38           mov         ecx,dword ptr [ebx+38h]
+  000000A8: 8D 86 B0 00 00 00  lea         eax,[esi+0B0h]
+  000000AE: 8B 4C 39 FC        mov         ecx,dword ptr [ecx+edi-4]
+  000000B2: 89 51 04           mov         dword ptr [ecx+4],edx
+  000000B5: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000B8: 3B 4D FC           cmp         ecx,dword ptr [ebp-4]
+  000000BB: 0F 8C 72 FF FF FF  jl          00000033
+  000000C1: 5F                 pop         edi
+  000000C2: 5E                 pop         esi
+  000000C3: 5B                 pop         ebx
+  000000C4: 8B E5              mov         esp,ebp
+  000000C6: 5D                 pop         ebp
+  000000C7: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          CA .text

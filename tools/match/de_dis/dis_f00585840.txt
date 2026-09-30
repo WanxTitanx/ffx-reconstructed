@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00585840.obj
+
+File Type: COFF OBJECT
+
+@PShaderBuffer_Destroy@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _Phyre_ShaderBuffer_Release
+  00000009: 8B 86 E0 04 00 00  mov         eax,dword ptr [esi+4E0h]
+  0000000F: 83 C4 04           add         esp,4
+  00000012: 85 C0              test        eax,eax
+  00000014: 78 14              js          0000002A
+  00000016: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000001B: 50                 push        eax
+  0000001C: FF B6 E4 04 00 00  push        dword ptr [esi+4E4h]
+  00000022: E8 00 00 00 00     call        _Phyre_PArray_PointerArray_FreeAll
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 56                 push        esi
+  0000002B: C7 86 E4 04 00 00  mov         dword ptr [esi+4E4h],0
+            00 00 00 00
+  00000035: C7 86 E0 04 00 00  mov         dword ptr [esi+4E0h],0
+            00 00 00 00
+  0000003F: E8 00 00 00 00     call        _Phyre_Shader_ValidateAndPatch
+  00000044: 83 C4 04           add         esp,4
+  00000047: 5E                 pop         esi
+  00000048: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          49 .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00950640.obj
+
+File Type: COFF OBJECT
+
+_LuaGC_FreeClosure:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: FF 76 1C           push        dword ptr [esi+1Ch]
+  0000000A: 56                 push        esi
+  0000000B: E8 00 00 00 00     call        _LuaStack_FreeBlocks
+  00000010: 83 C4 08           add         esp,8
+  00000013: 83 7E 1C 00        cmp         dword ptr [esi+1Ch],0
+  00000017: 74 21              je          0000003A
+  00000019: 8D 46 48           lea         eax,[esi+48h]
+  0000001C: 56                 push        esi
+  0000001D: 89 46 10           mov         dword ptr [esi+10h],eax
+  00000020: E8 00 00 00 00     call        _LuaGC_FreeUpvalList
+  00000025: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000028: 6A 00              push        0
+  0000002A: C1 E0 03           shl         eax,3
+  0000002D: 50                 push        eax
+  0000002E: FF 76 1C           push        dword ptr [esi+1Ch]
+  00000031: 56                 push        esi
+  00000032: E8 00 00 00 00     call        _LuaAlloc_Realloc
+  00000037: 83 C4 14           add         esp,14h
+  0000003A: 6A 00              push        0
+  0000003C: 6A 70              push        70h
+  0000003E: 56                 push        esi
+  0000003F: FF 75 08           push        dword ptr [ebp+8]
+  00000042: E8 00 00 00 00     call        _LuaAlloc_Realloc
+  00000047: 83 C4 10           add         esp,10h
+  0000004A: 5E                 pop         esi
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00868240.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_UpdateSceneModeHandleSet:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000008: 56                 push        esi
+  00000009: 57                 push        edi
+  0000000A: 8D 75 FC           lea         esi,[ebp-4]
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8B 3E              mov         edi,dword ptr [esi]
+  00000012: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00000015: 8B 06              mov         eax,dword ptr [esi]
+  00000017: 85 C0              test        eax,eax
+  00000019: 78 1D              js          00000038
+  0000001B: 50                 push        eax
+  0000001C: 85 DB              test        ebx,ebx
+  0000001E: 74 10              je          00000030
+  00000020: E8 00 00 00 00     call        _FFX_Render_ClearEntryByGfxId
+  00000025: 57                 push        edi
+  00000026: E8 00 00 00 00     call        _FFX_OutStrm_DropInFlight
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: EB 08              jmp         00000038
+  00000030: E8 00 00 00 00     call        _FFX_Render_SetVisibilityMask
+  00000035: 83 C4 04           add         esp,4
+  00000038: 83 C6 04           add         esi,4
+  0000003B: 3B 35 00 00 00 00  cmp         esi,dword ptr [_g_FieldUnkVar_1326CC0]
+  00000041: 7C CD              jl          00000010
+  00000043: 5F                 pop         edi
+  00000044: 5E                 pop         esi
+  00000045: 5B                 pop         ebx
+  00000046: 8B E5              mov         esp,ebp
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4A .text

@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DA370.obj
+
+File Type: COFF OBJECT
+
+@FFX_LocKit_LoadFile@4:
+  00000000: 80 B9 D2 06 00 00  cmp         byte ptr [ecx+6D2h],0
+            00
+  00000007: 75 03              jne         0000000C
+  00000009: 32 C0              xor         al,al
+  0000000B: C3                 ret
+  0000000C: 83 3D 00 00 00 00  cmp         dword ptr [_g_U8_CDED21],0
+            00
+  00000013: 74 03              je          00000018
+  00000015: B0 01              mov         al,1
+  00000017: C3                 ret
+  00000018: 80 B9 D0 06 00 00  cmp         byte ptr [ecx+6D0h],0
+            00
+  0000001F: 74 F4              je          00000015
+  00000021: 80 B9 E4 06 00 00  cmp         byte ptr [ecx+6E4h],0
+            00
+  00000028: 57                 push        edi
+  00000029: 74 28              je          00000053
+  0000002B: 53                 push        ebx
+  0000002C: 56                 push        esi
+  0000002D: 8D 71 38           lea         esi,[ecx+38h]
+  00000030: 56                 push        esi
+  00000031: E8 00 00 00 00     call        _FFX_BtlUI_TimeScaledFromCounter
+  00000036: 56                 push        esi
+  00000037: 8B F8              mov         edi,eax
+  00000039: 33 DB              xor         ebx,ebx
+  0000003B: E8 00 00 00 00     call        _FFX_BtlUI_HudGetTimeCounter
+  00000040: 83 C4 08           add         esp,8
+  00000043: 85 DB              test        ebx,ebx
+  00000045: 5E                 pop         esi
+  00000046: 5B                 pop         ebx
+  00000047: 72 0A              jb          00000053
+  00000049: 77 04              ja          0000004F
+  0000004B: 3B F8              cmp         edi,eax
+  0000004D: 72 04              jb          00000053
+  0000004F: B0 01              mov         al,1
+  00000051: 5F                 pop         edi
+  00000052: C3                 ret
+  00000053: 32 C0              xor         al,al
+  00000055: 5F                 pop         edi
+  00000056: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          57 .text

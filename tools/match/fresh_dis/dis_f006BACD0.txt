@@ -1,0 +1,83 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006BACD0.obj
+
+File Type: COFF OBJECT
+
+@FFX_DebugUI_StatusLineCycle@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 34           sub         esp,34h
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 80 BE C0 00 00 00  cmp         byte ptr [esi+0C0h],0
+            00
+  00000010: 0F 84 93 00 00 00  je          000000A9
+  00000016: 57                 push        edi
+  00000017: 8B BE BC 00 00 00  mov         edi,dword ptr [esi+0BCh]
+  0000001D: 84 D2              test        dl,dl
+  0000001F: 74 11              je          00000032
+  00000021: 8D 47 01           lea         eax,[edi+1]
+  00000024: 25 03 00 00 80     and         eax,80000003h
+  00000029: 79 13              jns         0000003E
+  0000002B: 48                 dec         eax
+  0000002C: 83 C8 FC           or          eax,0FFFFFFFCh
+  0000002F: 40                 inc         eax
+  00000030: EB 0C              jmp         0000003E
+  00000032: B8 03 00 00 00     mov         eax,3
+  00000037: 85 FF              test        edi,edi
+  00000039: 74 03              je          0000003E
+  0000003B: 8D 47 FF           lea         eax,[edi-1]
+  0000003E: 80 7E 14 00        cmp         byte ptr [esi+14h],0
+  00000042: 89 86 BC 00 00 00  mov         dword ptr [esi+0BCh],eax
+  00000048: 74 29              je          00000073
+  0000004A: 6A 32              push        32h
+  0000004C: 8D 45 CC           lea         eax,[ebp-34h]
+  0000004F: 6A 00              push        0
+  00000051: 50                 push        eax
+  00000052: E8 00 00 00 00     call        _memset
+  00000057: 8D 45 CC           lea         eax,[ebp-34h]
+  0000005A: 50                 push        eax
+  0000005B: 57                 push        edi
+  0000005C: 56                 push        esi
+  0000005D: E8 00 00 00 00     call        _FFX_DebugUI_StatusLineFormat
+  00000062: 8D 45 CC           lea         eax,[ebp-34h]
+  00000065: 50                 push        eax
+  00000066: 8D 46 18           lea         eax,[esi+18h]
+  00000069: 57                 push        edi
+  0000006A: 50                 push        eax
+  0000006B: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  00000070: 83 C4 24           add         esp,24h
+  00000073: 80 7E 14 00        cmp         byte ptr [esi+14h],0
+  00000077: 8B BE BC 00 00 00  mov         edi,dword ptr [esi+0BCh]
+  0000007D: 74 29              je          000000A8
+  0000007F: 6A 32              push        32h
+  00000081: 8D 45 CC           lea         eax,[ebp-34h]
+  00000084: 6A 00              push        0
+  00000086: 50                 push        eax
+  00000087: E8 00 00 00 00     call        _memset
+  0000008C: 8D 45 CC           lea         eax,[ebp-34h]
+  0000008F: 50                 push        eax
+  00000090: 57                 push        edi
+  00000091: 56                 push        esi
+  00000092: E8 00 00 00 00     call        _FFX_DebugUI_StatusLineFormat
+  00000097: 8D 45 CC           lea         eax,[ebp-34h]
+  0000009A: 50                 push        eax
+  0000009B: 8D 46 18           lea         eax,[esi+18h]
+  0000009E: 57                 push        edi
+  0000009F: 50                 push        eax
+  000000A0: E8 00 00 00 00     call        _DebugOverlay_MatrixInverseByIndex
+  000000A5: 83 C4 24           add         esp,24h
+  000000A8: 5F                 pop         edi
+  000000A9: 5E                 pop         esi
+  000000AA: 8B E5              mov         esp,ebp
+  000000AC: 5D                 pop         ebp
+  000000AD: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AE .text

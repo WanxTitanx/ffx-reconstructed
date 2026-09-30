@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006AAA10.obj
+
+File Type: COFF OBJECT
+
+@FFX_AudioLight_SetVolume@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 FA 03           cmp         edx,3
+  00000006: 75 19              jne         00000021
+  00000008: D9 45 08           fld         dword ptr [ebp+8]
+  0000000B: 6A 01              push        1
+  0000000D: 52                 push        edx
+  0000000E: D9 99 A0 01 00 00  fstp        dword ptr [ecx+1A0h]
+  00000014: 51                 push        ecx
+  00000015: E8 00 00 00 00     call        _FFX_Audio_ComputeVolumeFromDistance
+  0000001A: 83 C4 0C           add         esp,0Ch
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 04 00           ret         4
+  00000021: 80 B9 CC 01 00 00  cmp         byte ptr [ecx+1CCh],0
+            00
+  00000028: 56                 push        esi
+  00000029: 74 2A              je          00000055
+  0000002B: D9 45 08           fld         dword ptr [ebp+8]
+  0000002E: 8D 04 52           lea         eax,[edx+edx*2]
+  00000031: 8D 34 52           lea         esi,[edx+edx*2]
+  00000034: D9 9C 81 A8 01 00  fstp        dword ptr [ecx+eax*4+1A8h]
+            00
+  0000003B: 83 B9 F0 00 00 00  cmp         dword ptr [ecx+0F0h],0
+            00
+  00000042: 74 14              je          00000058
+  00000044: 6A 01              push        1
+  00000046: 52                 push        edx
+  00000047: 51                 push        ecx
+  00000048: E8 00 00 00 00     call        _FFX_Audio_ComputeVolumeFromDistance
+  0000004D: 83 C4 0C           add         esp,0Ch
+  00000050: 5E                 pop         esi
+  00000051: 5D                 pop         ebp
+  00000052: C2 04 00           ret         4
+  00000055: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000058: 8B C6              mov         eax,esi
+  0000005A: 5E                 pop         esi
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5F .text

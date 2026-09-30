@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006713E0.obj
+
+File Type: COFF OBJECT
+
+@FFX_TexAnim_RemoveByValueFromCache_B@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B BE 94 FA 00 00  mov         edi,dword ptr [esi+0FA94h]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 74 28              je          00000036
+  0000000E: E8 00 00 00 00     call        _FFX_TexAnim_GetFileCache
+  00000013: 57                 push        edi
+  00000014: 50                 push        eax
+  00000015: E8 00 00 00 00     call        _Phyre_Map_FindByValue
+  0000001A: 83 C4 08           add         esp,8
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 15              je          00000036
+  00000021: 8B B6 94 FA 00 00  mov         esi,dword ptr [esi+0FA94h]
+  00000027: E8 00 00 00 00     call        _FFX_TexAnim_GetFileCache
+  0000002C: 56                 push        esi
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _TextureAnimationMap_RemoveEntry
+  00000033: 83 C4 08           add         esp,8
+  00000036: 5F                 pop         edi
+  00000037: 33 C0              xor         eax,eax
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3B .text

@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083F260.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_GetCameraPositionVector:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 56              je          00000061
+  0000000B: 68 00 00 00 00     push        offset _FFX_Field_Global_C4DEC0
+  00000010: 6A 01              push        1
+  00000012: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAJ
+  00000017: DB 05 00 00 00 00  fild        dword ptr [_FFX_Field_Global_C4DEC0]
+  0000001D: A1 00 00 00 00     mov         eax,dword ptr [_FFX_Field_Global_C4DEC0]
+  00000022: 83 C4 08           add         esp,8
+  00000025: 85 C0              test        eax,eax
+  00000027: 79 06              jns         0000002F
+  00000029: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002F: D9 1E              fstp        dword ptr [esi]
+  00000031: A1 00 00 00 00     mov         eax,dword ptr [_FFX_Field_Global_C4DEC4]
+  00000036: DB 05 00 00 00 00  fild        dword ptr [_FFX_Field_Global_C4DEC4]
+  0000003C: 85 C0              test        eax,eax
+  0000003E: 79 06              jns         00000046
+  00000040: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000046: D9 5E 04           fstp        dword ptr [esi+4]
+  00000049: A1 00 00 00 00     mov         eax,dword ptr [_FFX_Field_Global_C4DEC8]
+  0000004E: DB 05 00 00 00 00  fild        dword ptr [_FFX_Field_Global_C4DEC8]
+  00000054: 85 C0              test        eax,eax
+  00000056: 79 06              jns         0000005E
+  00000058: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000005E: D9 5E 08           fstp        dword ptr [esi+8]
+  00000061: B8 00 00 00 00     mov         eax,offset _FFX_Field_Global_C4DEC0
+  00000066: 5E                 pop         esi
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          69 .text

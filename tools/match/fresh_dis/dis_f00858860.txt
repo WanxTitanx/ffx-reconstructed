@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00858860.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_SpatialLineQuery:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  00000012: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000015: 56                 push        esi
+  00000016: 57                 push        edi
+  00000017: 8B D8              mov         ebx,eax
+  00000019: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000001E: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000021: DB 45 F8           fild        dword ptr [ebp-8]
+  00000024: 85 C0              test        eax,eax
+  00000026: 79 06              jns         0000002E
+  00000028: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002E: 56                 push        esi
+  0000002F: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000032: 57                 push        edi
+  00000033: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000038: 56                 push        esi
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000003F: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000042: DB 45 F8           fild        dword ptr [ebp-8]
+  00000045: 85 C0              test        eax,eax
+  00000047: 79 06              jns         0000004F
+  00000049: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000004F: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000052: 51                 push        ecx
+  00000053: D9 45 FC           fld         dword ptr [ebp-4]
+  00000056: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  0000005A: D9 45 F8           fld         dword ptr [ebp-8]
+  0000005D: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000061: D9 43 08           fld         dword ptr [ebx+8]
+  00000064: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000068: D9 03              fld         dword ptr [ebx]
+  0000006A: DD 1C 24           fstp        qword ptr [esp]
+  0000006D: E8 00 00 00 00     call        _FFX_Field_ScriptSpatialLineQuery
+  00000072: 83 C4 20           add         esp,20h
+  00000075: 5F                 pop         edi
+  00000076: 5E                 pop         esi
+  00000077: 5B                 pop         ebx
+  00000078: 8B E5              mov         esp,ebp
+  0000007A: 5D                 pop         ebp
+  0000007B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          7C .text

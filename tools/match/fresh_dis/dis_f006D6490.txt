@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006D6490.obj
+
+File Type: COFF OBJECT
+
+_DEAD_FFX_VideoStream_Close:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 85 D2              test        edx,edx
+  00000008: 74 52              je          0000005C
+  0000000A: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000000D: 56                 push        esi
+  0000000E: 8B 01              mov         eax,dword ptr [ecx]
+  00000010: 89 02              mov         dword ptr [edx],eax
+  00000012: 8B 71 04           mov         esi,dword ptr [ecx+4]
+  00000015: C7 42 18 0F 00 00  mov         dword ptr [edx+18h],0Fh
+            00
+  0000001C: C7 42 14 00 00 00  mov         dword ptr [edx+14h],0
+            00
+  00000023: 83 C2 04           add         edx,4
+  00000026: C6 02 00           mov         byte ptr [edx],0
+  00000029: 80 3E 00           cmp         byte ptr [esi],0
+  0000002C: 74 1E              je          0000004C
+  0000002E: 8B CE              mov         ecx,esi
+  00000030: 57                 push        edi
+  00000031: 8D 79 01           lea         edi,[ecx+1]
+  00000034: 8A 01              mov         al,byte ptr [ecx]
+  00000036: 41                 inc         ecx
+  00000037: 84 C0              test        al,al
+  00000039: 75 F9              jne         00000034
+  0000003B: 2B CF              sub         ecx,edi
+  0000003D: 5F                 pop         edi
+  0000003E: 51                 push        ecx
+  0000003F: 56                 push        esi
+  00000040: 52                 push        edx
+  00000041: E8 00 00 00 00     call        _Engine_String_assign_range
+  00000046: 83 C4 0C           add         esp,0Ch
+  00000049: 5E                 pop         esi
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+  0000004C: 33 C9              xor         ecx,ecx
+  0000004E: 51                 push        ecx
+  0000004F: 56                 push        esi
+  00000050: 52                 push        edx
+  00000051: E8 00 00 00 00     call        _Engine_String_assign_range
+  00000056: 83 C4 0C           add         esp,0Ch
+  00000059: 5E                 pop         esi
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+  0000005C: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

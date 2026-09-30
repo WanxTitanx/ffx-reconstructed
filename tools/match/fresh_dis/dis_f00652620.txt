@@ -1,0 +1,97 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00652620.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Frustum_ClassifyPlane:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 57                 push        edi
+  0000000A: D9 40 08           fld         dword ptr [eax+8]
+  0000000D: D8 60 0C           fsub        dword ptr [eax+0Ch]
+  00000010: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000013: D9 00              fld         dword ptr [eax]
+  00000015: D8 40 0C           fadd        dword ptr [eax+0Ch]
+  00000018: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000001B: D9 40 04           fld         dword ptr [eax+4]
+  0000001E: D8 40 0C           fadd        dword ptr [eax+0Ch]
+  00000021: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000024: D9 40 0C           fld         dword ptr [eax+0Ch]
+  00000027: D8 40 08           fadd        dword ptr [eax+8]
+  0000002A: D9 5D F0           fstp        dword ptr [ebp-10h]
+  0000002D: D9 00              fld         dword ptr [eax]
+  0000002F: D8 60 0C           fsub        dword ptr [eax+0Ch]
+  00000032: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000035: D9 40 04           fld         dword ptr [eax+4]
+  00000038: D8 60 0C           fsub        dword ptr [eax+0Ch]
+  0000003B: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000003E: D9 45 08           fld         dword ptr [ebp+8]
+  00000041: D9 EE              fldz
+  00000043: D8 D1              fcom        st(1)
+  00000045: DF E0              fnstsw      ax
+  00000047: DD D9              fstp        st(1)
+  00000049: F6 C4 01           test        ah,1
+  0000004C: 75 04              jne         00000052
+  0000004E: 33 FF              xor         edi,edi
+  00000050: EB 05              jmp         00000057
+  00000052: BF 02 00 00 00     mov         edi,2
+  00000057: D8 55 FC           fcom        dword ptr [ebp-4]
+  0000005A: DF E0              fnstsw      ax
+  0000005C: F6 C4 01           test        ah,1
+  0000005F: 75 04              jne         00000065
+  00000061: 33 D2              xor         edx,edx
+  00000063: EB 05              jmp         0000006A
+  00000065: BA 04 00 00 00     mov         edx,4
+  0000006A: D8 55 F8           fcom        dword ptr [ebp-8]
+  0000006D: 56                 push        esi
+  0000006E: DF E0              fnstsw      ax
+  00000070: F6 C4 41           test        ah,41h
+  00000073: 7A 04              jp          00000079
+  00000075: 33 F6              xor         esi,esi
+  00000077: EB 05              jmp         0000007E
+  00000079: BE 08 00 00 00     mov         esi,8
+  0000007E: D8 55 F4           fcom        dword ptr [ebp-0Ch]
+  00000081: DF E0              fnstsw      ax
+  00000083: F6 C4 41           test        ah,41h
+  00000086: 7A 04              jp          0000008C
+  00000088: 33 C9              xor         ecx,ecx
+  0000008A: EB 05              jmp         00000091
+  0000008C: B9 10 00 00 00     mov         ecx,10h
+  00000091: D8 55 F0           fcom        dword ptr [ebp-10h]
+  00000094: 0B CE              or          ecx,esi
+  00000096: 0B CA              or          ecx,edx
+  00000098: DF E0              fnstsw      ax
+  0000009A: F6 C4 41           test        ah,41h
+  0000009D: 7B 03              jnp         000000A2
+  0000009F: 83 C9 20           or          ecx,20h
+  000000A2: D8 5D EC           fcomp       dword ptr [ebp-14h]
+  000000A5: 5E                 pop         esi
+  000000A6: DF E0              fnstsw      ax
+  000000A8: F6 C4 05           test        ah,5
+  000000AB: 7A 0E              jp          000000BB
+  000000AD: B8 01 00 00 00     mov         eax,1
+  000000B2: 0B C1              or          eax,ecx
+  000000B4: 0B C7              or          eax,edi
+  000000B6: 5F                 pop         edi
+  000000B7: 8B E5              mov         esp,ebp
+  000000B9: 5D                 pop         ebp
+  000000BA: C3                 ret
+  000000BB: 33 C0              xor         eax,eax
+  000000BD: 0B C1              or          eax,ecx
+  000000BF: 0B C7              or          eax,edi
+  000000C1: 5F                 pop         edi
+  000000C2: 8B E5              mov         esp,ebp
+  000000C4: 5D                 pop         ebp
+  000000C5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          C6 .text

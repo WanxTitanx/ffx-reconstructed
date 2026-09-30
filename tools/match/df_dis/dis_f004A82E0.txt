@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004A82E0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_4A82E0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B FA              mov         edi,edx
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 8B 07              mov         eax,dword ptr [edi]
+  0000000F: 89 06              mov         dword ptr [esi],eax
+  00000011: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000014: 8B C1              mov         eax,ecx
+  00000016: 83 E0 01           and         eax,1
+  00000019: 2B C8              sub         ecx,eax
+  0000001B: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000001E: 74 34              je          00000054
+  00000020: 8D 51 01           lea         edx,[ecx+1]
+  00000023: 8A 01              mov         al,byte ptr [ecx]
+  00000025: 41                 inc         ecx
+  00000026: 84 C0              test        al,al
+  00000028: 75 F9              jne         00000023
+  0000002A: 2B CA              sub         ecx,edx
+  0000002C: 6A 02              push        2
+  0000002E: 8D 41 01           lea         eax,[ecx+1]
+  00000031: 50                 push        eax
+  00000032: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000035: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000003A: 8B D8              mov         ebx,eax
+  0000003C: 83 C4 08           add         esp,8
+  0000003F: 85 DB              test        ebx,ebx
+  00000041: 74 13              je          00000056
+  00000043: FF 75 FC           push        dword ptr [ebp-4]
+  00000046: FF 75 F8           push        dword ptr [ebp-8]
+  00000049: 53                 push        ebx
+  0000004A: E8 00 00 00 00     call        _memcpy
+  0000004F: 83 C4 0C           add         esp,0Ch
+  00000052: EB 02              jmp         00000056
+  00000054: 33 DB              xor         ebx,ebx
+  00000056: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000059: 8B 47 08           mov         eax,dword ptr [edi+8]
+  0000005C: 89 46 08           mov         dword ptr [esi+8],eax
+  0000005F: 66 8B 47 0C        mov         ax,word ptr [edi+0Ch]
+  00000063: 66 89 46 0C        mov         word ptr [esi+0Ch],ax
+  00000067: 0F B6 47 0E        movzx       eax,byte ptr [edi+0Eh]
+  0000006B: 88 46 0E           mov         byte ptr [esi+0Eh],al
+  0000006E: 0F B6 47 0F        movzx       eax,byte ptr [edi+0Fh]
+  00000072: 88 46 0F           mov         byte ptr [esi+0Fh],al
+  00000075: 5F                 pop         edi
+  00000076: 8B C6              mov         eax,esi
+  00000078: 5E                 pop         esi
+  00000079: 5B                 pop         ebx
+  0000007A: 8B E5              mov         esp,ebp
+  0000007C: 5D                 pop         ebp
+  0000007D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7E .text

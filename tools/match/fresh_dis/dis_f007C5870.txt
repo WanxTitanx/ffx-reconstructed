@@ -1,0 +1,358 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C5870.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_ComputeTargetLookAt:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 1C           mov         eax,dword ptr [ebp+1Ch]
+  00000006: 83 EC 58           sub         esp,58h
+  00000009: 80 38 01           cmp         byte ptr [eax],1
+  0000000C: 75 32              jne         00000040
+  0000000E: FF 75 14           push        dword ptr [ebp+14h]
+  00000011: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000014: FF 75 14           push        dword ptr [ebp+14h]
+  00000017: D9 40 68           fld         dword ptr [eax+68h]
+  0000001A: 83 C0 50           add         eax,50h
+  0000001D: FF 75 14           push        dword ptr [ebp+14h]
+  00000020: 83 EC 18           sub         esp,18h
+  00000023: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000027: D9 40 14           fld         dword ptr [eax+14h]
+  0000002A: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000002E: D9 40 10           fld         dword ptr [eax+10h]
+  00000031: DD 1C 24           fstp        qword ptr [esp]
+  00000034: FF 70 3C           push        dword ptr [eax+3Ch]
+  00000037: 50                 push        eax
+  00000038: E8 00 00 00 00     call        _FFX_Camera_PolarToCartesian
+  0000003D: 83 C4 2C           add         esp,2Ch
+  00000040: D9 EE              fldz
+  00000042: 53                 push        ebx
+  00000043: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000046: D9 55 DC           fst         dword ptr [ebp-24h]
+  00000049: 56                 push        esi
+  0000004A: D9 55 F8           fst         dword ptr [ebp-8]
+  0000004D: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000050: D9 55 FC           fst         dword ptr [ebp-4]
+  00000053: 81 E3 00 00 0F 00  and         ebx,0F0000h
+  00000059: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  0000005C: 8D 46 14           lea         eax,[esi+14h]
+  0000005F: D9 55 F0           fst         dword ptr [ebp-10h]
+  00000062: 81 EB 00 00 05 00  sub         ebx,50000h
+  00000068: D9 5D EC           fstp        dword ptr [ebp-14h]
+  0000006B: F7 DB              neg         ebx
+  0000006D: 8B C8              mov         ecx,eax
+  0000006F: 89 45 D8           mov         dword ptr [ebp-28h],eax
+  00000072: 1B DB              sbb         ebx,ebx
+  00000074: 8D 46 10           lea         eax,[esi+10h]
+  00000077: 57                 push        edi
+  00000078: 81 E3 00 01 00 00  and         ebx,100h
+  0000007E: C7 45 08 00 00 00  mov         dword ptr [ebp+8],0
+            00
+  00000085: 8D 7D B8           lea         edi,[ebp-48h]
+  00000088: C7 45 E0 02 00 00  mov         dword ptr [ebp-20h],2
+            00
+  0000008F: 8B F0              mov         esi,eax
+  00000091: 0F BF 06           movsx       eax,word ptr [esi]
+  00000094: 8B 11              mov         edx,dword ptr [ecx]
+  00000096: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000099: 8B 55 E0           mov         edx,dword ptr [ebp-20h]
+  0000009C: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  0000009F: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  000000A2: 0F 84 97 00 00 00  je          0000013F
+  000000A8: 57                 push        edi
+  000000A9: 50                 push        eax
+  000000AA: FF 75 E8           push        dword ptr [ebp-18h]
+  000000AD: 8B C3              mov         eax,ebx
+  000000AF: 83 C8 09           or          eax,9
+  000000B2: 50                 push        eax
+  000000B3: E8 00 00 00 00     call        _FFX_Camera_ComputeTargetProjection
+  000000B8: 83 C4 10           add         esp,10h
+  000000BB: 85 C0              test        eax,eax
+  000000BD: 74 7A              je          00000139
+  000000BF: D9 07              fld         dword ptr [edi]
+  000000C1: FF 45 08           inc         dword ptr [ebp+8]
+  000000C4: D8 45 F4           fadd        dword ptr [ebp-0Ch]
+  000000C7: 8D 45 C8           lea         eax,[ebp-38h]
+  000000CA: 50                 push        eax
+  000000CB: FF 75 E4           push        dword ptr [ebp-1Ch]
+  000000CE: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000000D1: 8B C3              mov         eax,ebx
+  000000D3: D9 47 04           fld         dword ptr [edi+4]
+  000000D6: FF 75 E8           push        dword ptr [ebp-18h]
+  000000D9: D8 45 F0           fadd        dword ptr [ebp-10h]
+  000000DC: 83 C8 0A           or          eax,0Ah
+  000000DF: 50                 push        eax
+  000000E0: D9 5D F0           fstp        dword ptr [ebp-10h]
+  000000E3: D9 47 08           fld         dword ptr [edi+8]
+  000000E6: D8 45 EC           fadd        dword ptr [ebp-14h]
+  000000E9: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000000EC: E8 00 00 00 00     call        _FFX_Camera_ComputeTargetProjection
+  000000F1: D9 45 C8           fld         dword ptr [ebp-38h]
+  000000F4: 8D 45 C8           lea         eax,[ebp-38h]
+  000000F7: D8 45 DC           fadd        dword ptr [ebp-24h]
+  000000FA: 50                 push        eax
+  000000FB: FF 75 E4           push        dword ptr [ebp-1Ch]
+  000000FE: 8B C3              mov         eax,ebx
+  00000100: FF 75 E8           push        dword ptr [ebp-18h]
+  00000103: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000106: 83 C8 07           or          eax,7
+  00000109: 50                 push        eax
+  0000010A: E8 00 00 00 00     call        _FFX_Camera_ComputeTargetProjection
+  0000010F: D9 45 C8           fld         dword ptr [ebp-38h]
+  00000112: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000115: 8D 45 C8           lea         eax,[ebp-38h]
+  00000118: 50                 push        eax
+  00000119: FF 75 E4           push        dword ptr [ebp-1Ch]
+  0000011C: 8B C3              mov         eax,ebx
+  0000011E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000121: FF 75 E8           push        dword ptr [ebp-18h]
+  00000124: 83 C8 0B           or          eax,0Bh
+  00000127: 50                 push        eax
+  00000128: E8 00 00 00 00     call        _FFX_Camera_ComputeTargetProjection
+  0000012D: D9 45 C8           fld         dword ptr [ebp-38h]
+  00000130: D8 45 F8           fadd        dword ptr [ebp-8]
+  00000133: 83 C4 30           add         esp,30h
+  00000136: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000139: 8B 4D D8           mov         ecx,dword ptr [ebp-28h]
+  0000013C: 8B 55 E0           mov         edx,dword ptr [ebp-20h]
+  0000013F: 8B C2              mov         eax,edx
+  00000141: 4A                 dec         edx
+  00000142: 83 C1 04           add         ecx,4
+  00000145: 83 C6 02           add         esi,2
+  00000148: 83 C7 10           add         edi,10h
+  0000014B: 89 55 E0           mov         dword ptr [ebp-20h],edx
+  0000014E: 83 F8 01           cmp         eax,1
+  00000151: 75 04              jne         00000157
+  00000153: 8A C0              mov         al,al
+  00000155: EB 02              jmp         00000159
+  00000157: 32 C0              xor         al,al
+  00000159: 89 4D D8           mov         dword ptr [ebp-28h],ecx
+  0000015C: 84 C0              test        al,al
+  0000015E: 0F 84 2D FF FF FF  je          00000091
+  00000164: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000167: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  0000016A: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000016D: 85 C0              test        eax,eax
+  0000016F: 7F 1E              jg          0000018F
+  00000171: D9 46 30           fld         dword ptr [esi+30h]
+  00000174: D9 5F 50           fstp        dword ptr [edi+50h]
+  00000177: D9 46 34           fld         dword ptr [esi+34h]
+  0000017A: D9 5F 54           fstp        dword ptr [edi+54h]
+  0000017D: D9 46 38           fld         dword ptr [esi+38h]
+  00000180: D9 5F 58           fstp        dword ptr [edi+58h]
+  00000183: D9 EE              fldz
+  00000185: D9 5F 6C           fstp        dword ptr [edi+6Ch]
+  00000188: 5F                 pop         edi
+  00000189: 5E                 pop         esi
+  0000018A: 5B                 pop         ebx
+  0000018B: 8B E5              mov         esp,ebp
+  0000018D: 5D                 pop         ebp
+  0000018E: C3                 ret
+  0000018F: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  00000193: DB 45 08           fild        dword ptr [ebp+8]
+  00000196: 8D 4F 50           lea         ecx,[edi+50h]
+  00000199: D9 5D 14           fstp        dword ptr [ebp+14h]
+  0000019C: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000019F: D9 45 14           fld         dword ptr [ebp+14h]
+  000001A2: 89 4D 14           mov         dword ptr [ebp+14h],ecx
+  000001A5: D9 C0              fld         st(0)
+  000001A7: DE FA              fdivp       st(2),st
+  000001A9: D9 C9              fxch        st(1)
+  000001AB: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000001AE: D9 45 F0           fld         dword ptr [ebp-10h]
+  000001B1: D8 F1              fdiv        st,st(1)
+  000001B3: D9 5D F0           fstp        dword ptr [ebp-10h]
+  000001B6: D9 45 EC           fld         dword ptr [ebp-14h]
+  000001B9: D8 F1              fdiv        st,st(1)
+  000001BB: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000001BE: D9 45 FC           fld         dword ptr [ebp-4]
+  000001C1: D8 F1              fdiv        st,st(1)
+  000001C3: D9 5D FC           fstp        dword ptr [ebp-4]
+  000001C6: D9 45 F8           fld         dword ptr [ebp-8]
+  000001C9: D8 F1              fdiv        st,st(1)
+  000001CB: D9 5D F8           fstp        dword ptr [ebp-8]
+  000001CE: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000001D1: D9 19              fstp        dword ptr [ecx]
+  000001D3: D9 45 F0           fld         dword ptr [ebp-10h]
+  000001D6: D9 57 54           fst         dword ptr [edi+54h]
+  000001D9: D9 45 EC           fld         dword ptr [ebp-14h]
+  000001DC: D9 5F 58           fstp        dword ptr [edi+58h]
+  000001DF: D9 45 DC           fld         dword ptr [ebp-24h]
+  000001E2: DE F2              fdivrp      st(2),st
+  000001E4: D9 C9              fxch        st(1)
+  000001E6: D9 5D 10           fstp        dword ptr [ebp+10h]
+  000001E9: D9 45 10           fld         dword ptr [ebp+10h]
+  000001EC: D8 4E 5C           fmul        dword ptr [esi+5Ch]
+  000001EF: DE E9              fsubp       st(1),st
+  000001F1: D9 5F 54           fstp        dword ptr [edi+54h]
+  000001F4: 0F 84 8A 01 00 00  je          00000384
+  000001FA: 83 CA FF           or          edx,0FFFFFFFFh
+  000001FD: 83 F8 02           cmp         eax,2
+  00000200: 7C 24              jl          00000226
+  00000202: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000205: 3B 46 18           cmp         eax,dword ptr [esi+18h]
+  00000208: 74 1C              je          00000226
+  0000020A: 6A 00              push        0
+  0000020C: 6A 00              push        0
+  0000020E: 8D 45 FC           lea         eax,[ebp-4]
+  00000211: 50                 push        eax
+  00000212: 8D 45 A8           lea         eax,[ebp-58h]
+  00000215: 50                 push        eax
+  00000216: 8D 45 B8           lea         eax,[ebp-48h]
+  00000219: 50                 push        eax
+  0000021A: E8 00 00 00 00     call        _FFX_Camera_ComputeLookAtTransform
+  0000021F: 83 C4 14           add         esp,14h
+  00000222: 33 D2              xor         edx,edx
+  00000224: EB 1E              jmp         00000244
+  00000226: 8B 45 1C           mov         eax,dword ptr [ebp+1Ch]
+  00000229: 80 78 02 0C        cmp         byte ptr [eax+2],0Ch
+  0000022D: 75 18              jne         00000247
+  0000022F: 8B 48 18           mov         ecx,dword ptr [eax+18h]
+  00000232: 0B 48 14           or          ecx,dword ptr [eax+14h]
+  00000235: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000238: 0B 46 14           or          eax,dword ptr [esi+14h]
+  0000023B: 3B C1              cmp         eax,ecx
+  0000023D: 75 05              jne         00000244
+  0000023F: BA 01 00 00 00     mov         edx,1
+  00000244: 8D 4F 50           lea         ecx,[edi+50h]
+  00000247: 85 DB              test        ebx,ebx
+  00000249: 74 4F              je          0000029A
+  0000024B: 85 D2              test        edx,edx
+  0000024D: 0F 94 C0           sete        al
+  00000250: 85 D2              test        edx,edx
+  00000252: 79 4B              jns         0000029F
+  00000254: 80 3F 00           cmp         byte ptr [edi],0
+  00000257: 74 41              je          0000029A
+  00000259: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  0000025C: 83 C0 50           add         eax,50h
+  0000025F: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000262: D9 00              fld         dword ptr [eax]
+  00000264: D9 01              fld         dword ptr [ecx]
+  00000266: DA E9              fucompp
+  00000268: DF E0              fnstsw      ax
+  0000026A: F6 C4 44           test        ah,44h
+  0000026D: 7A 12              jp          00000281
+  0000026F: 8B 45 18           mov         eax,dword ptr [ebp+18h]
+  00000272: D9 40 58           fld         dword ptr [eax+58h]
+  00000275: D9 47 58           fld         dword ptr [edi+58h]
+  00000278: DA E9              fucompp
+  0000027A: DF E0              fnstsw      ax
+  0000027C: F6 C4 44           test        ah,44h
+  0000027F: 7B 19              jnp         0000029A
+  00000281: 6A 00              push        0
+  00000283: 6A 00              push        0
+  00000285: 8D 45 FC           lea         eax,[ebp-4]
+  00000288: 50                 push        eax
+  00000289: FF 75 10           push        dword ptr [ebp+10h]
+  0000028C: 51                 push        ecx
+  0000028D: E8 00 00 00 00     call        _FFX_Camera_ComputeLookAtTransform
+  00000292: 83 C4 14           add         esp,14h
+  00000295: 8D 4F 50           lea         ecx,[edi+50h]
+  00000298: EB 2B              jmp         000002C5
+  0000029A: 85 D2              test        edx,edx
+  0000029C: 0F 94 C0           sete        al
+  0000029F: 84 C0              test        al,al
+  000002A1: 75 1F              jne         000002C2
+  000002A3: 85 DB              test        ebx,ebx
+  000002A5: 74 1B              je          000002C2
+  000002A7: 89 4D 14           mov         dword ptr [ebp+14h],ecx
+  000002AA: 38 46 06           cmp         byte ptr [esi+6],al
+  000002AD: 74 0B              je          000002BA
+  000002AF: D9 45 FC           fld         dword ptr [ebp-4]
+  000002B2: 88 46 06           mov         byte ptr [esi+6],al
+  000002B5: D9 5E 64           fstp        dword ptr [esi+64h]
+  000002B8: EB 0B              jmp         000002C5
+  000002BA: D9 46 64           fld         dword ptr [esi+64h]
+  000002BD: D9 5D FC           fstp        dword ptr [ebp-4]
+  000002C0: EB 03              jmp         000002C5
+  000002C2: 89 4D 14           mov         dword ptr [ebp+14h],ecx
+  000002C5: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000002C8: 83 F8 02           cmp         eax,2
+  000002CB: 74 0D              je          000002DA
+  000002CD: 83 F8 04           cmp         eax,4
+  000002D0: 74 08              je          000002DA
+  000002D2: D9 46 60           fld         dword ptr [esi+60h]
+  000002D5: D8 4D F8           fmul        dword ptr [ebp-8]
+  000002D8: EB 0C              jmp         000002E6
+  000002DA: D9 46 60           fld         dword ptr [esi+60h]
+  000002DD: DC 0D 00 00 00 00  fmul        qword ptr [__real@4024000000000000]
+  000002E3: D8 45 F8           fadd        dword ptr [ebp-8]
+  000002E6: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  000002E9: D9 5D F8           fstp        dword ptr [ebp-8]
+  000002EC: 50                 push        eax
+  000002ED: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  000002F0: 50                 push        eax
+  000002F1: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  000002F4: 50                 push        eax
+  000002F5: 83 EC 18           sub         esp,18h
+  000002F8: 80 3E 00           cmp         byte ptr [esi],0
+  000002FB: 74 3D              je          0000033A
+  000002FD: D9 46 40           fld         dword ptr [esi+40h]
+  00000300: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000303: D9 5F 60           fstp        dword ptr [edi+60h]
+  00000306: D9 46 44           fld         dword ptr [esi+44h]
+  00000309: D9 5F 64           fstp        dword ptr [edi+64h]
+  0000030C: D9 45 F8           fld         dword ptr [ebp-8]
+  0000030F: D9 57 68           fst         dword ptr [edi+68h]
+  00000312: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000315: D9 45 10           fld         dword ptr [ebp+10h]
+  00000318: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  0000031C: D9 47 64           fld         dword ptr [edi+64h]
+  0000031F: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000323: D9 47 60           fld         dword ptr [edi+60h]
+  00000326: DD 1C 24           fstp        qword ptr [esp]
+  00000329: FF B7 8C 00 00 00  push        dword ptr [edi+8Ch]
+  0000032F: 51                 push        ecx
+  00000330: E8 00 00 00 00     call        _FFX_Camera_PolarToCartesian
+  00000335: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000338: EB 44              jmp         0000037E
+  0000033A: D9 45 F8           fld         dword ptr [ebp-8]
+  0000033D: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000340: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000344: D9 46 44           fld         dword ptr [esi+44h]
+  00000347: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000034B: D9 46 40           fld         dword ptr [esi+40h]
+  0000034E: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000351: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000354: D9 45 10           fld         dword ptr [ebp+10h]
+  00000357: DD 1C 24           fstp        qword ptr [esp]
+  0000035A: 6A 00              push        0
+  0000035C: 50                 push        eax
+  0000035D: E8 00 00 00 00     call        _FFX_Camera_PolarToCartesian
+  00000362: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000365: D9 01              fld         dword ptr [ecx]
+  00000367: D8 45 F4           fadd        dword ptr [ebp-0Ch]
+  0000036A: D9 19              fstp        dword ptr [ecx]
+  0000036C: D9 47 54           fld         dword ptr [edi+54h]
+  0000036F: D8 45 F0           fadd        dword ptr [ebp-10h]
+  00000372: D9 5F 54           fstp        dword ptr [edi+54h]
+  00000375: D9 47 58           fld         dword ptr [edi+58h]
+  00000378: D8 45 EC           fadd        dword ptr [ebp-14h]
+  0000037B: D9 5F 58           fstp        dword ptr [edi+58h]
+  0000037E: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000381: 83 C4 2C           add         esp,2Ch
+  00000384: D9 01              fld         dword ptr [ecx]
+  00000386: D9 5E 30           fstp        dword ptr [esi+30h]
+  00000389: D9 47 54           fld         dword ptr [edi+54h]
+  0000038C: D9 5E 34           fstp        dword ptr [esi+34h]
+  0000038F: D9 47 58           fld         dword ptr [edi+58h]
+  00000392: D9 5E 38           fstp        dword ptr [esi+38h]
+  00000395: D9 EE              fldz
+  00000397: D9 5F 6C           fstp        dword ptr [edi+6Ch]
+  0000039A: 5F                 pop         edi
+  0000039B: 5E                 pop         esi
+  0000039C: 5B                 pop         ebx
+  0000039D: 8B E5              mov         esp,ebp
+  0000039F: 5D                 pop         ebp
+  000003A0: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           C .rdata
+         3A1 .text

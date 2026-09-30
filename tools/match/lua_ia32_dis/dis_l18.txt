@@ -1,0 +1,129 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file l18.obj
+
+File Type: COFF OBJECT
+
+_luaM_growaux_:
+  00000000: 55                 push        ebp
+  00000001: 8B 6C 24 10        mov         ebp,dword ptr [esp+10h]
+  00000005: 56                 push        esi
+  00000006: 8B 74 24 1C        mov         esi,dword ptr [esp+1Ch]
+  0000000A: 8B C6              mov         eax,esi
+  0000000C: 99                 cdq
+  0000000D: 2B C2              sub         eax,edx
+  0000000F: 57                 push        edi
+  00000010: 8B 7D 00           mov         edi,dword ptr [ebp]
+  00000013: D1 F8              sar         eax,1
+  00000015: 3B F8              cmp         edi,eax
+  00000017: 7C 06              jl          0000001F
+  00000019: 3B FE              cmp         edi,esi
+  0000001B: 7C 0F              jl          0000002C
+  0000001D: EB 44              jmp         00000063
+  0000001F: 8D 34 3F           lea         esi,[edi+edi]
+  00000022: 83 FE 04           cmp         esi,4
+  00000025: 7D 05              jge         0000002C
+  00000027: BE 04 00 00 00     mov         esi,4
+  0000002C: 53                 push        ebx
+  0000002D: 8B 5C 24 20        mov         ebx,dword ptr [esp+20h]
+  00000031: 33 D2              xor         edx,edx
+  00000033: B8 FD FF FF FF     mov         eax,0FFFFFFFDh
+  00000038: F7 F3              div         eax,ebx
+  0000003A: 8D 4E 01           lea         ecx,[esi+1]
+  0000003D: 3B C8              cmp         ecx,eax
+  0000003F: 77 35              ja          $LN17
+  00000041: 8B C6              mov         eax,esi
+  00000043: 0F AF FB           imul        edi,ebx
+  00000046: 0F AF C3           imul        eax,ebx
+  00000049: 50                 push        eax
+  0000004A: 57                 push        edi
+  0000004B: FF 74 24 20        push        dword ptr [esp+20h]
+  0000004F: FF 74 24 20        push        dword ptr [esp+20h]
+  00000053: E8 00 00 00 00     call        _luaM_realloc_
+  00000058: 83 C4 10           add         esp,10h
+  0000005B: 89 75 00           mov         dword ptr [ebp],esi
+  0000005E: 5B                 pop         ebx
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+  00000063: 56                 push        esi
+  00000064: FF 74 24 28        push        dword ptr [esp+28h]
+  00000068: 68 00 00 00 00     push        offset ??_C@_0BK@JNOIBMBC@too?5many?5?$CFs?5?$CIlimit?5is?5?$CFd?$CJ?$AA@
+  0000006D: FF 74 24 1C        push        dword ptr [esp+1Ch]
+  00000071: E8 00 00 00 00     call        _luaG_runerror
+$LN17:
+  00000076: 68 00 00 00 00     push        offset ??_C@_0CH@LBFPMMCP@memory?5allocation?5error?3?5block?5t@
+  0000007B: FF 74 24 18        push        dword ptr [esp+18h]
+  0000007F: E8 00 00 00 00     call        _luaG_runerror
+$LN13:
+  00000084: CC                 int         3
+
+_luaM_realloc_:
+  00000000: 8B 44 24 08        mov         eax,dword ptr [esp+8]
+  00000004: 8B 4C 24 0C        mov         ecx,dword ptr [esp+0Ch]
+  00000008: 53                 push        ebx
+  00000009: 55                 push        ebp
+  0000000A: 8B 6C 24 0C        mov         ebp,dword ptr [esp+0Ch]
+  0000000E: 56                 push        esi
+  0000000F: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000012: 57                 push        edi
+  00000013: 8B 7C 24 20        mov         edi,dword ptr [esp+20h]
+  00000017: 57                 push        edi
+  00000018: 8B D8              mov         ebx,eax
+  0000001A: 51                 push        ecx
+  0000001B: 50                 push        eax
+  0000001C: FF 76 04           push        dword ptr [esi+4]
+  0000001F: 8B 06              mov         eax,dword ptr [esi]
+  00000021: F7 DB              neg         ebx
+  00000023: 1B DB              sbb         ebx,ebx
+  00000025: 23 D9              and         ebx,ecx
+  00000027: FF D0              call        eax
+  00000029: 83 C4 10           add         esp,10h
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 75 28              jne         00000058
+  00000030: 85 FF              test        edi,edi
+  00000032: 74 24              je          00000058
+  00000034: 38 46 33           cmp         byte ptr [esi+33h],al
+  00000037: 74 29              je          00000062
+  00000039: 6A 01              push        1
+  0000003B: 55                 push        ebp
+  0000003C: E8 00 00 00 00     call        _luaC_fullgc
+  00000041: 8B 06              mov         eax,dword ptr [esi]
+  00000043: 57                 push        edi
+  00000044: FF 74 24 28        push        dword ptr [esp+28h]
+  00000048: FF 74 24 28        push        dword ptr [esp+28h]
+  0000004C: FF 76 04           push        dword ptr [esi+4]
+  0000004F: FF D0              call        eax
+  00000051: 83 C4 18           add         esp,18h
+  00000054: 85 C0              test        eax,eax
+  00000056: 74 0A              je          00000062
+  00000058: 2B FB              sub         edi,ebx
+  0000005A: 01 7E 0C           add         dword ptr [esi+0Ch],edi
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: 5D                 pop         ebp
+  00000060: 5B                 pop         ebx
+  00000061: C3                 ret
+  00000062: 6A 04              push        4
+  00000064: 55                 push        ebp
+  00000065: E8 00 00 00 00     call        _luaD_throw
+$LN7:
+  0000006A: CC                 int         3
+
+_luaM_toobig:
+  00000000: 68 00 00 00 00     push        offset ??_C@_0CH@LBFPMMCP@memory?5allocation?5error?3?5block?5t@
+  00000005: FF 74 24 08        push        dword ptr [esp+8]
+  00000009: E8 00 00 00 00     call        _luaG_runerror
+$LN3:
+  0000000E: CC                 int         3
+
+  Summary
+
+          30 .debug$F
+          6C .debug$S
+          2F .drectve
+          41 .rdata
+          FF .text

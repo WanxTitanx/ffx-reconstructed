@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A24C90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PostProcessing_DestroyResourceHandle@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: F6 86 5C 0F 00 00  test        byte ptr [esi+0F5Ch],80h
+            80
+  0000000A: 74 0F              je          0000001B
+  0000000C: 8D 86 40 0F 00 00  lea         eax,[esi+0F40h]
+  00000012: 50                 push        eax
+  00000013: E8 00 00 00 00     call        _Phyre_Shader_CompilationCleanup
+  00000018: 83 C4 04           add         esp,4
+  0000001B: F6 86 80 0F 00 00  test        byte ptr [esi+0F80h],80h
+            80
+  00000022: 74 0F              je          00000033
+  00000024: 8D 86 64 0F 00 00  lea         eax,[esi+0F64h]
+  0000002A: 50                 push        eax
+  0000002B: E8 00 00 00 00     call        _Phyre_Shader_CompilationCleanup
+  00000030: 83 C4 04           add         esp,4
+  00000033: 8B 86 38 0F 00 00  mov         eax,dword ptr [esi+0F38h]
+  00000039: 85 C0              test        eax,eax
+  0000003B: 74 0A              je          00000047
+  0000003D: FF 30              push        dword ptr [eax]
+  0000003F: E8 00 00 00 00     call        _Engine_ResourceHandle_Destructor
+  00000044: 83 C4 04           add         esp,4
+  00000047: C7 86 38 0F 00 00  mov         dword ptr [esi+0F38h],0
+            00 00 00 00
+  00000051: 5E                 pop         esi
+  00000052: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          53 .text

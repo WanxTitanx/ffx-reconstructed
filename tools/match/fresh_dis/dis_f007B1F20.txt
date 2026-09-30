@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B1F20.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ClearChaseTarget:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 80 B8 38 04 00 00  cmp         byte ptr [eax+438h],0FFh
+            FF
+  0000000D: 75 04              jne         00000013
+  0000000F: 33 C0              xor         eax,eax
+  00000011: 5D                 pop         ebp
+  00000012: C3                 ret
+  00000013: 80 B8 CE 0D 00 00  cmp         byte ptr [eax+0DCEh],0
+            00
+  0000001A: C6 80 38 04 00 00  mov         byte ptr [eax+438h],0FFh
+            FF
+  00000021: 75 0E              jne         00000031
+  00000023: C6 80 39 04 00 00  mov         byte ptr [eax+439h],1
+            01
+  0000002A: B8 01 00 00 00     mov         eax,1
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 56                 push        esi
+  00000032: 8B 30              mov         esi,dword ptr [eax]
+  00000034: C6 80 39 04 00 00  mov         byte ptr [eax+439h],0
+            00
+  0000003B: 85 F6              test        esi,esi
+  0000003D: 74 1D              je          0000005C
+  0000003F: D9 EE              fldz
+  00000041: 83 EC 10           sub         esp,10h
+  00000044: DD 54 24 08        fst         qword ptr [esp+8]
+  00000048: DD 1C 24           fstp        qword ptr [esp]
+  0000004B: 56                 push        esi
+  0000004C: E8 00 00 00 00     call        _FFX_Chr_SetLightDirectional
+  00000051: 6A 00              push        0
+  00000053: 56                 push        esi
+  00000054: E8 00 00 00 00     call        _FFX_Chr_EnableLighting
+  00000059: 83 C4 1C           add         esp,1Ch
+  0000005C: 5E                 pop         esi
+  0000005D: B8 01 00 00 00     mov         eax,1
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          64 .text

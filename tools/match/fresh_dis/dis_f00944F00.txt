@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00944F00.obj
+
+File Type: COFF OBJECT
+
+@HeapHashTable_Free@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 8B 03              mov         eax,dword ptr [ebx]
+  00000006: 8B 73 04           mov         esi,dword ptr [ebx+4]
+  00000009: 57                 push        edi
+  0000000A: 8D 3C 85 FF 0F 00  lea         edi,[eax*4+0FFFh]
+            00
+  00000011: 81 E7 00 F0 FF FF  and         edi,0FFFFF000h
+  00000017: 57                 push        edi
+  00000018: 56                 push        esi
+  00000019: E8 00 00 00 00     call        _Memory_VirtualFreeTracked
+  0000001E: 57                 push        edi
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        _Memory_VirtualFreeRelease
+  00000025: 8B 73 10           mov         esi,dword ptr [ebx+10h]
+  00000028: 29 7B 18           sub         dword ptr [ebx+18h],edi
+  0000002B: 83 C4 10           add         esp,10h
+  0000002E: C7 03 00 00 00 00  mov         dword ptr [ebx],0
+  00000034: C7 43 04 00 00 00  mov         dword ptr [ebx+4],0
+            00
+  0000003B: C7 43 08 00 00 00  mov         dword ptr [ebx+8],0
+            00
+  00000042: 85 F6              test        esi,esi
+  00000044: 74 28              je          0000006E
+  00000046: 8B 3E              mov         edi,dword ptr [esi]
+  00000048: 68 00 10 00 00     push        1000h
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _Memory_VirtualFreeTracked
+  00000053: 68 00 10 00 00     push        1000h
+  00000058: 56                 push        esi
+  00000059: E8 00 00 00 00     call        _Memory_VirtualFreeRelease
+  0000005E: 81 43 18 00 F0 FF  add         dword ptr [ebx+18h],0FFFFF000h
+            FF
+  00000065: 83 C4 10           add         esp,10h
+  00000068: 8B F7              mov         esi,edi
+  0000006A: 85 FF              test        edi,edi
+  0000006C: 75 D8              jne         00000046
+  0000006E: 5F                 pop         edi
+  0000006F: 5E                 pop         esi
+  00000070: C7 43 14 00 00 00  mov         dword ptr [ebx+14h],0
+            00
+  00000077: C7 43 10 00 00 00  mov         dword ptr [ebx+10h],0
+            00
+  0000007E: 5B                 pop         ebx
+  0000007F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          80 .text

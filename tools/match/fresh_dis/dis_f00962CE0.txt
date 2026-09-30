@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00962CE0.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_parseForLoopVarList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000F: 8B 5F 1C           mov         ebx,dword ptr [edi+1Ch]
+  00000012: 53                 push        ebx
+  00000013: E8 00 00 00 00     call        _LuaCodeGen_forceToReg
+  00000018: 57                 push        edi
+  00000019: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  0000001E: 83 C4 0C           add         esp,0Ch
+  00000021: 81 7F 0C 20 01 00  cmp         dword ptr [edi+0Ch],120h
+            00
+  00000028: 74 0E              je          00000038
+  0000002A: 68 20 01 00 00     push        120h
+  0000002F: 57                 push        edi
+  00000030: E8 00 00 00 00     call        _LuaParser_raiseExpectedError
+  00000035: 83 C4 08           add         esp,8
+  00000038: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  0000003B: 57                 push        edi
+  0000003C: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  00000041: 56                 push        esi
+  00000042: FF 77 1C           push        dword ptr [edi+1Ch]
+  00000045: E8 00 00 00 00     call        _LuaCodeGen_makeStringConstant
+  0000004A: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000004D: 8D 45 F0           lea         eax,[ebp-10h]
+  00000050: 50                 push        eax
+  00000051: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000054: C7 45 F8 FF FF FF  mov         dword ptr [ebp-8],0FFFFFFFFh
+            FF
+  0000005B: 53                 push        ebx
+  0000005C: C7 45 FC FF FF FF  mov         dword ptr [ebp-4],0FFFFFFFFh
+            FF
+  00000063: C7 45 F0 04 00 00  mov         dword ptr [ebp-10h],4
+            00
+  0000006A: E8 00 00 00 00     call        _LuaCodeGen_makeRKValue
+  0000006F: 83 C4 18           add         esp,18h
+  00000072: 5F                 pop         edi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          79 .text

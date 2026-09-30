@@ -1,0 +1,122 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00617510.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PApplication_D3D11Init@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000000C: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000000F: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00000012: 85 C9              test        ecx,ecx
+  00000014: 0F 84 F5 00 00 00  je          0000010F
+  0000001A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000001D: 89 46 04           mov         dword ptr [esi+4],eax
+  00000020: 51                 push        ecx
+  00000021: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000024: 50                 push        eax
+  00000025: E8 00 00 00 00     call        _Phyre_RBTree_NodePoolAlloc
+  0000002A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 85 C0              test        eax,eax
+  00000032: 0F 84 C4 00 00 00  je          000000FC
+  00000038: 53                 push        ebx
+  00000039: 33 C9              xor         ecx,ecx
+  0000003B: 57                 push        edi
+  0000003C: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000003F: 8B F8              mov         edi,eax
+  00000041: 33 DB              xor         ebx,ebx
+  00000043: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000046: 8B 1C 03           mov         ebx,dword ptr [ebx+eax]
+  00000049: 85 DB              test        ebx,ebx
+  0000004B: 74 6A              je          000000B7
+  0000004D: 80 3B 23           cmp         byte ptr [ebx],23h
+  00000050: 74 65              je          000000B7
+  00000052: 6A 23              push        23h
+  00000054: 53                 push        ebx
+  00000055: E8 00 00 00 00     call        _strchr
+  0000005A: 8B F0              mov         esi,eax
+  0000005C: 83 C4 08           add         esp,8
+  0000005F: 85 F6              test        esi,esi
+  00000061: 74 04              je          00000067
+  00000063: 2B F3              sub         esi,ebx
+  00000065: EB 12              jmp         00000079
+  00000067: 8B F3              mov         esi,ebx
+  00000069: 8D 4E 01           lea         ecx,[esi+1]
+  0000006C: 8D 64 24 00        lea         esp,[esp]
+  00000070: 8A 06              mov         al,byte ptr [esi]
+  00000072: 46                 inc         esi
+  00000073: 84 C0              test        al,al
+  00000075: 75 F9              jne         00000070
+  00000077: 2B F1              sub         esi,ecx
+  00000079: 56                 push        esi
+  0000007A: 89 3F              mov         dword ptr [edi],edi
+  0000007C: 68 B5 07 00 00     push        7B5h
+  00000081: 53                 push        ebx
+  00000082: 89 7F 04           mov         dword ptr [edi+4],edi
+  00000085: 89 7F 08           mov         dword ptr [edi+8],edi
+  00000088: E8 00 00 00 00     call        _Engine_String_HashPChar
+  0000008D: 89 77 10           mov         dword ptr [edi+10h],esi
+  00000090: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000093: 83 C6 0C           add         esi,0Ch
+  00000096: 57                 push        edi
+  00000097: 56                 push        esi
+  00000098: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  0000009B: 89 5F 14           mov         dword ptr [edi+14h],ebx
+  0000009E: E8 00 00 00 00     call        _Phyre_StringHash_RBTreeInsert
+  000000A3: 83 C4 14           add         esp,14h
+  000000A6: 85 C0              test        eax,eax
+  000000A8: 75 0A              jne         000000B4
+  000000AA: 57                 push        edi
+  000000AB: 56                 push        esi
+  000000AC: E8 00 00 00 00     call        _Phyre_Tree_RemoveNode_COMDAT
+  000000B1: 83 C4 08           add         esp,8
+  000000B4: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000B7: 8D 41 01           lea         eax,[ecx+1]
+  000000BA: 8D 1C 8D 04 00 00  lea         ebx,[ecx*4+4]
+            00
+  000000C1: 83 C7 18           add         edi,18h
+  000000C4: 8B C8              mov         ecx,eax
+  000000C6: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  000000C9: 3B 45 0C           cmp         eax,dword ptr [ebp+0Ch]
+  000000CC: 0F 82 71 FF FF FF  jb          00000043
+  000000D2: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  000000D5: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000D8: 8B 06              mov         eax,dword ptr [esi]
+  000000DA: 50                 push        eax
+  000000DB: 56                 push        esi
+  000000DC: 89 4E 08           mov         dword ptr [esi+8],ecx
+  000000DF: E8 00 00 00 00     call        _Phyre_StringHash_InsertInTreeRecursive
+  000000E4: 8D 46 0C           lea         eax,[esi+0Ch]
+  000000E7: 50                 push        eax
+  000000E8: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  000000EF: E8 00 00 00 00     call        _PTree_Node_InitSelfRef
+  000000F4: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000F7: 83 C4 0C           add         esp,0Ch
+  000000FA: 5F                 pop         edi
+  000000FB: 5B                 pop         ebx
+  000000FC: 83 7D F4 00        cmp         dword ptr [ebp-0Ch],0
+  00000100: 7C 0D              jl          0000010F
+  00000102: 85 C0              test        eax,eax
+  00000104: 74 09              je          0000010F
+  00000106: 50                 push        eax
+  00000107: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000010C: 83 C4 04           add         esp,4
+  0000010F: 5E                 pop         esi
+  00000110: 8B E5              mov         esp,ebp
+  00000112: 5D                 pop         ebp
+  00000113: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         116 .text

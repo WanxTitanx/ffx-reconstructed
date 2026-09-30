@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00989700.obj
+
+File Type: COFF OBJECT
+
+_Phyre_BinTree_RecycleNode:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000B: 83 7F 28 00        cmp         dword ptr [edi+28h],0
+  0000000F: 74 15              je          00000026
+  00000011: FF 77 24           push        dword ptr [edi+24h]
+  00000014: 56                 push        esi
+  00000015: E8 00 00 00 00     call        _Phyre_BinTree_RecycleNode
+  0000001A: FF 77 28           push        dword ptr [edi+28h]
+  0000001D: 56                 push        esi
+  0000001E: E8 00 00 00 00     call        _Phyre_BinTree_RecycleNode
+  00000023: 83 C4 10           add         esp,10h
+  00000026: 3B 3E              cmp         edi,dword ptr [esi]
+  00000028: 75 06              jne         00000030
+  0000002A: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000030: FF 76 04           push        dword ptr [esi+4]
+  00000033: E8 00 00 00 00     call        _Phyre_Ragdoll_SetSolverIterations
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000003E: 5F                 pop         edi
+  0000003F: 5E                 pop         esi
+  00000040: 5D                 pop         ebp
+  00000041: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          42 .text

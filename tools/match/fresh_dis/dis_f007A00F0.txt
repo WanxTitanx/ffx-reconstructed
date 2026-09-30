@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A00F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_QueueOverdriveSet:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 75 04              jne         0000000E
+  0000000A: 33 C0              xor         eax,eax
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+  0000000E: 0F BF 45 10        movsx       eax,word ptr [ebp+10h]
+  00000012: 50                 push        eax
+  00000013: 81 C9 00 00 00 80  or          ecx,80000000h
+  00000019: 51                 push        ecx
+  0000001A: E8 00 00 00 00     call        _FFX_Btl_Sound_SetNodeFadeValue
+  0000001F: 83 C4 08           add         esp,8
+  00000022: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .text

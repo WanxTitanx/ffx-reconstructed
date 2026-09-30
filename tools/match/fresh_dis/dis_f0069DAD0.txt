@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069DAD0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Map_RangeInsert@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B DA              mov         ebx,edx
+  00000009: 57                 push        edi
+  0000000A: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000000D: 8B FB              mov         edi,ebx
+  0000000F: 3B 5D 08           cmp         ebx,dword ptr [ebp+8]
+  00000012: 74 71              je          00000085
+  00000014: 56                 push        esi
+  00000015: 8B 31              mov         esi,dword ptr [ecx]
+  00000017: 8D 47 10           lea         eax,[edi+10h]
+  0000001A: 50                 push        eax
+  0000001B: 51                 push        ecx
+  0000001C: E8 00 00 00 00     call        _Phyre_MapNode_AllocQuad
+  00000021: 50                 push        eax
+  00000022: 83 C0 10           add         eax,10h
+  00000025: 50                 push        eax
+  00000026: 56                 push        esi
+  00000027: 8D 45 F8           lea         eax,[ebp-8]
+  0000002A: 50                 push        eax
+  0000002B: FF 75 FC           push        dword ptr [ebp-4]
+  0000002E: E8 00 00 00 00     call        _Phyre_Map_Insert_CheckDuplicate
+  00000033: 83 C4 1C           add         esp,1Ch
+  00000036: 80 7B 0D 00        cmp         byte ptr [ebx+0Dh],0
+  0000003A: 8B FB              mov         edi,ebx
+  0000003C: 75 3E              jne         0000007C
+  0000003E: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  00000041: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000045: 74 1D              je          00000064
+  00000047: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000004A: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000004E: 75 10              jne         00000060
+  00000050: 3B 78 08           cmp         edi,dword ptr [eax+8]
+  00000053: 75 0B              jne         00000060
+  00000055: 8B F8              mov         edi,eax
+  00000057: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000005A: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000005E: 74 F0              je          00000050
+  00000060: 8B F8              mov         edi,eax
+  00000062: EB 16              jmp         0000007A
+  00000064: 8B F8              mov         edi,eax
+  00000066: 8B 00              mov         eax,dword ptr [eax]
+  00000068: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000006C: 75 0C              jne         0000007A
+  0000006E: 8B FF              mov         edi,edi
+  00000070: 8B F8              mov         edi,eax
+  00000072: 8B 00              mov         eax,dword ptr [eax]
+  00000074: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000078: 74 F6              je          00000070
+  0000007A: 8B DF              mov         ebx,edi
+  0000007C: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000007F: 3B 7D 08           cmp         edi,dword ptr [ebp+8]
+  00000082: 75 91              jne         00000015
+  00000084: 5E                 pop         esi
+  00000085: 8B C7              mov         eax,edi
+  00000087: 5F                 pop         edi
+  00000088: 5B                 pop         ebx
+  00000089: 8B E5              mov         esp,ebp
+  0000008B: 5D                 pop         ebp
+  0000008C: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8F .text

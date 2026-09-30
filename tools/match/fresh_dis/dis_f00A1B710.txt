@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A1B710.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PostProcessing_DepthOfFieldShaderInitFull@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000007: 85 C0              test        eax,eax
+  00000009: 74 57              je          00000062
+  0000000B: 83 38 00           cmp         dword ptr [eax],0
+  0000000E: 74 52              je          00000062
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _Phyre_PostProcessing_GetShaderPointer
+  00000016: 8B F8              mov         edi,eax
+  00000018: 57                 push        edi
+  00000019: FF 35 00 00 00 00  push        dword ptr [_g_CDSlot_PCluster_1943DA0]
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        _Phyre_PostProcessing_DepthOfFieldShaderSetup
+  00000025: 83 C4 10           add         esp,10h
+  00000028: 85 C0              test        eax,eax
+  0000002A: 75 3E              jne         0000006A
+  0000002C: 68 00 00 00 00     push        offset ??_C@_0BD@GPHGMNDK@FocusPlaneDistance?$AA@
+  00000031: 57                 push        edi
+  00000032: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  00000037: 68 00 00 00 00     push        offset ??_C@_0L@LNEIBPBH@FocusRange?$AA@
+  0000003C: 57                 push        edi
+  0000003D: 89 86 B4 0F 00 00  mov         dword ptr [esi+0FB4h],eax
+  00000043: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  00000048: 68 00 00 00 00     push        offset ??_C@_0P@KGNENCGD@FocusBlurRange?$AA@
+  0000004D: 57                 push        edi
+  0000004E: 89 86 B8 0F 00 00  mov         dword ptr [esi+0FB8h],eax
+  00000054: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  00000059: 83 C4 18           add         esp,18h
+  0000005C: 89 86 BC 0F 00 00  mov         dword ptr [esi+0FBCh],eax
+  00000062: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000065: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000068: 33 C0              xor         eax,eax
+  0000006A: 5F                 pop         edi
+  0000006B: 5E                 pop         esi
+  0000006C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2D .rdata
+          6D .text

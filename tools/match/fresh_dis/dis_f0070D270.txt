@@ -1,0 +1,124 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070D270.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodSfx_PlayBattleStreaming@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 08 01 00 00  sub         esp,108h
+  00000009: 56                 push        esi
+  0000000A: 8B F1              mov         esi,ecx
+  0000000C: 57                 push        edi
+  0000000D: 80 3E 00           cmp         byte ptr [esi],0
+  00000010: 8B FA              mov         edi,edx
+  00000012: 0F 85 25 01 00 00  jne         0000013D
+  00000018: 83 BE C4 00 00 00  cmp         dword ptr [esi+0C4h],0
+            00
+  0000001F: 75 60              jne         00000081
+  00000021: 68 00 01 00 00     push        100h
+  00000026: 8D 85 F8 FE FF FF  lea         eax,[ebp-108h]
+  0000002C: 6A 00              push        0
+  0000002E: 50                 push        eax
+  0000002F: E8 00 00 00 00     call        _memset
+  00000034: 83 C4 0C           add         esp,0Ch
+  00000037: 80 7E 02 00        cmp         byte ptr [esi+2],0
+  0000003B: 8D 85 F8 FE FF FF  lea         eax,[ebp-108h]
+  00000041: 74 07              je          0000004A
+  00000043: 68 00 00 00 00     push        offset ??_C@_0BA@DAABIEIG@SFX?1US?19999?4fev?$AA@
+  00000048: EB 05              jmp         0000004F
+  0000004A: 68 00 00 00 00     push        offset ??_C@_0BA@NHGPJAAK@SFX?1JP?19999?4fev?$AA@
+  0000004F: 50                 push        eax
+  00000050: E8 00 00 00 00     call        _FFX_FmodSfx_BuildSoundPath
+  00000055: 83 C4 08           add         esp,8
+  00000058: 6A 0C              push        0Ch
+  0000005A: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  0000005F: 83 C4 04           add         esp,4
+  00000062: 85 C0              test        eax,eax
+  00000064: 74 13              je          00000079
+  00000066: 8D 8D F8 FE FF FF  lea         ecx,[ebp-108h]
+  0000006C: 51                 push        ecx
+  0000006D: 57                 push        edi
+  0000006E: 50                 push        eax
+  0000006F: E8 00 00 00 00     call        _FFX_FmodSfx_LoadFevWithSidecars
+  00000074: 83 C4 0C           add         esp,0Ch
+  00000077: EB 02              jmp         0000007B
+  00000079: 33 C0              xor         eax,eax
+  0000007B: 89 86 C4 00 00 00  mov         dword ptr [esi+0C4h],eax
+  00000081: 8B 86 C8 00 00 00  mov         eax,dword ptr [esi+0C8h]
+  00000087: 85 C0              test        eax,eax
+  00000089: 74 2E              je          000000B9
+  0000008B: 6A 00              push        0
+  0000008D: 50                 push        eax
+  0000008E: E8 00 00 00 00     call        _FFX_FmodSfx_StopSfxEvents
+  00000093: 8B BE C8 00 00 00  mov         edi,dword ptr [esi+0C8h]
+  00000099: 83 C4 08           add         esp,8
+  0000009C: 85 FF              test        edi,edi
+  0000009E: 74 0F              je          000000AF
+  000000A0: 57                 push        edi
+  000000A1: E8 00 00 00 00     call        _FFX_FmodSfx_FreeEventInstanceData
+  000000A6: 57                 push        edi
+  000000A7: E8 00 00 00 00     call        _FFX_Heap_Free
+  000000AC: 83 C4 08           add         esp,8
+  000000AF: C7 86 C8 00 00 00  mov         dword ptr [esi+0C8h],0
+            00 00 00 00
+  000000B9: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  000000BC: 8D 45 F8           lea         eax,[ebp-8]
+  000000BF: 50                 push        eax
+  000000C0: 57                 push        edi
+  000000C1: FF B6 C4 00 00 00  push        dword ptr [esi+0C4h]
+  000000C7: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  000000CE: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  000000D5: E8 00 00 00 00     call        _FFX_FmodSfx_ResolveSequence
+  000000DA: 83 C4 0C           add         esp,0Ch
+  000000DD: 85 C0              test        eax,eax
+  000000DF: 74 49              je          0000012A
+  000000E1: 6A 28              push        28h
+  000000E3: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  000000E8: 83 C4 04           add         esp,4
+  000000EB: 85 C0              test        eax,eax
+  000000ED: 74 1B              je          0000010A
+  000000EF: D9 86 D0 00 00 00  fld         dword ptr [esi+0D0h]
+  000000F5: 83 EC 08           sub         esp,8
+  000000F8: 8D 4D F8           lea         ecx,[ebp-8]
+  000000FB: DD 1C 24           fstp        qword ptr [esp]
+  000000FE: 51                 push        ecx
+  000000FF: 50                 push        eax
+  00000100: E8 00 00 00 00     call        _FFX_FmodSfx_CopyEventInstanceData
+  00000105: 83 C4 10           add         esp,10h
+  00000108: EB 02              jmp         0000010C
+  0000010A: 33 C0              xor         eax,eax
+  0000010C: FF 75 10           push        dword ptr [ebp+10h]
+  0000010F: 89 86 C8 00 00 00  mov         dword ptr [esi+0C8h],eax
+  00000115: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000118: 56                 push        esi
+  00000119: 50                 push        eax
+  0000011A: E8 00 00 00 00     call        _FFX_FmodSfx_StartEventsFromSequence
+  0000011F: 83 C4 10           add         esp,10h
+  00000122: 5F                 pop         edi
+  00000123: 5E                 pop         esi
+  00000124: 8B E5              mov         esp,ebp
+  00000126: 5D                 pop         ebp
+  00000127: C2 0C 00           ret         0Ch
+  0000012A: 57                 push        edi
+  0000012B: 68 00 00 00 00     push        offset ??_C@_0FF@KBHJBAKF@FmodSfx_playBattleStreaming?3?5can@
+  00000130: 68 00 00 00 00     push        offset ??_C@_0N@GKCNCIEK@?$FLFmod?5Error?$FN?$AA@
+  00000135: E8 00 00 00 00     call        _FFX_FmodSfx_LogPrintf
+  0000013A: 83 C4 0C           add         esp,0Ch
+  0000013D: 5F                 pop         edi
+  0000013E: 5E                 pop         esi
+  0000013F: 8B E5              mov         esp,ebp
+  00000141: 5D                 pop         ebp
+  00000142: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          82 .rdata
+         145 .text

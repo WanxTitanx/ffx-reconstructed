@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008935D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_BtlSceneStateInit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 6A 01              push        1
+  00000006: 6A 00              push        0
+  00000008: 6A 07              push        7
+  0000000A: E8 00 00 00 00     call        _FFX_MenuText_SetParamKindPair
+  0000000F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000012: 56                 push        esi
+  00000013: 6A 00              push        0
+  00000015: 6A 07              push        7
+  00000017: E8 00 00 00 00     call        _BtlUI_SetSceneField
+  0000001C: 83 C4 18           add         esp,18h
+  0000001F: 85 F6              test        esi,esi
+  00000021: 78 04              js          00000027
+  00000023: 8B C6              mov         eax,esi
+  00000025: EB 0F              jmp         00000036
+  00000027: 6A 00              push        0
+  00000029: 68 1A 30 00 00     push        301Ah
+  0000002E: E8 00 00 00 00     call        _FFX_BtlUI_GetStringById
+  00000033: 83 C4 08           add         esp,8
+  00000036: 85 F6              test        esi,esi
+  00000038: 74 0B              je          00000045
+  0000003A: 7E 18              jle         00000054
+  0000003C: 6A 00              push        0
+  0000003E: 68 18 30 00 00     push        3018h
+  00000043: EB 07              jmp         0000004C
+  00000045: 6A 00              push        0
+  00000047: 68 19 30 00 00     push        3019h
+  0000004C: E8 00 00 00 00     call        _FFX_BtlUI_GetStringById
+  00000051: 83 C4 08           add         esp,8
+  00000054: D9 EE              fldz
+  00000056: 50                 push        eax
+  00000057: 83 EC 08           sub         esp,8
+  0000005A: DD 1C 24           fstp        qword ptr [esp]
+  0000005D: E8 00 00 00 00     call        _FFX_Btl_AnimatedBgRefCount
+  00000062: 83 C4 0C           add         esp,0Ch
+  00000065: B8 07 00 00 00     mov         eax,7
+  0000006A: 5E                 pop         esi
+  0000006B: 5D                 pop         ebp
+  0000006C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          6D .text

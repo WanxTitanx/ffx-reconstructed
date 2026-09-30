@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0049FB60.obj
+
+File Type: COFF OBJECT
+
+@PConstantBuffer_Assign@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 32              mov         esi,dword ptr [edx]
+  0000000A: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000010: 8B C1              mov         eax,ecx
+  00000012: 57                 push        edi
+  00000013: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000016: 83 FE 01           cmp         esi,1
+  00000019: 77 12              ja          0000002D
+  0000001B: 85 F6              test        esi,esi
+  0000001D: 74 05              je          00000024
+  0000001F: 8D 4A 04           lea         ecx,[edx+4]
+  00000022: EB 0C              jmp         00000030
+  00000024: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002B: EB 06              jmp         00000033
+  0000002D: 8B 4A 04           mov         ecx,dword ptr [edx+4]
+  00000030: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000033: 8D 58 04           lea         ebx,[eax+4]
+  00000036: 8B FB              mov         edi,ebx
+  00000038: 83 FE 01           cmp         esi,1
+  0000003B: 76 12              jbe         0000004F
+  0000003D: 8B C6              mov         eax,esi
+  0000003F: C1 E0 04           shl         eax,4
+  00000042: 6A 04              push        4
+  00000044: 50                 push        eax
+  00000045: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000004A: 83 C4 08           add         esp,8
+  0000004D: 8B F8              mov         edi,eax
+  0000004F: 85 FF              test        edi,edi
+  00000051: 74 0D              je          00000060
+  00000053: 56                 push        esi
+  00000054: FF 75 FC           push        dword ptr [ebp-4]
+  00000057: 57                 push        edi
+  00000058: E8 00 00 00 00     call        _PLight_CanSetFieldC
+  0000005D: 83 C4 0C           add         esp,0Ch
+  00000060: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000063: 8B D3              mov         edx,ebx
+  00000065: 8B 08              mov         ecx,dword ptr [eax]
+  00000067: 8B C1              mov         eax,ecx
+  00000069: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000006E: 83 F8 01           cmp         eax,1
+  00000071: 77 08              ja          0000007B
+  00000073: F7 D8              neg         eax
+  00000075: 1B C0              sbb         eax,eax
+  00000077: 23 C3              and         eax,ebx
+  00000079: EB 02              jmp         0000007D
+  0000007B: 8B 03              mov         eax,dword ptr [ebx]
+  0000007D: 3B C7              cmp         eax,edi
+  0000007F: 74 15              je          00000096
+  00000081: 3B C2              cmp         eax,edx
+  00000083: 74 11              je          00000096
+  00000085: 85 C9              test        ecx,ecx
+  00000087: 78 0D              js          00000096
+  00000089: 85 C0              test        eax,eax
+  0000008B: 74 09              je          00000096
+  0000008D: 50                 push        eax
+  0000008E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000093: 83 C4 04           add         esp,4
+  00000096: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000099: 89 30              mov         dword ptr [eax],esi
+  0000009B: 3B FB              cmp         edi,ebx
+  0000009D: 74 02              je          000000A1
+  0000009F: 89 3B              mov         dword ptr [ebx],edi
+  000000A1: 5F                 pop         edi
+  000000A2: 5E                 pop         esi
+  000000A3: 5B                 pop         ebx
+  000000A4: 8B E5              mov         esp,ebp
+  000000A6: 5D                 pop         ebp
+  000000A7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A8 .text

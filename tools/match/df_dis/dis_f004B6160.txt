@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004B6160.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_4B6160@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 83 7E 10 00        cmp         dword ptr [esi+10h],0
+  0000000A: 7C 10              jl          0000001C
+  0000000C: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 09              je          0000001C
+  00000013: 50                 push        eax
+  00000014: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000019: 83 C4 04           add         esp,4
+  0000001C: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000023: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000002A: F6 C3 01           test        bl,1
+  0000002D: 74 09              je          00000038
+  0000002F: 56                 push        esi
+  00000030: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000035: 83 C4 04           add         esp,4
+  00000038: 8B C6              mov         eax,esi
+  0000003A: 5E                 pop         esi
+  0000003B: 5B                 pop         ebx
+  0000003C: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3D .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0076DBD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mscd_GetLocaleBufferSize16:
+  00000000: E8 00 00 00 00     call        _FFX_ReturnZero
+  00000005: 85 C0              test        eax,eax
+  00000007: 75 19              jne         $LN2
+  00000009: E8 00 00 00 00     call        _FFX_Locale_GetLanguageId_Thunk
+  0000000E: 48                 dec         eax
+  0000000F: 83 F8 11           cmp         eax,11h
+  00000012: 77 0E              ja          $LN2
+  00000014: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN13[eax]
+            00
+  0000001B: FF 24 85 00 00 00  jmp         dword ptr $LN15[eax*4]
+            00
+$LN2:
+  00000022: B8 10 00 00 00     mov         eax,10h
+  00000027: C3                 ret
+$LN15:
+  00000028: 00 00              add         byte ptr [eax],al
+  0000002A: 00 00              add         byte ptr [eax],al
+  0000002C: 00 00              add         byte ptr [eax],al
+  0000002E: 00 00              add         byte ptr [eax],al
+$LN13:
+  00000030: 00 00              add         byte ptr [eax],al
+  00000032: 00 00              add         byte ptr [eax],al
+  00000034: 00 01              add         byte ptr [ecx],al
+  00000036: 01 01              add         dword ptr [ecx],eax
+  00000038: 01 01              add         dword ptr [ecx],eax
+  0000003A: 01 01              add         dword ptr [ecx],eax
+  0000003C: 01 01              add         dword ptr [ecx],eax
+  0000003E: 01 01              add         dword ptr [ecx],eax
+  00000040: 01 00              add         dword ptr [eax],eax
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          42 .text

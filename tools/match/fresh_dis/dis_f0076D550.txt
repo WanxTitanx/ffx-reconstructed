@@ -1,0 +1,93 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0076D550.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mscd_DecompressBlock:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 58 04           mov         ebx,dword ptr [eax+4]
+  0000000A: 8B 48 2C           mov         ecx,dword ptr [eax+2Ch]
+  0000000D: 0F B6 43 03        movzx       eax,byte ptr [ebx+3]
+  00000011: 56                 push        esi
+  00000012: 57                 push        edi
+  00000013: 0F B6 7B 04        movzx       edi,byte ptr [ebx+4]
+  00000017: C1 E7 08           shl         edi,8
+  0000001A: 03 F8              add         edi,eax
+  0000001C: 0F B6 43 02        movzx       eax,byte ptr [ebx+2]
+  00000020: C1 E7 08           shl         edi,8
+  00000023: 03 F8              add         edi,eax
+  00000025: 0F B6 43 01        movzx       eax,byte ptr [ebx+1]
+  00000029: C1 E7 08           shl         edi,8
+  0000002C: 03 F8              add         edi,eax
+  0000002E: 81 F9 00 18 00 00  cmp         ecx,1800h
+  00000034: 76 5E              jbe         00000094
+  00000036: 8D B1 00 E8 FF FF  lea         esi,[ecx-1800h]
+  0000003C: 68 00 18 00 00     push        1800h
+  00000041: 8D 04 1E           lea         eax,[esi+ebx]
+  00000044: 50                 push        eax
+  00000045: FF 75 08           push        dword ptr [ebp+8]
+  00000048: E8 00 00 00 00     call        _memcpy
+  0000004D: 8D 4B FF           lea         ecx,[ebx-1]
+  00000050: 83 C4 0C           add         esp,0Ch
+  00000053: 03 CF              add         ecx,edi
+  00000055: 85 F6              test        esi,esi
+  00000057: 7E 13              jle         0000006C
+  00000059: 4E                 dec         esi
+  0000005A: 03 F3              add         esi,ebx
+  0000005C: 8B D6              mov         edx,esi
+  0000005E: 2B D3              sub         edx,ebx
+  00000060: 42                 inc         edx
+  00000061: 2B F1              sub         esi,ecx
+  00000063: 8A 04 0E           mov         al,byte ptr [esi+ecx]
+  00000066: 88 01              mov         byte ptr [ecx],al
+  00000068: 49                 dec         ecx
+  00000069: 4A                 dec         edx
+  0000006A: 75 F7              jne         00000063
+  0000006C: 8A 41 01           mov         al,byte ptr [ecx+1]
+  0000006F: 3C 01              cmp         al,1
+  00000071: 75 09              jne         0000007C
+  00000073: 5F                 pop         edi
+  00000074: 5E                 pop         esi
+  00000075: 5B                 pop         ebx
+  00000076: 5D                 pop         ebp
+  00000077: E9 00 00 00 00     jmp         _FFX_Virtuos_Stub_DecompressMethod1Dec
+  0000007C: 0F B6 C8           movzx       ecx,al
+  0000007F: 3C 02              cmp         al,2
+  00000081: 75 09              jne         0000008C
+  00000083: 5F                 pop         edi
+  00000084: 5E                 pop         esi
+  00000085: 5B                 pop         ebx
+  00000086: 5D                 pop         ebp
+  00000087: E9 00 00 00 00     jmp         _FFX_Virtuos_Stub_DecompressMethod1Dec2
+  0000008C: 5F                 pop         edi
+  0000008D: 5E                 pop         esi
+  0000008E: 8D 41 FE           lea         eax,[ecx-2]
+  00000091: 5B                 pop         ebx
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+  00000094: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000097: 51                 push        ecx
+  00000098: 53                 push        ebx
+  00000099: 56                 push        esi
+  0000009A: E8 00 00 00 00     call        _memcpy
+  0000009F: 56                 push        esi
+  000000A0: 53                 push        ebx
+  000000A1: E8 00 00 00 00     call        _FFX_Mscd_DispatchDecompressMethod
+  000000A6: 83 C4 14           add         esp,14h
+  000000A9: 5F                 pop         edi
+  000000AA: 5E                 pop         esi
+  000000AB: 5B                 pop         ebx
+  000000AC: 5D                 pop         ebp
+  000000AD: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AE .text

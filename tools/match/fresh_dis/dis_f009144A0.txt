@@ -1,0 +1,139 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009144A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Render_SchedAllocEventD:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 3D 00 00 00 00  cmp         dword ptr [_g_RenderUnkVar_193BB08],0
+            00
+  0000000B: 74 07              je          00000014
+  0000000D: E8 00 00 00 00     call        _FFX_GetRenderTargetWidth
+  00000012: EB 05              jmp         00000019
+  00000014: E8 00 00 00 00     call        _FFX_GetRenderBufferStride
+  00000019: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001C: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000001F: 57                 push        edi
+  00000020: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000023: 8D 88 31 75 02 00  lea         ecx,[eax+27531h]
+  00000029: 33 D2              xor         edx,edx
+  0000002B: 8D 0C 8F           lea         ecx,[edi+ecx*4]
+  0000002E: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000031: 8B 09              mov         ecx,dword ptr [ecx]
+  00000033: 85 C9              test        ecx,ecx
+  00000035: 75 10              jne         00000047
+  00000037: 39 94 87 C4 D5 09  cmp         dword ptr [edi+eax*4+9D5C4h],edx
+            00
+  0000003E: 0F 84 36 01 00 00  je          0000017A
+  00000044: 8D 51 01           lea         edx,[ecx+1]
+  00000047: 53                 push        ebx
+  00000048: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000004B: 56                 push        esi
+  0000004C: 3B 9F 88 87 06 00  cmp         ebx,dword ptr [edi+68788h]
+  00000052: 0F 83 20 01 00 00  jae         00000178
+  00000058: 8D 87 C0 CA 09 00  lea         eax,[edi+9CAC0h]
+  0000005E: 33 F6              xor         esi,esi
+  00000060: F6 00 01           test        byte ptr [eax],1
+  00000063: 74 12              je          00000077
+  00000065: 46                 inc         esi
+  00000066: 83 FE 40           cmp         esi,40h
+  00000069: 0F 8D 09 01 00 00  jge         00000178
+  0000006F: 83 C0 28           add         eax,28h
+  00000072: F6 00 01           test        byte ptr [eax],1
+  00000075: 75 EE              jne         00000065
+  00000077: 85 D2              test        edx,edx
+  00000079: 74 77              je          000000F2
+  0000007B: 6A 05              push        5
+  0000007D: 53                 push        ebx
+  0000007E: 57                 push        edi
+  0000007F: E8 00 00 00 00     call        _FFX_Render_SchedDeallocById
+  00000084: 8D 04 B6           lea         eax,[esi+esi*4]
+  00000087: 83 C4 0C           add         esp,0Ch
+  0000008A: 8D 0C C7           lea         ecx,[edi+eax*8]
+  0000008D: B8 01 00 00 00     mov         eax,1
+  00000092: 66 89 81 C0 CA 09  mov         word ptr [ecx+9CAC0h],ax
+            00
+  00000099: 66 8B 45 14        mov         ax,word ptr [ebp+14h]
+  0000009D: 66 89 81 C2 CA 09  mov         word ptr [ecx+9CAC2h],ax
+            00
+  000000A4: B8 05 00 00 00     mov         eax,5
+  000000A9: 66 89 81 C4 CA 09  mov         word ptr [ecx+9CAC4h],ax
+            00
+  000000B0: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000B3: 66 89 81 C8 CA 09  mov         word ptr [ecx+9CAC8h],ax
+            00
+  000000BA: 33 C0              xor         eax,eax
+  000000BC: 66 89 81 CA CA 09  mov         word ptr [ecx+9CACAh],ax
+            00
+  000000C3: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000C6: 5E                 pop         esi
+  000000C7: 66 89 99 C6 CA 09  mov         word ptr [ecx+9CAC6h],bx
+            00
+  000000CE: 89 81 D4 CA 09 00  mov         dword ptr [ecx+9CAD4h],eax
+  000000D4: 89 81 D8 CA 09 00  mov         dword ptr [ecx+9CAD8h],eax
+  000000DA: C7 81 E4 CA 09 00  mov         dword ptr [ecx+9CAE4h],0
+            00 00 00 00
+  000000E4: FF 87 BC CA 09 00  inc         dword ptr [edi+9CABCh]
+  000000EA: 5B                 pop         ebx
+  000000EB: 33 C0              xor         eax,eax
+  000000ED: 5F                 pop         edi
+  000000EE: 8B E5              mov         esp,ebp
+  000000F0: 5D                 pop         ebp
+  000000F1: C3                 ret
+  000000F2: FF 71 08           push        dword ptr [ecx+8]
+  000000F5: 53                 push        ebx
+  000000F6: 57                 push        edi
+  000000F7: E8 00 00 00 00     call        _FFX_Render_SchedDeallocById
+  000000FC: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000000FF: 83 C4 0C           add         esp,0Ch
+  00000102: 8B 02              mov         eax,dword ptr [edx]
+  00000104: 83 78 08 02        cmp         dword ptr [eax+8],2
+  00000108: 75 0D              jne         00000117
+  0000010A: 6A 01              push        1
+  0000010C: E8 00 00 00 00     call        _FFX_System_SetSkipFieldDraw
+  00000111: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000114: 83 C4 04           add         esp,4
+  00000117: 8D 04 B6           lea         eax,[esi+esi*4]
+  0000011A: 8D 0C C7           lea         ecx,[edi+eax*8]
+  0000011D: B8 01 00 00 00     mov         eax,1
+  00000122: 66 89 81 C0 CA 09  mov         word ptr [ecx+9CAC0h],ax
+            00
+  00000129: 66 8B 45 14        mov         ax,word ptr [ebp+14h]
+  0000012D: 66 89 81 C2 CA 09  mov         word ptr [ecx+9CAC2h],ax
+            00
+  00000134: 8B 02              mov         eax,dword ptr [edx]
+  00000136: 0F B7 40 08        movzx       eax,word ptr [eax+8]
+  0000013A: 66 89 81 C4 CA 09  mov         word ptr [ecx+9CAC4h],ax
+            00
+  00000141: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000144: 66 89 81 C8 CA 09  mov         word ptr [ecx+9CAC8h],ax
+            00
+  0000014B: 33 C0              xor         eax,eax
+  0000014D: 66 89 81 CA CA 09  mov         word ptr [ecx+9CACAh],ax
+            00
+  00000154: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000157: 66 89 99 C6 CA 09  mov         word ptr [ecx+9CAC6h],bx
+            00
+  0000015E: 89 81 D4 CA 09 00  mov         dword ptr [ecx+9CAD4h],eax
+  00000164: 89 81 D8 CA 09 00  mov         dword ptr [ecx+9CAD8h],eax
+  0000016A: 8B 02              mov         eax,dword ptr [edx]
+  0000016C: 89 81 E4 CA 09 00  mov         dword ptr [ecx+9CAE4h],eax
+  00000172: FF 87 BC CA 09 00  inc         dword ptr [edi+9CABCh]
+  00000178: 5E                 pop         esi
+  00000179: 5B                 pop         ebx
+  0000017A: 33 C0              xor         eax,eax
+  0000017C: 5F                 pop         edi
+  0000017D: 8B E5              mov         esp,ebp
+  0000017F: 5D                 pop         ebp
+  00000180: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         181 .text

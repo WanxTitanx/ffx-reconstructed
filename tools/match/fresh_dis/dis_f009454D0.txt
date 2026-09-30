@@ -1,0 +1,127 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009454D0.obj
+
+File Type: COFF OBJECT
+
+@HeapHashTable_Resize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: B8 02 00 00 00     mov         eax,2
+  0000000B: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000000E: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000011: 3B D0              cmp         edx,eax
+  00000013: 7E 09              jle         0000001E
+  00000015: 03 C0              add         eax,eax
+  00000017: 3B C2              cmp         eax,edx
+  00000019: 7C FA              jl          00000015
+  0000001B: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000001E: 8B 11              mov         edx,dword ptr [ecx]
+  00000020: 53                 push        ebx
+  00000021: 8B 59 04           mov         ebx,dword ptr [ecx+4]
+  00000024: 56                 push        esi
+  00000025: 57                 push        edi
+  00000026: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  00000029: 89 5D F0           mov         dword ptr [ebp-10h],ebx
+  0000002C: 89 01              mov         dword ptr [ecx],eax
+  0000002E: 85 C0              test        eax,eax
+  00000030: 7E 4C              jle         0000007E
+  00000032: 8D 1C 85 FF 0F 00  lea         ebx,[eax*4+0FFFh]
+            00
+  00000039: 8B F3              mov         esi,ebx
+  0000003B: 81 E6 00 F0 FF FF  and         esi,0FFFFF000h
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _Memory_VirtualAllocReserve
+  00000047: 8B F8              mov         edi,eax
+  00000049: 56                 push        esi
+  0000004A: 57                 push        edi
+  0000004B: E8 00 00 00 00     call        _Memory_VirtualAllocTracked
+  00000050: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000053: 81 E3 00 F0 FF FF  and         ebx,0FFFFF000h
+  00000059: 01 59 18           add         dword ptr [ecx+18h],ebx
+  0000005C: 89 79 04           mov         dword ptr [ecx+4],edi
+  0000005F: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000062: 8D 04 8D 00 00 00  lea         eax,[ecx*4]
+            00
+  00000069: 50                 push        eax
+  0000006A: 6A 00              push        0
+  0000006C: 57                 push        edi
+  0000006D: E8 00 00 00 00     call        _memset
+  00000072: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000075: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  00000078: 8B 55 EC           mov         edx,dword ptr [ebp-14h]
+  0000007B: 83 C4 18           add         esp,18h
+  0000007E: 8B FB              mov         edi,ebx
+  00000080: 89 7D F8           mov         dword ptr [ebp-8],edi
+  00000083: 85 D2              test        edx,edx
+  00000085: 7E 55              jle         000000DC
+  00000087: 8B C2              mov         eax,edx
+  00000089: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  0000008C: 8D 64 24 00        lea         esp,[esp]
+  00000090: 8B 17              mov         edx,dword ptr [edi]
+  00000092: 85 D2              test        edx,edx
+  00000094: 74 31              je          000000C7
+  00000096: 8B 19              mov         ebx,dword ptr [ecx]
+  00000098: 8B 42 04           mov         eax,dword ptr [edx+4]
+  0000009B: 8B 71 04           mov         esi,dword ptr [ecx+4]
+  0000009E: 4B                 dec         ebx
+  0000009F: 23 C3              and         eax,ebx
+  000000A1: 8B 0C 86           mov         ecx,dword ptr [esi+eax*4]
+  000000A4: 85 C9              test        ecx,ecx
+  000000A6: 74 19              je          000000C1
+  000000A8: 8B 3A              mov         edi,dword ptr [edx]
+  000000AA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000B0: 39 39              cmp         dword ptr [ecx],edi
+  000000B2: 74 0A              je          000000BE
+  000000B4: 40                 inc         eax
+  000000B5: 23 C3              and         eax,ebx
+  000000B7: 8B 0C 86           mov         ecx,dword ptr [esi+eax*4]
+  000000BA: 85 C9              test        ecx,ecx
+  000000BC: 75 F2              jne         000000B0
+  000000BE: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  000000C1: 89 14 86           mov         dword ptr [esi+eax*4],edx
+  000000C4: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000C7: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000CA: 83 C7 04           add         edi,4
+  000000CD: 48                 dec         eax
+  000000CE: 89 7D F8           mov         dword ptr [ebp-8],edi
+  000000D1: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000D4: 75 BA              jne         00000090
+  000000D6: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  000000D9: 8B 55 EC           mov         edx,dword ptr [ebp-14h]
+  000000DC: 85 DB              test        ebx,ebx
+  000000DE: 74 2B              je          0000010B
+  000000E0: 8D 34 95 FF 0F 00  lea         esi,[edx*4+0FFFh]
+            00
+  000000E7: 81 E6 00 F0 FF FF  and         esi,0FFFFF000h
+  000000ED: 56                 push        esi
+  000000EE: 53                 push        ebx
+  000000EF: E8 00 00 00 00     call        _Memory_VirtualFreeTracked
+  000000F4: 56                 push        esi
+  000000F5: 53                 push        ebx
+  000000F6: E8 00 00 00 00     call        _Memory_VirtualFreeRelease
+  000000FB: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000FE: 83 C4 10           add         esp,10h
+  00000101: 29 71 18           sub         dword ptr [ecx+18h],esi
+  00000104: 5F                 pop         edi
+  00000105: 5E                 pop         esi
+  00000106: 5B                 pop         ebx
+  00000107: 8B E5              mov         esp,ebp
+  00000109: 5D                 pop         ebp
+  0000010A: C3                 ret
+  0000010B: 5F                 pop         edi
+  0000010C: 5E                 pop         esi
+  0000010D: 8B C3              mov         eax,ebx
+  0000010F: 5B                 pop         ebx
+  00000110: 8B E5              mov         esp,ebp
+  00000112: 5D                 pop         ebp
+  00000113: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         114 .text

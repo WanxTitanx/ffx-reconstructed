@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DECC0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Shader_CreateMutexManager:
+  00000000: 83 3D 80 B7 37 03  cmp         dword ptr ds:[337B780h],0
+            00
+  00000007: 75 54              jne         0000005D
+  00000009: 56                 push        esi
+  0000000A: 6A 10              push        10h
+  0000000C: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000011: 8B F0              mov         esi,eax
+  00000013: 83 C4 04           add         esp,4
+  00000016: 85 F6              test        esi,esi
+  00000018: 74 3A              je          00000054
+  0000001A: 6A 00              push        0
+  0000001C: 6A 00              push        0
+  0000001E: 6A 00              push        0
+  00000020: E8 00 00 00 00     call        _CreateMutexW
+  00000025: 6A 00              push        0
+  00000027: 56                 push        esi
+  00000028: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  0000002B: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000031: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000038: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000003F: E8 00 00 00 00     call        _FFX_Shader_ResourceList_Push
+  00000044: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000047: 83 C4 14           add         esp,14h
+  0000004A: 89 06              mov         dword ptr [esi],eax
+  0000004C: 89 35 80 B7 37 03  mov         dword ptr ds:[337B780h],esi
+  00000052: 5E                 pop         esi
+  00000053: C3                 ret
+  00000054: 33 F6              xor         esi,esi
+  00000056: 89 35 80 B7 37 03  mov         dword ptr ds:[337B780h],esi
+  0000005C: 5E                 pop         esi
+  0000005D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          5E .text

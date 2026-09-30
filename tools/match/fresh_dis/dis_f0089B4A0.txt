@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0089B4A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Kernel_Loose_89B4A0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000007: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000A: 8D 45 FC           lea         eax,[ebp-4]
+  0000000D: 50                 push        eax
+  0000000E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000011: E8 00 00 00 00     call        _FFX_Kernel_ResolveTypedEntryByPackedId
+  00000016: 8B C8              mov         ecx,eax
+  00000018: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: 3D 00 01 00 00     cmp         eax,100h
+  00000023: 75 10              jne         00000035
+  00000025: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000029: 51                 push        ecx
+  0000002A: 50                 push        eax
+  0000002B: E8 00 00 00 00     call        _FFX_Battle_ComputeMpCostWithMultipliers
+  00000030: 83 C4 08           add         esp,8
+  00000033: EB 12              jmp         00000047
+  00000035: 3D 00 02 00 00     cmp         eax,200h
+  0000003A: 75 0B              jne         00000047
+  0000003C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003F: E8 00 00 00 00     call        _FFX_Inventory_GetItemCount
+  00000044: 83 C4 04           add         esp,4
+  00000047: 85 C0              test        eax,eax
+  00000049: 74 18              je          00000063
+  0000004B: FF 75 1C           push        dword ptr [ebp+1Ch]
+  0000004E: FF 75 18           push        dword ptr [ebp+18h]
+  00000051: FF 75 14           push        dword ptr [ebp+14h]
+  00000054: 50                 push        eax
+  00000055: 6A 02              push        2
+  00000057: E8 00 00 00 00     call        _FFX_Menu2D_PushDrawCommand_AllocFit
+  0000005C: 83 C4 14           add         esp,14h
+  0000005F: 8B E5              mov         esp,ebp
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+  00000063: 33 C0              xor         eax,eax
+  00000065: 8B E5              mov         esp,ebp
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          69 .text

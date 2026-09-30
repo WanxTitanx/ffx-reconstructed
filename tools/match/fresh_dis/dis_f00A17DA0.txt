@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A17DA0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PostProcessing_SetOutputBuffer@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 83 BE 4C 0D 00 00  cmp         dword ptr [esi+0D4Ch],0
+            00
+  0000000D: 74 0A              je          00000019
+  0000000F: B8 16 00 00 00     mov         eax,16h
+  00000014: 5E                 pop         esi
+  00000015: 5D                 pop         ebp
+  00000016: C2 04 00           ret         4
+  00000019: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000001C: 80 79 04 00        cmp         byte ptr [ecx+4],0
+  00000020: 74 04              je          00000026
+  00000022: 33 C0              xor         eax,eax
+  00000024: EB 02              jmp         00000028
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: 8B 00              mov         eax,dword ptr [eax]
+  0000002A: 3B 05 00 00 00 00  cmp         eax,dword ptr [_g_CDSlot_File_CA3364]
+  00000030: 74 0A              je          0000003C
+  00000032: B8 05 00 00 00     mov         eax,5
+  00000037: 5E                 pop         esi
+  00000038: 5D                 pop         ebp
+  00000039: C2 04 00           ret         4
+  0000003C: 52                 push        edx
+  0000003D: 89 8E 4C 0D 00 00  mov         dword ptr [esi+0D4Ch],ecx
+  00000043: E8 00 00 00 00     call        _Phyre_PostProcessing_BufferOps
+  00000048: 89 86 DC 0C 00 00  mov         dword ptr [esi+0CDCh],eax
+  0000004E: 83 C4 04           add         esp,4
+  00000051: F7 D8              neg         eax
+  00000053: 1B C0              sbb         eax,eax
+  00000055: 83 E0 F2           and         eax,0FFFFFFF2h
+  00000058: 83 C0 0E           add         eax,0Eh
+  0000005B: 5E                 pop         esi
+  0000005C: 5D                 pop         ebp
+  0000005D: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          60 .text

@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008B3780.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_List_DrawCustomRowBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000007: 53                 push        ebx
+  00000008: 0F BF 40 48        movsx       eax,word ptr [eax+48h]
+  0000000C: 50                 push        eax
+  0000000D: E8 00 00 00 00     call        _FFX_Menu_List_GetRowStruct
+  00000012: 8B D8              mov         ebx,eax
+  00000014: 89 5D 08           mov         dword ptr [ebp+8],ebx
+  00000017: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000001A: 83 C4 04           add         esp,4
+  0000001D: 83 3C 8D 40 89 19  cmp         dword ptr [ecx*4+6198940h],1
+            06 01
+  00000025: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000028: 75 63              jne         0000008D
+  0000002A: 56                 push        esi
+  0000002B: 57                 push        edi
+  0000002C: E8 00 00 00 00     call        _FFX_BtlUI_CreateDrawBuffer_256x128
+  00000031: 68 A0 01 00 00     push        1A0h
+  00000036: 68 00 02 00 00     push        200h
+  0000003B: 6A 00              push        0
+  0000003D: 6A 00              push        0
+  0000003F: E8 00 00 00 00     call        _FFX_Menu2D_SetClipRect4
+  00000044: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000047: 8B CB              mov         ecx,ebx
+  00000049: 8D 73 05           lea         esi,[ebx+5]
+  0000004C: 83 C4 10           add         esp,10h
+  0000004F: BB 07 00 00 00     mov         ebx,7
+  00000054: 8A 06              mov         al,byte ptr [esi]
+  00000056: 3C FF              cmp         al,0FFh
+  00000058: 74 28              je          00000082
+  0000005A: 0F B6 C0           movzx       eax,al
+  0000005D: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000060: 3C 06              cmp         al,6
+  00000062: 75 0B              jne         0000006F
+  00000064: 80 79 1E 00        cmp         byte ptr [ecx+1Eh],0
+  00000068: 74 05              je          0000006F
+  0000006A: B8 07 00 00 00     mov         eax,7
+  0000006F: FF 75 10           push        dword ptr [ebp+10h]
+  00000072: 57                 push        edi
+  00000073: 50                 push        eax
+  00000074: E8 00 00 00 00     call        _FFX_Save_DrawRowAvailable
+  00000079: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000007C: 83 C4 0C           add         esp,0Ch
+  0000007F: 83 C7 3B           add         edi,3Bh
+  00000082: 46                 inc         esi
+  00000083: 4B                 dec         ebx
+  00000084: 75 CE              jne         00000054
+  00000086: 5F                 pop         edi
+  00000087: 5E                 pop         esi
+  00000088: 5B                 pop         ebx
+  00000089: 8B E5              mov         esp,ebp
+  0000008B: 5D                 pop         ebp
+  0000008C: C3                 ret
+  0000008D: 8A 45 08           mov         al,byte ptr [ebp+8]
+  00000090: 5B                 pop         ebx
+  00000091: 8B E5              mov         esp,ebp
+  00000093: 5D                 pop         ebp
+  00000094: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          95 .text

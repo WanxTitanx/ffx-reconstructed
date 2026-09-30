@@ -1,0 +1,67 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00897A60.obj
+
+File Type: COFF OBJECT
+
+_sub_897A60:
+  00000000: 57                 push        edi
+  00000001: 68 80 00 00 00     push        80h
+  00000006: 6A 00              push        0
+  00000008: 68 00 00 00 00     push        offset _unk_133F948
+  0000000D: E8 00 00 00 00     call        _memset
+  00000012: 33 FF              xor         edi,edi
+  00000014: 83 C4 0C           add         esp,0Ch
+  00000017: 39 3D B0 C2 CF 04  cmp         dword ptr ds:[4CFC2B0h],edi
+  0000001D: 76 71              jbe         00000090
+  0000001F: 53                 push        ebx
+  00000020: 56                 push        esi
+  00000021: BB 00 00 00 00     mov         ebx,offset _unk_133F94C
+  00000026: BA FF 00 00 00     mov         edx,0FFh
+  0000002B: B9 B0 C2 CF 04     mov         ecx,4CFC2B0h
+  00000030: 0F B6 87 00 00 00  movzx       eax,byte ptr _unk_133F0B0[edi]
+            00
+  00000037: 66 3B C2           cmp         ax,dx
+  0000003A: 74 4A              je          00000086
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _FFX_Btl_UI_UpdateAndStoreOverdriveGaugePos
+  00000042: 83 C4 04           add         esp,4
+  00000045: 83 F8 01           cmp         eax,1
+  00000048: 75 32              jne         0000007C
+  0000004A: 0F B6 87 00 00 00  movzx       eax,byte ptr _unk_133F0B0[edi]
+            00
+  00000051: 50                 push        eax
+  00000052: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveCharge
+  00000057: 0F B6 8F 00 00 00  movzx       ecx,byte ptr _unk_133F0B0[edi]
+            00
+  0000005E: 8B F0              mov         esi,eax
+  00000060: 0F AF 35 00 00 00  imul        esi,dword ptr [_unk_25D0AA4]
+            00
+  00000067: 51                 push        ecx
+  00000068: E8 00 00 00 00     call        _FFX_Btl_GetOverdriveChargeMax
+  0000006D: 8B C8              mov         ecx,eax
+  0000006F: 8B C6              mov         eax,esi
+  00000071: 99                 cdq
+  00000072: 83 C4 08           add         esp,8
+  00000075: F7 F9              idiv        eax,ecx
+  00000077: 89 43 FC           mov         dword ptr [ebx-4],eax
+  0000007A: 89 03              mov         dword ptr [ebx],eax
+  0000007C: BA FF 00 00 00     mov         edx,0FFh
+  00000081: B9 B0 C2 CF 04     mov         ecx,4CFC2B0h
+  00000086: 47                 inc         edi
+  00000087: 83 C3 10           add         ebx,10h
+  0000008A: 3B 39              cmp         edi,dword ptr [ecx]
+  0000008C: 72 A2              jb          00000030
+  0000008E: 5E                 pop         esi
+  0000008F: 5B                 pop         ebx
+  00000090: 5F                 pop         edi
+  00000091: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          92 .text

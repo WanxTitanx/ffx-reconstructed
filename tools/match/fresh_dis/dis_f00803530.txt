@@ -1,0 +1,85 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00803530.obj
+
+File Type: COFF OBJECT
+
+_FFX_Ps3Data_ComputeSlotOffsets:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 83 3D 00 00 00 00  cmp         dword ptr [_g_MagicUnkVar_11A004A],0
+            00
+  0000000D: 0F 84 A4 00 00 00  je          000000B7
+  00000013: 53                 push        ebx
+  00000014: 8D 45 FC           lea         eax,[ebp-4]
+  00000017: B9 08 00 00 00     mov         ecx,8
+  0000001C: 8B D0              mov         edx,eax
+  0000001E: 56                 push        esi
+  0000001F: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  00000022: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000025: 57                 push        edi
+  00000026: 8B 18              mov         ebx,dword ptr [eax]
+  00000028: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000002B: 83 38 00           cmp         dword ptr [eax],0
+  0000002E: 74 74              je          000000A4
+  00000030: 8B 50 04           mov         edx,dword ptr [eax+4]
+  00000033: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  00000036: 66 83 7A 04 00     cmp         word ptr [edx+4],0
+  0000003B: 8D 7A 10           lea         edi,[edx+10h]
+  0000003E: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  00000045: 74 5D              je          000000A4
+  00000047: FF 37              push        dword ptr [edi]
+  00000049: E8 00 00 00 00     call        _Std_IdentityFunc
+  0000004E: 0F B7 4F 0A        movzx       ecx,word ptr [edi+0Ah]
+  00000052: 51                 push        ecx
+  00000053: 53                 push        ebx
+  00000054: 8B F0              mov         esi,eax
+  00000056: E8 00 00 00 00     call        _FFX_Chr_GetSlotDword8ByIndex
+  0000005B: 2B C6              sub         eax,esi
+  0000005D: 89 46 08           mov         dword ptr [esi+8],eax
+  00000060: 0F B7 47 0A        movzx       eax,word ptr [edi+0Ah]
+  00000064: 50                 push        eax
+  00000065: 53                 push        ebx
+  00000066: E8 00 00 00 00     call        _FFX_Chr_GetSlotDword4ByIndex
+  0000006B: 2B C6              sub         eax,esi
+  0000006D: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000070: 0F B7 47 0A        movzx       eax,word ptr [edi+0Ah]
+  00000074: 6A 00              push        0
+  00000076: 50                 push        eax
+  00000077: 53                 push        ebx
+  00000078: E8 00 00 00 00     call        _FFX_Ps3Data_GetSlotMatrix
+  0000007D: 50                 push        eax
+  0000007E: E8 00 00 00 00     call        _Std_IdentityFunc_B
+  00000083: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000086: 89 47 04           mov         dword ptr [edi+4],eax
+  00000089: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  0000008C: 41                 inc         ecx
+  0000008D: 0F B7 40 04        movzx       eax,word ptr [eax+4]
+  00000091: 83 C4 24           add         esp,24h
+  00000094: 8D 7F 10           lea         edi,[edi+10h]
+  00000097: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000009A: 3B C8              cmp         ecx,eax
+  0000009C: 7C A9              jl          00000047
+  0000009E: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000000A1: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  000000A4: 83 C0 10           add         eax,10h
+  000000A7: 49                 dec         ecx
+  000000A8: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000AB: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  000000AE: 0F 85 72 FF FF FF  jne         00000026
+  000000B4: 5F                 pop         edi
+  000000B5: 5E                 pop         esi
+  000000B6: 5B                 pop         ebx
+  000000B7: 8B E5              mov         esp,ebp
+  000000B9: 5D                 pop         ebp
+  000000BA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          BB .text

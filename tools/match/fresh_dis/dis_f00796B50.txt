@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00796B50.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_Loose_796B50:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000009: 33 DB              xor         ebx,ebx
+  0000000B: 57                 push        edi
+  0000000C: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000000F: 83 C6 05           add         esi,5
+  00000012: 53                 push        ebx
+  00000013: E8 00 00 00 00     call        _FFX_Field_GetSlotRightModelType
+  00000018: 53                 push        ebx
+  00000019: 8B F8              mov         edi,eax
+  0000001B: E8 00 00 00 00     call        _FFX_Field_GetSlotLeftModelType
+  00000020: 57                 push        edi
+  00000021: 8B D8              mov         ebx,eax
+  00000023: E8 00 00 00 00     call        _FFX_Chr_FormatResIdString
+  00000028: 6A 04              push        4
+  0000002A: 50                 push        eax
+  0000002B: 8D 4E FB           lea         ecx,[esi-5]
+  0000002E: 51                 push        ecx
+  0000002F: E8 00 00 00 00     call        _strncpy
+  00000034: 53                 push        ebx
+  00000035: C6 46 FF 00        mov         byte ptr [esi-1],0
+  00000039: E8 00 00 00 00     call        _FFX_Chr_FormatResIdString
+  0000003E: 6A 04              push        4
+  00000040: 50                 push        eax
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _strncpy
+  00000047: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000004A: 43                 inc         ebx
+  0000004B: C6 46 04 00        mov         byte ptr [esi+4],0
+  0000004F: 83 C4 28           add         esp,28h
+  00000052: 83 C6 0A           add         esi,0Ah
+  00000055: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000058: 83 FB 07           cmp         ebx,7
+  0000005B: 7C B5              jl          00000012
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: 5B                 pop         ebx
+  00000060: 8B E5              mov         esp,ebp
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          64 .text

@@ -1,0 +1,95 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005AE280.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PMeshData_ProcessVertexStreamElement@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 7B 38           mov         edi,dword ptr [ebx+38h]
+  0000000E: 8B 43 14           mov         eax,dword ptr [ebx+14h]
+  00000011: C1 E2 04           shl         edx,4
+  00000014: 03 FA              add         edi,edx
+  00000016: 03 C2              add         eax,edx
+  00000018: 8B 37              mov         esi,dword ptr [edi]
+  0000001A: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000001D: 85 F6              test        esi,esi
+  0000001F: 75 0B              jne         0000002C
+  00000021: 5F                 pop         edi
+  00000022: 5E                 pop         esi
+  00000023: 33 C0              xor         eax,eax
+  00000025: 5B                 pop         ebx
+  00000026: 8B E5              mov         esp,ebp
+  00000028: 5D                 pop         ebp
+  00000029: C2 0C 00           ret         0Ch
+  0000002C: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000002F: 8D 41 10           lea         eax,[ecx+10h]
+  00000032: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000035: 8B 00              mov         eax,dword ptr [eax]
+  00000037: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000003A: 0F B7 41 22        movzx       eax,word ptr [ecx+22h]
+  0000003E: 8D 51 24           lea         edx,[ecx+24h]
+  00000041: 89 51 28           mov         dword ptr [ecx+28h],edx
+  00000044: 83 C0 10           add         eax,10h
+  00000047: C7 41 2C 00 00 00  mov         dword ptr [ecx+2Ch],0
+            00
+  0000004E: 8B 76 18           mov         esi,dword ptr [esi+18h]
+  00000051: 03 C1              add         eax,ecx
+  00000053: 33 D2              xor         edx,edx
+  00000055: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000058: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  0000005E: 74 2B              je          0000008B
+  00000060: 8B 4F 08           mov         ecx,dword ptr [edi+8]
+  00000063: 8B 43 30           mov         eax,dword ptr [ebx+30h]
+  00000066: 03 CA              add         ecx,edx
+  00000068: 8B 04 88           mov         eax,dword ptr [eax+ecx*4]
+  0000006B: 85 C0              test        eax,eax
+  0000006D: 78 17              js          00000086
+  0000006F: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000072: 8B 04 81           mov         eax,dword ptr [ecx+eax*4]
+  00000075: 85 C0              test        eax,eax
+  00000077: 74 05              je          0000007E
+  00000079: 8B 40 3C           mov         eax,dword ptr [eax+3Ch]
+  0000007C: EB 02              jmp         00000080
+  0000007E: 33 C0              xor         eax,eax
+  00000080: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000083: 89 04 91           mov         dword ptr [ecx+edx*4],eax
+  00000086: 42                 inc         edx
+  00000087: 3B D6              cmp         edx,esi
+  00000089: 72 D5              jb          00000060
+  0000008B: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  0000008E: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000091: 66 8B 40 0C        mov         ax,word ptr [eax+0Ch]
+  00000095: 66 C1 E0 02        shl         ax,2
+  00000099: 66 89 41 0E        mov         word ptr [ecx+0Eh],ax
+  0000009D: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  000000A0: 8B 43 20           mov         eax,dword ptr [ebx+20h]
+  000000A3: 8D 04 88           lea         eax,[eax+ecx*4]
+  000000A6: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000A9: 51                 push        ecx
+  000000AA: 89 41 14           mov         dword ptr [ecx+14h],eax
+  000000AD: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  000000B0: 8B 40 08           mov         eax,dword ptr [eax+8]
+  000000B3: 89 41 24           mov         dword ptr [ecx+24h],eax
+  000000B6: E8 00 00 00 00     call        _Phyre_MeshData_AllocateCopy
+  000000BB: 83 C4 04           add         esp,4
+  000000BE: 5F                 pop         edi
+  000000BF: 5E                 pop         esi
+  000000C0: 5B                 pop         ebx
+  000000C1: 8B E5              mov         esp,ebp
+  000000C3: 5D                 pop         ebp
+  000000C4: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          C7 .text

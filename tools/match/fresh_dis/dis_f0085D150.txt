@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085D150.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_VoiceStandbyResult:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 30              mov         esi,dword ptr [eax]
+  00000009: E8 00 00 00 00     call        _FFX_FieldDebug_IsVoiceActive
+  0000000E: 85 C0              test        eax,eax
+  00000010: 75 1F              jne         00000031
+  00000012: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000019: 75 0D              jne         00000028
+  0000001B: 68 00 00 00 00     push        offset ??_C@_0BF@DGIBMMH@VoiceStandbyResult?$CB?6?$AA@
+  00000020: E8 00 00 00 00     call        _printf
+  00000025: 83 C4 04           add         esp,4
+  00000028: 56                 push        esi
+  00000029: E8 00 00 00 00     call        _FFX_Btl_Sound_BankRequest
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 33 C0              xor         eax,eax
+  00000033: 5E                 pop         esi
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          15 .rdata
+          36 .text

@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FBEA0.obj
+
+File Type: COFF OBJECT
+
+_Menu2D_ClearVertexArray:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 74 2A              je          00000034
+  0000000A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000D: D9 EE              fldz
+  0000000F: 83 C0 0C           add         eax,0Ch
+  00000012: 8D 50 F4           lea         edx,[eax-0Ch]
+  00000015: 83 F8 0C           cmp         eax,0Ch
+  00000018: 74 0E              je          00000028
+  0000001A: D9 50 FC           fst         dword ptr [eax-4]
+  0000001D: C6 02 00           mov         byte ptr [edx],0
+  00000020: D9 10              fst         dword ptr [eax]
+  00000022: D9 50 04           fst         dword ptr [eax+4]
+  00000025: D9 50 08           fst         dword ptr [eax+8]
+  00000028: 83 C0 18           add         eax,18h
+  0000002B: 49                 dec         ecx
+  0000002C: 75 E4              jne         00000012
+  0000002E: DD D8              fstp        st(0)
+  00000030: 8B C2              mov         eax,edx
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+  00000034: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000037: 5D                 pop         ebp
+  00000038: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          39 .text

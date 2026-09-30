@@ -1,0 +1,34 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00955C10.obj
+
+File Type: COFF OBJECT
+
+_Lua_log2_pack:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 33 C9              xor         ecx,ecx
+  00000008: 83 F8 08           cmp         eax,8
+  0000000B: 72 1A              jb          00000027
+  0000000D: 83 F8 10           cmp         eax,10h
+  00000010: 72 09              jb          0000001B
+  00000012: 40                 inc         eax
+  00000013: D1 E8              shr         eax,1
+  00000015: 41                 inc         ecx
+  00000016: 83 F8 10           cmp         eax,10h
+  00000019: 73 F7              jae         00000012
+  0000001B: 8D 0C CD 08 00 00  lea         ecx,[ecx*8+00000008h]
+            00
+  00000022: 83 C0 F8           add         eax,0FFFFFFF8h
+  00000025: 0B C1              or          eax,ecx
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          29 .text

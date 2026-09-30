@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C4EB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_FindActiveCameraSlot:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000007: 0F BE 4D 0C        movsx       ecx,byte ptr [ebp+0Ch]
+  0000000B: 69 C0 A0 0D 00 00  imul        eax,eax,0DA0h
+  00000011: 83 E1 01           and         ecx,1
+  00000014: 69 C9 1C 06 00 00  imul        ecx,ecx,61Ch
+  0000001A: 8D 80 00 00 00 00  lea         eax,_g_FieldUnkVar_1137B00[eax]
+  00000020: 03 C1              add         eax,ecx
+  00000022: 33 D2              xor         edx,edx
+  00000024: 38 10              cmp         byte ptr [eax],dl
+  00000026: 75 0E              jne         00000036
+  00000028: 42                 inc         edx
+  00000029: 83 FA 03           cmp         edx,3
+  0000002C: 7D 0D              jge         0000003B
+  0000002E: 83 C0 24           add         eax,24h
+  00000031: 80 38 00           cmp         byte ptr [eax],0
+  00000034: 74 F2              je          00000028
+  00000036: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+  0000003B: 33 C0              xor         eax,eax
+  0000003D: 5D                 pop         ebp
+  0000003E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3F .text

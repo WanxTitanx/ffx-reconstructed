@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004BC410.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4BC410:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5F                 pop         edi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 8B C7              mov         eax,edi
+  00000012: 69 C0 54 02 00 00  imul        eax,eax,254h
+  00000018: 53                 push        ebx
+  00000019: 6A 04              push        4
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000021: 8B D8              mov         ebx,eax
+  00000023: 83 C4 08           add         esp,8
+  00000026: 85 DB              test        ebx,ebx
+  00000028: 74 29              je          00000053
+  0000002A: 56                 push        esi
+  0000002B: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  0000002E: 56                 push        esi
+  0000002F: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000032: 53                 push        ebx
+  00000033: E8 00 00 00 00     call        _PRenderQueueEntry_ArrayCopy
+  00000038: 2B FE              sub         edi,esi
+  0000003A: 69 F6 54 02 00 00  imul        esi,esi,254h
+  00000040: 57                 push        edi
+  00000041: 03 F3              add         esi,ebx
+  00000043: 56                 push        esi
+  00000044: E8 00 00 00 00     call        _PShader_RenderQueueEntry_InitArray
+  00000049: 83 C4 14           add         esp,14h
+  0000004C: 8B C3              mov         eax,ebx
+  0000004E: 5E                 pop         esi
+  0000004F: 5B                 pop         ebx
+  00000050: 5F                 pop         edi
+  00000051: 5D                 pop         ebp
+  00000052: C3                 ret
+  00000053: 5B                 pop         ebx
+  00000054: 33 C0              xor         eax,eax
+  00000056: 5F                 pop         edi
+  00000057: 5D                 pop         ebp
+  00000058: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          59 .text

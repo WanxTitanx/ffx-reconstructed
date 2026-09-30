@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A69290.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldBgAnim_CopyOpMdBlock:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_FieldBgAnim_CalcOpMdSize
+  0000000E: 8B F0              mov         esi,eax
+  00000010: 83 C4 04           add         esp,4
+  00000013: 85 F6              test        esi,esi
+  00000015: 75 0A              jne         00000021
+  00000017: E8 00 00 00 00     call        _dbgPrintf
+  0000001C: E8 00 00 00 00     call        _debug_exit_trace
+  00000021: 8B C6              mov         eax,esi
+  00000023: 99                 cdq
+  00000024: 83 E2 0F           and         edx,0Fh
+  00000027: 03 D0              add         edx,eax
+  00000029: C1 FA 04           sar         edx,4
+  0000002C: 85 D2              test        edx,edx
+  0000002E: 7E 38              jle         00000068
+  00000030: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000033: 2B F7              sub         esi,edi
+  00000035: 8D 47 04           lea         eax,[edi+4]
+  00000038: EB 06              jmp         00000040
+  0000003A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000040: 8B 48 FC           mov         ecx,dword ptr [eax-4]
+  00000043: 89 4C 06 FC        mov         dword ptr [esi+eax-4],ecx
+  00000047: 8B 08              mov         ecx,dword ptr [eax]
+  00000049: 89 0C 30           mov         dword ptr [eax+esi],ecx
+  0000004C: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  0000004F: 89 4C 30 04        mov         dword ptr [eax+esi+4],ecx
+  00000053: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00000056: 4A                 dec         edx
+  00000057: 89 4C 30 08        mov         dword ptr [eax+esi+8],ecx
+  0000005B: 8D 40 10           lea         eax,[eax+10h]
+  0000005E: 85 D2              test        edx,edx
+  00000060: 7F DE              jg          00000040
+  00000062: 5F                 pop         edi
+  00000063: 8B C1              mov         eax,ecx
+  00000065: 5E                 pop         esi
+  00000066: 5D                 pop         ebp
+  00000067: C3                 ret
+  00000068: 5F                 pop         edi
+  00000069: 8B C6              mov         eax,esi
+  0000006B: 5E                 pop         esi
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6E .text

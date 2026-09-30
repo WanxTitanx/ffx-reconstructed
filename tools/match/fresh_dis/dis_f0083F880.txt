@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083F880.obj
+
+File Type: COFF OBJECT
+
+_FFX_Texture_ParseTimHeader:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 83 3F 10           cmp         dword ptr [edi],10h
+  0000000B: 8D 77 08           lea         esi,[edi+8]
+  0000000E: 74 0A              je          0000001A
+  00000010: E8 00 00 00 00     call        _dbgPrintf
+  00000015: E8 00 00 00 00     call        _debug_exit_trace
+  0000001A: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000001D: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000020: 89 02              mov         dword ptr [edx],eax
+  00000022: F6 47 04 08        test        byte ptr [edi+4],8
+  00000026: 74 0E              je          00000036
+  00000028: 8D 46 04           lea         eax,[esi+4]
+  0000002B: 8D 4E 0C           lea         ecx,[esi+0Ch]
+  0000002E: 89 42 04           mov         dword ptr [edx+4],eax
+  00000031: 89 4A 08           mov         dword ptr [edx+8],ecx
+  00000034: 03 36              add         esi,dword ptr [esi]
+  00000036: 8D 4E 04           lea         ecx,[esi+4]
+  00000039: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  0000003C: 8D 4E 0C           lea         ecx,[esi+0Ch]
+  0000003F: 5F                 pop         edi
+  00000040: 89 4A 10           mov         dword ptr [edx+10h],ecx
+  00000043: 8B C2              mov         eax,edx
+  00000045: 5E                 pop         esi
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          48 .text

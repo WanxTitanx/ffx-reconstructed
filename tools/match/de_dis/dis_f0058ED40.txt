@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0058ED40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_EffectParameter_Resolve@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B C2              mov         eax,edx
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: 53                 push        ebx
+  0000000A: F6 42 08 06        test        byte ptr [edx+8],6
+  0000000E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000011: 8B D9              mov         ebx,ecx
+  00000013: 74 66              je          0000007B
+  00000015: F6 40 08 08        test        byte ptr [eax+8],8
+  00000019: 74 60              je          0000007B
+  0000001B: 83 38 04           cmp         dword ptr [eax],4
+  0000001E: 72 5B              jb          0000007B
+  00000020: 83 78 04 04        cmp         dword ptr [eax+4],4
+  00000024: 75 55              jne         0000007B
+  00000026: 56                 push        esi
+  00000027: 8B 73 70           mov         esi,dword ptr [ebx+70h]
+  0000002A: 57                 push        edi
+  0000002B: FF 72 0C           push        dword ptr [edx+0Ch]
+  0000002E: 8B 3E              mov         edi,dword ptr [esi]
+  00000030: 52                 push        edx
+  00000031: E8 00 00 00 00     call        _Phyre_Shader_GetElementFromPArray_B
+  00000036: 83 C4 08           add         esp,8
+  00000039: 50                 push        eax
+  0000003A: 8B 87 C4 00 00 00  mov         eax,dword ptr [edi+0C4h]
+  00000040: 6A 00              push        0
+  00000042: FF B3 78 03 00 00  push        dword ptr [ebx+378h]
+  00000048: 56                 push        esi
+  00000049: FF D0              call        eax
+  0000004B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000004E: 8B 7B 70           mov         edi,dword ptr [ebx+70h]
+  00000051: FF 70 0C           push        dword ptr [eax+0Ch]
+  00000054: 8B B3 78 03 00 00  mov         esi,dword ptr [ebx+378h]
+  0000005A: 8B 1F              mov         ebx,dword ptr [edi]
+  0000005C: 50                 push        eax
+  0000005D: E8 00 00 00 00     call        _PEffectParamArray_GetElement
+  00000062: 83 C4 08           add         esp,8
+  00000065: 56                 push        esi
+  00000066: 50                 push        eax
+  00000067: 8B 83 BC 00 00 00  mov         eax,dword ptr [ebx+0BCh]
+  0000006D: 57                 push        edi
+  0000006E: FF D0              call        eax
+  00000070: 33 C0              xor         eax,eax
+  00000072: 5F                 pop         edi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C2 04 00           ret         4
+  0000007B: B8 05 00 00 00     mov         eax,5
+  00000080: 5B                 pop         ebx
+  00000081: 8B E5              mov         esp,ebp
+  00000083: 5D                 pop         ebp
+  00000084: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          87 .text

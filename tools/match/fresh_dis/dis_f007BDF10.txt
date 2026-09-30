@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BDF10.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_MaskVisibility:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000008: 53                 push        ebx
+  00000009: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAL
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000014: 85 C0              test        eax,eax
+  00000016: 74 30              je          00000048
+  00000018: 0F BE 55 0C        movsx       edx,byte ptr [ebp+0Ch]
+  0000001C: 0F B6 C3           movzx       eax,bl
+  0000001F: 83 E2 01           and         edx,1
+  00000022: 69 C0 A0 0D 00 00  imul        eax,eax,0DA0h
+  00000028: 69 D2 1C 06 00 00  imul        edx,edx,61Ch
+  0000002E: 0F B6 CF           movzx       ecx,bh
+  00000031: 03 D0              add         edx,eax
+  00000033: 69 C9 30 01 00 00  imul        ecx,ecx,130h
+  00000039: 8A 45 10           mov         al,byte ptr [ebp+10h]
+  0000003C: 88 84 0A 00 00 00  mov         byte ptr _unk_1137617[edx+ecx],al
+            00
+  00000043: 5B                 pop         ebx
+  00000044: 8B E5              mov         esp,ebp
+  00000046: 5D                 pop         ebp
+  00000047: C3                 ret
+  00000048: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  0000004B: 5B                 pop         ebx
+  0000004C: 8B E5              mov         esp,ebp
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          50 .text

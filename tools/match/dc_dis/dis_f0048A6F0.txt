@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0048A6F0.obj
+
+File Type: COFF OBJECT
+
+@PMaterialSharray_Assign@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B 3A              mov         edi,dword ptr [edx]
+  00000009: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000000F: 8B F1              mov         esi,ecx
+  00000011: 83 FF 01           cmp         edi,1
+  00000014: 77 0D              ja          00000023
+  00000016: 85 FF              test        edi,edi
+  00000018: 74 05              je          0000001F
+  0000001A: 8D 42 04           lea         eax,[edx+4]
+  0000001D: EB 07              jmp         00000026
+  0000001F: 33 C0              xor         eax,eax
+  00000021: EB 03              jmp         00000026
+  00000023: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000026: 50                 push        eax
+  00000027: 57                 push        edi
+  00000028: 56                 push        esi
+  00000029: E8 00 00 00 00     call        _Phyre_PArray_AllocCopyInline
+  0000002E: 8B 0E              mov         ecx,dword ptr [esi]
+  00000030: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  00000036: 83 C4 0C           add         esp,0Ch
+  00000039: 8B D0              mov         edx,eax
+  0000003B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000003E: 83 F9 01           cmp         ecx,1
+  00000041: 77 0D              ja          00000050
+  00000043: 85 C9              test        ecx,ecx
+  00000045: 74 05              je          0000004C
+  00000047: 8D 46 04           lea         eax,[esi+4]
+  0000004A: EB 07              jmp         00000053
+  0000004C: 33 C0              xor         eax,eax
+  0000004E: EB 03              jmp         00000053
+  00000050: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000053: 8D 5E 04           lea         ebx,[esi+4]
+  00000056: 3B C2              cmp         eax,edx
+  00000058: 74 15              je          0000006F
+  0000005A: 3B C3              cmp         eax,ebx
+  0000005C: 74 11              je          0000006F
+  0000005E: 83 3E 00           cmp         dword ptr [esi],0
+  00000061: 7C 0C              jl          0000006F
+  00000063: 50                 push        eax
+  00000064: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000069: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000006C: 83 C4 04           add         esp,4
+  0000006F: 89 3E              mov         dword ptr [esi],edi
+  00000071: 8B C6              mov         eax,esi
+  00000073: 3B D3              cmp         edx,ebx
+  00000075: 74 02              je          00000079
+  00000077: 89 13              mov         dword ptr [ebx],edx
+  00000079: 5F                 pop         edi
+  0000007A: 5E                 pop         esi
+  0000007B: 5B                 pop         ebx
+  0000007C: 8B E5              mov         esp,ebp
+  0000007E: 5D                 pop         ebp
+  0000007F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          80 .text

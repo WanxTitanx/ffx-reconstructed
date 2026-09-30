@@ -1,0 +1,126 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0084A710.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_SetElementText:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B B0 90 00 00 00  mov         esi,dword ptr [eax+90h]
+  0000000D: 33 C9              xor         ecx,ecx
+  0000000F: 85 F6              test        esi,esi
+  00000011: 0F 8E 01 01 00 00  jle         00000118
+  00000017: 53                 push        ebx
+  00000018: 8B 98 94 00 00 00  mov         ebx,dword ptr [eax+94h]
+  0000001E: 0F B7 43 2E        movzx       eax,word ptr [ebx+2Eh]
+  00000022: 8D 53 2E           lea         edx,[ebx+2Eh]
+  00000025: 57                 push        edi
+  00000026: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000029: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000002C: 3B C7              cmp         eax,edi
+  0000002E: 74 13              je          00000043
+  00000030: 41                 inc         ecx
+  00000031: 3B CE              cmp         ecx,esi
+  00000033: 7D 66              jge         0000009B
+  00000035: 0F B7 42 44        movzx       eax,word ptr [edx+44h]
+  00000039: 83 C2 44           add         edx,44h
+  0000003C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000003F: 3B C7              cmp         eax,edi
+  00000041: 75 ED              jne         00000030
+  00000043: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000046: 8B C1              mov         eax,ecx
+  00000048: C1 E0 04           shl         eax,4
+  0000004B: 03 C1              add         eax,ecx
+  0000004D: 8D 1C 83           lea         ebx,[ebx+eax*4]
+  00000050: 85 FF              test        edi,edi
+  00000052: 0F 84 9B 00 00 00  je          000000F3
+  00000058: 8B F7              mov         esi,edi
+  0000005A: 8D 4E 01           lea         ecx,[esi+1]
+  0000005D: 8D 49 00           lea         ecx,[ecx]
+  00000060: 8A 06              mov         al,byte ptr [esi]
+  00000062: 46                 inc         esi
+  00000063: 84 C0              test        al,al
+  00000065: 75 F9              jne         00000060
+  00000067: 2B F1              sub         esi,ecx
+  00000069: 83 FE 0F           cmp         esi,0Fh
+  0000006C: 7C 4C              jl          000000BA
+  0000006E: 0F B7 43 26        movzx       eax,word ptr [ebx+26h]
+  00000072: 66 85 C0           test        ax,ax
+  00000075: 74 2C              je          000000A3
+  00000077: 98                 cwde
+  00000078: 3B C6              cmp         eax,esi
+  0000007A: 7D 5C              jge         000000D8
+  0000007C: FF 73 28           push        dword ptr [ebx+28h]
+  0000007F: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000084: 8D 46 11           lea         eax,[esi+11h]
+  00000087: 50                 push        eax
+  00000088: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000008D: 89 43 28           mov         dword ptr [ebx+28h],eax
+  00000090: 8D 46 10           lea         eax,[esi+10h]
+  00000093: 83 C4 08           add         esp,8
+  00000096: 0F B7 C0           movzx       eax,ax
+  00000099: EB 39              jmp         000000D4
+  0000009B: 8A 45 08           mov         al,byte ptr [ebp+8]
+  0000009E: 5F                 pop         edi
+  0000009F: 5B                 pop         ebx
+  000000A0: 5E                 pop         esi
+  000000A1: 5D                 pop         ebp
+  000000A2: C3                 ret
+  000000A3: 8D 46 11           lea         eax,[esi+11h]
+  000000A6: 50                 push        eax
+  000000A7: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  000000AC: 89 43 28           mov         dword ptr [ebx+28h],eax
+  000000AF: 8D 46 10           lea         eax,[esi+10h]
+  000000B2: 83 C4 04           add         esp,4
+  000000B5: 0F B7 C0           movzx       eax,ax
+  000000B8: EB 1A              jmp         000000D4
+  000000BA: 66 83 7B 26 00     cmp         word ptr [ebx+26h],0
+  000000BF: 74 17              je          000000D8
+  000000C1: FF 73 28           push        dword ptr [ebx+28h]
+  000000C4: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000C9: 8D 43 30           lea         eax,[ebx+30h]
+  000000CC: 83 C4 04           add         esp,4
+  000000CF: 89 43 28           mov         dword ptr [ebx+28h],eax
+  000000D2: 33 C0              xor         eax,eax
+  000000D4: 66 89 43 26        mov         word ptr [ebx+26h],ax
+  000000D8: 8B 4B 28           mov         ecx,dword ptr [ebx+28h]
+  000000DB: EB 03              jmp         000000E0
+  000000DD: 8D 49 00           lea         ecx,[ecx]
+  000000E0: 8A 07              mov         al,byte ptr [edi]
+  000000E2: 88 01              mov         byte ptr [ecx],al
+  000000E4: 8D 49 01           lea         ecx,[ecx+1]
+  000000E7: 8D 7F 01           lea         edi,[edi+1]
+  000000EA: 84 C0              test        al,al
+  000000EC: 75 F2              jne         000000E0
+  000000EE: 5F                 pop         edi
+  000000EF: 5B                 pop         ebx
+  000000F0: 5E                 pop         esi
+  000000F1: 5D                 pop         ebp
+  000000F2: C3                 ret
+  000000F3: 66 83 7B 26 00     cmp         word ptr [ebx+26h],0
+  000000F8: 74 0B              je          00000105
+  000000FA: FF 73 28           push        dword ptr [ebx+28h]
+  000000FD: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000102: 83 C4 04           add         esp,4
+  00000105: 8D 4B 30           lea         ecx,[ebx+30h]
+  00000108: 33 C0              xor         eax,eax
+  0000010A: 66 89 43 26        mov         word ptr [ebx+26h],ax
+  0000010E: 88 01              mov         byte ptr [ecx],al
+  00000110: 5F                 pop         edi
+  00000111: 89 4B 28           mov         dword ptr [ebx+28h],ecx
+  00000114: 8D 43 30           lea         eax,[ebx+30h]
+  00000117: 5B                 pop         ebx
+  00000118: 5E                 pop         esi
+  00000119: 5D                 pop         ebp
+  0000011A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         11B .text

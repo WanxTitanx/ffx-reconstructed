@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041C130.obj
+
+File Type: COFF OBJECT
+
+_FFX_VpxLoopFilter_Mb:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 1C           mov         esi,dword ptr [ebp+1Ch]
+  00000007: 6A 02              push        2
+  00000009: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000000C: FF 76 08           push        dword ptr [esi+8]
+  0000000F: FF 36              push        dword ptr [esi]
+  00000011: FF 75 14           push        dword ptr [ebp+14h]
+  00000014: FF 75 08           push        dword ptr [ebp+8]
+  00000017: E8 00 00 00 00     call        _FFX_Vpx_LoopFilterBlock
+  0000001C: 8B C8              mov         ecx,eax
+  0000001E: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000021: 83 C4 18           add         esp,18h
+  00000024: 85 C0              test        eax,eax
+  00000026: 74 18              je          00000040
+  00000028: 6A 01              push        1
+  0000002A: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000002D: FF 76 08           push        dword ptr [esi+8]
+  00000030: FF 36              push        dword ptr [esi]
+  00000032: FF 75 18           push        dword ptr [ebp+18h]
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _FFX_Vpx_LoopFilterBlock
+  0000003B: 83 C4 18           add         esp,18h
+  0000003E: 8B C8              mov         ecx,eax
+  00000040: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000043: 85 C0              test        eax,eax
+  00000045: 74 19              je          00000060
+  00000047: 6A 01              push        1
+  00000049: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000004C: FF 76 08           push        dword ptr [esi+8]
+  0000004F: FF 36              push        dword ptr [esi]
+  00000051: FF 75 18           push        dword ptr [ebp+18h]
+  00000054: 50                 push        eax
+  00000055: E8 00 00 00 00     call        _FFX_Vpx_LoopFilterBlock
+  0000005A: 83 C4 18           add         esp,18h
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C3                 ret
+  00000060: 8B C1              mov         eax,ecx
+  00000062: 5E                 pop         esi
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          65 .text

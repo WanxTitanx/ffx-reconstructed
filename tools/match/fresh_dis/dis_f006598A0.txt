@@ -1,0 +1,135 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006598A0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Phyre_ResolveTextureByNameToHandle@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: 8B F9              mov         edi,ecx
+  00000007: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000A: 8D 87 D4 12 00 00  lea         eax,[edi+12D4h]
+  00000010: 8B DA              mov         ebx,edx
+  00000012: 3B C8              cmp         ecx,eax
+  00000014: 74 16              je          0000002C
+  00000016: FF 75 10           push        dword ptr [ebp+10h]
+  00000019: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001C: 51                 push        ecx
+  0000001D: 53                 push        ebx
+  0000001E: E8 00 00 00 00     call        _PRendering_ResourceSurfaceAlloc
+  00000023: 83 C4 10           add         esp,10h
+  00000026: 5F                 pop         edi
+  00000027: 5B                 pop         ebx
+  00000028: 5D                 pop         ebp
+  00000029: C2 0C 00           ret         0Ch
+  0000002C: B8 E0 00 00 00     mov         eax,0E0h
+  00000031: 56                 push        esi
+  00000032: 66 39 43 30        cmp         word ptr [ebx+30h],ax
+  00000036: 0F 87 C3 00 00 00  ja          000000FF
+  0000003C: 8B 8F FC FB 00 00  mov         ecx,dword ptr [edi+0FBFCh]
+  00000042: 81 F9 A0 0F 00 00  cmp         ecx,0FA0h
+  00000048: 0F 8D B1 00 00 00  jge         000000FF
+  0000004E: 8B C1              mov         eax,ecx
+  00000050: 69 C0 E0 00 00 00  imul        eax,eax,0E0h
+  00000056: 03 87 E8 FB 00 00  add         eax,dword ptr [edi+0FBE8h]
+  0000005C: 8D 0C 49           lea         ecx,[ecx+ecx*2]
+  0000005F: 50                 push        eax
+  00000060: 8B 87 EC FB 00 00  mov         eax,dword ptr [edi+0FBECh]
+  00000066: 8D 04 C8           lea         eax,[eax+ecx*8]
+  00000069: 50                 push        eax
+  0000006A: 53                 push        ebx
+  0000006B: E8 00 00 00 00     call        _PTextureSampler_InitFromHandle
+  00000070: 8B 97 FC FB 00 00  mov         edx,dword ptr [edi+0FBFCh]
+  00000076: 8B 8F F8 FB 00 00  mov         ecx,dword ptr [edi+0FBF8h]
+  0000007C: 83 C4 0C           add         esp,0Ch
+  0000007F: C6 04 0A 01        mov         byte ptr [edx+ecx],1
+  00000083: 8B 8F FC FB 00 00  mov         ecx,dword ptr [edi+0FBFCh]
+  00000089: 41                 inc         ecx
+  0000008A: 81 F9 A0 0F 00 00  cmp         ecx,0FA0h
+  00000090: 0F 94 C2           sete        dl
+  00000093: 8B F0              mov         esi,eax
+  00000095: 81 F9 A0 0F 00 00  cmp         ecx,0FA0h
+  0000009B: 7D 31              jge         000000CE
+  0000009D: 8B 87 F8 FB 00 00  mov         eax,dword ptr [edi+0FBF8h]
+  000000A3: 80 3C 08 00        cmp         byte ptr [eax+ecx],0
+  000000A7: 74 16              je          000000BF
+  000000A9: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000000B0: 41                 inc         ecx
+  000000B1: 81 F9 A0 0F 00 00  cmp         ecx,0FA0h
+  000000B7: 7D 12              jge         000000CB
+  000000B9: 80 3C 08 00        cmp         byte ptr [eax+ecx],0
+  000000BD: 75 F1              jne         000000B0
+  000000BF: 89 8F FC FB 00 00  mov         dword ptr [edi+0FBFCh],ecx
+  000000C5: 81 F9 A0 0F 00 00  cmp         ecx,0FA0h
+  000000CB: 0F 94 C2           sete        dl
+  000000CE: 84 D2              test        dl,dl
+  000000D0: 74 0A              je          000000DC
+  000000D2: C7 87 FC FB 00 00  mov         dword ptr [edi+0FBFCh],0FA0h
+            A0 0F 00 00
+  000000DC: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000DF: 85 C0              test        eax,eax
+  000000E1: 74 06              je          000000E9
+  000000E3: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  000000E9: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000EC: 85 C0              test        eax,eax
+  000000EE: 74 06              je          000000F6
+  000000F0: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  000000F6: 8B C6              mov         eax,esi
+  000000F8: 5E                 pop         esi
+  000000F9: 5F                 pop         edi
+  000000FA: 5B                 pop         ebx
+  000000FB: 5D                 pop         ebp
+  000000FC: C2 0C 00           ret         0Ch
+  000000FF: BE A0 86 01 00     mov         esi,186A0h
+  00000104: 8D 87 78 27 00 00  lea         eax,[edi+2778h]
+  0000010A: BA 10 00 00 00     mov         edx,10h
+  0000010F: 90                 nop
+  00000110: 8B 48 FC           mov         ecx,dword ptr [eax-4]
+  00000113: 3B CE              cmp         ecx,esi
+  00000115: 7D 02              jge         00000119
+  00000117: 8B F1              mov         esi,ecx
+  00000119: 8B 08              mov         ecx,dword ptr [eax]
+  0000011B: 3B CE              cmp         ecx,esi
+  0000011D: 7D 02              jge         00000121
+  0000011F: 8B F1              mov         esi,ecx
+  00000121: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000124: 3B CE              cmp         ecx,esi
+  00000126: 7D 02              jge         0000012A
+  00000128: 8B F1              mov         esi,ecx
+  0000012A: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  0000012D: 3B CE              cmp         ecx,esi
+  0000012F: 7D 02              jge         00000133
+  00000131: 8B F1              mov         esi,ecx
+  00000133: 83 C0 10           add         eax,10h
+  00000136: 4A                 dec         edx
+  00000137: 75 D7              jne         00000110
+  00000139: FF 75 10           push        dword ptr [ebp+10h]
+  0000013C: 8D 04 B6           lea         eax,[esi+esi*4]
+  0000013F: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000142: C1 E0 04           shl         eax,4
+  00000145: 05 74 13 00 00     add         eax,1374h
+  0000014A: 03 C7              add         eax,edi
+  0000014C: 50                 push        eax
+  0000014D: 53                 push        ebx
+  0000014E: E8 00 00 00 00     call        _PRendering_ResourceSurfaceAlloc
+  00000153: 83 C4 10           add         esp,10h
+  00000156: 89 70 14           mov         dword ptr [eax+14h],esi
+  00000159: FF 84 B7 74 27 00  inc         dword ptr [edi+esi*4+2774h]
+            00
+  00000160: 5E                 pop         esi
+  00000161: 5F                 pop         edi
+  00000162: 5B                 pop         ebx
+  00000163: 5D                 pop         ebp
+  00000164: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         167 .text

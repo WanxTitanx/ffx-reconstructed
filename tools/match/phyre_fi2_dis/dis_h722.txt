@@ -1,0 +1,1150 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file h722.obj
+
+File Type: COFF OBJECT
+
+??$PhyreMinOfPair@I@Phyre@@YAIII@Z (unsigned int __cdecl Phyre::PhyreMinOfPair<unsigned int>(unsigned int,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 39 45 08           cmp         dword ptr [ebp+8],eax
+  00000009: 0F 42 45 08        cmovb       eax,dword ptr [ebp+8]
+  0000000D: 5D                 pop         ebp
+  0000000E: C3                 ret
+
+??0?$PCriticalSectionLockBase@VPCriticalSection@Phyre@@@Phyre@@QAE@AAVPCriticalSection@1@@Z (public: __thiscall Phyre::PCriticalSectionLockBase<class Phyre::PCriticalSection>::PCriticalSectionLockBase<class Phyre::PCriticalSection>(class Phyre::PCriticalSection &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 89 0E              mov         dword ptr [esi],ecx
+  0000000B: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  00000010: 8B C6              mov         eax,esi
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C2 04 00           ret         4
+
+??0PEventFlag@Phyre@@QAE@XZ (public: __thiscall Phyre::PEventFlag::PEventFlag(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: E8 00 00 00 00     call        ??0PEventFlagWin32@Phyre@@IAE@XZ
+  00000008: C6 46 04 00        mov         byte ptr [esi+4],0
+  0000000C: 8B C6              mov         eax,esi
+  0000000E: 5E                 pop         esi
+  0000000F: C3                 ret
+
+??0PInitializable@Phyre@@QAE@XZ (public: __thiscall Phyre::PInitializable::PInitializable(void)):
+  00000000: C6 01 00           mov         byte ptr [ecx],0
+  00000003: 8B C1              mov         eax,ecx
+  00000005: C3                 ret
+
+??0PMMU@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PMMU::PMMU(void)):
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8D 4B 04           lea         ecx,[ebx+4]
+  00000008: C6 03 00           mov         byte ptr [ebx],0
+  0000000B: E8 00 00 00 00     call        ??0PThreadWin32@Phyre@@IAE@XZ
+  00000010: C6 43 10 00        mov         byte ptr [ebx+10h],0
+  00000014: 8D 4B 1C           lea         ecx,[ebx+1Ch]
+  00000017: C6 43 14 00        mov         byte ptr [ebx+14h],0
+  0000001B: C7 43 18 00 00 00  mov         dword ptr [ebx+18h],0
+            00
+  00000022: E8 00 00 00 00     call        ??0PCriticalSection@Phyre@@QAE@XZ
+  00000027: 8D 4B 34           lea         ecx,[ebx+34h]
+  0000002A: E8 00 00 00 00     call        ??0PEventFlagWin32@Phyre@@IAE@XZ
+  0000002F: C6 43 38 00        mov         byte ptr [ebx+38h],0
+  00000033: 8D 73 3C           lea         esi,[ebx+3Ch]
+  00000036: BF 02 00 00 00     mov         edi,2
+  0000003B: EB 03              jmp         00000040
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: 8B CE              mov         ecx,esi
+  00000042: E8 00 00 00 00     call        ??0PMMUWorkBatch@PInternal@PTerrain@Phyre@@QAE@XZ
+  00000047: 81 C6 04 16 00 00  add         esi,1604h
+  0000004D: 4F                 dec         edi
+  0000004E: 79 F0              jns         00000040
+  00000050: 68 00 02 00 00     push        200h
+  00000055: 8D 83 48 42 00 00  lea         eax,[ebx+4248h]
+  0000005B: 6A 00              push        0
+  0000005D: 50                 push        eax
+  0000005E: C7 80 00 02 00 00  mov         dword ptr [eax+200h],0
+            00 00 00 00
+  00000068: E8 00 00 00 00     call        _memset
+  0000006D: 83 C4 0C           add         esp,0Ch
+  00000070: C7 83 4C 44 00 00  mov         dword ptr [ebx+444Ch],0
+            00 00 00 00
+  0000007A: 5F                 pop         edi
+  0000007B: 5E                 pop         esi
+  0000007C: 8B C3              mov         eax,ebx
+  0000007E: 5B                 pop         ebx
+  0000007F: C3                 ret
+
+??0PMMUWorkBatch@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PMMUWorkBatch::PMMUWorkBatch(void)):
+  00000000: 56                 push        esi
+  00000001: BE 7F 00 00 00     mov         esi,7Fh
+  00000006: 8D 41 24           lea         eax,[ecx+24h]
+  00000009: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000010: C7 40 DC 00 00 00  mov         dword ptr [eax-24h],0
+            00
+  00000017: 8B 15 00 00 00 00  mov         edx,dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  0000001D: 89 50 FC           mov         dword ptr [eax-4],edx
+  00000020: FF 05 00 00 00 00  inc         dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  00000026: 4E                 dec         esi
+  00000027: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000002D: 0F 57 C0           xorps       xmm0,xmm0
+  00000030: 66 0F D6 40 E0     movq        mmword ptr [eax-20h],xmm0
+  00000035: 66 0F D6 40 E8     movq        mmword ptr [eax-18h],xmm0
+  0000003A: 66 0F D6 40 F0     movq        mmword ptr [eax-10h],xmm0
+  0000003F: C7 40 F8 00 00 00  mov         dword ptr [eax-8],0
+            00
+  00000046: C7 40 04 00 00 00  mov         dword ptr [eax+4],0
+            00
+  0000004D: 8D 40 2C           lea         eax,[eax+2Ch]
+  00000050: 79 BE              jns         00000010
+  00000052: C7 81 00 16 00 00  mov         dword ptr [ecx+1600h],0
+            00 00 00 00
+  0000005C: 8B C1              mov         eax,ecx
+  0000005E: 5E                 pop         esi
+  0000005F: C3                 ret
+
+??0PPRTextureFinalizeBatch@PMMU@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PMMU::PPRTextureFinalizeBatch::PPRTextureFinalizeBatch(void)):
+  00000000: 56                 push        esi
+  00000001: 68 00 02 00 00     push        200h
+  00000006: 8B F1              mov         esi,ecx
+  00000008: 6A 00              push        0
+  0000000A: 56                 push        esi
+  0000000B: C7 86 00 02 00 00  mov         dword ptr [esi+200h],0
+            00 00 00 00
+  00000015: E8 00 00 00 00     call        _memset
+  0000001A: 83 C4 0C           add         esp,0Ch
+  0000001D: 8B C6              mov         eax,esi
+  0000001F: 5E                 pop         esi
+  00000020: C3                 ret
+
+??0PPageFault@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PPageFault::PPageFault(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000006: A1 00 00 00 00     mov         eax,dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  0000000B: 89 41 20           mov         dword ptr [ecx+20h],eax
+  0000000E: FF 05 00 00 00 00  inc         dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  00000014: C7 41 24 00 00 00  mov         dword ptr [ecx+24h],0
+            00
+  0000001B: 0F 57 C0           xorps       xmm0,xmm0
+  0000001E: 66 0F D6 41 04     movq        mmword ptr [ecx+4],xmm0
+  00000023: 66 0F D6 41 0C     movq        mmword ptr [ecx+0Ch],xmm0
+  00000028: 66 0F D6 41 14     movq        mmword ptr [ecx+14h],xmm0
+  0000002D: C7 41 1C 00 00 00  mov         dword ptr [ecx+1Ch],0
+            00
+  00000034: 8B C1              mov         eax,ecx
+  00000036: C3                 ret
+
+??0PProcessorProfileBlock@PProfiling@Phyre@@QAE@PBD@Z (public: __thiscall Phyre::PProfiling::PProcessorProfileBlock::PProcessorProfileBlock(char const *)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C2 04 00           ret         4
+
+??0PThread@Phyre@@QAE@XZ (public: __thiscall Phyre::PThread::PThread(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: E8 00 00 00 00     call        ??0PThreadWin32@Phyre@@IAE@XZ
+  00000008: C6 46 0C 00        mov         byte ptr [esi+0Ch],0
+  0000000C: 8B C6              mov         eax,esi
+  0000000E: 5E                 pop         esi
+  0000000F: C3                 ret
+
+??0PThreadInitialization@Phyre@@QAE@P6AIPAX@Z@Z (public: __thiscall Phyre::PThreadInitialization::PThreadInitialization(unsigned int (__cdecl*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 08           push        dword ptr [ebp+8]
+  00000007: 8B F1              mov         esi,ecx
+  00000009: E8 00 00 00 00     call        ??0PThreadInitializationWin32@Phyre@@QAE@P6AIPAX@Z@Z
+  0000000E: 8B C6              mov         eax,esi
+  00000010: 5E                 pop         esi
+  00000011: 5D                 pop         ebp
+  00000012: C2 04 00           ret         4
+
+??0PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PMMUWorkBatch::PWorkDesc::PWorkDesc(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000006: A1 00 00 00 00     mov         eax,dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  0000000B: 89 41 20           mov         dword ptr [ecx+20h],eax
+  0000000E: FF 05 00 00 00 00  inc         dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  00000014: C7 41 24 00 00 00  mov         dword ptr [ecx+24h],0
+            00
+  0000001B: 0F 57 C0           xorps       xmm0,xmm0
+  0000001E: 66 0F D6 41 04     movq        mmword ptr [ecx+4],xmm0
+  00000023: 66 0F D6 41 0C     movq        mmword ptr [ecx+0Ch],xmm0
+  00000028: 66 0F D6 41 14     movq        mmword ptr [ecx+14h],xmm0
+  0000002D: C7 41 1C 00 00 00  mov         dword ptr [ecx+1Ch],0
+            00
+  00000034: C7 41 28 00 00 00  mov         dword ptr [ecx+28h],0
+            00
+  0000003B: 8B C1              mov         eax,ecx
+  0000003D: C3                 ret
+
+??1?$PCriticalSectionLockBase@VPCriticalSection@Phyre@@@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSectionLockBase<class Phyre::PCriticalSection>::~PCriticalSectionLockBase<class Phyre::PCriticalSection>(void)):
+  00000000: 8B 09              mov         ecx,dword ptr [ecx]
+  00000002: E9 00 00 00 00     jmp         ?unlock@PCriticalSection@Phyre@@QAEXXZ
+
+??1PCriticalSection@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSection::~PCriticalSection(void)):
+  00000000: C3                 ret
+
+??1PCriticalSectionBase@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSectionBase::~PCriticalSectionBase(void)):
+  00000000: C3                 ret
+
+??1PEventFlag@Phyre@@QAE@XZ (public: __thiscall Phyre::PEventFlag::~PEventFlag(void)):
+  00000000: C3                 ret
+
+??1PInitializable@Phyre@@QAE@XZ (public: __thiscall Phyre::PInitializable::~PInitializable(void)):
+  00000000: C3                 ret
+
+??1PMMU@PInternal@PTerrain@Phyre@@QAE@XZ (public: __thiscall Phyre::PTerrain::PInternal::PMMU::~PMMU(void)):
+  00000000: C3                 ret
+
+??1PThread@Phyre@@QAE@XZ (public: __thiscall Phyre::PThread::~PThread(void)):
+  00000000: C3                 ret
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+??_I@YGXPAXIHP6EX0@Z@Z (void __stdcall `vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: 8B C3              mov         eax,ebx
+  00000011: 0F AF C7           imul        eax,edi
+  00000014: 03 F0              add         esi,eax
+  00000016: 4F                 dec         edi
+  00000017: 78 11              js          0000002A
+  00000019: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000020: 2B F3              sub         esi,ebx
+  00000022: 8B CE              mov         ecx,esi
+  00000024: FF 55 14           call        dword ptr [ebp+14h]
+  00000027: 4F                 dec         edi
+  00000028: 79 F6              jns         00000020
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 10 00           ret         10h
+
+??__Fmmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV1234@XZ@YAXXZ (void __cdecl `public: static class PTerrain::PInternal::PMMU::GetSingleton & __cdecl Phyre::PTerrain::PInternal::PMMU::GetSingleton(void)'::`5'::`dynamic atexit destructor for 'mmu''(void)):
+  00000000: B9 00 00 00 00     mov         ecx,offset ?mmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4V2345@A
+  00000005: E9 00 00 00 00     jmp         ??1PMMU@PInternal@PTerrain@Phyre@@QAE@XZ
+
+?CmpForRenderUnit@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z (public: static int __cdecl Phyre::PTerrain::PInternal::PMMUWorkBatch::PWorkDesc::CmpForRenderUnit(void const *,void const *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  0000000D: 83 F8 02           cmp         eax,2
+  00000010: 75 0B              jne         0000001D
+  00000012: 83 79 28 02        cmp         dword ptr [ecx+28h],2
+  00000016: 75 1F              jne         00000037
+  00000018: 83 F8 02           cmp         eax,2
+  0000001B: 74 0E              je          0000002B
+  0000001D: 83 79 28 02        cmp         dword ptr [ecx+28h],2
+  00000021: 75 08              jne         0000002B
+  00000023: B8 01 00 00 00     mov         eax,1
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+  0000002B: 8B 01              mov         eax,dword ptr [ecx]
+  0000002D: 8B 16              mov         edx,dword ptr [esi]
+  0000002F: 85 C0              test        eax,eax
+  00000031: 74 0A              je          0000003D
+  00000033: 3B D0              cmp         edx,eax
+  00000035: 73 08              jae         0000003F
+  00000037: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000003A: 5E                 pop         esi
+  0000003B: 5D                 pop         ebp
+  0000003C: C3                 ret
+  0000003D: 3B D0              cmp         edx,eax
+  0000003F: 77 E2              ja          00000023
+  00000041: 8B 56 24           mov         edx,dword ptr [esi+24h]
+  00000044: D1 EA              shr         edx,1
+  00000046: 80 E2 01           and         dl,1
+  00000049: 74 09              je          00000054
+  0000004B: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  0000004E: D1 E8              shr         eax,1
+  00000050: A8 01              test        al,1
+  00000052: 74 E3              je          00000037
+  00000054: 84 D2              test        dl,dl
+  00000056: 75 09              jne         00000061
+  00000058: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  0000005B: D1 E8              shr         eax,1
+  0000005D: A8 01              test        al,1
+  0000005F: 75 C2              jne         00000023
+  00000061: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000064: 8B 49 20           mov         ecx,dword ptr [ecx+20h]
+  00000067: 3B C1              cmp         eax,ecx
+  00000069: 77 CC              ja          00000037
+  0000006B: 1B C0              sbb         eax,eax
+  0000006D: F7 D8              neg         eax
+  0000006F: 5E                 pop         esi
+  00000070: 5D                 pop         ebp
+  00000071: C3                 ret
+
+?CmpForStreamUnit@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z (public: static int __cdecl Phyre::PTerrain::PInternal::PMMUWorkBatch::PWorkDesc::CmpForStreamUnit(void const *,void const *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  0000000D: 83 F8 01           cmp         eax,1
+  00000010: 75 0B              jne         0000001D
+  00000012: 83 79 28 01        cmp         dword ptr [ecx+28h],1
+  00000016: 75 1F              jne         00000037
+  00000018: 83 F8 01           cmp         eax,1
+  0000001B: 74 0E              je          0000002B
+  0000001D: 83 79 28 01        cmp         dword ptr [ecx+28h],1
+  00000021: 75 08              jne         0000002B
+  00000023: B8 01 00 00 00     mov         eax,1
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+  0000002B: 8B 01              mov         eax,dword ptr [ecx]
+  0000002D: 8B 16              mov         edx,dword ptr [esi]
+  0000002F: 85 C0              test        eax,eax
+  00000031: 74 0A              je          0000003D
+  00000033: 3B D0              cmp         edx,eax
+  00000035: 73 08              jae         0000003F
+  00000037: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000003A: 5E                 pop         esi
+  0000003B: 5D                 pop         ebp
+  0000003C: C3                 ret
+  0000003D: 3B D0              cmp         edx,eax
+  0000003F: 77 E2              ja          00000023
+  00000041: 8B 56 24           mov         edx,dword ptr [esi+24h]
+  00000044: D1 EA              shr         edx,1
+  00000046: 80 E2 01           and         dl,1
+  00000049: 74 09              je          00000054
+  0000004B: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  0000004E: D1 E8              shr         eax,1
+  00000050: A8 01              test        al,1
+  00000052: 74 E3              je          00000037
+  00000054: 84 D2              test        dl,dl
+  00000056: 75 09              jne         00000061
+  00000058: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  0000005B: D1 E8              shr         eax,1
+  0000005D: A8 01              test        al,1
+  0000005F: 75 C2              jne         00000023
+  00000061: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  00000064: 8B 49 20           mov         ecx,dword ptr [ecx+20h]
+  00000067: 3B C1              cmp         eax,ecx
+  00000069: 77 CC              ja          00000037
+  0000006B: 1B C0              sbb         eax,eax
+  0000006D: F7 D8              neg         eax
+  0000006F: 5E                 pop         esi
+  00000070: 5D                 pop         ebp
+  00000071: C3                 ret
+
+?CmpForUnbound@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z (public: static int __cdecl Phyre::PTerrain::PInternal::PMMUWorkBatch::PWorkDesc::CmpForUnbound(void const *,void const *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 48 28           mov         ecx,dword ptr [eax+28h]
+  00000009: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000C: 85 C9              test        ecx,ecx
+  0000000E: 74 0F              je          0000001F
+  00000010: 83 78 28 00        cmp         dword ptr [eax+28h],0
+  00000014: 75 05              jne         0000001B
+  00000016: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000019: 5D                 pop         ebp
+  0000001A: C3                 ret
+  0000001B: 85 C9              test        ecx,ecx
+  0000001D: 75 0D              jne         0000002C
+  0000001F: 83 78 28 00        cmp         dword ptr [eax+28h],0
+  00000023: 74 07              je          0000002C
+  00000025: B8 01 00 00 00     mov         eax,1
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+
+?GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV1234@XZ (public: static class Phyre::PTerrain::PInternal::PMMU & __cdecl Phyre::PTerrain::PInternal::PMMU::GetSingleton(void)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [?s_singleton@?1??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4PAV2345@A]
+  00000005: 85 C0              test        eax,eax
+  00000007: 75 37              jne         00000040
+  00000009: A1 00 00 00 00     mov         eax,dword ptr [?$S13@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4IA]
+  0000000E: A8 01              test        al,1
+  00000010: 75 1F              jne         00000031
+  00000012: 83 C8 01           or          eax,1
+  00000015: B9 00 00 00 00     mov         ecx,offset ?mmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4V2345@A
+  0000001A: A3 00 00 00 00     mov         dword ptr [?$S13@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4IA],eax
+  0000001F: E8 00 00 00 00     call        ??0PMMU@PInternal@PTerrain@Phyre@@QAE@XZ
+  00000024: 68 00 00 00 00     push        offset ??__Fmmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV1234@XZ@YAXXZ
+  00000029: E8 00 00 00 00     call        _atexit
+  0000002E: 83 C4 04           add         esp,4
+  00000031: C7 05 00 00 00 00  mov         dword ptr [?s_singleton@?1??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4PAV2345@A],offset ?mmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4V2345@A
+            00 00 00 00
+  0000003B: B8 00 00 00 00     mov         eax,offset ?mmu@?4??GetSingleton@PMMU@PInternal@PTerrain@Phyre@@SAAAV2345@XZ@4V2345@A
+  00000040: C3                 ret
+
+?MMUThread@PMMU@PInternal@PTerrain@Phyre@@CAIPAX@Z (private: static unsigned int __cdecl Phyre::PTerrain::PInternal::PMMU::MMUThread(void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ?mmuThread@PMMU@PInternal@PTerrain@Phyre@@AAEXXZ
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5D                 pop         ebp
+  0000000E: C3                 ret
+
+?abortAllProcessingForTarget@PMMU@PInternal@PTerrain@Phyre@@QAEXABVPPRTexture@234@@Z (public: void __thiscall Phyre::PTerrain::PInternal::PMMU::abortAllProcessingForTarget(class Phyre::PTerrain::PInternal::PPRTexture const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 33 FF              xor         edi,edi
+  0000000D: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000010: C7 45 FC FF FF FF  mov         dword ptr [ebp-4],0FFFFFFFFh
+            FF
+  00000017: 89 7D F8           mov         dword ptr [ebp-8],edi
+  0000001A: 8D 43 34           lea         eax,[ebx+34h]
+  0000001D: 8D 73 1C           lea         esi,[ebx+1Ch]
+  00000020: 8B C8              mov         ecx,eax
+  00000022: E8 00 00 00 00     call        ?signal@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000027: 8B CE              mov         ecx,esi
+  00000029: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  0000002E: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  00000031: 3B 45 FC           cmp         eax,dword ptr [ebp-4]
+  00000034: 75 09              jne         0000003F
+  00000036: 8B CE              mov         ecx,esi
+  00000038: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  0000003D: EB 6D              jmp         000000AC
+  0000003F: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000042: 69 C0 04 16 00 00  imul        eax,eax,1604h
+  00000048: 8D 7B 3C           lea         edi,[ebx+3Ch]
+  0000004B: 03 F8              add         edi,eax
+  0000004D: 33 C9              xor         ecx,ecx
+  0000004F: 33 D2              xor         edx,edx
+  00000051: 39 8F 00 16 00 00  cmp         dword ptr [edi+1600h],ecx
+  00000057: 76 45              jbe         0000009E
+  00000059: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000005C: 8B C7              mov         eax,edi
+  0000005E: 8B FF              mov         edi,edi
+  00000060: 39 18              cmp         dword ptr [eax],ebx
+  00000062: 75 08              jne         0000006C
+  00000064: C7 40 28 00 00 00  mov         dword ptr [eax+28h],0
+            00
+  0000006B: 42                 inc         edx
+  0000006C: 41                 inc         ecx
+  0000006D: 83 C0 2C           add         eax,2Ch
+  00000070: 3B 8F 00 16 00 00  cmp         ecx,dword ptr [edi+1600h]
+  00000076: 72 E8              jb          00000060
+  00000078: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  0000007B: 8D 73 1C           lea         esi,[ebx+1Ch]
+  0000007E: 85 D2              test        edx,edx
+  00000080: 74 1C              je          0000009E
+  00000082: 29 97 00 16 00 00  sub         dword ptr [edi+1600h],edx
+  00000088: 68 00 00 00 00     push        offset ?CmpForUnbound@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z
+  0000008D: 6A 2C              push        2Ch
+  0000008F: 68 80 00 00 00     push        80h
+  00000094: 57                 push        edi
+  00000095: FF 15 00 00 00 00  call        dword ptr [__imp__qsort]
+  0000009B: 83 C4 10           add         esp,10h
+  0000009E: 8B CE              mov         ecx,esi
+  000000A0: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  000000A5: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  000000A8: 47                 inc         edi
+  000000A9: 89 7D F8           mov         dword ptr [ebp-8],edi
+  000000AC: 8D 43 34           lea         eax,[ebx+34h]
+  000000AF: 83 FF 02           cmp         edi,2
+  000000B2: 0F 82 68 FF FF FF  jb          00000020
+  000000B8: 33 C9              xor         ecx,ecx
+  000000BA: 39 8B 48 44 00 00  cmp         dword ptr [ebx+4448h],ecx
+  000000C0: 76 24              jbe         000000E6
+  000000C2: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000000C5: 8D 83 48 42 00 00  lea         eax,[ebx+4248h]
+  000000CB: EB 03              jmp         000000D0
+  000000CD: 8D 49 00           lea         ecx,[ecx]
+  000000D0: 39 10              cmp         dword ptr [eax],edx
+  000000D2: 75 06              jne         000000DA
+  000000D4: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  000000DA: 41                 inc         ecx
+  000000DB: 83 C0 04           add         eax,4
+  000000DE: 3B 8B 48 44 00 00  cmp         ecx,dword ptr [ebx+4448h]
+  000000E4: 72 EA              jb          000000D0
+  000000E6: 5F                 pop         edi
+  000000E7: 5E                 pop         esi
+  000000E8: 5B                 pop         ebx
+  000000E9: 8B E5              mov         esp,ebp
+  000000EB: 5D                 pop         ebp
+  000000EC: C2 04 00           ret         4
+
+?flushAllProcessing@PMMU@PInternal@PTerrain@Phyre@@QAEIAAVPRendererBase@PRendering@4@@Z (public: unsigned int __thiscall Phyre::PTerrain::PInternal::PMMU::flushAllProcessing(class Phyre::PRendering::PRendererBase &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 89 7D F8           mov         dword ptr [ebp-8],edi
+  0000000E: 8D 77 1C           lea         esi,[edi+1Ch]
+  00000011: 8B CE              mov         ecx,esi
+  00000013: 33 DB              xor         ebx,ebx
+  00000015: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  0000001A: 8D 57 64           lea         edx,[edi+64h]
+  0000001D: 8D 7B 02           lea         edi,[ebx+2]
+  00000020: 8B 8A D8 15 00 00  mov         ecx,dword ptr [edx+15D8h]
+  00000026: 85 C9              test        ecx,ecx
+  00000028: 74 12              je          0000003C
+  0000002A: 8B C2              mov         eax,edx
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 83 38 00           cmp         dword ptr [eax],0
+  00000033: 74 01              je          00000036
+  00000035: 43                 inc         ebx
+  00000036: 83 C0 2C           add         eax,2Ch
+  00000039: 49                 dec         ecx
+  0000003A: 75 F4              jne         00000030
+  0000003C: 81 C2 04 16 00 00  add         edx,1604h
+  00000042: 4F                 dec         edi
+  00000043: 75 DB              jne         00000020
+  00000045: 8B CE              mov         ecx,esi
+  00000047: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  0000004C: 89 7D FC           mov         dword ptr [ebp-4],edi
+  0000004F: 90                 nop
+  00000050: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000053: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000056: 57                 push        edi
+  00000057: E8 00 00 00 00     call        ?processRenderUnit@PMMU@PInternal@PTerrain@Phyre@@QAEXAAVPRendererBase@PRendering@4@@Z
+  0000005C: 8B CF              mov         ecx,edi
+  0000005E: E8 00 00 00 00     call        ?flip@PRenderer@PRendering@Phyre@@QAE?AW4PResult@3@XZ
+  00000063: 85 C0              test        eax,eax
+  00000065: 75 4B              jne         000000B2
+  00000067: 8B 07              mov         eax,dword ptr [edi]
+  00000069: 8B CF              mov         ecx,edi
+  0000006B: FF 50 08           call        dword ptr [eax+8]
+  0000006E: 85 C0              test        eax,eax
+  00000070: 75 40              jne         000000B2
+  00000072: E8 00 00 00 00     call        ?GetInstance@PRenderThread@PRendering@Phyre@@SAAAV123@XZ
+  00000077: 8B C8              mov         ecx,eax
+  00000079: E8 00 00 00 00     call        ?sync@PRenderThread@PRendering@Phyre@@QAE?AW4PResult@3@XZ
+  0000007E: 85 C0              test        eax,eax
+  00000080: 75 30              jne         000000B2
+  00000082: 8B CE              mov         ecx,esi
+  00000084: 33 FF              xor         edi,edi
+  00000086: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  0000008B: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000008E: 8B 42 18           mov         eax,dword ptr [edx+18h]
+  00000091: 3B 45 FC           cmp         eax,dword ptr [ebp-4]
+  00000094: 74 25              je          000000BB
+  00000096: 8B CE              mov         ecx,esi
+  00000098: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  0000009D: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000A0: 83 F8 02           cmp         eax,2
+  000000A3: 72 AB              jb          00000050
+  000000A5: FF 75 08           push        dword ptr [ebp+8]
+  000000A8: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000000AB: E8 00 00 00 00     call        ?processRenderUnit@PMMU@PInternal@PTerrain@Phyre@@QAEXAAVPRendererBase@PRendering@4@@Z
+  000000B0: 8B C3              mov         eax,ebx
+  000000B2: 5F                 pop         edi
+  000000B3: 5E                 pop         esi
+  000000B4: 5B                 pop         ebx
+  000000B5: 8B E5              mov         esp,ebp
+  000000B7: 5D                 pop         ebp
+  000000B8: C2 04 00           ret         4
+  000000BB: 69 C0 04 16 00 00  imul        eax,eax,1604h
+  000000C1: 8B 8C 10 3C 16 00  mov         ecx,dword ptr [eax+edx+163Ch]
+            00
+  000000C8: 85 C9              test        ecx,ecx
+  000000CA: 74 11              je          000000DD
+  000000CC: 83 C0 64           add         eax,64h
+  000000CF: 03 C2              add         eax,edx
+  000000D1: 83 38 01           cmp         dword ptr [eax],1
+  000000D4: 75 01              jne         000000D7
+  000000D6: 47                 inc         edi
+  000000D7: 83 C0 2C           add         eax,2Ch
+  000000DA: 49                 dec         ecx
+  000000DB: 75 F4              jne         000000D1
+  000000DD: 8B CE              mov         ecx,esi
+  000000DF: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  000000E4: 85 FF              test        edi,edi
+  000000E6: 75 B5              jne         0000009D
+  000000E8: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000EB: 40                 inc         eax
+  000000EC: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000EF: EB AF              jmp         000000A0
+
+?getMaxBatchCount@PPRTexture@PInternal@PTerrain@Phyre@@QBEIXZ (public: unsigned int __thiscall Phyre::PTerrain::PInternal::PPRTexture::getMaxBatchCount(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?getPRTexture@PPageFault@PInternal@PTerrain@Phyre@@QAEPAVPPRTexture@234@XZ (public: class Phyre::PTerrain::PInternal::PPRTexture * __thiscall Phyre::PTerrain::PInternal::PPageFault::getPRTexture(void)):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C3                 ret
+
+?getPRTexture@PPageFault@PInternal@PTerrain@Phyre@@QBEPBVPPRTexture@234@XZ (public: class Phyre::PTerrain::PInternal::PPRTexture const * __thiscall Phyre::PTerrain::PInternal::PPageFault::getPRTexture(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C3                 ret
+
+?initialize@PEventFlag@Phyre@@QAE?AW4PResult@2@H@Z (public: enum Phyre::PResult __thiscall Phyre::PEventFlag::initialize(int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 08           push        dword ptr [ebp+8]
+  00000007: 8B F1              mov         esi,ecx
+  00000009: E8 00 00 00 00     call        ?initialize@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@H@Z
+  0000000E: C6 46 04 01        mov         byte ptr [esi+4],1
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C2 04 00           ret         4
+
+?initialize@PMMU@PInternal@PTerrain@Phyre@@QAE?AW4PResult@4@XZ (public: enum Phyre::PResult __thiscall Phyre::PTerrain::PInternal::PMMU::initialize(void)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  0000000C: E8 00 00 00 00     call        ?initialize@PCriticalSectionBase@Phyre@@QAE?AW4PResult@2@XZ
+  00000011: 85 C0              test        eax,eax
+  00000013: 75 54              jne         00000069
+  00000015: 56                 push        esi
+  00000016: 6A 01              push        1
+  00000018: 8D 4F 34           lea         ecx,[edi+34h]
+  0000001B: E8 00 00 00 00     call        ?initialize@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@H@Z
+  00000020: C6 47 38 01        mov         byte ptr [edi+38h],1
+  00000024: 85 C0              test        eax,eax
+  00000026: 75 40              jne         00000068
+  00000028: 68 00 00 00 00     push        offset ?MMUThread@PMMU@PInternal@PTerrain@Phyre@@CAIPAX@Z
+  0000002D: 8D 4D E8           lea         ecx,[ebp-18h]
+  00000030: E8 00 00 00 00     call        ??0PThreadInitializationWin32@Phyre@@QAE@P6AIPAX@Z@Z
+  00000035: 8D 45 E8           lea         eax,[ebp-18h]
+  00000038: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000003B: C7 45 F4 02 00 00  mov         dword ptr [ebp-0Ch],2
+            00
+  00000042: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],offset ??_C@_0BJ@GIDKDHFK@PhyreEngineTerrainThread?$AA@
+            00
+  00000049: C7 45 FC 01 00 00  mov         dword ptr [ebp-4],1
+            00
+  00000050: 50                 push        eax
+  00000051: 8D 4F 04           lea         ecx,[edi+4]
+  00000054: C6 47 14 00        mov         byte ptr [edi+14h],0
+  00000058: E8 00 00 00 00     call        ?initialize@PThreadWin32@Phyre@@IAE?AW4PResult@2@ABVPThreadInitialization@2@@Z
+  0000005D: C6 47 10 01        mov         byte ptr [edi+10h],1
+  00000061: 85 C0              test        eax,eax
+  00000063: 75 03              jne         00000068
+  00000065: C6 07 01           mov         byte ptr [edi],1
+  00000068: 5E                 pop         esi
+  00000069: 5F                 pop         edi
+  0000006A: 8B E5              mov         esp,ebp
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+
+?initialize@PThread@Phyre@@QAE?AW4PResult@2@ABVPThreadInitialization@2@@Z (public: enum Phyre::PResult __thiscall Phyre::PThread::initialize(class Phyre::PThreadInitialization const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 08           push        dword ptr [ebp+8]
+  00000007: 8B F1              mov         esi,ecx
+  00000009: E8 00 00 00 00     call        ?initialize@PThreadWin32@Phyre@@IAE?AW4PResult@2@ABVPThreadInitialization@2@@Z
+  0000000E: C6 46 0C 01        mov         byte ptr [esi+0Ch],1
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C2 04 00           ret         4
+
+?isFull@PMMUWorkBatch@PInternal@PTerrain@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PTerrain::PInternal::PMMUWorkBatch::isFull(void)const ):
+  00000000: 81 B9 00 16 00 00  cmp         dword ptr [ecx+00001600h],80h
+            80 00 00 00
+  0000000A: 1B C0              sbb         eax,eax
+  0000000C: 40                 inc         eax
+  0000000D: C3                 ret
+
+?isNoStreamingNeeded@PPageFault@PInternal@PTerrain@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PTerrain::PInternal::PPageFault::isNoStreamingNeeded(void)const ):
+  00000000: 8A 41 24           mov         al,byte ptr [ecx+24h]
+  00000003: 24 01              and         al,1
+  00000005: C3                 ret
+
+?isRecoverFromNack@PPageFault@PInternal@PTerrain@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PTerrain::PInternal::PPageFault::isRecoverFromNack(void)const ):
+  00000000: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  00000003: D1 E8              shr         eax,1
+  00000005: 24 01              and         al,1
+  00000007: C3                 ret
+
+?isStreamUnitAvailable@PPRTexture@PInternal@PTerrain@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PTerrain::PInternal::PPRTexture::isStreamUnitAvailable(void)const ):
+  00000000: 8B 49 10           mov         ecx,dword ptr [ecx+10h]
+  00000003: 33 C0              xor         eax,eax
+  00000005: 85 C9              test        ecx,ecx
+  00000007: 0F 9F C0           setg        al
+  0000000A: C3                 ret
+
+?isTexture2D@PPageFault@PInternal@PTerrain@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PTerrain::PInternal::PPageFault::isTexture2D(void)const ):
+  00000000: 33 C0              xor         eax,eax
+  00000002: 39 01              cmp         dword ptr [ecx],eax
+  00000004: 0F 95 C0           setne       al
+  00000007: C3                 ret
+
+?join@PThread@Phyre@@QAE?AW4PResult@2@AAI@Z (public: enum Phyre::PResult __thiscall Phyre::PThread::join(unsigned int &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 5D                 pop         ebp
+  00000004: E9 00 00 00 00     jmp         ?join@PThreadWin32@Phyre@@IAE?AW4PResult@2@AAI@Z
+
+?mmuThread@PMMU@PInternal@PTerrain@Phyre@@AAEXXZ (private: void __thiscall Phyre::PTerrain::PInternal::PMMU::mmuThread(void)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 18 02 00 00  sub         esp,218h
+  00000009: 57                 push        edi
+  0000000A: 8B F9              mov         edi,ecx
+  0000000C: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000000F: 80 7F 14 00        cmp         byte ptr [edi+14h],0
+  00000013: 0F 85 43 01 00 00  jne         0000015C
+  00000019: 53                 push        ebx
+  0000001A: 8D 4F 34           lea         ecx,[edi+34h]
+  0000001D: 56                 push        esi
+  0000001E: 8B FF              mov         edi,edi
+  00000020: E8 00 00 00 00     call        ?wait@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000025: 8B 77 18           mov         esi,dword ptr [edi+18h]
+  00000028: 8B DE              mov         ebx,esi
+  0000002A: 69 DB 04 16 00 00  imul        ebx,ebx,1604h
+  00000030: 83 C3 3C           add         ebx,3Ch
+  00000033: 03 DF              add         ebx,edi
+  00000035: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  00000038: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000003B: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  00000040: 8D 46 FF           lea         eax,[esi-1]
+  00000043: 83 E0 01           and         eax,1
+  00000046: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  00000049: 89 47 18           mov         dword ptr [edi+18h],eax
+  0000004C: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  00000051: 8B 83 00 16 00 00  mov         eax,dword ptr [ebx+1600h]
+  00000057: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000005A: 85 C0              test        eax,eax
+  0000005C: 0F 84 EB 00 00 00  je          0000014D
+  00000062: 8B 35 00 00 00 00  mov         esi,dword ptr [__imp__qsort]
+  00000068: 68 00 00 00 00     push        offset ?CmpForStreamUnit@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z
+  0000006D: 6A 2C              push        2Ch
+  0000006F: 50                 push        eax
+  00000070: 53                 push        ebx
+  00000071: FF D6              call        esi
+  00000073: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000076: 33 C9              xor         ecx,ecx
+  00000078: 83 C4 10           add         esp,10h
+  0000007B: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  0000007E: 85 D2              test        edx,edx
+  00000080: 0F 84 AD 00 00 00  je          00000133
+  00000086: 8B C1              mov         eax,ecx
+  00000088: 6B C0 2C           imul        eax,eax,2Ch
+  0000008B: 03 C3              add         eax,ebx
+  0000008D: 83 78 28 01        cmp         dword ptr [eax+28h],1
+  00000091: 8D 78 28           lea         edi,[eax+28h]
+  00000094: 0F 85 90 00 00 00  jne         0000012A
+  0000009A: 8B 18              mov         ebx,dword ptr [eax]
+  0000009C: 8B F1              mov         esi,ecx
+  0000009E: 8D 8D E8 FD FF FF  lea         ecx,[ebp-218h]
+  000000A4: 89 01              mov         dword ptr [ecx],eax
+  000000A6: 46                 inc         esi
+  000000A7: 83 C0 2C           add         eax,2Ch
+  000000AA: 8D 49 04           lea         ecx,[ecx+4]
+  000000AD: 3B F2              cmp         esi,edx
+  000000AF: 73 0A              jae         000000BB
+  000000B1: 39 18              cmp         dword ptr [eax],ebx
+  000000B3: 75 06              jne         000000BB
+  000000B5: 83 78 28 01        cmp         dword ptr [eax+28h],1
+  000000B9: 74 E9              je          000000A4
+  000000BB: 8D 85 E8 FD FF FF  lea         eax,[ebp-218h]
+  000000C1: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  000000C4: 8B 53 08           mov         edx,dword ptr [ebx+8]
+  000000C7: 8B C6              mov         eax,esi
+  000000C9: 2B 45 F4           sub         eax,dword ptr [ebp-0Ch]
+  000000CC: 3B C2              cmp         eax,edx
+  000000CE: 0F 42 D0           cmovb       edx,eax
+  000000D1: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  000000D4: 83 7B 10 00        cmp         dword ptr [ebx+10h],0
+  000000D8: 7E 3D              jle         00000117
+  000000DA: 8B 03              mov         eax,dword ptr [ebx]
+  000000DC: 8D 4D E8           lea         ecx,[ebp-18h]
+  000000DF: 51                 push        ecx
+  000000E0: 8B CB              mov         ecx,ebx
+  000000E2: FF 50 0C           call        dword ptr [eax+0Ch]
+  000000E5: 8B 55 EC           mov         edx,dword ptr [ebp-14h]
+  000000E8: 8B C8              mov         ecx,eax
+  000000EA: F7 D9              neg         ecx
+  000000EC: 1B C9              sbb         ecx,ecx
+  000000EE: 83 E1 FE           and         ecx,0FFFFFFFEh
+  000000F1: 83 C1 02           add         ecx,2
+  000000F4: 85 D2              test        edx,edx
+  000000F6: 74 10              je          00000108
+  000000F8: 8B C2              mov         eax,edx
+  000000FA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000100: 89 0F              mov         dword ptr [edi],ecx
+  00000102: 8D 7F 2C           lea         edi,[edi+2Ch]
+  00000105: 48                 dec         eax
+  00000106: 75 F8              jne         00000100
+  00000108: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000010B: 85 C9              test        ecx,ecx
+  0000010D: 75 0B              jne         0000011A
+  0000010F: 29 93 00 16 00 00  sub         dword ptr [ebx+1600h],edx
+  00000115: EB 03              jmp         0000011A
+  00000117: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000011A: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000011D: 8B CE              mov         ecx,esi
+  0000011F: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000122: 3B F2              cmp         esi,edx
+  00000124: 0F 82 5C FF FF FF  jb          00000086
+  0000012A: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  0000012D: 8B 35 00 00 00 00  mov         esi,dword ptr [__imp__qsort]
+  00000133: 3B 93 00 16 00 00  cmp         edx,dword ptr [ebx+1600h]
+  00000139: 76 12              jbe         0000014D
+  0000013B: 68 00 00 00 00     push        offset ?CmpForUnbound@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z
+  00000140: 6A 2C              push        2Ch
+  00000142: 68 80 00 00 00     push        80h
+  00000147: 53                 push        ebx
+  00000148: FF D6              call        esi
+  0000014A: 83 C4 10           add         esp,10h
+  0000014D: 80 7F 14 00        cmp         byte ptr [edi+14h],0
+  00000151: 8D 4F 34           lea         ecx,[edi+34h]
+  00000154: 0F 84 C6 FE FF FF  je          00000020
+  0000015A: 5E                 pop         esi
+  0000015B: 5B                 pop         ebx
+  0000015C: 5F                 pop         edi
+  0000015D: 8B E5              mov         esp,ebp
+  0000015F: 5D                 pop         ebp
+  00000160: C3                 ret
+
+?processRenderUnit@PMMU@PInternal@PTerrain@Phyre@@QAEXAAVPRendererBase@PRendering@4@@Z (public: void __thiscall Phyre::PTerrain::PInternal::PMMU::processRenderUnit(class Phyre::PRendering::PRendererBase &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 14 02 00 00  sub         esp,214h
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B F9              mov         edi,ecx
+  0000000E: 33 F6              xor         esi,esi
+  00000010: 39 B7 48 44 00 00  cmp         dword ptr [edi+4448h],esi
+  00000016: 76 22              jbe         0000003A
+  00000018: 8D 9F 48 42 00 00  lea         ebx,[edi+4248h]
+  0000001E: 8B FF              mov         edi,edi
+  00000020: 8B 0B              mov         ecx,dword ptr [ebx]
+  00000022: 85 C9              test        ecx,ecx
+  00000024: 74 08              je          0000002E
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: FF 75 08           push        dword ptr [ebp+8]
+  0000002B: FF 50 14           call        dword ptr [eax+14h]
+  0000002E: 46                 inc         esi
+  0000002F: 83 C3 04           add         ebx,4
+  00000032: 3B B7 48 44 00 00  cmp         esi,dword ptr [edi+4448h]
+  00000038: 72 E6              jb          00000020
+  0000003A: 8D 77 1C           lea         esi,[edi+1Ch]
+  0000003D: C7 87 48 44 00 00  mov         dword ptr [edi+4448h],0
+            00 00 00 00
+  00000047: 8B CE              mov         ecx,esi
+  00000049: C7 87 44 42 00 00  mov         dword ptr [edi+4244h],0
+            00 00 00 00
+  00000053: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  00000058: 8D 4F 34           lea         ecx,[edi+34h]
+  0000005B: E8 00 00 00 00     call        ?signal@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000060: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000063: 69 C0 04 16 00 00  imul        eax,eax,1604h
+  00000069: 8D 4F 3C           lea         ecx,[edi+3Ch]
+  0000006C: 03 C8              add         ecx,eax
+  0000006E: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000071: 8B 81 00 16 00 00  mov         eax,dword ptr [ecx+1600h]
+  00000077: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000007A: 85 C0              test        eax,eax
+  0000007C: 75 10              jne         0000008E
+  0000007E: 8B CE              mov         ecx,esi
+  00000080: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  00000085: 5F                 pop         edi
+  00000086: 5E                 pop         esi
+  00000087: 5B                 pop         ebx
+  00000088: 8B E5              mov         esp,ebp
+  0000008A: 5D                 pop         ebp
+  0000008B: C2 04 00           ret         4
+  0000008E: 68 00 00 00 00     push        offset ?CmpForRenderUnit@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z
+  00000093: 6A 2C              push        2Ch
+  00000095: 50                 push        eax
+  00000096: 51                 push        ecx
+  00000097: FF 15 00 00 00 00  call        dword ptr [__imp__qsort]
+  0000009D: 33 C9              xor         ecx,ecx
+  0000009F: 83 C4 10           add         esp,10h
+  000000A2: 33 DB              xor         ebx,ebx
+  000000A4: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000000A7: 39 4D F4           cmp         dword ptr [ebp-0Ch],ecx
+  000000AA: 0F 86 92 00 00 00  jbe         00000142
+  000000B0: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000B3: 8D B7 44 2C 00 00  lea         esi,[edi+2C44h]
+  000000B9: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000000C0: 8B 02              mov         eax,dword ptr [edx]
+  000000C2: 3B C3              cmp         eax,ebx
+  000000C4: 74 07              je          000000CD
+  000000C6: 33 C9              xor         ecx,ecx
+  000000C8: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000000CB: 8B D8              mov         ebx,eax
+  000000CD: 83 7A 28 02        cmp         dword ptr [edx+28h],2
+  000000D1: 75 64              jne         00000137
+  000000D3: 3B 4B 08           cmp         ecx,dword ptr [ebx+8]
+  000000D6: 73 5F              jae         00000137
+  000000D8: 8B 8E 00 16 00 00  mov         ecx,dword ptr [esi+1600h]
+  000000DE: F3 0F 7E 02        movq        xmm0,mmword ptr [edx]
+  000000E2: 6B C9 2C           imul        ecx,ecx,2Ch
+  000000E5: 66 0F D6 04 31     movq        mmword ptr [ecx+esi],xmm0
+  000000EA: F3 0F 7E 42 08     movq        xmm0,mmword ptr [edx+8]
+  000000EF: 03 CE              add         ecx,esi
+  000000F1: 66 0F D6 41 08     movq        mmword ptr [ecx+8],xmm0
+  000000F6: F3 0F 7E 42 10     movq        xmm0,mmword ptr [edx+10h]
+  000000FB: 66 0F D6 41 10     movq        mmword ptr [ecx+10h],xmm0
+  00000100: F3 0F 7E 42 18     movq        xmm0,mmword ptr [edx+18h]
+  00000105: 66 0F D6 41 18     movq        mmword ptr [ecx+18h],xmm0
+  0000010A: F3 0F 7E 42 20     movq        xmm0,mmword ptr [edx+20h]
+  0000010F: 66 0F D6 41 20     movq        mmword ptr [ecx+20h],xmm0
+  00000114: 8B 42 28           mov         eax,dword ptr [edx+28h]
+  00000117: 89 41 28           mov         dword ptr [ecx+28h],eax
+  0000011A: FF 86 00 16 00 00  inc         dword ptr [esi+1600h]
+  00000120: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000123: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000126: C7 42 28 00 00 00  mov         dword ptr [edx+28h],0
+            00
+  0000012D: FF 88 00 16 00 00  dec         dword ptr [eax+1600h]
+  00000133: 41                 inc         ecx
+  00000134: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000137: 83 C2 2C           add         edx,2Ch
+  0000013A: FF 4D F4           dec         dword ptr [ebp-0Ch]
+  0000013D: 75 81              jne         000000C0
+  0000013F: 8D 77 1C           lea         esi,[edi+1Ch]
+  00000142: 68 00 00 00 00     push        offset ?CmpForUnbound@PWorkDesc@PMMUWorkBatch@PInternal@PTerrain@Phyre@@SAHPBX0@Z
+  00000147: 6A 2C              push        2Ch
+  00000149: 68 80 00 00 00     push        80h
+  0000014E: FF 75 FC           push        dword ptr [ebp-4]
+  00000151: FF 15 00 00 00 00  call        dword ptr [__imp__qsort]
+  00000157: 83 C4 10           add         esp,10h
+  0000015A: 8B CE              mov         ecx,esi
+  0000015C: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  00000161: 8B 97 44 42 00 00  mov         edx,dword ptr [edi+4244h]
+  00000167: 8D 9F 44 2C 00 00  lea         ebx,[edi+2C44h]
+  0000016D: 33 C9              xor         ecx,ecx
+  0000016F: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000172: 89 55 F8           mov         dword ptr [ebp-8],edx
+  00000175: 85 D2              test        edx,edx
+  00000177: 0F 84 8E 00 00 00  je          0000020B
+  0000017D: 8D 49 00           lea         ecx,[ecx]
+  00000180: 8B C1              mov         eax,ecx
+  00000182: 6B C0 2C           imul        eax,eax,2Ch
+  00000185: 03 C3              add         eax,ebx
+  00000187: 8B F1              mov         esi,ecx
+  00000189: 8B 18              mov         ebx,dword ptr [eax]
+  0000018B: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000018E: 8D 8D EC FD FF FF  lea         ecx,[ebp-214h]
+  00000194: 89 01              mov         dword ptr [ecx],eax
+  00000196: 46                 inc         esi
+  00000197: 83 C0 2C           add         eax,2Ch
+  0000019A: 8D 49 04           lea         ecx,[ecx+4]
+  0000019D: 3B F2              cmp         esi,edx
+  0000019F: 73 0A              jae         000001AB
+  000001A1: 39 18              cmp         dword ptr [eax],ebx
+  000001A3: 75 06              jne         000001AB
+  000001A5: 83 78 28 02        cmp         dword ptr [eax+28h],2
+  000001A9: 74 E9              je          00000194
+  000001AB: 8D 85 EC FD FF FF  lea         eax,[ebp-214h]
+  000001B1: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  000001B4: 8B C6              mov         eax,esi
+  000001B6: 2B 45 FC           sub         eax,dword ptr [ebp-4]
+  000001B9: 8D 4D EC           lea         ecx,[ebp-14h]
+  000001BC: 51                 push        ecx
+  000001BD: FF 75 08           push        dword ptr [ebp+8]
+  000001C0: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  000001C3: 8B 03              mov         eax,dword ptr [ebx]
+  000001C5: 8B CB              mov         ecx,ebx
+  000001C7: FF 50 10           call        dword ptr [eax+10h]
+  000001CA: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  000001CD: 29 87 44 42 00 00  sub         dword ptr [edi+4244h],eax
+  000001D3: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000001D6: F6 40 24 01        test        byte ptr [eax+24h],1
+  000001DA: 75 13              jne         000001EF
+  000001DC: 8B 87 48 44 00 00  mov         eax,dword ptr [edi+4448h]
+  000001E2: 89 9C 87 48 42 00  mov         dword ptr [edi+eax*4+4248h],ebx
+            00
+  000001E9: FF 87 48 44 00 00  inc         dword ptr [edi+4448h]
+  000001EF: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000001F2: 8B CE              mov         ecx,esi
+  000001F4: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  000001F7: 8D 9F 44 2C 00 00  lea         ebx,[edi+2C44h]
+  000001FD: 3B F2              cmp         esi,edx
+  000001FF: 0F 82 7B FF FF FF  jb          00000180
+  00000205: 8D 9F 44 2C 00 00  lea         ebx,[edi+2C44h]
+  0000020B: 2B 93 00 16 00 00  sub         edx,dword ptr [ebx+1600h]
+  00000211: 89 97 4C 44 00 00  mov         dword ptr [edi+444Ch],edx
+  00000217: 5F                 pop         edi
+  00000218: 5E                 pop         esi
+  00000219: 5B                 pop         ebx
+  0000021A: 8B E5              mov         esp,ebp
+  0000021C: 5D                 pop         ebp
+  0000021D: C2 04 00           ret         4
+
+?signal@PEventFlag@Phyre@@QAE?AW4PResult@2@XZ (public: enum Phyre::PResult __thiscall Phyre::PEventFlag::signal(void)):
+  00000000: E9 00 00 00 00     jmp         ?signal@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+
+?terminate@PEventFlag@Phyre@@QAE?AW4PResult@2@XZ (public: enum Phyre::PResult __thiscall Phyre::PEventFlag::terminate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: E8 00 00 00 00     call        ?terminate@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000008: C6 46 04 00        mov         byte ptr [esi+4],0
+  0000000C: 5E                 pop         esi
+  0000000D: C3                 ret
+
+?terminate@PMMU@PInternal@PTerrain@Phyre@@QAE?AW4PResult@4@XZ (public: enum Phyre::PResult __thiscall Phyre::PTerrain::PInternal::PMMU::terminate(void)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F1              mov         esi,ecx
+  00000008: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000000F: 8D 4E 34           lea         ecx,[esi+34h]
+  00000012: C6 46 14 01        mov         byte ptr [esi+14h],1
+  00000016: E8 00 00 00 00     call        ?signal@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  0000001B: 85 C0              test        eax,eax
+  0000001D: 75 3F              jne         0000005E
+  0000001F: 57                 push        edi
+  00000020: 8D 45 FC           lea         eax,[ebp-4]
+  00000023: 50                 push        eax
+  00000024: 8D 4E 04           lea         ecx,[esi+4]
+  00000027: E8 00 00 00 00     call        ?join@PThreadWin32@Phyre@@IAE?AW4PResult@2@AAI@Z
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 75 2D              jne         0000005D
+  00000030: 8D 4E 04           lea         ecx,[esi+4]
+  00000033: E8 00 00 00 00     call        ?terminate@PThreadWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000038: C6 46 10 00        mov         byte ptr [esi+10h],0
+  0000003C: 85 C0              test        eax,eax
+  0000003E: 75 1D              jne         0000005D
+  00000040: 8D 4E 1C           lea         ecx,[esi+1Ch]
+  00000043: E8 00 00 00 00     call        ?terminate@PCriticalSectionBase@Phyre@@QAEXXZ
+  00000048: 8D 4E 34           lea         ecx,[esi+34h]
+  0000004B: E8 00 00 00 00     call        ?terminate@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000050: C6 46 38 00        mov         byte ptr [esi+38h],0
+  00000054: 85 C0              test        eax,eax
+  00000056: 75 05              jne         0000005D
+  00000058: 88 06              mov         byte ptr [esi],al
+  0000005A: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000005D: 5F                 pop         edi
+  0000005E: 5E                 pop         esi
+  0000005F: 5B                 pop         ebx
+  00000060: 8B E5              mov         esp,ebp
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+
+?terminate@PThread@Phyre@@QAE?AW4PResult@2@XZ (public: enum Phyre::PResult __thiscall Phyre::PThread::terminate(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: E8 00 00 00 00     call        ?terminate@PThreadWin32@Phyre@@IAE?AW4PResult@2@XZ
+  00000008: C6 46 0C 00        mov         byte ptr [esi+0Ch],0
+  0000000C: 5E                 pop         esi
+  0000000D: C3                 ret
+
+?tryRaisePageFaultException@PMMU@PInternal@PTerrain@Phyre@@QAE_NAAVPPageFault@234@@Z (public: bool __thiscall Phyre::PTerrain::PInternal::PMMU::tryRaisePageFaultException(class Phyre::PTerrain::PInternal::PPageFault &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 2C           sub         esp,2Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  0000000E: E8 00 00 00 00     call        ?lock@PCriticalSection@Phyre@@QAEXXZ
+  00000013: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000016: 69 C0 04 16 00 00  imul        eax,eax,1604h
+  0000001C: 8D 57 3C           lea         edx,[edi+3Ch]
+  0000001F: 03 D0              add         edx,eax
+  00000021: 81 BA 00 16 00 00  cmp         dword ptr [edx+1600h],80h
+            80 00 00 00
+  0000002B: 72 15              jb          00000042
+  0000002D: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  00000030: 32 DB              xor         bl,bl
+  00000032: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  00000037: 5F                 pop         edi
+  00000038: 5E                 pop         esi
+  00000039: 8A C3              mov         al,bl
+  0000003B: 5B                 pop         ebx
+  0000003C: 8B E5              mov         esp,ebp
+  0000003E: 5D                 pop         ebp
+  0000003F: C2 04 00           ret         4
+  00000042: FF 05 00 00 00 00  inc         dword ptr [?s_mostRecentlyRaisedPageFaultAge@PInternal@PTerrain@Phyre@@3IA]
+  00000048: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000004B: 0F 57 C0           xorps       xmm0,xmm0
+  0000004E: F6 40 24 01        test        byte ptr [eax+24h],1
+  00000052: F3 0F 7E 48 08     movq        xmm1,mmword ptr [eax+8]
+  00000057: F3 0F 7E 50 10     movq        xmm2,mmword ptr [eax+10h]
+  0000005C: F3 0F 7E 58 18     movq        xmm3,mmword ptr [eax+18h]
+  00000061: F3 0F 7E 60 20     movq        xmm4,mmword ptr [eax+20h]
+  00000066: 66 0F D6 45 D8     movq        mmword ptr [ebp-28h],xmm0
+  0000006B: 66 0F D6 45 E0     movq        mmword ptr [ebp-20h],xmm0
+  00000070: 66 0F D6 45 E8     movq        mmword ptr [ebp-18h],xmm0
+  00000075: F3 0F 7E 00        movq        xmm0,mmword ptr [eax]
+  00000079: 8B 82 00 16 00 00  mov         eax,dword ptr [edx+1600h]
+  0000007F: B9 00 00 00 00     mov         ecx,0
+  00000084: 0F 95 C1           setne       cl
+  00000087: 6B C0 2C           imul        eax,eax,2Ch
+  0000008A: 03 C2              add         eax,edx
+  0000008C: 41                 inc         ecx
+  0000008D: 66 0F D6 00        movq        mmword ptr [eax],xmm0
+  00000091: 66 0F D6 48 08     movq        mmword ptr [eax+8],xmm1
+  00000096: 66 0F D6 50 10     movq        mmword ptr [eax+10h],xmm2
+  0000009B: 66 0F D6 58 18     movq        mmword ptr [eax+18h],xmm3
+  000000A0: 66 0F D6 60 20     movq        mmword ptr [eax+20h],xmm4
+  000000A5: 89 48 28           mov         dword ptr [eax+28h],ecx
+  000000A8: FF 82 00 16 00 00  inc         dword ptr [edx+1600h]
+  000000AE: 8D 4F 1C           lea         ecx,[edi+1Ch]
+  000000B1: C7 45 F0 00 00 00  mov         dword ptr [ebp-10h],0
+            00
+  000000B8: B3 01              mov         bl,1
+  000000BA: E8 00 00 00 00     call        ?unlock@PCriticalSection@Phyre@@QAEXXZ
+  000000BF: 8A C3              mov         al,bl
+  000000C1: 5F                 pop         edi
+  000000C2: 5E                 pop         esi
+  000000C3: 5B                 pop         ebx
+  000000C4: 8B E5              mov         esp,ebp
+  000000C6: 5D                 pop         ebp
+  000000C7: C2 04 00           ret         4
+
+?wait@PEventFlag@Phyre@@QAE?AW4PResult@2@XZ (public: enum Phyre::PResult __thiscall Phyre::PEventFlag::wait(void)):
+  00000000: E9 00 00 00 00     jmp         ?wait@PEventFlagWin32@Phyre@@IAE?AW4PResult@2@XZ
+
+  Summary
+
+        445A .bss
+         1E0 .debug$F
+          6C .debug$S
+        1267 .drectve
+         27A .rdata
+         B34 .text
+           A .text$yd

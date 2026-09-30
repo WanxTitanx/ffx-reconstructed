@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092BBB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Rsd_TokenReadFloat:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  0000000B: 74 20              je          0000002D
+  0000000D: FF 76 04           push        dword ptr [esi+4]
+  00000010: E8 00 00 00 00     call        _atof
+  00000015: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000018: DB 45 08           fild        dword ptr [ebp+8]
+  0000001B: 56                 push        esi
+  0000001C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000001F: E8 00 00 00 00     call        _FFX_Rsd_TokenSkipToNext
+  00000024: D9 45 08           fld         dword ptr [ebp+8]
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+  0000002D: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000030: 6A 04              push        4
+  00000032: D9 00              fld         dword ptr [eax]
+  00000034: 56                 push        esi
+  00000035: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000038: E8 00 00 00 00     call        _FFX_Serial_OffsetAdd
+  0000003D: D9 45 08           fld         dword ptr [ebp+8]
+  00000040: 83 C4 08           add         esp,8
+  00000043: 5E                 pop         esi
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

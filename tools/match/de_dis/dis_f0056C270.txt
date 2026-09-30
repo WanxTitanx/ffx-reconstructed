@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056C270.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PSprite_ZOrderCompare:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000006: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000009: D9 41 28           fld         dword ptr [ecx+28h]
+  0000000C: D9 42 28           fld         dword ptr [edx+28h]
+  0000000F: DE D9              fcompp
+  00000011: DF E0              fnstsw      ax
+  00000013: F6 C4 01           test        ah,1
+  00000016: 75 1A              jne         00000032
+  00000018: D9 41 28           fld         dword ptr [ecx+28h]
+  0000001B: D9 42 28           fld         dword ptr [edx+28h]
+  0000001E: DE D9              fcompp
+  00000020: DF E0              fnstsw      ax
+  00000022: F6 C4 41           test        ah,41h
+  00000025: 75 07              jne         0000002E
+  00000027: B8 01 00 00 00     mov         eax,1
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: 33 C0              xor         eax,eax
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+  00000032: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

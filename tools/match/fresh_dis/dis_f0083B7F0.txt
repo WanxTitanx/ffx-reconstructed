@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083B7F0.obj
+
+File Type: COFF OBJECT
+
+_SgMem_FindFreeBlock:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 8D 77 F0           lea         esi,[edi-10h]
+  0000000E: 3B C6              cmp         eax,esi
+  00000010: 74 1C              je          0000002E
+  00000012: F6 40 0C 0F        test        byte ptr [eax+0Ch],0Fh
+  00000016: 75 0F              jne         00000027
+  00000018: 8B 10              mov         edx,dword ptr [eax]
+  0000001A: 8B 0E              mov         ecx,dword ptr [esi]
+  0000001C: 2B D0              sub         edx,eax
+  0000001E: 83 EA 10           sub         edx,10h
+  00000021: 2B CF              sub         ecx,edi
+  00000023: 3B D1              cmp         edx,ecx
+  00000025: 77 0D              ja          00000034
+  00000027: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000002A: 3B C6              cmp         eax,esi
+  0000002C: 75 E4              jne         00000012
+  0000002E: 5F                 pop         edi
+  0000002F: 33 C0              xor         eax,eax
+  00000031: 5E                 pop         esi
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+  00000034: 5F                 pop         edi
+  00000035: 83 C0 10           add         eax,10h
+  00000038: 5E                 pop         esi
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

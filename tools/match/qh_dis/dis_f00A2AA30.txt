@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A2AA30.obj
+
+File Type: COFF OBJECT
+
+@sub_A2AA30@8:
+  00000000: 53                 push        ebx
+  00000001: 8B DA              mov         ebx,edx
+  00000003: 57                 push        edi
+  00000004: 8B F9              mov         edi,ecx
+  00000006: 85 DB              test        ebx,ebx
+  00000008: 75 06              jne         00000010
+  0000000A: 5F                 pop         edi
+  0000000B: 8D 42 01           lea         eax,[edx+1]
+  0000000E: 5B                 pop         ebx
+  0000000F: C3                 ret
+  00000010: 56                 push        esi
+  00000011: 8B F3              mov         esi,ebx
+  00000013: 8D 4E 01           lea         ecx,[esi+1]
+  00000016: 8A 06              mov         al,byte ptr [esi]
+  00000018: 46                 inc         esi
+  00000019: 84 C0              test        al,al
+  0000001B: 75 F9              jne         00000016
+  0000001D: 2B F1              sub         esi,ecx
+  0000001F: 8B 8F 60 01 00 00  mov         ecx,dword ptr [edi+160h]
+  00000025: 85 C9              test        ecx,ecx
+  00000027: 74 26              je          0000004F
+  00000029: 8B 87 5C 01 00 00  mov         eax,dword ptr [edi+15Ch]
+  0000002F: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000034: 48                 dec         eax
+  00000035: 3B F0              cmp         esi,eax
+  00000037: 77 16              ja          0000004F
+  00000039: 8D 46 01           lea         eax,[esi+1]
+  0000003C: 50                 push        eax
+  0000003D: 53                 push        ebx
+  0000003E: 51                 push        ecx
+  0000003F: E8 00 00 00 00     call        _strncmp
+  00000044: 83 C4 0C           add         esp,0Ch
+  00000047: 85 C0              test        eax,eax
+  00000049: 75 12              jne         0000005D
+  0000004B: 5E                 pop         esi
+  0000004C: 5F                 pop         edi
+  0000004D: 5B                 pop         ebx
+  0000004E: C3                 ret
+  0000004F: 56                 push        esi
+  00000050: 57                 push        edi
+  00000051: E8 00 00 00 00     call        _sub_A2A110
+  00000056: 83 C4 08           add         esp,8
+  00000059: 85 C0              test        eax,eax
+  0000005B: 75 1A              jne         00000077
+  0000005D: 8D 46 01           lea         eax,[esi+1]
+  00000060: 50                 push        eax
+  00000061: 53                 push        ebx
+  00000062: FF B7 60 01 00 00  push        dword ptr [edi+160h]
+  00000068: E8 00 00 00 00     call        _memcpy
+  0000006D: 56                 push        esi
+  0000006E: 57                 push        edi
+  0000006F: E8 00 00 00 00     call        _sub_A29770
+  00000074: 83 C4 14           add         esp,14h
+  00000077: 5E                 pop         esi
+  00000078: 5F                 pop         edi
+  00000079: 5B                 pop         ebx
+  0000007A: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          7B .text

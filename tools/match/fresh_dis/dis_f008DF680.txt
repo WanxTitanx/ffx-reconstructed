@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008DF680.obj
+
+File Type: COFF OBJECT
+
+_FFX_TextLay_SkipNElements:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 85 F6              test        esi,esi
+  00000009: 75 06              jne         00000011
+  0000000B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000E: 5E                 pop         esi
+  0000000F: 5D                 pop         ebp
+  00000010: C3                 ret
+  00000011: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000014: 8A 01              mov         al,byte ptr [ecx]
+  00000016: 3C 02              cmp         al,2
+  00000018: 77 01              ja          0000001B
+  0000001A: 4E                 dec         esi
+  0000001B: 3C 26              cmp         al,26h
+  0000001D: 72 01              jb          00000020
+  0000001F: 4E                 dec         esi
+  00000020: 51                 push        ecx
+  00000021: E8 00 00 00 00     call        _FFX_TextLay_AdvanceTextPtr
+  00000026: 83 C4 04           add         esp,4
+  00000029: 8B C8              mov         ecx,eax
+  0000002B: 85 F6              test        esi,esi
+  0000002D: 75 E5              jne         00000014
+  0000002F: 5E                 pop         esi
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          32 .text

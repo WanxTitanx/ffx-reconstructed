@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009F3BC0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_9F3BC0@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 53                 push        ebx
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 57                 push        edi
+  0000000A: 53                 push        ebx
+  0000000B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000E: E8 00 00 00 00     call        _Phyre_VisibleBatch_JobProcessor
+  00000013: 8B F8              mov         edi,eax
+  00000015: 83 C4 04           add         esp,4
+  00000018: 85 FF              test        edi,edi
+  0000001A: 74 53              je          0000006F
+  0000001C: 56                 push        esi
+  0000001D: E8 00 00 00 00     call        _Phyre_Stats_GetSingleton
+  00000022: 8D 0C BD 00 00 00  lea         ecx,[edi*4]
+            00
+  00000029: 51                 push        ecx
+  0000002A: 50                 push        eax
+  0000002B: E8 00 00 00 00     call        _Phyre_PPreprocessRingBuffer_AllocateAndSetFlag
+  00000030: 8B F0              mov         esi,eax
+  00000032: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000035: 8D 4E 10           lea         ecx,[esi+10h]
+  00000038: 50                 push        eax
+  00000039: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  0000003C: 8D 45 EC           lea         eax,[ebp-14h]
+  0000003F: 8D 4F 04           lea         ecx,[edi+4]
+  00000042: 50                 push        eax
+  00000043: 8D 0C 8E           lea         ecx,[esi+ecx*4]
+  00000046: 53                 push        ebx
+  00000047: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000004A: E8 00 00 00 00     call        _Phyre_VisibleBatch_SortAndInsert
+  0000004F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000052: 83 C0 08           add         eax,8
+  00000055: 50                 push        eax
+  00000056: FF 75 F0           push        dword ptr [ebp-10h]
+  00000059: FF 75 EC           push        dword ptr [ebp-14h]
+  0000005C: FF 75 FC           push        dword ptr [ebp-4]
+  0000005F: E8 00 00 00 00     call        _Phyre_Renderer_ThreadPoolJob_Execute_w
+  00000064: 83 C4 24           add         esp,24h
+  00000067: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  0000006E: 5E                 pop         esi
+  0000006F: 5F                 pop         edi
+  00000070: 5B                 pop         ebx
+  00000071: 8B E5              mov         esp,ebp
+  00000073: 5D                 pop         ebp
+  00000074: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          77 .text

@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009F1180.obj
+
+File Type: COFF OBJECT
+
+_Phyre_QuickSort_Partition_FloatPairs:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 8B C1              mov         eax,ecx
+  0000000D: 2B C6              sub         eax,esi
+  0000000F: C1 F8 03           sar         eax,3
+  00000012: 83 F8 28           cmp         eax,28h
+  00000015: 7F 12              jg          00000029
+  00000017: 51                 push        ecx
+  00000018: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001B: 56                 push        esi
+  0000001C: E8 00 00 00 00     call        _Phyre_QuickSort_MedianOfThree_FloatPairs
+  00000021: 83 C4 0C           add         esp,0Ch
+  00000024: 5E                 pop         esi
+  00000025: 8B E5              mov         esp,ebp
+  00000027: 5D                 pop         ebp
+  00000028: C3                 ret
+  00000029: 40                 inc         eax
+  0000002A: 99                 cdq
+  0000002B: 83 E2 07           and         edx,7
+  0000002E: 03 C2              add         eax,edx
+  00000030: C1 F8 03           sar         eax,3
+  00000033: 53                 push        ebx
+  00000034: 8D 1C C5 00 00 00  lea         ebx,[eax*8]
+            00
+  0000003B: C1 E0 04           shl         eax,4
+  0000003E: 57                 push        edi
+  0000003F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000042: 03 C6              add         eax,esi
+  00000044: 8D 0C 33           lea         ecx,[ebx+esi]
+  00000047: 50                 push        eax
+  00000048: 51                 push        ecx
+  00000049: 56                 push        esi
+  0000004A: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000004D: E8 00 00 00 00     call        _Phyre_QuickSort_MedianOfThree_FloatPairs
+  00000052: 8B C3              mov         eax,ebx
+  00000054: 33 D2              xor         edx,edx
+  00000056: B9 FC FF FF FF     mov         ecx,0FFFFFFFCh
+  0000005B: F7 F1              div         eax,ecx
+  0000005D: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000060: C1 EB 02           shr         ebx,2
+  00000063: 8D 0C 9F           lea         ecx,[edi+ebx*4]
+  00000066: 51                 push        ecx
+  00000067: 57                 push        edi
+  00000068: 8B F0              mov         esi,eax
+  0000006A: C1 E6 02           shl         esi,2
+  0000006D: 8D 0C 3E           lea         ecx,[esi+edi]
+  00000070: 51                 push        ecx
+  00000071: E8 00 00 00 00     call        _Phyre_QuickSort_MedianOfThree_FloatPairs
+  00000076: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000079: 33 D2              xor         edx,edx
+  0000007B: BB FC FF FF FF     mov         ebx,0FFFFFFFCh
+  00000080: F7 F3              div         eax,ebx
+  00000082: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000085: 51                 push        ecx
+  00000086: 03 F1              add         esi,ecx
+  00000088: 56                 push        esi
+  00000089: 8D 04 81           lea         eax,[ecx+eax*4]
+  0000008C: 50                 push        eax
+  0000008D: E8 00 00 00 00     call        _Phyre_QuickSort_MedianOfThree_FloatPairs
+  00000092: 56                 push        esi
+  00000093: 57                 push        edi
+  00000094: FF 75 FC           push        dword ptr [ebp-4]
+  00000097: E8 00 00 00 00     call        _Phyre_QuickSort_MedianOfThree_FloatPairs
+  0000009C: 83 C4 30           add         esp,30h
+  0000009F: 5F                 pop         edi
+  000000A0: 5B                 pop         ebx
+  000000A1: 5E                 pop         esi
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

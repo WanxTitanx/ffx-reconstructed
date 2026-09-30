@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FC470.obj
+
+File Type: COFF OBJECT
+
+@Menu2D_PtrArray_MarkSlotUnused@8:
+  00000000: 57                 push        edi
+  00000001: 33 FF              xor         edi,edi
+  00000003: F7 01 FF FF FF 7F  test        dword ptr [ecx],7FFFFFFFh
+  00000009: 74 28              je          00000033
+  0000000B: 56                 push        esi
+  0000000C: 33 F6              xor         esi,esi
+  0000000E: 8B FF              mov         edi,edi
+  00000010: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000013: 80 3C 30 01        cmp         byte ptr [eax+esi],1
+  00000017: 75 0A              jne         00000023
+  00000019: 39 54 30 04        cmp         dword ptr [eax+esi+4],edx
+  0000001D: 75 04              jne         00000023
+  0000001F: C6 04 30 00        mov         byte ptr [eax+esi],0
+  00000023: 8B 01              mov         eax,dword ptr [ecx]
+  00000025: 47                 inc         edi
+  00000026: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000002B: 83 C6 18           add         esi,18h
+  0000002E: 3B F8              cmp         edi,eax
+  00000030: 72 DE              jb          00000010
+  00000032: 5E                 pop         esi
+  00000033: 33 C0              xor         eax,eax
+  00000035: 5F                 pop         edi
+  00000036: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          37 .text

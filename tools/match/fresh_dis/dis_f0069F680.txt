@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069F680.obj
+
+File Type: COFF OBJECT
+
+_FFX_VFXRenderDataTable2_Destroy:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  00000008: 85 F6              test        esi,esi
+  0000000A: 74 2B              je          00000037
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _FFX_Shadowmap_InitLightSlots_Thunk
+  00000012: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000015: 83 C4 04           add         esp,4
+  00000018: 85 C9              test        ecx,ecx
+  0000001A: 74 12              je          0000002E
+  0000001C: 8B 01              mov         eax,dword ptr [ecx]
+  0000001E: BA 01 00 00 00     mov         edx,1
+  00000023: 8B 00              mov         eax,dword ptr [eax]
+  00000025: FF D0              call        eax
+  00000027: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  0000002E: 56                 push        esi
+  0000002F: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000034: 83 C4 04           add         esp,4
+  00000037: 5E                 pop         esi
+  00000038: 8B E5              mov         esp,ebp
+  0000003A: 5D                 pop         ebp
+  0000003B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3C .text

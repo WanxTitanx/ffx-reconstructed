@@ -1,0 +1,114 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007089F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_RequestTrackPlay@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B DA              mov         ebx,edx
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 81 FB B5 00 00 00  cmp         ebx,0B5h
+  0000000F: 0F 87 E8 00 00 00  ja          000000FD
+  00000015: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000018: 56                 push        esi
+  00000019: 8B F3              mov         esi,ebx
+  0000001B: C1 E6 04           shl         esi,4
+  0000001E: 2B F3              sub         esi,ebx
+  00000020: 83 7C B0 04 01     cmp         dword ptr [eax+esi*4+4],1
+  00000025: 74 43              je          0000006A
+  00000027: 39 5F 18           cmp         dword ptr [edi+18h],ebx
+  0000002A: 0F 84 CC 00 00 00  je          000000FC
+  00000030: C7 44 B0 18 01 00  mov         dword ptr [eax+esi*4+18h],1
+            00 00
+  00000038: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  0000003B: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000003E: 6A 3C              push        3Ch
+  00000040: 89 44 B1 1C        mov         dword ptr [ecx+esi*4+1Ch],eax
+  00000044: FF 77 18           push        dword ptr [edi+18h]
+  00000047: 57                 push        edi
+  00000048: E8 00 00 00 00     call        _FFX_FmodMusic_CheckEventStopped
+  0000004D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000050: 53                 push        ebx
+  00000051: 57                 push        edi
+  00000052: E8 00 00 00 00     call        _FFX_FmodMusic_ReadEventByRuntimeId
+  00000057: 53                 push        ebx
+  00000058: 57                 push        edi
+  00000059: E8 00 00 00 00     call        _FFX_FmodMusic_PlayTrackByIndex
+  0000005E: 83 C4 20           add         esp,20h
+  00000061: 33 C0              xor         eax,eax
+  00000063: 5E                 pop         esi
+  00000064: 5F                 pop         edi
+  00000065: 5B                 pop         ebx
+  00000066: 5D                 pop         ebp
+  00000067: C2 08 00           ret         8
+  0000006A: 83 3C B0 00        cmp         dword ptr [eax+esi*4],0
+  0000006E: 0F 84 80 00 00 00  je          000000F4
+  00000074: 6A 12              push        12h
+  00000076: 6A 10              push        10h
+  00000078: 57                 push        edi
+  00000079: E8 00 00 00 00     call        _FFX_FmodMusic_CheckEventStopped
+  0000007E: 6A 12              push        12h
+  00000080: 68 8A 00 00 00     push        8Ah
+  00000085: 57                 push        edi
+  00000086: E8 00 00 00 00     call        _FFX_FmodMusic_CheckEventStopped
+  0000008B: 8B C3              mov         eax,ebx
+  0000008D: C1 E0 04           shl         eax,4
+  00000090: 53                 push        ebx
+  00000091: 2B C3              sub         eax,ebx
+  00000093: 50                 push        eax
+  00000094: 57                 push        edi
+  00000095: 57                 push        edi
+  00000096: E8 00 00 00 00     call        _FFX_FmodMusic_DetectActiveEvents
+  0000009B: E8 00 00 00 00     call        _FMOD_Event_setPaused
+  000000A0: 68 78 02 00 00     push        278h
+  000000A5: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  000000AA: 50                 push        eax
+  000000AB: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  000000B0: D9 EE              fldz
+  000000B2: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000B5: 83 C4 34           add         esp,34h
+  000000B8: 89 5F 18           mov         dword ptr [edi+18h],ebx
+  000000BB: 6A 01              push        1
+  000000BD: 83 EC 08           sub         esp,8
+  000000C0: C7 44 B0 20 01 00  mov         dword ptr [eax+esi*4+20h],1
+            00 00
+  000000C8: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000CB: DD 1C 24           fstp        qword ptr [esp]
+  000000CE: 53                 push        ebx
+  000000CF: 57                 push        edi
+  000000D0: C7 44 B0 04 00 00  mov         dword ptr [eax+esi*4+4],0
+            00 00
+  000000D8: E8 00 00 00 00     call        _FFX_FmodMusic_SetEventVolume
+  000000DD: 6A 7F              push        7Fh
+  000000DF: 6A 12              push        12h
+  000000E1: 53                 push        ebx
+  000000E2: 57                 push        edi
+  000000E3: E8 00 00 00 00     call        _FFX_FmodMusic_FadeEventVolume
+  000000E8: 83 C4 24           add         esp,24h
+  000000EB: 33 C0              xor         eax,eax
+  000000ED: 5E                 pop         esi
+  000000EE: 5F                 pop         edi
+  000000EF: 5B                 pop         ebx
+  000000F0: 5D                 pop         ebp
+  000000F1: C2 08 00           ret         8
+  000000F4: C7 44 B0 04 00 00  mov         dword ptr [eax+esi*4+4],0
+            00 00
+  000000FC: 5E                 pop         esi
+  000000FD: 5F                 pop         edi
+  000000FE: 33 C0              xor         eax,eax
+  00000100: 5B                 pop         ebx
+  00000101: 5D                 pop         ebp
+  00000102: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1F .rdata
+         105 .text

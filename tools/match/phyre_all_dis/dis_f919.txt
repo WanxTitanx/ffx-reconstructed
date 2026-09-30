@@ -1,0 +1,660 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f919.obj
+
+File Type: COFF OBJECT
+
+??$PhyreAlign@$0BA@@Phyre@@YAII@Z (unsigned int __cdecl Phyre::PhyreAlign<16>(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 83 C0 0F           add         eax,0Fh
+  00000009: 83 E0 F0           and         eax,0FFFFFFF0h
+  0000000C: 5D                 pop         ebp
+  0000000D: C3                 ret
+
+??$PhyreOffsetPointerByBytes@VPAsyncProcessBufferBlock@PScripting@Phyre@@I@Phyre@@YAPAVPAsyncProcessBufferBlock@PScripting@0@PAV120@I@Z (class Phyre::PScripting::PAsyncProcessBufferBlock * __cdecl Phyre::PhyreOffsetPointerByBytes<class Phyre::PScripting::PAsyncProcessBufferBlock,unsigned int>(class Phyre::PScripting::PAsyncProcessBufferBlock *,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 03 45 0C           add         eax,dword ptr [ebp+0Ch]
+  00000009: 5D                 pop         ebp
+  0000000A: C3                 ret
+
+??$allocateBlock@VPAsyncProcessBuffer@PScripting@Phyre@@@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAEPAVPAsyncProcessBufferBlock@PScripting@1@IABVPAsyncProcessBuffer@31@@Z (protected: class Phyre::PScripting::PAsyncProcessBufferBlock * __thiscall Phyre::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>::allocateBlock<class Phyre::PScripting::PAsyncProcessBuffer>(unsigned int,class Phyre::PScripting::PAsyncProcessBuffer const &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 83 C3 0F           add         ebx,0Fh
+  0000000D: 83 E3 F0           and         ebx,0FFFFFFF0h
+  00000010: 56                 push        esi
+  00000011: 8B F1              mov         esi,ecx
+  00000013: 83 C3 10           add         ebx,10h
+  00000016: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000019: 3B 5E 20           cmp         ebx,dword ptr [esi+20h]
+  0000001C: 72 0A              jb          00000028
+  0000001E: 5E                 pop         esi
+  0000001F: 33 C0              xor         eax,eax
+  00000021: 5B                 pop         ebx
+  00000022: 8B E5              mov         esp,ebp
+  00000024: 5D                 pop         ebp
+  00000025: C2 08 00           ret         8
+  00000028: 57                 push        edi
+  00000029: 33 FF              xor         edi,edi
+  0000002B: 39 7E 24           cmp         dword ptr [esi+24h],edi
+  0000002E: 0F 84 37 01 00 00  je          0000016B
+  00000034: E8 00 00 00 00     call        ?lock@PCriticalSectionSimple@Phyre@@QAEXXZ
+  00000039: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000040: 53                 push        ebx
+  00000041: 8B CE              mov         ecx,esi
+  00000043: E8 00 00 00 00     call        ?headWillCatchTail@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAE_NI@Z
+  00000048: 84 C0              test        al,al
+  0000004A: 0F 84 BB 00 00 00  je          0000010B
+  00000050: 8B 7E 24           mov         edi,dword ptr [esi+24h]
+  00000053: 8B 1D 00 00 00 00  mov         ebx,dword ptr [?s_currentFrame@PScheduler@PScripting@Phyre@@1IA]
+  00000059: 32 D2              xor         dl,dl
+  0000005B: 39 7E 28           cmp         dword ptr [esi+28h],edi
+  0000005E: 0F 84 CD 00 00 00  je          00000131
+  00000064: 8B 4E 28           mov         ecx,dword ptr [esi+28h]
+  00000067: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000006A: 85 C0              test        eax,eax
+  0000006C: 74 04              je          00000072
+  0000006E: 2B C3              sub         eax,ebx
+  00000070: 79 0D              jns         0000007F
+  00000072: 8B 01              mov         eax,dword ptr [ecx]
+  00000074: 89 46 28           mov         dword ptr [esi+28h],eax
+  00000077: B2 01              mov         dl,1
+  00000079: 3B C7              cmp         eax,edi
+  0000007B: 75 E7              jne         00000064
+  0000007D: EB 08              jmp         00000087
+  0000007F: 84 D2              test        dl,dl
+  00000081: 0F 84 AA 00 00 00  je          00000131
+  00000087: FF 75 FC           push        dword ptr [ebp-4]
+  0000008A: 8B CE              mov         ecx,esi
+  0000008C: 33 DB              xor         ebx,ebx
+  0000008E: E8 00 00 00 00     call        ?headWillCatchTail@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAE_NI@Z
+  00000093: 84 C0              test        al,al
+  00000095: 74 71              je          00000108
+  00000097: EB 07              jmp         000000A0
+  00000099: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000000A0: 43                 inc         ebx
+  000000A1: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  000000A4: F7 C3 FF 03 00 00  test        ebx,3FFh
+  000000AA: 75 12              jne         000000BE
+  000000AC: FF 76 28           push        dword ptr [esi+28h]
+  000000AF: 68 00 00 00 00     push        offset ??_C@_0GE@KLANHHBO@Trying?5to?5make?5space?5in?5PAsyncPr@
+  000000B4: 6A 01              push        1
+  000000B6: E8 00 00 00 00     call        ?PhyrePrintf@Phyre@@YAXW4PTTYSeverity@1@PBDZZ
+  000000BB: 83 C4 0C           add         esp,0Ch
+  000000BE: 6A 01              push        1
+  000000C0: E8 00 00 00 00     call        ?Sleep@PhyreOS@Phyre@@SAXI@Z
+  000000C5: 8B 7E 24           mov         edi,dword ptr [esi+24h]
+  000000C8: 8B 1D 00 00 00 00  mov         ebx,dword ptr [?s_currentFrame@PScheduler@PScripting@Phyre@@1IA]
+  000000CE: 83 C4 04           add         esp,4
+  000000D1: 32 D2              xor         dl,dl
+  000000D3: 39 7E 28           cmp         dword ptr [esi+28h],edi
+  000000D6: 74 59              je          00000131
+  000000D8: 8B 4E 28           mov         ecx,dword ptr [esi+28h]
+  000000DB: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  000000DE: 85 C0              test        eax,eax
+  000000E0: 74 04              je          000000E6
+  000000E2: 2B C3              sub         eax,ebx
+  000000E4: 79 0D              jns         000000F3
+  000000E6: 8B 01              mov         eax,dword ptr [ecx]
+  000000E8: 89 46 28           mov         dword ptr [esi+28h],eax
+  000000EB: B2 01              mov         dl,1
+  000000ED: 3B C7              cmp         eax,edi
+  000000EF: 75 E7              jne         000000D8
+  000000F1: EB 04              jmp         000000F7
+  000000F3: 84 D2              test        dl,dl
+  000000F5: 74 3A              je          00000131
+  000000F7: FF 75 FC           push        dword ptr [ebp-4]
+  000000FA: 8B CE              mov         ecx,esi
+  000000FC: E8 00 00 00 00     call        ?headWillCatchTail@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAE_NI@Z
+  00000101: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000104: 84 C0              test        al,al
+  00000106: 75 98              jne         000000A0
+  00000108: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  0000010B: 8B 4E 24           mov         ecx,dword ptr [esi+24h]
+  0000010E: 8B 56 1C           mov         edx,dword ptr [esi+1Ch]
+  00000111: 8D 04 19           lea         eax,[ecx+ebx]
+  00000114: 3B C2              cmp         eax,edx
+  00000116: 76 2B              jbe         00000143
+  00000118: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000011B: 89 46 24           mov         dword ptr [esi+24h],eax
+  0000011E: 2B D1              sub         edx,ecx
+  00000120: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000127: 89 51 08           mov         dword ptr [ecx+8],edx
+  0000012A: 89 01              mov         dword ptr [ecx],eax
+  0000012C: E9 0F FF FF FF     jmp         00000040
+  00000131: 8B CE              mov         ecx,esi
+  00000133: E8 00 00 00 00     call        ?unlock@PCriticalSectionSimple@Phyre@@QAEXXZ
+  00000138: 5F                 pop         edi
+  00000139: 5E                 pop         esi
+  0000013A: 33 C0              xor         eax,eax
+  0000013C: 5B                 pop         ebx
+  0000013D: 8B E5              mov         esp,ebp
+  0000013F: 5D                 pop         ebp
+  00000140: C2 08 00           ret         8
+  00000143: 8B F9              mov         edi,ecx
+  00000145: 8D 04 1F           lea         eax,[edi+ebx]
+  00000148: 3B C2              cmp         eax,edx
+  0000014A: 75 03              jne         0000014F
+  0000014C: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000014F: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000152: 89 46 24           mov         dword ptr [esi+24h],eax
+  00000155: 89 4F 08           mov         dword ptr [edi+8],ecx
+  00000158: C7 47 04 00 00 00  mov         dword ptr [edi+4],0
+            00
+  0000015F: 89 07              mov         dword ptr [edi],eax
+  00000161: 8B CE              mov         ecx,esi
+  00000163: 89 7E 2C           mov         dword ptr [esi+2Ch],edi
+  00000166: E8 00 00 00 00     call        ?unlock@PCriticalSectionSimple@Phyre@@QAEXXZ
+  0000016B: 8B C7              mov         eax,edi
+  0000016D: 5F                 pop         edi
+  0000016E: 5E                 pop         esi
+  0000016F: 5B                 pop         ebx
+  00000170: 8B E5              mov         esp,ebp
+  00000172: 5D                 pop         ebp
+  00000173: C2 08 00           ret         8
+
+??0?$PCriticalSectionLockBase@VPCriticalSectionSimple@Phyre@@@Phyre@@QAE@AAVPCriticalSectionSimple@1@@Z (public: __thiscall Phyre::PCriticalSectionLockBase<class Phyre::PCriticalSectionSimple>::PCriticalSectionLockBase<class Phyre::PCriticalSectionSimple>(class Phyre::PCriticalSectionSimple &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 89 0E              mov         dword ptr [esi],ecx
+  0000000B: E8 00 00 00 00     call        ?lock@PCriticalSectionSimple@Phyre@@QAEXXZ
+  00000010: 8B C6              mov         eax,esi
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C2 04 00           ret         4
+
+??0?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@QAE@XZ (public: __thiscall Phyre::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>(void)):
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: E8 00 00 00 00     call        ??0PCriticalSectionSimple@Phyre@@QAE@XZ
+  00000008: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  0000000F: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  00000016: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  0000001D: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  00000024: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  0000002B: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  00000032: 8B C6              mov         eax,esi
+  00000034: 5E                 pop         esi
+  00000035: C3                 ret
+
+??0PAsyncProcessBatch@PScripting@Phyre@@QAE@XZ (public: __thiscall Phyre::PScripting::PAsyncProcessBatch::PAsyncProcessBatch(void)):
+  00000000: 8D 41 04           lea         eax,[ecx+4]
+  00000003: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000006: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000000C: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7PAsyncProcessBatch@PScripting@Phyre@@6B@
+  00000012: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  00000019: C7 41 10 00 00 00  mov         dword ptr [ecx+10h],0
+            00
+  00000020: 8B C1              mov         eax,ecx
+  00000022: C3                 ret
+
+??0PAsyncProcessBuffer@PScripting@Phyre@@QAE@XZ (public: __thiscall Phyre::PScripting::PAsyncProcessBuffer::PAsyncProcessBuffer(void)):
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8D 4F 14           lea         ecx,[edi+14h]
+  00000007: E8 00 00 00 00     call        ??0PCriticalSectionSimple@Phyre@@QAE@XZ
+  0000000C: C7 47 2C 00 00 00  mov         dword ptr [edi+2Ch],0
+            00
+  00000013: C7 47 30 00 00 00  mov         dword ptr [edi+30h],0
+            00
+  0000001A: C7 47 34 00 00 00  mov         dword ptr [edi+34h],0
+            00
+  00000021: C7 47 38 00 00 00  mov         dword ptr [edi+38h],0
+            00
+  00000028: C7 47 3C 00 00 00  mov         dword ptr [edi+3Ch],0
+            00
+  0000002F: C7 47 40 00 00 00  mov         dword ptr [edi+40h],0
+            00
+  00000036: 8D 47 04           lea         eax,[edi+4]
+  00000039: 89 47 08           mov         dword ptr [edi+8],eax
+  0000003C: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000042: C7 47 0C 00 00 00  mov         dword ptr [edi+0Ch],0
+            00
+  00000049: C7 47 10 00 00 00  mov         dword ptr [edi+10h],0
+            00
+  00000050: C7 07 00 00 00 00  mov         dword ptr [edi],offset ??_7PAsyncProcessBuffer@PScripting@Phyre@@6B@
+  00000056: C7 47 44 00 00 00  mov         dword ptr [edi+44h],0
+            00
+  0000005D: 8B C7              mov         eax,edi
+  0000005F: 5F                 pop         edi
+  00000060: 5E                 pop         esi
+  00000061: C3                 ret
+
+??1?$PCriticalSectionLockBase@VPCriticalSectionSimple@Phyre@@@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSectionLockBase<class Phyre::PCriticalSectionSimple>::~PCriticalSectionLockBase<class Phyre::PCriticalSectionSimple>(void)):
+  00000000: 8B 09              mov         ecx,dword ptr [ecx]
+  00000002: E9 00 00 00 00     jmp         ?unlock@PCriticalSectionSimple@Phyre@@QAEXXZ
+
+??1?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@QAE@XZ (public: __thiscall Phyre::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>::~PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>(void)):
+  00000000: C3                 ret
+
+??1PAsyncProcessBatch@PScripting@Phyre@@UAE@XZ (public: virtual __thiscall Phyre::PScripting::PAsyncProcessBatch::~PAsyncProcessBatch(void)):
+  00000000: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  00000003: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7PAsyncProcessBatch@PScripting@Phyre@@6B@
+  00000009: 85 C0              test        eax,eax
+  0000000B: 74 08              je          00000015
+  0000000D: 51                 push        ecx
+  0000000E: 8B C8              mov         ecx,eax
+  00000010: E8 00 00 00 00     call        ?remove@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z
+  00000015: C3                 ret
+
+??1PAsyncProcessBuffer@PScripting@Phyre@@UAE@XZ (public: virtual __thiscall Phyre::PScripting::PAsyncProcessBuffer::~PAsyncProcessBuffer(void)):
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 57 44           mov         edx,dword ptr [edi+44h]
+  00000007: C7 07 00 00 00 00  mov         dword ptr [edi],offset ??_7PAsyncProcessBuffer@PScripting@Phyre@@6B@
+  0000000D: 85 D2              test        edx,edx
+  0000000F: 74 3A              je          0000004B
+  00000011: 56                 push        esi
+  00000012: 8B 72 0C           mov         esi,dword ptr [edx+0Ch]
+  00000015: 39 7A 10           cmp         dword ptr [edx+10h],edi
+  00000018: 75 2A              jne         00000044
+  0000001A: 83 7F 44 00        cmp         dword ptr [edi+44h],0
+  0000001E: 8D 47 44           lea         eax,[edi+44h]
+  00000021: 74 21              je          00000044
+  00000023: 8B 08              mov         ecx,dword ptr [eax]
+  00000025: 3B CA              cmp         ecx,edx
+  00000027: 74 0B              je          00000034
+  00000029: 83 79 0C 00        cmp         dword ptr [ecx+0Ch],0
+  0000002D: 8D 41 0C           lea         eax,[ecx+0Ch]
+  00000030: 75 F1              jne         00000023
+  00000032: EB 10              jmp         00000044
+  00000034: 89 30              mov         dword ptr [eax],esi
+  00000036: C7 42 0C 00 00 00  mov         dword ptr [edx+0Ch],0
+            00
+  0000003D: C7 42 10 00 00 00  mov         dword ptr [edx+10h],0
+            00
+  00000044: 8B D6              mov         edx,esi
+  00000046: 85 F6              test        esi,esi
+  00000048: 75 C8              jne         00000012
+  0000004A: 5E                 pop         esi
+  0000004B: 8B 4F 10           mov         ecx,dword ptr [edi+10h]
+  0000004E: C7 07 00 00 00 00  mov         dword ptr [edi],offset ??_7PAsyncProcessBatch@PScripting@Phyre@@6B@
+  00000054: 85 C9              test        ecx,ecx
+  00000056: 74 06              je          0000005E
+  00000058: 57                 push        edi
+  00000059: E8 00 00 00 00     call        ?remove@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z
+  0000005E: 5F                 pop         edi
+  0000005F: 5B                 pop         ebx
+  00000060: C3                 ret
+
+??1PCriticalSectionBase@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSectionBase::~PCriticalSectionBase(void)):
+  00000000: C3                 ret
+
+??1PCriticalSectionSimple@Phyre@@QAE@XZ (public: __thiscall Phyre::PCriticalSectionSimple::~PCriticalSectionSimple(void)):
+  00000000: C3                 ret
+
+??1PEventFlag@Phyre@@QAE@XZ (public: __thiscall Phyre::PEventFlag::~PEventFlag(void)):
+  00000000: C3                 ret
+
+??1PInitializable@Phyre@@QAE@XZ (public: __thiscall Phyre::PInitializable::~PInitializable(void)):
+  00000000: C3                 ret
+
+??RPAsyncProcessBuffer@PScripting@Phyre@@QBE?AW4PResult@2@PBVPAsyncProcessBufferBlock@12@AAPAV412@@Z (public: enum Phyre::PResult __thiscall Phyre::PScripting::PAsyncProcessBuffer::operator()(class Phyre::PScripting::PAsyncProcessBufferBlock const *,class Phyre::PScripting::PAsyncProcessBufferBlock * &)const ):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 32 DB              xor         bl,bl
+  0000000D: 57                 push        edi
+  0000000E: 8B 3D 00 00 00 00  mov         edi,dword ptr [?s_currentFrame@PScheduler@PScripting@Phyre@@1IA]
+  00000014: 39 32              cmp         dword ptr [edx],esi
+  00000016: 74 17              je          0000002F
+  00000018: 8B 0A              mov         ecx,dword ptr [edx]
+  0000001A: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 04              je          00000025
+  00000021: 2B C7              sub         eax,edi
+  00000023: 79 0A              jns         0000002F
+  00000025: 8B 01              mov         eax,dword ptr [ecx]
+  00000027: 89 02              mov         dword ptr [edx],eax
+  00000029: B3 01              mov         bl,1
+  0000002B: 3B C6              cmp         eax,esi
+  0000002D: 75 E9              jne         00000018
+  0000002F: 5F                 pop         edi
+  00000030: 33 C9              xor         ecx,ecx
+  00000032: 84 DB              test        bl,bl
+  00000034: B8 0D 00 00 00     mov         eax,0Dh
+  00000039: 5E                 pop         esi
+  0000003A: 0F 45 C1           cmovne      eax,ecx
+  0000003D: 5B                 pop         ebx
+  0000003E: 5D                 pop         ebp
+  0000003F: C2 08 00           ret         8
+
+??_GPAsyncProcessBatch@PScripting@Phyre@@UAEPAXI@Z (public: virtual void * __thiscall Phyre::PScripting::PAsyncProcessBatch::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  00000009: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7PAsyncProcessBatch@PScripting@Phyre@@6B@
+  0000000F: 85 C9              test        ecx,ecx
+  00000011: 74 06              je          00000019
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        ?remove@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z
+  00000019: F6 45 08 01        test        byte ptr [ebp+8],1
+  0000001D: 74 09              je          00000028
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000025: 83 C4 04           add         esp,4
+  00000028: 8B C6              mov         eax,esi
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C2 04 00           ret         4
+
+??_GPAsyncProcessBuffer@PScripting@Phyre@@UAEPAXI@Z (public: virtual void * __thiscall Phyre::PScripting::PAsyncProcessBuffer::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: E8 00 00 00 00     call        ??1PAsyncProcessBuffer@PScripting@Phyre@@UAE@XZ
+  0000000B: F6 45 08 01        test        byte ptr [ebp+8],1
+  0000000F: 74 09              je          0000001A
+  00000011: 56                 push        esi
+  00000012: E8 00 00 00 00     call        ??3@YAXPAX@Z
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8B C6              mov         eax,esi
+  0000001C: 5E                 pop         esi
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 04 00           ret         4
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+??_I@YGXPAXIHP6EX0@Z@Z (void __stdcall `vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: 8B C3              mov         eax,ebx
+  00000011: 0F AF C7           imul        eax,edi
+  00000014: 03 F0              add         esi,eax
+  00000016: 4F                 dec         edi
+  00000017: 78 11              js          0000002A
+  00000019: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000020: 2B F3              sub         esi,ebx
+  00000022: 8B CE              mov         ecx,esi
+  00000024: FF 55 14           call        dword ptr [ebp+14h]
+  00000027: 4F                 dec         edi
+  00000028: 79 F6              jns         00000020
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 10 00           ret         10h
+
+?GetCurrentFrame@PScheduler@PScripting@Phyre@@SAIXZ (public: static unsigned int __cdecl Phyre::PScripting::PScheduler::GetCurrentFrame(void)):
+  00000000: A1 00 00 00 00     mov         eax,dword ptr [?s_currentFrame@PScheduler@PScripting@Phyre@@1IA]
+  00000005: C3                 ret
+
+?add@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z (public: enum Phyre::PResult __thiscall Phyre::PScripting::PAsyncProcessBuffer::add(class Phyre::PScripting::PAsyncProcessBatch &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  0000000D: 3B CF              cmp         ecx,edi
+  0000000F: 74 16              je          00000027
+  00000011: 85 C9              test        ecx,ecx
+  00000013: 74 06              je          0000001B
+  00000015: 56                 push        esi
+  00000016: E8 00 00 00 00     call        ?remove@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z
+  0000001B: 8B 47 44           mov         eax,dword ptr [edi+44h]
+  0000001E: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000021: 89 7E 10           mov         dword ptr [esi+10h],edi
+  00000024: 89 77 44           mov         dword ptr [edi+44h],esi
+  00000027: 5F                 pop         edi
+  00000028: 33 C0              xor         eax,eax
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C2 04 00           ret         4
+
+?allocateAsyncResultSpace@PAsyncProcessBuffer@PScripting@Phyre@@IAEPAVPAsyncProcessHeader@23@II@Z (protected: class Phyre::PScripting::PAsyncProcessHeader * __thiscall Phyre::PScripting::PAsyncProcessBuffer::allocateAsyncResultSpace(unsigned int,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 51                 push        ecx
+  00000007: 83 C0 14           add         eax,14h
+  0000000A: 50                 push        eax
+  0000000B: 83 C1 14           add         ecx,14h
+  0000000E: E8 00 00 00 00     call        ??$allocateBlock@VPAsyncProcessBuffer@PScripting@Phyre@@@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAEPAVPAsyncProcessBufferBlock@PScripting@1@IABVPAsyncProcessBuffer@31@@Z
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 17              je          0000002E
+  00000017: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000001A: 85 C9              test        ecx,ecx
+  0000001C: BA 01 00 00 00     mov         edx,1
+  00000021: 0F 44 CA           cmove       ecx,edx
+  00000024: 89 48 04           mov         dword ptr [eax+4],ecx
+  00000027: 83 C0 10           add         eax,10h
+  0000002A: 5D                 pop         ebp
+  0000002B: C2 08 00           ret         8
+  0000002E: 33 C0              xor         eax,eax
+  00000030: 5D                 pop         ebp
+  00000031: C2 08 00           ret         8
+
+?allocateOneShotBufferSpace@PAsyncProcessBuffer@PScripting@Phyre@@QAEPAXI@Z (public: void * __thiscall Phyre::PScripting::PAsyncProcessBuffer::allocateOneShotBufferSpace(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B 35 00 00 00 00  mov         esi,dword ptr [?s_currentFrame@PScheduler@PScripting@Phyre@@1IA]
+  0000000D: 51                 push        ecx
+  0000000E: 83 C0 14           add         eax,14h
+  00000011: 50                 push        eax
+  00000012: 83 C1 14           add         ecx,14h
+  00000015: 46                 inc         esi
+  00000016: E8 00 00 00 00     call        ??$allocateBlock@VPAsyncProcessBuffer@PScripting@Phyre@@@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAEPAVPAsyncProcessBufferBlock@PScripting@1@IABVPAsyncProcessBuffer@31@@Z
+  0000001B: 85 C0              test        eax,eax
+  0000001D: 74 3E              je          0000005D
+  0000001F: B9 01 00 00 00     mov         ecx,1
+  00000024: 85 F6              test        esi,esi
+  00000026: 0F 44 F1           cmove       esi,ecx
+  00000029: 8D 48 10           lea         ecx,[eax+10h]
+  0000002C: 89 70 04           mov         dword ptr [eax+4],esi
+  0000002F: 85 C9              test        ecx,ecx
+  00000031: 74 2A              je          0000005D
+  00000033: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000039: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  00000040: C7 41 08 00 00 00  mov         dword ptr [ecx+8],0
+            00
+  00000047: C7 41 0C 00 00 00  mov         dword ptr [ecx+0Ch],0
+            00
+  0000004E: 8D 41 14           lea         eax,[ecx+14h]
+  00000051: C7 41 10 00 00 00  mov         dword ptr [ecx+10h],0
+            00
+  00000058: 5E                 pop         esi
+  00000059: 5D                 pop         ebp
+  0000005A: C2 04 00           ret         4
+  0000005D: 33 C0              xor         eax,eax
+  0000005F: 5E                 pop         esi
+  00000060: 5D                 pop         ebp
+  00000061: C2 04 00           ret         4
+
+?emitWaitingForThisBlockMessage@PAsyncProcessBufferBlock@PScripting@Phyre@@QAEXPAV123@@Z (public: void __thiscall Phyre::PScripting::PAsyncProcessBufferBlock::emitWaitingForThisBlockMessage(class Phyre::PScripting::PAsyncProcessBufferBlock *)):
+  00000000: 51                 push        ecx
+  00000001: 68 00 00 00 00     push        offset ??_C@_0GE@KLANHHBO@Trying?5to?5make?5space?5in?5PAsyncPr@
+  00000006: 6A 01              push        1
+  00000008: E8 00 00 00 00     call        ?PhyrePrintf@Phyre@@YAXW4PTTYSeverity@1@PBDZZ
+  0000000D: 83 C4 0C           add         esp,0Ch
+  00000010: C2 04 00           ret         4
+
+?getNext@PAsyncProcessHeader@PScripting@Phyre@@QBEPAV123@XZ (public: class Phyre::PScripting::PAsyncProcessHeader * __thiscall Phyre::PScripting::PAsyncProcessHeader::getNext(void)const ):
+  00000000: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000003: C3                 ret
+
+?headWillCatchTail@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAE_NI@Z (protected: bool __thiscall Phyre::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>::headWillCatchTail(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 28           mov         eax,dword ptr [ecx+28h]
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 03 71 24           add         esi,dword ptr [ecx+24h]
+  0000000D: 39 41 24           cmp         dword ptr [ecx+24h],eax
+  00000010: 73 0B              jae         0000001D
+  00000012: 3B F0              cmp         esi,eax
+  00000014: 72 07              jb          0000001D
+  00000016: B0 01              mov         al,1
+  00000018: 5E                 pop         esi
+  00000019: 5D                 pop         ebp
+  0000001A: C2 04 00           ret         4
+  0000001D: 3B 71 1C           cmp         esi,dword ptr [ecx+1Ch]
+  00000020: 72 05              jb          00000027
+  00000022: 3B 41 18           cmp         eax,dword ptr [ecx+18h]
+  00000025: 74 EF              je          00000016
+  00000027: 32 C0              xor         al,al
+  00000029: 5E                 pop         esi
+  0000002A: 5D                 pop         ebp
+  0000002B: C2 04 00           ret         4
+
+?headWillPassEnd@?$PRingBuffer@VPAsyncProcessBufferBlock@PScripting@Phyre@@@Phyre@@IAE_NI@Z (protected: bool __thiscall Phyre::PRingBuffer<class Phyre::PScripting::PAsyncProcessBufferBlock>::headWillPassEnd(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 41 24           mov         eax,dword ptr [ecx+24h]
+  00000006: 03 45 08           add         eax,dword ptr [ebp+8]
+  00000009: 3B 41 1C           cmp         eax,dword ptr [ecx+1Ch]
+  0000000C: 0F 97 C0           seta        al
+  0000000F: 5D                 pop         ebp
+  00000010: C2 04 00           ret         4
+
+?initialize@PAsyncProcessBufferBlock@PScripting@Phyre@@QAEXI@Z (public: void __thiscall Phyre::PScripting::PAsyncProcessBufferBlock::initialize(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: C7 41 04 00 00 00  mov         dword ptr [ecx+4],0
+            00
+  0000000D: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000010: 5D                 pop         ebp
+  00000011: C2 04 00           ret         4
+
+?processAsynchronousBatches@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@XZ (public: enum Phyre::PResult __thiscall Phyre::PScripting::PAsyncProcessBuffer::processAsynchronousBatches(void)):
+  00000000: 56                 push        esi
+  00000001: 8B 71 44           mov         esi,dword ptr [ecx+44h]
+  00000004: 85 F6              test        esi,esi
+  00000006: 74 1E              je          00000026
+  00000008: 8B 06              mov         eax,dword ptr [esi]
+  0000000A: 8B CE              mov         ecx,esi
+  0000000C: FF 50 04           call        dword ptr [eax+4]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 75 15              jne         00000028
+  00000013: 8D 46 04           lea         eax,[esi+4]
+  00000016: 89 46 08           mov         dword ptr [esi+8],eax
+  00000019: 8B 76 0C           mov         esi,dword ptr [esi+0Ch]
+  0000001C: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000022: 85 F6              test        esi,esi
+  00000024: 75 E2              jne         00000008
+  00000026: 33 C0              xor         eax,eax
+  00000028: 5E                 pop         esi
+  00000029: C3                 ret
+
+?processBatch@PAsyncProcessBuffer@PScripting@Phyre@@MAE?AW4PResult@3@XZ (protected: virtual enum Phyre::PResult __thiscall Phyre::PScripting::PAsyncProcessBuffer::processBatch(void)):
+  00000000: 56                 push        esi
+  00000001: 8B 71 04           mov         esi,dword ptr [ecx+4]
+  00000004: 85 F6              test        esi,esi
+  00000006: 74 12              je          0000001A
+  00000008: 8B CE              mov         ecx,esi
+  0000000A: E8 00 00 00 00     call        ?process@PAsyncProcessHeader@PScripting@Phyre@@QAE?AW4PResult@3@XZ
+  0000000F: 85 C0              test        eax,eax
+  00000011: 75 09              jne         0000001C
+  00000013: 8B 76 08           mov         esi,dword ptr [esi+8]
+  00000016: 85 F6              test        esi,esi
+  00000018: 75 EE              jne         00000008
+  0000001A: 33 C0              xor         eax,eax
+  0000001C: 5E                 pop         esi
+  0000001D: C3                 ret
+
+?remove@PAsyncProcessBuffer@PScripting@Phyre@@QAE?AW4PResult@3@AAVPAsyncProcessBatch@23@@Z (public: enum Phyre::PResult __thiscall Phyre::PScripting::PAsyncProcessBuffer::remove(class Phyre::PScripting::PAsyncProcessBatch &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 39 4A 10           cmp         dword ptr [edx+10h],ecx
+  00000009: 75 17              jne         00000022
+  0000000B: 83 C1 44           add         ecx,44h
+  0000000E: 83 39 00           cmp         dword ptr [ecx],0
+  00000011: 74 0F              je          00000022
+  00000013: 8B 01              mov         eax,dword ptr [ecx]
+  00000015: 3B C2              cmp         eax,edx
+  00000017: 74 12              je          0000002B
+  00000019: 83 78 0C 00        cmp         dword ptr [eax+0Ch],0
+  0000001D: 8D 48 0C           lea         ecx,[eax+0Ch]
+  00000020: 75 F1              jne         00000013
+  00000022: B8 13 00 00 00     mov         eax,13h
+  00000027: 5D                 pop         ebp
+  00000028: C2 04 00           ret         4
+  0000002B: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  0000002E: 89 01              mov         dword ptr [ecx],eax
+  00000030: C7 42 0C 00 00 00  mov         dword ptr [edx+0Ch],0
+            00
+  00000037: C7 42 10 00 00 00  mov         dword ptr [edx+10h],0
+            00
+  0000003E: 33 C0              xor         eax,eax
+  00000040: 5D                 pop         ebp
+  00000041: C2 04 00           ret         4
+
+?reset@PAsyncProcessBatch@PScripting@Phyre@@QAEXXZ (public: void __thiscall Phyre::PScripting::PAsyncProcessBatch::reset(void)):
+  00000000: 8D 41 04           lea         eax,[ecx+4]
+  00000003: 89 41 08           mov         dword ptr [ecx+8],eax
+  00000006: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000000C: C3                 ret
+
+  Summary
+
+           2 .bss
+          B4 .data
+         110 .debug$F
+          6C .debug$S
+        1267 .drectve
+         2DD .rdata
+          DF .rdata$r
+         59C .text

@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006E79F0.obj
+
+File Type: COFF OBJECT
+
+@FFX_BtlUI_HudBar_SetSegments@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: D9 EE              fldz
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: D9 5E 04           fstp        dword ptr [esi+4]
+  0000000C: C6 46 14 00        mov         byte ptr [esi+14h],0
+  00000010: E8 00 00 00 00     call        _FFX_Engine_GetFrameDeltaTime_Bridge
+  00000015: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000018: DB 45 FC           fild        dword ptr [ebp-4]
+  0000001B: 85 C0              test        eax,eax
+  0000001D: 79 06              jns         00000025
+  0000001F: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000025: D9 5E 08           fstp        dword ptr [esi+8]
+  00000028: C6 46 16 01        mov         byte ptr [esi+16h],1
+  0000002C: 5E                 pop         esi
+  0000002D: 8B E5              mov         esp,ebp
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          31 .text

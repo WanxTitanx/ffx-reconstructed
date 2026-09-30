@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083C720.obj
+
+File Type: COFF OBJECT
+
+_SgMem_CoalesceHeap:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 8B 56 0C           mov         edx,dword ptr [esi+0Ch]
+  0000000A: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  0000000D: 83 E0 0F           and         eax,0Fh
+  00000010: 3C 0F              cmp         al,0Fh
+  00000012: 74 2A              je          0000003E
+  00000014: F6 42 0C 0F        test        byte ptr [edx+0Ch],0Fh
+  00000018: 75 12              jne         0000002C
+  0000001A: 8B 02              mov         eax,dword ptr [edx]
+  0000001C: F6 40 0C 0F        test        byte ptr [eax+0Ch],0Fh
+  00000020: 75 0A              jne         0000002C
+  00000022: 8B 00              mov         eax,dword ptr [eax]
+  00000024: 89 02              mov         dword ptr [edx],eax
+  00000026: F6 40 0C 0F        test        byte ptr [eax+0Ch],0Fh
+  0000002A: 74 F6              je          00000022
+  0000002C: 8B 02              mov         eax,dword ptr [edx]
+  0000002E: 89 50 04           mov         dword ptr [eax+4],edx
+  00000031: 8B 12              mov         edx,dword ptr [edx]
+  00000033: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  00000036: 83 E1 0F           and         ecx,0Fh
+  00000039: 80 F9 0F           cmp         cl,0Fh
+  0000003C: 75 D6              jne         00000014
+  0000003E: C6 06 00           mov         byte ptr [esi],0
+  00000041: 8B C2              mov         eax,edx
+  00000043: 5E                 pop         esi
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

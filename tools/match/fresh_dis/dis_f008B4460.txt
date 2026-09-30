@@ -1,0 +1,340 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008B4460.obj
+
+File Type: COFF OBJECT
+
+_FFX_Save_BlockNodeInsert:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_MenuPad_ReadHeld_A
+  0000000E: 0F B7 F8           movzx       edi,ax
+  00000011: 8B C7              mov         eax,edi
+  00000013: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000016: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdgeRepeat_B
+  0000001B: 0F B7 C0           movzx       eax,ax
+  0000001E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000021: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdge_C
+  00000026: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000029: 0F B7 D8           movzx       ebx,ax
+  0000002C: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  0000002F: 83 F8 11           cmp         eax,11h
+  00000032: 0F 87 54 03 00 00  ja          $LN1
+  00000038: BA 67 FE 00 00     mov         edx,0FE67h
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: FF 24 85 00 00 00  jmp         dword ptr $LN78[eax*4]
+            00
+$LN43:
+  00000047: F6 C3 20           test        bl,20h
+  0000004A: 0F 85 E4 02 00 00  jne         00000334
+  00000050: F6 C3 40           test        bl,40h
+  00000053: 0F 85 C8 02 00 00  jne         00000321
+  00000059: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000005C: F7 C2 00 10 00 00  test        edx,1000h
+  00000062: 74 32              je          00000096
+  00000064: 66 83 7E 48 00     cmp         word ptr [esi+48h],0
+  00000069: 7E 2B              jle         00000096
+  0000006B: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000070: B8 FF FF 00 00     mov         eax,0FFFFh
+  00000075: 66 01 46 48        add         word ptr [esi+48h],ax
+  00000079: 66 8B 46 48        mov         ax,word ptr [esi+48h]
+  0000007D: 66 3B 46 32        cmp         ax,word ptr [esi+32h]
+  00000081: 0F 83 05 03 00 00  jae         $LN1
+  00000087: B8 07 00 00 00     mov         eax,7
+  0000008C: BA 67 FE 00 00     mov         edx,0FE67h
+  00000091: E9 7B 02 00 00     jmp         00000311
+  00000096: F7 C2 00 40 00 00  test        edx,4000h
+  0000009C: 74 3B              je          000000D9
+  0000009E: 0F B7 4E 30        movzx       ecx,word ptr [esi+30h]
+  000000A2: 0F BF 46 48        movsx       eax,word ptr [esi+48h]
+  000000A6: 49                 dec         ecx
+  000000A7: 3B C1              cmp         eax,ecx
+  000000A9: 7D 2E              jge         000000D9
+  000000AB: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000000B0: 0F BF 46 32        movsx       eax,word ptr [esi+32h]
+  000000B4: 0F B7 56 3A        movzx       edx,word ptr [esi+3Ah]
+  000000B8: 66 FF 46 48        inc         word ptr [esi+48h]
+  000000BC: 03 D0              add         edx,eax
+  000000BE: 0F BF 46 48        movsx       eax,word ptr [esi+48h]
+  000000C2: 3B C2              cmp         eax,edx
+  000000C4: 0F 8C C2 02 00 00  jl          $LN1
+  000000CA: B8 0B 00 00 00     mov         eax,0Bh
+  000000CF: BA 67 FE 00 00     mov         edx,0FE67h
+  000000D4: E9 38 02 00 00     jmp         00000311
+  000000D9: F6 C2 01           test        dl,1
+  000000DC: 74 3E              je          0000011C
+  000000DE: 66 83 FF 01        cmp         di,1
+  000000E2: 75 38              jne         0000011C
+  000000E4: 66 83 7E 48 00     cmp         word ptr [esi+48h],0
+  000000E9: 7E 31              jle         0000011C
+  000000EB: 0F BF 56 32        movsx       edx,word ptr [esi+32h]
+  000000EF: 0F B7 46 3A        movzx       eax,word ptr [esi+3Ah]
+  000000F3: 8B CA              mov         ecx,edx
+  000000F5: 2B C8              sub         ecx,eax
+  000000F7: B8 00 00 00 00     mov         eax,0
+  000000FC: 0F 98 C0           sets        al
+  000000FF: 48                 dec         eax
+  00000100: 23 C1              and         eax,ecx
+  00000102: 3B C2              cmp         eax,edx
+  00000104: 74 13              je          00000119
+  00000106: 66 89 46 34        mov         word ptr [esi+34h],ax
+  0000010A: B8 08 00 00 00     mov         eax,8
+  0000010F: BA 67 FE 00 00     mov         edx,0FE67h
+  00000114: E9 F8 01 00 00     jmp         00000311
+  00000119: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000011C: F6 C2 02           test        dl,2
+  0000011F: 0F 84 67 02 00 00  je          $LN1
+  00000125: 66 83 FF 02        cmp         di,2
+  00000129: 0F 85 5D 02 00 00  jne         $LN1
+  0000012F: 0F B7 56 30        movzx       edx,word ptr [esi+30h]
+  00000133: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  00000137: 8D 42 FF           lea         eax,[edx-1]
+  0000013A: 3B C8              cmp         ecx,eax
+  0000013C: 0F 8D 4A 02 00 00  jge         $LN1
+  00000142: 0F B7 46 3A        movzx       eax,word ptr [esi+3Ah]
+  00000146: 0F BF 4E 32        movsx       ecx,word ptr [esi+32h]
+  0000014A: 2B D0              sub         edx,eax
+  0000014C: 03 C1              add         eax,ecx
+  0000014E: 3B C2              cmp         eax,edx
+  00000150: 7C 0A              jl          0000015C
+  00000152: 33 C0              xor         eax,eax
+  00000154: 85 D2              test        edx,edx
+  00000156: 0F 98 C0           sets        al
+  00000159: 48                 dec         eax
+  0000015A: 23 C2              and         eax,edx
+  0000015C: 3B C1              cmp         eax,ecx
+  0000015E: 0F 84 28 02 00 00  je          $LN1
+  00000164: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000167: 66 89 46 34        mov         word ptr [esi+34h],ax
+  0000016B: 0F B7 F9           movzx       edi,cx
+  0000016E: B8 0C 00 00 00     mov         eax,0Ch
+  00000173: BA 67 FE 00 00     mov         edx,0FE67h
+  00000178: E9 94 01 00 00     jmp         00000311
+$LN18:
+  0000017D: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000182: B8 FF FF 00 00     mov         eax,0FFFFh
+  00000187: 66 01 46 32        add         word ptr [esi+32h],ax
+  0000018B: 66 8B 46 32        mov         ax,word ptr [esi+32h]
+  0000018F: 66 89 46 34        mov         word ptr [esi+34h],ax
+  00000193: B8 00 10 00 00     mov         eax,1000h
+  00000198: 33 DB              xor         ebx,ebx
+  0000019A: 66 89 46 46        mov         word ptr [esi+46h],ax
+  0000019E: C7 46 28 09 00 00  mov         dword ptr [esi+28h],9
+            00
+  000001A5: 8D 43 09           lea         eax,[ebx+9]
+  000001A8: BA 67 FE 00 00     mov         edx,0FE67h
+  000001AD: E9 5F 01 00 00     jmp         00000311
+$LN17:
+  000001B2: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000001B7: B8 00 10 00 00     mov         eax,1000h
+  000001BC: 33 DB              xor         ebx,ebx
+  000001BE: 66 89 46 46        mov         word ptr [esi+46h],ax
+  000001C2: C7 46 28 0A 00 00  mov         dword ptr [esi+28h],0Ah
+            00
+  000001C9: 8D 43 0A           lea         eax,[ebx+0Ah]
+  000001CC: BA 67 FE 00 00     mov         edx,0FE67h
+  000001D1: E9 3B 01 00 00     jmp         00000311
+$LN16:
+  000001D6: 66 01 56 46        add         word ptr [esi+46h],dx
+  000001DA: 66 83 7E 46 00     cmp         word ptr [esi+46h],0
+  000001DF: 0F 8E 95 00 00 00  jle         0000027A
+  000001E5: C1 EB 0C           shr         ebx,0Ch
+  000001E8: E9 80 00 00 00     jmp         0000026D
+$LN14:
+  000001ED: B8 EF FE 00 00     mov         eax,0FEEFh
+  000001F2: 66 01 46 46        add         word ptr [esi+46h],ax
+  000001F6: 66 83 7E 46 00     cmp         word ptr [esi+46h],0
+  000001FB: 0F 8F 8B 01 00 00  jg          $LN1
+  00000201: E9 A1 00 00 00     jmp         000002A7
+$LN12:
+  00000206: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  0000020B: 66 FF 46 32        inc         word ptr [esi+32h]
+  0000020F: 66 8B 46 32        mov         ax,word ptr [esi+32h]
+  00000213: 66 89 46 34        mov         word ptr [esi+34h],ax
+  00000217: B8 00 F0 00 00     mov         eax,0F000h
+  0000021C: 33 DB              xor         ebx,ebx
+  0000021E: 66 89 46 46        mov         word ptr [esi+46h],ax
+  00000222: C7 46 28 0D 00 00  mov         dword ptr [esi+28h],0Dh
+            00
+  00000229: 8D 43 0D           lea         eax,[ebx+0Dh]
+  0000022C: BA 67 FE 00 00     mov         edx,0FE67h
+  00000231: E9 DB 00 00 00     jmp         00000311
+$LN11:
+  00000236: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  0000023B: B8 00 F0 00 00     mov         eax,0F000h
+  00000240: 33 DB              xor         ebx,ebx
+  00000242: 66 89 46 46        mov         word ptr [esi+46h],ax
+  00000246: C7 46 28 0E 00 00  mov         dword ptr [esi+28h],0Eh
+            00
+  0000024D: 8D 43 0E           lea         eax,[ebx+0Eh]
+  00000250: BA 67 FE 00 00     mov         edx,0FE67h
+  00000255: E9 B7 00 00 00     jmp         00000311
+$LN10:
+  0000025A: B8 99 01 00 00     mov         eax,199h
+  0000025F: 66 01 46 46        add         word ptr [esi+46h],ax
+  00000263: 0F 98 C0           sets        al
+  00000266: 84 C0              test        al,al
+  00000268: 74 10              je          0000027A
+  0000026A: C1 EB 0E           shr         ebx,0Eh
+  0000026D: F6 D3              not         bl
+  0000026F: 80 E3 01           and         bl,1
+  00000272: 84 DB              test        bl,bl
+  00000274: 0F 85 12 01 00 00  jne         $LN1
+  0000027A: 0F B7 4E 34        movzx       ecx,word ptr [esi+34h]
+  0000027E: 33 C0              xor         eax,eax
+  00000280: 66 89 46 46        mov         word ptr [esi+46h],ax
+  00000284: 66 8B C1           mov         ax,cx
+  00000287: 66 2B 46 32        sub         ax,word ptr [esi+32h]
+  0000028B: 66 01 46 48        add         word ptr [esi+48h],ax
+  0000028F: 33 DB              xor         ebx,ebx
+  00000291: EB 29              jmp         000002BC
+$LN7:
+  00000293: B8 11 01 00 00     mov         eax,111h
+  00000298: 66 01 46 46        add         word ptr [esi+46h],ax
+  0000029C: 0F 98 C0           sets        al
+  0000029F: 84 C0              test        al,al
+  000002A1: 0F 85 E5 00 00 00  jne         $LN1
+  000002A7: 0F B7 4E 34        movzx       ecx,word ptr [esi+34h]
+  000002AB: 33 C0              xor         eax,eax
+  000002AD: 66 89 46 46        mov         word ptr [esi+46h],ax
+  000002B1: 66 8B C1           mov         ax,cx
+  000002B4: 66 2B 46 32        sub         ax,word ptr [esi+32h]
+  000002B8: 66 01 46 48        add         word ptr [esi+48h],ax
+  000002BC: 66 89 4E 32        mov         word ptr [esi+32h],cx
+  000002C0: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  000002C7: B8 02 00 00 00     mov         eax,2
+  000002CC: EB 43              jmp         00000311
+$LN5:
+  000002CE: 0F BE 4E 45        movsx       ecx,byte ptr [esi+45h]
+  000002D2: 66 8B 46 48        mov         ax,word ptr [esi+48h]
+  000002D6: 66 89 44 4E 2C     mov         word ptr [esi+ecx*2+2Ch],ax
+  000002DB: FE 46 45           inc         byte ptr [esi+45h]
+  000002DE: 0F B6 4E 42        movzx       ecx,byte ptr [esi+42h]
+  000002E2: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  000002E6: 3B C1              cmp         eax,ecx
+  000002E8: 0F 8C 97 00 00 00  jl          $LABEL_57$79
+  000002EE: C7 46 28 10 00 00  mov         dword ptr [esi+28h],10h
+            00
+  000002F5: B8 10 00 00 00     mov         eax,10h
+  000002FA: EB 15              jmp         00000311
+$LN3:
+  000002FC: FE 4E 45           dec         byte ptr [esi+45h]
+  000002FF: 0F 89 80 00 00 00  jns         $LABEL_57$79
+  00000305: C7 46 28 12 00 00  mov         dword ptr [esi+28h],12h
+            00
+  0000030C: B8 12 00 00 00     mov         eax,12h
+  00000311: 83 F8 11           cmp         eax,11h
+  00000314: 0F 86 26 FD FF FF  jbe         00000040
+  0000031A: 5F                 pop         edi
+  0000031B: 5E                 pop         esi
+  0000031C: 5B                 pop         ebx
+  0000031D: 8B E5              mov         esp,ebp
+  0000031F: 5D                 pop         ebp
+  00000320: C3                 ret
+  00000321: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000326: 5F                 pop         edi
+  00000327: C7 46 28 11 00 00  mov         dword ptr [esi+28h],11h
+            00
+  0000032E: 5E                 pop         esi
+  0000032F: 5B                 pop         ebx
+  00000330: 8B E5              mov         esp,ebp
+  00000332: 5D                 pop         ebp
+  00000333: C3                 ret
+  00000334: 8B 4E 1C           mov         ecx,dword ptr [esi+1Ch]
+  00000337: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  0000033B: 85 C9              test        ecx,ecx
+  0000033D: 74 20              je          0000035F
+  0000033F: 50                 push        eax
+  00000340: 0F BF 46 48        movsx       eax,word ptr [esi+48h]
+  00000344: 50                 push        eax
+  00000345: 56                 push        esi
+  00000346: FF D1              call        ecx
+  00000348: 83 C4 0C           add         esp,0Ch
+  0000034B: 85 C0              test        eax,eax
+  0000034D: 75 0C              jne         0000035B
+  0000034F: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000354: 5F                 pop         edi
+  00000355: 5E                 pop         esi
+  00000356: 5B                 pop         ebx
+  00000357: 8B E5              mov         esp,ebp
+  00000359: 5D                 pop         ebp
+  0000035A: C3                 ret
+  0000035B: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  0000035F: 0F B6 4E 42        movzx       ecx,byte ptr [esi+42h]
+  00000363: 49                 dec         ecx
+  00000364: 3B C1              cmp         eax,ecx
+  00000366: 75 06              jne         0000036E
+  00000368: 80 7E 37 00        cmp         byte ptr [esi+37h],0
+  0000036C: 74 05              je          00000373
+  0000036E: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000373: 5F                 pop         edi
+  00000374: C7 46 28 0F 00 00  mov         dword ptr [esi+28h],0Fh
+            00
+  0000037B: 5E                 pop         esi
+  0000037C: 5B                 pop         ebx
+  0000037D: 8B E5              mov         esp,ebp
+  0000037F: 5D                 pop         ebp
+  00000380: C3                 ret
+$LN44:
+  00000381: C6 46 45 00        mov         byte ptr [esi+45h],0
+$LABEL_57$79:
+  00000385: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+$LN1:
+  0000038C: 5F                 pop         edi
+  0000038D: 5E                 pop         esi
+  0000038E: 5B                 pop         ebx
+  0000038F: 8B E5              mov         esp,ebp
+  00000391: 5D                 pop         ebp
+  00000392: C3                 ret
+  00000393: 90                 nop
+$LN78:
+  00000394: 00 00              add         byte ptr [eax],al
+  00000396: 00 00              add         byte ptr [eax],al
+  00000398: 00 00              add         byte ptr [eax],al
+  0000039A: 00 00              add         byte ptr [eax],al
+  0000039C: 00 00              add         byte ptr [eax],al
+  0000039E: 00 00              add         byte ptr [eax],al
+  000003A0: 00 00              add         byte ptr [eax],al
+  000003A2: 00 00              add         byte ptr [eax],al
+  000003A4: 00 00              add         byte ptr [eax],al
+  000003A6: 00 00              add         byte ptr [eax],al
+  000003A8: 00 00              add         byte ptr [eax],al
+  000003AA: 00 00              add         byte ptr [eax],al
+  000003AC: 00 00              add         byte ptr [eax],al
+  000003AE: 00 00              add         byte ptr [eax],al
+  000003B0: 00 00              add         byte ptr [eax],al
+  000003B2: 00 00              add         byte ptr [eax],al
+  000003B4: 00 00              add         byte ptr [eax],al
+  000003B6: 00 00              add         byte ptr [eax],al
+  000003B8: 00 00              add         byte ptr [eax],al
+  000003BA: 00 00              add         byte ptr [eax],al
+  000003BC: 00 00              add         byte ptr [eax],al
+  000003BE: 00 00              add         byte ptr [eax],al
+  000003C0: 00 00              add         byte ptr [eax],al
+  000003C2: 00 00              add         byte ptr [eax],al
+  000003C4: 00 00              add         byte ptr [eax],al
+  000003C6: 00 00              add         byte ptr [eax],al
+  000003C8: 00 00              add         byte ptr [eax],al
+  000003CA: 00 00              add         byte ptr [eax],al
+  000003CC: 00 00              add         byte ptr [eax],al
+  000003CE: 00 00              add         byte ptr [eax],al
+  000003D0: 00 00              add         byte ptr [eax],al
+  000003D2: 00 00              add         byte ptr [eax],al
+  000003D4: 00 00              add         byte ptr [eax],al
+  000003D6: 00 00              add         byte ptr [eax],al
+  000003D8: 00 00              add         byte ptr [eax],al
+  000003DA: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         3DC .text

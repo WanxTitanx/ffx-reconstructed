@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006B68D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_DebugUI_ToggleWithDebounce:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8A 55 08           mov         dl,byte ptr [ebp+8]
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: 84 D2              test        dl,dl
+  0000000B: 74 0C              je          00000019
+  0000000D: 41                 inc         ecx
+  0000000E: 83 F9 03           cmp         ecx,3
+  00000011: 7F 04              jg          00000017
+  00000013: 32 D2              xor         dl,dl
+  00000015: EB 02              jmp         00000019
+  00000017: 33 C9              xor         ecx,ecx
+  00000019: 53                 push        ebx
+  0000001A: 8A 5D 0C           mov         bl,byte ptr [ebp+0Ch]
+  0000001D: 84 DB              test        bl,bl
+  0000001F: 74 20              je          00000041
+  00000021: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_DebugUIUnkVar_CCCAE8]
+  00000027: 41                 inc         ecx
+  00000028: 89 0D 00 00 00 00  mov         dword ptr [_g_DebugUIUnkVar_CCCAE8],ecx
+  0000002E: 83 F9 03           cmp         ecx,3
+  00000031: 7F 04              jg          00000037
+  00000033: 32 DB              xor         bl,bl
+  00000035: EB 0A              jmp         00000041
+  00000037: C7 05 00 00 00 00  mov         dword ptr [_g_DebugUIUnkVar_CCCAE8],0
+            00 00 00 00
+  00000041: 84 D2              test        dl,dl
+  00000043: 75 04              jne         00000049
+  00000045: 84 DB              test        bl,bl
+  00000047: 74 10              je          00000059
+  00000049: 33 C0              xor         eax,eax
+  0000004B: 39 05 00 00 00 00  cmp         dword ptr [_g_UnkVar_CCCAB0],eax
+  00000051: 0F 94 C0           sete        al
+  00000054: A3 00 00 00 00     mov         dword ptr [_g_UnkVar_CCCAB0],eax
+  00000059: 8B C1              mov         eax,ecx
+  0000005B: 5B                 pop         ebx
+  0000005C: 5D                 pop         ebp
+  0000005D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5E .text

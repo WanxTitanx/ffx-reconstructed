@@ -1,0 +1,225 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A58FF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Abmap_TickUpdate:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  0000000A: 57                 push        edi
+  0000000B: 83 BE B0 15 01 00  cmp         dword ptr [esi+115B0h],0
+            00
+  00000012: 8D BE B8 12 01 00  lea         edi,[esi+112B8h]
+  00000018: 0F 85 7C 01 00 00  jne         0000019A
+  0000001E: D9 EE              fldz
+  00000020: D8 9E E4 15 01 00  fcomp       dword ptr [esi+115E4h]
+  00000026: DF E0              fnstsw      ax
+  00000028: F6 C4 41           test        ah,41h
+  0000002B: 75 08              jne         00000035
+  0000002D: D9 E8              fld1
+  0000002F: D9 9E E4 15 01 00  fstp        dword ptr [esi+115E4h]
+  00000035: 8D 45 F8           lea         eax,[ebp-8]
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _FFX_Abmap_ReadCursorInput
+  0000003E: 83 C4 04           add         esp,4
+  00000041: 85 C0              test        eax,eax
+  00000043: 0F 84 7A 01 00 00  je          000001C3
+  00000049: C6 86 CD 15 01 00  mov         byte ptr [esi+115CDh],1
+            01
+  00000050: D9 07              fld         dword ptr [edi]
+  00000052: D8 45 F8           fadd        dword ptr [ebp-8]
+  00000055: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000058: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000005B: D9 17              fst         dword ptr [edi]
+  0000005D: D9 47 04           fld         dword ptr [edi+4]
+  00000060: D8 45 F4           fadd        dword ptr [ebp-0Ch]
+  00000063: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000066: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000069: D9 57 04           fst         dword ptr [edi+4]
+  0000006C: D9 86 0C 16 01 00  fld         dword ptr [esi+1160Ch]
+  00000072: D8 DA              fcomp       st(2)
+  00000074: DF E0              fnstsw      ax
+  00000076: F6 C4 41           test        ah,41h
+  00000079: 7A 19              jp          00000094
+  0000007B: D9 86 14 16 01 00  fld         dword ptr [esi+11614h]
+  00000081: D8 DA              fcomp       st(2)
+  00000083: DF E0              fnstsw      ax
+  00000085: DD D9              fstp        st(1)
+  00000087: F6 C4 01           test        ah,1
+  0000008A: 74 12              je          0000009E
+  0000008C: D9 86 14 16 01 00  fld         dword ptr [esi+11614h]
+  00000092: EB 08              jmp         0000009C
+  00000094: DD D9              fstp        st(1)
+  00000096: D9 86 0C 16 01 00  fld         dword ptr [esi+1160Ch]
+  0000009C: D9 1F              fstp        dword ptr [edi]
+  0000009E: D9 86 10 16 01 00  fld         dword ptr [esi+11610h]
+  000000A4: D8 D9              fcomp       st(1)
+  000000A6: DF E0              fnstsw      ax
+  000000A8: F6 C4 41           test        ah,41h
+  000000AB: 7A 17              jp          000000C4
+  000000AD: D9 86 18 16 01 00  fld         dword ptr [esi+11618h]
+  000000B3: DE D9              fcompp
+  000000B5: DF E0              fnstsw      ax
+  000000B7: F6 C4 01           test        ah,1
+  000000BA: 74 13              je          000000CF
+  000000BC: D9 86 18 16 01 00  fld         dword ptr [esi+11618h]
+  000000C2: EB 08              jmp         000000CC
+  000000C4: DD D8              fstp        st(0)
+  000000C6: D9 86 10 16 01 00  fld         dword ptr [esi+11610h]
+  000000CC: D9 5F 04           fstp        dword ptr [edi+4]
+  000000CF: 8B 07              mov         eax,dword ptr [edi]
+  000000D1: FF 75 08           push        dword ptr [ebp+8]
+  000000D4: 89 86 08 13 01 00  mov         dword ptr [esi+11308h],eax
+  000000DA: 8B 86 BC 12 01 00  mov         eax,dword ptr [esi+112BCh]
+  000000E0: 89 86 0C 13 01 00  mov         dword ptr [esi+1130Ch],eax
+  000000E6: 8B 86 C0 12 01 00  mov         eax,dword ptr [esi+112C0h]
+  000000EC: 89 86 10 13 01 00  mov         dword ptr [esi+11310h],eax
+  000000F2: 8B 86 C4 12 01 00  mov         eax,dword ptr [esi+112C4h]
+  000000F8: 89 86 14 13 01 00  mov         dword ptr [esi+11314h],eax
+  000000FE: 8D 45 FC           lea         eax,[ebp-4]
+  00000101: 57                 push        edi
+  00000102: 50                 push        eax
+  00000103: E8 00 00 00 00     call        _FFX_Abmap_FindNearestNode
+  00000108: D9 47 3C           fld         dword ptr [edi+3Ch]
+  0000010B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000010E: 0F B7 C8           movzx       ecx,ax
+  00000111: DE D9              fcompp
+  00000113: 83 C4 0C           add         esp,0Ch
+  00000116: DF E0              fnstsw      ax
+  00000118: F6 C4 41           test        ah,41h
+  0000011B: 74 7D              je          0000019A
+  0000011D: 2B CE              sub         ecx,esi
+  0000011F: 81 E9 08 08 00 00  sub         ecx,808h
+  00000125: 0F B7 C1           movzx       eax,cx
+  00000128: 0F BF C8           movsx       ecx,ax
+  0000012B: B8 67 66 66 66     mov         eax,66666667h
+  00000130: F7 E9              imul        ecx
+  00000132: C1 FA 04           sar         edx,4
+  00000135: 8B C2              mov         eax,edx
+  00000137: C1 E8 1F           shr         eax,1Fh
+  0000013A: 03 C2              add         eax,edx
+  0000013C: 66 89 47 44        mov         word ptr [edi+44h],ax
+  00000140: 0F B7 C0           movzx       eax,ax
+  00000143: 50                 push        eax
+  00000144: E8 00 00 00 00     call        _FFX_Abmap_GetNodeRadiusOffset
+  00000149: 83 C4 04           add         esp,4
+  0000014C: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000014F: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  00000152: 85 C0              test        eax,eax
+  00000154: 79 06              jns         0000015C
+  00000156: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000015C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000015F: D9 45 FC           fld         dword ptr [ebp-4]
+  00000162: D9 C0              fld         st(0)
+  00000164: D9 47 3C           fld         dword ptr [edi+3Ch]
+  00000167: D8 D2              fcom        st(2)
+  00000169: DF E0              fnstsw      ax
+  0000016B: DD DA              fstp        st(2)
+  0000016D: F6 C4 41           test        ah,41h
+  00000170: 7A 2E              jp          000001A0
+  00000172: D8 D1              fcom        st(1)
+  00000174: DF E0              fnstsw      ax
+  00000176: DD D9              fstp        st(1)
+  00000178: F6 C4 41           test        ah,41h
+  0000017B: 7B 1B              jnp         00000198
+  0000017D: D9 47 3C           fld         dword ptr [edi+3Ch]
+  00000180: DC 05 00 00 00 00  fadd        qword ptr [__real@4000000000000000]
+  00000186: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000189: D9 45 FC           fld         dword ptr [ebp-4]
+  0000018C: D9 57 3C           fst         dword ptr [edi+3Ch]
+  0000018F: D8 D9              fcomp       st(1)
+  00000191: DF E0              fnstsw      ax
+  00000193: F6 C4 41           test        ah,41h
+  00000196: 7A 22              jp          000001BA
+  00000198: DD D8              fstp        st(0)
+  0000019A: 5F                 pop         edi
+  0000019B: 5E                 pop         esi
+  0000019C: 8B E5              mov         esp,ebp
+  0000019E: 5D                 pop         ebp
+  0000019F: C3                 ret
+  000001A0: D9 C9              fxch        st(1)
+  000001A2: DC 25 00 00 00 00  fsub        qword ptr [__real@4000000000000000]
+  000001A8: D9 5D FC           fstp        dword ptr [ebp-4]
+  000001AB: D9 45 FC           fld         dword ptr [ebp-4]
+  000001AE: D9 57 3C           fst         dword ptr [edi+3Ch]
+  000001B1: D8 D9              fcomp       st(1)
+  000001B3: DF E0              fnstsw      ax
+  000001B5: F6 C4 01           test        ah,1
+  000001B8: 74 DE              je          00000198
+  000001BA: D9 5F 3C           fstp        dword ptr [edi+3Ch]
+  000001BD: 5F                 pop         edi
+  000001BE: 5E                 pop         esi
+  000001BF: 8B E5              mov         esp,ebp
+  000001C1: 5D                 pop         ebp
+  000001C2: C3                 ret
+  000001C3: 80 BE CD 15 01 00  cmp         byte ptr [esi+115CDh],0
+            00
+  000001CA: 74 56              je          00000222
+  000001CC: FF 75 08           push        dword ptr [ebp+8]
+  000001CF: 8D 45 FC           lea         eax,[ebp-4]
+  000001D2: 57                 push        edi
+  000001D3: 50                 push        eax
+  000001D4: C6 86 CD 15 01 00  mov         byte ptr [esi+115CDh],0
+            00
+  000001DB: E8 00 00 00 00     call        _FFX_Abmap_FindNearestNode
+  000001E0: 8B F8              mov         edi,eax
+  000001E2: 83 C4 0C           add         esp,0Ch
+  000001E5: 85 FF              test        edi,edi
+  000001E7: 74 B1              je          0000019A
+  000001E9: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000001EE: DD 05 00 00 00 00  fld         qword ptr [__real@3fe0000000000000]
+  000001F4: 2B FE              sub         edi,esi
+  000001F6: 81 EF 08 08 00 00  sub         edi,808h
+  000001FC: B8 67 66 66 66     mov         eax,66666667h
+  00000201: F7 EF              imul        edi
+  00000203: C1 FA 04           sar         edx,4
+  00000206: 8B C2              mov         eax,edx
+  00000208: 83 EC 08           sub         esp,8
+  0000020B: C1 E8 1F           shr         eax,1Fh
+  0000020E: 03 C2              add         eax,edx
+  00000210: DD 1C 24           fstp        qword ptr [esp]
+  00000213: 50                 push        eax
+  00000214: E8 00 00 00 00     call        _FFX_Abmap_UpdateAndChainCursorAnim
+  00000219: 83 C4 0C           add         esp,0Ch
+  0000021C: 5F                 pop         edi
+  0000021D: 5E                 pop         esi
+  0000021E: 8B E5              mov         esp,ebp
+  00000220: 5D                 pop         ebp
+  00000221: C3                 ret
+  00000222: D9 45 F8           fld         dword ptr [ebp-8]
+  00000225: D9 EE              fldz
+  00000227: DA E9              fucompp
+  00000229: DF E0              fnstsw      ax
+  0000022B: F6 C4 44           test        ah,44h
+  0000022E: 7A 12              jp          00000242
+  00000230: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000233: D9 EE              fldz
+  00000235: DA E9              fucompp
+  00000237: DF E0              fnstsw      ax
+  00000239: F6 C4 44           test        ah,44h
+  0000023C: 0F 8B 58 FF FF FF  jnp         0000019A
+  00000242: FF 75 08           push        dword ptr [ebp+8]
+  00000245: 8D 45 F8           lea         eax,[ebp-8]
+  00000248: 50                 push        eax
+  00000249: 57                 push        edi
+  0000024A: E8 00 00 00 00     call        _FFX_Abmap_FindNearestSpherePoint
+  0000024F: 8B F8              mov         edi,eax
+  00000251: 83 C4 0C           add         esp,0Ch
+  00000254: 85 FF              test        edi,edi
+  00000256: 0F 84 3E FF FF FF  je          0000019A
+  0000025C: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000261: DD 05 00 00 00 00  fld         qword ptr [__real@3fd0000000000000]
+  00000267: EB 8B              jmp         000001F4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2C .rdata
+         269 .text

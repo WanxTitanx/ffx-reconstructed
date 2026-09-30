@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0065A360.obj
+
+File Type: COFF OBJECT
+
+@FFX_MagicHost_ReleaseClusterSlot_A@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000E: 8D 9F D4 12 00 00  lea         ebx,[edi+12D4h]
+  00000014: 3B D3              cmp         edx,ebx
+  00000016: 75 56              jne         0000006E
+  00000018: 8B 87 A4 FB 00 00  mov         eax,dword ptr [edi+0FBA4h]
+  0000001E: 8B D8              mov         ebx,eax
+  00000020: 8B F1              mov         esi,ecx
+  00000022: 2B F0              sub         esi,eax
+  00000024: B8 25 49 92 24     mov         eax,24924925h
+  00000029: F7 E6              mul         eax,esi
+  0000002B: 2B F2              sub         esi,edx
+  0000002D: D1 EE              shr         esi,1
+  0000002F: 03 F2              add         esi,edx
+  00000031: 2B D9              sub         ebx,ecx
+  00000033: C1 EE 04           shr         esi,4
+  00000036: 69 DB 6D DB B6 6D  imul        ebx,ebx,6DB6DB6Dh
+  0000003C: 81 FE B7 0B 00 00  cmp         esi,0BB7h
+  00000042: 77 27              ja          0000006B
+  00000044: 8B 87 B0 FB 00 00  mov         eax,dword ptr [edi+0FBB0h]
+  0000004A: C6 04 06 00        mov         byte ptr [esi+eax],0
+  0000004E: 3B B7 B4 FB 00 00  cmp         esi,dword ptr [edi+0FBB4h]
+  00000054: 73 06              jae         0000005C
+  00000056: 89 B7 B4 FB 00 00  mov         dword ptr [edi+0FBB4h],esi
+  0000005C: 8B 01              mov         eax,dword ptr [ecx]
+  0000005E: 33 D2              xor         edx,edx
+  00000060: 8B 00              mov         eax,dword ptr [eax]
+  00000062: FF D0              call        eax
+  00000064: 5F                 pop         edi
+  00000065: 5E                 pop         esi
+  00000066: 5B                 pop         ebx
+  00000067: 5D                 pop         ebp
+  00000068: C2 08 00           ret         8
+  0000006B: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000006E: 85 C9              test        ecx,ecx
+  00000070: 74 19              je          0000008B
+  00000072: 83 F9 FC           cmp         ecx,0FFFFFFFCh
+  00000075: 74 14              je          0000008B
+  00000077: 8D 41 04           lea         eax,[ecx+4]
+  0000007A: 50                 push        eax
+  0000007B: 52                 push        edx
+  0000007C: E8 00 00 00 00     call        _Phyre_PCluster_GetHandleByAddress
+  00000081: 83 C4 08           add         esp,8
+  00000084: 5F                 pop         edi
+  00000085: 5E                 pop         esi
+  00000086: 5B                 pop         ebx
+  00000087: 5D                 pop         ebp
+  00000088: C2 08 00           ret         8
+  0000008B: 5F                 pop         edi
+  0000008C: 5E                 pop         esi
+  0000008D: 8B C3              mov         eax,ebx
+  0000008F: 5B                 pop         ebx
+  00000090: 5D                 pop         ebp
+  00000091: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          94 .text

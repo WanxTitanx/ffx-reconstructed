@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00946950.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_946950@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F2              mov         esi,edx
+  00000004: 8B F9              mov         edi,ecx
+  00000006: 56                 push        esi
+  00000007: FF 37              push        dword ptr [edi]
+  00000009: E8 00 00 00 00     call        _HeapPool_ContainsAddr
+  0000000E: 83 C4 08           add         esp,8
+  00000011: 85 C0              test        eax,eax
+  00000013: 75 05              jne         0000001A
+  00000015: 5F                 pop         edi
+  00000016: 32 C0              xor         al,al
+  00000018: 5E                 pop         esi
+  00000019: C3                 ret
+  0000001A: 8B 07              mov         eax,dword ptr [edi]
+  0000001C: FF 70 18           push        dword ptr [eax+18h]
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        _HeapBlock_ReadAlignedPtr
+  00000025: 56                 push        esi
+  00000026: 50                 push        eax
+  00000027: E8 00 00 00 00     call        _HeapCache_FreeEntry
+  0000002C: 83 C4 10           add         esp,10h
+  0000002F: B0 01              mov         al,1
+  00000031: 5F                 pop         edi
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

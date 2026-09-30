@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0072ABB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicHost_Loose_72ABB0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000008: 75 38              jne         00000042
+  0000000A: 57                 push        edi
+  0000000B: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000E: 85 FF              test        edi,edi
+  00000010: 7E 2F              jle         00000041
+  00000012: 56                 push        esi
+  00000013: 57                 push        edi
+  00000014: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000019: 57                 push        edi
+  0000001A: FF 75 08           push        dword ptr [ebp+8]
+  0000001D: 8B F0              mov         esi,eax
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        _memcpy
+  00000025: 56                 push        esi
+  00000026: E8 00 00 00 00     call        _FFX_MagicHost_Oef2RelocateSectionsThunk
+  0000002B: 68 00 00 00 40     push        40000000h
+  00000030: 68 10 27 00 00     push        2710h
+  00000035: 6A 00              push        0
+  00000037: 56                 push        esi
+  00000038: E8 00 00 00 00     call        _FFX_MagicHost_ProcessRuntimeTableRangeAndGateMask
+  0000003D: 83 C4 24           add         esp,24h
+  00000040: 5E                 pop         esi
+  00000041: 5F                 pop         edi
+  00000042: 8B E5              mov         esp,ebp
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

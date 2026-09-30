@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00964830.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_allocLocalStorage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 59 1C           mov         ebx,dword ptr [ecx+1Ch]
+  0000000A: 56                 push        esi
+  0000000B: 0F BF 43 2C        movsx       eax,word ptr [ebx+2Ch]
+  0000000F: 8B 33              mov         esi,dword ptr [ebx]
+  00000011: 57                 push        edi
+  00000012: 8B 7E 3C           mov         edi,dword ptr [esi+3Ch]
+  00000015: 40                 inc         eax
+  00000016: 3B C7              cmp         eax,edi
+  00000018: 7E 0E              jle         00000028
+  0000001A: FF 71 20           push        dword ptr [ecx+20h]
+  0000001D: E8 00 00 00 00     call        _LuaM_reallocGrowArray
+  00000022: 83 C4 04           add         esp,4
+  00000025: 89 46 18           mov         dword ptr [esi+18h],eax
+  00000028: 3B 7E 3C           cmp         edi,dword ptr [esi+3Ch]
+  0000002B: 7D 19              jge         00000046
+  0000002D: 8D 0C 7F           lea         ecx,[edi+edi*2]
+  00000030: C1 E1 02           shl         ecx,2
+  00000033: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000036: 47                 inc         edi
+  00000037: C7 04 01 00 00 00  mov         dword ptr [ecx+eax],0
+            00
+  0000003E: 8D 49 0C           lea         ecx,[ecx+0Ch]
+  00000041: 3B 7E 3C           cmp         edi,dword ptr [esi+3Ch]
+  00000044: 7C ED              jl          00000033
+  00000046: 0F BF 43 2C        movsx       eax,word ptr [ebx+2Ch]
+  0000004A: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000004D: 8D 14 40           lea         edx,[eax+eax*2]
+  00000050: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000053: 89 0C 90           mov         dword ptr [eax+edx*4],ecx
+  00000056: F6 41 05 03        test        byte ptr [ecx+5],3
+  0000005A: 74 15              je          00000071
+  0000005C: F6 46 05 04        test        byte ptr [esi+5],4
+  00000060: 74 0F              je          00000071
+  00000062: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000065: 56                 push        esi
+  00000066: FF 70 20           push        dword ptr [eax+20h]
+  00000069: E8 00 00 00 00     call        _LuaG_gcColorize
+  0000006E: 83 C4 08           add         esp,8
+  00000071: 0F B7 4B 2C        movzx       ecx,word ptr [ebx+2Ch]
+  00000075: 5F                 pop         edi
+  00000076: 8D 41 01           lea         eax,[ecx+1]
+  00000079: 66 89 43 2C        mov         word ptr [ebx+2Ch],ax
+  0000007D: 5E                 pop         esi
+  0000007E: 0F BF C1           movsx       eax,cx
+  00000081: 5B                 pop         ebx
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

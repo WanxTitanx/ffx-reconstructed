@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004D4200.obj
+
+File Type: COFF OBJECT
+
+_PShaderCompileDef_HasNonDefaultOpacity@28:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 32 C9              xor         cl,cl
+  00000008: 8B 40 20           mov         eax,dword ptr [eax+20h]
+  0000000B: 85 C0              test        eax,eax
+  0000000D: 74 65              je          00000074
+  0000000F: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000012: 83 BA BC 00 00 00  cmp         dword ptr [edx+000000BCh],0
+            00
+  00000019: 74 59              je          00000074
+  0000001B: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  0000001E: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  00000024: 83 F9 01           cmp         ecx,1
+  00000027: 77 0D              ja          00000036
+  00000029: 85 C9              test        ecx,ecx
+  0000002B: 74 05              je          00000032
+  0000002D: 8D 48 18           lea         ecx,[eax+18h]
+  00000030: EB 07              jmp         00000039
+  00000032: 33 C9              xor         ecx,ecx
+  00000034: EB 03              jmp         00000039
+  00000036: 8B 48 18           mov         ecx,dword ptr [eax+18h]
+  00000039: 8B 82 C4 00 00 00  mov         eax,dword ptr [edx+000000C4h]
+  0000003F: 8D 04 40           lea         eax,[eax+eax*2]
+  00000042: D9 04 81           fld         dword ptr [ecx+eax*4]
+  00000045: D9 EE              fldz
+  00000047: DD E9              fucomp      st(1)
+  00000049: DF E0              fnstsw      ax
+  0000004B: F6 C4 44           test        ah,44h
+  0000004E: 7B 20              jnp         00000070
+  00000050: D9 E8              fld1
+  00000052: DA E9              fucompp
+  00000054: DF E0              fnstsw      ax
+  00000056: F6 C4 44           test        ah,44h
+  00000059: 7B 17              jnp         00000072
+  0000005B: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  0000005E: B1 01              mov         cl,1
+  00000060: 8B 02              mov         eax,dword ptr [edx]
+  00000062: 0F B6 C9           movzx       ecx,cl
+  00000065: 89 08              mov         dword ptr [eax],ecx
+  00000067: 83 02 04           add         dword ptr [edx],4
+  0000006A: 33 C0              xor         eax,eax
+  0000006C: 5D                 pop         ebp
+  0000006D: C2 1C 00           ret         1Ch
+  00000070: DD D8              fstp        st(0)
+  00000072: 32 C9              xor         cl,cl
+  00000074: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000077: 0F B6 C9           movzx       ecx,cl
+  0000007A: 8B 02              mov         eax,dword ptr [edx]
+  0000007C: 89 08              mov         dword ptr [eax],ecx
+  0000007E: 83 02 04           add         dword ptr [edx],4
+  00000081: 33 C0              xor         eax,eax
+  00000083: 5D                 pop         ebp
+  00000084: C2 1C 00           ret         1Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          87 .text

@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00885D40.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldDebug_StringOrIntDisplay:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 33 C9              xor         ecx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  0000000E: 89 0D 00 00 00 00  mov         dword ptr [_g_UnkVar_132FF0C],ecx
+  00000014: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000017: 51                 push        ecx
+  00000018: E8 00 00 00 00     call        _FFX_Sound_SpuCmdParamExtractor
+  0000001D: 8B C8              mov         ecx,eax
+  0000001F: 83 C4 04           add         esp,4
+  00000022: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000025: 33 DB              xor         ebx,ebx
+  00000027: 33 F6              xor         esi,esi
+  00000029: 85 C9              test        ecx,ecx
+  0000002B: 78 24              js          00000051
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 56                 push        esi
+  00000031: 53                 push        ebx
+  00000032: 57                 push        edi
+  00000033: E8 00 00 00 00     call        _FFX_Sound_SpuCmdContextInit
+  00000038: 83 C4 0C           add         esp,0Ch
+  0000003B: 83 38 00           cmp         dword ptr [eax],0
+  0000003E: 74 06              je          00000046
+  00000040: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000046: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000049: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000004C: 46                 inc         esi
+  0000004D: 3B F1              cmp         esi,ecx
+  0000004F: 7E DF              jle         00000030
+  00000051: 43                 inc         ebx
+  00000052: 83 FB 10           cmp         ebx,10h
+  00000055: 7C D0              jl          00000027
+  00000057: 8D 4F 01           lea         ecx,[edi+1]
+  0000005A: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000005D: 83 F9 10           cmp         ecx,10h
+  00000060: 7C B5              jl          00000017
+  00000062: 5F                 pop         edi
+  00000063: 5E                 pop         esi
+  00000064: 5B                 pop         ebx
+  00000065: 8B E5              mov         esp,ebp
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          69 .text

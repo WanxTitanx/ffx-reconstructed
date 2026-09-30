@@ -1,0 +1,98 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00628760.obj
+
+File Type: COFF OBJECT
+
+_Engine_CountSectionEntriesInFile:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 24           sub         esp,24h
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 45 DC           lea         eax,[ebp-24h]
+  0000000D: 56                 push        esi
+  0000000E: 50                 push        eax
+  0000000F: E8 00 00 00 00     call        _Phyre_PStreamReaderFile_ctor
+  00000014: 8D 45 DC           lea         eax,[ebp-24h]
+  00000017: 50                 push        eax
+  00000018: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  0000001F: E8 00 00 00 00     call        _Phyre_SectionData_GetPointerFromOffset
+  00000024: 83 C4 0C           add         esp,0Ch
+  00000027: 85 C0              test        eax,eax
+  00000029: 74 7C              je          000000A7
+  0000002B: 57                 push        edi
+  0000002C: 6A 01              push        1
+  0000002E: 8D 45 FC           lea         eax,[ebp-4]
+  00000031: 50                 push        eax
+  00000032: 8D 45 DC           lea         eax,[ebp-24h]
+  00000035: 50                 push        eax
+  00000036: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000003D: E8 00 00 00 00     call        _Phyre_Cluster_ValidateImportRegion
+  00000042: 8B F8              mov         edi,eax
+  00000044: 8D 45 F0           lea         eax,[ebp-10h]
+  00000047: 50                 push        eax
+  00000048: E8 00 00 00 00     call        _Phyre_PStreamWriterFile_Close
+  0000004D: 83 C4 10           add         esp,10h
+  00000050: 33 F6              xor         esi,esi
+  00000052: 85 FF              test        edi,edi
+  00000054: 75 33              jne         00000089
+  00000056: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000059: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000005F: 76 28              jbe         00000089
+  00000061: 80 3E 0A           cmp         byte ptr [esi],0Ah
+  00000064: 8B C6              mov         eax,esi
+  00000066: 74 0A              je          00000072
+  00000068: 3B F7              cmp         esi,edi
+  0000006A: 73 06              jae         00000072
+  0000006C: 46                 inc         esi
+  0000006D: 80 3E 0A           cmp         byte ptr [esi],0Ah
+  00000070: 75 F6              jne         00000068
+  00000072: 8D 4D F8           lea         ecx,[ebp-8]
+  00000075: 51                 push        ecx
+  00000076: 68 00 00 00 00     push        offset ??_C@_03CDCAMCGK@?$CFd?3?$AA@
+  0000007B: 50                 push        eax
+  0000007C: 46                 inc         esi
+  0000007D: E8 00 00 00 00     call        _sscanf_s
+  00000082: 83 C4 0C           add         esp,0Ch
+  00000085: 3B F7              cmp         esi,edi
+  00000087: 72 D8              jb          00000061
+  00000089: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  0000008C: 8D 45 DC           lea         eax,[ebp-24h]
+  0000008F: 5F                 pop         edi
+  00000090: 50                 push        eax
+  00000091: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000098: E8 00 00 00 00     call        _Phyre_PStreamReaderFile_dtor
+  0000009D: 83 C4 04           add         esp,4
+  000000A0: 8B C6              mov         eax,esi
+  000000A2: 5E                 pop         esi
+  000000A3: 8B E5              mov         esp,ebp
+  000000A5: 5D                 pop         ebp
+  000000A6: C3                 ret
+  000000A7: 56                 push        esi
+  000000A8: 68 00 00 00 00     push        offset ??_C@_0BD@BABLNMAP@Error?5opening?5?3?5?$CFs?$AA@
+  000000AD: 6A 02              push        2
+  000000AF: E8 00 00 00 00     call        _Phyre_Stream_Printf
+  000000B4: 83 C4 0C           add         esp,0Ch
+  000000B7: 8D 45 DC           lea         eax,[ebp-24h]
+  000000BA: 50                 push        eax
+  000000BB: BE 13 00 00 00     mov         esi,13h
+  000000C0: E8 00 00 00 00     call        _Phyre_PStreamReaderFile_dtor
+  000000C5: 83 C4 04           add         esp,4
+  000000C8: 8B C6              mov         eax,esi
+  000000CA: 5E                 pop         esi
+  000000CB: 8B E5              mov         esp,ebp
+  000000CD: 5D                 pop         ebp
+  000000CE: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          CF .text

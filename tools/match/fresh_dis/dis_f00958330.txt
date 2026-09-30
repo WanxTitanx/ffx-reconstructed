@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00958330.obj
+
+File Type: COFF OBJECT
+
+_Lua_debug_srclookup:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 78 3C           mov         edi,dword ptr [eax+3Ch]
+  0000000C: 33 C9              xor         ecx,ecx
+  0000000E: 85 FF              test        edi,edi
+  00000010: 7E 25              jle         00000037
+  00000012: 8B 58 18           mov         ebx,dword ptr [eax+18h]
+  00000015: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000018: 39 53 04           cmp         dword ptr [ebx+4],edx
+  0000001B: 8D 43 08           lea         eax,[ebx+8]
+  0000001E: 77 17              ja          00000037
+  00000020: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000023: 3B 10              cmp         edx,dword ptr [eax]
+  00000025: 73 03              jae         0000002A
+  00000027: 4E                 dec         esi
+  00000028: 74 14              je          0000003E
+  0000002A: 41                 inc         ecx
+  0000002B: 3B CF              cmp         ecx,edi
+  0000002D: 7D 08              jge         00000037
+  0000002F: 83 C0 0C           add         eax,0Ch
+  00000032: 39 50 FC           cmp         dword ptr [eax-4],edx
+  00000035: 76 EC              jbe         00000023
+  00000037: 5F                 pop         edi
+  00000038: 5E                 pop         esi
+  00000039: 33 C0              xor         eax,eax
+  0000003B: 5B                 pop         ebx
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+  0000003E: 8D 04 49           lea         eax,[ecx+ecx*2]
+  00000041: 5F                 pop         edi
+  00000042: 8B 04 83           mov         eax,dword ptr [ebx+eax*4]
+  00000045: 5E                 pop         esi
+  00000046: 83 C0 10           add         eax,10h
+  00000049: 5B                 pop         ebx
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

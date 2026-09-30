@@ -1,0 +1,122 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008B4A00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu_List_DrawRowsAndCursor:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: E8 00 00 00 00     call        _FFX_Menu_RenderStatePush
+  0000000B: E8 00 00 00 00     call        _Menu_InitDrawBufferBoundaries
+  00000010: 68 46 01 00 00     push        146h
+  00000015: 68 00 02 00 00     push        200h
+  0000001A: 6A 5A              push        5Ah
+  0000001C: 6A 00              push        0
+  0000001E: E8 00 00 00 00     call        _FFX_Menu2D_SetClipRect4
+  00000023: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000026: 83 C4 10           add         esp,10h
+  00000029: 66 8B 46 32        mov         ax,word ptr [esi+32h]
+  0000002D: 66 3B 46 34        cmp         ax,word ptr [esi+34h]
+  00000031: 75 28              jne         0000005B
+  00000033: BF 2A 00 00 00     mov         edi,2Ah
+  00000038: 83 CB FF           or          ebx,0FFFFFFFFh
+  0000003B: EB 03              jmp         00000040
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: 6A 00              push        0
+  00000042: 53                 push        ebx
+  00000043: 57                 push        edi
+  00000044: 6A 1E              push        1Eh
+  00000046: 56                 push        esi
+  00000047: 57                 push        edi
+  00000048: E8 00 00 00 00     call        _FFX_Save_BlockChainValidate
+  0000004D: 43                 inc         ebx
+  0000004E: 83 C4 18           add         esp,18h
+  00000051: 83 C7 30           add         edi,30h
+  00000054: 83 FB 06           cmp         ebx,6
+  00000057: 7C E7              jl          00000040
+  00000059: EB 5E              jmp         000000B9
+  0000005B: BF 5A 00 00 00     mov         edi,5Ah
+  00000060: 33 DB              xor         ebx,ebx
+  00000062: 6A 02              push        2
+  00000064: 53                 push        ebx
+  00000065: 57                 push        edi
+  00000066: 6A 1E              push        1Eh
+  00000068: 56                 push        esi
+  00000069: 57                 push        edi
+  0000006A: E8 00 00 00 00     call        _FFX_Save_BlockChainValidate
+  0000006F: 43                 inc         ebx
+  00000070: 83 C4 18           add         esp,18h
+  00000073: 83 C7 30           add         edi,30h
+  00000076: 83 FB 05           cmp         ebx,5
+  00000079: 7C E7              jl          00000062
+  0000007B: 0F BF 46 46        movsx       eax,word ptr [esi+46h]
+  0000007F: 69 C0 EC 00 00 00  imul        eax,eax,0ECh
+  00000085: 99                 cdq
+  00000086: 81 E2 FF 0F 00 00  and         edx,0FFFh
+  0000008C: 03 C2              add         eax,edx
+  0000008E: C1 F8 0C           sar         eax,0Ch
+  00000091: BF 5A 00 00 00     mov         edi,5Ah
+  00000096: 2B F8              sub         edi,eax
+  00000098: 33 DB              xor         ebx,ebx
+  0000009A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000A0: 6A 01              push        1
+  000000A2: 53                 push        ebx
+  000000A3: 57                 push        edi
+  000000A4: 6A 1E              push        1Eh
+  000000A6: 56                 push        esi
+  000000A7: 57                 push        edi
+  000000A8: E8 00 00 00 00     call        _FFX_Save_BlockChainValidate
+  000000AD: 43                 inc         ebx
+  000000AE: 83 C4 18           add         esp,18h
+  000000B1: 83 C7 30           add         edi,30h
+  000000B4: 83 FB 05           cmp         ebx,5
+  000000B7: 7C E7              jl          000000A0
+  000000B9: 68 A0 01 00 00     push        1A0h
+  000000BE: 68 00 02 00 00     push        200h
+  000000C3: 6A 00              push        0
+  000000C5: 6A 00              push        0
+  000000C7: E8 00 00 00 00     call        _FFX_Menu2D_SetClipRectCoord
+  000000CC: 68 53 01 00 00     push        153h
+  000000D1: 6A 2A              push        2Ah
+  000000D3: 56                 push        esi
+  000000D4: E8 00 00 00 00     call        _FFX_Menu_List_DrawCustomRowBuffer
+  000000D9: 0F BF 46 32        movsx       eax,word ptr [esi+32h]
+  000000DD: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  000000E1: 2B C8              sub         ecx,eax
+  000000E3: 8D 04 49           lea         eax,[ecx+ecx*2]
+  000000E6: C1 E0 04           shl         eax,4
+  000000E9: 83 C0 5A           add         eax,5Ah
+  000000EC: 50                 push        eax
+  000000ED: 6A 1E              push        1Eh
+  000000EF: 6A 00              push        0
+  000000F1: E8 00 00 00 00     call        _FFX_Btl_DrawAnimatedBgParticles
+  000000F6: 0F B7 46 30        movzx       eax,word ptr [esi+30h]
+  000000FA: 50                 push        eax
+  000000FB: 0F B7 46 3A        movzx       eax,word ptr [esi+3Ah]
+  000000FF: 50                 push        eax
+  00000100: 0F BF 46 32        movsx       eax,word ptr [esi+32h]
+  00000104: 50                 push        eax
+  00000105: 68 FC 00 00 00     push        0FCh
+  0000010A: 6A 0A              push        0Ah
+  0000010C: 6A 52              push        52h
+  0000010E: 68 E3 01 00 00     push        1E3h
+  00000113: E8 00 00 00 00     call        _FFX_Menu_DrawScrollbar
+  00000118: 83 C4 44           add         esp,44h
+  0000011B: E8 00 00 00 00     call        _Menu_PoolAllocCallback
+  00000120: 5F                 pop         edi
+  00000121: 5E                 pop         esi
+  00000122: 5B                 pop         ebx
+  00000123: 5D                 pop         ebp
+  00000124: E9 00 00 00 00     jmp         _FFX_Menu_RenderStatePush
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         129 .text

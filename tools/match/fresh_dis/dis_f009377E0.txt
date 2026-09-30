@@ -1,0 +1,120 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009377E0.obj
+
+File Type: COFF OBJECT
+
+_Dbg_LookupMapIdFromCsv:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000009: 57                 push        edi
+  0000000A: 50                 push        eax
+  0000000B: 83 CF FF           or          edi,0FFFFFFFFh
+  0000000E: E8 00 00 00 00     call        _FFX_Rcdt_InitSlotStruct
+  00000013: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000016: 68 00 00 00 00     push        offset ??_C@_0CJ@ENBJAFL@host?3?1ffx?1proj?1map?1master?1info?1m@
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _FFX_Render_DestroySceneSlot
+  00000021: 83 C4 0C           add         esp,0Ch
+  00000024: 85 C0              test        eax,eax
+  00000026: 0F 84 D4 00 00 00  je          00000100
+  0000002C: 8D 45 FC           lea         eax,[ebp-4]
+  0000002F: 56                 push        esi
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        _FFX_Rsd_TokenBufAllocInit
+  00000036: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000039: 50                 push        eax
+  0000003A: 8D 45 FC           lea         eax,[ebp-4]
+  0000003D: 50                 push        eax
+  0000003E: E8 00 00 00 00     call        _FFX_Rsd_TokenBufSetFile
+  00000043: 8D 45 FC           lea         eax,[ebp-4]
+  00000046: 6A 01              push        1
+  00000048: 50                 push        eax
+  00000049: E8 00 00 00 00     call        _FFX_Rsd_TokenBufSetType
+  0000004E: 8D 45 FC           lea         eax,[ebp-4]
+  00000051: 68 00 00 00 00     push        offset ??_C@_01IHBHIGKO@?0?$AA@
+  00000056: 50                 push        eax
+  00000057: E8 00 00 00 00     call        _FFX_Data_SetFlagBytesFromStrList
+  0000005C: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000005F: 0F B6 06           movzx       eax,byte ptr [esi]
+  00000062: 50                 push        eax
+  00000063: E8 00 00 00 00     call        _isdigit
+  00000068: 83 C4 20           add         esp,20h
+  0000006B: 85 C0              test        eax,eax
+  0000006D: 75 1A              jne         00000089
+  0000006F: 90                 nop
+  00000070: 8D 45 FC           lea         eax,[ebp-4]
+  00000073: 50                 push        eax
+  00000074: E8 00 00 00 00     call        _FFX_Rsd_TokenReadLineAndAdvance
+  00000079: 0F B6 06           movzx       eax,byte ptr [esi]
+  0000007C: 50                 push        eax
+  0000007D: E8 00 00 00 00     call        _isdigit
+  00000082: 83 C4 08           add         esp,8
+  00000085: 85 C0              test        eax,eax
+  00000087: 74 E7              je          00000070
+  00000089: 8D 45 FC           lea         eax,[ebp-4]
+  0000008C: 50                 push        eax
+  0000008D: E8 00 00 00 00     call        _FFX_Rsd_TokenBufIsExhausted
+  00000092: 83 C4 04           add         esp,4
+  00000095: 85 C0              test        eax,eax
+  00000097: 75 61              jne         000000FA
+  00000099: 8D 45 FC           lea         eax,[ebp-4]
+  0000009C: 53                 push        ebx
+  0000009D: 50                 push        eax
+  0000009E: E8 00 00 00 00     call        _FFX_Rsd_TokenReadInt
+  000000A3: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  000000A6: 6A 06              push        6
+  000000A8: 56                 push        esi
+  000000A9: 53                 push        ebx
+  000000AA: 8B F8              mov         edi,eax
+  000000AC: E8 00 00 00 00     call        _strncmp
+  000000B1: 83 C4 10           add         esp,10h
+  000000B4: 85 C0              test        eax,eax
+  000000B6: 74 41              je          000000F9
+  000000B8: EB 06              jmp         000000C0
+  000000BA: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000C0: 8D 45 FC           lea         eax,[ebp-4]
+  000000C3: 50                 push        eax
+  000000C4: E8 00 00 00 00     call        _FFX_Rsd_TokenReadLineAndAdvance
+  000000C9: 8D 45 FC           lea         eax,[ebp-4]
+  000000CC: 50                 push        eax
+  000000CD: E8 00 00 00 00     call        _FFX_Rsd_TokenBufIsExhausted
+  000000D2: 83 C4 08           add         esp,8
+  000000D5: 85 C0              test        eax,eax
+  000000D7: 75 1D              jne         000000F6
+  000000D9: 8D 45 FC           lea         eax,[ebp-4]
+  000000DC: 50                 push        eax
+  000000DD: E8 00 00 00 00     call        _FFX_Rsd_TokenReadInt
+  000000E2: 6A 06              push        6
+  000000E4: 56                 push        esi
+  000000E5: 53                 push        ebx
+  000000E6: 8B F8              mov         edi,eax
+  000000E8: E8 00 00 00 00     call        _strncmp
+  000000ED: 83 C4 10           add         esp,10h
+  000000F0: 85 C0              test        eax,eax
+  000000F2: 75 CC              jne         000000C0
+  000000F4: EB 03              jmp         000000F9
+  000000F6: 83 CF FF           or          edi,0FFFFFFFFh
+  000000F9: 5B                 pop         ebx
+  000000FA: E8 00 00 00 00     call        _rcdtParseFini
+  000000FF: 5E                 pop         esi
+  00000100: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000103: 50                 push        eax
+  00000104: E8 00 00 00 00     call        _FFX_Mem_FreeIfNonNull
+  00000109: 83 C4 04           add         esp,4
+  0000010C: 8B C7              mov         eax,edi
+  0000010E: 5F                 pop         edi
+  0000010F: 8B E5              mov         esp,ebp
+  00000111: 5D                 pop         ebp
+  00000112: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2B .rdata
+         113 .text

@@ -1,0 +1,181 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009BC740.obj
+
+File Type: COFF OBJECT
+
+@Bullet_RigidBody_integrateVelocities@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 57                 push        edi
+  00000006: 8B D9              mov         ebx,ecx
+  00000008: 33 FF              xor         edi,edi
+  0000000A: 39 BB D0 00 00 00  cmp         dword ptr [ebx+0D0h],edi
+  00000010: 0F 8E EC 01 00 00  jle         00000202
+  00000016: D9 45 08           fld         dword ptr [ebp+8]
+  00000019: 56                 push        esi
+  0000001A: D9 C0              fld         st(0)
+  0000001C: D9 EE              fldz
+  0000001E: 8B 83 D8 00 00 00  mov         eax,dword ptr [ebx+0D8h]
+  00000024: 8B 34 B8           mov         esi,dword ptr [eax+edi*4]
+  00000027: 85 F6              test        esi,esi
+  00000029: 0F 84 B7 01 00 00  je          000001E6
+  0000002F: 8B 86 E4 00 00 00  mov         eax,dword ptr [esi+0E4h]
+  00000035: 83 F8 02           cmp         eax,2
+  00000038: 0F 84 B6 00 00 00  je          000000F4
+  0000003E: 83 F8 04           cmp         eax,4
+  00000041: 0F 84 AD 00 00 00  je          000000F4
+  00000047: DD DA              fstp        st(2)
+  00000049: DD D9              fstp        st(1)
+  0000004B: D9 86 EC 01 00 00  fld         dword ptr [esi+1ECh]
+  00000051: D9 86 44 01 00 00  fld         dword ptr [esi+144h]
+  00000057: D9 86 40 01 00 00  fld         dword ptr [esi+140h]
+  0000005D: D9 86 48 01 00 00  fld         dword ptr [esi+148h]
+  00000063: D9 CB              fxch        st(3)
+  00000065: DC C8              fmul        st(0),st
+  00000067: D9 C9              fxch        st(1)
+  00000069: DC C8              fmul        st(0),st
+  0000006B: D9 CA              fxch        st(2)
+  0000006D: DC C8              fmul        st(0),st
+  0000006F: DE C2              faddp       st(2),st
+  00000071: D9 CA              fxch        st(2)
+  00000073: DC C8              fmul        st(0),st
+  00000075: DE C1              faddp       st(1),st
+  00000077: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000007A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000007D: DE D9              fcompp
+  0000007F: DF E0              fnstsw      ax
+  00000081: F6 C4 01           test        ah,1
+  00000084: 74 50              je          000000D6
+  00000086: D9 86 F0 01 00 00  fld         dword ptr [esi+1F0h]
+  0000008C: D9 86 54 01 00 00  fld         dword ptr [esi+154h]
+  00000092: D9 86 50 01 00 00  fld         dword ptr [esi+150h]
+  00000098: D9 86 58 01 00 00  fld         dword ptr [esi+158h]
+  0000009E: D9 CB              fxch        st(3)
+  000000A0: DC C8              fmul        st(0),st
+  000000A2: D9 CA              fxch        st(2)
+  000000A4: DC C8              fmul        st(0),st
+  000000A6: D9 C9              fxch        st(1)
+  000000A8: DC C8              fmul        st(0),st
+  000000AA: DE C1              faddp       st(1),st
+  000000AC: D9 CA              fxch        st(2)
+  000000AE: DC C8              fmul        st(0),st
+  000000B0: DE C2              faddp       st(2),st
+  000000B2: D9 C9              fxch        st(1)
+  000000B4: D9 5D FC           fstp        dword ptr [ebp-4]
+  000000B7: D9 45 FC           fld         dword ptr [ebp-4]
+  000000BA: DE D9              fcompp
+  000000BC: DF E0              fnstsw      ax
+  000000BE: F6 C4 01           test        ah,1
+  000000C1: 74 13              je          000000D6
+  000000C3: D8 86 E8 00 00 00  fadd        dword ptr [esi+0E8h]
+  000000C9: D9 9E E8 00 00 00  fstp        dword ptr [esi+0E8h]
+  000000CF: D9 45 08           fld         dword ptr [ebp+8]
+  000000D2: D9 EE              fldz
+  000000D4: EB 20              jmp         000000F6
+  000000D6: 6A 00              push        0
+  000000D8: DD D8              fstp        st(0)
+  000000DA: 56                 push        esi
+  000000DB: C7 86 E8 00 00 00  mov         dword ptr [esi+0E8h],0
+            00 00 00 00
+  000000E5: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  000000EA: D9 45 08           fld         dword ptr [ebp+8]
+  000000ED: D9 EE              fldz
+  000000EF: 83 C4 08           add         esp,8
+  000000F2: EB 02              jmp         000000F6
+  000000F4: DD D9              fstp        st(1)
+  000000F6: 8B 8E E4 00 00 00  mov         ecx,dword ptr [esi+0E4h]
+  000000FC: 83 F9 04           cmp         ecx,4
+  000000FF: 0F 84 E3 00 00 00  je          000001E8
+  00000105: 83 3D 00 00 00 00  cmp         dword ptr [_g_U8_193F658],0
+            00
+  0000010C: DD D9              fstp        st(1)
+  0000010E: 0F 85 C0 00 00 00  jne         000001D4
+  00000114: D9 05 00 00 00 00  fld         dword ptr [_g_BulletF32_C64954]
+  0000011A: DD E1              fucom       st(1)
+  0000011C: DF E0              fnstsw      ax
+  0000011E: DD D9              fstp        st(1)
+  00000120: F6 C4 44           test        ah,44h
+  00000123: 0F 8B AB 00 00 00  jnp         000001D4
+  00000129: 83 F9 02           cmp         ecx,2
+  0000012C: 74 1A              je          00000148
+  0000012E: 83 F9 03           cmp         ecx,3
+  00000131: 74 15              je          00000148
+  00000133: D9 86 E8 00 00 00  fld         dword ptr [esi+0E8h]
+  00000139: DE D9              fcompp
+  0000013B: DF E0              fnstsw      ax
+  0000013D: F6 C4 41           test        ah,41h
+  00000140: 0F 8B 90 00 00 00  jnp         000001D6
+  00000146: EB 02              jmp         0000014A
+  00000148: DD D8              fstp        st(0)
+  0000014A: F6 86 D8 00 00 00  test        byte ptr [esi+0D8h],3
+            03
+  00000151: 74 13              je          00000166
+  00000153: 6A 02              push        2
+  00000155: 56                 push        esi
+  00000156: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  0000015B: D9 45 08           fld         dword ptr [ebp+8]
+  0000015E: 83 C4 08           add         esp,8
+  00000161: E9 84 00 00 00     jmp         000001EA
+  00000166: 83 F9 01           cmp         ecx,1
+  00000169: 75 0B              jne         00000176
+  0000016B: 6A 03              push        3
+  0000016D: 56                 push        esi
+  0000016E: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  00000173: 83 C4 08           add         esp,8
+  00000176: 83 BE E4 00 00 00  cmp         dword ptr [esi+0E4h],2
+            02
+  0000017D: D9 45 08           fld         dword ptr [ebp+8]
+  00000180: 75 68              jne         000001EA
+  00000182: C7 86 50 01 00 00  mov         dword ptr [esi+150h],0
+            00 00 00 00
+  0000018C: C7 86 54 01 00 00  mov         dword ptr [esi+154h],0
+            00 00 00 00
+  00000196: C7 86 58 01 00 00  mov         dword ptr [esi+158h],0
+            00 00 00 00
+  000001A0: C7 86 5C 01 00 00  mov         dword ptr [esi+15Ch],0
+            00 00 00 00
+  000001AA: C7 86 40 01 00 00  mov         dword ptr [esi+140h],0
+            00 00 00 00
+  000001B4: C7 86 44 01 00 00  mov         dword ptr [esi+144h],0
+            00 00 00 00
+  000001BE: C7 86 48 01 00 00  mov         dword ptr [esi+148h],0
+            00 00 00 00
+  000001C8: C7 86 4C 01 00 00  mov         dword ptr [esi+14Ch],0
+            00 00 00 00
+  000001D2: EB 16              jmp         000001EA
+  000001D4: DD D8              fstp        st(0)
+  000001D6: 6A 01              push        1
+  000001D8: 56                 push        esi
+  000001D9: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  000001DE: D9 45 08           fld         dword ptr [ebp+8]
+  000001E1: 83 C4 08           add         esp,8
+  000001E4: EB 04              jmp         000001EA
+  000001E6: DD D8              fstp        st(0)
+  000001E8: DD D8              fstp        st(0)
+  000001EA: 47                 inc         edi
+  000001EB: D9 C0              fld         st(0)
+  000001ED: D9 EE              fldz
+  000001EF: 3B BB D0 00 00 00  cmp         edi,dword ptr [ebx+0D0h]
+  000001F5: 0F 82 23 FE FF FF  jb          0000001E
+  000001FB: DD DA              fstp        st(2)
+  000001FD: 5E                 pop         esi
+  000001FE: DD D9              fstp        st(1)
+  00000200: DD D8              fstp        st(0)
+  00000202: 5F                 pop         edi
+  00000203: 8B C3              mov         eax,ebx
+  00000205: 5B                 pop         ebx
+  00000206: 8B E5              mov         esp,ebp
+  00000208: 5D                 pop         ebp
+  00000209: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         20C .text

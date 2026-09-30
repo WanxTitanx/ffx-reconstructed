@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004E3B10.obj
+
+File Type: COFF OBJECT
+
+@PRendering_ResourceInstanceCreate@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000006: 85 C0              test        eax,eax
+  00000008: 78 11              js          0000001B
+  0000000A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000000F: 50                 push        eax
+  00000010: FF 76 2C           push        dword ptr [esi+2Ch]
+  00000013: E8 00 00 00 00     call        _PShaderArray_ParamDef_Destroy
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 8B 46 20           mov         eax,dword ptr [esi+20h]
+  0000001E: C7 46 2C 00 00 00  mov         dword ptr [esi+2Ch],0
+            00
+  00000025: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 78 11              js          00000041
+  00000030: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000035: 50                 push        eax
+  00000036: FF 76 24           push        dword ptr [esi+24h]
+  00000039: E8 00 00 00 00     call        _PShaderArray_ParamDef_Destroy
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 83 7E 14 00        cmp         dword ptr [esi+14h],0
+  00000045: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  0000004C: C7 46 20 00 00 00  mov         dword ptr [esi+20h],0
+            00
+  00000053: 7C 0B              jl          00000060
+  00000055: FF 76 18           push        dword ptr [esi+18h]
+  00000058: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000005D: 83 C4 04           add         esp,4
+  00000060: 8D 46 0C           lea         eax,[esi+0Ch]
+  00000063: 50                 push        eax
+  00000064: C7 46 18 00 00 00  mov         dword ptr [esi+18h],0
+            00
+  0000006B: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000072: E8 00 00 00 00     call        _PStringArray_Free
+  00000077: 8B 46 04           mov         eax,dword ptr [esi+4]
+  0000007A: 83 C4 04           add         esp,4
+  0000007D: 85 C0              test        eax,eax
+  0000007F: 78 11              js          00000092
+  00000081: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000086: 50                 push        eax
+  00000087: FF 76 08           push        dword ptr [esi+8]
+  0000008A: E8 00 00 00 00     call        _PPairAlignedBuffer_Free
+  0000008F: 83 C4 08           add         esp,8
+  00000092: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000099: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  000000A0: 5E                 pop         esi
+  000000A1: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          A2 .text

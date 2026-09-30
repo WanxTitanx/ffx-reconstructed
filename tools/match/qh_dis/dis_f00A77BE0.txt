@@ -1,0 +1,42 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A77BE0.obj
+
+File Type: COFF OBJECT
+
+_sub_A77BE0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: FF 75 10           push        dword ptr [ebp+10h]
+  00000009: FF 75 08           push        dword ptr [ebp+8]
+  0000000C: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  00000011: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000014: DB 45 F8           fild        dword ptr [ebp-8]
+  00000017: 85 C0              test        eax,eax
+  00000019: 79 06              jns         00000021
+  0000001B: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000021: FF 75 10           push        dword ptr [ebp+10h]
+  00000024: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000027: FF 75 08           push        dword ptr [ebp+8]
+  0000002A: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000002F: D9 45 FC           fld         dword ptr [ebp-4]
+  00000032: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000035: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000039: D9 45 F8           fld         dword ptr [ebp-8]
+  0000003C: DD 1C 24           fstp        qword ptr [esp]
+  0000003F: E8 00 00 00 00     call        _sub_82DA10
+  00000044: 83 C4 10           add         esp,10h
+  00000047: 33 C0              xor         eax,eax
+  00000049: 8B E5              mov         esp,ebp
+  0000004B: 5D                 pop         ebp
+  0000004C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          4D .text

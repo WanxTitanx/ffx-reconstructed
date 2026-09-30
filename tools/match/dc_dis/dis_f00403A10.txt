@@ -1,0 +1,130 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00403A10.obj
+
+File Type: COFF OBJECT
+
+@Engine_String_assign@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B DA              mov         ebx,edx
+  00000007: 57                 push        edi
+  00000008: 8B 7B 10           mov         edi,dword ptr [ebx+10h]
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000010: 3B F9              cmp         edi,ecx
+  00000012: 73 10              jae         00000024
+  00000014: 68 00 00 00 00     push        offset ??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@
+  00000019: E8 00 00 00 00     call        _std__Xout_of_range
+  0000001E: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000021: 83 C4 04           add         esp,4
+  00000024: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000027: 2B F9              sub         edi,ecx
+  00000029: 3B C7              cmp         eax,edi
+  0000002B: 73 02              jae         0000002F
+  0000002D: 8B F8              mov         edi,eax
+  0000002F: 3B F3              cmp         esi,ebx
+  00000031: 0F 84 97 00 00 00  je          000000CE
+  00000037: 83 FF FF           cmp         edi,0FFFFFFFFh
+  0000003A: 75 0D              jne         00000049
+  0000003C: 68 00 00 00 00     push        offset ??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@
+  00000041: E8 00 00 00 00     call        _std__Xlength_error
+  00000046: 83 C4 04           add         esp,4
+  00000049: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000004C: 3B C7              cmp         eax,edi
+  0000004E: 72 26              jb          00000076
+  00000050: 85 FF              test        edi,edi
+  00000052: 75 33              jne         00000087
+  00000054: 89 7E 10           mov         dword ptr [esi+10h],edi
+  00000057: 83 F8 10           cmp         eax,10h
+  0000005A: 73 0C              jae         00000068
+  0000005C: 5F                 pop         edi
+  0000005D: C6 06 00           mov         byte ptr [esi],0
+  00000060: 8B C6              mov         eax,esi
+  00000062: 5E                 pop         esi
+  00000063: 5B                 pop         ebx
+  00000064: 5D                 pop         ebp
+  00000065: C2 08 00           ret         8
+  00000068: 8B 06              mov         eax,dword ptr [esi]
+  0000006A: 5F                 pop         edi
+  0000006B: C6 00 00           mov         byte ptr [eax],0
+  0000006E: 8B C6              mov         eax,esi
+  00000070: 5E                 pop         esi
+  00000071: 5B                 pop         ebx
+  00000072: 5D                 pop         ebp
+  00000073: C2 08 00           ret         8
+  00000076: FF 76 10           push        dword ptr [esi+10h]
+  00000079: 57                 push        edi
+  0000007A: 56                 push        esi
+  0000007B: E8 00 00 00 00     call        _Engine_String_grow
+  00000080: 83 C4 0C           add         esp,0Ch
+  00000083: 85 FF              test        edi,edi
+  00000085: 74 7F              je          00000106
+  00000087: 83 7B 14 10        cmp         dword ptr [ebx+14h],10h
+  0000008B: 72 02              jb          0000008F
+  0000008D: 8B 1B              mov         ebx,dword ptr [ebx]
+  0000008F: 83 7E 14 10        cmp         dword ptr [esi+14h],10h
+  00000093: 8B CE              mov         ecx,esi
+  00000095: 72 02              jb          00000099
+  00000097: 8B 0E              mov         ecx,dword ptr [esi]
+  00000099: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000009C: 57                 push        edi
+  0000009D: 03 C3              add         eax,ebx
+  0000009F: 50                 push        eax
+  000000A0: 51                 push        ecx
+  000000A1: E8 00 00 00 00     call        _memcpy
+  000000A6: 83 C4 0C           add         esp,0Ch
+  000000A9: 83 7E 14 10        cmp         dword ptr [esi+14h],10h
+  000000AD: 89 7E 10           mov         dword ptr [esi+10h],edi
+  000000B0: 72 0F              jb          000000C1
+  000000B2: 8B 06              mov         eax,dword ptr [esi]
+  000000B4: C6 04 07 00        mov         byte ptr [edi+eax],0
+  000000B8: 5F                 pop         edi
+  000000B9: 8B C6              mov         eax,esi
+  000000BB: 5E                 pop         esi
+  000000BC: 5B                 pop         ebx
+  000000BD: 5D                 pop         ebp
+  000000BE: C2 08 00           ret         8
+  000000C1: C6 04 37 00        mov         byte ptr [edi+esi],0
+  000000C5: 5F                 pop         edi
+  000000C6: 8B C6              mov         eax,esi
+  000000C8: 5E                 pop         esi
+  000000C9: 5B                 pop         ebx
+  000000CA: 5D                 pop         ebp
+  000000CB: C2 08 00           ret         8
+  000000CE: 03 F9              add         edi,ecx
+  000000D0: 39 7E 10           cmp         dword ptr [esi+10h],edi
+  000000D3: 73 10              jae         000000E5
+  000000D5: 68 00 00 00 00     push        offset ??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@
+  000000DA: E8 00 00 00 00     call        _std__Xout_of_range
+  000000DF: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000E2: 83 C4 04           add         esp,4
+  000000E5: 83 7E 14 10        cmp         dword ptr [esi+14h],10h
+  000000E9: 89 7E 10           mov         dword ptr [esi+10h],edi
+  000000EC: 73 06              jae         000000F4
+  000000EE: C6 04 37 00        mov         byte ptr [edi+esi],0
+  000000F2: EB 06              jmp         000000FA
+  000000F4: 8B 06              mov         eax,dword ptr [esi]
+  000000F6: C6 04 07 00        mov         byte ptr [edi+eax],0
+  000000FA: 51                 push        ecx
+  000000FB: 6A 00              push        0
+  000000FD: 56                 push        esi
+  000000FE: E8 00 00 00 00     call        _Engine_String_erase
+  00000103: 83 C4 0C           add         esp,0Ch
+  00000106: 5F                 pop         edi
+  00000107: 8B C6              mov         eax,esi
+  00000109: 5E                 pop         esi
+  0000010A: 5B                 pop         ebx
+  0000010B: 5D                 pop         ebp
+  0000010C: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          28 .rdata
+         10F .text

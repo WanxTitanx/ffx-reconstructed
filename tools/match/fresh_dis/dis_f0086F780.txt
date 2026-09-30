@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086F780.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SpatialRayQueryFromActor:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8B 02              mov         eax,dword ptr [edx]
+  00000009: 8A 5A 32           mov         bl,byte ptr [edx+32h]
+  0000000C: 8A 20              mov         ah,byte ptr [eax]
+  0000000E: 8A C4              mov         al,ah
+  00000010: 2C 05              sub         al,5
+  00000012: 56                 push        esi
+  00000013: 0F B6 CB           movzx       ecx,bl
+  00000016: 3C 01              cmp         al,1
+  00000018: 76 0C              jbe         00000026
+  0000001A: 80 FB 09           cmp         bl,9
+  0000001D: 72 11              jb          00000030
+  0000001F: B9 08 00 00 00     mov         ecx,8
+  00000024: EB 0A              jmp         00000030
+  00000026: 80 FB 02           cmp         bl,2
+  00000029: 72 05              jb          00000030
+  0000002B: B9 01 00 00 00     mov         ecx,1
+  00000030: 6B C9 4C           imul        ecx,ecx,4Ch
+  00000033: 8B B4 11 74 01 00  mov         esi,dword ptr [ecx+edx+174h]
+            00
+  0000003A: 80 FC 04           cmp         ah,4
+  0000003D: 75 04              jne         00000043
+  0000003F: 33 D2              xor         edx,edx
+  00000041: EB 12              jmp         00000055
+  00000043: 3C 01              cmp         al,1
+  00000045: 76 08              jbe         0000004F
+  00000047: 81 C2 58 05 00 00  add         edx,558h
+  0000004D: EB 06              jmp         00000055
+  0000004F: 81 C2 84 02 00 00  add         edx,284h
+  00000055: D9 45 14           fld         dword ptr [ebp+14h]
+  00000058: 83 EC 30           sub         esp,30h
+  0000005B: 8D 45 14           lea         eax,[ebp+14h]
+  0000005E: DD 5C 24 28        fstp        qword ptr [esp+28h]
+  00000062: D9 45 10           fld         dword ptr [ebp+10h]
+  00000065: DD 5C 24 20        fstp        qword ptr [esp+20h]
+  00000069: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000006C: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  00000070: D9 42 08           fld         dword ptr [edx+8]
+  00000073: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000077: D9 42 04           fld         dword ptr [edx+4]
+  0000007A: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000007E: D9 02              fld         dword ptr [edx]
+  00000080: DD 1C 24           fstp        qword ptr [esp]
+  00000083: 50                 push        eax
+  00000084: 8D 45 08           lea         eax,[ebp+8]
+  00000087: 50                 push        eax
+  00000088: E8 00 00 00 00     call        _FFX_Field_ScriptSpatialRayQuery
+  0000008D: D9 45 08           fld         dword ptr [ebp+8]
+  00000090: D9 5E 20           fstp        dword ptr [esi+20h]
+  00000093: 83 C4 38           add         esp,38h
+  00000096: D9 45 14           fld         dword ptr [ebp+14h]
+  00000099: D9 5E 24           fstp        dword ptr [esi+24h]
+  0000009C: 5E                 pop         esi
+  0000009D: 5B                 pop         ebx
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A0 .text

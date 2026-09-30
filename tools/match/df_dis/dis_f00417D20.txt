@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00417D20.obj
+
+File Type: COFF OBJECT
+
+_FFX_Video_TransformBlock_DCT:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 1C           mov         esi,dword ptr [ebp+1Ch]
+  00000007: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000000A: FF 76 08           push        dword ptr [esi+8]
+  0000000D: FF 36              push        dword ptr [esi]
+  0000000F: FF 75 14           push        dword ptr [ebp+14h]
+  00000012: FF 75 08           push        dword ptr [ebp+8]
+  00000015: E8 00 00 00 00     call        _Math_SSEMatrixMultiply
+  0000001A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000001D: 83 C4 14           add         esp,14h
+  00000020: 85 C0              test        eax,eax
+  00000022: 74 1A              je          0000003E
+  00000024: FF 75 10           push        dword ptr [ebp+10h]
+  00000027: FF 76 0C           push        dword ptr [esi+0Ch]
+  0000002A: FF 76 08           push        dword ptr [esi+8]
+  0000002D: FF 36              push        dword ptr [esi]
+  0000002F: FF 75 18           push        dword ptr [ebp+18h]
+  00000032: 50                 push        eax
+  00000033: E8 00 00 00 00     call        _Math_SSEMatrixTransform
+  00000038: 83 C4 18           add         esp,18h
+  0000003B: 5E                 pop         esi
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+  0000003E: 33 C0              xor         eax,eax
+  00000040: 5E                 pop         esi
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          43 .text

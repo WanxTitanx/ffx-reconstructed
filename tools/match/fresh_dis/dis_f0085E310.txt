@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085E310.obj
+
+File Type: COFF OBJECT
+
+_FFX_VoiceSyncExec:
+  00000000: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_12FB7C4]
+  00000006: 83 F9 01           cmp         ecx,1
+  00000009: 75 27              jne         00000032
+  0000000B: 83 3D 00 00 00 00  cmp         dword ptr [_g_VoiceSyncExecUnkVar_1325ABC],0
+            00
+  00000012: 75 18              jne         0000002C
+  00000014: 68 00 00 00 00     push        offset ??_C@_0BB@HLPHMPLO@VoiceSyncStart?$CB?6?$AA@
+  00000019: E8 00 00 00 00     call        _printf
+  0000001E: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_12FB7C4]
+  00000024: 83 C4 04           add         esp,4
+  00000027: 83 F9 01           cmp         ecx,1
+  0000002A: 75 06              jne         00000032
+  0000002C: FF 05 00 00 00 00  inc         dword ptr [_g_VoiceSyncExecUnkVar_1325ABC]
+  00000032: 83 3D 00 00 00 00  cmp         dword ptr [_g_FieldDebugFlag_1325AAC],1
+            01
+  00000039: 56                 push        esi
+  0000003A: 75 22              jne         0000005E
+  0000003C: A1 00 00 00 00     mov         eax,dword ptr [_dword_1325AA8]
+  00000041: 85 C0              test        eax,eax
+  00000043: 75 0F              jne         00000054
+  00000045: A3 00 00 00 00     mov         dword ptr [_dword_1325AA8],eax
+  0000004A: A3 00 00 00 00     mov         dword ptr [_g_FieldDebugFlag_1325AAC],eax
+  0000004F: 8D 70 01           lea         esi,[eax+1]
+  00000052: EB 20              jmp         00000074
+  00000054: 48                 dec         eax
+  00000055: A3 00 00 00 00     mov         dword ptr [_dword_1325AA8],eax
+  0000005A: 33 F6              xor         esi,esi
+  0000005C: EB 16              jmp         00000074
+  0000005E: E8 00 00 00 00     call        _FFX_Sound_AggregateStatusFlags
+  00000063: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_dword_12FB7C4]
+  00000069: F7 D8              neg         eax
+  0000006B: 1B C0              sbb         eax,eax
+  0000006D: F7 D8              neg         eax
+  0000006F: F7 D8              neg         eax
+  00000071: 8D 70 01           lea         esi,[eax+1]
+  00000074: 83 F9 01           cmp         ecx,1
+  00000077: 75 21              jne         0000009A
+  00000079: 3B F1              cmp         esi,ecx
+  0000007B: 75 1D              jne         0000009A
+  0000007D: FF 35 00 00 00 00  push        dword ptr [_g_VoiceSyncExecUnkVar_1325ABC]
+  00000083: 68 00 00 00 00     push        offset ??_C@_0BM@JBNJPCPG@VoiceSyncExec?3?5Frame?5?$DN?5?$CFd?$CB?6?$AA@
+  00000088: E8 00 00 00 00     call        _printf
+  0000008D: 83 C4 08           add         esp,8
+  00000090: C7 05 00 00 00 00  mov         dword ptr [_g_VoiceSyncExecUnkVar_1325ABC],0
+            00 00 00 00
+  0000009A: 8B C6              mov         eax,esi
+  0000009C: 5E                 pop         esi
+  0000009D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2D .rdata
+          9E .text

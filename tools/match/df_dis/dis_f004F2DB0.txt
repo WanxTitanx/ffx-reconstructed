@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004F2DB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PBitmapFontText_Destructor@4:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 57                 push        edi
+  00000005: 33 FF              xor         edi,edi
+  00000007: F7 46 70 FF FF FF  test        dword ptr [esi+70h],7FFFFFFFh
+            7F
+  0000000E: 74 2D              je          0000003D
+  00000010: 8B 46 74           mov         eax,dword ptr [esi+74h]
+  00000013: 8B 1C B8           mov         ebx,dword ptr [eax+edi*4]
+  00000016: C7 04 B8 00 00 00  mov         dword ptr [eax+edi*4],0
+            00
+  0000001D: 85 DB              test        ebx,ebx
+  0000001F: 74 0F              je          00000030
+  00000021: 53                 push        ebx
+  00000022: E8 00 00 00 00     call        _PConstantBuffer_Destructor
+  00000027: 53                 push        ebx
+  00000028: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 8B 46 70           mov         eax,dword ptr [esi+70h]
+  00000033: 47                 inc         edi
+  00000034: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000039: 3B F8              cmp         edi,eax
+  0000003B: 72 D3              jb          00000010
+  0000003D: 33 FF              xor         edi,edi
+  0000003F: F7 46 78 FF FF FF  test        dword ptr [esi+78h],7FFFFFFFh
+            7F
+  00000046: 74 35              je          0000007D
+  00000048: EB 06              jmp         00000050
+  0000004A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000050: 8B 46 7C           mov         eax,dword ptr [esi+7Ch]
+  00000053: 8B 1C B8           mov         ebx,dword ptr [eax+edi*4]
+  00000056: C7 04 B8 00 00 00  mov         dword ptr [eax+edi*4],0
+            00
+  0000005D: 85 DB              test        ebx,ebx
+  0000005F: 74 0F              je          00000070
+  00000061: 53                 push        ebx
+  00000062: E8 00 00 00 00     call        _PConstantBuffer_Destructor
+  00000067: 53                 push        ebx
+  00000068: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000006D: 83 C4 08           add         esp,8
+  00000070: 8B 46 78           mov         eax,dword ptr [esi+78h]
+  00000073: 47                 inc         edi
+  00000074: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000079: 3B F8              cmp         edi,eax
+  0000007B: 72 D3              jb          00000050
+  0000007D: 83 7E 78 00        cmp         dword ptr [esi+78h],0
+  00000081: 7C 0B              jl          0000008E
+  00000083: FF 76 7C           push        dword ptr [esi+7Ch]
+  00000086: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000008B: 83 C4 04           add         esp,4
+  0000008E: 83 7E 70 00        cmp         dword ptr [esi+70h],0
+  00000092: C7 46 7C 00 00 00  mov         dword ptr [esi+7Ch],0
+            00
+  00000099: C7 46 78 00 00 00  mov         dword ptr [esi+78h],0
+            00
+  000000A0: 7C 0B              jl          000000AD
+  000000A2: FF 76 74           push        dword ptr [esi+74h]
+  000000A5: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000AA: 83 C4 04           add         esp,4
+  000000AD: F6 46 2C 01        test        byte ptr [esi+2Ch],1
+  000000B1: C7 46 74 00 00 00  mov         dword ptr [esi+74h],0
+            00
+  000000B8: C7 46 70 00 00 00  mov         dword ptr [esi+70h],0
+            00
+  000000BF: 75 0B              jne         000000CC
+  000000C1: FF 76 2C           push        dword ptr [esi+2Ch]
+  000000C4: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000C9: 83 C4 04           add         esp,4
+  000000CC: 8B 46 24           mov         eax,dword ptr [esi+24h]
+  000000CF: 85 C0              test        eax,eax
+  000000D1: 78 11              js          000000E4
+  000000D3: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  000000D8: 50                 push        eax
+  000000D9: FF 76 28           push        dword ptr [esi+28h]
+  000000DC: E8 00 00 00 00     call        _Phyre_PBitmapFontText_FreeSegments
+  000000E1: 83 C4 08           add         esp,8
+  000000E4: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  000000E8: C7 46 28 00 00 00  mov         dword ptr [esi+28h],0
+            00
+  000000EF: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  000000F6: 7C 10              jl          00000108
+  000000F8: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  000000FB: 85 C0              test        eax,eax
+  000000FD: 74 09              je          00000108
+  000000FF: 50                 push        eax
+  00000100: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000105: 83 C4 04           add         esp,4
+  00000108: 5F                 pop         edi
+  00000109: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000110: C7 46 08 00 00 00  mov         dword ptr [esi+8],0
+            00
+  00000117: 5E                 pop         esi
+  00000118: 5B                 pop         ebx
+  00000119: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+         11A .text

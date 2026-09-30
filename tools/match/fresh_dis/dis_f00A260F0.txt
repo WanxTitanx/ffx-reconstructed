@@ -1,0 +1,81 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A260F0.obj
+
+File Type: COFF OBJECT
+
+_Phyre_IggyAS3_DispatchByHash@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: 8D 45 F8           lea         eax,[ebp-8]
+  00000012: 8B 3F              mov         edi,dword ptr [edi]
+  00000014: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000017: 8A 1F              mov         bl,byte ptr [edi]
+  00000019: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000001C: BE 05 15 00 00     mov         esi,1505h
+  00000021: 84 DB              test        bl,bl
+  00000023: 74 16              je          0000003B
+  00000025: 0F BE CB           movsx       ecx,bl
+  00000028: 8A 5F 01           mov         bl,byte ptr [edi+1]
+  0000002B: 8B C6              mov         eax,esi
+  0000002D: C1 E6 05           shl         esi,5
+  00000030: 8D 7F 01           lea         edi,[edi+1]
+  00000033: 03 F1              add         esi,ecx
+  00000035: 03 F0              add         esi,eax
+  00000037: 84 DB              test        bl,bl
+  00000039: 75 EA              jne         00000025
+  0000003B: 8D 42 10           lea         eax,[edx+10h]
+  0000003E: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000044: 33 DB              xor         ebx,ebx
+  00000046: F7 00 FF FF FF 7F  test        dword ptr [eax],7FFFFFFFh
+  0000004C: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000004F: 74 51              je          000000A2
+  00000051: 33 FF              xor         edi,edi
+  00000053: 8B 42 14           mov         eax,dword ptr [edx+14h]
+  00000056: 80 3C 38 00        cmp         byte ptr [eax+edi],0
+  0000005A: 74 31              je          0000008D
+  0000005C: 39 74 38 04        cmp         dword ptr [eax+edi+4],esi
+  00000060: 75 2B              jne         0000008D
+  00000062: FF 74 38 0C        push        dword ptr [eax+edi+0Ch]
+  00000066: E8 00 00 00 00     call        _Phyre_IggyMenu_GetPlayer
+  0000006B: 83 C4 04           add         esp,4
+  0000006E: 39 45 0C           cmp         dword ptr [ebp+0Ch],eax
+  00000071: 75 1A              jne         0000008D
+  00000073: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000076: 8B 48 14           mov         ecx,dword ptr [eax+14h]
+  00000079: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000007C: 83 C0 10           add         eax,10h
+  0000007F: 50                 push        eax
+  00000080: FF 74 39 0C        push        dword ptr [ecx+edi+0Ch]
+  00000084: 8B 44 39 08        mov         eax,dword ptr [ecx+edi+8]
+  00000088: FF D0              call        eax
+  0000008A: 83 C4 08           add         esp,8
+  0000008D: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000090: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000093: 8B 00              mov         eax,dword ptr [eax]
+  00000095: 43                 inc         ebx
+  00000096: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000009B: 83 C7 10           add         edi,10h
+  0000009E: 3B D8              cmp         ebx,eax
+  000000A0: 72 B1              jb          00000053
+  000000A2: 5F                 pop         edi
+  000000A3: 5E                 pop         esi
+  000000A4: B8 01 00 00 00     mov         eax,1
+  000000A9: 5B                 pop         ebx
+  000000AA: 8B E5              mov         esp,ebp
+  000000AC: 5D                 pop         ebp
+  000000AD: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B0 .text

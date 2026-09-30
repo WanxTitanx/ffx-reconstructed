@@ -1,0 +1,107 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00440AB0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PCluster_Absorb@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B F2              mov         esi,edx
+  0000000A: 57                 push        edi
+  0000000B: 8B F9              mov         edi,ecx
+  0000000D: 8D 46 28           lea         eax,[esi+28h]
+  00000010: 50                 push        eax
+  00000011: 8D 47 28           lea         eax,[edi+28h]
+  00000014: 50                 push        eax
+  00000015: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000018: E8 00 00 00 00     call        _AlignedLinkedList_Absorb
+  0000001D: 8B 4E 40           mov         ecx,dword ptr [esi+40h]
+  00000020: 8B 57 40           mov         edx,dword ptr [edi+40h]
+  00000023: 8D 46 1C           lea         eax,[esi+1Ch]
+  00000026: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000029: 8B 00              mov         eax,dword ptr [eax]
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: 8B DA              mov         ebx,edx
+  00000030: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000033: 8B F0              mov         esi,eax
+  00000035: 3B 45 FC           cmp         eax,dword ptr [ebp-4]
+  00000038: 74 64              je          0000009E
+  0000003A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000040: 85 F6              test        esi,esi
+  00000042: 74 5A              je          0000009E
+  00000044: 85 C9              test        ecx,ecx
+  00000046: 74 0C              je          00000054
+  00000048: 50                 push        eax
+  00000049: 51                 push        ecx
+  0000004A: E8 00 00 00 00     call        _Phyre_Object_Release
+  0000004F: 83 C4 08           add         esp,8
+  00000052: 8B D3              mov         edx,ebx
+  00000054: 8B 0E              mov         ecx,dword ptr [esi]
+  00000056: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000059: 89 41 04           mov         dword ptr [ecx+4],eax
+  0000005C: 89 08              mov         dword ptr [eax],ecx
+  0000005E: 89 36              mov         dword ptr [esi],esi
+  00000060: 89 76 04           mov         dword ptr [esi+4],esi
+  00000063: 8B 4F 20           mov         ecx,dword ptr [edi+20h]
+  00000066: 8D 47 1C           lea         eax,[edi+1Ch]
+  00000069: 89 06              mov         dword ptr [esi],eax
+  0000006B: 89 4E 04           mov         dword ptr [esi+4],ecx
+  0000006E: 89 31              mov         dword ptr [ecx],esi
+  00000070: 89 77 20           mov         dword ptr [edi+20h],esi
+  00000073: 85 D2              test        edx,edx
+  00000075: 74 0A              je          00000081
+  00000077: 56                 push        esi
+  00000078: 52                 push        edx
+  00000079: E8 00 00 00 00     call        _Phyre_Debug_Trace
+  0000007E: 83 C4 08           add         esp,8
+  00000081: 56                 push        esi
+  00000082: 89 7E 28           mov         dword ptr [esi+28h],edi
+  00000085: E8 00 00 00 00     call        _Phyre_PCluster_Absorb_ResetInstances
+  0000008A: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000008D: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000090: 8B 00              mov         eax,dword ptr [eax]
+  00000092: 83 C4 04           add         esp,4
+  00000095: 8B D3              mov         edx,ebx
+  00000097: 8B F0              mov         esi,eax
+  00000099: 3B 45 FC           cmp         eax,dword ptr [ebp-4]
+  0000009C: 75 A2              jne         00000040
+  0000009E: 8B 75 F4           mov         esi,dword ptr [ebp-0Ch]
+  000000A1: 8B 56 24           mov         edx,dword ptr [esi+24h]
+  000000A4: 85 D2              test        edx,edx
+  000000A6: 74 1C              je          000000C4
+  000000A8: 8B 47 24           mov         eax,dword ptr [edi+24h]
+  000000AB: 8B CA              mov         ecx,edx
+  000000AD: 8B 12              mov         edx,dword ptr [edx]
+  000000AF: 89 01              mov         dword ptr [ecx],eax
+  000000B1: 89 4F 24           mov         dword ptr [edi+24h],ecx
+  000000B4: 85 D2              test        edx,edx
+  000000B6: 75 F0              jne         000000A8
+  000000B8: 5F                 pop         edi
+  000000B9: 8B C6              mov         eax,esi
+  000000BB: 89 56 24           mov         dword ptr [esi+24h],edx
+  000000BE: 5E                 pop         esi
+  000000BF: 5B                 pop         ebx
+  000000C0: 8B E5              mov         esp,ebp
+  000000C2: 5D                 pop         ebp
+  000000C3: C3                 ret
+  000000C4: 5F                 pop         edi
+  000000C5: C7 46 24 00 00 00  mov         dword ptr [esi+24h],0
+            00
+  000000CC: 5E                 pop         esi
+  000000CD: 8B C1              mov         eax,ecx
+  000000CF: 5B                 pop         ebx
+  000000D0: 8B E5              mov         esp,ebp
+  000000D2: 5D                 pop         ebp
+  000000D3: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          D4 .text

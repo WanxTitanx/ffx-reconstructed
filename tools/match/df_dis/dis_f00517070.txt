@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00517070.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationSlotSet_BlendSlots@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B 31              mov         esi,dword ptr [ecx]
+  00000009: 57                 push        edi
+  0000000A: 8B FA              mov         edi,edx
+  0000000C: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000012: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000015: 3B 39              cmp         edi,dword ptr [ecx]
+  00000017: 75 08              jne         00000021
+  00000019: 5F                 pop         edi
+  0000001A: 33 C0              xor         eax,eax
+  0000001C: 5E                 pop         esi
+  0000001D: 8B E5              mov         esp,ebp
+  0000001F: 5D                 pop         ebp
+  00000020: C3                 ret
+  00000021: 3B FE              cmp         edi,esi
+  00000023: 73 02              jae         00000027
+  00000025: 8B F7              mov         esi,edi
+  00000027: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000002A: 53                 push        ebx
+  0000002B: 33 DB              xor         ebx,ebx
+  0000002D: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000030: 85 FF              test        edi,edi
+  00000032: 74 36              je          0000006A
+  00000034: 8B C7              mov         eax,edi
+  00000036: 6B C0 34           imul        eax,eax,34h
+  00000039: 6A 04              push        4
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000041: 8B D8              mov         ebx,eax
+  00000043: 83 C4 08           add         esp,8
+  00000046: 85 DB              test        ebx,ebx
+  00000048: 74 34              je          0000007E
+  0000004A: 56                 push        esi
+  0000004B: FF 75 FC           push        dword ptr [ebp-4]
+  0000004E: 53                 push        ebx
+  0000004F: E8 00 00 00 00     call        _PAnimationSlot_CopySlots
+  00000054: 8B C7              mov         eax,edi
+  00000056: 2B C6              sub         eax,esi
+  00000058: 6B F6 34           imul        esi,esi,34h
+  0000005B: 50                 push        eax
+  0000005C: 03 F3              add         esi,ebx
+  0000005E: 56                 push        esi
+  0000005F: E8 00 00 00 00     call        _Phyre_PAnimationSlot_ZeroKeyData
+  00000064: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000067: 83 C4 14           add         esp,14h
+  0000006A: 57                 push        edi
+  0000006B: 53                 push        ebx
+  0000006C: 51                 push        ecx
+  0000006D: E8 00 00 00 00     call        _Phyre_PAnimationSlotSet_ProcessSlotAnimations
+  00000072: 83 C4 0C           add         esp,0Ch
+  00000075: 33 C0              xor         eax,eax
+  00000077: 5B                 pop         ebx
+  00000078: 5F                 pop         edi
+  00000079: 5E                 pop         esi
+  0000007A: 8B E5              mov         esp,ebp
+  0000007C: 5D                 pop         ebp
+  0000007D: C3                 ret
+  0000007E: 5B                 pop         ebx
+  0000007F: 5F                 pop         edi
+  00000080: B8 0D 00 00 00     mov         eax,0Dh
+  00000085: 5E                 pop         esi
+  00000086: 8B E5              mov         esp,ebp
+  00000088: 5D                 pop         ebp
+  00000089: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8A .text

@@ -1,0 +1,298 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008263C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_AllocAndLoadModelData:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 0F B7 06           movzx       eax,word ptr [esi]
+  0000000F: 50                 push        eax
+  00000010: 6A 01              push        1
+  00000012: E8 00 00 00 00     call        _FFX_ResourceCache_GetSlotField6
+  00000017: 8B D0              mov         edx,eax
+  00000019: 83 C4 08           add         esp,8
+  0000001C: 85 D2              test        edx,edx
+  0000001E: 0F 84 F4 02 00 00  je          00000318
+  00000024: D9 02              fld         dword ptr [edx]
+  00000026: 8D 42 18           lea         eax,[edx+18h]
+  00000029: DD 05 00 00 00 00  fld         qword ptr [__real@408f400000000000]
+  0000002F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000032: DC C9              fmul        st(1),st
+  00000034: D9 C9              fxch        st(1)
+  00000036: D9 9E 40 08 00 00  fstp        dword ptr [esi+840h]
+  0000003C: D9 42 04           fld         dword ptr [edx+4]
+  0000003F: D8 C9              fmul        st,st(1)
+  00000041: D9 9E 44 08 00 00  fstp        dword ptr [esi+844h]
+  00000047: D9 42 08           fld         dword ptr [edx+8]
+  0000004A: D8 C9              fmul        st,st(1)
+  0000004C: D9 9E 48 08 00 00  fstp        dword ptr [esi+848h]
+  00000052: D9 42 0C           fld         dword ptr [edx+0Ch]
+  00000055: D8 C9              fmul        st,st(1)
+  00000057: D9 9E 4C 08 00 00  fstp        dword ptr [esi+84Ch]
+  0000005D: D9 42 10           fld         dword ptr [edx+10h]
+  00000060: D8 C9              fmul        st,st(1)
+  00000062: D9 9E 50 08 00 00  fstp        dword ptr [esi+850h]
+  00000068: D8 4A 14           fmul        dword ptr [edx+14h]
+  0000006B: D9 9E 54 08 00 00  fstp        dword ptr [esi+854h]
+  00000071: D9 86 4C 08 00 00  fld         dword ptr [esi+84Ch]
+  00000077: D8 A6 40 08 00 00  fsub        dword ptr [esi+840h]
+  0000007D: D9 E8              fld1
+  0000007F: D9 C0              fld         st(0)
+  00000081: DE F2              fdivrp      st(2),st
+  00000083: D9 C9              fxch        st(1)
+  00000085: D9 9E 58 08 00 00  fstp        dword ptr [esi+858h]
+  0000008B: D9 86 50 08 00 00  fld         dword ptr [esi+850h]
+  00000091: D8 A6 44 08 00 00  fsub        dword ptr [esi+844h]
+  00000097: D8 F9              fdivr       st,st(1)
+  00000099: D9 9E 5C 08 00 00  fstp        dword ptr [esi+85Ch]
+  0000009F: D9 86 54 08 00 00  fld         dword ptr [esi+854h]
+  000000A5: D8 A6 48 08 00 00  fsub        dword ptr [esi+848h]
+  000000AB: DE F9              fdivp       st(1),st
+  000000AD: D9 9E 60 08 00 00  fstp        dword ptr [esi+860h]
+  000000B3: 0F B7 08           movzx       ecx,word ptr [eax]
+  000000B6: 0F B7 42 1A        movzx       eax,word ptr [edx+1Ah]
+  000000BA: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000BD: 0F B7 42 1C        movzx       eax,word ptr [edx+1Ch]
+  000000C1: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000C4: B8 FF FF 00 00     mov         eax,0FFFFh
+  000000C9: 66 3B C8           cmp         cx,ax
+  000000CC: 0F 84 3A 02 00 00  je          0000030C
+  000000D2: EB 0C              jmp         000000E0
+  000000D4: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  000000DB: EB 03              jmp         000000E0
+  000000DD: 8D 49 00           lea         ecx,[ecx]
+  000000E0: 0F B7 C1           movzx       eax,cx
+  000000E3: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  000000E9: 8D 1C C5 00 00 00  lea         ebx,[eax*8]
+            00
+  000000F0: 8D 3C C5 00 00 00  lea         edi,[eax*8]
+            00
+  000000F7: 2B D8              sub         ebx,eax
+  000000F9: 2B F8              sub         edi,eax
+  000000FB: 83 7C D9 2C 00     cmp         dword ptr [ecx+ebx*8+2Ch],0
+  00000100: 75 37              jne         00000139
+  00000102: 8B 04 D9           mov         eax,dword ptr [ecx+ebx*8]
+  00000105: 0F B7 40 18        movzx       eax,word ptr [eax+18h]
+  00000109: C1 E0 02           shl         eax,2
+  0000010C: 50                 push        eax
+  0000010D: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000112: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  00000118: 89 44 D9 2C        mov         dword ptr [ecx+ebx*8+2Ch],eax
+  0000011C: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  00000122: 8B 04 F9           mov         eax,dword ptr [ecx+edi*8]
+  00000125: 0F B7 40 18        movzx       eax,word ptr [eax+18h]
+  00000129: C1 E0 02           shl         eax,2
+  0000012C: 50                 push        eax
+  0000012D: FF 74 F9 2C        push        dword ptr [ecx+edi*8+2Ch]
+  00000131: E8 00 00 00 00     call        _Engine_MemZero
+  00000136: 83 C4 0C           add         esp,0Ch
+  00000139: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  0000013F: 83 7C F8 30 00     cmp         dword ptr [eax+edi*8+30h],0
+  00000144: 75 55              jne         0000019B
+  00000146: 8B 04 F8           mov         eax,dword ptr [eax+edi*8]
+  00000149: 0F B7 40 04        movzx       eax,word ptr [eax+4]
+  0000014D: 50                 push        eax
+  0000014E: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000153: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  00000159: 83 C4 04           add         esp,4
+  0000015C: 89 44 F9 30        mov         dword ptr [ecx+edi*8+30h],eax
+  00000160: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  00000166: 33 C9              xor         ecx,ecx
+  00000168: C7 44 F8 34 00 00  mov         dword ptr [eax+edi*8+34h],0
+            00 00
+  00000170: 8B 96 BC 01 00 00  mov         edx,dword ptr [esi+1BCh]
+  00000176: 8B 04 FA           mov         eax,dword ptr [edx+edi*8]
+  00000179: 66 39 48 04        cmp         word ptr [eax+4],cx
+  0000017D: 74 1C              je          0000019B
+  0000017F: 90                 nop
+  00000180: 8B 44 FA 30        mov         eax,dword ptr [edx+edi*8+30h]
+  00000184: 41                 inc         ecx
+  00000185: C6 44 08 FF 00     mov         byte ptr [eax+ecx-1],0
+  0000018A: 8B 96 BC 01 00 00  mov         edx,dword ptr [esi+1BCh]
+  00000190: 8B 04 FA           mov         eax,dword ptr [edx+edi*8]
+  00000193: 0F B7 40 04        movzx       eax,word ptr [eax+4]
+  00000197: 3B C8              cmp         ecx,eax
+  00000199: 7C E5              jl          00000180
+  0000019B: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000019E: 0F B7 D8           movzx       ebx,ax
+  000001A1: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  000001A7: 8B 44 F8 2C        mov         eax,dword ptr [eax+edi*8+2Ch]
+  000001AB: 83 3C 98 00        cmp         dword ptr [eax+ebx*4],0
+  000001AF: 75 2B              jne         000001DC
+  000001B1: 6A 4C              push        4Ch
+  000001B3: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  000001B8: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  000001BE: 6A 4C              push        4Ch
+  000001C0: 8B 4C F9 2C        mov         ecx,dword ptr [ecx+edi*8+2Ch]
+  000001C4: 89 04 99           mov         dword ptr [ecx+ebx*4],eax
+  000001C7: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  000001CD: 8B 44 F8 2C        mov         eax,dword ptr [eax+edi*8+2Ch]
+  000001D1: FF 34 98           push        dword ptr [eax+ebx*4]
+  000001D4: E8 00 00 00 00     call        _Engine_MemZero
+  000001D9: 83 C4 0C           add         esp,0Ch
+  000001DC: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  000001E2: 8B 44 F8 2C        mov         eax,dword ptr [eax+edi*8+2Ch]
+  000001E6: 8B 1C 98           mov         ebx,dword ptr [eax+ebx*4]
+  000001E9: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000001EC: 83 7B 44 00        cmp         dword ptr [ebx+44h],0
+  000001F0: 66 89 43 40        mov         word ptr [ebx+40h],ax
+  000001F4: 75 12              jne         00000208
+  000001F6: 98                 cwde
+  000001F7: 8D 04 40           lea         eax,[eax+eax*2]
+  000001FA: 03 C0              add         eax,eax
+  000001FC: 50                 push        eax
+  000001FD: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000202: 83 C4 04           add         esp,4
+  00000205: 89 43 44           mov         dword ptr [ebx+44h],eax
+  00000208: 83 7B 48 00        cmp         dword ptr [ebx+48h],0
+  0000020C: 75 12              jne         00000220
+  0000020E: 0F BF 43 40        movsx       eax,word ptr [ebx+40h]
+  00000212: 03 C0              add         eax,eax
+  00000214: 50                 push        eax
+  00000215: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000021A: 83 C4 04           add         esp,4
+  0000021D: 89 43 48           mov         dword ptr [ebx+48h],eax
+  00000220: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000223: 83 C0 08           add         eax,8
+  00000226: 33 C9              xor         ecx,ecx
+  00000228: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000022B: 8B D0              mov         edx,eax
+  0000022D: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000230: 66 39 4B 40        cmp         word ptr [ebx+40h],cx
+  00000234: 0F 8E B1 00 00 00  jle         000002EB
+  0000023A: 33 D2              xor         edx,edx
+  0000023C: 8D 64 24 00        lea         esp,[esp]
+  00000240: 0F B7 00           movzx       eax,word ptr [eax]
+  00000243: 8B 4B 44           mov         ecx,dword ptr [ebx+44h]
+  00000246: 83 C2 06           add         edx,6
+  00000249: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000024C: 66 89 44 11 FA     mov         word ptr [ecx+edx-6],ax
+  00000251: 8B 4B 44           mov         ecx,dword ptr [ebx+44h]
+  00000254: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000257: 0F B7 40 02        movzx       eax,word ptr [eax+2]
+  0000025B: 66 89 44 11 FC     mov         word ptr [ecx+edx-4],ax
+  00000260: 8B 4B 44           mov         ecx,dword ptr [ebx+44h]
+  00000263: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000266: 0F B7 40 04        movzx       eax,word ptr [eax+4]
+  0000026A: 66 89 44 11 FE     mov         word ptr [ecx+edx-2],ax
+  0000026F: 8B 43 44           mov         eax,dword ptr [ebx+44h]
+  00000272: 0F BF 4C 10 FA     movsx       ecx,word ptr [eax+edx-6]
+  00000277: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  0000027D: 8B 44 F8 30        mov         eax,dword ptr [eax+edi*8+30h]
+  00000281: C6 04 01 01        mov         byte ptr [ecx+eax],1
+  00000285: 8B 43 44           mov         eax,dword ptr [ebx+44h]
+  00000288: 0F BF 4C 10 FC     movsx       ecx,word ptr [eax+edx-4]
+  0000028D: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  00000293: 8B 44 F8 30        mov         eax,dword ptr [eax+edi*8+30h]
+  00000297: C6 04 01 01        mov         byte ptr [ecx+eax],1
+  0000029B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000029E: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000002A1: 8B D0              mov         edx,eax
+  000002A3: 40                 inc         eax
+  000002A4: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000002A7: 8B 43 44           mov         eax,dword ptr [ebx+44h]
+  000002AA: 0F BF 4C 08 FE     movsx       ecx,word ptr [eax+ecx-2]
+  000002AF: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  000002B5: 8B 44 F8 30        mov         eax,dword ptr [eax+edi*8+30h]
+  000002B9: C6 04 01 01        mov         byte ptr [ecx+eax],1
+  000002BD: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000002C0: 8B 4B 48           mov         ecx,dword ptr [ebx+48h]
+  000002C3: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  000002C7: 66 89 04 51        mov         word ptr [ecx+edx*2],ax
+  000002CB: 0F BF 43 40        movsx       eax,word ptr [ebx+40h]
+  000002CF: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000002D2: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000002D5: 83 C1 20           add         ecx,20h
+  000002D8: 39 45 FC           cmp         dword ptr [ebp-4],eax
+  000002DB: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  000002DE: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000002E1: 8B C1              mov         eax,ecx
+  000002E3: 0F 8C 57 FF FF FF  jl          00000240
+  000002E9: 8B D1              mov         edx,ecx
+  000002EB: 0F B7 02           movzx       eax,word ptr [edx]
+  000002EE: 0F B7 5A 02        movzx       ebx,word ptr [edx+2]
+  000002F2: 0F B7 52 04        movzx       edx,word ptr [edx+4]
+  000002F6: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000002F9: BA FF FF 00 00     mov         edx,0FFFFh
+  000002FE: 8B C8              mov         ecx,eax
+  00000300: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  00000303: 66 3B C2           cmp         ax,dx
+  00000306: 0F 85 D4 FD FF FF  jne         000000E0
+  0000030C: 5F                 pop         edi
+  0000030D: 5E                 pop         esi
+  0000030E: B8 01 00 00 00     mov         eax,1
+  00000313: 5B                 pop         ebx
+  00000314: 8B E5              mov         esp,ebp
+  00000316: 5D                 pop         ebp
+  00000317: C3                 ret
+  00000318: 8B 86 C0 01 00 00  mov         eax,dword ptr [esi+1C0h]
+  0000031E: 33 D2              xor         edx,edx
+  00000320: 89 55 08           mov         dword ptr [ebp+8],edx
+  00000323: 66 39 50 06        cmp         word ptr [eax+6],dx
+  00000327: 0F 84 93 00 00 00  je          000003C0
+  0000032D: 33 DB              xor         ebx,ebx
+  0000032F: 90                 nop
+  00000330: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  00000336: 83 7C 19 2C 00     cmp         dword ptr [ecx+ebx+2Ch],0
+  0000033B: 74 4E              je          0000038B
+  0000033D: 8B 04 19           mov         eax,dword ptr [ecx+ebx]
+  00000340: 33 FF              xor         edi,edi
+  00000342: 66 39 78 18        cmp         word ptr [eax+18h],di
+  00000346: 74 2E              je          00000376
+  00000348: EB 06              jmp         00000350
+  0000034A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000350: 8B 44 19 2C        mov         eax,dword ptr [ecx+ebx+2Ch]
+  00000354: 8B 04 B8           mov         eax,dword ptr [eax+edi*4]
+  00000357: 85 C0              test        eax,eax
+  00000359: 74 09              je          00000364
+  0000035B: 50                 push        eax
+  0000035C: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000361: 83 C4 04           add         esp,4
+  00000364: 8B 8E BC 01 00 00  mov         ecx,dword ptr [esi+1BCh]
+  0000036A: 47                 inc         edi
+  0000036B: 8B 04 19           mov         eax,dword ptr [ecx+ebx]
+  0000036E: 0F B7 40 18        movzx       eax,word ptr [eax+18h]
+  00000372: 3B F8              cmp         edi,eax
+  00000374: 7C DA              jl          00000350
+  00000376: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  0000037C: FF 74 03 2C        push        dword ptr [ebx+eax+2Ch]
+  00000380: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000385: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000388: 83 C4 04           add         esp,4
+  0000038B: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  00000391: 83 C3 38           add         ebx,38h
+  00000394: C7 44 03 F4 00 00  mov         dword ptr [ebx+eax-0Ch],0
+            00 00
+  0000039C: 8B 86 BC 01 00 00  mov         eax,dword ptr [esi+1BCh]
+  000003A2: 42                 inc         edx
+  000003A3: C7 44 03 F8 00 00  mov         dword ptr [ebx+eax-8],0
+            00 00
+  000003AB: 8B 86 C0 01 00 00  mov         eax,dword ptr [esi+1C0h]
+  000003B1: 89 55 08           mov         dword ptr [ebp+8],edx
+  000003B4: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  000003B8: 3B D0              cmp         edx,eax
+  000003BA: 0F 8C 70 FF FF FF  jl          00000330
+  000003C0: 5F                 pop         edi
+  000003C1: 5E                 pop         esi
+  000003C2: 33 C0              xor         eax,eax
+  000003C4: 5B                 pop         ebx
+  000003C5: 8B E5              mov         esp,ebp
+  000003C7: 5D                 pop         ebp
+  000003C8: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+         3C9 .text

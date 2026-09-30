@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086F450.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_UpdateActorLighting:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 83 EC 20           sub         esp,20h
+  00000009: 8B 01              mov         eax,dword ptr [ecx]
+  0000000B: 8A 00              mov         al,byte ptr [eax]
+  0000000D: 3C 04              cmp         al,4
+  0000000F: 75 04              jne         00000015
+  00000011: 33 C0              xor         eax,eax
+  00000013: EB 12              jmp         00000027
+  00000015: 2C 05              sub         al,5
+  00000017: 3C 01              cmp         al,1
+  00000019: 8D 81 58 05 00 00  lea         eax,[ecx+558h]
+  0000001F: 77 06              ja          00000027
+  00000021: 8D 81 84 02 00 00  lea         eax,[ecx+284h]
+  00000027: D9 40 30           fld         dword ptr [eax+30h]
+  0000002A: 8A 91 AA 00 00 00  mov         dl,byte ptr [ecx+0AAh]
+  00000030: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000033: D9 40 34           fld         dword ptr [eax+34h]
+  00000036: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000039: D9 40 38           fld         dword ptr [eax+38h]
+  0000003C: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000003F: D9 EE              fldz
+  00000041: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000044: D9 00              fld         dword ptr [eax]
+  00000046: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000049: D9 40 04           fld         dword ptr [eax+4]
+  0000004C: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000004F: D9 40 08           fld         dword ptr [eax+8]
+  00000052: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000055: D9 E8              fld1
+  00000057: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000005A: 80 FA 04           cmp         dl,4
+  0000005D: 75 1C              jne         0000007B
+  0000005F: 8D 45 F0           lea         eax,[ebp-10h]
+  00000062: 50                 push        eax
+  00000063: 8D 45 E0           lea         eax,[ebp-20h]
+  00000066: 50                 push        eax
+  00000067: 0F B7 81 A8 00 00  movzx       eax,word ptr [ecx+0A8h]
+            00
+  0000006E: 50                 push        eax
+  0000006F: E8 00 00 00 00     call        _FFX_Battle_FindAndUpdateFieldLighting
+  00000074: 83 C4 0C           add         esp,0Ch
+  00000077: 8B E5              mov         esp,ebp
+  00000079: 5D                 pop         ebp
+  0000007A: C3                 ret
+  0000007B: 80 FA 05           cmp         dl,5
+  0000007E: 75 1C              jne         0000009C
+  00000080: 8D 45 F0           lea         eax,[ebp-10h]
+  00000083: 50                 push        eax
+  00000084: 8D 45 E0           lea         eax,[ebp-20h]
+  00000087: 50                 push        eax
+  00000088: 0F B7 81 A8 00 00  movzx       eax,word ptr [ecx+0A8h]
+            00
+  0000008F: 50                 push        eax
+  00000090: E8 00 00 00 00     call        _FFX_Battle_WriteFieldLightingEntry
+  00000095: 83 C4 0C           add         esp,0Ch
+  00000098: 8B E5              mov         esp,ebp
+  0000009A: 5D                 pop         ebp
+  0000009B: C3                 ret
+  0000009C: 8A C2              mov         al,dl
+  0000009E: 8B E5              mov         esp,ebp
+  000000A0: 5D                 pop         ebp
+  000000A1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          A2 .text

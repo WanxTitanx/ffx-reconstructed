@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0076B9E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Pmcom_FlushRingBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000008: 3B 1D 00 00 00 00  cmp         ebx,dword ptr [_g_PmcomUnkVar_10E7878]
+  0000000E: 74 1D              je          0000002D
+  00000010: 8D 43 01           lea         eax,[ebx+1]
+  00000013: 33 DB              xor         ebx,ebx
+  00000015: 3D 00 01 00 00     cmp         eax,100h
+  0000001A: 0F 9D C3           setge       bl
+  0000001D: 4B                 dec         ebx
+  0000001E: 23 D8              and         ebx,eax
+  00000020: E8 00 00 00 00     call        _dbgPrintf
+  00000025: 3B 1D 00 00 00 00  cmp         ebx,dword ptr [_g_PmcomUnkVar_10E7878]
+  0000002B: 75 E3              jne         00000010
+  0000002D: 8B C3              mov         eax,ebx
+  0000002F: 5B                 pop         ebx
+  00000030: 8B E5              mov         esp,ebp
+  00000032: 5D                 pop         ebp
+  00000033: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          34 .text

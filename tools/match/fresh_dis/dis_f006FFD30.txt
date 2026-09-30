@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FFD30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Keyboard_ResetAllKeys:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: E8 00 00 00 00     call        _GetGlobalSystemContext
+  00000007: 8B F8              mov         edi,eax
+  00000009: 33 F6              xor         esi,esi
+  0000000B: EB 03              jmp         00000010
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 6A 00              push        0
+  00000012: 6A 00              push        0
+  00000014: 56                 push        esi
+  00000015: 57                 push        edi
+  00000016: E8 00 00 00 00     call        _Phyre_Keyboard_SetKeyState
+  0000001B: 46                 inc         esi
+  0000001C: 83 C4 10           add         esp,10h
+  0000001F: 83 FE 7B           cmp         esi,7Bh
+  00000022: 7E EC              jle         00000010
+  00000024: 5F                 pop         edi
+  00000025: 5E                 pop         esi
+  00000026: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          27 .text

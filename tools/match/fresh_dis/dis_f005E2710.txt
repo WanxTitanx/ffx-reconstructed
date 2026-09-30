@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005E2710.obj
+
+File Type: COFF OBJECT
+
+@Phyre_animation_stateUpdate@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B BE B0 00 00 00  mov         edi,dword ptr [esi+0B0h]
+  0000000A: 85 FF              test        edi,edi
+  0000000C: 74 3D              je          0000004B
+  0000000E: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000011: 85 C0              test        eax,eax
+  00000013: 74 18              je          0000002D
+  00000015: 8B 48 54           mov         ecx,dword ptr [eax+54h]
+  00000018: 85 C9              test        ecx,ecx
+  0000001A: 74 11              je          0000002D
+  0000001C: 8B 96 DC 00 00 00  mov         edx,dword ptr [esi+0DCh]
+  00000022: 85 D2              test        edx,edx
+  00000024: 74 07              je          0000002D
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: 8B 40 50           mov         eax,dword ptr [eax+50h]
+  0000002B: FF D0              call        eax
+  0000002D: 56                 push        esi
+  0000002E: 57                 push        edi
+  0000002F: E8 00 00 00 00     call        _Phyre_Singleton_Destructor
+  00000034: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000037: 83 C4 08           add         esp,8
+  0000003A: 85 C0              test        eax,eax
+  0000003C: 74 0D              je          0000004B
+  0000003E: 83 C0 50           add         eax,50h
+  00000041: 50                 push        eax
+  00000042: 56                 push        esi
+  00000043: E8 00 00 00 00     call        _Phyre_Misc_601BE0
+  00000048: 83 C4 08           add         esp,8
+  0000004B: 8B 8E DC 00 00 00  mov         ecx,dword ptr [esi+0DCh]
+  00000051: 85 C9              test        ecx,ecx
+  00000053: 74 0C              je          00000061
+  00000055: 8B 01              mov         eax,dword ptr [ecx]
+  00000057: BA 01 00 00 00     mov         edx,1
+  0000005C: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000005F: FF D0              call        eax
+  00000061: 8B 8E E0 00 00 00  mov         ecx,dword ptr [esi+0E0h]
+  00000067: 85 C9              test        ecx,ecx
+  00000069: 74 0B              je          00000076
+  0000006B: 8B 01              mov         eax,dword ptr [ecx]
+  0000006D: BA 01 00 00 00     mov         edx,1
+  00000072: 8B 00              mov         eax,dword ptr [eax]
+  00000074: FF D0              call        eax
+  00000076: 56                 push        esi
+  00000077: C7 86 E0 00 00 00  mov         dword ptr [esi+0E0h],0
+            00 00 00 00
+  00000081: C7 86 DC 00 00 00  mov         dword ptr [esi+0DCh],0
+            00 00 00 00
+  0000008B: C7 86 B0 00 00 00  mov         dword ptr [esi+0B0h],0
+            00 00 00 00
+  00000095: E8 00 00 00 00     call        _Phyre_physics_calcForce
+  0000009A: 83 C4 04           add         esp,4
+  0000009D: 5F                 pop         edi
+  0000009E: 5E                 pop         esi
+  0000009F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          A0 .text

@@ -1,0 +1,307 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00842C80.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldMap_ParseEncounterGuidePoly:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 40           sub         esp,40h
+  00000006: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000009: 53                 push        ebx
+  0000000A: 8B 18              mov         ebx,dword ptr [eax]
+  0000000C: 56                 push        esi
+  0000000D: 57                 push        edi
+  0000000E: FF 70 04           push        dword ptr [eax+4]
+  00000011: 8B 7B 10           mov         edi,dword ptr [ebx+10h]
+  00000014: FF 70 08           push        dword ptr [eax+8]
+  00000017: 33 F6              xor         esi,esi
+  00000019: 89 5D D8           mov         dword ptr [ebp-28h],ebx
+  0000001C: C6 45 0B FF        mov         byte ptr [ebp+0Bh],0FFh
+  00000020: C6 45 FF FF        mov         byte ptr [ebp-1],0FFh
+  00000024: C6 45 FE FF        mov         byte ptr [ebp-2],0FFh
+  00000028: C7 45 F4 FF FF FF  mov         dword ptr [ebp-0Ch],0FFFFFFFFh
+            FF
+  0000002F: 89 75 E4           mov         dword ptr [ebp-1Ch],esi
+  00000032: E8 00 00 00 00     call        _FFX_FieldMap_AdvanceGuidePolyBuf
+  00000037: 83 C4 08           add         esp,8
+  0000003A: 89 75 E0           mov         dword ptr [ebp-20h],esi
+  0000003D: 66 39 73 06        cmp         word ptr [ebx+6],si
+  00000041: 0F 84 29 03 00 00  je          00000370
+  00000047: 83 C7 02           add         edi,2
+  0000004A: 8B DF              mov         ebx,edi
+  0000004C: 89 7D F8           mov         dword ptr [ebp-8],edi
+  0000004F: 89 5D DC           mov         dword ptr [ebp-24h],ebx
+  00000052: 8A 4F FF           mov         cl,byte ptr [edi-1]
+  00000055: 0F BE 45 0B        movsx       eax,byte ptr [ebp+0Bh]
+  00000059: 0F B6 D1           movzx       edx,cl
+  0000005C: 3B C2              cmp         eax,edx
+  0000005E: 75 05              jne         00000065
+  00000060: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  00000063: EB 12              jmp         00000077
+  00000065: 52                 push        edx
+  00000066: 88 4D 0B           mov         byte ptr [ebp+0Bh],cl
+  00000069: E8 00 00 00 00     call        _FFX_FieldMap_SetGuidePolyXCnt
+  0000006E: 83 C4 04           add         esp,4
+  00000071: 83 CF FF           or          edi,0FFFFFFFFh
+  00000074: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  00000077: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000007A: 8A 08              mov         cl,byte ptr [eax]
+  0000007C: 0F BE 45 FF        movsx       eax,byte ptr [ebp-1]
+  00000080: 0F B6 D1           movzx       edx,cl
+  00000083: 3B C2              cmp         eax,edx
+  00000085: 74 12              je          00000099
+  00000087: 52                 push        edx
+  00000088: 88 4D FF           mov         byte ptr [ebp-1],cl
+  0000008B: E8 00 00 00 00     call        _FFX_FieldMap_SetGuidePolyWidth
+  00000090: 83 C4 04           add         esp,4
+  00000093: 83 CF FF           or          edi,0FFFFFFFFh
+  00000096: 89 7D F4           mov         dword ptr [ebp-0Ch],edi
+  00000099: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000009C: 8A 48 FE           mov         cl,byte ptr [eax-2]
+  0000009F: 0F BE 45 FE        movsx       eax,byte ptr [ebp-2]
+  000000A3: 0F B6 D1           movzx       edx,cl
+  000000A6: 3B C2              cmp         eax,edx
+  000000A8: 74 1C              je          000000C6
+  000000AA: 52                 push        edx
+  000000AB: 88 4D FE           mov         byte ptr [ebp-2],cl
+  000000AE: E8 00 00 00 00     call        _FFX_FieldMap_SetGuidePolyHeight
+  000000B3: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000B6: 83 C4 04           add         esp,4
+  000000B9: 0F B6 70 FE        movzx       esi,byte ptr [eax-2]
+  000000BD: C1 EE 02           shr         esi,2
+  000000C0: 83 E6 01           and         esi,1
+  000000C3: 89 75 E4           mov         dword ptr [ebp-1Ch],esi
+  000000C6: 3B FE              cmp         edi,esi
+  000000C8: 74 0C              je          000000D6
+  000000CA: 56                 push        esi
+  000000CB: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  000000CE: E8 00 00 00 00     call        _FFX_FieldMap_SetGuidePolyYCnt
+  000000D3: 83 C4 04           add         esp,4
+  000000D6: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  000000D9: F6 47 FE 01        test        byte ptr [edi-2],1
+  000000DD: 8B 47 06           mov         eax,dword ptr [edi+6]
+  000000E0: 50                 push        eax
+  000000E1: 0F 85 D9 01 00 00  jne         000002C0
+  000000E7: E8 00 00 00 00     call        _Std_IdentityFunc
+  000000EC: 0F B7 4F 02        movzx       ecx,word ptr [edi+2]
+  000000F0: 8B F0              mov         esi,eax
+  000000F2: B8 56 55 55 55     mov         eax,55555556h
+  000000F7: F7 E9              imul        ecx
+  000000F9: 8B CA              mov         ecx,edx
+  000000FB: C1 E9 1F           shr         ecx,1Fh
+  000000FE: 83 C4 04           add         esp,4
+  00000101: 33 DB              xor         ebx,ebx
+  00000103: 03 CA              add         ecx,edx
+  00000105: 0F 84 41 02 00 00  je          0000034C
+  0000010B: 83 C6 02           add         esi,2
+  0000010E: 8B FF              mov         edi,edi
+  00000110: 0F B7 4E FE        movzx       ecx,word ptr [esi-2]
+  00000114: F7 C1 00 80 00 00  test        ecx,8000h
+  0000011A: 74 23              je          0000013F
+  0000011C: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  00000122: C1 E1 02           shl         ecx,2
+  00000125: B8 56 55 55 55     mov         eax,55555556h
+  0000012A: F7 E9              imul        ecx
+  0000012C: 8B CA              mov         ecx,edx
+  0000012E: C1 E9 1F           shr         ecx,1Fh
+  00000131: 03 CA              add         ecx,edx
+  00000133: 03 C9              add         ecx,ecx
+  00000135: 8D 46 FE           lea         eax,[esi-2]
+  00000138: 2B C1              sub         eax,ecx
+  0000013A: 0F B7 00           movzx       eax,word ptr [eax]
+  0000013D: EB 02              jmp         00000141
+  0000013F: 8B C1              mov         eax,ecx
+  00000141: 66 89 45 C0        mov         word ptr [ebp-40h],ax
+  00000145: 0F B7 0E           movzx       ecx,word ptr [esi]
+  00000148: F7 C1 00 80 00 00  test        ecx,8000h
+  0000014E: 74 24              je          00000174
+  00000150: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  00000156: C1 E1 02           shl         ecx,2
+  00000159: B8 56 55 55 55     mov         eax,55555556h
+  0000015E: F7 E9              imul        ecx
+  00000160: 8B CA              mov         ecx,edx
+  00000162: C1 E9 1F           shr         ecx,1Fh
+  00000165: 03 CA              add         ecx,edx
+  00000167: 03 C9              add         ecx,ecx
+  00000169: 8D 46 FE           lea         eax,[esi-2]
+  0000016C: 2B C1              sub         eax,ecx
+  0000016E: 0F B7 40 FE        movzx       eax,word ptr [eax-2]
+  00000172: EB 02              jmp         00000176
+  00000174: 8B C1              mov         eax,ecx
+  00000176: 66 89 45 C2        mov         word ptr [ebp-3Eh],ax
+  0000017A: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  0000017E: 66 89 45 C4        mov         word ptr [ebp-3Ch],ax
+  00000182: 0F B7 46 04        movzx       eax,word ptr [esi+4]
+  00000186: 66 89 45 C6        mov         word ptr [ebp-3Ah],ax
+  0000018A: 0F B7 4E 06        movzx       ecx,word ptr [esi+6]
+  0000018E: F7 C1 00 80 00 00  test        ecx,8000h
+  00000194: 74 25              je          000001BB
+  00000196: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  0000019C: C1 E1 02           shl         ecx,2
+  0000019F: B8 56 55 55 55     mov         eax,55555556h
+  000001A4: F7 E9              imul        ecx
+  000001A6: 8B CA              mov         ecx,edx
+  000001A8: C1 E9 1F           shr         ecx,1Fh
+  000001AB: 03 CA              add         ecx,edx
+  000001AD: B8 04 00 00 00     mov         eax,4
+  000001B2: 2B C1              sub         eax,ecx
+  000001B4: 0F B7 44 46 FE     movzx       eax,word ptr [esi+eax*2-2]
+  000001B9: EB 02              jmp         000001BD
+  000001BB: 8B C1              mov         eax,ecx
+  000001BD: 66 89 45 C8        mov         word ptr [ebp-38h],ax
+  000001C1: 0F B7 4E 08        movzx       ecx,word ptr [esi+8]
+  000001C5: F7 C1 00 80 00 00  test        ecx,8000h
+  000001CB: 74 25              je          000001F2
+  000001CD: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  000001D3: C1 E1 02           shl         ecx,2
+  000001D6: B8 56 55 55 55     mov         eax,55555556h
+  000001DB: F7 E9              imul        ecx
+  000001DD: 8B CA              mov         ecx,edx
+  000001DF: C1 E9 1F           shr         ecx,1Fh
+  000001E2: 03 CA              add         ecx,edx
+  000001E4: B8 03 00 00 00     mov         eax,3
+  000001E9: 2B C1              sub         eax,ecx
+  000001EB: 0F B7 44 46 FE     movzx       eax,word ptr [esi+eax*2-2]
+  000001F0: EB 02              jmp         000001F4
+  000001F2: 8B C1              mov         eax,ecx
+  000001F4: 66 89 45 CA        mov         word ptr [ebp-36h],ax
+  000001F8: 0F B7 46 0A        movzx       eax,word ptr [esi+0Ah]
+  000001FC: 66 89 45 CC        mov         word ptr [ebp-34h],ax
+  00000200: 0F B7 46 0C        movzx       eax,word ptr [esi+0Ch]
+  00000204: 66 89 45 CE        mov         word ptr [ebp-32h],ax
+  00000208: 0F B7 4E 0E        movzx       ecx,word ptr [esi+0Eh]
+  0000020C: F7 C1 00 80 00 00  test        ecx,8000h
+  00000212: 74 25              je          00000239
+  00000214: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  0000021A: C1 E1 02           shl         ecx,2
+  0000021D: B8 56 55 55 55     mov         eax,55555556h
+  00000222: F7 E9              imul        ecx
+  00000224: 8B CA              mov         ecx,edx
+  00000226: C1 E9 1F           shr         ecx,1Fh
+  00000229: 03 CA              add         ecx,edx
+  0000022B: B8 08 00 00 00     mov         eax,8
+  00000230: 2B C1              sub         eax,ecx
+  00000232: 0F B7 44 46 FE     movzx       eax,word ptr [esi+eax*2-2]
+  00000237: EB 02              jmp         0000023B
+  00000239: 8B C1              mov         eax,ecx
+  0000023B: 66 89 45 D0        mov         word ptr [ebp-30h],ax
+  0000023F: 0F B7 4E 10        movzx       ecx,word ptr [esi+10h]
+  00000243: F7 C1 00 80 00 00  test        ecx,8000h
+  00000249: 74 25              je          00000270
+  0000024B: 81 E1 FF 7F 00 00  and         ecx,7FFFh
+  00000251: C1 E1 02           shl         ecx,2
+  00000254: B8 56 55 55 55     mov         eax,55555556h
+  00000259: F7 E9              imul        ecx
+  0000025B: 8B CA              mov         ecx,edx
+  0000025D: C1 E9 1F           shr         ecx,1Fh
+  00000260: 03 CA              add         ecx,edx
+  00000262: B8 07 00 00 00     mov         eax,7
+  00000267: 2B C1              sub         eax,ecx
+  00000269: 0F B7 44 46 FE     movzx       eax,word ptr [esi+eax*2-2]
+  0000026E: EB 02              jmp         00000272
+  00000270: 8B C1              mov         eax,ecx
+  00000272: 66 89 45 D2        mov         word ptr [ebp-2Eh],ax
+  00000276: 0F B7 46 12        movzx       eax,word ptr [esi+12h]
+  0000027A: 66 89 45 D4        mov         word ptr [ebp-2Ch],ax
+  0000027E: 0F B7 46 14        movzx       eax,word ptr [esi+14h]
+  00000282: 66 89 45 D6        mov         word ptr [ebp-2Ah],ax
+  00000286: 8D 45 D0           lea         eax,[ebp-30h]
+  00000289: 50                 push        eax
+  0000028A: 8D 45 C8           lea         eax,[ebp-38h]
+  0000028D: 50                 push        eax
+  0000028E: 8D 45 C0           lea         eax,[ebp-40h]
+  00000291: 50                 push        eax
+  00000292: 83 C6 18           add         esi,18h
+  00000295: E8 00 00 00 00     call        _FFX_FieldMap_CompareGuidePolyMeta
+  0000029A: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  0000029D: B8 56 55 55 55     mov         eax,55555556h
+  000002A2: 0F B7 4F 02        movzx       ecx,word ptr [edi+2]
+  000002A6: F7 E9              imul        ecx
+  000002A8: 8B C2              mov         eax,edx
+  000002AA: C1 E8 1F           shr         eax,1Fh
+  000002AD: 43                 inc         ebx
+  000002AE: 03 C2              add         eax,edx
+  000002B0: 83 C4 0C           add         esp,0Ch
+  000002B3: 3B D8              cmp         ebx,eax
+  000002B5: 0F 8C 55 FE FF FF  jl          00000110
+  000002BB: E9 8C 00 00 00     jmp         0000034C
+  000002C0: E8 00 00 00 00     call        _Std_IdentityFunc
+  000002C5: 33 C9              xor         ecx,ecx
+  000002C7: 83 C4 04           add         esp,4
+  000002CA: 8B D0              mov         edx,eax
+  000002CC: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  000002CF: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  000002D2: 66 39 4F 02        cmp         word ptr [edi+2],cx
+  000002D6: 74 77              je          0000034F
+  000002D8: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  000002DB: EB 03              jmp         000002E0
+  000002DD: 8D 49 00           lea         ecx,[ecx]
+  000002E0: 0F B6 7A 01        movzx       edi,byte ptr [edx+1]
+  000002E4: 33 DB              xor         ebx,ebx
+  000002E6: 03 FA              add         edi,edx
+  000002E8: 8D 42 04           lea         eax,[edx+4]
+  000002EB: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  000002EE: 38 5A 02           cmp         byte ptr [edx+2],bl
+  000002F1: 74 3C              je          0000032F
+  000002F3: 6A 00              push        0
+  000002F5: E8 00 00 00 00     call        _FFX_FieldMap_ParseGuidePolyToBuffer
+  000002FA: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  000002FD: 83 C4 04           add         esp,4
+  00000300: 33 F6              xor         esi,esi
+  00000302: 80 3C 18 00        cmp         byte ptr [eax+ebx],0
+  00000306: 74 18              je          00000320
+  00000308: 57                 push        edi
+  00000309: E8 00 00 00 00     call        _FFX_FieldMap_ParseGuidePolyToBuffer
+  0000030E: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  00000311: 46                 inc         esi
+  00000312: 0F B6 04 18        movzx       eax,byte ptr [eax+ebx]
+  00000316: 83 C4 04           add         esp,4
+  00000319: 83 C7 08           add         edi,8
+  0000031C: 3B F0              cmp         esi,eax
+  0000031E: 7C E8              jl          00000308
+  00000320: 8B 55 EC           mov         edx,dword ptr [ebp-14h]
+  00000323: 43                 inc         ebx
+  00000324: 0F B6 42 02        movzx       eax,byte ptr [edx+2]
+  00000328: 3B D8              cmp         ebx,eax
+  0000032A: 7C C7              jl          000002F3
+  0000032C: 8B 4D E8           mov         ecx,dword ptr [ebp-18h]
+  0000032F: 0F B6 02           movzx       eax,byte ptr [edx]
+  00000332: C1 E0 04           shl         eax,4
+  00000335: 03 D0              add         edx,eax
+  00000337: 8B 45 DC           mov         eax,dword ptr [ebp-24h]
+  0000033A: 41                 inc         ecx
+  0000033B: 0F B7 40 02        movzx       eax,word ptr [eax+2]
+  0000033F: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  00000342: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  00000345: 3B C8              cmp         ecx,eax
+  00000347: 7C 97              jl          000002E0
+  00000349: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  0000034C: 8B 75 E4           mov         esi,dword ptr [ebp-1Ch]
+  0000034F: 8B 45 D8           mov         eax,dword ptr [ebp-28h]
+  00000352: 8B 4D E0           mov         ecx,dword ptr [ebp-20h]
+  00000355: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  00000359: 83 C7 0C           add         edi,0Ch
+  0000035C: 41                 inc         ecx
+  0000035D: 89 7D F8           mov         dword ptr [ebp-8],edi
+  00000360: 89 4D E0           mov         dword ptr [ebp-20h],ecx
+  00000363: 8B DF              mov         ebx,edi
+  00000365: 89 7D DC           mov         dword ptr [ebp-24h],edi
+  00000368: 3B C8              cmp         ecx,eax
+  0000036A: 0F 8C E2 FC FF FF  jl          00000052
+  00000370: E8 00 00 00 00     call        _FFX_FieldMap_PushGuidePolyMarker
+  00000375: 5F                 pop         edi
+  00000376: 5E                 pop         esi
+  00000377: 5B                 pop         ebx
+  00000378: 8B E5              mov         esp,ebp
+  0000037A: 5D                 pop         ebp
+  0000037B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         37C .text

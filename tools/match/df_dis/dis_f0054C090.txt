@@ -1,0 +1,438 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0054C090.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_54C090@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 0C 01 00 00  sub         esp,10Ch
+  00000009: D9 EE              fldz
+  0000000B: 53                 push        ebx
+  0000000C: 56                 push        esi
+  0000000D: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000010: 57                 push        edi
+  00000011: 8B F9              mov         edi,ecx
+  00000013: 57                 push        edi
+  00000014: 89 55 E8           mov         dword ptr [ebp-18h],edx
+  00000017: 33 F6              xor         esi,esi
+  00000019: E8 00 00 00 00     call        _Phyre_PSpline_GetKeyCount
+  0000001E: 8B D8              mov         ebx,eax
+  00000020: 83 C4 04           add         esp,4
+  00000023: 85 DB              test        ebx,ebx
+  00000025: 74 2B              je          00000052
+  00000027: 56                 push        esi
+  00000028: 57                 push        edi
+  00000029: 46                 inc         esi
+  0000002A: E8 00 00 00 00     call        _PhyrePSpline_InterpolateVector3
+  0000002F: 83 C4 08           add         esp,8
+  00000032: 89 45 A8           mov         dword ptr [ebp-58h],eax
+  00000035: DB 45 A8           fild        dword ptr [ebp-58h]
+  00000038: 85 C0              test        eax,eax
+  0000003A: 79 06              jns         00000042
+  0000003C: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000042: DD 5D A4           fstp        qword ptr [ebp-5Ch]
+  00000045: DD 45 A4           fld         qword ptr [ebp-5Ch]
+  00000048: D8 45 F8           fadd        dword ptr [ebp-8]
+  0000004B: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000004E: 3B F3              cmp         esi,ebx
+  00000050: 72 D5              jb          00000027
+  00000052: D9 45 F8           fld         dword ptr [ebp-8]
+  00000055: 8D 5F 24           lea         ebx,[edi+24h]
+  00000058: D8 75 E8           fdiv        dword ptr [ebp-18h]
+  0000005B: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000005E: 89 5D A8           mov         dword ptr [ebp-58h],ebx
+  00000061: E8 00 00 00 00     call        __ftol2
+  00000066: 0F A4 C2 01        shld        edx,eax,1
+  0000006A: 52                 push        edx
+  0000006B: 03 C0              add         eax,eax
+  0000006D: 50                 push        eax
+  0000006E: 53                 push        ebx
+  0000006F: E8 00 00 00 00     call        _Phyre_PSpline_SetBuffer
+  00000074: 83 C4 0C           add         esp,0Ch
+  00000077: D9 45 E8           fld         dword ptr [ebp-18h]
+  0000007A: DC 0D 00 00 00 00  fmul        qword ptr [__real@3f847ae140000000]
+  00000080: D9 5D A0           fstp        dword ptr [ebp-60h]
+  00000083: D9 EE              fldz
+  00000085: D9 55 D0           fst         dword ptr [ebp-30h]
+  00000088: D9 45 F8           fld         dword ptr [ebp-8]
+  0000008B: DA E9              fucompp
+  0000008D: DF E0              fnstsw      ax
+  0000008F: F6 C4 44           test        ah,44h
+  00000092: 7A 32              jp          000000C6
+  00000094: 8B 03              mov         eax,dword ptr [ebx]
+  00000096: 85 C0              test        eax,eax
+  00000098: 0F 84 E5 03 00 00  je          00000483
+  0000009E: 8B 4F 28           mov         ecx,dword ptr [edi+28h]
+  000000A1: 85 C9              test        ecx,ecx
+  000000A3: 74 0D              je          000000B2
+  000000A5: 85 C0              test        eax,eax
+  000000A7: 78 09              js          000000B2
+  000000A9: 51                 push        ecx
+  000000AA: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000AF: 83 C4 04           add         esp,4
+  000000B2: C7 47 28 00 00 00  mov         dword ptr [edi+28h],0
+            00
+  000000B9: 5F                 pop         edi
+  000000BA: 5E                 pop         esi
+  000000BB: C7 03 00 00 00 00  mov         dword ptr [ebx],0
+  000000C1: 5B                 pop         ebx
+  000000C2: 8B E5              mov         esp,ebp
+  000000C4: 5D                 pop         ebp
+  000000C5: C3                 ret
+  000000C6: D9 EE              fldz
+  000000C8: 83 EC 08           sub         esp,8
+  000000CB: DD 55 C4           fst         qword ptr [ebp-3Ch]
+  000000CE: 8D 45 CC           lea         eax,[ebp-34h]
+  000000D1: DD 1C 24           fstp        qword ptr [esp]
+  000000D4: 6A 00              push        0
+  000000D6: 50                 push        eax
+  000000D7: 57                 push        edi
+  000000D8: E8 00 00 00 00     call        _PhyrePSpline_InterpolateEuler
+  000000DD: D9 EE              fldz
+  000000DF: 8B 47 28           mov         eax,dword ptr [edi+28h]
+  000000E2: 83 C4 0C           add         esp,0Ch
+  000000E5: D9 50 04           fst         dword ptr [eax+4]
+  000000E8: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  000000EE: D9 58 08           fstp        dword ptr [eax+8]
+  000000F1: D9 45 CC           fld         dword ptr [ebp-34h]
+  000000F4: D9 58 0C           fstp        dword ptr [eax+0Ch]
+  000000F7: D9 45 DC           fld         dword ptr [ebp-24h]
+  000000FA: D9 58 10           fstp        dword ptr [eax+10h]
+  000000FD: D9 45 C8           fld         dword ptr [ebp-38h]
+  00000100: D9 58 14           fstp        dword ptr [eax+14h]
+  00000103: D9 45 FC           fld         dword ptr [ebp-4]
+  00000106: D9 58 18           fstp        dword ptr [eax+18h]
+  00000109: 8D 45 AC           lea         eax,[ebp-54h]
+  0000010C: D9 EE              fldz
+  0000010E: DD 1C 24           fstp        qword ptr [esp]
+  00000111: 6A 00              push        0
+  00000113: 50                 push        eax
+  00000114: 57                 push        edi
+  00000115: E8 00 00 00 00     call        _PhyrePSpline_InterpolateRotation
+  0000011A: D9 EE              fldz
+  0000011C: D9 55 F4           fst         dword ptr [ebp-0Ch]
+  0000011F: BE 01 00 00 00     mov         esi,1
+  00000124: D9 55 B0           fst         dword ptr [ebp-50h]
+  00000127: 57                 push        edi
+  00000128: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000012B: 89 75 E4           mov         dword ptr [ebp-1Ch],esi
+  0000012E: 89 75 B8           mov         dword ptr [ebp-48h],esi
+  00000131: E8 00 00 00 00     call        _Phyre_PSpline_GetKeyCount
+  00000136: 83 C4 18           add         esp,18h
+  00000139: 85 C0              test        eax,eax
+  0000013B: 0F 84 B5 02 00 00  je          000003F6
+  00000141: 8B DE              mov         ebx,esi
+  00000143: 89 5D E0           mov         dword ptr [ebp-20h],ebx
+  00000146: 8D 43 FE           lea         eax,[ebx-2]
+  00000149: 50                 push        eax
+  0000014A: 8D 85 44 FF FF FF  lea         eax,[ebp-0BCh]
+  00000150: 50                 push        eax
+  00000151: 57                 push        edi
+  00000152: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  00000157: 8D 43 FF           lea         eax,[ebx-1]
+  0000015A: 50                 push        eax
+  0000015B: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000015E: 8D 85 24 FF FF FF  lea         eax,[ebp-0DCh]
+  00000164: 50                 push        eax
+  00000165: 57                 push        edi
+  00000166: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  0000016B: 53                 push        ebx
+  0000016C: 8D 45 84           lea         eax,[ebp-7Ch]
+  0000016F: 50                 push        eax
+  00000170: 57                 push        edi
+  00000171: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  00000176: 8D 43 01           lea         eax,[ebx+1]
+  00000179: 50                 push        eax
+  0000017A: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  0000017D: 8D 85 64 FF FF FF  lea         eax,[ebp-9Ch]
+  00000183: 50                 push        eax
+  00000184: 57                 push        edi
+  00000185: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  0000018A: D9 47 1C           fld         dword ptr [edi+1Ch]
+  0000018D: 83 C4 20           add         esp,20h
+  00000190: 8D 85 64 FF FF FF  lea         eax,[ebp-9Ch]
+  00000196: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000019A: D9 45 F8           fld         dword ptr [ebp-8]
+  0000019D: DD 1C 24           fstp        qword ptr [esp]
+  000001A0: 50                 push        eax
+  000001A1: 8D 45 84           lea         eax,[ebp-7Ch]
+  000001A4: 50                 push        eax
+  000001A5: 8D 85 24 FF FF FF  lea         eax,[ebp-0DCh]
+  000001AB: 50                 push        eax
+  000001AC: 8D 85 44 FF FF FF  lea         eax,[ebp-0BCh]
+  000001B2: 50                 push        eax
+  000001B3: 8D 85 04 FF FF FF  lea         eax,[ebp-0FCh]
+  000001B9: 50                 push        eax
+  000001BA: E8 00 00 00 00     call        _PhyrePSpline_GetEuler
+  000001BF: D9 45 E8           fld         dword ptr [ebp-18h]
+  000001C2: DD 55 94           fst         qword ptr [ebp-6Ch]
+  000001C5: 83 C4 24           add         esp,24h
+  000001C8: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000001CB: DE D9              fcompp
+  000001CD: DF E0              fnstsw      ax
+  000001CF: F6 C4 05           test        ah,5
+  000001D2: 0F 8A F8 01 00 00  jp          000003D0
+  000001D8: DD 45 C4           fld         qword ptr [ebp-3Ch]
+  000001DB: 8D 1C F5 00 00 00  lea         ebx,[esi*8]
+            00
+  000001E2: D9 5D FC           fstp        dword ptr [ebp-4]
+  000001E5: 2B DE              sub         ebx,esi
+  000001E7: D9 45 FC           fld         dword ptr [ebp-4]
+  000001EA: C1 E3 02           shl         ebx,2
+  000001ED: D9 E8              fld1
+  000001EF: D8 D1              fcom        st(1)
+  000001F1: DF E0              fnstsw      ax
+  000001F3: F6 C4 41           test        ah,41h
+  000001F6: 0F 85 98 02 00 00  jne         00000494
+  000001FC: 8B 75 E0           mov         esi,dword ptr [ebp-20h]
+  000001FF: D9 45 A0           fld         dword ptr [ebp-60h]
+  00000202: DE C2              faddp       st(2),st
+  00000204: D9 C9              fxch        st(1)
+  00000206: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000209: D9 45 EC           fld         dword ptr [ebp-14h]
+  0000020C: D9 E8              fld1
+  0000020E: D8 D9              fcomp       st(1)
+  00000210: DF E0              fnstsw      ax
+  00000212: F6 C4 05           test        ah,5
+  00000215: 0F 8B 6F 02 00 00  jnp         0000048A
+  0000021B: 8D 46 FE           lea         eax,[esi-2]
+  0000021E: DD D8              fstp        st(0)
+  00000220: 50                 push        eax
+  00000221: DD D8              fstp        st(0)
+  00000223: 8D 85 34 FF FF FF  lea         eax,[ebp-0CCh]
+  00000229: 50                 push        eax
+  0000022A: 57                 push        edi
+  0000022B: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  00000230: 8D 46 FF           lea         eax,[esi-1]
+  00000233: 50                 push        eax
+  00000234: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  0000023A: 50                 push        eax
+  0000023B: 57                 push        edi
+  0000023C: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  00000241: 56                 push        esi
+  00000242: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000248: 50                 push        eax
+  00000249: 57                 push        edi
+  0000024A: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  0000024F: FF 75 D4           push        dword ptr [ebp-2Ch]
+  00000252: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000258: 50                 push        eax
+  00000259: 57                 push        edi
+  0000025A: E8 00 00 00 00     call        _PhyrePSpline_ComputeSegmentIndex
+  0000025F: D9 47 1C           fld         dword ptr [edi+1Ch]
+  00000262: 83 C4 20           add         esp,20h
+  00000265: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  0000026B: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000026F: D9 45 EC           fld         dword ptr [ebp-14h]
+  00000272: DD 1C 24           fstp        qword ptr [esp]
+  00000275: 50                 push        eax
+  00000276: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  0000027C: 50                 push        eax
+  0000027D: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  00000283: 50                 push        eax
+  00000284: 8D 85 34 FF FF FF  lea         eax,[ebp-0CCh]
+  0000028A: 50                 push        eax
+  0000028B: 8D 45 BC           lea         eax,[ebp-44h]
+  0000028E: 50                 push        eax
+  0000028F: E8 00 00 00 00     call        _PhyrePSpline_GetEuler
+  00000294: D9 45 BC           fld         dword ptr [ebp-44h]
+  00000297: D8 65 AC           fsub        dword ptr [ebp-54h]
+  0000029A: 83 C4 24           add         esp,24h
+  0000029D: D9 5D FC           fstp        dword ptr [ebp-4]
+  000002A0: D9 45 F0           fld         dword ptr [ebp-10h]
+  000002A3: D8 65 DC           fsub        dword ptr [ebp-24h]
+  000002A6: D9 5D C8           fstp        dword ptr [ebp-38h]
+  000002A9: D9 45 F0           fld         dword ptr [ebp-10h]
+  000002AC: D8 65 C0           fsub        dword ptr [ebp-40h]
+  000002AF: D9 5D B4           fstp        dword ptr [ebp-4Ch]
+  000002B2: D9 45 C8           fld         dword ptr [ebp-38h]
+  000002B5: D9 45 FC           fld         dword ptr [ebp-4]
+  000002B8: DC C8              fmul        st(0),st
+  000002BA: D9 5D FC           fstp        dword ptr [ebp-4]
+  000002BD: D9 45 FC           fld         dword ptr [ebp-4]
+  000002C0: D9 C9              fxch        st(1)
+  000002C2: DC C8              fmul        st(0),st
+  000002C4: DE C1              faddp       st(1),st
+  000002C6: D9 5D D8           fstp        dword ptr [ebp-28h]
+  000002C9: D9 45 B4           fld         dword ptr [ebp-4Ch]
+  000002CC: DC C8              fmul        st(0),st
+  000002CE: D8 45 D8           fadd        dword ptr [ebp-28h]
+  000002D1: D9 5D FC           fstp        dword ptr [ebp-4]
+  000002D4: D9 45 FC           fld         dword ptr [ebp-4]
+  000002D7: E8 00 00 00 00     call        __CIsqrt
+  000002DC: D9 5D FC           fstp        dword ptr [ebp-4]
+  000002DF: D9 45 FC           fld         dword ptr [ebp-4]
+  000002E2: D8 45 B0           fadd        dword ptr [ebp-50h]
+  000002E5: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000002E8: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000002EB: D9 45 E8           fld         dword ptr [ebp-18h]
+  000002EE: D8 D1              fcom        st(1)
+  000002F0: DF E0              fnstsw      ax
+  000002F2: F6 C4 41           test        ah,41h
+  000002F5: 0F 8A AC 00 00 00  jp          000003A7
+  000002FB: DE E9              fsubp       st(1),st
+  000002FD: 83 EC 08           sub         esp,8
+  00000300: 8D 85 F4 FE FF FF  lea         eax,[ebp-10Ch]
+  00000306: D9 5D B0           fstp        dword ptr [ebp-50h]
+  00000309: D9 EE              fldz
+  0000030B: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000030E: D9 45 EC           fld         dword ptr [ebp-14h]
+  00000311: DD 1C 24           fstp        qword ptr [esp]
+  00000314: FF 75 F0           push        dword ptr [ebp-10h]
+  00000317: 50                 push        eax
+  00000318: 57                 push        edi
+  00000319: E8 00 00 00 00     call        _PhyrePSpline_InterpolateEuler
+  0000031E: D9 00              fld         dword ptr [eax]
+  00000320: 8B 77 28           mov         esi,dword ptr [edi+28h]
+  00000323: D9 5D CC           fstp        dword ptr [ebp-34h]
+  00000326: 03 F3              add         esi,ebx
+  00000328: D9 40 04           fld         dword ptr [eax+4]
+  0000032B: 83 C4 14           add         esp,14h
+  0000032E: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000331: D9 40 08           fld         dword ptr [eax+8]
+  00000334: D9 5D C8           fstp        dword ptr [ebp-38h]
+  00000337: D9 40 0C           fld         dword ptr [eax+0Ch]
+  0000033A: 8B 45 E0           mov         eax,dword ptr [ebp-20h]
+  0000033D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000340: 48                 dec         eax
+  00000341: D9 45 B4           fld         dword ptr [ebp-4Ch]
+  00000344: 89 06              mov         dword ptr [esi],eax
+  00000346: D9 45 EC           fld         dword ptr [ebp-14h]
+  00000349: D9 5E 04           fstp        dword ptr [esi+4]
+  0000034C: DC C8              fmul        st(0),st
+  0000034E: D8 45 D8           fadd        dword ptr [ebp-28h]
+  00000351: D9 5D D8           fstp        dword ptr [ebp-28h]
+  00000354: D9 45 D8           fld         dword ptr [ebp-28h]
+  00000357: E8 00 00 00 00     call        __CIsqrt
+  0000035C: D9 5E 08           fstp        dword ptr [esi+8]
+  0000035F: D9 45 CC           fld         dword ptr [ebp-34h]
+  00000362: 8B 4D B8           mov         ecx,dword ptr [ebp-48h]
+  00000365: D9 5E 0C           fstp        dword ptr [esi+0Ch]
+  00000368: 41                 inc         ecx
+  00000369: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000036C: 89 4D E4           mov         dword ptr [ebp-1Ch],ecx
+  0000036F: D9 5E 10           fstp        dword ptr [esi+10h]
+  00000372: 89 4D B8           mov         dword ptr [ebp-48h],ecx
+  00000375: D9 45 C8           fld         dword ptr [ebp-38h]
+  00000378: 83 C3 1C           add         ebx,1Ch
+  0000037B: D9 5E 14           fstp        dword ptr [esi+14h]
+  0000037E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000381: D9 5E 18           fstp        dword ptr [esi+18h]
+  00000384: 8B 75 E0           mov         esi,dword ptr [ebp-20h]
+  00000387: D9 45 BC           fld         dword ptr [ebp-44h]
+  0000038A: D9 5D AC           fstp        dword ptr [ebp-54h]
+  0000038D: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000390: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000393: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000396: D9 5D C0           fstp        dword ptr [ebp-40h]
+  00000399: D9 45 D0           fld         dword ptr [ebp-30h]
+  0000039C: D8 45 E8           fadd        dword ptr [ebp-18h]
+  0000039F: D9 5D D0           fstp        dword ptr [ebp-30h]
+  000003A2: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  000003A5: EB 02              jmp         000003A9
+  000003A7: DD D8              fstp        st(0)
+  000003A9: D9 45 EC           fld         dword ptr [ebp-14h]
+  000003AC: DD 45 94           fld         qword ptr [ebp-6Ch]
+  000003AF: D8 DA              fcomp       st(2)
+  000003B1: DF E0              fnstsw      ax
+  000003B3: DD D9              fstp        st(1)
+  000003B5: F6 C4 41           test        ah,41h
+  000003B8: 7B 11              jnp         000003CB
+  000003BA: D9 E8              fld1
+  000003BC: D8 D1              fcom        st(1)
+  000003BE: DF E0              fnstsw      ax
+  000003C0: F6 C4 41           test        ah,41h
+  000003C3: 0F 84 36 FE FF FF  je          000001FF
+  000003C9: DD D9              fstp        st(1)
+  000003CB: DD D8              fstp        st(0)
+  000003CD: 8B 75 E4           mov         esi,dword ptr [ebp-1Ch]
+  000003D0: D9 45 F8           fld         dword ptr [ebp-8]
+  000003D3: 8B 5D D4           mov         ebx,dword ptr [ebp-2Ch]
+  000003D6: 57                 push        edi
+  000003D7: DD 5D C4           fstp        qword ptr [ebp-3Ch]
+  000003DA: 89 5D E0           mov         dword ptr [ebp-20h],ebx
+  000003DD: E8 00 00 00 00     call        _Phyre_PSpline_GetKeyCount
+  000003E2: 8B CB              mov         ecx,ebx
+  000003E4: 49                 dec         ecx
+  000003E5: 83 C4 04           add         esp,4
+  000003E8: 3B C8              cmp         ecx,eax
+  000003EA: 0F 82 56 FD FF FF  jb          00000146
+  000003F0: 8D 5F 24           lea         ebx,[edi+24h]
+  000003F3: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  000003F6: D9 45 D0           fld         dword ptr [ebp-30h]
+  000003F9: D9 5F 20           fstp        dword ptr [edi+20h]
+  000003FC: 8B 3B              mov         edi,dword ptr [ebx]
+  000003FE: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000404: 3B 33              cmp         esi,dword ptr [ebx]
+  00000406: 74 7B              je          00000483
+  00000408: 3B F7              cmp         esi,edi
+  0000040A: 73 02              jae         0000040E
+  0000040C: 8B FE              mov         edi,esi
+  0000040E: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000411: 33 DB              xor         ebx,ebx
+  00000413: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000416: 89 45 C0           mov         dword ptr [ebp-40h],eax
+  00000419: 85 F6              test        esi,esi
+  0000041B: 74 42              je          0000045F
+  0000041D: 8D 04 F5 00 00 00  lea         eax,[esi*8]
+            00
+  00000424: 2B C6              sub         eax,esi
+  00000426: C1 E0 02           shl         eax,2
+  00000429: 6A 04              push        4
+  0000042B: 50                 push        eax
+  0000042C: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000431: 8B D8              mov         ebx,eax
+  00000433: 83 C4 08           add         esp,8
+  00000436: 85 DB              test        ebx,ebx
+  00000438: 74 49              je          00000483
+  0000043A: 57                 push        edi
+  0000043B: FF 75 C0           push        dword ptr [ebp-40h]
+  0000043E: 53                 push        ebx
+  0000043F: 53                 push        ebx
+  00000440: E8 00 00 00 00     call        _Phyre_PSpline_ArrayCopyControlPoints
+  00000445: 8B C6              mov         eax,esi
+  00000447: 2B C7              sub         eax,edi
+  00000449: 50                 push        eax
+  0000044A: 8D 04 FD 00 00 00  lea         eax,[edi*8]
+            00
+  00000451: 2B C7              sub         eax,edi
+  00000453: 8D 04 83           lea         eax,[ebx+eax*4]
+  00000456: 50                 push        eax
+  00000457: E8 00 00 00 00     call        _Phyre_PSpline_InitFloat7ArrayIdentity
+  0000045C: 83 C4 18           add         esp,18h
+  0000045F: 8B 7D A8           mov         edi,dword ptr [ebp-58h]
+  00000462: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000465: 3B C3              cmp         eax,ebx
+  00000467: 74 15              je          0000047E
+  00000469: F7 07 00 00 00 80  test        dword ptr [edi],80000000h
+  0000046F: 75 0D              jne         0000047E
+  00000471: 85 C0              test        eax,eax
+  00000473: 74 09              je          0000047E
+  00000475: 50                 push        eax
+  00000476: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000047B: 83 C4 04           add         esp,4
+  0000047E: 89 5F 04           mov         dword ptr [edi+4],ebx
+  00000481: 89 37              mov         dword ptr [edi],esi
+  00000483: 5F                 pop         edi
+  00000484: 5E                 pop         esi
+  00000485: 5B                 pop         ebx
+  00000486: 8B E5              mov         esp,ebp
+  00000488: 5D                 pop         ebp
+  00000489: C3                 ret
+  0000048A: DE E1              fsubrp      st(1),st
+  0000048C: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000048F: E9 39 FF FF FF     jmp         000003CD
+  00000494: DD D9              fstp        st(1)
+  00000496: DD D8              fstp        st(0)
+  00000498: E9 33 FF FF FF     jmp         000003D0
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          28 .rdata
+         49D .text

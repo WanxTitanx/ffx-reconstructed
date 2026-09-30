@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004DFC60.obj
+
+File Type: COFF OBJECT
+
+@PhyrePRendering_ResourceAlloc@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8D 45 08           lea         eax,[ebp+8]
+  00000009: 8B F1              mov         esi,ecx
+  0000000B: 50                 push        eax
+  0000000C: 56                 push        esi
+  0000000D: 8B DA              mov         ebx,edx
+  0000000F: E8 00 00 00 00     call        _PRBTree_UInt_Find
+  00000014: 83 C4 08           add         esp,8
+  00000017: 85 C0              test        eax,eax
+  00000019: 74 12              je          0000002D
+  0000001B: 83 F8 F0           cmp         eax,0FFFFFFF0h
+  0000001E: 74 0D              je          0000002D
+  00000020: 5E                 pop         esi
+  00000021: B8 12 00 00 00     mov         eax,12h
+  00000026: 5B                 pop         ebx
+  00000027: 8B E5              mov         esp,ebp
+  00000029: 5D                 pop         ebp
+  0000002A: C2 04 00           ret         4
+  0000002D: 8D 45 FC           lea         eax,[ebp-4]
+  00000030: 50                 push        eax
+  00000031: 8D 45 08           lea         eax,[ebp+8]
+  00000034: 50                 push        eax
+  00000035: 56                 push        esi
+  00000036: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000003D: E8 00 00 00 00     call        _PRendering_FreeListNodeAlloc
+  00000042: 83 C4 0C           add         esp,0Ch
+  00000045: 85 C0              test        eax,eax
+  00000047: 0F 85 84 00 00 00  jne         000000D1
+  0000004D: 8D 45 08           lea         eax,[ebp+8]
+  00000050: 50                 push        eax
+  00000051: 56                 push        esi
+  00000052: E8 00 00 00 00     call        _PRBTree_UInt_Find
+  00000057: 83 C4 08           add         esp,8
+  0000005A: 85 C0              test        eax,eax
+  0000005C: 74 05              je          00000063
+  0000005E: 8D 70 10           lea         esi,[eax+10h]
+  00000061: EB 02              jmp         00000065
+  00000063: 33 F6              xor         esi,esi
+  00000065: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000068: 57                 push        edi
+  00000069: 8B 78 04           mov         edi,dword ptr [eax+4]
+  0000006C: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000072: 89 46 08           mov         dword ptr [esi+8],eax
+  00000075: 89 5E 0C           mov         dword ptr [esi+0Ch],ebx
+  00000078: 3B 3E              cmp         edi,dword ptr [esi]
+  0000007A: 74 52              je          000000CE
+  0000007C: 33 DB              xor         ebx,ebx
+  0000007E: 85 FF              test        edi,edi
+  00000080: 74 2E              je          000000B0
+  00000082: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000089: 6A 04              push        4
+  0000008B: 50                 push        eax
+  0000008C: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000091: 8B D8              mov         ebx,eax
+  00000093: 83 C4 08           add         esp,8
+  00000096: 85 DB              test        ebx,ebx
+  00000098: 74 3F              je          000000D9
+  0000009A: 8B CB              mov         ecx,ebx
+  0000009C: 8B D7              mov         edx,edi
+  0000009E: 8B FF              mov         edi,edi
+  000000A0: 85 C9              test        ecx,ecx
+  000000A2: 74 06              je          000000AA
+  000000A4: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  000000AA: 83 C1 04           add         ecx,4
+  000000AD: 4A                 dec         edx
+  000000AE: 75 F0              jne         000000A0
+  000000B0: 8B 46 04           mov         eax,dword ptr [esi+4]
+  000000B3: 3B C3              cmp         eax,ebx
+  000000B5: 74 12              je          000000C9
+  000000B7: 83 3E 00           cmp         dword ptr [esi],0
+  000000BA: 7C 0D              jl          000000C9
+  000000BC: 85 C0              test        eax,eax
+  000000BE: 74 09              je          000000C9
+  000000C0: 50                 push        eax
+  000000C1: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000C6: 83 C4 04           add         esp,4
+  000000C9: 89 5E 04           mov         dword ptr [esi+4],ebx
+  000000CC: 89 3E              mov         dword ptr [esi],edi
+  000000CE: 33 C0              xor         eax,eax
+  000000D0: 5F                 pop         edi
+  000000D1: 5E                 pop         esi
+  000000D2: 5B                 pop         ebx
+  000000D3: 8B E5              mov         esp,ebp
+  000000D5: 5D                 pop         ebp
+  000000D6: C2 04 00           ret         4
+  000000D9: 5F                 pop         edi
+  000000DA: 5E                 pop         esi
+  000000DB: B8 0D 00 00 00     mov         eax,0Dh
+  000000E0: 5B                 pop         ebx
+  000000E1: 8B E5              mov         esp,ebp
+  000000E3: 5D                 pop         ebp
+  000000E4: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          E7 .text

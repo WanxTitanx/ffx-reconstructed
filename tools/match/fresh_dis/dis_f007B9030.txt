@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B9030.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Camera_camSetScrDpt_CALL:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000A: 57                 push        edi
+  0000000B: E8 00 00 00 00     call        _FFX_Field_GetCameraStructOffset60
+  00000010: 8B D8              mov         ebx,eax
+  00000012: 83 C4 04           add         esp,4
+  00000015: 8B 33              mov         esi,dword ptr [ebx]
+  00000017: 85 F6              test        esi,esi
+  00000019: 75 25              jne         00000040
+  0000001B: 57                 push        edi
+  0000001C: E8 00 00 00 00     call        _FFX_Atel_GetActorWord2E
+  00000021: 8B F0              mov         esi,eax
+  00000023: E8 00 00 00 00     call        _FFX_Field_GetCurrentMapId
+  00000028: 33 C9              xor         ecx,ecx
+  0000002A: 3B C6              cmp         eax,esi
+  0000002C: 0F 94 C1           sete        cl
+  0000002F: 6A 00              push        0
+  00000031: 51                 push        ecx
+  00000032: 6A 05              push        5
+  00000034: E8 00 00 00 00     call        _FFX_Camera_AllocSlot
+  00000039: 8B F0              mov         esi,eax
+  0000003B: 83 C4 10           add         esp,10h
+  0000003E: 89 33              mov         dword ptr [ebx],esi
+  00000040: FF 75 10           push        dword ptr [ebp+10h]
+  00000043: 57                 push        edi
+  00000044: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000004F: DB 45 FC           fild        dword ptr [ebp-4]
+  00000052: 85 C0              test        eax,eax
+  00000054: 79 06              jns         0000005C
+  00000056: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000005C: 83 3D 00 00 00 00  cmp         dword ptr [_dword_12FB7C4],1
+            01
+  00000063: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000066: D9 45 FC           fld         dword ptr [ebp-4]
+  00000069: 75 16              jne         00000081
+  0000006B: E8 00 00 00 00     call        __ftol2_sse
+  00000070: 50                 push        eax
+  00000071: 68 00 00 00 00     push        offset ??_C@_0BI@POIIOAEH@MsCameraSetScrDpt?5?$CI?$CFd?$CJ?6?$AA@
+  00000076: E8 00 00 00 00     call        _printf
+  0000007B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000007E: 83 C4 08           add         esp,8
+  00000081: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000084: 83 EC 08           sub         esp,8
+  00000087: D9 45 FC           fld         dword ptr [ebp-4]
+  0000008A: DD 1C 24           fstp        qword ptr [esp]
+  0000008D: 56                 push        esi
+  0000008E: E8 00 00 00 00     call        _FFX_Camera_Internal_OpBF
+  00000093: 83 C4 0C           add         esp,0Ch
+  00000096: 8B C6              mov         eax,esi
+  00000098: 5F                 pop         edi
+  00000099: 5E                 pop         esi
+  0000009A: 5B                 pop         ebx
+  0000009B: 8B E5              mov         esp,ebp
+  0000009D: 5D                 pop         ebp
+  0000009E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1C .rdata
+          9F .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C0E80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_Loose_7C0E80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: D9 40 04           fld         dword ptr [eax+4]
+  0000000A: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000D: D8 45 10           fadd        dword ptr [ebp+10h]
+  00000010: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000013: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000016: D9 56 04           fst         dword ptr [esi+4]
+  00000019: D9 EE              fldz
+  0000001B: DD E1              fucom       st(1)
+  0000001D: DF E0              fnstsw      ax
+  0000001F: DD D9              fstp        st(1)
+  00000021: F6 C4 44           test        ah,44h
+  00000024: 7A 09              jp          0000002F
+  00000026: DD D8              fstp        st(0)
+  00000028: E8 00 00 00 00     call        _FFX_Math_SetFlagBit6
+  0000002D: D9 EE              fldz
+  0000002F: D9 46 04           fld         dword ptr [esi+4]
+  00000032: 5E                 pop         esi
+  00000033: DE D9              fcompp
+  00000035: DF E0              fnstsw      ax
+  00000037: F6 C4 05           test        ah,5
+  0000003A: 7A 06              jp          00000042
+  0000003C: 5D                 pop         ebp
+  0000003D: E9 00 00 00 00     jmp         _FFX_Math_SetFlagBit7
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          44 .text

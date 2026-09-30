@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00790B80.obj
+
+File Type: COFF OBJECT
+
+_FFX_MonsterArena_OnCaptureAdjustAndText:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000008: 33 DB              xor         ebx,ebx
+  0000000A: 57                 push        edi
+  0000000B: 81 FE FF 00 00 00  cmp         esi,0FFh
+  00000011: 75 07              jne         0000001A
+  00000013: BF 0C 30 00 00     mov         edi,300Ch
+  00000018: EB 29              jmp         00000043
+  0000001A: 56                 push        esi
+  0000001B: E8 00 00 00 00     call        _FFX_MonsterArena_GetCaptureCountBySlot
+  00000020: 83 C4 04           add         esp,4
+  00000023: 83 F8 0A           cmp         eax,0Ah
+  00000026: 73 16              jae         0000003E
+  00000028: BB 01 00 00 00     mov         ebx,1
+  0000002D: 53                 push        ebx
+  0000002E: 56                 push        esi
+  0000002F: BF 0A 30 00 00     mov         edi,300Ah
+  00000034: E8 00 00 00 00     call        _FFX_MonsterArena_AdjustCaptureCountBySlot_Clamp10
+  00000039: 83 C4 08           add         esp,8
+  0000003C: EB 05              jmp         00000043
+  0000003E: BF 0B 30 00 00     mov         edi,300Bh
+  00000043: 6A 23              push        23h
+  00000045: 6A 1B              push        1Bh
+  00000047: 57                 push        edi
+  00000048: FF 75 08           push        dword ptr [ebp+8]
+  0000004B: 6A 05              push        5
+  0000004D: E8 00 00 00 00     call        _FFX_Battle_PushSceneStateToQueue
+  00000052: 83 C4 14           add         esp,14h
+  00000055: 8B C3              mov         eax,ebx
+  00000057: 5F                 pop         edi
+  00000058: 5E                 pop         esi
+  00000059: 5B                 pop         ebx
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5C .text

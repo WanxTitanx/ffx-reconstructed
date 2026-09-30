@@ -1,0 +1,119 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0098C800.obj
+
+File Type: COFF OBJECT
+
+@btQuantizedBvh_NodeDeserialize@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 1C           sub         esp,1Ch
+  00000006: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000009: 53                 push        ebx
+  0000000A: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  0000000D: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  00000010: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000013: 56                 push        esi
+  00000014: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000017: 57                 push        edi
+  00000018: 8B 7D F4           mov         edi,dword ptr [ebp-0Ch]
+  0000001B: 8B F1              mov         esi,ecx
+  0000001D: 8B C3              mov         eax,ebx
+  0000001F: 8B 4E 44           mov         ecx,dword ptr [esi+44h]
+  00000022: 2B C7              sub         eax,edi
+  00000024: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000027: 83 F8 01           cmp         eax,1
+  0000002A: 75 15              jne         00000041
+  0000002C: 57                 push        edi
+  0000002D: 51                 push        ecx
+  0000002E: 56                 push        esi
+  0000002F: E8 00 00 00 00     call        _Bullet_btQuantizedBvh_CopyNode
+  00000034: 83 C4 0C           add         esp,0Ch
+  00000037: FF 46 44           inc         dword ptr [esi+44h]
+  0000003A: 5F                 pop         edi
+  0000003B: 5E                 pop         esi
+  0000003C: 5B                 pop         ebx
+  0000003D: 8B E5              mov         esp,ebp
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _btQuantizedBvh_QuantizeNodes
+  00000047: 56                 push        esi
+  00000048: E8 00 00 00 00     call        _btQuantizedBvh_computeAverageNodePosition
+  0000004D: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  00000050: 56                 push        esi
+  00000051: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000054: E8 00 00 00 00     call        _btQuantizedBvh_NodeSerializeQuantized
+  00000059: 56                 push        esi
+  0000005A: E8 00 00 00 00     call        _btQuantizedBvh_NodeSerializeClipped
+  0000005F: 83 C4 10           add         esp,10h
+  00000062: 3B FB              cmp         edi,ebx
+  00000064: 7D 1F              jge         00000085
+  00000066: 56                 push        esi
+  00000067: E8 00 00 00 00     call        _btQuantizedBvh_DecodeNode
+  0000006C: 57                 push        edi
+  0000006D: 8D 45 F0           lea         eax,[ebp-10h]
+  00000070: 50                 push        eax
+  00000071: 56                 push        esi
+  00000072: E8 00 00 00 00     call        _Bullet_btQuantizedBvh_DequantizeNodePosition
+  00000077: 56                 push        esi
+  00000078: E8 00 00 00 00     call        _btQuantizedBvh_SerializeNodes
+  0000007D: 47                 inc         edi
+  0000007E: 83 C4 14           add         esp,14h
+  00000081: 3B FB              cmp         edi,ebx
+  00000083: 7C E1              jl          00000066
+  00000085: 8B 5E 44           mov         ebx,dword ptr [esi+44h]
+  00000088: 43                 inc         ebx
+  00000089: 8B CE              mov         ecx,esi
+  0000008B: 89 5E 44           mov         dword ptr [esi+44h],ebx
+  0000008E: E8 00 00 00 00     call        @btQuantizedBvh_NodeDeserialize@4
+  00000093: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  00000096: 8B CE              mov         ecx,esi
+  00000098: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000009B: E8 00 00 00 00     call        @btQuantizedBvh_NodeDeserialize@4
+  000000A0: 8B 7E 44           mov         edi,dword ptr [esi+44h]
+  000000A3: 2B 7D F8           sub         edi,dword ptr [ebp-8]
+  000000A6: 80 7E 48 00        cmp         byte ptr [esi+48h],0
+  000000AA: 74 3B              je          000000E7
+  000000AC: 8B C7              mov         eax,edi
+  000000AE: C1 E0 04           shl         eax,4
+  000000B1: 3D 00 08 00 00     cmp         eax,800h
+  000000B6: 7E 11              jle         000000C9
+  000000B8: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000000BB: 8D 45 E4           lea         eax,[ebp-1Ch]
+  000000BE: 53                 push        ebx
+  000000BF: 50                 push        eax
+  000000C0: 56                 push        esi
+  000000C1: E8 00 00 00 00     call        _Bullet_btQuantizedBvh_deSerializeClone
+  000000C6: 83 C4 10           add         esp,10h
+  000000C9: 80 7E 48 00        cmp         byte ptr [esi+48h],0
+  000000CD: 74 18              je          000000E7
+  000000CF: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000D2: 8B 86 94 00 00 00  mov         eax,dword ptr [esi+94h]
+  000000D8: F7 DF              neg         edi
+  000000DA: 03 C9              add         ecx,ecx
+  000000DC: 89 7C C8 0C        mov         dword ptr [eax+ecx*8+0Ch],edi
+  000000E0: 5F                 pop         edi
+  000000E1: 5E                 pop         esi
+  000000E2: 5B                 pop         ebx
+  000000E3: 8B E5              mov         esp,ebp
+  000000E5: 5D                 pop         ebp
+  000000E6: C3                 ret
+  000000E7: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000EA: 8B 46 6C           mov         eax,dword ptr [esi+6Ch]
+  000000ED: C1 E1 06           shl         ecx,6
+  000000F0: 89 7C 01 20        mov         dword ptr [ecx+eax+20h],edi
+  000000F4: 5F                 pop         edi
+  000000F5: 5E                 pop         esi
+  000000F6: 5B                 pop         ebx
+  000000F7: 8B E5              mov         esp,ebp
+  000000F9: 5D                 pop         ebp
+  000000FA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          FB .text

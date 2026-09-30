@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A79EA0.obj
+
+File Type: COFF OBJECT
+
+_sub_A79EA0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 57                 push        edi
+  00000008: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: E8 00 00 00 00     call        _FFX_TK_GetChrPointer
+  00000011: FF 75 10           push        dword ptr [ebp+10h]
+  00000014: 8B D8              mov         ebx,eax
+  00000016: 57                 push        edi
+  00000017: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000001C: FF 75 10           push        dword ptr [ebp+10h]
+  0000001F: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000022: 57                 push        edi
+  00000023: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  00000028: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002B: DB 45 FC           fild        dword ptr [ebp-4]
+  0000002E: 83 C4 14           add         esp,14h
+  00000031: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000034: 85 DB              test        ebx,ebx
+  00000036: 74 15              je          0000004D
+  00000038: FF 75 F8           push        dword ptr [ebp-8]
+  0000003B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003E: 83 EC 08           sub         esp,8
+  00000041: DD 1C 24           fstp        qword ptr [esp]
+  00000044: 53                 push        ebx
+  00000045: E8 00 00 00 00     call        _FFX_BtlChr_SetHPValueFloatTransition
+  0000004A: 83 C4 10           add         esp,10h
+  0000004D: 5F                 pop         edi
+  0000004E: 33 C0              xor         eax,eax
+  00000050: 5B                 pop         ebx
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          55 .text

@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00826A00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_RelocatePointersInBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 33 D2              xor         edx,edx
+  00000009: 8B 86 C0 01 00 00  mov         eax,dword ptr [esi+000001C0h]
+  0000000F: 8B 8E 28 03 00 00  mov         ecx,dword ptr [esi+00000328h]
+  00000015: 66 39 50 0A        cmp         word ptr [eax+0Ah],dx
+  00000019: 74 2C              je          00000047
+  0000001B: 53                 push        ebx
+  0000001C: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000001F: 57                 push        edi
+  00000020: 8D BE C8 01 00 00  lea         edi,[esi+000001C8h]
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: 3B C7              cmp         eax,edi
+  0000002A: 74 04              je          00000030
+  0000002C: 03 C3              add         eax,ebx
+  0000002E: 89 01              mov         dword ptr [ecx],eax
+  00000030: 8B 86 C0 01 00 00  mov         eax,dword ptr [esi+000001C0h]
+  00000036: 42                 inc         edx
+  00000037: 0F B7 40 0A        movzx       eax,word ptr [eax+0Ah]
+  0000003B: 81 C1 60 01 00 00  add         ecx,160h
+  00000041: 3B D0              cmp         edx,eax
+  00000043: 7C E1              jl          00000026
+  00000045: 5F                 pop         edi
+  00000046: 5B                 pop         ebx
+  00000047: 5E                 pop         esi
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4A .text

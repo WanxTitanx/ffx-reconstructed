@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008262E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_FreeModelDataMemory:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000008: 33 C9              xor         ecx,ecx
+  0000000A: 8B 83 C0 01 00 00  mov         eax,dword ptr [ebx+1C0h]
+  00000010: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000013: 66 39 48 06        cmp         word ptr [eax+6],cx
+  00000017: 0F 84 B1 00 00 00  je          000000CE
+  0000001D: 56                 push        esi
+  0000001E: 57                 push        edi
+  0000001F: 33 FF              xor         edi,edi
+  00000021: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  00000027: 03 C7              add         eax,edi
+  00000029: 83 78 2C 00        cmp         dword ptr [eax+2Ch],0
+  0000002D: 0F 84 80 00 00 00  je          000000B3
+  00000033: 8B 08              mov         ecx,dword ptr [eax]
+  00000035: 33 F6              xor         esi,esi
+  00000037: 66 39 71 18        cmp         word ptr [ecx+18h],si
+  0000003B: 74 52              je          0000008F
+  0000003D: 8D 49 00           lea         ecx,[ecx]
+  00000040: 8B 40 2C           mov         eax,dword ptr [eax+2Ch]
+  00000043: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000046: 85 C0              test        eax,eax
+  00000048: 74 32              je          0000007C
+  0000004A: FF 70 44           push        dword ptr [eax+44h]
+  0000004D: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000052: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  00000058: 8B 44 38 2C        mov         eax,dword ptr [eax+edi+2Ch]
+  0000005C: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  0000005F: FF 70 48           push        dword ptr [eax+48h]
+  00000062: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000067: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  0000006D: 8B 44 38 2C        mov         eax,dword ptr [eax+edi+2Ch]
+  00000071: FF 34 B0           push        dword ptr [eax+esi*4]
+  00000074: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000079: 83 C4 0C           add         esp,0Ch
+  0000007C: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  00000082: 03 C7              add         eax,edi
+  00000084: 46                 inc         esi
+  00000085: 8B 08              mov         ecx,dword ptr [eax]
+  00000087: 0F B7 49 18        movzx       ecx,word ptr [ecx+18h]
+  0000008B: 3B F1              cmp         esi,ecx
+  0000008D: 7C B1              jl          00000040
+  0000008F: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  00000095: FF 74 38 2C        push        dword ptr [eax+edi+2Ch]
+  00000099: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  0000009E: 8B 83 BC 01 00 00  mov         eax,dword ptr [ebx+1BCh]
+  000000A4: FF 74 38 30        push        dword ptr [eax+edi+30h]
+  000000A8: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  000000AD: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000B0: 83 C4 08           add         esp,8
+  000000B3: 8B 83 C0 01 00 00  mov         eax,dword ptr [ebx+1C0h]
+  000000B9: 41                 inc         ecx
+  000000BA: 0F B7 40 06        movzx       eax,word ptr [eax+6]
+  000000BE: 83 C7 38           add         edi,38h
+  000000C1: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  000000C4: 3B C8              cmp         ecx,eax
+  000000C6: 0F 8C 55 FF FF FF  jl          00000021
+  000000CC: 5F                 pop         edi
+  000000CD: 5E                 pop         esi
+  000000CE: 33 C0              xor         eax,eax
+  000000D0: 5B                 pop         ebx
+  000000D1: 8B E5              mov         esp,ebp
+  000000D3: 5D                 pop         ebp
+  000000D4: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          D5 .text

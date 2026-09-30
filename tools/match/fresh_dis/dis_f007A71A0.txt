@@ -1,0 +1,69 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A71A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Atel_Battle_BtlSetTrans_INTRET:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _FFX_Field_GetScriptSelfActorIndexPtr
+  00000012: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000015: 0F B6 18           movzx       ebx,byte ptr [eax]
+  00000018: 56                 push        esi
+  00000019: 57                 push        edi
+  0000001A: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000001F: 56                 push        esi
+  00000020: 57                 push        edi
+  00000021: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000024: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000029: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000002C: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  0000002F: 85 C0              test        eax,eax
+  00000031: 79 06              jns         00000039
+  00000033: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000039: 56                 push        esi
+  0000003A: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000003D: 57                 push        edi
+  0000003E: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000043: 83 C4 1C           add         esp,1Ch
+  00000046: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000049: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 79 06              jns         00000056
+  00000050: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000056: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000059: 81 FB FF 00 00 00  cmp         ebx,0FFh
+  0000005F: 74 1E              je          0000007F
+  00000061: D9 45 F8           fld         dword ptr [ebp-8]
+  00000064: 6A 01              push        1
+  00000066: FF 75 FC           push        dword ptr [ebp-4]
+  00000069: 83 EC 10           sub         esp,10h
+  0000006C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000070: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000073: DD 1C 24           fstp        qword ptr [esp]
+  00000076: 53                 push        ebx
+  00000077: E8 00 00 00 00     call        _FFX_Battle_SetActorTransformAndResetState
+  0000007C: 83 C4 1C           add         esp,1Ch
+  0000007F: 5F                 pop         edi
+  00000080: 5E                 pop         esi
+  00000081: 33 C0              xor         eax,eax
+  00000083: 5B                 pop         ebx
+  00000084: 8B E5              mov         esp,ebp
+  00000086: 5D                 pop         ebp
+  00000087: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          88 .text

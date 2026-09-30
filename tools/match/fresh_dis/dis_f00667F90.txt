@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00667F90.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Vector_ReserveInt@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  00000008: 8B FA              mov         edi,edx
+  0000000A: 74 44              je          00000050
+  0000000C: 53                 push        ebx
+  0000000D: 33 DB              xor         ebx,ebx
+  0000000F: 85 FF              test        edi,edi
+  00000011: 7E 28              jle         0000003B
+  00000013: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000020: 8B D8              mov         ebx,eax
+  00000022: 83 C4 04           add         esp,4
+  00000025: 85 DB              test        ebx,ebx
+  00000027: 74 12              je          0000003B
+  00000029: 8B 0E              mov         ecx,dword ptr [esi]
+  0000002B: C1 E1 02           shl         ecx,2
+  0000002E: 51                 push        ecx
+  0000002F: FF 76 08           push        dword ptr [esi+8]
+  00000032: 53                 push        ebx
+  00000033: E8 00 00 00 00     call        _memcpy
+  00000038: 83 C4 0C           add         esp,0Ch
+  0000003B: FF 76 08           push        dword ptr [esi+8]
+  0000003E: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000043: 83 C4 04           add         esp,4
+  00000046: 89 5E 08           mov         dword ptr [esi+8],ebx
+  00000049: 5B                 pop         ebx
+  0000004A: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000004D: 5F                 pop         edi
+  0000004E: 5E                 pop         esi
+  0000004F: C3                 ret
+  00000050: 8D 04 BD 00 00 00  lea         eax,[edi*4]
+            00
+  00000057: 50                 push        eax
+  00000058: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000005D: 83 C4 04           add         esp,4
+  00000060: 89 7E 04           mov         dword ptr [esi+4],edi
+  00000063: 5F                 pop         edi
+  00000064: 89 46 08           mov         dword ptr [esi+8],eax
+  00000067: 5E                 pop         esi
+  00000068: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          69 .text

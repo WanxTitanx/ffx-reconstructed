@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070F570.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodSfx_StopSfxEvents@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000000A: 80 78 04 00        cmp         byte ptr [eax+4],0
+  0000000E: 74 14              je          00000024
+  00000010: E8 00 00 00 00     call        _FMOD_Event_getVolume
+  00000015: FF 75 FC           push        dword ptr [ebp-4]
+  00000018: FF 75 FC           push        dword ptr [ebp-4]
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000021: 83 C4 0C           add         esp,0Ch
+  00000024: 53                 push        ebx
+  00000025: 8B 1E              mov         ebx,dword ptr [esi]
+  00000027: 57                 push        edi
+  00000028: 33 FF              xor         edi,edi
+  0000002A: 85 DB              test        ebx,ebx
+  0000002C: 7E 2D              jle         0000005B
+  0000002E: 8B FF              mov         edi,edi
+  00000030: 8B 46 08           mov         eax,dword ptr [esi+8]
+  00000033: 68 AC 00 00 00     push        0ACh
+  00000038: 68 00 00 00 00     push        offset ??_C@_0BG@ODMEIOGM@?4?4?2sound?2SfxEvent?4cpp?$AA@
+  0000003D: 6A 01              push        1
+  0000003F: FF 34 F8           push        dword ptr [eax+edi*8]
+  00000042: E8 00 00 00 00     call        _FMOD_Event_stop
+  00000047: FF 75 FC           push        dword ptr [ebp-4]
+  0000004A: FF 75 FC           push        dword ptr [ebp-4]
+  0000004D: 50                 push        eax
+  0000004E: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000053: 47                 inc         edi
+  00000054: 83 C4 1C           add         esp,1Ch
+  00000057: 3B FB              cmp         edi,ebx
+  00000059: 7C D5              jl          00000030
+  0000005B: D9 EE              fldz
+  0000005D: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  00000060: D9 56 0C           fst         dword ptr [esi+0Ch]
+  00000063: 5F                 pop         edi
+  00000064: D9 56 10           fst         dword ptr [esi+10h]
+  00000067: 5B                 pop         ebx
+  00000068: D9 5E 14           fstp        dword ptr [esi+14h]
+  0000006B: 85 C0              test        eax,eax
+  0000006D: 74 0E              je          0000007D
+  0000006F: 50                 push        eax
+  00000070: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000075: D9 EE              fldz
+  00000077: D9 5E 18           fstp        dword ptr [esi+18h]
+  0000007A: 83 C4 04           add         esp,4
+  0000007D: 8B 46 1C           mov         eax,dword ptr [esi+1Ch]
+  00000080: 85 C0              test        eax,eax
+  00000082: 74 0E              je          00000092
+  00000084: 50                 push        eax
+  00000085: E8 00 00 00 00     call        _FFX_Heap_Free
+  0000008A: D9 EE              fldz
+  0000008C: D9 5E 1C           fstp        dword ptr [esi+1Ch]
+  0000008F: 83 C4 04           add         esp,4
+  00000092: 5E                 pop         esi
+  00000093: 8B E5              mov         esp,ebp
+  00000095: 5D                 pop         ebp
+  00000096: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1A .rdata
+          97 .text

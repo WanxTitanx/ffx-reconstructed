@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086BFB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Scene_GetPObjectSlotByIndex:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 78 04           mov         edi,dword ptr [eax+4]
+  0000000C: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000F: 8B 77 04           mov         esi,dword ptr [edi+4]
+  00000012: 8B 5F 08           mov         ebx,dword ptr [edi+8]
+  00000015: 85 C0              test        eax,eax
+  00000017: 79 05              jns         0000001E
+  00000019: E8 00 00 00 00     call        _FFX_Scene_PObjectSetDeleteFlag
+  0000001E: 85 F6              test        esi,esi
+  00000020: 75 0A              jne         0000002C
+  00000022: 5F                 pop         edi
+  00000023: 5E                 pop         esi
+  00000024: B8 00 00 00 00     mov         eax,offset _g_SceneUnkVar_1325B10
+  00000029: 5B                 pop         ebx
+  0000002A: 5D                 pop         ebp
+  0000002B: C3                 ret
+  0000002C: C1 E0 05           shl         eax,5
+  0000002F: 03 C6              add         eax,esi
+  00000031: 3B C3              cmp         eax,ebx
+  00000033: 7C 02              jl          00000037
+  00000035: 8B C6              mov         eax,esi
+  00000037: 03 C7              add         eax,edi
+  00000039: 5F                 pop         edi
+  0000003A: 5E                 pop         esi
+  0000003B: 5B                 pop         ebx
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

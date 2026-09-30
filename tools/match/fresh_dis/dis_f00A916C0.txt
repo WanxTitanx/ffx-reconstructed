@@ -1,0 +1,105 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A916C0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Audio_BufferExpand@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000000E: 8B 77 68           mov         esi,dword ptr [edi+68h]
+  00000011: 8B 5F 04           mov         ebx,dword ptr [edi+4]
+  00000014: 8B 46 40           mov         eax,dword ptr [esi+40h]
+  00000017: 89 7D F0           mov         dword ptr [ebp-10h],edi
+  0000001A: 85 C0              test        eax,eax
+  0000001C: 74 09              je          00000027
+  0000001E: 50                 push        eax
+  0000001F: E8 00 00 00 00     call        _free_1
+  00000024: 83 C4 04           add         esp,4
+  00000027: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  0000002A: C7 46 40 00 00 00  mov         dword ptr [esi+40h],0
+            00
+  00000031: 85 C0              test        eax,eax
+  00000033: 74 09              je          0000003E
+  00000035: 50                 push        eax
+  00000036: E8 00 00 00 00     call        _free_1
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 8B 46 48           mov         eax,dword ptr [esi+48h]
+  00000041: C7 46 44 00 00 00  mov         dword ptr [esi+44h],0
+            00
+  00000048: 85 C0              test        eax,eax
+  0000004A: 74 09              je          00000055
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _free_1
+  00000052: 83 C4 04           add         esp,4
+  00000055: 8B 4F 14           mov         ecx,dword ptr [edi+14h]
+  00000058: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000005B: C7 46 48 00 00 00  mov         dword ptr [esi+48h],0
+            00
+  00000062: 8D 04 11           lea         eax,[ecx+edx]
+  00000065: 3B 47 10           cmp         eax,dword ptr [edi+10h]
+  00000068: 72 4F              jb          000000B9
+  0000006A: 8D 04 51           lea         eax,[ecx+edx*2]
+  0000006D: 89 47 10           mov         dword ptr [edi+10h],eax
+  00000070: 83 7B 04 00        cmp         dword ptr [ebx+4],0
+  00000074: 76 43              jbe         000000B9
+  00000076: 33 C9              xor         ecx,ecx
+  00000078: C7 45 FC 01 00 00  mov         dword ptr [ebp-4],1
+            00
+  0000007F: C7 45 F8 04 00 00  mov         dword ptr [ebp-8],4
+            00
+  00000086: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000089: 8B 77 08           mov         esi,dword ptr [edi+8]
+  0000008C: C1 E0 02           shl         eax,2
+  0000008F: 50                 push        eax
+  00000090: FF 34 31           push        dword ptr [ecx+esi]
+  00000093: E8 00 00 00 00     call        _realloc_0
+  00000098: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  0000009B: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000009E: FF 45 FC           inc         dword ptr [ebp-4]
+  000000A1: 89 55 F4           mov         dword ptr [ebp-0Ch],edx
+  000000A4: 89 44 32 FC        mov         dword ptr [edx+esi-4],eax
+  000000A8: 83 C2 04           add         edx,4
+  000000AB: 83 C4 08           add         esp,8
+  000000AE: 3B 4B 04           cmp         ecx,dword ptr [ebx+4]
+  000000B1: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  000000B4: 89 55 F8           mov         dword ptr [ebp-8],edx
+  000000B7: 72 CD              jb          00000086
+  000000B9: 33 D2              xor         edx,edx
+  000000BB: 39 53 04           cmp         dword ptr [ebx+4],edx
+  000000BE: 7E 23              jle         000000E3
+  000000C0: 8B 77 14           mov         esi,dword ptr [edi+14h]
+  000000C3: 8B 47 08           mov         eax,dword ptr [edi+8]
+  000000C6: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  000000C9: 8B F8              mov         edi,eax
+  000000CB: C1 E6 02           shl         esi,2
+  000000CE: 2B F9              sub         edi,ecx
+  000000D0: 8B 04 0F           mov         eax,dword ptr [edi+ecx]
+  000000D3: 03 C6              add         eax,esi
+  000000D5: 89 01              mov         dword ptr [ecx],eax
+  000000D7: 42                 inc         edx
+  000000D8: 8D 49 04           lea         ecx,[ecx+4]
+  000000DB: 3B 53 04           cmp         edx,dword ptr [ebx+4]
+  000000DE: 72 F0              jb          000000D0
+  000000E0: 8B 7D F0           mov         edi,dword ptr [ebp-10h]
+  000000E3: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  000000E6: 5F                 pop         edi
+  000000E7: 5E                 pop         esi
+  000000E8: 5B                 pop         ebx
+  000000E9: 8B E5              mov         esp,ebp
+  000000EB: 5D                 pop         ebp
+  000000EC: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          ED .text

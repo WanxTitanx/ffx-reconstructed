@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00908C80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_908C80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 1D 00 00 00 00  mov         ebx,dword ptr [_dword_1912F98]
+  0000000B: 57                 push        edi
+  0000000C: 33 FF              xor         edi,edi
+  0000000E: 89 7D FC           mov         dword ptr [ebp-4],edi
+  00000011: 85 DB              test        ebx,ebx
+  00000013: 74 67              je          0000007C
+  00000015: 56                 push        esi
+  00000016: BE 00 00 00 00     mov         esi,offset _unk_1912FB0
+  0000001B: 83 EE 10           sub         esi,10h
+  0000001E: EB 03              jmp         00000023
+  00000020: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000023: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000026: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000029: 0F AF 46 10        imul        eax,dword ptr [esi+10h]
+  0000002D: 83 E9 02           sub         ecx,2
+  00000030: 74 1E              je          00000050
+  00000032: 83 E9 11           sub         ecx,11h
+  00000035: 74 0E              je          00000045
+  00000037: 49                 dec         ecx
+  00000038: 75 1B              jne         00000055
+  0000003A: 99                 cdq
+  0000003B: 83 E2 07           and         edx,7
+  0000003E: 03 C2              add         eax,edx
+  00000040: C1 F8 03           sar         eax,3
+  00000043: EB 10              jmp         00000055
+  00000045: 99                 cdq
+  00000046: 83 E2 03           and         edx,3
+  00000049: 03 C2              add         eax,edx
+  0000004B: C1 F8 02           sar         eax,2
+  0000004E: EB 05              jmp         00000055
+  00000050: 99                 cdq
+  00000051: 2B C2              sub         eax,edx
+  00000053: D1 F8              sar         eax,1
+  00000055: 99                 cdq
+  00000056: 83 E2 3F           and         edx,3Fh
+  00000059: 8D 0C 02           lea         ecx,[edx+eax]
+  0000005C: 8B 06              mov         eax,dword ptr [esi]
+  0000005E: C1 F9 06           sar         ecx,6
+  00000061: 03 C1              add         eax,ecx
+  00000063: 39 45 FC           cmp         dword ptr [ebp-4],eax
+  00000066: 73 05              jae         0000006D
+  00000068: 8B F8              mov         edi,eax
+  0000006A: 89 7D FC           mov         dword ptr [ebp-4],edi
+  0000006D: 83 C6 24           add         esi,24h
+  00000070: 4B                 dec         ebx
+  00000071: 75 AD              jne         00000020
+  00000073: 5E                 pop         esi
+  00000074: 8B C7              mov         eax,edi
+  00000076: 5F                 pop         edi
+  00000077: 5B                 pop         ebx
+  00000078: 8B E5              mov         esp,ebp
+  0000007A: 5D                 pop         ebp
+  0000007B: C3                 ret
+  0000007C: 5F                 pop         edi
+  0000007D: 33 C0              xor         eax,eax
+  0000007F: 5B                 pop         ebx
+  00000080: 8B E5              mov         esp,ebp
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          84 .text

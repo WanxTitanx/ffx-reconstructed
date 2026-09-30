@@ -1,0 +1,242 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f154.obj
+
+File Type: COFF OBJECT
+
+??0btMatrix3x3@@QAE@XZ (public: __thiscall btMatrix3x3::btMatrix3x3(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0btTransform@@QAE@XZ (public: __thiscall btTransform::btTransform(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??0btVector3@@QAE@XZ (public: __thiscall btVector3::btVector3(void)):
+  00000000: 8B C1              mov         eax,ecx
+  00000002: C3                 ret
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+?cmdIntegrateBodies@@YAXIIIPAUPEGatherScatterTask_LocalStoreMemory@@M@Z (void __cdecl cmdIntegrateBodies(unsigned int,unsigned int,unsigned int,struct PEGatherScatterTask_LocalStoreMemory *,float)):
+  00000000: 53                 push        ebx
+  00000001: 8B DC              mov         ebx,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 83 E4 F0           and         esp,0FFFFFFF0h
+  00000009: 83 C4 04           add         esp,4
+  0000000C: 55                 push        ebp
+  0000000D: 8B 6B 04           mov         ebp,dword ptr [ebx+4]
+  00000010: 89 6C 24 04        mov         dword ptr [esp+4],ebp
+  00000014: 8B EC              mov         ebp,esp
+  00000016: 8B 53 10           mov         edx,dword ptr [ebx+10h]
+  00000019: 83 EC 58           sub         esp,58h
+  0000001C: 56                 push        esi
+  0000001D: 57                 push        edi
+  0000001E: 81 FA 00 40 00 00  cmp         edx,4000h
+  00000024: 77 77              ja          0000009D
+  00000026: 8B 4B 0C           mov         ecx,dword ptr [ebx+0Ch]
+  00000029: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000002C: 33 F6              xor         esi,esi
+  0000002E: 8D 04 88           lea         eax,[eax+ecx*4]
+  00000031: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000034: 85 D2              test        edx,edx
+  00000036: 74 65              je          0000009D
+  00000038: 6A 00              push        0
+  0000003A: 6A 00              push        0
+  0000003C: 6A 01              push        1
+  0000003E: 68 C0 02 00 00     push        2C0h
+  00000043: FF 34 B0           push        dword ptr [eax+esi*4]
+  00000046: FF 73 14           push        dword ptr [ebx+14h]
+  00000049: E8 00 00 00 00     call        ?cellDmaGetReadOnly@@YAPAXPAXKIIII@Z
+  0000004E: 6A 01              push        1
+  00000050: 8B F8              mov         edi,eax
+  00000052: E8 00 00 00 00     call        ?cellDmaWaitTagStatusAll@@YAXH@Z
+  00000057: 8B 87 E4 00 00 00  mov         eax,dword ptr [edi+0E4h]
+  0000005D: 83 C4 1C           add         esp,1Ch
+  00000060: 83 F8 02           cmp         eax,2
+  00000063: 74 2F              je          00000094
+  00000065: 83 F8 05           cmp         eax,5
+  00000068: 74 2A              je          00000094
+  0000006A: F6 87 D8 00 00 00  test        byte ptr [edi+0D8h],3
+            03
+  00000071: 75 21              jne         00000094
+  00000073: F3 0F 10 43 18     movss       xmm0,dword ptr [ebx+18h]
+  00000078: 8D 45 B0           lea         eax,[ebp-50h]
+  0000007B: 50                 push        eax
+  0000007C: 51                 push        ecx
+  0000007D: 8B CF              mov         ecx,edi
+  0000007F: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000084: E8 00 00 00 00     call        ?predictIntegratedTransform@btRigidBody@@QAEXMAAVbtTransform@@@Z
+  00000089: 8D 45 B0           lea         eax,[ebp-50h]
+  0000008C: 50                 push        eax
+  0000008D: 8B CF              mov         ecx,edi
+  0000008F: E8 00 00 00 00     call        ?proceedToTransform@btRigidBody@@QAEXABVbtTransform@@@Z
+  00000094: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000097: 46                 inc         esi
+  00000098: 3B 73 10           cmp         esi,dword ptr [ebx+10h]
+  0000009B: 72 9B              jb          00000038
+  0000009D: 5F                 pop         edi
+  0000009E: 5E                 pop         esi
+  0000009F: 8B E5              mov         esp,ebp
+  000000A1: 5D                 pop         ebp
+  000000A2: 8B E3              mov         esp,ebx
+  000000A4: 5B                 pop         ebx
+  000000A5: C3                 ret
+
+?cmdPredictMotionBodies@@YAXIIIPAUPEGatherScatterTask_LocalStoreMemory@@M@Z (void __cdecl cmdPredictMotionBodies(unsigned int,unsigned int,unsigned int,struct PEGatherScatterTask_LocalStoreMemory *,float)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 55 10           mov         edx,dword ptr [ebp+10h]
+  00000007: 81 FA 00 40 00 00  cmp         edx,4000h
+  0000000D: 0F 87 9D 00 00 00  ja          000000B0
+  00000013: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000016: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000019: 56                 push        esi
+  0000001A: 8D 04 88           lea         eax,[eax+ecx*4]
+  0000001D: 33 F6              xor         esi,esi
+  0000001F: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000022: 85 D2              test        edx,edx
+  00000024: 0F 84 85 00 00 00  je          000000AF
+  0000002A: 57                 push        edi
+  0000002B: EB 03              jmp         00000030
+  0000002D: 8D 49 00           lea         ecx,[ecx]
+  00000030: 6A 00              push        0
+  00000032: 6A 00              push        0
+  00000034: 6A 01              push        1
+  00000036: 68 C0 02 00 00     push        2C0h
+  0000003B: FF 34 B0           push        dword ptr [eax+esi*4]
+  0000003E: FF 75 14           push        dword ptr [ebp+14h]
+  00000041: E8 00 00 00 00     call        ?cellDmaGetReadOnly@@YAPAXPAXKIIII@Z
+  00000046: 6A 01              push        1
+  00000048: 8B F8              mov         edi,eax
+  0000004A: E8 00 00 00 00     call        ?cellDmaWaitTagStatusAll@@YAXH@Z
+  0000004F: 83 C4 1C           add         esp,1Ch
+  00000052: F6 87 D8 00 00 00  test        byte ptr [edi+0D8h],3
+            03
+  00000059: 75 4A              jne         000000A5
+  0000005B: 8B 87 E4 00 00 00  mov         eax,dword ptr [edi+0E4h]
+  00000061: 83 F8 02           cmp         eax,2
+  00000064: 74 3F              je          000000A5
+  00000066: 83 F8 05           cmp         eax,5
+  00000069: 74 3A              je          000000A5
+  0000006B: F3 0F 10 45 18     movss       xmm0,dword ptr [ebp+18h]
+  00000070: 51                 push        ecx
+  00000071: 8B CF              mov         ecx,edi
+  00000073: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000078: E8 00 00 00 00     call        ?integrateVelocities@btRigidBody@@QAEXM@Z
+  0000007D: F3 0F 10 45 18     movss       xmm0,dword ptr [ebp+18h]
+  00000082: 51                 push        ecx
+  00000083: 8B CF              mov         ecx,edi
+  00000085: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000008A: E8 00 00 00 00     call        ?applyDamping@btRigidBody@@QAEXM@Z
+  0000008F: F3 0F 10 45 18     movss       xmm0,dword ptr [ebp+18h]
+  00000094: 8D 47 50           lea         eax,[edi+50h]
+  00000097: 50                 push        eax
+  00000098: 51                 push        ecx
+  00000099: 8B CF              mov         ecx,edi
+  0000009B: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  000000A0: E8 00 00 00 00     call        ?predictIntegratedTransform@btRigidBody@@QAEXMAAVbtTransform@@@Z
+  000000A5: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000A8: 46                 inc         esi
+  000000A9: 3B 75 10           cmp         esi,dword ptr [ebp+10h]
+  000000AC: 72 82              jb          00000030
+  000000AE: 5F                 pop         edi
+  000000AF: 5E                 pop         esi
+  000000B0: 8B E5              mov         esp,ebp
+  000000B2: 5D                 pop         ebp
+  000000B3: C3                 ret
+
+?createPEGatherScatterLocalStoreMemory@@YAPAXXZ (void * __cdecl createPEGatherScatterLocalStoreMemory(void)):
+  00000000: 68 B0 0A 01 00     push        10AB0h
+  00000005: E8 00 00 00 00     call        ??2@YAPAXI@Z
+  0000000A: 83 C4 04           add         esp,4
+  0000000D: C3                 ret
+
+?getActivationState@btCollisionObject@@QBEHXZ (public: int __thiscall btCollisionObject::getActivationState(void)const ):
+  00000000: 8B 81 E4 00 00 00  mov         eax,dword ptr [ecx+000000E4h]
+  00000006: C3                 ret
+
+?getInterpolationWorldTransform@btCollisionObject@@QAEAAVbtTransform@@XZ (public: class btTransform & __thiscall btCollisionObject::getInterpolationWorldTransform(void)):
+  00000000: 8D 41 50           lea         eax,[ecx+50h]
+  00000003: C3                 ret
+
+?isActive@btCollisionObject@@QBE_NXZ (public: bool __thiscall btCollisionObject::isActive(void)const ):
+  00000000: 8B 81 E4 00 00 00  mov         eax,dword ptr [ecx+000000E4h]
+  00000006: 83 F8 02           cmp         eax,2
+  00000009: 74 08              je          00000013
+  0000000B: 83 F8 05           cmp         eax,5
+  0000000E: 74 03              je          00000013
+  00000010: B0 01              mov         al,1
+  00000012: C3                 ret
+  00000013: 32 C0              xor         al,al
+  00000015: C3                 ret
+
+?isStaticOrKinematicObject@btCollisionObject@@QBE_NXZ (public: bool __thiscall btCollisionObject::isStaticOrKinematicObject(void)const ):
+  00000000: F6 81 D8 00 00 00  test        byte ptr [ecx+000000D8h],3
+            03
+  00000007: B8 00 00 00 00     mov         eax,0
+  0000000C: 0F 95 C0           setne       al
+  0000000F: C3                 ret
+
+?processPEGatherScatterTask@@YAXPAX0@Z (void __cdecl processPEGatherScatterTask(void *,void *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 8B 08              mov         ecx,dword ptr [eax]
+  00000008: 83 E9 13           sub         ecx,13h
+  0000000B: 74 24              je          00000031
+  0000000D: 49                 dec         ecx
+  0000000E: 75 40              jne         00000050
+  00000010: F3 0F 10 40 1C     movss       xmm0,dword ptr [eax+1Ch]
+  00000015: 51                 push        ecx
+  00000016: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000001B: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001E: FF 70 18           push        dword ptr [eax+18h]
+  00000021: FF 70 14           push        dword ptr [eax+14h]
+  00000024: FF 70 08           push        dword ptr [eax+8]
+  00000027: E8 00 00 00 00     call        ?cmdPredictMotionBodies@@YAXIIIPAUPEGatherScatterTask_LocalStoreMemory@@M@Z
+  0000002C: 83 C4 14           add         esp,14h
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: F3 0F 10 40 1C     movss       xmm0,dword ptr [eax+1Ch]
+  00000036: 51                 push        ecx
+  00000037: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000003C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000003F: FF 70 18           push        dword ptr [eax+18h]
+  00000042: FF 70 14           push        dword ptr [eax+14h]
+  00000045: FF 70 08           push        dword ptr [eax+8]
+  00000048: E8 00 00 00 00     call        ?cmdIntegrateBodies@@YAXIIIPAUPEGatherScatterTask_LocalStoreMemory@@M@Z
+  0000004D: 83 C4 14           add         esp,14h
+  00000050: 5D                 pop         ebp
+  00000051: C3                 ret
+
+  Summary
+
+          80 .debug$F
+          70 .debug$S
+          C2 .drectve
+          36 .rdata
+         217 .text

@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F81F0.obj
+
+File Type: COFF OBJECT
+
+@BlurEffect_InitRandomVertices@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B F1              mov         esi,ecx
+  00000008: 33 DB              xor         ebx,ebx
+  0000000A: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  0000000D: 03 46 34           add         eax,dword ptr [esi+34h]
+  00000010: C1 E0 02           shl         eax,2
+  00000013: 85 C0              test        eax,eax
+  00000015: 0F 84 82 00 00 00  je          0000009D
+  0000001B: D9 EE              fldz
+  0000001D: 57                 push        edi
+  0000001E: 33 FF              xor         edi,edi
+  00000020: 8B 46 64           mov         eax,dword ptr [esi+64h]
+  00000023: 43                 inc         ebx
+  00000024: D9 1C 07           fstp        dword ptr [edi+eax]
+  00000027: 83 C7 20           add         edi,20h
+  0000002A: E8 00 00 00 00     call        _rand
+  0000002F: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000032: DB 45 FC           fild        dword ptr [ebp-4]
+  00000035: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000038: D9 45 FC           fld         dword ptr [ebp-4]
+  0000003B: 8B 46 64           mov         eax,dword ptr [esi+64h]
+  0000003E: DC 35 00 00 00 00  fdiv        qword ptr [__real@40dfffc000000000]
+  00000044: DD 05 00 00 00 00  fld         qword ptr [__real@3f50624ddfffffff]
+  0000004A: DC C9              fmul        st(1),st
+  0000004C: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000052: DE CA              fmulp       st(2),st
+  00000054: DE E9              fsubp       st(1),st
+  00000056: DC 05 00 00 00 00  fadd        qword ptr [__real@3f60624de0000001]
+  0000005C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000005F: D9 45 FC           fld         dword ptr [ebp-4]
+  00000062: D9 5C 38 E4        fstp        dword ptr [eax+edi-1Ch]
+  00000066: 8B 46 64           mov         eax,dword ptr [esi+64h]
+  00000069: D9 E8              fld1
+  0000006B: D9 54 38 E8        fst         dword ptr [eax+edi-18h]
+  0000006F: 8B 46 64           mov         eax,dword ptr [esi+64h]
+  00000072: D9 54 38 EC        fst         dword ptr [eax+edi-14h]
+  00000076: 8B 46 64           mov         eax,dword ptr [esi+64h]
+  00000079: D9 54 38 F0        fst         dword ptr [eax+edi-10h]
+  0000007D: D9 54 38 F4        fst         dword ptr [eax+edi-0Ch]
+  00000081: D9 54 38 F8        fst         dword ptr [eax+edi-8]
+  00000085: D9 5C 38 FC        fstp        dword ptr [eax+edi-4]
+  00000089: 8B 46 30           mov         eax,dword ptr [esi+30h]
+  0000008C: 03 46 34           add         eax,dword ptr [esi+34h]
+  0000008F: D9 EE              fldz
+  00000091: C1 E0 02           shl         eax,2
+  00000094: D1 E8              shr         eax,1
+  00000096: 3B D8              cmp         ebx,eax
+  00000098: 72 86              jb          00000020
+  0000009A: DD D8              fstp        st(0)
+  0000009C: 5F                 pop         edi
+  0000009D: 5E                 pop         esi
+  0000009E: 5B                 pop         ebx
+  0000009F: 8B E5              mov         esp,ebp
+  000000A1: 5D                 pop         ebp
+  000000A2: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          28 .rdata
+          A3 .text

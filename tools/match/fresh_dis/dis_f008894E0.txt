@@ -1,0 +1,186 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008894E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_DispatchEncounterFormation:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000A: E8 00 00 00 00     call        _FFX_Field_GetContextOffset
+  0000000F: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000012: 83 C4 04           add         esp,4
+  00000015: 8D 79 04           lea         edi,[ecx+4]
+  00000018: 0F B6 49 01        movzx       ecx,byte ptr [ecx+1]
+  0000001C: 83 E1 0F           and         ecx,0Fh
+  0000001F: 03 C9              add         ecx,ecx
+  00000021: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000024: 8D 59 FE           lea         ebx,[ecx-2]
+  00000027: 83 F9 02           cmp         ecx,2
+  0000002A: 75 03              jne         0000002F
+  0000002C: 83 CB FF           or          ebx,0FFFFFFFFh
+  0000002F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000032: 56                 push        esi
+  00000033: E8 00 00 00 00     call        _FFX_Input_ReadRepeatButtons
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 33 C9              xor         ecx,ecx
+  0000003D: 85 DB              test        ebx,ebx
+  0000003F: 7E 15              jle         00000056
+  00000041: 83 F9 04           cmp         ecx,4
+  00000044: 7D 10              jge         00000056
+  00000046: 8A 07              mov         al,byte ptr [edi]
+  00000048: 88 84 31 84 00 00  mov         byte ptr [ecx+esi+84h],al
+            00
+  0000004F: 4B                 dec         ebx
+  00000050: 47                 inc         edi
+  00000051: 41                 inc         ecx
+  00000052: 85 DB              test        ebx,ebx
+  00000054: 7F EB              jg          00000041
+  00000056: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000059: 83 EC 08           sub         esp,8
+  0000005C: D9 40 08           fld         dword ptr [eax+8]
+  0000005F: DD 1C 24           fstp        qword ptr [esp]
+  00000062: E8 00 00 00 00     call        _FFX_Field_EncounterStepAccum
+  00000067: 88 86 84 00 00 00  mov         byte ptr [esi+84h],al
+  0000006D: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000070: D9 40 0C           fld         dword ptr [eax+0Ch]
+  00000073: DD 1C 24           fstp        qword ptr [esp]
+  00000076: E8 00 00 00 00     call        _FFX_Field_EncounterStepAccum
+  0000007B: 88 86 85 00 00 00  mov         byte ptr [esi+85h],al
+  00000081: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000084: D9 00              fld         dword ptr [eax]
+  00000086: DD 1C 24           fstp        qword ptr [esp]
+  00000089: E8 00 00 00 00     call        _FFX_Field_EncounterStepAccum
+  0000008E: 88 86 86 00 00 00  mov         byte ptr [esi+86h],al
+  00000094: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000097: D9 40 04           fld         dword ptr [eax+4]
+  0000009A: DD 1C 24           fstp        qword ptr [esp]
+  0000009D: E8 00 00 00 00     call        _FFX_Field_EncounterStepAccum
+  000000A2: 83 C4 08           add         esp,8
+  000000A5: 88 86 87 00 00 00  mov         byte ptr [esi+87h],al
+  000000AB: 85 DB              test        ebx,ebx
+  000000AD: 7F 42              jg          000000F1
+  000000AF: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000B2: A9 00 20 00 00     test        eax,2000h
+  000000B7: 74 07              je          000000C0
+  000000B9: C6 86 90 00 00 00  mov         byte ptr [esi+90h],0BFh
+            BF
+  000000C0: 66 85 C0           test        ax,ax
+  000000C3: 79 07              jns         000000CC
+  000000C5: C6 86 90 00 00 00  mov         byte ptr [esi+90h],40h
+            40
+  000000CC: A9 00 10 00 00     test        eax,1000h
+  000000D1: 74 07              je          000000DA
+  000000D3: C6 86 91 00 00 00  mov         byte ptr [esi+91h],40h
+            40
+  000000DA: A9 00 40 00 00     test        eax,4000h
+  000000DF: 0F 84 93 00 00 00  je          00000178
+  000000E5: C6 86 91 00 00 00  mov         byte ptr [esi+91h],0BFh
+            BF
+  000000EC: E9 87 00 00 00     jmp         00000178
+  000000F1: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  000000F4: F7 C3 00 20 00 00  test        ebx,2000h
+  000000FA: 74 18              je          00000114
+  000000FC: 0F BE 07           movsx       eax,byte ptr [edi]
+  000000FF: 50                 push        eax
+  00000100: 6A 08              push        8
+  00000102: E8 00 00 00 00     call        _FFX_Field_EncounterPreBattleByte
+  00000107: D1 E8              shr         eax,1
+  00000109: 83 C4 08           add         esp,8
+  0000010C: 2C 80              sub         al,80h
+  0000010E: 88 86 90 00 00 00  mov         byte ptr [esi+90h],al
+  00000114: 66 85 DB           test        bx,bx
+  00000117: 79 1B              jns         00000134
+  00000119: 0F BE 47 01        movsx       eax,byte ptr [edi+1]
+  0000011D: 50                 push        eax
+  0000011E: 6A 09              push        9
+  00000120: E8 00 00 00 00     call        _FFX_Field_EncounterPreBattleByte
+  00000125: D1 E8              shr         eax,1
+  00000127: B1 7F              mov         cl,7Fh
+  00000129: 83 C4 08           add         esp,8
+  0000012C: 2A C8              sub         cl,al
+  0000012E: 88 8E 90 00 00 00  mov         byte ptr [esi+90h],cl
+  00000134: F7 C3 00 10 00 00  test        ebx,1000h
+  0000013A: 74 1B              je          00000157
+  0000013C: 0F BE 47 02        movsx       eax,byte ptr [edi+2]
+  00000140: 50                 push        eax
+  00000141: 6A 0A              push        0Ah
+  00000143: E8 00 00 00 00     call        _FFX_Field_EncounterPreBattleByte
+  00000148: D1 E8              shr         eax,1
+  0000014A: B1 7F              mov         cl,7Fh
+  0000014C: 83 C4 08           add         esp,8
+  0000014F: 2A C8              sub         cl,al
+  00000151: 88 8E 91 00 00 00  mov         byte ptr [esi+91h],cl
+  00000157: F7 C3 00 40 00 00  test        ebx,4000h
+  0000015D: 74 19              je          00000178
+  0000015F: 0F BE 47 03        movsx       eax,byte ptr [edi+3]
+  00000163: 50                 push        eax
+  00000164: 6A 0B              push        0Bh
+  00000166: E8 00 00 00 00     call        _FFX_Field_EncounterPreBattleByte
+  0000016B: D1 E8              shr         eax,1
+  0000016D: 83 C4 08           add         esp,8
+  00000170: 2C 80              sub         al,80h
+  00000172: 88 86 91 00 00 00  mov         byte ptr [esi+91h],al
+  00000178: 8A 86 86 00 00 00  mov         al,byte ptr [esi+86h]
+  0000017E: 3C 10              cmp         al,10h
+  00000180: 72 1D              jb          0000019F
+  00000182: 3C F0              cmp         al,0F0h
+  00000184: 76 39              jbe         000001BF
+  00000186: 66 8B 86 9A 00 00  mov         ax,word ptr [esi+9Ah]
+            00
+  0000018D: B9 FF 5F 00 00     mov         ecx,5FFFh
+  00000192: 66 23 C1           and         ax,cx
+  00000195: 0F B7 C8           movzx       ecx,ax
+  00000198: B8 00 20 00 00     mov         eax,2000h
+  0000019D: EB 17              jmp         000001B6
+  0000019F: 66 8B 86 9A 00 00  mov         ax,word ptr [esi+9Ah]
+            00
+  000001A6: B9 FF DF FF FF     mov         ecx,0FFFFDFFFh
+  000001AB: 66 23 C1           and         ax,cx
+  000001AE: 0F B7 C8           movzx       ecx,ax
+  000001B1: B8 00 80 FF FF     mov         eax,0FFFF8000h
+  000001B6: 0B C1              or          eax,ecx
+  000001B8: 66 89 86 9A 00 00  mov         word ptr [esi+9Ah],ax
+            00
+  000001BF: 8A 86 87 00 00 00  mov         al,byte ptr [esi+87h]
+  000001C5: 3C F0              cmp         al,0F0h
+  000001C7: 77 1A              ja          000001E3
+  000001C9: 3C 10              cmp         al,10h
+  000001CB: 73 40              jae         0000020D
+  000001CD: 0F B7 86 9A 00 00  movzx       eax,word ptr [esi+9Ah]
+            00
+  000001D4: B9 FF BF FF FF     mov         ecx,0FFFFBFFFh
+  000001D9: 66 23 C1           and         ax,cx
+  000001DC: B9 00 10 00 00     mov         ecx,1000h
+  000001E1: EB 14              jmp         000001F7
+  000001E3: 0F B7 86 9A 00 00  movzx       eax,word ptr [esi+9Ah]
+            00
+  000001EA: B9 FF EF FF FF     mov         ecx,0FFFFEFFFh
+  000001EF: 66 23 C1           and         ax,cx
+  000001F2: B9 00 40 00 00     mov         ecx,4000h
+  000001F7: 66 0B C1           or          ax,cx
+  000001FA: 0F B7 C0           movzx       eax,ax
+  000001FD: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000200: 0F B7 C0           movzx       eax,ax
+  00000203: 66 89 86 9A 00 00  mov         word ptr [esi+9Ah],ax
+            00
+  0000020A: 8A 45 0C           mov         al,byte ptr [ebp+0Ch]
+  0000020D: 5F                 pop         edi
+  0000020E: 5E                 pop         esi
+  0000020F: 5B                 pop         ebx
+  00000210: 8B E5              mov         esp,ebp
+  00000212: 5D                 pop         ebp
+  00000213: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         214 .text

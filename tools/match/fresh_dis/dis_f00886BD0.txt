@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00886BD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Music_BankLoadPoll:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 83 CE FF           or          esi,0FFFFFFFFh
+  0000000B: 33 C9              xor         ecx,ecx
+  0000000D: B8 70 FC CB 04     mov         eax,4CBFC70h
+  00000012: 8B 10              mov         edx,dword ptr [eax]
+  00000014: 85 D2              test        edx,edx
+  00000016: 79 02              jns         0000001A
+  00000018: 8B F1              mov         esi,ecx
+  0000001A: 3B FA              cmp         edi,edx
+  0000001C: 74 20              je          0000003E
+  0000001E: 83 C0 04           add         eax,4
+  00000021: 41                 inc         ecx
+  00000022: 3D 74 FC CB 04     cmp         eax,4CBFC74h
+  00000027: 7C E9              jl          00000012
+  00000029: 33 C0              xor         eax,eax
+  0000002B: 85 F6              test        esi,esi
+  0000002D: 0F 98 C0           sets        al
+  00000030: 48                 dec         eax
+  00000031: 23 C6              and         eax,esi
+  00000033: 89 3C 85 70 FC CB  mov         dword ptr [eax*4+04CBFC70h],edi
+            04
+  0000003A: 5F                 pop         edi
+  0000003B: 5E                 pop         esi
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+  0000003E: 5F                 pop         edi
+  0000003F: 8B C1              mov         eax,ecx
+  00000041: 5E                 pop         esi
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          44 .text

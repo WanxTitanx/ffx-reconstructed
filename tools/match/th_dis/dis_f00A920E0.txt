@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A920E0.obj
+
+File Type: COFF OBJECT
+
+@sub_A920E0@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 56                 push        esi
+  00000004: 8B 73 54           mov         esi,dword ptr [ebx+54h]
+  00000007: 85 F6              test        esi,esi
+  00000009: 74 2C              je          00000037
+  0000000B: 57                 push        edi
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: FF 36              push        dword ptr [esi]
+  00000012: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000015: E8 00 00 00 00     call        _free_1
+  0000001A: 56                 push        esi
+  0000001B: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000021: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000028: E8 00 00 00 00     call        _free_1
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 8B F7              mov         esi,edi
+  00000032: 85 FF              test        edi,edi
+  00000034: 75 DA              jne         00000010
+  00000036: 5F                 pop         edi
+  00000037: 8B 4B 50           mov         ecx,dword ptr [ebx+50h]
+  0000003A: 85 C9              test        ecx,ecx
+  0000003C: 74 21              je          0000005F
+  0000003E: 8B 43 4C           mov         eax,dword ptr [ebx+4Ch]
+  00000041: 03 C1              add         eax,ecx
+  00000043: 50                 push        eax
+  00000044: FF 73 44           push        dword ptr [ebx+44h]
+  00000047: E8 00 00 00 00     call        _realloc_0
+  0000004C: 89 43 44           mov         dword ptr [ebx+44h],eax
+  0000004F: 8B 43 50           mov         eax,dword ptr [ebx+50h]
+  00000052: 83 C4 08           add         esp,8
+  00000055: 01 43 4C           add         dword ptr [ebx+4Ch],eax
+  00000058: C7 43 50 00 00 00  mov         dword ptr [ebx+50h],0
+            00
+  0000005F: 5E                 pop         esi
+  00000060: C7 43 48 00 00 00  mov         dword ptr [ebx+48h],0
+            00
+  00000067: C7 43 54 00 00 00  mov         dword ptr [ebx+54h],0
+            00
+  0000006E: 5B                 pop         ebx
+  0000006F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          70 .text

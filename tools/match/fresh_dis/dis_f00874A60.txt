@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00874A60.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SetEventTextureAlpha:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 78 0C              js          00000016
+  0000000A: 83 F9 7F           cmp         ecx,7Fh
+  0000000D: 7E 09              jle         00000018
+  0000000F: B9 7F 00 00 00     mov         ecx,7Fh
+  00000014: EB 02              jmp         00000018
+  00000016: 33 C9              xor         ecx,ecx
+  00000018: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000001B: 85 D2              test        edx,edx
+  0000001D: 78 26              js          00000045
+  0000001F: 81 FA FF 00 00 00  cmp         edx,0FFh
+  00000025: 7E 03              jle         0000002A
+  00000027: 80 CA FF           or          dl,0FFh
+  0000002A: 8D 04 CD 00 00 00  lea         eax,[ecx*8]
+            00
+  00000031: 2B C1              sub         eax,ecx
+  00000033: 88 14 85 00 00 00  mov         byte ptr _g_FieldUnkVar_1327109[eax*4],dl
+            00
+  0000003A: 8D 04 CD 00 00 00  lea         eax,[ecx*8]
+            00
+  00000041: 2B C1              sub         eax,ecx
+  00000043: 5D                 pop         ebp
+  00000044: C3                 ret
+  00000045: 8D 04 CD 00 00 00  lea         eax,[ecx*8]
+            00
+  0000004C: 2B C1              sub         eax,ecx
+  0000004E: C6 04 85 00 00 00  mov         byte ptr _g_FieldUnkVar_1327109[eax*4],0
+            00 00
+  00000056: 8D 04 CD 00 00 00  lea         eax,[ecx*8]
+            00
+  0000005D: 2B C1              sub         eax,ecx
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

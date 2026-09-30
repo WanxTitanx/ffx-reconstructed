@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00804070.obj
+
+File Type: COFF OBJECT
+
+_sub_804070:
+  00000000: E8 00 00 00 00     call        _FFX_Btl_GetCurrentBattleFormationId
+  00000005: 8B D0              mov         edx,eax
+  00000007: 81 FA 80 02 00 00  cmp         edx,280h
+  0000000D: 74 50              je          0000005F
+  0000000F: 81 FA E5 01 00 00  cmp         edx,1E5h
+  00000015: 74 48              je          0000005F
+  00000017: 81 FA C6 02 00 00  cmp         edx,2C6h
+  0000001D: 74 40              je          0000005F
+  0000001F: 81 FA 50 02 00 00  cmp         edx,250h
+  00000025: 74 38              je          0000005F
+  00000027: 8D 82 8A FD FF FF  lea         eax,[edx-276h]
+  0000002D: 83 F8 07           cmp         eax,7
+  00000030: 76 2D              jbe         0000005F
+  00000032: 0F B7 05 00 00 00  movzx       eax,word ptr [_word_B587E0]
+            00
+  00000039: 3B D0              cmp         edx,eax
+  0000003B: 74 16              je          00000053
+  0000003D: 33 C9              xor         ecx,ecx
+  0000003F: 90                 nop
+  00000040: 83 C1 02           add         ecx,2
+  00000043: 83 F9 12           cmp         ecx,12h
+  00000046: 73 11              jae         00000059
+  00000048: 0F B7 81 00 00 00  movzx       eax,word ptr _word_B587E0[ecx]
+            00
+  0000004F: 3B D0              cmp         edx,eax
+  00000051: 75 ED              jne         00000040
+  00000053: B8 03 00 00 00     mov         eax,3
+  00000058: C3                 ret
+  00000059: B8 01 00 00 00     mov         eax,1
+  0000005E: C3                 ret
+  0000005F: 33 C0              xor         eax,eax
+  00000061: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          62 .text

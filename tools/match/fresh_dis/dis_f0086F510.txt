@@ -1,0 +1,109 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0086F510.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_SetControlledActor:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 85 FF              test        edi,edi
+  0000000E: 79 15              jns         00000025
+  00000010: 8A 06              mov         al,byte ptr [esi]
+  00000012: A8 40              test        al,40h
+  00000014: 74 0A              je          00000020
+  00000016: 0F B7 7E 0E        movzx       edi,word ptr [esi+0Eh]
+  0000001A: 24 BF              and         al,0BFh
+  0000001C: 88 06              mov         byte ptr [esi],al
+  0000001E: EB 19              jmp         00000039
+  00000020: 83 CF FF           or          edi,0FFFFFFFFh
+  00000023: EB 14              jmp         00000039
+  00000025: 8A 0E              mov         cl,byte ptr [esi]
+  00000027: F6 C1 40           test        cl,40h
+  0000002A: 75 0D              jne         00000039
+  0000002C: 66 8B 46 0A        mov         ax,word ptr [esi+0Ah]
+  00000030: 80 C9 40           or          cl,40h
+  00000033: 66 89 46 0E        mov         word ptr [esi+0Eh],ax
+  00000037: 88 0E              mov         byte ptr [esi],cl
+  00000039: 0F B7 46 0A        movzx       eax,word ptr [esi+0Ah]
+  0000003D: B9 FF FF 00 00     mov         ecx,0FFFFh
+  00000042: 66 3B C1           cmp         ax,cx
+  00000045: 74 50              je          00000097
+  00000047: 50                 push        eax
+  00000048: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  0000004D: B9 F7 FF 00 00     mov         ecx,0FFF7h
+  00000052: 66 21 48 36        and         word ptr [eax+36h],cx
+  00000056: 0F B6 1E           movzx       ebx,byte ptr [esi]
+  00000059: D1 EB              shr         ebx,1
+  0000005B: 83 C4 04           add         esp,4
+  0000005E: 83 E3 01           and         ebx,1
+  00000061: F6 06 22           test        byte ptr [esi],22h
+  00000064: B8 00 00 00 00     mov         eax,0
+  00000069: 0F 95 C0           setne       al
+  0000006C: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000006F: E8 00 00 00 00     call        _FFX_Field_ClearControlledActorsAndMotionFlags
+  00000074: F6 46 01 04        test        byte ptr [esi+1],4
+  00000078: 75 11              jne         0000008B
+  0000007A: F6 46 03 84        test        byte ptr [esi+3],84h
+  0000007E: 75 0B              jne         0000008B
+  00000080: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  00000084: 74 05              je          0000008B
+  00000086: E8 00 00 00 00     call        _FFX_Field_SelectControlledActorInstance
+  0000008B: 8A C3              mov         al,bl
+  0000008D: B2 FE              mov         dl,0FEh
+  0000008F: F6 EA              imul        dl
+  00000091: 32 06              xor         al,byte ptr [esi]
+  00000093: 24 02              and         al,2
+  00000095: 30 06              xor         byte ptr [esi],al
+  00000097: 85 FF              test        edi,edi
+  00000099: 78 21              js          000000BC
+  0000009B: 81 FF FF FF 00 00  cmp         edi,0FFFFh
+  000000A1: 74 19              je          000000BC
+  000000A3: 57                 push        edi
+  000000A4: E8 00 00 00 00     call        _FFX_Field_StoreAiPositionToGlobal
+  000000A9: 57                 push        edi
+  000000AA: E8 00 00 00 00     call        _FFX_Field_AiScriptStateMachine
+  000000AF: 66 83 48 36 08     or          word ptr [eax+36h],8
+  000000B4: 83 C4 08           add         esp,8
+  000000B7: 80 0E 20           or          byte ptr [esi],20h
+  000000BA: EB 03              jmp         000000BF
+  000000BC: 80 26 DF           and         byte ptr [esi],0DFh
+  000000BF: 0F B6 1E           movzx       ebx,byte ptr [esi]
+  000000C2: D1 EB              shr         ebx,1
+  000000C4: 83 E3 01           and         ebx,1
+  000000C7: F6 06 22           test        byte ptr [esi],22h
+  000000CA: B8 00 00 00 00     mov         eax,0
+  000000CF: 0F 95 C0           setne       al
+  000000D2: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000D5: E8 00 00 00 00     call        _FFX_Field_ClearControlledActorsAndMotionFlags
+  000000DA: F6 46 01 04        test        byte ptr [esi+1],4
+  000000DE: 75 11              jne         000000F1
+  000000E0: F6 46 03 84        test        byte ptr [esi+3],84h
+  000000E4: 75 0B              jne         000000F1
+  000000E6: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  000000EA: 74 05              je          000000F1
+  000000EC: E8 00 00 00 00     call        _FFX_Field_SelectControlledActorInstance
+  000000F1: 8A C3              mov         al,bl
+  000000F3: B2 FE              mov         dl,0FEh
+  000000F5: F6 EA              imul        dl
+  000000F7: 32 06              xor         al,byte ptr [esi]
+  000000F9: 5F                 pop         edi
+  000000FA: 24 02              and         al,2
+  000000FC: 30 06              xor         byte ptr [esi],al
+  000000FE: 5E                 pop         esi
+  000000FF: 5B                 pop         ebx
+  00000100: 5D                 pop         ebp
+  00000101: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         102 .text

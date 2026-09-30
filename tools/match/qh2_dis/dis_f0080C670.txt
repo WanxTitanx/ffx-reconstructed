@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0080C670.obj
+
+File Type: COFF OBJECT
+
+_sub_80C670:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 0F B7 8F 1A 02 00  movzx       ecx,word ptr [edi+21Ah]
+            00
+  0000000F: 8B C1              mov         eax,ecx
+  00000011: 25 00 F0 00 00     and         eax,0F000h
+  00000016: 3D 00 30 00 00     cmp         eax,3000h
+  0000001B: 76 58              jbe         00000075
+  0000001D: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000020: 3D 00 80 00 00     cmp         eax,8000h
+  00000025: 75 2D              jne         00000054
+  00000027: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  0000002B: 50                 push        eax
+  0000002C: FF B7 20 02 00 00  push        dword ptr [edi+220h]
+  00000032: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _sub_800F80
+  0000003E: 83 C4 0C           add         esp,0Ch
+  00000041: 3B 87 20 03 00 00  cmp         eax,dword ptr [edi+320h]
+  00000047: 0F 85 BF 00 00 00  jne         0000010C
+  0000004D: 5F                 pop         edi
+  0000004E: 8D 46 04           lea         eax,[esi+4]
+  00000051: 5E                 pop         esi
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+  00000054: 3D 00 90 00 00     cmp         eax,9000h
+  00000059: 0F 85 B4 00 00 00  jne         00000113
+  0000005F: 83 3D 00 00 00 00  cmp         dword ptr [_unk_11A004B],0
+            00
+  00000066: 0F 84 A0 00 00 00  je          0000010C
+  0000006C: 8B C6              mov         eax,esi
+  0000006E: 5F                 pop         edi
+  0000006F: 83 C0 02           add         eax,2
+  00000072: 5E                 pop         esi
+  00000073: 5D                 pop         ebp
+  00000074: C3                 ret
+  00000075: 74 7D              je          000000F4
+  00000077: F7 C1 00 F0 00 00  test        ecx,0F000h
+  0000007D: 75 1D              jne         0000009C
+  0000007F: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000082: 0F BF 46 02        movsx       eax,word ptr [esi+2]
+  00000086: 50                 push        eax
+  00000087: E8 00 00 00 00     call        _sub_7E5C60
+  0000008C: 83 C4 04           add         esp,4
+  0000008F: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  00000095: 5F                 pop         edi
+  00000096: 8D 46 04           lea         eax,[esi+4]
+  00000099: 5E                 pop         esi
+  0000009A: 5D                 pop         ebp
+  0000009B: C3                 ret
+  0000009C: 3D 00 10 00 00     cmp         eax,1000h
+  000000A1: 75 21              jne         000000C4
+  000000A3: FF B7 20 02 00 00  push        dword ptr [edi+220h]
+  000000A9: E8 00 00 00 00     call        _sub_800CC0
+  000000AE: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000B1: 83 C4 04           add         esp,4
+  000000B4: F6 69 02           imul        byte ptr [ecx+2]
+  000000B7: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  000000BD: 5F                 pop         edi
+  000000BE: 8D 41 04           lea         eax,[ecx+4]
+  000000C1: 5E                 pop         esi
+  000000C2: 5D                 pop         ebp
+  000000C3: C3                 ret
+  000000C4: 3D 00 20 00 00     cmp         eax,2000h
+  000000C9: 75 22              jne         000000ED
+  000000CB: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000000CE: 8B 87 20 02 00 00  mov         eax,dword ptr [edi+220h]
+  000000D4: 0F BF 4E 02        movsx       ecx,word ptr [esi+2]
+  000000D8: D9 04 01           fld         dword ptr [ecx+eax]
+  000000DB: E8 00 00 00 00     call        __ftol2_sse
+  000000E0: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  000000E6: 5F                 pop         edi
+  000000E7: 8D 46 04           lea         eax,[esi+4]
+  000000EA: 5E                 pop         esi
+  000000EB: 5D                 pop         ebp
+  000000EC: C3                 ret
+  000000ED: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000F0: 5F                 pop         edi
+  000000F1: 5E                 pop         esi
+  000000F2: 5D                 pop         ebp
+  000000F3: C3                 ret
+  000000F4: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000000F7: 0F BF 46 02        movsx       eax,word ptr [esi+2]
+  000000FB: 50                 push        eax
+  000000FC: E8 00 00 00 00     call        _sub_7FE9C0
+  00000101: 83 C4 04           add         esp,4
+  00000104: 85 C0              test        eax,eax
+  00000106: 0F 89 41 FF FF FF  jns         0000004D
+  0000010C: C6 87 10 02 00 00  mov         byte ptr [edi+210h],1
+            01
+  00000113: 5F                 pop         edi
+  00000114: 8B C6              mov         eax,esi
+  00000116: 5E                 pop         esi
+  00000117: 5D                 pop         ebp
+  00000118: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         119 .text

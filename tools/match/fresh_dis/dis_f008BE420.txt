@@ -1,0 +1,29 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008BE420.obj
+
+File Type: COFF OBJECT
+
+_FFX_MenuPad_ReadMixEdgeMode:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdgeModeFlag
+  00000008: 83 F8 01           cmp         eax,1
+  0000000B: 75 0D              jne         0000001A
+  0000000D: FF 75 10           push        dword ptr [ebp+10h]
+  00000010: E8 00 00 00 00     call        _FFX_MenuPad_GetBoundKey
+  00000015: 83 C4 04           add         esp,4
+  00000018: 5D                 pop         ebp
+  00000019: C3                 ret
+  0000001A: 0F BE 45 14        movsx       eax,byte ptr [ebp+14h]
+  0000001E: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000021: 5D                 pop         ebp
+  00000022: E9 00 00 00 00     jmp         _FFX_Input_ReadPadByteAtOffset12
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .text

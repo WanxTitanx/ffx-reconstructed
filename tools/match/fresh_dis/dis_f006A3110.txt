@@ -1,0 +1,104 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006A3110.obj
+
+File Type: COFF OBJECT
+
+@FFX_Material_SetLightMatrices@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 6A 40              push        40h
+  00000008: 8D 46 54           lea         eax,[esi+54h]
+  0000000B: 52                 push        edx
+  0000000C: 50                 push        eax
+  0000000D: C6 46 52 01        mov         byte ptr [esi+52h],1
+  00000011: E8 00 00 00 00     call        _qmemcpy
+  00000016: 6A 40              push        40h
+  00000018: FF 75 08           push        dword ptr [ebp+8]
+  0000001B: 8D 86 94 00 00 00  lea         eax,[esi+94h]
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _qmemcpy
+  00000027: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000002A: 83 C4 18           add         esp,18h
+  0000002D: D9 9E D4 00 00 00  fstp        dword ptr [esi+0D4h]
+  00000033: 80 7E 52 00        cmp         byte ptr [esi+52h],0
+  00000037: 0F 84 C3 00 00 00  je          00000100
+  0000003D: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000040: 85 C0              test        eax,eax
+  00000042: 0F 84 B8 00 00 00  je          00000100
+  00000048: 8B 00              mov         eax,dword ptr [eax]
+  0000004A: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000004F: 57                 push        edi
+  00000050: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000053: BF 00 00 00 00     mov         edi,0
+  00000058: 0F 84 A1 00 00 00  je          000000FF
+  0000005E: 53                 push        ebx
+  0000005F: 90                 nop
+  00000060: 8B 4E 14           mov         ecx,dword ptr [esi+14h]
+  00000063: 8B 01              mov         eax,dword ptr [ecx]
+  00000065: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000006A: 83 F8 01           cmp         eax,1
+  0000006D: 77 0D              ja          0000007C
+  0000006F: 85 C0              test        eax,eax
+  00000071: 74 05              je          00000078
+  00000073: 8D 41 04           lea         eax,[ecx+4]
+  00000076: EB 07              jmp         0000007F
+  00000078: 33 C0              xor         eax,eax
+  0000007A: EB 03              jmp         0000007F
+  0000007C: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000007F: 8B 1C B8           mov         ebx,dword ptr [eax+edi*4]
+  00000082: 68 00 00 00 00     push        offset ??_C@_08MAJPGGFK@LvMatrix?$AA@
+  00000087: FF 76 28           push        dword ptr [esi+28h]
+  0000008A: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  0000008F: 83 C4 08           add         esp,8
+  00000092: 85 C0              test        eax,eax
+  00000094: 74 10              je          000000A6
+  00000096: 8D 4E 54           lea         ecx,[esi+54h]
+  00000099: 51                 push        ecx
+  0000009A: 50                 push        eax
+  0000009B: FF 73 04           push        dword ptr [ebx+4]
+  0000009E: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer
+  000000A3: 83 C4 0C           add         esp,0Ch
+  000000A6: 68 00 00 00 00     push        offset ??_C@_08PEMEFJBF@LcMatrix?$AA@
+  000000AB: FF 76 28           push        dword ptr [esi+28h]
+  000000AE: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  000000B3: 83 C4 08           add         esp,8
+  000000B6: 85 C0              test        eax,eax
+  000000B8: 74 13              je          000000CD
+  000000BA: 8D 8E 94 00 00 00  lea         ecx,[esi+94h]
+  000000C0: 51                 push        ecx
+  000000C1: 50                 push        eax
+  000000C2: FF 73 04           push        dword ptr [ebx+4]
+  000000C5: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer
+  000000CA: 83 C4 0C           add         esp,0Ch
+  000000CD: 68 00 00 00 00     push        offset ??_C@_08DLHKJOIN@MdiLight?$AA@
+  000000D2: FF 76 28           push        dword ptr [esi+28h]
+  000000D5: E8 00 00 00 00     call        _FFX_Phyre_FindShaderParamDefinitionByName
+  000000DA: 83 C4 08           add         esp,8
+  000000DD: 85 C0              test        eax,eax
+  000000DF: 74 13              je          000000F4
+  000000E1: 8D 8E D4 00 00 00  lea         ecx,[esi+0D4h]
+  000000E7: 51                 push        ecx
+  000000E8: 50                 push        eax
+  000000E9: FF 73 04           push        dword ptr [ebx+4]
+  000000EC: E8 00 00 00 00     call        _FFX_Binary_ReadStructToBuffer
+  000000F1: 83 C4 0C           add         esp,0Ch
+  000000F4: 47                 inc         edi
+  000000F5: 3B 7D 08           cmp         edi,dword ptr [ebp+8]
+  000000F8: 0F 8C 62 FF FF FF  jl          00000060
+  000000FE: 5B                 pop         ebx
+  000000FF: 5F                 pop         edi
+  00000100: 5E                 pop         esi
+  00000101: 5D                 pop         ebp
+  00000102: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          1B .rdata
+         105 .text

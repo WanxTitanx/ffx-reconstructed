@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0055B8F0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PSceneNode_ApplyWorldMatrixFromParent@8:
+  00000000: 8B 41 58           mov         eax,dword ptr [ecx+58h]
+  00000003: 85 C0              test        eax,eax
+  00000005: 74 0B              je          00000012
+  00000007: 52                 push        edx
+  00000008: 50                 push        eax
+  00000009: E8 00 00 00 00     call        _Phyre_PSceneNode_setMatricesForWorldMatrix
+  0000000E: 83 C4 08           add         esp,8
+  00000011: C3                 ret
+  00000012: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000015: 85 C0              test        eax,eax
+  00000017: 74 12              je          0000002B
+  00000019: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000001C: 85 C0              test        eax,eax
+  0000001E: 74 0B              je          0000002B
+  00000020: 52                 push        edx
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _Matrix4x4_CopyTransposed
+  00000027: 83 C4 08           add         esp,8
+  0000002A: C3                 ret
+  0000002B: 33 C0              xor         eax,eax
+  0000002D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          2E .text

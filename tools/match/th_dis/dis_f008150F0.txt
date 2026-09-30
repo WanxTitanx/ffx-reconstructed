@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008150F0.obj
+
+File Type: COFF OBJECT
+
+_sub_8150F0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B B0 20 02 00 00  mov         esi,dword ptr [eax+220h]
+  0000000D: 0F BE 86 A1 00 00  movsx       eax,byte ptr [esi+0A1h]
+            00
+  00000014: 8A 8E A2 00 00 00  mov         cl,byte ptr [esi+0A2h]
+  0000001A: D9 04 30           fld         dword ptr [eax+esi]
+  0000001D: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000020: 84 C9              test        cl,cl
+  00000022: 74 08              je          0000002C
+  00000024: 0F BE C1           movsx       eax,cl
+  00000027: D9 04 30           fld         dword ptr [eax+esi]
+  0000002A: EB 02              jmp         0000002E
+  0000002C: D9 EE              fldz
+  0000002E: 0F BE 86 A0 00 00  movsx       eax,byte ptr [esi+0A0h]
+            00
+  00000035: D9 04 30           fld         dword ptr [eax+esi]
+  00000038: E8 00 00 00 00     call        __ftol2_sse
+  0000003D: 25 FF 0F 00 00     and         eax,0FFFh
+  00000042: 05 00 04 00 00     add         eax,400h
+  00000047: D9 04 85 00 00 00  fld         dword ptr _flt_C43BE0[eax*4]
+            00
+  0000004E: 25 FF 0F 00 00     and         eax,0FFFh
+  00000053: D9 45 08           fld         dword ptr [ebp+8]
+  00000056: D9 C0              fld         st(0)
+  00000058: DE CA              fmulp       st(2),st
+  0000005A: D9 46 44           fld         dword ptr [esi+44h]
+  0000005D: DE C2              faddp       st(2),st
+  0000005F: DD 05 00 00 00 00  fld         qword ptr [__real@3fb0000000000000]
+  00000065: DC CA              fmul        st(2),st
+  00000067: D9 CA              fxch        st(2)
+  00000069: D9 9E 94 00 00 00  fstp        dword ptr [esi+94h]
+  0000006F: D8 0C 85 00 00 00  fmul        dword ptr _flt_C44BE0[eax*4]
+            00
+  00000076: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000079: D8 46 40           fadd        dword ptr [esi+40h]
+  0000007C: D8 C9              fmul        st,st(1)
+  0000007E: D9 9E 90 00 00 00  fstp        dword ptr [esi+90h]
+  00000084: D9 46 48           fld         dword ptr [esi+48h]
+  00000087: D9 CA              fxch        st(2)
+  00000089: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000008C: D9 45 08           fld         dword ptr [ebp+8]
+  0000008F: DE C2              faddp       st(2),st
+  00000091: DE C9              fmulp       st(1),st
+  00000093: D9 9E 98 00 00 00  fstp        dword ptr [esi+98h]
+  00000099: 5E                 pop         esi
+  0000009A: 5D                 pop         ebp
+  0000009B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          10 .rdata
+          9C .text

@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F3770.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PhysicsBody_RefreshCameraNodes@4:
+  00000000: 53                 push        ebx
+  00000001: 8B D9              mov         ebx,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 7B 48           mov         edi,dword ptr [ebx+48h]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 5F                 pop         edi
+  0000000C: 33 C0              xor         eax,eax
+  0000000E: 5B                 pop         ebx
+  0000000F: C3                 ret
+  00000010: 56                 push        esi
+  00000011: 8B 77 04           mov         esi,dword ptr [edi+4]
+  00000014: 85 F6              test        esi,esi
+  00000016: 74 27              je          0000003F
+  00000018: 56                 push        esi
+  00000019: 53                 push        ebx
+  0000001A: E8 00 00 00 00     call        _Phyre_PhysicsBody_UpdateSkeletonNode
+  0000001F: 8B 8E B0 00 00 00  mov         ecx,dword ptr [esi+0B0h]
+  00000025: 83 C4 08           add         esp,8
+  00000028: 85 C9              test        ecx,ecx
+  0000002A: 74 03              je          0000002F
+  0000002C: 89 59 08           mov         dword ptr [ecx+8],ebx
+  0000002F: 85 C0              test        eax,eax
+  00000031: 75 17              jne         0000004A
+  00000033: 89 BE B0 00 00 00  mov         dword ptr [esi+0B0h],edi
+  00000039: 8B 36              mov         esi,dword ptr [esi]
+  0000003B: 85 F6              test        esi,esi
+  0000003D: 75 D9              jne         00000018
+  0000003F: 89 5F 08           mov         dword ptr [edi+8],ebx
+  00000042: 8B 3F              mov         edi,dword ptr [edi]
+  00000044: 85 FF              test        edi,edi
+  00000046: 75 C9              jne         00000011
+  00000048: 33 C0              xor         eax,eax
+  0000004A: 5E                 pop         esi
+  0000004B: 5F                 pop         edi
+  0000004C: 5B                 pop         ebx
+  0000004D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4E .text

@@ -1,0 +1,83 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005B80D0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_ShadowMesh_DeepCopyAndRemap@8:
+  00000000: 53                 push        ebx
+  00000001: 57                 push        edi
+  00000002: 8B FA              mov         edi,edx
+  00000004: 8B 07              mov         eax,dword ptr [edi]
+  00000006: 83 C0 0F           add         eax,0Fh
+  00000009: 83 E0 F0           and         eax,0FFFFFFF0h
+  0000000C: 50                 push        eax
+  0000000D: 8D 41 1C           lea         eax,[ecx+1Ch]
+  00000010: 50                 push        eax
+  00000011: E8 00 00 00 00     call        _Phyre_ScratchBuffer_Alloc
+  00000016: 8B D8              mov         ebx,eax
+  00000018: 83 C4 08           add         esp,8
+  0000001B: 85 DB              test        ebx,ebx
+  0000001D: 0F 84 80 00 00 00  je          000000A3
+  00000023: 56                 push        esi
+  00000024: FF 37              push        dword ptr [edi]
+  00000026: 57                 push        edi
+  00000027: 53                 push        ebx
+  00000028: E8 00 00 00 00     call        _memcpy
+  0000002D: 8B 77 08           mov         esi,dword ptr [edi+8]
+  00000030: 83 C4 0C           add         esp,0Ch
+  00000033: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000039: 74 62              je          0000009D
+  0000003B: 8B 4F 0C           mov         ecx,dword ptr [edi+0Ch]
+  0000003E: 83 C1 08           add         ecx,8
+  00000041: 0F B6 41 FA        movzx       eax,byte ptr [ecx-6]
+  00000045: 83 F8 42           cmp         eax,42h
+  00000048: 74 2B              je          00000075
+  0000004A: 3D D9 00 00 00     cmp         eax,0D9h
+  0000004F: 74 24              je          00000075
+  00000051: 3D DA 00 00 00     cmp         eax,0DAh
+  00000056: 74 1D              je          00000075
+  00000058: 3D DB 00 00 00     cmp         eax,0DBh
+  0000005D: 74 16              je          00000075
+  0000005F: 3D DC 00 00 00     cmp         eax,0DCh
+  00000064: 74 0F              je          00000075
+  00000066: 83 F8 12           cmp         eax,12h
+  00000069: 74 0A              je          00000075
+  0000006B: 83 F8 43           cmp         eax,43h
+  0000006E: 74 05              je          00000075
+  00000070: 83 F8 44           cmp         eax,44h
+  00000073: 75 22              jne         00000097
+  00000075: 0F B7 11           movzx       edx,word ptr [ecx]
+  00000078: 33 FF              xor         edi,edi
+  0000007A: 8B 04 1A           mov         eax,dword ptr [edx+ebx]
+  0000007D: 83 E8 42           sub         eax,42h
+  00000080: 74 06              je          00000088
+  00000082: 48                 dec         eax
+  00000083: 83 F8 01           cmp         eax,1
+  00000086: 77 0B              ja          00000093
+  00000088: 8B 44 1A 0C        mov         eax,dword ptr [edx+ebx+0Ch]
+  0000008C: 85 C0              test        eax,eax
+  0000008E: 74 03              je          00000093
+  00000090: 8B 78 08           mov         edi,dword ptr [eax+8]
+  00000093: 89 7C 1A 04        mov         dword ptr [edx+ebx+4],edi
+  00000097: 83 C1 10           add         ecx,10h
+  0000009A: 4E                 dec         esi
+  0000009B: 75 A4              jne         00000041
+  0000009D: 5E                 pop         esi
+  0000009E: 5F                 pop         edi
+  0000009F: 8B C3              mov         eax,ebx
+  000000A1: 5B                 pop         ebx
+  000000A2: C3                 ret
+  000000A3: 5F                 pop         edi
+  000000A4: 33 C0              xor         eax,eax
+  000000A6: 5B                 pop         ebx
+  000000A7: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          A8 .text

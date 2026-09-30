@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00825770.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_RelocatePtrsInWorkBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 8B DF              mov         ebx,edi
+  0000000A: 2B 1F              sub         ebx,dword ptr [edi]
+  0000000C: 74 51              je          0000005F
+  0000000E: 56                 push        esi
+  0000000F: 33 F6              xor         esi,esi
+  00000011: 89 3F              mov         dword ptr [edi],edi
+  00000013: 39 77 04           cmp         dword ptr [edi+4],esi
+  00000016: 76 46              jbe         0000005E
+  00000018: 8B 44 F7 10        mov         eax,dword ptr [edi+esi*8+10h]
+  0000001C: 85 C0              test        eax,eax
+  0000001E: 74 38              je          00000058
+  00000020: 03 C3              add         eax,ebx
+  00000022: 89 44 F7 10        mov         dword ptr [edi+esi*8+10h],eax
+  00000026: 85 F6              test        esi,esi
+  00000028: 74 23              je          0000004D
+  0000002A: 83 FE 01           cmp         esi,1
+  0000002D: 75 0A              jne         00000039
+  0000002F: FF 77 18           push        dword ptr [edi+18h]
+  00000032: E8 00 00 00 00     call        _SgMem_RelocateBufferPointers
+  00000037: EB 1C              jmp         00000055
+  00000039: 83 FE 04           cmp         esi,4
+  0000003C: 75 1A              jne         00000058
+  0000003E: 8D 47 30           lea         eax,[edi+30h]
+  00000041: 53                 push        ebx
+  00000042: 50                 push        eax
+  00000043: E8 00 00 00 00     call        _FFX_Memory_OffsetDwordArray
+  00000048: 83 C4 08           add         esp,8
+  0000004B: EB 0B              jmp         00000058
+  0000004D: FF 77 10           push        dword ptr [edi+10h]
+  00000050: E8 00 00 00 00     call        _FFX_Debug_ModelBrowserAnimate
+  00000055: 83 C4 04           add         esp,4
+  00000058: 46                 inc         esi
+  00000059: 3B 77 04           cmp         esi,dword ptr [edi+4]
+  0000005C: 72 BA              jb          00000018
+  0000005E: 5E                 pop         esi
+  0000005F: 5F                 pop         edi
+  00000060: 5B                 pop         ebx
+  00000061: 5D                 pop         ebp
+  00000062: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          63 .text

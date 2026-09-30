@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0056F510.obj
+
+File Type: COFF OBJECT
+
+@PScript_Read3IntDispatchUInt32@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B F9              mov         edi,ecx
+  00000006: 85 D2              test        edx,edx
+  00000008: 75 07              jne         00000011
+  0000000A: 33 C0              xor         eax,eax
+  0000000C: 5F                 pop         edi
+  0000000D: 5D                 pop         ebp
+  0000000E: C2 0C 00           ret         0Ch
+  00000011: 56                 push        esi
+  00000012: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000015: 83 06 04           add         dword ptr [esi],4
+  00000018: 8B 06              mov         eax,dword ptr [esi]
+  0000001A: 8B 50 FC           mov         edx,dword ptr [eax-4]
+  0000001D: 8D 48 04           lea         ecx,[eax+4]
+  00000020: 89 0E              mov         dword ptr [esi],ecx
+  00000022: 8B 41 FC           mov         eax,dword ptr [ecx-4]
+  00000025: 83 C1 04           add         ecx,4
+  00000028: 89 0E              mov         dword ptr [esi],ecx
+  0000002A: FF 71 FC           push        dword ptr [ecx-4]
+  0000002D: 50                 push        eax
+  0000002E: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000031: 52                 push        edx
+  00000032: FF D0              call        eax
+  00000034: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000037: 8B F8              mov         edi,eax
+  00000039: 85 F6              test        esi,esi
+  0000003B: 74 1E              je          0000005B
+  0000003D: E8 00 00 00 00     call        _Phyre_PTypeDefault_UInt32_GetSingleton
+  00000042: 39 45 08           cmp         dword ptr [ebp+8],eax
+  00000045: 75 14              jne         0000005B
+  00000047: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000004A: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000050: 5E                 pop         esi
+  00000051: B8 01 00 00 00     mov         eax,1
+  00000056: 5F                 pop         edi
+  00000057: 5D                 pop         ebp
+  00000058: C2 0C 00           ret         0Ch
+  0000005B: 5E                 pop         esi
+  0000005C: 33 C0              xor         eax,eax
+  0000005E: 5F                 pop         edi
+  0000005F: 5D                 pop         ebp
+  00000060: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          63 .text

@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00889810.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_EncounterFormationSelect:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 14           push        dword ptr [ebp+14h]
+  00000006: E8 00 00 00 00     call        _AsyncQueue_ReadFirstEntry
+  0000000B: 0F B7 D0           movzx       edx,ax
+  0000000E: 8B C2              mov         eax,edx
+  00000010: 25 00 A0 00 00     and         eax,0A000h
+  00000015: 83 C4 04           add         esp,4
+  00000018: 8B CA              mov         ecx,edx
+  0000001A: 3D 00 A0 00 00     cmp         eax,0A000h
+  0000001F: 75 06              jne         00000027
+  00000021: 81 E1 FF 5F 00 00  and         ecx,5FFFh
+  00000027: 8B C1              mov         eax,ecx
+  00000029: 25 00 50 00 00     and         eax,5000h
+  0000002E: BA 00 50 00 00     mov         edx,5000h
+  00000033: 66 3B C2           cmp         ax,dx
+  00000036: 75 06              jne         0000003E
+  00000038: 81 E1 FF AF FF FF  and         ecx,0FFFFAFFFh
+  0000003E: 56                 push        esi
+  0000003F: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000042: 8A 56 01           mov         dl,byte ptr [esi+1]
+  00000045: 0F B6 C2           movzx       eax,dl
+  00000048: 83 E0 0F           and         eax,0Fh
+  0000004B: C0 EA 04           shr         dl,4
+  0000004E: 03 C0              add         eax,eax
+  00000050: 80 FA 02           cmp         dl,2
+  00000053: 75 06              jne         0000005B
+  00000055: C6 46 01 22        mov         byte ptr [esi+1],22h
+  00000059: EB 05              jmp         00000060
+  0000005B: 80 FA 06           cmp         dl,6
+  0000005E: 74 14              je          00000074
+  00000060: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000063: 5E                 pop         esi
+  00000064: 66 89 88 9A 00 00  mov         word ptr [eax+9Ah],cx
+            00
+  0000006B: 66 89 88 98 00 00  mov         word ptr [eax+98h],cx
+            00
+  00000072: 5D                 pop         ebp
+  00000073: C3                 ret
+  00000074: 83 F8 03           cmp         eax,3
+  00000077: 7E 15              jle         0000008E
+  00000079: 83 C0 FD           add         eax,0FFFFFFFDh
+  0000007C: 50                 push        eax
+  0000007D: 8D 46 03           lea         eax,[esi+3]
+  00000080: 68 80 00 00 00     push        80h
+  00000085: 50                 push        eax
+  00000086: E8 00 00 00 00     call        _memset
+  0000008B: 83 C4 0C           add         esp,0Ch
+  0000008E: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000091: C6 46 01 42        mov         byte ptr [esi+1],42h
+  00000095: C7 80 98 00 00 00  mov         dword ptr [eax+98h],0
+            00 00 00 00
+  0000009F: 5E                 pop         esi
+  000000A0: 5D                 pop         ebp
+  000000A1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A2 .text

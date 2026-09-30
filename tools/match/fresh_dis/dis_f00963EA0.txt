@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00963EA0.obj
+
+File Type: COFF OBJECT
+
+_LuaParser_parseLocalFunction:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 81 7F 0C 20 01 00  cmp         dword ptr [edi+0Ch],120h
+            00
+  00000010: 8B 5F 1C           mov         ebx,dword ptr [edi+1Ch]
+  00000013: 74 0E              je          00000023
+  00000015: 68 20 01 00 00     push        120h
+  0000001A: 57                 push        edi
+  0000001B: E8 00 00 00 00     call        _LuaParser_raiseExpectedError
+  00000020: 83 C4 08           add         esp,8
+  00000023: 8B 77 10           mov         esi,dword ptr [edi+10h]
+  00000026: 57                 push        edi
+  00000027: E8 00 00 00 00     call        _LuaParser_parseStatementOrExpression
+  0000002C: 56                 push        esi
+  0000002D: 57                 push        edi
+  0000002E: E8 00 00 00 00     call        _LuaParser_registerLocalVar
+  00000033: 8B 77 1C           mov         esi,dword ptr [edi+1Ch]
+  00000036: 57                 push        edi
+  00000037: FE 46 2E           inc         byte ptr [esi+2Eh]
+  0000003A: 0F B6 46 2E        movzx       eax,byte ptr [esi+2Eh]
+  0000003E: 8B 4E 28           mov         ecx,dword ptr [esi+28h]
+  00000041: 03 C8              add         ecx,eax
+  00000043: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000046: 8B 40 2C           mov         eax,dword ptr [eax+2Ch]
+  00000049: 8B 00              mov         eax,dword ptr [eax]
+  0000004B: 0F BF 44 48 FE     movsx       eax,word ptr [eax+ecx*2-2]
+  00000050: 8D 14 40           lea         edx,[eax+eax*2]
+  00000053: 8B 06              mov         eax,dword ptr [esi]
+  00000055: 8B 48 18           mov         ecx,dword ptr [eax+18h]
+  00000058: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000005B: 89 44 91 04        mov         dword ptr [ecx+edx*4+4],eax
+  0000005F: E8 00 00 00 00     call        _LuaParser_functionDefinition
+  00000064: 8B 4B 0C           mov         ecx,dword ptr [ebx+0Ch]
+  00000067: 8B 53 28           mov         edx,dword ptr [ebx+28h]
+  0000006A: 8B 49 2C           mov         ecx,dword ptr [ecx+2Ch]
+  0000006D: 8B 43 14           mov         eax,dword ptr [ebx+14h]
+  00000070: 8B 09              mov         ecx,dword ptr [ecx]
+  00000072: 83 C4 10           add         esp,10h
+  00000075: 03 55 08           add         edx,dword ptr [ebp+8]
+  00000078: 5F                 pop         edi
+  00000079: 5E                 pop         esi
+  0000007A: 0F BF 0C 51        movsx       ecx,word ptr [ecx+edx*2]
+  0000007E: 8D 14 49           lea         edx,[ecx+ecx*2]
+  00000081: 8B 0B              mov         ecx,dword ptr [ebx]
+  00000083: 5B                 pop         ebx
+  00000084: 8B 49 18           mov         ecx,dword ptr [ecx+18h]
+  00000087: 89 44 91 04        mov         dword ptr [ecx+edx*4+4],eax
+  0000008B: 5D                 pop         ebp
+  0000008C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          8D .text

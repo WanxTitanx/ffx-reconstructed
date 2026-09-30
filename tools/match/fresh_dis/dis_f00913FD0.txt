@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00913FD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_Loose_913FD0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 60           sub         esp,60h
+  00000006: D9 EE              fldz
+  00000008: 56                 push        esi
+  00000009: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000C: D9 5D F0           fstp        dword ptr [ebp-10h]
+  0000000F: D9 E8              fld1
+  00000011: 6A 40              push        40h
+  00000013: D9 55 F8           fst         dword ptr [ebp-8]
+  00000016: 8D 86 78 7F 06 00  lea         eax,[esi+67F78h]
+  0000001C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001F: 50                 push        eax
+  00000020: D9 86 7C E0 0B 00  fld         dword ptr [esi+0BE07Ch]
+  00000026: 8D 45 A0           lea         eax,[ebp-60h]
+  00000029: D9 E0              fchs
+  0000002B: 50                 push        eax
+  0000002C: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000002F: E8 00 00 00 00     call        _qmemcpy
+  00000034: 8D 45 A0           lea         eax,[ebp-60h]
+  00000037: 50                 push        eax
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _FFXVu0InversMatrix
+  0000003E: 8D 45 F0           lea         eax,[ebp-10h]
+  00000041: 50                 push        eax
+  00000042: 8D 45 A0           lea         eax,[ebp-60h]
+  00000045: 50                 push        eax
+  00000046: 8D 45 E0           lea         eax,[ebp-20h]
+  00000049: 50                 push        eax
+  0000004A: E8 00 00 00 00     call        _FFX_Math_Mat4x4MulVec4_Copy
+  0000004F: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000052: D9 86 60 83 06 00  fld         dword ptr [esi+68360h]
+  00000058: 83 C4 20           add         esp,20h
+  0000005B: DD 05 00 00 00 00  fld         qword ptr [__real@406a000000000000]
+  00000061: D9 C0              fld         st(0)
+  00000063: 5E                 pop         esi
+  00000064: DE F2              fdivrp      st(2),st
+  00000066: D9 C9              fxch        st(1)
+  00000068: DC 0D 00 00 00 00  fmul        qword ptr [__real@4050000000000000]
+  0000006E: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000071: D9 45 08           fld         dword ptr [ebp+8]
+  00000074: DE FA              fdivp       st(2),st
+  00000076: DC C9              fmul        st(1),st
+  00000078: DE E9              fsubp       st(1),st
+  0000007A: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000007D: D9 45 08           fld         dword ptr [ebp+8]
+  00000080: 8B E5              mov         esp,ebp
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          84 .text

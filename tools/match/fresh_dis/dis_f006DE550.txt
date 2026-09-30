@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DE550.obj
+
+File Type: COFF OBJECT
+
+@FFX_Shader_UploadConstants@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 22              je          0000002C
+  0000000A: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  0000000D: 85 C9              test        ecx,ecx
+  0000000F: 74 0D              je          0000001E
+  00000011: 85 C0              test        eax,eax
+  00000013: 78 09              js          0000001E
+  00000015: 51                 push        ecx
+  00000016: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000001B: 83 C4 04           add         esp,4
+  0000001E: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000025: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002C: FF 76 14           push        dword ptr [esi+14h]
+  0000002F: E8 00 00 00 00     call        _CloseHandle
+  00000034: 83 C4 04           add         esp,4
+  00000037: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  0000003B: 7C 0B              jl          00000048
+  0000003D: FF 76 10           push        dword ptr [esi+10h]
+  00000040: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000045: 83 C4 04           add         esp,4
+  00000048: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000004F: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  00000056: 5E                 pop         esi
+  00000057: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          58 .text

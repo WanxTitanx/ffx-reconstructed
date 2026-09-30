@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A8D880.obj
+
+File Type: COFF OBJECT
+
+__allshr@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8A 45 10           mov         al,byte ptr [ebp+10h]
+  00000006: 3C 40              cmp         al,40h
+  00000008: 72 0A              jb          00000014
+  0000000A: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000000D: C1 F8 1F           sar         eax,1Fh
+  00000010: 5D                 pop         ebp
+  00000011: C2 0C 00           ret         0Ch
+  00000014: 0F B6 C8           movzx       ecx,al
+  00000017: 83 E1 1F           and         ecx,1Fh
+  0000001A: 3C 20              cmp         al,20h
+  0000001C: 72 09              jb          00000027
+  0000001E: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000021: D3 F8              sar         eax,cl
+  00000023: 5D                 pop         ebp
+  00000024: C2 0C 00           ret         0Ch
+  00000027: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000002A: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  0000002D: E8 00 00 00 00     call        __allshr
+  00000032: 89 55 0C           mov         dword ptr [ebp+0Ch],edx
+  00000035: 5D                 pop         ebp
+  00000036: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          39 .text

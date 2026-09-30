@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B9520.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_CameraSetLoopFlag:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 57                 push        edi
+  0000000A: E8 00 00 00 00     call        _FFX_Field_GetCameraStructOffset60
+  0000000F: 8B D8              mov         ebx,eax
+  00000011: 83 C4 04           add         esp,4
+  00000014: 8B 33              mov         esi,dword ptr [ebx]
+  00000016: 85 F6              test        esi,esi
+  00000018: 75 25              jne         0000003F
+  0000001A: 57                 push        edi
+  0000001B: E8 00 00 00 00     call        _FFX_Atel_GetActorWord2E
+  00000020: 8B F0              mov         esi,eax
+  00000022: E8 00 00 00 00     call        _FFX_Field_GetCurrentMapId
+  00000027: 33 C9              xor         ecx,ecx
+  00000029: 3B C6              cmp         eax,esi
+  0000002B: 0F 94 C1           sete        cl
+  0000002E: 6A 00              push        0
+  00000030: 51                 push        ecx
+  00000031: 6A 05              push        5
+  00000033: E8 00 00 00 00     call        _FFX_Camera_AllocSlot
+  00000038: 8B F0              mov         esi,eax
+  0000003A: 83 C4 10           add         esp,10h
+  0000003D: 89 33              mov         dword ptr [ebx],esi
+  0000003F: FF 75 10           push        dword ptr [ebp+10h]
+  00000042: 57                 push        edi
+  00000043: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  00000048: 0F BE C0           movsx       eax,al
+  0000004B: 83 E0 01           and         eax,1
+  0000004E: 50                 push        eax
+  0000004F: 6A 01              push        1
+  00000051: 56                 push        esi
+  00000052: E8 00 00 00 00     call        _FFX_Camera_FlagLoopSetter
+  00000057: 83 C4 14           add         esp,14h
+  0000005A: 8B C6              mov         eax,esi
+  0000005C: 5F                 pop         edi
+  0000005D: 5E                 pop         esi
+  0000005E: 5B                 pop         ebx
+  0000005F: 5D                 pop         ebp
+  00000060: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          61 .text

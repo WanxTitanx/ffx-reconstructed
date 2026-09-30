@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00403260.obj
+
+File Type: COFF OBJECT
+
+@Engine_streambuf_xsgetn_sbumpc@8:
+  00000000: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000003: 56                 push        esi
+  00000004: 8B 30              mov         esi,dword ptr [eax]
+  00000006: 85 F6              test        esi,esi
+  00000008: 74 35              je          0000003F
+  0000000A: 8B 41 0C           mov         eax,dword ptr [ecx+0Ch]
+  0000000D: 3B 30              cmp         esi,dword ptr [eax]
+  0000000F: 76 2E              jbe         0000003F
+  00000011: 83 FA FF           cmp         edx,0FFFFFFFFh
+  00000014: 74 0B              je          00000021
+  00000016: 3A 56 FF           cmp         dl,byte ptr [esi-1]
+  00000019: 74 06              je          00000021
+  0000001B: F6 41 3C 02        test        byte ptr [ecx+3Ch],2
+  0000001F: 75 1E              jne         0000003F
+  00000021: 8B 41 2C           mov         eax,dword ptr [ecx+2Ch]
+  00000024: FF 00              inc         dword ptr [eax]
+  00000026: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000029: FF 08              dec         dword ptr [eax]
+  0000002B: 83 FA FF           cmp         edx,0FFFFFFFFh
+  0000002E: 75 04              jne         00000034
+  00000030: 33 C0              xor         eax,eax
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+  00000034: 8B 41 1C           mov         eax,dword ptr [ecx+1Ch]
+  00000037: 5E                 pop         esi
+  00000038: 8B 00              mov         eax,dword ptr [eax]
+  0000003A: 88 10              mov         byte ptr [eax],dl
+  0000003C: 8B C2              mov         eax,edx
+  0000003E: C3                 ret
+  0000003F: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000042: 5E                 pop         esi
+  00000043: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          44 .text

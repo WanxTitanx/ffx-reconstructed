@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00840120.obj
+
+File Type: COFF OBJECT
+
+_sub_840120:
+  00000000: B8 00 00 00 00     mov         eax,offset _unk_1302F58
+  00000005: 56                 push        esi
+  00000006: 8B 30              mov         esi,dword ptr [eax]
+  00000008: 8A 56 08           mov         dl,byte ptr [esi+8]
+  0000000B: 8A CA              mov         cl,dl
+  0000000D: 80 E1 07           and         cl,7
+  00000010: 74 12              je          00000024
+  00000012: 80 F9 07           cmp         cl,7
+  00000015: 74 0D              je          00000024
+  00000017: 8D 4A FF           lea         ecx,[edx-1]
+  0000001A: 32 CA              xor         cl,dl
+  0000001C: 80 E1 07           and         cl,7
+  0000001F: 32 CA              xor         cl,dl
+  00000021: 88 4E 08           mov         byte ptr [esi+8],cl
+  00000024: 0F B6 0D 00 00 00  movzx       ecx,byte ptr [_byte_13030E8]
+            00
+  0000002B: 83 C0 04           add         eax,4
+  0000002E: 3B C1              cmp         eax,ecx
+  00000030: 7C D4              jl          00000006
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

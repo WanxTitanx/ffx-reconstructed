@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00584230.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_584230@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B DA              mov         ebx,edx
+  00000009: 56                 push        esi
+  0000000A: 0F B6 33           movzx       esi,byte ptr [ebx]
+  0000000D: 57                 push        edi
+  0000000E: 8B F9              mov         edi,ecx
+  00000010: 8B 0B              mov         ecx,dword ptr [ebx]
+  00000012: 83 E6 01           and         esi,1
+  00000015: 2B CE              sub         ecx,esi
+  00000017: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  0000001A: 39 33              cmp         dword ptr [ebx],esi
+  0000001C: 75 04              jne         00000022
+  0000001E: 33 F6              xor         esi,esi
+  00000020: EB 32              jmp         00000054
+  00000022: 8D 51 01           lea         edx,[ecx+1]
+  00000025: 8A 01              mov         al,byte ptr [ecx]
+  00000027: 41                 inc         ecx
+  00000028: 84 C0              test        al,al
+  0000002A: 75 F9              jne         00000025
+  0000002C: 2B CA              sub         ecx,edx
+  0000002E: 6A 02              push        2
+  00000030: 8D 41 01           lea         eax,[ecx+1]
+  00000033: 50                 push        eax
+  00000034: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000037: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000003C: 8B F0              mov         esi,eax
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 85 F6              test        esi,esi
+  00000043: 74 0F              je          00000054
+  00000045: FF 75 FC           push        dword ptr [ebp-4]
+  00000048: FF 75 F8           push        dword ptr [ebp-8]
+  0000004B: 56                 push        esi
+  0000004C: E8 00 00 00 00     call        _memcpy
+  00000051: 83 C4 0C           add         esp,0Ch
+  00000054: 89 37              mov         dword ptr [edi],esi
+  00000056: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000059: 89 47 04           mov         dword ptr [edi+4],eax
+  0000005C: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  0000005F: 89 47 08           mov         dword ptr [edi+8],eax
+  00000062: 8B 43 0C           mov         eax,dword ptr [ebx+0Ch]
+  00000065: 89 47 0C           mov         dword ptr [edi+0Ch],eax
+  00000068: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  0000006B: 89 47 10           mov         dword ptr [edi+10h],eax
+  0000006E: 8B C7              mov         eax,edi
+  00000070: 5F                 pop         edi
+  00000071: 5E                 pop         esi
+  00000072: 5B                 pop         ebx
+  00000073: 8B E5              mov         esp,ebp
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          77 .text

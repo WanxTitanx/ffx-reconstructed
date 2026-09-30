@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0080F6E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Ps3Data_ComputeSlotTextureRecordSize:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 01              push        1
+  00000008: 6A 12              push        12h
+  0000000A: 6A 00              push        0
+  0000000C: 6A 00              push        0
+  0000000E: E8 00 00 00 00     call        _FFX_Magic_FindRecordByTagByte
+  00000013: 83 C4 10           add         esp,10h
+  00000016: 85 C0              test        eax,eax
+  00000018: 0F 84 82 00 00 00  je          000000A0
+  0000001E: 8B 88 BC 00 00 00  mov         ecx,dword ptr [eax+0BCh]
+  00000024: 53                 push        ebx
+  00000025: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000028: 57                 push        edi
+  00000029: 8B 10              mov         edx,dword ptr [eax]
+  0000002B: 33 DB              xor         ebx,ebx
+  0000002D: 33 FF              xor         edi,edi
+  0000002F: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000032: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000035: 66 39 59 0E        cmp         word ptr [ecx+0Eh],bx
+  00000039: 74 5D              je          00000098
+  0000003B: 56                 push        esi
+  0000003C: 8D B1 24 01 00 00  lea         esi,[ecx+124h]
+  00000042: 0F B7 06           movzx       eax,word ptr [esi]
+  00000045: 50                 push        eax
+  00000046: 52                 push        edx
+  00000047: E8 00 00 00 00     call        _FFX_Ps3Data_BuildSlotFromGuidePoly
+  0000004C: 83 C4 08           add         esp,8
+  0000004F: 8D 48 0F           lea         ecx,[eax+0Fh]
+  00000052: 81 E1 F0 FF FF 0F  and         ecx,0FFFFFF0h
+  00000058: 33 C0              xor         eax,eax
+  0000005A: 83 7D 08 02        cmp         dword ptr [ebp+8],2
+  0000005E: 75 21              jne         00000081
+  00000060: B8 25 49 92 24     mov         eax,24924925h
+  00000065: F7 E1              mul         eax,ecx
+  00000067: 8B C1              mov         eax,ecx
+  00000069: 2B C2              sub         eax,edx
+  0000006B: D1 E8              shr         eax,1
+  0000006D: 03 C2              add         eax,edx
+  0000006F: C1 E8 04           shr         eax,4
+  00000072: 8D 04 40           lea         eax,[eax+eax*2]
+  00000075: 8D 04 85 0F 00 00  lea         eax,[eax*4+0Fh]
+            00
+  0000007C: 25 F0 FF FF 0F     and         eax,0FFFFFF0h
+  00000081: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000084: 03 C8              add         ecx,eax
+  00000086: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000089: 03 D9              add         ebx,ecx
+  0000008B: 0F B7 48 0E        movzx       ecx,word ptr [eax+0Eh]
+  0000008F: 47                 inc         edi
+  00000090: 83 C6 60           add         esi,60h
+  00000093: 3B F9              cmp         edi,ecx
+  00000095: 7C AB              jl          00000042
+  00000097: 5E                 pop         esi
+  00000098: 5F                 pop         edi
+  00000099: 8B C3              mov         eax,ebx
+  0000009B: 5B                 pop         ebx
+  0000009C: 8B E5              mov         esp,ebp
+  0000009E: 5D                 pop         ebp
+  0000009F: C3                 ret
+  000000A0: 33 C0              xor         eax,eax
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

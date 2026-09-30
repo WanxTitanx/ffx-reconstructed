@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007ABED0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_InterleaveVertexData:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000007: 85 FF              test        edi,edi
+  00000009: 78 78              js          00000083
+  0000000B: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000E: 0F BE 41 01        movsx       eax,byte ptr [ecx+1]
+  00000012: 3B F8              cmp         edi,eax
+  00000014: 7D 6D              jge         00000083
+  00000016: 53                 push        ebx
+  00000017: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  0000001A: C1 E7 05           shl         edi,5
+  0000001D: 0F BE 43 01        movsx       eax,byte ptr [ebx+1]
+  00000021: 03 F9              add         edi,ecx
+  00000023: 89 45 10           mov         dword ptr [ebp+10h],eax
+  00000026: 85 C0              test        eax,eax
+  00000028: 7E 58              jle         00000082
+  0000002A: 8D 43 04           lea         eax,[ebx+4]
+  0000002D: 56                 push        esi
+  0000002E: 8B FF              mov         edi,edi
+  00000030: 8B 57 10           mov         edx,dword ptr [edi+10h]
+  00000033: 0F BE 77 04        movsx       esi,byte ptr [edi+4]
+  00000037: 03 D1              add         edx,ecx
+  00000039: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  0000003C: 03 CB              add         ecx,ebx
+  0000003E: 0F BE 18           movsx       ebx,byte ptr [eax]
+  00000041: 3B F3              cmp         esi,ebx
+  00000043: 7E 02              jle         00000047
+  00000045: 8B F3              mov         esi,ebx
+  00000047: 85 F6              test        esi,esi
+  00000049: 7E 28              jle         00000073
+  0000004B: 83 C1 F4           add         ecx,0FFFFFFF4h
+  0000004E: 83 C2 F4           add         edx,0FFFFFFF4h
+  00000051: D9 42 0C           fld         dword ptr [edx+0Ch]
+  00000054: 83 C2 10           add         edx,10h
+  00000057: D8 40 2C           fadd        dword ptr [eax+2Ch]
+  0000005A: 83 C1 10           add         ecx,10h
+  0000005D: D9 59 FC           fstp        dword ptr [ecx-4]
+  00000060: D9 40 30           fld         dword ptr [eax+30h]
+  00000063: D8 02              fadd        dword ptr [edx]
+  00000065: D9 19              fstp        dword ptr [ecx]
+  00000067: D9 42 04           fld         dword ptr [edx+4]
+  0000006A: D8 40 34           fadd        dword ptr [eax+34h]
+  0000006D: D9 59 04           fstp        dword ptr [ecx+4]
+  00000070: 4E                 dec         esi
+  00000071: 75 DE              jne         00000051
+  00000073: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000076: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000079: 83 C0 60           add         eax,60h
+  0000007C: FF 4D 10           dec         dword ptr [ebp+10h]
+  0000007F: 75 AF              jne         00000030
+  00000081: 5E                 pop         esi
+  00000082: 5B                 pop         ebx
+  00000083: 5F                 pop         edi
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          86 .text

@@ -1,0 +1,237 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file c168.obj
+
+File Type: COFF OBJECT
+
+___raise_securityfailure:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 08           push        dword ptr [ebp+8]
+  00000006: E8 00 00 00 00     call        ___crtUnhandledException
+  0000000B: 83 C4 04           add         esp,4
+  0000000E: C7 45 08 09 04 00  mov         dword ptr [ebp+8],0C0000409h
+            C0
+  00000015: 5D                 pop         ebp
+  00000016: E9 00 00 00 00     jmp         ___crtTerminateProcess
+
+___report_gsfailure:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 24 03 00 00  sub         esp,324h
+  00000009: 6A 17              push        17h
+  0000000B: E8 00 00 00 00     call        _IsProcessorFeaturePresent@4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 07              je          0000001B
+  00000014: B9 02 00 00 00     mov         ecx,2
+  00000019: CD 29              int         29h
+  0000001B: A3 B0 00 00 00     mov         dword ptr [_GS_ContextRecord+0B0h],eax
+  00000020: 89 0D AC 00 00 00  mov         dword ptr [_GS_ContextRecord+0ACh],ecx
+  00000026: 89 15 A8 00 00 00  mov         dword ptr [_GS_ContextRecord+0A8h],edx
+  0000002C: 89 1D A4 00 00 00  mov         dword ptr [_GS_ContextRecord+0A4h],ebx
+  00000032: 89 35 A0 00 00 00  mov         dword ptr [_GS_ContextRecord+0A0h],esi
+  00000038: 89 3D 9C 00 00 00  mov         dword ptr [_GS_ContextRecord+9Ch],edi
+  0000003E: 66 8C 15 C8 00 00  mov         word ptr [_GS_ContextRecord+0C8h],ss
+            00
+  00000045: 66 8C 0D BC 00 00  mov         word ptr [_GS_ContextRecord+0BCh],cs
+            00
+  0000004C: 66 8C 1D 98 00 00  mov         word ptr [_GS_ContextRecord+98h],ds
+            00
+  00000053: 66 8C 05 94 00 00  mov         word ptr [_GS_ContextRecord+94h],es
+            00
+  0000005A: 66 8C 25 90 00 00  mov         word ptr [_GS_ContextRecord+90h],fs
+            00
+  00000061: 66 8C 2D 8C 00 00  mov         word ptr [_GS_ContextRecord+8Ch],gs
+            00
+  00000068: 9C                 pushfd
+  00000069: 8F 05 C0 00 00 00  pop         dword ptr [_GS_ContextRecord+0C0h]
+  0000006F: 8B 45 00           mov         eax,dword ptr [ebp]
+  00000072: A3 B4 00 00 00     mov         dword ptr [_GS_ContextRecord+0B4h],eax
+  00000077: 8B 45 04           mov         eax,dword ptr [ebp+4]
+  0000007A: A3 B8 00 00 00     mov         dword ptr [_GS_ContextRecord+0B8h],eax
+  0000007F: 8D 45 08           lea         eax,[ebp+8]
+  00000082: A3 C4 00 00 00     mov         dword ptr [_GS_ContextRecord+0C4h],eax
+  00000087: 8B 85 DC FC FF FF  mov         eax,dword ptr [ebp-324h]
+  0000008D: C7 05 00 00 00 00  mov         dword ptr [_GS_ContextRecord],10001h
+            01 00 01 00
+  00000097: A1 B8 00 00 00     mov         eax,dword ptr [_GS_ContextRecord+0B8h]
+  0000009C: A3 0C 00 00 00     mov         dword ptr [_GS_ExceptionRecord+0Ch],eax
+  000000A1: C7 05 00 00 00 00  mov         dword ptr [_GS_ExceptionRecord],0C0000409h
+            09 04 00 C0
+  000000AB: C7 05 04 00 00 00  mov         dword ptr [_GS_ExceptionRecord+4],1
+            01 00 00 00
+  000000B5: C7 05 10 00 00 00  mov         dword ptr [_GS_ExceptionRecord+10h],1
+            01 00 00 00
+  000000BF: B9 04 00 00 00     mov         ecx,4
+  000000C4: 6B C9 00           imul        ecx,ecx,0
+  000000C7: C7 81 14 00 00 00  mov         dword ptr _GS_ExceptionRecord[ecx+14h],2
+            02 00 00 00
+  000000D1: BA 04 00 00 00     mov         edx,4
+  000000D6: 6B D2 00           imul        edx,edx,0
+  000000D9: A1 00 00 00 00     mov         eax,dword ptr [___security_cookie]
+  000000DE: 89 44 15 F8        mov         dword ptr [ebp+edx-8],eax
+  000000E2: B9 04 00 00 00     mov         ecx,4
+  000000E7: C1 E1 00           shl         ecx,0
+  000000EA: 8B 15 00 00 00 00  mov         edx,dword ptr [___security_cookie_complement]
+  000000F0: 89 54 0D F8        mov         dword ptr [ebp+ecx-8],edx
+  000000F4: 68 00 00 00 00     push        offset _GS_ExceptionPointers
+  000000F9: E8 00 00 00 00     call        ___raise_securityfailure
+  000000FE: 8B E5              mov         esp,ebp
+  00000100: 5D                 pop         ebp
+  00000101: C3                 ret
+
+___report_rangecheckfailure:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 6A 08              push        8
+  00000005: E8 00 00 00 00     call        ___report_securityfailure
+  0000000A: 5D                 pop         ebp
+  0000000B: C3                 ret
+
+___report_securityfailure:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 1C 03 00 00  sub         esp,31Ch
+  00000009: 6A 17              push        17h
+  0000000B: E8 00 00 00 00     call        _IsProcessorFeaturePresent@4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 05              je          00000019
+  00000014: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000017: CD 29              int         29h
+  00000019: A3 B0 00 00 00     mov         dword ptr [_GS_ContextRecord+0B0h],eax
+  0000001E: 89 0D AC 00 00 00  mov         dword ptr [_GS_ContextRecord+0ACh],ecx
+  00000024: 89 15 A8 00 00 00  mov         dword ptr [_GS_ContextRecord+0A8h],edx
+  0000002A: 89 1D A4 00 00 00  mov         dword ptr [_GS_ContextRecord+0A4h],ebx
+  00000030: 89 35 A0 00 00 00  mov         dword ptr [_GS_ContextRecord+0A0h],esi
+  00000036: 89 3D 9C 00 00 00  mov         dword ptr [_GS_ContextRecord+9Ch],edi
+  0000003C: 66 8C 15 C8 00 00  mov         word ptr [_GS_ContextRecord+0C8h],ss
+            00
+  00000043: 66 8C 0D BC 00 00  mov         word ptr [_GS_ContextRecord+0BCh],cs
+            00
+  0000004A: 66 8C 1D 98 00 00  mov         word ptr [_GS_ContextRecord+98h],ds
+            00
+  00000051: 66 8C 05 94 00 00  mov         word ptr [_GS_ContextRecord+94h],es
+            00
+  00000058: 66 8C 25 90 00 00  mov         word ptr [_GS_ContextRecord+90h],fs
+            00
+  0000005F: 66 8C 2D 8C 00 00  mov         word ptr [_GS_ContextRecord+8Ch],gs
+            00
+  00000066: 9C                 pushfd
+  00000067: 8F 05 C0 00 00 00  pop         dword ptr [_GS_ContextRecord+0C0h]
+  0000006D: 8B 45 00           mov         eax,dword ptr [ebp]
+  00000070: A3 B4 00 00 00     mov         dword ptr [_GS_ContextRecord+0B4h],eax
+  00000075: 8B 45 04           mov         eax,dword ptr [ebp+4]
+  00000078: A3 B8 00 00 00     mov         dword ptr [_GS_ContextRecord+0B8h],eax
+  0000007D: 8D 45 08           lea         eax,[ebp+8]
+  00000080: A3 C4 00 00 00     mov         dword ptr [_GS_ContextRecord+0C4h],eax
+  00000085: 8B 85 E4 FC FF FF  mov         eax,dword ptr [ebp-31Ch]
+  0000008B: A1 B8 00 00 00     mov         eax,dword ptr [_GS_ContextRecord+0B8h]
+  00000090: A3 0C 00 00 00     mov         dword ptr [_GS_ExceptionRecord+0Ch],eax
+  00000095: C7 05 00 00 00 00  mov         dword ptr [_GS_ExceptionRecord],0C0000409h
+            09 04 00 C0
+  0000009F: C7 05 04 00 00 00  mov         dword ptr [_GS_ExceptionRecord+4],1
+            01 00 00 00
+  000000A9: C7 05 10 00 00 00  mov         dword ptr [_GS_ExceptionRecord+10h],1
+            01 00 00 00
+  000000B3: B9 04 00 00 00     mov         ecx,4
+  000000B8: 6B C9 00           imul        ecx,ecx,0
+  000000BB: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000000BE: 89 91 14 00 00 00  mov         dword ptr _GS_ExceptionRecord[ecx+14h],edx
+  000000C4: 68 00 00 00 00     push        offset _GS_ExceptionPointers
+  000000C9: E8 00 00 00 00     call        ___raise_securityfailure
+  000000CE: 8B E5              mov         esp,ebp
+  000000D0: 5D                 pop         ebp
+  000000D1: C3                 ret
+
+___report_securityfailureEx:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 20 03 00 00  sub         esp,320h
+  00000009: 6A 17              push        17h
+  0000000B: E8 00 00 00 00     call        _IsProcessorFeaturePresent@4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 05              je          00000019
+  00000014: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000017: CD 29              int         29h
+  00000019: A3 B0 00 00 00     mov         dword ptr [_GS_ContextRecord+0B0h],eax
+  0000001E: 89 0D AC 00 00 00  mov         dword ptr [_GS_ContextRecord+0ACh],ecx
+  00000024: 89 15 A8 00 00 00  mov         dword ptr [_GS_ContextRecord+0A8h],edx
+  0000002A: 89 1D A4 00 00 00  mov         dword ptr [_GS_ContextRecord+0A4h],ebx
+  00000030: 89 35 A0 00 00 00  mov         dword ptr [_GS_ContextRecord+0A0h],esi
+  00000036: 89 3D 9C 00 00 00  mov         dword ptr [_GS_ContextRecord+9Ch],edi
+  0000003C: 66 8C 15 C8 00 00  mov         word ptr [_GS_ContextRecord+0C8h],ss
+            00
+  00000043: 66 8C 0D BC 00 00  mov         word ptr [_GS_ContextRecord+0BCh],cs
+            00
+  0000004A: 66 8C 1D 98 00 00  mov         word ptr [_GS_ContextRecord+98h],ds
+            00
+  00000051: 66 8C 05 94 00 00  mov         word ptr [_GS_ContextRecord+94h],es
+            00
+  00000058: 66 8C 25 90 00 00  mov         word ptr [_GS_ContextRecord+90h],fs
+            00
+  0000005F: 66 8C 2D 8C 00 00  mov         word ptr [_GS_ContextRecord+8Ch],gs
+            00
+  00000066: 9C                 pushfd
+  00000067: 8F 05 C0 00 00 00  pop         dword ptr [_GS_ContextRecord+0C0h]
+  0000006D: 8B 45 00           mov         eax,dword ptr [ebp]
+  00000070: A3 B4 00 00 00     mov         dword ptr [_GS_ContextRecord+0B4h],eax
+  00000075: 8B 45 04           mov         eax,dword ptr [ebp+4]
+  00000078: A3 B8 00 00 00     mov         dword ptr [_GS_ContextRecord+0B8h],eax
+  0000007D: 8D 45 08           lea         eax,[ebp+8]
+  00000080: A3 C4 00 00 00     mov         dword ptr [_GS_ContextRecord+0C4h],eax
+  00000085: 8B 85 E0 FC FF FF  mov         eax,dword ptr [ebp-320h]
+  0000008B: A1 B8 00 00 00     mov         eax,dword ptr [_GS_ContextRecord+0B8h]
+  00000090: A3 0C 00 00 00     mov         dword ptr [_GS_ExceptionRecord+0Ch],eax
+  00000095: C7 05 00 00 00 00  mov         dword ptr [_GS_ExceptionRecord],0C0000409h
+            09 04 00 C0
+  0000009F: C7 05 04 00 00 00  mov         dword ptr [_GS_ExceptionRecord+4],1
+            01 00 00 00
+  000000A9: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  000000AD: 76 0D              jbe         000000BC
+  000000AF: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  000000B3: 75 07              jne         000000BC
+  000000B5: C7 45 0C 00 00 00  mov         dword ptr [ebp+0Ch],0
+            00
+  000000BC: 83 7D 0C 0E        cmp         dword ptr [ebp+0Ch],0Eh
+  000000C0: 76 09              jbe         000000CB
+  000000C2: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000C5: 83 E9 01           sub         ecx,1
+  000000C8: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  000000CB: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  000000CE: 83 C2 01           add         edx,1
+  000000D1: 89 15 10 00 00 00  mov         dword ptr [_GS_ExceptionRecord+10h],edx
+  000000D7: B8 04 00 00 00     mov         eax,4
+  000000DC: 6B C0 00           imul        eax,eax,0
+  000000DF: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000E2: 89 88 14 00 00 00  mov         dword ptr _GS_ExceptionRecord[eax+14h],ecx
+  000000E8: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  000000EF: EB 09              jmp         000000FA
+  000000F1: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000000F4: 83 C2 01           add         edx,1
+  000000F7: 89 55 FC           mov         dword ptr [ebp-4],edx
+  000000FA: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000FD: 3B 45 0C           cmp         eax,dword ptr [ebp+0Ch]
+  00000100: 73 15              jae         00000117
+  00000102: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000105: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000108: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000010B: 8B 14 90           mov         edx,dword ptr [eax+edx*4]
+  0000010E: 89 14 8D 18 00 00  mov         dword ptr _GS_ExceptionRecord[ecx*4+18h],edx
+            00
+  00000115: EB DA              jmp         000000F1
+  00000117: 68 00 00 00 00     push        offset _GS_ExceptionPointers
+  0000011C: E8 00 00 00 00     call        ___raise_securityfailure
+  00000121: 8B E5              mov         esp,ebp
+  00000123: 5D                 pop         ebp
+  00000124: C3                 ret
+
+  Summary
+
+         31C .bss
+          6C .debug$S
+          5D .drectve
+           8 .rdata
+         320 .text

@@ -1,0 +1,50 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004953B0.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_4953B0@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 8B DA              mov         ebx,edx
+  0000000B: 8B F1              mov         esi,ecx
+  0000000D: 85 FF              test        edi,edi
+  0000000F: 79 0C              jns         0000001D
+  00000011: 5F                 pop         edi
+  00000012: 5E                 pop         esi
+  00000013: B8 05 00 00 00     mov         eax,5
+  00000018: 5B                 pop         ebx
+  00000019: 5D                 pop         ebp
+  0000001A: C2 04 00           ret         4
+  0000001D: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000020: 3B C3              cmp         eax,ebx
+  00000022: 74 15              je          00000039
+  00000024: F7 06 00 00 00 80  test        dword ptr [esi],80000000h
+  0000002A: 75 0D              jne         00000039
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 74 09              je          00000039
+  00000030: 50                 push        eax
+  00000031: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000036: 83 C4 04           add         esp,4
+  00000039: 81 CF 00 00 00 80  or          edi,80000000h
+  0000003F: 89 3E              mov         dword ptr [esi],edi
+  00000041: 5F                 pop         edi
+  00000042: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000045: 5E                 pop         esi
+  00000046: 33 C0              xor         eax,eax
+  00000048: 5B                 pop         ebx
+  00000049: 5D                 pop         ebp
+  0000004A: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4D .text

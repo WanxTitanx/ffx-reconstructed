@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0081F000.obj
+
+File Type: COFF OBJECT
+
+_FFX_SoundSpuDma_SpinWaitAndCheckReady:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: E8 00 00 00 00     call        _FlushCache
+  0000000A: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000D: BE 01 00 00 00     mov         esi,1
+  00000012: 85 F6              test        esi,esi
+  00000014: 74 04              je          0000001A
+  00000016: 33 F6              xor         esi,esi
+  00000018: EB 0D              jmp         00000027
+  0000001A: BE 00 00 01 00     mov         esi,10000h
+  0000001F: 90                 nop
+  00000020: 8B C6              mov         eax,esi
+  00000022: 4E                 dec         esi
+  00000023: 85 C0              test        eax,eax
+  00000025: 75 F9              jne         00000020
+  00000027: E8 00 00 00 00     call        _FFX_SpuDma_QueryStatusReturnNegOne
+  0000002C: 85 FF              test        edi,edi
+  0000002E: 74 04              je          00000034
+  00000030: 85 C0              test        eax,eax
+  00000032: 79 DE              jns         00000012
+  00000034: 5F                 pop         edi
+  00000035: 5E                 pop         esi
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          38 .text

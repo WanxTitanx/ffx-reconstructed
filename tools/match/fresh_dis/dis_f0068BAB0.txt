@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068BAB0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_FFX_Menu2D_AlignedView_dtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 56                 push        esi
+  00000005: 8A DA              mov         bl,dl
+  00000007: E8 00 00 00 00     call        _FFX_Menu2D_PtrArray_Realloc16
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: 83 3E 00           cmp         dword ptr [esi],0
+  00000012: 7C 0B              jl          0000001F
+  00000014: FF 76 04           push        dword ptr [esi+4]
+  00000017: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000026: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000002C: F6 C3 01           test        bl,1
+  0000002F: 74 09              je          0000003A
+  00000031: 56                 push        esi
+  00000032: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 8B C6              mov         eax,esi
+  0000003C: 5E                 pop         esi
+  0000003D: 5B                 pop         ebx
+  0000003E: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3F .text

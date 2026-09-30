@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00867FC0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_RunTargetVectorChecksForLinkedTargets:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 8B 07              mov         eax,dword ptr [edi]
+  0000000A: 8A 00              mov         al,byte ptr [eax]
+  0000000C: 3C 04              cmp         al,4
+  0000000E: 75 04              jne         00000014
+  00000010: 33 C0              xor         eax,eax
+  00000012: EB 12              jmp         00000026
+  00000014: 2C 05              sub         al,5
+  00000016: 3C 01              cmp         al,1
+  00000018: 8D 87 58 05 00 00  lea         eax,[edi+558h]
+  0000001E: 77 06              ja          00000026
+  00000020: 8D 87 84 02 00 00  lea         eax,[edi+284h]
+  00000026: 0F B7 40 28        movzx       eax,word ptr [eax+28h]
+  0000002A: 6A 00              push        0
+  0000002C: 50                 push        eax
+  0000002D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000030: 57                 push        edi
+  00000031: E8 00 00 00 00     call        _FFX_FieldActor_EvaluateTargetLinkAndQueuePriorityNode
+  00000036: 8B B7 E4 02 00 00  mov         esi,dword ptr [edi+2E4h]
+  0000003C: 83 C4 10           add         esp,10h
+  0000003F: 85 F6              test        esi,esi
+  00000041: 74 33              je          00000076
+  00000043: 53                 push        ebx
+  00000044: BB 08 00 00 00     mov         ebx,8
+  00000049: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000050: 0F B7 06           movzx       eax,word ptr [esi]
+  00000053: 3D FF FF 00 00     cmp         eax,0FFFFh
+  00000058: 74 15              je          0000006F
+  0000005A: 66 83 7E 02 00     cmp         word ptr [esi+2],0
+  0000005F: 74 0E              je          0000006F
+  00000061: 56                 push        esi
+  00000062: 50                 push        eax
+  00000063: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000066: 57                 push        edi
+  00000067: E8 00 00 00 00     call        _FFX_FieldActor_EvaluateTargetLinkAndQueuePriorityNode
+  0000006C: 83 C4 10           add         esp,10h
+  0000006F: 83 C6 08           add         esi,8
+  00000072: 4B                 dec         ebx
+  00000073: 75 DB              jne         00000050
+  00000075: 5B                 pop         ebx
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7A .text

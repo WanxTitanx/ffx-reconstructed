@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007094D0.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_ApplyVolumeToAllEvents@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: 57                 push        edi
+  00000006: D9 45 08           fld         dword ptr [ebp+8]
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: D8 D1              fcom        st(1)
+  0000000D: DF E0              fnstsw      ax
+  0000000F: F6 C4 01           test        ah,1
+  00000012: 75 15              jne         00000029
+  00000014: D9 E8              fld1
+  00000016: D8 D1              fcom        st(1)
+  00000018: DF E0              fnstsw      ax
+  0000001A: F6 C4 05           test        ah,5
+  0000001D: 7A 14              jp          00000033
+  0000001F: DD D9              fstp        st(1)
+  00000021: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000024: D9 45 08           fld         dword ptr [ebp+8]
+  00000027: EB 0C              jmp         00000035
+  00000029: DD D8              fstp        st(0)
+  0000002B: D9 55 08           fst         dword ptr [ebp+8]
+  0000002E: D9 45 08           fld         dword ptr [ebp+8]
+  00000031: EB 02              jmp         00000035
+  00000033: DD D8              fstp        st(0)
+  00000035: D9 47 30           fld         dword ptr [edi+30h]
+  00000038: D9 C1              fld         st(1)
+  0000003A: DA E9              fucompp
+  0000003C: DF E0              fnstsw      ax
+  0000003E: F6 C4 44           test        ah,44h
+  00000041: 0F 8B CB 00 00 00  jnp         00000112
+  00000047: 53                 push        ebx
+  00000048: D9 5F 30           fstp        dword ptr [edi+30h]
+  0000004B: DD 05 00 00 00 00  fld         qword ptr [__real@405fc00000000000]
+  00000051: 56                 push        esi
+  00000052: 33 DB              xor         ebx,ebx
+  00000054: 33 F6              xor         esi,esi
+  00000056: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  00000059: D9 44 30 34        fld         dword ptr [eax+esi+34h]
+  0000005D: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000060: 81 FB B5 00 00 00  cmp         ebx,0B5h
+  00000066: 0F 87 94 00 00 00  ja          00000100
+  0000006C: 83 3C 30 00        cmp         dword ptr [eax+esi],0
+  00000070: 0F 84 8A 00 00 00  je          00000100
+  00000076: 83 7C 30 20 01     cmp         dword ptr [eax+esi+20h],1
+  0000007B: 75 66              jne         000000E3
+  0000007D: 83 7F 24 01        cmp         dword ptr [edi+24h],1
+  00000081: 75 07              jne         0000008A
+  00000083: D9 C9              fxch        st(1)
+  00000085: D9 55 08           fst         dword ptr [ebp+8]
+  00000088: D9 C9              fxch        st(1)
+  0000008A: 83 7C 30 0C 01     cmp         dword ptr [eax+esi+0Ch],1
+  0000008F: 75 1E              jne         000000AF
+  00000091: C7 44 30 0C 00 00  mov         dword ptr [eax+esi+0Ch],0
+            00 00
+  00000099: D9 C9              fxch        st(1)
+  0000009B: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  0000009E: D9 5C 30 10        fstp        dword ptr [eax+esi+10h]
+  000000A2: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000A5: C7 44 30 14 00 00  mov         dword ptr [eax+esi+14h],0
+            00 00
+  000000AD: EB 02              jmp         000000B1
+  000000AF: DD D9              fstp        st(1)
+  000000B1: D8 7D 08           fdivr       dword ptr [ebp+8]
+  000000B4: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000B7: D9 5D 08           fstp        dword ptr [ebp+8]
+  000000BA: D9 45 08           fld         dword ptr [ebp+8]
+  000000BD: D9 5C 30 38        fstp        dword ptr [eax+esi+38h]
+  000000C1: E8 00 00 00 00     call        _FMOD_Event_setVolume
+  000000C6: 68 3A 03 00 00     push        33Ah
+  000000CB: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  000000D0: 50                 push        eax
+  000000D1: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  000000D6: D9 EE              fldz
+  000000D8: DD 05 00 00 00 00  fld         qword ptr [__real@405fc00000000000]
+  000000DE: 83 C4 0C           add         esp,0Ch
+  000000E1: EB 1D              jmp         00000100
+  000000E3: D9 45 08           fld         dword ptr [ebp+8]
+  000000E6: C7 44 30 0C 01 00  mov         dword ptr [eax+esi+0Ch],1
+            00 00
+  000000EE: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000F1: D9 5C 30 10        fstp        dword ptr [eax+esi+10h]
+  000000F5: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  000000F8: C7 44 30 14 00 00  mov         dword ptr [eax+esi+14h],0
+            00 00
+  00000100: 83 C6 3C           add         esi,3Ch
+  00000103: 43                 inc         ebx
+  00000104: 81 FE A8 2A 00 00  cmp         esi,2AA8h
+  0000010A: 0F 8C 46 FF FF FF  jl          00000056
+  00000110: 5E                 pop         esi
+  00000111: 5B                 pop         ebx
+  00000112: DD D8              fstp        st(0)
+  00000114: 5F                 pop         edi
+  00000115: DD D8              fstp        st(0)
+  00000117: 5D                 pop         ebp
+  00000118: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          27 .rdata
+         11B .text

@@ -1,0 +1,30 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00967A20.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_patchScopeJmp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 41 14           mov         eax,dword ptr [ecx+14h]
+  00000009: 39 45 08           cmp         dword ptr [ebp+8],eax
+  0000000C: 74 09              je          00000017
+  0000000E: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000011: 5D                 pop         ebp
+  00000012: E9 00 00 00 00     jmp         _LuaCodeGen_resolveJmpChain
+  00000017: 89 41 18           mov         dword ptr [ecx+18h],eax
+  0000001A: 8D 41 1C           lea         eax,[ecx+1Ch]
+  0000001D: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000020: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000023: 5D                 pop         ebp
+  00000024: E9 00 00 00 00     jmp         _LuaCodeGen_patchJmpTarget
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          29 .text

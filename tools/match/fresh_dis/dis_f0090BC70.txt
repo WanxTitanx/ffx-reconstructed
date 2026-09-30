@@ -1,0 +1,94 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0090BC70.obj
+
+File Type: COFF OBJECT
+
+_FFX_Orp_90BC70:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000009: 56                 push        esi
+  0000000A: DC 0D 00 00 00 00  fmul        qword ptr [__real@4008000000000000]
+  00000010: DD 05 00 00 00 00  fld         qword ptr [__real@4080000000000000]
+  00000016: D9 7D 0E           fnstcw      word ptr [ebp+0Eh]
+  00000019: D8 C1              fadd        st,st(1)
+  0000001B: 0F B7 45 0E        movzx       eax,word ptr [ebp+0Eh]
+  0000001F: DD 05 00 00 00 00  fld         qword ptr [__real@3ff99999a0000000]
+  00000025: 0D 00 0C 00 00     or          eax,0C00h
+  0000002A: DC F9              fdiv        st(1),st
+  0000002C: D9 45 08           fld         dword ptr [ebp+8]
+  0000002F: D9 C0              fld         st(0)
+  00000031: DE FB              fdivp       st(3),st
+  00000033: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000036: D9 6D 08           fldcw       word ptr [ebp+8]
+  00000039: D9 CA              fxch        st(2)
+  0000003B: DF 7D F8           fistp       qword ptr [ebp-8]
+  0000003E: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000041: 89 0D 00 00 00 00  mov         dword ptr [_g_OrpF32_193BAF0],ecx
+  00000047: D9 6D 0E           fldcw       word ptr [ebp+0Eh]
+  0000004A: 0F AF C9           imul        ecx,ecx
+  0000004D: D9 CA              fxch        st(2)
+  0000004F: DC 05 00 00 00 00  fadd        qword ptr [__real@407a000000000000]
+  00000055: D9 7D 0E           fnstcw      word ptr [ebp+0Eh]
+  00000058: DE F2              fdivrp      st(2),st
+  0000005A: 0F B7 45 0E        movzx       eax,word ptr [ebp+0Eh]
+  0000005E: 0D 00 0C 00 00     or          eax,0C00h
+  00000063: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000066: DE F9              fdivp       st(1),st
+  00000068: D9 6D 08           fldcw       word ptr [ebp+8]
+  0000006B: DF 7D F8           fistp       qword ptr [ebp-8]
+  0000006E: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  00000071: 89 35 00 00 00 00  mov         dword ptr [_g_OrpF32_193BAF4],esi
+  00000077: D9 6D 0E           fldcw       word ptr [ebp+0Eh]
+  0000007A: 89 4D 0C           mov         dword ptr [ebp+0Ch],ecx
+  0000007D: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000080: 85 C9              test        ecx,ecx
+  00000082: 79 06              jns         0000008A
+  00000084: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000008A: D9 E8              fld1
+  0000008C: DC C1              fadd        st(1),st
+  0000008E: D9 C9              fxch        st(1)
+  00000090: DD 55 F8           fst         qword ptr [ebp-8]
+  00000093: DE F9              fdivp       st(1),st
+  00000095: E8 00 00 00 00     call        __CIsqrt
+  0000009A: 0F AF F6           imul        esi,esi
+  0000009D: D9 1D 00 00 00 00  fstp        dword ptr [_flt_193BAF8]
+  000000A3: 89 75 0C           mov         dword ptr [ebp+0Ch],esi
+  000000A6: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000000A9: 85 F6              test        esi,esi
+  000000AB: 79 06              jns         000000B3
+  000000AD: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  000000B3: D9 E8              fld1
+  000000B5: DC C1              fadd        st(1),st
+  000000B7: D9 C9              fxch        st(1)
+  000000B9: DD 55 F0           fst         qword ptr [ebp-10h]
+  000000BC: DE F9              fdivp       st(1),st
+  000000BE: E8 00 00 00 00     call        __CIsqrt
+  000000C3: D9 1D 00 00 00 00  fstp        dword ptr [_flt_193BAFC]
+  000000C9: DD 45 F8           fld         qword ptr [ebp-8]
+  000000CC: E8 00 00 00 00     call        __CIsqrt
+  000000D1: D9 E8              fld1
+  000000D3: DE F1              fdivrp      st(1),st
+  000000D5: D9 E0              fchs
+  000000D7: D9 1D 00 00 00 00  fstp        dword ptr [_flt_193BB00]
+  000000DD: DD 45 F0           fld         qword ptr [ebp-10h]
+  000000E0: E8 00 00 00 00     call        __CIsqrt
+  000000E5: D9 E8              fld1
+  000000E7: DE F1              fdivrp      st(1),st
+  000000E9: 5E                 pop         esi
+  000000EA: D9 E0              fchs
+  000000EC: D9 1D 00 00 00 00  fstp        dword ptr [_flt_193BB04]
+  000000F2: 8B E5              mov         esp,ebp
+  000000F4: 5D                 pop         ebp
+  000000F5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .rdata
+          F6 .text

@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041A520.obj
+
+File Type: COFF OBJECT
+
+@FFX_Vpx_InterpFilterScale_Byte@24:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 7D 0C 00        cmp         dword ptr [ebp+0Ch],0
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 74 51              je          0000005D
+  0000000C: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000000F: 53                 push        ebx
+  00000010: 56                 push        esi
+  00000011: 8D 5A FF           lea         ebx,[edx-1]
+  00000014: 33 C0              xor         eax,eax
+  00000016: 85 C9              test        ecx,ecx
+  00000018: 74 39              je          00000053
+  0000001A: 8D 14 09           lea         edx,[ecx+ecx]
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 0F B7 34 3A        movzx       esi,word ptr [edx+edi]
+  00000024: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000027: 0F B7 17           movzx       edx,word ptr [edi]
+  0000002A: 0F BF 49 02        movsx       ecx,word ptr [ecx+2]
+  0000002E: 0F AF F1           imul        esi,ecx
+  00000031: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000034: 40                 inc         eax
+  00000035: 0F BF 09           movsx       ecx,word ptr [ecx]
+  00000038: 0F AF CA           imul        ecx,edx
+  0000003B: 83 C1 40           add         ecx,40h
+  0000003E: 03 CE              add         ecx,esi
+  00000040: C1 F9 07           sar         ecx,7
+  00000043: 88 0C 03           mov         byte ptr [ebx+eax],cl
+  00000046: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000049: 83 C7 02           add         edi,2
+  0000004C: 8D 14 09           lea         edx,[ecx+ecx]
+  0000004F: 3B C1              cmp         eax,ecx
+  00000051: 72 CD              jb          00000020
+  00000053: 03 5D 08           add         ebx,dword ptr [ebp+8]
+  00000056: FF 4D 0C           dec         dword ptr [ebp+0Ch]
+  00000059: 75 B9              jne         00000014
+  0000005B: 5E                 pop         esi
+  0000005C: 5B                 pop         ebx
+  0000005D: 5F                 pop         edi
+  0000005E: 5D                 pop         ebp
+  0000005F: C2 10 00           ret         10h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

@@ -1,0 +1,888 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f935.obj
+
+File Type: COFF OBJECT
+
+??$PhyreCheckCast@I_K@Phyre@@YAI_K@Z (unsigned int __cdecl Phyre::PhyreCheckCast<unsigned int,unsigned __int64>(unsigned __int64)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 5D                 pop         ebp
+  00000007: C3                 ret
+
+??$PhyreMinOfPair@I@Phyre@@YAIII@Z (unsigned int __cdecl Phyre::PhyreMinOfPair<unsigned int>(unsigned int,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 39 45 08           cmp         dword ptr [ebp+8],eax
+  00000009: 0F 42 45 08        cmovb       eax,dword ptr [ebp+8]
+  0000000D: 5D                 pop         ebp
+  0000000E: C3                 ret
+
+??0?$PSimpleListElement@VPStreamBuffer@PInternal@PSerialization@Phyre@@@Phyre@@QAE@XZ (public: __thiscall Phyre::PSimpleListElement<class Phyre::PSerialization::PInternal::PStreamBuffer>::PSimpleListElement<class Phyre::PSerialization::PInternal::PStreamBuffer>(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0PStreamBuffer@PInternal@PSerialization@Phyre@@QAE@XZ (public: __thiscall Phyre::PSerialization::PInternal::PStreamBuffer::PStreamBuffer(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  00000006: 8B C1              mov         eax,ecx
+  00000008: C3                 ret
+
+??0PStreamReader@PSerialization@Phyre@@IAE@PBD@Z (protected: __thiscall Phyre::PSerialization::PStreamReader::PStreamReader(char const *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 08           push        dword ptr [ebp+8]
+  00000007: 8B F1              mov         esi,ecx
+  00000009: E8 00 00 00 00     call        ??0PStream@PSerialization@Phyre@@IAE@PBD@Z
+  0000000E: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7PStreamReader@PSerialization@Phyre@@6B@
+  00000014: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  0000001B: C7 46 14 00 00 00  mov         dword ptr [esi+14h],0
+            00
+  00000022: C7 46 18 FF FF FF  mov         dword ptr [esi+18h],0FFFFFFFFh
+            FF
+  00000029: C7 46 1C 00 00 00  mov         dword ptr [esi+1Ch],0
+            00
+  00000030: 8B C6              mov         eax,esi
+  00000032: 5E                 pop         esi
+  00000033: 5D                 pop         ebp
+  00000034: C2 04 00           ret         4
+
+??1PStreamReader@PSerialization@Phyre@@UAE@XZ (public: virtual __thiscall Phyre::PSerialization::PStreamReader::~PStreamReader(void)):
+  00000000: C7 01 00 00 00 00  mov         dword ptr [ecx],offset ??_7PStreamReader@PSerialization@Phyre@@6B@
+  00000006: E9 00 00 00 00     jmp         ??1PStream@PSerialization@Phyre@@UAE@XZ
+
+??2PMemoryBase@Phyre@@SAPAXI@Z (public: static void * __cdecl Phyre::PMemoryBase::operator new(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 5D                 pop         ebp
+  00000004: E9 00 00 00 00     jmp         ?PhyreMalloc@Phyre@@YAPAXI@Z
+
+??3PMemoryBase@Phyre@@SAXPAX@Z (public: static void __cdecl Phyre::PMemoryBase::operator delete(void *)):
+  00000000: E9 00 00 00 00     jmp         ?PhyreFree@Phyre@@YAXPAX@Z
+
+??BPString@Phyre@@QBEPBDXZ (public: __thiscall Phyre::PString::operator char const *(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+??_GPStreamReader@PSerialization@Phyre@@UAEPAXI@Z (public: virtual void * __thiscall Phyre::PSerialization::PStreamReader::`scalar deleting destructor'(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: C7 06 00 00 00 00  mov         dword ptr [esi],offset ??_7PStreamReader@PSerialization@Phyre@@6B@
+  0000000C: E8 00 00 00 00     call        ??1PStream@PSerialization@Phyre@@UAE@XZ
+  00000011: F6 45 08 01        test        byte ptr [ebp+8],1
+  00000015: 74 09              je          00000020
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  0000001D: 83 C4 04           add         esp,4
+  00000020: 8B C6              mov         eax,esi
+  00000022: 5E                 pop         esi
+  00000023: 5D                 pop         ebp
+  00000024: C2 04 00           ret         4
+
+??_H@YGXPAXIHP6EPAX0@Z@Z (void __stdcall `vector constructor iterator'(void *,unsigned int,int,void * (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000007: 4E                 dec         esi
+  00000008: 78 14              js          0000001E
+  0000000A: 53                 push        ebx
+  0000000B: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  0000000E: 57                 push        edi
+  0000000F: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000012: 8B CF              mov         ecx,edi
+  00000014: FF D3              call        ebx
+  00000016: 03 7D 0C           add         edi,dword ptr [ebp+0Ch]
+  00000019: 4E                 dec         esi
+  0000001A: 79 F6              jns         00000012
+  0000001C: 5F                 pop         edi
+  0000001D: 5B                 pop         ebx
+  0000001E: 5E                 pop         esi
+  0000001F: 5D                 pop         ebp
+  00000020: C2 10 00           ret         10h
+
+??_I@YGXPAXIHP6EX0@Z@Z (void __stdcall `vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000000F: 8B C3              mov         eax,ebx
+  00000011: 0F AF C7           imul        eax,edi
+  00000014: 03 F0              add         esi,eax
+  00000016: 4F                 dec         edi
+  00000017: 78 11              js          0000002A
+  00000019: 8D A4 24 00 00 00  lea         esp,[esp+00000000h]
+            00
+  00000020: 2B F3              sub         esi,ebx
+  00000022: 8B CE              mov         ecx,esi
+  00000024: FF 55 14           call        dword ptr [ebp+14h]
+  00000027: 4F                 dec         edi
+  00000028: 79 F6              jns         00000020
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 5B                 pop         ebx
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 10 00           ret         10h
+
+?AllocateNewBlock@?$PArray@E$00@Phyre@@KAPAEI@Z (protected: static unsigned char * __cdecl Phyre::PArray<unsigned char,1>::AllocateNewBlock(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 0D              je          00000017
+  0000000A: 6A 01              push        1
+  0000000C: 50                 push        eax
+  0000000D: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXII@Z
+  00000012: 83 C4 08           add         esp,8
+  00000015: 5D                 pop         ebp
+  00000016: C3                 ret
+  00000017: 33 C0              xor         eax,eax
+  00000019: 5D                 pop         ebp
+  0000001A: C3                 ret
+
+?DeleteList@PStreamBuffer@PInternal@PSerialization@Phyre@@SAXAAPAV1234@@Z (public: static void __cdecl Phyre::PSerialization::PInternal::PStreamBuffer::DeleteList(class Phyre::PSerialization::PInternal::PStreamBuffer * &)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 83 3E 00           cmp         dword ptr [esi],0
+  0000000A: 74 18              je          00000024
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 8B 0E              mov         ecx,dword ptr [esi]
+  00000012: 51                 push        ecx
+  00000013: 8B 01              mov         eax,dword ptr [ecx]
+  00000015: 89 06              mov         dword ptr [esi],eax
+  00000017: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 83 3E 00           cmp         dword ptr [esi],0
+  00000022: 75 EC              jne         00000010
+  00000024: 5E                 pop         esi
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+
+?DestructOldBlock@?$PArrayInitializer@E@Phyre@@SAXPAEI@Z (public: static void __cdecl Phyre::PArrayInitializer<unsigned char>::DestructOldBlock(unsigned char *,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 85 C0              test        eax,eax
+  00000008: 74 09              je          00000013
+  0000000A: 50                 push        eax
+  0000000B: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000010: 83 C4 04           add         esp,4
+  00000013: 5D                 pop         ebp
+  00000014: C3                 ret
+
+?GetElementAlignment@?$PArray@E$00@Phyre@@SAIXZ (public: static unsigned int __cdecl Phyre::PArray<unsigned char,1>::GetElementAlignment(void)):
+  00000000: B8 01 00 00 00     mov         eax,1
+  00000005: C3                 ret
+
+?Initialize@?$PArrayInitializer@E@Phyre@@SAXPAEI@Z (public: static void __cdecl Phyre::PArrayInitializer<unsigned char>::Initialize(unsigned char *,unsigned int)):
+  00000000: C3                 ret
+
+?addElementToListEnd@?$PSimpleListElement@VPStreamBuffer@PInternal@PSerialization@Phyre@@@Phyre@@QAEXPAPAVPStreamBuffer@PInternal@PSerialization@2@@Z (public: void __thiscall Phyre::PSimpleListElement<class Phyre::PSerialization::PInternal::PStreamBuffer>::addElementToListEnd(class Phyre::PSerialization::PInternal::PStreamBuffer * *)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 83 38 00           cmp         dword ptr [eax],0
+  00000009: 74 0C              je          00000017
+  0000000B: EB 03              jmp         00000010
+  0000000D: 8D 49 00           lea         ecx,[ecx]
+  00000010: 8B 00              mov         eax,dword ptr [eax]
+  00000012: 83 38 00           cmp         dword ptr [eax],0
+  00000015: 75 F9              jne         00000010
+  00000017: 89 08              mov         dword ptr [eax],ecx
+  00000019: C7 01 00 00 00 00  mov         dword ptr [ecx],0
+  0000001F: 5D                 pop         ebp
+  00000020: C2 04 00           ret         4
+
+?c_str@PString@Phyre@@QBEPBDXZ (public: char const * __thiscall Phyre::PString::c_str(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+?canFreeAllocatedBuffer@PString@Phyre@@ABE_NXZ (private: bool __thiscall Phyre::PString::canFreeAllocatedBuffer(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: F7 D0              not         eax
+  00000004: 83 E0 01           and         eax,1
+  00000007: C3                 ret
+
+?canFreeAllocatedElements@PArrayBase@Phyre@@QBE_NXZ (public: bool __thiscall Phyre::PArrayBase::canFreeAllocatedElements(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: C1 E8 1F           shr         eax,1Fh
+  00000005: F7 D0              not         eax
+  00000007: 83 E0 01           and         eax,1
+  0000000A: C3                 ret
+
+?get@PStreamReader@PSerialization@Phyre@@QAE_KPAX_K@Z (public: unsigned __int64 __thiscall Phyre::PSerialization::PStreamReader::get(void *,unsigned __int64)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: FF 75 10           push        dword ptr [ebp+10h]
+  00000007: 8B F1              mov         esi,ecx
+  00000009: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000C: 8B 06              mov         eax,dword ptr [esi]
+  0000000E: FF 75 08           push        dword ptr [ebp+8]
+  00000011: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000014: FF D0              call        eax
+  00000016: 01 46 10           add         dword ptr [esi+10h],eax
+  00000019: 11 56 14           adc         dword ptr [esi+14h],edx
+  0000001C: 5E                 pop         esi
+  0000001D: 5D                 pop         ebp
+  0000001E: C2 0C 00           ret         0Ch
+
+?getArray@?$PArray@E$00@Phyre@@QAEPAEXZ (public: unsigned char * __thiscall Phyre::PArray<unsigned char,1>::getArray(void)):
+  00000000: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  00000003: C3                 ret
+
+?getCount@PArrayBase@Phyre@@QBEIXZ (public: unsigned int __thiscall Phyre::PArrayBase::getCount(void)const ):
+  00000000: 8B 01              mov         eax,dword ptr [ecx]
+  00000002: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000007: C3                 ret
+
+?getName@PStream@PSerialization@Phyre@@QBEPBDXZ (public: char const * __thiscall Phyre::PSerialization::PStream::getName(void)const ):
+  00000000: 0F B6 51 08        movzx       edx,byte ptr [ecx+8]
+  00000004: 8B 41 08           mov         eax,dword ptr [ecx+8]
+  00000007: 83 E2 01           and         edx,1
+  0000000A: 2B C2              sub         eax,edx
+  0000000C: C3                 ret
+
+?getRemainingSize@PStreamReader@PSerialization@Phyre@@QBE_KXZ (public: unsigned __int64 __thiscall Phyre::PSerialization::PStreamReader::getRemainingSize(void)const ):
+  00000000: 8B 41 18           mov         eax,dword ptr [ecx+18h]
+  00000003: 8B 51 1C           mov         edx,dword ptr [ecx+1Ch]
+  00000006: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000009: 75 07              jne         00000012
+  0000000B: 85 D2              test        edx,edx
+  0000000D: 75 03              jne         00000012
+  0000000F: 0B C0              or          eax,eax
+  00000011: C3                 ret
+  00000012: 2B 41 10           sub         eax,dword ptr [ecx+10h]
+  00000015: 1B 51 14           sbb         edx,dword ptr [ecx+14h]
+  00000018: C3                 ret
+
+?getStart@PString@Phyre@@ABEPAXXZ (private: void * __thiscall Phyre::PString::getStart(void)const ):
+  00000000: 0F B6 11           movzx       edx,byte ptr [ecx]
+  00000003: 8B 01              mov         eax,dword ptr [ecx]
+  00000005: 83 E2 01           and         edx,1
+  00000008: 2B C2              sub         eax,edx
+  0000000A: C3                 ret
+
+?getWithCheck@PStreamReader@PSerialization@Phyre@@QAE?AW4PResult@3@PAX_K@Z (public: enum Phyre::PResult __thiscall Phyre::PSerialization::PStreamReader::getWithCheck(void *,unsigned __int64)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: FF 75 10           push        dword ptr [ebp+10h]
+  00000007: 8B F9              mov         edi,ecx
+  00000009: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000000C: 8B 07              mov         eax,dword ptr [edi]
+  0000000E: FF 75 08           push        dword ptr [ebp+8]
+  00000011: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000014: FF D0              call        eax
+  00000016: 01 47 10           add         dword ptr [edi+10h],eax
+  00000019: 11 57 14           adc         dword ptr [edi+14h],edx
+  0000001C: 5F                 pop         edi
+  0000001D: 3B 45 0C           cmp         eax,dword ptr [ebp+0Ch]
+  00000020: 75 0B              jne         0000002D
+  00000022: 3B 55 10           cmp         edx,dword ptr [ebp+10h]
+  00000025: 75 06              jne         0000002D
+  00000027: 33 C0              xor         eax,eax
+  00000029: 5D                 pop         ebp
+  0000002A: C2 0C 00           ret         0Ch
+  0000002D: B8 09 00 00 00     mov         eax,9
+  00000032: 5D                 pop         ebp
+  00000033: C2 0C 00           ret         0Ch
+
+?parseToArray@PStreamReader@PSerialization@Phyre@@QAE?AW4PResult@3@AAV?$PArray@E$00@3@_N@Z (public: enum Phyre::PResult __thiscall Phyre::PSerialization::PStreamReader::parseToArray(class Phyre::PArray<unsigned char,1> &,bool)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 1C           sub         esp,1Ch
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 83 CE FF           or          esi,0FFFFFFFFh
+  0000000E: 8B 57 18           mov         edx,dword ptr [edi+18h]
+  00000011: 8B 4F 1C           mov         ecx,dword ptr [edi+1Ch]
+  00000014: 33 C0              xor         eax,eax
+  00000016: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000019: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001C: 83 FA FF           cmp         edx,0FFFFFFFFh
+  0000001F: 75 04              jne         00000025
+  00000021: 85 C9              test        ecx,ecx
+  00000023: 74 10              je          00000035
+  00000025: 8B F2              mov         esi,edx
+  00000027: 2B 77 10           sub         esi,dword ptr [edi+10h]
+  0000002A: 8B C1              mov         eax,ecx
+  0000002C: 1B 47 14           sbb         eax,dword ptr [edi+14h]
+  0000002F: 89 75 F4           mov         dword ptr [ebp-0Ch],esi
+  00000032: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000035: 0F 57 C0           xorps       xmm0,xmm0
+  00000038: 66 0F 13 45 E4     movlpd      qword ptr [ebp-1Ch],xmm0
+  0000003D: 83 FE FF           cmp         esi,0FFFFFFFFh
+  00000040: 0F 85 4E 01 00 00  jne         00000194
+  00000046: 85 C0              test        eax,eax
+  00000048: 0F 85 46 01 00 00  jne         00000194
+  0000004E: 66 0F 13 45 E4     movlpd      qword ptr [ebp-1Ch],xmm0
+  00000053: 8B 4D E8           mov         ecx,dword ptr [ebp-18h]
+  00000056: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  00000059: 8B 4D E4           mov         ecx,dword ptr [ebp-1Ch]
+  0000005C: 33 DB              xor         ebx,ebx
+  0000005E: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000061: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000064: 68 08 08 00 00     push        808h
+  00000069: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXI@Z
+  0000006E: 8B F0              mov         esi,eax
+  00000070: 83 C4 04           add         esp,4
+  00000073: 85 F6              test        esi,esi
+  00000075: 0F 84 F8 00 00 00  je          00000173
+  0000007B: 6A 00              push        0
+  0000007D: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000083: 8B 07              mov         eax,dword ptr [edi]
+  00000085: 68 00 08 00 00     push        800h
+  0000008A: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  0000008D: 8D 4E 04           lea         ecx,[esi+4]
+  00000090: 51                 push        ecx
+  00000091: 8B CF              mov         ecx,edi
+  00000093: FF D0              call        eax
+  00000095: 01 47 10           add         dword ptr [edi+10h],eax
+  00000098: 11 57 14           adc         dword ptr [edi+14h],edx
+  0000009B: 89 86 04 08 00 00  mov         dword ptr [esi+804h],eax
+  000000A1: 85 C0              test        eax,eax
+  000000A3: 74 2F              je          000000D4
+  000000A5: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000000A8: 85 DB              test        ebx,ebx
+  000000AA: 74 0B              je          000000B7
+  000000AC: 8D 64 24 00        lea         esp,[esp]
+  000000B0: 8B 00              mov         eax,dword ptr [eax]
+  000000B2: 83 38 00           cmp         dword ptr [eax],0
+  000000B5: 75 F9              jne         000000B0
+  000000B7: 89 30              mov         dword ptr [eax],esi
+  000000B9: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000BC: 03 86 04 08 00 00  add         eax,dword ptr [esi+804h]
+  000000C2: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  000000C5: 83 55 F8 00        adc         dword ptr [ebp-8],0
+  000000C9: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  000000CF: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000D2: EB 90              jmp         00000064
+  000000D4: 56                 push        esi
+  000000D5: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  000000DA: 0F B6 45 0C        movzx       eax,byte ptr [ebp+0Ch]
+  000000DE: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  000000E1: 99                 cdq
+  000000E2: 8B 0E              mov         ecx,dword ptr [esi]
+  000000E4: 83 C4 04           add         esp,4
+  000000E7: 03 45 FC           add         eax,dword ptr [ebp-4]
+  000000EA: 13 55 F8           adc         edx,dword ptr [ebp-8]
+  000000ED: 33 FF              xor         edi,edi
+  000000EF: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  000000F5: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  000000F8: 89 55 F8           mov         dword ptr [ebp-8],edx
+  000000FB: 3B FA              cmp         edi,edx
+  000000FD: 77 2B              ja          0000012A
+  000000FF: 72 04              jb          00000105
+  00000101: 3B C8              cmp         ecx,eax
+  00000103: 73 25              jae         0000012A
+  00000105: 50                 push        eax
+  00000106: 8B CE              mov         ecx,esi
+  00000108: E8 00 00 00 00     call        ?resize@?$PArray@E$00@Phyre@@QAE?AW4PResult@2@I@Z
+  0000010D: 8B F8              mov         edi,eax
+  0000010F: 85 FF              test        edi,edi
+  00000111: 74 17              je          0000012A
+  00000113: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000116: 50                 push        eax
+  00000117: E8 00 00 00 00     call        ?DeleteList@PStreamBuffer@PInternal@PSerialization@Phyre@@SAXAAPAV1234@@Z
+  0000011C: 83 C4 04           add         esp,4
+  0000011F: 8B C7              mov         eax,edi
+  00000121: 5F                 pop         edi
+  00000122: 5E                 pop         esi
+  00000123: 5B                 pop         ebx
+  00000124: 8B E5              mov         esp,ebp
+  00000126: 5D                 pop         ebp
+  00000127: C2 08 00           ret         8
+  0000012A: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000012D: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000130: 85 DB              test        ebx,ebx
+  00000132: 74 28              je          0000015C
+  00000134: 8B FB              mov         edi,ebx
+  00000136: 8B 1B              mov         ebx,dword ptr [ebx]
+  00000138: 8B B7 04 08 00 00  mov         esi,dword ptr [edi+804h]
+  0000013E: 56                 push        esi
+  0000013F: 8D 47 04           lea         eax,[edi+4]
+  00000142: 50                 push        eax
+  00000143: 51                 push        ecx
+  00000144: E8 00 00 00 00     call        _memcpy
+  00000149: 01 75 FC           add         dword ptr [ebp-4],esi
+  0000014C: 57                 push        edi
+  0000014D: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000152: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000155: 83 C4 10           add         esp,10h
+  00000158: 85 DB              test        ebx,ebx
+  0000015A: 75 D8              jne         00000134
+  0000015C: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00000160: 74 03              je          00000165
+  00000162: C6 01 00           mov         byte ptr [ecx],0
+  00000165: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000168: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  0000016B: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  0000016E: E9 EC 00 00 00     jmp         0000025F
+  00000173: 85 DB              test        ebx,ebx
+  00000175: 74 0F              je          00000186
+  00000177: 53                 push        ebx
+  00000178: 8B 1B              mov         ebx,dword ptr [ebx]
+  0000017A: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  0000017F: 83 C4 04           add         esp,4
+  00000182: 85 DB              test        ebx,ebx
+  00000184: 75 F1              jne         00000177
+  00000186: 5F                 pop         edi
+  00000187: 5E                 pop         esi
+  00000188: B8 0D 00 00 00     mov         eax,0Dh
+  0000018D: 5B                 pop         ebx
+  0000018E: 8B E5              mov         esp,ebp
+  00000190: 5D                 pop         ebp
+  00000191: C2 08 00           ret         8
+  00000194: 0F B6 45 0C        movzx       eax,byte ptr [ebp+0Ch]
+  00000198: 99                 cdq
+  00000199: 8B D8              mov         ebx,eax
+  0000019B: 8B CB              mov         ecx,ebx
+  0000019D: 03 CE              add         ecx,esi
+  0000019F: 8B F2              mov         esi,edx
+  000001A1: 13 75 FC           adc         esi,dword ptr [ebp-4]
+  000001A4: 8B C1              mov         eax,ecx
+  000001A6: 0B C6              or          eax,esi
+  000001A8: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  000001AB: 89 4D F8           mov         dword ptr [ebp-8],ecx
+  000001AE: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  000001B1: 0F 84 A5 00 00 00  je          0000025C
+  000001B7: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  000001BA: 33 D2              xor         edx,edx
+  000001BC: 8B 06              mov         eax,dword ptr [esi]
+  000001BE: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  000001C3: 3B 55 F0           cmp         edx,dword ptr [ebp-10h]
+  000001C6: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  000001C9: 77 5B              ja          00000226
+  000001CB: 72 04              jb          000001D1
+  000001CD: 3B C1              cmp         eax,ecx
+  000001CF: 73 55              jae         00000226
+  000001D1: 3B 0E              cmp         ecx,dword ptr [esi]
+  000001D3: 74 51              je          00000226
+  000001D5: 33 D2              xor         edx,edx
+  000001D7: 89 55 08           mov         dword ptr [ebp+8],edx
+  000001DA: 85 C9              test        ecx,ecx
+  000001DC: 74 1B              je          000001F9
+  000001DE: 6A 01              push        1
+  000001E0: 51                 push        ecx
+  000001E1: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXII@Z
+  000001E6: 8B D0              mov         edx,eax
+  000001E8: 83 C4 08           add         esp,8
+  000001EB: 89 55 08           mov         dword ptr [ebp+8],edx
+  000001EE: 85 D2              test        edx,edx
+  000001F0: 75 07              jne         000001F9
+  000001F2: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  000001F5: 85 C9              test        ecx,ecx
+  000001F7: 75 8D              jne         00000186
+  000001F9: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  000001FC: 3B CA              cmp         ecx,edx
+  000001FE: 74 1B              je          0000021B
+  00000200: 8B 06              mov         eax,dword ptr [esi]
+  00000202: C1 E8 1F           shr         eax,1Fh
+  00000205: F6 D0              not         al
+  00000207: A8 01              test        al,1
+  00000209: 74 10              je          0000021B
+  0000020B: 85 C9              test        ecx,ecx
+  0000020D: 74 0C              je          0000021B
+  0000020F: 51                 push        ecx
+  00000210: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000215: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000218: 83 C4 04           add         esp,4
+  0000021B: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000021E: 89 56 04           mov         dword ptr [esi+4],edx
+  00000221: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00000224: 89 06              mov         dword ptr [esi],eax
+  00000226: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000229: 8B 07              mov         eax,dword ptr [edi]
+  0000022B: 52                 push        edx
+  0000022C: FF 75 F4           push        dword ptr [ebp-0Ch]
+  0000022F: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000232: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000235: 51                 push        ecx
+  00000236: 8B CF              mov         ecx,edi
+  00000238: FF D0              call        eax
+  0000023A: 01 47 10           add         dword ptr [edi+10h],eax
+  0000023D: 11 57 14           adc         dword ptr [edi+14h],edx
+  00000240: 03 D8              add         ebx,eax
+  00000242: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  00000245: 13 C2              adc         eax,edx
+  00000247: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  0000024B: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  0000024E: 74 12              je          00000262
+  00000250: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000253: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000256: C6 04 08 00        mov         byte ptr [eax+ecx],0
+  0000025A: EB 06              jmp         00000262
+  0000025C: 8B 5D E4           mov         ebx,dword ptr [ebp-1Ch]
+  0000025F: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000262: 8B 06              mov         eax,dword ptr [esi]
+  00000264: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000269: 3B C3              cmp         eax,ebx
+  0000026B: 0F 42 D8           cmovb       ebx,eax
+  0000026E: 8B 06              mov         eax,dword ptr [esi]
+  00000270: 25 00 00 00 80     and         eax,80000000h
+  00000275: 0B D8              or          ebx,eax
+  00000277: 8B C3              mov         eax,ebx
+  00000279: C1 E8 1F           shr         eax,1Fh
+  0000027C: F6 D0              not         al
+  0000027E: 89 1E              mov         dword ptr [esi],ebx
+  00000280: A8 01              test        al,1
+  00000282: 74 12              je          00000296
+  00000284: 85 DB              test        ebx,ebx
+  00000286: 75 0E              jne         00000296
+  00000288: FF 76 04           push        dword ptr [esi+4]
+  0000028B: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000290: 83 C4 04           add         esp,4
+  00000293: 89 5E 04           mov         dword ptr [esi+4],ebx
+  00000296: 5F                 pop         edi
+  00000297: 5E                 pop         esi
+  00000298: 33 C0              xor         eax,eax
+  0000029A: 5B                 pop         ebx
+  0000029B: 8B E5              mov         esp,ebp
+  0000029D: 5D                 pop         ebp
+  0000029E: C2 08 00           ret         8
+
+?parseToBuffer@PStreamReader@PSerialization@Phyre@@QAEPAEPAI_N@Z (public: unsigned char * __thiscall Phyre::PSerialization::PStreamReader::parseToBuffer(unsigned int *,bool)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B 5F 18           mov         ebx,dword ptr [edi+18h]
+  0000000E: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  00000011: 83 FB FF           cmp         ebx,0FFFFFFFFh
+  00000014: 75 04              jne         0000001A
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 1A              je          00000034
+  0000001A: 2B 5F 10           sub         ebx,dword ptr [edi+10h]
+  0000001D: 1B 47 14           sbb         eax,dword ptr [edi+14h]
+  00000020: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000023: 83 FB FF           cmp         ebx,0FFFFFFFFh
+  00000026: 0F 85 43 01 00 00  jne         0000016F
+  0000002C: 85 C0              test        eax,eax
+  0000002E: 0F 85 3B 01 00 00  jne         0000016F
+  00000034: 0F 57 C0           xorps       xmm0,xmm0
+  00000037: 66 0F 13 45 F8     movlpd      qword ptr [ebp-8],xmm0
+  0000003C: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000003F: 8B 4D F8           mov         ecx,dword ptr [ebp-8]
+  00000042: 33 DB              xor         ebx,ebx
+  00000044: 89 5D F4           mov         dword ptr [ebp-0Ch],ebx
+  00000047: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000004A: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 68 08 08 00 00     push        808h
+  00000055: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXI@Z
+  0000005A: 8B F0              mov         esi,eax
+  0000005C: 83 C4 04           add         esp,4
+  0000005F: 85 F6              test        esi,esi
+  00000061: 0F 84 EA 00 00 00  je          00000151
+  00000067: 6A 00              push        0
+  00000069: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  0000006F: 8B 07              mov         eax,dword ptr [edi]
+  00000071: 68 00 08 00 00     push        800h
+  00000076: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000079: 8D 4E 04           lea         ecx,[esi+4]
+  0000007C: 51                 push        ecx
+  0000007D: 8B CF              mov         ecx,edi
+  0000007F: FF D0              call        eax
+  00000081: 01 47 10           add         dword ptr [edi+10h],eax
+  00000084: 11 57 14           adc         dword ptr [edi+14h],edx
+  00000087: 89 86 04 08 00 00  mov         dword ptr [esi+804h],eax
+  0000008D: 85 C0              test        eax,eax
+  0000008F: 74 2B              je          000000BC
+  00000091: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000094: 85 DB              test        ebx,ebx
+  00000096: 74 07              je          0000009F
+  00000098: 8B 00              mov         eax,dword ptr [eax]
+  0000009A: 83 38 00           cmp         dword ptr [eax],0
+  0000009D: 75 F9              jne         00000098
+  0000009F: 89 30              mov         dword ptr [eax],esi
+  000000A1: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000A4: 03 86 04 08 00 00  add         eax,dword ptr [esi+804h]
+  000000AA: 8B 5D F4           mov         ebx,dword ptr [ebp-0Ch]
+  000000AD: 83 55 F0 00        adc         dword ptr [ebp-10h],0
+  000000B1: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  000000B7: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000000BA: EB 94              jmp         00000050
+  000000BC: 56                 push        esi
+  000000BD: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  000000C2: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  000000C5: 8A 55 0C           mov         dl,byte ptr [ebp+0Ch]
+  000000C8: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000CB: 83 C4 04           add         esp,4
+  000000CE: 85 F6              test        esi,esi
+  000000D0: 74 07              je          000000D9
+  000000D2: 0F B6 C2           movzx       eax,dl
+  000000D5: 03 C1              add         eax,ecx
+  000000D7: 89 06              mov         dword ptr [esi],eax
+  000000D9: 0F B6 C2           movzx       eax,dl
+  000000DC: 03 C1              add         eax,ecx
+  000000DE: 6A 01              push        1
+  000000E0: 50                 push        eax
+  000000E1: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXII@Z
+  000000E6: 8B F0              mov         esi,eax
+  000000E8: 83 C4 08           add         esp,8
+  000000EB: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  000000EE: 85 F6              test        esi,esi
+  000000F0: 75 17              jne         00000109
+  000000F2: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000000F5: 50                 push        eax
+  000000F6: E8 00 00 00 00     call        ?DeleteList@PStreamBuffer@PInternal@PSerialization@Phyre@@SAXAAPAV1234@@Z
+  000000FB: 83 C4 04           add         esp,4
+  000000FE: 33 C0              xor         eax,eax
+  00000100: 5F                 pop         edi
+  00000101: 5E                 pop         esi
+  00000102: 5B                 pop         ebx
+  00000103: 8B E5              mov         esp,ebp
+  00000105: 5D                 pop         ebp
+  00000106: C2 08 00           ret         8
+  00000109: 8B CE              mov         ecx,esi
+  0000010B: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000010E: 85 DB              test        ebx,ebx
+  00000110: 74 2B              je          0000013D
+  00000112: 8B FB              mov         edi,ebx
+  00000114: 8B 1B              mov         ebx,dword ptr [ebx]
+  00000116: 8B B7 04 08 00 00  mov         esi,dword ptr [edi+804h]
+  0000011C: 56                 push        esi
+  0000011D: 8D 47 04           lea         eax,[edi+4]
+  00000120: 50                 push        eax
+  00000121: 51                 push        ecx
+  00000122: E8 00 00 00 00     call        _memcpy
+  00000127: 01 75 08           add         dword ptr [ebp+8],esi
+  0000012A: 57                 push        edi
+  0000012B: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000130: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000133: 83 C4 10           add         esp,10h
+  00000136: 85 DB              test        ebx,ebx
+  00000138: 75 D8              jne         00000112
+  0000013A: 8B 75 F0           mov         esi,dword ptr [ebp-10h]
+  0000013D: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  00000141: 74 74              je          000001B7
+  00000143: 5F                 pop         edi
+  00000144: 8B C6              mov         eax,esi
+  00000146: 5E                 pop         esi
+  00000147: C6 01 00           mov         byte ptr [ecx],0
+  0000014A: 5B                 pop         ebx
+  0000014B: 8B E5              mov         esp,ebp
+  0000014D: 5D                 pop         ebp
+  0000014E: C2 08 00           ret         8
+  00000151: 85 DB              test        ebx,ebx
+  00000153: 74 0F              je          00000164
+  00000155: 53                 push        ebx
+  00000156: 8B 1B              mov         ebx,dword ptr [ebx]
+  00000158: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  0000015D: 83 C4 04           add         esp,4
+  00000160: 85 DB              test        ebx,ebx
+  00000162: 75 F1              jne         00000155
+  00000164: 5F                 pop         edi
+  00000165: 5E                 pop         esi
+  00000166: 33 C0              xor         eax,eax
+  00000168: 5B                 pop         ebx
+  00000169: 8B E5              mov         esp,ebp
+  0000016B: 5D                 pop         ebp
+  0000016C: C2 08 00           ret         8
+  0000016F: 0F B6 45 0C        movzx       eax,byte ptr [ebp+0Ch]
+  00000173: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000176: 03 C3              add         eax,ebx
+  00000178: 6A 01              push        1
+  0000017A: 50                 push        eax
+  0000017B: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXII@Z
+  00000180: 8B F0              mov         esi,eax
+  00000182: 83 C4 08           add         esp,8
+  00000185: 85 F6              test        esi,esi
+  00000187: 74 2E              je          000001B7
+  00000189: FF 75 F0           push        dword ptr [ebp-10h]
+  0000018C: 8B 07              mov         eax,dword ptr [edi]
+  0000018E: 53                 push        ebx
+  0000018F: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00000192: 56                 push        esi
+  00000193: 8B CF              mov         ecx,edi
+  00000195: FF D0              call        eax
+  00000197: 8B C8              mov         ecx,eax
+  00000199: 01 4F 10           add         dword ptr [edi+10h],ecx
+  0000019C: 11 57 14           adc         dword ptr [edi+14h],edx
+  0000019F: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  000001A2: 85 D2              test        edx,edx
+  000001A4: 74 07              je          000001AD
+  000001A6: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000001A9: 03 C1              add         eax,ecx
+  000001AB: 89 02              mov         dword ptr [edx],eax
+  000001AD: 80 7D 0C 00        cmp         byte ptr [ebp+0Ch],0
+  000001B1: 74 04              je          000001B7
+  000001B3: C6 04 31 00        mov         byte ptr [ecx+esi],0
+  000001B7: 5F                 pop         edi
+  000001B8: 8B C6              mov         eax,esi
+  000001BA: 5E                 pop         esi
+  000001BB: 5B                 pop         ebx
+  000001BC: 8B E5              mov         esp,ebp
+  000001BE: 5D                 pop         ebp
+  000001BF: C2 08 00           ret         8
+
+?resize@?$PArray@E$00@Phyre@@QAE?AW4PResult@2@I@Z (public: enum Phyre::PResult __thiscall Phyre::PArray<unsigned char,1>::resize(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 3B 37              cmp         esi,dword ptr [edi]
+  0000000D: 74 49              je          00000058
+  0000000F: 33 DB              xor         ebx,ebx
+  00000011: 85 F6              test        esi,esi
+  00000013: 74 1F              je          00000034
+  00000015: 6A 01              push        1
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        ?PhyreMalloc@Phyre@@YAPAXII@Z
+  0000001D: 8B D8              mov         ebx,eax
+  0000001F: 83 C4 08           add         esp,8
+  00000022: 85 DB              test        ebx,ebx
+  00000024: 75 0E              jne         00000034
+  00000026: 85 F6              test        esi,esi
+  00000028: 74 0A              je          00000034
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 8D 43 0D           lea         eax,[ebx+0Dh]
+  0000002F: 5B                 pop         ebx
+  00000030: 5D                 pop         ebp
+  00000031: C2 04 00           ret         4
+  00000034: 8B 4F 04           mov         ecx,dword ptr [edi+4]
+  00000037: 3B CB              cmp         ecx,ebx
+  00000039: 74 18              je          00000053
+  0000003B: 8B 07              mov         eax,dword ptr [edi]
+  0000003D: C1 E8 1F           shr         eax,1Fh
+  00000040: F6 D0              not         al
+  00000042: A8 01              test        al,1
+  00000044: 74 0D              je          00000053
+  00000046: 85 C9              test        ecx,ecx
+  00000048: 74 09              je          00000053
+  0000004A: 51                 push        ecx
+  0000004B: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000050: 83 C4 04           add         esp,4
+  00000053: 89 5F 04           mov         dword ptr [edi+4],ebx
+  00000056: 89 37              mov         dword ptr [edi],esi
+  00000058: 5F                 pop         edi
+  00000059: 5E                 pop         esi
+  0000005A: 33 C0              xor         eax,eax
+  0000005C: 5B                 pop         ebx
+  0000005D: 5D                 pop         ebp
+  0000005E: C2 04 00           ret         4
+
+?setNewBlock@?$PArray@E$00@Phyre@@IAEXPAEI@Z (protected: void __thiscall Phyre::PArray<unsigned char,1>::setNewBlock(unsigned char *,unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 57                 push        edi
+  00000007: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  0000000A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000D: 3B CF              cmp         ecx,edi
+  0000000F: 74 18              je          00000029
+  00000011: 8B 06              mov         eax,dword ptr [esi]
+  00000013: C1 E8 1F           shr         eax,1Fh
+  00000016: F6 D0              not         al
+  00000018: A8 01              test        al,1
+  0000001A: 74 0D              je          00000029
+  0000001C: 85 C9              test        ecx,ecx
+  0000001E: 74 09              je          00000029
+  00000020: 51                 push        ecx
+  00000021: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000026: 83 C4 04           add         esp,4
+  00000029: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000002C: 89 7E 04           mov         dword ptr [esi+4],edi
+  0000002F: 5F                 pop         edi
+  00000030: 89 06              mov         dword ptr [esi],eax
+  00000032: 5E                 pop         esi
+  00000033: 5D                 pop         ebp
+  00000034: C2 08 00           ret         8
+
+?shrink@?$PArray@E$00@Phyre@@QAEXI@Z (public: void __thiscall Phyre::PArray<unsigned char,1>::shrink(unsigned int)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 8B 06              mov         eax,dword ptr [esi]
+  0000000B: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000010: 3B C2              cmp         eax,edx
+  00000012: 0F 42 D0           cmovb       edx,eax
+  00000015: 8B 06              mov         eax,dword ptr [esi]
+  00000017: 25 00 00 00 80     and         eax,80000000h
+  0000001C: 0B D0              or          edx,eax
+  0000001E: 8B C2              mov         eax,edx
+  00000020: C1 E8 1F           shr         eax,1Fh
+  00000023: F6 D0              not         al
+  00000025: 89 16              mov         dword ptr [esi],edx
+  00000027: A8 01              test        al,1
+  00000029: 74 16              je          00000041
+  0000002B: 85 D2              test        edx,edx
+  0000002D: 75 12              jne         00000041
+  0000002F: FF 76 04           push        dword ptr [esi+4]
+  00000032: E8 00 00 00 00     call        ?PhyreFree@Phyre@@YAXPAX@Z
+  00000037: 83 C4 04           add         esp,4
+  0000003A: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000041: 5E                 pop         esi
+  00000042: 5D                 pop         ebp
+  00000043: C2 04 00           ret         4
+
+?skip@PStreamReader@PSerialization@Phyre@@QAE_K_K@Z (public: unsigned __int64 __thiscall Phyre::PSerialization::PStreamReader::skip(unsigned __int64)):
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000006: 56                 push        esi
+  00000007: 8B F1              mov         esi,ecx
+  00000009: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000C: 8B C1              mov         eax,ecx
+  0000000E: 0B C2              or          eax,edx
+  00000010: 75 07              jne         00000019
+  00000012: 33 D2              xor         edx,edx
+  00000014: 5E                 pop         esi
+  00000015: 5D                 pop         ebp
+  00000016: C2 08 00           ret         8
+  00000019: 8B 06              mov         eax,dword ptr [esi]
+  0000001B: 52                 push        edx
+  0000001C: 8B 40 18           mov         eax,dword ptr [eax+18h]
+  0000001F: 51                 push        ecx
+  00000020: 8B CE              mov         ecx,esi
+  00000022: FF D0              call        eax
+  00000024: 01 46 10           add         dword ptr [esi+10h],eax
+  00000027: 11 56 14           adc         dword ptr [esi+14h],edx
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C2 08 00           ret         8
+
+  Summary
+
+           2 .bss
+          7C .data
+          E0 .debug$F
+          6C .debug$S
+        1267 .drectve
+         281 .rdata
+          CF .rdata$r
+         7A2 .text

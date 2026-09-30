@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006FCCA0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Iggy_FillStringArray@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 34           sub         esp,34h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: 8B D9              mov         ebx,ecx
+  0000000E: 57                 push        edi
+  0000000F: 52                 push        edx
+  00000010: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000013: 89 13              mov         dword ptr [ebx],edx
+  00000015: E8 00 00 00 00     call        _IggyValueRefCreateArray
+  0000001A: 50                 push        eax
+  0000001B: FF 33              push        dword ptr [ebx]
+  0000001D: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000020: 8D 45 CC           lea         eax,[ebp-34h]
+  00000023: 50                 push        eax
+  00000024: E8 00 00 00 00     call        _IggyValuePathFromRef
+  00000029: 6A 00              push        0
+  0000002B: 8D 45 CC           lea         eax,[ebp-34h]
+  0000002E: 50                 push        eax
+  0000002F: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000032: 50                 push        eax
+  00000033: E8 00 00 00 00     call        _IggyValuePathMakeArrayRef
+  00000038: 83 C4 20           add         esp,20h
+  0000003B: 33 F6              xor         esi,esi
+  0000003D: 85 FF              test        edi,edi
+  0000003F: 7F 0B              jg          0000004C
+  00000041: 5F                 pop         edi
+  00000042: 5E                 pop         esi
+  00000043: 8B C3              mov         eax,ebx
+  00000045: 5B                 pop         ebx
+  00000046: 8B E5              mov         esp,ebp
+  00000048: 5D                 pop         ebp
+  00000049: C2 08 00           ret         8
+  0000004C: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000004F: 90                 nop
+  00000050: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000053: 56                 push        esi
+  00000054: 50                 push        eax
+  00000055: E8 00 00 00 00     call        _IggyValuePathSetArrayIndex
+  0000005A: 8B 14 B3           mov         edx,dword ptr [ebx+esi*4]
+  0000005D: 8B C2              mov         eax,edx
+  0000005F: 83 C4 08           add         esp,8
+  00000062: 8D 78 01           lea         edi,[eax+1]
+  00000065: 8A 08              mov         cl,byte ptr [eax]
+  00000067: 40                 inc         eax
+  00000068: 84 C9              test        cl,cl
+  0000006A: 75 F9              jne         00000065
+  0000006C: 2B C7              sub         eax,edi
+  0000006E: 50                 push        eax
+  0000006F: 52                 push        edx
+  00000070: 6A 00              push        0
+  00000072: 8D 45 E4           lea         eax,[ebp-1Ch]
+  00000075: 6A 00              push        0
+  00000077: 50                 push        eax
+  00000078: E8 00 00 00 00     call        _IggyValueSetStringUTF8RS
+  0000007D: 46                 inc         esi
+  0000007E: 83 C4 14           add         esp,14h
+  00000081: 3B 75 0C           cmp         esi,dword ptr [ebp+0Ch]
+  00000084: 7C CA              jl          00000050
+  00000086: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000089: 5F                 pop         edi
+  0000008A: 5E                 pop         esi
+  0000008B: 5B                 pop         ebx
+  0000008C: 8B E5              mov         esp,ebp
+  0000008E: 5D                 pop         ebp
+  0000008F: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          92 .text

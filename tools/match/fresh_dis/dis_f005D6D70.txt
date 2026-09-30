@@ -1,0 +1,57 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005D6D70.obj
+
+File Type: COFF OBJECT
+
+@Engine_Loose_5D6D70@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 57                 push        edi
+  00000003: 8B F1              mov         esi,ecx
+  00000005: 8B FA              mov         edi,edx
+  00000007: 3B 3E              cmp         edi,dword ptr [esi]
+  00000009: 74 43              je          0000004E
+  0000000B: 33 DB              xor         ebx,ebx
+  0000000D: 85 FF              test        edi,edi
+  0000000F: 74 1F              je          00000030
+  00000011: 8D 04 FD 00 00 00  lea         eax,[edi*8]
+            00
+  00000018: 6A 04              push        4
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000020: 8B D8              mov         ebx,eax
+  00000022: 83 C4 08           add         esp,8
+  00000025: 85 DB              test        ebx,ebx
+  00000027: 75 07              jne         00000030
+  00000029: 5F                 pop         edi
+  0000002A: 5E                 pop         esi
+  0000002B: 8D 43 0D           lea         eax,[ebx+0Dh]
+  0000002E: 5B                 pop         ebx
+  0000002F: C3                 ret
+  00000030: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000033: 3B C3              cmp         eax,ebx
+  00000035: 74 12              je          00000049
+  00000037: 83 3E 00           cmp         dword ptr [esi],0
+  0000003A: 7C 0D              jl          00000049
+  0000003C: 85 C0              test        eax,eax
+  0000003E: 74 09              je          00000049
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000046: 83 C4 04           add         esp,4
+  00000049: 89 5E 04           mov         dword ptr [esi+4],ebx
+  0000004C: 89 3E              mov         dword ptr [esi],edi
+  0000004E: 5F                 pop         edi
+  0000004F: 5E                 pop         esi
+  00000050: 33 C0              xor         eax,eax
+  00000052: 5B                 pop         ebx
+  00000053: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          54 .text

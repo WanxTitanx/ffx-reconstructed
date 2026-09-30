@@ -1,0 +1,160 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00966B50.obj
+
+File Type: COFF OBJECT
+
+_LuaCodeGen_storeToReg:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: 57                 push        edi
+  0000000D: 53                 push        ebx
+  0000000E: E8 00 00 00 00     call        _LuaCodeGen_dischargeValue
+  00000013: 8B 07              mov         eax,dword ptr [edi]
+  00000015: 83 C4 08           add         esp,8
+  00000018: 8D 48 FF           lea         ecx,[eax-1]
+  0000001B: 83 F9 0A           cmp         ecx,0Ah
+  0000001E: 0F 87 E2 00 00 00  ja          $LN1
+  00000024: FF 24 8D 00 00 00  jmp         dword ptr $LN15[ecx*4]
+            00
+$LN8:
+  0000002B: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000002E: 6A 01              push        1
+  00000030: 56                 push        esi
+  00000031: 53                 push        ebx
+  00000032: E8 00 00 00 00     call        _LuaCodeGen_emitSetList
+  00000037: 83 C4 0C           add         esp,0Ch
+  0000003A: 89 77 04           mov         dword ptr [edi+4],esi
+  0000003D: C7 07 06 00 00 00  mov         dword ptr [edi],6
+  00000043: 5F                 pop         edi
+  00000044: 5E                 pop         esi
+  00000045: 8B D8              mov         ebx,eax
+  00000047: 5B                 pop         ebx
+  00000048: 5D                 pop         ebp
+  00000049: C3                 ret
+$LN7:
+  0000004A: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000004D: 33 DB              xor         ebx,ebx
+  0000004F: 83 F8 02           cmp         eax,2
+  00000052: 0F 94 C3           sete        bl
+  00000055: C1 E3 11           shl         ebx,11h
+  00000058: 0B DE              or          ebx,esi
+  0000005A: C1 E3 06           shl         ebx,6
+  0000005D: 83 CB 03           or          ebx,3
+  00000060: EB 55              jmp         000000B7
+$LN6:
+  00000062: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000065: 56                 push        esi
+  00000066: 53                 push        ebx
+  00000067: E8 00 00 00 00     call        _LuaCodeGen_emitLoadConst
+  0000006C: 83 C4 08           add         esp,8
+  0000006F: 89 77 04           mov         dword ptr [edi+4],esi
+  00000072: C7 07 06 00 00 00  mov         dword ptr [edi],6
+  00000078: 5F                 pop         edi
+  00000079: 5E                 pop         esi
+  0000007A: 8B D8              mov         ebx,eax
+  0000007C: 5B                 pop         ebx
+  0000007D: 5D                 pop         ebp
+  0000007E: C3                 ret
+$LN5:
+  0000007F: FF 77 04           push        dword ptr [edi+4]
+  00000082: 53                 push        ebx
+  00000083: E8 00 00 00 00     call        _LuaCodeGen_ensureFloatConstant
+  00000088: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000008B: 56                 push        esi
+  0000008C: 53                 push        ebx
+  0000008D: E8 00 00 00 00     call        _LuaCodeGen_emitLoadConst
+  00000092: 83 C4 10           add         esp,10h
+  00000095: 89 77 04           mov         dword ptr [edi+4],esi
+  00000098: C7 07 06 00 00 00  mov         dword ptr [edi],6
+  0000009E: 5F                 pop         edi
+  0000009F: 5E                 pop         esi
+  000000A0: 8B D8              mov         ebx,eax
+  000000A2: 5B                 pop         ebx
+  000000A3: 5D                 pop         ebp
+  000000A4: C3                 ret
+$LN4:
+  000000A5: 8B 5F 04           mov         ebx,dword ptr [edi+4]
+  000000A8: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000000AB: 3B F3              cmp         esi,ebx
+  000000AD: 74 16              je          000000C5
+  000000AF: C1 E3 11           shl         ebx,11h
+  000000B2: 0B DE              or          ebx,esi
+  000000B4: C1 E3 06           shl         ebx,6
+  000000B7: 53                 push        ebx
+  000000B8: FF 75 08           push        dword ptr [ebp+8]
+  000000BB: E8 00 00 00 00     call        _LuaCodeGen_emitRawOpcode
+  000000C0: 83 C4 08           add         esp,8
+  000000C3: 8B D8              mov         ebx,eax
+  000000C5: 89 77 04           mov         dword ptr [edi+4],esi
+  000000C8: C7 07 06 00 00 00  mov         dword ptr [edi],6
+  000000CE: 5F                 pop         edi
+  000000CF: 5E                 pop         esi
+  000000D0: 8B C3              mov         eax,ebx
+  000000D2: 5B                 pop         ebx
+  000000D3: 5D                 pop         ebp
+  000000D4: C3                 ret
+$LN2:
+  000000D5: 8B 03              mov         eax,dword ptr [ebx]
+  000000D7: 8B 48 0C           mov         ecx,dword ptr [eax+0Ch]
+  000000DA: 8B 47 04           mov         eax,dword ptr [edi+4]
+  000000DD: 8D 14 81           lea         edx,[ecx+eax*4]
+  000000E0: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000E3: 8B 0A              mov         ecx,dword ptr [edx]
+  000000E5: 8B D8              mov         ebx,eax
+  000000E7: C1 E3 06           shl         ebx,6
+  000000EA: 33 D9              xor         ebx,ecx
+  000000EC: 81 E3 C0 3F 00 00  and         ebx,3FC0h
+  000000F2: 33 CB              xor         ecx,ebx
+  000000F4: 89 0A              mov         dword ptr [edx],ecx
+  000000F6: 89 47 04           mov         dword ptr [edi+4],eax
+  000000F9: C7 07 06 00 00 00  mov         dword ptr [edi],6
+  000000FF: 5F                 pop         edi
+  00000100: 5E                 pop         esi
+  00000101: 8B C3              mov         eax,ebx
+  00000103: 5B                 pop         ebx
+  00000104: 5D                 pop         ebp
+  00000105: C3                 ret
+$LN1:
+  00000106: 5F                 pop         edi
+  00000107: 5E                 pop         esi
+  00000108: 48                 dec         eax
+  00000109: 5B                 pop         ebx
+  0000010A: 5D                 pop         ebp
+  0000010B: C3                 ret
+$LN15:
+  0000010C: 00 00              add         byte ptr [eax],al
+  0000010E: 00 00              add         byte ptr [eax],al
+  00000110: 00 00              add         byte ptr [eax],al
+  00000112: 00 00              add         byte ptr [eax],al
+  00000114: 00 00              add         byte ptr [eax],al
+  00000116: 00 00              add         byte ptr [eax],al
+  00000118: 00 00              add         byte ptr [eax],al
+  0000011A: 00 00              add         byte ptr [eax],al
+  0000011C: 00 00              add         byte ptr [eax],al
+  0000011E: 00 00              add         byte ptr [eax],al
+  00000120: 00 00              add         byte ptr [eax],al
+  00000122: 00 00              add         byte ptr [eax],al
+  00000124: 00 00              add         byte ptr [eax],al
+  00000126: 00 00              add         byte ptr [eax],al
+  00000128: 00 00              add         byte ptr [eax],al
+  0000012A: 00 00              add         byte ptr [eax],al
+  0000012C: 00 00              add         byte ptr [eax],al
+  0000012E: 00 00              add         byte ptr [eax],al
+  00000130: 00 00              add         byte ptr [eax],al
+  00000132: 00 00              add         byte ptr [eax],al
+  00000134: 00 00              add         byte ptr [eax],al
+  00000136: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         138 .text

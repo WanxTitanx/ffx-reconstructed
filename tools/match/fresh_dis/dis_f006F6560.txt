@@ -1,0 +1,75 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006F6560.obj
+
+File Type: COFF OBJECT
+
+@DebugUI_BuildStringBuffer@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 0F B6 57 7C        movzx       edx,byte ptr [edi+7Ch]
+  0000000D: 8B 47 7C           mov         eax,dword ptr [edi+7Ch]
+  00000010: 83 E2 01           and         edx,1
+  00000013: 2B C2              sub         eax,edx
+  00000015: 8D 4F 14           lea         ecx,[edi+14h]
+  00000018: 50                 push        eax
+  00000019: 51                 push        ecx
+  0000001A: C7 47 1C 00 00 00  mov         dword ptr [edi+1Ch],0
+            00
+  00000021: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000026: 8B 5F 74           mov         ebx,dword ptr [edi+74h]
+  00000029: 83 C4 08           add         esp,8
+  0000002C: 33 F6              xor         esi,esi
+  0000002E: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000034: 74 4A              je          00000080
+  00000036: 8B 47 78           mov         eax,dword ptr [edi+78h]
+  00000039: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  0000003C: 8B C8              mov         ecx,eax
+  0000003E: 83 E1 01           and         ecx,1
+  00000041: 2B C1              sub         eax,ecx
+  00000043: 74 36              je          0000007B
+  00000045: 8D 50 01           lea         edx,[eax+1]
+  00000048: 8A 08              mov         cl,byte ptr [eax]
+  0000004A: 40                 inc         eax
+  0000004B: 84 C9              test        cl,cl
+  0000004D: 75 F9              jne         00000048
+  0000004F: 2B C2              sub         eax,edx
+  00000051: 74 28              je          0000007B
+  00000053: 8D 47 14           lea         eax,[edi+14h]
+  00000056: 68 00 00 00 00     push        offset ??_C@_01EEMJAFIK@?6?$AA@
+  0000005B: 50                 push        eax
+  0000005C: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000061: 8B 47 78           mov         eax,dword ptr [edi+78h]
+  00000064: 8B 0C B0           mov         ecx,dword ptr [eax+esi*4]
+  00000067: 8B C1              mov         eax,ecx
+  00000069: 83 E0 01           and         eax,1
+  0000006C: 2B C8              sub         ecx,eax
+  0000006E: 51                 push        ecx
+  0000006F: 8D 47 14           lea         eax,[edi+14h]
+  00000072: 50                 push        eax
+  00000073: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000078: 83 C4 10           add         esp,10h
+  0000007B: 46                 inc         esi
+  0000007C: 3B F3              cmp         esi,ebx
+  0000007E: 72 B6              jb          00000036
+  00000080: C6 47 70 00        mov         byte ptr [edi+70h],0
+  00000084: 5F                 pop         edi
+  00000085: 5E                 pop         esi
+  00000086: 5B                 pop         ebx
+  00000087: 8B E5              mov         esp,ebp
+  00000089: 5D                 pop         ebp
+  0000008A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           2 .rdata
+          8B .text

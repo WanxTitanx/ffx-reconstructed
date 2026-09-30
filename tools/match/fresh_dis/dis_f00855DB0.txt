@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00855DB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_StoreTwoFloats:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: 0F B6 7B 32        movzx       edi,byte ptr [ebx+32h]
+  0000000D: FF 75 10           push        dword ptr [ebp+10h]
+  00000010: 6B FF 4C           imul        edi,edi,4Ch
+  00000013: 53                 push        ebx
+  00000014: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000019: 89 45 08           mov         dword ptr [ebp+8],eax
+  0000001C: DB 45 08           fild        dword ptr [ebp+8]
+  0000001F: 85 C0              test        eax,eax
+  00000021: 79 06              jns         00000029
+  00000023: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000029: FF 75 10           push        dword ptr [ebp+10h]
+  0000002C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000002F: 53                 push        ebx
+  00000030: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  00000035: 83 C4 10           add         esp,10h
+  00000038: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000003B: DB 45 FC           fild        dword ptr [ebp-4]
+  0000003E: 85 C0              test        eax,eax
+  00000040: 79 06              jns         00000048
+  00000042: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000048: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004B: D9 45 08           fld         dword ptr [ebp+8]
+  0000004E: D9 9C 1F C4 05 00  fstp        dword ptr [edi+ebx+5C4h]
+            00
+  00000055: D9 45 FC           fld         dword ptr [ebp-4]
+  00000058: D9 94 1F C0 05 00  fst         dword ptr [edi+ebx+5C0h]
+            00
+  0000005F: 5F                 pop         edi
+  00000060: 5B                 pop         ebx
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          65 .text

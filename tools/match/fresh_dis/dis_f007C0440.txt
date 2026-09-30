@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007C0440.obj
+
+File Type: COFF OBJECT
+
+_FFX_Math_NormalizeAngleRad:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 45 08           fld         dword ptr [ebp+8]
+  00000006: D9 C0              fld         st(0)
+  00000008: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000000B: DE E2              fsubrp      st(2),st
+  0000000D: D9 C9              fxch        st(1)
+  0000000F: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000012: D9 45 08           fld         dword ptr [ebp+8]
+  00000015: D9 C0              fld         st(0)
+  00000017: DD 05 00 00 00 00  fld         qword ptr [__real@401921fb5fffffff]
+  0000001D: DC FA              fdiv        st(2),st
+  0000001F: D9 CA              fxch        st(2)
+  00000021: E8 00 00 00 00     call        __ftol2_sse
+  00000026: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000029: DB 45 08           fild        dword ptr [ebp+8]
+  0000002C: D9 5D 08           fstp        dword ptr [ebp+8]
+  0000002F: D9 45 08           fld         dword ptr [ebp+8]
+  00000032: D8 CA              fmul        st,st(2)
+  00000034: DE E9              fsubp       st(1),st
+  00000036: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000039: D9 45 08           fld         dword ptr [ebp+8]
+  0000003C: D9 C0              fld         st(0)
+  0000003E: D9 EE              fldz
+  00000040: D8 DA              fcomp       st(2)
+  00000042: DF E0              fnstsw      ax
+  00000044: DD D9              fstp        st(1)
+  00000046: F6 C4 41           test        ah,41h
+  00000049: 75 08              jne         00000053
+  0000004B: D8 C1              fadd        st,st(1)
+  0000004D: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000050: D9 45 08           fld         dword ptr [ebp+8]
+  00000053: DD 05 00 00 00 00  fld         qword ptr [__real@400921fb5fffffff]
+  00000059: D8 D9              fcomp       st(1)
+  0000005B: DF E0              fnstsw      ax
+  0000005D: F6 C4 41           test        ah,41h
+  00000060: 7A 0C              jp          0000006E
+  00000062: DE C2              faddp       st(2),st
+  00000064: DE E9              fsubp       st(1),st
+  00000066: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000069: D9 45 08           fld         dword ptr [ebp+8]
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+  0000006E: DD D9              fstp        st(1)
+  00000070: DE C1              faddp       st(1),st
+  00000072: D9 5D 08           fstp        dword ptr [ebp+8]
+  00000075: D9 45 08           fld         dword ptr [ebp+8]
+  00000078: 5D                 pop         ebp
+  00000079: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          14 .rdata
+          7A .text

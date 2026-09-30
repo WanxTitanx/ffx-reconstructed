@@ -1,0 +1,38 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005E6BA0.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_btCollisionWorld_lite_Dtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 56                 push        esi
+  00000005: 8A DA              mov         bl,dl
+  00000007: E8 00 00 00 00     call        _Phyre_PhysicsBody_ReleaseResources
+  0000000C: 83 C4 04           add         esp,4
+  0000000F: F6 86 00 01 00 00  test        byte ptr [esi+100h],1
+            01
+  00000016: 75 0E              jne         00000026
+  00000018: FF B6 00 01 00 00  push        dword ptr [esi+100h]
+  0000001E: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000023: 83 C4 04           add         esp,4
+  00000026: F6 C3 01           test        bl,1
+  00000029: 74 09              je          00000034
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000031: 83 C4 04           add         esp,4
+  00000034: 8B C6              mov         eax,esi
+  00000036: 5E                 pop         esi
+  00000037: 5B                 pop         ebx
+  00000038: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          39 .text

@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00947350.obj
+
+File Type: COFF OBJECT
+
+@HeapBucket_AllocPage5Slot@4:
+  00000000: 57                 push        edi
+  00000001: 8B F9              mov         edi,ecx
+  00000003: 83 3F 00           cmp         dword ptr [edi],0
+  00000006: 75 56              jne         0000005E
+  00000008: 56                 push        esi
+  00000009: 68 00 10 00 00     push        1000h
+  0000000E: E8 00 00 00 00     call        _Memory_VirtualAllocReserve
+  00000013: 8B F0              mov         esi,eax
+  00000015: 68 00 10 00 00     push        1000h
+  0000001A: 56                 push        esi
+  0000001B: E8 00 00 00 00     call        _Memory_VirtualAllocTracked
+  00000020: 68 00 10 00 00     push        1000h
+  00000025: 6A 00              push        0
+  00000027: 56                 push        esi
+  00000028: E8 00 00 00 00     call        _memset
+  0000002D: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000030: 89 06              mov         dword ptr [esi],eax
+  00000032: FF 47 08           inc         dword ptr [edi+8]
+  00000035: 8D 56 14           lea         edx,[esi+14h]
+  00000038: 89 77 04           mov         dword ptr [edi+4],esi
+  0000003B: 81 C6 DC 0F 00 00  add         esi,0FDCh
+  00000041: 83 C4 18           add         esp,18h
+  00000044: 8B C2              mov         eax,edx
+  00000046: 3B D6              cmp         edx,esi
+  00000048: 74 11              je          0000005B
+  0000004A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000050: 8D 48 14           lea         ecx,[eax+14h]
+  00000053: 89 08              mov         dword ptr [eax],ecx
+  00000055: 8B C1              mov         eax,ecx
+  00000057: 3B C6              cmp         eax,esi
+  00000059: 75 F5              jne         00000050
+  0000005B: 89 17              mov         dword ptr [edi],edx
+  0000005D: 5E                 pop         esi
+  0000005E: 8B 07              mov         eax,dword ptr [edi]
+  00000060: 8B 08              mov         ecx,dword ptr [eax]
+  00000062: 89 0F              mov         dword ptr [edi],ecx
+  00000064: 5F                 pop         edi
+  00000065: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          66 .text

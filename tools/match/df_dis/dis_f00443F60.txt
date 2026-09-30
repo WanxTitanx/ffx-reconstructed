@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00443F60.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Object_GetType@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8B DA              mov         ebx,edx
+  00000006: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  00000009: 3B D8              cmp         ebx,eax
+  0000000B: 75 10              jne         0000001D
+  0000000D: 83 7E 04 00        cmp         dword ptr [esi+4],0
+  00000011: 75 0A              jne         0000001D
+  00000013: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000001A: 5E                 pop         esi
+  0000001B: 5B                 pop         ebx
+  0000001C: C3                 ret
+  0000001D: 85 DB              test        ebx,ebx
+  0000001F: 74 2A              je          0000004B
+  00000021: 8B 4E 04           mov         ecx,dword ptr [esi+4]
+  00000024: 8B 16              mov         edx,dword ptr [esi]
+  00000026: 57                 push        edi
+  00000027: 8B 7E 08           mov         edi,dword ptr [esi+8]
+  0000002A: 8D 9B 00 00 00 00  lea         ebx,[ebx+00000000h]
+  00000030: 4B                 dec         ebx
+  00000031: 03 D7              add         edx,edi
+  00000033: 48                 dec         eax
+  00000034: 89 16              mov         dword ptr [esi],edx
+  00000036: 89 46 0C           mov         dword ptr [esi+0Ch],eax
+  00000039: 3B CA              cmp         ecx,edx
+  0000003B: 75 09              jne         00000046
+  0000003D: 8B 09              mov         ecx,dword ptr [ecx]
+  0000003F: 89 4E 04           mov         dword ptr [esi+4],ecx
+  00000042: 85 C0              test        eax,eax
+  00000044: 75 EB              jne         00000031
+  00000046: 85 DB              test        ebx,ebx
+  00000048: 75 E6              jne         00000030
+  0000004A: 5F                 pop         edi
+  0000004B: 5E                 pop         esi
+  0000004C: 5B                 pop         ebx
+  0000004D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4E .text

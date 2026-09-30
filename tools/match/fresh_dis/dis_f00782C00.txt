@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00782C00.obj
+
+File Type: COFF OBJECT
+
+_FFX_Encounter_RebuildWeightsFromToken:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 6A 00              push        0
+  00000009: 6A 00              push        0
+  0000000B: 6A 00              push        0
+  0000000D: 56                 push        esi
+  0000000E: E8 00 00 00 00     call        _FFX_Field_ResolveEncounterToken
+  00000013: 83 C4 10           add         esp,10h
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 11              je          0000002B
+  0000001A: 6A 00              push        0
+  0000001C: C1 FE 10           sar         esi,10h
+  0000001F: 56                 push        esi
+  00000020: E8 00 00 00 00     call        _FFX_Field_RebuildEncounterGroupWeights
+  00000025: 83 C4 08           add         esp,8
+  00000028: 5E                 pop         esi
+  00000029: 5D                 pop         ebp
+  0000002A: C3                 ret
+  0000002B: 33 C0              xor         eax,eax
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          30 .text

@@ -1,0 +1,158 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00835C30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_UpdateMotionBlend:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: D9 EE              fldz
+  00000005: 83 EC 10           sub         esp,10h
+  00000008: 56                 push        esi
+  00000009: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: 8B BE 94 01 00 00  mov         edi,dword ptr [esi+194h]
+  00000013: F7 C7 00 04 00 00  test        edi,400h
+  00000019: 0F 84 C1 00 00 00  je          000000E0
+  0000001F: D9 86 70 01 00 00  fld         dword ptr [esi+170h]
+  00000025: D9 86 54 01 00 00  fld         dword ptr [esi+154h]
+  0000002B: DE D9              fcompp
+  0000002D: DF E0              fnstsw      ax
+  0000002F: F6 C4 41           test        ah,41h
+  00000032: 7A 1F              jp          00000053
+  00000034: D9 86 54 01 00 00  fld         dword ptr [esi+154h]
+  0000003A: DA E9              fucompp
+  0000003C: DF E0              fnstsw      ax
+  0000003E: F6 C4 44           test        ah,44h
+  00000041: 7A 08              jp          0000004B
+  00000043: DD 05 00 00 00 00  fld         qword ptr [__real@3fd41b2f3b2bfb06]
+  00000049: EB 10              jmp         0000005B
+  0000004B: DD 05 00 00 00 00  fld         qword ptr [__real@3fd65717ff502cbe]
+  00000051: EB 08              jmp         0000005B
+  00000053: DD D8              fstp        st(0)
+  00000055: DD 05 00 00 00 00  fld         qword ptr [__real@3fe0c151ff7c218f]
+  0000005B: DD 5D F0           fstp        qword ptr [ebp-10h]
+  0000005E: 83 EC 08           sub         esp,8
+  00000061: D9 86 68 01 00 00  fld         dword ptr [esi+168h]
+  00000067: DD 1C 24           fstp        qword ptr [esp]
+  0000006A: E8 00 00 00 00     call        _FFX_Math_NormalizeAngle
+  0000006F: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000072: DB 45 08           fild        dword ptr [ebp+8]
+  00000075: 85 C0              test        eax,eax
+  00000077: 79 06              jns         0000007F
+  00000079: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000007F: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000082: D9 86 58 01 00 00  fld         dword ptr [esi+158h]
+  00000088: DD 1C 24           fstp        qword ptr [esp]
+  0000008B: E8 00 00 00 00     call        _FFX_Math_NormalizeAngle
+  00000090: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000093: DB 45 08           fild        dword ptr [ebp+8]
+  00000096: 85 C0              test        eax,eax
+  00000098: 79 06              jns         000000A0
+  0000009A: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000A0: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000A3: 83 EC 10           sub         esp,10h
+  000000A6: DD 45 F0           fld         qword ptr [ebp-10h]
+  000000A9: D9 5D 08           fstp        dword ptr [ebp+8]
+  000000AC: D9 45 08           fld         dword ptr [ebp+8]
+  000000AF: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  000000B3: D9 45 FC           fld         dword ptr [ebp-4]
+  000000B6: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000000BA: D9 45 F8           fld         dword ptr [ebp-8]
+  000000BD: DD 1C 24           fstp        qword ptr [esp]
+  000000C0: E8 00 00 00 00     call        _FFX_Chr_LerpAngle
+  000000C5: 83 C4 18           add         esp,18h
+  000000C8: 89 45 08           mov         dword ptr [ebp+8],eax
+  000000CB: DB 45 08           fild        dword ptr [ebp+8]
+  000000CE: 85 C0              test        eax,eax
+  000000D0: 79 06              jns         000000D8
+  000000D2: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  000000D8: D9 9E 58 01 00 00  fstp        dword ptr [esi+158h]
+  000000DE: D9 EE              fldz
+  000000E0: 80 BE 36 07 00 00  cmp         byte ptr [esi+736h],0
+            00
+  000000E7: 74 14              je          000000FD
+  000000E9: 81 E7 FF FF FF F7  and         edi,0F7FFFFFFh
+  000000EF: DD D8              fstp        st(0)
+  000000F1: 89 BE 94 01 00 00  mov         dword ptr [esi+194h],edi
+  000000F7: 5F                 pop         edi
+  000000F8: 5E                 pop         esi
+  000000F9: 8B E5              mov         esp,ebp
+  000000FB: 5D                 pop         ebp
+  000000FC: C3                 ret
+  000000FD: D9 86 70 01 00 00  fld         dword ptr [esi+170h]
+  00000103: D9 86 54 01 00 00  fld         dword ptr [esi+154h]
+  00000109: DE D9              fcompp
+  0000010B: DF E0              fnstsw      ax
+  0000010D: F6 C4 41           test        ah,41h
+  00000110: 7A 71              jp          00000183
+  00000112: D9 86 54 01 00 00  fld         dword ptr [esi+154h]
+  00000118: DA E9              fucompp
+  0000011A: DF E0              fnstsw      ax
+  0000011C: F6 C4 44           test        ah,44h
+  0000011F: 7A 5A              jp          0000017B
+  00000121: F7 C7 00 00 00 08  test        edi,8000000h
+  00000127: 74 0B              je          00000134
+  00000129: 6A 05              push        5
+  0000012B: 56                 push        esi
+  0000012C: E8 00 00 00 00     call        _FFX_Chr_PlayFootstepSound
+  00000131: 83 C4 08           add         esp,8
+  00000134: 8B 86 5C 07 00 00  mov         eax,dword ptr [esi+75Ch]
+  0000013A: 81 A6 94 01 00 00  and         dword ptr [esi+194h],0F7FFFFFFh
+            FF FF FF F7
+  00000144: B9 00 10 00 00     mov         ecx,1000h
+  00000149: 50                 push        eax
+  0000014A: 66 3B C1           cmp         ax,cx
+  0000014D: 72 15              jb          00000164
+  0000014F: 56                 push        esi
+  00000150: E8 00 00 00 00     call        _FFX_Mgrp_BindMseqToActiveInstance
+  00000155: 83 C4 08           add         esp,8
+  00000158: 81 8E 94 01 00 00  or          dword ptr [esi+194h],4000000h
+            00 00 00 04
+  00000162: EB 52              jmp         000001B6
+  00000164: 6A 00              push        0
+  00000166: 56                 push        esi
+  00000167: E8 00 00 00 00     call        _FFX_Mgrp_SelectResidentMotionForInstance
+  0000016C: 83 C4 0C           add         esp,0Ch
+  0000016F: 81 8E 94 01 00 00  or          dword ptr [esi+194h],4000000h
+            00 00 00 04
+  00000179: EB 3B              jmp         000001B6
+  0000017B: 8B 86 60 07 00 00  mov         eax,dword ptr [esi+760h]
+  00000181: EB 08              jmp         0000018B
+  00000183: 8B 86 64 07 00 00  mov         eax,dword ptr [esi+764h]
+  00000189: DD D8              fstp        st(0)
+  0000018B: B9 00 10 00 00     mov         ecx,1000h
+  00000190: 50                 push        eax
+  00000191: 66 3B C1           cmp         ax,cx
+  00000194: 72 0B              jb          000001A1
+  00000196: 56                 push        esi
+  00000197: E8 00 00 00 00     call        _FFX_Mgrp_BindMseqToActiveInstance
+  0000019C: 83 C4 08           add         esp,8
+  0000019F: EB 0B              jmp         000001AC
+  000001A1: 6A 00              push        0
+  000001A3: 56                 push        esi
+  000001A4: E8 00 00 00 00     call        _FFX_Mgrp_SelectResidentMotionForInstance
+  000001A9: 83 C4 0C           add         esp,0Ch
+  000001AC: 81 8E 94 01 00 00  or          dword ptr [esi+194h],8000000h
+            00 00 00 08
+  000001B6: 6A 00              push        0
+  000001B8: 56                 push        esi
+  000001B9: C6 86 36 07 00 00  mov         byte ptr [esi+736h],0
+            00
+  000001C0: E8 00 00 00 00     call        _FFX_Chr_SetMotionFrame
+  000001C5: 83 C4 08           add         esp,8
+  000001C8: 5F                 pop         edi
+  000001C9: 5E                 pop         esi
+  000001CA: 8B E5              mov         esp,ebp
+  000001CC: 5D                 pop         ebp
+  000001CD: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          20 .rdata
+         1CE .text

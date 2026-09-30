@@ -1,0 +1,89 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00419FA0.obj
+
+File Type: COFF OBJECT
+
+_PhyreVideo_SAD8_MotionSearch_Dispatch:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000007: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  0000000A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000D: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000010: 83 F9 04           cmp         ecx,4
+  00000013: 74 26              je          0000003B
+  00000015: 85 C9              test        ecx,ecx
+  00000017: 75 48              jne         00000061
+  00000019: 83 F8 04           cmp         eax,4
+  0000001C: 75 43              jne         00000061
+  0000001E: 8D 45 10           lea         eax,[ebp+10h]
+  00000021: 50                 push        eax
+  00000022: 8D 45 FC           lea         eax,[ebp-4]
+  00000025: 50                 push        eax
+  00000026: 6A 08              push        8
+  00000028: FF 75 1C           push        dword ptr [ebp+1Ch]
+  0000002B: FF 75 18           push        dword ptr [ebp+18h]
+  0000002E: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000031: FF 75 08           push        dword ptr [ebp+8]
+  00000034: E8 00 00 00 00     call        _PhyreImage_SAD_Bilinear_Unaligned_SSE
+  00000039: EB 63              jmp         0000009E
+  0000003B: 85 C0              test        eax,eax
+  0000003D: 74 44              je          00000083
+  0000003F: 83 F8 04           cmp         eax,4
+  00000042: 75 1D              jne         00000061
+  00000044: 8D 45 10           lea         eax,[ebp+10h]
+  00000047: 50                 push        eax
+  00000048: 8D 45 FC           lea         eax,[ebp-4]
+  0000004B: 50                 push        eax
+  0000004C: 6A 08              push        8
+  0000004E: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000051: FF 75 18           push        dword ptr [ebp+18h]
+  00000054: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000057: FF 75 08           push        dword ptr [ebp+8]
+  0000005A: E8 00 00 00 00     call        _PhyreImage_SAD_Bilinear_128_Dual_SSE
+  0000005F: EB 3D              jmp         0000009E
+  00000061: 8D 55 10           lea         edx,[ebp+10h]
+  00000064: 52                 push        edx
+  00000065: 8D 55 FC           lea         edx,[ebp-4]
+  00000068: 52                 push        edx
+  00000069: 50                 push        eax
+  0000006A: 51                 push        ecx
+  0000006B: 6A 08              push        8
+  0000006D: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000070: FF 75 18           push        dword ptr [ebp+18h]
+  00000073: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000076: FF 75 08           push        dword ptr [ebp+8]
+  00000079: E8 00 00 00 00     call        _PhyreVideo_BlockMatchSSD_SAD
+  0000007E: 83 C4 24           add         esp,24h
+  00000081: EB 1E              jmp         000000A1
+  00000083: 8D 45 10           lea         eax,[ebp+10h]
+  00000086: 50                 push        eax
+  00000087: 8D 45 FC           lea         eax,[ebp-4]
+  0000008A: 50                 push        eax
+  0000008B: 6A 08              push        8
+  0000008D: FF 75 1C           push        dword ptr [ebp+1Ch]
+  00000090: FF 75 18           push        dword ptr [ebp+18h]
+  00000093: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000096: FF 75 08           push        dword ptr [ebp+8]
+  00000099: E8 00 00 00 00     call        _PhyreImage_SAD_Bilinear_Unaligned2_SSE
+  0000009E: 83 C4 1C           add         esp,1Ch
+  000000A1: 8B 4D 20           mov         ecx,dword ptr [ebp+20h]
+  000000A4: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  000000A7: 89 01              mov         dword ptr [ecx],eax
+  000000A9: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000AC: 0F AF C9           imul        ecx,ecx
+  000000AF: C1 E9 07           shr         ecx,7
+  000000B2: 2B C1              sub         eax,ecx
+  000000B4: 8B E5              mov         esp,ebp
+  000000B6: 5D                 pop         ebp
+  000000B7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B8 .text

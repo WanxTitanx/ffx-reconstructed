@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0045A900.obj
+
+File Type: COFF OBJECT
+
+@DEAD_PNameComponent_Destructor_WithFree@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B 57 0C           mov         edx,dword ptr [edi+0Ch]
+  00000007: 8B 47 10           mov         eax,dword ptr [edi+10h]
+  0000000A: 8D 77 0C           lea         esi,[edi+0Ch]
+  0000000D: 89 42 04           mov         dword ptr [edx+4],eax
+  00000010: 89 10              mov         dword ptr [eax],edx
+  00000012: F6 47 14 01        test        byte ptr [edi+14h],1
+  00000016: 89 36              mov         dword ptr [esi],esi
+  00000018: 89 77 10           mov         dword ptr [edi+10h],esi
+  0000001B: 75 0B              jne         00000028
+  0000001D: FF 77 14           push        dword ptr [edi+14h]
+  00000020: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000025: 83 C4 04           add         esp,4
+  00000028: 57                 push        edi
+  00000029: E8 00 00 00 00     call        _PComponent_UnlinkFromEntityList
+  0000002E: 83 C4 04           add         esp,4
+  00000031: 5F                 pop         edi
+  00000032: 5E                 pop         esi
+  00000033: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          34 .text

@@ -1,0 +1,98 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007CF4C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_MenuDefDataFieldValue_10w:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 53                 push        ebx
+  00000007: 8A 02              mov         al,byte ptr [edx]
+  00000009: 56                 push        esi
+  0000000A: 33 F6              xor         esi,esi
+  0000000C: 57                 push        edi
+  0000000D: 8D 4A 01           lea         ecx,[edx+1]
+  00000010: 3C FF              cmp         al,0FFh
+  00000012: 74 14              je          00000028
+  00000014: 84 C0              test        al,al
+  00000016: 74 10              je          00000028
+  00000018: 3C 0D              cmp         al,0Dh
+  0000001A: 74 0C              je          00000028
+  0000001C: 3C 0A              cmp         al,0Ah
+  0000001E: 74 08              je          00000028
+  00000020: 8A 01              mov         al,byte ptr [ecx]
+  00000022: 46                 inc         esi
+  00000023: 41                 inc         ecx
+  00000024: 3C FF              cmp         al,0FFh
+  00000026: 75 EC              jne         00000014
+  00000028: 8D 45 08           lea         eax,[ebp+8]
+  0000002B: 50                 push        eax
+  0000002C: 52                 push        edx
+  0000002D: E8 00 00 00 00     call        _FFX_Path_StripToDirectory
+  00000032: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000035: 83 C4 08           add         esp,8
+  00000038: 80 3C 08 2E        cmp         byte ptr [eax+ecx],2Eh
+  0000003C: 75 01              jne         0000003F
+  0000003E: 41                 inc         ecx
+  0000003F: 8D 3C 01           lea         edi,[ecx+eax]
+  00000042: 33 C9              xor         ecx,ecx
+  00000044: 8A 07              mov         al,byte ptr [edi]
+  00000046: 8D 57 01           lea         edx,[edi+1]
+  00000049: 3C FF              cmp         al,0FFh
+  0000004B: 74 17              je          00000064
+  0000004D: 8D 49 00           lea         ecx,[ecx]
+  00000050: 84 C0              test        al,al
+  00000052: 74 10              je          00000064
+  00000054: 3C 0D              cmp         al,0Dh
+  00000056: 74 0C              je          00000064
+  00000058: 3C 0A              cmp         al,0Ah
+  0000005A: 74 08              je          00000064
+  0000005C: 8A 02              mov         al,byte ptr [edx]
+  0000005E: 41                 inc         ecx
+  0000005F: 42                 inc         edx
+  00000060: 3C FF              cmp         al,0FFh
+  00000062: 75 EC              jne         00000050
+  00000064: 83 7D 14 01        cmp         dword ptr [ebp+14h],1
+  00000068: 74 0B              je          00000075
+  0000006A: 85 C9              test        ecx,ecx
+  0000006C: 74 07              je          00000075
+  0000006E: 5F                 pop         edi
+  0000006F: 5E                 pop         esi
+  00000070: 33 C0              xor         eax,eax
+  00000072: 5B                 pop         ebx
+  00000073: 5D                 pop         ebp
+  00000074: C3                 ret
+  00000075: 80 7F FF 2E        cmp         byte ptr [edi-1],2Eh
+  00000079: 75 0F              jne         0000008A
+  0000007B: 8B C6              mov         eax,esi
+  0000007D: 2B C1              sub         eax,ecx
+  0000007F: 83 F8 01           cmp         eax,1
+  00000082: 7E 0B              jle         0000008F
+  00000084: F6 47 FE 80        test        byte ptr [edi-2],80h
+  00000088: 74 05              je          0000008F
+  0000008A: C6 07 2E           mov         byte ptr [edi],2Eh
+  0000008D: 47                 inc         edi
+  0000008E: 46                 inc         esi
+  0000008F: 2B CE              sub         ecx,esi
+  00000091: 03 4D 10           add         ecx,dword ptr [ebp+10h]
+  00000094: 51                 push        ecx
+  00000095: 57                 push        edi
+  00000096: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000099: E8 00 00 00 00     call        _FFX_Menu2D_MenuDefDataFieldValue_11w
+  0000009E: 83 C4 0C           add         esp,0Ch
+  000000A1: B8 01 00 00 00     mov         eax,1
+  000000A6: 5F                 pop         edi
+  000000A7: 5E                 pop         esi
+  000000A8: 5B                 pop         ebx
+  000000A9: 5D                 pop         ebp
+  000000AA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AB .text

@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00830200.obj
+
+File Type: COFF OBJECT
+
+_sub_830200:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 7D 08 00        cmp         dword ptr [ebp+8],0
+  00000007: 0F 84 A9 00 00 00  je          000000B6
+  0000000D: 56                 push        esi
+  0000000E: 57                 push        edi
+  0000000F: E8 00 00 00 00     call        _sub_843220
+  00000014: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_unk_23C44E0]
+  0000001A: 8B 15 00 00 00 00  mov         edx,dword ptr [_unk_23C44E4]
+  00000020: 69 C9 80 08 00 00  imul        ecx,ecx,880h
+  00000026: 03 CA              add         ecx,edx
+  00000028: 8B F8              mov         edi,eax
+  0000002A: 8B F2              mov         esi,edx
+  0000002C: 3B D1              cmp         edx,ecx
+  0000002E: 0F 84 80 00 00 00  je          000000B4
+  00000034: 80 7E 02 00        cmp         byte ptr [esi+2],0
+  00000038: 74 63              je          0000009D
+  0000003A: F6 86 98 01 00 00  test        byte ptr [esi+198h],10h
+            10
+  00000041: 74 5A              je          0000009D
+  00000043: 56                 push        esi
+  00000044: E8 00 00 00 00     call        _sub_830420
+  00000049: 83 C4 04           add         esp,4
+  0000004C: 85 C0              test        eax,eax
+  0000004E: 75 47              jne         00000097
+  00000050: 8A 86 86 01 00 00  mov         al,byte ptr [esi+186h]
+  00000056: 3C 02              cmp         al,2
+  00000058: 74 3D              je          00000097
+  0000005A: 3C 03              cmp         al,3
+  0000005C: 74 39              je          00000097
+  0000005E: A1 00 00 00 00     mov         eax,dword ptr [_unk_1300875]
+  00000063: 85 C0              test        eax,eax
+  00000065: 74 03              je          0000006A
+  00000067: 48                 dec         eax
+  00000068: EB 07              jmp         00000071
+  0000006A: 0F BE 86 83 01 00  movsx       eax,byte ptr [esi+183h]
+            00
+  00000071: 83 F8 01           cmp         eax,1
+  00000074: 75 21              jne         00000097
+  00000076: 0F B7 06           movzx       eax,word ptr [esi]
+  00000079: 50                 push        eax
+  0000007A: E8 00 00 00 00     call        _sub_831800
+  0000007F: 83 C4 04           add         esp,4
+  00000082: 85 C0              test        eax,eax
+  00000084: 74 11              je          00000097
+  00000086: 57                 push        edi
+  00000087: 8D 86 14 01 00 00  lea         eax,[esi+114h]
+  0000008D: 50                 push        eax
+  0000008E: 56                 push        esi
+  0000008F: E8 00 00 00 00     call        _sub_82E460
+  00000094: 83 C4 0C           add         esp,0Ch
+  00000097: 8B 15 00 00 00 00  mov         edx,dword ptr [_unk_23C44E4]
+  0000009D: A1 00 00 00 00     mov         eax,dword ptr [_unk_23C44E0]
+  000000A2: 69 C0 80 08 00 00  imul        eax,eax,880h
+  000000A8: 81 C6 80 08 00 00  add         esi,880h
+  000000AE: 03 C2              add         eax,edx
+  000000B0: 3B F0              cmp         esi,eax
+  000000B2: 75 80              jne         00000034
+  000000B4: 5F                 pop         edi
+  000000B5: 5E                 pop         esi
+  000000B6: 5D                 pop         ebp
+  000000B7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          B8 .text

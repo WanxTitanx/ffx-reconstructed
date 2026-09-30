@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00815060.obj
+
+File Type: COFF OBJECT
+
+_sub_815060:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 57                 push        edi
+  00000008: 8B B9 20 02 00 00  mov         edi,dword ptr [ecx+220h]
+  0000000E: 0F B7 87 A0 00 00  movzx       eax,word ptr [edi+0A0h]
+            00
+  00000015: 50                 push        eax
+  00000016: 8D 81 00 03 00 00  lea         eax,[ecx+300h]
+  0000001C: 57                 push        edi
+  0000001D: 50                 push        eax
+  0000001E: E8 00 00 00 00     call        _sub_800F80
+  00000023: 83 C4 0C           add         esp,0Ch
+  00000026: D9 47 48           fld         dword ptr [edi+48h]
+  00000029: 8B F0              mov         esi,eax
+  0000002B: E8 00 00 00 00     call        __ftol2_sse
+  00000030: 25 FF 0F 00 00     and         eax,0FFFh
+  00000035: 05 00 04 00 00     add         eax,400h
+  0000003A: D9 04 85 00 00 00  fld         dword ptr _flt_C43BE0[eax*4]
+            00
+  00000041: 25 FF 0F 00 00     and         eax,0FFFh
+  00000046: D8 4F 40           fmul        dword ptr [edi+40h]
+  00000049: DD 05 00 00 00 00  fld         qword ptr [__real@3fb0000000000000]
+  0000004F: DC C9              fmul        st(1),st
+  00000051: D9 86 90 00 00 00  fld         dword ptr [esi+90h]
+  00000057: DE C2              faddp       st(2),st
+  00000059: D9 C9              fxch        st(1)
+  0000005B: D9 9F 90 00 00 00  fstp        dword ptr [edi+90h]
+  00000061: D9 04 85 00 00 00  fld         dword ptr _flt_C44BE0[eax*4]
+            00
+  00000068: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000006B: D8 4F 40           fmul        dword ptr [edi+40h]
+  0000006E: D8 C9              fmul        st,st(1)
+  00000070: D8 86 98 00 00 00  fadd        dword ptr [esi+98h]
+  00000076: D9 9F 98 00 00 00  fstp        dword ptr [edi+98h]
+  0000007C: D8 4F 44           fmul        dword ptr [edi+44h]
+  0000007F: D9 9F 94 00 00 00  fstp        dword ptr [edi+94h]
+  00000085: 5F                 pop         edi
+  00000086: 5E                 pop         esi
+  00000087: 5D                 pop         ebp
+  00000088: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          89 .text

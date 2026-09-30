@@ -1,0 +1,98 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BF030.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_Internal_OpAV:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 53                 push        ebx
+  0000000B: E8 00 00 00 00     call        _FFX_Camera_Internal_OpAL
+  00000010: 83 C4 04           add         esp,4
+  00000013: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000016: 85 C0              test        eax,eax
+  00000018: 0F 84 C6 00 00 00  je          000000E4
+  0000001E: 0F B6 D3           movzx       edx,bl
+  00000021: 0F B6 C7           movzx       eax,bh
+  00000024: 69 D2 A0 0D 00 00  imul        edx,edx,0DA0h
+  0000002A: 69 C0 30 01 00 00  imul        eax,eax,130h
+  00000030: 03 D0              add         edx,eax
+  00000032: 0F BE 45 0C        movsx       eax,byte ptr [ebp+0Ch]
+  00000036: 83 E0 01           and         eax,1
+  00000039: 69 C0 1C 06 00 00  imul        eax,eax,61Ch
+  0000003F: 05 00 00 00 00     add         eax,offset _g_CameraUnkVar_1137610
+  00000044: 03 D0              add         edx,eax
+  00000046: 8A 42 04           mov         al,byte ptr [edx+4]
+  00000049: 3C 05              cmp         al,5
+  0000004B: 0F 83 96 00 00 00  jae         000000E7
+  00000051: D9 45 1C           fld         dword ptr [ebp+1Ch]
+  00000054: 0F B6 C8           movzx       ecx,al
+  00000057: D9 45 14           fld         dword ptr [ebp+14h]
+  0000005A: C1 E1 05           shl         ecx,5
+  0000005D: D9 C0              fld         st(0)
+  0000005F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000062: DE EA              fsubp       st(2),st
+  00000064: F7 D8              neg         eax
+  00000066: D9 C9              fxch        st(1)
+  00000068: 1B C0              sbb         eax,eax
+  0000006A: 83 E0 02           and         eax,2
+  0000006D: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000070: 89 84 11 90 00 00  mov         dword ptr [ecx+edx+90h],eax
+            00
+  00000077: D9 45 F8           fld         dword ptr [ebp-8]
+  0000007A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000007D: D9 C0              fld         st(0)
+  0000007F: D9 C9              fxch        st(1)
+  00000081: D9 9C 11 A0 00 00  fstp        dword ptr [ecx+edx+0A0h]
+            00
+  00000088: D9 45 20           fld         dword ptr [ebp+20h]
+  0000008B: D9 45 18           fld         dword ptr [ebp+18h]
+  0000008E: D9 C0              fld         st(0)
+  00000090: DE EA              fsubp       st(2),st
+  00000092: D9 C9              fxch        st(1)
+  00000094: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000097: D9 45 F8           fld         dword ptr [ebp-8]
+  0000009A: D9 94 11 A4 00 00  fst         dword ptr [ecx+edx+0A4h]
+            00
+  000000A1: D9 CB              fxch        st(3)
+  000000A3: D9 94 11 A8 00 00  fst         dword ptr [ecx+edx+0A8h]
+            00
+  000000AA: D9 C9              fxch        st(1)
+  000000AC: D9 94 11 AC 00 00  fst         dword ptr [ecx+edx+0ACh]
+            00
+  000000B3: D9 C9              fxch        st(1)
+  000000B5: D9 E0              fchs
+  000000B7: D8 CA              fmul        st,st(2)
+  000000B9: D9 C3              fld         st(3)
+  000000BB: DE CA              fmulp       st(2),st
+  000000BD: DE E1              fsubrp      st(1),st
+  000000BF: D9 9C 11 94 00 00  fstp        dword ptr [ecx+edx+94h]
+            00
+  000000C6: D9 C9              fxch        st(1)
+  000000C8: DC C8              fmul        st(0),st
+  000000CA: D9 C9              fxch        st(1)
+  000000CC: DC C8              fmul        st(0),st
+  000000CE: DE C1              faddp       st(1),st
+  000000D0: D9 9C 11 98 00 00  fstp        dword ptr [ecx+edx+98h]
+            00
+  000000D7: D9 45 24           fld         dword ptr [ebp+24h]
+  000000DA: D9 9C 11 9C 00 00  fstp        dword ptr [ecx+edx+9Ch]
+            00
+  000000E1: FE 42 04           inc         byte ptr [edx+4]
+  000000E4: 8A 45 FC           mov         al,byte ptr [ebp-4]
+  000000E7: 5B                 pop         ebx
+  000000E8: 8B E5              mov         esp,ebp
+  000000EA: 5D                 pop         ebp
+  000000EB: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          EC .text

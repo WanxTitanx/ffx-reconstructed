@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004BDD50.obj
+
+File Type: COFF OBJECT
+
+@PRenderQueueEntry_ManagedResize@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B D9              mov         ebx,ecx
+  0000000A: 57                 push        edi
+  0000000B: 8B 33              mov         esi,dword ptr [ebx]
+  0000000D: 8B FA              mov         edi,edx
+  0000000F: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  00000015: 3B 3B              cmp         edi,dword ptr [ebx]
+  00000017: 74 78              je          00000091
+  00000019: 3B FE              cmp         edi,esi
+  0000001B: 73 02              jae         0000001F
+  0000001D: 8B F7              mov         esi,edi
+  0000001F: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  00000022: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000025: 33 C0              xor         eax,eax
+  00000027: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000002A: 85 FF              test        edi,edi
+  0000002C: 74 3E              je          0000006C
+  0000002E: 8B C7              mov         eax,edi
+  00000030: 69 C0 54 02 00 00  imul        eax,eax,254h
+  00000036: 6A 04              push        4
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000003E: 83 C4 08           add         esp,8
+  00000041: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000044: 85 C0              test        eax,eax
+  00000046: 74 52              je          0000009A
+  00000048: 56                 push        esi
+  00000049: FF 75 F8           push        dword ptr [ebp-8]
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _PRenderQueueEntry_ArrayCopy
+  00000052: 8B C7              mov         eax,edi
+  00000054: 2B C6              sub         eax,esi
+  00000056: 69 F6 54 02 00 00  imul        esi,esi,254h
+  0000005C: 03 75 FC           add         esi,dword ptr [ebp-4]
+  0000005F: 50                 push        eax
+  00000060: 56                 push        esi
+  00000061: E8 00 00 00 00     call        _PShader_RenderQueueEntry_InitArray
+  00000066: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000069: 83 C4 14           add         esp,14h
+  0000006C: 8B 53 04           mov         edx,dword ptr [ebx+4]
+  0000006F: 3B D0              cmp         edx,eax
+  00000071: 74 19              je          0000008C
+  00000073: 8B 0B              mov         ecx,dword ptr [ebx]
+  00000075: 85 C9              test        ecx,ecx
+  00000077: 78 13              js          0000008C
+  00000079: 81 E1 FF FF FF 7F  and         ecx,7FFFFFFFh
+  0000007F: 51                 push        ecx
+  00000080: 52                 push        edx
+  00000081: E8 00 00 00 00     call        _PShader_DestroyQueueEntryArray
+  00000086: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000089: 83 C4 08           add         esp,8
+  0000008C: 89 43 04           mov         dword ptr [ebx+4],eax
+  0000008F: 89 3B              mov         dword ptr [ebx],edi
+  00000091: 5F                 pop         edi
+  00000092: 5E                 pop         esi
+  00000093: 33 C0              xor         eax,eax
+  00000095: 5B                 pop         ebx
+  00000096: 8B E5              mov         esp,ebp
+  00000098: 5D                 pop         ebp
+  00000099: C3                 ret
+  0000009A: 5F                 pop         edi
+  0000009B: 5E                 pop         esi
+  0000009C: B8 0D 00 00 00     mov         eax,0Dh
+  000000A1: 5B                 pop         ebx
+  000000A2: 8B E5              mov         esp,ebp
+  000000A4: 5D                 pop         ebp
+  000000A5: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A6 .text

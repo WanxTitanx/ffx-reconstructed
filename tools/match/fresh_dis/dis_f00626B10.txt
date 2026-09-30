@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00626B10.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Input_TestAndClearFlag@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 57                 push        edi
+  00000008: 8B FA              mov         edi,edx
+  0000000A: 83 FE 12           cmp         esi,12h
+  0000000D: 72 08              jb          00000017
+  0000000F: 5F                 pop         edi
+  00000010: 32 C0              xor         al,al
+  00000012: 5E                 pop         esi
+  00000013: 5D                 pop         ebp
+  00000014: C2 04 00           ret         4
+  00000017: 8B 81 B8 02 00 00  mov         eax,dword ptr [ecx+000002B8h]
+  0000001D: 8B 54 B0 38        mov         edx,dword ptr [eax+esi*4+38h]
+  00000021: 85 D2              test        edx,edx
+  00000023: 74 EA              je          0000000F
+  00000025: 8D 47 F5           lea         eax,[edi-0Bh]
+  00000028: 83 F8 10           cmp         eax,10h
+  0000002B: 73 E2              jae         0000000F
+  0000002D: 8A 4C 10 18        mov         cl,byte ptr [eax+edx+18h]
+  00000031: 84 C9              test        cl,cl
+  00000033: 53                 push        ebx
+  00000034: 0F 95 C3           setne       bl
+  00000037: 84 C9              test        cl,cl
+  00000039: 74 05              je          00000040
+  0000003B: C6 44 10 18 00     mov         byte ptr [eax+edx+18h],0
+  00000040: 8A C3              mov         al,bl
+  00000042: 5B                 pop         ebx
+  00000043: 5F                 pop         edi
+  00000044: 5E                 pop         esi
+  00000045: 5D                 pop         ebp
+  00000046: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          49 .text

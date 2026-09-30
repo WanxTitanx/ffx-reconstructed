@@ -1,0 +1,111 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083B830.obj
+
+File Type: COFF OBJECT
+
+_SgMem_CheckHeapIntegrity:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 8D 45 FC           lea         eax,[ebp-4]
+  00000007: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000000A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000D: 56                 push        esi
+  0000000E: 8D 04 40           lea         eax,[eax+eax*2]
+  00000011: 80 3C C5 01 00 00  cmp         byte ptr _g_SgMemUnkVar_1301928[eax*8+1],0
+            00 00
+  00000019: 8B 34 C5 0C 00 00  mov         esi,dword ptr _g_SgMemUnkVar_1301928[eax*8+0Ch]
+            00
+  00000020: 8D 04 C5 00 00 00  lea         eax,_g_SgMemUnkVar_1301928[eax*8]
+            00
+  00000027: 0F 84 09 01 00 00  je          00000136
+  0000002D: 85 F6              test        esi,esi
+  0000002F: 0F 84 01 01 00 00  je          00000136
+  00000035: F7 46 0C 00 00 00  test        dword ptr [esi+0Ch],4000000h
+            04
+  0000003C: 74 76              je          000000B4
+  0000003E: 56                 push        esi
+  0000003F: E8 00 00 00 00     call        _SgMem_ComputeMCBChecksum
+  00000044: 0F B7 4E 08        movzx       ecx,word ptr [esi+8]
+  00000048: 83 C4 04           add         esp,4
+  0000004B: 3B C8              cmp         ecx,eax
+  0000004D: 74 65              je          000000B4
+  0000004F: E8 00 00 00 00     call        _dbgPrintf
+  00000054: E8 00 00 00 00     call        _dbgPrintf
+  00000059: 6A 00              push        0
+  0000005B: 56                 push        esi
+  0000005C: E8 00 00 00 00     call        _SgMem_DumpMCB
+  00000061: E8 00 00 00 00     call        _dbgPrintf
+  00000066: E8 00 00 00 00     call        _FFX_Chr_DebugDumpFunctionHistory
+  0000006B: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  0000006E: C1 E8 1B           shr         eax,1Bh
+  00000071: 83 E0 03           and         eax,3
+  00000074: 8D 04 40           lea         eax,[eax+eax*2]
+  00000077: 8D 04 C5 00 00 00  lea         eax,_g_SgMemUnkVar_1301928[eax*8]
+            00
+  0000007E: 50                 push        eax
+  0000007F: E8 00 00 00 00     call        _SgMem_DumpHeap
+  00000084: E8 00 00 00 00     call        _dbgPrintf
+  00000089: E8 00 00 00 00     call        _dbgPrintf
+  0000008E: 6A 00              push        0
+  00000090: 56                 push        esi
+  00000091: E8 00 00 00 00     call        _SgMem_DumpMCB
+  00000096: E8 00 00 00 00     call        _dbgPrintf
+  0000009B: 68 00 00 00 00     push        offset ??_C@_0CL@HKOPKPBE@SG?32?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9@
+  000000A0: 68 00 00 00 00     push        offset ??_C@_0BG@JKAPMBLF@Memory?5CheckSum?5Error?$AA@
+  000000A5: 68 00 00 00 00     push        offset ??_C@_0P@FPMJDCDB@SgMemCheckHeap?$AA@
+  000000AA: 6A 00              push        0
+  000000AC: E8 00 00 00 00     call        _Debug_AssertHandler
+  000000B1: 83 C4 24           add         esp,24h
+  000000B4: 8B 06              mov         eax,dword ptr [esi]
+  000000B6: 85 C0              test        eax,eax
+  000000B8: 74 72              je          0000012C
+  000000BA: 50                 push        eax
+  000000BB: E8 00 00 00 00     call        _SgMem_ValidateMCB
+  000000C0: 83 C4 04           add         esp,4
+  000000C3: 85 C0              test        eax,eax
+  000000C5: 74 65              je          0000012C
+  000000C7: E8 00 00 00 00     call        _dbgPrintf
+  000000CC: E8 00 00 00 00     call        _dbgPrintf
+  000000D1: 6A 00              push        0
+  000000D3: 56                 push        esi
+  000000D4: E8 00 00 00 00     call        _SgMem_DumpMCB
+  000000D9: E8 00 00 00 00     call        _dbgPrintf
+  000000DE: E8 00 00 00 00     call        _FFX_Chr_DebugDumpFunctionHistory
+  000000E3: 8B 46 0C           mov         eax,dword ptr [esi+0Ch]
+  000000E6: C1 E8 1B           shr         eax,1Bh
+  000000E9: 83 E0 03           and         eax,3
+  000000EC: 8D 04 40           lea         eax,[eax+eax*2]
+  000000EF: 8D 04 C5 00 00 00  lea         eax,_g_SgMemUnkVar_1301928[eax*8]
+            00
+  000000F6: 50                 push        eax
+  000000F7: E8 00 00 00 00     call        _SgMem_DumpHeap
+  000000FC: E8 00 00 00 00     call        _dbgPrintf
+  00000101: E8 00 00 00 00     call        _dbgPrintf
+  00000106: 6A 00              push        0
+  00000108: 56                 push        esi
+  00000109: E8 00 00 00 00     call        _SgMem_DumpMCB
+  0000010E: E8 00 00 00 00     call        _dbgPrintf
+  00000113: 68 00 00 00 00     push        offset ??_C@_0CK@FJDAPL@SG?3?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9@
+  00000118: 68 00 00 00 00     push        offset ??_C@_0P@EFGHBBNH@Memory?5Brocken?$AA@
+  0000011D: 68 00 00 00 00     push        offset ??_C@_0P@FPMJDCDB@SgMemCheckHeap?$AA@
+  00000122: 6A 00              push        0
+  00000124: E8 00 00 00 00     call        _Debug_AssertHandler
+  00000129: 83 C4 24           add         esp,24h
+  0000012C: 8B 36              mov         esi,dword ptr [esi]
+  0000012E: 85 F6              test        esi,esi
+  00000130: 0F 85 FF FE FF FF  jne         00000035
+  00000136: 5E                 pop         esi
+  00000137: 8B E5              mov         esp,ebp
+  00000139: 5D                 pop         ebp
+  0000013A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          89 .rdata
+         13B .text

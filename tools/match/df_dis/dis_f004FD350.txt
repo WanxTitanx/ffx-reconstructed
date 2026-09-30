@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004FD350.obj
+
+File Type: COFF OBJECT
+
+@DEAD_PShaderArray_ParamDefArray_Destroy@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 8D 46 14           lea         eax,[esi+14h]
+  00000006: 50                 push        eax
+  00000007: E8 00 00 00 00     call        _PShaderParamDefArray_Destroy
+  0000000C: 8B 06              mov         eax,dword ptr [esi]
+  0000000E: 83 C4 04           add         esp,4
+  00000011: 85 C0              test        eax,eax
+  00000013: 78 11              js          00000026
+  00000015: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000001A: 50                 push        eax
+  0000001B: FF 76 04           push        dword ptr [esi+4]
+  0000001E: E8 00 00 00 00     call        _PShaderArray_ParamDef_Destroy
+  00000023: 83 C4 08           add         esp,8
+  00000026: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  0000002D: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000033: 5E                 pop         esi
+  00000034: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          35 .text

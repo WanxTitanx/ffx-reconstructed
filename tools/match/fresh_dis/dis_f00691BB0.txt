@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00691BB0.obj
+
+File Type: COFF OBJECT
+
+_Async_ProcessTask_LazyInit:
+  00000000: 83 3D 10 22 33 03  cmp         dword ptr ds:[3332210h],0
+            00
+  00000007: 75 27              jne         00000030
+  00000009: 6A 4C              push        4Ch
+  0000000B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000010: 83 C4 04           add         esp,4
+  00000013: 85 C0              test        eax,eax
+  00000015: 74 0F              je          00000026
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _AsyncLoadManager_Constructor
+  0000001D: 83 C4 04           add         esp,4
+  00000020: A3 10 22 33 03     mov         dword ptr ds:[03332210h],eax
+  00000025: C3                 ret
+  00000026: C7 05 10 22 33 03  mov         dword ptr ds:[3332210h],0
+            00 00 00 00
+  00000030: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          31 .text

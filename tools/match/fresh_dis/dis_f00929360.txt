@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00929360.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicVfx_UpdateNailVelocity:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 83 EC 10           sub         esp,10h
+  00000009: 56                 push        esi
+  0000000A: 8B 70 30           mov         esi,dword ptr [eax+30h]
+  0000000D: 57                 push        edi
+  0000000E: 8B 78 1C           mov         edi,dword ptr [eax+1Ch]
+  00000011: 85 FF              test        edi,edi
+  00000013: 7E 39              jle         0000004E
+  00000015: 53                 push        ebx
+  00000016: 8B 58 2C           mov         ebx,dword ptr [eax+2Ch]
+  00000019: 2B DE              sub         ebx,esi
+  0000001B: EB 03              jmp         00000020
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000023: 83 EC 08           sub         esp,8
+  00000026: D9 40 1C           fld         dword ptr [eax+1Ch]
+  00000029: 8D 04 33           lea         eax,[ebx+esi]
+  0000002C: DD 1C 24           fstp        qword ptr [esp]
+  0000002F: 50                 push        eax
+  00000030: 8D 45 F0           lea         eax,[ebp-10h]
+  00000033: 50                 push        eax
+  00000034: E8 00 00 00 00     call        _FFX_Math_Vec4MulScalarScratch_3
+  00000039: 8D 45 F0           lea         eax,[ebp-10h]
+  0000003C: 50                 push        eax
+  0000003D: 56                 push        esi
+  0000003E: 56                 push        esi
+  0000003F: E8 00 00 00 00     call        _FFX_Math_Vec4Sub3DScratch_2
+  00000044: 83 C4 1C           add         esp,1Ch
+  00000047: 83 C6 10           add         esi,10h
+  0000004A: 4F                 dec         edi
+  0000004B: 75 D3              jne         00000020
+  0000004D: 5B                 pop         ebx
+  0000004E: 5F                 pop         edi
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          54 .text

@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005B6DF0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Renderer_JobQueue_SubmitEntry@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B C1              mov         eax,ecx
+  00000007: 56                 push        esi
+  00000008: 8B 58 44           mov         ebx,dword ptr [eax+44h]
+  0000000B: 8B 70 4C           mov         esi,dword ptr [eax+4Ch]
+  0000000E: 57                 push        edi
+  0000000F: 8B 78 50           mov         edi,dword ptr [eax+50h]
+  00000012: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000015: E8 00 00 00 00     call        _PProcessorProfileTimelineCpu_GetSingleton
+  0000001A: 53                 push        ebx
+  0000001B: 57                 push        edi
+  0000001C: 56                 push        esi
+  0000001D: 50                 push        eax
+  0000001E: E8 00 00 00 00     call        _Phyre_Renderer_JobQueue_Push
+  00000023: 83 C4 10           add         esp,10h
+  00000026: 85 C0              test        eax,eax
+  00000028: 75 38              jne         00000062
+  0000002A: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000002D: 8B 46 44           mov         eax,dword ptr [esi+44h]
+  00000030: 85 C0              test        eax,eax
+  00000032: 74 09              je          0000003D
+  00000034: 50                 push        eax
+  00000035: E8 00 00 00 00     call        _Phyre_SpinLock_Release
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: 8D 46 1C           lea         eax,[esi+1Ch]
+  00000040: 50                 push        eax
+  00000041: C7 46 4C 00 00 00  mov         dword ptr [esi+4Ch],0
+            00
+  00000048: C7 46 50 00 00 00  mov         dword ptr [esi+50h],0
+            00
+  0000004F: E8 00 00 00 00     call        _Phyre_CircularBuffer_Advance
+  00000054: 8D 46 30           lea         eax,[esi+30h]
+  00000057: 50                 push        eax
+  00000058: E8 00 00 00 00     call        _Phyre_CircularBuffer_Advance
+  0000005D: 83 C4 08           add         esp,8
+  00000060: 33 C0              xor         eax,eax
+  00000062: 5F                 pop         edi
+  00000063: 5E                 pop         esi
+  00000064: 5B                 pop         ebx
+  00000065: 8B E5              mov         esp,ebp
+  00000067: 5D                 pop         ebp
+  00000068: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          69 .text

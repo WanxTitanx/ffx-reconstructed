@@ -1,0 +1,62 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007ABBF0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_GetModelRecordByCode:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 81 F9 FF 00 00 00  cmp         ecx,0FFh
+  0000000C: 75 04              jne         00000012
+  0000000E: 33 C0              xor         eax,eax
+  00000010: 5D                 pop         ebp
+  00000011: C3                 ret
+  00000012: 8B D1              mov         edx,ecx
+  00000014: 8B C1              mov         eax,ecx
+  00000016: C1 FA 0C           sar         edx,0Ch
+  00000019: 56                 push        esi
+  0000001A: 25 FF 0F 00 00     and         eax,0FFFh
+  0000001F: 57                 push        edi
+  00000020: 83 FA 07           cmp         edx,7
+  00000023: 75 12              jne         00000037
+  00000025: 83 F8 08           cmp         eax,8
+  00000028: 1B F6              sbb         esi,esi
+  0000002A: 23 F0              and         esi,eax
+  0000002C: 6B F6 16           imul        esi,esi,16h
+  0000002F: 81 C6 00 00 00 00  add         esi,offset _g_BattleUnkVar_2310F9E
+  00000035: EB 29              jmp         00000060
+  00000037: 83 FA 0B           cmp         edx,0Bh
+  0000003A: 75 12              jne         0000004E
+  0000003C: 83 F8 08           cmp         eax,8
+  0000003F: 1B F6              sbb         esi,esi
+  00000041: 23 F0              and         esi,eax
+  00000043: 6B F6 16           imul        esi,esi,16h
+  00000046: 81 C6 00 00 00 00  add         esi,offset _g_FieldUnkVar_2310DDE
+  0000004C: EB 12              jmp         00000060
+  0000004E: 3D C8 00 00 00     cmp         eax,0C8h
+  00000053: 1B F6              sbb         esi,esi
+  00000055: 23 F0              and         esi,eax
+  00000057: 6B F6 16           imul        esi,esi,16h
+  0000005A: 81 C6 B0 3C 4C 04  add         esi,44C3CB0h
+  00000060: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00000063: 85 FF              test        edi,edi
+  00000065: 74 0B              je          00000072
+  00000067: 51                 push        ecx
+  00000068: E8 00 00 00 00     call        _FFX_Field_LookupModelRecordTable
+  0000006D: 83 C4 04           add         esp,4
+  00000070: 89 07              mov         dword ptr [edi],eax
+  00000072: 5F                 pop         edi
+  00000073: 8B C6              mov         eax,esi
+  00000075: 5E                 pop         esi
+  00000076: 5D                 pop         ebp
+  00000077: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          78 .text

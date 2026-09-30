@@ -1,0 +1,135 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C3D70.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_PDynamicGeometry_VertexStreamResizeV3@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 18           sub         esp,18h
+  00000006: 83 7D 0C 01        cmp         dword ptr [ebp+0Ch],1
+  0000000A: 53                 push        ebx
+  0000000B: 56                 push        esi
+  0000000C: 57                 push        edi
+  0000000D: 0F 84 10 01 00 00  je          00000123
+  00000013: 8B 02              mov         eax,dword ptr [edx]
+  00000015: 8B 71 20           mov         esi,dword ptr [ecx+20h]
+  00000018: 8B 59 1C           mov         ebx,dword ptr [ecx+1Ch]
+  0000001B: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000001E: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000021: D1 EE              shr         esi,1
+  00000023: D1 EB              shr         ebx,1
+  00000025: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000028: 0F 84 F5 00 00 00  je          00000123
+  0000002E: 85 F6              test        esi,esi
+  00000030: 0F 84 ED 00 00 00  je          00000123
+  00000036: 8B 01              mov         eax,dword ptr [ecx]
+  00000038: 33 D2              xor         edx,edx
+  0000003A: 8B 78 0C           mov         edi,dword ptr [eax+0Ch]
+  0000003D: 0F AF FB           imul        edi,ebx
+  00000040: C1 EF 03           shr         edi,3
+  00000043: 8B C7              mov         eax,edi
+  00000045: 0F AF C6           imul        eax,esi
+  00000048: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000004B: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000004E: 85 C0              test        eax,eax
+  00000050: 74 13              je          00000065
+  00000052: 6A 01              push        1
+  00000054: 50                 push        eax
+  00000055: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000005A: 8B D0              mov         edx,eax
+  0000005C: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  0000005F: 83 C4 08           add         esp,8
+  00000062: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000065: 8B CA              mov         ecx,edx
+  00000067: F7 D9              neg         ecx
+  00000069: 1B C9              sbb         ecx,ecx
+  0000006B: 23 C8              and         ecx,eax
+  0000006D: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000070: 89 55 EC           mov         dword ptr [ebp-14h],edx
+  00000073: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  00000076: 85 D2              test        edx,edx
+  00000078: 75 1A              jne         00000094
+  0000007A: 8D 45 E8           lea         eax,[ebp-18h]
+  0000007D: 50                 push        eax
+  0000007E: E8 00 00 00 00     call        _PNodeList_ClearNode
+  00000083: 83 C4 04           add         esp,4
+  00000086: B8 0D 00 00 00     mov         eax,0Dh
+  0000008B: 5F                 pop         edi
+  0000008C: 5E                 pop         esi
+  0000008D: 5B                 pop         ebx
+  0000008E: 8B E5              mov         esp,ebp
+  00000090: 5D                 pop         ebp
+  00000091: C2 0C 00           ret         0Ch
+  00000094: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000097: 83 F9 01           cmp         ecx,1
+  0000009A: 76 78              jbe         00000114
+  0000009C: 83 45 08 10        add         dword ptr [ebp+8],10h
+  000000A0: 8D 41 FF           lea         eax,[ecx-1]
+  000000A3: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  000000A6: 56                 push        esi
+  000000A7: 53                 push        ebx
+  000000A8: FF 75 F8           push        dword ptr [ebp-8]
+  000000AB: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000000AE: 57                 push        edi
+  000000AF: 52                 push        edx
+  000000B0: FF 55 10           call        dword ptr [ebp+10h]
+  000000B3: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000B6: 83 C4 18           add         esp,18h
+  000000B9: 8B 41 FC           mov         eax,dword ptr [ecx-4]
+  000000BC: 85 C0              test        eax,eax
+  000000BE: 74 14              je          000000D4
+  000000C0: 56                 push        esi
+  000000C1: 57                 push        edi
+  000000C2: 57                 push        edi
+  000000C3: FF 75 FC           push        dword ptr [ebp-4]
+  000000C6: FF 31              push        dword ptr [ecx]
+  000000C8: 50                 push        eax
+  000000C9: E8 00 00 00 00     call        _PTexture_MemcpyLoop_StridedCopy
+  000000CE: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  000000D1: 83 C4 18           add         esp,18h
+  000000D4: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000D7: 89 7D F8           mov         dword ptr [ebp-8],edi
+  000000DA: D1 EB              shr         ebx,1
+  000000DC: D1 EF              shr         edi,1
+  000000DE: 8B D0              mov         edx,eax
+  000000E0: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000E3: 83 FB 01           cmp         ebx,1
+  000000E6: 77 05              ja          000000ED
+  000000E8: BB 01 00 00 00     mov         ebx,1
+  000000ED: D1 EE              shr         esi,1
+  000000EF: 83 FE 01           cmp         esi,1
+  000000F2: 77 05              ja          000000F9
+  000000F4: BE 01 00 00 00     mov         esi,1
+  000000F9: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  000000FC: FF 4D 0C           dec         dword ptr [ebp+0Ch]
+  000000FF: 83 F8 01           cmp         eax,1
+  00000102: 75 04              jne         00000108
+  00000104: 8A C0              mov         al,al
+  00000106: EB 02              jmp         0000010A
+  00000108: 32 C0              xor         al,al
+  0000010A: 83 C1 08           add         ecx,8
+  0000010D: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000110: 84 C0              test        al,al
+  00000112: 74 92              je          000000A6
+  00000114: 83 7D F0 00        cmp         dword ptr [ebp-10h],0
+  00000118: 7C 09              jl          00000123
+  0000011A: 52                 push        edx
+  0000011B: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000120: 83 C4 04           add         esp,4
+  00000123: 5F                 pop         edi
+  00000124: 5E                 pop         esi
+  00000125: 33 C0              xor         eax,eax
+  00000127: 5B                 pop         ebx
+  00000128: 8B E5              mov         esp,ebp
+  0000012A: 5D                 pop         ebp
+  0000012B: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         12E .text

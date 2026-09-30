@@ -1,0 +1,55 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C7380.obj
+
+File Type: COFF OBJECT
+
+@PTextureFormat_SetDimensions@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000009: 85 C9              test        ecx,ecx
+  0000000B: 74 15              je          00000022
+  0000000D: B8 01 00 00 00     mov         eax,1
+  00000012: D3 E0              shl         eax,cl
+  00000014: 3B C2              cmp         eax,edx
+  00000016: 76 0A              jbe         00000022
+  00000018: B8 03 00 00 00     mov         eax,3
+  0000001D: 5E                 pop         esi
+  0000001E: 5D                 pop         ebp
+  0000001F: C2 08 00           ret         8
+  00000022: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000025: 3B 56 1C           cmp         edx,dword ptr [esi+1Ch]
+  00000028: 75 09              jne         00000033
+  0000002A: 3B 06              cmp         eax,dword ptr [esi]
+  0000002C: 75 05              jne         00000033
+  0000002E: 3B 4E 0C           cmp         ecx,dword ptr [esi+0Ch]
+  00000031: 74 25              je          00000058
+  00000033: F6 46 14 02        test        byte ptr [esi+14h],2
+  00000037: 89 06              mov         dword ptr [esi],eax
+  00000039: 89 56 1C           mov         dword ptr [esi+1Ch],edx
+  0000003C: 89 4E 0C           mov         dword ptr [esi+0Ch],ecx
+  0000003F: 74 0F              je          00000050
+  00000041: 6A 00              push        0
+  00000043: 6A 00              push        0
+  00000045: 52                 push        edx
+  00000046: E8 00 00 00 00     call        _PTexture_GetMaxOf3_FindHighestBit
+  0000004B: 83 C4 0C           add         esp,0Ch
+  0000004E: 8B C8              mov         ecx,eax
+  00000050: 3B 4E 10           cmp         ecx,dword ptr [esi+10h]
+  00000053: 74 03              je          00000058
+  00000055: 89 4E 10           mov         dword ptr [esi+10h],ecx
+  00000058: 33 C0              xor         eax,eax
+  0000005A: 5E                 pop         esi
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 08 00           ret         8
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5F .text

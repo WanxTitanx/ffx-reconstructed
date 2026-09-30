@@ -1,0 +1,70 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00900F80.obj
+
+File Type: COFF OBJECT
+
+_sub_900F80:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 83 FF 10           cmp         edi,10h
+  0000000A: 0F 8D 80 00 00 00  jge         00000090
+  00000010: 8B 55 0C           mov         edx,dword ptr [ebp+0Ch]
+  00000013: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000016: C1 E7 04           shl         edi,4
+  00000019: 0F BF 87 00 00 00  movsx       eax,word ptr _unk_18762A2[edi]
+            00
+  00000020: 3B D0              cmp         edx,eax
+  00000022: 75 0B              jne         0000002F
+  00000024: 0F BF 87 00 00 00  movsx       eax,word ptr _unk_18762A4[edi]
+            00
+  0000002B: 3B C8              cmp         ecx,eax
+  0000002D: 74 64              je          00000093
+  0000002F: B8 01 00 00 00     mov         eax,1
+  00000034: 66 89 87 00 00 00  mov         word ptr _unk_18762A0[edi],ax
+            00
+  0000003B: 66 89 97 00 00 00  mov         word ptr _unk_18762A2[edi],dx
+            00
+  00000042: 66 89 8F 00 00 00  mov         word ptr _unk_18762A4[edi],cx
+            00
+  00000049: 66 39 87 00 00 00  cmp         word ptr _word_18762AE[edi],ax
+            00
+  00000050: 74 41              je          00000093
+  00000052: 56                 push        esi
+  00000053: 8B 75 14           mov         esi,dword ptr [ebp+14h]
+  00000056: 6A 00              push        0
+  00000058: 8B C6              mov         eax,esi
+  0000005A: 99                 cdq
+  0000005B: 68 93 24 49 92     push        92492493h
+  00000060: 52                 push        edx
+  00000061: 50                 push        eax
+  00000062: C7 87 00 00 00 00  mov         dword ptr _unk_18762A8[edi],0
+            00 00 00 00
+  0000006C: E8 00 00 00 00     call        __allmul
+  00000071: 8B C2              mov         eax,edx
+  00000073: C1 F8 03           sar         eax,3
+  00000076: C1 EA 1F           shr         edx,1Fh
+  00000079: 83 C0 02           add         eax,2
+  0000007C: 66 89 B7 00 00 00  mov         word ptr _unk_18762A6[edi],si
+            00
+  00000083: 03 C2              add         eax,edx
+  00000085: 5E                 pop         esi
+  00000086: 66 89 87 00 00 00  mov         word ptr _unk_18762AC[edi],ax
+            00
+  0000008D: 5F                 pop         edi
+  0000008E: 5D                 pop         ebp
+  0000008F: C3                 ret
+  00000090: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000093: 5F                 pop         edi
+  00000094: 5D                 pop         ebp
+  00000095: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          96 .text

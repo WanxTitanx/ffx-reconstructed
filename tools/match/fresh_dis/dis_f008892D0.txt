@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008892D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Input_InitPadContext:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000C: 57                 push        edi
+  0000000D: 53                 push        ebx
+  0000000E: E8 00 00 00 00     call        _FFX_Input_GetPadContextBase
+  00000013: 8B F0              mov         esi,eax
+  00000015: B8 00 01 00 00     mov         eax,100h
+  0000001A: 66 89 86 9D 00 00  mov         word ptr [esi+9Dh],ax
+            00
+  00000021: C6 86 9F 00 00 00  mov         byte ptr [esi+9Fh],1
+            01
+  00000028: 56                 push        esi
+  00000029: C7 86 94 00 00 00  mov         dword ptr [esi+94h],5000Ch
+            0C 00 05 00
+  00000033: E8 00 00 00 00     call        _FFX_Input_PadContextSetDefaultRepeat
+  00000038: 56                 push        esi
+  00000039: E8 00 00 00 00     call        _FFX_Input_PadReadByte
+  0000003E: 56                 push        esi
+  0000003F: E8 00 00 00 00     call        _FFX_Input_PadReadWord
+  00000044: 57                 push        edi
+  00000045: 53                 push        ebx
+  00000046: E8 00 00 00 00     call        _FFX_Input_ClearPadAnalogHistory
+  0000004B: 83 C4 1C           add         esp,1Ch
+  0000004E: C6 86 9C 00 00 00  mov         byte ptr [esi+9Ch],0
+            00
+  00000055: C6 86 83 00 00 00  mov         byte ptr [esi+83h],0
+            00
+  0000005C: 33 F6              xor         esi,esi
+  0000005E: 8B FF              mov         edi,edi
+  00000060: 56                 push        esi
+  00000061: 56                 push        esi
+  00000062: 57                 push        edi
+  00000063: 53                 push        ebx
+  00000064: E8 00 00 00 00     call        _FFX_Field_AccessEncounterParameter
+  00000069: 46                 inc         esi
+  0000006A: 83 C4 10           add         esp,10h
+  0000006D: 83 FE 10           cmp         esi,10h
+  00000070: 7C EE              jl          00000060
+  00000072: 5F                 pop         edi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: 5D                 pop         ebp
+  00000076: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          77 .text

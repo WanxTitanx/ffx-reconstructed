@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0066BF30.obj
+
+File Type: COFF OBJECT
+
+@reserve@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 8B 7E 10           mov         edi,dword ptr [esi+10h]
+  00000007: 3B FA              cmp         edi,edx
+  00000009: 77 27              ja          00000032
+  0000000B: 39 56 14           cmp         dword ptr [esi+14h],edx
+  0000000E: 74 22              je          00000032
+  00000010: 6A 01              push        1
+  00000012: 52                 push        edx
+  00000013: 56                 push        esi
+  00000014: E8 00 00 00 00     call        _Engine_String_reserve
+  00000019: 83 C4 0C           add         esp,0Ch
+  0000001C: 84 C0              test        al,al
+  0000001E: 74 14              je          00000034
+  00000020: 83 7E 14 10        cmp         dword ptr [esi+14h],10h
+  00000024: 89 7E 10           mov         dword ptr [esi+10h],edi
+  00000027: 72 02              jb          0000002B
+  00000029: 8B 36              mov         esi,dword ptr [esi]
+  0000002B: C6 04 37 00        mov         byte ptr [edi+esi],0
+  0000002F: 5F                 pop         edi
+  00000030: 5E                 pop         esi
+  00000031: C3                 ret
+  00000032: 8B C2              mov         eax,edx
+  00000034: 5F                 pop         edi
+  00000035: 5E                 pop         esi
+  00000036: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          37 .text

@@ -1,0 +1,59 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0078C640.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckMagicBoosterDamage:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 7D 10 1F 31 00  cmp         dword ptr [ebp+10h],311Fh
+            00
+  0000000A: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000000D: 75 27              jne         00000036
+  0000000F: 80 B8 CA 05 00 00  cmp         byte ptr [eax+000005CAh],0
+            00
+  00000016: 74 1A              je          00000032
+  00000018: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  0000001B: C6 80 CA 05 00 00  mov         byte ptr [eax+000005CAh],0
+            00
+  00000022: 85 C9              test        ecx,ecx
+  00000024: 74 0C              je          00000032
+  00000026: 8B 01              mov         eax,dword ptr [ecx]
+  00000028: 8D 04 40           lea         eax,[eax+eax*2]
+  0000002B: 99                 cdq
+  0000002C: 2B C2              sub         eax,edx
+  0000002E: D1 F8              sar         eax,1
+  00000030: 89 01              mov         dword ptr [ecx],eax
+  00000032: 33 C0              xor         eax,eax
+  00000034: 5D                 pop         ebp
+  00000035: C3                 ret
+  00000036: F6 80 BC 06 00 00  test        byte ptr [eax+000006BCh],40h
+            40
+  0000003D: 74 F3              je          00000032
+  0000003F: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000042: 8A 40 17           mov         al,byte ptr [eax+17h]
+  00000045: 3C 01              cmp         al,1
+  00000047: 74 04              je          0000004D
+  00000049: 3C 02              cmp         al,2
+  0000004B: 75 E5              jne         00000032
+  0000004D: 8B 4D 14           mov         ecx,dword ptr [ebp+14h]
+  00000050: 85 C9              test        ecx,ecx
+  00000052: 74 0C              je          00000060
+  00000054: 8B 01              mov         eax,dword ptr [ecx]
+  00000056: 8D 04 40           lea         eax,[eax+eax*2]
+  00000059: 99                 cdq
+  0000005A: 2B C2              sub         eax,edx
+  0000005C: D1 F8              sar         eax,1
+  0000005E: 89 01              mov         dword ptr [ecx],eax
+  00000060: 83 C8 FF           or          eax,0FFFFFFFFh
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          65 .text

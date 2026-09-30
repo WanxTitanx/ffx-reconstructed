@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0076E240.obj
+
+File Type: COFF OBJECT
+
+_FFX_Mscd_CancelQueueEntries:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 85 C9              test        ecx,ecx
+  00000008: 7E 5A              jle         00000064
+  0000000A: 8B 15 00 00 00 00  mov         edx,dword ptr [_g_MscdUnkVar_1128AA4]
+  00000010: B8 00 00 00 00     mov         eax,offset _g_MscdUnkVar_1127CA4
+  00000015: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000019: 74 08              je          00000023
+  0000001B: 39 08              cmp         dword ptr [eax],ecx
+  0000001D: 75 04              jne         00000023
+  0000001F: C6 40 0F 01        mov         byte ptr [eax+0Fh],1
+  00000023: 80 78 45 00        cmp         byte ptr [eax+45h],0
+  00000027: 74 09              je          00000032
+  00000029: 39 48 38           cmp         dword ptr [eax+38h],ecx
+  0000002C: 75 04              jne         00000032
+  0000002E: C6 40 47 01        mov         byte ptr [eax+47h],1
+  00000032: 80 78 7D 00        cmp         byte ptr [eax+7Dh],0
+  00000036: 74 09              je          00000041
+  00000038: 39 48 70           cmp         dword ptr [eax+70h],ecx
+  0000003B: 75 04              jne         00000041
+  0000003D: C6 40 7F 01        mov         byte ptr [eax+7Fh],1
+  00000041: 80 B8 B5 00 00 00  cmp         byte ptr [eax+0B5h],0
+            00
+  00000048: 74 0F              je          00000059
+  0000004A: 39 88 A8 00 00 00  cmp         dword ptr [eax+0A8h],ecx
+  00000050: 75 07              jne         00000059
+  00000052: C6 80 B7 00 00 00  mov         byte ptr [eax+0B7h],1
+            01
+  00000059: 05 E0 00 00 00     add         eax,0E0h
+  0000005E: 3B C2              cmp         eax,edx
+  00000060: 7C B3              jl          00000015
+  00000062: 5D                 pop         ebp
+  00000063: C3                 ret
+  00000064: B8 00 00 00 00     mov         eax,offset _unk_1127CB3
+  00000069: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000070: 80 78 FE 00        cmp         byte ptr [eax-2],0
+  00000074: 74 03              je          00000079
+  00000076: C6 00 01           mov         byte ptr [eax],1
+  00000079: 83 C0 38           add         eax,38h
+  0000007C: 3D 00 00 00 00     cmp         eax,offset _unk_1128AB3
+  00000081: 7C ED              jl          00000070
+  00000083: 5D                 pop         ebp
+  00000084: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          85 .text

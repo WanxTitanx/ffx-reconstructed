@@ -1,0 +1,35 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00947DF0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_947DF0@4:
+  00000000: 83 3D 00 00 00 00  cmp         dword ptr [_g_U8_C613AC],0
+            00
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 74 2E              je          0000003A
+  0000000C: 8D 64 24 00        lea         esp,[esp]
+  00000010: 68 E8 03 00 00     push        3E8h
+  00000015: FF B6 74 1C 00 00  push        dword ptr [esi+1C74h]
+  0000001B: E8 00 00 00 00     call        _WaitForSingleObject
+  00000020: 6A 00              push        0
+  00000022: 56                 push        esi
+  00000023: E8 00 00 00 00     call        _Heap_GCCollect
+  00000028: FF 86 6C 1C 00 00  inc         dword ptr [esi+1C6Ch]
+  0000002E: 83 C4 10           add         esp,10h
+  00000031: 83 3D 00 00 00 00  cmp         dword ptr [_g_U8_C613AC],0
+            00
+  00000038: 75 D6              jne         00000010
+  0000003A: 5E                 pop         esi
+  0000003B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3C .text

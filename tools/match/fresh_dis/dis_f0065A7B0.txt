@@ -1,0 +1,58 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0065A7B0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Scene_ReleaseAllClusterHandles@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: E8 00 00 00 00     call        _FFX_Scene_ClearClusterHandleTable
+  00000009: 33 FF              xor         edi,edi
+  0000000B: 39 BE A0 38 00 00  cmp         dword ptr [esi+38A0h],edi
+  00000011: 76 38              jbe         0000004B
+  00000013: 8B 86 94 38 00 00  mov         eax,dword ptr [esi+3894h]
+  00000019: 8B 0C B8           mov         ecx,dword ptr [eax+edi*4]
+  0000001C: 85 C9              test        ecx,ecx
+  0000001E: 74 22              je          00000042
+  00000020: 8B 86 9C 38 00 00  mov         eax,dword ptr [esi+389Ch]
+  00000026: FF 34 B8           push        dword ptr [eax+edi*4]
+  00000029: 51                 push        ecx
+  0000002A: 56                 push        esi
+  0000002B: E8 00 00 00 00     call        _FFX_ClusterHandle_ReleaseBitmapFontTextRefs
+  00000030: 8B 86 94 38 00 00  mov         eax,dword ptr [esi+3894h]
+  00000036: FF 34 B8           push        dword ptr [eax+edi*4]
+  00000039: 56                 push        esi
+  0000003A: E8 00 00 00 00     call        _FFX_Scene_FindObjectIndex
+  0000003F: 83 C4 14           add         esp,14h
+  00000042: 47                 inc         edi
+  00000043: 3B BE A0 38 00 00  cmp         edi,dword ptr [esi+38A0h]
+  00000049: 72 C8              jb          00000013
+  0000004B: 8B 86 90 38 00 00  mov         eax,dword ptr [esi+3890h]
+  00000051: C1 E0 02           shl         eax,2
+  00000054: 50                 push        eax
+  00000055: 6A 00              push        0
+  00000057: FF B6 94 38 00 00  push        dword ptr [esi+3894h]
+  0000005D: E8 00 00 00 00     call        _memset
+  00000062: 8B 86 98 38 00 00  mov         eax,dword ptr [esi+3898h]
+  00000068: C1 E0 02           shl         eax,2
+  0000006B: 50                 push        eax
+  0000006C: 6A 00              push        0
+  0000006E: FF B6 9C 38 00 00  push        dword ptr [esi+389Ch]
+  00000074: E8 00 00 00 00     call        _memset
+  00000079: 83 C4 18           add         esp,18h
+  0000007C: C7 86 A0 38 00 00  mov         dword ptr [esi+38A0h],0
+            00 00 00 00
+  00000086: 5F                 pop         edi
+  00000087: 5E                 pop         esi
+  00000088: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          89 .text

@@ -1,0 +1,45 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00840560.obj
+
+File Type: COFF OBJECT
+
+_FFX_ResourceCache_RegisterDataPtr:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: BE 60 BD C0 04     mov         esi,4C0BD60h
+  00000009: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000010: 8B 06              mov         eax,dword ptr [esi]
+  00000012: 8B 08              mov         ecx,dword ptr [eax]
+  00000014: 83 79 0C 00        cmp         dword ptr [ecx+0Ch],0
+  00000018: 74 17              je          00000031
+  0000001A: 83 C0 04           add         eax,4
+  0000001D: 3B 05 A0 C3 C0 04  cmp         eax,dword ptr ds:[4C0C3A0h]
+  00000023: 7C ED              jl          00000012
+  00000025: E8 00 00 00 00     call        _FFX_ResourceCache_EvictOnOverflow
+  0000002A: 85 C0              test        eax,eax
+  0000002C: 74 E2              je          00000010
+  0000002E: 5E                 pop         esi
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000034: 89 01              mov         dword ptr [ecx],eax
+  00000036: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000039: 89 41 0C           mov         dword ptr [ecx+0Ch],eax
+  0000003C: 8A 45 08           mov         al,byte ptr [ebp+8]
+  0000003F: C7 41 05 00 00 00  mov         dword ptr [ecx+5],5000000h
+            05
+  00000046: 88 41 04           mov         byte ptr [ecx+4],al
+  00000049: 5E                 pop         esi
+  0000004A: 5D                 pop         ebp
+  0000004B: E9 00 00 00 00     jmp         _FFX_Debug_FieldActionListDisplay_Stub
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          50 .text

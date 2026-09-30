@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00859C40.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldVM_Op_SetActorOpacity:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: FF 75 08           push        dword ptr [ebp+8]
+  00000008: E8 00 00 00 00     call        _FFX_FieldOp_GetActorActionTableByType
+  0000000D: FF 75 10           push        dword ptr [ebp+10h]
+  00000010: 8B F8              mov         edi,eax
+  00000012: FF 75 08           push        dword ptr [ebp+8]
+  00000015: E8 00 00 00 00     call        _FFX_FieldVM_PopFloatOperand
+  0000001A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001D: DB 45 FC           fild        dword ptr [ebp-4]
+  00000020: 85 C0              test        eax,eax
+  00000022: 79 06              jns         0000002A
+  00000024: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000002A: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002D: 83 C4 04           add         esp,4
+  00000030: D9 45 FC           fld         dword ptr [ebp-4]
+  00000033: DD 1C 24           fstp        qword ptr [esp]
+  00000036: E8 00 00 00 00     call        _FFX_Field_BgAnimOpacityReader
+  0000003B: 83 C4 08           add         esp,8
+  0000003E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000041: DB 45 FC           fild        dword ptr [ebp-4]
+  00000044: 85 C0              test        eax,eax
+  00000046: 79 06              jns         0000004E
+  00000048: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000004E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000051: D9 45 FC           fld         dword ptr [ebp-4]
+  00000054: D9 57 34           fst         dword ptr [edi+34h]
+  00000057: 5F                 pop         edi
+  00000058: 8B E5              mov         esp,ebp
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          5C .text

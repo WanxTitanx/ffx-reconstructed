@@ -1,0 +1,63 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00848FE0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_ParseDecimalOrHexInt:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 33 C9              xor         ecx,ecx
+  00000008: 56                 push        esi
+  00000009: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000C: 8A 06              mov         al,byte ptr [esi]
+  0000000E: 3C 24              cmp         al,24h
+  00000010: 75 14              jne         00000026
+  00000012: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000015: 8D 46 01           lea         eax,[esi+1]
+  00000018: 50                 push        eax
+  00000019: E8 00 00 00 00     call        _FFX_Dbg_ParseHexString
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 5E                 pop         esi
+  00000022: 8B E5              mov         esp,ebp
+  00000024: 5D                 pop         ebp
+  00000025: C3                 ret
+  00000026: 3C 30              cmp         al,30h
+  00000028: 7C 1B              jl          00000045
+  0000002A: 8D 55 F0           lea         edx,[ebp-10h]
+  0000002D: 2B D6              sub         edx,esi
+  0000002F: 90                 nop
+  00000030: 3C 39              cmp         al,39h
+  00000032: 7F 0C              jg          00000040
+  00000034: 88 04 32           mov         byte ptr [edx+esi],al
+  00000037: 8A 46 01           mov         al,byte ptr [esi+1]
+  0000003A: 46                 inc         esi
+  0000003B: 41                 inc         ecx
+  0000003C: 3C 30              cmp         al,30h
+  0000003E: 7D F0              jge         00000030
+  00000040: 83 F9 10           cmp         ecx,10h
+  00000043: 73 1D              jae         00000062
+  00000045: 8D 45 F0           lea         eax,[ebp-10h]
+  00000048: 50                 push        eax
+  00000049: C6 44 0D F0 00     mov         byte ptr [ebp+ecx-10h],0
+  0000004E: E8 00 00 00 00     call        _atoi
+  00000053: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000056: 83 C4 04           add         esp,4
+  00000059: 89 01              mov         dword ptr [ecx],eax
+  0000005B: 8B C6              mov         eax,esi
+  0000005D: 5E                 pop         esi
+  0000005E: 8B E5              mov         esp,ebp
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+  00000062: E8 00 00 00 00     call        ___report_rangecheckfailure
+$LN13:
+  00000067: CC                 int         3
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          68 .text

@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007950C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_GetActorBone1TransformOffsetY:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000007: 50                 push        eax
+  00000008: E8 00 00 00 00     call        _FFX_Battle_GetActorModelInstance
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 1D              je          00000031
+  00000014: 56                 push        esi
+  00000015: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000018: 56                 push        esi
+  00000019: 6A 01              push        1
+  0000001B: 50                 push        eax
+  0000001C: E8 00 00 00 00     call        _FFX_Chr_GetBoneTransform4
+  00000021: D9 46 04           fld         dword ptr [esi+4]
+  00000024: DC 25 00 00 00 00  fsub        qword ptr [__real@4000000000000000]
+  0000002A: 83 C4 0C           add         esp,0Ch
+  0000002D: D9 5E 04           fstp        dword ptr [esi+4]
+  00000030: 5E                 pop         esi
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          33 .text

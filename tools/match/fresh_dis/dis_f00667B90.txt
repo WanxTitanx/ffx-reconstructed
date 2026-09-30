@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00667B90.obj
+
+File Type: COFF OBJECT
+
+@FFX_Orp_667B90@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: FF 06              inc         dword ptr [esi]
+  00000006: 8B 0E              mov         ecx,dword ptr [esi]
+  00000008: 8B FA              mov         edi,edx
+  0000000A: 3B 4E 04           cmp         ecx,dword ptr [esi+4]
+  0000000D: 76 1A              jbe         00000029
+  0000000F: 8B C1              mov         eax,ecx
+  00000011: 99                 cdq
+  00000012: 83 E2 07           and         edx,7
+  00000015: 03 C2              add         eax,edx
+  00000017: C1 F8 03           sar         eax,3
+  0000001A: 83 C0 02           add         eax,2
+  0000001D: 03 C1              add         eax,ecx
+  0000001F: 50                 push        eax
+  00000020: 56                 push        esi
+  00000021: E8 00 00 00 00     call        _Int64Array_Reserve
+  00000026: 83 C4 08           add         esp,8
+  00000029: 8B 0E              mov         ecx,dword ptr [esi]
+  0000002B: 8B 56 08           mov         edx,dword ptr [esi+8]
+  0000002E: 49                 dec         ecx
+  0000002F: 8D 0C CA           lea         ecx,[edx+ecx*8]
+  00000032: 85 C9              test        ecx,ecx
+  00000034: 74 0D              je          00000043
+  00000036: 8B 07              mov         eax,dword ptr [edi]
+  00000038: 89 01              mov         dword ptr [ecx],eax
+  0000003A: 8B 47 04           mov         eax,dword ptr [edi+4]
+  0000003D: 5F                 pop         edi
+  0000003E: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000041: 5E                 pop         esi
+  00000042: C3                 ret
+  00000043: 5F                 pop         edi
+  00000044: 8B C2              mov         eax,edx
+  00000046: 5E                 pop         esi
+  00000047: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          48 .text

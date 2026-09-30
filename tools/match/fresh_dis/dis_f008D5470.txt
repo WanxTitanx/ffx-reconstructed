@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008D5470.obj
+
+File Type: COFF OBJECT
+
+_FFX_CustomizeMenu_CalcTextWidth:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 05              push        5
+  00000008: E8 00 00 00 00     call        _Menu_TextLookupByTable11
+  0000000D: DD 05 00 00 00 00  fld         qword ptr [__real@3fe8f5c27f40fdcc]
+  00000013: 51                 push        ecx
+  00000014: 8D 4D F8           lea         ecx,[ebp-8]
+  00000017: DD 1C 24           fstp        qword ptr [esp]
+  0000001A: 6A 00              push        0
+  0000001C: 51                 push        ecx
+  0000001D: 50                 push        eax
+  0000001E: E8 00 00 00 00     call        _FFX_Menu2D_MeasureTextWidth_Filtered
+  00000023: 6A 06              push        6
+  00000025: E8 00 00 00 00     call        _Menu_TextLookupByTable11
+  0000002A: DD 05 00 00 00 00  fld         qword ptr [__real@3fe8f5c27f40fdcc]
+  00000030: 83 C4 10           add         esp,10h
+  00000033: 8D 4D FC           lea         ecx,[ebp-4]
+  00000036: DD 1C 24           fstp        qword ptr [esp]
+  00000039: 6A 00              push        0
+  0000003B: 51                 push        ecx
+  0000003C: 50                 push        eax
+  0000003D: E8 00 00 00 00     call        _FFX_Menu2D_MeasureTextWidth_Filtered
+  00000042: D9 45 FC           fld         dword ptr [ebp-4]
+  00000045: D9 45 F8           fld         dword ptr [ebp-8]
+  00000048: 83 C4 14           add         esp,14h
+  0000004B: DE D9              fcompp
+  0000004D: 83 EC 08           sub         esp,8
+  00000050: DF E0              fnstsw      ax
+  00000052: DD 05 00 00 00 00  fld         qword ptr [__real@408fe00000000000]
+  00000058: DD 1C 24           fstp        qword ptr [esp]
+  0000005B: F6 C4 41           test        ah,41h
+  0000005E: 7A 24              jp          00000084
+  00000060: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920To512
+  00000065: 83 C4 08           add         esp,8
+  00000068: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000006B: DB 45 F8           fild        dword ptr [ebp-8]
+  0000006E: 85 C0              test        eax,eax
+  00000070: 79 06              jns         00000078
+  00000072: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000078: D8 65 FC           fsub        dword ptr [ebp-4]
+  0000007B: E8 00 00 00 00     call        __ftol2_sse
+  00000080: 8B E5              mov         esp,ebp
+  00000082: 5D                 pop         ebp
+  00000083: C3                 ret
+  00000084: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920To512
+  00000089: 83 C4 08           add         esp,8
+  0000008C: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000008F: DB 45 FC           fild        dword ptr [ebp-4]
+  00000092: 85 C0              test        eax,eax
+  00000094: 79 06              jns         0000009C
+  00000096: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000009C: D8 65 F8           fsub        dword ptr [ebp-8]
+  0000009F: E8 00 00 00 00     call        __ftol2_sse
+  000000A4: 8B E5              mov         esp,ebp
+  000000A6: 5D                 pop         ebp
+  000000A7: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+          A8 .text

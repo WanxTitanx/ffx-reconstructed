@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008885F0.obj
+
+File Type: COFF OBJECT
+
+_FFX_System_HeapAlloc:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000009: 74 12              je          0000001D
+  0000000B: E8 00 00 00 00     call        _FFX_VsyncEmulationThread_Stop
+  00000010: E8 00 00 00 00     call        _Sys_Semaphore_StubRetZero
+  00000015: E8 00 00 00 00     call        _Sys_Semaphore_StubRetZeroB
+  0000001A: 83 C8 FF           or          eax,0FFFFFFFFh
+  0000001D: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000020: 85 C9              test        ecx,ecx
+  00000022: 74 15              je          00000039
+  00000024: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  00000027: 75 10              jne         00000039
+  00000029: 51                 push        ecx
+  0000002A: E8 00 00 00 00     call        _FFX_VsyncEmulationThread_Start
+  0000002F: 83 C4 04           add         esp,4
+  00000032: E8 00 00 00 00     call        _Sys_HeapAllocStub
+  00000037: 33 C0              xor         eax,eax
+  00000039: 5D                 pop         ebp
+  0000003A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3B .text

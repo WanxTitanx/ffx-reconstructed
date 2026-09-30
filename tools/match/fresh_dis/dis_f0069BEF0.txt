@@ -1,0 +1,102 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069BEF0.obj
+
+File Type: COFF OBJECT
+
+@TextureAnimationMap_RemoveEntry@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B D9              mov         ebx,ecx
+  00000008: 57                 push        edi
+  00000009: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  0000000C: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000F: 6A FF              push        0FFFFFFFFh
+  00000011: FF 30              push        dword ptr [eax]
+  00000013: E8 00 00 00 00     call        _WaitForSingleObject
+  00000018: 8B 4B 10           mov         ecx,dword ptr [ebx+10h]
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: 8B 31              mov         esi,dword ptr [ecx]
+  00000020: 3B F1              cmp         esi,ecx
+  00000022: 0F 84 A2 00 00 00  je          000000CA
+  00000028: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  0000002B: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  0000002E: 39 38              cmp         dword ptr [eax],edi
+  00000030: 74 53              je          00000085
+  00000032: 80 7E 0D 00        cmp         byte ptr [esi+0Dh],0
+  00000036: 75 42              jne         0000007A
+  00000038: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000003B: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000003F: 74 23              je          00000064
+  00000041: 8B 46 04           mov         eax,dword ptr [esi+4]
+  00000044: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000048: 75 16              jne         00000060
+  0000004A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000050: 3B 70 08           cmp         esi,dword ptr [eax+8]
+  00000053: 75 0B              jne         00000060
+  00000055: 8B F0              mov         esi,eax
+  00000057: 8B 40 04           mov         eax,dword ptr [eax+4]
+  0000005A: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000005E: 74 F0              je          00000050
+  00000060: 8B F0              mov         esi,eax
+  00000062: EB 16              jmp         0000007A
+  00000064: 8B F0              mov         esi,eax
+  00000066: 8B 00              mov         eax,dword ptr [eax]
+  00000068: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  0000006C: 75 0C              jne         0000007A
+  0000006E: 8B FF              mov         edi,edi
+  00000070: 8B F0              mov         esi,eax
+  00000072: 8B 00              mov         eax,dword ptr [eax]
+  00000074: 80 78 0D 00        cmp         byte ptr [eax+0Dh],0
+  00000078: 74 F6              je          00000070
+  0000007A: 3B F1              cmp         esi,ecx
+  0000007C: 74 4C              je          000000CA
+  0000007E: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000081: 39 38              cmp         dword ptr [eax],edi
+  00000083: 75 AD              jne         00000032
+  00000085: 80 78 14 00        cmp         byte ptr [eax+14h],0
+  00000089: 75 3F              jne         000000CA
+  0000008B: FF 48 04           dec         dword ptr [eax+4]
+  0000008E: 8B 46 14           mov         eax,dword ptr [esi+14h]
+  00000091: 83 78 04 01        cmp         dword ptr [eax+4],1
+  00000095: 7D 33              jge         000000CA
+  00000097: 83 78 0C 00        cmp         dword ptr [eax+0Ch],0
+  0000009B: 75 2D              jne         000000CA
+  0000009D: 85 FF              test        edi,edi
+  0000009F: 74 0F              je          000000B0
+  000000A1: 57                 push        edi
+  000000A2: E8 00 00 00 00     call        _Phyre_PCluster_Destructor
+  000000A7: 57                 push        edi
+  000000A8: E8 00 00 00 00     call        _Engine_AlignedFree
+  000000AD: 83 C4 08           add         esp,8
+  000000B0: FF 76 14           push        dword ptr [esi+14h]
+  000000B3: 53                 push        ebx
+  000000B4: E8 00 00 00 00     call        _Phyre_ChrPClusterSampleFree
+  000000B9: 56                 push        esi
+  000000BA: 8D 45 FC           lea         eax,[ebp-4]
+  000000BD: 50                 push        eax
+  000000BE: 8D 43 10           lea         eax,[ebx+10h]
+  000000C1: 50                 push        eax
+  000000C2: E8 00 00 00 00     call        _Phyre_Map_Erase_Rebalance_v3
+  000000C7: 83 C4 14           add         esp,14h
+  000000CA: 8B 43 18           mov         eax,dword ptr [ebx+18h]
+  000000CD: FF 30              push        dword ptr [eax]
+  000000CF: E8 00 00 00 00     call        _ReleaseMutex
+  000000D4: 83 C4 04           add         esp,4
+  000000D7: 5F                 pop         edi
+  000000D8: 5E                 pop         esi
+  000000D9: 5B                 pop         ebx
+  000000DA: 8B E5              mov         esp,ebp
+  000000DC: 5D                 pop         ebp
+  000000DD: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          DE .text

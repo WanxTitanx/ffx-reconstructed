@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008BA580.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldMenu_DrawItemDetail:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000008: 56                 push        esi
+  00000009: 8B 75 FC           mov         esi,dword ptr [ebp-4]
+  0000000C: 57                 push        edi
+  0000000D: 33 FF              xor         edi,edi
+  0000000F: 90                 nop
+  00000010: 8D 45 FC           lea         eax,[ebp-4]
+  00000013: 50                 push        eax
+  00000014: 0F B7 06           movzx       eax,word ptr [esi]
+  00000017: 50                 push        eax
+  00000018: E8 00 00 00 00     call        _FFX_Field_GetModelRecordByCode
+  0000001D: 83 C4 08           add         esp,8
+  00000020: 80 78 02 00        cmp         byte ptr [eax+2],0
+  00000024: 74 15              je          0000003B
+  00000026: F6 40 03 0D        test        byte ptr [eax+3],0Dh
+  0000002A: 74 0F              je          0000003B
+  0000002C: 0F B7 06           movzx       eax,word ptr [esi]
+  0000002F: 50                 push        eax
+  00000030: 47                 inc         edi
+  00000031: E8 00 00 00 00     call        _FFX_Field_LookupModelRecordTable
+  00000036: 83 C4 04           add         esp,4
+  00000039: 8B D8              mov         ebx,eax
+  0000003B: 83 C6 02           add         esi,2
+  0000003E: 3B 35 00 00 00 00  cmp         esi,dword ptr [_g_FieldMenuUnkVar_2310F9A]
+  00000044: 7C CA              jl          00000010
+  00000046: 83 FF 01           cmp         edi,1
+  00000049: 75 37              jne         00000082
+  0000004B: 6A 00              push        0
+  0000004D: 6A 00              push        0
+  0000004F: 6A 07              push        7
+  00000051: E8 00 00 00 00     call        _BtlUI_GetBtlFieldByte
+  00000056: 53                 push        ebx
+  00000057: 6A 00              push        0
+  00000059: 6A 07              push        7
+  0000005B: E8 00 00 00 00     call        _BtlUI_GetBtlFieldDword
+  00000060: 6A 07              push        7
+  00000062: E8 00 00 00 00     call        _FFX_BtlUI_InitSlotBuffers
+  00000067: 68 1B 40 00 00     push        401Bh
+  0000006C: E8 00 00 00 00     call        _Menu_LocalizedStringLookup
+  00000071: 83 C4 20           add         esp,20h
+  00000074: A3 40 16 73 09     mov         dword ptr ds:[09731640h],eax
+  00000079: 8B C7              mov         eax,edi
+  0000007B: 5F                 pop         edi
+  0000007C: 5E                 pop         esi
+  0000007D: 5B                 pop         ebx
+  0000007E: 8B E5              mov         esp,ebp
+  00000080: 5D                 pop         ebp
+  00000081: C3                 ret
+  00000082: 68 1C 40 00 00     push        401Ch
+  00000087: E8 00 00 00 00     call        _Menu_LocalizedStringLookup
+  0000008C: 83 C4 04           add         esp,4
+  0000008F: A3 40 16 73 09     mov         dword ptr ds:[09731640h],eax
+  00000094: 8B C7              mov         eax,edi
+  00000096: 5F                 pop         edi
+  00000097: 5E                 pop         esi
+  00000098: 5B                 pop         ebx
+  00000099: 8B E5              mov         esp,ebp
+  0000009B: 5D                 pop         ebp
+  0000009C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          9D .text

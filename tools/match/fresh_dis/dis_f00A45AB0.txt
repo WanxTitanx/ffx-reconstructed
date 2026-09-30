@@ -1,0 +1,78 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A45AB0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Menu2D_DrawLocaleAwareQuad@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 08 01 00 00  sub         esp,108h
+  00000009: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  00000010: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  00000015: 48                 dec         eax
+  00000016: 83 F8 11           cmp         eax,11h
+  00000019: 77 0E              ja          $LABEL_7$14
+  0000001B: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN11[eax]
+            00
+  00000022: FF 24 85 00 00 00  jmp         dword ptr $LN13[eax*4]
+            00
+$LABEL_7$14:
+  00000029: D9 45 10           fld         dword ptr [ebp+10h]
+  0000002C: 6A 06              push        6
+  0000002E: 8D 85 F8 FE FF FF  lea         eax,[ebp-108h]
+  00000034: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000037: 50                 push        eax
+  00000038: 8D 45 FC           lea         eax,[ebp-4]
+  0000003B: 50                 push        eax
+  0000003C: FF 75 08           push        dword ptr [ebp+8]
+  0000003F: E8 00 00 00 00     call        _FFX_Menu2D_EnqueueQuadCaptured
+  00000044: 83 C4 10           add         esp,10h
+  00000047: E8 00 00 00 00     call        _FFX_Locale_GetCurrentId
+  0000004C: 83 F8 0B           cmp         eax,0Bh
+  0000004F: 75 07              jne         00000058
+  00000051: C7 45 F8 06 00 00  mov         dword ptr [ebp-8],6
+            00
+  00000058: D9 45 10           fld         dword ptr [ebp+10h]
+  0000005B: 6A 06              push        6
+  0000005D: DC 05 00 00 00 00  fadd        qword ptr [__real@4021111120000000]
+  00000063: 8D 85 F8 FE FF FF  lea         eax,[ebp-108h]
+  00000069: DB 45 F8           fild        dword ptr [ebp-8]
+  0000006C: 50                 push        eax
+  0000006D: 8D 45 FC           lea         eax,[ebp-4]
+  00000070: 50                 push        eax
+  00000071: FF 75 08           push        dword ptr [ebp+8]
+  00000074: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000077: D8 65 10           fsub        dword ptr [ebp+10h]
+  0000007A: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000007D: E8 00 00 00 00     call        _FFX_Menu2D_EnqueueQuadCaptured
+  00000082: 83 C4 10           add         esp,10h
+  00000085: 8B E5              mov         esp,ebp
+  00000087: 5D                 pop         ebp
+  00000088: C2 0C 00           ret         0Ch
+  0000008B: 90                 nop
+$LN13:
+  0000008C: 00 00              add         byte ptr [eax],al
+  0000008E: 00 00              add         byte ptr [eax],al
+  00000090: 00 00              add         byte ptr [eax],al
+  00000092: 00 00              add         byte ptr [eax],al
+$LN11:
+  00000094: 00 00              add         byte ptr [eax],al
+  00000096: 00 01              add         byte ptr [ecx],al
+  00000098: 00 01              add         byte ptr [ecx],al
+  0000009A: 01 01              add         dword ptr [ecx],eax
+  0000009C: 01 01              add         dword ptr [ecx],eax
+  0000009E: 01 01              add         dword ptr [ecx],eax
+  000000A0: 01 01              add         dword ptr [ecx],eax
+  000000A2: 01 01              add         dword ptr [ecx],eax
+  000000A4: 01 00              add         dword ptr [eax],eax
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          A6 .text

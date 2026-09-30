@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00631550.obj
+
+File Type: COFF OBJECT
+
+@FFX_AsyncQ_ThrottleTimer@8:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 8B F2              mov         esi,edx
+  00000006: 85 77 04           test        dword ptr [edi+4],esi
+  00000009: 75 04              jne         0000000F
+  0000000B: 85 37              test        dword ptr [edi],esi
+  0000000D: 75 38              jne         00000047
+  0000000F: DD 05 00 00 00 00  fld         qword ptr [__real@3fcdddddc0000001]
+  00000015: 33 C9              xor         ecx,ecx
+  00000017: 8D 57 08           lea         edx,[edi+8]
+  0000001A: B8 01 00 00 00     mov         eax,1
+  0000001F: D3 E0              shl         eax,cl
+  00000021: 85 C6              test        esi,eax
+  00000023: 74 0B              je          00000030
+  00000025: D9 02              fld         dword ptr [edx]
+  00000027: D8 D9              fcomp       st(1)
+  00000029: DF E0              fnstsw      ax
+  0000002B: F6 C4 41           test        ah,41h
+  0000002E: 7A 0B              jp          0000003B
+  00000030: 41                 inc         ecx
+  00000031: 83 F9 1D           cmp         ecx,1Dh
+  00000034: 7D 16              jge         0000004C
+  00000036: 83 C2 04           add         edx,4
+  00000039: EB DF              jmp         0000001A
+  0000003B: DD D8              fstp        st(0)
+  0000003D: D9 05 00 00 00 00  fld         dword ptr [__real@3e088888]
+  00000043: D9 5C 8F 08        fstp        dword ptr [edi+ecx*4+8]
+  00000047: 5F                 pop         edi
+  00000048: B0 01              mov         al,1
+  0000004A: 5E                 pop         esi
+  0000004B: C3                 ret
+  0000004C: 5F                 pop         edi
+  0000004D: DD D8              fstp        st(0)
+  0000004F: 32 C0              xor         al,al
+  00000051: 5E                 pop         esi
+  00000052: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+           C .rdata
+          53 .text

@@ -1,0 +1,32 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092EE90.obj
+
+File Type: COFF OBJECT
+
+_FFX_Obj_DelayHandlerTick:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 8B 81 AC 00 00 00  mov         eax,dword ptr [ecx+0ACh]
+  0000000C: 03 C0              add         eax,eax
+  0000000E: FF 4C C1 2C        dec         dword ptr [ecx+eax*8+2Ch]
+  00000012: 8B 81 AC 00 00 00  mov         eax,dword ptr [ecx+0ACh]
+  00000018: 8D 14 00           lea         edx,[eax+eax]
+  0000001B: C1 E0 04           shl         eax,4
+  0000001E: 83 7C 08 2C 00     cmp         dword ptr [eax+ecx+2Ch],0
+  00000023: 7F 09              jg          0000002E
+  00000025: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  00000028: 5D                 pop         ebp
+  00000029: E9 00 00 00 00     jmp         _FFX_Counter_DecAndSignal
+  0000002E: 8B C2              mov         eax,edx
+  00000030: 5D                 pop         ebp
+  00000031: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          32 .text

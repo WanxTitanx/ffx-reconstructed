@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006DCEF0.obj
+
+File Type: COFF OBJECT
+
+@MapLoad_BuildMapUnloadName@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 04 01 00 00  sub         esp,104h
+  00000009: 56                 push        esi
+  0000000A: 8B F1              mov         esi,ecx
+  0000000C: 80 3E 00           cmp         byte ptr [esi],0
+  0000000F: 0F 84 93 00 00 00  je          000000A8
+  00000015: 80 7E 01 00        cmp         byte ptr [esi+1],0
+  00000019: 0F 84 89 00 00 00  je          000000A8
+  0000001F: 57                 push        edi
+  00000020: 68 00 01 00 00     push        100h
+  00000025: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  0000002B: 6A 00              push        0
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _memset
+  00000033: 8D 7E 0C           lea         edi,[esi+0Ch]
+  00000036: 8B CF              mov         ecx,edi
+  00000038: 83 C4 0C           add         esp,0Ch
+  0000003B: 8B 01              mov         eax,dword ptr [ecx]
+  0000003D: BA FC 00 00 00     mov         edx,0FCh
+  00000042: 3B 85 FC FE FF FF  cmp         eax,dword ptr [ebp-104h]
+  00000048: 75 1F              jne         00000069
+  0000004A: 8D B5 FC FE FF FF  lea         esi,[ebp-104h]
+  00000050: 2B F7              sub         esi,edi
+  00000052: 83 FA 04           cmp         edx,4
+  00000055: 0F 92 C0           setb        al
+  00000058: 83 EA 04           sub         edx,4
+  0000005B: 8D 49 04           lea         ecx,[ecx+4]
+  0000005E: 84 C0              test        al,al
+  00000060: 75 27              jne         00000089
+  00000062: 8B 01              mov         eax,dword ptr [ecx]
+  00000064: 3B 04 0E           cmp         eax,dword ptr [esi+ecx]
+  00000067: 74 E9              je          00000052
+  00000069: 57                 push        edi
+  0000006A: 68 00 00 00 00     push        offset ??_C@_0N@FOFEGJIN@?$CFs_MapUnload?$AA@
+  0000006F: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  00000075: 68 00 01 00 00     push        100h
+  0000007A: 50                 push        eax
+  0000007B: E8 00 00 00 00     call        _sprintf_s
+  00000080: 83 C4 10           add         esp,10h
+  00000083: 5F                 pop         edi
+  00000084: 5E                 pop         esi
+  00000085: 8B E5              mov         esp,ebp
+  00000087: 5D                 pop         ebp
+  00000088: C3                 ret
+  00000089: 68 00 00 00 00     push        offset ??_C@_09KEGJMFHJ@MapUnload?$AA@
+  0000008E: 8D 85 FC FE FF FF  lea         eax,[ebp-104h]
+  00000094: 68 00 01 00 00     push        100h
+  00000099: 50                 push        eax
+  0000009A: E8 00 00 00 00     call        _sprintf_s
+  0000009F: 83 C4 0C           add         esp,0Ch
+  000000A2: 5F                 pop         edi
+  000000A3: 5E                 pop         esi
+  000000A4: 8B E5              mov         esp,ebp
+  000000A6: 5D                 pop         ebp
+  000000A7: C3                 ret
+  000000A8: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  000000AB: 5E                 pop         esi
+  000000AC: 8B E5              mov         esp,ebp
+  000000AE: 5D                 pop         ebp
+  000000AF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          17 .rdata
+          B0 .text

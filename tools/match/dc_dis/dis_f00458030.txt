@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00458030.obj
+
+File Type: COFF OBJECT
+
+@DEAD_Phyre_PArray_PTypedObject_dtor@8:
+  00000000: 53                 push        ebx
+  00000001: 56                 push        esi
+  00000002: 8B F1              mov         esi,ecx
+  00000004: 8A DA              mov         bl,dl
+  00000006: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  0000000A: 7C 10              jl          0000001C
+  0000000C: 8B 46 10           mov         eax,dword ptr [esi+10h]
+  0000000F: 85 C0              test        eax,eax
+  00000011: 74 09              je          0000001C
+  00000013: 50                 push        eax
+  00000014: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 56                 push        esi
+  0000001D: C7 46 10 00 00 00  mov         dword ptr [esi+10h],0
+            00
+  00000024: C7 46 0C 00 00 00  mov         dword ptr [esi+0Ch],0
+            00
+  0000002B: E8 00 00 00 00     call        _PComponent_UnlinkFromEntityList
+  00000030: 83 C4 04           add         esp,4
+  00000033: F6 C3 01           test        bl,1
+  00000036: 74 09              je          00000041
+  00000038: 56                 push        esi
+  00000039: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003E: 83 C4 04           add         esp,4
+  00000041: 8B C6              mov         eax,esi
+  00000043: 5E                 pop         esi
+  00000044: 5B                 pop         ebx
+  00000045: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          46 .text

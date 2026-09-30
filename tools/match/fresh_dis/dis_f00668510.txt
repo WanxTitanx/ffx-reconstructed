@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00668510.obj
+
+File Type: COFF OBJECT
+
+@ByteArray_Reserve@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 57                 push        edi
+  00000004: 83 7E 08 00        cmp         dword ptr [esi+8],0
+  00000008: 8B FA              mov         edi,edx
+  0000000A: 74 39              je          00000045
+  0000000C: 53                 push        ebx
+  0000000D: 33 DB              xor         ebx,ebx
+  0000000F: 85 FF              test        edi,edi
+  00000011: 7E 1D              jle         00000030
+  00000013: 57                 push        edi
+  00000014: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  00000019: 8B D8              mov         ebx,eax
+  0000001B: 83 C4 04           add         esp,4
+  0000001E: 85 DB              test        ebx,ebx
+  00000020: 74 0E              je          00000030
+  00000022: FF 36              push        dword ptr [esi]
+  00000024: FF 76 08           push        dword ptr [esi+8]
+  00000027: 53                 push        ebx
+  00000028: E8 00 00 00 00     call        _memcpy
+  0000002D: 83 C4 0C           add         esp,0Ch
+  00000030: FF 76 08           push        dword ptr [esi+8]
+  00000033: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  00000038: 83 C4 04           add         esp,4
+  0000003B: 89 5E 08           mov         dword ptr [esi+8],ebx
+  0000003E: 5B                 pop         ebx
+  0000003F: 89 7E 04           mov         dword ptr [esi+4],edi
+  00000042: 5F                 pop         edi
+  00000043: 5E                 pop         esi
+  00000044: C3                 ret
+  00000045: 57                 push        edi
+  00000046: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper
+  0000004B: 83 C4 04           add         esp,4
+  0000004E: 89 7E 04           mov         dword ptr [esi+4],edi
+  00000051: 5F                 pop         edi
+  00000052: 89 46 08           mov         dword ptr [esi+8],eax
+  00000055: 5E                 pop         esi
+  00000056: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          57 .text

@@ -1,0 +1,97 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0041C030.obj
+
+File Type: COFF OBJECT
+
+_FFX_VpxLoopFilter_HEdge_Luma:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 14           sub         esp,14h
+  00000006: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000F: 8D 04 09           lea         eax,[ecx+ecx]
+  00000012: 8B F7              mov         esi,edi
+  00000014: 2B F0              sub         esi,eax
+  00000016: 8B D7              mov         edx,edi
+  00000018: 2B D1              sub         edx,ecx
+  0000001A: 8D 41 01           lea         eax,[ecx+1]
+  0000001D: 03 C6              add         eax,esi
+  0000001F: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000022: C7 45 F8 10 00 00  mov         dword ptr [ebp-8],10h
+            00
+  00000029: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000002C: 8D 64 24 00        lea         esp,[esp]
+  00000030: 0F B6 0F           movzx       ecx,byte ptr [edi]
+  00000033: 0F B6 02           movzx       eax,byte ptr [edx]
+  00000036: 2B C1              sub         eax,ecx
+  00000038: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000003B: 03 CF              add         ecx,edi
+  0000003D: 51                 push        ecx
+  0000003E: 0F B6 09           movzx       ecx,byte ptr [ecx]
+  00000041: 57                 push        edi
+  00000042: 0F B6 3E           movzx       edi,byte ptr [esi]
+  00000045: FF 75 FC           push        dword ptr [ebp-4]
+  00000048: 99                 cdq
+  00000049: 2B F9              sub         edi,ecx
+  0000004B: 56                 push        esi
+  0000004C: 57                 push        edi
+  0000004D: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000050: 8B DA              mov         ebx,edx
+  00000052: E8 00 00 00 00     call        _abs32
+  00000057: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  0000005A: 99                 cdq
+  0000005B: 2B C2              sub         eax,edx
+  0000005D: 33 CB              xor         ecx,ebx
+  0000005F: D1 F8              sar         eax,1
+  00000061: 2B CB              sub         ecx,ebx
+  00000063: 33 D2              xor         edx,edx
+  00000065: 8D 0C 48           lea         ecx,[eax+ecx*2]
+  00000068: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000006B: 83 C4 04           add         esp,4
+  0000006E: 0F B6 00           movzx       eax,byte ptr [eax]
+  00000071: 3B C8              cmp         ecx,eax
+  00000073: 0F 9E C2           setle       dl
+  00000076: F7 DA              neg         edx
+  00000078: 52                 push        edx
+  00000079: E8 00 00 00 00     call        _FFX_Vpx_LoopFilterPixel_Adjust
+  0000007E: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000081: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000084: 8B 4D F4           mov         ecx,dword ptr [ebp-0Ch]
+  00000087: 88 45 EC           mov         byte ptr [ebp-14h],al
+  0000008A: 8B C3              mov         eax,ebx
+  0000008C: 47                 inc         edi
+  0000008D: 4B                 dec         ebx
+  0000008E: 83 C4 14           add         esp,14h
+  00000091: 8B D1              mov         edx,ecx
+  00000093: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000096: 89 7D 08           mov         dword ptr [ebp+8],edi
+  00000099: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  0000009C: 83 F8 01           cmp         eax,1
+  0000009F: 75 04              jne         000000A5
+  000000A1: 8A C0              mov         al,al
+  000000A3: EB 02              jmp         000000A7
+  000000A5: 32 C0              xor         al,al
+  000000A7: 41                 inc         ecx
+  000000A8: 46                 inc         esi
+  000000A9: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000000AC: 84 C0              test        al,al
+  000000AE: 74 80              je          00000030
+  000000B0: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  000000B3: 5F                 pop         edi
+  000000B4: 5E                 pop         esi
+  000000B5: 5B                 pop         ebx
+  000000B6: 8B E5              mov         esp,ebp
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          BA .text

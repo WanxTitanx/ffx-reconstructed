@@ -1,0 +1,49 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00710A40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PMapTree_FreeNodeChain@4:
+  00000000: 8B 41 10           mov         eax,dword ptr [ecx+10h]
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8D 79 04           lea         edi,[ecx+4]
+  00000008: 8B F0              mov         esi,eax
+  0000000A: 3B F7              cmp         esi,edi
+  0000000C: 74 29              je          00000037
+  0000000E: 8B FF              mov         edi,edi
+  00000010: 85 F6              test        esi,esi
+  00000012: 74 23              je          00000037
+  00000014: 50                 push        eax
+  00000015: 57                 push        edi
+  00000016: E8 00 00 00 00     call        _Phyre_Tree_RemoveNodeEx_COMDAT
+  0000001B: 8B 46 18           mov         eax,dword ptr [esi+18h]
+  0000001E: 83 C4 08           add         esp,8
+  00000021: 85 C0              test        eax,eax
+  00000023: 74 09              je          0000002E
+  00000025: 50                 push        eax
+  00000026: E8 00 00 00 00     call        _Engine_HeapFreeThunk
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 8B 47 0C           mov         eax,dword ptr [edi+0Ch]
+  00000031: 8B F0              mov         esi,eax
+  00000033: 3B F7              cmp         esi,edi
+  00000035: 75 D9              jne         00000010
+  00000037: 8D 47 18           lea         eax,[edi+18h]
+  0000003A: 50                 push        eax
+  0000003B: E8 00 00 00 00     call        _AlignedLinkedListBlock_FreeAll_B
+  00000040: 57                 push        edi
+  00000041: E8 00 00 00 00     call        _Phyre_PMapTree_DtorDeep_710990
+  00000046: 83 C4 08           add         esp,8
+  00000049: 5F                 pop         edi
+  0000004A: 5E                 pop         esi
+  0000004B: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4C .text

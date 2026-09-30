@@ -1,0 +1,51 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00544610.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Animation_GetTarget@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F2              mov         esi,edx
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 85 F6              test        esi,esi
+  0000000B: 74 41              je          0000004E
+  0000000D: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000010: 8D 4E FC           lea         ecx,[esi-4]
+  00000013: 83 00 04           add         dword ptr [eax],4
+  00000016: 8B 10              mov         edx,dword ptr [eax]
+  00000018: 03 4F 0C           add         ecx,dword ptr [edi+0Ch]
+  0000001B: 8B 52 FC           mov         edx,dword ptr [edx-4]
+  0000001E: 8B 47 08           mov         eax,dword ptr [edi+8]
+  00000021: FF D0              call        eax
+  00000023: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000026: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000029: 85 F6              test        esi,esi
+  0000002B: 74 21              je          0000004E
+  0000002D: E8 00 00 00 00     call        _Phyre_PType_GetFloat
+  00000032: 39 45 08           cmp         dword ptr [ebp+8],eax
+  00000035: 75 17              jne         0000004E
+  00000037: D9 45 10           fld         dword ptr [ebp+10h]
+  0000003A: 5F                 pop         edi
+  0000003B: D9 5E 04           fstp        dword ptr [esi+4]
+  0000003E: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000044: B8 01 00 00 00     mov         eax,1
+  00000049: 5E                 pop         esi
+  0000004A: 5D                 pop         ebp
+  0000004B: C2 0C 00           ret         0Ch
+  0000004E: 5F                 pop         edi
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 5E                 pop         esi
+  00000052: 5D                 pop         ebp
+  00000053: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

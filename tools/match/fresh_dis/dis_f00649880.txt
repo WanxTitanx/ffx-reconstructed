@@ -1,0 +1,80 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00649880.obj
+
+File Type: COFF OBJECT
+
+_Phyre_ReallocBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: 57                 push        edi
+  00000009: 85 F6              test        esi,esi
+  0000000B: 75 0D              jne         0000001A
+  0000000D: 68 57 00 07 80     push        80070057h
+  00000012: E8 00 00 00 00     call        _FFX_ThrowCAtlException
+  00000017: 83 C4 04           add         esp,4
+  0000001A: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000001D: 85 FF              test        edi,edi
+  0000001F: 79 0D              jns         0000002E
+  00000021: 68 57 00 07 80     push        80070057h
+  00000026: E8 00 00 00 00     call        _FFX_ThrowCAtlException
+  0000002B: 83 C4 04           add         esp,4
+  0000002E: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000031: 85 DB              test        ebx,ebx
+  00000033: 75 0D              jne         00000042
+  00000035: 68 57 00 07 80     push        80070057h
+  0000003A: E8 00 00 00 00     call        _FFX_ThrowCAtlException
+  0000003F: 83 C4 04           add         esp,4
+  00000042: 8B 06              mov         eax,dword ptr [esi]
+  00000044: 3B C3              cmp         eax,ebx
+  00000046: 74 33              je          0000007B
+  00000048: 3B 7D 14           cmp         edi,dword ptr [ebp+14h]
+  0000004B: 7E 21              jle         0000006E
+  0000004D: 6A 02              push        2
+  0000004F: 57                 push        edi
+  00000050: 50                 push        eax
+  00000051: E8 00 00 00 00     call        __recalloc
+  00000056: 8B F8              mov         edi,eax
+  00000058: 83 C4 0C           add         esp,0Ch
+  0000005B: 85 FF              test        edi,edi
+  0000005D: 75 32              jne         00000091
+  0000005F: 68 0E 00 07 80     push        8007000Eh
+  00000064: E8 00 00 00 00     call        _FFX_ThrowCAtlException
+  00000069: 83 C4 04           add         esp,4
+  0000006C: EB 23              jmp         00000091
+  0000006E: 50                 push        eax
+  0000006F: E8 00 00 00 00     call        _free
+  00000074: 83 C4 04           add         esp,4
+  00000077: 89 1E              mov         dword ptr [esi],ebx
+  00000079: EB 18              jmp         00000093
+  0000007B: 3B 7D 14           cmp         edi,dword ptr [ebp+14h]
+  0000007E: 7F 04              jg          00000084
+  00000080: 89 1E              mov         dword ptr [esi],ebx
+  00000082: EB 0F              jmp         00000093
+  00000084: 6A 02              push        2
+  00000086: 57                 push        edi
+  00000087: E8 00 00 00 00     call        _calloc
+  0000008C: 83 C4 08           add         esp,8
+  0000008F: 8B F8              mov         edi,eax
+  00000091: 89 3E              mov         dword ptr [esi],edi
+  00000093: 83 3E 00           cmp         dword ptr [esi],0
+  00000096: 5F                 pop         edi
+  00000097: 5E                 pop         esi
+  00000098: 5B                 pop         ebx
+  00000099: 75 0D              jne         000000A8
+  0000009B: 68 0E 00 07 80     push        8007000Eh
+  000000A0: E8 00 00 00 00     call        _FFX_ThrowCAtlException
+  000000A5: 83 C4 04           add         esp,4
+  000000A8: 5D                 pop         ebp
+  000000A9: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          AA .text

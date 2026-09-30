@@ -1,0 +1,52 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00434C00.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_434C00@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B F2              mov         esi,edx
+  0000000D: 89 07              mov         dword ptr [edi],eax
+  0000000F: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000012: 89 47 04           mov         dword ptr [edi+4],eax
+  00000015: 8A 45 08           mov         al,byte ptr [ebp+8]
+  00000018: 88 47 0C           mov         byte ptr [edi+0Ch],al
+  0000001B: 0F B6 C0           movzx       eax,al
+  0000001E: 50                 push        eax
+  0000001F: 89 77 08           mov         dword ptr [edi+8],esi
+  00000022: E8 00 00 00 00     call        _VertexFormat_SemanticToComponentSize
+  00000027: 8B D8              mov         ebx,eax
+  00000029: 0F AF DE           imul        ebx,esi
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 39 5F 34           cmp         dword ptr [edi+34h],ebx
+  00000032: 74 19              je          0000004D
+  00000034: 57                 push        edi
+  00000035: E8 00 00 00 00     call        _PVertexBuffer_IsFlaggedDirty
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: 84 C0              test        al,al
+  0000003F: 74 09              je          0000004A
+  00000041: 57                 push        edi
+  00000042: E8 00 00 00 00     call        _Phyre_PGeometry_UnbindIndexDataBlocks
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 89 5F 34           mov         dword ptr [edi+34h],ebx
+  0000004D: 5F                 pop         edi
+  0000004E: 5E                 pop         esi
+  0000004F: 33 C0              xor         eax,eax
+  00000051: 5B                 pop         ebx
+  00000052: 5D                 pop         ebp
+  00000053: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          56 .text

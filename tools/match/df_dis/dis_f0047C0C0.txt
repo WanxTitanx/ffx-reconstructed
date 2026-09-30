@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0047C0C0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_47C0C0@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8D 45 FC           lea         eax,[ebp-4]
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 50                 push        eax
+  0000000B: 57                 push        edi
+  0000000C: 89 55 FC           mov         dword ptr [ebp-4],edx
+  0000000F: E8 00 00 00 00     call        _Phyre_BSTree_SearchByNameStrB
+  00000014: 83 C4 08           add         esp,8
+  00000017: 85 C0              test        eax,eax
+  00000019: 74 0C              je          00000027
+  0000001B: 83 F8 F0           cmp         eax,0FFFFFFF0h
+  0000001E: 74 07              je          00000027
+  00000020: 32 C0              xor         al,al
+  00000022: 5F                 pop         edi
+  00000023: 8B E5              mov         esp,ebp
+  00000025: 5D                 pop         ebp
+  00000026: C3                 ret
+  00000027: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000002A: 8B 48 18           mov         ecx,dword ptr [eax+18h]
+  0000002D: 8D 51 01           lea         edx,[ecx+1]
+  00000030: 8A 01              mov         al,byte ptr [ecx]
+  00000032: 41                 inc         ecx
+  00000033: 84 C0              test        al,al
+  00000035: 75 F9              jne         00000030
+  00000037: 2B CA              sub         ecx,edx
+  00000039: 56                 push        esi
+  0000003A: 8D 41 01           lea         eax,[ecx+1]
+  0000003D: 01 47 30           add         dword ptr [edi+30h],eax
+  00000040: 8D 77 34           lea         esi,[edi+34h]
+  00000043: 56                 push        esi
+  00000044: 8D 45 FC           lea         eax,[ebp-4]
+  00000047: 50                 push        eax
+  00000048: 57                 push        edi
+  00000049: E8 00 00 00 00     call        _Phyre_BSTree_InsertByNameAlt_SList
+  0000004E: 83 C4 0C           add         esp,0Ch
+  00000051: FF 06              inc         dword ptr [esi]
+  00000053: 5E                 pop         esi
+  00000054: B0 01              mov         al,1
+  00000056: 5F                 pop         edi
+  00000057: 8B E5              mov         esp,ebp
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5B .text

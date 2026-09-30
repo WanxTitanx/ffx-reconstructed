@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00928970.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicVfx_UpdateServices:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 33 F6              xor         esi,esi
+  0000000A: 39 77 34           cmp         dword ptr [edi+34h],esi
+  0000000D: 76 1B              jbe         0000002A
+  0000000F: 90                 nop
+  00000010: 8B 47 38           mov         eax,dword ptr [edi+38h]
+  00000013: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000016: 8B 48 10           mov         ecx,dword ptr [eax+10h]
+  00000019: 85 C9              test        ecx,ecx
+  0000001B: 74 07              je          00000024
+  0000001D: 57                 push        edi
+  0000001E: 50                 push        eax
+  0000001F: FF D1              call        ecx
+  00000021: 83 C4 08           add         esp,8
+  00000024: 46                 inc         esi
+  00000025: 3B 77 34           cmp         esi,dword ptr [edi+34h]
+  00000028: 72 E6              jb          00000010
+  0000002A: 57                 push        edi
+  0000002B: E8 00 00 00 00     call        _FFX_MagicVfx_ZeroPositionBuffer
+  00000030: 83 C4 04           add         esp,4
+  00000033: 5F                 pop         edi
+  00000034: 5E                 pop         esi
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

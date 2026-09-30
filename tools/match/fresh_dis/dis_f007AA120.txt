@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007AA120.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckActorDistanceFlag:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: E8 00 00 00 00     call        _FFX_Battle_CheckActorValidForDistanceCheck
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 C0              test        eax,eax
+  00000012: 74 1A              je          0000002E
+  00000014: 0F BE 46 34        movsx       eax,byte ptr [esi+34h]
+  00000018: 50                 push        eax
+  00000019: 56                 push        esi
+  0000001A: FF 75 08           push        dword ptr [ebp+8]
+  0000001D: E8 00 00 00 00     call        _FFX_Battle_CheckActorDistanceThreshold
+  00000022: 83 C4 0C           add         esp,0Ch
+  00000025: 88 86 08 05 00 00  mov         byte ptr [esi+508h],al
+  0000002B: 5E                 pop         esi
+  0000002C: 5D                 pop         ebp
+  0000002D: C3                 ret
+  0000002E: C6 86 08 05 00 00  mov         byte ptr [esi+508h],0
+            00
+  00000035: 5E                 pop         esi
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          38 .text

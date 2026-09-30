@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00656DC0.obj
+
+File Type: COFF OBJECT
+
+@FFX_Scene_PushResourceSlot@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 80 7D 08 00        cmp         byte ptr [ebp+8],0
+  00000007: 56                 push        esi
+  00000008: 8B F1              mov         esi,ecx
+  0000000A: 74 23              je          0000002F
+  0000000C: 8B 8E CC F8 00 00  mov         ecx,dword ptr [esi+0F8CCh]
+  00000012: 81 F9 00 0C 00 00  cmp         ecx,0C00h
+  00000018: 7D 43              jge         0000005D
+  0000001A: 8B 42 0C           mov         eax,dword ptr [edx+0Ch]
+  0000001D: 89 84 8E CC 38 00  mov         dword ptr [esi+ecx*4+38CCh],eax
+            00
+  00000024: FF 86 CC F8 00 00  inc         dword ptr [esi+0F8CCh]
+  0000002A: 5E                 pop         esi
+  0000002B: 5D                 pop         ebp
+  0000002C: C2 04 00           ret         4
+  0000002F: 8B 86 D0 F8 00 00  mov         eax,dword ptr [esi+0F8D0h]
+  00000035: 3D 00 0C 00 00     cmp         eax,0C00h
+  0000003A: 7D 21              jge         0000005D
+  0000003C: 89 94 86 CC 68 00  mov         dword ptr [esi+eax*4+68CCh],edx
+            00
+  00000043: FF 86 D0 F8 00 00  inc         dword ptr [esi+0F8D0h]
+  00000049: 56                 push        esi
+  0000004A: E8 00 00 00 00     call        _FFX_Shader_CheckShouldBindMeshConstants
+  0000004F: 83 C4 04           add         esp,4
+  00000052: 85 C0              test        eax,eax
+  00000054: 74 07              je          0000005D
+  00000056: C6 86 2C 0D 01 00  mov         byte ptr [esi+10D2Ch],1
+            01
+  0000005D: 5E                 pop         esi
+  0000005E: 5D                 pop         ebp
+  0000005F: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

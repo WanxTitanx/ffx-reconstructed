@@ -1,0 +1,97 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007BCA30.obj
+
+File Type: COFF OBJECT
+
+_FFX_Camera_Internal_OpY:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 14           mov         ebx,dword ptr [ebp+14h]
+  00000007: 56                 push        esi
+  00000008: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000B: 83 FB 01           cmp         ebx,1
+  0000000E: 75 32              jne         00000042
+  00000010: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000013: D9 46 68           fld         dword ptr [esi+68h]
+  00000016: 8D 46 50           lea         eax,[esi+50h]
+  00000019: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000001F: 83 EC 18           sub         esp,18h
+  00000022: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000026: D9 46 64           fld         dword ptr [esi+64h]
+  00000029: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000002D: D9 46 60           fld         dword ptr [esi+60h]
+  00000030: DD 1C 24           fstp        qword ptr [esp]
+  00000033: FF B6 8C 00 00 00  push        dword ptr [esi+8Ch]
+  00000039: 50                 push        eax
+  0000003A: E8 00 00 00 00     call        _FFX_Camera_PolarToCartesian
+  0000003F: 83 C4 2C           add         esp,2Ch
+  00000042: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000045: D9 46 50           fld         dword ptr [esi+50h]
+  00000048: 57                 push        edi
+  00000049: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000004C: D9 58 30           fstp        dword ptr [eax+30h]
+  0000004F: D9 46 54           fld         dword ptr [esi+54h]
+  00000052: D9 58 34           fstp        dword ptr [eax+34h]
+  00000055: D9 46 58           fld         dword ptr [esi+58h]
+  00000058: D9 58 38           fstp        dword ptr [eax+38h]
+  0000005B: 80 7F 1D 00        cmp         byte ptr [edi+1Dh],0
+  0000005F: 74 2B              je          0000008C
+  00000061: 0F B6 47 1E        movzx       eax,byte ptr [edi+1Eh]
+  00000065: 50                 push        eax
+  00000066: C6 47 1D 00        mov         byte ptr [edi+1Dh],0
+  0000006A: 83 EC 18           sub         esp,18h
+  0000006D: D9 46 58           fld         dword ptr [esi+58h]
+  00000070: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000074: D9 46 54           fld         dword ptr [esi+54h]
+  00000077: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000007B: D9 46 50           fld         dword ptr [esi+50h]
+  0000007E: DD 1C 24           fstp        qword ptr [esp]
+  00000081: FF 77 08           push        dword ptr [edi+8]
+  00000084: E8 00 00 00 00     call        _FFX_Camera_ComputeClosestPathPoint
+  00000089: 83 C4 20           add         esp,20h
+  0000008C: 80 7F 04 00        cmp         byte ptr [edi+4],0
+  00000090: 74 19              je          000000AB
+  00000092: 80 7F 05 00        cmp         byte ptr [edi+5],0
+  00000096: 75 13              jne         000000AB
+  00000098: 57                 push        edi
+  00000099: 56                 push        esi
+  0000009A: 57                 push        edi
+  0000009B: E8 00 00 00 00     call        _FFX_Camera_ComputeArcballPosition
+  000000A0: 83 C4 0C           add         esp,0Ch
+  000000A3: F7 D8              neg         eax
+  000000A5: 1B C0              sbb         eax,eax
+  000000A7: F7 D0              not         eax
+  000000A9: 23 D8              and         ebx,eax
+  000000AB: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000AE: 5F                 pop         edi
+  000000AF: D9 41 6C           fld         dword ptr [ecx+6Ch]
+  000000B2: D9 EE              fldz
+  000000B4: DA E9              fucompp
+  000000B6: DF E0              fnstsw      ax
+  000000B8: F6 C4 44           test        ah,44h
+  000000BB: 7A 06              jp          000000C3
+  000000BD: 5E                 pop         esi
+  000000BE: 8B C3              mov         eax,ebx
+  000000C0: 5B                 pop         ebx
+  000000C1: 5D                 pop         ebp
+  000000C2: C3                 ret
+  000000C3: D9 41 6C           fld         dword ptr [ecx+6Ch]
+  000000C6: 33 C0              xor         eax,eax
+  000000C8: D8 46 54           fadd        dword ptr [esi+54h]
+  000000CB: D9 5E 54           fstp        dword ptr [esi+54h]
+  000000CE: 5E                 pop         esi
+  000000CF: 5B                 pop         ebx
+  000000D0: 5D                 pop         ebp
+  000000D1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          D2 .text

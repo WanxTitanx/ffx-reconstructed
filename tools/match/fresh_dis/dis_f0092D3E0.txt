@@ -1,0 +1,48 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0092D3E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_RcBg_AllocTextureBuffer:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 66 8B 45 0C        mov         ax,word ptr [ebp+0Ch]
+  00000007: 8B 55 18           mov         edx,dword ptr [ebp+18h]
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000E: 89 56 30           mov         dword ptr [esi+30h],edx
+  00000011: 66 85 C0           test        ax,ax
+  00000014: 74 19              je          0000002F
+  00000016: 66 83 F8 13        cmp         ax,13h
+  0000001A: 75 28              jne         00000044
+  0000001C: 0F BF 4D 10        movsx       ecx,word ptr [ebp+10h]
+  00000020: 0F BF 45 14        movsx       eax,word ptr [ebp+14h]
+  00000024: 0F AF C8           imul        ecx,eax
+  00000027: 83 C1 10           add         ecx,10h
+  0000002A: 89 4E 34           mov         dword ptr [esi+34h],ecx
+  0000002D: EB 15              jmp         00000044
+  0000002F: 0F BF 45 14        movsx       eax,word ptr [ebp+14h]
+  00000033: 0F BF 4D 10        movsx       ecx,word ptr [ebp+10h]
+  00000037: 0F AF C8           imul        ecx,eax
+  0000003A: 8D 04 8D 10 00 00  lea         eax,[ecx*4+10h]
+            00
+  00000041: 89 46 34           mov         dword ptr [esi+34h],eax
+  00000044: 8B 46 34           mov         eax,dword ptr [esi+34h]
+  00000047: 0F AF C2           imul        eax,edx
+  0000004A: 50                 push        eax
+  0000004B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArena
+  00000050: 83 C4 04           add         esp,4
+  00000053: 83 4E 10 01        or          dword ptr [esi+10h],1
+  00000057: 89 46 38           mov         dword ptr [esi+38h],eax
+  0000005A: 5E                 pop         esi
+  0000005B: 5D                 pop         ebp
+  0000005C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5D .text

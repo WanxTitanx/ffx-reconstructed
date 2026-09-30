@@ -1,0 +1,66 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007AF330.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CheckActorAliveAndType:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000006: 80 B8 08 05 00 00  cmp         byte ptr [eax+00000508h],0
+            00
+  0000000D: 75 6E              jne         0000007D
+  0000000F: 80 B8 08 06 00 00  cmp         byte ptr [eax+00000608h],0
+            00
+  00000016: 75 65              jne         0000007D
+  00000018: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000001B: 83 F9 01           cmp         ecx,1
+  0000001E: 75 24              jne         00000044
+  00000020: 80 B8 32 04 00 00  cmp         byte ptr [eax+00000432h],0
+            00
+  00000027: 0F B6 88 F0 03 00  movzx       ecx,byte ptr [eax+000003F0h]
+            00
+  0000002E: 74 33              je          00000063
+  00000030: 83 F9 28           cmp         ecx,28h
+  00000033: 74 2E              je          00000063
+  00000035: 83 F9 29           cmp         ecx,29h
+  00000038: 0F 94 C1           sete        cl
+  0000003B: 33 C0              xor         eax,eax
+  0000003D: 84 C9              test        cl,cl
+  0000003F: 0F 95 C0           setne       al
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+  00000044: 83 F9 02           cmp         ecx,2
+  00000047: 75 21              jne         0000006A
+  00000049: 80 B8 32 04 00 00  cmp         byte ptr [eax+00000432h],0
+            00
+  00000050: 0F B6 88 F0 03 00  movzx       ecx,byte ptr [eax+000003F0h]
+            00
+  00000057: 75 24              jne         0000007D
+  00000059: 83 F9 28           cmp         ecx,28h
+  0000005C: 74 1F              je          0000007D
+  0000005E: 83 F9 29           cmp         ecx,29h
+  00000061: 74 1A              je          0000007D
+  00000063: B8 01 00 00 00     mov         eax,1
+  00000068: 5D                 pop         ebp
+  00000069: C3                 ret
+  0000006A: 80 B8 32 04 00 00  cmp         byte ptr [eax+00000432h],0
+            00
+  00000071: 0F 94 C1           sete        cl
+  00000074: 33 C0              xor         eax,eax
+  00000076: 84 C9              test        cl,cl
+  00000078: 0F 95 C0           setne       al
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+  0000007D: 33 C0              xor         eax,eax
+  0000007F: 5D                 pop         ebp
+  00000080: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          81 .text

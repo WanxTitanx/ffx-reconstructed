@@ -1,0 +1,86 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00859A80.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_SaveBufferStateMachine:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 0C           mov         ebx,dword ptr [ebp+0Ch]
+  00000007: 56                 push        esi
+  00000008: 8B 33              mov         esi,dword ptr [ebx]
+  0000000A: 57                 push        edi
+  0000000B: 56                 push        esi
+  0000000C: E8 00 00 00 00     call        _FFX_Field_GetEventStruct
+  00000011: 0F B7 40 14        movzx       eax,word ptr [eax+14h]
+  00000015: 83 C4 04           add         esp,4
+  00000018: 83 CF FF           or          edi,0FFFFFFFFh
+  0000001B: 66 85 C0           test        ax,ax
+  0000001E: 74 5D              je          0000007D
+  00000020: 83 F8 02           cmp         eax,2
+  00000023: 74 0C              je          00000031
+  00000025: 83 F8 04           cmp         eax,4
+  00000028: 74 53              je          0000007D
+  0000002A: 5F                 pop         edi
+  0000002B: 5E                 pop         esi
+  0000002C: 33 C0              xor         eax,eax
+  0000002E: 5B                 pop         ebx
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+  00000031: 56                 push        esi
+  00000032: E8 00 00 00 00     call        _FFX_MenuText_GetItemKind
+  00000037: 83 C4 04           add         esp,4
+  0000003A: 83 F8 03           cmp         eax,3
+  0000003D: 75 37              jne         00000076
+  0000003F: 56                 push        esi
+  00000040: E8 00 00 00 00     call        _FFX_MenuText_GetLineParamFlag
+  00000045: 83 C4 04           add         esp,4
+  00000048: 83 F8 02           cmp         eax,2
+  0000004B: 75 29              jne         00000076
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _FFX_MenuText_GetLineParamData
+  00000053: 56                 push        esi
+  00000054: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000057: E8 00 00 00 00     call        _FFX_MenuText_GetParamField7
+  0000005C: 83 C4 08           add         esp,8
+  0000005F: 85 C0              test        eax,eax
+  00000061: 74 06              je          00000069
+  00000063: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000066: 0F B6 38           movzx       edi,byte ptr [eax]
+  00000069: 56                 push        esi
+  0000006A: 66 89 7B 04        mov         word ptr [ebx+4],di
+  0000006E: E8 00 00 00 00     call        _FFX_Menu_SetListItemSelect
+  00000073: 83 C4 04           add         esp,4
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 33 C0              xor         eax,eax
+  0000007A: 5B                 pop         ebx
+  0000007B: 5D                 pop         ebp
+  0000007C: C3                 ret
+  0000007D: 56                 push        esi
+  0000007E: E8 00 00 00 00     call        _FFX_MenuText_GetLineParamData
+  00000083: 56                 push        esi
+  00000084: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000087: E8 00 00 00 00     call        _FFX_MenuText_GetParamField7
+  0000008C: 83 C4 08           add         esp,8
+  0000008F: 85 C0              test        eax,eax
+  00000091: 74 06              je          00000099
+  00000093: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000096: 0F B6 38           movzx       edi,byte ptr [eax]
+  00000099: 66 89 7B 04        mov         word ptr [ebx+4],di
+  0000009D: 5F                 pop         edi
+  0000009E: 5E                 pop         esi
+  0000009F: B8 01 00 00 00     mov         eax,1
+  000000A4: 5B                 pop         ebx
+  000000A5: 5D                 pop         ebp
+  000000A6: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          A7 .text

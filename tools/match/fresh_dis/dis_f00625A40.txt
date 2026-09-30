@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00625A40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PoolQueue_NodeClone@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 6A 14              push        14h
+  00000004: 8B F9              mov         edi,ecx
+  00000006: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  0000000B: 8B F0              mov         esi,eax
+  0000000D: 83 C4 04           add         esp,4
+  00000010: 85 F6              test        esi,esi
+  00000012: 75 05              jne         00000019
+  00000014: E8 00 00 00 00     call        _std__Xbad_alloc
+  00000019: 8B 0F              mov         ecx,dword ptr [edi]
+  0000001B: 89 0E              mov         dword ptr [esi],ecx
+  0000001D: 83 FE FC           cmp         esi,0FFFFFFFCh
+  00000020: 74 05              je          00000027
+  00000022: 8B 07              mov         eax,dword ptr [edi]
+  00000024: 89 46 04           mov         dword ptr [esi+4],eax
+  00000027: 83 FE F8           cmp         esi,0FFFFFFF8h
+  0000002A: 74 05              je          00000031
+  0000002C: 8B 07              mov         eax,dword ptr [edi]
+  0000002E: 89 46 08           mov         dword ptr [esi+8],eax
+  00000031: 5F                 pop         edi
+  00000032: 8B C6              mov         eax,esi
+  00000034: 5E                 pop         esi
+  00000035: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          36 .text

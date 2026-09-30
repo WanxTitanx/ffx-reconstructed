@@ -1,0 +1,53 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0057DB40.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_57DB40@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 57                 push        edi
+  00000007: 8B F9              mov         edi,ecx
+  00000009: 8B 47 40           mov         eax,dword ptr [edi+40h]
+  0000000C: 2B C2              sub         eax,edx
+  0000000E: 83 F8 02           cmp         eax,2
+  00000011: 77 3A              ja          0000004D
+  00000013: 53                 push        ebx
+  00000014: 83 E2 01           and         edx,1
+  00000017: 8D 5F 54           lea         ebx,[edi+54h]
+  0000001A: 03 DA              add         ebx,edx
+  0000001C: 89 5D F8           mov         dword ptr [ebp-8],ebx
+  0000001F: 80 3B 00           cmp         byte ptr [ebx],0
+  00000022: 75 26              jne         0000004A
+  00000024: 56                 push        esi
+  00000025: 33 F6              xor         esi,esi
+  00000027: 8D 42 06           lea         eax,[edx+6]
+  0000002A: 8D 04 C7           lea         eax,[edi+eax*8]
+  0000002D: 39 77 08           cmp         dword ptr [edi+8],esi
+  00000030: 74 14              je          00000046
+  00000032: 8B D8              mov         ebx,eax
+  00000034: 53                 push        ebx
+  00000035: E8 00 00 00 00     call        _Phyre_SpinLock_Release
+  0000003A: 46                 inc         esi
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 3B 77 08           cmp         esi,dword ptr [edi+8]
+  00000041: 72 F1              jb          00000034
+  00000043: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000046: C6 03 01           mov         byte ptr [ebx],1
+  00000049: 5E                 pop         esi
+  0000004A: 8B C3              mov         eax,ebx
+  0000004C: 5B                 pop         ebx
+  0000004D: 5F                 pop         edi
+  0000004E: 8B E5              mov         esp,ebp
+  00000050: 5D                 pop         ebp
+  00000051: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          52 .text

@@ -1,0 +1,65 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005173C0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationSlotSet_ProcessSlotAnimations@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B D9              mov         ebx,ecx
+  00000009: 57                 push        edi
+  0000000A: 8B 0B              mov         ecx,dword ptr [ebx]
+  0000000C: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000000F: 8B F9              mov         edi,ecx
+  00000011: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  00000017: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000001A: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000001D: 3B C2              cmp         eax,edx
+  0000001F: 74 3E              je          0000005F
+  00000021: 85 C9              test        ecx,ecx
+  00000023: 78 3A              js          0000005F
+  00000025: 85 C0              test        eax,eax
+  00000027: 74 36              je          0000005F
+  00000029: 85 FF              test        edi,edi
+  0000002B: 74 16              je          00000043
+  0000002D: 56                 push        esi
+  0000002E: 8B F0              mov         esi,eax
+  00000030: 56                 push        esi
+  00000031: E8 00 00 00 00     call        _Phyre_PAnimationChannel_FreeBuffer
+  00000036: 83 C4 04           add         esp,4
+  00000039: 83 C6 34           add         esi,34h
+  0000003C: 4F                 dec         edi
+  0000003D: 75 F1              jne         00000030
+  0000003F: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00000042: 5E                 pop         esi
+  00000043: 50                 push        eax
+  00000044: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000049: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000004C: 83 C4 04           add         esp,4
+  0000004F: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000052: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000055: 5F                 pop         edi
+  00000056: 89 03              mov         dword ptr [ebx],eax
+  00000058: 5B                 pop         ebx
+  00000059: 8B E5              mov         esp,ebp
+  0000005B: 5D                 pop         ebp
+  0000005C: C2 04 00           ret         4
+  0000005F: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000062: 5F                 pop         edi
+  00000063: 89 53 04           mov         dword ptr [ebx+4],edx
+  00000066: 89 03              mov         dword ptr [ebx],eax
+  00000068: 5B                 pop         ebx
+  00000069: 8B E5              mov         esp,ebp
+  0000006B: 5D                 pop         ebp
+  0000006C: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6F .text

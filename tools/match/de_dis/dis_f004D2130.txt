@@ -1,0 +1,110 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004D2130.obj
+
+File Type: COFF OBJECT
+
+_Phyre_Array_IntrospectiveSortUInt:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000009: 57                 push        edi
+  0000000A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000D: 8B C6              mov         eax,esi
+  0000000F: 2B C7              sub         eax,edi
+  00000011: C1 F8 02           sar         eax,2
+  00000014: 83 F8 20           cmp         eax,20h
+  00000017: 0F 8E 9D 00 00 00  jle         000000BA
+  0000001D: 8B 5D 10           mov         ebx,dword ptr [ebp+10h]
+  00000020: 85 DB              test        ebx,ebx
+  00000022: 7E 6F              jle         00000093
+  00000024: 56                 push        esi
+  00000025: 8D 45 FC           lea         eax,[ebp-4]
+  00000028: 57                 push        edi
+  00000029: 50                 push        eax
+  0000002A: E8 00 00 00 00     call        _Phyre_Array_QuickSortPartitionUInt
+  0000002F: 8B 48 04           mov         ecx,dword ptr [eax+4]
+  00000032: 8B 00              mov         eax,dword ptr [eax]
+  00000034: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000037: 8B C3              mov         eax,ebx
+  00000039: 99                 cdq
+  0000003A: 2B C2              sub         eax,edx
+  0000003C: 89 4D 08           mov         dword ptr [ebp+8],ecx
+  0000003F: 8B C8              mov         ecx,eax
+  00000041: D1 F9              sar         ecx,1
+  00000043: 8B C1              mov         eax,ecx
+  00000045: 99                 cdq
+  00000046: 2B C2              sub         eax,edx
+  00000048: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  0000004B: 8B D8              mov         ebx,eax
+  0000004D: D1 FB              sar         ebx,1
+  0000004F: 03 D9              add         ebx,ecx
+  00000051: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000054: 8B C6              mov         eax,esi
+  00000056: 2B CF              sub         ecx,edi
+  00000058: 2B C2              sub         eax,edx
+  0000005A: 83 C4 0C           add         esp,0Ch
+  0000005D: 83 E1 FC           and         ecx,0FFFFFFFCh
+  00000060: 83 E0 FC           and         eax,0FFFFFFFCh
+  00000063: 53                 push        ebx
+  00000064: 3B C8              cmp         ecx,eax
+  00000066: 7C 0C              jl          00000074
+  00000068: 56                 push        esi
+  00000069: 52                 push        edx
+  0000006A: E8 00 00 00 00     call        _Phyre_Array_IntrospectiveSortUInt
+  0000006F: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000072: EB 0C              jmp         00000080
+  00000074: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000077: 57                 push        edi
+  00000078: E8 00 00 00 00     call        _Phyre_Array_IntrospectiveSortUInt
+  0000007D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000080: 8B C6              mov         eax,esi
+  00000082: 2B C7              sub         eax,edi
+  00000084: C1 F8 02           sar         eax,2
+  00000087: 83 C4 0C           add         esp,0Ch
+  0000008A: 83 F8 20           cmp         eax,20h
+  0000008D: 7E 2B              jle         000000BA
+  0000008F: 85 DB              test        ebx,ebx
+  00000091: 7F 91              jg          00000024
+  00000093: 8B C6              mov         eax,esi
+  00000095: 2B C7              sub         eax,edi
+  00000097: 83 E0 FC           and         eax,0FFFFFFFCh
+  0000009A: 83 F8 04           cmp         eax,4
+  0000009D: 7E 0A              jle         000000A9
+  0000009F: 56                 push        esi
+  000000A0: 57                 push        edi
+  000000A1: E8 00 00 00 00     call        _Phyre_Array_HeapSortUInt
+  000000A6: 83 C4 08           add         esp,8
+  000000A9: 56                 push        esi
+  000000AA: 57                 push        edi
+  000000AB: E8 00 00 00 00     call        _Phyre_Array_HeapSortPopUInt
+  000000B0: 83 C4 08           add         esp,8
+  000000B3: 5F                 pop         edi
+  000000B4: 5E                 pop         esi
+  000000B5: 5B                 pop         ebx
+  000000B6: 8B E5              mov         esp,ebp
+  000000B8: 5D                 pop         ebp
+  000000B9: C3                 ret
+  000000BA: 83 F8 01           cmp         eax,1
+  000000BD: 7E 0A              jle         000000C9
+  000000BF: 56                 push        esi
+  000000C0: 57                 push        edi
+  000000C1: E8 00 00 00 00     call        _Phyre_Array_InsertionSortUInt
+  000000C6: 83 C4 08           add         esp,8
+  000000C9: 5F                 pop         edi
+  000000CA: 5E                 pop         esi
+  000000CB: 5B                 pop         ebx
+  000000CC: 8B E5              mov         esp,ebp
+  000000CE: 5D                 pop         ebp
+  000000CF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          D0 .text

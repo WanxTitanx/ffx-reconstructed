@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00547F90.obj
+
+File Type: COFF OBJECT
+
+_Phyre_PSpline_AllocAndCopyControlPoints:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 57                 push        edi
+  00000004: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000007: 85 FF              test        edi,edi
+  00000009: 75 05              jne         00000010
+  0000000B: 33 C0              xor         eax,eax
+  0000000D: 5F                 pop         edi
+  0000000E: 5D                 pop         ebp
+  0000000F: C3                 ret
+  00000010: 8D 04 FD 00 00 00  lea         eax,[edi*8]
+            00
+  00000017: 53                 push        ebx
+  00000018: 2B C7              sub         eax,edi
+  0000001A: C1 E0 02           shl         eax,2
+  0000001D: 6A 04              push        4
+  0000001F: 50                 push        eax
+  00000020: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  00000025: 8B D8              mov         ebx,eax
+  00000027: 83 C4 08           add         esp,8
+  0000002A: 85 DB              test        ebx,ebx
+  0000002C: 74 2E              je          0000005C
+  0000002E: 56                 push        esi
+  0000002F: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000032: 56                 push        esi
+  00000033: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000036: 53                 push        ebx
+  00000037: 53                 push        ebx
+  00000038: E8 00 00 00 00     call        _Phyre_PSpline_ArrayCopyControlPoints
+  0000003D: 8D 04 F5 00 00 00  lea         eax,[esi*8]
+            00
+  00000044: 2B C6              sub         eax,esi
+  00000046: 2B FE              sub         edi,esi
+  00000048: 8D 04 83           lea         eax,[ebx+eax*4]
+  0000004B: 57                 push        edi
+  0000004C: 50                 push        eax
+  0000004D: E8 00 00 00 00     call        _Phyre_PSpline_InitFloat7ArrayIdentity
+  00000052: 83 C4 18           add         esp,18h
+  00000055: 8B C3              mov         eax,ebx
+  00000057: 5E                 pop         esi
+  00000058: 5B                 pop         ebx
+  00000059: 5F                 pop         edi
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+  0000005C: 5B                 pop         ebx
+  0000005D: 33 C0              xor         eax,eax
+  0000005F: 5F                 pop         edi
+  00000060: 5D                 pop         ebp
+  00000061: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          62 .text

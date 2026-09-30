@@ -1,0 +1,122 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0051CBA0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PAnimationDescriptor_FindByName@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 89 55 F8           mov         dword ptr [ebp-8],edx
+  0000000C: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000000F: 85 D2              test        edx,edx
+  00000011: 0F 84 D3 00 00 00  je          000000EA
+  00000017: 8B 19              mov         ebx,dword ptr [ecx]
+  00000019: 33 F6              xor         esi,esi
+  0000001B: 81 E3 FF FF FF 7F  and         ebx,7FFFFFFFh
+  00000021: 74 68              je          0000008B
+  00000023: 8D 41 04           lea         eax,[ecx+4]
+  00000026: 83 FB 01           cmp         ebx,1
+  00000029: 76 03              jbe         0000002E
+  0000002B: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  0000002E: 8B 3C B0           mov         edi,dword ptr [eax+esi*4]
+  00000031: 85 FF              test        edi,edi
+  00000033: 74 51              je          00000086
+  00000035: 0F B6 47 1C        movzx       eax,byte ptr [edi+1Ch]
+  00000039: 8B 4F 1C           mov         ecx,dword ptr [edi+1Ch]
+  0000003C: 83 E0 01           and         eax,1
+  0000003F: 2B C8              sub         ecx,eax
+  00000041: 74 40              je          00000083
+  00000043: 8B C2              mov         eax,edx
+  00000045: 8A 10              mov         dl,byte ptr [eax]
+  00000047: 3A 11              cmp         dl,byte ptr [ecx]
+  00000049: 75 1A              jne         00000065
+  0000004B: 84 D2              test        dl,dl
+  0000004D: 74 12              je          00000061
+  0000004F: 8A 50 01           mov         dl,byte ptr [eax+1]
+  00000052: 3A 51 01           cmp         dl,byte ptr [ecx+1]
+  00000055: 75 0E              jne         00000065
+  00000057: 83 C0 02           add         eax,2
+  0000005A: 83 C1 02           add         ecx,2
+  0000005D: 84 D2              test        dl,dl
+  0000005F: 75 E4              jne         00000045
+  00000061: 33 C9              xor         ecx,ecx
+  00000063: EB 05              jmp         0000006A
+  00000065: 1B C9              sbb         ecx,ecx
+  00000067: 83 C9 01           or          ecx,1
+  0000006A: 85 C9              test        ecx,ecx
+  0000006C: 74 3C              je          000000AA
+  0000006E: 33 C0              xor         eax,eax
+  00000070: 85 C9              test        ecx,ecx
+  00000072: 0F 99 C0           setns       al
+  00000075: 8D 04 45 FF FF FF  lea         eax,[eax*2-1]
+            FF
+  0000007C: 85 C0              test        eax,eax
+  0000007E: 74 2A              je          000000AA
+  00000080: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00000083: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000086: 46                 inc         esi
+  00000087: 3B F3              cmp         esi,ebx
+  00000089: 72 98              jb          00000023
+  0000008B: 33 F6              xor         esi,esi
+  0000008D: 85 DB              test        ebx,ebx
+  0000008F: 74 59              je          000000EA
+  00000091: 8B 01              mov         eax,dword ptr [ecx]
+  00000093: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  00000098: 3B F0              cmp         esi,eax
+  0000009A: 73 44              jae         000000E0
+  0000009C: 83 F8 01           cmp         eax,1
+  0000009F: 77 16              ja          000000B7
+  000000A1: 85 C0              test        eax,eax
+  000000A3: 74 0E              je          000000B3
+  000000A5: 8D 41 04           lea         eax,[ecx+4]
+  000000A8: EB 10              jmp         000000BA
+  000000AA: 8B C7              mov         eax,edi
+  000000AC: 5F                 pop         edi
+  000000AD: 5E                 pop         esi
+  000000AE: 5B                 pop         ebx
+  000000AF: 8B E5              mov         esp,ebp
+  000000B1: 5D                 pop         ebp
+  000000B2: C3                 ret
+  000000B3: 33 C0              xor         eax,eax
+  000000B5: EB 03              jmp         000000BA
+  000000B7: 8B 41 04           mov         eax,dword ptr [ecx+4]
+  000000BA: 8B 3C B0           mov         edi,dword ptr [eax+esi*4]
+  000000BD: 85 FF              test        edi,edi
+  000000BF: 74 1F              je          000000E0
+  000000C1: 0F B6 47 1C        movzx       eax,byte ptr [edi+1Ch]
+  000000C5: 8B 4F 1C           mov         ecx,dword ptr [edi+1Ch]
+  000000C8: 83 E0 01           and         eax,1
+  000000CB: 2B C8              sub         ecx,eax
+  000000CD: 74 0E              je          000000DD
+  000000CF: 52                 push        edx
+  000000D0: 51                 push        ecx
+  000000D1: E8 00 00 00 00     call        _strstr
+  000000D6: 83 C4 08           add         esp,8
+  000000D9: 85 C0              test        eax,eax
+  000000DB: 75 CD              jne         000000AA
+  000000DD: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  000000E0: 46                 inc         esi
+  000000E1: 3B F3              cmp         esi,ebx
+  000000E3: 73 05              jae         000000EA
+  000000E5: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  000000E8: EB A7              jmp         00000091
+  000000EA: 5F                 pop         edi
+  000000EB: 5E                 pop         esi
+  000000EC: 33 C0              xor         eax,eax
+  000000EE: 5B                 pop         ebx
+  000000EF: 8B E5              mov         esp,ebp
+  000000F1: 5D                 pop         ebp
+  000000F2: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          F3 .text

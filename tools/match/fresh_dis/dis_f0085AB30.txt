@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0085AB30.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldOp_PopOverdriveModelState:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: FF 75 10           push        dword ptr [ebp+10h]
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000000E: 83 C4 08           add         esp,8
+  00000011: 3D FE 00 00 00     cmp         eax,0FEh
+  00000016: 76 04              jbe         0000001C
+  00000018: 33 C0              xor         eax,eax
+  0000001A: 5D                 pop         ebp
+  0000001B: C3                 ret
+  0000001C: 05 04 A0 00 00     add         eax,0A004h
+  00000021: 50                 push        eax
+  00000022: E8 00 00 00 00     call        _FFX_Overdrive_ModelStateSetter
+  00000027: 83 C4 04           add         esp,4
+  0000002A: B8 01 00 00 00     mov         eax,1
+  0000002F: 5D                 pop         ebp
+  00000030: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          31 .text

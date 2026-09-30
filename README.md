@@ -1,259 +1,100 @@
 # FFX Reconstructed
 
-**A functional engine for Final Fantasy X, rebuilt from the ground up through massive reverse engineering of the original executable.**
+Reconstrução verificável do `FFX.exe` de Final Fantasy X HD Remaster para Windows x86, com ferramentas para compilar alterações dentro do próprio executável.
 
-> **License:** MIT — educational reverse engineering and research project. Contains no Square Enix code. Final Fantasy X is property of Square Enix.
+## Estado verificado em 30/09/2026
 
----
+A baseline reconstruída reproduz **todos os 10.675.712 bytes** da referência:
 
-## What is this project
-
-This project is the result of one of the largest FFX reverse engineering efforts ever undertaken. The original `FFX.exe` executable (Steam, International version, 11MB) was analyzed in IDA Pro with Hex-Rays decompiler, producing a database with:
-
-- **47,432 functions** — 100% named (0 `sub_*` remaining)
-- **7,706 globals** in `.data` — 100% named
-- **117 enums** populated with members (~1,500+ values)
-- **119 named structs** — 37 FFX + 56 Phyre + 26 Bullet
-- **15,800+ comments** across functions, structs, and critical addresses
-- **40+ bookmarks** at critical engine addresses
-- **13,962 strings** mapped and categorized
-- **6 segments** fully mapped (.text, .rdata, .data, .idata, .rodata, _RDATA)
-
-From this knowledge base, we are rebuilding the engine in pure C++, compilable with MSVC/Clang, producing a Windows executable that opens a window, initializes D3D11, renders to the screen, and accepts keyboard input.
-
----
-
-## Key reverse engineering discoveries
-
-### Battle System
-- **FFXBattleActorRecord** = 3984 bytes (0xF90), 115+ binary-confirmed fields
-  - HP @ 0x5D0, MP @ 0x5D4, MaxHP @ 0x594, MaxMP @ 0x598
-  - STR @ 0x5A8, DEF @ 0x5A9, MAG @ 0x5AA, MDEF @ 0x5AB, AGI @ 0x5AC, LUCK @ 0x5AD, EVA @ 0x5AE, ACC @ 0x5AF
-  - Overdrive @ 0x5BC, CTB Gauge @ 0x0000, Status Flags A/B/C @ 0x1544-0x1546
-  - Accessor: `FFX_Battle_PoolActorByTargetType_structural` @ 0x7B2DD0 — 346-case switch mapping field IDs to offsets
-- **FFX_MagicHostContextTable** = 2048 bytes, 512 static function pointers with REAL names (`pfn_Chr_GetPosX`, `pfn_MagicHost_ApplyTransformPattern_M`, etc.)
-- **Target sentinel resolution** via `FFX_Battle_QueryActorBitmask` @ 0x794340: 0xFFF1=AllAeons, 0xFFF2=FrontlineChars, 0xFFF3=Self, 0xFFEF=LastAttacker
-- **ForcePerformCommand** = 0x705A (not 0x7050 which is reviveOrReinitialize)
-- **ATEL_DispatchOpcode** = 0x7018 (ability logger, not WriteChrProperty)
-
-### ATEL VM (Field Event Scripting)
-- **Interpreter** @ 0x864180 — `FFX_Field_EventParser_structural`
-  - 4208 bytes, 224 basic blocks, cyclomatic complexity 156
-  - 123-case switch (0x00-0x7A = 0-122)
-  - Fetches opcodes via `FFX_Atel_FetchOpcode` @ 0x869D00
-  - Opcodes: NCJMP, JSR, RTS, CALL, REQ, RET, HALT, PUSHN, PUSHT, PUSHVP, PUSHFIX, POPI0-3, POPF0-9, PUSHI0-3, PUSHF0-9, PUSHAINTER, ER, AIT, SYSTEM
-- **g_AtelOpcodeTable** @ 0xC54920 — 76 entries, 16 bytes each
-
-### PPP (Particle/Post-Process) System
-- **PPP Processor** @ 0x7170F0 — vtable dispatcher
-- **274 opcodes** cataloged (strings at 0xB4FEB0-0xB513D4)
-  - Categories: Draw(46), Ke/Kernel(106), Rand(33), Matrix(29), op/Special(14), Light(12), Move(7), Accele(4), Point(5), Color(2), Other(20), tt(1)
-- **Full pipeline**: PPP bytecode → PppProgramProcessor → PPP draw opcodes → PppDrawRecord_Build (0xA5C370) → VfxDrawDispatch (0xA5BF50) → BuildVfxTextureFromPath (0x714890, loads .dds.phyre) → RenderVfxParticles (0x7697D0)
-- **79 DXBC shader blobs** embedded in FFX.exe .rdata (0x82CAE4+)
-
-### PhyreEngine Type System
-- **PhyrePClassDescriptor** (148 bytes): +0x18 m_pClassName, +0x1C m_typeSize, +0x44 m_propertyList, +0x54 m_memberListHead
-- **PhyrePClassMember** (36 bytes): +0x10 m_pName, +0x14 m_offset, +0x18 m_size
-- **Namespace singleton** @ 0xC90B00 (lazy-init, zeros in static binary)
-- **InsertIntoPropertyList** @ 0x43C190 — 1228 xrefs (498 DATA from vtables in .rdata)
-- **Finding:** all PhyrePClassDescriptor instances are heap-allocated at runtime. Impossible to extract field names offline without a runtime memory dump.
-
-### Magic DLL System
-- **monmagic1.bin / monmagic2.bin** format FULLY mapped
-  - Container = EntryListFile (header 0x14 bytes + FirstFile=entry table + SecondFile=text pool)
-  - MonMagic entry = 0x5C (92 bytes): 16 bytes header + 76 bytes body (Ability_command with ~35 fields)
-  - Anim1Id/Anim2Id point to magic_{NNNN}.dll
-  - AI operand encoding: 0x4000|id = MonMagic1, 0x6000|id = MonMagic2
-- **Texture path swap** in magic DLLs PROVEN in-game (DLLs ID 0700+)
-- **Visible magic color** comes from TEXTURES (.dds.phyre), not float4/BGRA in .data
-
-### PS2 Source Code
-- **Original PS2 source code** found at `D:\FFX Extracted\FFX\ffx_ps2\ffx\yonishi_data`
-  - 130 .h files, 334 .ha files, 112 mag_NNNN directories
-  - 4,218 PPMPN() invocations across 120 files
-  - pppProg struct = 10 function pointers (40 bytes)
-  - bat_eff.h = super-catalog with 139 entries
-
----
-
-## Current reconstruction status
-
-### ✅ Working (verified with running .exe)
-- **Window** — Opens a window titled "FINAL FANTASY X", 800x600, responds to input
-- **Game loop** — PeekMessage + QueryPerformanceCounter + 0.05s clamp, runs without crashing
-- **D3D11 Renderer** — Device, swap chain, render target view via LoadLibrary/GetProcAddress. Clears screen to dark blue. **Test triangle renders (RGB gradient visible)**
-- **Inline HLSL shaders** — Vertex + pixel shaders compiled at runtime via D3DCompile
-- **Render queue** — Quad batching pipeline with ortho projection and DrawIndexed (code present, needs verification)
-- **Input** — 256-key polling via GetAsyncKeyState with rising-edge detection
-- **Build** — Compiles with Clang 22 (x64), produces 548KB .exe
-
-### 🔄 In progress
-- **FPS bar** — Code exists but not visible on screen (render queue flush may have issue)
-- **ESC menu** — Code exists, toggle with M key, untested visually
-- **Texture manager** — stb_image integration, 64-slot SRV cache. No texture files in project yet.
-- **Save system** — CRC-16 CCITT, file I/O. Untested.
-
-### ⚠️ Honest assessment — what does NOT work
-- **No FPS bar visible** — render queue may not be flushing correctly
-- **DrawString** — Placeholder using colored rectangles. Does NOT render actual text.
-- **DrawWindow** — Simplified 4-border rect. Does NOT do real 9-slice with atlas textures.
-- **No textures loaded** — No PNG/DDS files exist in the project. Atlas registry is empty.
-- **No audio** — FMOD is a stub.
-- **No 3D rendering** — Field/scene system is 5% stub.
-- **No battle HUD** — Data model exists, visual rendering is 0%.
-- **PhyreEngine** — All stubs. PClassDescriptor has partial implementation.
-- **Bullet Physics** — All stubs.
-- **Steam/Iggy** — All stubs.
-- **Lua 5.1** — 27 .c files in repo but not linked in current build (uses lua_stubs.cpp).
-
-### 🎯 Immediate goal
-Get the render queue flushing correctly (FPS bar visible), then build toward a title screen with a background image and "Press Any Key" prompt.
-
----
-
-## Architecture
-
-```
-ffx_reconstructed/
-├── src/
-│   ├── ffx/                    # Core game logic
-│   │   ├── main.cpp            # Entry point, game loop, init chain
-│   │   ├── ffx_renderer.cpp    # D3D11 device, swapchain, shaders
-│   │   ├── ffx_renderqueue.cpp # Deferred quad batching pipeline
-│   │   ├── ffx_texture.cpp     # Texture manager (stb_image + SRV cache)
-│   │   ├── ffx_input.cpp       # Keyboard input polling
-│   │   ├── ffx_menu.cpp        # ESC menu + menu2D primitives
-│   │   ├── ffx_battle.cpp      # Battle data model + actions
-│   │   ├── ffx_battle_hud.cpp  # Battle HUD rendering
-│   │   ├── ffx_field.cpp       # Field/scene system
-│   │   ├── ffx_save.cpp        # Save/load + CRC-16 + slot management
-│   │   └── ffx_debug.cpp       # Debug logging + dev tools
-│   ├── phyre/                  # PhyreEngine stubs + implementations
-│   ├── include/                # Project headers
-│   │   ├── ffx_structs.h       # 20+ FFX/PhyreEngine structs with named fields
-│   │   ├── ffx_vtables.h       # 4 vtables with 35+ mapped entries
-│   │   ├── ffx_rva.h           # 354 constexpr RVAs from runtime hooks
-│   │   └── ffx_debug.h         # Debug logging interface
-│   ├── lua-real/               # Lua 5.1 VM (real, full)
-│   ├── bullet/                 # Bullet Physics stubs
-│   └── lua/                    # Lua bridge stubs
-├── stubs/                      # Middleware stubs (Steam, FMOD, Iggy, D3D11, Win32)
-├── include/                    # Third-party headers (Bullet, FMOD, ImGui, Lua, stb, zlib)
-├── test/                       # Google Test (CRC-16, PClassDescriptor, camera, etc.)
-└── CMakeLists.txt              # Build config
+```text
+SHA-256: 78ce34397da5e6f49b72c2aebadedaf4cd3f6720e1949d46a1b8ed67d3db5ced
+Formato: PE32 / x86
+Comparação integral: 0 bytes diferentes
 ```
 
-### Render Pipeline
+As evidências estão em [`recon/ffx/complete/proof.json`](recon/ffx/complete/proof.json), no manifesto e nos recibos associados. A aceitação confere os bytes, a procedência dos insumos e uma segunda linkagem independente. O linker da baseline não lê o executável original; a referência é usada pelo verificador separado.
 
-```
-FFX_Renderer_BeginFrame()
-  ├── OMSetRenderTargets(1, &RTV, NULL)
-  ├── RSSetViewports(backbuffer w/h)
-  └── ClearRenderTargetView(RTV, dark blue)
+A representação combina **C, assembly simbólico e dados declarados**. O plano contém 2.142.911 registros de instruções de assembly e 35.956 bytes de código proveniente de C compilado. Isso reconstrói o executável completo; a recuperação de todas as funções em C/C++ de alto nível continua sendo trabalho futuro.
 
-[Scene drawing]
-  ├── FFX_RenderQueue_PushRect()    — solid/gradient quads
-  ├── FFX_RenderQueue_PushQuad()    — UV-mapped quads with per-vertex colors
-  ├── FFX_RenderQueue_PushQuadTex() — textured quads with SRV
-  └── FFX_Renderer_DrawTestTriangle() — RGB test triangle
+O usuário reportou que a baseline instalada abriu normalmente pela Steam no Linux/Proton em 30/09/2026. Essa sessão usava os módulos já presentes na instalação. É um teste manual de abertura; alterações novas ainda precisam de validação própria de gameplay.
 
-FFX_RenderQueue_Flush()
-  ├── Map vertex buffer (WRITE_DISCARD)
-  ├── Build orthographic projection matrix (screen-space → clip-space)
-  ├── Batch quads by SRV (minimize state changes)
-  ├── Set IA/VS/PS state
-  └── DrawIndexed()
+## Organização
 
-FFX_Renderer_EndFrame()
-  └── SwapChain->Present(1, 0)
-```
+| Caminho | Conteúdo |
+| --- | --- |
+| [`recon/ffx/complete/`](recon/ffx/complete/) | Receitas e evidências da reconstrução integral |
+| [`recon/ffx/text_program/`](recon/ffx/text_program/) | Instruções simbólicas, referências e seleção dos provedores C |
+| [`recon/ffx/pe_data/`](recon/ffx/pe_data/) e [`pe_headers/`](recon/ffx/pe_headers/) | Dados, recursos, cabeçalhos e estrutura PE |
+| [`recon/ffx/c_leaf/`](recon/ffx/c_leaf/), [`c_reloc/`](recon/ffx/c_reloc/) e [`byteproof/`](recon/ffx/byteproof/) | Fontes e receitas de compilação C/assembly com prova estrita |
+| [`recon/ffx/mods/`](recon/ffx/mods/) | Compilação e linkagem de código novo no executável |
+| [`tools/match/`](tools/match/) | Assembler, linker, verificadores, testes e pesquisas de correspondência |
+| [`research/`](research/) | Pesquisas e referências de engenharia reversa, incluindo materiais do FFX Editor |
+| [`recon/STATUS.md`](recon/STATUS.md) | Estado detalhado das funções e das frentes de recuperação |
+| [`src/`](src/) e `CMakeLists.txt` | Protótipo anterior em C++; a receita da baseline byte-idêntica fica em `tools/match/` |
 
----
+## Ambiente e dependências
 
-## Building
+O ambiente validado usa Linux, Python 3.14, `iced-x86==1.21.0`, LLVM/Clang 21, GNU binutils, GCC com suporte a i386 e `strace`. Os provedores C históricos usam **MSVC 2012 x86 17.00.50727.1**, com opções específicas registradas em cada pacote. A compilação desses provedores foi feita em uma VM Windows.
 
-### Requirements
-- **Windows 10+**
-- **Clang 22+** (or Visual Studio 2022 with C++ workload)
-- **Windows SDK** (for d3d11.h, dxgi.h, windows.h)
+Este repositório publica fontes, declarações preparadas e recibos. Instaladores, SDKs, ferramentas binárias, bancos IDA, ambientes virtuais, caches e executáveis gerados ficam no backup local. Um clone novo exige instalar as ferramentas e reconstruir os objetos C conforme as receitas abaixo; os recibos, sozinhos, não substituem esses objetos.
 
-### Build with Clang
 ```bash
-cd ffx_reconstructed
-mkdir build
-clang++ -Isrc\ffx -Isrc\include -Isrc -Iinclude -Istubs -Isrc\lua-real \
-    -std=c++17 -O2 -DWIN32_LEAN_AND_MEAN -D_CRT_SECURE_NO_WARNINGS \
-    -Wl,/SUBSYSTEM:WINDOWS \
-    -o build\FFX_Reconstructed.exe \
-    src\ffx\*.cpp src\phyre\*.cpp src\bullet\*.cpp stubs\*.cpp src\lua\lua_stubs.cpp \
-    -ld3d11 -ldxgi -ldinput8 -lxinput -lwinmm -ladvapi32 -luser32 -lgdi32 -lshell32 -lole32
+python3.14 -m venv recon/ffx/.venv-asm
+recon/ffx/.venv-asm/bin/python -m pip install iced-x86==1.21.0 pytest==9.1.1
 ```
 
-### Build with CMake + Visual Studio
+Consulte as receitas de [`c_leaf`](recon/ffx/c_leaf/README.md), [`c_reloc`](recon/ffx/c_reloc/README.md) e [`byteproof`](recon/ffx/byteproof/README.md) para gerar os objetos e seus manifestos com a toolchain histórica. Preserve os diretórios `build/`, logs, snapshots de entrada e recibos produzidos.
+
+As evidências históricas registram caminhos absolutos do ambiente em que foram geradas. Em outra máquina, configure a referência usada por `tools/match/definitive_match.py` e regenere os recibos aplicáveis. Não edite hashes dos manifestos para contornar verificações.
+
+## Reconstruir a baseline
+
+Com as dependências e os objetos dos provedores C preparados, execute da raiz:
+
 ```bash
-cd ffx_reconstructed
-cmake -S . -B build -G "Visual Studio 17 2022" -A Win32
-cmake --build build --config Release
+ffx_root="$(pwd -P)"
+strace -f -s 4096 -yy -e trace=open,openat,openat2,execve \
+  -o "$ffx_root/recon/ffx/complete/build.trace" \
+  "$ffx_root/recon/ffx/.venv-asm/bin/python" \
+  "$ffx_root/tools/match/run_source_only.py" \
+  "$ffx_root/tools/match/rebuild_complete.py"
+
+recon/ffx/.venv-asm/bin/python tools/match/complete_acceptance.py record-audit
+recon/ffx/.venv-asm/bin/python tools/match/verify_complete_image.py
 ```
 
-### Controls
-| Key | Action |
-|-----|--------|
-| `M` | Toggle ESC menu |
-| `↑/↓` | Navigate menu |
-| `Enter` | Confirm / close menu |
-| `Esc` | Close menu / quit |
-| `F11` | Toggle fullscreen |
+O resultado é `recon/ffx/complete/FFX.exe`. A referência original, com a hash acima, deve ser fornecida localmente para a verificação. A descrição completa do processo e de suas provas está em [`complete/README.md`](recon/ffx/complete/README.md).
 
----
+## Compilar código novo no FFX.exe
 
-## IDA knowledge base
+O caminho de mods compila C/C++ para COFF i386 e resolve as referências durante a linkagem. Código, constantes e dados graváveis podem ocupar seções novas `.modtxt`, `.modro` e `.moddat`.
 
-The IDA database (`ffxoficial.exe.i64`) is the source of truth for the entire reconstruction. Current state:
+```bash
+recon/ffx/.venv-asm/bin/python tools/match/run_source_only.py tools/match/mod_link.py
+recon/ffx/.venv-asm/bin/python tools/match/mod_acceptance.py --native-demo
+```
 
-| KPI | Target | Actual | Status |
-|-----|--------|--------|--------|
-| Function names | 100% | 47,432 (0 sub_*) | ✅ |
-| .data globals | ≥80% | 7,706/7,706 = 100% | ✅ |
-| Enums | ≥90% | 117 enums, all populated | ✅ |
-| Bookmarks | ≥140 | 40+ critical | ✅ |
-| Comments | ≥5,000 | 15,800+ | ✅ |
-| Struct coverage | ≥95% | ~68% (blocked: vtable dispatch) | 🟡 |
-| .text intact | verified | zero modifications | ✅ |
+O exemplo [`compare_demo`](recon/ffx/mods/compare_demo/) substitui as referências a `FFX_memcmp`, em `0x401020`, por uma implementação compilada nova. Ele altera a magnitude do resultado e registra comparações em dados adicionados. As sete chamadas existentes são resolvidas pelo linker. Esse fluxo dispensa a instalação de hooks, trampolins ou DLL de modificação em runtime.
 
-### Key mapped structs
-- **FFXBattleActorData** (3984B/115 fields) — HP, MP, stats, overdrive, CTB, status flags, animation
-- **FFXFieldMap** (284B/64 fields) — field flags, state, scene pointer
-- **FFX_MagicHostContextTable** (2048B/512 fields) — function pointers with real names
-- **FFXBattleState** (184B) — battle flags, formation, turn, overdrive
-- **FFXEncounterState** (340B) — flags, area, type, mode, formation, spawn, music
-- **FFXMenu2DContext** (228B/57 fields) — highRes, modifier, capture, geom/tex slots
-- **FFXMenuObject** (148B/33 fields) — callbacks, state machine, rows, scroll, window
-- **PhyrePClassDescriptor** (148B/37 fields) — RTTI class descriptor
-- **PhyrePClassMember** (36B/9 fields) — RTTI class member (name, offset, size)
-- **PhyrePCamera** (264B) — view/projection/view-projection matrices, fog, glow, DOF
-- **26 Bullet physics structs** — btRigidBody, btCollisionObject, btBoxShape, etc.
+A variante modificada tem tamanho e hash diferentes por definição. Desativar o pacote reconstrói a baseline byte-idêntica:
 
-### DB backups
-Incremental backups in `work/reverse/ida/backups_ffxoficial/`:
-- `ffxoficial_post_catalog_v2_20260711_150000.i64`
-- `ffxoficial_post_p4_enums_20260711_160000.i64`
-- `ffxoficial_post_p3_p4_p6_20260711_163000.i64`
-- `ffxoficial_post_p5_infer_20260711_164500.i64`
+```bash
+recon/ffx/.venv-asm/bin/python tools/match/mod_link.py --disable \
+  --output recon/ffx/mods/build/disabled
+```
 
----
+O ensaio nativo do exemplo cobre 101.400 chamadas em três bases de carga. Ele testa a rotina modificada por uma chamada relinkada; não executa o chamador inteiro nem uma partida. O formato de `mod.json`, os bindings, o contrato de ABI e as limitações do linker estão em [`mods/README.md`](recon/ffx/mods/README.md).
 
-## Related documentation
+## Verificação local e publicação
 
-- `docs/history/FFX_IDA_DB_RECONSTRUCTION_FINAL_2026-07-11.md` — Final DB reconciliation report
-- `work/reverse/ida/STRUCT_CATALOG_20260711.md` — Struct catalog (v2.0)
-- `work/reverse/ida/DB_RECONSTRUCTION_MASTERPLAN.md` — 8-phase plan
-- `docs/ai/SESSION_HANDOFF.md` — Session handoff
-- `KNOWLEDGE_BASE.md` — Project long-term memory index
-- `PORT_STATUS.md` — Live operational status board
+A suíte inclui três testes que executam o demo nativo. Gere primeiro seus artefatos com `mod_acceptance.py --native-demo`; uma árvore sem esses produtos de build ainda não atende à pré-condição desses testes.
 
----
+```bash
+recon/ffx/.venv-asm/bin/python -m pytest -q tools/match
+```
 
-## License
+A publicação de 30/09/2026 reúne a integração `ebed41f4d` e pesquisas locais adicionais em um snapshot sobre a `main` remota anterior. O histórico de desenvolvimento local e os insumos grandes foram preservados em backup, sem reescrever a história remota existente.
 
-MIT — This is an educational reverse engineering and research project. It contains no original Square Enix code, only original implementations based on software behavior observation. Final Fantasy X is property of Square Enix.
+As verificações de publicação são executadas localmente. Não há workflow de GitHub Actions adicionado por esta atualização. O relatório sanitizado da auditoria de segredos fica em [`security/publication-audit.json`](security/publication-audit.json); evidências que possam conter material sensível permanecem privadas.
+
+Final Fantasy X e as bibliotecas de terceiros pertencem aos respectivos titulares. A reconstrução não recupera o projeto C++ original. As licenças dos componentes de terceiros continuam aplicáveis aos respectivos arquivos.

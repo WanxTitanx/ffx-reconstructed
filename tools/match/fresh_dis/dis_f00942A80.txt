@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00942A80.obj
+
+File Type: COFF OBJECT
+
+@HeapBlock_FreeCoalesceTraverse@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 57                 push        edi
+  00000008: 8B 7B 0C           mov         edi,dword ptr [ebx+0Ch]
+  0000000B: 85 FF              test        edi,edi
+  0000000D: 74 71              je          00000080
+  0000000F: 56                 push        esi
+  00000010: 83 BF 1C 10 00 00  cmp         dword ptr [edi+101Ch],2
+            02
+  00000017: 8D 97 10 10 00 00  lea         edx,[edi+1010h]
+  0000001D: 74 0A              je          00000029
+  0000001F: 90                 nop
+  00000020: 03 52 04           add         edx,dword ptr [edx+4]
+  00000023: 83 7A 0C 02        cmp         dword ptr [edx+0Ch],2
+  00000027: 75 F7              jne         00000020
+  00000029: 8B 0B              mov         ecx,dword ptr [ebx]
+  0000002B: 83 C1 F0           add         ecx,0FFFFFFF0h
+  0000002E: 03 CF              add         ecx,edi
+  00000030: 2B CA              sub         ecx,edx
+  00000032: F7 D9              neg         ecx
+  00000034: 1B C9              sbb         ecx,ecx
+  00000036: 23 CA              and         ecx,edx
+  00000038: 74 3E              je          00000078
+  0000003A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  00000040: 8B 71 04           mov         esi,dword ptr [ecx+4]
+  00000043: 8B 03              mov         eax,dword ptr [ebx]
+  00000045: 83 C0 F0           add         eax,0FFFFFFF0h
+  00000048: 03 F1              add         esi,ecx
+  0000004A: 03 C7              add         eax,edi
+  0000004C: 83 7E 0C 02        cmp         dword ptr [esi+0Ch],2
+  00000050: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000053: 74 09              je          0000005E
+  00000055: 03 76 04           add         esi,dword ptr [esi+4]
+  00000058: 83 7E 0C 02        cmp         dword ptr [esi+0Ch],2
+  0000005C: 75 F7              jne         00000055
+  0000005E: 8D 41 10           lea         eax,[ecx+10h]
+  00000061: 50                 push        eax
+  00000062: 53                 push        ebx
+  00000063: E8 00 00 00 00     call        _FFX_Heap_FreeCoalescer
+  00000068: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  0000006B: 2B CE              sub         ecx,esi
+  0000006D: 83 C4 08           add         esp,8
+  00000070: F7 D9              neg         ecx
+  00000072: 1B C9              sbb         ecx,ecx
+  00000074: 23 CE              and         ecx,esi
+  00000076: 75 C8              jne         00000040
+  00000078: 8B 7B 0C           mov         edi,dword ptr [ebx+0Ch]
+  0000007B: 85 FF              test        edi,edi
+  0000007D: 75 91              jne         00000010
+  0000007F: 5E                 pop         esi
+  00000080: 5F                 pop         edi
+  00000081: 5B                 pop         ebx
+  00000082: 8B E5              mov         esp,ebp
+  00000084: 5D                 pop         ebp
+  00000085: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          86 .text

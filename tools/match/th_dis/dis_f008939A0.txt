@@ -1,0 +1,1204 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008939A0.obj
+
+File Type: COFF OBJECT
+
+_FFX_BtlUI_DrawScanTargetInfoPanel@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 38           sub         esp,38h
+  00000006: 83 3D 00 00 00 00  cmp         dword ptr [_unk_133C8FE],0
+            00
+  0000000D: 0F 84 B1 0F 00 00  je          00000FC4
+  00000013: 83 3D 00 00 00 00  cmp         dword ptr [_unk_133D6A0],1
+            01
+  0000001A: 0F 84 A4 0F 00 00  je          00000FC4
+  00000020: E8 00 00 00 00     call        _FFX_Engine_GetTime
+  00000025: DB 05 00 00 00 00  fild        dword ptr [_unk_133C904]
+  0000002B: A1 00 00 00 00     mov         eax,dword ptr [_unk_133C904]
+  00000030: 85 C0              test        eax,eax
+  00000032: 79 06              jns         0000003A
+  00000034: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  0000003A: DD 5D C8           fstp        qword ptr [ebp-38h]
+  0000003D: DD 45 C8           fld         qword ptr [ebp-38h]
+  00000040: DC 6D 08           fsubr       qword ptr [ebp+8]
+  00000043: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000046: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000049: DC 35 00 00 00 00  fdiv        qword ptr [__real@3fc999999fffffff]
+  0000004F: D9 5D D0           fstp        dword ptr [ebp-30h]
+  00000052: D9 EE              fldz
+  00000054: D9 45 D0           fld         dword ptr [ebp-30h]
+  00000057: D8 D1              fcom        st(1)
+  00000059: DF E0              fnstsw      ax
+  0000005B: DD D9              fstp        st(1)
+  0000005D: D9 EE              fldz
+  0000005F: D9 E8              fld1
+  00000061: DD 55 C8           fst         qword ptr [ebp-38h]
+  00000064: D9 E8              fld1
+  00000066: F6 C4 01           test        ah,1
+  00000069: 75 11              jne         0000007C
+  0000006B: DD DA              fstp        st(2)
+  0000006D: D9 C9              fxch        st(1)
+  0000006F: D8 DA              fcomp       st(2)
+  00000071: DF E0              fnstsw      ax
+  00000073: F6 C4 01           test        ah,1
+  00000076: 75 08              jne         00000080
+  00000078: DD D8              fstp        st(0)
+  0000007A: EB 06              jmp         00000082
+  0000007C: DD DB              fstp        st(3)
+  0000007E: DD D8              fstp        st(0)
+  00000080: DD D9              fstp        st(1)
+  00000082: 8B 45 14           mov         eax,dword ptr [ebp+14h]
+  00000085: 05 81 01 00 00     add         eax,181h
+  0000008A: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000008D: DB 45 14           fild        dword ptr [ebp+14h]
+  00000090: 53                 push        ebx
+  00000091: 56                 push        esi
+  00000092: 57                 push        edi
+  00000093: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000096: D8 4D 14           fmul        dword ptr [ebp+14h]
+  00000099: DC 25 00 00 00 00  fsub        qword ptr [__real@4078100000000000]
+  0000009F: E8 00 00 00 00     call        __ftol2_sse
+  000000A4: DD 05 00 00 00 00  fld         qword ptr [__real@4049800000000000]
+  000000AA: 83 EC 08           sub         esp,8
+  000000AD: 89 45 D4           mov         dword ptr [ebp-2Ch],eax
+  000000B0: DD 1C 24           fstp        qword ptr [esp]
+  000000B3: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000000B8: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  000000BB: 89 45 14           mov         dword ptr [ebp+14h],eax
+  000000BE: DB 45 14           fild        dword ptr [ebp+14h]
+  000000C1: 56                 push        esi
+  000000C2: DD 5D 08           fstp        qword ptr [ebp+8]
+  000000C5: DD 45 08           fld         qword ptr [ebp+8]
+  000000C8: DC 05 00 00 00 00  fadd        qword ptr [__real@4018000000000000]
+  000000CE: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000000D1: E8 00 00 00 00     call        _FFX_GetActorElemWeak_5DD
+  000000D6: 56                 push        esi
+  000000D7: 88 45 17           mov         byte ptr [ebp+17h],al
+  000000DA: E8 00 00 00 00     call        _FFX_GetActorElemAbsorb_5DA
+  000000DF: 56                 push        esi
+  000000E0: 8A D8              mov         bl,al
+  000000E2: E8 00 00 00 00     call        _FFX_GetActorElemIgnore_5DB
+  000000E7: 56                 push        esi
+  000000E8: 8A F8              mov         bh,al
+  000000EA: E8 00 00 00 00     call        _FFX_GetActorElemResist_5DC
+  000000EF: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  000000F5: 83 C4 18           add         esp,18h
+  000000F8: 80 7D 17 00        cmp         byte ptr [ebp+17h],0
+  000000FC: 88 45 13           mov         byte ptr [ebp+13h],al
+  000000FF: 74 26              je          00000127
+  00000101: 83 EC 08           sub         esp,8
+  00000104: DD 1C 24           fstp        qword ptr [esp]
+  00000107: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000010C: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  0000010F: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000112: 83 C4 08           add         esp,8
+  00000115: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000118: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000011B: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  0000011E: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000121: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  00000127: 84 DB              test        bl,bl
+  00000129: 74 22              je          0000014D
+  0000012B: 83 EC 08           sub         esp,8
+  0000012E: DD 1C 24           fstp        qword ptr [esp]
+  00000131: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000136: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000139: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000013C: 83 C4 08           add         esp,8
+  0000013F: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000142: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000145: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  00000148: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000014B: EB 02              jmp         0000014F
+  0000014D: DD D8              fstp        st(0)
+  0000014F: 84 FF              test        bh,bh
+  00000151: 74 26              je          00000179
+  00000153: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  00000159: 83 EC 08           sub         esp,8
+  0000015C: DD 1C 24           fstp        qword ptr [esp]
+  0000015F: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000164: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000167: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000016A: 83 C4 08           add         esp,8
+  0000016D: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000170: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000173: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  00000176: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000179: 80 7D 13 00        cmp         byte ptr [ebp+13h],0
+  0000017D: 74 26              je          000001A5
+  0000017F: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  00000185: 83 EC 08           sub         esp,8
+  00000188: DD 1C 24           fstp        qword ptr [esp]
+  0000018B: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000190: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000193: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000196: 83 C4 08           add         esp,8
+  00000199: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000019C: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000019F: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  000001A2: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000001A5: 83 3D 00 00 00 00  cmp         dword ptr [_unk_133F586],0
+            00
+  000001AC: 76 26              jbe         000001D4
+  000001AE: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  000001B4: 83 EC 08           sub         esp,8
+  000001B7: DD 1C 24           fstp        qword ptr [esp]
+  000001BA: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000001BF: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000001C2: DB 45 DC           fild        dword ptr [ebp-24h]
+  000001C5: 83 C4 08           add         esp,8
+  000001C8: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000001CB: D9 45 DC           fld         dword ptr [ebp-24h]
+  000001CE: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  000001D1: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000001D4: 68 A0 01 00 00     push        1A0h
+  000001D9: 68 00 02 00 00     push        200h
+  000001DE: 6A 00              push        0
+  000001E0: 6A 00              push        0
+  000001E2: E8 00 00 00 00     call        _sub_8F9230
+  000001E7: DB 45 D4           fild        dword ptr [ebp-2Ch]
+  000001EA: 83 C4 08           add         esp,8
+  000001ED: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000001F0: D9 45 DC           fld         dword ptr [ebp-24h]
+  000001F3: DD 1C 24           fstp        qword ptr [esp]
+  000001F6: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000001FB: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000001FE: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000201: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000204: DB 45 18           fild        dword ptr [ebp+18h]
+  00000207: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000020A: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000020D: DD 1C 24           fstp        qword ptr [esp]
+  00000210: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000215: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000218: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000021B: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000021E: DD 05 00 00 00 00  fld         qword ptr [__real@4078100000000000]
+  00000224: DD 1C 24           fstp        qword ptr [esp]
+  00000227: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  0000022C: 83 C4 08           add         esp,8
+  0000022F: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000232: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000235: 6A 00              push        0
+  00000237: 83 EC 10           sub         esp,10h
+  0000023A: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000023D: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000240: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000244: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000247: DD 1C 24           fstp        qword ptr [esp]
+  0000024A: FF 75 F8           push        dword ptr [ebp-8]
+  0000024D: D9 45 FC           fld         dword ptr [ebp-4]
+  00000250: 83 EC 08           sub         esp,8
+  00000253: DD 1C 24           fstp        qword ptr [esp]
+  00000256: E8 00 00 00 00     call        _FFX_Menu2D_DrawRoundedPanel9Slice
+  0000025B: 83 C4 20           add         esp,20h
+  0000025E: E8 00 00 00 00     call        _FFX_Game_GetRegion
+  00000263: 83 EC 08           sub         esp,8
+  00000266: 83 F8 0B           cmp         eax,0Bh
+  00000269: 0F 85 9E 00 00 00  jne         0000030D
+  0000026F: D9 05 00 00 00 00  fld         dword ptr [__real@3d280000]
+  00000275: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000278: D9 05 00 00 00 00  fld         dword ptr [__real@3ee38000]
+  0000027E: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000281: D9 05 00 00 00 00  fld         dword ptr [__real@3c400000]
+  00000287: D9 5D F0           fstp        dword ptr [ebp-10h]
+  0000028A: D9 05 00 00 00 00  fld         dword ptr [__real@3eb90000]
+  00000290: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000293: DD 05 00 00 00 00  fld         qword ptr [__real@403e000000000000]
+  00000299: DD 1C 24           fstp        qword ptr [esp]
+  0000029C: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000002A1: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000002A4: DB 45 DC           fild        dword ptr [ebp-24h]
+  000002A7: D9 5D E8           fstp        dword ptr [ebp-18h]
+  000002AA: DD 05 00 00 00 00  fld         qword ptr [__real@4055400000000000]
+  000002B0: DD 1C 24           fstp        qword ptr [esp]
+  000002B3: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000002B8: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000002BB: DB 45 DC           fild        dword ptr [ebp-24h]
+  000002BE: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000002C1: DD 05 00 00 00 00  fld         qword ptr [__real@4032000000000000]
+  000002C7: DD 1C 24           fstp        qword ptr [esp]
+  000002CA: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000002CF: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000002D2: DB 45 DC           fild        dword ptr [ebp-24h]
+  000002D5: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000002D8: D9 45 DC           fld         dword ptr [ebp-24h]
+  000002DB: D8 45 F8           fadd        dword ptr [ebp-8]
+  000002DE: DC 25 00 00 00 00  fsub        qword ptr [__real@4008000000000000]
+  000002E4: D9 5D E0           fstp        dword ptr [ebp-20h]
+  000002E7: DD 05 00 00 00 00  fld         qword ptr [__real@4038000000000000]
+  000002ED: DD 1C 24           fstp        qword ptr [esp]
+  000002F0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000002F5: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000002F8: DB 45 DC           fild        dword ptr [ebp-24h]
+  000002FB: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000002FE: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000301: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000304: D9 EE              fldz
+  00000306: DE C1              faddp       st(1),st
+  00000308: E9 8F 00 00 00     jmp         0000039C
+  0000030D: D9 05 00 00 00 00  fld         dword ptr [__real@3d240000]
+  00000313: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000316: D9 05 00 00 00 00  fld         dword ptr [__real@3eda0000]
+  0000031C: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  0000031F: D9 05 00 00 00 00  fld         dword ptr [__real@3c700001]
+  00000325: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000328: D9 05 00 00 00 00  fld         dword ptr [__real@3eb20000]
+  0000032E: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000331: DD 05 00 00 00 00  fld         qword ptr [__real@4037000000000000]
+  00000337: DD 1C 24           fstp        qword ptr [esp]
+  0000033A: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000033F: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000342: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000345: D9 5D E8           fstp        dword ptr [ebp-18h]
+  00000348: DD 05 00 00 00 00  fld         qword ptr [__real@404ec00000000000]
+  0000034E: DD 1C 24           fstp        qword ptr [esp]
+  00000351: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000356: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000359: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000035C: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000035F: DD 05 00 00 00 00  fld         qword ptr [__real@4032000000000000]
+  00000365: DD 1C 24           fstp        qword ptr [esp]
+  00000368: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000036D: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000370: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000373: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000376: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000379: D8 45 F8           fadd        dword ptr [ebp-8]
+  0000037C: D9 5D E0           fstp        dword ptr [ebp-20h]
+  0000037F: DD 05 00 00 00 00  fld         qword ptr [__real@4038000000000000]
+  00000385: DD 1C 24           fstp        qword ptr [esp]
+  00000388: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  0000038D: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000390: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000393: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000396: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000399: D8 45 FC           fadd        dword ptr [ebp-4]
+  0000039C: 83 C4 08           add         esp,8
+  0000039F: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000003A2: D9 45 E8           fld         dword ptr [ebp-18h]
+  000003A5: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000003A8: FF 75 F4           push        dword ptr [ebp-0Ch]
+  000003AB: FF 75 F0           push        dword ptr [ebp-10h]
+  000003AE: FF 75 EC           push        dword ptr [ebp-14h]
+  000003B1: 83 EC 10           sub         esp,10h
+  000003B4: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000003B8: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  000003BB: DD 1C 24           fstp        qword ptr [esp]
+  000003BE: FF 75 E0           push        dword ptr [ebp-20h]
+  000003C1: D9 45 DC           fld         dword ptr [ebp-24h]
+  000003C4: 83 EC 08           sub         esp,8
+  000003C7: DD 1C 24           fstp        qword ptr [esp]
+  000003CA: 68 E9 00 00 00     push        0E9h
+  000003CF: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  000003D4: DD 05 00 00 00 00  fld         qword ptr [__real@402a000000000000]
+  000003DA: 83 C4 28           add         esp,28h
+  000003DD: DD 1C 24           fstp        qword ptr [esp]
+  000003E0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000003E5: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  000003E8: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000003EB: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000003EE: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000003F1: D8 45 F8           fadd        dword ptr [ebp-8]
+  000003F4: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000003F7: DD 05 00 00 00 00  fld         qword ptr [__real@406a400000000000]
+  000003FD: DD 1C 24           fstp        qword ptr [esp]
+  00000400: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000405: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000408: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000040B: 56                 push        esi
+  0000040C: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000040F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000412: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000415: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000418: E8 00 00 00 00     call        _FFX_Btl_GetActorCtbGaugeCurrent
+  0000041D: D9 EE              fldz
+  0000041F: 51                 push        ecx
+  00000420: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000424: DD 05 00 00 00 00  fld         qword ptr [__real@3fe333333deffaa4]
+  0000042A: DD 1C 24           fstp        qword ptr [esp]
+  0000042D: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000430: 6A 00              push        0
+  00000432: 83 EC 10           sub         esp,10h
+  00000435: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000439: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000043C: DD 1C 24           fstp        qword ptr [esp]
+  0000043F: 50                 push        eax
+  00000440: E8 00 00 00 00     call        _sub_9055C0
+  00000445: DD 05 00 00 00 00  fld         qword ptr [__real@4036000000000000]
+  0000044B: 83 C4 20           add         esp,20h
+  0000044E: DD 1C 24           fstp        qword ptr [esp]
+  00000451: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000456: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000459: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000045C: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000045F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000462: D8 45 F8           fadd        dword ptr [ebp-8]
+  00000465: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000468: DD 05 00 00 00 00  fld         qword ptr [__real@406ae00000000000]
+  0000046E: DD 1C 24           fstp        qword ptr [esp]
+  00000471: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000476: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  00000479: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000047C: 83 EC 08           sub         esp,8
+  0000047F: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000482: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000485: D8 45 FC           fadd        dword ptr [ebp-4]
+  00000488: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000048B: D9 EE              fldz
+  0000048D: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000491: DD 05 00 00 00 00  fld         qword ptr [__real@3fe333333deffaa4]
+  00000497: DD 1C 24           fstp        qword ptr [esp]
+  0000049A: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000049D: 6A 00              push        0
+  0000049F: 83 EC 10           sub         esp,10h
+  000004A2: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000004A6: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000004A9: DD 1C 24           fstp        qword ptr [esp]
+  000004AC: 0F B7 05 00 00 00  movzx       eax,word ptr [_word_B8F87C]
+            00
+  000004B3: 50                 push        eax
+  000004B4: E8 00 00 00 00     call        _FFX_Menu2D_DrawIconOrTimer
+  000004B9: 83 C4 20           add         esp,20h
+  000004BC: DD 05 00 00 00 00  fld         qword ptr [__real@402a000000000000]
+  000004C2: DD 1C 24           fstp        qword ptr [esp]
+  000004C5: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000004CA: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  000004CD: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000004D0: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000004D3: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000004D6: D8 45 F8           fadd        dword ptr [ebp-8]
+  000004D9: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000004DC: DD 05 00 00 00 00  fld         qword ptr [__real@4076800000000000]
+  000004E2: DD 1C 24           fstp        qword ptr [esp]
+  000004E5: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000004EA: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  000004ED: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  000004F0: 56                 push        esi
+  000004F1: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000004F4: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000004F7: D8 45 FC           fadd        dword ptr [ebp-4]
+  000004FA: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000004FD: E8 00 00 00 00     call        _FFX_Btl_GetActorCtbTurns
+  00000502: D9 EE              fldz
+  00000504: 51                 push        ecx
+  00000505: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000509: DD 05 00 00 00 00  fld         qword ptr [__real@3fe333333deffaa4]
+  0000050F: DD 1C 24           fstp        qword ptr [esp]
+  00000512: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000515: 6A 00              push        0
+  00000517: 83 EC 10           sub         esp,10h
+  0000051A: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000051E: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000521: DD 1C 24           fstp        qword ptr [esp]
+  00000524: 50                 push        eax
+  00000525: E8 00 00 00 00     call        _sub_9055C0
+  0000052A: DD 05 00 00 00 00  fld         qword ptr [__real@404b800000000000]
+  00000530: 83 C4 20           add         esp,20h
+  00000533: DD 1C 24           fstp        qword ptr [esp]
+  00000536: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000053B: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000053E: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  00000541: 83 C4 08           add         esp,8
+  00000544: 80 7D 17 00        cmp         byte ptr [ebp+17h],0
+  00000548: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000054B: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000054E: D8 45 F8           fadd        dword ptr [ebp-8]
+  00000551: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000554: DD 05 00 00 00 00  fld         qword ptr [__real@4045000000000000]
+  0000055A: 0F 84 C8 00 00 00  je          00000628
+  00000560: 83 EC 08           sub         esp,8
+  00000563: DD 1C 24           fstp        qword ptr [esp]
+  00000566: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000056B: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000056E: DB 45 14           fild        dword ptr [ebp+14h]
+  00000571: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000574: DD 05 00 00 00 00  fld         qword ptr [__real@4077c00000000000]
+  0000057A: DD 1C 24           fstp        qword ptr [esp]
+  0000057D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000582: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000585: DB 45 14           fild        dword ptr [ebp+14h]
+  00000588: D9 5D E0           fstp        dword ptr [ebp-20h]
+  0000058B: DD 05 00 00 00 00  fld         qword ptr [__real@4024000000000000]
+  00000591: DD 1C 24           fstp        qword ptr [esp]
+  00000594: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000599: 83 C4 08           add         esp,8
+  0000059C: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000059F: DB 45 14           fild        dword ptr [ebp+14h]
+  000005A2: 6A 32              push        32h
+  000005A4: 68 90 06 00 00     push        690h
+  000005A9: 6A 00              push        0
+  000005AB: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000005AE: 68 32 05 00 00     push        532h
+  000005B3: D9 45 14           fld         dword ptr [ebp+14h]
+  000005B6: 83 EC 10           sub         esp,10h
+  000005B9: D8 45 FC           fadd        dword ptr [ebp-4]
+  000005BC: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000005BF: D9 45 DC           fld         dword ptr [ebp-24h]
+  000005C2: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000005C6: D9 45 E0           fld         dword ptr [ebp-20h]
+  000005C9: DD 1C 24           fstp        qword ptr [esp]
+  000005CC: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000005CF: D9 45 14           fld         dword ptr [ebp+14h]
+  000005D2: 83 EC 08           sub         esp,8
+  000005D5: DD 1C 24           fstp        qword ptr [esp]
+  000005D8: 6A FF              push        0FFFFFFFFh
+  000005DA: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  000005DF: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000005E2: 83 C4 30           add         esp,30h
+  000005E5: E8 00 00 00 00     call        __ftol2_sse
+  000005EA: D9 45 FC           fld         dword ptr [ebp-4]
+  000005ED: 50                 push        eax
+  000005EE: E8 00 00 00 00     call        __ftol2_sse
+  000005F3: 50                 push        eax
+  000005F4: 6A 00              push        0
+  000005F6: 56                 push        esi
+  000005F7: E8 00 00 00 00     call        _FFX_BtlUI_DrawScanElementResistRow_4ElemHardcoded
+  000005FC: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  00000602: 83 C4 08           add         esp,8
+  00000605: DD 1C 24           fstp        qword ptr [esp]
+  00000608: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000060D: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000610: DB 45 14           fild        dword ptr [ebp+14h]
+  00000613: 83 C4 08           add         esp,8
+  00000616: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000619: D9 45 14           fld         dword ptr [ebp+14h]
+  0000061C: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  0000061F: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000622: DD 05 00 00 00 00  fld         qword ptr [__real@4045000000000000]
+  00000628: 84 DB              test        bl,bl
+  0000062A: 0F 84 E5 00 00 00  je          00000715
+  00000630: D9 05 00 00 00 00  fld         dword ptr [__real@42480000]
+  00000636: 83 EC 08           sub         esp,8
+  00000639: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000063C: D9 05 00 00 00 00  fld         dword ptr [__real@44d20000]
+  00000642: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000645: D9 05 00 00 00 00  fld         dword ptr [__real@44a64000]
+  0000064B: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000064E: DD 1C 24           fstp        qword ptr [esp]
+  00000651: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000656: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000659: DB 45 14           fild        dword ptr [ebp+14h]
+  0000065C: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000065F: DD 05 00 00 00 00  fld         qword ptr [__real@4077c00000000000]
+  00000665: DD 1C 24           fstp        qword ptr [esp]
+  00000668: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  0000066D: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000670: DB 45 14           fild        dword ptr [ebp+14h]
+  00000673: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000676: DD 05 00 00 00 00  fld         qword ptr [__real@4024000000000000]
+  0000067C: DD 1C 24           fstp        qword ptr [esp]
+  0000067F: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000684: 83 C4 08           add         esp,8
+  00000687: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000068A: FF 75 DC           push        dword ptr [ebp-24h]
+  0000068D: DB 45 14           fild        dword ptr [ebp+14h]
+  00000690: FF 75 E0           push        dword ptr [ebp-20h]
+  00000693: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000696: D9 45 14           fld         dword ptr [ebp+14h]
+  00000699: 6A 00              push        0
+  0000069B: D8 45 FC           fadd        dword ptr [ebp-4]
+  0000069E: FF 75 E4           push        dword ptr [ebp-1Ch]
+  000006A1: 83 EC 10           sub         esp,10h
+  000006A4: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000006A7: D9 45 E8           fld         dword ptr [ebp-18h]
+  000006AA: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000006AE: D9 45 EC           fld         dword ptr [ebp-14h]
+  000006B1: DD 1C 24           fstp        qword ptr [esp]
+  000006B4: FF 75 0C           push        dword ptr [ebp+0Ch]
+  000006B7: D9 45 14           fld         dword ptr [ebp+14h]
+  000006BA: 83 EC 08           sub         esp,8
+  000006BD: DD 1C 24           fstp        qword ptr [esp]
+  000006C0: 6A FF              push        0FFFFFFFFh
+  000006C2: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  000006C7: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000006CA: 83 C4 30           add         esp,30h
+  000006CD: E8 00 00 00 00     call        __ftol2_sse
+  000006D2: D9 45 FC           fld         dword ptr [ebp-4]
+  000006D5: 50                 push        eax
+  000006D6: E8 00 00 00 00     call        __ftol2_sse
+  000006DB: 50                 push        eax
+  000006DC: 6A 01              push        1
+  000006DE: 56                 push        esi
+  000006DF: E8 00 00 00 00     call        _FFX_BtlUI_DrawScanElementResistRow_4ElemHardcoded
+  000006E4: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  000006EA: 83 C4 08           add         esp,8
+  000006ED: DD 1C 24           fstp        qword ptr [esp]
+  000006F0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000006F5: 89 45 14           mov         dword ptr [ebp+14h],eax
+  000006F8: DB 45 14           fild        dword ptr [ebp+14h]
+  000006FB: 83 C4 08           add         esp,8
+  000006FE: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000701: D9 45 14           fld         dword ptr [ebp+14h]
+  00000704: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  00000707: DD 55 D8           fst         qword ptr [ebp-28h]
+  0000070A: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000070D: DD 05 00 00 00 00  fld         qword ptr [__real@4045000000000000]
+  00000713: EB 03              jmp         00000718
+  00000715: DD 55 D8           fst         qword ptr [ebp-28h]
+  00000718: 84 FF              test        bh,bh
+  0000071A: 0F 84 C7 00 00 00  je          000007E7
+  00000720: 83 EC 08           sub         esp,8
+  00000723: DD 1C 24           fstp        qword ptr [esp]
+  00000726: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000072B: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000072E: DB 45 14           fild        dword ptr [ebp+14h]
+  00000731: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000734: DD 05 00 00 00 00  fld         qword ptr [__real@4077c00000000000]
+  0000073A: DD 1C 24           fstp        qword ptr [esp]
+  0000073D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000742: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000745: DB 45 14           fild        dword ptr [ebp+14h]
+  00000748: D9 5D E0           fstp        dword ptr [ebp-20h]
+  0000074B: DD 05 00 00 00 00  fld         qword ptr [__real@4024000000000000]
+  00000751: DD 1C 24           fstp        qword ptr [esp]
+  00000754: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000759: 83 C4 08           add         esp,8
+  0000075C: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000075F: DB 45 14           fild        dword ptr [ebp+14h]
+  00000762: 6A 32              push        32h
+  00000764: 68 90 06 00 00     push        690h
+  00000769: 6A 00              push        0
+  0000076B: D9 5D 14           fstp        dword ptr [ebp+14h]
+  0000076E: 68 32 05 00 00     push        532h
+  00000773: D9 45 14           fld         dword ptr [ebp+14h]
+  00000776: 83 EC 10           sub         esp,10h
+  00000779: D8 45 FC           fadd        dword ptr [ebp-4]
+  0000077C: D9 5D 14           fstp        dword ptr [ebp+14h]
+  0000077F: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000782: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000786: D9 45 E0           fld         dword ptr [ebp-20h]
+  00000789: DD 1C 24           fstp        qword ptr [esp]
+  0000078C: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000078F: D9 45 14           fld         dword ptr [ebp+14h]
+  00000792: 83 EC 08           sub         esp,8
+  00000795: DD 1C 24           fstp        qword ptr [esp]
+  00000798: 6A FF              push        0FFFFFFFFh
+  0000079A: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  0000079F: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  000007A2: 83 C4 30           add         esp,30h
+  000007A5: E8 00 00 00 00     call        __ftol2_sse
+  000007AA: D9 45 FC           fld         dword ptr [ebp-4]
+  000007AD: 50                 push        eax
+  000007AE: E8 00 00 00 00     call        __ftol2_sse
+  000007B3: 50                 push        eax
+  000007B4: 6A 02              push        2
+  000007B6: 56                 push        esi
+  000007B7: E8 00 00 00 00     call        _FFX_BtlUI_DrawScanElementResistRow_4ElemHardcoded
+  000007BC: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  000007C2: 83 C4 08           add         esp,8
+  000007C5: DD 1C 24           fstp        qword ptr [esp]
+  000007C8: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000007CD: 89 45 14           mov         dword ptr [ebp+14h],eax
+  000007D0: DB 45 14           fild        dword ptr [ebp+14h]
+  000007D3: 83 C4 08           add         esp,8
+  000007D6: D9 5D 14           fstp        dword ptr [ebp+14h]
+  000007D9: D9 45 14           fld         dword ptr [ebp+14h]
+  000007DC: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  000007DF: DD 55 D8           fst         qword ptr [ebp-28h]
+  000007E2: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  000007E5: EB 02              jmp         000007E9
+  000007E7: DD D8              fstp        st(0)
+  000007E9: 80 7D 13 00        cmp         byte ptr [ebp+13h],0
+  000007ED: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  000007F3: 0F 84 0B 05 00 00  je          00000D04
+  000007F9: DD D8              fstp        st(0)
+  000007FB: 83 EC 08           sub         esp,8
+  000007FE: DD 05 00 00 00 00  fld         qword ptr [__real@4045000000000000]
+  00000804: DD 1C 24           fstp        qword ptr [esp]
+  00000807: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000080C: 89 45 14           mov         dword ptr [ebp+14h],eax
+  0000080F: DB 45 14           fild        dword ptr [ebp+14h]
+  00000812: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000815: DD 05 00 00 00 00  fld         qword ptr [__real@4077c00000000000]
+  0000081B: DD 1C 24           fstp        qword ptr [esp]
+  0000081E: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000823: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000826: DB 45 14           fild        dword ptr [ebp+14h]
+  00000829: D9 5D DC           fstp        dword ptr [ebp-24h]
+  0000082C: DD 05 00 00 00 00  fld         qword ptr [__real@4024000000000000]
+  00000832: DD 1C 24           fstp        qword ptr [esp]
+  00000835: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  0000083A: 83 C4 08           add         esp,8
+  0000083D: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000840: DB 45 14           fild        dword ptr [ebp+14h]
+  00000843: 6A 32              push        32h
+  00000845: 68 90 06 00 00     push        690h
+  0000084A: 6A 00              push        0
+  0000084C: D9 5D 14           fstp        dword ptr [ebp+14h]
+  0000084F: 68 32 05 00 00     push        532h
+  00000854: D9 45 14           fld         dword ptr [ebp+14h]
+  00000857: 83 EC 10           sub         esp,10h
+  0000085A: D8 45 FC           fadd        dword ptr [ebp-4]
+  0000085D: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000860: D9 45 10           fld         dword ptr [ebp+10h]
+  00000863: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000867: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000086A: DD 1C 24           fstp        qword ptr [esp]
+  0000086D: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000870: D9 45 14           fld         dword ptr [ebp+14h]
+  00000873: 83 EC 08           sub         esp,8
+  00000876: DD 1C 24           fstp        qword ptr [esp]
+  00000879: 6A FF              push        0FFFFFFFFh
+  0000087B: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  00000880: 56                 push        esi
+  00000881: E8 00 00 00 00     call        _FFX_GetActorElemResist_5DC
+  00000886: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000889: 8A D8              mov         bl,al
+  0000088B: E8 00 00 00 00     call        __ftol2_sse
+  00000890: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000893: DB 45 14           fild        dword ptr [ebp+14h]
+  00000896: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000899: D9 45 FC           fld         dword ptr [ebp-4]
+  0000089C: E8 00 00 00 00     call        __ftol2_sse
+  000008A1: 89 45 10           mov         dword ptr [ebp+10h],eax
+  000008A4: DB 45 10           fild        dword ptr [ebp+10h]
+  000008A7: 83 C4 2C           add         esp,2Ch
+  000008AA: D9 5D 10           fstp        dword ptr [ebp+10h]
+  000008AD: DD 05 00 00 00 00  fld         qword ptr [__real@403a000000000000]
+  000008B3: DD 1C 24           fstp        qword ptr [esp]
+  000008B6: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000008BB: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000008BE: DB 45 DC           fild        dword ptr [ebp-24h]
+  000008C1: D9 5D E0           fstp        dword ptr [ebp-20h]
+  000008C4: DD 05 00 00 00 00  fld         qword ptr [__real@4052c00000000000]
+  000008CA: DD 1C 24           fstp        qword ptr [esp]
+  000008CD: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000008D2: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000008D5: DB 45 DC           fild        dword ptr [ebp-24h]
+  000008D8: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000008DB: DD 05 00 00 00 00  fld         qword ptr [__real@4018000000000000]
+  000008E1: DD 1C 24           fstp        qword ptr [esp]
+  000008E4: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000008E9: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000008EC: DB 45 DC           fild        dword ptr [ebp-24h]
+  000008EF: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000008F2: D9 45 DC           fld         dword ptr [ebp-24h]
+  000008F5: D8 45 14           fadd        dword ptr [ebp+14h]
+  000008F8: D9 5D E8           fstp        dword ptr [ebp-18h]
+  000008FB: DD 05 00 00 00 00  fld         qword ptr [__real@4039000000000000]
+  00000901: DD 1C 24           fstp        qword ptr [esp]
+  00000904: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000909: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  0000090C: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000090F: 83 C4 08           add         esp,8
+  00000912: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000915: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000918: 6A 00              push        0
+  0000091A: D8 45 10           fadd        dword ptr [ebp+10h]
+  0000091D: 6A 00              push        0
+  0000091F: 6A 00              push        0
+  00000921: 6A 00              push        0
+  00000923: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000926: 83 EC 10           sub         esp,10h
+  00000929: D9 45 E0           fld         dword ptr [ebp-20h]
+  0000092C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000930: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000933: DD 1C 24           fstp        qword ptr [esp]
+  00000936: FF 75 E8           push        dword ptr [ebp-18h]
+  00000939: D9 45 DC           fld         dword ptr [ebp-24h]
+  0000093C: 83 EC 08           sub         esp,8
+  0000093F: DD 1C 24           fstp        qword ptr [esp]
+  00000942: 68 B2 01 00 00     push        1B2h
+  00000947: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  0000094C: DD 05 00 00 00 00  fld         qword ptr [__real@4041d999a1fd156a]
+  00000952: 83 C4 28           add         esp,28h
+  00000955: DD 1C 24           fstp        qword ptr [esp]
+  00000958: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000095D: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000960: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000963: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000966: DD 05 00 00 00 00  fld         qword ptr [__real@406c200000000000]
+  0000096C: DD 1C 24           fstp        qword ptr [esp]
+  0000096F: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000974: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000977: DB 45 DC           fild        dword ptr [ebp-24h]
+  0000097A: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  0000097D: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000983: DD 1C 24           fstp        qword ptr [esp]
+  00000986: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  0000098B: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  0000098E: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000991: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000994: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000997: D8 45 14           fadd        dword ptr [ebp+14h]
+  0000099A: D9 5D E8           fstp        dword ptr [ebp-18h]
+  0000099D: DD 05 00 00 00 00  fld         qword ptr [__real@405f400000000000]
+  000009A3: DD 1C 24           fstp        qword ptr [esp]
+  000009A6: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000009AB: 83 C4 08           add         esp,8
+  000009AE: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  000009B1: DB 45 DC           fild        dword ptr [ebp-24h]
+  000009B4: 6A 00              push        0
+  000009B6: 6A 00              push        0
+  000009B8: 6A 00              push        0
+  000009BA: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000009BD: 6A 00              push        0
+  000009BF: D9 45 DC           fld         dword ptr [ebp-24h]
+  000009C2: 83 EC 10           sub         esp,10h
+  000009C5: D8 45 10           fadd        dword ptr [ebp+10h]
+  000009C8: D9 5D DC           fstp        dword ptr [ebp-24h]
+  000009CB: D9 45 E0           fld         dword ptr [ebp-20h]
+  000009CE: DD 5C 24 08        fstp        qword ptr [esp+8]
+  000009D2: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  000009D5: DD 1C 24           fstp        qword ptr [esp]
+  000009D8: FF 75 E8           push        dword ptr [ebp-18h]
+  000009DB: D9 45 DC           fld         dword ptr [ebp-24h]
+  000009DE: 83 EC 08           sub         esp,8
+  000009E1: DD 1C 24           fstp        qword ptr [esp]
+  000009E4: 68 AF 01 00 00     push        1AFh
+  000009E9: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  000009EE: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  000009F4: 83 C4 30           add         esp,30h
+  000009F7: F6 C3 01           test        bl,1
+  000009FA: 0F 85 A1 00 00 00  jne         00000AA1
+  00000A00: 83 EC 08           sub         esp,8
+  00000A03: DD 1C 24           fstp        qword ptr [esp]
+  00000A06: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000A0B: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000A0E: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000A11: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000A14: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000A1A: DD 1C 24           fstp        qword ptr [esp]
+  00000A1D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000A22: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000A25: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000A28: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000A2B: DD 05 00 00 00 00  fld         qword ptr [__real@4010000000000000]
+  00000A31: DD 1C 24           fstp        qword ptr [esp]
+  00000A34: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000A39: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000A3C: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000A3F: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000A42: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000A45: D8 45 14           fadd        dword ptr [ebp+14h]
+  00000A48: D9 5D E8           fstp        dword ptr [ebp-18h]
+  00000A4B: DD 05 00 00 00 00  fld         qword ptr [__real@405f400000000000]
+  00000A51: DD 1C 24           fstp        qword ptr [esp]
+  00000A54: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000A59: 83 C4 08           add         esp,8
+  00000A5C: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000A5F: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000A62: 6A 00              push        0
+  00000A64: 6A 00              push        0
+  00000A66: 6A 00              push        0
+  00000A68: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000A6B: 6A 00              push        0
+  00000A6D: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000A70: 83 EC 10           sub         esp,10h
+  00000A73: D8 45 10           fadd        dword ptr [ebp+10h]
+  00000A76: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000A79: D9 45 E0           fld         dword ptr [ebp-20h]
+  00000A7C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000A80: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000A83: DD 1C 24           fstp        qword ptr [esp]
+  00000A86: FF 75 E8           push        dword ptr [ebp-18h]
+  00000A89: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000A8C: 83 EC 08           sub         esp,8
+  00000A8F: DD 1C 24           fstp        qword ptr [esp]
+  00000A92: 68 AF 01 00 00     push        1AFh
+  00000A97: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  00000A9C: 83 C4 30           add         esp,30h
+  00000A9F: EB 02              jmp         00000AA3
+  00000AA1: DD D8              fstp        st(0)
+  00000AA3: F6 C3 04           test        bl,4
+  00000AA6: 0F 85 CD 00 00 00  jne         00000B79
+  00000AAC: D9 05 00 00 00 00  fld         dword ptr [__real@3f7c8000]
+  00000AB2: 83 EC 08           sub         esp,8
+  00000AB5: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000AB8: D9 05 00 00 00 00  fld         dword ptr [__real@3f148000]
+  00000ABE: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000AC1: D9 05 00 00 00 00  fld         dword ptr [__real@3f738000]
+  00000AC7: D9 5D E8           fstp        dword ptr [ebp-18h]
+  00000ACA: D9 05 00 00 00 00  fld         dword ptr [__real@3f0b4000]
+  00000AD0: D9 5D EC           fstp        dword ptr [ebp-14h]
+  00000AD3: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a0000000]
+  00000AD9: DD 1C 24           fstp        qword ptr [esp]
+  00000ADC: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000AE1: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000AE4: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000AE7: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000AEA: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000AF0: DD 1C 24           fstp        qword ptr [esp]
+  00000AF3: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000AF8: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000AFB: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000AFE: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000B01: DD 05 00 00 00 00  fld         qword ptr [__real@4010000000000000]
+  00000B07: DD 1C 24           fstp        qword ptr [esp]
+  00000B0A: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000B0F: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000B12: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000B15: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000B18: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000B1B: D8 45 14           fadd        dword ptr [ebp+14h]
+  00000B1E: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000B21: DD 05 00 00 00 00  fld         qword ptr [__real@4067800000000000]
+  00000B27: DD 1C 24           fstp        qword ptr [esp]
+  00000B2A: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000B2F: 83 C4 08           add         esp,8
+  00000B32: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000B35: FF 75 E0           push        dword ptr [ebp-20h]
+  00000B38: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000B3B: FF 75 E4           push        dword ptr [ebp-1Ch]
+  00000B3E: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000B41: FF 75 E8           push        dword ptr [ebp-18h]
+  00000B44: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000B47: D8 45 10           fadd        dword ptr [ebp+10h]
+  00000B4A: FF 75 EC           push        dword ptr [ebp-14h]
+  00000B4D: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000B50: 83 EC 10           sub         esp,10h
+  00000B53: D9 45 F0           fld         dword ptr [ebp-10h]
+  00000B56: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000B5A: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000B5D: DD 1C 24           fstp        qword ptr [esp]
+  00000B60: FF 75 F8           push        dword ptr [ebp-8]
+  00000B63: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000B66: 83 EC 08           sub         esp,8
+  00000B69: DD 1C 24           fstp        qword ptr [esp]
+  00000B6C: 68 AF 01 00 00     push        1AFh
+  00000B71: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  00000B76: 83 C4 30           add         esp,30h
+  00000B79: F6 C3 08           test        bl,8
+  00000B7C: 0F 85 A5 00 00 00  jne         00000C27
+  00000B82: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000B88: 83 EC 08           sub         esp,8
+  00000B8B: DD 1C 24           fstp        qword ptr [esp]
+  00000B8E: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000B93: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000B96: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000B99: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000B9C: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000BA2: DD 1C 24           fstp        qword ptr [esp]
+  00000BA5: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000BAA: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000BAD: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000BB0: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000BB3: DD 05 00 00 00 00  fld         qword ptr [__real@4010000000000000]
+  00000BB9: DD 1C 24           fstp        qword ptr [esp]
+  00000BBC: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000BC1: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000BC4: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000BC7: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000BCA: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000BCD: D8 45 14           fadd        dword ptr [ebp+14h]
+  00000BD0: D9 5D E8           fstp        dword ptr [ebp-18h]
+  00000BD3: DD 05 00 00 00 00  fld         qword ptr [__real@406f600000000000]
+  00000BD9: DD 1C 24           fstp        qword ptr [esp]
+  00000BDC: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000BE1: 83 C4 08           add         esp,8
+  00000BE4: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000BE7: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000BEA: 6A 00              push        0
+  00000BEC: 6A 00              push        0
+  00000BEE: 6A 00              push        0
+  00000BF0: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000BF3: 6A 00              push        0
+  00000BF5: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000BF8: 83 EC 10           sub         esp,10h
+  00000BFB: D8 45 10           fadd        dword ptr [ebp+10h]
+  00000BFE: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000C01: D9 45 E0           fld         dword ptr [ebp-20h]
+  00000C04: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000C08: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000C0B: DD 1C 24           fstp        qword ptr [esp]
+  00000C0E: FF 75 E8           push        dword ptr [ebp-18h]
+  00000C11: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000C14: 83 EC 08           sub         esp,8
+  00000C17: DD 1C 24           fstp        qword ptr [esp]
+  00000C1A: 68 AF 01 00 00     push        1AFh
+  00000C1F: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  00000C24: 83 C4 30           add         esp,30h
+  00000C27: F6 C3 02           test        bl,2
+  00000C2A: 0F 85 A5 00 00 00  jne         00000CD5
+  00000C30: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000C36: 83 EC 08           sub         esp,8
+  00000C39: DD 1C 24           fstp        qword ptr [esp]
+  00000C3C: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000C41: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000C44: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000C47: D9 5D E0           fstp        dword ptr [ebp-20h]
+  00000C4A: DD 05 00 00 00 00  fld         qword ptr [__real@40405999a1fd156a]
+  00000C50: DD 1C 24           fstp        qword ptr [esp]
+  00000C53: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000C58: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000C5B: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000C5E: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  00000C61: DD 05 00 00 00 00  fld         qword ptr [__real@4010000000000000]
+  00000C67: DD 1C 24           fstp        qword ptr [esp]
+  00000C6A: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000C6F: 89 45 DC           mov         dword ptr [ebp-24h],eax
+  00000C72: DB 45 DC           fild        dword ptr [ebp-24h]
+  00000C75: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000C78: D9 45 DC           fld         dword ptr [ebp-24h]
+  00000C7B: D8 45 14           fadd        dword ptr [ebp+14h]
+  00000C7E: D9 5D DC           fstp        dword ptr [ebp-24h]
+  00000C81: DD 05 00 00 00 00  fld         qword ptr [__real@4073c00000000000]
+  00000C87: DD 1C 24           fstp        qword ptr [esp]
+  00000C8A: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000C8F: 83 C4 08           add         esp,8
+  00000C92: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000C95: DB 45 14           fild        dword ptr [ebp+14h]
+  00000C98: 6A 00              push        0
+  00000C9A: 6A 00              push        0
+  00000C9C: 6A 00              push        0
+  00000C9E: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000CA1: 6A 00              push        0
+  00000CA3: D9 45 14           fld         dword ptr [ebp+14h]
+  00000CA6: 83 EC 10           sub         esp,10h
+  00000CA9: D8 45 10           fadd        dword ptr [ebp+10h]
+  00000CAC: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000CAF: D9 45 E0           fld         dword ptr [ebp-20h]
+  00000CB2: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000CB6: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000CB9: DD 1C 24           fstp        qword ptr [esp]
+  00000CBC: FF 75 DC           push        dword ptr [ebp-24h]
+  00000CBF: D9 45 14           fld         dword ptr [ebp+14h]
+  00000CC2: 83 EC 08           sub         esp,8
+  00000CC5: DD 1C 24           fstp        qword ptr [esp]
+  00000CC8: 68 AF 01 00 00     push        1AFh
+  00000CCD: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadSolid
+  00000CD2: 83 C4 30           add         esp,30h
+  00000CD5: DD 05 00 00 00 00  fld         qword ptr [__real@4045800000000000]
+  00000CDB: 83 EC 08           sub         esp,8
+  00000CDE: DD 1C 24           fstp        qword ptr [esp]
+  00000CE1: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000CE6: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000CE9: DB 45 14           fild        dword ptr [ebp+14h]
+  00000CEC: 83 C4 08           add         esp,8
+  00000CEF: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000CF2: D9 45 14           fld         dword ptr [ebp+14h]
+  00000CF5: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  00000CF8: DD 55 D8           fst         qword ptr [ebp-28h]
+  00000CFB: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000CFE: DD 05 00 00 00 00  fld         qword ptr [__real@4000000000000000]
+  00000D04: 83 3D 00 00 00 00  cmp         dword ptr [_unk_133F586],0
+            00
+  00000D0B: 76 20              jbe         00000D2D
+  00000D0D: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  00000D10: DD 55 D8           fst         qword ptr [ebp-28h]
+  00000D13: E8 00 00 00 00     call        __ftol2_sse
+  00000D18: D9 45 FC           fld         dword ptr [ebp-4]
+  00000D1B: 50                 push        eax
+  00000D1C: E8 00 00 00 00     call        __ftol2_sse
+  00000D21: 50                 push        eax
+  00000D22: 56                 push        esi
+  00000D23: E8 00 00 00 00     call        _FFX_BtlUI_DrawScanStatusRow
+  00000D28: 83 C4 0C           add         esp,0Ch
+  00000D2B: EB 02              jmp         00000D2F
+  00000D2D: DD D8              fstp        st(0)
+  00000D2F: E8 00 00 00 00     call        _FFX_Engine_GetTime
+  00000D34: 8B 5D D4           mov         ebx,dword ptr [ebp-2Ch]
+  00000D37: 8B 7D 18           mov         edi,dword ptr [ebp+18h]
+  00000D3A: 8D 43 DF           lea         eax,[ebx-21h]
+  00000D3D: 89 45 14           mov         dword ptr [ebp+14h],eax
+  00000D40: DB 45 14           fild        dword ptr [ebp+14h]
+  00000D43: 83 EC 08           sub         esp,8
+  00000D46: 8D 47 D2           lea         eax,[edi-2Eh]
+  00000D49: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000D4C: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000D4F: DD 45 D8           fld         qword ptr [ebp-28h]
+  00000D52: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000D55: D9 45 10           fld         dword ptr [ebp+10h]
+  00000D58: DD 1C 24           fstp        qword ptr [esp]
+  00000D5B: 68 80 80 80 80     push        80808080h
+  00000D60: DD 05 00 00 00 00  fld         qword ptr [__real@4063200000000000]
+  00000D66: 68 80 80 80 80     push        80808080h
+  00000D6B: 83 EC 40           sub         esp,40h
+  00000D6E: DD 5C 24 38        fstp        qword ptr [esp+38h]
+  00000D72: DD 05 00 00 00 00  fld         qword ptr [__real@4059400000000000]
+  00000D78: DD 5C 24 30        fstp        qword ptr [esp+30h]
+  00000D7C: DD 05 00 00 00 00  fld         qword ptr [__real@404a800000000000]
+  00000D82: DD 5C 24 28        fstp        qword ptr [esp+28h]
+  00000D86: D9 E8              fld1
+  00000D88: DD 5C 24 20        fstp        qword ptr [esp+20h]
+  00000D8C: DD 05 00 00 00 00  fld         qword ptr [__real@4051000000000000]
+  00000D92: DD 54 24 18        fst         qword ptr [esp+18h]
+  00000D96: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000D9A: DB 45 18           fild        dword ptr [ebp+18h]
+  00000D9D: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000DA0: D9 45 18           fld         dword ptr [ebp+18h]
+  00000DA3: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000DA7: D9 45 14           fld         dword ptr [ebp+14h]
+  00000DAA: DD 1C 24           fstp        qword ptr [esp]
+  00000DAD: 6A FF              push        0FFFFFFFFh
+  00000DAF: E8 00 00 00 00     call        _sub_902EF0
+  00000DB4: E8 00 00 00 00     call        _FFX_Engine_GetTime
+  00000DB9: D9 45 14           fld         dword ptr [ebp+14h]
+  00000DBC: D9 E0              fchs
+  00000DBE: 83 C4 4C           add         esp,4Ch
+  00000DC1: 8D 47 D9           lea         eax,[edi-27h]
+  00000DC4: DD 1C 24           fstp        qword ptr [esp]
+  00000DC7: 68 80 80 80 80     push        80808080h
+  00000DCC: DD 05 00 00 00 00  fld         qword ptr [__real@4053400000000000]
+  00000DD2: 68 80 80 80 80     push        80808080h
+  00000DD7: 83 EC 40           sub         esp,40h
+  00000DDA: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000DDD: DD 5C 24 38        fstp        qword ptr [esp+38h]
+  00000DE1: 8D 43 E6           lea         eax,[ebx-1Ah]
+  00000DE4: DD 05 00 00 00 00  fld         qword ptr [__real@409cac0000000000]
+  00000DEA: DD 5C 24 30        fstp        qword ptr [esp+30h]
+  00000DEE: D9 E8              fld1
+  00000DF0: DD 5C 24 28        fstp        qword ptr [esp+28h]
+  00000DF4: DD 05 00 00 00 00  fld         qword ptr [__real@409b7c0000000000]
+  00000DFA: DD 5C 24 20        fstp        qword ptr [esp+20h]
+  00000DFE: DD 05 00 00 00 00  fld         qword ptr [__real@404b000000000000]
+  00000E04: DD 54 24 18        fst         qword ptr [esp+18h]
+  00000E08: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000E0C: DB 45 18           fild        dword ptr [ebp+18h]
+  00000E0F: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000E12: D9 45 18           fld         dword ptr [ebp+18h]
+  00000E15: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000E18: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000E1C: DB 45 18           fild        dword ptr [ebp+18h]
+  00000E1F: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000E22: D9 45 18           fld         dword ptr [ebp+18h]
+  00000E25: DD 1C 24           fstp        qword ptr [esp]
+  00000E28: 6A FF              push        0FFFFFFFFh
+  00000E2A: E8 00 00 00 00     call        _sub_902EF0
+  00000E2F: D9 45 D0           fld         dword ptr [ebp-30h]
+  00000E32: D9 EE              fldz
+  00000E34: 83 C4 54           add         esp,54h
+  00000E37: D8 D1              fcom        st(1)
+  00000E39: DF E0              fnstsw      ax
+  00000E3B: F6 C4 41           test        ah,41h
+  00000E3E: 7A 13              jp          00000E53
+  00000E40: D9 E8              fld1
+  00000E42: D8 DA              fcomp       st(2)
+  00000E44: DF E0              fnstsw      ax
+  00000E46: F6 C4 01           test        ah,1
+  00000E49: 75 04              jne         00000E4F
+  00000E4B: D9 C9              fxch        st(1)
+  00000E4D: EB 08              jmp         00000E57
+  00000E4F: DD D9              fstp        st(1)
+  00000E51: EB 07              jmp         00000E5A
+  00000E53: DD D9              fstp        st(1)
+  00000E55: D9 EE              fldz
+  00000E57: DD 5D C8           fstp        qword ptr [ebp-38h]
+  00000E5A: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000E5D: 83 EC 08           sub         esp,8
+  00000E60: DD 05 00 00 00 00  fld         qword ptr [__real@4062a00000000000]
+  00000E66: DD 1C 24           fstp        qword ptr [esp]
+  00000E69: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000E6E: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000E71: DB 45 18           fild        dword ptr [ebp+18h]
+  00000E74: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000E77: DD 05 00 00 00 00  fld         qword ptr [__real@407dd00000000000]
+  00000E7D: DD 1C 24           fstp        qword ptr [esp]
+  00000E80: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000E85: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000E88: DB 45 18           fild        dword ptr [ebp+18h]
+  00000E8B: 8D 47 AA           lea         eax,[edi-56h]
+  00000E8E: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000E91: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000E94: DB 45 18           fild        dword ptr [ebp+18h]
+  00000E97: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000E9A: D9 45 18           fld         dword ptr [ebp+18h]
+  00000E9D: DD 1C 24           fstp        qword ptr [esp]
+  00000EA0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000EA5: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000EA8: DB 45 18           fild        dword ptr [ebp+18h]
+  00000EAB: 8D 43 B7           lea         eax,[ebx-49h]
+  00000EAE: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000EB1: D9 5D D0           fstp        dword ptr [ebp-30h]
+  00000EB4: DB 45 18           fild        dword ptr [ebp+18h]
+  00000EB7: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000EBA: D9 45 18           fld         dword ptr [ebp+18h]
+  00000EBD: DD 1C 24           fstp        qword ptr [esp]
+  00000EC0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000EC5: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000EC8: DB 45 18           fild        dword ptr [ebp+18h]
+  00000ECB: 83 C4 08           add         esp,8
+  00000ECE: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000ED1: DD 45 C8           fld         qword ptr [ebp-38h]
+  00000ED4: DC 0D 00 00 00 00  fmul        qword ptr [__real@c060000000000000]
+  00000EDA: E8 00 00 00 00     call        __ftol2
+  00000EDF: D9 45 10           fld         dword ptr [ebp+10h]
+  00000EE2: C1 E0 18           shl         eax,18h
+  00000EE5: BE 80 80 80 00     mov         esi,808080h
+  00000EEA: 2B F0              sub         esi,eax
+  00000EEC: 56                 push        esi
+  00000EED: 56                 push        esi
+  00000EEE: 6A 00              push        0
+  00000EF0: 6A 00              push        0
+  00000EF2: 6A 00              push        0
+  00000EF4: FF 75 14           push        dword ptr [ebp+14h]
+  00000EF7: 83 EC 10           sub         esp,10h
+  00000EFA: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000EFE: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000F01: DD 1C 24           fstp        qword ptr [esp]
+  00000F04: FF 75 D0           push        dword ptr [ebp-30h]
+  00000F07: D9 45 18           fld         dword ptr [ebp+18h]
+  00000F0A: 83 EC 08           sub         esp,8
+  00000F0D: DD 1C 24           fstp        qword ptr [esp]
+  00000F10: 68 90 01 00 00     push        190h
+  00000F15: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadTinted
+  00000F1A: DD 05 00 00 00 00  fld         qword ptr [__real@4039000000000000]
+  00000F20: 83 C4 30           add         esp,30h
+  00000F23: DD 1C 24           fstp        qword ptr [esp]
+  00000F26: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000F2B: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F2E: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F31: D9 5D 14           fstp        dword ptr [ebp+14h]
+  00000F34: DD 05 00 00 00 00  fld         qword ptr [__real@4054c00000000000]
+  00000F3A: DD 1C 24           fstp        qword ptr [esp]
+  00000F3D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000F42: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F45: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F48: 8D 47 E7           lea         eax,[edi-19h]
+  00000F4B: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F4E: D9 5D 10           fstp        dword ptr [ebp+10h]
+  00000F51: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F54: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000F57: D9 45 18           fld         dword ptr [ebp+18h]
+  00000F5A: DD 1C 24           fstp        qword ptr [esp]
+  00000F5D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  00000F62: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F65: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F68: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000F6B: 8D 43 FC           lea         eax,[ebx-4]
+  00000F6E: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F71: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F74: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000F77: D9 45 18           fld         dword ptr [ebp+18h]
+  00000F7A: DD 1C 24           fstp        qword ptr [esp]
+  00000F7D: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  00000F82: 83 C4 08           add         esp,8
+  00000F85: 89 45 18           mov         dword ptr [ebp+18h],eax
+  00000F88: DB 45 18           fild        dword ptr [ebp+18h]
+  00000F8B: 56                 push        esi
+  00000F8C: 56                 push        esi
+  00000F8D: 6A 00              push        0
+  00000F8F: 6A 00              push        0
+  00000F91: D9 5D 18           fstp        dword ptr [ebp+18h]
+  00000F94: D9 45 14           fld         dword ptr [ebp+14h]
+  00000F97: 6A 00              push        0
+  00000F99: 6A 00              push        0
+  00000F9B: 83 EC 10           sub         esp,10h
+  00000F9E: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000FA2: D9 45 10           fld         dword ptr [ebp+10h]
+  00000FA5: DD 1C 24           fstp        qword ptr [esp]
+  00000FA8: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000FAB: D9 45 18           fld         dword ptr [ebp+18h]
+  00000FAE: 83 EC 08           sub         esp,8
+  00000FB1: DD 1C 24           fstp        qword ptr [esp]
+  00000FB4: 68 90 01 00 00     push        190h
+  00000FB9: E8 00 00 00 00     call        _FFX_Menu2D_DrawTexQuadTinted
+  00000FBE: 83 C4 38           add         esp,38h
+  00000FC1: 5F                 pop         edi
+  00000FC2: 5E                 pop         esi
+  00000FC3: 5B                 pop         ebx
+  00000FC4: 8B E5              mov         esp,ebp
+  00000FC6: 5D                 pop         ebp
+  00000FC7: C2 14 00           ret         14h
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         1D4 .rdata
+         FCA .text

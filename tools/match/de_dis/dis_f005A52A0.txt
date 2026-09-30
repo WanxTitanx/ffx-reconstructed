@@ -1,0 +1,73 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005A52A0.obj
+
+File Type: COFF OBJECT
+
+@Phyre_RenderState_BatchPostAlloc@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 8B 75 F8           mov         esi,dword ptr [ebp-8]
+  0000000B: C7 05 00 00 00 00  mov         dword ptr [_g_PhyreU8_CBAA80],1
+            01 00 00 00
+  00000015: 8B 46 2C           mov         eax,dword ptr [esi+2Ch]
+  00000018: 8B 4E 3C           mov         ecx,dword ptr [esi+3Ch]
+  0000001B: 8B 40 1C           mov         eax,dword ptr [eax+1Ch]
+  0000001E: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000021: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000024: 57                 push        edi
+  00000025: 8B 7E 30           mov         edi,dword ptr [esi+30h]
+  00000028: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  0000002B: 83 FB 01           cmp         ebx,1
+  0000002E: 76 4A              jbe         0000007A
+  00000030: 8B 76 38           mov         esi,dword ptr [esi+38h]
+  00000033: 85 F6              test        esi,esi
+  00000035: 75 0A              jne         00000041
+  00000037: 5F                 pop         edi
+  00000038: 8D 46 07           lea         eax,[esi+7]
+  0000003B: 5E                 pop         esi
+  0000003C: 5B                 pop         ebx
+  0000003D: 8B E5              mov         esp,ebp
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+  00000041: 85 C9              test        ecx,ecx
+  00000043: 74 35              je          0000007A
+  00000045: 53                 push        ebx
+  00000046: 8D 47 20           lea         eax,[edi+20h]
+  00000049: 56                 push        esi
+  0000004A: 50                 push        eax
+  0000004B: E8 00 00 00 00     call        _Phyre_RenderState_AssignArr
+  00000050: 83 C4 0C           add         esp,0Ch
+  00000053: 85 DB              test        ebx,ebx
+  00000055: 74 1B              je          00000072
+  00000057: 8B CB              mov         ecx,ebx
+  00000059: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000060: 8B C6              mov         eax,esi
+  00000062: 83 C6 04           add         esi,4
+  00000065: 85 C0              test        eax,eax
+  00000067: 74 06              je          0000006F
+  00000069: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  0000006F: 49                 dec         ecx
+  00000070: 75 EE              jne         00000060
+  00000072: 03 7D F8           add         edi,dword ptr [ebp-8]
+  00000075: FF 4D FC           dec         dword ptr [ebp-4]
+  00000078: 75 CB              jne         00000045
+  0000007A: 5F                 pop         edi
+  0000007B: 5E                 pop         esi
+  0000007C: 33 C0              xor         eax,eax
+  0000007E: 5B                 pop         ebx
+  0000007F: 8B E5              mov         esp,ebp
+  00000081: 5D                 pop         ebp
+  00000082: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          83 .text

@@ -1,0 +1,490 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f008C6DA0.obj
+
+File Type: COFF OBJECT
+
+_FFX_SphereGrid_NameEntryInputHandler:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: E8 00 00 00 00     call        _FFX_MenuPad_ReadHeld_A
+  0000000E: 0F B7 F8           movzx       edi,ax
+  00000011: 8B C7              mov         eax,edi
+  00000013: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000016: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdgeRepeat_B
+  0000001B: 0F B7 C0           movzx       eax,ax
+  0000001E: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000021: E8 00 00 00 00     call        _FFX_MenuPad_ReadEdge_C
+  00000026: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000029: 0F B7 D8           movzx       ebx,ax
+  0000002C: 80 7E 45 00        cmp         byte ptr [esi+45h],0
+  00000030: 0F 8C 49 05 00 00  jl          $LN1
+  00000036: 8B 46 28           mov         eax,dword ptr [esi+28h]
+  00000039: 83 F8 13           cmp         eax,13h
+  0000003C: 0F 87 3D 05 00 00  ja          $LN1
+  00000042: BA EF FE 00 00     mov         edx,0FEEFh
+  00000047: FF 24 85 00 00 00  jmp         dword ptr $LN88[eax*4]
+            00
+$LN49:
+  0000004E: 8B 86 94 00 00 00  mov         eax,dword ptr [esi+94h]
+  00000054: 85 C0              test        eax,eax
+  00000056: 74 09              je          00000061
+  00000058: F6 C3 20           test        bl,20h
+  0000005B: 0F 85 DF 03 00 00  jne         00000440
+  00000061: F6 C3 40           test        bl,40h
+  00000064: 0F 85 88 04 00 00  jne         000004F2
+  0000006A: 85 C0              test        eax,eax
+  0000006C: 0F 84 0D 05 00 00  je          $LN1
+  00000072: F7 C3 00 80 00 00  test        ebx,8000h
+  00000078: 0F 85 3E 04 00 00  jne         000004BC
+  0000007E: F7 C3 00 20 00 00  test        ebx,2000h
+  00000084: 0F 85 F6 03 00 00  jne         00000480
+  0000008A: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  0000008D: F7 C2 00 10 00 00  test        edx,1000h
+  00000093: 74 40              je          000000D5
+  00000095: 66 83 7E 48 00     cmp         word ptr [esi+48h],0
+  0000009A: 7E 39              jle         000000D5
+  0000009C: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000000A1: B8 FF FF 00 00     mov         eax,0FFFFh
+  000000A6: 66 01 46 48        add         word ptr [esi+48h],ax
+  000000AA: 56                 push        esi
+  000000AB: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  000000B0: 66 8B 46 48        mov         ax,word ptr [esi+48h]
+  000000B4: 83 C4 04           add         esp,4
+  000000B7: 66 3B 46 32        cmp         ax,word ptr [esi+32h]
+  000000BB: 0F 83 BE 04 00 00  jae         $LN1
+  000000C1: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  000000C6: B8 09 00 00 00     mov         eax,9
+  000000CB: BA EF FE 00 00     mov         edx,0FEEFh
+  000000D0: E9 5B 03 00 00     jmp         00000430
+  000000D5: F7 C2 00 40 00 00  test        edx,4000h
+  000000DB: 74 69              je          00000146
+  000000DD: 0F B7 4E 30        movzx       ecx,word ptr [esi+30h]
+  000000E1: 0F BF 46 48        movsx       eax,word ptr [esi+48h]
+  000000E5: 49                 dec         ecx
+  000000E6: 3B C1              cmp         eax,ecx
+  000000E8: 7D 5C              jge         00000146
+  000000EA: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000000EF: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  000000F3: 66 FF 46 48        inc         word ptr [esi+48h]
+  000000F7: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  000000FB: 8D 14 86           lea         edx,[esi+eax*4]
+  000000FE: 8B 42 58           mov         eax,dword ptr [edx+58h]
+  00000101: 8D 04 48           lea         eax,[eax+ecx*2]
+  00000104: 3B 86 94 00 00 00  cmp         eax,dword ptr [esi+94h]
+  0000010A: 72 07              jb          00000113
+  0000010C: C7 42 58 00 00 00  mov         dword ptr [edx+58h],0
+            00
+  00000113: 56                 push        esi
+  00000114: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  00000119: 0F BF 46 32        movsx       eax,word ptr [esi+32h]
+  0000011D: 0F B7 4E 3A        movzx       ecx,word ptr [esi+3Ah]
+  00000121: 03 C8              add         ecx,eax
+  00000123: 0F BF 46 48        movsx       eax,word ptr [esi+48h]
+  00000127: 83 C4 04           add         esp,4
+  0000012A: 3B C1              cmp         eax,ecx
+  0000012C: 0F 8C 4D 04 00 00  jl          $LN1
+  00000132: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  00000137: B8 0D 00 00 00     mov         eax,0Dh
+  0000013C: BA EF FE 00 00     mov         edx,0FEEFh
+  00000141: E9 EA 02 00 00     jmp         00000430
+  00000146: F6 C2 01           test        dl,1
+  00000149: 74 44              je          0000018F
+  0000014B: 66 83 FF 01        cmp         di,1
+  0000014F: 75 3E              jne         0000018F
+  00000151: 66 83 7E 48 00     cmp         word ptr [esi+48h],0
+  00000156: 7E 37              jle         0000018F
+  00000158: 0F BF 56 32        movsx       edx,word ptr [esi+32h]
+  0000015C: 0F B7 46 3A        movzx       eax,word ptr [esi+3Ah]
+  00000160: 8B CA              mov         ecx,edx
+  00000162: 2B C8              sub         ecx,eax
+  00000164: B8 00 00 00 00     mov         eax,0
+  00000169: 0F 98 C0           sets        al
+  0000016C: 48                 dec         eax
+  0000016D: 23 C1              and         eax,ecx
+  0000016F: 3B C2              cmp         eax,edx
+  00000171: 0F 84 08 04 00 00  je          $LN1
+  00000177: 66 89 46 34        mov         word ptr [esi+34h],ax
+  0000017B: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  00000180: B8 0A 00 00 00     mov         eax,0Ah
+  00000185: BA EF FE 00 00     mov         edx,0FEEFh
+  0000018A: E9 A1 02 00 00     jmp         00000430
+  0000018F: F6 C2 02           test        dl,2
+  00000192: 0F 84 E7 03 00 00  je          $LN1
+  00000198: 66 83 FF 02        cmp         di,2
+  0000019C: 0F 85 DD 03 00 00  jne         $LN1
+  000001A2: 0F B7 56 30        movzx       edx,word ptr [esi+30h]
+  000001A6: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  000001AA: 8D 42 FF           lea         eax,[edx-1]
+  000001AD: 3B C8              cmp         ecx,eax
+  000001AF: 0F 8D CA 03 00 00  jge         $LN1
+  000001B5: 0F B7 46 3A        movzx       eax,word ptr [esi+3Ah]
+  000001B9: 0F BF 4E 32        movsx       ecx,word ptr [esi+32h]
+  000001BD: 2B D0              sub         edx,eax
+  000001BF: 03 C1              add         eax,ecx
+  000001C1: 3B C2              cmp         eax,edx
+  000001C3: 7C 0A              jl          000001CF
+  000001C5: 33 C0              xor         eax,eax
+  000001C7: 85 D2              test        edx,edx
+  000001C9: 0F 98 C0           sets        al
+  000001CC: 48                 dec         eax
+  000001CD: 23 C2              and         eax,edx
+  000001CF: 3B C1              cmp         eax,ecx
+  000001D1: 0F 84 A8 03 00 00  je          $LN1
+  000001D7: 66 89 46 34        mov         word ptr [esi+34h],ax
+  000001DB: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  000001E0: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000001E3: 0F B7 F8           movzx       edi,ax
+  000001E6: B8 0E 00 00 00     mov         eax,0Eh
+  000001EB: BA EF FE 00 00     mov         edx,0FEEFh
+  000001F0: E9 3B 02 00 00     jmp         00000430
+$LN20:
+  000001F5: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000001FA: B8 FF FF 00 00     mov         eax,0FFFFh
+  000001FF: 66 01 46 32        add         word ptr [esi+32h],ax
+  00000203: 66 8B 46 32        mov         ax,word ptr [esi+32h]
+  00000207: 66 89 46 34        mov         word ptr [esi+34h],ax
+  0000020B: B8 00 10 00 00     mov         eax,1000h
+  00000210: 66 89 46 46        mov         word ptr [esi+46h],ax
+  00000214: C7 46 28 0B 00 00  mov         dword ptr [esi+28h],0Bh
+            00
+  0000021B: B8 0B 00 00 00     mov         eax,0Bh
+  00000220: 33 DB              xor         ebx,ebx
+  00000222: BA EF FE 00 00     mov         edx,0FEEFh
+  00000227: E9 04 02 00 00     jmp         00000430
+$LN19:
+  0000022C: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000231: B8 00 10 00 00     mov         eax,1000h
+  00000236: 66 89 46 46        mov         word ptr [esi+46h],ax
+  0000023A: C7 46 28 0C 00 00  mov         dword ptr [esi+28h],0Ch
+            00
+  00000241: B8 0C 00 00 00     mov         eax,0Ch
+  00000246: 33 DB              xor         ebx,ebx
+  00000248: BA EF FE 00 00     mov         edx,0FEEFh
+  0000024D: E9 DE 01 00 00     jmp         00000430
+$LN18:
+  00000252: B8 CD FC 00 00     mov         eax,0FCCDh
+  00000257: 66 01 46 46        add         word ptr [esi+46h],ax
+  0000025B: 66 83 7E 46 00     cmp         word ptr [esi+46h],0
+  00000260: 7E 1D              jle         0000027F
+  00000262: F7 C3 00 10 00 00  test        ebx,1000h
+  00000268: 0F 84 11 03 00 00  je          $LN1
+  0000026E: EB 0F              jmp         0000027F
+$LN15:
+  00000270: 66 01 56 46        add         word ptr [esi+46h],dx
+  00000274: 66 83 7E 46 00     cmp         word ptr [esi+46h],0
+  00000279: 0F 8F 00 03 00 00  jg          $LN1
+  0000027F: 0F B7 4E 34        movzx       ecx,word ptr [esi+34h]
+  00000283: 33 C0              xor         eax,eax
+  00000285: 66 89 46 46        mov         word ptr [esi+46h],ax
+  00000289: 66 8B C1           mov         ax,cx
+  0000028C: 66 2B 46 32        sub         ax,word ptr [esi+32h]
+  00000290: 66 89 4E 32        mov         word ptr [esi+32h],cx
+  00000294: 0F B7 C0           movzx       eax,ax
+  00000297: 66 01 46 48        add         word ptr [esi+48h],ax
+  0000029B: E9 20 01 00 00     jmp         000003C0
+$LN13:
+  000002A0: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000002A5: 66 FF 46 32        inc         word ptr [esi+32h]
+  000002A9: 66 8B 46 32        mov         ax,word ptr [esi+32h]
+  000002AD: 66 89 46 34        mov         word ptr [esi+34h],ax
+  000002B1: B8 00 F0 00 00     mov         eax,0F000h
+  000002B6: 33 DB              xor         ebx,ebx
+  000002B8: 66 89 46 46        mov         word ptr [esi+46h],ax
+  000002BC: C7 46 28 0F 00 00  mov         dword ptr [esi+28h],0Fh
+            00
+  000002C3: 8D 43 0F           lea         eax,[ebx+0Fh]
+  000002C6: BA EF FE 00 00     mov         edx,0FEEFh
+  000002CB: E9 60 01 00 00     jmp         00000430
+$LN12:
+  000002D0: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000002D5: B8 00 F0 00 00     mov         eax,0F000h
+  000002DA: 33 DB              xor         ebx,ebx
+  000002DC: 66 89 46 46        mov         word ptr [esi+46h],ax
+  000002E0: C7 46 28 10 00 00  mov         dword ptr [esi+28h],10h
+            00
+  000002E7: 8D 43 10           lea         eax,[ebx+10h]
+  000002EA: BA EF FE 00 00     mov         edx,0FEEFh
+  000002EF: E9 3C 01 00 00     jmp         00000430
+$LN11:
+  000002F4: B8 33 03 00 00     mov         eax,333h
+  000002F9: 66 01 46 46        add         word ptr [esi+46h],ax
+  000002FD: 0F 98 C0           sets        al
+  00000300: 84 C0              test        al,al
+  00000302: 74 0C              je          00000310
+  00000304: F7 C3 00 40 00 00  test        ebx,4000h
+  0000030A: 0F 84 6F 02 00 00  je          $LN1
+  00000310: 0F B7 4E 34        movzx       ecx,word ptr [esi+34h]
+  00000314: 33 C0              xor         eax,eax
+  00000316: 66 89 46 46        mov         word ptr [esi+46h],ax
+  0000031A: 66 8B C1           mov         ax,cx
+  0000031D: 66 2B 46 32        sub         ax,word ptr [esi+32h]
+  00000321: 66 89 4E 32        mov         word ptr [esi+32h],cx
+  00000325: 0F B7 C0           movzx       eax,ax
+  00000328: 66 01 46 48        add         word ptr [esi+48h],ax
+  0000032C: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  00000330: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  00000334: 8D 14 86           lea         edx,[esi+eax*4]
+  00000337: 8B 42 58           mov         eax,dword ptr [edx+58h]
+  0000033A: 8D 04 48           lea         eax,[eax+ecx*2]
+  0000033D: 3B 86 94 00 00 00  cmp         eax,dword ptr [esi+94h]
+  00000343: 72 07              jb          0000034C
+  00000345: C7 42 58 00 00 00  mov         dword ptr [edx+58h],0
+            00
+  0000034C: 56                 push        esi
+  0000034D: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  00000352: 83 C4 04           add         esp,4
+  00000355: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  0000035A: 33 DB              xor         ebx,ebx
+  0000035C: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  00000363: 8D 43 02           lea         eax,[ebx+2]
+  00000366: BA EF FE 00 00     mov         edx,0FEEFh
+  0000036B: E9 C0 00 00 00     jmp         00000430
+$LN8:
+  00000370: B8 11 01 00 00     mov         eax,111h
+  00000375: 66 01 46 46        add         word ptr [esi+46h],ax
+  00000379: 0F 98 C0           sets        al
+  0000037C: 84 C0              test        al,al
+  0000037E: 0F 85 FB 01 00 00  jne         $LN1
+  00000384: 0F B7 4E 34        movzx       ecx,word ptr [esi+34h]
+  00000388: 33 C0              xor         eax,eax
+  0000038A: 66 89 46 46        mov         word ptr [esi+46h],ax
+  0000038E: 66 8B C1           mov         ax,cx
+  00000391: 66 2B 46 32        sub         ax,word ptr [esi+32h]
+  00000395: 66 89 4E 32        mov         word ptr [esi+32h],cx
+  00000399: 0F B7 C0           movzx       eax,ax
+  0000039C: 66 01 46 48        add         word ptr [esi+48h],ax
+  000003A0: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  000003A4: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  000003A8: 8D 14 86           lea         edx,[esi+eax*4]
+  000003AB: 8B 42 58           mov         eax,dword ptr [edx+58h]
+  000003AE: 8D 04 48           lea         eax,[eax+ecx*2]
+  000003B1: 3B 86 94 00 00 00  cmp         eax,dword ptr [esi+94h]
+  000003B7: 72 07              jb          000003C0
+  000003B9: C7 42 58 00 00 00  mov         dword ptr [edx+58h],0
+            00
+  000003C0: 56                 push        esi
+  000003C1: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  000003C6: 83 C4 04           add         esp,4
+  000003C9: E8 00 00 00 00     call        _FFX_Menu_SetReadyFlag
+  000003CE: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  000003D5: B8 02 00 00 00     mov         eax,2
+  000003DA: 33 DB              xor         ebx,ebx
+  000003DC: BA EF FE 00 00     mov         edx,0FEEFh
+  000003E1: EB 4D              jmp         00000430
+$LN5:
+  000003E3: 0F BE 4E 45        movsx       ecx,byte ptr [esi+45h]
+  000003E7: 66 8B 46 48        mov         ax,word ptr [esi+48h]
+  000003EB: 66 89 44 4E 2C     mov         word ptr [esi+ecx*2+2Ch],ax
+  000003F0: FE 46 45           inc         byte ptr [esi+45h]
+  000003F3: 8A 56 45           mov         dl,byte ptr [esi+45h]
+  000003F6: 0F B6 4E 42        movzx       ecx,byte ptr [esi+42h]
+  000003FA: 0F BE C2           movsx       eax,dl
+  000003FD: 3B C1              cmp         eax,ecx
+  000003FF: 0F 8C 00 01 00 00  jl          00000505
+  00000405: C7 46 28 12 00 00  mov         dword ptr [esi+28h],12h
+            00
+  0000040C: B8 12 00 00 00     mov         eax,12h
+  00000411: BA EF FE 00 00     mov         edx,0FEEFh
+  00000416: EB 18              jmp         00000430
+$LN3:
+  00000418: FE 4E 45           dec         byte ptr [esi+45h]
+  0000041B: 8A 46 45           mov         al,byte ptr [esi+45h]
+  0000041E: 0F 89 0C 01 00 00  jns         00000530
+  00000424: C7 46 28 14 00 00  mov         dword ptr [esi+28h],14h
+            00
+  0000042B: B8 14 00 00 00     mov         eax,14h
+  00000430: 83 F8 13           cmp         eax,13h
+  00000433: 0F 86 0E FC FF FF  jbe         00000047
+  00000439: 5F                 pop         edi
+  0000043A: 5E                 pop         esi
+  0000043B: 5B                 pop         ebx
+  0000043C: 8B E5              mov         esp,ebp
+  0000043E: 5D                 pop         ebp
+  0000043F: C3                 ret
+  00000440: 8B 56 1C           mov         edx,dword ptr [esi+1Ch]
+  00000443: 85 D2              test        edx,edx
+  00000445: 74 26              je          0000046D
+  00000447: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  0000044B: 0F BF 4E 48        movsx       ecx,word ptr [esi+48h]
+  0000044F: 50                 push        eax
+  00000450: 8B 46 58           mov         eax,dword ptr [esi+58h]
+  00000453: 8D 04 48           lea         eax,[eax+ecx*2]
+  00000456: 50                 push        eax
+  00000457: 56                 push        esi
+  00000458: FF D2              call        edx
+  0000045A: 83 C4 0C           add         esp,0Ch
+  0000045D: 85 C0              test        eax,eax
+  0000045F: 75 0C              jne         0000046D
+  00000461: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000466: 5F                 pop         edi
+  00000467: 5E                 pop         esi
+  00000468: 5B                 pop         ebx
+  00000469: 8B E5              mov         esp,ebp
+  0000046B: 5D                 pop         ebp
+  0000046C: C3                 ret
+  0000046D: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  00000472: 5F                 pop         edi
+  00000473: C7 46 28 11 00 00  mov         dword ptr [esi+28h],11h
+            00
+  0000047A: 5E                 pop         esi
+  0000047B: 5B                 pop         ebx
+  0000047C: 8B E5              mov         esp,ebp
+  0000047E: 5D                 pop         ebp
+  0000047F: C3                 ret
+  00000480: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  00000484: 83 7C 86 58 00     cmp         dword ptr [esi+eax*4+58h],0
+  00000489: 0F 85 F0 00 00 00  jne         $LN1
+  0000048F: 0F B7 56 48        movzx       edx,word ptr [esi+48h]
+  00000493: 8B 8E 94 00 00 00  mov         ecx,dword ptr [esi+94h]
+  00000499: 0F BF C2           movsx       eax,dx
+  0000049C: 49                 dec         ecx
+  0000049D: 03 C0              add         eax,eax
+  0000049F: 3B C1              cmp         eax,ecx
+  000004A1: 72 28              jb          000004CB
+  000004A3: 66 85 D2           test        dx,dx
+  000004A6: 0F 84 D3 00 00 00  je          $LN1
+  000004AC: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000004B1: B8 FF FF 00 00     mov         eax,0FFFFh
+  000004B6: 66 01 46 48        add         word ptr [esi+48h],ax
+  000004BA: EB 14              jmp         000004D0
+  000004BC: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  000004C0: 83 7C 86 58 00     cmp         dword ptr [esi+eax*4+58h],0
+  000004C5: 0F 84 B4 00 00 00  je          $LN1
+  000004CB: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000004D0: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  000004D4: 56                 push        esi
+  000004D5: 8D 0C 86           lea         ecx,[esi+eax*4]
+  000004D8: 33 C0              xor         eax,eax
+  000004DA: 39 41 58           cmp         dword ptr [ecx+58h],eax
+  000004DD: 0F 94 C0           sete        al
+  000004E0: 89 41 58           mov         dword ptr [ecx+58h],eax
+  000004E3: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  000004E8: 83 C4 04           add         esp,4
+  000004EB: 5F                 pop         edi
+  000004EC: 5E                 pop         esi
+  000004ED: 5B                 pop         ebx
+  000004EE: 8B E5              mov         esp,ebp
+  000004F0: 5D                 pop         ebp
+  000004F1: C3                 ret
+  000004F2: E8 00 00 00 00     call        _FFX_RenderEngine_ModeNotify
+  000004F7: 5F                 pop         edi
+  000004F8: C7 46 28 13 00 00  mov         dword ptr [esi+28h],13h
+            00
+  000004FF: 5E                 pop         esi
+  00000500: 5B                 pop         ebx
+  00000501: 8B E5              mov         esp,ebp
+  00000503: 5D                 pop         ebp
+  00000504: C3                 ret
+  00000505: 0F BE CA           movsx       ecx,dl
+  00000508: 5F                 pop         edi
+  00000509: 8B 44 8E 54        mov         eax,dword ptr [esi+ecx*4+54h]
+  0000050D: 89 44 8E 58        mov         dword ptr [esi+ecx*4+58h],eax
+  00000511: 0F B6 4E 42        movzx       ecx,byte ptr [esi+42h]
+  00000515: 0F BE 46 45        movsx       eax,byte ptr [esi+45h]
+  00000519: 0F BF 56 32        movsx       edx,word ptr [esi+32h]
+  0000051D: 03 C8              add         ecx,eax
+  0000051F: 89 54 8E 54        mov         dword ptr [esi+ecx*4+54h],edx
+  00000523: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  0000052A: 5E                 pop         esi
+  0000052B: 5B                 pop         ebx
+  0000052C: 8B E5              mov         esp,ebp
+  0000052E: 5D                 pop         ebp
+  0000052F: C3                 ret
+  00000530: 0F BE C8           movsx       ecx,al
+  00000533: 5F                 pop         edi
+  00000534: 66 8B 44 4E 2C     mov         ax,word ptr [esi+ecx*2+2Ch]
+  00000539: 66 89 46 48        mov         word ptr [esi+48h],ax
+  0000053D: 0F B6 46 42        movzx       eax,byte ptr [esi+42h]
+  00000541: 03 C1              add         eax,ecx
+  00000543: 0F B7 44 86 58     movzx       eax,word ptr [esi+eax*4+58h]
+  00000548: 66 89 46 32        mov         word ptr [esi+32h],ax
+  0000054C: 66 89 46 34        mov         word ptr [esi+34h],ax
+  00000550: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  00000557: 5E                 pop         esi
+  00000558: 5B                 pop         ebx
+  00000559: 8B E5              mov         esp,ebp
+  0000055B: 5D                 pop         ebp
+  0000055C: C3                 ret
+$LN50:
+  0000055D: C6 46 45 00        mov         byte ptr [esi+45h],0
+$LABEL_69$89:
+  00000561: 56                 push        esi
+  00000562: E8 00 00 00 00     call        _FFX_SphereGrid_GetSelectedItemEntry
+  00000567: 83 C4 04           add         esp,4
+  0000056A: C7 46 28 02 00 00  mov         dword ptr [esi+28h],2
+            00
+  00000571: 5F                 pop         edi
+  00000572: 5E                 pop         esi
+  00000573: 5B                 pop         ebx
+  00000574: 8B E5              mov         esp,ebp
+  00000576: 5D                 pop         ebp
+  00000577: C3                 ret
+$LN21:
+  00000578: C7 46 28 04 00 00  mov         dword ptr [esi+28h],4
+            00
+$LN1:
+  0000057F: 5F                 pop         edi
+  00000580: 5E                 pop         esi
+  00000581: 5B                 pop         ebx
+  00000582: 8B E5              mov         esp,ebp
+  00000584: 5D                 pop         ebp
+  00000585: C3                 ret
+  00000586: 8B FF              mov         edi,edi
+$LN88:
+  00000588: 00 00              add         byte ptr [eax],al
+  0000058A: 00 00              add         byte ptr [eax],al
+  0000058C: 00 00              add         byte ptr [eax],al
+  0000058E: 00 00              add         byte ptr [eax],al
+  00000590: 00 00              add         byte ptr [eax],al
+  00000592: 00 00              add         byte ptr [eax],al
+  00000594: 00 00              add         byte ptr [eax],al
+  00000596: 00 00              add         byte ptr [eax],al
+  00000598: 00 00              add         byte ptr [eax],al
+  0000059A: 00 00              add         byte ptr [eax],al
+  0000059C: 00 00              add         byte ptr [eax],al
+  0000059E: 00 00              add         byte ptr [eax],al
+  000005A0: 00 00              add         byte ptr [eax],al
+  000005A2: 00 00              add         byte ptr [eax],al
+  000005A4: 00 00              add         byte ptr [eax],al
+  000005A6: 00 00              add         byte ptr [eax],al
+  000005A8: 00 00              add         byte ptr [eax],al
+  000005AA: 00 00              add         byte ptr [eax],al
+  000005AC: 00 00              add         byte ptr [eax],al
+  000005AE: 00 00              add         byte ptr [eax],al
+  000005B0: 00 00              add         byte ptr [eax],al
+  000005B2: 00 00              add         byte ptr [eax],al
+  000005B4: 00 00              add         byte ptr [eax],al
+  000005B6: 00 00              add         byte ptr [eax],al
+  000005B8: 00 00              add         byte ptr [eax],al
+  000005BA: 00 00              add         byte ptr [eax],al
+  000005BC: 00 00              add         byte ptr [eax],al
+  000005BE: 00 00              add         byte ptr [eax],al
+  000005C0: 00 00              add         byte ptr [eax],al
+  000005C2: 00 00              add         byte ptr [eax],al
+  000005C4: 00 00              add         byte ptr [eax],al
+  000005C6: 00 00              add         byte ptr [eax],al
+  000005C8: 00 00              add         byte ptr [eax],al
+  000005CA: 00 00              add         byte ptr [eax],al
+  000005CC: 00 00              add         byte ptr [eax],al
+  000005CE: 00 00              add         byte ptr [eax],al
+  000005D0: 00 00              add         byte ptr [eax],al
+  000005D2: 00 00              add         byte ptr [eax],al
+  000005D4: 00 00              add         byte ptr [eax],al
+  000005D6: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         5D8 .text

@@ -1,0 +1,33 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042F270.obj
+
+File Type: COFF OBJECT
+
+_FFX_Engine_GetFieldRenderStack:
+  00000000: A1 C0 20 33 03     mov         eax,dword ptr ds:[033320C0h]
+  00000005: 85 C0              test        eax,eax
+  00000007: 75 2C              jne         00000035
+  00000009: 68 40 03 00 00     push        340h
+  0000000E: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000013: 83 C4 04           add         esp,4
+  00000016: 85 C0              test        eax,eax
+  00000018: 74 0F              je          00000029
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _FFX_Camera_PerspectiveAndFlyCtrl_Init
+  00000020: 83 C4 04           add         esp,4
+  00000023: A3 C0 20 33 03     mov         dword ptr ds:[033320C0h],eax
+  00000028: C3                 ret
+  00000029: C7 05 C0 20 33 03  mov         dword ptr ds:[33320C0h],0
+            00 00 00 00
+  00000033: 33 C0              xor         eax,eax
+  00000035: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          36 .text

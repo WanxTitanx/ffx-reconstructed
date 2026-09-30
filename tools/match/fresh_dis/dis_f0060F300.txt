@@ -1,0 +1,265 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0060F300.obj
+
+File Type: COFF OBJECT
+
+_FFX2_LocaleTag_Differs:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 83 EC 14           sub         esp,14h
+  00000009: 85 C0              test        eax,eax
+  0000000B: 75 0D              jne         0000001A
+  0000000D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000010: C7 00 00 00 00 00  mov         dword ptr [eax],0
+  00000016: 8B E5              mov         esp,ebp
+  00000018: 5D                 pop         ebp
+  00000019: C3                 ret
+  0000001A: 56                 push        esi
+  0000001B: 57                 push        edi
+  0000001C: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  0000001F: 85 FF              test        edi,edi
+  00000021: 75 15              jne         00000038
+  00000023: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000026: 50                 push        eax
+  00000027: 56                 push        esi
+  00000028: E8 00 00 00 00     call        _mkvparser_Track_IsEnabled
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 8B C6              mov         eax,esi
+  00000032: 5F                 pop         edi
+  00000033: 5E                 pop         esi
+  00000034: 8B E5              mov         esp,ebp
+  00000036: 5D                 pop         ebp
+  00000037: C3                 ret
+  00000038: 53                 push        ebx
+  00000039: 8D 4D F8           lea         ecx,[ebp-8]
+  0000003C: 51                 push        ecx
+  0000003D: 50                 push        eax
+  0000003E: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  00000045: E8 00 00 00 00     call        _Phyre_Path_NormalizeToBuffer
+  0000004A: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  0000004D: 0F B6 C3           movzx       eax,bl
+  00000050: 83 E0 01           and         eax,1
+  00000053: 8B F3              mov         esi,ebx
+  00000055: 2B F0              sub         esi,eax
+  00000057: 8D 45 0C           lea         eax,[ebp+0Ch]
+  0000005A: 50                 push        eax
+  0000005B: 57                 push        edi
+  0000005C: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000005F: C7 45 0C 00 00 00  mov         dword ptr [ebp+0Ch],0
+            00
+  00000066: E8 00 00 00 00     call        _Phyre_Path_NormalizeToBuffer
+  0000006B: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  0000006E: 0F B6 C1           movzx       eax,cl
+  00000071: 83 E0 01           and         eax,1
+  00000074: 8B F9              mov         edi,ecx
+  00000076: 83 C4 10           add         esp,10h
+  00000079: 2B F8              sub         edi,eax
+  0000007B: 85 F6              test        esi,esi
+  0000007D: 0F 84 B4 01 00 00  je          00000237
+  00000083: 85 FF              test        edi,edi
+  00000085: 0F 84 AC 01 00 00  je          00000237
+  0000008B: 57                 push        edi
+  0000008C: E8 00 00 00 00     call        _DEAD_Phyre_Path_FindLastSeparator_0
+  00000091: 83 C4 04           add         esp,4
+  00000094: 85 C0              test        eax,eax
+  00000096: 75 15              jne         000000AD
+  00000098: 56                 push        esi
+  00000099: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000009C: 56                 push        esi
+  0000009D: E8 00 00 00 00     call        _mkvparser_Track_IsEnabled
+  000000A2: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000A5: 83 C4 08           add         esp,8
+  000000A8: E9 93 01 00 00     jmp         00000240
+  000000AD: 40                 inc         eax
+  000000AE: 50                 push        eax
+  000000AF: 8D 45 F0           lea         eax,[ebp-10h]
+  000000B2: 57                 push        edi
+  000000B3: 50                 push        eax
+  000000B4: C7 45 F0 00 00 00  mov         dword ptr [ebp-10h],0
+            00
+  000000BB: E8 00 00 00 00     call        _Phyre_MKVBuffer_SetLacingData
+  000000C0: 8B 5D F0           mov         ebx,dword ptr [ebp-10h]
+  000000C3: 8B C3              mov         eax,ebx
+  000000C5: 83 E0 01           and         eax,1
+  000000C8: 2B D8              sub         ebx,eax
+  000000CA: 56                 push        esi
+  000000CB: 89 5D EC           mov         dword ptr [ebp-14h],ebx
+  000000CE: E8 00 00 00 00     call        _Phyre_Path_FindFirstSeparator
+  000000D3: 53                 push        ebx
+  000000D4: 8B F8              mov         edi,eax
+  000000D6: E8 00 00 00 00     call        _Phyre_Path_FindFirstSeparator
+  000000DB: 8B D8              mov         ebx,eax
+  000000DD: 8B 45 EC           mov         eax,dword ptr [ebp-14h]
+  000000E0: 8B D7              mov         edx,edi
+  000000E2: 8B CB              mov         ecx,ebx
+  000000E4: 2B D6              sub         edx,esi
+  000000E6: 2B C8              sub         ecx,eax
+  000000E8: 83 C4 14           add         esp,14h
+  000000EB: 3B D1              cmp         edx,ecx
+  000000ED: 0F 85 B3 00 00 00  jne         000001A6
+  000000F3: 52                 push        edx
+  000000F4: 50                 push        eax
+  000000F5: 56                 push        esi
+  000000F6: E8 00 00 00 00     call        __strnicmp
+  000000FB: 83 C4 0C           add         esp,0Ch
+  000000FE: 85 C0              test        eax,eax
+  00000100: 0F 85 9A 00 00 00  jne         000001A0
+  00000106: 8B F7              mov         esi,edi
+  00000108: 8A 06              mov         al,byte ptr [esi]
+  0000010A: 3C 5C              cmp         al,5Ch
+  0000010C: 74 04              je          00000112
+  0000010E: 3C 2F              cmp         al,2Fh
+  00000110: 75 03              jne         00000115
+  00000112: 46                 inc         esi
+  00000113: EB F3              jmp         00000108
+  00000115: 8B FB              mov         edi,ebx
+  00000117: 8A 07              mov         al,byte ptr [edi]
+  00000119: 3C 5C              cmp         al,5Ch
+  0000011B: 74 04              je          00000121
+  0000011D: 3C 2F              cmp         al,2Fh
+  0000011F: 75 03              jne         00000124
+  00000121: 47                 inc         edi
+  00000122: EB F3              jmp         00000117
+  00000124: 6A 2F              push        2Fh
+  00000126: 56                 push        esi
+  00000127: E8 00 00 00 00     call        _strchr
+  0000012C: 8B D8              mov         ebx,eax
+  0000012E: 6A 5C              push        5Ch
+  00000130: 56                 push        esi
+  00000131: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  00000134: E8 00 00 00 00     call        _strchr
+  00000139: 83 C4 10           add         esp,10h
+  0000013C: 85 DB              test        ebx,ebx
+  0000013E: 74 0A              je          0000014A
+  00000140: 85 C0              test        eax,eax
+  00000142: 74 06              je          0000014A
+  00000144: 3B D8              cmp         ebx,eax
+  00000146: 73 09              jae         00000151
+  00000148: EB 0A              jmp         00000154
+  0000014A: 89 5D FC           mov         dword ptr [ebp-4],ebx
+  0000014D: 3B D8              cmp         ebx,eax
+  0000014F: 77 03              ja          00000154
+  00000151: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000154: 6A 2F              push        2Fh
+  00000156: 57                 push        edi
+  00000157: E8 00 00 00 00     call        _strchr
+  0000015C: 6A 5C              push        5Ch
+  0000015E: 57                 push        edi
+  0000015F: 8B D8              mov         ebx,eax
+  00000161: E8 00 00 00 00     call        _strchr
+  00000166: 83 C4 10           add         esp,10h
+  00000169: 85 DB              test        ebx,ebx
+  0000016B: 74 0A              je          00000177
+  0000016D: 85 C0              test        eax,eax
+  0000016F: 74 06              je          00000177
+  00000171: 3B D8              cmp         ebx,eax
+  00000173: 73 06              jae         0000017B
+  00000175: EB 06              jmp         0000017D
+  00000177: 3B D8              cmp         ebx,eax
+  00000179: 77 02              ja          0000017D
+  0000017B: 8B D8              mov         ebx,eax
+  0000017D: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000180: 8B C3              mov         eax,ebx
+  00000182: 2B CE              sub         ecx,esi
+  00000184: 2B C7              sub         eax,edi
+  00000186: 3B C8              cmp         ecx,eax
+  00000188: 75 16              jne         000001A0
+  0000018A: 51                 push        ecx
+  0000018B: 57                 push        edi
+  0000018C: 56                 push        esi
+  0000018D: E8 00 00 00 00     call        __strnicmp
+  00000192: 8B 7D FC           mov         edi,dword ptr [ebp-4]
+  00000195: 83 C4 0C           add         esp,0Ch
+  00000198: 85 C0              test        eax,eax
+  0000019A: 0F 84 66 FF FF FF  je          00000106
+  000001A0: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000001A3: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000001A6: C7 45 F4 00 00 00  mov         dword ptr [ebp-0Ch],0
+            00
+  000001AD: 85 DB              test        ebx,ebx
+  000001AF: 74 4D              je          000001FE
+  000001B1: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000001B4: 68 00 00 00 00     push        offset ??_C@_03LOJJKLGJ@?4?4?1?$AA@
+  000001B9: 50                 push        eax
+  000001BA: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  000001BF: 83 C4 08           add         esp,8
+  000001C2: 8B FB              mov         edi,ebx
+  000001C4: 8A 07              mov         al,byte ptr [edi]
+  000001C6: 3C 5C              cmp         al,5Ch
+  000001C8: 74 04              je          000001CE
+  000001CA: 3C 2F              cmp         al,2Fh
+  000001CC: 75 03              jne         000001D1
+  000001CE: 47                 inc         edi
+  000001CF: EB F3              jmp         000001C4
+  000001D1: 6A 2F              push        2Fh
+  000001D3: 57                 push        edi
+  000001D4: E8 00 00 00 00     call        _strchr
+  000001D9: 6A 5C              push        5Ch
+  000001DB: 57                 push        edi
+  000001DC: 8B D8              mov         ebx,eax
+  000001DE: E8 00 00 00 00     call        _strchr
+  000001E3: 83 C4 10           add         esp,10h
+  000001E6: 85 DB              test        ebx,ebx
+  000001E8: 74 0A              je          000001F4
+  000001EA: 85 C0              test        eax,eax
+  000001EC: 74 06              je          000001F4
+  000001EE: 3B D8              cmp         ebx,eax
+  000001F0: 72 08              jb          000001FA
+  000001F2: EB 04              jmp         000001F8
+  000001F4: 3B D8              cmp         ebx,eax
+  000001F6: 77 02              ja          000001FA
+  000001F8: 8B D8              mov         ebx,eax
+  000001FA: 85 DB              test        ebx,ebx
+  000001FC: 75 B3              jne         000001B1
+  000001FE: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000201: 56                 push        esi
+  00000202: 50                 push        eax
+  00000203: E8 00 00 00 00     call        _Phyre_String_AppendCStr
+  00000208: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000020B: 6A 00              push        0
+  0000020D: 56                 push        esi
+  0000020E: E8 00 00 00 00     call        _mkvparser_Track_IsEnabled
+  00000213: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000216: 50                 push        eax
+  00000217: E8 00 00 00 00     call        _Phyre_String_Destructor
+  0000021C: 8B 45 F0           mov         eax,dword ptr [ebp-10h]
+  0000021F: 83 C4 14           add         esp,14h
+  00000222: A8 01              test        al,1
+  00000224: 75 09              jne         0000022F
+  00000226: 50                 push        eax
+  00000227: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000022C: 83 C4 04           add         esp,4
+  0000022F: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  00000232: 8B 5D FC           mov         ebx,dword ptr [ebp-4]
+  00000235: EB 09              jmp         00000240
+  00000237: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000023A: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000240: F6 C1 01           test        cl,1
+  00000243: 75 09              jne         0000024E
+  00000245: 51                 push        ecx
+  00000246: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000024B: 83 C4 04           add         esp,4
+  0000024E: F6 C3 01           test        bl,1
+  00000251: 75 09              jne         0000025C
+  00000253: 53                 push        ebx
+  00000254: E8 00 00 00 00     call        _Engine_AlignedFree
+  00000259: 83 C4 04           add         esp,4
+  0000025C: 5B                 pop         ebx
+  0000025D: 5F                 pop         edi
+  0000025E: 8B C6              mov         eax,esi
+  00000260: 5E                 pop         esi
+  00000261: 8B E5              mov         esp,ebp
+  00000263: 5D                 pop         ebp
+  00000264: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         265 .text

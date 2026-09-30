@@ -1,0 +1,74 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005F7880.obj
+
+File Type: COFF OBJECT
+
+@Phyre_PhysicsBody_SetSleepState@8:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: 85 D2              test        edx,edx
+  00000005: 75 23              jne         0000002A
+  00000007: 8B 8E DC 00 00 00  mov         ecx,dword ptr [esi+0DCh]
+  0000000D: 85 C9              test        ecx,ecx
+  0000000F: 74 5C              je          0000006D
+  00000011: 8B 81 D8 00 00 00  mov         eax,dword ptr [ecx+0D8h]
+  00000017: 81 C1 D8 00 00 00  add         ecx,0D8h
+  0000001D: 83 E0 FD           and         eax,0FFFFFFFDh
+  00000020: 83 C8 01           or          eax,1
+  00000023: BA 02 00 00 00     mov         edx,2
+  00000028: EB 32              jmp         0000005C
+  0000002A: 83 FA 01           cmp         edx,1
+  0000002D: 74 52              je          00000081
+  0000002F: 83 FA 02           cmp         edx,2
+  00000032: 74 07              je          0000003B
+  00000034: B8 09 00 00 00     mov         eax,9
+  00000039: 5E                 pop         esi
+  0000003A: C3                 ret
+  0000003B: 8B 8E DC 00 00 00  mov         ecx,dword ptr [esi+0DCh]
+  00000041: 85 C9              test        ecx,ecx
+  00000043: 74 28              je          0000006D
+  00000045: 8B 81 D8 00 00 00  mov         eax,dword ptr [ecx+0D8h]
+  0000004B: 81 C1 D8 00 00 00  add         ecx,0D8h
+  00000051: 83 E0 FE           and         eax,0FFFFFFFEh
+  00000054: 83 C8 02           or          eax,2
+  00000057: BA 04 00 00 00     mov         edx,4
+  0000005C: 52                 push        edx
+  0000005D: 89 01              mov         dword ptr [ecx],eax
+  0000005F: FF B6 DC 00 00 00  push        dword ptr [esi+0DCh]
+  00000065: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  0000006A: 83 C4 08           add         esp,8
+  0000006D: 80 BE BC 00 00 00  cmp         byte ptr [esi+0BCh],0Fh
+            0F
+  00000074: 75 3C              jne         000000B2
+  00000076: C6 86 BC 00 00 00  mov         byte ptr [esi+0BCh],1
+            01
+  0000007D: 33 C0              xor         eax,eax
+  0000007F: 5E                 pop         esi
+  00000080: C3                 ret
+  00000081: 8B 86 DC 00 00 00  mov         eax,dword ptr [esi+0DCh]
+  00000087: 85 C0              test        eax,eax
+  00000089: 74 17              je          000000A2
+  0000008B: 83 A0 D8 00 00 00  and         dword ptr [eax+0D8h],0FFFFFFFCh
+            FC
+  00000092: 6A 01              push        1
+  00000094: FF B6 DC 00 00 00  push        dword ptr [esi+0DCh]
+  0000009A: E8 00 00 00 00     call        _Bullet_btCollisionObject_setActivationState
+  0000009F: 83 C4 08           add         esp,8
+  000000A2: 80 BE BC 00 00 00  cmp         byte ptr [esi+0BCh],0Fh
+            0F
+  000000A9: 75 07              jne         000000B2
+  000000AB: C6 86 BC 00 00 00  mov         byte ptr [esi+0BCh],0
+            00
+  000000B2: 33 C0              xor         eax,eax
+  000000B4: 5E                 pop         esi
+  000000B5: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          B6 .text

@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f005CCB70.obj
+
+File Type: COFF OBJECT
+
+@Phyre_RBTree_InsertByComparator@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B DA              mov         ebx,edx
+  00000007: 56                 push        esi
+  00000008: 8B 73 08           mov         esi,dword ptr [ebx+8]
+  0000000B: 8B C6              mov         eax,esi
+  0000000D: 83 E0 01           and         eax,1
+  00000010: 2B F0              sub         esi,eax
+  00000012: 46                 inc         esi
+  00000013: 57                 push        edi
+  00000014: 8D 79 0C           lea         edi,[ecx+0Ch]
+  00000017: 89 73 08           mov         dword ptr [ebx+8],esi
+  0000001A: 89 0B              mov         dword ptr [ebx],ecx
+  0000001C: 89 4B 04           mov         dword ptr [ebx+4],ecx
+  0000001F: 8B 37              mov         esi,dword ptr [edi]
+  00000021: 32 D2              xor         dl,dl
+  00000023: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000026: 3B F1              cmp         esi,ecx
+  00000028: 74 3B              je          00000065
+  0000002A: 8D 4B 0C           lea         ecx,[ebx+0Ch]
+  0000002D: 8B FE              mov         edi,esi
+  0000002F: 85 F6              test        esi,esi
+  00000031: 74 05              je          00000038
+  00000033: 8D 46 0C           lea         eax,[esi+0Ch]
+  00000036: EB 02              jmp         0000003A
+  00000038: 33 C0              xor         eax,eax
+  0000003A: 51                 push        ecx
+  0000003B: 50                 push        eax
+  0000003C: E8 00 00 00 00     call        _Phyre_AnimationSetTarget_Compare
+  00000041: 8B C8              mov         ecx,eax
+  00000043: 83 C4 08           add         esp,8
+  00000046: 85 C9              test        ecx,ecx
+  00000048: 74 12              je          0000005C
+  0000004A: 0F 98 C2           sets        dl
+  0000004D: 33 C0              xor         eax,eax
+  0000004F: 85 C9              test        ecx,ecx
+  00000051: 0F 98 C0           sets        al
+  00000054: 8B 34 86           mov         esi,dword ptr [esi+eax*4]
+  00000057: 3B 75 FC           cmp         esi,dword ptr [ebp-4]
+  0000005A: EB CC              jmp         00000028
+  0000005C: 5F                 pop         edi
+  0000005D: 8B C6              mov         eax,esi
+  0000005F: 5E                 pop         esi
+  00000060: 5B                 pop         ebx
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+  00000065: 8B 43 08           mov         eax,dword ptr [ebx+8]
+  00000068: 83 E0 01           and         eax,1
+  0000006B: 03 C7              add         eax,edi
+  0000006D: 89 43 08           mov         dword ptr [ebx+8],eax
+  00000070: 0F B6 C2           movzx       eax,dl
+  00000073: 89 1C 87           mov         dword ptr [edi+eax*4],ebx
+  00000076: 5F                 pop         edi
+  00000077: 5E                 pop         esi
+  00000078: 33 C0              xor         eax,eax
+  0000007A: 5B                 pop         ebx
+  0000007B: 8B E5              mov         esp,ebp
+  0000007D: 5D                 pop         ebp
+  0000007E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          7F .text

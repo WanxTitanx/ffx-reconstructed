@@ -1,0 +1,118 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0080C670.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicCoreOp_B0_Transform:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 57                 push        edi
+  00000005: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000008: 0F B7 8F 1A 02 00  movzx       ecx,word ptr [edi+21Ah]
+            00
+  0000000F: 8B C1              mov         eax,ecx
+  00000011: 25 00 F0 00 00     and         eax,0F000h
+  00000016: 3D 00 30 00 00     cmp         eax,3000h
+  0000001B: 76 56              jbe         00000073
+  0000001D: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000020: 3D 00 80 00 00     cmp         eax,8000h
+  00000025: 75 33              jne         0000005A
+  00000027: 0F B7 46 02        movzx       eax,word ptr [esi+2]
+  0000002B: 50                 push        eax
+  0000002C: FF B7 20 02 00 00  push        dword ptr [edi+220h]
+  00000032: 8D 87 00 03 00 00  lea         eax,[edi+300h]
+  00000038: 50                 push        eax
+  00000039: E8 00 00 00 00     call        _FFX_Magic_TraverseRecordChain
+  0000003E: 83 C4 0C           add         esp,0Ch
+  00000041: 3B 87 20 03 00 00  cmp         eax,dword ptr [edi+320h]
+  00000047: 0F 84 D0 00 00 00  je          0000011D
+  0000004D: C6 87 10 02 00 00  mov         byte ptr [edi+210h],1
+            01
+  00000054: 5F                 pop         edi
+  00000055: 8B C6              mov         eax,esi
+  00000057: 5E                 pop         esi
+  00000058: 5D                 pop         ebp
+  00000059: C3                 ret
+  0000005A: 3D 00 90 00 00     cmp         eax,9000h
+  0000005F: 75 F3              jne         00000054
+  00000061: 83 3D 00 00 00 00  cmp         dword ptr [_g_MagicUnkVar_11A004B],0
+            00
+  00000068: 74 E3              je          0000004D
+  0000006A: 8B C6              mov         eax,esi
+  0000006C: 5F                 pop         edi
+  0000006D: 83 C0 02           add         eax,2
+  00000070: 5E                 pop         esi
+  00000071: 5D                 pop         ebp
+  00000072: C3                 ret
+  00000073: 0F 84 94 00 00 00  je          0000010D
+  00000079: F7 C1 00 F0 00 00  test        ecx,0F000h
+  0000007F: 75 34              jne         000000B5
+  00000081: D9 45 08           fld         dword ptr [ebp+8]
+  00000084: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000087: 83 EC 18           sub         esp,18h
+  0000008A: 0F BF 46 02        movsx       eax,word ptr [esi+2]
+  0000008E: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000092: D9 45 08           fld         dword ptr [ebp+8]
+  00000095: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000099: D9 45 08           fld         dword ptr [ebp+8]
+  0000009C: DD 1C 24           fstp        qword ptr [esp]
+  0000009F: 50                 push        eax
+  000000A0: E8 00 00 00 00     call        _FFX_Debug_ModelBrowser_StoreIntFloatParam_Thunk
+  000000A5: 83 C4 1C           add         esp,1Ch
+  000000A8: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  000000AE: 5F                 pop         edi
+  000000AF: 8D 46 04           lea         eax,[esi+4]
+  000000B2: 5E                 pop         esi
+  000000B3: 5D                 pop         ebp
+  000000B4: C3                 ret
+  000000B5: 3D 00 10 00 00     cmp         eax,1000h
+  000000BA: 75 21              jne         000000DD
+  000000BC: FF B7 20 02 00 00  push        dword ptr [edi+220h]
+  000000C2: E8 00 00 00 00     call        _FFX_Magic_SearchSlotArrayForByteMatch
+  000000C7: 8B 4D 0C           mov         ecx,dword ptr [ebp+0Ch]
+  000000CA: 83 C4 04           add         esp,4
+  000000CD: F6 69 02           imul        byte ptr [ecx+2]
+  000000D0: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  000000D6: 5F                 pop         edi
+  000000D7: 8D 41 04           lea         eax,[ecx+4]
+  000000DA: 5E                 pop         esi
+  000000DB: 5D                 pop         ebp
+  000000DC: C3                 ret
+  000000DD: 3D 00 20 00 00     cmp         eax,2000h
+  000000E2: 75 22              jne         00000106
+  000000E4: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  000000E7: 8B 87 20 02 00 00  mov         eax,dword ptr [edi+220h]
+  000000ED: 0F BF 4E 02        movsx       ecx,word ptr [esi+2]
+  000000F1: D9 04 01           fld         dword ptr [ecx+eax]
+  000000F4: E8 00 00 00 00     call        __ftol2_sse
+  000000F9: 88 87 10 02 00 00  mov         byte ptr [edi+210h],al
+  000000FF: 5F                 pop         edi
+  00000100: 8D 46 04           lea         eax,[esi+4]
+  00000103: 5E                 pop         esi
+  00000104: 5D                 pop         ebp
+  00000105: C3                 ret
+  00000106: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000109: 5F                 pop         edi
+  0000010A: 5E                 pop         esi
+  0000010B: 5D                 pop         ebp
+  0000010C: C3                 ret
+  0000010D: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000110: 0F BF 46 02        movsx       eax,word ptr [esi+2]
+  00000114: 50                 push        eax
+  00000115: E8 00 00 00 00     call        _FFX_Magic_FindRuntimeSlotIndex
+  0000011A: 83 C4 04           add         esp,4
+  0000011D: 5F                 pop         edi
+  0000011E: 8D 46 04           lea         eax,[esi+4]
+  00000121: 5E                 pop         esi
+  00000122: 5D                 pop         ebp
+  00000123: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+         124 .text

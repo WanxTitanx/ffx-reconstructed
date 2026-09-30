@@ -1,0 +1,54 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00443320.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Debug_OutputString@8:
+  00000000: 53                 push        ebx
+  00000001: 8B DA              mov         ebx,edx
+  00000003: 56                 push        esi
+  00000004: 8B 43 40           mov         eax,dword ptr [ebx+40h]
+  00000007: 57                 push        edi
+  00000008: 8B F9              mov         edi,ecx
+  0000000A: 85 C0              test        eax,eax
+  0000000C: 74 0A              je          00000018
+  0000000E: 53                 push        ebx
+  0000000F: 50                 push        eax
+  00000010: E8 00 00 00 00     call        _PNode_DisconnectFromParent
+  00000015: 83 C4 08           add         esp,8
+  00000018: 8B 0F              mov         ecx,dword ptr [edi]
+  0000001A: 8D 43 48           lea         eax,[ebx+48h]
+  0000001D: 89 7B 4C           mov         dword ptr [ebx+4Ch],edi
+  00000020: 89 08              mov         dword ptr [eax],ecx
+  00000022: 89 07              mov         dword ptr [edi],eax
+  00000024: 89 41 04           mov         dword ptr [ecx+4],eax
+  00000027: 8B 73 1C           mov         esi,dword ptr [ebx+1Ch]
+  0000002A: 89 7B 40           mov         dword ptr [ebx+40h],edi
+  0000002D: 83 C3 1C           add         ebx,1Ch
+  00000030: 3B DE              cmp         ebx,esi
+  00000032: 74 18              je          0000004C
+  00000034: 85 F6              test        esi,esi
+  00000036: 74 14              je          0000004C
+  00000038: 56                 push        esi
+  00000039: 57                 push        edi
+  0000003A: E8 00 00 00 00     call        _Phyre_Debug_Trace
+  0000003F: 8B 36              mov         esi,dword ptr [esi]
+  00000041: 83 C4 08           add         esp,8
+  00000044: 3B DE              cmp         ebx,esi
+  00000046: 74 04              je          0000004C
+  00000048: 85 F6              test        esi,esi
+  0000004A: 75 EC              jne         00000038
+  0000004C: 5F                 pop         edi
+  0000004D: 5E                 pop         esi
+  0000004E: 5B                 pop         ebx
+  0000004F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          50 .text

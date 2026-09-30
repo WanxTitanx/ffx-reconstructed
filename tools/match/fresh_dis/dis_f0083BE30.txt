@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0083BE30.obj
+
+File Type: COFF OBJECT
+
+_SgMem_MarkMCBDirty:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 8B 4A 0C           mov         ecx,dword ptr [edx+0Ch]
+  00000009: 8B C1              mov         eax,ecx
+  0000000B: C1 E8 1B           shr         eax,1Bh
+  0000000E: 83 E0 03           and         eax,3
+  00000011: 81 E1 00 00 00 18  and         ecx,18000000h
+  00000017: 8D 04 40           lea         eax,[eax+eax*2]
+  0000001A: C7 42 08 00 00 00  mov         dword ptr [edx+8],0
+            00
+  00000021: 89 4A 0C           mov         dword ptr [edx+0Ch],ecx
+  00000024: C6 04 C5 00 00 00  mov         byte ptr _g_SgMemUnkVar_1301928[eax*8],1
+            00 01
+  0000002C: 39 14 C5 00 00 00  cmp         dword ptr _g_SgMemUnkVar_130193C[eax*8],edx
+            00
+  00000033: 76 07              jbe         0000003C
+  00000035: 89 14 C5 00 00 00  mov         dword ptr _g_SgMemUnkVar_130193C[eax*8],edx
+            00
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          3E .text

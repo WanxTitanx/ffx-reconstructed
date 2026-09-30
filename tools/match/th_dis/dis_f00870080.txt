@@ -1,0 +1,44 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00870080.obj
+
+File Type: COFF OBJECT
+
+_sub_870080:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: E8 00 00 00 00     call        _j_FFX_SceneState_GetBase
+  00000009: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  0000000C: 8B F0              mov         esi,eax
+  0000000E: 8B C1              mov         eax,ecx
+  00000010: 99                 cdq
+  00000011: 83 E2 1F           and         edx,1Fh
+  00000014: 03 C2              add         eax,edx
+  00000016: C1 F8 05           sar         eax,5
+  00000019: 83 F8 02           cmp         eax,2
+  0000001C: 7C 05              jl          00000023
+  0000001E: 33 C0              xor         eax,eax
+  00000020: 5E                 pop         esi
+  00000021: 5D                 pop         ebp
+  00000022: C3                 ret
+  00000023: 81 E1 1F 00 00 80  and         ecx,8000001Fh
+  00000029: 79 05              jns         00000030
+  0000002B: 49                 dec         ecx
+  0000002C: 83 C9 E0           or          ecx,0FFFFFFE0h
+  0000002F: 41                 inc         ecx
+  00000030: BA 01 00 00 00     mov         edx,1
+  00000035: D3 E2              shl         edx,cl
+  00000037: 09 54 86 18        or          dword ptr [esi+eax*4+18h],edx
+  0000003B: B8 01 00 00 00     mov         eax,1
+  00000040: 5E                 pop         esi
+  00000041: 5D                 pop         ebp
+  00000042: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          43 .text

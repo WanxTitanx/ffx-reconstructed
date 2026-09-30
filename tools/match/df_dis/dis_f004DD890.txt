@@ -1,0 +1,41 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004DD890.obj
+
+File Type: COFF OBJECT
+
+_Engine_Loose_4DD890:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000007: 85 DB              test        ebx,ebx
+  00000009: 74 25              je          00000030
+  0000000B: 57                 push        edi
+  0000000C: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  0000000F: 85 FF              test        edi,edi
+  00000011: 74 13              je          00000026
+  00000013: 56                 push        esi
+  00000014: 8B F3              mov         esi,ebx
+  00000016: 56                 push        esi
+  00000017: E8 00 00 00 00     call        _PShaderArray_Cleanup
+  0000001C: 83 C4 04           add         esp,4
+  0000001F: 83 C6 20           add         esi,20h
+  00000022: 4F                 dec         edi
+  00000023: 75 F1              jne         00000016
+  00000025: 5E                 pop         esi
+  00000026: 53                 push        ebx
+  00000027: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: 5F                 pop         edi
+  00000030: 5B                 pop         ebx
+  00000031: 5D                 pop         ebp
+  00000032: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          33 .text

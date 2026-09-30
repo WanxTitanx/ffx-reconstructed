@@ -1,0 +1,39 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009B7A30.obj
+
+File Type: COFF OBJECT
+
+@Bullet_btCollisionWorld_integrateAllVelocities@4:
+  00000000: 56                 push        esi
+  00000001: 57                 push        edi
+  00000002: 8B F9              mov         edi,ecx
+  00000004: 33 F6              xor         esi,esi
+  00000006: 39 B7 D0 00 00 00  cmp         dword ptr [edi+0D0h],esi
+  0000000C: 76 2D              jbe         0000003B
+  0000000E: 8B FF              mov         edi,edi
+  00000010: 8B 87 D8 00 00 00  mov         eax,dword ptr [edi+0D8h]
+  00000016: 8B 04 B0           mov         eax,dword ptr [eax+esi*4]
+  00000019: 8B 88 E4 00 00 00  mov         ecx,dword ptr [eax+0E4h]
+  0000001F: 83 F9 02           cmp         ecx,2
+  00000022: 74 0E              je          00000032
+  00000024: 83 F9 05           cmp         ecx,5
+  00000027: 74 09              je          00000032
+  00000029: 50                 push        eax
+  0000002A: E8 00 00 00 00     call        _Bullet_btRigidBody_IntegrateVelocities
+  0000002F: 83 C4 04           add         esp,4
+  00000032: 46                 inc         esi
+  00000033: 3B B7 D0 00 00 00  cmp         esi,dword ptr [edi+0D0h]
+  00000039: 72 D5              jb          00000010
+  0000003B: 5F                 pop         edi
+  0000003C: 5E                 pop         esi
+  0000003D: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          3E .text

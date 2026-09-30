@@ -1,0 +1,56 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0070D720.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodSfx_SetPanBySeqGroup@12:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 57                 push        edi
+  00000005: 8D 45 FC           lea         eax,[ebp-4]
+  00000008: 50                 push        eax
+  00000009: 8D 41 64           lea         eax,[ecx+64h]
+  0000000C: 50                 push        eax
+  0000000D: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00000010: E8 00 00 00 00     call        _Phyre_PMapTree_FindRight
+  00000015: 8B F8              mov         edi,eax
+  00000017: 83 C4 08           add         esp,8
+  0000001A: 85 FF              test        edi,edi
+  0000001C: 74 2F              je          0000004D
+  0000001E: 83 FF F0           cmp         edi,0FFFFFFF0h
+  00000021: 74 2A              je          0000004D
+  00000023: 56                 push        esi
+  00000024: 33 F6              xor         esi,esi
+  00000026: 39 77 10           cmp         dword ptr [edi+10h],esi
+  00000029: 74 21              je          0000004C
+  0000002B: 53                 push        ebx
+  0000002C: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000002F: 90                 nop
+  00000030: 8B 47 18           mov         eax,dword ptr [edi+18h]
+  00000033: 8B 0C B0           mov         ecx,dword ptr [eax+esi*4]
+  00000036: 85 C9              test        ecx,ecx
+  00000038: 74 0B              je          00000045
+  0000003A: 53                 push        ebx
+  0000003B: 56                 push        esi
+  0000003C: 51                 push        ecx
+  0000003D: E8 00 00 00 00     call        _FFX_FmodSfx_SetPanFromInt
+  00000042: 83 C4 0C           add         esp,0Ch
+  00000045: 46                 inc         esi
+  00000046: 3B 77 10           cmp         esi,dword ptr [edi+10h]
+  00000049: 72 E5              jb          00000030
+  0000004B: 5B                 pop         ebx
+  0000004C: 5E                 pop         esi
+  0000004D: 5F                 pop         edi
+  0000004E: 8B E5              mov         esp,ebp
+  00000050: 5D                 pop         ebp
+  00000051: C2 04 00           ret         4
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          54 .text

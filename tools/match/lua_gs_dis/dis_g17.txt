@@ -1,0 +1,896 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file g17.obj
+
+File Type: COFF OBJECT
+
+_math_abs:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: 83 C4 04           add         esp,4
+  0000001C: 66 0F 54 05 00 00  andpd       xmm0,xmmword ptr [__xmm@7fffffffffffffff7fffffffffffffff]
+            00 00
+  00000024: 66 0F 5A C0        cvtpd2ps    xmm0,xmm0
+  00000028: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: E8 00 00 00 00     call        _lua_pushnumber
+  00000035: 83 C4 08           add         esp,8
+  00000038: B8 01 00 00 00     mov         eax,1
+  0000003D: 8B E5              mov         esp,ebp
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+_math_sin:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_sin_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_sinh:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 01              push        1
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _luaL_checknumber
+  00000010: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000013: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000018: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000023: DD 45 F8           fld         qword ptr [ebp-8]
+  00000026: E8 00 00 00 00     call        __CIsinh
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000031: 51                 push        ecx
+  00000032: D9 1C 24           fstp        dword ptr [esp]
+  00000035: FF 75 08           push        dword ptr [ebp+8]
+  00000038: E8 00 00 00 00     call        _lua_pushnumber
+  0000003D: 83 C4 08           add         esp,8
+  00000040: B8 01 00 00 00     mov         eax,1
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+_math_cos:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_cos_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_cosh:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 01              push        1
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _luaL_checknumber
+  00000010: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000013: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000018: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000023: DD 45 F8           fld         qword ptr [ebp-8]
+  00000026: E8 00 00 00 00     call        __CIcosh
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000031: 51                 push        ecx
+  00000032: D9 1C 24           fstp        dword ptr [esp]
+  00000035: FF 75 08           push        dword ptr [ebp+8]
+  00000038: E8 00 00 00 00     call        _lua_pushnumber
+  0000003D: 83 C4 08           add         esp,8
+  00000040: B8 01 00 00 00     mov         eax,1
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+_math_tan:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_tan_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_tanh:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 01              push        1
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _luaL_checknumber
+  00000010: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000013: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000018: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001B: 83 C4 08           add         esp,8
+  0000001E: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000023: DD 45 F8           fld         qword ptr [ebp-8]
+  00000026: E8 00 00 00 00     call        __CItanh
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: D9 45 FC           fld         dword ptr [ebp-4]
+  00000031: 51                 push        ecx
+  00000032: D9 1C 24           fstp        dword ptr [esp]
+  00000035: FF 75 08           push        dword ptr [ebp+8]
+  00000038: E8 00 00 00 00     call        _lua_pushnumber
+  0000003D: 83 C4 08           add         esp,8
+  00000040: B8 01 00 00 00     mov         eax,1
+  00000045: 8B E5              mov         esp,ebp
+  00000047: 5D                 pop         ebp
+  00000048: C3                 ret
+
+_math_asin:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_asin_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_acos:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_acos_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_atan:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_atan_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_atan2:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 6A 01              push        1
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _luaL_checknumber
+  00000012: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000015: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  0000001A: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001D: 6A 02              push        2
+  0000001F: 56                 push        esi
+  00000020: F2 0F 11 45 F0     movsd       mmword ptr [ebp-10h],xmm0
+  00000025: E8 00 00 00 00     call        _luaL_checknumber
+  0000002A: 83 C4 10           add         esp,10h
+  0000002D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000030: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000035: DD 45 F0           fld         qword ptr [ebp-10h]
+  00000038: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000003B: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000040: DD 45 F8           fld         qword ptr [ebp-8]
+  00000043: E8 00 00 00 00     call        __CIatan2
+  00000048: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004E: 51                 push        ecx
+  0000004F: D9 1C 24           fstp        dword ptr [esp]
+  00000052: 56                 push        esi
+  00000053: E8 00 00 00 00     call        _lua_pushnumber
+  00000058: 83 C4 08           add         esp,8
+  0000005B: B8 01 00 00 00     mov         eax,1
+  00000060: 5E                 pop         esi
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+_math_ceil:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: DD 1C 24           fstp        qword ptr [esp]
+  00000011: FF 15 00 00 00 00  call        dword ptr [__imp__ceil]
+  00000017: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001A: D9 45 FC           fld         dword ptr [ebp-4]
+  0000001D: 83 C4 04           add         esp,4
+  00000020: D9 1C 24           fstp        dword ptr [esp]
+  00000023: FF 75 08           push        dword ptr [ebp+8]
+  00000026: E8 00 00 00 00     call        _lua_pushnumber
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: B8 01 00 00 00     mov         eax,1
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+_math_floor:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 6A 01              push        1
+  00000008: FF 75 08           push        dword ptr [ebp+8]
+  0000000B: E8 00 00 00 00     call        _luaL_checknumber
+  00000010: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000013: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000018: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001B: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000020: DD 45 F8           fld         qword ptr [ebp-8]
+  00000023: DD 1C 24           fstp        qword ptr [esp]
+  00000026: E8 00 00 00 00     call        _floor
+  0000002B: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000002E: 83 C4 04           add         esp,4
+  00000031: D9 45 FC           fld         dword ptr [ebp-4]
+  00000034: D9 1C 24           fstp        dword ptr [esp]
+  00000037: FF 75 08           push        dword ptr [ebp+8]
+  0000003A: E8 00 00 00 00     call        _lua_pushnumber
+  0000003F: 83 C4 08           add         esp,8
+  00000042: B8 01 00 00 00     mov         eax,1
+  00000047: 8B E5              mov         esp,ebp
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+
+_math_fmod:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 6A 01              push        1
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _luaL_checknumber
+  00000012: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000015: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  0000001A: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000001D: 6A 02              push        2
+  0000001F: 56                 push        esi
+  00000020: F2 0F 11 45 F0     movsd       mmword ptr [ebp-10h],xmm0
+  00000025: E8 00 00 00 00     call        _luaL_checknumber
+  0000002A: 83 C4 10           add         esp,10h
+  0000002D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000030: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000035: DD 45 F0           fld         qword ptr [ebp-10h]
+  00000038: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000003B: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000040: DD 45 F8           fld         qword ptr [ebp-8]
+  00000043: E8 00 00 00 00     call        __CIfmod
+  00000048: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000004B: D9 45 FC           fld         dword ptr [ebp-4]
+  0000004E: 51                 push        ecx
+  0000004F: D9 1C 24           fstp        dword ptr [esp]
+  00000052: 56                 push        esi
+  00000053: E8 00 00 00 00     call        _lua_pushnumber
+  00000058: 83 C4 08           add         esp,8
+  0000005B: B8 01 00 00 00     mov         eax,1
+  00000060: 5E                 pop         esi
+  00000061: 8B E5              mov         esp,ebp
+  00000063: 5D                 pop         ebp
+  00000064: C3                 ret
+
+_math_modf:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 45 FC           lea         eax,[ebp-4]
+  0000000D: 50                 push        eax
+  0000000E: 6A 01              push        1
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _luaL_checknumber
+  00000016: DD 1C 24           fstp        qword ptr [esp]
+  00000019: FF 15 00 00 00 00  call        dword ptr [__imp__modf]
+  0000001F: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000022: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000027: 83 C4 08           add         esp,8
+  0000002A: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002F: 56                 push        esi
+  00000030: E8 00 00 00 00     call        _lua_pushnumber
+  00000035: F3 0F 10 45 F8     movss       xmm0,dword ptr [ebp-8]
+  0000003A: 83 C4 04           add         esp,4
+  0000003D: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000042: 56                 push        esi
+  00000043: E8 00 00 00 00     call        _lua_pushnumber
+  00000048: 83 C4 08           add         esp,8
+  0000004B: B8 02 00 00 00     mov         eax,2
+  00000050: 5E                 pop         esi
+  00000051: 8B E5              mov         esp,ebp
+  00000053: 5D                 pop         ebp
+  00000054: C3                 ret
+
+_math_sqrt:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 E4 F8           and         esp,0FFFFFFF8h
+  00000006: 83 EC 08           sub         esp,8
+  00000009: 6A 01              push        1
+  0000000B: FF 75 08           push        dword ptr [ebp+8]
+  0000000E: E8 00 00 00 00     call        _luaL_checknumber
+  00000013: D9 5C 24 0C        fstp        dword ptr [esp+0Ch]
+  00000017: F3 0F 10 44 24 0C  movss       xmm0,dword ptr [esp+0Ch]
+  0000001D: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000020: E8 00 00 00 00     call        __libm_sse2_sqrt_precise
+  00000025: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000029: 83 C4 04           add         esp,4
+  0000002C: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000031: FF 75 08           push        dword ptr [ebp+8]
+  00000034: E8 00 00 00 00     call        _lua_pushnumber
+  00000039: 83 C4 08           add         esp,8
+  0000003C: B8 01 00 00 00     mov         eax,1
+  00000041: 8B E5              mov         esp,ebp
+  00000043: 5D                 pop         ebp
+  00000044: C3                 ret
+
+_math_pow:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 6A 01              push        1
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _luaL_checknumber
+  00000012: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000015: 6A 02              push        2
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _luaL_checknumber
+  0000001D: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000020: F3 0F 10 4D FC     movss       xmm1,dword ptr [ebp-4]
+  00000025: F3 0F 10 45 F8     movss       xmm0,dword ptr [ebp-8]
+  0000002A: 0F 5A C9           cvtps2pd    xmm1,xmm1
+  0000002D: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000030: E8 00 00 00 00     call        __libm_sse2_pow_precise
+  00000035: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000039: 83 C4 0C           add         esp,0Ch
+  0000003C: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000041: 56                 push        esi
+  00000042: E8 00 00 00 00     call        _lua_pushnumber
+  00000047: 83 C4 08           add         esp,8
+  0000004A: B8 01 00 00 00     mov         eax,1
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+
+_math_log:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 6A 01              push        1
+  0000000C: 56                 push        esi
+  0000000D: E8 00 00 00 00     call        _luaL_checknumber
+  00000012: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000015: 6A 02              push        2
+  00000017: 56                 push        esi
+  00000018: E8 00 00 00 00     call        _lua_type
+  0000001D: 83 C4 10           add         esp,10h
+  00000020: 85 C0              test        eax,eax
+  00000022: 7F 13              jg          00000037
+  00000024: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000029: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000002C: E8 00 00 00 00     call        __libm_sse2_log_precise
+  00000031: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000035: EB 57              jmp         0000008E
+  00000037: 6A 02              push        2
+  00000039: 56                 push        esi
+  0000003A: E8 00 00 00 00     call        _luaL_checknumber
+  0000003F: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000042: F3 0F 10 45 F4     movss       xmm0,dword ptr [ebp-0Ch]
+  00000047: 83 C4 08           add         esp,8
+  0000004A: 0F 2E 05 00 00 00  ucomiss     xmm0,dword ptr [__real@41200000]
+            00
+  00000051: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000056: 9F                 lahf
+  00000057: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000005A: F6 C4 44           test        ah,44h
+  0000005D: 7A 0B              jp          0000006A
+  0000005F: E8 00 00 00 00     call        __libm_sse2_log10_precise
+  00000064: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000068: EB 24              jmp         0000008E
+  0000006A: E8 00 00 00 00     call        __libm_sse2_log_precise
+  0000006F: F2 0F 11 45 F8     movsd       mmword ptr [ebp-8],xmm0
+  00000074: F3 0F 10 45 F4     movss       xmm0,dword ptr [ebp-0Ch]
+  00000079: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  0000007C: E8 00 00 00 00     call        __libm_sse2_log_precise
+  00000081: F2 0F 10 4D F8     movsd       xmm1,mmword ptr [ebp-8]
+  00000086: F2 0F 5E C8        divsd       xmm1,xmm0
+  0000008A: 66 0F 5A C1        cvtpd2ps    xmm0,xmm1
+  0000008E: 51                 push        ecx
+  0000008F: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000094: 56                 push        esi
+  00000095: E8 00 00 00 00     call        _lua_pushnumber
+  0000009A: 83 C4 08           add         esp,8
+  0000009D: B8 01 00 00 00     mov         eax,1
+  000000A2: 5E                 pop         esi
+  000000A3: 8B E5              mov         esp,ebp
+  000000A5: 5D                 pop         ebp
+  000000A6: C3                 ret
+
+_math_exp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: E8 00 00 00 00     call        __libm_sse2_exp_precise
+  0000001E: F2 0F 5A C0        cvtsd2ss    xmm0,xmm0
+  00000022: 83 C4 04           add         esp,4
+  00000025: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002A: FF 75 08           push        dword ptr [ebp+8]
+  0000002D: E8 00 00 00 00     call        _lua_pushnumber
+  00000032: 83 C4 08           add         esp,8
+  00000035: B8 01 00 00 00     mov         eax,1
+  0000003A: 8B E5              mov         esp,ebp
+  0000003C: 5D                 pop         ebp
+  0000003D: C3                 ret
+
+_math_deg:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: 83 C4 04           add         esp,4
+  0000001C: F2 0F 5E 05 00 00  divsd       xmm0,mmword ptr [__real@3f91df46a2529d39]
+            00 00
+  00000024: 66 0F 5A C0        cvtpd2ps    xmm0,xmm0
+  00000028: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: E8 00 00 00 00     call        _lua_pushnumber
+  00000035: 83 C4 08           add         esp,8
+  00000038: B8 01 00 00 00     mov         eax,1
+  0000003D: 8B E5              mov         esp,ebp
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+_math_rad:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 6A 01              push        1
+  00000006: FF 75 08           push        dword ptr [ebp+8]
+  00000009: E8 00 00 00 00     call        _luaL_checknumber
+  0000000E: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000011: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000016: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  00000019: 83 C4 04           add         esp,4
+  0000001C: F2 0F 59 05 00 00  mulsd       xmm0,mmword ptr [__real@3f91df46a2529d39]
+            00 00
+  00000024: 66 0F 5A C0        cvtpd2ps    xmm0,xmm0
+  00000028: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  0000002D: FF 75 08           push        dword ptr [ebp+8]
+  00000030: E8 00 00 00 00     call        _lua_pushnumber
+  00000035: 83 C4 08           add         esp,8
+  00000038: B8 01 00 00 00     mov         eax,1
+  0000003D: 8B E5              mov         esp,ebp
+  0000003F: 5D                 pop         ebp
+  00000040: C3                 ret
+
+_math_frexp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 56                 push        esi
+  00000007: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000A: 8D 45 F8           lea         eax,[ebp-8]
+  0000000D: 50                 push        eax
+  0000000E: 6A 01              push        1
+  00000010: 56                 push        esi
+  00000011: E8 00 00 00 00     call        _luaL_checknumber
+  00000016: DD 1C 24           fstp        qword ptr [esp]
+  00000019: FF 15 00 00 00 00  call        dword ptr [__imp__frexp]
+  0000001F: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000022: D9 45 FC           fld         dword ptr [ebp-4]
+  00000025: 83 C4 08           add         esp,8
+  00000028: D9 1C 24           fstp        dword ptr [esp]
+  0000002B: 56                 push        esi
+  0000002C: E8 00 00 00 00     call        _lua_pushnumber
+  00000031: FF 75 F8           push        dword ptr [ebp-8]
+  00000034: 56                 push        esi
+  00000035: E8 00 00 00 00     call        _lua_pushinteger
+  0000003A: 83 C4 10           add         esp,10h
+  0000003D: B8 02 00 00 00     mov         eax,2
+  00000042: 5E                 pop         esi
+  00000043: 8B E5              mov         esp,ebp
+  00000045: 5D                 pop         ebp
+  00000046: C3                 ret
+
+_math_ldexp:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 56                 push        esi
+  00000005: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000008: 6A 02              push        2
+  0000000A: 56                 push        esi
+  0000000B: E8 00 00 00 00     call        _luaL_checkinteger
+  00000010: 83 C4 08           add         esp,8
+  00000013: 50                 push        eax
+  00000014: 6A 01              push        1
+  00000016: 56                 push        esi
+  00000017: E8 00 00 00 00     call        _luaL_checknumber
+  0000001C: DD 1C 24           fstp        qword ptr [esp]
+  0000001F: FF 15 00 00 00 00  call        dword ptr [__imp__ldexp]
+  00000025: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000028: D9 45 FC           fld         dword ptr [ebp-4]
+  0000002B: 83 C4 08           add         esp,8
+  0000002E: D9 1C 24           fstp        dword ptr [esp]
+  00000031: 56                 push        esi
+  00000032: E8 00 00 00 00     call        _lua_pushnumber
+  00000037: 83 C4 08           add         esp,8
+  0000003A: B8 01 00 00 00     mov         eax,1
+  0000003F: 5E                 pop         esi
+  00000040: 8B E5              mov         esp,ebp
+  00000042: 5D                 pop         ebp
+  00000043: C3                 ret
+
+_math_min:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 53                 push        ebx
+  0000000D: E8 00 00 00 00     call        _lua_gettop
+  00000012: 6A 01              push        1
+  00000014: 53                 push        ebx
+  00000015: 8B F8              mov         edi,eax
+  00000017: E8 00 00 00 00     call        _luaL_checknumber
+  0000001C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001F: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000024: BE 02 00 00 00     mov         esi,2
+  00000029: 83 C4 0C           add         esp,0Ch
+  0000002C: 3B FE              cmp         edi,esi
+  0000002E: 7C 2E              jl          0000005E
+  00000030: F3 0F 11 45 FC     movss       dword ptr [ebp-4],xmm0
+  00000035: 56                 push        esi
+  00000036: 53                 push        ebx
+  00000037: E8 00 00 00 00     call        _luaL_checknumber
+  0000003C: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000003F: F3 0F 10 4D F8     movss       xmm1,dword ptr [ebp-8]
+  00000044: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 0F 2F C1           comiss      xmm0,xmm1
+  0000004F: 76 08              jbe         00000059
+  00000051: 0F 28 C1           movaps      xmm0,xmm1
+  00000054: F3 0F 11 45 FC     movss       dword ptr [ebp-4],xmm0
+  00000059: 46                 inc         esi
+  0000005A: 3B F7              cmp         esi,edi
+  0000005C: 7E D7              jle         00000035
+  0000005E: 51                 push        ecx
+  0000005F: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000064: 53                 push        ebx
+  00000065: E8 00 00 00 00     call        _lua_pushnumber
+  0000006A: 83 C4 08           add         esp,8
+  0000006D: B8 01 00 00 00     mov         eax,1
+  00000072: 5F                 pop         edi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+_math_max:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  0000000A: 56                 push        esi
+  0000000B: 57                 push        edi
+  0000000C: 53                 push        ebx
+  0000000D: E8 00 00 00 00     call        _lua_gettop
+  00000012: 6A 01              push        1
+  00000014: 53                 push        ebx
+  00000015: 8B F8              mov         edi,eax
+  00000017: E8 00 00 00 00     call        _luaL_checknumber
+  0000001C: D9 5D FC           fstp        dword ptr [ebp-4]
+  0000001F: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000024: BE 02 00 00 00     mov         esi,2
+  00000029: 83 C4 0C           add         esp,0Ch
+  0000002C: 3B FE              cmp         edi,esi
+  0000002E: 7C 2E              jl          0000005E
+  00000030: F3 0F 11 45 FC     movss       dword ptr [ebp-4],xmm0
+  00000035: 56                 push        esi
+  00000036: 53                 push        ebx
+  00000037: E8 00 00 00 00     call        _luaL_checknumber
+  0000003C: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000003F: F3 0F 10 4D F8     movss       xmm1,dword ptr [ebp-8]
+  00000044: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  00000049: 83 C4 08           add         esp,8
+  0000004C: 0F 2F C8           comiss      xmm1,xmm0
+  0000004F: 76 08              jbe         00000059
+  00000051: 0F 28 C1           movaps      xmm0,xmm1
+  00000054: F3 0F 11 45 FC     movss       dword ptr [ebp-4],xmm0
+  00000059: 46                 inc         esi
+  0000005A: 3B F7              cmp         esi,edi
+  0000005C: 7E D7              jle         00000035
+  0000005E: 51                 push        ecx
+  0000005F: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000064: 53                 push        ebx
+  00000065: E8 00 00 00 00     call        _lua_pushnumber
+  0000006A: 83 C4 08           add         esp,8
+  0000006D: B8 01 00 00 00     mov         eax,1
+  00000072: 5F                 pop         edi
+  00000073: 5E                 pop         esi
+  00000074: 5B                 pop         ebx
+  00000075: 8B E5              mov         esp,ebp
+  00000077: 5D                 pop         ebp
+  00000078: C3                 ret
+
+_math_random:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 56                 push        esi
+  00000007: FF 15 00 00 00 00  call        dword ptr [__imp__rand]
+  0000000D: 99                 cdq
+  0000000E: B9 FF 7F 00 00     mov         ecx,7FFFh
+  00000013: F7 F9              idiv        eax,ecx
+  00000015: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000018: 56                 push        esi
+  00000019: 66 0F 6E C2        movd        xmm0,edx
+  0000001D: 0F 5B C0           cvtdq2ps    xmm0,xmm0
+  00000020: F3 0F 5E 05 00 00  divss       xmm0,dword ptr [__real@46fffe00]
+            00 00
+  00000028: F3 0F 11 45 F8     movss       dword ptr [ebp-8],xmm0
+  0000002D: E8 00 00 00 00     call        _lua_gettop
+  00000032: 83 C4 04           add         esp,4
+  00000035: 83 E8 00           sub         eax,0
+  00000038: 0F 84 0C 01 00 00  je          0000014A
+  0000003E: 48                 dec         eax
+  0000003F: 0F 84 9C 00 00 00  je          000000E1
+  00000045: 48                 dec         eax
+  00000046: 74 13              je          0000005B
+  00000048: 68 00 00 00 00     push        offset ??_C@_0BK@KNAOOCNO@wrong?5number?5of?5arguments?$AA@
+  0000004D: 56                 push        esi
+  0000004E: E8 00 00 00 00     call        _luaL_error
+  00000053: 83 C4 08           add         esp,8
+  00000056: 5E                 pop         esi
+  00000057: 8B E5              mov         esp,ebp
+  00000059: 5D                 pop         ebp
+  0000005A: C3                 ret
+  0000005B: 6A 01              push        1
+  0000005D: 56                 push        esi
+  0000005E: E8 00 00 00 00     call        _luaL_checknumber
+  00000063: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000066: 6A 02              push        2
+  00000068: 56                 push        esi
+  00000069: E8 00 00 00 00     call        _luaL_checknumber
+  0000006E: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000071: F3 0F 10 4D F4     movss       xmm1,dword ptr [ebp-0Ch]
+  00000076: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  0000007B: 83 C4 10           add         esp,10h
+  0000007E: 0F 2F C8           comiss      xmm1,xmm0
+  00000081: 73 1A              jae         0000009D
+  00000083: 68 00 00 00 00     push        offset ??_C@_0BC@JKHEKPDC@interval?5is?5empty?$AA@
+  00000088: 6A 02              push        2
+  0000008A: 56                 push        esi
+  0000008B: E8 00 00 00 00     call        _luaL_argerror
+  00000090: F3 0F 10 4D F4     movss       xmm1,dword ptr [ebp-0Ch]
+  00000095: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  0000009A: 83 C4 0C           add         esp,0Ch
+  0000009D: F3 0F 5C C8        subss       xmm1,xmm0
+  000000A1: 83 EC 08           sub         esp,8
+  000000A4: F3 0F 58 0D 00 00  addss       xmm1,dword ptr [__real@3f800000]
+            00 00
+  000000AC: F3 0F 59 4D F8     mulss       xmm1,dword ptr [ebp-8]
+  000000B1: 0F 5A C1           cvtps2pd    xmm0,xmm1
+  000000B4: F2 0F 11 45 F0     movsd       mmword ptr [ebp-10h],xmm0
+  000000B9: DD 45 F0           fld         qword ptr [ebp-10h]
+  000000BC: DD 1C 24           fstp        qword ptr [esp]
+  000000BF: E8 00 00 00 00     call        _floor
+  000000C4: F3 0F 10 45 FC     movss       xmm0,dword ptr [ebp-4]
+  000000C9: DD 5D F0           fstp        qword ptr [ebp-10h]
+  000000CC: F2 0F 10 4D F0     movsd       xmm1,mmword ptr [ebp-10h]
+  000000D1: 0F 5A C0           cvtps2pd    xmm0,xmm0
+  000000D4: 83 C4 04           add         esp,4
+  000000D7: F2 0F 58 C8        addsd       xmm1,xmm0
+  000000DB: 66 0F 5A C1        cvtpd2ps    xmm0,xmm1
+  000000DF: EB 6F              jmp         00000150
+  000000E1: 6A 01              push        1
+  000000E3: 56                 push        esi
+  000000E4: E8 00 00 00 00     call        _luaL_checknumber
+  000000E9: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  000000EC: F3 0F 10 4D F4     movss       xmm1,dword ptr [ebp-0Ch]
+  000000F1: 0F 5A C1           cvtps2pd    xmm0,xmm1
+  000000F4: 83 C4 08           add         esp,8
+  000000F7: 66 0F 2F 05 00 00  comisd      xmm0,mmword ptr [__real@3ff0000000000000]
+            00 00
+  000000FF: 73 15              jae         00000116
+  00000101: 68 00 00 00 00     push        offset ??_C@_0BC@JKHEKPDC@interval?5is?5empty?$AA@
+  00000106: 6A 01              push        1
+  00000108: 56                 push        esi
+  00000109: E8 00 00 00 00     call        _luaL_argerror
+  0000010E: F3 0F 10 4D F4     movss       xmm1,dword ptr [ebp-0Ch]
+  00000113: 83 C4 0C           add         esp,0Ch
+  00000116: F3 0F 59 4D F8     mulss       xmm1,dword ptr [ebp-8]
+  0000011B: 83 EC 08           sub         esp,8
+  0000011E: 0F 5A C1           cvtps2pd    xmm0,xmm1
+  00000121: F2 0F 11 45 F0     movsd       mmword ptr [ebp-10h],xmm0
+  00000126: DD 45 F0           fld         qword ptr [ebp-10h]
+  00000129: DD 1C 24           fstp        qword ptr [esp]
+  0000012C: E8 00 00 00 00     call        _floor
+  00000131: DD 5D F0           fstp        qword ptr [ebp-10h]
+  00000134: 83 C4 04           add         esp,4
+  00000137: F2 0F 10 45 F0     movsd       xmm0,mmword ptr [ebp-10h]
+  0000013C: F2 0F 58 05 00 00  addsd       xmm0,mmword ptr [__real@3ff0000000000000]
+            00 00
+  00000144: 66 0F 5A C0        cvtpd2ps    xmm0,xmm0
+  00000148: EB 06              jmp         00000150
+  0000014A: F3 0F 10 45 F8     movss       xmm0,dword ptr [ebp-8]
+  0000014F: 51                 push        ecx
+  00000150: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000155: 56                 push        esi
+  00000156: E8 00 00 00 00     call        _lua_pushnumber
+  0000015B: 83 C4 08           add         esp,8
+  0000015E: B8 01 00 00 00     mov         eax,1
+  00000163: 5E                 pop         esi
+  00000164: 8B E5              mov         esp,ebp
+  00000166: 5D                 pop         ebp
+  00000167: C3                 ret
+
+_math_randomseed:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 6A 01              push        1
+  00000005: FF 75 08           push        dword ptr [ebp+8]
+  00000008: E8 00 00 00 00     call        _luaL_checkunsigned
+  0000000D: 50                 push        eax
+  0000000E: FF 15 00 00 00 00  call        dword ptr [__imp__srand]
+  00000014: 83 C4 0C           add         esp,0Ch
+  00000017: FF 15 00 00 00 00  call        dword ptr [__imp__rand]
+  0000001D: 33 C0              xor         eax,eax
+  0000001F: 5D                 pop         ebp
+  00000020: C3                 ret
+
+_luaopen_math:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000007: 6A 1B              push        1Bh
+  00000009: 6A 00              push        0
+  0000000B: 56                 push        esi
+  0000000C: E8 00 00 00 00     call        _lua_createtable
+  00000011: 6A 00              push        0
+  00000013: 68 00 00 00 00     push        offset _mathlib
+  00000018: 56                 push        esi
+  00000019: E8 00 00 00 00     call        _luaL_setfuncs
+  0000001E: 83 C4 14           add         esp,14h
+  00000021: C7 04 24 DB 0F 49  mov         dword ptr [esp],40490FDBh
+            40
+  00000028: 56                 push        esi
+  00000029: E8 00 00 00 00     call        _lua_pushnumber
+  0000002E: 68 00 00 00 00     push        offset ??_C@_02OAHAJOFD@pi?$AA@
+  00000033: 6A FE              push        0FFFFFFFEh
+  00000035: 56                 push        esi
+  00000036: E8 00 00 00 00     call        _lua_setfield
+  0000003B: A1 00 00 00 00     mov         eax,dword ptr [__imp___HUGE]
+  00000040: 83 C4 10           add         esp,10h
+  00000043: F2 0F 10 00        movsd       xmm0,mmword ptr [eax]
+  00000047: 66 0F 5A C0        cvtpd2ps    xmm0,xmm0
+  0000004B: F3 0F 11 04 24     movss       dword ptr [esp],xmm0
+  00000050: 56                 push        esi
+  00000051: E8 00 00 00 00     call        _lua_pushnumber
+  00000056: 68 00 00 00 00     push        offset ??_C@_04JJGMCGIH@huge?$AA@
+  0000005B: 6A FE              push        0FFFFFFFEh
+  0000005D: 56                 push        esi
+  0000005E: E8 00 00 00 00     call        _lua_setfield
+  00000063: 83 C4 14           add         esp,14h
+  00000066: B8 01 00 00 00     mov         eax,1
+  0000006B: 5E                 pop         esi
+  0000006C: 5D                 pop         ebp
+  0000006D: C3                 ret
+
+  Summary
+
+          68 .debug$S
+          2F .drectve
+         1C8 .rdata
+         9A5 .text

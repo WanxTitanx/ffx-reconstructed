@@ -1,0 +1,72 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0091BC80.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldActor_ScriptOp_SetAmbientColorG:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 0C           sub         esp,0Ch
+  00000006: 8D 45 FC           lea         eax,[ebp-4]
+  00000009: 50                 push        eax
+  0000000A: E8 00 00 00 00     call        _FFX_Graphics_ComputeLightingColorRGBA
+  0000000F: FF 75 10           push        dword ptr [ebp+10h]
+  00000012: FF 75 08           push        dword ptr [ebp+8]
+  00000015: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000001A: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0000001D: 8D 45 FC           lea         eax,[ebp-4]
+  00000020: 50                 push        eax
+  00000021: E8 00 00 00 00     call        _FFX_Graphics_SetAmbientColorFromBytes
+  00000026: 83 C4 10           add         esp,10h
+  00000029: E8 00 00 00 00     call        _FFX_FieldActor_IsScreenRes320
+  0000002E: 85 C0              test        eax,eax
+  00000030: 74 72              je          000000A4
+  00000032: DB 45 FC           fild        dword ptr [ebp-4]
+  00000035: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000038: D9 45 F8           fld         dword ptr [ebp-8]
+  0000003B: DD 05 00 00 00 00  fld         qword ptr [__real@406fe00000000000]
+  00000041: DC F9              fdiv        st(1),st
+  00000043: D9 C9              fxch        st(1)
+  00000045: E8 00 00 00 00     call        __ftol2_sse
+  0000004A: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  0000004D: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000050: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000053: D9 45 F8           fld         dword ptr [ebp-8]
+  00000056: D8 F1              fdiv        st,st(1)
+  00000058: E8 00 00 00 00     call        __ftol2_sse
+  0000005D: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000060: DB 45 F8           fild        dword ptr [ebp-8]
+  00000063: 83 EC 08           sub         esp,8
+  00000066: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000069: D9 45 F8           fld         dword ptr [ebp-8]
+  0000006C: DD 1C 24           fstp        qword ptr [esp]
+  0000006F: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  00000072: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000075: D8 7D F4           fdivr       dword ptr [ebp-0Ch]
+  00000078: E8 00 00 00 00     call        __ftol2_sse
+  0000007D: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  00000080: DB 45 F4           fild        dword ptr [ebp-0Ch]
+  00000083: 83 EC 10           sub         esp,10h
+  00000086: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000089: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  0000008C: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000090: DB 45 FC           fild        dword ptr [ebp-4]
+  00000093: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000096: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000099: DD 1C 24           fstp        qword ptr [esp]
+  0000009C: E8 00 00 00 00     call        _FFX_Field_ClearScreenWithColor
+  000000A1: 83 C4 18           add         esp,18h
+  000000A4: B8 01 00 00 00     mov         eax,1
+  000000A9: 8B E5              mov         esp,ebp
+  000000AB: 5D                 pop         ebp
+  000000AC: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          AD .text

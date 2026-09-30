@@ -1,0 +1,82 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f006A1460.obj
+
+File Type: COFF OBJECT
+
+@FFX_MagicVFX_AllocRenderTarget@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 56                 push        esi
+  00000006: 57                 push        edi
+  00000007: 8B FA              mov         edi,edx
+  00000009: 89 7D FC           mov         dword ptr [ebp-4],edi
+  0000000C: 8B 07              mov         eax,dword ptr [edi]
+  0000000E: 8D 59 08           lea         ebx,[ecx+8]
+  00000011: 8B 30              mov         esi,dword ptr [eax]
+  00000013: 32 C9              xor         cl,cl
+  00000015: 81 E6 FF FF FF 7F  and         esi,7FFFFFFFh
+  0000001B: 74 21              je          0000003E
+  0000001D: 8B 40 04           mov         eax,dword ptr [eax+4]
+  00000020: 83 C0 24           add         eax,24h
+  00000023: 84 C9              test        cl,cl
+  00000025: 75 0F              jne         00000036
+  00000027: 83 78 FC FF        cmp         dword ptr [eax-4],0FFFFFFFFh
+  0000002B: 74 05              je          00000032
+  0000002D: 83 38 FF           cmp         dword ptr [eax],0FFFFFFFFh
+  00000030: 75 04              jne         00000036
+  00000032: 32 C9              xor         cl,cl
+  00000034: EB 02              jmp         00000038
+  00000036: B1 01              mov         cl,1
+  00000038: 83 C0 6C           add         eax,6Ch
+  0000003B: 4E                 dec         esi
+  0000003C: 75 E5              jne         00000023
+  0000003E: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  00000045: 84 C9              test        cl,cl
+  00000047: 74 2B              je          00000074
+  00000049: 6A 14              push        14h
+  0000004B: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000050: 83 C4 04           add         esp,4
+  00000053: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000056: 85 C0              test        eax,eax
+  00000058: 74 0B              je          00000065
+  0000005A: 50                 push        eax
+  0000005B: E8 00 00 00 00     call        _FFX_MagicVFX_SetRenderTarget
+  00000060: 83 C4 04           add         esp,4
+  00000063: EB 02              jmp         00000067
+  00000065: 33 C0              xor         eax,eax
+  00000067: 57                 push        edi
+  00000068: 50                 push        eax
+  00000069: 89 45 FC           mov         dword ptr [ebp-4],eax
+  0000006C: E8 00 00 00 00     call        _Phyre_ClothInstDynMesh_Create
+  00000071: 83 C4 08           add         esp,8
+  00000074: 8B 03              mov         eax,dword ptr [ebx]
+  00000076: 25 FF FF FF 7F     and         eax,7FFFFFFFh
+  0000007B: 6A 04              push        4
+  0000007D: 8D 04 85 04 00 00  lea         eax,[eax*4+4]
+            00
+  00000084: 50                 push        eax
+  00000085: E8 00 00 00 00     call        _Engine_AlignedAllocAlign
+  0000008A: 8D 4D FC           lea         ecx,[ebp-4]
+  0000008D: 51                 push        ecx
+  0000008E: 50                 push        eax
+  0000008F: 53                 push        ebx
+  00000090: E8 00 00 00 00     call        _AlignedArray_PushBack_4byte_B
+  00000095: 83 C4 14           add         esp,14h
+  00000098: 5F                 pop         edi
+  00000099: 5E                 pop         esi
+  0000009A: 5B                 pop         ebx
+  0000009B: 8B E5              mov         esp,ebp
+  0000009D: 5D                 pop         ebp
+  0000009E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          9F .text

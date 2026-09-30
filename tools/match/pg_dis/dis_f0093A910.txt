@@ -1,0 +1,107 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0093A910.obj
+
+File Type: COFF OBJECT
+
+_sub_93A910:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 18 01 00 00  sub         esp,118h
+  00000009: 53                 push        ebx
+  0000000A: 56                 push        esi
+  0000000B: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0000000E: 57                 push        edi
+  0000000F: 56                 push        esi
+  00000010: 8D 85 E8 FE FF FF  lea         eax,[ebp-118h]
+  00000016: 68 00 00 00 00     push        offset ??_C@_08DDJFLLKK@ls?5?9l?5?$CFs?$AA@
+  0000001B: 50                 push        eax
+  0000001C: C7 45 F8 00 00 00  mov         dword ptr [ebp-8],0
+            00
+  00000023: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000002A: E8 00 00 00 00     call        _sprintf
+  0000002F: 68 00 00 01 00     push        10000h
+  00000034: 6A 00              push        0
+  00000036: FF 35 00 00 00 00  push        dword ptr [_off_C498DC]
+  0000003C: E8 00 00 00 00     call        _memset
+  00000041: FF 35 00 00 00 00  push        dword ptr [_off_C498DC]
+  00000047: 8D 85 E8 FE FF FF  lea         eax,[ebp-118h]
+  0000004D: 50                 push        eax
+  0000004E: E8 00 00 00 00     call        _sub_84EDE0
+  00000053: 83 C4 20           add         esp,20h
+  00000056: 85 C0              test        eax,eax
+  00000058: 78 0D              js          00000067
+  0000005A: 8D 45 F8           lea         eax,[ebp-8]
+  0000005D: 56                 push        esi
+  0000005E: 50                 push        eax
+  0000005F: E8 00 00 00 00     call        _sub_8498E0
+  00000064: 83 C4 08           add         esp,8
+  00000067: 33 C0              xor         eax,eax
+  00000069: 33 DB              xor         ebx,ebx
+  0000006B: EB 03              jmp         00000070
+  0000006D: 8D 49 00           lea         ecx,[ecx]
+  00000070: 50                 push        eax
+  00000071: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00000074: 8D 45 E8           lea         eax,[ebp-18h]
+  00000077: 68 00 00 00 00     push        offset ??_C@_0M@NMEPFAIP@?$CFs?$CFd_00?4tm2?$AA@
+  0000007C: 50                 push        eax
+  0000007D: E8 00 00 00 00     call        _sprintf
+  00000082: 8B 7D F8           mov         edi,dword ptr [ebp-8]
+  00000085: 83 C4 10           add         esp,10h
+  00000088: 33 F6              xor         esi,esi
+  0000008A: 85 FF              test        edi,edi
+  0000008C: 74 55              je          000000E3
+  0000008E: 8B FF              mov         edi,edi
+  00000090: 8B 0C B5 00 00 00  mov         ecx,dword ptr [esi*4]
+            00
+  00000097: 8D 45 E8           lea         eax,[ebp-18h]
+  0000009A: 8D 9B 00 00 00 00  lea         ebx,[ebx]
+  000000A0: 8A 11              mov         dl,byte ptr [ecx]
+  000000A2: 3A 10              cmp         dl,byte ptr [eax]
+  000000A4: 75 1A              jne         000000C0
+  000000A6: 84 D2              test        dl,dl
+  000000A8: 74 12              je          000000BC
+  000000AA: 8A 51 01           mov         dl,byte ptr [ecx+1]
+  000000AD: 3A 50 01           cmp         dl,byte ptr [eax+1]
+  000000B0: 75 0E              jne         000000C0
+  000000B2: 83 C1 02           add         ecx,2
+  000000B5: 83 C0 02           add         eax,2
+  000000B8: 84 D2              test        dl,dl
+  000000BA: 75 E4              jne         000000A0
+  000000BC: 33 C9              xor         ecx,ecx
+  000000BE: EB 05              jmp         000000C5
+  000000C0: 1B C9              sbb         ecx,ecx
+  000000C2: 83 C9 01           or          ecx,1
+  000000C5: 85 C9              test        ecx,ecx
+  000000C7: 74 19              je          000000E2
+  000000C9: 33 C0              xor         eax,eax
+  000000CB: 85 C9              test        ecx,ecx
+  000000CD: 0F 99 C0           setns       al
+  000000D0: 8D 04 45 FF FF FF  lea         eax,[eax*2-1]
+            FF
+  000000D7: 85 C0              test        eax,eax
+  000000D9: 74 07              je          000000E2
+  000000DB: 46                 inc         esi
+  000000DC: 3B F7              cmp         esi,edi
+  000000DE: 72 B0              jb          00000090
+  000000E0: EB 01              jmp         000000E3
+  000000E2: 43                 inc         ebx
+  000000E3: 8B C3              mov         eax,ebx
+  000000E5: 3B F7              cmp         esi,edi
+  000000E7: 75 87              jne         00000070
+  000000E9: 5F                 pop         edi
+  000000EA: 5E                 pop         esi
+  000000EB: 5B                 pop         ebx
+  000000EC: 8B E5              mov         esp,ebp
+  000000EE: 5D                 pop         ebp
+  000000EF: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          15 .rdata
+          F0 .text

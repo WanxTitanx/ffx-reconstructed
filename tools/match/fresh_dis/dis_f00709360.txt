@@ -1,0 +1,125 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00709360.obj
+
+File Type: COFF OBJECT
+
+@FFX_FmodMusic_StartEventPlayback@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 53                 push        ebx
+  00000005: 8B D9              mov         ebx,ecx
+  00000007: 56                 push        esi
+  00000008: 83 7B 1C 00        cmp         dword ptr [ebx+1Ch],0
+  0000000C: 8B F2              mov         esi,edx
+  0000000E: 0F 84 32 01 00 00  je          00000146
+  00000014: 85 F6              test        esi,esi
+  00000016: 0F 84 2A 01 00 00  je          00000146
+  0000001C: 81 FE B5 00 00 00  cmp         esi,0B5h
+  00000022: 0F 87 1E 01 00 00  ja          00000146
+  00000028: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  0000002B: 57                 push        edi
+  0000002C: 8B FE              mov         edi,esi
+  0000002E: C1 E7 04           shl         edi,4
+  00000031: 2B FE              sub         edi,esi
+  00000033: 83 7C B8 20 01     cmp         dword ptr [eax+edi*4+20h],1
+  00000038: 0F 84 07 01 00 00  je          00000145
+  0000003E: 83 3C B8 00        cmp         dword ptr [eax+edi*4],0
+  00000042: 0F 84 FD 00 00 00  je          00000145
+  00000048: E8 00 00 00 00     call        _FMOD_Event_getState
+  0000004D: 68 24 02 00 00     push        224h
+  00000052: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  00000057: 50                 push        eax
+  00000058: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  0000005D: 83 C4 0C           add         esp,0Ch
+  00000060: 83 FE 01           cmp         esi,1
+  00000063: 0F 85 DC 00 00 00  jne         00000145
+  00000069: E8 00 00 00 00     call        _FMOD_Event_setCallback
+  0000006E: FF 75 FC           push        dword ptr [ebp-4]
+  00000071: 68 29 02 00 00     push        229h
+  00000076: 50                 push        eax
+  00000077: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  0000007C: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  0000007F: 8B 34 B8           mov         esi,dword ptr [eax+edi*4]
+  00000082: E8 00 00 00 00     call        _FMOD_Event_start
+  00000087: 68 00 00 00 00     push        offset ??_C@_0BH@NNPPLGLM@?4?4?2sound?2FmodMusic?4cpp?$AA@
+  0000008C: 56                 push        esi
+  0000008D: 50                 push        eax
+  0000008E: E8 00 00 00 00     call        _FFX_FmodSfx_CheckResult
+  00000093: D9 05 00 00 00 00  fld         dword ptr [__real@42fe0000]
+  00000099: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  0000009C: C7 43 1C 00 00 00  mov         dword ptr [ebx+1Ch],0
+            00
+  000000A3: D9 5C B8 34        fstp        dword ptr [eax+edi*4+34h]
+  000000A7: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  000000AA: D9 EE              fldz
+  000000AC: 83 C4 18           add         esp,18h
+  000000AF: C7 44 B8 20 01 00  mov         dword ptr [eax+edi*4+20h],1
+            00 00
+  000000B7: 83 7B 24 01        cmp         dword ptr [ebx+24h],1
+  000000BB: C7 43 20 00 00 00  mov         dword ptr [ebx+20h],0
+            00
+  000000C2: 75 2B              jne         000000EF
+  000000C4: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  000000C7: 6A 00              push        0
+  000000C9: 83 EC 08           sub         esp,8
+  000000CC: C7 44 B8 18 00 00  mov         dword ptr [eax+edi*4+18h],0
+            00 00
+  000000D4: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  000000D7: DD 1C 24           fstp        qword ptr [esp]
+  000000DA: 6A 01              push        1
+  000000DC: 53                 push        ebx
+  000000DD: C7 44 B8 1C 00 00  mov         dword ptr [eax+edi*4+1Ch],0
+            00 00
+  000000E5: E8 00 00 00 00     call        _FFX_FmodMusic_SetEventVolume
+  000000EA: D9 EE              fldz
+  000000EC: 83 C4 14           add         esp,14h
+  000000EF: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  000000F2: 83 7C B8 18 01     cmp         dword ptr [eax+edi*4+18h],1
+  000000F7: 75 4A              jne         00000143
+  000000F9: 83 7C B8 1C 00     cmp         dword ptr [eax+edi*4+1Ch],0
+  000000FE: 74 43              je          00000143
+  00000100: 6A 01              push        1
+  00000102: 83 EC 08           sub         esp,8
+  00000105: DD 1C 24           fstp        qword ptr [esp]
+  00000108: 6A 01              push        1
+  0000010A: 53                 push        ebx
+  0000010B: E8 00 00 00 00     call        _FFX_FmodMusic_SetEventVolume
+  00000110: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00000113: 6A 7F              push        7Fh
+  00000115: FF 74 B8 1C        push        dword ptr [eax+edi*4+1Ch]
+  00000119: 6A 01              push        1
+  0000011B: 53                 push        ebx
+  0000011C: E8 00 00 00 00     call        _FFX_FmodMusic_FadeEventVolume
+  00000121: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00000124: 83 C4 24           add         esp,24h
+  00000127: C7 44 B8 18 00 00  mov         dword ptr [eax+edi*4+18h],0
+            00 00
+  0000012F: 8B 43 10           mov         eax,dword ptr [ebx+10h]
+  00000132: C7 44 B8 1C 00 00  mov         dword ptr [eax+edi*4+1Ch],0
+            00 00
+  0000013A: 5F                 pop         edi
+  0000013B: 5E                 pop         esi
+  0000013C: 33 C0              xor         eax,eax
+  0000013E: 5B                 pop         ebx
+  0000013F: 8B E5              mov         esp,ebp
+  00000141: 5D                 pop         ebp
+  00000142: C3                 ret
+  00000143: DD D8              fstp        st(0)
+  00000145: 5F                 pop         edi
+  00000146: 5E                 pop         esi
+  00000147: 33 C0              xor         eax,eax
+  00000149: 5B                 pop         ebx
+  0000014A: 8B E5              mov         esp,ebp
+  0000014C: 5D                 pop         ebp
+  0000014D: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          23 .rdata
+         14E .text

@@ -1,0 +1,88 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0065E620.obj
+
+File Type: COFF OBJECT
+
+@FFX_PostProcess_CalcRenderTargetSize@4:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 81 CC 10 00 00  mov         eax,dword ptr [ecx+10CCh]
+  00000009: 83 EC 0C           sub         esp,0Ch
+  0000000C: 8B 80 8C 00 00 00  mov         eax,dword ptr [eax+8Ch]
+  00000012: 80 78 04 00        cmp         byte ptr [eax+4],0
+  00000016: 74 04              je          0000001C
+  00000018: 33 C0              xor         eax,eax
+  0000001A: EB 02              jmp         0000001E
+  0000001C: 8B 00              mov         eax,dword ptr [eax]
+  0000001E: D9 EE              fldz
+  00000020: 56                 push        esi
+  00000021: 57                 push        edi
+  00000022: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000025: 8B 78 20           mov         edi,dword ptr [eax+20h]
+  00000028: 8B 41 74           mov         eax,dword ptr [ecx+74h]
+  0000002B: 48                 dec         eax
+  0000002C: 83 F8 03           cmp         eax,3
+  0000002F: 77 32              ja          00000063
+  00000031: FF 24 85 00 00 00  jmp         dword ptr $LN17[eax*4]
+            00
+$LN7:
+  00000038: 80 39 00           cmp         byte ptr [ecx],0
+  0000003B: 74 08              je          00000045
+  0000003D: DD 05 00 00 00 00  fld         qword ptr [__real@4073c20000000000]
+  00000043: EB 1B              jmp         00000060
+  00000045: DD 05 00 00 00 00  fld         qword ptr [__real@4061000000000000]
+  0000004B: EB 13              jmp         00000060
+$LN4:
+  0000004D: 80 39 00           cmp         byte ptr [ecx],0
+  00000050: 74 08              je          0000005A
+  00000052: DD 05 00 00 00 00  fld         qword ptr [__real@4073c20000000000]
+  00000058: EB 06              jmp         00000060
+  0000005A: DD 05 00 00 00 00  fld         qword ptr [__real@4078000000000000]
+  00000060: D9 5D FC           fstp        dword ptr [ebp-4]
+  00000063: 89 7D F8           mov         dword ptr [ebp-8],edi
+  00000066: DB 45 F8           fild        dword ptr [ebp-8]
+  00000069: 85 FF              test        edi,edi
+  0000006B: 79 06              jns         00000073
+  0000006D: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000073: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000076: 51                 push        ecx
+  00000077: D9 45 F8           fld         dword ptr [ebp-8]
+  0000007A: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  0000007D: E8 00 00 00 00     call        _Phyre_PostProcessing_CalcSize_120x
+  00000082: D9 45 FC           fld         dword ptr [ebp-4]
+  00000085: 83 C4 04           add         esp,4
+  00000088: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  0000008B: 8B F0              mov         esi,eax
+  0000008D: DC C9              fmul        st(1),st
+  0000008F: D9 C9              fxch        st(1)
+  00000091: DC 35 00 00 00 00  fdiv        qword ptr [__real@407a000000000000]
+  00000097: DE E9              fsubp       st(1),st
+  00000099: E8 00 00 00 00     call        __ftol2_sse
+  0000009E: 2B F8              sub         edi,eax
+  000000A0: 2B FE              sub         edi,esi
+  000000A2: 8B C7              mov         eax,edi
+  000000A4: 5F                 pop         edi
+  000000A5: 5E                 pop         esi
+  000000A6: 8B E5              mov         esp,ebp
+  000000A8: 5D                 pop         ebp
+  000000A9: C3                 ret
+  000000AA: 8B FF              mov         edi,edi
+$LN17:
+  000000AC: 00 00              add         byte ptr [eax],al
+  000000AE: 00 00              add         byte ptr [eax],al
+  000000B0: 00 00              add         byte ptr [eax],al
+  000000B2: 00 00              add         byte ptr [eax],al
+  000000B4: 00 00              add         byte ptr [eax],al
+  000000B6: 00 00              add         byte ptr [eax],al
+  000000B8: 00 00              add         byte ptr [eax],al
+  000000BA: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          28 .rdata
+          BC .text

@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0052D870.obj
+
+File Type: COFF OBJECT
+
+@Phyre_Loose_52D870@8:
+  00000000: 8B 42 04           mov         eax,dword ptr [edx+4]
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B F1              mov         esi,ecx
+  00000007: 57                 push        edi
+  00000008: 89 46 04           mov         dword ptr [esi+4],eax
+  0000000B: 8B 42 08           mov         eax,dword ptr [edx+8]
+  0000000E: 89 46 08           mov         dword ptr [esi+8],eax
+  00000011: 8B 7A 0C           mov         edi,dword ptr [edx+0Ch]
+  00000014: FF 72 10           push        dword ptr [edx+10h]
+  00000017: 81 E7 FF FF FF 7F  and         edi,7FFFFFFFh
+  0000001D: 57                 push        edi
+  0000001E: E8 00 00 00 00     call        _Phyre_AlignedAllocCopyIntArray_B
+  00000023: 8B 4E 10           mov         ecx,dword ptr [esi+10h]
+  00000026: 8B D8              mov         ebx,eax
+  00000028: 83 C4 08           add         esp,8
+  0000002B: 3B CB              cmp         ecx,ebx
+  0000002D: 74 0F              je          0000003E
+  0000002F: 83 7E 0C 00        cmp         dword ptr [esi+0Ch],0
+  00000033: 7C 09              jl          0000003E
+  00000035: 51                 push        ecx
+  00000036: E8 00 00 00 00     call        _Engine_AlignedFree
+  0000003B: 83 C4 04           add         esp,4
+  0000003E: 89 7E 0C           mov         dword ptr [esi+0Ch],edi
+  00000041: 5F                 pop         edi
+  00000042: 89 5E 10           mov         dword ptr [esi+10h],ebx
+  00000045: 8B C6              mov         eax,esi
+  00000047: 5E                 pop         esi
+  00000048: 5B                 pop         ebx
+  00000049: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          4A .text

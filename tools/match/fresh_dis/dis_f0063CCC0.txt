@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0063CCC0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Graphics_SetAudioLightColor:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_AudioListenerContext_GetPtr
+  00000008: D9 45 14           fld         dword ptr [ebp+14h]
+  0000000B: 83 EC 18           sub         esp,18h
+  0000000E: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000012: D9 45 10           fld         dword ptr [ebp+10h]
+  00000015: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000019: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000001C: DD 1C 24           fstp        qword ptr [esp]
+  0000001F: FF 75 08           push        dword ptr [ebp+8]
+  00000022: 50                 push        eax
+  00000023: E8 00 00 00 00     call        _FFX_AudioLight_SetColor
+  00000028: E8 00 00 00 00     call        _FFX_RenderTarget_GetPtr
+  0000002D: 50                 push        eax
+  0000002E: E8 00 00 00 00     call        _FFX_Audio_UpdateVolumeFadeChannel
+  00000033: 83 C4 24           add         esp,24h
+  00000036: 83 7D 08 03        cmp         dword ptr [ebp+8],3
+  0000003A: 75 0E              jne         0000004A
+  0000003C: E8 00 00 00 00     call        _FFX_AudioListenerContext_GetPtr
+  00000041: 50                 push        eax
+  00000042: E8 00 00 00 00     call        _FFX_Audio_UpdateClampedVolume
+  00000047: 83 C4 04           add         esp,4
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4C .text

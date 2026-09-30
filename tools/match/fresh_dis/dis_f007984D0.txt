@@ -1,0 +1,105 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007984D0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Field_AccumulateActorPositionOffset:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 48                 dec         eax
+  00000007: 83 EC 14           sub         esp,14h
+  0000000A: 83 F8 0A           cmp         eax,0Ah
+  0000000D: 0F 87 84 00 00 00  ja          $LN2
+  00000013: 0F B6 80 00 00 00  movzx       eax,byte ptr $LN12[eax]
+            00
+  0000001A: FF 24 85 00 00 00  jmp         dword ptr $LN17[eax*4]
+            00
+$LN7:
+  00000021: 8D 45 EC           lea         eax,[ebp-14h]
+  00000024: 50                 push        eax
+  00000025: 8D 45 FC           lea         eax,[ebp-4]
+  00000028: 50                 push        eax
+  00000029: 8D 45 0C           lea         eax,[ebp+0Ch]
+  0000002C: 50                 push        eax
+  0000002D: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000031: 50                 push        eax
+  00000032: E8 00 00 00 00     call        _FFX_Field_GetAiStatePosition
+  00000037: 83 C4 10           add         esp,10h
+  0000003A: EB 5B              jmp         $LN2
+$LN6:
+  0000003C: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  00000040: 50                 push        eax
+  00000041: E8 00 00 00 00     call        _FFX_FieldActor_GetRotationAngle
+  00000046: 83 C4 04           add         esp,4
+  00000049: 89 45 0C           mov         dword ptr [ebp+0Ch],eax
+  0000004C: DB 45 0C           fild        dword ptr [ebp+0Ch]
+  0000004F: 85 C0              test        eax,eax
+  00000051: 79 41              jns         00000094
+  00000053: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000059: EB 39              jmp         00000094
+$LN5:
+  0000005B: DD 05 00 00 00 00  fld         qword ptr [__real@4032000000000000]
+  00000061: EB 31              jmp         00000094
+$LN4:
+  00000063: DD 05 00 00 00 00  fld         qword ptr [__real@4024000000000000]
+  00000069: EB 29              jmp         00000094
+$LN3:
+  0000006B: 0F B6 45 08        movzx       eax,byte ptr [ebp+8]
+  0000006F: 50                 push        eax
+  00000070: E8 00 00 00 00     call        _FFX_FieldActor_GetRotationAngle
+  00000075: 83 C4 04           add         esp,4
+  00000078: 89 45 F8           mov         dword ptr [ebp-8],eax
+  0000007B: DB 45 F8           fild        dword ptr [ebp-8]
+  0000007E: 85 C0              test        eax,eax
+  00000080: 79 06              jns         00000088
+  00000082: DC 05 00 00 00 00  fadd        qword ptr [__real@41f0000000000000]
+  00000088: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  0000008B: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  0000008E: DC 05 00 00 00 00  fadd        qword ptr [__real@400921fb5fffffff]
+  00000094: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+$LN2:
+  00000097: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000009A: 85 C0              test        eax,eax
+  0000009C: 74 19              je          000000B7
+  0000009E: D9 00              fld         dword ptr [eax]
+  000000A0: D8 45 0C           fadd        dword ptr [ebp+0Ch]
+  000000A3: D9 18              fstp        dword ptr [eax]
+  000000A5: D9 40 04           fld         dword ptr [eax+4]
+  000000A8: D8 45 FC           fadd        dword ptr [ebp-4]
+  000000AB: D9 58 04           fstp        dword ptr [eax+4]
+  000000AE: D9 40 08           fld         dword ptr [eax+8]
+  000000B1: D8 45 EC           fadd        dword ptr [ebp-14h]
+  000000B4: D9 58 08           fstp        dword ptr [eax+8]
+  000000B7: 8B E5              mov         esp,ebp
+  000000B9: 5D                 pop         ebp
+  000000BA: C3                 ret
+  000000BB: 90                 nop
+$LN17:
+  000000BC: 00 00              add         byte ptr [eax],al
+  000000BE: 00 00              add         byte ptr [eax],al
+  000000C0: 00 00              add         byte ptr [eax],al
+  000000C2: 00 00              add         byte ptr [eax],al
+  000000C4: 00 00              add         byte ptr [eax],al
+  000000C6: 00 00              add         byte ptr [eax],al
+  000000C8: 00 00              add         byte ptr [eax],al
+  000000CA: 00 00              add         byte ptr [eax],al
+  000000CC: 00 00              add         byte ptr [eax],al
+  000000CE: 00 00              add         byte ptr [eax],al
+  000000D0: 00 00              add         byte ptr [eax],al
+  000000D2: 00 00              add         byte ptr [eax],al
+$LN12:
+  000000D4: 00 01              add         byte ptr [ecx],al
+  000000D6: 02 03              add         al,byte ptr [ebx]
+  000000D8: 05 05 04 00 00     add         eax,405h
+  000000DD: 02 03              add         al,byte ptr [ebx]
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          20 .rdata
+          DF .text

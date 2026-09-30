@@ -1,0 +1,77 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0087E740.obj
+
+File Type: COFF OBJECT
+
+_FFX_FieldDebug_PrintFormattedValue:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000006: 81 EC 00 01 00 00  sub         esp,100h
+  0000000C: F6 C2 10           test        dl,10h
+  0000000F: 74 43              je          00000054
+  00000011: 56                 push        esi
+  00000012: 57                 push        edi
+  00000013: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  00000016: 4F                 dec         edi
+  00000017: BE 01 00 00 00     mov         esi,1
+  0000001C: 8B CF              mov         ecx,edi
+  0000001E: D3 C6              rol         esi,cl
+  00000020: 85 FF              test        edi,edi
+  00000022: 78 28              js          0000004C
+  00000024: 53                 push        ebx
+  00000025: 8B 5D 08           mov         ebx,dword ptr [ebp+8]
+  00000028: 85 F3              test        ebx,esi
+  0000002A: 74 07              je          00000033
+  0000002C: 68 00 00 00 00     push        offset ??_C@_01HIHLOKLC@1?$AA@
+  00000031: EB 05              jmp         00000038
+  00000033: 68 00 00 00 00     push        offset ??_C@_01GBGANLPD@0?$AA@
+  00000038: 6A 00              push        0
+  0000003A: 6A 00              push        0
+  0000003C: E8 00 00 00 00     call        _FFX_Debug_DrawQuadGlyph
+  00000041: D1 CE              ror         esi,1
+  00000043: 83 C4 0C           add         esp,0Ch
+  00000046: 4F                 dec         edi
+  00000047: 8B D0              mov         edx,eax
+  00000049: 79 DD              jns         00000028
+  0000004B: 5B                 pop         ebx
+  0000004C: 5F                 pop         edi
+  0000004D: 8B C2              mov         eax,edx
+  0000004F: 5E                 pop         esi
+  00000050: 8B E5              mov         esp,ebp
+  00000052: 5D                 pop         ebp
+  00000053: C3                 ret
+  00000054: 84 D2              test        dl,dl
+  00000056: 79 0F              jns         00000067
+  00000058: FF 75 0C           push        dword ptr [ebp+0Ch]
+  0000005B: E8 00 00 00 00     call        _FFX_FieldDebug_PrintVariableScope
+  00000060: 83 C4 04           add         esp,4
+  00000063: 8B E5              mov         esp,ebp
+  00000065: 5D                 pop         ebp
+  00000066: C3                 ret
+  00000067: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000006A: 50                 push        eax
+  0000006B: 50                 push        eax
+  0000006C: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000072: 68 00 00 00 00     push        offset ??_C@_09LLNGGBEK@?$CFd?$CI0x?$CFx?$CJ?6?$AA@
+  00000077: 50                 push        eax
+  00000078: E8 00 00 00 00     call        _sprintf
+  0000007D: 8D 85 00 FF FF FF  lea         eax,[ebp-100h]
+  00000083: 50                 push        eax
+  00000084: 6A 00              push        0
+  00000086: 6A 00              push        0
+  00000088: E8 00 00 00 00     call        _FFX_Debug_DrawQuadGlyph
+  0000008D: 83 C4 1C           add         esp,1Ch
+  00000090: 8B E5              mov         esp,ebp
+  00000092: 5D                 pop         ebp
+  00000093: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           E .rdata
+          94 .text

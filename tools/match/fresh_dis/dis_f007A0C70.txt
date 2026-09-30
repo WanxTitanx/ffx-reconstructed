@@ -1,0 +1,46 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A0C70.obj
+
+File Type: COFF OBJECT
+
+_FFX_Table_LookupEntryByRangeAndIndex:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 0F B6 75 0C        movzx       esi,byte ptr [ebp+0Ch]
+  00000008: 8D 45 0C           lea         eax,[ebp+0Ch]
+  0000000B: 50                 push        eax
+  0000000C: FF 35 00 00 00 00  push        dword ptr [_g_TableUnkVar_11363A4]
+  00000012: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000015: 25 FF 0F 00 00     and         eax,0FFFh
+  0000001A: 50                 push        eax
+  0000001B: E8 00 00 00 00     call        _FFX_Table_GetEntryByIdRange
+  00000020: 8B 55 14           mov         edx,dword ptr [ebp+14h]
+  00000023: 83 C4 0C           add         esp,0Ch
+  00000026: 85 D2              test        edx,edx
+  00000028: 74 08              je          00000032
+  0000002A: 66 8B 4C 70 38     mov         cx,word ptr [eax+esi*2+38h]
+  0000002F: 66 89 0A           mov         word ptr [edx],cx
+  00000032: 83 7D 10 00        cmp         dword ptr [ebp+10h],0
+  00000036: 74 0D              je          00000045
+  00000038: 0F B7 4C B0 1C     movzx       ecx,word ptr [eax+esi*4+1Ch]
+  0000003D: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000040: 03 C1              add         eax,ecx
+  00000042: 5E                 pop         esi
+  00000043: 5D                 pop         ebp
+  00000044: C3                 ret
+  00000045: 0F B7 0C B0        movzx       ecx,word ptr [eax+esi*4]
+  00000049: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000004C: 03 C1              add         eax,ecx
+  0000004E: 5E                 pop         esi
+  0000004F: 5D                 pop         ebp
+  00000050: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          51 .text

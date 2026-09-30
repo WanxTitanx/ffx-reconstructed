@@ -1,0 +1,108 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00893330.obj
+
+File Type: COFF OBJECT
+
+_sub_893330:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 24           sub         esp,24h
+  00000006: E8 00 00 00 00     call        _FFX_Btl_Death_CheckPartyAliveStatus
+  0000000B: 83 F8 01           cmp         eax,1
+  0000000E: 0F 84 14 01 00 00  je          00000128
+  00000014: 56                 push        esi
+  00000015: 68 A0 01 00 00     push        1A0h
+  0000001A: 68 00 02 00 00     push        200h
+  0000001F: 6A 00              push        0
+  00000021: 6A 00              push        0
+  00000023: E8 00 00 00 00     call        _FFX_Menu2D_SetViewport
+  00000028: 33 F6              xor         esi,esi
+  0000002A: 83 C4 10           add         esp,10h
+  0000002D: 39 35 B0 C2 CF 04  cmp         dword ptr ds:[4CFC2B0h],esi
+  00000033: 0F 86 EE 00 00 00  jbe         00000127
+  00000039: 53                 push        ebx
+  0000003A: 57                 push        edi
+  0000003B: BF 00 00 00 00     mov         edi,offset _unk_133F94C
+  00000040: BB B0 C2 CF 04     mov         ebx,4CFC2B0h
+  00000045: EB 09              jmp         00000050
+  00000047: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  0000004E: 8B FF              mov         edi,edi
+  00000050: 8A 86 00 00 00 00  mov         al,byte ptr _unk_133F0B0[esi]
+  00000056: 3C FF              cmp         al,0FFh
+  00000058: 0F 84 BB 00 00 00  je          00000119
+  0000005E: 0F B6 C0           movzx       eax,al
+  00000061: 50                 push        eax
+  00000062: E8 00 00 00 00     call        _FFX_Btl_UI_UpdateAndStoreOverdriveGaugePos
+  00000067: 83 C4 04           add         esp,4
+  0000006A: 83 F8 01           cmp         eax,1
+  0000006D: 0F 85 A6 00 00 00  jne         00000119
+  00000073: 8D 45 F0           lea         eax,[ebp-10h]
+  00000076: 50                 push        eax
+  00000077: 8D 45 FC           lea         eax,[ebp-4]
+  0000007A: 50                 push        eax
+  0000007B: 0F B6 86 00 00 00  movzx       eax,byte ptr _unk_133F0B0[esi]
+            00
+  00000082: 50                 push        eax
+  00000083: E8 00 00 00 00     call        _sub_795000
+  00000088: 83 C4 04           add         esp,4
+  0000008B: DB 45 FC           fild        dword ptr [ebp-4]
+  0000008E: D9 5D F8           fstp        dword ptr [ebp-8]
+  00000091: D9 45 F8           fld         dword ptr [ebp-8]
+  00000094: DD 5D DC           fstp        qword ptr [ebp-24h]
+  00000097: DD 05 00 00 00 00  fld         qword ptr [__real@4020000000000000]
+  0000009D: DD 1C 24           fstp        qword ptr [esp]
+  000000A0: E8 00 00 00 00     call        _FFX_Menu2D_ScaleY_1080to416
+  000000A5: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000A8: DB 45 F8           fild        dword ptr [ebp-8]
+  000000AB: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000000AE: DD 05 00 00 00 00  fld         qword ptr [__real@407c200000000000]
+  000000B4: DD 1C 24           fstp        qword ptr [esp]
+  000000B7: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000000BC: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000BF: DB 45 F8           fild        dword ptr [ebp-8]
+  000000C2: D9 5D E8           fstp        dword ptr [ebp-18h]
+  000000C5: DB 45 F0           fild        dword ptr [ebp-10h]
+  000000C8: D9 5D E4           fstp        dword ptr [ebp-1Ch]
+  000000CB: DD 05 00 00 00 00  fld         qword ptr [__real@407c200000000000]
+  000000D1: DD 1C 24           fstp        qword ptr [esp]
+  000000D4: E8 00 00 00 00     call        _FFX_Menu2D_ScaleX_1920to512
+  000000D9: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000DC: DB 45 F8           fild        dword ptr [ebp-8]
+  000000DF: 83 EC 18           sub         esp,18h
+  000000E2: DD 5D F4           fstp        qword ptr [ebp-0Ch]
+  000000E5: DD 45 F4           fld         qword ptr [ebp-0Ch]
+  000000E8: DC 0D 00 00 00 00  fmul        qword ptr [__real@3fe0000000000000]
+  000000EE: DC 6D DC           fsubr       qword ptr [ebp-24h]
+  000000F1: D9 5D F8           fstp        dword ptr [ebp-8]
+  000000F4: D9 45 EC           fld         dword ptr [ebp-14h]
+  000000F7: DD 5C 24 18        fstp        qword ptr [esp+18h]
+  000000FB: D9 45 E8           fld         dword ptr [ebp-18h]
+  000000FE: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000102: D9 45 E4           fld         dword ptr [ebp-1Ch]
+  00000105: DD 5C 24 08        fstp        qword ptr [esp+8]
+  00000109: D9 45 F8           fld         dword ptr [ebp-8]
+  0000010C: DD 1C 24           fstp        qword ptr [esp]
+  0000010F: FF 37              push        dword ptr [edi]
+  00000111: E8 00 00 00 00     call        _FFX_Menu2D_DrawProgressBar
+  00000116: 83 C4 24           add         esp,24h
+  00000119: 46                 inc         esi
+  0000011A: 83 C7 10           add         edi,10h
+  0000011D: 3B 33              cmp         esi,dword ptr [ebx]
+  0000011F: 0F 82 2B FF FF FF  jb          00000050
+  00000125: 5F                 pop         edi
+  00000126: 5B                 pop         ebx
+  00000127: 5E                 pop         esi
+  00000128: 8B E5              mov         esp,ebp
+  0000012A: 5D                 pop         ebp
+  0000012B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          18 .rdata
+         12C .text

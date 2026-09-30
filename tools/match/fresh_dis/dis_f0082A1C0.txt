@@ -1,0 +1,60 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0082A1C0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_LoadCdfCmfForAnimation:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 8B 87 04 01 00 00  mov         eax,dword ptr [edi+104h]
+  0000000F: 8B 9F 00 01 00 00  mov         ebx,dword ptr [edi+100h]
+  00000015: 89 45 08           mov         dword ptr [ebp+8],eax
+  00000018: 8B C7              mov         eax,edi
+  0000001A: 8D 50 01           lea         edx,[eax+1]
+  0000001D: 8D 49 00           lea         ecx,[ecx]
+  00000020: 8A 08              mov         cl,byte ptr [eax]
+  00000022: 40                 inc         eax
+  00000023: 84 C9              test        cl,cl
+  00000025: 75 F9              jne         00000020
+  00000027: 2B C2              sub         eax,edx
+  00000029: 6A 04              push        4
+  0000002B: 8D 77 F9           lea         esi,[edi-7]
+  0000002E: 03 F0              add         esi,eax
+  00000030: 68 00 00 00 00     push        offset ??_C@_03ILFBNHND@cdf?$AA@
+  00000035: 56                 push        esi
+  00000036: E8 00 00 00 00     call        _strncpy
+  0000003B: 57                 push        edi
+  0000003C: E8 00 00 00 00     call        _FFX_Chr_LoadCdfFile
+  00000041: 6A 04              push        4
+  00000043: 68 00 00 00 00     push        offset ??_C@_03IEIAOMFM@cmf?$AA@
+  00000048: 56                 push        esi
+  00000049: 89 03              mov         dword ptr [ebx],eax
+  0000004B: E8 00 00 00 00     call        _strncpy
+  00000050: 57                 push        edi
+  00000051: E8 00 00 00 00     call        _FFX_Chr_LoadCdfFile
+  00000056: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000059: 83 C4 20           add         esp,20h
+  0000005C: 89 01              mov         dword ptr [ecx],eax
+  0000005E: C6 87 08 01 00 00  mov         byte ptr [edi+108h],0
+            00
+  00000065: C7 87 0C 01 00 00  mov         dword ptr [edi+10Ch],0
+            00 00 00 00
+  0000006F: 5F                 pop         edi
+  00000070: 5E                 pop         esi
+  00000071: 5B                 pop         ebx
+  00000072: 5D                 pop         ebp
+  00000073: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           8 .rdata
+          74 .text

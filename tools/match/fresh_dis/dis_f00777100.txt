@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00777100.obj
+
+File Type: COFF OBJECT
+
+_FFX_Movie_ShellWaitAndRead:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: E8 00 00 00 00     call        _FFX_CdRom_CheckBlockEndReturnZero
+  00000008: 83 F8 01           cmp         eax,1
+  0000000B: 75 43              jne         00000050
+  0000000D: 56                 push        esi
+  0000000E: E8 00 00 00 00     call        _dbgPrintf
+  00000013: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  00000016: E8 00 00 00 00     call        _FFX_CdStub_Return2
+  0000001B: 83 F8 02           cmp         eax,2
+  0000001E: 75 0A              jne         0000002A
+  00000020: E8 00 00 00 00     call        _FFX_CdRom_CheckBlockEndReturnZero
+  00000025: 83 F8 01           cmp         eax,1
+  00000028: 75 1C              jne         00000046
+  0000002A: 6A 01              push        1
+  0000002C: E8 00 00 00 00     call        _FFX_Mscd_SetGlobalFromArg
+  00000031: 83 C4 04           add         esp,4
+  00000034: 85 F6              test        esi,esi
+  00000036: 74 07              je          0000003F
+  00000038: E8 00 00 00 00     call        _FFX_Movie_TaskWaitWrapper
+  0000003D: EB D7              jmp         00000016
+  0000003F: E8 00 00 00 00     call        _FFX_RenderEngine_NotifyFrameEnd
+  00000044: EB D0              jmp         00000016
+  00000046: E8 00 00 00 00     call        _dbgPrintf
+  0000004B: 33 C0              xor         eax,eax
+  0000004D: 5E                 pop         esi
+  0000004E: 5D                 pop         ebp
+  0000004F: C3                 ret
+  00000050: E8 00 00 00 00     call        _dbgPrintf
+  00000055: B8 01 00 00 00     mov         eax,1
+  0000005A: 5D                 pop         ebp
+  0000005B: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          5C .text

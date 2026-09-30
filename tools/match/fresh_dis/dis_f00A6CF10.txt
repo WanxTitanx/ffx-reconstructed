@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A6CF10.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicHost_CheckTextureHandle:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B B8 90 03 00 00  mov         edi,dword ptr [eax+390h]
+  0000000F: 8D 9F C0 00 00 00  lea         ebx,[edi+0C0h]
+  00000015: 8D 87 80 00 00 00  lea         eax,[edi+80h]
+  0000001B: 53                 push        ebx
+  0000001C: 50                 push        eax
+  0000001D: E8 00 00 00 00     call        _FFX_Lighting_CopyAndNegateDirections
+  00000022: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000025: 8D 47 40           lea         eax,[edi+40h]
+  00000028: FF 76 2C           push        dword ptr [esi+2Ch]
+  0000002B: FF 76 28           push        dword ptr [esi+28h]
+  0000002E: 50                 push        eax
+  0000002F: E8 00 00 00 00     call        _FFX_Math_Matrix4x4_InverseTransform
+  00000034: FF 76 2C           push        dword ptr [esi+2Ch]
+  00000037: 53                 push        ebx
+  00000038: 53                 push        ebx
+  00000039: E8 00 00 00 00     call        _FFX_Math_Matrix4x4_InverseTransform
+  0000003E: 83 C4 20           add         esp,20h
+  00000041: 5F                 pop         edi
+  00000042: 5E                 pop         esi
+  00000043: 5B                 pop         ebx
+  00000044: 5D                 pop         ebp
+  00000045: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          46 .text

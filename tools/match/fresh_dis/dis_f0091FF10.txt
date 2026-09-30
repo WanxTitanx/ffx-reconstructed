@@ -1,0 +1,61 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0091FF10.obj
+
+File Type: COFF OBJECT
+
+_FFX_MagicVfx_ApplyForce:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  00000006: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000009: D9 00              fld         dword ptr [eax]
+  0000000B: 33 D2              xor         edx,edx
+  0000000D: 39 55 0C           cmp         dword ptr [ebp+0Ch],edx
+  00000010: 74 40              je          00000052
+  00000012: D9 99 8C 00 00 00  fstp        dword ptr [ecx+8Ch]
+  00000018: D9 40 04           fld         dword ptr [eax+4]
+  0000001B: D9 99 90 00 00 00  fstp        dword ptr [ecx+90h]
+  00000021: D9 40 08           fld         dword ptr [eax+8]
+  00000024: D9 99 94 00 00 00  fstp        dword ptr [ecx+94h]
+  0000002A: 39 91 A0 00 00 00  cmp         dword ptr [ecx+0A0h],edx
+  00000030: 75 62              jne         00000094
+  00000032: 8B 81 A4 00 00 00  mov         eax,dword ptr [ecx+0A4h]
+  00000038: 85 C0              test        eax,eax
+  0000003A: 74 0A              je          00000046
+  0000003C: 48                 dec         eax
+  0000003D: 89 81 A4 00 00 00  mov         dword ptr [ecx+0A4h],eax
+  00000043: 0F 94 C2           sete        dl
+  00000046: C7 81 A0 00 00 00  mov         dword ptr [ecx+0A0h],1
+            01 00 00 00
+  00000050: EB 35              jmp         00000087
+  00000052: D9 59 4C           fstp        dword ptr [ecx+4Ch]
+  00000055: D9 40 04           fld         dword ptr [eax+4]
+  00000058: D9 59 50           fstp        dword ptr [ecx+50h]
+  0000005B: D9 40 08           fld         dword ptr [eax+8]
+  0000005E: D9 59 54           fstp        dword ptr [ecx+54h]
+  00000061: 39 91 9C 00 00 00  cmp         dword ptr [ecx+9Ch],edx
+  00000067: 75 2B              jne         00000094
+  00000069: 8B 81 A4 00 00 00  mov         eax,dword ptr [ecx+0A4h]
+  0000006F: 85 C0              test        eax,eax
+  00000071: 74 0A              je          0000007D
+  00000073: 48                 dec         eax
+  00000074: 89 81 A4 00 00 00  mov         dword ptr [ecx+0A4h],eax
+  0000007A: 0F 94 C2           sete        dl
+  0000007D: C7 81 9C 00 00 00  mov         dword ptr [ecx+9Ch],1
+            01 00 00 00
+  00000087: 85 D2              test        edx,edx
+  00000089: 74 09              je          00000094
+  0000008B: 51                 push        ecx
+  0000008C: E8 00 00 00 00     call        _FFX_MagicVfx_UpdateAndSetDirty
+  00000091: 83 C4 04           add         esp,4
+  00000094: 5D                 pop         ebp
+  00000095: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          96 .text

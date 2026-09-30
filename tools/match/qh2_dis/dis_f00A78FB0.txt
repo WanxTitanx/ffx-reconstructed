@@ -1,0 +1,79 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00A78FB0.obj
+
+File Type: COFF OBJECT
+
+_sub_A78FB0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 10           sub         esp,10h
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000C: 57                 push        edi
+  0000000D: E8 00 00 00 00     call        _FFX_TK_GetChrPointer
+  00000012: 8B 75 10           mov         esi,dword ptr [ebp+10h]
+  00000015: 56                 push        esi
+  00000016: 57                 push        edi
+  00000017: 8B D8              mov         ebx,eax
+  00000019: E8 00 00 00 00     call        _FFX_FieldVM_PopOperand
+  0000001E: 56                 push        esi
+  0000001F: 57                 push        edi
+  00000020: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000023: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  00000028: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000002B: DB 45 F0           fild        dword ptr [ebp-10h]
+  0000002E: 85 C0              test        eax,eax
+  00000030: 79 06              jns         00000038
+  00000032: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000038: 56                 push        esi
+  00000039: D9 5D F8           fstp        dword ptr [ebp-8]
+  0000003C: 57                 push        edi
+  0000003D: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  00000042: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000045: DB 45 F0           fild        dword ptr [ebp-10h]
+  00000048: 85 C0              test        eax,eax
+  0000004A: 79 06              jns         00000052
+  0000004C: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  00000052: 56                 push        esi
+  00000053: D9 5D F4           fstp        dword ptr [ebp-0Ch]
+  00000056: 57                 push        edi
+  00000057: E8 00 00 00 00     call        _FFX_TK_PopStackFloat
+  0000005C: 83 C4 24           add         esp,24h
+  0000005F: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  00000062: DB 45 F0           fild        dword ptr [ebp-10h]
+  00000065: 85 C0              test        eax,eax
+  00000067: 79 06              jns         0000006F
+  00000069: D8 05 00 00 00 00  fadd        dword ptr [__real@4f800000]
+  0000006F: D9 5D F0           fstp        dword ptr [ebp-10h]
+  00000072: 85 DB              test        ebx,ebx
+  00000074: 74 23              je          00000099
+  00000076: FF 75 FC           push        dword ptr [ebp-4]
+  00000079: D9 45 F8           fld         dword ptr [ebp-8]
+  0000007C: 83 EC 18           sub         esp,18h
+  0000007F: DD 5C 24 10        fstp        qword ptr [esp+10h]
+  00000083: D9 45 F4           fld         dword ptr [ebp-0Ch]
+  00000086: DD 5C 24 08        fstp        qword ptr [esp+8]
+  0000008A: D9 45 F0           fld         dword ptr [ebp-10h]
+  0000008D: DD 1C 24           fstp        qword ptr [esp]
+  00000090: 53                 push        ebx
+  00000091: E8 00 00 00 00     call        _sub_82B650
+  00000096: 83 C4 20           add         esp,20h
+  00000099: 5F                 pop         edi
+  0000009A: 5E                 pop         esi
+  0000009B: 33 C0              xor         eax,eax
+  0000009D: 5B                 pop         ebx
+  0000009E: 8B E5              mov         esp,ebp
+  000000A0: 5D                 pop         ebp
+  000000A1: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          A2 .text

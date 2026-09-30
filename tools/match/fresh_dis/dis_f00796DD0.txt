@@ -1,0 +1,97 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00796DD0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_ReleaseActorResources:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 8A 5D 10           mov         bl,byte ptr [ebp+10h]
+  00000007: 56                 push        esi
+  00000008: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000B: 57                 push        edi
+  0000000C: 8B 3E              mov         edi,dword ptr [esi]
+  0000000E: 85 FF              test        edi,edi
+  00000010: 74 26              je          00000038
+  00000012: F6 C3 08           test        bl,8
+  00000015: 74 0F              je          00000026
+  00000017: 6A 01              push        1
+  00000019: 57                 push        edi
+  0000001A: E8 00 00 00 00     call        _FFX_Chr_PurgeModelPacket
+  0000001F: 83 C4 08           add         esp,8
+  00000022: C6 46 3A 01        mov         byte ptr [esi+3Ah],1
+  00000026: F6 C3 01           test        bl,1
+  00000029: 74 0D              je          00000038
+  0000002B: 57                 push        edi
+  0000002C: E8 00 00 00 00     call        _FFX_Chr_DisposeActiveInstance
+  00000031: D9 EE              fldz
+  00000033: D9 1E              fstp        dword ptr [esi]
+  00000035: 83 C4 04           add         esp,4
+  00000038: 80 7E 11 00        cmp         byte ptr [esi+11h],0
+  0000003C: 0F 84 82 00 00 00  je          000000C4
+  00000042: 80 7E 12 00        cmp         byte ptr [esi+12h],0
+  00000046: 75 7C              jne         000000C4
+  00000048: FF 75 08           push        dword ptr [ebp+8]
+  0000004B: E8 00 00 00 00     call        _FFX_Battle_ReleaseActorModelInstance
+  00000050: 8B 4E 08           mov         ecx,dword ptr [esi+8]
+  00000053: 8B 7E 04           mov         edi,dword ptr [esi+4]
+  00000056: 83 C4 04           add         esp,4
+  00000059: 85 C9              test        ecx,ecx
+  0000005B: 74 1D              je          0000007A
+  0000005D: F6 C3 04           test        bl,4
+  00000060: 74 18              je          0000007A
+  00000062: 80 7E 3E 00        cmp         byte ptr [esi+3Eh],0
+  00000066: 75 12              jne         0000007A
+  00000068: 0F BE 46 20        movsx       eax,byte ptr [esi+20h]
+  0000006C: 50                 push        eax
+  0000006D: 51                 push        ecx
+  0000006E: E8 00 00 00 00     call        _FFX_Mgrp_UnloadRegistryEntry
+  00000073: 83 C4 08           add         esp,8
+  00000076: C6 46 38 00        mov         byte ptr [esi+38h],0
+  0000007A: 85 FF              test        edi,edi
+  0000007C: 74 16              je          00000094
+  0000007E: F6 C3 02           test        bl,2
+  00000081: 74 11              je          00000094
+  00000083: 80 7E 3E 00        cmp         byte ptr [esi+3Eh],0
+  00000087: 75 0B              jne         00000094
+  00000089: 6A 00              push        0
+  0000008B: 57                 push        edi
+  0000008C: E8 00 00 00 00     call        _FFX_Chr_DataDispose
+  00000091: 83 C4 08           add         esp,8
+  00000094: 8B 46 48           mov         eax,dword ptr [esi+48h]
+  00000097: 85 C0              test        eax,eax
+  00000099: 74 0E              je          000000A9
+  0000009B: 50                 push        eax
+  0000009C: E8 00 00 00 00     call        _FFX_Mem_FreeAligned
+  000000A1: D9 EE              fldz
+  000000A3: D9 5E 48           fstp        dword ptr [esi+48h]
+  000000A6: 83 C4 04           add         esp,4
+  000000A9: 83 7D 08 1F        cmp         dword ptr [ebp+8],1Fh
+  000000AD: 7D 0B              jge         000000BA
+  000000AF: 6A 00              push        0
+  000000B1: 56                 push        esi
+  000000B2: E8 00 00 00 00     call        _FFX_Battle_ClearActorSoundEffectSlots
+  000000B7: 83 C4 08           add         esp,8
+  000000BA: 5F                 pop         edi
+  000000BB: 5E                 pop         esi
+  000000BC: B8 01 00 00 00     mov         eax,1
+  000000C1: 5B                 pop         ebx
+  000000C2: 5D                 pop         ebp
+  000000C3: C3                 ret
+  000000C4: 5F                 pop         edi
+  000000C5: 5E                 pop         esi
+  000000C6: 33 C0              xor         eax,eax
+  000000C8: 5B                 pop         ebx
+  000000C9: 5D                 pop         ebp
+  000000CA: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+          CB .text

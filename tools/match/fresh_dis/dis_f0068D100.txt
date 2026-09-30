@@ -1,0 +1,151 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0068D100.obj
+
+File Type: COFF OBJECT
+
+@Async_Deque_GrowFront@8:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 83 EC 08           sub         esp,8
+  00000006: 53                 push        ebx
+  00000007: 56                 push        esi
+  00000008: 57                 push        edi
+  00000009: 8B F9              mov         edi,ecx
+  0000000B: 8B DA              mov         ebx,edx
+  0000000D: 8B 4F 08           mov         ecx,dword ptr [edi+8]
+  00000010: 89 7D F8           mov         dword ptr [ebp-8],edi
+  00000013: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00000016: 8B F1              mov         esi,ecx
+  00000018: 85 C9              test        ecx,ecx
+  0000001A: 75 05              jne         00000021
+  0000001C: BE 01 00 00 00     mov         esi,1
+  00000021: 8B C6              mov         eax,esi
+  00000023: 2B C1              sub         eax,ecx
+  00000025: 3B C3              cmp         eax,ebx
+  00000027: 72 05              jb          0000002E
+  00000029: 83 FE 08           cmp         esi,8
+  0000002C: 73 1F              jae         0000004D
+  0000002E: B8 FF FF FF 0F     mov         eax,0FFFFFFFh
+  00000033: 2B C6              sub         eax,esi
+  00000035: 3B C6              cmp         eax,esi
+  00000037: 73 10              jae         00000049
+  00000039: 68 00 00 00 00     push        offset ??_C@_0BC@KBDMBKEH@deque?$DMT?$DO?5too?5long?$AA@
+  0000003E: E8 00 00 00 00     call        _std__Xlength_error
+  00000043: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000046: 83 C4 04           add         esp,4
+  00000049: 03 F6              add         esi,esi
+  0000004B: EB D4              jmp         00000021
+  0000004D: 8B 5F 0C           mov         ebx,dword ptr [edi+0Ch]
+  00000050: 2B F1              sub         esi,ecx
+  00000052: C1 EB 02           shr         ebx,2
+  00000055: 8D 04 0E           lea         eax,[esi+ecx]
+  00000058: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0000005F: 85 C0              test        eax,eax
+  00000061: 74 1F              je          00000082
+  00000063: 3D FF FF FF 3F     cmp         eax,3FFFFFFFh
+  00000068: 77 13              ja          0000007D
+  0000006A: C1 E0 02           shl         eax,2
+  0000006D: 50                 push        eax
+  0000006E: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000073: 83 C4 04           add         esp,4
+  00000076: 89 45 FC           mov         dword ptr [ebp-4],eax
+  00000079: 85 C0              test        eax,eax
+  0000007B: 75 05              jne         00000082
+  0000007D: E8 00 00 00 00     call        _std__Xbad_alloc
+  00000082: 8B 47 04           mov         eax,dword ptr [edi+4]
+  00000085: 8B 7F 08           mov         edi,dword ptr [edi+8]
+  00000088: 2B FB              sub         edi,ebx
+  0000008A: 8D 0C 9D 00 00 00  lea         ecx,[ebx*4]
+            00
+  00000091: C1 E7 02           shl         edi,2
+  00000094: 03 C1              add         eax,ecx
+  00000096: 83 E7 FC           and         edi,0FFFFFFFCh
+  00000099: 57                 push        edi
+  0000009A: 50                 push        eax
+  0000009B: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000009E: 03 C1              add         eax,ecx
+  000000A0: 50                 push        eax
+  000000A1: E8 00 00 00 00     call        _memmove
+  000000A6: 83 C4 0C           add         esp,0Ch
+  000000A9: 8D 0C 07           lea         ecx,[edi+eax]
+  000000AC: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000AF: 3B DE              cmp         ebx,esi
+  000000B1: 76 3C              jbe         000000EF
+  000000B3: 8D 3C B5 00 00 00  lea         edi,[esi*4]
+            00
+  000000BA: 57                 push        edi
+  000000BB: FF 70 04           push        dword ptr [eax+4]
+  000000BE: 51                 push        ecx
+  000000BF: E8 00 00 00 00     call        _memmove
+  000000C4: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  000000CB: 2B C7              sub         eax,edi
+  000000CD: 50                 push        eax
+  000000CE: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000000D1: 8B 40 04           mov         eax,dword ptr [eax+4]
+  000000D4: 03 C7              add         eax,edi
+  000000D6: 50                 push        eax
+  000000D7: FF 75 FC           push        dword ptr [ebp-4]
+  000000DA: E8 00 00 00 00     call        _memmove
+  000000DF: 2B DE              sub         ebx,esi
+  000000E1: 83 C4 18           add         esp,18h
+  000000E4: 8D 0C 98           lea         ecx,[eax+ebx*4]
+  000000E7: 85 F6              test        esi,esi
+  000000E9: 74 4B              je          00000136
+  000000EB: 8B DE              mov         ebx,esi
+  000000ED: EB 34              jmp         00000123
+  000000EF: 8D 3C 9D 00 00 00  lea         edi,[ebx*4]
+            00
+  000000F6: 57                 push        edi
+  000000F7: FF 70 04           push        dword ptr [eax+4]
+  000000FA: 51                 push        ecx
+  000000FB: E8 00 00 00 00     call        _memmove
+  00000100: 83 C4 0C           add         esp,0Ch
+  00000103: 03 C7              add         eax,edi
+  00000105: 3B F3              cmp         esi,ebx
+  00000107: 74 13              je          0000011C
+  00000109: 8B CE              mov         ecx,esi
+  0000010B: 2B CB              sub         ecx,ebx
+  0000010D: C1 E1 02           shl         ecx,2
+  00000110: 51                 push        ecx
+  00000111: 6A 00              push        0
+  00000113: 50                 push        eax
+  00000114: E8 00 00 00 00     call        _memset
+  00000119: 83 C4 0C           add         esp,0Ch
+  0000011C: 85 DB              test        ebx,ebx
+  0000011E: 74 16              je          00000136
+  00000120: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000123: 8D 04 9D 00 00 00  lea         eax,[ebx*4]
+            00
+  0000012A: 50                 push        eax
+  0000012B: 6A 00              push        0
+  0000012D: 51                 push        ecx
+  0000012E: E8 00 00 00 00     call        _memset
+  00000133: 83 C4 0C           add         esp,0Ch
+  00000136: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00000139: 8B 43 04           mov         eax,dword ptr [ebx+4]
+  0000013C: 85 C0              test        eax,eax
+  0000013E: 74 09              je          00000149
+  00000140: 50                 push        eax
+  00000141: E8 00 00 00 00     call        _FFX_Heap_Free
+  00000146: 83 C4 04           add         esp,4
+  00000149: 01 73 08           add         dword ptr [ebx+8],esi
+  0000014C: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  0000014F: 5F                 pop         edi
+  00000150: 5E                 pop         esi
+  00000151: 89 43 04           mov         dword ptr [ebx+4],eax
+  00000154: 5B                 pop         ebx
+  00000155: 8B E5              mov         esp,ebp
+  00000157: 5D                 pop         ebp
+  00000158: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          12 .rdata
+         159 .text

@@ -1,0 +1,37 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0069F580.obj
+
+File Type: COFF OBJECT
+
+_FFX_VFXRenderDataTable_LazyInit:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 51                 push        ecx
+  00000004: 83 7D FC 00        cmp         dword ptr [ebp-4],0
+  00000008: 75 29              jne         00000033
+  0000000A: 56                 push        esi
+  0000000B: 6A 08              push        8
+  0000000D: E8 00 00 00 00     call        _FFX_Heap_AllocGameArenaDebugFill_wrapper_w
+  00000012: 8B F0              mov         esi,eax
+  00000014: 83 C4 04           add         esp,4
+  00000017: 85 F6              test        esi,esi
+  00000019: 74 17              je          00000032
+  0000001B: C7 06 00 00 00 00  mov         dword ptr [esi],0
+  00000021: C7 46 04 00 00 00  mov         dword ptr [esi+4],0
+            00
+  00000028: E8 00 00 00 00     call        _FFX_VFXMap_InitContainer
+  0000002D: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000030: 89 0E              mov         dword ptr [esi],ecx
+  00000032: 5E                 pop         esi
+  00000033: 8B E5              mov         esp,ebp
+  00000035: 5D                 pop         ebp
+  00000036: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          37 .text

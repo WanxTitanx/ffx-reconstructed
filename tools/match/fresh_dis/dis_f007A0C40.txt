@@ -1,0 +1,40 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007A0C40.obj
+
+File Type: COFF OBJECT
+
+_FFX_Btl_CheckCommandWordInList:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 55 08           mov         edx,dword ptr [ebp+8]
+  00000006: 83 C2 0E           add         edx,0Eh
+  00000009: 56                 push        esi
+  0000000A: 0F BF 75 0C        movsx       esi,word ptr [ebp+0Ch]
+  0000000E: 0F B7 0A           movzx       ecx,word ptr [edx]
+  00000011: 33 C0              xor         eax,eax
+  00000013: 3B CE              cmp         ecx,esi
+  00000015: 74 11              je          00000028
+  00000017: 40                 inc         eax
+  00000018: 83 F8 04           cmp         eax,4
+  0000001B: 7D 13              jge         00000030
+  0000001D: 0F B7 4A 02        movzx       ecx,word ptr [edx+2]
+  00000021: 83 C2 02           add         edx,2
+  00000024: 3B CE              cmp         ecx,esi
+  00000026: 75 EF              jne         00000017
+  00000028: B8 01 00 00 00     mov         eax,1
+  0000002D: 5E                 pop         esi
+  0000002E: 5D                 pop         ebp
+  0000002F: C3                 ret
+  00000030: 33 C0              xor         eax,eax
+  00000032: 5E                 pop         esi
+  00000033: 5D                 pop         ebp
+  00000034: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          35 .text

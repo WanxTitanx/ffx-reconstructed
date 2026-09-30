@@ -1,0 +1,64 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00AA3C80.obj
+
+File Type: COFF OBJECT
+
+_FFX_Audio_OutputDispatch:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  00000008: 57                 push        edi
+  00000009: 8B 5E 14           mov         ebx,dword ptr [esi+14h]
+  0000000C: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000F: 56                 push        esi
+  00000010: 53                 push        ebx
+  00000011: 57                 push        edi
+  00000012: E8 00 00 00 00     call        _FFX_Audio_RemapTableBuild
+  00000017: 8B 45 10           mov         eax,dword ptr [ebp+10h]
+  0000001A: 83 C4 0C           add         esp,0Ch
+  0000001D: 85 C0              test        eax,eax
+  0000001F: 74 2B              je          0000004C
+  00000021: FF 76 04           push        dword ptr [esi+4]
+  00000024: 8B 4F 1C           mov         ecx,dword ptr [edi+1Ch]
+  00000027: 50                 push        eax
+  00000028: FF 36              push        dword ptr [esi]
+  0000002A: 8B 46 08           mov         eax,dword ptr [esi+8]
+  0000002D: FF 74 8E 0C        push        dword ptr [esi+ecx*4+0Ch]
+  00000031: 56                 push        esi
+  00000032: 57                 push        edi
+  00000033: 53                 push        ebx
+  00000034: FF 75 14           push        dword ptr [ebp+14h]
+  00000037: FF 34 88           push        dword ptr [eax+ecx*4]
+  0000003A: E8 00 00 00 00     call        _FFX_Audio_SynthWindowApply
+  0000003F: 83 C4 24           add         esp,24h
+  00000042: B8 01 00 00 00     mov         eax,1
+  00000047: 5F                 pop         edi
+  00000048: 5E                 pop         esi
+  00000049: 5B                 pop         ebx
+  0000004A: 5D                 pop         ebp
+  0000004B: C3                 ret
+  0000004C: 8B 47 1C           mov         eax,dword ptr [edi+1Ch]
+  0000004F: 8B 44 86 0C        mov         eax,dword ptr [esi+eax*4+0Ch]
+  00000053: C1 E0 02           shl         eax,2
+  00000056: 50                 push        eax
+  00000057: 6A 00              push        0
+  00000059: FF 75 14           push        dword ptr [ebp+14h]
+  0000005C: E8 00 00 00 00     call        _memset
+  00000061: 83 C4 0C           add         esp,0Ch
+  00000064: 33 C0              xor         eax,eax
+  00000066: 5F                 pop         edi
+  00000067: 5E                 pop         esi
+  00000068: 5B                 pop         ebx
+  00000069: 5D                 pop         ebp
+  0000006A: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          6B .text

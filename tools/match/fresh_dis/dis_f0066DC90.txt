@@ -1,0 +1,419 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0066DC90.obj
+
+File Type: COFF OBJECT
+
+@FFX_Field_VertexBuffer_ApplySkinning_impl@16:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 81 EC 4C 01 00 00  sub         esp,14Ch
+  00000009: 83 B9 D4 10 00 00  cmp         dword ptr [ecx+10D4h],0
+            00
+  00000010: 56                 push        esi
+  00000011: 8B F2              mov         esi,edx
+  00000013: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  00000016: 0F 84 D9 03 00 00  je          000003F5
+  0000001C: 57                 push        edi
+  0000001D: 8D 45 F0           lea         eax,[ebp-10h]
+  00000020: 8D B9 98 11 00 00  lea         edi,[ecx+1198h]
+  00000026: 50                 push        eax
+  00000027: 57                 push        edi
+  00000028: E8 00 00 00 00     call        _Phyre_RBTree_FindByKey_0
+  0000002D: 83 C4 08           add         esp,8
+  00000030: 85 C0              test        eax,eax
+  00000032: 0F 84 BC 03 00 00  je          000003F4
+  00000038: 83 F8 F0           cmp         eax,0FFFFFFF0h
+  0000003B: 0F 84 B3 03 00 00  je          000003F4
+  00000041: 8D 45 F0           lea         eax,[ebp-10h]
+  00000044: 50                 push        eax
+  00000045: 57                 push        edi
+  00000046: 89 75 F0           mov         dword ptr [ebp-10h],esi
+  00000049: E8 00 00 00 00     call        _Phyre_RBTree_FindByKey_0
+  0000004E: 83 C4 08           add         esp,8
+  00000051: 85 C0              test        eax,eax
+  00000053: 74 05              je          0000005A
+  00000055: 8D 50 10           lea         edx,[eax+10h]
+  00000058: EB 02              jmp         0000005C
+  0000005A: 33 D2              xor         edx,edx
+  0000005C: 8B 12              mov         edx,dword ptr [edx]
+  0000005E: 33 C9              xor         ecx,ecx
+  00000060: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000063: 89 55 E4           mov         dword ptr [ebp-1Ch],edx
+  00000066: 39 0A              cmp         dword ptr [edx],ecx
+  00000068: 0F 84 86 03 00 00  je          000003F4
+  0000006E: 8D 42 08           lea         eax,[edx+8]
+  00000071: 53                 push        ebx
+  00000072: 66 8B 5D 0C        mov         bx,word ptr [ebp+0Ch]
+  00000076: 89 45 E8           mov         dword ptr [ebp-18h],eax
+  00000079: 8D A4 24 00 00 00  lea         esp,[esp]
+            00
+  00000080: 8B 42 08           mov         eax,dword ptr [edx+8]
+  00000083: 6A 30              push        30h
+  00000085: 8B 04 88           mov         eax,dword ptr [eax+ecx*4]
+  00000088: FF 70 04           push        dword ptr [eax+4]
+  0000008B: 8D 45 B4           lea         eax,[ebp-4Ch]
+  0000008E: 50                 push        eax
+  0000008F: E8 00 00 00 00     call        _qmemcpy
+  00000094: 8D 45 B4           lea         eax,[ebp-4Ch]
+  00000097: 50                 push        eax
+  00000098: 8D 45 FC           lea         eax,[ebp-4]
+  0000009B: 50                 push        eax
+  0000009C: E8 00 00 00 00     call        _Matrix4x4_TransposeRotation
+  000000A1: D9 05 00 00 00 00  fld         dword ptr [__real@41200000]
+  000000A7: 8D 45 EC           lea         eax,[ebp-14h]
+  000000AA: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000000AD: 50                 push        eax
+  000000AE: 8D 45 FC           lea         eax,[ebp-4]
+  000000B1: 50                 push        eax
+  000000B2: E8 00 00 00 00     call        _Phyre_Math_Matrix4x4_RowsCopy
+  000000B7: 83 C4 1C           add         esp,1Ch
+  000000BA: 66 83 FB 05        cmp         bx,5
+  000000BE: 0F 84 84 00 00 00  je          00000148
+  000000C4: 66 83 FB 04        cmp         bx,4
+  000000C8: 74 7E              je          00000148
+  000000CA: 66 83 FB 03        cmp         bx,3
+  000000CE: 74 32              je          00000102
+  000000D0: 66 83 FB 02        cmp         bx,2
+  000000D4: 74 2C              je          00000102
+  000000D6: 66 83 FB 01        cmp         bx,1
+  000000DA: 0F 87 F8 00 00 00  ja          000001D8
+  000000E0: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  000000E3: 83 EC 08           sub         esp,8
+  000000E6: D9 40 08           fld         dword ptr [eax+8]
+  000000E9: 8D 45 F8           lea         eax,[ebp-8]
+  000000EC: DD 1C 24           fstp        qword ptr [esp]
+  000000EF: 50                 push        eax
+  000000F0: E8 00 00 00 00     call        _Phyre_Matrix4_ZRotation
+  000000F5: 50                 push        eax
+  000000F6: 8D 45 FC           lea         eax,[ebp-4]
+  000000F9: 50                 push        eax
+  000000FA: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000100: EB 28              jmp         0000012A
+  00000102: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00000105: 83 EC 08           sub         esp,8
+  00000108: D9 40 04           fld         dword ptr [eax+4]
+  0000010B: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000111: D9 E0              fchs
+  00000113: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000116: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000119: DD 1C 24           fstp        qword ptr [esp]
+  0000011C: 50                 push        eax
+  0000011D: E8 00 00 00 00     call        _Phyre_Matrix4_YRotation
+  00000122: 50                 push        eax
+  00000123: 8D 45 FC           lea         eax,[ebp-4]
+  00000126: 50                 push        eax
+  00000127: 8D 45 F8           lea         eax,[ebp-8]
+  0000012A: 50                 push        eax
+  0000012B: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  00000130: 83 C4 18           add         esp,18h
+  00000133: 50                 push        eax
+  00000134: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000137: 50                 push        eax
+  00000138: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  0000013D: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000140: 83 C4 08           add         esp,8
+  00000143: E9 8D 00 00 00     jmp         000001D5
+  00000148: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  0000014B: 83 EC 08           sub         esp,8
+  0000014E: D9 00              fld         dword ptr [eax]
+  00000150: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000156: D9 E0              fchs
+  00000158: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  0000015B: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  0000015E: DD 1C 24           fstp        qword ptr [esp]
+  00000161: 50                 push        eax
+  00000162: E8 00 00 00 00     call        _Phyre_Matrix4_XRotation
+  00000167: 8B F8              mov         edi,eax
+  00000169: 8D 85 44 FF FF FF  lea         eax,[ebp-0BCh]
+  0000016F: 8D 4F 30           lea         ecx,[edi+30h]
+  00000172: 51                 push        ecx
+  00000173: 50                 push        eax
+  00000174: 8D 45 FC           lea         eax,[ebp-4]
+  00000177: 50                 push        eax
+  00000178: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  0000017D: 8D 4F 20           lea         ecx,[edi+20h]
+  00000180: 51                 push        ecx
+  00000181: 8D 85 D4 FE FF FF  lea         eax,[ebp-12Ch]
+  00000187: 50                 push        eax
+  00000188: 8D 45 FC           lea         eax,[ebp-4]
+  0000018B: 50                 push        eax
+  0000018C: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  00000191: 8D 47 10           lea         eax,[edi+10h]
+  00000194: 50                 push        eax
+  00000195: 8D 85 B4 FE FF FF  lea         eax,[ebp-14Ch]
+  0000019B: 50                 push        eax
+  0000019C: 8D 45 FC           lea         eax,[ebp-4]
+  0000019F: 50                 push        eax
+  000001A0: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  000001A5: 8B F0              mov         esi,eax
+  000001A7: 57                 push        edi
+  000001A8: 8D 85 64 FF FF FF  lea         eax,[ebp-9Ch]
+  000001AE: 50                 push        eax
+  000001AF: 8D 45 FC           lea         eax,[ebp-4]
+  000001B2: 50                 push        eax
+  000001B3: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  000001B8: 8B 08              mov         ecx,dword ptr [eax]
+  000001BA: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000001BD: 50                 push        eax
+  000001BE: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  000001C1: D9 06              fld         dword ptr [esi]
+  000001C3: 8D 45 F8           lea         eax,[ebp-8]
+  000001C6: D9 5D EC           fstp        dword ptr [ebp-14h]
+  000001C9: 50                 push        eax
+  000001CA: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  000001CF: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000001D2: 83 C4 44           add         esp,44h
+  000001D5: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000001D8: 66 83 FB 02        cmp         bx,2
+  000001DC: 0F 84 81 00 00 00  je          00000263
+  000001E2: 66 83 FB 01        cmp         bx,1
+  000001E6: 74 7B              je          00000263
+  000001E8: 66 83 FB 05        cmp         bx,5
+  000001EC: 74 2F              je          0000021D
+  000001EE: 66 85 DB           test        bx,bx
+  000001F1: 74 2A              je          0000021D
+  000001F3: 66 83 FB 04        cmp         bx,4
+  000001F7: 74 0A              je          00000203
+  000001F9: 66 83 FB 03        cmp         bx,3
+  000001FD: 0F 85 FB 01 00 00  jne         000003FE
+  00000203: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000206: 83 EC 08           sub         esp,8
+  00000209: D9 47 08           fld         dword ptr [edi+8]
+  0000020C: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000212: DD 1C 24           fstp        qword ptr [esp]
+  00000215: 50                 push        eax
+  00000216: E8 00 00 00 00     call        _Phyre_Matrix4_ZRotation
+  0000021B: EB 20              jmp         0000023D
+  0000021D: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000220: 83 EC 08           sub         esp,8
+  00000223: D9 47 04           fld         dword ptr [edi+4]
+  00000226: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  0000022C: D9 E0              fchs
+  0000022E: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000231: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000234: DD 1C 24           fstp        qword ptr [esp]
+  00000237: 50                 push        eax
+  00000238: E8 00 00 00 00     call        _Phyre_Matrix4_YRotation
+  0000023D: 83 C4 0C           add         esp,0Ch
+  00000240: 50                 push        eax
+  00000241: 8D 45 FC           lea         eax,[ebp-4]
+  00000244: 50                 push        eax
+  00000245: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000248: 50                 push        eax
+  00000249: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  0000024E: 50                 push        eax
+  0000024F: 8D 45 F8           lea         eax,[ebp-8]
+  00000252: 50                 push        eax
+  00000253: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  00000258: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  0000025B: 83 C4 14           add         esp,14h
+  0000025E: E9 86 00 00 00     jmp         000002E9
+  00000263: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000266: 83 EC 08           sub         esp,8
+  00000269: D9 07              fld         dword ptr [edi]
+  0000026B: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000271: D9 E0              fchs
+  00000273: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000276: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000279: DD 1C 24           fstp        qword ptr [esp]
+  0000027C: 50                 push        eax
+  0000027D: E8 00 00 00 00     call        _Phyre_Matrix4_XRotation
+  00000282: 8B F0              mov         esi,eax
+  00000284: 8D 85 C4 FE FF FF  lea         eax,[ebp-13Ch]
+  0000028A: 8D 4E 30           lea         ecx,[esi+30h]
+  0000028D: 51                 push        ecx
+  0000028E: 50                 push        eax
+  0000028F: 8D 45 FC           lea         eax,[ebp-4]
+  00000292: 50                 push        eax
+  00000293: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  00000298: 8D 4E 20           lea         ecx,[esi+20h]
+  0000029B: 51                 push        ecx
+  0000029C: 8D 85 24 FF FF FF  lea         eax,[ebp-0DCh]
+  000002A2: 50                 push        eax
+  000002A3: 8D 45 FC           lea         eax,[ebp-4]
+  000002A6: 50                 push        eax
+  000002A7: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  000002AC: 8D 46 10           lea         eax,[esi+10h]
+  000002AF: 50                 push        eax
+  000002B0: 8D 85 E4 FE FF FF  lea         eax,[ebp-11Ch]
+  000002B6: 50                 push        eax
+  000002B7: 8D 45 FC           lea         eax,[ebp-4]
+  000002BA: 50                 push        eax
+  000002BB: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  000002C0: 56                 push        esi
+  000002C1: 8D 85 04 FF FF FF  lea         eax,[ebp-0FCh]
+  000002C7: 50                 push        eax
+  000002C8: 8D 45 FC           lea         eax,[ebp-4]
+  000002CB: 50                 push        eax
+  000002CC: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  000002D1: 8B 00              mov         eax,dword ptr [eax]
+  000002D3: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000002D6: 8D 45 F8           lea         eax,[ebp-8]
+  000002D9: 50                 push        eax
+  000002DA: 8D 45 F4           lea         eax,[ebp-0Ch]
+  000002DD: 50                 push        eax
+  000002DE: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  000002E3: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  000002E6: 83 C4 44           add         esp,44h
+  000002E9: 89 45 FC           mov         dword ptr [ebp-4],eax
+  000002EC: 66 83 FB 03        cmp         bx,3
+  000002F0: 0F 85 0B 01 00 00  jne         00000401
+$LABEL_38$45:
+  000002F6: D9 07              fld         dword ptr [edi]
+  000002F8: 83 EC 08           sub         esp,8
+  000002FB: D9 E0              fchs
+  000002FD: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000303: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000306: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000309: DD 1C 24           fstp        qword ptr [esp]
+  0000030C: 50                 push        eax
+  0000030D: E8 00 00 00 00     call        _Phyre_Matrix4_XRotation
+  00000312: 8B F0              mov         esi,eax
+  00000314: 8D 85 54 FF FF FF  lea         eax,[ebp-0ACh]
+  0000031A: 8D 4E 30           lea         ecx,[esi+30h]
+  0000031D: 51                 push        ecx
+  0000031E: 50                 push        eax
+  0000031F: 8D 45 FC           lea         eax,[ebp-4]
+  00000322: 50                 push        eax
+  00000323: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  00000328: 8D 4E 20           lea         ecx,[esi+20h]
+  0000032B: 51                 push        ecx
+  0000032C: 8D 85 34 FF FF FF  lea         eax,[ebp-0CCh]
+  00000332: 50                 push        eax
+  00000333: 8D 45 FC           lea         eax,[ebp-4]
+  00000336: 50                 push        eax
+  00000337: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  0000033C: 8D 46 10           lea         eax,[esi+10h]
+  0000033F: 50                 push        eax
+  00000340: 8D 85 14 FF FF FF  lea         eax,[ebp-0ECh]
+  00000346: 50                 push        eax
+  00000347: 8D 45 FC           lea         eax,[ebp-4]
+  0000034A: 50                 push        eax
+  0000034B: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  00000350: 56                 push        esi
+  00000351: 8D 85 F4 FE FF FF  lea         eax,[ebp-10Ch]
+  00000357: 50                 push        eax
+  00000358: 8D 45 FC           lea         eax,[ebp-4]
+  0000035B: 50                 push        eax
+  0000035C: E8 00 00 00 00     call        _Phyre_Matrix4_MulVec4
+  00000361: 8B 00              mov         eax,dword ptr [eax]
+  00000363: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00000366: 8D 45 F8           lea         eax,[ebp-8]
+  00000369: 50                 push        eax
+  0000036A: 8D 45 F4           lea         eax,[ebp-0Ch]
+  0000036D: 50                 push        eax
+  0000036E: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  00000373: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00000376: 83 C4 44           add         esp,44h
+  00000379: 89 45 FC           mov         dword ptr [ebp-4],eax
+$LABEL_39$46:
+  0000037C: 8D 45 FC           lea         eax,[ebp-4]
+  0000037F: 50                 push        eax
+  00000380: 8D 45 B4           lea         eax,[ebp-4Ch]
+  00000383: 50                 push        eax
+  00000384: E8 00 00 00 00     call        _Matrix4x4_CopyTransposed
+  00000389: D9 45 B4           fld         dword ptr [ebp-4Ch]
+  0000038C: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  0000038F: 8B 45 E8           mov         eax,dword ptr [ebp-18h]
+  00000392: 41                 inc         ecx
+  00000393: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  00000396: 8B 00              mov         eax,dword ptr [eax]
+  00000398: 8B 75 E4           mov         esi,dword ptr [ebp-1Ch]
+  0000039B: 8B 44 88 FC        mov         eax,dword ptr [eax+ecx*4-4]
+  0000039F: 83 C4 08           add         esp,8
+  000003A2: 8B 40 04           mov         eax,dword ptr [eax+4]
+  000003A5: 8B D6              mov         edx,esi
+  000003A7: D9 18              fstp        dword ptr [eax]
+  000003A9: D9 45 B8           fld         dword ptr [ebp-48h]
+  000003AC: D9 58 04           fstp        dword ptr [eax+4]
+  000003AF: D9 45 BC           fld         dword ptr [ebp-44h]
+  000003B2: D9 58 08           fstp        dword ptr [eax+8]
+  000003B5: D9 45 C0           fld         dword ptr [ebp-40h]
+  000003B8: D9 58 0C           fstp        dword ptr [eax+0Ch]
+  000003BB: D9 45 C4           fld         dword ptr [ebp-3Ch]
+  000003BE: D9 58 10           fstp        dword ptr [eax+10h]
+  000003C1: D9 45 C8           fld         dword ptr [ebp-38h]
+  000003C4: D9 58 14           fstp        dword ptr [eax+14h]
+  000003C7: D9 45 CC           fld         dword ptr [ebp-34h]
+  000003CA: D9 58 18           fstp        dword ptr [eax+18h]
+  000003CD: D9 45 D0           fld         dword ptr [ebp-30h]
+  000003D0: D9 58 1C           fstp        dword ptr [eax+1Ch]
+  000003D3: D9 45 D4           fld         dword ptr [ebp-2Ch]
+  000003D6: D9 58 20           fstp        dword ptr [eax+20h]
+  000003D9: D9 45 D8           fld         dword ptr [ebp-28h]
+  000003DC: D9 58 24           fstp        dword ptr [eax+24h]
+  000003DF: D9 45 DC           fld         dword ptr [ebp-24h]
+  000003E2: D9 58 28           fstp        dword ptr [eax+28h]
+  000003E5: D9 45 E0           fld         dword ptr [ebp-20h]
+  000003E8: D9 58 2C           fstp        dword ptr [eax+2Ch]
+  000003EB: 3B 0E              cmp         ecx,dword ptr [esi]
+  000003ED: 0F 82 8D FC FF FF  jb          00000080
+  000003F3: 5B                 pop         ebx
+  000003F4: 5F                 pop         edi
+  000003F5: 33 C0              xor         eax,eax
+  000003F7: 5E                 pop         esi
+  000003F8: 8B E5              mov         esp,ebp
+  000003FA: 5D                 pop         ebp
+  000003FB: C2 08 00           ret         8
+  000003FE: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000401: 0F BF C3           movsx       eax,bx
+  00000404: 83 F8 05           cmp         eax,5
+  00000407: 0F 87 6F FF FF FF  ja          $LABEL_39$46
+  0000040D: FF 24 85 00 00 00  jmp         dword ptr $LN44[eax*4]
+            00
+$LN4:
+  00000414: D9 47 04           fld         dword ptr [edi+4]
+  00000417: 83 EC 08           sub         esp,8
+  0000041A: D9 E0              fchs
+  0000041C: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  00000422: D9 5D 0C           fstp        dword ptr [ebp+0Ch]
+  00000425: D9 45 0C           fld         dword ptr [ebp+0Ch]
+  00000428: DD 1C 24           fstp        qword ptr [esp]
+  0000042B: 50                 push        eax
+  0000042C: E8 00 00 00 00     call        _Phyre_Matrix4_YRotation
+  00000431: EB 15              jmp         00000448
+$LN3:
+  00000433: D9 47 08           fld         dword ptr [edi+8]
+  00000436: 83 EC 08           sub         esp,8
+  00000439: 8D 85 74 FF FF FF  lea         eax,[ebp-8Ch]
+  0000043F: DD 1C 24           fstp        qword ptr [esp]
+  00000442: 50                 push        eax
+  00000443: E8 00 00 00 00     call        _Phyre_Matrix4_ZRotation
+  00000448: 83 C4 0C           add         esp,0Ch
+  0000044B: 50                 push        eax
+  0000044C: 8D 45 FC           lea         eax,[ebp-4]
+  0000044F: 50                 push        eax
+  00000450: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00000453: 50                 push        eax
+  00000454: E8 00 00 00 00     call        _Phyre_physics_calcInertia
+  00000459: 50                 push        eax
+  0000045A: 8D 45 F8           lea         eax,[ebp-8]
+  0000045D: 50                 push        eax
+  0000045E: E8 00 00 00 00     call        _Phyre_Matrix4_Copy
+  00000463: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00000466: 83 C4 14           add         esp,14h
+  00000469: E9 0B FF FF FF     jmp         00000379
+  0000046E: 8B FF              mov         edi,edi
+$LN44:
+  00000470: 00 00              add         byte ptr [eax],al
+  00000472: 00 00              add         byte ptr [eax],al
+  00000474: 00 00              add         byte ptr [eax],al
+  00000476: 00 00              add         byte ptr [eax],al
+  00000478: 00 00              add         byte ptr [eax],al
+  0000047A: 00 00              add         byte ptr [eax],al
+  0000047C: 00 00              add         byte ptr [eax],al
+  0000047E: 00 00              add         byte ptr [eax],al
+  00000480: 00 00              add         byte ptr [eax],al
+  00000482: 00 00              add         byte ptr [eax],al
+  00000484: 00 00              add         byte ptr [eax],al
+  00000486: 00 00              add         byte ptr [eax],al
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           4 .rdata
+         488 .text

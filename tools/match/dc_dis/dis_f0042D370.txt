@@ -1,0 +1,43 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f0042D370.obj
+
+File Type: COFF OBJECT
+
+@mkvparser_CuePoint_GetRelativePosition@4:
+  00000000: 56                 push        esi
+  00000001: 8B F1              mov         esi,ecx
+  00000003: FF 76 04           push        dword ptr [esi+4]
+  00000006: 8D 46 10           lea         eax,[esi+10h]
+  00000009: 50                 push        eax
+  0000000A: E8 00 00 00 00     call        _mkvparser_Segment_ParseCuesEntry
+  0000000F: 83 C4 08           add         esp,8
+  00000012: 85 C0              test        eax,eax
+  00000014: 75 28              jne         0000003E
+  00000016: 39 46 44           cmp         dword ptr [esi+44h],eax
+  00000019: 7C 1D              jl          00000038
+  0000001B: 7F 05              jg          00000022
+  0000001D: 39 46 40           cmp         dword ptr [esi+40h],eax
+  00000020: 76 16              jbe         00000038
+  00000022: 83 7E 4C 00        cmp         dword ptr [esi+4Ch],0
+  00000026: 7F 10              jg          00000038
+  00000028: 7C 06              jl          00000030
+  0000002A: 83 7E 48 00        cmp         dword ptr [esi+48h],0
+  0000002E: 77 08              ja          00000038
+  00000030: 80 4E 2A 80        or          byte ptr [esi+2Ah],80h
+  00000034: 33 C0              xor         eax,eax
+  00000036: 5E                 pop         esi
+  00000037: C3                 ret
+  00000038: 80 66 2A 7F        and         byte ptr [esi+2Ah],7Fh
+  0000003C: 33 C0              xor         eax,eax
+  0000003E: 5E                 pop         esi
+  0000003F: C3                 ret
+
+  Summary
+
+          10 .debug$F
+          6C .debug$S
+          2F .drectve
+          40 .text

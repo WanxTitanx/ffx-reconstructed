@@ -1,0 +1,68 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f004C41C0.obj
+
+File Type: COFF OBJECT
+
+@PTextureDescription_ValidateAndSetConfig@20:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 56                 push        esi
+  00000004: 8B F1              mov         esi,ecx
+  00000006: 8B 4D 10           mov         ecx,dword ptr [ebp+10h]
+  00000009: 57                 push        edi
+  0000000A: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  0000000D: 85 C9              test        ecx,ecx
+  0000000F: 74 20              je          00000031
+  00000011: 53                 push        ebx
+  00000012: 8B DA              mov         ebx,edx
+  00000014: 3B D7              cmp         edx,edi
+  00000016: 77 02              ja          0000001A
+  00000018: 8B DF              mov         ebx,edi
+  0000001A: B8 01 00 00 00     mov         eax,1
+  0000001F: D3 E0              shl         eax,cl
+  00000021: 3B C3              cmp         eax,ebx
+  00000023: 5B                 pop         ebx
+  00000024: 76 0B              jbe         00000031
+  00000026: 5F                 pop         edi
+  00000027: B8 03 00 00 00     mov         eax,3
+  0000002C: 5E                 pop         esi
+  0000002D: 5D                 pop         ebp
+  0000002E: C2 0C 00           ret         0Ch
+  00000031: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000034: 3B 56 1C           cmp         edx,dword ptr [esi+1Ch]
+  00000037: 75 0E              jne         00000047
+  00000039: 3B 7E 20           cmp         edi,dword ptr [esi+20h]
+  0000003C: 75 09              jne         00000047
+  0000003E: 3B 06              cmp         eax,dword ptr [esi]
+  00000040: 75 05              jne         00000047
+  00000042: 3B 4E 0C           cmp         ecx,dword ptr [esi+0Ch]
+  00000045: 74 27              je          0000006E
+  00000047: F6 46 14 02        test        byte ptr [esi+14h],2
+  0000004B: 89 06              mov         dword ptr [esi],eax
+  0000004D: 89 56 1C           mov         dword ptr [esi+1Ch],edx
+  00000050: 89 7E 20           mov         dword ptr [esi+20h],edi
+  00000053: 89 4E 0C           mov         dword ptr [esi+0Ch],ecx
+  00000056: 74 0E              je          00000066
+  00000058: 6A 00              push        0
+  0000005A: 57                 push        edi
+  0000005B: 52                 push        edx
+  0000005C: E8 00 00 00 00     call        _PTexture_GetMaxOf3_FindHighestBit
+  00000061: 83 C4 0C           add         esp,0Ch
+  00000064: 8B C8              mov         ecx,eax
+  00000066: 3B 4E 10           cmp         ecx,dword ptr [esi+10h]
+  00000069: 74 03              je          0000006E
+  0000006B: 89 4E 10           mov         dword ptr [esi+10h],ecx
+  0000006E: 5F                 pop         edi
+  0000006F: 33 C0              xor         eax,eax
+  00000071: 5E                 pop         esi
+  00000072: 5D                 pop         ebp
+  00000073: C2 0C 00           ret         0Ch
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          76 .text

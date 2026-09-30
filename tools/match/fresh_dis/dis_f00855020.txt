@@ -1,0 +1,201 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f00855020.obj
+
+File Type: COFF OBJECT
+
+_FFX_Dbg_MemoryInfoDisplay:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000006: 81 EC 80 00 00 00  sub         esp,80h
+  0000000C: 3D 03 80 00 00     cmp         eax,8003h
+  00000011: 75 38              jne         0000004B
+  00000013: A1 00 00 00 00     mov         eax,dword ptr [_g_DbgVar_1325910]
+  00000018: C7 05 00 00 00 00  mov         dword ptr [_g_DbgConsoleUnkVar_1325914],0
+            00 00 00 00
+  00000022: 85 C0              test        eax,eax
+  00000024: 74 13              je          00000039
+  00000026: 50                 push        eax
+  00000027: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  0000002C: 83 C4 04           add         esp,4
+  0000002F: C7 05 00 00 00 00  mov         dword ptr [_g_DbgVar_1325910],0
+            00 00 00 00
+  00000039: 6A 01              push        1
+  0000003B: 6A 11              push        11h
+  0000003D: E8 00 00 00 00     call        _FFX_DbgConsole_WriteVariable
+  00000042: 83 C4 08           add         esp,8
+  00000045: 33 C0              xor         eax,eax
+  00000047: 8B E5              mov         esp,ebp
+  00000049: 5D                 pop         ebp
+  0000004A: C3                 ret
+  0000004B: 3D 11 80 00 00     cmp         eax,8011h
+  00000050: 0F 85 CC 01 00 00  jne         00000222
+  00000056: 53                 push        ebx
+  00000057: 56                 push        esi
+  00000058: 8D 45 C0           lea         eax,[ebp-40h]
+  0000005B: 57                 push        edi
+  0000005C: 50                 push        eax
+  0000005D: E8 00 00 00 00     call        _SgMem_ComputeMemoryUsageByCategory
+  00000062: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000065: D1 E8              shr         eax,1
+  00000067: 57                 push        edi
+  00000068: 89 45 F0           mov         dword ptr [ebp-10h],eax
+  0000006B: C7 45 E4 00 00 00  mov         dword ptr [ebp-1Ch],0
+            00
+  00000072: E8 00 00 00 00     call        _FFX_Dbg_GetWindowScrollX
+  00000077: 83 E8 02           sub         eax,2
+  0000007A: 0F B7 C0           movzx       eax,ax
+  0000007D: 57                 push        edi
+  0000007E: 89 45 EC           mov         dword ptr [ebp-14h],eax
+  00000081: E8 00 00 00 00     call        _FFX_Dbg_GetWindowScrollY
+  00000086: 57                 push        edi
+  00000087: 8D 58 FE           lea         ebx,[eax-2]
+  0000008A: E8 00 00 00 00     call        _FFX_Dbg_WindowHitTest
+  0000008F: 83 C4 10           add         esp,10h
+  00000092: 85 C0              test        eax,eax
+  00000094: 74 3F              je          000000D5
+  00000096: 57                 push        edi
+  00000097: E8 00 00 00 00     call        _FFX_Dbg_GetMouseOffsetY
+  0000009C: 57                 push        edi
+  0000009D: 8B F0              mov         esi,eax
+  0000009F: E8 00 00 00 00     call        _FFX_Dbg_GetWindowField130
+  000000A4: 2B F0              sub         esi,eax
+  000000A6: 83 C4 08           add         esp,8
+  000000A9: 89 75 FC           mov         dword ptr [ebp-4],esi
+  000000AC: E8 00 00 00 00     call        _FFX_Dbg_GetMouseY
+  000000B1: 8D 70 F6           lea         esi,[eax-0Ah]
+  000000B4: E8 00 00 00 00     call        _FFX_Dbg_GetMouseX
+  000000B9: 8B 0D 00 00 00 00  mov         ecx,dword ptr [_g_DbgVar_1325910]
+  000000BF: A3 00 00 00 00     mov         dword ptr [_g_DbgVar_13259A0],eax
+  000000C4: 85 C9              test        ecx,ecx
+  000000C6: 74 13              je          000000DB
+  000000C8: 56                 push        esi
+  000000C9: 50                 push        eax
+  000000CA: 51                 push        ecx
+  000000CB: E8 00 00 00 00     call        _FFX_Dbg_SetScrollBarRanges
+  000000D0: 83 C4 0C           add         esp,0Ch
+  000000D3: EB 06              jmp         000000DB
+  000000D5: 83 CE FF           or          esi,0FFFFFFFFh
+  000000D8: 89 75 FC           mov         dword ptr [ebp-4],esi
+  000000DB: 57                 push        edi
+  000000DC: E8 00 00 00 00     call        _FFX_DbgOverlay_InitEntryBase
+  000000E1: 6A 06              push        6
+  000000E3: E8 00 00 00 00     call        _FFX_DbgOverlay_PushFormat3Entry
+  000000E8: 83 C4 08           add         esp,8
+  000000EB: 33 FF              xor         edi,edi
+  000000ED: 33 C0              xor         eax,eax
+  000000EF: 89 45 F8           mov         dword ptr [ebp-8],eax
+  000000F2: 0F BF C3           movsx       eax,bx
+  000000F5: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  000000F8: C7 45 0C 01 00 00  mov         dword ptr [ebp+0Ch],1
+            00
+  000000FF: 8D 5D C0           lea         ebx,[ebp-40h]
+  00000102: BE 01 00 00 00     mov         esi,offset _unk_B5B935+1
+  00000107: 0F B6 06           movzx       eax,byte ptr [esi]
+  0000010A: 68 FF 00 00 00     push        0FFh
+  0000010F: 50                 push        eax
+  00000110: 0F B6 46 FF        movzx       eax,byte ptr [esi-1]
+  00000114: 50                 push        eax
+  00000115: 0F B6 46 FE        movzx       eax,byte ptr [esi-2]
+  00000119: 50                 push        eax
+  0000011A: E8 00 00 00 00     call        _FFX_DbgOverlay_PushColoredEntry
+  0000011F: 03 3B              add         edi,dword ptr [ebx]
+  00000121: 8B 4D FC           mov         ecx,dword ptr [ebp-4]
+  00000124: 8B C7              mov         eax,edi
+  00000126: 99                 cdq
+  00000127: 2B C2              sub         eax,edx
+  00000129: D1 F8              sar         eax,1
+  0000012B: 0F AF 45 F4        imul        eax,dword ptr [ebp-0Ch]
+  0000012F: 99                 cdq
+  00000130: F7 7D F0           idiv        eax,dword ptr [ebp-10h]
+  00000133: 89 7D E8           mov         dword ptr [ebp-18h],edi
+  00000136: 83 C4 10           add         esp,10h
+  00000139: 8D 78 01           lea         edi,[eax+1]
+  0000013C: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  0000013F: 3B C8              cmp         ecx,eax
+  00000141: 7C 58              jl          0000019B
+  00000143: 3B CF              cmp         ecx,edi
+  00000145: 7D 54              jge         0000019B
+  00000147: 8B 03              mov         eax,dword ptr [ebx]
+  00000149: 0F BE 4E FE        movsx       ecx,byte ptr [esi-2]
+  0000014D: 50                 push        eax
+  0000014E: 99                 cdq
+  0000014F: 81 E2 FF 03 00 00  and         edx,3FFh
+  00000155: 03 C2              add         eax,edx
+  00000157: 89 0D 00 00 00 00  mov         dword ptr [_g_U8_132595C],ecx
+  0000015D: 0F BE 4E FF        movsx       ecx,byte ptr [esi-1]
+  00000161: C1 F8 0A           sar         eax,0Ah
+  00000164: 50                 push        eax
+  00000165: FF 76 FA           push        dword ptr [esi-6]
+  00000168: 89 0D 00 00 00 00  mov         dword ptr [_g_U8_132595D],ecx
+  0000016E: 0F BE 0E           movsx       ecx,byte ptr [esi]
+  00000171: 8D 45 80           lea         eax,[ebp-80h]
+  00000174: 68 00 00 00 00     push        offset ??_C@_0N@OHPNJPKE@?$CFs?5?$CFdK?$FL?$CFxh?$FN?5?$AA@
+  00000179: 50                 push        eax
+  0000017A: 89 0D 00 00 00 00  mov         dword ptr [_g_U8_132595E],ecx
+  00000180: E8 00 00 00 00     call        _sprintf
+  00000185: 8D 45 80           lea         eax,[ebp-80h]
+  00000188: 50                 push        eax
+  00000189: E8 00 00 00 00     call        _FFX_DbgConsole_ToggleStatusBar
+  0000018E: 8B 45 0C           mov         eax,dword ptr [ebp+0Ch]
+  00000191: 83 C4 18           add         esp,18h
+  00000194: C7 45 F8 01 00 00  mov         dword ptr [ebp-8],1
+            00
+  0000019B: 50                 push        eax
+  0000019C: 6A 00              push        0
+  0000019E: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  000001A3: 8B 4D EC           mov         ecx,dword ptr [ebp-14h]
+  000001A6: 0F BF C1           movsx       eax,cx
+  000001A9: 57                 push        edi
+  000001AA: 50                 push        eax
+  000001AB: E8 00 00 00 00     call        _FFX_DbgOverlay_PushTextEntry
+  000001B0: 83 C6 08           add         esi,8
+  000001B3: 83 C4 10           add         esp,10h
+  000001B6: 8D 46 FF           lea         eax,[esi-1]
+  000001B9: 83 C3 04           add         ebx,4
+  000001BC: 89 7D 0C           mov         dword ptr [ebp+0Ch],edi
+  000001BF: 8B 7D E8           mov         edi,dword ptr [ebp-18h]
+  000001C2: 3D 00 00 00 00     cmp         eax,offset ??_C@_00CNPNBAHC@?$AA@
+  000001C7: 0F 8C 3A FF FF FF  jl          00000107
+  000001CD: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  000001D0: 5F                 pop         edi
+  000001D1: 5E                 pop         esi
+  000001D2: 5B                 pop         ebx
+  000001D3: 85 C0              test        eax,eax
+  000001D5: 75 1C              jne         000001F3
+  000001D7: A1 00 00 00 00     mov         eax,dword ptr [_g_DbgVar_1325910]
+  000001DC: 85 C0              test        eax,eax
+  000001DE: 74 13              je          000001F3
+  000001E0: 50                 push        eax
+  000001E1: E8 00 00 00 00     call        _FFX_Dbg_DestroyWindowRecursive
+  000001E6: 83 C4 04           add         esp,4
+  000001E9: C7 05 00 00 00 00  mov         dword ptr [_g_DbgVar_1325910],0
+            00 00 00 00
+  000001F3: 6A 02              push        2
+  000001F5: E8 00 00 00 00     call        _FFX_DbgOverlay_PushFormat3Entry
+  000001FA: 6A 00              push        0
+  000001FC: 6A 00              push        0
+  000001FE: 6A 00              push        0
+  00000200: 6A 00              push        0
+  00000202: E8 00 00 00 00     call        _FFX_DbgOverlay_PushColoredEntry
+  00000207: 8D 45 E4           lea         eax,[ebp-1Ch]
+  0000020A: 50                 push        eax
+  0000020B: E8 00 00 00 00     call        _FFX_DbgOverlay_DrawRectOutline
+  00000210: E8 00 00 00 00     call        _FFX_DbgOverlay_UpdateDisplayCount
+  00000215: 68 00 01 00 00     push        100h
+  0000021A: E8 00 00 00 00     call        _FFX_DbgOverlay_NextLine
+  0000021F: 83 C4 1C           add         esp,1Ch
+  00000222: 33 C0              xor         eax,eax
+  00000224: 8B E5              mov         esp,ebp
+  00000226: 5D                 pop         ebp
+  00000227: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+           E .rdata
+         228 .text

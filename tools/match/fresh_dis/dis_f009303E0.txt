@@ -1,0 +1,47 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f009303E0.obj
+
+File Type: COFF OBJECT
+
+_FFX_Chr_Loose_9303E0:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 53                 push        ebx
+  00000004: 56                 push        esi
+  00000005: 57                 push        edi
+  00000006: 8B 7D 08           mov         edi,dword ptr [ebp+8]
+  00000009: 8B 87 AC 00 00 00  mov         eax,dword ptr [edi+0ACh]
+  0000000F: 03 C0              add         eax,eax
+  00000011: 8B 5C C7 2C        mov         ebx,dword ptr [edi+eax*8+2Ch]
+  00000015: 53                 push        ebx
+  00000016: E8 00 00 00 00     call        _FFX_Chr_GetActorModelInstance
+  0000001B: 8B 8F AC 00 00 00  mov         ecx,dword ptr [edi+0ACh]
+  00000021: 83 C1 03           add         ecx,3
+  00000024: 03 C9              add         ecx,ecx
+  00000026: 50                 push        eax
+  00000027: 8B 34 CF           mov         esi,dword ptr [edi+ecx*8]
+  0000002A: E8 00 00 00 00     call        _FFX_Chr_GetMotionId
+  0000002F: C1 E8 08           shr         eax,8
+  00000032: 83 C4 08           add         esp,8
+  00000035: 3B C6              cmp         eax,esi
+  00000037: 75 11              jne         0000004A
+  00000039: 6A 00              push        0
+  0000003B: 53                 push        ebx
+  0000003C: E8 00 00 00 00     call        _FFX_Battle_SetActorMotionPriority
+  00000041: 57                 push        edi
+  00000042: E8 00 00 00 00     call        _FFX_Counter_DecAndSignal
+  00000047: 83 C4 0C           add         esp,0Ch
+  0000004A: 5F                 pop         edi
+  0000004B: 5E                 pop         esi
+  0000004C: 5B                 pop         ebx
+  0000004D: 5D                 pop         ebp
+  0000004E: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          4F .text

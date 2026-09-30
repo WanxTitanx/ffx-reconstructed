@@ -1,0 +1,36 @@
+Microsoft (R) COFF/PE Dumper Version 11.00.50727.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file f007B1E50.obj
+
+File Type: COFF OBJECT
+
+_FFX_Battle_CountMatchingReelSlots:
+  00000000: 55                 push        ebp
+  00000001: 8B EC              mov         ebp,esp
+  00000003: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00000006: 56                 push        esi
+  00000007: 0F B6 01           movzx       eax,byte ptr [ecx]
+  0000000A: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  0000000D: 33 D2              xor         edx,edx
+  0000000F: 3B C6              cmp         eax,esi
+  00000011: 0F B6 41 01        movzx       eax,byte ptr [ecx+1]
+  00000015: 0F 94 C2           sete        dl
+  00000018: 3B C6              cmp         eax,esi
+  0000001A: 75 01              jne         0000001D
+  0000001C: 42                 inc         edx
+  0000001D: 0F B6 49 02        movzx       ecx,byte ptr [ecx+2]
+  00000021: 3B CE              cmp         ecx,esi
+  00000023: 5E                 pop         esi
+  00000024: 8B C2              mov         eax,edx
+  00000026: 75 03              jne         0000002B
+  00000028: 8D 42 01           lea         eax,[edx+1]
+  0000002B: 5D                 pop         ebp
+  0000002C: C3                 ret
+
+  Summary
+
+          6C .debug$S
+          2F .drectve
+          2D .text
