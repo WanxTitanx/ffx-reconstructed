@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "independent reproducibility check of a recovered C provider",
+  "verifier": "cline-pass/deepseek-v4.1-flash (astra)",
+  "module": "math_vec3",
+  "function_va": "0x0093d3d0",
+  "compiler": "MSVC 2012 x86 17.00.50727.1",
+  "builds_compared": 5,
+  "distinct_code_bytes": 1,
+  "distinct_symbol_tables": 1,
+  "distinct_relocations": 1,
+  "distinct_whole_object_hashes": 4,
+  "code_symbols_relocations_identical": true,
+  "only_differing_section": ".debug (embeds the compiler working-directory record) plus the COFF timestamp header field",
+  "linked_text_section_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+  "fresh_build_objects_sha256": "db23e97399978e867b4aee3e0950ba3b301d7a7c0adde744412c51a5049d56e8",
+  "proof_files": [
+    "recon/ffx/recovered/proofs/math_vec3-repeatability.json (author)",
+    "recon/ffx/recovered/evidence/whole-exe/independent-verification.json (verifier)"
+  ],
+  "records": [
+    {
+      "object_sha256": "760e84b2a63d183665fc494aca1fd107d8f19d57973c61db953f476f82654259",
+      "code_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+      "symbol_table_sha256": "0b72410b2efe33ecb1a7ad849c1379de2c6a88cd444c9b56e5c26f84217faead",
+      "relocations_sha256": "69e2c577a191f983ae272910cf9d16afb6d9dab265e264b277fead461bdcb2c6",
+      "timestamp": 1790789601,
+      "build": "probe-1-canonical/module.obj"
+    },
+    {
+      "object_sha256": "40f343072fef04dfc01811627a44625ebf62d30ab4135f30d38497174798dba5",
+      "code_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+      "symbol_table_sha256": "0b72410b2efe33ecb1a7ad849c1379de2c6a88cd444c9b56e5c26f84217faead",
+      "relocations_sha256": "69e2c577a191f983ae272910cf9d16afb6d9dab265e264b277fead461bdcb2c6",
+      "timestamp": 1790791136,
+      "build": "b/module.obj"
+    },
+    {
+      "object_sha256": "365120310d09c0b618eea8c530bf0344ca808691eda35b7b1da1004e2a20ce0a",
+      "code_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+      "symbol_table_sha256": "0b72410b2efe33ecb1a7ad849c1379de2c6a88cd444c9b56e5c26f84217faead",
+      "relocations_sha256": "69e2c577a191f983ae272910cf9d16afb6d9dab265e264b277fead461bdcb2c6",
+      "timestamp": 1790791134,
+      "build": "a/module.obj"
+    },
+    {
+      "object_sha256": "760e84b2a63d183665fc494aca1fd107d8f19d57973c61db953f476f82654259",
+      "code_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+      "symbol_table_sha256": "0b72410b2efe33ecb1a7ad849c1379de2c6a88cd444c9b56e5c26f84217faead",
+      "relocations_sha256": "69e2c577a191f983ae272910cf9d16afb6d9dab265e264b277fead461bdcb2c6",
+      "timestamp": 1790789601,
+      "build": "probe-1/module.obj"
+    },
+    {
+      "object_sha256": "db23e97399978e867b4aee3e0950ba3b301d7a7c0adde744412c51a5049d56e8",
+      "code_sha256": "f707f6b9aaf3677628efe62f8b6bc3bd8a798ee4e6d6f4cb517615a184dea239",
+      "symbol_table_sha256": "0b72410b2efe33ecb1a7ad849c1379de2c6a88cd444c9b56e5c26f84217faead",
+      "relocations_sha256": "69e2c577a191f983ae272910cf9d16afb6d9dab265e264b277fead461bdcb2c6",
+      "timestamp": 1790798478,
+      "build": "astra-fresh"
+    }
+  ],
+  "conclusion": "Code, symbols and relocations are reproducible across independent builds; the .debug section varies with the build directory and is discarded by the linker, so the reconstructed PE remains byte-identical."
+}
